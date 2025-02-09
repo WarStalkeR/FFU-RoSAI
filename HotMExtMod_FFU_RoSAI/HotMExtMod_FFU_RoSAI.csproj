@@ -19,8 +19,8 @@
     <ProjectGuid>{9D22067C-248A-4630-B125-FB2449612E39}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HotMExternalVisualizationCode</RootNamespace>
-    <AssemblyName>HotMExternalVisualizationCode</AssemblyName>
+    <RootNamespace>HotMExtMod_FFU_RoSAI</RootNamespace>
+    <AssemblyName>HotMExtMod_FFU_RoSAI</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -29,7 +29,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\ModifiedDLLs\</OutputPath>
+    <OutputPath>..\..\..\XMLMods\FFU_RoSAI\ModdableLogicDLLs\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -73,6 +73,16 @@
         <Reference Include="HotMExternal0CommonCode, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
           <SpecificVersion>False</SpecificVersion>
           <HintPath>..\..\..\GameData\ModdableLogicDLLs\HotMExternal0CommonCode.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="HotMExternalAbstractSim, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\..\..\GameData\ModdableLogicDLLs\HotMExternalAbstractSim.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="HotMExternalVisualizationCode, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\..\..\GameData\ModdableLogicDLLs\HotMExternalVisualizationCode.dll</HintPath>
           <Private>False</Private>
         </Reference>
       </ItemGroup>
@@ -399,7 +409,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicAndroidAbilities.cs" />
+    <None Include="Logic\BasicAndroidAbilities.cs" />
+    <Compile Include="Logic\BasicConsumables.cs" />
+    <Compile Include="ModHelpers.cs" />
+    <Compile Include="ModInit.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
