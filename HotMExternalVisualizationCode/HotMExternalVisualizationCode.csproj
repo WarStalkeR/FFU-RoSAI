@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF5C0EDE-E953-46AF-B818-CC6B49226780}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HotMExternalVisualizationCode</RootNamespace>
+    <AssemblyName>HotMExternalVisualizationCode</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">VisualStudio</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF5C0EDE-E953-46AF-B818-CC6B49226780}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HotMExternalVisualizationCode</RootNamespace>
+    <AssemblyName>HotMExternalVisualizationCode</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\ModifiedDLLs\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" PrivateAssets="All" Version="1.0.0-preview.2" />
+  </ItemGroup>
+  <Choose>
+    <When Condition=" '$(Configuration)' == 'VisualStudio' Or '$(ArcenUseProjectReferences)' == 'true' ">
+      <ItemGroup>
+        <ProjectReference Include="..\..\..\..\CodeCrossProject\ArcenUniversal\ArcenUniversal.csproj" />
+        <ProjectReference Include="..\..\..\CodeMain\HotMCore\HotMCore.csproj" />
+        <ProjectReference Include="..\..\..\CodeMain\HotMVisualization\HotMVisualization.csproj" />
+        <ProjectReference Include="..\..\..\CodeExternal\HotMExternal0CommonCode\HotMExternal0CommonCode.csproj" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="ArcenUniversal">
+          <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\ArcenUniversal.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="HotMCore">
+          <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\HotMCore.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="HotMVisualization">
+          <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\HotMVisualization.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="HotMExternal0CommonCode, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\..\..\GameData\ModdableLogicDLLs\HotMExternal0CommonCode.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\Unity.Mathematics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\Unity.Collections.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\mscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\System.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.XML">
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\System.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.ARModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.GridModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.HotReloadModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.ProfilerModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.StreamingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.SubstanceModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.TLSModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UmbraModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UNETModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.WindModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\UnityEngine.XRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Central\NoteLog\TemporaryNote.cs" />
+    <Compile Include="src\Input\Input_CommandModeHandler.cs" />
+    <Compile Include="src\Logic\Dooms\Dooms_Basic.cs" />
+    <Compile Include="src\Logic\CityConflicts\CityConflicts_Basic.cs" />
+    <Compile Include="src\Logic\Feats\ActorFeats_General.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\ActionsOverTime_Generic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\EventsBasic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\JobsRoutineFlow.cs" />
+    <Compile Include="src\Logic\MachineLogic\Hacking\InfiltrationSysOpScenariosBasic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\Calculators_Export.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\ExtraCode_Common.cs" />
+    <Compile Include="src\Logic\NPCs\NPCAction_Specialized.cs" />
+    <Compile Include="src\Logic\Projects\Projects_ChapterTwo.cs" />
+    <Compile Include="src\Logic\TimelineGoals\TimelineGoalHelper.cs" />
+    <Compile Include="src\Logic\TimelineGoals\TimelineGoals_Main.cs" />
+    <Compile Include="src\Logic\Flags\CityTasks_Basics.cs" />
+    <Compile Include="src\Logic\Flags\CityFlags_Basics.cs" />
+    <Compile Include="src\Logic\Flags\MetaFlags_Basics.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\BasicConsumables.cs" />
+    <Compile Include="src\Logic\MachineLogic\Debate\DebateRewardsBasic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Debate\DebateHelper.cs" />
+    <Compile Include="src\Logic\MachineLogic\Debate\DebateScenariosBasic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Hacking\HackingScenariosBasic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Hacking\Support\BlockedIndicator.cs" />
+    <Compile Include="src\Logic\MachineLogic\Hacking\Support\HackingHelper.cs" />
+    <Compile Include="src\Logic\MachineLogic\Hacking\Support\Daemon.cs" />
+    <Compile Include="src\Logic\MachineLogic\Hacking\Support\TargetingIndicator.cs" />
+    <Compile Include="src\Logic\MachineLogic\Hacking\Support\PlayerShard.cs" />
+    <Compile Include="src\Logic\MachineLogic\Hacking\Support\IHEntity.cs" />
+    <Compile Include="src\Logic\MachineLogic\Hacking\HackingScene.cs" />
+    <Compile Include="src\Logic\MachineLogic\Hacking\DaemonsBasic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Hacking\HackingActionsBasic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\CommandActionsBasic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\JobsNonCode.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\JobsStorage.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\JobsWithSpecialties.cs" />
+    <Compile Include="src\Logic\MachineLogic\KeyHelpers\JobHelper.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\BuildModeCategoriesBasic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\CommandModeHandler.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\CoreNetworkHandler.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\OuterRadialOptions.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\BuildModeHandler.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\MetaResourceTypes_Basic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\Calculators_Common.cs" />
+    <Compile Include="src\Logic\MachineLogic\Movement\CapturedNPCUnitMoveLogic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Movement\BulkAndroidMoveLogic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Movement\InteractionTextCache.cs" />
+    <Compile Include="src\Logic\NPCs\NPCObjective_MachineJobs.cs" />
+    <Compile Include="src\Logic\Projects\ProjectHelper.cs" />
+    <Compile Include="src\Logic\Projects\Projects_ChapterZero.cs" />
+    <Compile Include="src\Logic\Projects\Projects_ChapterOne.cs" />
+    <Compile Include="src\Logic\Notes\OtherAlerts_Basic.cs" />
+    <Compile Include="src\Logic\Notes\KeyMessages_Basic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\ResourceTypes_Basic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\JobsBasic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\BasicMechAbilities.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\MachineUpgrade_Basics.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\MVStance_Basics.cs" />
+    <Compile Include="src\Logic\Notes\Notes_SimpleBasics.cs" />
+    <Compile Include="src\Logic\MachineLogic\KeyHelpers\MouseHelper.cs" />
+    <Compile Include="src\Logic\MachineLogic\Movement\AndroidMoveAndAttackLogic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Movement\MechMoveAndAttackLogic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Movement\VehicleMoveAndAttackLogic.cs" />
+    <Compile Include="src\Logic\NPCs\Helpers\NPCActionHelper.cs" />
+    <Compile Include="src\Logic\NPCs\NPCObjective_Basics.cs" />
+    <Compile Include="src\Logic\NPCs\NPCAction_NoCode.cs" />
+    <Compile Include="src\Logic\NPCs\NPCAction_Basics.cs" />
+    <Compile Include="src\Logic\NPCs\NPCStance_Basics.cs" />
+    <Compile Include="src\Logic\MachineLogic\KeyHelpers\AggregateActionsHelper.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\ActionsOverTime_Basic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\LocActs_Basic.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\LocCalcs_Basic.cs" />
+    <Compile Include="src\Logic\MachineLogic\KeyHelpers\BasicActionsHelper.cs" />
+    <Compile Include="src\Logic\MachineLogic\Lesser\MUStance_Basics.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\BasicAndroidAbilities.cs" />
+    <Compile Include="src\Logic\MachineLogic\Core\BasicVehicleAbilities.cs" />
+    <Compile Include="src\Logic\MachineLogic\Movement\MachineMovePlannerImplementation.cs" />
+    <Compile Include="src\Central\NoteLog\QueuedNote.cs" />
+    <Compile Include="src\Central\NoteLog\NoteLog.cs" />
+    <Compile Include="src\Central\Examples\ExampleMessageHandler.cs" />
+    <Compile Include="src\Central\VisQueriesImplementation.cs" />
+    <Compile Include="src\Central\VisCentralData.cs" />
+    <Compile Include="src\Logic\Cheats\VisCheats_Basic.cs" />
+    <Compile Include="src\BuildingOverlayTypes\BuildingOverlayTypes_Basic.cs" />
+    <Compile Include="src\BuildingOverlayTypes\IBuildingOverlayTypeImplementation.cs" />
+    <Compile Include="src\CityLifeEffects\Effects\PathHelperFuncs.cs" />
+    <Compile Include="src\CityLifeEffects\Effects\BuildingShootout.cs" />
+    <Compile Include="src\CityLifeEffects\Effects\OpenGroundPathfinder.cs" />
+    <Compile Include="src\CityLifeEffects\Effects\Waypoint.cs" />
+    <Compile Include="src\CityLifeEffects\Mobs\AbstractMob.cs" />
+    <Compile Include="src\CityLifeEffects\Mobs\AbstractPedestrian.cs" />
+    <Compile Include="src\CityLifeEffects\Mobs\BreachingPod.cs" />
+    <Compile Include="src\CityLifeEffects\CityLifeVis.cs" />
+    <Compile Include="src\CityLifeEffects\Mobs\Farmer.cs" />
+    <Compile Include="src\CityLifeEffects\Mobs\Gangster.cs" />
+    <Compile Include="src\CityLifeEffects\Mobs\PanicCivilian.cs" />
+    <Compile Include="src\CityLifeEffects\Mobs\Pedestrian.cs" />
+    <Compile Include="src\CityLifeEffects\Effects\StreetPathfinder.cs" />
+    <Compile Include="src\CityLifeEffects\Mobs\Sportser.cs" />
+    <Compile Include="src\CityLifeEffects\Mobs\StreetVehicle.cs" />
+    <Compile Include="src\CityLifeEffects\VisDebuggingCommon.cs" />
+    <Compile Include="src\Logic\CityVehicleSpawning\CityVehicles_SpawnLogicGeneral.cs" />
+    <Compile Include="src\Logic\CityVehicleSpawning\CityVehiclesSpawner.cs" />
+    <Compile Include="src\Logic\CityVehicleSpawning\CityVehicleHelper.cs" />
+    <Compile Include="src\Logic\TutorialChecklists\ChecklistHelper.cs" />
+    <Compile Include="src\Logic\TutorialChecklists\TutCL_ChapterOne.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\DataSmallPopup\Window_HackOptionList.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\DataSmallPopup\Window_LensFilters.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\Window_Credits.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\Window_GoalCompleteSideWindow.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\Window_VictoryPath.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\Window_PlayerHistory.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\Window_PlayerHardware.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\Window_PlayerTechnologies.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\DataSmallPopup\Window_ScrapUnitList.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\Window_StructuresWithProblems.cs" />
+    <Compile Include="src\UIs\MainGame\InfoScreens\Window_BuildSidebar.cs" />
+    <Compile Include="src\Logic\MachineLogic\Hacking\Window_Hacking.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Support\bStatsIconBase.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Support\bBadgeIconBase.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_ActorSidebarStatsEquipment.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_ActorTypeSidebarStats.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_CommandFooter.cs" />
+    <Compile Include="src\Logic\MachineLogic\Debate\Window_Debate.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_TechHeader.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_TaskStack.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_VirtualRealityNameWindow.cs" />
+    <Compile Include="src\UIs\MainGame\PreGame\Window_SystemMenu.cs" />
+    <Compile Include="src\UIs\MainGame\PreGame\Window_ProjectComplete.cs" />
+    <Compile Include="src\UIs\Modal\Window_ModalTextboxWindowWithRandomizer.cs" />
+    <Compile Include="src\UIs\Modal\Window_WelcomeToEA.cs" />
+    <Compile Include="src\UIs\Modal\Window_ModalYesNoSmall.cs" />
+    <Compile Include="src\UIs\Sidebars\Sidebar_CultActions.cs" />
+    <Compile Include="src\UIs\Sidebars\Support\Sidebar_VehicleHeader.cs" />
+    <Compile Include="src\UIs\Tooltips\AtMouse\Window_LevelEditorTooltip.cs" />
+    <Compile Include="src\UIs\Tooltips\FlatPanels\Window_SingleFloatingNote.cs" />
+    <Compile Include="src\UIs\Tooltips\Novel\CondensedAttackTooltipHandler.cs" />
+    <Compile Include="src\UIs\Tooltips\Novel\UnitStyleNovelTooltipHandler.cs" />
+    <Compile Include="src\UIs\Tooltips\Novel\SmallerNovelTooltipHandler.cs" />
+    <Compile Include="src\UIs\Tooltips\Novel\BasicNovelTooltipHandler.cs" />
+    <Compile Include="src\UIs\Tooltips\Novel\Window_CondensedAttackTooltip.cs" />
+    <Compile Include="src\UIs\Tooltips\Novel\Window_UnitStyleAtMouseNovelTooltip.cs" />
+    <Compile Include="src\UIs\Tooltips\Novel\Window_UnitStyleLowerLeftNovelTooltip.cs" />
+    <Compile Include="src\UIs\Tooltips\Novel\Window_BasicLowerLeftNovelTooltip.cs" />
+    <Compile Include="src\UIs\Tooltips\Novel\Window_SmallerLowerLeftNovelTooltip.cs" />
+    <Compile Include="src\UIs\Tooltips\Novel\Window_SmallerAtMouseNovelTooltip.cs" />
+    <Compile Include="src\UIs\Tooltips\Novel\Window_BasicAtMouseNovelTooltip.cs" />
+    <Compile Include="src\UIs\Tooltips\Support\NovelTooltipImplementation.cs" />
+    <Compile Include="src\UIs\Tooltips\Support\TooltipNovelBundle.cs" />
+    <Compile Include="src\UIs\Tooltips\Support\TooltipBundle.cs" />
+    <Compile Include="src\UIs\Tooltips\Support\TooltipFromBufferImplementation.cs" />
+    <Compile Include="src\UIs\Tooltips\FlatPanels\Window_ArrowIndicatorDark.cs" />
+    <Compile Include="src\UIXSortAndFilter\UnlockedActorPanelDisplayStyle_Basic.cs" />
+    <Compile Include="src\UIXSortAndFilter\UnlockedActorFilters_Basic.cs" />
+    <Compile Include="src\VisCalc\Animators\AnimatorLogic_SineScale.cs" />
+    <Compile Include="src\VisCalc\Projectiles\Projectile_ArcShot.cs" />
+    <Compile Include="src\VisCalc\Projectiles\Projectile_HomingShot.cs" />
+    <Compile Include="src\VisCalc\Animators\AnimatorLogic_SineMove.cs" />
+    <Compile Include="src\VisCalc\Projectiles\Projectile_StraightShot.cs" />
+    <Compile Include="src\Logic\Names\NameLogic_Basic.cs" />
+    <Compile Include="src\VisCalc\Calculators\NPCTargetingCalculator.cs" />
+    <Compile Include="src\VisCalc\RenderManagers\Indicator.cs" />
+    <Compile Include="src\VisCalc\RenderManagers\RenderHelper_MapItems.cs" />
+    <Compile Include="src\VisCalc\RenderManagers\ThreatLineData.cs" />
+    <Compile Include="src\VisCalc\Calculators\VisibilityGranterCalculator.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\DataSmallPopup\Window_StructureChoiceList.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\Window_ActorCustomizeLoadout.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\DataSmallPopup\Window_AbilityOptionList.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\DataSmallPopup\Window_ActorStanceChange.cs" />
+    <Compile Include="src\UIs\MainGame\InfoScreens\Window_MetaFlagsInfo.cs" />
+    <Compile Include="src\UIs\MainGame\InfoScreens\Window_Handbook.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\Window_RecentEvents.cs" />
+    <Compile Include="src\UIs\MainGame\InfoScreens\Window_UpgradesAndUnlocksEditing.cs" />
+    <Compile Include="src\UIs\MainGame\InfoScreens\Window_ParticleTestWindow.cs" />
+    <Compile Include="src\UIs\MainGame\InfoScreens\Window_SFXTestWindow.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_NewProfile.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_NetworkNameWindow.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_ExamineTimeline.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_NewTimeline.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_MajorEventWindow.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_RewardWindow.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_SimpleChoiceWindow.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_MainGameHeaderBarRight.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_RadialMenu.cs" />
+    <Compile Include="src\UIs\MainGame\InfoScreens\Window_VehicleUnitPanel.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_ActorSidebarStatsLowerLeft.cs" />
+    <Compile Include="src\UIs\MainGame\PreGame\Window_GameOverBanner.cs" />
+    <Compile Include="src\UIs\MainGame\PreGame\Window_ChapterChange.cs" />
+    <Compile Include="src\UIs\Modal\Window_ModalYesNoThird.cs" />
+    <Compile Include="src\UIs\Sidebars\Sidebar_Timelines.cs" />
+    <Compile Include="src\UIs\Sidebars\Sidebar_Networks.cs" />
+    <Compile Include="src\UIs\Sidebars\Support\Sidebar_SubnetHandler.cs" />
+    <Compile Include="src\UIs\Sidebars\Support\Sidebar_TimelineHandler.cs" />
+    <Compile Include="src\UIs\Sidebars\Support\Sidebar_NetworkHandler.cs" />
+    <Compile Include="src\UIs\Tooltips\FlatPanels\Window_AbilityBarNote.cs" />
+    <Compile Include="src\UIs\UIHelper.cs" />
+    <Compile Include="src\UIs\MainGame\InfoScreens\Window_CityFlagsInfo.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_AbilityFooterBar.cs" />
+    <Compile Include="src\UIs\Sidebars\Sidebar_Base.cs" />
+    <Compile Include="src\UIs\Sidebars\Sidebar_YourForces.cs" />
+    <Compile Include="src\UIs\Sidebars\Sidebar_DeepCheat.cs" />
+    <Compile Include="src\UIs\Sidebars\Support\Sidebar_DistrictSingleInfo.cs" />
+    <Compile Include="src\UIs\Sidebars\Support\Sidebar_MainMapActor.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_Sidebar.cs" />
+    <Compile Include="src\Input\InputWindowCutthrough.cs" />
+    <Compile Include="src\VisCalc\Calculators\MetaRegionPopulator.cs" />
+    <Compile Include="src\Input\Input_MainUIHandler.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\Window_PlayerResources.cs" />
+    <Compile Include="src\UIs\MainGame\Graphs\Window_DistrictEcologyGraphs.cs" />
+    <Compile Include="src\UIs\MainGame\InfoScreens\AbstractWindowManager.cs" />
+    <Compile Include="src\UIs\MainGame\InfoScreens\AbstractWindowInfoScreen.cs" />
+    <Compile Include="src\UIs\MainGame\InfoScreens\Children\Window_BuildingDirectory.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\Window_CheatWindow.cs" />
+    <Compile Include="src\UIs\MainGame\CommandScreens\Window_FilterOverlayWindow.cs" />
+    <Compile Include="src\UIs\MainGame\InfoScreens\Children\Window_PopulationStatistics.cs" />
+    <Compile Include="src\UIs\MainGame\Passive\Window_MainGameHeaderBarLeft.cs" />
+    <Compile Include="src\UIs\MainGame\SystemMenus\SaveFileSortMethod.cs" />
+    <Compile Include="src\UIs\MainGame\SystemMenus\Window_SaveGameMenu.cs" />
+    <Compile Include="src\UIs\LevelEditor\Window_LevelEditorBottomRightPopup.cs" />
+    <Compile Include="src\UIs\LevelEditor\Window_LevelEditorLevelDetails.cs" />
+    <Compile Include="src\UIs\LevelEditor\Window_LevelEditorSingleObjectEditableDetails.cs" />
+    <Compile Include="src\UIs\LevelEditor\Window_LevelEditorSecondaryInfo.cs" />
+    <Compile Include="src\UIs\MainGame\PreGame\Window_LoadingWindow.cs" />
+    <Compile Include="src\UIs\MainGame\PreGame\Window_MainMenu.cs" />
+    <Compile Include="src\UIs\LevelEditor\Window_LevelEditorSystemMenu.cs" />
+    <Compile Include="src\UIs\LevelEditor\Window_LevelEditorPalette.cs" />
+    <Compile Include="src\UIs\LevelEditor\Window_LevelEditorObjectList.cs" />
+    <Compile Include="src\UIs\LevelEditor\Window_LevelEditorHeaderBar.cs" />
+    <Compile Include="src\UIs\Modal\Window_ModalBlocker.cs" />
+    <Compile Include="src\UIs\Modal\Window_ModalBaseOK.cs" />
+    <Compile Include="src\UIs\Modal\Window_ModalOKTall.cs" />
+    <Compile Include="src\UIs\Modal\Window_NonModalOKTallLeft.cs" />
+    <Compile Include="src\UIs\Modal\Window_NonModalOKTallRight.cs" />
+    <Compile Include="src\UIs\Modal\Window_ModalOKTall_Wide.cs" />
+    <Compile Include="src\UIs\Modal\Window_ModalOKTall_UltraWide.cs" />
+    <Compile Include="src\UIs\Modal\Window_ModalTextboxWindow.cs" />
+    <Compile Include="src\UIs\System\Window_ControlBindingsMenu.cs" />
+    <Compile Include="src\UIs\MainGame\SystemMenus\Window_LoadGameMenu.cs" />
+    <Compile Include="src\UIs\System\Window_SettingsMenu.cs" />
+    <Compile Include="src\UIs\Modal\Window_ErrorReportMenuThatClearsAfter.cs" />
+    <Compile Include="src\UIs\Modal\Window_ErrorReportMenu.cs" />
+    <Compile Include="src\UIs\Modal\Window_ModalYesNo.cs" />
+    <Compile Include="src\UIs\Modal\Window_ModalOK.cs" />
+    <Compile Include="src\UIs\System\Window_AtMouseIcon.cs" />
+    <Compile Include="src\DropdownFillers.cs" />
+    <Compile Include="src\UIXDisplayStyles\BuildingDisplayStyles_Basic.cs" />
+    <Compile Include="src\UIXDisplayStyles\PopulationStatisticsDisplayStyles_Basic.cs" />
+    <Compile Include="src\UIXSortAndFilter\BuildingFilters_Basic.cs" />
+    <Compile Include="src\VisCalc\RenderManagers\PulsingBeaconStates.cs" />
+    <Compile Include="src\VisCalc\RenderManagers\RenderHelper_EventCamera.cs" />
+    <Compile Include="src\VisCalc\RenderManagers\RenderHelper_Objects.cs" />
+    <Compile Include="src\VisCalc\RenderManagers\RenderManager_LevelEditor.cs" />
+    <Compile Include="src\VisCalc\RenderManagers\RenderManager_TheEndOfTime.cs" />
+    <Compile Include="src\VisCalc\RenderManagers\SharedRenderManagerData.cs" />
+    <Compile Include="src\VisCalc\RenderManagers\RenderManager_Streets.cs" />
+    <Compile Include="src\VisCalc\RenderManagers\RenderManager_CityMap.cs" />
+    <Compile Include="src\VisCalc\Targeting\NPCTargeting_ActionOverTimeHunter.cs" />
+    <Compile Include="src\VisCalc\Targeting\NPCTargeting_Nonviolent.cs" />
+    <Compile Include="src\VisCalc\Targeting\NPCTargeting_FuzzedStandardIntelligence.cs" />
+    <Compile Include="src\VisCalc\TextHandlers\VisAbilityBarNote.cs" />
+    <Compile Include="src\VisCalc\VisOtherReports.cs" />
+    <Compile Include="src\VisCalc\VisRangeAndSimilarDrawing.cs" />
+    <Compile Include="src\VisCalc\VisCommands.cs" />
+    <Compile Include="src\Logic\MachineLogic\Movement\MoveHelper.cs" />
+    <Compile Include="src\VisCalc\TextHandlers\VisBottomSecondarySideTooltip.cs" />
+    <Compile Include="src\Central\VisPlannerImplementation.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <PostBuildEvent>call "$(ProjectDir)..\..\..\batchScripts\MonoBuild_SingleExternal.bat" $(ProjectName)</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' == 'Unix'">
+    <PostBuildEvent>"$(ProjectDir)..\..\..\batchScripts\CopyToReliableStorage.sh" $(ProjectName)</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent />
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
