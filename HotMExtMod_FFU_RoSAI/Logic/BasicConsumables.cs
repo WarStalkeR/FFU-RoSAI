@@ -5,8 +5,6 @@ using Arcen.HotM.Core;
 using Arcen.HotM.External;
 using Arcen.HotM.Visualization;
 using Arcen.HotM.ExternalVis;
-using static UnityEngine.UI.CanvasScaler;
-using UnityEngine.Networking;
 
 namespace Arcen.HotM.FFU.RoSAI {
     public class BasicConsumables : IResourceConsumableImplementation {
@@ -62,27 +60,37 @@ namespace Arcen.HotM.FFU.RoSAI {
 
                         debugStage = 5200;
                         bool isInRange = (destinationPoint - center).GetSquareGroundMagnitude() <= attackRange * attackRange;
-                        int costConsumable = 1000;
                         int peopleInBuilding = buildingUnderCursor == null ? 0 : buildingUnderCursor.GetTotalResidentCount() + buildingUnderCursor.GetTotalWorkerCount();
                         int legalOverhead = 0;
+                        int legalIssues = 0;
                         if (buildingUnderCursor != null) {
                             float legalValue = 0;
                             foreach (var legalEntity in buildingUnderCursor.GetBuildingData()) {
+                                legalIssues += legalEntity.Value;
                                 switch (legalEntity.Key.ID) {
-                                    case "MilitaryPresence": legalValue += legalEntity.Value * 15f; break;
-                                    case "SecForcesPresence": legalValue += legalEntity.Value * 10f; break;
-                                    case "CrimeSyndicatePresence": legalValue += legalEntity.Value * 5f; break;
-                                    case "HackerPresence": legalValue += legalEntity.Value * 7.5f; break;
-                                    case "HostileCultPresence": legalValue += legalEntity.Value * 3f; break;
-                                    case "GangCrime": legalValue += legalEntity.Value * 1.5f; break;
-                                    case "BlackMarket": legalValue += legalEntity.Value * 2f; break;
-                                    case "Vermin": legalValue += legalEntity.Value * 0.35f; break;
-                                    case "BacterialLoad": legalValue += legalEntity.Value * 0.1f; break;
+                                    case "MilitaryPresence": legalValue += legalEntity.Value * DataRefs.LEGAL_MILITARY; break;
+                                    case "SecForcesPresence": legalValue += legalEntity.Value * DataRefs.LEGAL_SECURITY; break;
+                                    case "CrimeSyndicatePresence": legalValue += legalEntity.Value * DataRefs.LEGAL_SYNDICATE; break;
+                                    case "HackerPresence": legalValue += legalEntity.Value * DataRefs.LEGAL_HACKERS; break;
+                                    case "HostileCultPresence": legalValue += legalEntity.Value * DataRefs.LEGAL_CULT; break;
+                                    case "GangCrime": legalValue += legalEntity.Value * DataRefs.LEGAL_GANGS; break;
+                                    case "BlackMarket": legalValue += legalEntity.Value * DataRefs.LEGAL_MARKET; break;
+                                    case "Vermin": legalValue += legalEntity.Value * DataRefs.LEGAL_VERMIN; break;
+                                    case "BacterialLoad": legalValue += legalEntity.Value * DataRefs.LEGAL_BACTERIA; break;
+                                    default: legalValue += legalEntity.Value * 1f; break;
                                 }
                             }
                             legalOverhead = (int)legalValue;
                         }
-                        int totalEvictionCost = peopleInBuilding + legalOverhead + costConsumable;
+                        BuildingPrefab buildingPrefab = buildingUnderCursor?.GetPrefab();
+                        int buildingVolume = buildingPrefab?.NormalTotalBuildingVolumeFullDimensions ?? 0;
+                        int buildingStorage = buildingPrefab?.NormalTotalStorageVolumeFullDimensions ?? 0;
+                        int buildingFloorArea = buildingPrefab?.NormalTotalBuildingFloorAreaFullDimensions ?? 0;
+                        int totalEvictionCost = (int)(1000 +
+                            peopleInBuilding + legalOverhead +
+                            buildingVolume * DataRefs.EVICT_VOLUME +
+                            buildingStorage * DataRefs.EVICT_STORAGE +
+                            buildingFloorArea * DataRefs.EVICT_AREA);
                         BuildingTypeVariant variant = buildingUnderCursor?.GetVariant();
                         bool buildingIsInvalid = buildingUnderCursor == null || buildingUnderCursor.MachineStructureInBuilding != null;
 
@@ -94,7 +102,15 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 novel.Icon = IconRefs.Mouse_OutOfRange.Icon;
                                 novel.ShouldTooltipBeRed = true;
                                 novel.TitleUpperLeft.AddLang("Move_OutOfRange");
-                                if (!buildingIsInvalid) novel.Main.AddRaw(variant.GetDisplayName()).AddFormat1("TotalEvictionCost", totalEvictionCost.ToStringThousandsWhole());
+                                if (!buildingIsInvalid) {
+                                    var costInfo = novel.Main.AddRaw(variant.GetDisplayName()).StartLineHeight50().Line();
+                                    if (peopleInBuilding > 0) costInfo.AddFormat1("EvictionResidents", peopleInBuilding.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                    if (legalIssues > 0) costInfo.AddFormat1("EvictionLegalIssues", legalIssues.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                    if (buildingVolume > 0) costInfo.AddFormat1("EvictionVolume", buildingVolume.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                    if (buildingStorage > 0) costInfo.AddFormat1("EvictionStorage", buildingStorage.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                    if (buildingFloorArea > 0) costInfo.AddFormat1("EvictionArea", buildingFloorArea.ToStringThousandsWhole()).StartLineHeight50().Line();
+                                    costInfo.AddFormat1("EvictionCostTotal", totalEvictionCost.ToStringThousandsWhole());
+                                }
                             }
                             return false;
                         }
@@ -107,11 +123,18 @@ namespace Arcen.HotM.FFU.RoSAI {
 
                             if (novel.TryStartSmallerTooltip(TooltipID.Create(Consumable), null, SideClamp.Any, TooltipNovelWidth.Simple)) {
                                 novel.Icon = Consumable.Icon;
-                                novel.TitleUpperLeft.AddFormat1("Move_ClickToLaunchDroneSwarm", Lang.GetRightClickText());
+                                novel.TitleUpperLeft.AddFormat1("Move_ClickToEvict", Lang.GetRightClickText());
+                                var costInfo = novel.Main.AddRaw(variant.GetDisplayName()).StartLineHeight50().Line();
+                                if (peopleInBuilding > 0) costInfo.AddFormat1("EvictionResidents", peopleInBuilding.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (legalIssues > 0) costInfo.AddFormat1("EvictionLegalIssues", legalIssues.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (buildingVolume > 0) costInfo.AddFormat1("EvictionVolume", buildingVolume.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (buildingStorage > 0) costInfo.AddFormat1("EvictionStorage", buildingStorage.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (buildingFloorArea > 0) costInfo.AddFormat1("EvictionArea", buildingFloorArea.ToStringThousandsWhole()).StartLineHeight50().Line();
                                 if (ResourceRefs.Wealth.Current < totalEvictionCost) {
-                                    novel.Main.AddRaw(variant.GetDisplayName()).AddFormat1("TotalEvictionCostNotEnough", totalEvictionCost.ToStringThousandsWhole());
+                                    costInfo.AddFormat1("EvictionCostTotal", totalEvictionCost.ToStringThousandsWhole()).StartLineHeight50().Line();
+                                    costInfo.AddFormat1("EvictionMissingFunds", string.Empty);
                                     return false;
-                                } else novel.Main.AddRaw(variant.GetDisplayName()).AddFormat1("TotalEvictionCost", totalEvictionCost.ToStringThousandsWhole());
+                                } else costInfo.AddFormat1("EvictionCostTotal", totalEvictionCost.ToStringThousandsWhole());
                             }
 
                             ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), DataRefs.BuildingValidEvictionTarget.ColorHDR,
