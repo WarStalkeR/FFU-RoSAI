@@ -11,10 +11,35 @@ namespace Arcen.HotM.FFU.RoSAI {
         public ActorAbilityResult TryHandleAbility(ISimMachineActor Actor, ISimBuilding BuildingOrNull, Vector3 ActionLocation, AbilityType Ability, ArcenCharacterBufferBase BufferOrNull, ActorAbilityLogic Logic) {
             if (Ability == null || Actor == null) return ActorAbilityResult.PlayErrorSound;
             NovelTooltipBuffer novel = NovelTooltipBuffer.Instance;
+            HandleDataRefsPreload();
             int debugStage = 0;
 
             try {
                 debugStage = 100;
+                ISimMachineUnit unit = Actor as ISimMachineUnit;
+                if (unit == null) {
+                    debugStage = 200;
+                    if (Actor is ISimMachineVehicle vehicle)
+                        ArcenDebugging.LogSingleLine("BasicAndroidAbilities: Called HandleAbility for '" + Ability.ID + "' with a vehicle instead of a unit!", Verbosity.ShowAsError);
+                    return ActorAbilityResult.PlayErrorSound;
+                }
+
+                debugStage = 300;
+                if (Ability.MustBeTargeted) {
+                    switch (Logic) {
+                        default: return ActorAbilityResult.OpenedInterface;
+                        case ActorAbilityLogic.ExecuteAbilityFromPlayerDirect:
+                        case ActorAbilityLogic.ExecuteAbilityAutomated:
+                        case ActorAbilityLogic.TriggerAbilityAltView: {
+                            debugStage = 700;
+                            if (Actor.IsInAbilityTypeTargetingMode == Ability) Actor.SetTargetingMode(null, null);
+                            else Actor.SetTargetingMode(Ability, null);
+                            return ActorAbilityResult.OpenedInterface;
+                        }
+                    }
+                }
+
+                debugStage = 500;
                 switch (Ability.ID) {
                     case "Eviction":
                         return ActorAbilityResult.PlayErrorSound;
@@ -35,42 +60,46 @@ namespace Arcen.HotM.FFU.RoSAI {
         public void HandleAbilityMixedTargeting(ISimMachineActor Actor, AbilityType Ability, Vector3 center, float attackRange, float moveRange) {
             if (Ability == null || Actor == null) return;
             NovelTooltipBuffer novel = NovelTooltipBuffer.Instance;
+            HandleDataRefsPreload();
             int debugStage = 0;
             try {
                 debugStage = 100;
                 ISimMachineUnit unit = Actor as ISimMachineUnit;
+                if (unit == null) {
+                    debugStage = 200;
+                    if (Actor is ISimMachineVehicle vehicle) 
+                        ArcenDebugging.LogSingleLine("BasicAndroidAbilities: Called HandleAbilityHardTargeting for '" + Ability.ID + "' with a vehicle instead of a unit!", Verbosity.ShowAsError);
+                    return;
+                }
                 float groundLevel = Engine_HotM.GameModeData.GroundLineDrawLevel;
                 Vector3 groundCenter = center.ReplaceY(groundLevel);
+
+                debugStage = 500;
                 switch (Ability.ID) {
-                    case "Eviction":
-                        /*
+                    case "Eviction": {
                         debugStage = 1200;
                         if (attackRange < moveRange) attackRange = moveRange;
-
                         Int64 framesPrepped = RenderManager.FramesPrepped;
                         DrawHelper.RenderRangeCircle(groundCenter, attackRange, ColorRefs.MachineUnitAttackLine.ColorHDR);
 
-                        TargetingHelper.DoForAllBuildingsWithinRangeTight(unit, attackRange, DataRefs.EvictionTarget,
-                            delegate (ISimBuilding Building) {
-                                MapItem item = Building.GetMapItem();
-                                if (item == null) return false;
+                        debugStage = 2200;
+                        TargetingHelper.DoForAllBuildingsWithinRangeTight(unit, attackRange, DataRefs.EvictionTag, delegate (ISimBuilding Building) {
+                            MapItem item = Building.GetMapItem();
+                            if (item == null) return false;
 
-                                if (item.LastFramePrepRendered_StructureHighlight >= RenderManager.FramesPrepped) return false;
-                                item.LastFramePrepRendered_StructureHighlight = RenderManager.FramesPrepped;
+                            if (item.LastFramePrepRendered_StructureHighlight >= RenderManager.FramesPrepped) return false;
+                            item.LastFramePrepRendered_StructureHighlight = RenderManager.FramesPrepped;
 
-                                MapCell cell = item.ParentCell;
-                                if (!cell.IsConsideredInCameraView) return false;
-                                if (Building.MachineStructureInBuilding != null) return false;
+                            MapCell cell = item.ParentCell;
+                            MapTile tile = item.ParentTile;
+                            if (!cell.IsConsideredInCameraView) return false;
+                            if (Building.MachineStructureInBuilding != null) return false;
+                            if (tile.TileNetworkLevel.Display < TileNetLevel.Full) return false;
 
-                                ModHelpers.DrawMapItemHighlightedBorder(item, DataRefs.BuildingValidEvictionTarget.ColorHDR,
-                                    new Vector3(1.05f, 1.05f, 1.05f), HighlightPass.First, Engine_HotM.GameMode == MainGameMode.CityMap, framesPrepped);
-                                return false;
-                            });
-
-                        if (unit.CurrentActionPoints < Ability.ActionPointCost || ResourceRefs.MentalEnergy.Current < Ability.MentalEnergyCost) {
-                            unit.SetTargetingMode(null, null);
-                            return;
-                        }
+                            ModHelpers.DrawMapItemHighlightedBorder(item, DataRefs.EvictionVis.ColorHDR,
+                                new Vector3(1.05f, 1.05f, 1.05f), HighlightPass.First, Engine_HotM.GameMode == MainGameMode.CityMap, framesPrepped);
+                            return false;
+                        });
 
                         debugStage = 3200;
                         Vector3 destinationPoint = Engine_HotM.GameMode == MainGameMode.CityMap ? Engine_HotM.MouseWorldLocation : Engine_HotM.MouseWorldHitLocation;
@@ -80,162 +109,142 @@ namespace Arcen.HotM.FFU.RoSAI {
                             if (status != null && (status.ShouldBuildingBeInvisible || status.ShouldBuildingBeBurnedVisually)) buildingUnderCursor = null;
                             else destinationPoint = buildingUnderCursor.GetMapItem().CenterPoint;
                         }
-
-                        debugStage = 4200;
-                        if (!Engine_Universal.IsMouseOverGUI && !Engine_HotM.IsGameWorldMouseInteractionBlockedByWindow_General && !Engine_Universal.IsMouseOutsideGameWindow &&
-                                destinationPoint.x != float.NegativeInfinity && destinationPoint.x != float.PositiveInfinity)
-                            unit.RotateAndroidToFacePoint(destinationPoint);
-                        else return;
-
-                        debugStage = 5200;
-                        bool isInRange = (destinationPoint - center).GetSquareGroundMagnitude() <= attackRange * attackRange;
-                        int peopleInBuilding = buildingUnderCursor == null ? 0 : buildingUnderCursor.GetTotalResidentCount() + buildingUnderCursor.GetTotalWorkerCount();
-                        BuildingTypeVariant variant = buildingUnderCursor?.GetVariant();
-                        bool buildingIsInvalid = buildingUnderCursor == null || buildingUnderCursor.MachineStructureInBuilding != null;
-
-                        debugStage = 6200;
-                        if (!isInRange && !buildingIsInvalid && !MouseHelper.GetShouldSkipOutOfRangeNotice(destinationPoint)) {
-                            DrawHelper.RenderCatmullLine(Actor.GetCollisionCenter(), destinationPoint, Color.red, 1f, CatmullSlotType.Move, CatmullSlope.AndroidTargeting);
-                            CursorHelper.RenderSpecificMouseCursorAtSpot(true, IconRefs.Mouse_Invalid, destinationPoint, 0.2f);
-                            if (novel.TryStartSmallerTooltip(TooltipID.Create(buildingUnderCursor), null, SideClamp.Any, TooltipNovelWidth.Simple)) {
-                                novel.Icon = IconRefs.Mouse_OutOfRange.Icon;
-                                novel.ShouldTooltipBeRed = true;
-                                novel.TitleUpperLeft.AddLang("Move_OutOfRange");
-                                if (!buildingIsInvalid) novel.Main.AddRaw(variant.GetDisplayName()).AddFormat1("PeopleInsideCountParenthetical", peopleInBuilding.ToStringThousandsWhole());
-                            }
-                            return;
-                        }
-
-                        debugStage = 7200;
-                        if (buildingIsInvalid || peopleInBuilding == 0) return;
-                        else {
-                            DrawHelper.RenderCatmullLine(Actor.GetCollisionCenter(), destinationPoint,ColorRefs.MachineUnitAttackLine.ColorHDR, 1.5f, CatmullSlotType.Move, CatmullSlope.AndroidTargeting);
-                            CursorHelper.RenderSpecificMouseCursorAtSpotWithColor(true, IconRefs.MouseMoveMode_Valid, destinationPoint, ColorRefs.MachineUnitAttackLine.ColorHDR);
-
-                            if (novel.TryStartSmallerTooltip(TooltipID.Create(buildingUnderCursor), null, SideClamp.Any, TooltipNovelWidth.Smaller)) {
-                                novel.Icon = Ability.Icon;
-                                novel.TitleUpperLeft.AddRightClickFormat("Move_ClickToEvict");
-                            }
-
-                            ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), DataRefs.BuildingValidEvictionTarget.ColorHDR, 
-                                new Vector3(1.08f, 1.08f, 1.08f), HighlightPass.First, Engine_HotM.GameMode == MainGameMode.CityMap, framesPrepped);
-
-                            if (ArcenInput.RightMouseNonUI.GetIsBrieflyClicked_AndConsume()) {
-                                Vector3 epicenter = buildingUnderCursor.GetMapItem().OBBCache.BottomCenter;
-
-                                //do the thing
-                                ProjectileInstructionPrePacket prePacket = ProjectileInstructionPrePacket.CreateVerySimple(center, destinationPoint.ReplaceY(groundLevel),
-                                    unit, delegate {
-                                    int debugStageInner = 0;
-                                    try {
-                                        debugStageInner = 200;
-                                        buildingUnderCursor.KillEveryoneHere();
-
-                                        ParticleSoundRefs.SlumBuildingReplaced.DuringGame_PlayAtLocation(buildingUnderCursor.GetMapItem().OBBCache.BottomCenter,
-                                            new Vector3(0, Engine_Universal.PermanentQualityRandom.Next(0, 360), 0));
-                                        buildingUnderCursor.GetMapItem().DropBurningEffect_Slow();
-                                        buildingUnderCursor.FullyDeleteBuilding();
-
-                                        CityStatisticTable.AlterScore("CitizensForciblyRescuedFromSlums", peopleInBuilding);
-                                        ResourceRefs.ShelteredHumans.AlterCurrent_Named(peopleInBuilding, string.Empty, ResourceAddRule.StoreExcess);
-                                        ArcenNotes.SendSimpleNoteToGameOnly(300, NoteInstructionTable.Instance.GetRowByID("GainedResource"), 
-                                            NoteStyle.BothGame, ResourceRefs.ShelteredHumans.ID, peopleInBuilding, 0, 0, 0);
-                                    } catch (Exception e) {
-                                        ArcenDebugging.LogDebugStageWithStack("DecrownerDronesHit", debugStageInner, e, Verbosity.ShowAsError);
-                                    }
-                                });
-                            }
-                            return;
-                        }
-                        */
-
-                        /*
-                        debugStage = 1200;
-                        if (attackRange < moveRange) attackRange = moveRange;
-
-                        Int64 framesPrepped = RenderManager.FramesPrepped;
-                        DrawHelper.RenderRangeCircle(groundCenter, attackRange, ColorRefs.MachineUnitAttackLine.ColorHDR);
-
-                        TargetingHelper.DoForAllBuildingsWithinRangeTight(unit, attackRange, DataRefs.EvictionTarget,
-                            delegate (ISimBuilding Building) {
-                                MapItem item = Building.GetMapItem();
-                                if (item == null) return false;
-
-                                if (item.LastFramePrepRendered_StructureHighlight >= RenderManager.FramesPrepped) return false;
-                                item.LastFramePrepRendered_StructureHighlight = RenderManager.FramesPrepped;
-
-                                MapCell cell = item.ParentCell;
-                                if (!cell.IsConsideredInCameraView) return false;
-                                if (Building.MachineStructureInBuilding != null) return false;
-
-                                ModHelpers.DrawMapItemHighlightedBorder(item, DataRefs.BuildingValidEvictionTarget.ColorHDR,
-                                    new Vector3(1.08f, 1.08f, 1.08f), HighlightPass.First, Engine_HotM.GameMode == MainGameMode.CityMap, framesPrepped);
-                                return false;
-                            });
-
                         if (unit.CurrentActionPoints < Ability.ActionPointCost || ResourceRefs.MentalEnergy.Current < Ability.MentalEnergyCost) {
                             unit.SetTargetingMode(null, null);
                             return;
                         }
 
-                        Vector3 destinationPoint = Engine_HotM.GameMode == MainGameMode.CityMap ? Engine_HotM.MouseWorldLocation : Engine_HotM.MouseWorldHitLocation;
-                        ISimBuilding buildingUnderCursor = MouseHelper.BuildingNoFilterUnderCursor;
-                        if (buildingUnderCursor != null) {
-                            BuildingStatus status = buildingUnderCursor.GetStatus();
-                            if (status != null && (status.ShouldBuildingBeInvisible || status.ShouldBuildingBeBurnedVisually)) buildingUnderCursor = null;
-                            else destinationPoint = buildingUnderCursor.GetMapItem().CenterPoint;
-                        }
-
+                        debugStage = 4200;
                         if (!Engine_Universal.IsMouseOverGUI && !Engine_HotM.IsGameWorldMouseInteractionBlockedByWindow_General && !Engine_Universal.IsMouseOutsideGameWindow &&
                             destinationPoint.x != float.NegativeInfinity && destinationPoint.x != float.PositiveInfinity)
                             unit.RotateAndroidToFacePoint(destinationPoint);
                         else return;
 
+                        debugStage = 5200;
                         bool isInRange = (destinationPoint - center).GetSquareGroundMagnitude() <= attackRange * attackRange;
-                        if (!isInRange) return;
+                        bool buildingIsInvalid = buildingUnderCursor == null || buildingUnderCursor.MachineStructureInBuilding != null ||
+                            (buildingUnderCursor?.GetMapItem()?.ParentTile?.TileNetworkLevel?.Display ?? TileNetLevel.None) < TileNetLevel.Full ||
+                            !(buildingUnderCursor?.GetVariant()?.Tags?.ContainsKey(DataRefs.EvictionTag.ID) ?? false);
+                        BuildingTypeVariant variant = buildingUnderCursor?.GetVariant();
+                        int peopleTotal = 0;
+                        int peopleResidents = 0;
+                        int peopleWorkers = 0;
+                        int legalIssues = 0;
+                        int buildingVolume = 0;
+                        int buildingStorage = 0;
+                        int buildingFloorArea = 0;
+                        int totalEvictionCost = 0;
+                        if (!buildingIsInvalid) {
+                            peopleResidents = buildingUnderCursor.GetTotalResidentCount();
+                            peopleWorkers = buildingUnderCursor.GetTotalWorkerCount();
+                            peopleTotal = peopleResidents + peopleWorkers;
+                            float legalOverhead = 0;
+                            foreach (var legalEntity in buildingUnderCursor.GetBuildingData()) {
+                                legalIssues += legalEntity.Value;
+                                switch (legalEntity.Key.ID) {
+                                    case "MilitaryPresence": legalOverhead += legalEntity.Value * DataRefs.LEGAL_MILITARY; break;
+                                    case "SecForcesPresence": legalOverhead += legalEntity.Value * DataRefs.LEGAL_SECURITY; break;
+                                    case "CrimeSyndicatePresence": legalOverhead += legalEntity.Value * DataRefs.LEGAL_SYNDICATE; break;
+                                    case "HackerPresence": legalOverhead += legalEntity.Value * DataRefs.LEGAL_HACKERS; break;
+                                    case "HostileCultPresence": legalOverhead += legalEntity.Value * DataRefs.LEGAL_CULT; break;
+                                    case "GangCrime": legalOverhead += legalEntity.Value * DataRefs.LEGAL_GANGS; break;
+                                    case "BlackMarket": legalOverhead += legalEntity.Value * DataRefs.LEGAL_MARKET; break;
+                                    case "Vermin": legalOverhead += legalEntity.Value * DataRefs.LEGAL_VERMIN; break;
+                                    case "BacterialLoad": legalOverhead += legalEntity.Value * DataRefs.LEGAL_BACTERIA; break;
+                                    default: legalOverhead += legalEntity.Value * 1f; break;
+                                }
+                            }
+                            BuildingPrefab buildingPrefab = buildingUnderCursor.GetPrefab();
+                            buildingVolume = buildingPrefab.NormalTotalBuildingVolumeFullDimensions;
+                            buildingStorage = buildingPrefab.NormalTotalStorageVolumeFullDimensions;
+                            buildingFloorArea = buildingPrefab.NormalTotalBuildingFloorAreaFullDimensions;
+                            totalEvictionCost = (int)(1000 +
+                            peopleTotal + legalOverhead +
+                            buildingVolume * DataRefs.EVICT_VOLUME_FUNDS_MULT +
+                            buildingStorage * DataRefs.EVICT_STORAGE_FUNDS_MULT +
+                            buildingFloorArea * DataRefs.EVICT_AREA_FUNDS_MULT);
+                        }
 
-                        if (buildingUnderCursor == null || !(buildingUnderCursor?.GetVariant()?.Tags?.ContainsKey(DataRefs.EvictionTarget.ID) ?? false) ||
-                            buildingUnderCursor.MachineStructureInBuilding != null || buildingUnderCursor.CurrentOccupyingUnit != null) {
+                        debugStage = 6200;
+                        if (!isInRange && !buildingIsInvalid && !MouseHelper.GetShouldSkipOutOfRangeNotice(destinationPoint)) {
+                            DrawHelper.RenderCatmullLine(Actor.GetCollisionCenter(), destinationPoint, Color.red, 1f, CatmullSlotType.Move, CatmullSlope.AndroidTargeting);
+                            CursorHelper.RenderSpecificMouseCursorAtSpot(true, IconRefs.Mouse_Invalid, destinationPoint, 0.2f);
+
+                            if (novel.TryStartSmallerTooltip(TooltipID.Create(buildingUnderCursor), null, SideClamp.Any, TooltipNovelWidth.Smaller)) {
+                                novel.Icon = IconRefs.Mouse_OutOfRange.Icon;
+                                novel.ShouldTooltipBeRed = true;
+                                novel.TitleUpperLeft.AddLang("Move_OutOfRange");
+                                var costInfo = novel.Main.AddRaw(variant.GetDisplayName()).StartLineHeight50().Line();
+                                if (peopleResidents > 0) costInfo.AddFormat1("EvictionResidents", peopleResidents.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (peopleWorkers > 0) costInfo.AddFormat1("EvictionWorkers", peopleWorkers.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (legalIssues > 0) costInfo.AddFormat1("EvictionLegalIssues", legalIssues.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (buildingVolume > 0) costInfo.AddFormat1("EvictionVolume", buildingVolume.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (buildingStorage > 0) costInfo.AddFormat1("EvictionStorage", buildingStorage.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (buildingFloorArea > 0) costInfo.AddFormat1("EvictionArea", buildingFloorArea.ToStringThousandsWhole()).StartLineHeight50().Line();
+                                if (ResourceRefs.Wealth.Current < totalEvictionCost) {
+                                    costInfo.AddFormat1("EvictionCostFunds", totalEvictionCost.ToStringThousandsWhole()).StartLineHeight50().Line();
+                                    costInfo.AddFormat1("EvictionMissingFunds", string.Empty);
+                                } else costInfo.AddFormat1("EvictionCostFunds", totalEvictionCost.ToStringThousandsWhole());
+                            }
                             return;
-                        } else {
+                        }
+
+                        debugStage = 7200;
+                        if (!isInRange || buildingIsInvalid) return;
+                        else {
                             DrawHelper.RenderCatmullLine(unit.GetCollisionCenter(), destinationPoint, ColorRefs.MachineUnitAttackLine.ColorHDR, 1.5f, CatmullSlotType.Move, CatmullSlope.AndroidTargeting);
                             CursorHelper.RenderSpecificMouseCursorAtSpotWithColor(true, IconRefs.MouseMoveMode_Valid, destinationPoint, ColorRefs.MachineUnitAttackLine.ColorHDR);
 
                             if (novel.TryStartSmallerTooltip(TooltipID.Create(buildingUnderCursor), null, SideClamp.Any, TooltipNovelWidth.Smaller)) {
                                 novel.Icon = Ability.Icon;
                                 novel.TitleUpperLeft.AddRightClickFormat("Move_ClickToEvict");
+                                var costInfo = novel.Main.AddRaw(variant.GetDisplayName()).StartLineHeight50().Line();
+                                if (peopleResidents > 0) costInfo.AddFormat1("EvictionResidents", peopleResidents.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (peopleWorkers > 0) costInfo.AddFormat1("EvictionWorkers", peopleWorkers.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (legalIssues > 0) costInfo.AddFormat1("EvictionLegalIssues", legalIssues.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (buildingVolume > 0) costInfo.AddFormat1("EvictionVolume", buildingVolume.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (buildingStorage > 0) costInfo.AddFormat1("EvictionStorage", buildingStorage.ToStringThousandsWhole()).StartLineHeight10().Line();
+                                if (buildingFloorArea > 0) costInfo.AddFormat1("EvictionArea", buildingFloorArea.ToStringThousandsWhole()).StartLineHeight50().Line();
+                                if (ResourceRefs.Wealth.Current < totalEvictionCost) {
+                                    costInfo.AddFormat1("EvictionCostFunds", totalEvictionCost.ToStringThousandsWhole()).StartLineHeight50().Line();
+                                    costInfo.AddFormat1("EvictionMissingFunds", string.Empty);
+                                    return;
+                                } else costInfo.AddFormat1("EvictionCostFunds", totalEvictionCost.ToStringThousandsWhole());
                             }
 
-                            ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), DataRefs.BuildingValidEvictionTarget.ColorHDR,
-                                new Vector3(1.1f, 1.1f, 1.1f), HighlightPass.AlwaysHappen, Engine_HotM.GameMode == MainGameMode.CityMap, framesPrepped);
-
+                            ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), DataRefs.EvictionVis.ColorHDR,
+                                new Vector3(1.08f, 1.08f, 1.08f), HighlightPass.AlwaysHappen, Engine_HotM.GameMode == MainGameMode.CityMap, framesPrepped);
                             if (ArcenInput.RightMouseNonUI.GetIsBrieflyClicked_AndConsume()) {
-                                unit.ApplyVisibilityFromAction(ActionVisibility.IsAttack);
-                                unit.AddOrRemoveBadge(CommonRefs.MarkedDefective, true);
                                 unit.AlterCurrentActionPoints(-Ability.ActionPointCost);
                                 ResourceRefs.MentalEnergy.AlterCurrent_Named(-Ability.MentalEnergyCost, "Expense_UnitActions", ResourceAddRule.IgnoreUntilTurnChange);
-                                ProjectileInstructionPrePacket prePacket = ProjectileInstructionPrePacket.CreateVerySimple(center, destinationPoint.ReplaceY(groundLevel), unit, delegate {
-                                    int residentCount = buildingUnderCursor.GetTotalResidentCount() + buildingUnderCursor.GetTotalWorkerCount();
-                                    if (residentCount > 0) {
-                                        CityStatisticTable.AlterScore("CitizensForciblyRescuedFromSlums", residentCount);
-                                        ResourceRefs.ShelteredHumans.AlterCurrent_Named(residentCount, string.Empty, ResourceAddRule.StoreExcess);
-                                        ArcenNotes.SendSimpleNoteToGameOnly(300, NoteInstructionTable.Instance.GetRowByID("GainedResource"),
-                                            NoteStyle.BothGame, ResourceRefs.ShelteredHumans.ID, residentCount, 0, 0, 0);
-                                    }
-                                    BuildingTypeVariant variant = buildingUnderCursor.GetVariant();
-                                    buildingUnderCursor.KillEveryoneHere();
-                                    ParticleSoundRefs.SlumBuildingReplaced.DuringGame_PlayAtLocation(buildingUnderCursor.GetMapItem().OBBCache.BottomCenter,
-                                            new Vector3(0, Engine_Universal.PermanentQualityRandom.Next(0, 360), 0));
-                                    buildingUnderCursor.GetMapItem().DropBurningEffect_Slow();
-                                    buildingUnderCursor.FullyDeleteBuilding();
-                                });
+                                ResourceRefs.Wealth.AlterCurrent_Named(-totalEvictionCost, "Expense_UnitActions", ResourceAddRule.IgnoreUntilTurnChange);
 
-                                Ability.OnTargetedUse.DuringGame_PlayAtLocationWithTarget(center, prePacket, false);
-                                if (!InputCaching.ShouldKeepDoingAction) unit.SetTargetingMode(null, null);
+                                ProjectileInstructionPrePacket prePacket = ProjectileInstructionPrePacket.CreateVerySimple(center, destinationPoint.ReplaceY(groundLevel), unit, delegate {
+                                    int debugStageInner = 0;
+                                    try {
+                                        debugStageInner = 100;
+                                        buildingUnderCursor.KillEveryoneHere();
+
+                                        debugStageInner = 200;
+                                        buildingUnderCursor.GetMapItem().DropBurningEffect_Slow();
+                                        buildingUnderCursor.FullyDeleteBuilding();
+
+                                        debugStageInner = 300;
+                                        if (peopleTotal > 0) {
+                                            CityStatisticTable.AlterScore("CitizensForciblyRescuedFromSlums", peopleTotal);
+                                            ResourceRefs.ShelteredHumans.AlterCurrent_Named(peopleTotal, string.Empty, ResourceAddRule.StoreExcess);
+                                            ArcenNotes.SendSimpleNoteToGameOnly(300, NoteInstructionTable.Instance.GetRowByID("GainedResource"),
+                                                NoteStyle.BothGame, ResourceRefs.ShelteredHumans.ID, peopleTotal, 0, 0, 0);
+                                        }
+                                    } catch (Exception e) {
+                                        ArcenDebugging.LogDebugStageWithStack("EvictionAbilityHit", debugStageInner, e, Verbosity.ShowAsError);
+                                    }
+                                });
+                                Ability.OnTargetedUse.DuringGame_PlayAtLocationWithTarget(buildingUnderCursor.GetMapItem().OBBCache.BottomCenter, prePacket, false);
                             }
                         }
-                        */
                         break;
+                    }
                     default: {
                         ArcenDebugging.LogSingleLine("BasicAndroidAbilities: Called HandleAbilityMixedTargeting for '" + Ability.ID + "', which does not support it!", Verbosity.ShowAsError);
                         break;
@@ -244,6 +253,12 @@ namespace Arcen.HotM.FFU.RoSAI {
             } catch (Exception e) {
                 ArcenDebugging.LogDebugStageWithStack("BasicAndroidAbilities.HandleAbilityMixedTargeting", debugStage, Ability?.ID ?? "[null-ability]", e, Verbosity.ShowAsError);
             }
+        }
+
+        public void HandleDataRefsPreload() {
+            if (DataRefs.Eviction == null) DataRefs.Eviction = AbilityTypeTable.Instance.GetRowByID("Eviction");
+            if (DataRefs.EvictionTag == null) DataRefs.EvictionTag = BuildingTagTable.Instance.GetRowByID("EvictionTarget");
+            if (DataRefs.EvictionVis == null) DataRefs.EvictionVis = VisColorUsageTable.Instance.GetRowByID("BuildingValidEvictionTarget");
         }
     }
 }
