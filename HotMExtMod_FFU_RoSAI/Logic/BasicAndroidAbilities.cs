@@ -174,17 +174,10 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 novel.Icon = IconRefs.Mouse_OutOfRange.Icon;
                                 novel.ShouldTooltipBeRed = true;
                                 novel.TitleUpperLeft.AddLang("Move_OutOfRange");
-                                var costInfo = novel.Main.AddRaw(variant.GetDisplayName()).StartLineHeight50().Line();
-                                if (peopleResidents > 0) costInfo.AddFormat1("EvictionResidents", peopleResidents.ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (peopleWorkers > 0) costInfo.AddFormat1("EvictionWorkers", peopleWorkers.ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (legalIssues > 0) costInfo.AddFormat1("EvictionLegalIssues", legalIssues.ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (buildingVolume > 0) costInfo.AddFormat1("EvictionVolume", buildingVolume.ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (buildingStorage > 0) costInfo.AddFormat1("EvictionStorage", buildingStorage.ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (buildingFloorArea > 0) costInfo.AddFormat1("EvictionArea", buildingFloorArea.ToStringThousandsWhole()).StartLineHeight50().Line();
-                                if (ResourceRefs.Wealth.Current < totalEvictionCost) {
-                                    costInfo.AddFormat1("EvictionCostFunds", totalEvictionCost.ToStringThousandsWhole()).StartLineHeight50().Line();
-                                    costInfo.AddFormat1("EvictionMissingFunds", string.Empty);
-                                } else costInfo.AddFormat1("EvictionCostFunds", totalEvictionCost.ToStringThousandsWhole());
+                                var costInfo = novel.Main.AddRaw(variant.GetDisplayName());
+                                if (peopleTotal > 0) costInfo.AddFormat2("EvictionFundsPeople", totalEvictionCost.ToStringThousandsWhole(), peopleTotal.ToStringThousandsWhole());
+                                else costInfo.AddFormat1("EvictionFundsOnly", totalEvictionCost.ToStringThousandsWhole());
+                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.AddLang("EvictionFundsMissing");
                             }
                             return;
                         }
@@ -198,18 +191,10 @@ namespace Arcen.HotM.FFU.RoSAI {
                             if (novel.TryStartSmallerTooltip(TooltipID.Create(buildingUnderCursor), null, SideClamp.Any, TooltipNovelWidth.Smaller)) {
                                 novel.Icon = Ability.Icon;
                                 novel.TitleUpperLeft.AddRightClickFormat("Move_ClickToEvict");
-                                var costInfo = novel.Main.AddRaw(variant.GetDisplayName()).StartLineHeight50().Line();
-                                if (peopleResidents > 0) costInfo.AddFormat1("EvictionResidents", peopleResidents.ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (peopleWorkers > 0) costInfo.AddFormat1("EvictionWorkers", peopleWorkers.ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (legalIssues > 0) costInfo.AddFormat1("EvictionLegalIssues", legalIssues.ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (buildingVolume > 0) costInfo.AddFormat1("EvictionVolume", buildingVolume.ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (buildingStorage > 0) costInfo.AddFormat1("EvictionStorage", buildingStorage.ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (buildingFloorArea > 0) costInfo.AddFormat1("EvictionArea", buildingFloorArea.ToStringThousandsWhole()).StartLineHeight50().Line();
-                                if (ResourceRefs.Wealth.Current < totalEvictionCost) {
-                                    costInfo.AddFormat1("EvictionCostFunds", totalEvictionCost.ToStringThousandsWhole()).StartLineHeight50().Line();
-                                    costInfo.AddFormat1("EvictionMissingFunds", string.Empty);
-                                    return;
-                                } else costInfo.AddFormat1("EvictionCostFunds", totalEvictionCost.ToStringThousandsWhole());
+                                var costInfo = novel.Main.AddRaw(variant.GetDisplayName());
+                                if (peopleTotal > 0) costInfo.AddFormat2("EvictionFundsPeople", totalEvictionCost.ToStringThousandsWhole(), peopleTotal.ToStringThousandsWhole());
+                                else costInfo.AddFormat1("EvictionFundsOnly", totalEvictionCost.ToStringThousandsWhole());
+                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.AddLang("EvictionFundsMissing");
                             }
 
                             ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), DataRefs.EvictionVis.ColorHDR,
