@@ -56,36 +56,32 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 novel.TitleUpperLeft.AddLang("DebugTooltipInfo");
 
                                 debugStage = 4400;
-                                var costInfo = novel.Main.AddRaw(variant.GetDisplayName()).StartLineHeight50().Line();
-                                if (buildingUnderCursor.GetTotalResidentCount() > 0) costInfo.AddFormat1("InfoResidents", 
-                                    buildingUnderCursor.GetTotalResidentCount().ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (buildingUnderCursor.GetTotalWorkerCount() > 0) costInfo.AddFormat1("InfoWorkers",
-                                    buildingUnderCursor.GetTotalWorkerCount().ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (buildingPrefab.NormalTotalBuildingVolumeFullDimensions > 0) costInfo.AddFormat1("InfoVolume",
-                                    buildingPrefab.NormalTotalBuildingVolumeFullDimensions.ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (buildingPrefab.NormalTotalStorageVolumeFullDimensions > 0) costInfo.AddFormat1("InfoStorage",
-                                    buildingPrefab.NormalTotalStorageVolumeFullDimensions.ToStringThousandsWhole()).StartLineHeight10().Line();
-                                if (buildingPrefab.NormalTotalBuildingFloorAreaFullDimensions > 0) costInfo.AddFormat1("InfoArea",
-                                    buildingPrefab.NormalTotalBuildingFloorAreaFullDimensions.ToStringThousandsWhole()).StartLineHeight50().Line();
+                                var costInfo = novel.Main.StartLineHeight10().AddRaw(variant.GetDisplayName()).Line();
+                                if (buildingUnderCursor.GetTotalResidentCount() > 0) 
+                                    costInfo.Line().AddFormat1("InfoResidents", buildingUnderCursor.GetTotalResidentCount().ToStringThousandsWhole());
+                                if (buildingUnderCursor.GetTotalWorkerCount() > 0) 
+                                    costInfo.Line().AddFormat1("InfoWorkers", buildingUnderCursor.GetTotalWorkerCount().ToStringThousandsWhole());
+                                if (buildingPrefab.NormalTotalBuildingVolumeFullDimensions > 0) 
+                                    costInfo.Line().AddFormat1("InfoVolume", buildingPrefab.NormalTotalBuildingVolumeFullDimensions.ToStringThousandsWhole());
+                                if (buildingPrefab.NormalTotalStorageVolumeFullDimensions > 0) 
+                                    costInfo.Line().AddFormat1("InfoStorage", buildingPrefab.NormalTotalStorageVolumeFullDimensions.ToStringThousandsWhole());
+                                if (buildingPrefab.NormalTotalBuildingFloorAreaFullDimensions > 0) 
+                                    costInfo.Line().AddFormat1("InfoArea", buildingPrefab.NormalTotalBuildingFloorAreaFullDimensions.ToStringThousandsWhole());
 
                                 debugStage = 4500;
                                 if (buildingStructure != null) {
                                     if (buildingData != null && buildingData.Value.HasAnyItems) {
+                                        costInfo.Line();
                                         using (var dataEnum = buildingData.Value.GetEnumerator()) {
                                             var dataCurrent = dataEnum.Current;
                                             while (true) {
                                                 bool hasNext = dataEnum.MoveNext();
-                                                bool isLast = !hasNext;
                                                 try {
                                                     string dataValCurr = dataCurrent.Value.Current.ToStringThousandsWhole();
                                                     string dataValMax = dataCurrent.Value.Maximum.ToStringThousandsWhole();
-                                                    if (!string.IsNullOrEmpty(dataCurrent.Key.GetDisplayName())) {
-                                                        if (isLast) costInfo.AddRaw($"{dataCurrent.Key.GetDisplayName()}: {dataValCurr} / {dataValMax}", "FFFFFF").StartLineHeight50().Line();
-                                                        else costInfo.AddRaw($"{dataCurrent.Key.GetDisplayName()}: {dataValCurr} / {dataValMax}", "FFFFFF").StartLineHeight10().Line();
-                                                    } else {
-                                                        if (isLast) costInfo.AddRaw($"{dataCurrent.Key.ID}: {dataValCurr} / {dataValMax}", "FFFFFF").StartLineHeight50().Line();
-                                                        else costInfo.AddRaw($"{dataCurrent.Key.ID}: {dataValCurr} / {dataValMax}", "FFFFFF").StartLineHeight10().Line();
-                                                    }
+                                                    if (!string.IsNullOrEmpty(dataCurrent.Key.GetDisplayName())) 
+                                                        costInfo.Line().AddRaw($"{dataCurrent.Key.GetDisplayName()}: {dataValCurr} / {dataValMax}", "FFFFFF");
+                                                    else costInfo.Line().AddRaw($"{dataCurrent.Key.ID}: {dataValCurr} / {dataValMax}", "FFFFFF");
                                                 } catch { }
                                                 if (!hasNext) break;
                                                 dataCurrent = dataEnum.Current;
@@ -95,6 +91,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 }
 
                                 debugStage = 4600;
+                                bool isFirstBlock = true;
                                 if (buildingJob != null) {
                                     JobResourceCapIncrease[] jobCaps = new JobResourceCapIncrease[] {
                                         buildingJob.CapIncrease1,
@@ -103,22 +100,19 @@ namespace Arcen.HotM.FFU.RoSAI {
                                         buildingJob.CapIncrease4,
                                         buildingJob.CapIncrease5
                                     };
+                                    if (isFirstBlock) {
+                                        isFirstBlock = false;
+                                        costInfo.Line();
+                                    }
                                     bool hasDataAfter = buildingJob.MathInts.Count > 0 || buildingJob.MathFloats.Count > 0;
                                     for (int i = 0; i < jobCaps.Length; i++) {
                                         try {
                                             if (jobCaps[i] != null && jobCaps[i].Resource != null) {
-                                                bool isLast = (i == (jobCaps.Length - 1) || jobCaps[i + 1].Resource == null) && !hasDataAfter;
                                                 long capValue = GetCapIncreaseValue(jobCaps[i], buildingPrefab);
-                                                string capTextProcessed = capValue > 0 ? 
-                                                    $"+{capValue.ToStringThousandsWhole()}" : 
-                                                    $"{capValue.ToStringThousandsWhole()}";
-                                                if (!string.IsNullOrEmpty(jobCaps[i].Resource.GetDisplayName())) {
-                                                    if (isLast) costInfo.AddRaw($"{jobCaps[i].Resource.GetDisplayName()} Capacity: {capTextProcessed}", "FFFFFF").StartLineHeight50().Line();
-                                                    else costInfo.AddRaw($"{jobCaps[i].Resource.GetDisplayName()} Capacity: {capTextProcessed}", "FFFFFF").StartLineHeight10().Line();
-                                                } else {
-                                                    if (isLast) costInfo.AddRaw($"{jobCaps[i].Resource.ID} Capacity: {capTextProcessed}", "FFFFFF").StartLineHeight50().Line();
-                                                    else costInfo.AddRaw($"{jobCaps[i].Resource.ID} Capacity: {capTextProcessed}", "FFFFFF").StartLineHeight10().Line();
-                                                }
+                                                string capTextProcessed = capValue > 0 ? $"+{capValue.ToStringThousandsWhole()}" : capValue.ToStringThousandsWhole();
+                                                if (!string.IsNullOrEmpty(jobCaps[i].Resource.GetDisplayName()))
+                                                    costInfo.Line().AddRaw($"{jobCaps[i].Resource.GetDisplayName()} Capacity: {capTextProcessed}", "FFFFFF");
+                                                else costInfo.Line().AddRaw($"{jobCaps[i].Resource.ID} Capacity: {capTextProcessed}", "FFFFFF");
                                             }
                                         } catch { }
                                     }
@@ -127,31 +121,26 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 debugStage = 4700;
                                 if (buildingStructure != null && buildingJob != null && 
                                     buildingJob.MathInts != null && buildingJob.MathInts.HasAnyItems) {
+                                    if (isFirstBlock) {
+                                        isFirstBlock = false;
+                                        costInfo.Line();
+                                    }
                                     bool hasDataAfter = buildingJob.MathFloats.Count > 0;
                                     using (var mIntEnum = buildingJob.MathInts.GetEnumerator()) {
                                         var mIntCurrent = mIntEnum.Current;
                                         while (true) {
                                             bool hasNext = mIntEnum.MoveNext();
-                                            bool isLast = !hasNext && !hasDataAfter;
                                             try {
                                                 string opType = GetMathTypeText(mIntCurrent.Value.MathType);
-                                                string opValue = $"{mIntCurrent.Value.GetMin(buildingStructure)}";
+                                                string opValue = mIntCurrent.Value.GetMin(buildingStructure).ToStringThousandsWhole();
                                                 if (mIntCurrent.Value.IncomeOrExpenseResource != null) {
                                                     var refResource = mIntCurrent.Value.IncomeOrExpenseResource;
-                                                    if (!string.IsNullOrEmpty(refResource.GetDisplayName())) {
-                                                        if (isLast) costInfo.AddRaw($"{refResource.GetDisplayName()} {opType}: {opValue}", "FFFFFF").StartLineHeight50().Line();
-                                                        else costInfo.AddRaw($"{refResource.GetDisplayName()} {opType}: {opValue}", "FFFFFF").StartLineHeight10().Line();
-                                                    } else {
-                                                        if (isLast) costInfo.AddRaw($"{refResource.ID} {opType}: {opValue}", "FFFFFF").StartLineHeight50().Line();
-                                                        else costInfo.AddRaw($"{refResource.ID} {opType}: {opValue}", "FFFFFF").StartLineHeight10().Line();
-                                                    }
-                                                } else if (!string.IsNullOrEmpty(mIntCurrent.Value.DisplayName)) {
-                                                    if (isLast) costInfo.AddRaw($"{mIntCurrent.Value.DisplayName} {opType}: {opValue}", "FFFFFF").StartLineHeight50().Line();
-                                                    else costInfo.AddRaw($"{mIntCurrent.Value.DisplayName} {opType}: {opValue}", "FFFFFF").StartLineHeight10().Line();
-                                                } else {
-                                                    if (isLast) costInfo.AddRaw($"{mIntCurrent.Value.ID} {opType}: {opValue}", "FFFFFF").StartLineHeight50().Line();
-                                                    else costInfo.AddRaw($"{mIntCurrent.Value.ID} {opType}: {opValue}", "FFFFFF").StartLineHeight10().Line();
-                                                }
+                                                    if (!string.IsNullOrEmpty(refResource.GetDisplayName()))
+                                                        costInfo.Line().AddRaw($"{refResource.GetDisplayName()} {opType}: {opValue}", "FFFFFF");
+                                                    else costInfo.Line().AddRaw($"{refResource.ID} {opType}: {opValue}", "FFFFFF");
+                                                } else if (!string.IsNullOrEmpty(mIntCurrent.Value.DisplayName))
+                                                    costInfo.Line().AddRaw($"{mIntCurrent.Value.DisplayName} {opType}: {opValue}", "FFFFFF");
+                                                else costInfo.Line().AddRaw($"{mIntCurrent.Value.ID} {opType}: {opValue}", "FFFFFF");
                                             } catch { }
                                             if (!hasNext) break;
                                             mIntCurrent = mIntEnum.Current;
@@ -162,30 +151,25 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 debugStage = 4800;
                                 if (buildingStructure != null && buildingJob != null && 
                                     buildingJob.MathFloats != null && buildingJob.MathFloats.HasAnyItems) {
+                                    if (isFirstBlock) {
+                                        isFirstBlock = false;
+                                        costInfo.Line();
+                                    }
                                     using (var mFloatEnum = buildingJob.MathFloats.GetEnumerator()) {
                                         var mFloatCurrent = mFloatEnum.Current;
                                         while (true) {
                                             bool hasNext = mFloatEnum.MoveNext();
-                                            bool isLast = !hasNext;
                                             try {
                                                 string opType = GetMathTypeText(mFloatCurrent.Value.MathType);
-                                                string opValue = $"{mFloatCurrent.Value.GetMin(buildingStructure)}";
+                                                string opValue = mFloatCurrent.Value.GetMin(buildingStructure).ToStringThousandsWhole();
                                                 if (mFloatCurrent.Value.IncomeOrExpenseResource != null) {
                                                     var refResource = mFloatCurrent.Value.IncomeOrExpenseResource;
-                                                    if (!string.IsNullOrEmpty(refResource.GetDisplayName())) {
-                                                        if (isLast) costInfo.AddRaw($"{refResource.GetDisplayName()} {opType}: {opValue}", "FFFFFF").StartLineHeight50().Line();
-                                                        else costInfo.AddRaw($"{refResource.GetDisplayName()} {opType}: {opValue}", "FFFFFF").StartLineHeight10().Line();
-                                                    } else {
-                                                        if (isLast) costInfo.AddRaw($"{refResource.ID} {opType}: {opValue}", "FFFFFF").StartLineHeight50().Line();
-                                                        else costInfo.AddRaw($"{refResource.ID} {opType}: {opValue}", "FFFFFF").StartLineHeight10().Line();
-                                                    }
-                                                } else if (!string.IsNullOrEmpty(mFloatCurrent.Value.DisplayName)) {
-                                                    if (isLast) costInfo.AddRaw($"{mFloatCurrent.Value.DisplayName} {opType}: {opValue}", "FFFFFF").StartLineHeight50().Line();
-                                                    else costInfo.AddRaw($"{mFloatCurrent.Value.DisplayName} {opType}: {opValue}", "FFFFFF").StartLineHeight10().Line();
-                                                } else {
-                                                    if (isLast) costInfo.AddRaw($"{mFloatCurrent.Value.ID} {opType}: {opValue}", "FFFFFF").StartLineHeight50().Line();
-                                                    else costInfo.AddRaw($"{mFloatCurrent.Value.ID} {opType}: {opValue}", "FFFFFF").StartLineHeight10().Line();
-                                                }
+                                                    if (!string.IsNullOrEmpty(refResource.GetDisplayName()))
+                                                        costInfo.Line().AddRaw($"{refResource.GetDisplayName()} {opType}: {opValue}", "FFFFFF");
+                                                    else costInfo.Line().AddRaw($"{refResource.ID} {opType}: {opValue}", "FFFFFF");
+                                                } else if (!string.IsNullOrEmpty(mFloatCurrent.Value.DisplayName))
+                                                    costInfo.Line().AddRaw($"{mFloatCurrent.Value.DisplayName} {opType}: {opValue}", "FFFFFF");
+                                                else costInfo.Line().AddRaw($"{mFloatCurrent.Value.ID} {opType}: {opValue}", "FFFFFF");
                                             } catch { }
                                             if (!hasNext) break;
                                             mFloatCurrent = mFloatEnum.Current;
@@ -194,7 +178,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 }
 
                                 debugStage = 4900;
-                                costInfo.AddRaw("Unique ID: " + buildingUnderCursor.GetBuildingID(), "FFFFFF");
+                                costInfo.Line2x().AddRaw("Unique ID: " + buildingUnderCursor.GetBuildingID(), "FFFFFF");
                             }
 
                             ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), DataRefs.InfoVis.ColorHDR,
