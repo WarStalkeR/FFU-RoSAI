@@ -777,7 +777,7 @@ namespace Arcen.HotM.ExternalVis
                                         novel.ShouldTooltipBeRed = true;
 
                                         novel.TitleUpperLeft.AddLang( "Move_NoRoomToMoveForward" );
-                                        novel.Main.AddLang( "Move_NoRoomToMoveForward_StrategyTip" ).AddRaw( hoveredNPC.GetDisplayName() );
+                                        novel.Main.AddLang( "Move_NoRoomToMoveForward_StrategyTip" );
                                     }
 
                                     return;
@@ -785,6 +785,65 @@ namespace Arcen.HotM.ExternalVis
                                 else
                                 {
                                     destinationPoint = targetLocation.GetEffectiveWorldLocationForContainedUnit();
+                                }
+
+                                if ( !hoveredNPC.IsManagedUnit.DialogCanBeDoneByShellCompanyUnits && unit.UnitType.IsTiedToShellCompany )
+                                {
+                                    DrawHelper.RenderCatmullLine( unit.GetCollisionCenter(), destinationPoint,
+                                        Color.red, 1f, CatmullSlotType.Move, CatmullSlope.AndroidTargeting );
+                                    CursorHelper.RenderSpecificMouseCursorAtSpot( true, IconRefs.Mouse_OutOfRange, destinationPoint, 0.2f );
+
+                                    if ( novel.TryStartSmallerTooltip( TooltipID.Create( hoveredNPC ), null, SideClamp.Any, TooltipNovelWidth.Smaller ) )
+                                    {
+                                        novel.Icon = IconRefs.Mouse_OutOfRange.Icon;
+                                        novel.ShouldTooltipBeRed = true;
+
+                                        novel.TitleUpperLeft.AddLang( "WrongKindOfUnitToTalk" );
+                                        novel.Main.AddLang( "WrongKindOfUnitToTalk_Shell_StrategyTip" );
+                                    }
+
+                                    return;
+                                }
+
+                                if ( !hoveredNPC.IsManagedUnit.DialogCanBeDoneByPMCImpostor && unit.UnitType.IsPMCImpostor )
+                                {
+                                    DrawHelper.RenderCatmullLine( unit.GetCollisionCenter(), destinationPoint,
+                                        Color.red, 1f, CatmullSlotType.Move, CatmullSlope.AndroidTargeting );
+                                    CursorHelper.RenderSpecificMouseCursorAtSpot( true, IconRefs.Mouse_OutOfRange, destinationPoint, 0.2f );
+
+                                    if ( novel.TryStartSmallerTooltip( TooltipID.Create( hoveredNPC ), null, SideClamp.Any, TooltipNovelWidth.Smaller ) )
+                                    {
+                                        novel.Icon = IconRefs.Mouse_OutOfRange.Icon;
+                                        novel.ShouldTooltipBeRed = true;
+
+                                        novel.TitleUpperLeft.AddLang( "WrongKindOfUnitToTalk" );
+                                        novel.Main.AddLang( "WrongKindOfUnitToTalk_PMC_StrategyTip" );
+                                    }
+
+                                    return;
+                                }
+
+                                if ( !hoveredNPC.IsManagedUnit.DialogCanBeDoneByRegularUnits && !unit.UnitType.IsPMCImpostor && !unit.UnitType.IsTiedToShellCompany )
+                                {
+                                    DrawHelper.RenderCatmullLine( unit.GetCollisionCenter(), destinationPoint,
+                                        Color.red, 1f, CatmullSlotType.Move, CatmullSlope.AndroidTargeting );
+                                    CursorHelper.RenderSpecificMouseCursorAtSpot( true, IconRefs.Mouse_OutOfRange, destinationPoint, 0.2f );
+
+                                    if ( novel.TryStartSmallerTooltip( TooltipID.Create( hoveredNPC ), null, SideClamp.Any, TooltipNovelWidth.Smaller ) )
+                                    {
+                                        novel.Icon = IconRefs.Mouse_OutOfRange.Icon;
+                                        novel.ShouldTooltipBeRed = true;
+
+                                        novel.TitleUpperLeft.AddLang( "WrongKindOfUnitToTalk" );
+                                        if ( hoveredNPC.IsManagedUnit.DialogCanBeDoneByPMCImpostor )
+                                            novel.Main.AddLang( "WrongKindOfUnitToTalk_MustBePMC_StrategyTip" );
+                                        else if ( hoveredNPC.IsManagedUnit.DialogCanBeDoneByShellCompanyUnits )
+                                            novel.Main.AddLang( "WrongKindOfUnitToTalk_MustBeShell_StrategyTip" );
+                                        else
+                                            novel.Main.AddLang( "WrongKindOfUnitToTalk_Other_StrategyTip" );                                        
+                                    }
+
+                                    return;
                                 }
 
                                 if ( novel.TryStartSmallerTooltip( TooltipID.Create( hoveredNPC ), null, SideClamp.Any, TooltipNovelWidth.SizeToText ) )

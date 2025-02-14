@@ -461,6 +461,7 @@ namespace Arcen.HotM.ExternalVis
             {
                 case JobLogic.ExecuteLogic:
                     {
+                        bool createdAnything = false;
                         float bestExpenseRatio = 1f;
                         bool hadAnyExpensesLowerThanPerfect = false;
 
@@ -615,6 +616,7 @@ namespace Arcen.HotM.ExternalVis
                                                     Job.DuringGame_OutputsActual.Construction[res] += finalDesired;
                                                     res.SortedProducers.AddToConstructionList( new KeyValuePair<MachineStructure, int>( Structure, finalDesired ) );
                                                     res.AlterCurrent_Job( finalDesired, Job, ResourceAddRule.IgnoreUntilTurnChange );
+                                                    createdAnything = true;
                                                 }
 
                                                 if ( finalDesired < originalDesired )
@@ -638,7 +640,7 @@ namespace Arcen.HotM.ExternalVis
 
                         Structure.DoesJobHaveAnyInputShortage = doesJobHaveAnyInputShortage;
 
-                        return JobResult.Success;
+                        return createdAnything ? JobResult.Success : JobResult.Indeterminate;
                     }
             }
             return JobResult.Indeterminate;
@@ -898,6 +900,8 @@ namespace Arcen.HotM.ExternalVis
                 if ( totalInMindFarms > 0 )
                     neuralProcessing += totalInMindFarms;
             }
+
+            neuralProcessing += CityStatisticRefs.NeuralExpansionFromBrainPals.GetScore();
 
             if ( FlagRefs.MachineCultDealWithNCOs.DuringGameplay_IsTripped )
                 neuralProcessing += 2000000 + ( SimCommon.Turn * 3 );

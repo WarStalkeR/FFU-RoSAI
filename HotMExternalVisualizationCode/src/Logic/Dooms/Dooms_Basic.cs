@@ -127,7 +127,7 @@ namespace Arcen.HotM.ExternalVis
                                     {
                                         KeyContactRefs.ExalterGeneticist.DuringGame_IsDead = true;
                                         KeyContactRefs.ExalterGeneticist.DuringGame_KilledOnTurn = SimCommon.Turn;
-                                        CommonRefs.NurturismExalters.DuringGame_HasBeenDisbanded = true;
+                                        CohortRefs.NurturismExalters.DuringGame_HasBeenDisbanded = true;
                                     }
 
                                     FlagRefs.HasActivePrisonerDrive.UnTripIfNeeded();
@@ -162,7 +162,10 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     FlagRefs.HasActiveSpaceNationInvasion.UnTripIfNeeded();
                                     if ( altEvent == null )
+                                    {
                                         FlagRefs.HasSecForceSuperCruisersRoaming.TripIfNeeded();
+                                        FlagRefs.Ch2_VorsiberAssassinationsHappened.TripIfNeeded();
+                                    }
                                     else
                                         FlagRefs.Ch2_VorsiberAssassinationsPrevented.TripIfNeeded();
                                 }
@@ -372,7 +375,7 @@ namespace Arcen.HotM.ExternalVis
                                         mEvent.Actor = unitToUse;
                                         mEvent.MinorEvent = FlagRefs.Doom_NuclearDelivery;
                                         mEvent.BuildingOrNull = SimCommon.TheNetwork?.Tower?.Building;
-                                        mEvent.EventCohort = CommonRefs.Yourself;
+                                        mEvent.EventCohort = CohortRefs.Yourself;
                                         mEvent.ClearAnyExistingMusicTagsIfAnyExist = false;
                                         SimCommon.QueuedMinorEvents.Enqueue( mEvent );
                                     }

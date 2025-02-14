@@ -21,6 +21,9 @@ namespace Arcen.HotM.External
             bool couldDoAll = true;
             foreach ( KeyValuePair<ResourceType, int> kv in DuringGameData.EffectiveCostsPerAttack.GetDisplayDict() )
             {
+                if ( kv.Key.ID == "MentalEnergy" )
+                    continue; //skip this one for npc units
+
                 if ( kv.Value > kv.Key.Current )
                 {
                     couldDoAll = false;

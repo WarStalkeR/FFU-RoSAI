@@ -2997,7 +2997,7 @@ namespace Arcen.HotM.ExternalVis
                                 case GameNoteAction.WriteText:
                                     if ( WriteShortIfPossible )
                                         BufferOrNull.StartSize80();
-                                    BufferOrNull.AddFormat1( "WorkByRepairCrabs_Brief", totalStructureRepairs );
+                                    BufferOrNull.AddFormat1( "WorkByRepairCrabsA_Brief", totalStructureRepairs );
                                     break;
                                 case GameNoteAction.WriteTooltip:
                                     {
@@ -3021,7 +3021,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case GameNoteAction.GetMatchesSearchString:
                                     return building.GetDisplayName().Contains( SearchString, StringComparison.InvariantCultureIgnoreCase ) ||
-                                        Lang.Get( "WorkByRepairCrabs_Brief" ).Contains( SearchString, StringComparison.InvariantCultureIgnoreCase ) ||
+                                        Lang.Get( "WorkByRepairCrabsA_Brief" ).Contains( SearchString, StringComparison.InvariantCultureIgnoreCase ) ||
                                         Lang.Get( "WorkByRepairCrabs_Longer" ).Contains( SearchString, StringComparison.InvariantCultureIgnoreCase );
                                 case GameNoteAction.GetIsStillValid:
                                     return building != null;

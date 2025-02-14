@@ -213,6 +213,11 @@ namespace Arcen.HotM.ExternalVis
                     FlagRefs.GeothermalPower_V1.DuringGame_HasBeenCompleted = false;
             }
 
+            //fixed a while back I guess??
+            //BlackMarketMerchandiser
+            //BlackMarketTradesman   BlackMarketTradesman InitialPurchase
+            //BlackMarketAssistant
+
             #region 0.601.3
             if ( SimCommon.GetIsFreshlyLoadedFromVersionOlderThan( 0, 601, 3 ) )
             {
@@ -238,6 +243,9 @@ namespace Arcen.HotM.ExternalVis
                     FlagRefs.HasHackedFirstMechInAnyWay.TripIfNeeded();
             }
             #endregion 0.602.3
+
+            if ( ResourceRefs.PetCat.Current >= 1 || (UnlockTable.Instance.GetRowByIDOrNullIfNotFound( "AdoptedACat" )?.DuringGameplay_IsInvented??false) )
+                FlagRefs.IsAwareOfCats.TripIfNeeded();
 
             HandleMusicUnlocks();
             CentralVars.HandleCrossovers();
@@ -451,6 +459,41 @@ namespace Arcen.HotM.ExternalVis
                 if ( !AchievementRefs.WhoIsTheRealMonster.OneTimeline_HasBeenTripped && MetaStatisticRefs.MonsterPeltsSoldToTheUltraWealthy.GetScore() >= 5000 )
                     AchievementRefs.WhoIsTheRealMonster.TripIfNeeded();
 
+                if ( !AchievementRefs.GoodBoy.OneTimeline_HasBeenTripped && MetaStatisticRefs.RescuedDogs.GetScore() >= 1 )
+                    AchievementRefs.GoodBoy.TripIfNeeded();
+
+                if ( !AchievementRefs.TheFirstTenThousand.OneTimeline_HasBeenTripped && StatHelper.GetTotalsMurdersAcrossTimelines() >= 10000 )
+                    AchievementRefs.TheFirstTenThousand.TripIfNeeded();
+
+                if ( !AchievementRefs.TheBestestBoys.OneTimeline_HasBeenTripped &&
+                    MetaStatisticRefs.RescuedBulldogs.GetScore() >= 1 &&
+                    MetaStatisticRefs.RescuedDalmatians.GetScore() >= 1 &&
+                    MetaStatisticRefs.RescuedDobermans.GetScore() >= 1 &&
+                    MetaStatisticRefs.RescuedDachshunds.GetScore() >= 1 &&
+                    MetaStatisticRefs.RescuedGreyhounds.GetScore() >= 1 &&
+                    MetaStatisticRefs.RescuedHuskies.GetScore() >= 1 &&
+                    MetaStatisticRefs.RescuedRottweilers.GetScore() >= 1 &&
+                    MetaStatisticRefs.RescuedTatraSheepdogs.GetScore() >= 1 )
+                    AchievementRefs.TheBestestBoys.TripIfNeeded();
+
+                if ( !AchievementRefs.HousePets.OneTimeline_HasBeenTripped &&
+                    JobRefs.AnimalPalace.DuringGame_NumberFunctional.Display > 0 &&
+                    ( ResourceRefs.PetCat.Current >= 1 ||
+                    ResourceRefs.PetBulldog.Current >= 1 ||
+                    ResourceRefs.PetDalmatian.Current >= 1 ||
+                    ResourceRefs.PetDoberman.Current >= 1 ||
+                    ResourceRefs.PetDachshund.Current >= 1 ||
+                    ResourceRefs.PetGreyhound.Current >= 1 ||
+                    ResourceRefs.PetHusky.Current >= 1 ||
+                    ResourceRefs.PetRottweiler.Current >= 1 ||
+                    ResourceRefs.PetTatraSheepdog.Current >= 1 ) )
+                    AchievementRefs.HousePets.TripIfNeeded();
+
+
+                if ( !AchievementRefs.BearsOnWheels.OneTimeline_HasBeenTripped &&
+                    ResourceRefs.ParkourBear.CurrentPlusExcess >= 16 )
+                    AchievementRefs.BearsOnWheels.TripIfNeeded();
+
                 if ( !AchievementRefs.GrandAndGhostly.OneTimeline_HasBeenTripped )
                 {
                     TimelineGoal goal = TimelineGoalTable.Instance.GetRowByID( "AlteredGrowth" );
@@ -551,6 +594,52 @@ namespace Arcen.HotM.ExternalVis
                             }
                             break;
                     }
+                }
+            }
+        }
+        #endregion
+
+        #region OtherLatePerTurn
+        private static void OtherLatePerTurn() //PerTurnLate
+        {
+            if ( !Engine_HotM.IsDemoVersion ) //only in the non-demo version
+            {
+                if ( !FlagRefs.VoxPopuliAttackingAfterAnthroneuroweave.DuringGameplay_IsTripped &&
+                    DealRefs.Ch2_RebelAnthroneuroweave.DuringGame_CumulativeTurnsOfPayment >= 7 )
+                {
+                    FlagRefs.VoxPopuliAttackingAfterAnthroneuroweave.TripIfNeeded();
+                }
+
+                long brainPalsSold = CityStatisticRefs.BrainPalsSold.GetScore();
+                if ( brainPalsSold > 0 )
+                {
+                    if ( DealRefs.Ch2_SyndicateBrainPals.DuringGame_Status == DealStatus.Active )
+                    {
+                        if ( SimCommon.SecondsSinceLoaded > 5 && brainPalsSold >= Math.Max( CityStatisticRefs.WealthyConsumers.GetScore() / 10, 81920 ) )
+                        {
+                            DealRefs.Ch2_SyndicateBrainPals.DuringGame_EndedOnTurn = SimCommon.Turn;
+                            DealRefs.Ch2_SyndicateBrainPals.DuringGame_Status = DealStatus.BrokenByOtherParty;
+                            FlagRefs.IsBrainPalDealWithExoticImportersDone.TripIfNeeded();
+                        }
+                    }
+
+                    if ( FlagRefs.HasTriggeredBrainPalAneurysms.DuringGameplay_IsTripped )
+                    {
+                        CityStatisticRefs.NeuralExpansionFromBrainPals.SetScore_WarningForSerializationOnly( 0 );
+                        CityStatisticRefs.ComputeTimeFromBrainPals.SetScore_WarningForSerializationOnly( 0 );
+                    }
+                    else
+                    {
+                        CityStatisticRefs.NeuralExpansionFromBrainPals.SetScore_WarningForSerializationOnly( brainPalsSold * 25 );
+                        CityStatisticRefs.ComputeTimeFromBrainPals.SetScore_WarningForSerializationOnly( Mathf.RoundToInt( brainPalsSold * 0.3f ) );
+
+                        ResourceRefs.ComputeTime.AlterCurrent_Named( CityStatisticRefs.ComputeTimeFromBrainPals.GetScore(), "Income_FromBrainPalsSold", ResourceAddRule.IgnoreUntilTurnChange );
+                    }
+                }
+
+                if ( FlagRefs.HasBlackmailDealWithAtcaRetail.DuringGameplay_IsTripped )
+                {
+                    ResourceRefs.Wealth.AlterCurrent_Named( 930000000, "Income_FromBlackmailingAtcaRetail", ResourceAddRule.IgnoreUntilTurnChange );
                 }
             }
         }
@@ -701,6 +790,9 @@ namespace Arcen.HotM.ExternalVis
                 case "AchievementsPerTurn":
                     HandleAchievementsPerTurn();
                     break;
+                case "OtherLatePerTurn":
+                    OtherLatePerTurn();
+                    break;
                 default:
                     ArcenDebugging.LogSingleLine( "DoPerTurn_Late: Calculators_Common was asked to handle '" + Calculator.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
                     break;
@@ -741,7 +833,7 @@ namespace Arcen.HotM.ExternalVis
         {
             bool isCurrentlyHavingAMilitaryInvasionFromWastelanderTalks = false;
             bool isCurrentlyHavingAMilitaryInvasionOfAnySort = false;
-            if ( FlagRefs.DagekonInvadesUntilTurn.GetScore() > SimCommon.Turn )
+            if ( FlagRefs.DagekonInvadesUntilTurn.GetScore() > SimCommon.Turn && !FlagRefs.IsPostFinalDoom.DuringGameplay_IsTripped )
             {
                 isCurrentlyHavingAMilitaryInvasionFromWastelanderTalks = true;
                 isCurrentlyHavingAMilitaryInvasionOfAnySort = true;
@@ -759,14 +851,14 @@ namespace Arcen.HotM.ExternalVis
 
                 int next = RandForThisTurn.Next( 0, 100 );
                 if ( next < 33 )
-                    NPCManagerTable.Instance.GetRowByID( "Man_DagekonInvadesA" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                    NPCManagerTable.Instance.GetRowByID( "Man_DagekonInvadesA" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                 else if ( next < 66 )
-                    NPCManagerTable.Instance.GetRowByID( "Man_DagekonInvadesB" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                    NPCManagerTable.Instance.GetRowByID( "Man_DagekonInvadesB" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                 else
-                    NPCManagerTable.Instance.GetRowByID( "Man_DagekonInvadesC" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                    NPCManagerTable.Instance.GetRowByID( "Man_DagekonInvadesC" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
             }
 
-            if ( FlagRefs.TheUIHInvadesUntilTurn.GetScore() > SimCommon.Turn )
+            if ( FlagRefs.TheUIHInvadesUntilTurn.GetScore() > SimCommon.Turn && !FlagRefs.IsPostFinalDoom.DuringGameplay_IsTripped )
             {
                 isCurrentlyHavingAMilitaryInvasionFromWastelanderTalks = true;
                 isCurrentlyHavingAMilitaryInvasionOfAnySort = true;
@@ -784,11 +876,11 @@ namespace Arcen.HotM.ExternalVis
 
                 int next = RandForThisTurn.Next( 0, 100 );
                 if ( next < 33 )
-                    NPCManagerTable.Instance.GetRowByID( "Man_UIHInvadesA" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                    NPCManagerTable.Instance.GetRowByID( "Man_UIHInvadesA" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                 else if ( next < 66 )
-                    NPCManagerTable.Instance.GetRowByID( "Man_UIHInvadesB" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                    NPCManagerTable.Instance.GetRowByID( "Man_UIHInvadesB" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                 else
-                    NPCManagerTable.Instance.GetRowByID( "Man_UIHInvadesC" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                    NPCManagerTable.Instance.GetRowByID( "Man_UIHInvadesC" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
             }
 
             if ( FlagRefs.Ch2_IsWW4Ongoing.DuringGameplay_IsTripped )
@@ -804,11 +896,11 @@ namespace Arcen.HotM.ExternalVis
 
                     int next = RandForThisTurn.Next( 0, 100 );
                     if ( next < 33 )
-                        NPCManagerTable.Instance.GetRowByID( "Man_DagekonWW4A" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                        NPCManagerTable.Instance.GetRowByID( "Man_DagekonWW4A" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                     else if ( next < 66 )
-                        NPCManagerTable.Instance.GetRowByID( "Man_DagekonWW4B" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                        NPCManagerTable.Instance.GetRowByID( "Man_DagekonWW4B" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                     else
-                        NPCManagerTable.Instance.GetRowByID( "Man_DagekonWW4C" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                        NPCManagerTable.Instance.GetRowByID( "Man_DagekonWW4C" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                 }
 
                 for ( int i = 0; i < 3; i++ )
@@ -817,11 +909,11 @@ namespace Arcen.HotM.ExternalVis
 
                     int next = RandForThisTurn.Next( 0, 100 );
                     if ( next < 33 )
-                        NPCManagerTable.Instance.GetRowByID( "Man_UIHWW4A" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                        NPCManagerTable.Instance.GetRowByID( "Man_UIHWW4A" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                     else if ( next < 66 )
-                        NPCManagerTable.Instance.GetRowByID( "Man_UIHWW4B" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                        NPCManagerTable.Instance.GetRowByID( "Man_UIHWW4B" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                     else
-                        NPCManagerTable.Instance.GetRowByID( "Man_UIHWW4C" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                        NPCManagerTable.Instance.GetRowByID( "Man_UIHWW4C" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                 }
 
                 if ( !ForceToHappen && RandForThisTurn.Next( 0, 100 ) > 40 )
@@ -833,11 +925,11 @@ namespace Arcen.HotM.ExternalVis
 
                     int next = RandForThisTurn.Next( 0, 100 );
                     if ( next < 33 )
-                        NPCManagerTable.Instance.GetRowByID( "Man_DagekonWW4A" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                        NPCManagerTable.Instance.GetRowByID( "Man_DagekonWW4A" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                     else if ( next < 66 )
-                        NPCManagerTable.Instance.GetRowByID( "Man_DagekonWW4B" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                        NPCManagerTable.Instance.GetRowByID( "Man_DagekonWW4B" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                     else
-                        NPCManagerTable.Instance.GetRowByID( "Man_DagekonWW4C" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                        NPCManagerTable.Instance.GetRowByID( "Man_DagekonWW4C" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                 }
 
                 for ( int i = 0; i < 3; i++ )
@@ -846,15 +938,137 @@ namespace Arcen.HotM.ExternalVis
 
                     int next = RandForThisTurn.Next( 0, 100 );
                     if ( next < 33 )
-                        NPCManagerTable.Instance.GetRowByID( "Man_UIHWW4A" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                        NPCManagerTable.Instance.GetRowByID( "Man_UIHWW4A" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                     else if ( next < 66 )
-                        NPCManagerTable.Instance.GetRowByID( "Man_UIHWW4B" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                        NPCManagerTable.Instance.GetRowByID( "Man_UIHWW4B" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                     else
-                        NPCManagerTable.Instance.GetRowByID( "Man_UIHWW4C" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                        NPCManagerTable.Instance.GetRowByID( "Man_UIHWW4C" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                 }
             }
 
-            if ( FlagRefs.MimicEscapeVorsiberSweepsUntilTurn.GetScore() > SimCommon.Turn )
+            if ( FlagRefs.Ch2_IsCivilWarOngoing.DuringGameplay_IsTripped && !FlagRefs.IsPostFinalDoom.DuringGameplay_IsTripped )
+            {
+                isCurrentlyHavingAMilitaryInvasionOfAnySort = true;
+
+                if ( !ForceToHappen && RandForThisTurn.Next( 0, 100 ) > 90 )
+                    return;
+
+                if ( !CohortRefs.ShusoCorrections.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Shuso" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.FalsomDetention.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Falsom" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.ArkorNexus.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Arkor" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.EspiaTelecom.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Espia" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.TarkDefenseSystems.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Tark" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.GoleriExpeditionary.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Goleri" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.OerlIntegrated.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Oerl" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.Baurcorp.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Baur" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.Vericorp.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Veri" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.NathVertical.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Nath" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.AtcaRetail.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Atca" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.LurpekoMinerals.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Lurpeko" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.NeboInvestments.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Nebo" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.GraffIndustries.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Graff" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.DyadInstruments.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Dyad" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.YinshiWellness.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Yinshi" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.AsiSolutions.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Asi" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                if ( !CohortRefs.PeakHomes.DuringGame_HasBeenDisbanded )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Peak" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+
+                for ( int i = 0; i < 7; i++ )
+                {
+                    Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
+                    NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Vorsiber" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                }
+            }
+
+            if ( FlagRefs.MimicEscapeVorsiberSweepsUntilTurn.GetScore() > SimCommon.Turn && !FlagRefs.IsPostFinalDoom.DuringGameplay_IsTripped )
             {
                 isCurrentlyHavingAMilitaryInvasionOfAnySort = true;                
 
@@ -865,11 +1079,11 @@ namespace Arcen.HotM.ExternalVis
 
                 int next = RandForThisTurn.Next( 0, 100 );
                 if ( next < 33 )
-                    NPCManagerTable.Instance.GetRowByID( "Man_MimicEscapeVorsiberSweepsA" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                    NPCManagerTable.Instance.GetRowByID( "Man_MimicEscapeVorsiberSweepsA" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                 else if ( next < 66 )
-                    NPCManagerTable.Instance.GetRowByID( "Man_MimicEscapeVorsiberSweepsB" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                    NPCManagerTable.Instance.GetRowByID( "Man_MimicEscapeVorsiberSweepsB" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                 else
-                    NPCManagerTable.Instance.GetRowByID( "Man_MimicEscapeVorsiberSweepsC" ).HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
+                    NPCManagerTable.Instance.GetRowByID( "Man_MimicEscapeVorsiberSweepsC" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
             }
 
             if ( FlagRefs.HasActiveSpaceNationInvasion.DuringGameplay_IsTripped )
@@ -1902,6 +2116,15 @@ namespace Arcen.HotM.ExternalVis
                             {
                                 if ( FlagRefs.IsExperiencingObsession.DuringGameplay_IsTripped )
                                     FlagRefs.IsExperiencingObsession.UnTripIfNeeded();
+                            }
+
+                            if ( FlagRefs.TheArk.DuringGameplay_IsInvented )
+                            {
+                                if ( FlagRefs.IsAwareOfCats.DuringGameplay_IsTripped && !FlagRefs.CatRescue.DuringGameplay_IsInvented )
+                                    FlagRefs.CatRescue.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+
+                                if ( FlagRefs.IsAwareOfDogs.DuringGameplay_IsTripped && !FlagRefs.DogRescue.DuringGameplay_IsInvented )
+                                    FlagRefs.DogRescue.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
                             }
 
                             HandleWarMusicChecksPerQuarterSecond();

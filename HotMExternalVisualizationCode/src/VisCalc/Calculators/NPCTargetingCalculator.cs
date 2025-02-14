@@ -259,6 +259,26 @@ namespace Arcen.HotM.ExternalVis
                 return;
             }
 
+            MobileActorTypeDuringGameData dgd = npcUnit.GetTypeDuringGameData();
+            if ( dgd != null && dgd.EffectiveCostsPerAttack.Count > 0 )
+            {
+                bool couldDoAll = true;
+                foreach ( KeyValuePair<ResourceType, int> kv in dgd.EffectiveCostsPerAttack.GetDisplayDict() )
+                {
+                    if ( kv.Value > kv.Key.Current )
+                    {
+                        couldDoAll = false;
+                        break;
+                    }
+                }
+                if ( !couldDoAll )
+                {
+                    if ( isDoingDump )
+                        npcUnit.TargetingDumpLines.Add( "Could not afford all costs!" );
+                    return;
+                }
+            }
+
             //always look for a fresh target, but using the same seed each time on a given turn
             ISimMapActor target = stance.TargetingLogic.Implementation.ChooseATargetInRangeThatCanBeShotRightNow( stance.TargetingLogic, npcUnit, currentPossibleMapActors, workingRand, isDoingDump );
             AttackAmounts damageToDo = AttackAmounts.Zero();

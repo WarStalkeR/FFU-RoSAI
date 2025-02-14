@@ -21,8 +21,14 @@ namespace Arcen.HotM.ExternalVis
                         TimelineGoalHelper.HandleGoalPathCompletion( Goal, "PrimaryGoal" );
                     break;
                 case "BionicDues":
-                    if ( (ResourceRefs.DonutsByDanver?.Current??0) >= 10000000 && (ResourceRefs.DonutsByHudson?.Current ?? 0) <= 0 )
+                    if ( (ResourceRefs.DonutsByDanver?.Current??0) >= 10000000 )
                         TimelineGoalHelper.HandleGoalPathSecondCompletionLimitedConditionally( Goal, "CultOfDanver", "ExtraSprinkles" );
+                    break;
+                case "BionicSecret":
+                    if ( FlagRefs.GotOfficerCodexFromVoxPopuli.DuringGameplay_IsTripped )
+                        TimelineGoalHelper.HandleGoalPathCompletion( Goal, "RebelAlliance" );
+                    if ( CityStatisticRefs.NeuralExpansionFromBrainPals.GetScore() >= 2000000 )
+                        TimelineGoalHelper.HandleGoalPathCompletion( Goal, "ToysForTheElite" );
                     break;
             }
         }

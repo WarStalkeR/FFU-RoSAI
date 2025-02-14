@@ -304,6 +304,39 @@ namespace Arcen.HotM.ExternalVis
     }
     #endregion
 
+    #region AutosavesToKeepFiller
+    public class AutosavesToKeepFiller : IDropdownFiller
+    {
+        public int GetCurrentValue( ArcenSetting setting )
+        {
+            return GameSettings.Current.GetInt( setting );
+        }
+
+        public int GetTempValue( ArcenSetting setting )
+        {
+            return setting.TempValue_Int;
+        }
+
+        public void SetExtraValuesFromSpecialLogicIfWeShould( int Value )
+        { }
+
+        private readonly List<IArcenDropdownOption> cachedOptions = List<IArcenDropdownOption>.Create_WillNeverBeGCed( 20, "AutosavesToKeepFiller-cachedOptions" );
+        public List<IArcenDropdownOption> GetListOfDropdownOptions()
+        {
+            if ( cachedOptions.Count == 0 || cachedOptions.Count != AutosavesToKeepTypeTable.Instance.Rows.Length )
+            {
+                cachedOptions.Clear();
+                for ( int i = 0; i < AutosavesToKeepTypeTable.Instance.Rows.Length; i++ )
+                {
+                    AutosavesToKeepType type = AutosavesToKeepTypeTable.Instance.Rows[i];
+                    cachedOptions.Add( type );
+                }
+            }
+            return cachedOptions;
+        }
+    }
+    #endregion
+
     #region NPCActionsViewFiller
     public class NPCActionsViewFiller : IDropdownFiller
     {

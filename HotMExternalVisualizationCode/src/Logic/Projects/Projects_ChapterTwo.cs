@@ -3215,7 +3215,6 @@ namespace Arcen.HotM.ExternalVis
                                 case ProjectLogic.WriteAddedContext:
                                     break;
                                 case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
-                                    ResourceRefs.HumanUmbilicalCords.SetCurrent_Named( 0, string.Empty, true );
                                     break;
                             }
                         }
@@ -3260,6 +3259,209 @@ namespace Arcen.HotM.ExternalVis
                                 MathRefs.MedicalResearch, MathRefs.NeurologyResearch, MathRefs.BionicsEngineeringWork,
                                 ResourceRefs.Physicians, ResourceRefs.Neurologists, ResourceRefs.BionicsEngineers,
                                 BufferOrNull, ref CanBeCompletedNow, RandOrNull );
+                        }
+                        break;
+                    #endregion
+                    #region Ch2_MIN_RebelAnthroneuroweave
+                    case "Ch2_MIN_RebelAnthroneuroweave":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            int target = OutcomeOrNoneYet.GetSingleIntByID( "Goal", 509 );
+                            ResourceType finalResource = ResourceRefs.Anthroneuroweave;
+                            int current = (int)finalResource.GetActualTrendWithLieIfStorageAtLeast( target, 2000000 );
+                            CanBeCompletedNow = current >= target;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, current, target, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat3( "RequiredResourcePerTurn", current.ToStringThousandsWhole(), target.ToStringThousandsWhole(), finalResource.GetDisplayName() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext:
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
+                    #region Ch2_MIN_DesignBrainPal
+                    case "Ch2_MIN_DesignBrainPal":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            ProjectHelper.HandleScienceWork3X( Logic, OutcomeOrNoneYet,
+                                OutcomeOrNoneYet.GetSingleIntByID( "MedicalResearchGoal", 100 ),
+                                OutcomeOrNoneYet.GetSingleIntByID( "NeurologyGoal", 100 ),
+                                OutcomeOrNoneYet.GetSingleIntByID( "BionicsGoal", 100 ),
+                                MathRefs.MedicalResearch, MathRefs.NeurologyResearch, MathRefs.BionicsEngineeringWork,
+                                ResourceRefs.Physicians, ResourceRefs.Neurologists, ResourceRefs.BionicsEngineers,
+                                BufferOrNull, ref CanBeCompletedNow, RandOrNull );
+                        }
+                        break;
+                    #endregion
+                    #region Ch2_MIN_ShipBrainPals
+                    case "Ch2_MIN_ShipBrainPals":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            int target = OutcomeOrNoneYet.GetSingleIntByID( "Goal", 509 );
+                            ResourceType finalResource = ResourceRefs.BrainPal;
+                            int current = (int)finalResource.GetActualTrendWithLieIfStorageAtLeast( target, 2000000 );
+                            CanBeCompletedNow = current >= target;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, current, target, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat3( "RequiredResourcePerTurn", current.ToStringThousandsWhole(), target.ToStringThousandsWhole(), finalResource.GetDisplayName() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext:
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
+                    #region Ch2_MIN_StealAtcaBankRecords
+                    case "Ch2_MIN_StealAtcaBankRecords":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            ResourceType stolenData = ResourceTypeTable.Instance.GetRowByID( "EncryptedAtcaBankRecords" );
+                            int currentData = (int)stolenData.Current;
+                            int dataGoal = 400000;
+                            CanBeCompletedNow = currentData >= dataGoal;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, currentData, dataGoal, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat3( "RequiredResourceAmount", currentData.ToStringThousandsWhole(), dataGoal.ToStringThousandsWhole(), stolenData.GetDisplayName() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext:
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
+                    #region Ch2_MIN_DecryptAtcaBankRecords
+                    case "Ch2_MIN_DecryptAtcaBankRecords":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            ResourceType encryptedData = ResourceTypeTable.Instance.GetRowByID( "EncryptedAtcaBankRecords" );
+                            ResourceType decryptedData = ResourceTypeTable.Instance.GetRowByID( "DecryptedAtcaBankRecords" );
+                            int current = (int)decryptedData.Current;
+                            int target = (int)encryptedData.Current + (int)decryptedData.Current;
+                            CanBeCompletedNow = target > 0 && current >= target;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, current, target, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat3( "RequiredResourceAmount", current.ToStringThousandsWhole(), target.ToStringThousandsWhole(), decryptedData.GetDisplayName() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext:
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
+
+                    #region Ch2_MIN_DestroyTheBanks
+                    case "Ch2_MIN_DestroyTheBanks":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            CityStatistic statistic = CityStatisticTable.Instance.GetRowByID( "BanksDemolished" );
+                            int totalBanks = 0;
+                            foreach ( ISimBuilding building in BuildingTagTable.Instance.GetRowByID( "Bank" ).DuringGame_Buildings.GetDisplayList() )
+                            {
+                                if ( building == null || building.GetIsDestroyed() || building.GetMapItem() == null || building.GetMapItem().IsInPoolAtAll )
+                                    continue;
+
+                                totalBanks++;
+                            }
+
+                            if ( SimCommon.SecondsSinceLoaded < 3 )
+                                totalBanks++;
+
+                            int current = (int)statistic.GetScore();
+                            int target = totalBanks + current;
+                            if ( target > 1000000 )
+                                target = 1000000;
+
+                            CanBeCompletedNow = current >= target;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, current, target, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat3( "RequiredResourceAmount", current.ToStringThousandsWhole(), target.ToStringThousandsWhole(), statistic.GetDisplayName() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext: //nothing on this one
+                                    break;
+                                case ProjectLogic.DoAnyPerTurnEarlyLogicWhileProjectActive:
+                                    {
+                                        foreach ( ISimBuilding building in BuildingTagTable.Instance.GetRowByID( "Bank" ).DuringGame_Buildings.GetDisplayList() )
+                                        {
+                                            if ( building == null || building.GetIsDestroyed() || building.GetMapItem() == null || building.GetMapItem().IsInPoolAtAll )
+                                                continue;
+
+                                            if ( building.CurrentOccupyingUnit != null && !building.CurrentOccupyingUnit.GetIsPartOfPlayerForcesInAnyWay() )
+                                            {
+                                                (building.CurrentOccupyingUnit as ISimNPCUnit)?.DisbandNPCUnit( NPCDisbandReason.WantedToLeave );
+                                            }
+                                            else if ( building.CurrentOccupyingUnit != null || building.MachineStructureInBuilding != null )
+                                            {
+                                                Vector3 epicenter = building.GetMapItem().OBBCache.BottomCenter;
+                                                int peopleInBuilding = building.GetTotalResidentCount() + building.GetTotalWorkerCount();
+
+                                                building.KillEveryoneHere();
+
+                                                ParticleSoundRefs.SlumBuildingReplaced.DuringGame_PlayAtLocation( epicenter,
+                                                    new Vector3( 0, Engine_Universal.PermanentQualityRandom.Next( 0, 360 ), 0 ) );
+                                                building.GetMapItem().DropBurningEffect_Slow();
+                                                building.FullyDeleteBuilding();
+
+                                                CityStatisticTable.AlterScore( "BanksDemolished", 1 );
+                                                CityStatisticRefs.MurdersByWorkerAndroids.AlterScore_CityAndMeta( peopleInBuilding );
+
+                                                //ArcenNotes.SendSimpleNoteToGameOnly( NoteInstructionTable.Instance.GetRowByID( "GainedResource" ),
+                                                //    NoteStyle.BothGame, ResourceRefs.ShelteredHumans.ID, peopleInBuilding, 0, 0, 0 );
+
+                                                ManagerRefs.Man_BankDemolishedReaction.HandleManualInvocationAtPoint( epicenter, Engine_Universal.PermanentQualityRandom, true );
+                                            }
+                                        }
+                                    }
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    {
+                                        OtherKeyMessageTable.Instance.GetRowByID( "AfterEconomicCollapse" ).DuringGameplay_IsReadyToBeViewed = true;
+                                    }
+                                    break;
+                            }
                         }
                         break;
                     #endregion

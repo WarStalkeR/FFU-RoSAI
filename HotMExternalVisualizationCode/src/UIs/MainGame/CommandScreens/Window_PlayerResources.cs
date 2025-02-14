@@ -24,6 +24,7 @@ namespace Arcen.HotM.ExternalVis
         public override void OnOpen()
         {
             ResourceStorage_FilterText = string.Empty;
+            Lifeforms_FilterText = string.Empty;
             StrategicResources_FilterText = string.Empty;
 
             bool resetFilterText = true;
@@ -35,6 +36,7 @@ namespace Arcen.HotM.ExternalVis
             }
 
             PrimaryRegularResourceCollection = null;
+            LifeformsCollection = null;
             PrimaryStrategicResourceCollection = null;
             InputOutput_target = null;
 
@@ -45,6 +47,11 @@ namespace Arcen.HotM.ExternalVis
         private static string ResourceStorage_LastFilterText = string.Empty;
         private static int ResourceStorage_lastTurn = 0;
         private static ResourceTypeCollection PrimaryRegularResourceCollection = null;
+
+        private static string Lifeforms_FilterText = string.Empty;
+        private static string Lifeforms_LastFilterText = string.Empty;
+        private static int Lifeforms_lastTurn = 0;
+        private static ResourceTypeCollection LifeformsCollection = null;
 
         private static string StrategicResources_FilterText = string.Empty;
         private static string StrategicResources_LastFilterText = string.Empty;
@@ -171,11 +178,15 @@ namespace Arcen.HotM.ExternalVis
                     switch ( currentlyRequestedDisplayType )
                     {
                         case ResourcesDisplayType.ResourceStorage:
-                            ResourceTypeCollection.DrawStrategicStyle = false;
+                            ResourceTypeCollection.DrawStyle = ResourceDrawStyle.Regular;
                             OnUpdate_Content_ResourceStorage();
                             break;
+                        case ResourcesDisplayType.Lifeforms:
+                            ResourceTypeCollection.DrawStyle = ResourceDrawStyle.Lifeforms;
+                            OnUpdate_Content_Lifeforms();
+                            break;
                         case ResourcesDisplayType.StrategicResources:
-                            ResourceTypeCollection.DrawStrategicStyle = true;
+                            ResourceTypeCollection.DrawStyle = ResourceDrawStyle.Strategic;
                             OnUpdate_Content_StrategicResources();
                             break;
                         case ResourcesDisplayType.TPSReports:
@@ -632,6 +643,121 @@ namespace Arcen.HotM.ExternalVis
                                 resource.DuringGame_HasBeenFilteredOutInInventory = false;
                             else
                                 resource.DuringGame_HasBeenFilteredOutInInventory = !resource.GetMatchesSearchString( StrategicResources_FilterText );
+                        }
+                        if ( resource.DuringGame_HasBeenFilteredOutInInventory )
+                            continue;
+
+                        if ( !HandleSpecificResource( resource, ref currentColumn ) )
+                            continue; //time-slicing
+                    }
+                }
+
+                //if ( currentColumn < 3 )
+                {
+                    this.CalculateBoundsQuintColumn( out Rect bounds, currentColumn, runningY, RESOURCE_ITEM_HEIGHT );
+                    runningY -= (bounds.height + CONTENT_ROW_GAP_RESOURCE_ITEM);
+                }
+            }
+            #endregion
+
+            #region OnUpdate_Content_Lifeforms
+            private void OnUpdate_Content_Lifeforms()
+            {
+                #region Resource Totals
+                {
+                    bool render = true;
+                    this.CalculateBoundsLargeTwoLineHeader( out Rect bounds, ref runningY );
+                    if ( bounds.yMax < minYToShow )
+                        render = false; //it's scrolled up far enough we can skip it, yay!
+                    if ( bounds.yMax > maxYToShow )
+                        render = false; //this is below where we are scrolled, so let's skip this, too!  We won't break out, because we need runningY to be fully calculated
+
+                    if ( render && bLargeTwoLineHeader.Instance != null )
+                    {
+                        bLargeTwoLineHeader.Instance.ApplySingleItemInRow( bounds, false );
+
+                        bLargeTwoLineHeader.Instance.Assign( delegate ( ArcenUI_Element element, UIAction Action, ref UIActionData ExtraData )
+                        {
+                            switch ( Action )
+                            {
+                                case UIAction.GetTextToShowFromVolatile:
+                                    ExtraData.Buffer.AddLang( "Inventory_Lifeforms" );
+                                    break;
+                                case UIAction.GetOtherTextToShowFromVolatile:
+
+                                    int discoveredResourceCount = 0;
+                                    int totalResourceCount = 0;
+                                    foreach ( ResourceType resource in ResourceTypeTable.SortedLifeformResources )
+                                    {
+                                        if ( resource.IsAlwaysSkippedOnResourceScreen )
+                                            continue;
+                                        totalResourceCount++;
+                                        if ( !resource.DuringGame_IsUnlocked() )
+                                            continue;
+                                        discoveredResourceCount++;
+                                    }
+
+                                    ExtraData.Buffer.AddLangAndAfterLineItemHeader( "DiscoveredResources" )
+                                        .AddRaw( discoveredResourceCount.ToStringThousandsWhole(), ColorTheme.GetDataBlue( element.LastHadMouseWithin ) );
+                                    ExtraData.Buffer.Space8x();
+                                    ExtraData.Buffer.AddLangAndAfterLineItemHeader( "TotalResources" )
+                                        .AddRaw( totalResourceCount.ToStringThousandsWhole(), ColorTheme.GetDataBlue( element.LastHadMouseWithin ) );
+                                    break;
+                                case UIAction.OnClick:
+                                    break;
+                            }
+                        } );
+                    }
+                    else
+                        bLargeTwoLineHeader.Instance?.Assign( null );
+                }
+                #endregion
+
+                int currentColumn = 0;
+
+                bool hasFilterChanged = !(Lifeforms_FilterText == Lifeforms_LastFilterText && Lifeforms_lastTurn == SimCommon.Turn);
+                Lifeforms_LastFilterText = Lifeforms_FilterText;
+                Lifeforms_lastTurn = SimCommon.Turn;
+
+                if ( LifeformsCollection != null )
+                {
+                    //do the resources in order from the collection
+                    foreach ( SortedResourceType sortedResource in LifeformsCollection.LifeformsList )
+                    {
+                        ResourceType resource = sortedResource.Type;
+                        if ( resource.IsAlwaysSkippedOnResourceScreen )
+                            continue;
+                        if ( !resource.DuringGame_IsUnlocked() )
+                            continue;
+                        if ( hasFilterChanged )
+                        {
+                            if ( Lifeforms_FilterText.IsEmpty() )
+                                resource.DuringGame_HasBeenFilteredOutInInventory = false;
+                            else
+                                resource.DuringGame_HasBeenFilteredOutInInventory = !resource.GetMatchesSearchString( Lifeforms_FilterText );
+                        }
+                        if ( resource.DuringGame_HasBeenFilteredOutInInventory )
+                            continue;
+
+                        if ( !HandleSpecificResource( resource, ref currentColumn ) )
+                            continue; //time-slicing
+                    }
+                }
+                else
+                {
+                    //do the resources in alphabetical order
+                    foreach ( ResourceType resource in ResourceTypeTable.SortedLifeformResources )
+                    {
+                        if ( resource.IsAlwaysSkippedOnResourceScreen )
+                            continue;
+                        if ( !resource.DuringGame_IsUnlocked() )
+                            continue;
+                        if ( hasFilterChanged )
+                        {
+                            if ( Lifeforms_FilterText.IsEmpty() )
+                                resource.DuringGame_HasBeenFilteredOutInInventory = false;
+                            else
+                                resource.DuringGame_HasBeenFilteredOutInInventory = !resource.GetMatchesSearchString( Lifeforms_FilterText );
                         }
                         if ( resource.DuringGame_HasBeenFilteredOutInInventory )
                             continue;
@@ -1331,6 +1457,7 @@ namespace Arcen.HotM.ExternalVis
         public enum ResourcesDisplayType
         {
             ResourceStorage,
+            Lifeforms,
             StrategicResources,
 
             Ledger,
@@ -1389,10 +1516,18 @@ namespace Arcen.HotM.ExternalVis
 
                 if ( Item.GetItem() is ResourceTypeCollection resourceTypeCollection )
                 {
-                    if ( ResourceTypeCollection.DrawStrategicStyle || customParent.currentlyRequestedDisplayType == ResourcesDisplayType.StrategicResources)
-                        PrimaryStrategicResourceCollection = resourceTypeCollection;
-                    else
-                        PrimaryRegularResourceCollection = resourceTypeCollection;
+                    switch (ResourceTypeCollection.DrawStyle )
+                    {
+                        case ResourceDrawStyle.Regular:
+                            PrimaryRegularResourceCollection = resourceTypeCollection;
+                            break;
+                        case ResourceDrawStyle.Lifeforms:
+                            LifeformsCollection = resourceTypeCollection;
+                            break;
+                        case ResourceDrawStyle.Strategic:
+                            PrimaryStrategicResourceCollection = resourceTypeCollection;
+                            break;
+                    }
                 }
                 else if ( Item.GetItem() is IProducerConsumerTarget ProducerConsumerTarget )
                 {
@@ -1431,6 +1566,71 @@ namespace Arcen.HotM.ExternalVis
 
                             bool foundMismatch = false;
                             if ( typeDataToSelect != null && (elementAsType.CurrentlySelectedOption == null || 
+                                elementAsType.CurrentlySelectedOption.GetItem() as ResourceTypeCollection != typeDataToSelect) )
+                            {
+                                foundMismatch = true;
+                                //ArcenDebugging.ArcenDebugLogSingleLine( "Fixing selected item in names to be " + typeDataToSelect.ID, Verbosity.DoNotShow );
+                            }
+                            else if ( validOptions.Count != elementAsType.GetItems_DoNotAlterDirectly().Count )
+                                foundMismatch = true;
+                            else
+                            {
+                                for ( int i = 0; i < validOptions.Count; i++ )
+                                {
+                                    ResourceTypeCollection row = validOptions[i];
+
+                                    IArcenDropdownOption option = elementAsType.GetItems_DoNotAlterDirectly()[i];
+                                    if ( option == null )
+                                    {
+                                        foundMismatch = true;
+                                        break;
+                                    }
+                                    ResourceTypeCollection optionItemAsType = option.GetItem() as ResourceTypeCollection;
+                                    if ( row == optionItemAsType )
+                                        continue;
+                                    foundMismatch = true;
+                                    break;
+                                }
+                            }
+
+                            if ( foundMismatch )
+                            {
+                                elementAsType.ClearItems();
+
+                                for ( int i = 0; i < validOptions.Count; i++ )
+                                {
+                                    ResourceTypeCollection row = validOptions[i];
+                                    elementAsType.AddItem( row, row == typeDataToSelect );
+                                }
+                            }
+                        }
+                        #endregion
+                        break;
+                    case ResourcesDisplayType.Lifeforms:
+                        #region Lifeforms
+                        {
+                            List<ResourceTypeCollection> validOptions = ResourceTypeCollection.AvailableLifeformCollections.GetDisplayList();
+
+                            ResourceTypeCollection typeDataToSelect = LifeformsCollection;
+
+                            #region If The Selected Type Is Not Valid Right Now, Then Skip It
+                            if ( typeDataToSelect != null )
+                            {
+                                if ( !validOptions.Contains( typeDataToSelect ) )
+                                {
+                                    typeDataToSelect = null;
+                                    LifeformsCollection = null;
+                                }
+                            }
+                            #endregion
+
+                            #region Select Default If Blank
+                            if ( typeDataToSelect == null && validOptions.Count > 0 )
+                                typeDataToSelect = validOptions[0];
+                            #endregion
+
+                            bool foundMismatch = false;
+                            if ( typeDataToSelect != null && (elementAsType.CurrentlySelectedOption == null ||
                                 elementAsType.CurrentlySelectedOption.GetItem() as ResourceTypeCollection != typeDataToSelect) )
                             {
                                 foundMismatch = true;
@@ -1651,6 +1851,7 @@ namespace Arcen.HotM.ExternalVis
                     switch ( customParent.currentlyRequestedDisplayType )
                     {
                         case ResourcesDisplayType.ResourceStorage:
+                        case ResourcesDisplayType.Lifeforms:
                         case ResourcesDisplayType.StrategicResources:
                         case ResourcesDisplayType.InputOutput:
                             return false;
@@ -1865,6 +2066,24 @@ namespace Arcen.HotM.ExternalVis
                             foreach ( ResourceType resource in ResourceTypeTable.SortedRegularResources )
                             {
                                 if ( !resource.DuringGame_IsUnlocked() )
+                                    continue;
+                                discoveredResourceCount++;
+                                break; //finding one is enough
+                            }
+
+                            countToShow = discoveredResourceCount;
+                            showGrayedOut = countToShow == 0;
+                            countToShow = -1;
+                        }
+                        break;
+                    case ResourcesDisplayType.Lifeforms:
+                        {
+                            int discoveredResourceCount = 0;
+                            foreach ( ResourceType resource in ResourceTypeTable.SortedLifeformResources )
+                            {
+                                if ( !resource.DuringGame_IsUnlocked() )
+                                    continue;
+                                if ( resource.IsHiddenWhenNoneHad && resource.Current == 0 )
                                     continue;
                                 discoveredResourceCount++;
                                 break; //finding one is enough

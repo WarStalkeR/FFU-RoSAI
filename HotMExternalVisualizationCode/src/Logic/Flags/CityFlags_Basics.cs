@@ -100,6 +100,31 @@ namespace Arcen.HotM.ExternalVis
                                 }
                             }
                         }
+                        if ( FlagRefs.Ch2_IsCivilWarOngoing.DuringGameplay_IsTripped )
+                            shouldBeShown = true;
+
+                        Flag.SetTripTo( shouldBeShown );
+                    }
+                    break;
+                case "ShouldShowTheComingWar":
+                    if ( !WorldSaveLoad.IsLoadingAtTheMoment && SimCommon.SecondsSinceLoaded > 5 )
+                    {
+                        bool shouldBeShown = true;
+
+                        if ( FlagRefs.Ch2_IsWW4Ongoing.DuringGameplay_IsTripped ||
+                            FlagRefs.IsPostFinalDoom.DuringGameplay_IsTripped )
+                            shouldBeShown = false;
+                        else
+                        {
+                            if ( !FlagRefs.LiquidMetalWoodsman.DuringGameplay_IsTripped )
+                                shouldBeShown = false;
+                            else if ( !FlagRefs.CrossoverWithHomoGrandien.DuringGameplay_IsTripped )
+                                shouldBeShown = false;
+                            else if ( KeyContactRefs.BlackMarketAssistant.DuringGame_IsDead )
+                                shouldBeShown = false;
+                            else if ( FlagRefs.Ch2_VorsiberAssassinationsHappened.DuringGameplay_IsTripped )
+                                shouldBeShown = false;
+                        }
 
                         Flag.SetTripTo( shouldBeShown );
                     }
@@ -109,7 +134,10 @@ namespace Arcen.HotM.ExternalVis
                     {
                         bool shouldBeShown = false;
 
-                        //todo finish ShouldShowAnimalPalace
+                        if ( FlagRefs.IsAwareOfCats.DuringGameplay_IsTripped )
+                            shouldBeShown = true;
+                        else if ( FlagRefs.IsAwareOfDogs.DuringGameplay_IsTripped )
+                            shouldBeShown = true;
 
                         Flag.SetTripTo( shouldBeShown );
                     }

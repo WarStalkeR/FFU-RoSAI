@@ -33,7 +33,10 @@ namespace Arcen.HotM.ExternalVis
                     if ( FlagRefs.HasStartedToAccelerateDooms_Hard.DuringGameplay_IsTripped )
                         Goal.PathDict["HardMode"]?.DuringGameplay_ExecutePathAchievedResultIfNeeded();
                     if ( FlagRefs.HasStartedToAccelerateDooms_Extreme.DuringGameplay_IsTripped )
+                    {
+                        Goal.PathDict["HardMode"]?.DuringGameplay_ExecutePathAchievedResultIfNeeded();
                         Goal.PathDict["ExtremeMode"]?.DuringGameplay_ExecutePathAchievedResultIfNeeded();
+                    }
                 }
             }
         }

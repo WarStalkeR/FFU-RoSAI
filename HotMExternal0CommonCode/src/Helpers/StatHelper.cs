@@ -24,6 +24,8 @@ namespace Arcen.HotM.External
                 return true;
             if ( CityStatisticRefs.MurdersByWorkerAndroids.GetScore() > 0 )
                 return true;
+            if ( CityStatisticRefs.MurdersByBionicImplant.GetScore() > 0 )
+                return true;
             return false;
         }
         #endregion
@@ -48,7 +50,8 @@ namespace Arcen.HotM.External
                 MetaStatisticRefs.MurdersByNuke.GetScore() +
                 MetaStatisticRefs.MurdersByBuildingCollapse.GetScore() +
                 MetaStatisticRefs.MurdersByConventionalExplosion.GetScore() +
-                MetaStatisticRefs.MurdersByWorkerAndroids.GetScore();
+                MetaStatisticRefs.MurdersByWorkerAndroids.GetScore() +
+                MetaStatisticRefs.MurdersByBionicImplant.GetScore();
         }
         #endregion
     }

@@ -28,61 +28,7 @@ namespace Arcen.HotM.ExternalVis
                     break;
                 case "ShelteredHumans":
                     {
-                        {
-                            if ( ResourceRefs.AbandonedHumans.Current > 0 ) //at least some humans are abandoned
-                            {
-                                int numberCanMoveIn = (int)Resource.EffectiveHardCapStorageAvailable;
-                                if ( numberCanMoveIn > 0 )
-                                {
-                                    numberCanMoveIn = Mathf.Min( numberCanMoveIn, (int)ResourceRefs.AbandonedHumans.Current );
-
-                                    ResourceRefs.AbandonedHumans.AlterCurrent_Named( -numberCanMoveIn, "Expense_MovedIntoHousing", ResourceAddRule.IgnoreUntilTurnChange );
-                                    Resource.AlterCurrent_Named( numberCanMoveIn, "Increase_AbandonedCitizensMovingBackIn", ResourceAddRule.IgnoreUntilTurnChange );
-                                    
-                                    //log the move-ins!
-                                    CityStatisticTable.AlterScore( "AbandonedHumansWhoMovedBackIn", numberCanMoveIn );
-                                }
-                                else
-                                {
-                                    //if no humans can move back in, have some die from exposure
-                                    int deaths = Mathf.CeilToInt( (int)ResourceRefs.AbandonedHumans.Current * RandForThisTurn.NextFloat( 0.02f, 0.25f ) ); //between 2 and 25 percent die each turn
-                                    deaths = Mathf.Min( deaths, (int)ResourceRefs.AbandonedHumans.Current );
-
-                                    ResourceRefs.AbandonedHumans.AlterCurrent_Named( -deaths, "Expense_DeathsFromExposure", ResourceAddRule.IgnoreUntilTurnChange );
-
-                                    //log the deaths!
-                                    CityStatisticTable.AlterScore( "AbandonedHumanDeathsFromExposure", deaths );
-                                }
-                            }
-                        }
-                        {
-                            CityStatistic desperateHomeless = CityStatisticTable.Instance.GetRowByID( "DesperateHomeless" );
-                            if ( desperateHomeless.GetScore() > 0 ) //at least some humans are abandoned
-                            {
-                                int numberCanMoveIn = (int)Resource.EffectiveHardCapStorageAvailable;
-                                if ( numberCanMoveIn > 0 )
-                                {
-                                    numberCanMoveIn = Mathf.Min( numberCanMoveIn, (int)desperateHomeless.GetScore() );
-
-                                    CityStatisticTable.AlterScore( "DesperateHomeless", -numberCanMoveIn ); //moving in, hooray!
-                                    Resource.AlterCurrent_Named( numberCanMoveIn, "Increase_DesperateHomelessMovingIn", ResourceAddRule.IgnoreUntilTurnChange );
-
-                                    //log the move-ins!
-                                    CityStatisticTable.AlterScore( "DesperateHomelessWhoMovedIn", numberCanMoveIn );
-                                }
-                                else
-                                {
-                                    //if no humans can move in, have some die from exposure
-                                    int deaths = Mathf.CeilToInt( (int)desperateHomeless.GetScore() * RandForThisTurn.NextFloat( 0.02f, 0.25f ) ); //between 2 and 25 percent die each turn
-                                    deaths = Mathf.Min( deaths, (int)desperateHomeless.GetScore() );
-
-                                    CityStatisticTable.AlterScore( "DesperateHomeless", -deaths ); //deaths, boo!
-
-                                    //log the deaths!
-                                    CityStatisticTable.AlterScore( "DesperateHomelessDeathsFromExposure", deaths );
-                                }
-                            }
-                        }
+                        HandleMovingIn( RandForThisTurn );
 
                         {
                             ResourceType refugeeHumans = ResourceRefs.RefugeeHumans;
@@ -155,6 +101,18 @@ namespace Arcen.HotM.ExternalVis
 
                             CityStatisticTable.SetScore_UserBeware( "HomelessPopulationRemaining", World.People.GetCurrentResidents()[homelessClass] );
                             CityStatisticTable.SetScore_UserBeware( "HomelessTentsRemaining", tents.DuringGame_Buildings.Count );
+
+                            EconomicClassType managerialClass = EconomicClassTypeTable.Instance.GetRowByID( "Managerial" );
+                            EconomicClassType scientistsClass = EconomicClassTypeTable.Instance.GetRowByID( "Scientists" );
+
+                            CityStatisticTable.SetScore_UserBeware( "WealthyConsumers", Mathf.CeilToInt( World.People.GetCurrentResidents()[managerialClass] * 0.92f ) +
+                                Mathf.CeilToInt( World.People.GetCurrentResidents()[scientistsClass] * 0.76f ) );
+
+                            EconomicClassType middleClass = EconomicClassTypeTable.Instance.GetRowByID( "MiddleClass" );
+                            EconomicClassType uneducatedClass = EconomicClassTypeTable.Instance.GetRowByID( "Uneducated" );
+
+                            CityStatisticTable.SetScore_UserBeware( "WorkingClassConsumers", Mathf.CeilToInt( World.People.GetCurrentResidents()[middleClass] * 0.98f ) +
+                                Mathf.CeilToInt( World.People.GetCurrentResidents()[uneducatedClass] * 0.41f ) );
                         }
 
                         {
@@ -201,5 +159,87 @@ namespace Arcen.HotM.ExternalVis
                     break;
             }
         }
+
+        #region HandleMovingIn
+        private static void HandleMovingIn( MersenneTwister RandForThisTurn )
+        {
+            if ( ResourceRefs.AbandonedHumans.Current > 0 ) //at least some humans are abandoned
+            {
+                int numberCanMoveInShelter = (int)ResourceRefs.ShelteredHumans.EffectiveHardCapStorageAvailable;
+                int numberCanMoveInRefugee = (int)ResourceRefs.RefugeeHumans.EffectiveHardCapStorageAvailable;
+                if ( numberCanMoveInShelter > 0 )
+                {
+                    numberCanMoveInShelter = Mathf.Min( numberCanMoveInShelter, (int)ResourceRefs.AbandonedHumans.Current );
+
+                    ResourceRefs.AbandonedHumans.AlterCurrent_Named( -numberCanMoveInShelter, "Expense_MovedIntoHousing", ResourceAddRule.IgnoreUntilTurnChange );
+                    ResourceRefs.ShelteredHumans.AlterCurrent_Named( numberCanMoveInShelter, "Increase_AbandonedCitizensMovingBackIn", ResourceAddRule.IgnoreUntilTurnChange );
+
+                    //log the move-ins!
+                    CityStatisticTable.AlterScore( "AbandonedHumansWhoMovedBackIn", numberCanMoveInShelter );
+                }
+                else if ( numberCanMoveInRefugee > 0 )
+                {
+                    numberCanMoveInRefugee = Mathf.Min( numberCanMoveInRefugee, (int)ResourceRefs.AbandonedHumans.Current );
+
+                    ResourceRefs.AbandonedHumans.AlterCurrent_Named( -numberCanMoveInRefugee, "Expense_MovedIntoHousing", ResourceAddRule.IgnoreUntilTurnChange );
+                    ResourceRefs.RefugeeHumans.AlterCurrent_Named( numberCanMoveInRefugee, "Increase_AbandonedCitizensBecomingRefugees", ResourceAddRule.IgnoreUntilTurnChange );
+
+                    //log the move-ins!
+                    CityStatisticTable.AlterScore( "AbandonedHumansWhoBecameRefugees", numberCanMoveInRefugee );
+                }
+                else
+                {
+                    //if no humans can move back in, have some die from exposure
+                    int deaths = Mathf.CeilToInt( (int)ResourceRefs.AbandonedHumans.Current * RandForThisTurn.NextFloat( 0.02f, 0.25f ) ); //between 2 and 25 percent die each turn
+                    deaths = Mathf.Min( deaths, (int)ResourceRefs.AbandonedHumans.Current );
+
+                    ResourceRefs.AbandonedHumans.AlterCurrent_Named( -deaths, "Expense_DeathsFromExposure", ResourceAddRule.IgnoreUntilTurnChange );
+
+                    //log the deaths!
+                    CityStatisticTable.AlterScore( "AbandonedHumanDeathsFromExposure", deaths );
+                }
+            }
+
+            {
+                CityStatistic desperateHomeless = CityStatisticTable.Instance.GetRowByID( "DesperateHomeless" );
+                if ( desperateHomeless.GetScore() > 0 ) //at least some humans are abandoned
+                {
+                    int numberCanMoveInShelter = (int)ResourceRefs.ShelteredHumans.EffectiveHardCapStorageAvailable;
+                    int numberCanMoveInRefugee = (int)ResourceRefs.RefugeeHumans.EffectiveHardCapStorageAvailable;
+                    if ( numberCanMoveInShelter > 0 )
+                    {
+                        numberCanMoveInShelter = Mathf.Min( numberCanMoveInShelter, (int)desperateHomeless.GetScore() );
+
+                        CityStatisticTable.AlterScore( "DesperateHomeless", -numberCanMoveInShelter ); //moving in, hooray!
+                        ResourceRefs.ShelteredHumans.AlterCurrent_Named( numberCanMoveInShelter, "Increase_DesperateHomelessMovingIn", ResourceAddRule.IgnoreUntilTurnChange );
+
+                        //log the move-ins!
+                        CityStatisticTable.AlterScore( "DesperateHomelessWhoMovedIn", numberCanMoveInShelter );
+                    }
+                    else if ( numberCanMoveInRefugee > 0 )
+                    {
+                        numberCanMoveInRefugee = Mathf.Min( numberCanMoveInRefugee, (int)desperateHomeless.GetScore() );
+
+                        CityStatisticTable.AlterScore( "DesperateHomeless", -numberCanMoveInRefugee ); //moving in, hooray!
+                        ResourceRefs.RefugeeHumans.AlterCurrent_Named( numberCanMoveInRefugee, "Increase_DesperateHomelessMovingIn", ResourceAddRule.IgnoreUntilTurnChange );
+
+                        //log the move-ins!
+                        CityStatisticTable.AlterScore( "DesperateHomelessWhoBecameRefugees", numberCanMoveInRefugee );
+                    }
+                    else
+                    {
+                        //if no humans can move in, have some die from exposure
+                        int deaths = Mathf.CeilToInt( (int)desperateHomeless.GetScore() * RandForThisTurn.NextFloat( 0.02f, 0.25f ) ); //between 2 and 25 percent die each turn
+                        deaths = Mathf.Min( deaths, (int)desperateHomeless.GetScore() );
+
+                        CityStatisticTable.AlterScore( "DesperateHomeless", -deaths ); //deaths, boo!
+
+                        //log the deaths!
+                        CityStatisticTable.AlterScore( "DesperateHomelessDeathsFromExposure", deaths );
+                    }
+                }
+            }
+        }
+        #endregion
     }
 }

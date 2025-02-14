@@ -691,7 +691,7 @@ namespace Arcen.HotM.ExternalVis
                                                 //ParticleSoundRefs.MicroNuke.DuringGame_PlayAtLocation( epicenter,
                                                 //    new Vector3( 0, Engine_Universal.PermanentQualityRandom.NextFloat( 0, 360f ), 0 ) );
 
-                                                World.Forces.CreateNewNPCUnitAtBuilding( NPCTypeRefs.CorruptedOfficePrinter, CommonRefs.ConvertedTroops, stance, 1f, groundCenter, 0f,
+                                                World.Forces.CreateNewNPCUnitAtBuilding( NPCTypeRefs.CorruptedOfficePrinter, CohortRefs.ConvertedTroops, stance, 1f, groundCenter, 0f,
                                                     buildingUnderCursor.GetMapItem(), Engine_Universal.PermanentQualityRandom, null, 0, null, null, CollisionRule.Relaxed, "AnimatePrinter" );
                                             }
                                             catch ( Exception e )

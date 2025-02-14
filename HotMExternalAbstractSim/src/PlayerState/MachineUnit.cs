@@ -2033,7 +2033,10 @@ namespace Arcen.HotM.External
                 usn.PortraitFrameColorHex = this.GetTooltipIconColorStyle()?.RelatedBorderColorHex ?? string.Empty;
 
                 usn.UpperStats.StartUppercase().AddRaw( unitType.GetDisplayName(), ColorTheme.DataBlue ).EndUppercase().Line();
-                usn.UpperStats.AddRaw( this.Stance?.GetDisplayName() ?? LangCommon.None.Text, ColorTheme.Gray ).Line();
+                if ( unitType.PrimaryArchetypeCollection != null )
+                    usn.UpperStats.AddRaw( unitType.PrimaryArchetypeCollection.GetDisplayName(), ColorTheme.Gray ).Line();
+                else
+                    usn.UpperStats.AddRaw( this.Stance?.GetDisplayName() ?? LangCommon.None.Text, ColorTheme.Gray ).Line();
 
                 int effectiveClearanceLevel = this.GetEffectiveClearance( ClearanceCheckType.MovingToBuilding );
                 SecurityClearance effectiveClearance = this.CurrentBaseClearance;

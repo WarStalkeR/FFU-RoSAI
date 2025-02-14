@@ -169,6 +169,38 @@ namespace Arcen.HotM.ExternalVis
                     }
                     #endregion
                     break;
+                case "JumpTo9thDoom":
+                    #region JumpTo9thDoom
+                    {
+                        int currentTurn = SimCommon.Turn;
+                        CityTimelineDoomType doomType = SimCommon.GetEffectiveTimelineDoomType();
+                        DoomEvent lastDoomEvent = null;
+                        foreach ( DoomEvent doomEvent in doomType.DoomMainEvents )
+                        {
+                            if ( doomEvent.DuringGameplay_HasHappened || doomEvent.DoomNumber > 9 )
+                                continue;
+
+                            int turnsFromNow = doomEvent.DuringGameplay_WillHappenOnTurn - currentTurn;
+                            if ( turnsFromNow <= 0 )
+                                continue;
+
+                            lastDoomEvent = doomEvent;
+
+                            Interlocked.Exchange( ref doomEvent.DuringGameplay_WillHappenOnTurn, SimCommon.Turn ); //make it happen now
+                        }
+
+                        if ( lastDoomEvent != null )
+                            Interlocked.Exchange( ref lastDoomEvent.DuringGameplay_WillHappenOnTurn, currentTurn );
+
+                        //if ( doomType != null && doomType.DuringGame_StartedOnTurn > 0 )
+                        //    doomType.Implementation.HandleDoomLogic( doomType, CityDoomLogic.HandlePerTurn, workingRand );
+
+                        shouldForceNoAfterActionReport = true;
+
+                        SimCommon.MarkAsReadyForNextTurn();
+                    }
+                    #endregion
+                    break;
                 case "ObsessionBrainSurgery":
                     #region ObsessionBrainSurgery
                     {
@@ -178,22 +210,79 @@ namespace Arcen.HotM.ExternalVis
                     }
                     #endregion
                     break;
+                case "BrainPalAneurysms":
+                    #region BrainPalAneurysms
+                    {
+                        FlagRefs.HasTriggeredBrainPalAneurysms.TripIfNeeded();
+                        CityStatisticRefs.NeuralExpansionFromBrainPals.SetScore_WarningForSerializationOnly( 0 );
+                        CityStatisticRefs.ComputeTimeFromBrainPals.SetScore_WarningForSerializationOnly( 0 );
+
+                        EconomicClassType managerialClass = EconomicClassTypeTable.Instance.GetRowByID( "Managerial" );
+                        EconomicClassType scientistsClass = EconomicClassTypeTable.Instance.GetRowByID( "Scientists" );
+
+                        int toKill = (int)CityStatisticRefs.BrainPalsSold.GetScore();
+                        int managersToKill = Mathf.CeilToInt( toKill * 0.6667f );
+                        int scientistsToKill = toKill - managersToKill;
+
+                        World.People.KillResidentsCityWide( managerialClass, ref managersToKill, workingRand );
+                        if ( managersToKill > 0 )
+                            scientistsToKill += managersToKill;
+
+                        World.People.KillResidentsCityWide( scientistsClass, ref scientistsToKill, workingRand );
+
+                        CityStatisticRefs.MurdersByBionicImplant.AlterScore_CityAndMeta( toKill );
+
+                        OtherKeyMessageTable.Instance.GetRowByID( "AfterBrainPalAneurysms" ).DuringGameplay_IsReadyToBeViewed = true;
+                    }
+                    #endregion
+                    break;
+                case "ReleaseParkourBearsNow":
+                    #region ReleaseParkourBearsNow
+                    {
+                        Vector3 position;
+                        if ( ForBuilding == null )
+                        {
+                            if ( ForMachineActor != null  )
+                                position = ForMachineActor.GetDrawLocation();
+                            else
+                                position = Engine_HotM.SelectedActor.GetDrawLocation();
+                        }
+                        else
+                            position = ForBuilding.GetEffectiveWorldLocationForContainedUnit();
+
+                        MapCell cell = CityMap.TryGetWorldCellAtCoordinates( position );
+
+                        {
+                            NPCUnitType parkourBear = NPCUnitTypeTable.Instance.GetRowByID( "ParkourBear" );
+                            NPCUnitStance runningWild = NPCUnitStanceTable.Instance.GetRowByID( "ParkourBearRunning" );
+
+                            for ( int i = 0; i < 16; i++ )
+                            {
+                                if ( World.Forces.TryCreateNewNPCUnitWithinThisRadius( position, cell, parkourBear, CohortRefs.WildAnimals, runningWild, 1f, Vector3.zero, -1f,
+                                    false, 30, 1, CellRange.CellAndAdjacent2x, workingRand, CollisionRule.Relaxed, "ReleaseParkourBearsNow" ) == null )
+                                {
+                                    World.Forces.TryCreateNewNPCUnitWithinThisRadius( position, cell, parkourBear, CohortRefs.WildAnimals, runningWild, 1f, Vector3.zero, -1f,
+                                    false, 60, 5, CellRange.CellAndAdjacent2x, workingRand, CollisionRule.Relaxed, "ReleaseParkourBearsNow" );
+                                }
+                            }
+                        }
+
+                        {
+                            NPCUnitType humeOwnedCombatUnit = NPCUnitTypeTable.Instance.GetRowByID( "HumeOwnedCombatUnit" );
+                            NPCUnitStance androidSecurityResponseTeam = NPCUnitStanceTable.Instance.GetRowByID( "AndroidSecurityResponseTeam" );
+
+                            for ( int i = 0; i < 6; i++ )
+                            {
+                                World.Forces.TryCreateNewNPCUnitWithinThisRadius( position, cell, humeOwnedCombatUnit, CohortRefs.PeakHomes, androidSecurityResponseTeam, 1f, Vector3.zero, -1f,
+                                    false, 30, 5, CellRange.CellAndAdjacent2x, workingRand, CollisionRule.Relaxed, "ReleaseParkourBearsNow" );
+                            }
+                        }
+
+                    }
+                    #endregion
+                    break;
                 default:
                     ArcenDebugging.LogSingleLine( "HandleExtraEventChoiceConsequences: ExtraCode_Common was asked to handle '" + Handler.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
-                    break;
-            }
-        }
-
-        public void HandleExtraNPCDialogChoiceConsequences( ExtraCodeHandler Handler, ISimMachineActor YourMachineActor, ISimNPCUnit WithUnit, 
-            MersenneTwister workingRand, bool IsFromAfterDebate, NPCDialog Dialog, NPCDialogChoice Choice )
-        {
-            if ( Handler == null || workingRand == null || Dialog == null || Choice == null )
-                return;
-
-            switch ( Handler.ID )
-            {
-                default:
-                    ArcenDebugging.LogSingleLine( "HandleExtraNPCDialogChoiceConsequences: ExtraCode_Common was asked to handle '" + Handler.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
                     break;
             }
         }
@@ -355,7 +444,7 @@ namespace Arcen.HotM.ExternalVis
             {
                 case "PlayerWorkerMurderDissidents":
                     #region PlayerWorkerMurderDissidents
-                    if ( objectiveBuilding != null )
+                    if ( objectiveBuilding != null && !objectiveBuilding.GetIsDestroyed() )
                     {
                         objectiveBuilding.IsBlockedFromGettingMoreCitizens = true;
 
@@ -397,7 +486,7 @@ namespace Arcen.HotM.ExternalVis
                 case "PlayerWorkerRemoveDissidents":
                 case "PlayerWorkerInstallCyberocracy":
                     #region PlayerWorkerRemoveDissidents / PlayerWorkerInstallCyberocracy
-                    if ( objectiveBuilding != null )
+                    if ( objectiveBuilding != null && !objectiveBuilding.GetIsDestroyed() )
                     {
                         objectiveBuilding.IsBlockedFromGettingMoreCitizens = true;
 
@@ -439,7 +528,7 @@ namespace Arcen.HotM.ExternalVis
                 case "PlayerWorkerKidnapUpperClass":
                 case "PlayerWorkerKidnapLowerClass":
                     #region PlayerWorkerKidnapUpperClass / PlayerWorkerKidnapLowerClass
-                    if ( objectiveBuilding != null )
+                    if ( objectiveBuilding != null && !objectiveBuilding.GetIsDestroyed() )
                     {
                         bool isLowerClass = Handler.ID == "PlayerWorkerKidnapLowerClass";
 
@@ -506,7 +595,8 @@ namespace Arcen.HotM.ExternalVis
                     break;
                 case "ClearOutSlumBuilding":
                     #region ClearOutSlumBuilding
-                    if ( objectiveBuilding != null )
+                    if ( objectiveBuilding != null && !objectiveBuilding.GetIsDestroyed() && objectiveBuilding.GetMapItem() != null &&
+                        !objectiveBuilding.GetMapItem().IsInPoolAtAll )
                     {
                         //objectiveBuilding.IsBlockedFromGettingMoreCitizens = true;
 
@@ -532,8 +622,56 @@ namespace Arcen.HotM.ExternalVis
                     }
                     #endregion
                     break;
+                case "DemolishBank":
+                    #region DemolishBank
+                    if ( objectiveBuilding != null && !objectiveBuilding.GetIsDestroyed() && objectiveBuilding.GetMapItem() != null &&
+                        !objectiveBuilding.GetMapItem().IsInPoolAtAll )
+                    {
+                        //objectiveBuilding.IsBlockedFromGettingMoreCitizens = true;
+
+                        Vector3 epicenter = objectiveBuilding.GetMapItem().OBBCache.BottomCenter;
+                        int peopleInBuilding = objectiveBuilding.GetTotalResidentCount() + objectiveBuilding.GetTotalWorkerCount();
+
+                        objectiveBuilding.KillEveryoneHere();
+
+                        ParticleSoundRefs.SlumBuildingReplaced.DuringGame_PlayAtLocation( epicenter,
+                            new Vector3( 0, Engine_Universal.PermanentQualityRandom.Next( 0, 360 ), 0 ) );
+                        objectiveBuilding.GetMapItem().DropBurningEffect_Slow();
+                        objectiveBuilding.FullyDeleteBuilding();
+
+                        CityStatisticTable.AlterScore( "BanksDemolished", 1 );
+                        CityStatisticRefs.MurdersByWorkerAndroids.AlterScore_CityAndMeta( peopleInBuilding );
+                        
+                        //ArcenNotes.SendSimpleNoteToGameOnly( NoteInstructionTable.Instance.GetRowByID( "GainedResource" ),
+                        //    NoteStyle.BothGame, ResourceRefs.ShelteredHumans.ID, peopleInBuilding, 0, 0, 0 );
+
+                        ManagerRefs.Man_BankDemolishedReaction.HandleManualInvocationAtPoint( epicenter, Engine_Universal.PermanentQualityRandom, true );
+                    }
+                    #endregion
+                    break;
                 default:
                     ArcenDebugging.LogSingleLine( "HandleExtraNPCCompletedObjectiveConsequences: ExtraCode_Common was asked to handle '" + Handler.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
+                    break;
+            }
+        }
+
+        public void HandleExtraNPCDialogChoiceConsequences( ExtraCodeHandler Handler, ISimMachineActor YourMachineActor, ISimNPCUnit WithUnit,
+            MersenneTwister workingRand, bool IsFromAfterDebate, NPCDialog Dialog, NPCDialogChoice Choice )
+        {
+            if ( Handler == null || workingRand == null || Dialog == null || Choice == null )
+                return;
+
+            switch ( Handler.ID )
+            {
+                case "MurderedAtcaRetailPresident":
+                    #region HasBlackmailDealWithAtcaRetail
+                    {
+                        CityStatisticRefs.Murders.AlterScore_CityAndMeta( 1 );
+                    }
+                    #endregion
+                    break;
+                default:
+                    ArcenDebugging.LogSingleLine( "HandleExtraNPCDialogChoiceConsequences: ExtraCode_Common was asked to handle '" + Handler.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
                     break;
             }
         }
@@ -558,8 +696,38 @@ namespace Arcen.HotM.ExternalVis
                         structure.ScrapStructureNow( ScrapReason.Cheat, Engine_Universal.PermanentQualityRandom );
                     }
                     break;
+                case "BrainPalAneurysmsP2":
+                    #region BrainPalAneurysmsP2
+                    {
+                        TimelineGoal goal = TimelineGoalTable.Instance.GetRowByID( "CollapseACriminalSyndicate" );
+                        TimelineGoalHelper.HandleGoalPathCompletion( goal, "ExoticImporters" );
+
+                        NPCCohortTable.Instance.GetRowByID( "ExoticImporters" ).DuringGame_HasBeenDisbanded = true;
+                    }
+                    #endregion
+                    break;
+                case "AfterEconomicCollapseP2":
+                    #region BrainPalAneurysmsP2
+                    {
+                        {
+                            TimelineGoal goal = TimelineGoalTable.Instance.GetRowByID( "CollapseAFederatedCorporation" );
+                            TimelineGoalHelper.HandleGoalPathCompletion( goal, "AtcaRetail" );
+                        }
+                        {
+                            TimelineGoal goal = TimelineGoalTable.Instance.GetRowByID( "CauseACivilWar" );
+                            TimelineGoalHelper.HandleGoalPathCompletion( goal, "Billionaire" );
+                        }
+
+                        NPCCohortTable.Instance.GetRowByID( "AtcaRetail" ).DuringGame_HasBeenDisbanded = true;
+
+                        FlagRefs.Ch2_IsCivilWarOngoing.TripIfNeeded();
+
+                        ResourceRefs.Wealth.AlterCurrent_Named( 16000000000000000, string.Empty, ResourceAddRule.IgnoreUntilTurnChange );
+                    }
+                    #endregion
+                    break;
                 default:
-                    ArcenDebugging.LogSingleLine( "HandleExtraNPCDialogChoiceConsequences: ExtraCode_Common was asked to handle '" + Handler.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
+                    ArcenDebugging.LogSingleLine( "HandleExtraOtherKeyMessageOptionConsequences: ExtraCode_Common was asked to handle '" + Handler.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
                     break;
             }
         }

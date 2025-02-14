@@ -212,37 +212,54 @@ namespace Arcen.HotM.ExternalVis
 
                                         List<MachineStructure> structuresInRange = Structure.StructuresWithinEffectiveRangeOfThisMachineStructure.GetDisplayList();
 
-                                        int remainingBuildingHealing = maxTotalRepairsToBuildingsPerTurn;
+                                        int remainingBuildingsToHeal = maxTotalRepairsToBuildingsPerTurn;
                                         //first look at self
-                                        JobHelper.DoActorRepairsIfNeeded_FromPool( Structure, ref remainingBuildingHealing,
-                                            slurryRequiredPerHPRestored, "Expense_UsedForStructureRepairs" );
+                                        JobHelper.DoStructureRepairsIfNeeded_FromPool( Structure, ref remainingBuildingsToHeal,
+                                             slurryRequiredPerHPRestored, "Expense_UsedForStructureRepairs" );
 
                                         //then look for structures that are not functional
-                                        if ( remainingBuildingHealing > 0 )
+                                        if ( remainingBuildingsToHeal > 0 )
                                         {
                                             foreach ( MachineStructure otherStructure in structuresInRange.GetRandomStartEnumerable( RandOrNull ) )
                                             {
-                                                if ( otherStructure.IsFunctionalStructure )
-                                                    continue; //skip any that are functional for now
-                                                if ( otherStructure.IsUnderConstruction )
-                                                    continue; //don't do it for ones that are under construction
+                                                if ( otherStructure.Building == null )
+                                                    continue;
+                                                if ( otherStructure.Building.GetIsDestroyed() || otherStructure.IsBeingRebuilt )
+                                                {
+
+                                                }
+                                                else
+                                                {
+                                                    if ( otherStructure.IsFunctionalStructure )
+                                                        continue; //skip any that are functional for now
+                                                    if ( otherStructure.IsUnderConstruction )
+                                                        continue; //don't do it for ones that are under construction
+                                                }
                                                 if ( otherStructure.IsBlockedFromAutomatedRebuildingUntilAnotherTurn )
                                                     continue; //skip any that are blocked from automated rebuilding for now
                                                 if ( otherStructure == Structure )
                                                     continue; //don't do self multiple times
 
-                                                JobHelper.DoActorRepairsIfNeeded_FromPool( otherStructure, ref remainingBuildingHealing,
+                                                if ( otherStructure.Building.GetIsDestroyed() && !otherStructure.IsBeingRebuilt )
+                                                {
+                                                    otherStructure.Building.SetStatus( CommonRefs.UnderConstructionBuildingStatus );
+                                                    otherStructure.IsFullDead = false;
+                                                    otherStructure.GetActorDataData( ActorRefs.ActorHP, true )?.SetCurrentSilently_BeVeryCarefulWithThis( 1 );
+                                                    otherStructure.IsBeingRebuilt = true;
+                                                }
+
+                                                JobHelper.DoStructureRepairsIfNeeded_FromPool( otherStructure, ref remainingBuildingsToHeal,
                                                     slurryRequiredPerHPRestored, "Expense_UsedForStructureRepairs" );
 
                                                 JobHelper.HandleStructureAfterRepair( otherStructure );
 
-                                                if ( remainingBuildingHealing <= 0 )
+                                                if ( remainingBuildingsToHeal <= 0 )
                                                     break;
                                             }
                                         }
 
                                         //then look for structures that are functional
-                                        if ( remainingBuildingHealing > 0 )
+                                        if ( remainingBuildingsToHeal > 0 )
                                         {
                                             foreach ( MachineStructure otherStructure in structuresInRange.GetRandomStartEnumerable( RandOrNull ) )
                                             {
@@ -255,15 +272,15 @@ namespace Arcen.HotM.ExternalVis
                                                 if ( otherStructure == Structure )
                                                     continue; //don't do self multiple times
 
-                                                JobHelper.DoActorRepairsIfNeeded_FromPool( otherStructure, ref remainingBuildingHealing,
+                                                JobHelper.DoStructureRepairsIfNeeded_FromPool( otherStructure, ref remainingBuildingsToHeal,
                                                     slurryRequiredPerHPRestored, "Expense_UsedForStructureRepairs" );
 
-                                                if ( remainingBuildingHealing <= 0 )
+                                                if ( remainingBuildingsToHeal <= 0 )
                                                     break;
                                             }
                                         }
 
-                                        int totalStructureHealingDone = maxTotalRepairsToBuildingsPerTurn - remainingBuildingHealing;
+                                        int totalStructureHealingDone = maxTotalRepairsToBuildingsPerTurn - remainingBuildingsToHeal;
 
                                         if ( totalStructureHealingDone > 0 )
                                         {
@@ -656,7 +673,7 @@ namespace Arcen.HotM.ExternalVis
                                 break;
                         }
                         return JobHelper.HandleRoutineJobInputOutput( Structure, Job, Logic ); //this is the same from JobsRoutineFlow
-                    #endregion
+                        #endregion
                     case "Codebreaker":
                         #region Codebreaker
                         {
@@ -813,6 +830,17 @@ namespace Arcen.HotM.ExternalVis
                             return JobResult.Indeterminate;
                         }
                     #endregion
+                    case "DailyNecessitiesFactory":
+                        #region DailyNecessitiesFactory
+                        {
+                            JobResult result = JobHelper.HandleRoutineJobInputOutput( Structure, Job, Logic ); //this is the same from JobsRoutineFlow
+                            if ( Logic == JobLogic.ExecuteLogic && result == JobResult.Success )
+                            {
+                                AchievementRefs.ApplePieFromScratch.TripIfNeeded();
+                            }
+                            return result;
+                        }
+                        #endregion
                     default:
                         if ( Logic == JobLogic.PerQuarterSecondAggregation )
                             return JobResult.Indeterminate;

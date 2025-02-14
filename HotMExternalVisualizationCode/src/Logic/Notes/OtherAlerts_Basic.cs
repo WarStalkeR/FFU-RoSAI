@@ -262,6 +262,51 @@ namespace Arcen.HotM.ExternalVis
                         }
                         #endregion
                         break;
+                    case "UnitsWithoutResourcesToAttack":
+                        #region UnitsWithoutResourcesToAttack
+                        {
+                            switch ( Logic )
+                            {
+                                case OtherChecklistAlertLogic.DoPerQuarterSecond:
+                                    if ( FlagRefs.IsChapterOneTutorialDone.DuringGameplay_IsTripped )
+                                        Alert.DuringGameplay_ShouldBeVisibleNow = SimCommon.PlayerUnitsShortResourceCostsToAttacks.Count > 0;
+                                    else
+                                        Alert.DuringGameplay_ShouldBeVisibleNow = false;
+                                    break;
+                                case OtherChecklistAlertLogic.OnClicked_Left:
+                                case OtherChecklistAlertLogic.OnClicked_Right:
+                                    SimCommon.TrySelectNextActorShortResourceCostsToAttack();
+                                    break;
+                                case OtherChecklistAlertLogic.WriteBriefText:
+                                    BufferOrNull.AddRaw( SimCommon.PlayerUnitsShortResourceCostsToAttacks.Count.ToString() ).Position20();
+                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    break;
+                                case OtherChecklistAlertLogic.WriteTooltip:
+                                    {
+                                        if ( novel.TryStartSmallerTooltip( TooltipID.Create( Alert ), MustBeAboveOrBelow, Clamp, TooltipNovelWidth.Simple, TooltipExtraText.None, ExtraRules ) )
+                                        {
+                                            Alert.HandleTooltip_Format1( novel, SimCommon.PlayerUnitsShortResourceCostsToAttacks.Count );
+
+                                            novel.Main.StartStyleLineHeightA();
+                                            int itemCount = 0;
+                                            foreach ( ISimMapActor actor in SimCommon.PlayerUnitsShortResourceCostsToAttacks.GetDisplayList() )
+                                            {
+                                                novel.Main.AddRaw( actor.GetDisplayName(), ColorTheme.RedOrange2 ).Line();
+                                                itemCount++;
+
+                                                if ( itemCount >= 10 )
+                                                    break;
+                                            }
+                                            novel.Main.EndLineHeight();
+
+                                            novel.Main.AddLeftClickFormat( "LeftClickToCycleThroughUnits_RelatedToNotice", ColorTheme.SoftGold ).Line();
+                                        }
+                                    }
+                                    break;
+                            }
+                        }
+                        #endregion
+                        break;
                     case "DeepObsession":
                         #region DeepObsession
                         {
@@ -351,6 +396,41 @@ namespace Arcen.HotM.ExternalVis
                                                     novel.Main.AddBoldRawAndAfterLineItemHeader( resource.GetDisplayName(), ColorTheme.DataLabelWhite )
                                                         .AddSpriteStyled_NoIndent( resource.Icon, AdjustedSpriteStyle.InlineLarger1_2, resource.IconColorHex )
                                                         .AddRaw( resource.ExcessOverage.ToStringThousandsWhole(), IconRefs.ResourceExcess.DefaultColorTextHex ).Line();
+                                            }
+                                        }
+                                    }
+                                    break;
+                            }
+                        }
+                        #endregion
+                        break;
+                    case "ProjectsCausingAttacks":
+                        #region ProjectsCausingAttacks
+                        {
+                            switch ( Logic )
+                            {
+                                case OtherChecklistAlertLogic.DoPerQuarterSecond:
+                                    Alert.DuringGameplay_ShouldBeVisibleNow = SimCommon.ActiveProjectsThatCauseAttacks.Count > 0;
+                                    break;
+                                case OtherChecklistAlertLogic.OnClicked_Left:
+                                case OtherChecklistAlertLogic.OnClicked_Right:
+                                    if ( !Window_PlayerResources.Instance.IsOpen )
+                                        Window_PlayerResources.Instance.Open();
+                                    Window_PlayerResources.customParent.currentlyRequestedDisplayType = Window_PlayerResources.ResourcesDisplayType.ResourceStorage;
+                                    break;
+                                case OtherChecklistAlertLogic.WriteBriefText:
+                                    BufferOrNull.AddRaw( SimCommon.ActiveProjectsThatCauseAttacks.Count.ToString() ).Position20();
+                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    break;
+                                case OtherChecklistAlertLogic.WriteTooltip:
+                                    {
+                                        if ( novel.TryStartSmallerTooltip( TooltipID.Create( Alert ), MustBeAboveOrBelow, Clamp, TooltipNovelWidth.Simple, TooltipExtraText.None, ExtraRules ) )
+                                        {
+                                            Alert.HandleTooltip_Format2( novel, SimCommon.ActiveProjectsThatCauseAttacks.Count, SimCommon.ActiveProjectsThatCauseAttacks.Count );
+
+                                            foreach ( MachineProject project in SimCommon.ActiveProjectsThatCauseAttacks.GetDisplayList() )
+                                            {
+                                                novel.Main.AddRaw( project.GetDisplayName(), ColorTheme.DataBlue ).Line();
                                             }
                                         }
                                     }

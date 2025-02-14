@@ -516,7 +516,7 @@ namespace Arcen.HotM.External
             NPCCohort districtGroup = cell?.ParentTile?.District?.ControlledBy;
             if ( districtGroup != null )
                 return districtGroup;
-            return CommonRefs.MegaCorpEnforcement;
+            return CohortRefs.MegaCorpEnforcement;
         }
         #endregion
 

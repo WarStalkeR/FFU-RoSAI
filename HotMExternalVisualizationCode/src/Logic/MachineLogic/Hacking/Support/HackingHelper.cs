@@ -1475,12 +1475,15 @@ namespace Arcen.HotM.ExternalVis.Hacking
             //    " to " + targetPoint.ArrayX + "," + targetPoint.ArrayY, Verbosity.DoNotShow );
 
             h.hCell currentCell = startingPoint;
+            h.hCell priorCell = startingPoint;
             for ( int i = 0; i < DistToMove; i++ )
             {
                 int diffX = MathA.Abs( targetPoint.ArrayX - currentCell.ArrayX );
                 int diffY = MathA.Abs( targetPoint.ArrayY - currentCell.ArrayY );
                 if ( diffX == 0 && diffY == 0 )
                     return currentCell; //we made it!
+
+                priorCell = currentCell;
 
                 //ArcenDebugging.LogSingleLine( "i: " + i + " " + currentCell.ArrayX + "," + currentCell.ArrayY +
                 //    " diffs: " + diffX + "," + diffY, Verbosity.DoNotShow );
@@ -1513,6 +1516,9 @@ namespace Arcen.HotM.ExternalVis.Hacking
                         //ArcenDebugging.LogSingleLine( "moveSouth: " + " " + (currentCell?.ArrayX ?? -3) + "," + (currentCell?.ArrayY ?? -3), Verbosity.DoNotShow );
                     }
                 }
+
+                if ( currentCell == null )
+                    return priorCell;
             }
 
             return currentCell;

@@ -177,10 +177,15 @@ namespace Arcen.HotM.ExternalVis
                     {
                         if ( actor is ISimMachineUnit mUnit )
                         {
-                            if ( mUnit.UnitType.IsConsideredMech )
-                                Buffer.AddLang( "StandardMech" );
+                            if ( mUnit.UnitType?.PrimaryArchetypeCollection != null )
+                                Buffer.AddRaw( mUnit.UnitType?.PrimaryArchetypeCollection?.GetDisplayName()??string.Empty );
                             else
-                                Buffer.AddLang( "StandardAndroid" );
+                            {
+                                if ( mUnit.UnitType.IsConsideredMech )
+                                    Buffer.AddLang( "StandardMech" );
+                                else
+                                    Buffer.AddLang( "StandardAndroid" );
+                            }
                         }
                         else if ( actor is ISimMachineVehicle mVehicle )
                             Buffer.AddLang( "StandardVehicle" );

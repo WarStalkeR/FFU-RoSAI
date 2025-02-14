@@ -74,7 +74,7 @@ namespace Arcen.HotM.ExternalVis
                     float groundLevel = Engine_HotM.GameModeData.GroundLineDrawLevel;
                     Vector3 groundCenter = center.ReplaceY( groundLevel );
 
-                    if ( !isBlockedFromActing && !TooltipRefs.AtMouseBasicNovel.GetWasAlreadyDrawnThisFrame() && Unit.IsInAbilityTypeTargetingMode == null && !AlreadyDidHandling )
+                    if ( !isBlockedFromActing && !TooltipRefs.AtMouseBasicNovel.GetWasAlreadyDrawnThisFrame() && !AlreadyDidHandling )
                     {
                         //if our cursor is over a structure...
                         //and if the structure is under construction, digging basement, installing a job, or damaged...
@@ -89,8 +89,11 @@ namespace Arcen.HotM.ExternalVis
                             MoveHelper.UnpackActionFromBuildingForActor( Unit, structureUnderCursor.Building, false, ref importantAction, ref importantEvent, ref importantProjectItem, ref importantActionOptionalID );
 
                             if ( importantAction == null )
+                            {
+                                AlreadyDidHandling = true;
                                 HandleAttemptToAssistTargetStructure( Unit, structureUnderCursor, center, groundCenter,
                                     moveRange, attackRange, groundLevel );
+                            }
                         }
                     }
 
@@ -1206,8 +1209,10 @@ namespace Arcen.HotM.ExternalVis
                 bool wouldMoveInClose = false;
                 bool wouldBeAttack = !actorUnderCursor.GetIsAnAllyFromThePlayerPerspective();
                 bool wouldBeDialog = false;
+                bool wouldBeRescue = false;
                 bool canDoAction = true;
                 bool canAfford = true;
+                bool isBlockedByUnlock = false;
                 int apCost = wouldBeAttack ? Unit.UnitType.APCostPerAttack : 1;
 
                 bool canTargetNoncombatants = Unit.IsInAbilityTypeTargetingMode?.AllowsTargetingNoncombatants ?? false;
@@ -1223,6 +1228,39 @@ namespace Arcen.HotM.ExternalVis
                             wouldBeAttack = false;
                             wouldBeDialog = true;
                             wouldMoveInClose = true;
+
+                            if ( !npcUnit.IsManagedUnit.DialogCanBeDoneByShellCompanyUnits && Unit.UnitType.IsTiedToShellCompany )
+                            {
+                                canDoAction = false;
+                                isBlockedByUnlock = true;
+                            }
+
+                            if ( !npcUnit.IsManagedUnit.DialogCanBeDoneByPMCImpostor && Unit.UnitType.IsPMCImpostor )
+                            {
+                                canDoAction = false;
+                                isBlockedByUnlock = true;
+                            }
+
+                            if ( !npcUnit.IsManagedUnit.DialogCanBeDoneByRegularUnits && !Unit.UnitType.IsPMCImpostor && !Unit.UnitType.IsTiedToShellCompany )
+                            {
+                                canDoAction = false;
+                                isBlockedByUnlock = true;
+                            }
+                        }
+
+                        if ( !wouldBeDialog )
+                        {
+                            if ( npcUnit.UnitType.RescuedBecomes != null )
+                            {
+                                wouldBeRescue = true;
+                                wouldMoveInClose = true;
+
+                                if ( npcUnit.UnitType.UnlockRequiredForRescue != null && !npcUnit.UnitType.UnlockRequiredForRescue.DuringGameplay_IsInvented )
+                                {
+                                    canDoAction = false;
+                                    isBlockedByUnlock = true;
+                                }
+                            }
                         }
                     }
                 }
@@ -1316,7 +1354,8 @@ namespace Arcen.HotM.ExternalVis
                 else
                 {
                     canAfford = Unit.CurrentActionPoints >= apCost; //Do we have that much?
-                    canDoAction = true;//say we can do it no matter what
+                    if ( !isBlockedByUnlock )
+                        canDoAction = true;//say we can do it no matter what, unless blocked by an unlock
                 }
 
                 ISimUnit unitUnderCursor = actorUnderCursor as ISimUnit;
@@ -1521,15 +1560,74 @@ namespace Arcen.HotM.ExternalVis
                         }
                         else if ( wouldBeDialog )
                         {
+                            if ( !npcUnit.IsManagedUnit.DialogCanBeDoneByShellCompanyUnits && Unit.UnitType.IsTiedToShellCompany )
+                            {
+                                if ( novel.TryStartSmallerTooltip( TooltipID.Create( npcUnit ), null, SideClamp.Any, TooltipNovelWidth.Smaller ) )
+                                {
+                                    novel.Icon = IconRefs.Mouse_OutOfRange.Icon;
+                                    novel.ShouldTooltipBeRed = true;
+
+                                    novel.TitleUpperLeft.AddLang( "WrongKindOfUnitToTalk" );
+                                    novel.Main.AddLang( "WrongKindOfUnitToTalk_Shell_StrategyTip" );
+                                }
+                            }
+                            else if ( !npcUnit.IsManagedUnit.DialogCanBeDoneByPMCImpostor && Unit.UnitType.IsPMCImpostor )
+                            {
+                                if ( novel.TryStartSmallerTooltip( TooltipID.Create( npcUnit ), null, SideClamp.Any, TooltipNovelWidth.Smaller ) )
+                                {
+                                    novel.Icon = IconRefs.Mouse_OutOfRange.Icon;
+                                    novel.ShouldTooltipBeRed = true;
+
+                                    novel.TitleUpperLeft.AddLang( "WrongKindOfUnitToTalk" );
+                                    novel.Main.AddLang( "WrongKindOfUnitToTalk_PMC_StrategyTip" );
+                                }
+                            }
+                            else if ( !npcUnit.IsManagedUnit.DialogCanBeDoneByRegularUnits && !Unit.UnitType.IsPMCImpostor && !Unit.UnitType.IsTiedToShellCompany )
+                            {
+                                if ( novel.TryStartSmallerTooltip( TooltipID.Create( npcUnit ), null, SideClamp.Any, TooltipNovelWidth.Smaller ) )
+                                {
+                                    novel.Icon = IconRefs.Mouse_OutOfRange.Icon;
+                                    novel.ShouldTooltipBeRed = true;
+
+                                    novel.TitleUpperLeft.AddLang( "WrongKindOfUnitToTalk" );
+                                    if ( npcUnit.IsManagedUnit.DialogCanBeDoneByPMCImpostor )
+                                        novel.Main.AddLang( "WrongKindOfUnitToTalk_MustBePMC_StrategyTip" );
+                                    else if ( npcUnit.IsManagedUnit.DialogCanBeDoneByShellCompanyUnits )
+                                        novel.Main.AddLang( "WrongKindOfUnitToTalk_MustBeShell_StrategyTip" );
+                                    else
+                                        novel.Main.AddLang( "WrongKindOfUnitToTalk_Other_StrategyTip" );
+                                }
+                            }
+                            else
+                            {
+                                if ( novel.TryStartSmallerTooltip( TooltipID.Create( Unit ), null, SideClamp.Any, TooltipNovelWidth.Simple ) )
+                                {
+                                    novel.ShouldTooltipBeRed = true;
+                                    novel.Icon = IconRefs.Mouse_Invalid.Icon;
+                                    novel.TitleUpperLeft.AddLangAndAfterLineItemHeader( "CannotSpeakWithTarget" ).AddRaw( actorUnderCursor.GetDisplayName() );
+                                    novel.CanExpand = CanExpandType.Brief;
+
+                                    if ( InputCaching.ShouldShowDetailedTooltips )
+                                        novel.Main.AddLang( "CannotSpeakWithTarget_StrategyTip" ).Line();
+                                }
+                            }
+                        }
+                        else if ( wouldBeRescue )
+                        {
                             if ( novel.TryStartSmallerTooltip( TooltipID.Create( Unit ), null, SideClamp.Any, TooltipNovelWidth.Simple ) )
                             {
                                 novel.ShouldTooltipBeRed = true;
                                 novel.Icon = IconRefs.Mouse_Invalid.Icon;
-                                novel.TitleUpperLeft.AddLangAndAfterLineItemHeader( "CannotSpeakWithTarget" ).AddRaw( actorUnderCursor.GetDisplayName() );
+                                novel.TitleUpperLeft.AddLangAndAfterLineItemHeader( "CannotRescueTarget" ).AddRaw( actorUnderCursor.GetDisplayName() );
                                 novel.CanExpand = CanExpandType.Brief;
 
-                                if ( InputCaching.ShouldShowDetailedTooltips )
-                                    novel.Main.AddLang( "CannotSpeakWithTarget_StrategyTip" ).Line();
+                                if ( npcUnit.UnitType.UnlockRequiredForRescue != null && !npcUnit.UnitType.UnlockRequiredForRescue.DuringGameplay_IsInvented )
+                                    novel.Main.AddLang( "CannotRescueTarget_DoNotKnowHow_StrategyTip" ).Line();
+                                else
+                                {
+                                    if ( InputCaching.ShouldShowDetailedTooltips )
+                                        novel.Main.AddLang( "CannotRescueTarget_MentalEnergy_StrategyTip" ).Line();
+                                }
                             }
                         }
                         else
@@ -1652,6 +1750,38 @@ namespace Arcen.HotM.ExternalVis
                                 }
                             }
                         }
+                        else if ( wouldBeRescue )
+                        {
+                            if ( novel.TryStartSmallerTooltip( TooltipID.Create( Unit ), null, SideClamp.Any,
+                                InputCaching.ShouldShowDetailedTooltips ? TooltipNovelWidth.Simple : TooltipNovelWidth.SizeToText ) )
+                            {
+                                novel.Icon = npcUnit.UnitType.ShapeIcon;
+                                novel.TitleUpperLeft.AddLangAndAfterLineItemHeader( "RescuePrefix" ).AddRaw( npcUnit.GetDisplayName() );
+
+                                if ( isSprinting || !canAfford )
+                                {
+                                    string energyHex = canAffordExtraEnergy && canAfford ? string.Empty : ColorTheme.RedOrange2;
+
+                                    if ( !canAffordExtraEnergy || !canAfford )
+                                        novel.ShouldTooltipBeRed = true;
+
+                                    novel.TitleUpperLeft.RemoveLastCharacterIfNewline();
+                                    novel.TitleUpperLeft.Space2x()
+                                        .AddSpriteStyled_NoIndent( ResourceRefs.MentalEnergy.Icon, AdjustedSpriteStyle.InlineLarger1_2, ResourceRefs.MentalEnergy.IconColorHex )
+                                        .AddRaw( (extraEnergyCostFromMovingFar + 1).ToStringThousandsWhole(), energyHex );
+
+                                    if ( InputCaching.ShouldShowDetailedTooltips || !canAfford )
+                                    {
+                                        novel.Main.AddLangAndAfterLineItemHeader( "Move_TotalMentalEnergyCost", ResourceRefs.MentalEnergy.IconColorHex )
+                                            .AddSpriteStyled_NoIndent( ResourceRefs.MentalEnergy.Icon, AdjustedSpriteStyle.InlineLarger1_2, ResourceRefs.MentalEnergy.IconColorHex );
+                                        novel.Main.AddRaw( (extraEnergyCostFromMovingFar + 1).ToStringThousandsWhole(), energyHex ).Line();
+
+                                        if ( isSprinting && InputCaching.ShouldShowDetailedTooltips )
+                                            novel.Main.AddBoldLangAndAfterLineItemHeader( "Move_Sprinting", ColorTheme.DataLabelWhite ).AddLang( "Move_Sprinting_Details" );
+                                    }
+                                }
+                            }
+                        }
                         else
                         {      
                             //this is some sort of nothing case at this point
@@ -1727,6 +1857,8 @@ namespace Arcen.HotM.ExternalVis
                     }
                     else if ( wouldBeDialog )
                         CursorHelper.RenderSpecificMouseCursorAtSpot( true, IconRefs.DialogActionIcon, targetUnitLocation );
+                    else if ( wouldBeRescue )
+                        CursorHelper.RenderSpecificMouseCursorAtSpot( true, IconRefs.MouseMoveMode_ProvideHelp, targetUnitLocation );
                     else
                         CursorHelper.RenderSpecificMouseCursorAtSpot( true, IconRefs.MouseMoveMode_ProvideHelp, targetUnitLocation );
                 }
@@ -1841,6 +1973,32 @@ namespace Arcen.HotM.ExternalVis
                                             SimCommon.RewardProvider = NPCDialogChoiceHandler.Start( Unit, npcUnit.IsManagedUnit.DialogToShow, npcUnit, true );
                                             SimCommon.OpenWindowRequest = OpenWindowRequest.Reward;
                                             ParticleSoundRefs.Dialog.DuringGame_PlayAtLocation( Unit.GetDrawLocation(), Unit.GetDrawRotation().eulerAngles );
+                                        } );
+                                        Unit.SetDesiredContainerLocation( targetLocation );
+                                    }
+                                }
+                            }
+                            else if ( wouldBeRescue ) //rescue!
+                            {
+                                if ( wouldMoveInClose && targetLocation != null && npcUnit != null )
+                                {
+                                    NPCUnitType unitType = npcUnit?.UnitType;
+                                    if ( unitType != null )
+                                    {
+                                        //move in
+                                        Unit.ApplyVisibilityFromAction( ActionVisibility.IsMovement );
+                                        Unit.UnitType.OnMoveStart.DuringGame_PlayAtLocation( center ); //consider rotation here
+                                        Unit.AlterCurrentActionPoints( -apCost );
+                                        ResourceRefs.MentalEnergy.AlterCurrent_Named( -1, "Expense_UnitActions", ResourceAddRule.IgnoreUntilTurnChange );
+                                        if ( extraEnergyCostFromMovingFar > 0 )
+                                            ResourceRefs.MentalEnergy.AlterCurrent_Named( -extraEnergyCostFromMovingFar, "Expense_UnitSprinting", ResourceAddRule.IgnoreUntilTurnChange );
+                                        Unit.SetMeleeCallbackForAfterMovementEnds( delegate //this will be called-back on the main thread
+                                        {
+                                            int squadSize = MathA.Max( 1, npcUnit.CurrentSquadSize );
+                                            unitType.RescuedBecomes?.AlterCurrent_Named( squadSize, "Increase_RescuedByAndroid", ResourceAddRule.StoreExcess );
+                                            unitType.RescuedStatistic1?.AlterScore_CityAndMeta( squadSize );
+                                            unitType.RescuedStatistic2?.AlterScore_CityAndMeta( squadSize );
+                                            npcUnit.DisbandNPCUnit( NPCDisbandReason.WantedToLeave );
                                         } );
                                         Unit.SetDesiredContainerLocation( targetLocation );
                                     }

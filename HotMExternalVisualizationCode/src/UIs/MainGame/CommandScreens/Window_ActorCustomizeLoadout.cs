@@ -1448,10 +1448,15 @@ namespace Arcen.HotM.ExternalVis
                 {
                     if ( actorDGD.ParentUnitTypeOrNull != null )
                     {
-                        if ( actorDGD.ParentUnitTypeOrNull.IsConsideredMech )
-                            Buffer.AddLang( "StandardMech" );
+                        if ( actorDGD.ParentUnitTypeOrNull.PrimaryArchetypeCollection != null )
+                            Buffer.AddRaw( actorDGD.ParentUnitTypeOrNull.PrimaryArchetypeCollection.GetDisplayName() );
                         else
-                            Buffer.AddLang( "StandardAndroid" );
+                        {
+                            if ( actorDGD.ParentUnitTypeOrNull.IsConsideredMech )
+                                Buffer.AddLang( "StandardMech" );
+                            else
+                                Buffer.AddLang( "StandardAndroid" );
+                        }
                     }
                     else if ( actorDGD.ParentVehicleTypeOrNull != null)
                         Buffer.AddLang( "StandardVehicle" );

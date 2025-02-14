@@ -1661,6 +1661,14 @@ namespace Arcen.HotM.External
                 if ( this.UnitType.ConvertsToIfCityFlagTrue3 != null && (this.UnitType.CityFlagThatCausesConversion3?.DuringGameplay_IsTripped ?? false) )
                     convertsTo = this.UnitType.ConvertsToIfCityFlagTrue3;
             }
+            else
+            {
+                //this IS player controlled
+                if ( this.HomePOI != null )
+                    this.HomePOI = null;
+                if ( this.HomeDistrict != null )
+                    this.HomeDistrict = null;
+            }
 
             //do not do this for player units
             if ( convertsTo != null )
@@ -3290,7 +3298,7 @@ namespace Arcen.HotM.External
                 }
 
                 this.Stance = CommonRefs.Player_DeterAndDefend;
-                this.FromCohort = CommonRefs.ConvertedTroops;
+                this.FromCohort = CohortRefs.ConvertedTroops;
                 this.IsManagedUnit = null;
                 this.IsCityConflictUnit = null;
                 this.ManagerStartLocation = new WrapperedSimBuilding();
@@ -3314,7 +3322,7 @@ namespace Arcen.HotM.External
                 }
 
                 this.Stance = CommonRefs.Player_DeterAndDefend;
-                this.FromCohort = CommonRefs.ConvertedTroops;
+                this.FromCohort = CohortRefs.ConvertedTroops;
                 this.IsManagedUnit = null;
                 this.IsCityConflictUnit = null;
                 this.ManagerStartLocation = new WrapperedSimBuilding();
@@ -4601,7 +4609,7 @@ namespace Arcen.HotM.External
             if ( otherCohort.IsInwardLookingMegacorpAlly && myCohort.IsInwardLookingMegacorpAlly )
                 return false; //we serve the masters...
 
-            if ( !this.GetWillFireOnMachineUnitsBaseline() && !this.GetWillFireOnMachineUnitsBaseline() )
+            if ( !this.GetWillFireOnMachineUnitsBaseline() && !OtherUnit.GetWillFireOnMachineUnitsBaseline() )
                 return false; //hey, we are both on cohort "do not shoot at machines!"  So we will not shoot at each other, either
 
             if ( otherManaged?.IsBlockedFromAnyKilling??false )

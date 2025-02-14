@@ -608,7 +608,7 @@ namespace Arcen.HotM.ExternalVis
 
                             TheoreticalDeployedNPCUnit theoreticalNPC;
                             theoreticalNPC.UnitType = npcType;
-                            theoreticalNPC.Cohort = CommonRefs.YourTroops;
+                            theoreticalNPC.Cohort = CohortRefs.YourTroops;
                             theoreticalNPC.Stance = CommonRefs.Player_DeterAndDefend;
                             theoreticalNPC.Location = destinationPoint;
 
@@ -722,7 +722,7 @@ namespace Arcen.HotM.ExternalVis
                             {
                                 //no need to do any attacks of opportunity, as the unit is getting out of a craft!
 
-                                ISimNPCUnit newBulk = World.Forces.CreateNewNPCUnitAtExactSpotOrBuildingForPlayer( npcType, CommonRefs.YourTroops, CommonRefs.Player_DeterAndDefend, 1f, rotationY,
+                                ISimNPCUnit newBulk = World.Forces.CreateNewNPCUnitAtExactSpotOrBuildingForPlayer( npcType, CohortRefs.YourTroops, CommonRefs.Player_DeterAndDefend, 1f, rotationY,
                                     isToBuilding, destinationPoint, Engine_Universal.PermanentQualityRandom, "PlayerDeployment" );
                                 if ( newBulk != null )
                                 {

@@ -123,6 +123,22 @@ namespace Arcen.HotM.ExternalVis
                     }
                     #endregion
                     break;
+                case "Main_CurrentlyBuildable":
+                    #region Main_CurrentlyBuildable
+                    {
+                        AddAllFrom_Main_BuildableOnly( Category, JobCollectionRefs.All );
+
+                        if ( SimCommon.VisibleTerritoryControlInvestigations.Count > 0 )
+                        {
+                            foreach ( Investigation investigation in SimCommon.VisibleTerritoryControlInvestigations )
+                            {
+                                if ( investigation?.Type != null )
+                                    Category.DuringGame_VisibleInvestigations.AddToConstructionList( investigation );
+                            }
+                        }
+                    }
+                    #endregion
+                    break;
                 case "Main_All":
                     #region Main_All
                     {
@@ -232,6 +248,23 @@ namespace Arcen.HotM.ExternalVis
                     continue;
 
                 if ( job.Type.DuringGame_IsUnlocked() && job.Type.DuringGame_NumberFunctional.Display == 0 && job.Type.DuringGame_NumberInstalling.Display == 0 && job.Type.DuringGame_NumberBroken.Display == 0 )
+                    Category.DuringGame_VisibleMainJobs.AddToConstructionList( job.Type );
+            }
+        }
+        #endregion
+
+        #region AddAllFrom_Main_BuildableOnly
+        private void AddAllFrom_Main_BuildableOnly( MachineBuildModeCategory Category, MachineJobCollection Collection )
+        {
+            if ( SimCommon.TheNetwork == null )
+                return; //no jobs if the network is not yet in there
+
+            foreach ( SortedMachineJob job in Collection.JobList )
+            {
+                if ( job.Type.RequiredStructureType.IsBuiltInZodiac )
+                    continue;
+
+                if ( job.Type.DuringGame_IsUnlocked() && job.Type.GetCanAffordAnother( true, null ) )
                     Category.DuringGame_VisibleMainJobs.AddToConstructionList( job.Type );
             }
         }
