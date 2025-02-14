@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<stance id="PlayerWorkerClearOutSlums_LargeBuildings"
+		is_partial_record="true">
+		<action_consideration id="ClearOutSlumBuilding"
+			sort_order="100" chance_of_attempting="100"
+			target_building_tag="SlumDroneTarget"
+			is_partial_record="true"/>
+	</stance>
+
+	<stance id="PlayerWorkerClearOutSlums_AllBuildings"
+		is_partial_record="true">
+		<action_consideration id="ClearOutSlumBuilding"
+			sort_order="100" chance_of_attempting="100"
+			target_building_tag="SlumDroneTarget"
+			is_partial_record="true"/>
+	</stance>
+
+</root>

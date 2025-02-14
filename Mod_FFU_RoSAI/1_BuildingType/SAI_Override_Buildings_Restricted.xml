@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_type id="AirportControlTower" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport,SupplyChainTarget">
+		</variant>
+	</building_type>
+
+	<building_type id="AirportHangar" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport,AirportHangar,AirportHangarNonSyndicate,IndependentBlackMarketMeetSite,PMCFightBuilding,AnimalHidingValid,AnimalLargeHidingValid">
+		</variant>
+		<variant id="Criminal" is_partial_record="true" weight="50"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport,SyndicateStorage,SyndicateBuilding,AirportHangar,SyndicateDeliveryTarget,AnimalHidingValid,AnimalLargeHidingValid">
+		</variant>
+		<variant id="Infested" is_partial_record="true" weight="10"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,InfestedHangar,Airport,AirportHangar,AirportHangarNonSyndicate,IndependentBlackMarketMeetSite,PMCFightBuilding,AnimalHidingValid,AnimalLargeHidingValid">
+		</variant>
+	</building_type>
+
+	<building_type id="AirportTerminal" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport,SupplyChainTarget,AirportPrime,IndependentBlackMarketMeetSite">
+		</variant>
+	</building_type>
+
+	<building_type id="AirportJetway" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport">
+		</variant>
+		<variant id="Infested" is_partial_record="true" weight="5"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport,InfestedJetway">
+		</variant>
+	</building_type>
+
+	<building_type id="AirportHeliport" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport,SupplyChainTarget">
+		</variant>
+	</building_type>
+
+	<building_type id="AirportBuilding" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport">
+		</variant>
+	</building_type>
+
+	<building_type id="DataCenter" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Communications,CityFeedAccess,DataCenter,ScienceIndustrial,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		</variant>
+		<variant id="2" is_partial_record="true" weight="10"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Communications,CityFeedAccess,DataCenter,ScienceIndustrial,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		</variant>
+	</building_type>
+	
+	<building_type id="RadioTower" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Communications,CityFeedAccess,CanHaveSecretCompartment">
+		</variant>
+	</building_type>
+
+	<building_type id="SatelliteCommunications" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Scientific,Communications,Space,CityFeedAccess,CanHaveSecretCompartment">
+		</variant>
+	</building_type>
+
+	<building_type id="ScientificRadioTelescope" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Scientific,ScientificResearch">
+		</variant>
+	</building_type>
+
+	<building_type id="DeepSpaceCommunications" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Scientific,Communications,Space,Military">
+		</variant>
+	</building_type>
+
+	<building_type id="Radome" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Communications,Military">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmBarn" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,FarmMainBuildings,FarmAnimals,Food,FarmPrimaryBuilding,FarmBarn,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
+		</variant>
+	</building_type>
+
+	<building_type id="Farmhouse" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,Housing,BasicCommon,MiddleClassCommon,FarmPrimaryBuilding,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmGranary" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,FarmMainBuildings,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">			
+		</variant>
+	</building_type>
+
+	<building_type id="FarmGreenhouse" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,DemolishTarget">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmLeanTo" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,DemolishTarget">
+		</variant>	
+	</building_type>
+
+	<building_type id="FarmSilo" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,FarmMainBuildings,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">			
+		</variant>
+	</building_type>
+
+	<building_type id="FarmWarehouse" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,FarmMainBuildings,Warehouse,PossibleRebelMeetingSpot,FarmPrimaryBuilding,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid">			
+		</variant>
+	</building_type>
+
+	<building_type id="FarmWaterTower" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Liquids,Water,DemolishTarget">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmWindmill" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,DemolishTarget">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmTomatoes" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,Food,FarmFieldGreens">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmBeans" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,Food,FarmFieldGreens">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmCabbage" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,Food,FarmFieldGreens">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmCorn" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,Food,FarmFieldGreens">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmCotton" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,CottonSource">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmGrapes" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,Food">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmSprouts" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,Food,FarmFieldGreens">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmLettuce" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,Food,FarmFieldGreens">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmPeppers" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,Food">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmPumpkins" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,Food">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmSquash" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,Food">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmSunflowers" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,Food">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmWheat" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Fields,Food,FarmFieldGreens">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmWell" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,Liquids,Water">
+		</variant>
+	</building_type>
+
+	<building_type id="FarmChickenCoop" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Farm,FarmAnimals,Food">
+		</variant>
+	</building_type>
+
+	<building_type id="CryoPrepCenter" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Cryonics,Scientific,Space,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		</variant>
+	</building_type>
+
+	<building_type id="SpaceportControlTower" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Space,Spaceport,SupplyChainTarget,SpaceportControlTower">
+		</variant>
+	</building_type>
+
+	<building_type id="SpaceportHangar" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Space,Spaceport">
+		</variant>
+	</building_type>
+
+	<building_type id="SpaceportTerminal" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Space,Spaceport,SpaceportTerminal">
+		</variant>
+	</building_type>
+
+	<building_type id="SpaceportLightDutyLaunch" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Space,Spaceport">
+		</variant>
+	</building_type>
+
+	<building_type id="SpaceportCrane" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Space,Spaceport">
+		</variant>
+	</building_type>
+
+	<building_type id="SpaceportEngineTrolley" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Space,Spaceport">
+		</variant>
+	</building_type>
+
+	<building_type id="SpaceportLaunchArm" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Space,Spaceport,SpaceportLaunchArm">
+		</variant>
+	</building_type>
+
+	<building_type id="SpaceportLaunchPad" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Space,Spaceport,SpaceportLaunchPad">
+		</variant>
+	</building_type>
+
+	<building_type id="SpaceportRocketHangar" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Space,Spaceport,SpaceportRocketHangar">
+		</variant>
+	</building_type>
+
+	<building_type id="LightRocket" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Space,Spaceport,Rocket">
+		</variant>
+	</building_type>
+
+	<building_type id="MediumRocket" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Space,Spaceport,Rocket">
+		</variant>
+	</building_type>
+
+	<building_type id="HeavyRocket" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Space,Spaceport,Rocket">
+		</variant>	
+	</building_type>
+
+	<building_type id="RocketFuelRefinery" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Industrial,Space,ScienceIndustrial">
+		</variant>
+	</building_type>
+
+	<building_type id="RocketFuelStorage" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Industrial,Space,ScienceIndustrial">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryBunker" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,MilitaryStorage,HasManyPeople,Underground,CouldHaveMechPilotSoftware">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryGuardPost" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryBarracks" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,HasManyPeople,MilitaryBarracks">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryPoliticalOps" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,HasManyPeople">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryHospital" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,Medical,MedicalOrSchoolOrGovernment,Hospital,HasManyPeople">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryMedicalTent" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,MedicalOrSchoolOrGovernment,Medical,Clinic">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryChemicalWeaponsStorge" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,Weapons,MilitaryStorage,Warehouse,ChemicalWeapons">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryGroundOps" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,HasManyPeople,CouldHaveMechPilotSoftware">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryPsyOps" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,HasManyPeople">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryIntelligence" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,HasManyPeople">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryWarehouse" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,MilitaryStorage,Warehouse">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryMunitionsDepot" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,MilitaryStorage,Warehouse,Weapons">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryHoverVehicleBunker" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,Warehouse,Weapons,Automotive,Underground">
+		</variant>
+	</building_type>
+
+	<building_type id="FaradayCageConferenceRooms" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryMainframe" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military,Communications">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryFlightTower" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryAirHangar" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military">
+		</variant>
+	</building_type>
+
+	<building_type id="MilitaryAirBuilding" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Military">
+		</variant>
+	</building_type>
+
+	<building_type id="NuclearLaunchSilo" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,NuclearSilo">
+		</variant>
+	</building_type>
+
+	<building_type id="NuclearLaunchControlRoom" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,NuclearSilo">
+		</variant>
+	</building_type>
+
+	<building_type id="NuclearSiloGenerator" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,NuclearSilo">
+		</variant>
+	</building_type>
+
+	<building_type id="NuclearLaunchSafety" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,NuclearSilo">
+		</variant>
+	</building_type>
+
+	<building_type id="NuclearSiloSupport" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,NuclearSilo">
+		</variant>
+	</building_type>
+
+	<building_type id="NuclearPowerPlant" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Energy,PowerPlant,ScienceIndustrial,NuclearPowerPlant,CanHaveSecretCompartment,CanHaveHiddenRoom,HasManyPeople">
+		</variant>
+	</building_type>
+
+	<building_type id="FusionPowerPlant" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Energy,PowerPlant,ScienceIndustrial,FusionPowerPlant,CanHaveSecretCompartment,CanHaveHiddenRoom,HasManyPeople">
+		</variant>
+	</building_type>
+
+	<building_type id="GeothermalPowerPlant" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,Energy,PowerPlant,ScienceIndustrial,SupplyChainTarget,GeothermalPower,CanHaveSecretCompartment,HasManyPeople">
+		</variant>
+	</building_type>
+
+	<building_type id="HeliumStorage" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Liquids,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="NaturalGasStorage" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Liquids,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="NaturalGasAccumulator" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="NaturalGasExtractor" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="OilStorage" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Liquids,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="RadiumStorage" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Liquids,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="DangerousWasteStorage" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Liquids,CivilService">
+		</variant>
+	</building_type>
+
+	<building_type id="FilterTank" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Liquids,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="AdvancedWasteProcessingPlant" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Liquids,SupplyChainTarget,CivilService,SewageTreatment,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		</variant>
+	</building_type>
+
+	<building_type id="WaterPurificationPlant" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Liquids,SupplyChainTarget,CivilService,Water,ScienceIndustrial,WaterPurification,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		</variant>
+	</building_type>
+
+	<building_type id="PureWaterStorage" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Liquids,CivilService,Water">
+		</variant>
+	</building_type>
+
+	<building_type id="OilMiningAccumulator" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="OilMiningConverter" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="OilMiningCooler" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="OilMiningDegasser" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="OilMiningDrillingRig" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Mining,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		</variant>
+	</building_type>
+
+	<building_type id="OilMiningFilters" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="OilMiningSeparator" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="OilMiningTank" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,Mining">
+		</variant>
+	</building_type>
+
+	<building_type id="HeliumFiltrationPlant" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Mining,MiningFacility,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		</variant>
+	</building_type>
+
+	<building_type id="MineralAndMolecularSeparationFacility" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Mining,MiningFacility,HasManyPeople,Scientific,CanHaveSecretCompartment,CanHaveHiddenRoom,MineralAndMolecularSeparationFacility,CanHaveSeizedLevelsOfMine">
+		</variant>
+	</building_type>
+
+	<building_type id="MultipurposeMineshaft" is_partial_record="true">
+		<variant id="1" is_partial_record="true" weight="100"
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Mining,MiningFacility,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom,MultipurposeMineshaft,CanHaveSeizedLevelsOfMine">
+		</variant>
+	</building_type>
+
+</root>

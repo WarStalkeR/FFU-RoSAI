@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<unlock id="ClearThePlot" display_name="Clearing The Plot" ability_type="Eviction"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		immediately_unlocked_by_city_flag="HasEstablishedShellCompany"
+		immediate_unlock_inspiration_type="WorldExperience" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+
+	<unlock id="DroneForEviction" display_name="Drone For Eviction" consumable_item="EvictionDrone"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+</root>
