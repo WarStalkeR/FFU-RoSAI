@@ -264,10 +264,19 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 novel.Icon = IconRefs.Mouse_OutOfRange.Icon;
                                 novel.ShouldTooltipBeRed = true;
                                 novel.TitleUpperLeft.AddLang("Move_OutOfRange");
-                                var costInfo = novel.Main.AddRaw(variant.GetDisplayName());
-                                if (peopleTotal > 0) costInfo.AddFormat2("EvictionSilicaPeople", totalEvictionCost.ToStringThousandsWhole(), peopleTotal.ToStringThousandsWhole());
-                                else costInfo.AddFormat1("EvictionSilicaOnly", totalEvictionCost.ToStringThousandsWhole());
-                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.AddLang("EvictionSilicaMissing");
+                                novel.Main_ExtraSizePerLine = 0f;
+
+                                var costInfo = novel.Main.StartLineHeight10().AddRaw(variant.GetDisplayName()).Line();
+                                if (peopleResidents > 0) costInfo.Line().AddFormat1("InfoResidents", peopleResidents.ToStringThousandsWhole());
+                                if (peopleWorkers > 0) costInfo.Line().AddFormat1("InfoWorkers", peopleWorkers.ToStringThousandsWhole());
+                                if (buildingVolume > 0) costInfo.Line().AddFormat1("InfoVolume", buildingVolume.ToStringThousandsWhole());
+                                if (buildingStorage > 0) costInfo.Line().AddFormat1("InfoStorage", buildingStorage.ToStringThousandsWhole());
+                                if (buildingFloorArea > 0) costInfo.Line().AddFormat1("InfoArea", buildingFloorArea.ToStringThousandsWhole());
+                                if (peopleResidents > 0 || peopleWorkers > 0 || buildingVolume > 0 || buildingStorage > 0 || buildingFloorArea > 0) costInfo.Line();
+                                if (peopleTotal > 0) costInfo.Line().AddFormat1("ResultPeople", peopleTotal.ToStringThousandsWhole());
+                                if (totalEvictionCost > 0) costInfo.Line().AddFormat1("ResultSilica", totalEvictionCost.ToStringThousandsWhole());
+                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.Line().AddLang("EvictionSilicaMissing");
+                                novel.Main.EndLineHeight();
                             }
                             return false;
                         }
@@ -281,10 +290,19 @@ namespace Arcen.HotM.FFU.RoSAI {
                             if (novel.TryStartSmallerTooltip(TooltipID.Create(Consumable), null, SideClamp.Any, TooltipNovelWidth.Smaller)) {
                                 novel.Icon = Consumable.Icon;
                                 novel.TitleUpperLeft.AddFormat1("Move_ClickToEvict", Lang.GetRightClickText());
-                                var costInfo = novel.Main.AddRaw(variant.GetDisplayName());
-                                if (peopleTotal > 0) costInfo.AddFormat2("EvictionSilicaPeople", totalEvictionCost.ToStringThousandsWhole(), peopleTotal.ToStringThousandsWhole());
-                                else costInfo.AddFormat1("EvictionSilicaOnly", totalEvictionCost.ToStringThousandsWhole());
-                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.AddLang("EvictionSilicaMissing");
+                                novel.Main_ExtraSizePerLine = 0f;
+
+                                var costInfo = novel.Main.StartLineHeight10().AddRaw(variant.GetDisplayName()).Line();
+                                if (peopleResidents > 0) costInfo.Line().AddFormat1("InfoResidents", peopleResidents.ToStringThousandsWhole());
+                                if (peopleWorkers > 0) costInfo.Line().AddFormat1("InfoWorkers", peopleWorkers.ToStringThousandsWhole());
+                                if (buildingVolume > 0) costInfo.Line().AddFormat1("InfoVolume", buildingVolume.ToStringThousandsWhole());
+                                if (buildingStorage > 0) costInfo.Line().AddFormat1("InfoStorage", buildingStorage.ToStringThousandsWhole());
+                                if (buildingFloorArea > 0) costInfo.Line().AddFormat1("InfoArea", buildingFloorArea.ToStringThousandsWhole());
+                                if (peopleResidents > 0 || peopleWorkers > 0 || buildingVolume > 0 || buildingStorage > 0 || buildingFloorArea > 0) costInfo.Line();
+                                if (peopleTotal > 0) costInfo.Line().AddFormat1("ResultPeople", peopleTotal.ToStringThousandsWhole());
+                                if (totalEvictionCost > 0) costInfo.Line().AddFormat1("ResultSilica", totalEvictionCost.ToStringThousandsWhole());
+                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.Line().AddLang("EvictionSilicaMissing");
+                                novel.Main.EndLineHeight();
                             }
 
                             ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), DataRefs.EvictionVis.ColorHDR,
