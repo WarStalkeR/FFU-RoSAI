@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="equipment_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	
+	<attribute key="slot_type" type="node-dropdown" is_required="true" node_source="MachineEquipmentSlotType" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The type of slot that this equipment must go in on vehicles or units." />
+
+	<attribute key="limited_to_actor_collection" type="node-dropdown" is_required="false" node_source="ActorCollection" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Optionally, limit this type of equipment to only be used by actors in a specific collection." />
+
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of what is going on with this equipment."/>
+
+	<attribute key="intentionally_has_no_unlock" type="bool" default="false"
+		tooltip="If this is not going to be unlocked by a Unlock, this should be set to true. If it is unlocked, it should be false." />
+	<attribute key="is_locked_before_unlock" type="node-dropdown" is_required="false" node_source="Unlock" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players until the specified Unlock is invented. This is not locked by an Unlock in the traditional way; typically these are multi-unlocks." />
+	
+	<attribute key="collections" type="node-list" node_source="EquipmentCollection" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What collections is this equipment part of?" />
+
+	<attribute key="turns_required_to_equip" type="int-textbox" min="0" max="15" content_width_px="150" is_required="true"
+		tooltip="After this equipment is applied to an actor, this is how many turns are required before it is effective."/>
+
+	<attribute key="is_not_yet_functional" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this feat does not actually work yet." />
+	
+	<attribute key="on_attack" type="node-dropdown" is_required="false" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Optional, and should be used for weapons. Which particle effect and sound effect to use when the unit does an attack while holding this weapon." />
+	<attribute key="on_attack_priority" type="int-textbox" min="0" max="1000" content_width_px="150" is_required="false"
+		tooltip="Required if on_attack is specified. The higher this number, the more likely it is that this weapon will be the one with the sound that plays if the unit is holding multiple weapons. The highest-priority weapon sound always plays out of equipped weapons."/>
+	<attribute key="is_ranged_weapon" type="bool" default="false"
+		tooltip="If this is true, then this is a ranged weapon. If the unit cannot equip ranged weapons, then they cannot use this. Sound effects will play when the unit uses ranged attacks, if it's the top priority." />
+	<attribute key="is_melee_weapon" type="bool" default="false"
+		tooltip="If this is true, then this is a melee weapon. Sound effects will play when the unit uses melee attacks, if it's the top priority." />
+
+	<attribute key="skip_complaints_if_this_is_all_that_is_available" type="bool" default="false"
+		tooltip="If this is true, then don't complain about a lack of equipment assigned to a slot for a unit unless there are options where this is NOT true.
+Should be used for equipment that has both pros and cons, or which is just not critical (like the initial augments) in general." />
+	<attribute key="is_invalid_and_invisible_for_npc_units" type="bool" default="false"
+		tooltip="If this is true, then this can't be used on NPC units -- bulk androids, most notably.  They don't use some of the stats, so this is relevant." />
+	
+	<sub_node id="initial_actor_data">
+		<attribute key="data_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="true"
+			tooltip="This ActorDataType will be the baseline for all Equipment of this type. One specific instance compared to another never differs if they are the same type.
+			
+The ActorDataTypes that are calculated at actors should not be used here, as they will not work." />
+		<attribute key="value" type="int-textbox" min="-10000000" max="10000000" content_width_px="150" is_required="true"
+			tooltip="The range you can set on this is wide. If set to 0 (by mod or otherwise), then it will effectively not exist for this equipment type unless machine upgrades later raise it."/>
+		<attribute key="alt_stat_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true"
+			tooltip="Alternative name by which to refer to this stat (and therefore its purpose) at this equipment." />
+	</sub_node>
+	
+	<sub_node id="grants_perk">
+		<attribute key="perk" type="node-dropdown" is_required="true" node_source="ActorPerk" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When an actor has this equipment, then what perks do they automatically get?" />
+		<attribute key="value" type="bool" is_required="true" default="true"
+			tooltip="Normally set to true to indicate the grant. Set to false to mod it out, typically." />
+	</sub_node>
+
+	<sub_node id="grants_feat">
+		<attribute key="feat" type="node-dropdown" is_required="true" node_source="ActorFeat" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When an actor has this equipment, then what feats do they automatically get?" />
+		<attribute key="value" type="bool" is_required="true" default="true"
+			tooltip="Normally set to true to indicate the grant. Set to false to mod it out, typically." />
+	</sub_node>
+
+	<sub_node id="cost_per_attack">
+		<attribute key="resource" type="node-dropdown" is_required="true" node_source="ResourceType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When an actor has this equipment, then what costs are required per attack?" />
+		<attribute key="amount" type="int-textbox" min="0" max="100000" content_width_px="150" is_required="true"
+			tooltip="How much is required?"/>
+	</sub_node>
+</root>

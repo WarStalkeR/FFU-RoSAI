@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<input_action id="LoadoutWindow"
+		category="UnitShortcuts" display_name="Loadout Management"
+		description="Configure equipment and abilities for selected unit class."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="2" key="X" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<!--
+	<input_action id="TriggerStructureAbility"
+		category="UnitShortcuts" display_name="Trigger Structure Ability"
+		description="If the selected structure has an ability that can be activated (like deploying a unit, for example), then this triggers that ability."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="X" />
+	</input_action>
+	-->
+
+	<input_action id="ChangeStance"
+		category="UnitShortcuts" display_name="Change Stance"
+		description="Toggle change-stance option for units."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="5" key="Semicolon" />
+		<keybind id="6" key="" />
+	</input_action>
+
+	<input_action id="ScrapSelected"
+		category="UnitShortcuts" display_name="Scrap Selected"
+		description="Scrap the unit or structure you currently have selected."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="Delete" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="NextSubnet"
+		category="UnitShortcuts" display_name="Next Subnet"
+		description="Cycle through your subnets."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="2" key="Slash" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="NextNetworkTower"
+		category="UnitShortcuts" display_name="Next Network Tower"
+		description="Cycle through your network towers."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="NextMachineActor"
+		category="UnitShortcuts" display_name="Next Machine Unit"
+		description="Cycle through all your androids, mechs, and vehicles."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="P" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="NextActiveNPCCombatant"
+		category="UnitShortcuts" display_name="Next Active NPC Combatant"
+		description="Cycle through all NPC units that are combatants and not on guard duty."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="2" key="N" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="NextNPCNoncombatant"
+		category="UnitShortcuts" display_name="Next NPC Noncombatant"
+		description="Cycle through all NPC units that are noncombatants."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="NextStructure"
+		category="UnitShortcuts" display_name="Next Structure"
+		description="Cycle through all your machine structures."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="NextStructureWithAnyIssue"
+		category="UnitShortcuts" display_name="Next Structure With Any Issue"
+		description="Cycle through your structures with any issues at all."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="K" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="NextStructureWithMajorComplaint"
+		category="UnitShortcuts" display_name="Next Structure With Major Complaint"
+		description="Cycle through your structures with a major complaint icon above them."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="3" key="" />
+		<keybind id="4" key="" />
+	</input_action>
+
+	<input_action id="NextStructureWithMinorComplaint"
+		category="UnitShortcuts" display_name="Next Structure With Minor Complaint"
+		description="Cycle through your structures with low-priority complaints."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="NextStructureWithAnyComplaint"
+		category="UnitShortcuts" display_name="Next Structure With Any Complaint"
+		description="Cycle through your structures with any form of complaint."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="NextDamagedStructure"
+		category="UnitShortcuts" display_name="Next Damaged Structure"
+		description="Cycle through your damaged structures."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="NextUnderConstructionStructure"
+		category="UnitShortcuts" display_name="Next Under-Construction Structure"
+		description="Cycle through your structures with active construction or job installation."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+</root>

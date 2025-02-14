@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<cheat id="SwitchToCheatMode" display_name="Switch To Cheat Mode"
+		description="Enter cheat mode. Will turn off achievements for this timeline and allow you to freely cheat. Does not affect other timelines or the end of time."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		is_available_in_strategic_mode="true" is_available_in_cheat_timeline="false"
+		is_available_in_end_of_time_view="true"/>
+
+	<cheat id="ChangeWeather" display_name="Change Weather"
+		description=""
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		is_available_in_strategic_mode="true" />
+
+	<cheat id="RotateSun" display_name="Rotate Sun"
+		description=""
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		is_available_in_strategic_mode="true" />
+	
+	<!--This section can only be done in cheat mode.
+		***********************************************************************-->
+
+	<cheat id="ResetAPForAllMyUnits" display_name="Reset AP For All My Units"
+		description="Refreshes all of your action points."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+
+	<cheat id="DiscoverAllLocations" display_name="Discover All Locations"
+		description="Marks all of the districts and POIs as discovered."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"/>
+
+	<cheat id="UnlockEverything" display_name="Unlock Everything"
+		description="Grants all of the unlocks."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"/>
+
+	<cheat id="CompleteAllActiveProjects" display_name="Complete All Active Projects"
+		description="Whatever your current chosen outcome is, it will be 'won' immediately on any active projects."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"/>
+	
+	<cheat id="ToggleFogOfWar" display_name="Toggle Fog Of War"
+		description="Turns the fog of war on or off."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"/>
+
+	<cheat id="ToggleDeleteAnyUnit" display_name="Toggle 'Delete Any Unit'"
+		description="With the 'delete any unit' mode on, simply select a unit and you can delete it."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"/>
+
+	<cheat id="ToggleDeleteAllAttackers" display_name="Toggle 'Delete All Attackers'"
+		description="With the 'delete all attackers' mode on, select nothing and use the scrap button to delete all enemies targeting your units. Will also scrap any enemy hackers."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"/>
+	
+	<cheat id="ResourceGrant" display_name="Resource Grant"
+		description="Grants a resource. The amount specified in the textbox, or one million."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+
+	<cheat id="BigStrategy" display_name="Big Strategy"
+		description="Grants all the main strategic resources. The amount specified in the textbox, or one thousand."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+	
+	<cheat id="NextDoom" display_name="Next Doom"
+		description="Instantly advance to the next doom."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+
+	<cheat id="DelayDoom" display_name="Delay Doom"
+		description="Delay the next doom by 50 turns."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+
+	<cheat id="InspirationGrant" display_name="Inspiration Grant"
+		description="Grants inspiration in a research domain. The amount specified in the textbox, or three."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+	
+	<!--
+	<cheat id="GoToNextBuilding" display_name="Go To Next Building"
+		description="Go to the next building of a given type."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"/>-->
+
+	<cheat id="SpawnMachineUnit" display_name="Spawn Machine Unit"
+		description=""
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		 />
+
+	<cheat id="SpawnMachineVehicle" display_name="Spawn Machine Vehicle"
+		description=""
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+
+	<cheat id="SpawnNPCUnitForSelf" display_name="Spawn NPC Unit For Self"
+		description=""
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+
+	<cheat id="SpawnNPCUnitForLocalAuthority" display_name="Spawn NPC Unit For Local Authority"
+		description=""
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+
+	<cheat id="SpawnRebelWar" display_name="Spawn Rebel War"
+		description="Rebel units and corporate units will be seeded across the map, ready to fight with one another. Excellent stress test."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+
+	<cheat id="ClearAllNPCUnits" display_name="Clear All NPC Units"
+		description="Clear all NPC Units out of the city."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"/>
+
+	<cheat id="ClickToNuke" display_name="Click To Nuke"
+		description="Clicking a building will initiate a nuclear blast at that site."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+
+	<cheat id="ClickToMicroNuke" display_name="Click To Micro-Nuke"
+		description="Clicking a building will initiate a nuclear blast at that site."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+	
+	<cheat id="ClickToDestroyBuilding" display_name="Click To Destroy Building"
+		description="Clicking a building will immediately destroy it, including any machine structures in it."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+
+	<cheat id="ClickToEruptMachineTower" display_name="Click To Erupt Machine Tower"
+		description="Clicking a building will initiate a machine tower erupting at that site."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+
+	<cheat id="ClickToBuildEmbeddedStructure" display_name="Click To Build Embedded Structure"
+		description="Clicking a building without a machine structure will put a machine structure in it. Right-clicking deletes embedded structures."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+	
+	<cheat id="ClickToInstallJob" display_name="Click To Install Job In Structure"
+		description="Clicking a machine structure will immediately put a job there. Right-clicking removes jobs."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		/>
+
+	<cheat id="ClickToEstablishNetwork" display_name="Click To Establish Network"
+		description="Clicking a building will start a new network centered on the site."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VisCheats_Basic"
+		/>
+
+	<cheat id="ClickToSpawnTimeline" display_name="Click To Spawn Timeline"
+		description="Clicking a build spot on this map will spawn a new timeline, fully or just a stub depending on your choice."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VisCheats_Basic"
+		is_available_in_end_of_time_view="true" is_available_in_streets_and_map_views="false" />
+
+	<cheat id="ClickToEraseTimeline" display_name="Click To Erase Timeline"
+		description="Clicking an existing timeline will erase it. You cannot erase the timeline you are presently in. Be very careful with this!"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VisCheats_Basic"
+		is_available_in_end_of_time_view="true" is_available_in_streets_and_map_views="false" />
+	
+	<cheat id="ClickToFillMissionProgress" display_name="Click To Fill Mission Progress"
+		description="Clicking an NPC mission will cause its top bar to fill up. This usually means losing."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"/>
+
+	<cheat id="ClickToExpireMission" display_name="Click To Expire Mission"
+		description="Clicking an NPC mission will cause its bottom bar to fill up. This means it expires and goes away."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"/>
+
+	<cheat id="ReseedEndOfTimeMap" display_name="Reseed The End of Time Map"
+		description="Regenerate the End of Time map. Can only be done while all cities are on the first rock."
+		dll_name="HotMExternalAbstractSim" type_name="Arcen.HotM.External.AbstractSimCheats_Basic"
+		is_available_in_strategic_mode="true"
+		is_available_in_end_of_time_view="true" is_available_in_streets_and_map_views="false" />
+	
+	<!--Always the last item, and can be done in strategic mode.
+		***********************************************************************-->
+	
+	<cheat id="AbortAllThreads" display_name="Abort All Threads"
+		description="Abort all background threads."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VisCheats_Basic"
+		is_available_in_strategic_mode="true"
+		is_available_in_end_of_time_view="true"/>
+	
+</root>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="other_key_message">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+
+	<attribute key="reward_header_text" type="string" maxlength="200" content_width_px="200" is_localized="true" is_required="true" can_localization_merge="true"
+		tooltip="First line on the toast popups."/>
+
+	<attribute key="toast_line_1" type="string" maxlength="200" content_width_px="200" is_localized="true" is_required="true" can_localization_merge="true"
+		tooltip="First line on the toast popups."/>
+	<attribute key="toast_line_2" type="string" maxlength="200" content_width_px="200" is_localized="true" is_required="true" can_localization_merge="true"
+		tooltip="Second line on the toast popups."/>
+	<attribute key="toast_tooltip_instruction" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible instruction for toast tooltips."/>
+	
+	<attribute key="toast_icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the toast popup."/>
+
+	<attribute key="sound_to_play_on_open" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This is the type of sound played on opening of the toast." />
+	<attribute key="sound_and_vfx_to_play_on_close" type="node-dropdown" is_required="true" node_source="VisEventVFXAndSoundUsage" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This is the type of sound and vfx playing closing the popup window." />
+
+	<attribute key="toast_icon_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the toast icon?"/>
+	<attribute key="toast_icon_hovered_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the toast icon when it is hovered?"/>
+
+	<attribute key="has_no_code" type="bool" is_required="true" default="false"
+		tooltip="If this has no code associated with it, then it will not need the dll_name, etc." />
+
+	<attribute key="auto_trips_if_skipping_chapter_zero" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically trip to true when skipping chapter zero?" />
+	<attribute key="auto_trips_if_skipping_chapter_one" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically trip to true when skipping chapter one?" />
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the implementation control code for this message is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the control code for this message in the specified external dll."/>
+
+	<sub_node id="option">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="line_1" type="string" maxlength="200" content_width_px="200" is_localized="true" is_required="true" can_localization_merge="true"
+			tooltip="First line on the button."/>
+		<attribute key="line_2" type="string" maxlength="200" content_width_px="200" is_localized="true" is_required="true" can_localization_merge="true"
+			tooltip="Second line on the button."/>
+		<attribute key="description" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible tooltip over the button from the message."/>
+		<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible second part of the tooltip, optional."/>		
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+			tooltip="Which icon to use for the choice button."/>
+		
+		<attribute key="city_flag_enable_1" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="This will trip a city flag, optionally." />
+		<attribute key="city_flag_enable_2" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="This will trip another city flag, optionally." />
+		
+		<attribute key="meta_flag_enable_1" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+			tooltip="This will trip a meta flag, optionally." />
+		<attribute key="meta_flag_enable_2" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+			tooltip="This will trip another meta flag, optionally." />
+
+		<attribute key="city_task_to_start_1" type="node-dropdown" node_source="CityTask" content_width_px="200" is_required="false"
+			tooltip="This will start a new task if it has not already been started, optionally." />
+		<attribute key="city_task_to_start_2" type="node-dropdown" node_source="CityTask" content_width_px="200" is_required="false"
+			tooltip="This will start a new task if it has not already been started, optionally." />
+
+		<attribute key="crossover1" type="node-dropdown" node_source="CityTimelineCrossover" content_width_px="200" is_required="false"
+			tooltip="This will trip a timeline crossover, optionally." />
+		<attribute key="crossover2" type="node-dropdown" node_source="CityTimelineCrossover" content_width_px="200" is_required="false"
+			tooltip="This will trip another timeline crossover, optionally." />
+		
+		<attribute key="ready_other_key_message_1" type="node-dropdown" node_source="OtherKeyMessage" content_width_px="200" is_required="false"
+			tooltip="This will ready an other-key-message, optionally." />
+		<attribute key="ready_other_key_message_2" type="node-dropdown" node_source="OtherKeyMessage" content_width_px="200" is_required="false"
+			tooltip="This will ready an other-key-message, optionally." />
+
+		<attribute key="immediately_open_other_key_message" type="node-dropdown" node_source="OtherKeyMessage" content_width_px="200" is_required="false"
+			tooltip="This will immediately open another one, optionally." />
+
+		<attribute key="start_investigation_1" type="node-dropdown" node_source="InvestigationType" content_width_px="200" is_required="false"
+			tooltip="This will start an investigation, optionally." />
+		<attribute key="start_investigation_2" type="node-dropdown" node_source="InvestigationType" content_width_px="200" is_required="false"
+			tooltip="This will start an investigation, optionally." />
+
+		<attribute key="start_investigations_quietly" type="bool" is_required="true" default="false"
+			tooltip="If true, then the normal message won't be dropped above the radial wheel when this is started." />
+
+		<attribute key="do_full_activity_spawn_check" type="bool" is_required="false" default="false"
+			tooltip="If true, then the game will see if it needs to spawn anything at all after this." />
+
+		<attribute key="project_to_start_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="If this starts a project, which project does it start?" />
+		<attribute key="project_to_start_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="If this starts a project, which project does it start?" />
+		<attribute key="project_to_start_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="If this starts a project, which project does it start?" />
+
+		<attribute key="achievement_triggered1" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+		<attribute key="achievement_triggered2" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+		<attribute key="achievement_triggered3" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+
+		<attribute key="ready_unlock_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="This will ready an unlock, optionally. If specified, then unlock_inspiration_type is also required." />
+		<attribute key="ready_unlock_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="This will ready an unlock, optionally. If specified, then unlock_inspiration_type is also required." />
+		<attribute key="ready_unlock_4" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="This will ready an unlock, optionally. If specified, then unlock_inspiration_type is also required." />
+		<attribute key="immediate_unlock_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="This will immediately grant an unlock, optionally. If specified, then unlock_inspiration_type is also required." />
+		<attribute key="immediate_unlock_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="This will immediately grant an unlock, optionally. If specified, then unlock_inspiration_type is also required." />
+		<attribute key="immediate_unlock_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="This will immediately grant an unlock, optionally. If specified, then unlock_inspiration_type is also required." />
+		<attribute key="unlock_inspiration_type" type="node-dropdown" node_source="UnlockInspirationType" content_width_px="200" is_required="false"
+			tooltip="This is only used when ready_unlock_1 or ready_unlock_2 is used. It specifies what kind of inspiration the unlock was from." />
+		<attribute key="include_tech_readied_toast" type="bool" is_required="false" default="true"
+			tooltip="If set to true, then the new idea will be called out as a toast notification. By default it is true." />
+
+		<attribute key="required_resource_must_have" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If specified, then if the player does not have this amount of a resource, they cannot choose this option." />
+		<attribute key="required_resource_must_have_amount" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+			tooltip="If required_resource_must_have is specified, and this is above 0, then that's how much the player must have of a resource to choose this option."/>
+
+		<attribute key="extra_code_on_chosen" type="node-dropdown" node_source="ExtraCodeHandler" content_width_px="200" is_required="false"
+			tooltip="If this needs to run some extra code, custom, at the end of making this choice, then the handler for that can be linked here.
+This has no effect on the ability to make the choice, or other aspects of the choice having been made.  It's purely for adding extra logic to a choice that is definitely happening." />
+		
+	</sub_node>
+	
+</root>

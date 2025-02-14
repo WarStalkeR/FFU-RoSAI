@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<profile_start_type id="Prologue" display_name="Prologue" skip_to_chapter="0" is_default="true"
+		description="Teaches the very basics of the game, and also establishes your backstory."
+		strategy_tip="Do not skip this if you're new!  You will be lost, and not in a fun way!
+You'll likely only play this once, ever. It's short and linear."
+		can_be_selected="true"/>
+
+	<profile_start_type id="ChapterOne" display_name="Chapter One - Tactics" skip_to_chapter="1"
+		description="Teaches tactics and the basics of construction."
+		strategy_tip="Do not skip this if you're new!  You will be lost, and not in a fun way!
+You might play this twice, as it has some minor branching. But playing it once-only is certainly fine."
+		can_be_selected="true"/>
+
+	<profile_start_type id="ChapterTwo" display_name="Chapter Two - Strategy" skip_to_chapter="2"
+		description="The start of the main game, where you get to choose your own path."
+		strategy_tip="If you skip straight here while you're new, you're likely to be lost.
+It's strongly recommended to do the Prologue and Chapter One a single time before embarking here."
+		strategy_tip_if_blocked_by_demo="Not available in demo."
+		can_be_selected="true" can_be_selected_if_in_demo="false"/>
+
+</root>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="ui_other_category">
+
+	<attribute key="parent_group" type="node-dropdown" node_source="UIOtherCategoryGroup" content_width_px="200" is_required="false"
+		tooltip="What parent group does this category definition belong to?" />
+	
+	<attribute key="parent_category" type="node-dropdown" is_required="false" node_source="UIOtherCategory" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="If this is actually a subcategory of another category, then what is it a subcategory of?" />
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the category implementation is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the category implementation in the specified external dll."/>
+
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+
+	<attribute key="defaults_to_open_in_new_game_if_relevant" type="bool" default="true"
+		tooltip="This mainly uses when there is a collapsible area, often meaning this would be a sub-category. If that is the case, should it start out open or closed?" />
+
+	<attribute key="should_show_even_when_empty" type="bool" default="true"
+		tooltip="This is only contextually used as well, but in general if there are no items in this category (because they are hidden or they literally do not exist), then shoudl it still be shown?" />
+
+</root>

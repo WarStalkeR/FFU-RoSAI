@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="bus">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="max_voice_count" type="int-textbox" min="1" max="99" content_width_px="150"
+		tooltip="How many sounds can be playing from this bus at the same time?  Some buses really should only have a single sound at a time, others might have 16, a very few might have 40."/>
+	
+	<attribute key="min_distance" type="float-textbox" min="0" max="100000" default="500" content_width_px="300"
+		tooltip="If this is a 3D bus rather than a 2D one, then at what distance does the volume attenuation start?"/>
+
+	<attribute key="max_distance" type="float-textbox" min="0" max="100000" default="8000" content_width_px="300"
+		tooltip="If this is a 3D bus rather than a 2D one, then at what distance does the volume attenuation end?"/>
+
+	<attribute key="spatial_blend" type="float-textbox" min="0" max="1" default="0" content_width_px="100"
+		tooltip="If this is set to 0, then this is a 2D bus. If this is set to 1, then it's a full 3D bus that is fully converted to mono and then directional.
+		
+If this is set somewhere in between 0 and 1, then it's a bit of a hybrid. Straight 0 or 1 is usually better.
+
+Interface and music and general ambience should be 0, in-game foley and action sounds should usually be 1."/>
+
+	<attribute key="doppler_level" type="float-textbox" min="0" max="1" default="0" content_width_px="100"
+		tooltip="Determines how much doppler effect will be applied to this audio source (if is set to 0, then no effect is applied).
+		
+Not sure that we've actually made use of this yet in any project, so it would take fiddling to figure out if it's difficult or straightforward."/>
+	
+</root>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<road_prefab id="Bridge Road Low" path_to_placeable="Assets/__Library/Roads/Bridges/Bridge Road Lo.prefab">
+		<lane id="D1" type="Downtown" points="-2,0.25,6;-2,0.25,-6"></lane>
+		<lane id="D2" type="Downtown" points="2,0.25,-6;2,0.25,6"></lane>
+		<lane id="S1" type="Sidewalk" points="5,0.25,-6;5,0.25,6"></lane>
+		<lane id="S2" type="Sidewalk" points="-5,0.25,-6;-5,0.25,6"></lane>
+	</road_prefab>
+
+	<road_prefab id="Bridge Road Climb" path_to_placeable="Assets/__Library/Roads/Bridges/Bridge Rd Climb.prefab">
+		<lane id="D1" type="Downtown" points="-0.2,0,0.6;-0.2,0.25,-0.6"></lane>
+		<lane id="D2" type="Downtown" points="0.2,0.25,-0.6;0.2,0,0.6"></lane>
+		<lane id="S1" type="Sidewalk" points="0.5,0,0.6;0.5,0.25,-0.6"></lane>
+		<lane id="S2" type="Sidewalk" points="-0.5,0,0.6;-0.5,0.25,-0.6"></lane>
+	</road_prefab>
+
+	<road_prefab id="Bridge Road Start End" path_to_placeable="Assets/__Library/Roads/Bridges/Bridge Rd StartEnd.prefab">
+		<lane id="D1" type="Downtown" points="-0.2,0,0.63;-0.2,0.25,-0.54"></lane>
+		<lane id="D2" type="Downtown" points="0.2,0.25,-0.54;0.2,0,0.63"></lane>
+		<lane id="S1" type="Sidewalk" points="-0.5,0,0.63;-0.5,0.25,-0.54"></lane>
+		<lane id="S2" type="Sidewalk" points="0.5,0,0.63;0.5,0.25,-0.54"></lane>
+	</road_prefab>
+
+	<road_prefab id="Bridge Road Med" path_to_placeable="Assets/__Library/Roads/Bridges/Bridge Road Med.prefab">
+		<lane id="D1" type="Downtown" points="-2,0,6;-2,0,-6"></lane>
+		<lane id="D2" type="Downtown" points="2,0,-6;2,0,6"></lane>
+		<lane id="S1" type="Sidewalk" points="5,0,-6;5,0,6"></lane>
+		<lane id="S2" type="Sidewalk" points="-5,0,-6;-5,0,6"></lane>
+	</road_prefab>
+
+</root>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_status id="Normal" display_name="Normal"
+        description="Normal Building! Nothing is wrong... yet."
+		is_default="true" color_hex="#a1ffa1" >
+	</building_status>
+
+	<building_status id="BurnedOut" display_name="Burned Out"
+        description="This has been badly damaged by a fire, and will require significant rebuilding."
+		color_hex="#FF3165"
+		should_building_be_nonfunctional="true" should_building_be_burned_visually="true" >
+	</building_status>
+
+	<building_status id="Irradiated" display_name="Irradiated"
+        description="High levels of radiation prevent this building from being used until radiation cleanup has happened."
+		color_hex="#FF3165"
+		should_building_be_nonfunctional="true" >
+	</building_status>
+	
+    <building_status id="BurnedAndIrradiated" display_name="Burned And Irradiated"
+        description="High levels of radiation, along with significant fire damage. Requires both rebuilding and radiation cleanup."
+		color_hex="#FF3165"
+		should_building_be_nonfunctional="true" should_building_be_burned_visually="true" >
+	</building_status>
+
+	<building_status id="UnderConstruction" display_name="Under Construction"
+        description="Construction has yet to complete."
+		color_hex="#62DFF1"
+		should_building_be_nonfunctional="true" is_building_considered_to_be_under_construction="true" >
+	</building_status>
+
+	<building_status id="Demolished" display_name="Demolished"
+        description=""
+		color_hex="#ff7070"
+		should_building_be_nonfunctional="true" should_building_be_invisible="false" should_building_be_burned_visually="true" >
+	</building_status>
+	
+</root>

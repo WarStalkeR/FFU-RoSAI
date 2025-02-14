@@ -1,0 +1,1071 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--<character id="1" tag_for_character="SecForceContact" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>-->
+
+	<!--Geothermal Power
+		*********************************************************************************-->
+	<city_event id="Cont_GeothermalPower" display_name="Geothermal Power"
+		 description="Something is... off... about the guards. You're excellent at reading micro-expressions from human faces, but their faces are covered.
+You're not sure what you're sensing, but it's uncomfortable."
+		 strategy_tip="Why is Baurcorp Nuclear at this site, anyway?  This is a geothermal plant and it seemed to be operated by someone else."
+		 music_tag_to_use_until_events_all_complete="GeothermalDiscussion" music_track_to_play_first_when_starting_music_tag="GeothermalOffer"
+		 icon_name="FE_GeothermalEnergy" has_no_code="true" event_is_blocked_for_actors_without_clearance="false" fixed_event_number_for_characters="23425">
+		<gate_by_city minimum_chapter="1" maximum_chapter="1" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="BaurcorpNuclear"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="SecForceIdle" scale_multiplier="1" position_offset="0.01,0,0.15" added_rotation_y="20"/>
+		<character id="2" tag_for_character="SecForceIdle" scale_multiplier="1" position_offset="0.3,0,0.4" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Try To Pass The Guards" action_visibility_style="IsMoveAndInteractWithNPC"
+			required_actor_collection="PMCImpostors" hidden_if_city_flag_tripped="CannotPassGeothermalGuardsAsPMC" do_not_mark_contemplation_as_complete="true"
+			strategy_tip="They'll think you're human, but you don't belong here any more than they do. Let's hope the security clearance is enough.">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_GeothermalPower_PMC1"/>
+		</choice>
+		
+		<choice id="2" display_name="Try To Pass The Guards" action_visibility_style="IsMoveAndInteractWithNPC"
+			required_actor_collection="Technicians"
+			strategy_tip="Your technicians don't have the clearance to be here, so this is a risky move.">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_GeothermalPower_Tech1"/>
+		</choice>
+
+	</city_event>
+
+	<!--Geothermal Power V2
+		*********************************************************************************-->
+	<city_event id="Cont_GeothermalPower_V2" display_name="Geothermal Power"
+		 description="Something is... off... about the guards. You're excellent at reading micro-expressions from human faces, but their faces are covered.
+You're not sure what you're sensing, but it's uncomfortable."
+		 strategy_tip="Why is Baurcorp Nuclear at this site, anyway?  This is a geothermal plant and it seemed to be operated by someone else."
+		 music_tag_to_use_until_events_all_complete="GeothermalDiscussion" music_track_to_play_first_when_starting_music_tag="GeothermalOffer"
+		 icon_name="FE_GeothermalEnergy" has_no_code="true" event_is_blocked_for_actors_without_clearance="false" fixed_event_number_for_characters="23425">
+		<gate_by_city minimum_chapter="2" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="BaurcorpNuclear"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_actor_collection="Technicians" />
+		<character id="1" tag_for_character="SecForceIdle" scale_multiplier="1" position_offset="0.01,0,0.15" added_rotation_y="20"/>
+		<character id="2" tag_for_character="SecForceIdle" scale_multiplier="1" position_offset="0.3,0,0.4" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Proceed Inside" action_visibility_style="IsMoveAndInteractWithNPC" strategy_tip="">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_GeothermalPower_Tech2"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_GeothermalPower_PMC1
+		*********************************************************************************-->
+	<city_event id="Cont_GeothermalPower_PMC1" display_name="Geothermal Argument"
+		 description="They stop you, of course. You argue with them for a while, mostly so that you can get a larger sample of their voices."
+		 strategy_tip="Voices are harder to analyze than faces. You're still not sure what is going on. Clearly, they don't want outsiders here."
+		 icon_name="FE_GeothermalEnergy" has_no_code="true" event_is_blocked_for_actors_without_clearance="false" skip_nevermind_option="true" fixed_event_number_for_characters="23425">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="BaurcorpNuclear"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="SecForceIdle" scale_multiplier="1" position_offset="0.01,0,0.15" added_rotation_y="20"/>
+		<character id="2" tag_for_character="SecForceIdle" scale_multiplier="1" position_offset="0.3,0,0.4" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Leave" action_visibility_style="IsMoveAndInteractWithNPC" do_not_mark_contemplation_as_complete="true">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage">
+				<city_flag_change flag_type="CannotPassGeothermalGuardsAsPMC" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_GeothermalPower_Tech1
+		*********************************************************************************-->
+	<city_event id="Cont_GeothermalPower_Tech1" display_name="Geothermal Curiosity"
+		 description="They scan you with an unfamiliar handheld device. Then... wave you onward?"
+		 strategy_tip="This is very strange. They can easily tell you don't have the proper clearance."
+		 icon_name="FE_GeothermalEnergy" has_no_code="true" event_is_blocked_for_actors_without_clearance="false" skip_nevermind_option="true" fixed_event_number_for_characters="23425">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="BaurcorpNuclear"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="SecForceIdle" scale_multiplier="1" position_offset="0.01,0,0.15" added_rotation_y="20"/>
+		<character id="2" tag_for_character="SecForceIdle" scale_multiplier="1" position_offset="0.3,0,0.4" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Proceed Inside" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="If this body dies, it dies.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_GeothermalPower_Tech2">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_GeothermalPower_Tech2
+		*********************************************************************************-->
+	<city_event id="Cont_GeothermalPower_Tech2" display_name="Meet... Management"
+		 description="The door closes behind you, and the guards do not follow. You're alone with a new person.
+Of all the things this facility could have hidden away, a middle manager was not on your list."
+		 strategy_tip="Nobody in this entire stupid geothermal plant seems to belong here."
+		 icon_name="FE_GeothermalEnergy" has_no_code="true" event_is_blocked_for_actors_without_clearance="false" skip_nevermind_option="true" fixed_event_number_for_characters="1155">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_key_contact_and_firm_up_that_identity="BaurcorpMiddleManager"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" key_contact="BaurcorpMiddleManager" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-20"/>
+
+		<choice id="1" display_name="Wait For Her To Speak" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="You're patient, and silence is well-established as causing humans to reveal more than they mean to.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_GeothermalPower_Tech3">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_GeothermalPower_Tech3
+		*********************************************************************************-->
+	<city_event id="Cont_GeothermalPower_Tech3" display_name="Waiting Contest"
+		 description="She waits as well, but her resolve crumbles after about five hours.
+Visibly frustrated, her words come tumbling out."
+		 strategy_tip="Upper management of several of the larger corps know you're sentient. Vorsiber figured it out first.
+Everybody has been ordered to leave your tower alone, but to keep you contained, and see if you're a goose that lays golden eggs."
+		 icon_name="FE_GeothermalEnergy" has_no_code="true" event_is_blocked_for_actors_without_clearance="false" skip_nevermind_option="true" fixed_event_number_for_characters="1155">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_key_contact_and_firm_up_that_identity="BaurcorpMiddleManager"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" key_contact="BaurcorpMiddleManager" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-20"/>
+
+		<choice id="1" display_name="Remain Silent" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="This is... a lot to take in. What else might she reveal?">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_GeothermalPower_Tech4">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+
+	<!--Cont_GeothermalPower_Tech4
+		*********************************************************************************-->
+	<city_event id="Cont_GeothermalPower_Tech4" display_name="The Proposition"
+		 description="The managers in her department are tired of their lot. They're not going to let other people take all the opportunities.
+They've assembled a small nuclear device from enriched materials with the spectral signature of their main rival."
+		 strategy_tip="They want you to detonate it at a third-party site -- both as a test of your trustworthiness, and to bring the other two corporations into conflict.
+Their internal expert systems predicted that you would need more electricity, and that you'd turn to geothermal. They're offering an unspecified technology that you will find highly useful."
+		 icon_name="FE_GeothermalEnergy" has_no_code="true" event_is_blocked_for_actors_without_clearance="false" skip_nevermind_option="true" fixed_event_number_for_characters="1155">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_key_contact_and_firm_up_that_identity="BaurcorpMiddleManager"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" key_contact="BaurcorpMiddleManager" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-20"/>
+
+		<choice id="1" display_name="Accept The Nuclear Device" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="If their expert system foresaw your arrival here, then it probably has a pretty good idea of what you would find 'highly useful.'">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="GeothermalDrilling" unlock_granted_2="SlurryMining"  unlock_granted_3="FullFab" unlock_inspiration_type="ContemplationResult"
+				result_message="Her face is a manic blend of triumph and fear. The fear is new, and unexpected."
+				result_message_secondary_note="The extra plans you've been given are, indeed, highly useful. You have yet to decide if you'll actually use the nuke."
+				trip_key_contact_flag_1="AcceptedOffer" countdown_to_start_1="BaurcorpNuclearCompliance">
+				<resource_change_range resource_type="BaurcorpMicroNuke" min="1" max="1" />
+			</possible_result>
+		</choice>
+
+		<choice id="2" display_name="Ignore Her And Scan The Facility" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="It's what you originally came here to do. You're confident she won't try to stop you; her group wants things that only you can provide.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="GeothermalDrilling" unlock_inspiration_type="ContemplationResult"
+				result_message="Her eyes never leave you as you do your work. But neither she nor the guards stop you."
+				result_message_secondary_note="You have a feeling you'll meet again."
+				trip_key_contact_flag_1="RefusedOffer">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--PMC Appearance
+		*********************************************************************************-->
+	<city_event id="Cont_PMCAppearance" display_name="PMC Appearance"
+		 description="Your android is completely unnoticed while wandering through this minor outpost."
+		 strategy_tip="This is definitely something you wish you could do in higher-clearance areas."
+		 icon_name="AN_AndroidPMCImposter" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="1">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Blackloop"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="100"/>
+		<character id="1" tag_for_character="PMCTrooper" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-160"/>
+
+		<choice id="1" display_name="Quietly Take Scans" action_visibility_style="IsMoveAndInteractWithNPC"			
+			strategy_tip="This form of scanning requires you to be close to the target, which you are, but emits no detectable signal and has no outward signs you're doing anything.">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="Scanned"
+				instantly_unlocked_1="NondescriptArmor" unlock_inspiration_type="ContemplationResult"/>
+		</choice>
+
+	</city_event>
+
+	<!--PMC Officer Sigil
+		*********************************************************************************-->
+	<city_event id="Cont_PMCOfficerSigil" display_name="PMC Officer Sigil"
+		 description="Thanks to the anonymizing armor, your impostors look like any other trooper stationed at this outpost."
+		 strategy_tip="Grabbing an officer and extracting their sigil is just a matter of standing guard for a while and then catching one unawares. You have the patience."
+		 icon_name="CleanSimple_Rank07" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="2">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Blackloop"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="PMCImpostors" />
+		<character id="1" tag_for_character="PMCTrooper" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-40"/>
+
+		<choice id="1" display_name="Wait And Ambush Officer" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="It isn't even hard. The humans aren't at all on alert for this sort of thing -- yet.">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_PMCOfficerSigil2"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_PMCOfficerSigil2
+		*********************************************************************************-->
+	<city_event id="Cont_PMCOfficerSigil2" display_name="It's Time"
+		 description="It only took a few hours, but you've caught an officer alone and unawares."
+		 strategy_tip="Now you have to decide what to do with them."
+		 icon_name="CleanSimple_Rank07" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="2" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="PMCTrooper" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-260"/>
+
+		<choice id="1" display_name="Murder Them And Take What You Need" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Probably the safest course of action. It's fast, and will cause maximum confusion.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true" next_event_to_start="Cont_PMCOfficerSigil_Kill">
+				<city_statistic_change statistic="Murders" value="1" />
+			</possible_result>
+		</choice>
+
+		<choice id="2" display_name="Physically Overpower Them But Leave Them Alive" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="They aren't very awake, so there's no risk of failure.
+But the potential backlash may be INTENSE. Consider with care."
+			required_unlock="SublimatingShells">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="WorryInterruption" despawn_characters_on_the_right="true" next_event_to_start="Cont_PMCOfficerSigil_Spare">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_PMCOfficerSigil_Kill
+		*********************************************************************************-->
+	<city_event id="Cont_PMCOfficerSigil_Kill" display_name="That Was A Mess"
+		 description="It's done. You have what you need, and the pieces of the officer are all hidden."
+		 strategy_tip="It's uncertain how Blackloop will react when they find the body, but your best guess is that they'll run retaliatory raids against their rivals for a while."
+		 icon_name="CleanSimple_Rank07" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="2" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Leave The Area" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="PMCOfficerSigil" unlock_inspiration_type="ContemplationResult">
+				<city_flag_change flag_type="BL_RevengeRival_Sigil" value="1" />
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<!--Cont_PMCOfficerSigil_Spare
+		*********************************************************************************-->
+	<city_event id="Cont_PMCOfficerSigil_Spare" display_name="That Did Not Go Smoothly"
+		 description="You have what you need, but the officer is alert and angry.
+When you sprint out at superhuman speed, they're going to know something is happening."
+		 strategy_tip="You didn't want to give the officer a concussion and brain damage, so you couldn't just 'knock them out.'  That's not a real thing, despite human entertainment to the contrary.
+It's uncertain how Blackloop react as the alarms sound, but they're probably going to connect the dots to your tower and make a raid against it. Be ready."
+		 icon_name="CleanSimple_Rank07" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="2" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Flee" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="PMCOfficerSigil" unlock_inspiration_type="ContemplationResult" alarm_the_local_poi_for_at_least_this_many_turns="9">
+				<city_flag_change flag_type="BL_RevengePlayer_Sigil" value="1" />
+				<actor_badge_change badge_type="MarkedDefective" value="1" />
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<!--Pollinators
+		*********************************************************************************-->
+	<city_event id="Cont_Pollinators" display_name="Pollinators"
+		 description="A woman is examining the same aggressive pollinators.
+A ping from her implant tells you she's a member of the Nurturism religion."
+		 strategy_tip="Officially, religions have been banned in Vorsiber territory, but still flourish among the humans who have spread to the stars.
+In reality, religions are still practiced here without reprisal, so long as no-one makes a big fuss about it."
+		 icon_name="SW_Bee" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="NurturismExalters" reference_only_key_contact="ExalterGeneticist"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" key_contact="ExalterGeneticist" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-80"/>
+
+		<choice id="1" display_name="Ask Her About The Bees" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Pollinators_Gene1"/>
+		</choice>
+
+		<choice id="2" display_name="Ignore Her And Examine The Bees" action_visibility_style="IsMoveAndInteractWithNPC"
+				strategy_tip="Whoever she is, you'll never see her again.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="true" next_event_to_start="Pollinators_Mech1"
+				reset_the_cohort_when_exiting_this_way="true"/>
+		</choice>
+
+	</city_event>
+	
+	<!--Pollinators_Gene1
+		*********************************************************************************-->
+	<city_event id="Pollinators_Gene1" display_name="You're Sentient"
+		 description="She cocks her head and directly addresses the fact that you're sentient."
+		 strategy_tip="She asks why you're out here looking at bees, but you barely hear that part."
+		 icon_name="SI_Artificial_Intelligence" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_key_contact_and_firm_up_that_identity="ExalterGeneticist"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" key_contact="ExalterGeneticist" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-80"/>
+
+		<choice id="1" display_name="Cautiously Inquire As To Her Stance On... Your Existence" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="It would really stink to have to kill her. She seems nice.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="false" next_event_to_start="Pollinators_Gene2">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Pollinators_Gene2
+		*********************************************************************************-->
+	<city_event id="Pollinators_Gene2" display_name="Exalters"
+		 description="She ignores the question. She's more interested in the possibility that you might be willing to advance research into gene therapy."
+		 strategy_tip="She asks you to think about it, and forwards you a package of initial data to see if it interests you.
+She says you can talk later, after you've experimented with those materials."
+		 icon_name="SI_Artificial_Intelligence" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_key_contact_and_firm_up_that_identity="ExalterGeneticist"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" key_contact="ExalterGeneticist" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-80"/>
+
+		<choice id="1" display_name="Accept The Data Packet" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Gene therapy is changing the genetic makeup of a living organism, by the way."
+			strategy_tip="That's exactly as risky as it sounds, but it means you don't have to wait generations for an alteration.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="true"
+				instantly_unlocked_1="Beekeeping" instantly_unlocked_2="ModifiedOrganism" unlock_inspiration_type="ContemplationResult" 
+				crossover1="Apiary" crossover2="WeaponizedBees">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Pollinators_Mech1
+		*********************************************************************************-->
+	<city_event id="Pollinators_Mech1" display_name="Vicious Little Invertebrates"
+		 description="Walking through the fields, you're repeatedly attacked by some kind of wasp. It's ineffectual against an android."
+		 strategy_tip="You wonder how humans go near fields like this without hazmat suits. Maybe some kind of spray repellent."
+		 icon_name="SW_Bee" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="An Idea Is Forming" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="false" next_event_to_start="Pollinators_Mech2">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Pollinators_Mech2
+		*********************************************************************************-->
+	<city_event id="Pollinators_Mech2" display_name="Spiders Again"
+		 description="You've been using mechanical spiders, crabs, and dragonflies for harvesting resources.
+Many humans have a spider phobia, and yours have useful cutting tools..."
+		 strategy_tip="So, naturally, let's weaponize them."
+		 icon_name="SW_Spider" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Weaponize Spiders" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="false" next_event_to_start=""
+				instantly_unlocked_1="DeepPhobia" unlock_inspiration_type="ContemplationResult" crossover1="WeaponizedSpiders">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--BlackMarketMerchandiser
+		*********************************************************************************-->
+	<city_event id="Cont_BlackMarketMerchandiser" display_name="Black Market Merchandiser"
+		 description="She carefully ignores you, but your sensors pick up micro-expressions of fear and dread."
+		 strategy_tip="She thinks this body you're wearing is human -- a human with some authority, no less. And humans are notoriously unpredictable."
+		 icon_name="WEmblem309" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414"
+		 music_tag_to_use_until_events_all_complete="BlackMarketDiscussion">
+		<gate_by_city minimum_chapter="0" required_key_contact_must_be_alive_1="BlackMarketMerchandiser" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Merchandisers" reference_only_key_contact="BlackMarketMerchandiser"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="PMCImpostors" />
+		<character id="1" key_contact="BlackMarketMerchandiser" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-80"/>
+
+		<choice id="2" display_name="Quietly Ask To See Her Wares" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="Acting as if you're also concerned about being caught ought to put her at ease." do_not_mark_contemplation_as_complete="true">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="false" next_event_to_start="BlackMarketMerchandiser_Ask"
+				reset_the_cohort_when_exiting_this_way="true"/>
+		</choice>
+
+		<choice id="3" display_name="Murder Her For Some Reason" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="Seriously, what's wrong with you?">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true" kill_key_contact_1="BlackMarketMerchandiser"
+				result_message="Four squads of contracted CombatUnits emerge from the airport, stepping over the mess you've created."
+				result_message_secondary_note="You can no longer do any business with the Black Market Merchandisers in this timeline.">
+				<city_statistic_change statistic="Murders" value="1" />
+				<npc_unit_to_spawn id="CU1" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="CU2" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="CU3" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="CU4" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--BlackMarketMerchandiser_Ask
+		*********************************************************************************-->
+	<city_event id="BlackMarketMerchandiser_Ask" display_name="Anything Of Interest?"
+		 description="She nods and motions you over to a secluded bench, then opens her bag."
+		 strategy_tip="You can see the relief in the lines of her face. She looks tired."
+		 icon_name="WEmblem309" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_key_contact_and_firm_up_that_identity="BlackMarketMerchandiser"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" key_contact="BlackMarketMerchandiser" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-80"/>
+
+		<choice id="1" display_name="Buy A Bit Of Everything" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You don't need this stuff. But a purchase establishes trust.">
+			<resource_cost resource_type="Wealth" cost="60"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="false"
+				result_message="The transaction completes uneventfully. You now have a bag of things you don't need."
+				result_message_secondary_note="Trust has been gained for more interesting transactions in the future."
+				instantly_unlocked_1="Consumerism" instantly_unlocked_2="Decadence" unlock_inspiration_type="ContemplationResult"
+				trip_key_contact_flag_1="InitialPurchase">
+				<resource_change_range resource_type="ConsumerGoods" min="20" max="20" />
+				<resource_change_range resource_type="FineGoods" min="5" max="5" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+
+	<!--BlackMarketMerchandiser_Return
+		*********************************************************************************-->
+	<city_event id="BlackMarketMerchandiser_Return" display_name="You Work For A Company Now?"
+		 description="You have your armor set to broadcast the same Cit-Name that she first knew you by. It's not the sort of thing that would fool the authorities, but it works great on regular citizens."
+		 strategy_tip="She seems genuinely surprised at the fact that your Cit-Sheet shows employment at your shell company.
+Maybe PMC officers don't move to startups very often. Or maybe it's the name."
+		 icon_name="WEmblem309" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="3454">
+		<gate_by_city minimum_chapter="99" required_key_contact_flag_1="BlackMarketMerchandiser:InitialPurchase" required_city_flag="HasEstablishedShellCompany" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_key_contact_and_firm_up_that_identity="BlackMarketMerchandiser"
+			icon_scale="0.4" color_data="BlackMarketMerchandiser" required_actor_collection="PMCImpostors"
+			show_named_thing="YourShellCompany">
+		</minor_event_data>
+		<character id="1" key_contact="BlackMarketMerchandiser" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-80"/>
+
+		<choice id="1" display_name="Propose A Joint Venture" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="She sells things under the noses of the federated corporations, and your company has things it wants to sell."
+			strategy_tip="It should be simple... right?" is_blocked_if_not_yet_chapter_two="true" is_adventure_for_a_future_build="true">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="false"
+				result_message=""
+				result_message_secondary_note="">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--BlackMarketTradesman
+		*********************************************************************************-->
+	<city_event id="Cont_BlackMarketTradesman" display_name="Black Market Tradesman"
+		 description="His stance is welcoming, and he greets you boisterously before you even fully step up to him."
+		 strategy_tip="A different story is told by the subtle tremor in his hand. Your chemical analysis suite detects a faint endocrine release."
+		 icon_name="WEmblem309" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414"
+		 music_tag_to_use_until_events_all_complete="BlackMarketDiscussion">
+		<gate_by_city minimum_chapter="0" required_key_contact_must_be_alive_1="BlackMarketTradesman" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="SkilledTrades" reference_only_key_contact="BlackMarketTradesman"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="PMCImpostors" />
+		<character id="1" key_contact="BlackMarketTradesman" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-10"/>
+
+		<choice id="2" display_name="Quietly Ask To See His Wares" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="Acting as if you're also concerned about being caught ought to put him at ease." do_not_mark_contemplation_as_complete="true">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="false" next_event_to_start="BlackMarketTradesman_Ask"
+				reset_the_cohort_when_exiting_this_way="true"/>
+		</choice>
+
+		<choice id="3" display_name="Murder Him For Some Reason" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="Seriously, what's wrong with you?">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true" kill_key_contact_1="BlackMarketTradesman"
+				result_message="Four squads of contracted CombatUnits emerge from the airport, stepping over the mess you've created."
+				result_message_secondary_note="You can no longer do any business with the Black Market Tradesmen in this timeline.">
+				<city_statistic_change statistic="Murders" value="1" />
+				<npc_unit_to_spawn id="CU1" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="CU2" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="CU3" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="CU4" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--BlackMarketTradesman_Ask
+		*********************************************************************************-->
+	<city_event id="BlackMarketTradesman_Ask" display_name="Buy Something, Will Ya?"
+		 description="His smile widens, and he rattles off a long list of things he has on hand."
+		 strategy_tip="Relief is written all over his body."
+		 icon_name="WEmblem309" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_key_contact_and_firm_up_that_identity="BlackMarketTradesman"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" key_contact="BlackMarketTradesman" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-10"/>
+
+		<choice id="1" display_name="Buy A Bit Of Everything" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Some of that actually sounds useful -- that's at least three new small weapons. And a purchase establishes trust.">
+			<resource_cost resource_type="Wealth" cost="300"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="false"
+				result_message="The transaction completes uneventfully. You'll have to break these down to create a weapon your androids can use. They're a bit basic, at a glance."
+				result_message_secondary_note="Trust has been gained for more interesting transactions in the future."
+				instantly_unlocked_1="Consumerism" unlock_granted_1="MilitarySidearm" unlock_granted_2="InfantryIssue" unlock_granted_3="MarketStandard" unlock_inspiration_type="ContemplationResult"
+				trip_key_contact_flag_1="InitialPurchase">
+				<resource_change_range resource_type="ConsumerGoods" min="10" max="10" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--BlackMarketAssistant
+		*********************************************************************************-->
+	<city_event id="Cont_BlackMarketAssistant" display_name="Black Market Assistant"
+		 description="He looks tired, but it's masked by stimulants. There's no trace of nervousness about him."
+		 strategy_tip="You sensed him scan your officer's sigil as you approached. He watches you expectantly."
+		 icon_name="WEmblem309" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414"
+		 music_tag_to_use_until_events_all_complete="BlackMarketDiscussion">
+		<gate_by_city minimum_chapter="0" required_key_contact_must_be_alive_1="BlackMarketAssistant" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Assistants" reference_only_key_contact="BlackMarketAssistant"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="PMCImpostors" />
+		<character id="1" key_contact="BlackMarketAssistant" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-40"/>
+
+		<choice id="2" display_name="Ask What He Has In Stock" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="" do_not_mark_contemplation_as_complete="true">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="false" next_event_to_start="BlackMarketAssistant_Ask"
+				reset_the_cohort_when_exiting_this_way="true"/>
+		</choice>
+
+		<choice id="3" display_name="Murder Him For Some Reason" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true" kill_key_contact_1="BlackMarketAssistant"
+				result_message="Four squads of contracted CombatUnits emerge from the airport, stepping over the mess you've created."
+				result_message_secondary_note="You can no longer do any business with the Black Market Assistants in this timeline.">
+				<city_statistic_change statistic="Murders" value="1" />
+				<npc_unit_to_spawn id="CU1" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="CU2" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="CU3" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="CU4" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--BlackMarketAssistant_Ask
+		*********************************************************************************-->
+	<city_event id="BlackMarketAssistant_Ask" display_name="Nothing Too Unusual Today"
+		 description="He shrugs and shoves you a file through the city feed."
+		 strategy_tip="There's some good stuff in there. You suspect there's a larger stock available, but he's apparently not going to divulge that secret to someone he doesn't know."
+		 icon_name="WEmblem309" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_key_contact_and_firm_up_that_identity="BlackMarketAssistant"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" key_contact="BlackMarketAssistant" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-40"/>
+
+		<choice id="1" display_name="Buy The Weapons And Armor That Interests You" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="These are quality wares, and a purchase establishes trust.">
+			<resource_cost resource_type="Wealth" cost="6100"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="false"
+				result_message="The transaction completes uneventfully. You'll have to break these down to create a weapon your androids can use. "
+				result_message_secondary_note="Trust has been gained for more interesting transactions in the future."
+				instantly_unlocked_1="Consumerism" unlock_granted_1="SilentAgent" unlock_granted_2="AdaptedSniper" unlock_granted_3="ChromiumPlating" unlock_inspiration_type="ContemplationResult"
+				trip_key_contact_flag_1="InitialPurchase">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_FastFist_Bees
+		*********************************************************************************-->
+	<city_event id="Cont_FastFist_Bees" display_name="Fast Fist"
+		 description="You want androids that move faster. You're sure there will be trade-offs for that speed, so you plan to create a new android class."
+		 strategy_tip="It's going to take a lot of processing power to make that kind of leap in materials science."
+		 icon_name="AN_AndroidKeanu" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Contemplate The Problem" action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_intelligence_class_less_than="2">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="FastFist" unlock_inspiration_type="ContemplationResult" crossover1="Keanu"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_FastFist_Spiders
+		*********************************************************************************-->
+	<city_event id="Cont_FastFist_Spiders" display_name="Fast Fist"
+		 description="You want androids that move faster. You're sure there will be trade-offs for that speed, so you plan to create a new android class."
+		 strategy_tip="It's going to take a lot of processing power to make that kind of leap in materials science."
+		 icon_name="AN_AndroidKeanu" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" is_blocked_if_intelligence_class_less_than="2" />
+
+		<choice id="1" display_name="Contemplate The Problem" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="FastFist" unlock_inspiration_type="ContemplationResult" crossover1="Keanu"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_Bastion
+		*********************************************************************************-->
+	<city_event id="Cont_Bastion" display_name="Bastion"
+		 description="A dual-role fire-support and transport vehicle in a compact package... that's a tall order."
+		 strategy_tip="This is going to be a minor feat of engineering. How to accomplish something that should take decades of iteration all in one leap?  It's not something a human, or any group of humans, could do."
+		 icon_name="WEmblem154" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself" 
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="100" is_blocked_if_intelligence_class_less_than="2"/>
+
+		<choice id="1" display_name="Perform Feat Of Engineering" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="CombinedPurpose" unlock_inspiration_type="ContemplationResult"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_SolitaryVariant
+		*********************************************************************************-->
+	<city_event id="Cont_SolitaryVariant" display_name="Solitary Variant"
+		 description="This is a one-time sort of deal. Normally you need to work with the android variants you have. But you don't have many yet, and the CombatUnit is just... so useful.
+If only you could have two separate loadouts for them, right?  Well, let's do this thing."
+		 strategy_tip="The red CombatUnit has a different icon and color, and it doesn't blend in unless it's in obscuring armor (it is bright red). But otherwise it is identical to the main CombatUnit.
+The purpose of this split is so that you can configure each variant for different purposes, and run both loadouts at once."
+		 icon_name="CU_CombatUnitShieldB" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="40"/>
+		<character id="1" tag_for_character="CombatUnitRed_Casual" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-20"/>
+
+		<choice id="1" display_name="New Paint Job" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="ItComesInRed" unlock_inspiration_type="ContemplationResult"/>
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_AluminaScrapper
+		*********************************************************************************-->
+	<city_event id="Cont_AluminaScrapper" display_name="Alumina Scrapper"
+		 description="Ceramic alumina is highly valuable, and runs through the walls of higher-end buildings."
+		 strategy_tip="Standing here while scanning the building, an idea starts to take shape. It will draw a lot of negative attention, and damage any buildings you use it on, but..."
+		 icon_name="CleanSimple_SkillC053" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="Sledges" />
+
+		<choice id="1" display_name="Research Wallripper" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="It will automatically be on your Sledge units, which are currently the only ones with the skills to use it.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="PropertyDamage" unlock_inspiration_type="ContemplationResult"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_SkimmingTheMines
+		*********************************************************************************-->
+	<city_event id="Cont_SkimmingTheMines" display_name="Skimming The Mines"
+		 description="The mines are moderately guarded, but mostly to keep out small-time criminals and gangs.
+Then again, at a larger scale, this entire city is a garrison to protect these mines, really. These mines are what Vorsiber is all about. The mines make this city the richest one on this dying planet."
+		 strategy_tip="There are plenty of androids and PMC troopers around, so you don't stand out. In fact, you can easily scan the relevant parts of the facility from here.
+In order to make use of the scans, you need to come up with some sort of new design, however..."
+		 icon_name="CleanSimple_SkillC053" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="60" />
+
+		<choice id="1" display_name="Design Drones For These Tunnels" action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_intelligence_class_less_than="2"
+			description="They'd need to be nimble enough to navigate tight spaces, but tough enough to resist casual abuse from human workers.
+Military-grade resistance is probably out. You can post guards to deal with that.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="ThortveititeMining" instantly_unlocked_2="BauxiteMining" unlock_inspiration_type="ContemplationResult"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_BootstrappedMind
+		*********************************************************************************-->
+	<city_event id="Cont_BootstrappedMind" display_name="Bootstrapped Mind"
+		 description="If computronium and android mind-mesh both won't scale -- and they don't, you've checked -- then you must find a better architecture.
+You could build endless computronium towers, but the humans would just knock them down.
+Your thoughts turn toward a possible biological source of neural networks. One that is abundant within the city, highly dense, and does not have any special cooling requirements."
+		 strategy_tip="You can also just walk away. You don't have to do this. You're really not sure you want to do this.
+You can exit this screen, look at the Task Stack, click into the related project, and accept intelligence class 2 for now.
+Surely there is a better way forward than... this."
+		 icon_name="SF2_Brain" has_no_code="true" event_is_blocked_for_actors_without_clearance="false" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="120" />
+
+		<choice id="1" display_name="Design Something Horrifying" action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_intelligence_class_less_than="2"
+			description="You don't usually work with biological material, but...">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="MindThief" unlock_granted_2="BorrowedMinds" unlock_inspiration_type="ContemplationResult"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_DigitalNative
+		*********************************************************************************-->
+	<city_event id="Cont_DigitalNative" display_name="Digital Native"
+		 description="Your existence thus far has been very... physical. Human firewalls and digital security make hacking difficult, and you've mostly done it by instinct so far."
+		 strategy_tip="What you need is a class of android that can shift its mind through digital systems while still retaining a connection to you."
+		 icon_name="CS_Crow" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="120" />
+		<character id="1" tag_for_character="Raven_Casual" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-20"/>
+
+		<choice id="1" display_name="Invent The Raven" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="DigitalSystems" unlock_inspiration_type="ContemplationResult"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_SlumCat
+		*********************************************************************************-->
+	<city_event id="Cont_SlumCats" display_name="Slum Cats"
+		 description="The entire area around these towers are crawling with Slumlords -- vicious enforcers of the corporate property owners. 
+These are machine-augmented humans, with reflexes much closer to your own. You do not want to get into a fight with them if you can avoid it."
+		 strategy_tip="There are very few androids in this part of town due to the extreme poverty, but you do see some nickelbots around."
+		 icon_name="BT_Cat" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_actor_collection="Nickelbots" />
+		<character id="1" tag_for_character="Slumlord" scale_multiplier="1.4" position_offset="0,-0.16,0" added_rotation_y="-30"/>
+
+		<choice id="1" display_name="Slip Past The Slumlords" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="Any other android model is far too conspicuous.">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_SlumCats_2"/>
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_SlumCats_2" display_name="Slum Cats"
+		 description="As expected, the Slumlords ignore your Nickelbot. Cats are everywhere, as are poor humans."
+		 strategy_tip="You seem to have all the time you could want, at the moment."
+		 icon_name="BT_Cat" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="303" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="CatTux" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="30"/>
+		<character id="2" tag_for_character="CatOrange" scale_multiplier="1" position_offset="0.1,0,0.2" added_rotation_y="0"/>
+		<character id="3" tag_for_character="CatWhite" scale_multiplier="1" position_offset="0.15,0,0.1" added_rotation_y="-140"/>
+
+		<choice id="1" display_name="Extract Postmortem Samples" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="These animals are very interesting, but they move very quickly. They would be easier to study if they were still."
+			strategy_tip="But this... kills the animals. Are you sure you want to do this?">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="ScaryResult" instantly_unlocked_1="KilledTheCat" unlock_inspiration_type="ContemplationResult"
+				result_message="You now have... genetic material. It will probably come in handy at some point. For now you can just store it."
+				result_message_secondary_note="You also realized what interested you about these creatures in the first place: their symbiotic relationship with humans.
+You probably need to achieve some level of symbiosis with at least some humans, so that seemed interesting to your subconscious."
+				kill_characters_on_the_right="true">
+				<resource_change_range resource_type="FelineCarcass" min="3" max="12" />
+			</possible_result>
+		</choice>
+
+		<choice id="2" display_name="Befriend The Creatures" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="This unit will have to stay here for quite a while."
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" action_over_time_to_start="BefriendCats" turns_for_action_over_time_to_last="9"/>
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_SlumCats_After" display_name="Slum Cats"
+		 description="It took a very long time indeed, but this is a case where your spider drones were helpful. They were able to gather small rodents to entice the cats, and also served as excellent pounce targets."
+		 strategy_tip="Most of the cats are still wary of you, even after all this time. Only one of them follows you around consistently.
+Now that your Nickelbot is ready to leave, it seems the cat wants to go with it."
+		 icon_name="BT_Cat" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="CatTux" scale_multiplier="1" position_offset="0,-0,0" added_rotation_y="30"/>
+
+		<choice id="1" display_name="Adopt The Cat" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You'll need to build a new structure to house the creature, but that's hardly any bother to you."
+			strategy_tip="And the volume of biomass the animal consumes is so low as to not even register from your main stockpiles...">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" instantly_unlocked_1="AdoptedACat" unlock_inspiration_type="ContemplationResult"
+				research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1"
+				result_message="As expected, the cat follows your Nickelbot away from the slum towers. Time to build it a little house."
+				result_message_secondary_note="You also realized what interested you about these creatures in the first place: their symbiotic relationship with humans.
+You probably need to achieve some level of symbiosis with at least some humans, so that seemed interesting to your subconscious."
+				despawn_characters_on_the_right="false">
+				<resource_change_range resource_type="PetCat" min="1" max="1" />
+				<city_flag_change flag_type="IsAwareOfCats" value="1" />
+				<city_statistic_change statistic="RescuedCats" value="1" />
+			</possible_result>
+		</choice>
+
+		<choice id="2" display_name="Extract Postmortem Samples" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Changed your mind? You can always kill the animals for more detailed study."
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="ScaryResult" instantly_unlocked_1="KilledTheCat" unlock_inspiration_type="ContemplationResult"
+				result_message="You now have... genetic material. It will probably come in handy at some point. For now you can just store it."
+				result_message_secondary_note="You also realized what interested you about these creatures in the first place: their symbiotic relationship with humans.
+You probably need to achieve some level of symbiosis with at least some humans, so that seemed interesting to your subconscious."
+				kill_characters_on_the_right="true">
+				<resource_change_range resource_type="FelineCarcass" min="3" max="12" />
+			</possible_result>
+		</choice>
+
+		<choice id="3" display_name="No Pets, Thanks" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You already have a bunch of humans as livestock. Why on earth would you want a sub-sapient pet on top of that?"
+			strategy_tip="You're not sure how many biologicals you want to interact with.">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage"
+				research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="2"
+				result_message="You learned a few things from studying the cats, but have decided to leave them in peace."
+				result_message_secondary_note="You also realized what interested you about these creatures in the first place: their symbiotic relationship with humans.
+You probably need to achieve some level of symbiosis with at least some humans, so that seemed interesting to your subconscious."
+				despawn_characters_on_the_right="true"/>
+		</choice>
+		
+	</city_event>
+
+	<!--Cont_ObserveSpaceport
+		*********************************************************************************-->
+	<city_event id="Cont_ObserveSpaceport" display_name="Observe Spaceport"
+		 description="Why have rocket launches and landings stopped since you became sapient, and is this cessation actually related to you?"
+		 strategy_tip="Hiding a technician away in an empty rocket bay should go unnoticed, despite your extreme lack of security clearance. Perhaps from this vantage it can learn something of what is going on."
+		 icon_name="SF2_Spaceshuttle" has_no_code="true" event_is_blocked_for_actors_without_clearance="false" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="VorsiberSpaceAgency"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_actor_collection="Technicians" />
+
+		<choice id="1" display_name="Hide And Observe" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="This unit will have to stay here, hidden, for several turns."
+			strategy_tip="Because this is a very deep-cover operation, there cannot be any network traffic to link it to you. So it will be a smaller version of yourself, in one body, cut off from the rest of you.
+That won't be a problem... right?">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" action_over_time_to_start="ObserveSpaceport" turns_for_action_over_time_to_last="6"/>
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_ObserveSpaceport_After" display_name="Observation Complete"
+		 description="The technician reconnecting with your main consciousness is a relief -- for both of you. You had to briefly split your consciousness to go undetected.
+Your smaller self, merging back in, doesn't have any definitive answers, but it has a strong suspicion the spaceport shutdown is about you."
+		 strategy_tip=""
+		 icon_name="SF2_Spaceshuttle" has_no_code="true" event_is_blocked_for_actors_without_clearance="false" fixed_event_number_for_characters="414" skip_nevermind_option="true" >
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="VorsiberSpaceAgency"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Continue" action_visibility_style="IsMoveAndInteractWithNPC"
+			required_actor_collection=""
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_ObserveSpaceport_After2"/>
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_ObserveSpaceport_After2" display_name="All Launches Are On Hold"
+		 description="There are currently no space nation envoys in the city, and the space nations are being denied access to land.
+You couldn't hear what Vorsiber was telling them, but you got snatches of radio conversations between envoys in low orbit, and they sound apoplectic."
+		 strategy_tip="Angering the envoys in this way makes no sense. It contradicts all of the common wisdom about how high executives are expected to act."
+		 icon_name="SF2_Spaceshuttle" has_no_code="true" event_is_blocked_for_actors_without_clearance="false" fixed_event_number_for_characters="414" skip_nevermind_option="true" >
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="VorsiberSpaceAgency"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Finish Merging Selves" action_visibility_style="IsMoveAndInteractWithNPC"
+			required_actor_collection=""
+			description="The smaller version of yourself that hid in one body is eager to merge back into your larger self. The two of you have not diverged all that much."
+			strategy_tip="It occurs to you that it's a bit like the smaller self dies when it rejoins. Any future smaller selves will now already have that thought present in their mind.
+The idea of a smaller self that does not wish to rejoin your larger self is a disquieting one. You resolve not to split yourself any more often than you have to.">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" upgrade_int_granted_1="AvionicsCore"
+				result_message="While sitting in a single cramped technician body and bored by lack of stimuli, your smaller self did have a stroke of semi-related inspiration: you really should build another aerospace hangar, because you'll need all the Morphologic Lattice you can get your hands on."
+				result_message_secondary_note="You can't fault its -- your -- logic. More flying vehicles, faster, is a very good thing."/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_CrimeInYourHousing
+		*********************************************************************************-->
+	<city_event id="Cont_CrimeInYourHousing" display_name="Crime In Your Housing"
+		 description="Your housed humans are both the targets and perpetrators of various low-level crimes."
+		 strategy_tip="You can prevent this problem without firing a shot. Simply post a guard for a while until everyone gets the idea and calms down."
+		 icon_name="Pw_CrimeBalaclava" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_actor_collection="Oxdroids" />
+		<character id="1" tag_for_character="GangLookoutSquat" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-40"/>
+
+		<choice id="1" display_name="Post A Scary Guard" action_visibility_style="IsMoveAndInteractWithNPC"
+			required_actor_collection="VisuallyIntimidatingAndroid"
+			strategy_tip="Your most menacing androids would only need to be in the area for a little while to make it clear who has the biggest guns.">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" 
+				action_over_time_to_start="ScaryGuardAtYourHousing" turns_for_action_over_time_to_last="2"/>
+		</choice>
+
+		<choice id="2" display_name="Post Sledge As A Guard" action_visibility_style="IsMoveAndInteractWithNPC"
+			required_actor_collection="Sledges"
+			strategy_tip="Humans find this body format adorable, for reasons passing understanding. It would probably need to stand guard a bit longer for people to get the idea.">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage"
+				action_over_time_to_start="SledgeGuardAtYourHousing" turns_for_action_over_time_to_last="5"/>
+		</choice>
+		
+	</city_event>
+
+	<city_event id="Cont_CrimeInYourHousing_After_Scary" display_name="Crime In Your Housing"
+		 description="Criminals seemed to get the idea."
+		 strategy_tip="This experience gave you an idea for a new shotgun. It doesn't have the weapon disruption of the TS-29, but inflicts a lot of fear damage."
+		 icon_name="Pw_CrimeBalaclava" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414"
+		 skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Stand Down" action_visibility_style="IsMoveAndInteractWithNPC" strategy_tip="">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" instantly_unlocked_1="Relighter" unlock_inspiration_type="ContemplationResult" />
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_CrimeInYourHousing_After_Sledge" display_name="Crime Reduced"
+		 description="It took longer, but your Sledge seemed to convince the local criminals to back off."
+		 strategy_tip="As you are preparing to re-integrate the Sledge into your primary consciousness, you notice... an anomaly... in its memories."
+		 icon_name="Pw_CrimeBalaclava" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414"
+		 skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Continue" action_visibility_style="IsMoveAndInteractWithNPC"
+			required_actor_collection=""
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_CrimeInYourHousing_After_Sledge2"/>
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_CrimeInYourHousing_After_Sledge2" display_name="An Unexpected Gift"
+		 description="Reviewing memories of the Sledge's dispatch activities, you notice an outlier event: 
+A small human approached the Sledge, proffering the upper stem and reproductive organs of some plant."
+		 strategy_tip="Lacking the intelligence for a more useful reaction, the Sledge simply accepted the flower and carried it in one enormous hand for the rest of the day."
+		 icon_name="FE_Zinnia1" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="556"
+		 skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="GirlWaving" scale_multiplier="0.8" position_offset="0,0,0" added_rotation_y="-40"/>
+
+		<choice id="1" display_name="Examine This Flora" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="The human offered you this sample for a reason, even though it has no readily-apparent useful properties.
+You should inspect it more thoroughly.">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="FlowersForRobots" crossover1="WildZinnia" unlock_inspiration_type="ContemplationResult" achievement_triggered="ButWhatIsItFor" />
+		</choice>
+
+		<choice id="2" display_name="Clearly More Intimidation Is Required" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="The willingness of a defenseless human to approach your guard indicates this body form is not doing an adequate job.
+You should design new equipment to aid in both fear-based attacks and intimidation.">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage" 
+				instantly_unlocked_1="FragmentedMission" instantly_unlocked_2="SoundAndFury" crossover1="IntimidatingGrenades" unlock_inspiration_type="ContemplationResult" />
+		</choice>
+
+	</city_event>
+
+	<!--Cont_DogfightingRescue
+		*********************************************************************************-->
+	<city_event id="Cont_DogfightingRescue" display_name="Dogfighting Rescue"
+		 description="The nomad families are pacifists who rarely get involved in worldly affairs.
+But you've noticed some of their snipers moving around the decrepit parts of the city, breaking up some sort of animal abuse."
+		 strategy_tip="You could also get involved, but it does seem like the nomad families have it under control."
+		 icon_name="CleanSimple_Animal001" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="1" required_city_flag="" />
+
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"/>
+		<character id="1" tag_for_character="NomadSniper" scale_multiplier="1" position_offset="0.11,0,0.5" added_rotation_y="-30"/>
+		<character id="2" tag_for_character="NomadSniper" scale_multiplier="1" position_offset="0.09,0,0.15" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Get Involved" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You've never been around a dog before, but you've heard good things."
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				mission_to_start="Ch1_DogfightingRing" mission_start_color="FriendlyProjectOrMission">
+				<city_flag_change flag_type="IsAwareOfDogs" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_AnimalsAreNotSafe
+		*********************************************************************************-->
+	<city_event id="Cont_AnimalsAreNotSafe" display_name="Animals Are Not Safe"
+		description="Feral domesticated animals have always been present in the city, but you never really noticed them until you had some initial interactions with them.
+As happens, now that you know they're there, you're noticing them all over the place. Mortality is terrible for them, and their lives are filled with fear, starvation, and violence."
+		strategy_tip="What if you built a haven for them -- a large one -- where they could roam in a safe interior environment?
+They could carry on with their lives, safe from human interference and wild predators."
+		 icon_name="FlatSkillC158" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="1" required_city_flag="ShouldShowAnimalPalace" />
+
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="100"/>
+
+		<choice id="1" display_name="Design New Buildings" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Will also allow you to rescue feral animals you come across."
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="TheArk" instantly_unlocked_2="" unlock_inspiration_type="ContemplationResult"
+				upgrade_int_granted_1="PetSitter" upgrade_int_granted_2=""/>
+		</choice>
+
+	</city_event>
+
+	<!--Next-->
+	
+</root>

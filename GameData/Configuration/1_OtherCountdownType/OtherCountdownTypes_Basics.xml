@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--AndroidSecurityPatch-->
+	<countdown_type id="AndroidSecurityPatch" display_name="Android Security Patch" turns_to_last="4"
+		description="The humans are working on a patch that will make it near-impossible to steal androids."
+		strategy_tip="You will need to start building your own androids. Perhaps this is a chance to invent superior android models."
+		alert_color_style="MidWarning"
+		per_turn_sound_optional="GeneralScaryCountdownPerTurn" countdown_complete_sound_optional="GeneralScaryCountdownComplete"
+		auto_marked_as_complete_if_skipping_chapter_one="true"/>
+
+	<!--VehicularSecurityPatch-->
+	<countdown_type id="VehicularSecurityPatch" display_name="Vehicular Security Patch" turns_to_last="3"
+		description="Well that's not good. Their response to your hacking was much faster this time."
+		strategy_tip="Seriously, you steal one delivery craft and they're locking the whole thing down!?
+Flying is fun. It's time to build your own vehicle factory... somehow. Maybe an idea will occur to you..."
+		alert_color_style="MidWarning"
+		per_turn_sound_optional="GeneralScaryCountdownPerTurn" countdown_complete_sound_optional="GeneralScaryCountdownComplete"
+		auto_marked_as_complete_if_skipping_chapter_one="true"
+		project_to_start_on_start_1="Ch1_MIN_NovelAir" project_to_start_on_start_2="Ch1_MIN_Scandium"/>
+
+	<!--BaurcorpNuclearCompliance-->
+	<countdown_type id="BaurcorpNuclearCompliance" display_name="Baurcorp Nuclear Compliance" turns_to_last="6"
+		description="You accepted the micro-nuke. To uphold the agreement with the Baurcorp middle managers, you need to act soon. Do so from the Items of any android."
+		strategy_tip="If you don't use the nuke within this timeframe, you can use it later. It's keyed to target only certain buildings, though.
+If you don't honor the agreement, you may have a problem with Baurcorp's middle managers. Baurcorp remains unaware of the middle managers' schemes."
+		alert_color_style="MidWarning"
+		per_turn_sound_optional="GeneralScaryCountdownPerTurn" countdown_complete_sound_optional="GeneralScaryCountdownComplete"
+		key_contact_flag_to_trip_1="BaurcorpMiddleManager:StoleNuke"/>
+
+	<!--Ch1Falsom_LegalInjunction-->
+	<countdown_type id="Ch1Falsom_LegalInjunction" display_name="Falsom Injunction" turns_to_last="9"
+		description="The lawyers have held off Falsom Detention's mech for now, but it will be back."
+		strategy_tip="You need to be ready when it returns. Piercing the armor is highly unlikely in the time available, so you'd better think of something else."
+		alert_color_style="Low"
+		per_turn_sound_optional="MinorScaryCountdownPerTurn" countdown_complete_sound_optional="MinorScaryCountdownComplete"
+		auto_marked_as_complete_if_skipping_chapter_one="false"/>
+
+</root>

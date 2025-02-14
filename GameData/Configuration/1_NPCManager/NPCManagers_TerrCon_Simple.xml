@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--**************************************************************DefendSimpleResources**************************************************************-->
+
+	<npc_manager id="TC_DefendSimpleResources_Smaller" cohort_tag_a="GenericCorporateAggressor" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="3"
+			max_security_clearance_of_seed_spot="2" target_territory_trigger="DefendSimpleResources"
+			only_targets_territory_trigger_if_required_deterrence_percentage_at_least="0"
+			only_targets_territory_trigger_if_required_deterrence_percentage_less_than="100"
+			threat_radius="30" home_radius="15">
+			<gate_by_city />
+		</periodic_data>
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="DefendingArea"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_TerrCon_DefendRes"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="4"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="G" to_spawn="Grenadier" stance_to_start_in="DefendingArea"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_TerrCon_DefendRes"
+			min_squad_size_multiplier="0.2" max_squad_size_multiplier="3"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="MilitarySniper" stance_to_start_in="DefendingArea"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_TerrCon_DefendRes"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+	
+	<npc_manager id="TC_DefendSimpleResources_Larger" cohort_tag_a="GenericCorporateAggressor" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="2"
+			max_security_clearance_of_seed_spot="2" target_territory_trigger="DefendSimpleResources"
+			only_targets_territory_trigger_if_required_deterrence_percentage_at_least="0"
+			only_targets_territory_trigger_if_required_deterrence_percentage_less_than="50"
+			threat_radius="30" home_radius="15">
+			<gate_by_city />
+		</periodic_data>
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="DefendingArea"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_TerrCon_DefendRes"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="4"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="G" to_spawn="Grenadier" stance_to_start_in="DefendingArea"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_TerrCon_DefendRes"
+			min_squad_size_multiplier="0.2" max_squad_size_multiplier="3"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="MilitarySniper" stance_to_start_in="DefendingArea"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_TerrCon_DefendRes"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+	
+	</npc_manager>
+	
+	<!--**************************************************************DroneHarvestSimpleResources**************************************************************-->
+
+	<npc_manager id="TC_DroneHarvestSimpleResources" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="0" max_turns_between_activity="0"
+			max_security_clearance_of_seed_spot="2" target_territory_trigger="DroneHarvestSimpleResources"
+			only_targets_territory_trigger_if_required_deterrence_percentage_at_least="0"
+			only_targets_territory_trigger_if_required_deterrence_percentage_less_than="1000000"
+			threat_radius="30" home_radius="15">
+			<gate_by_city/>
+		</periodic_data>
+		
+		<unit id="0" to_spawn="BulkHarvesterDrones" stance_to_start_in="PlayerHarvest"
+			should_be_specific_cohort="YourAutomatedWorkers"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" max_to_have_extant_per_structure="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="4" spawn_radius_relaxed_max="7"
+			skip_ever_making_player_focus_on_these="true"
+			spawn_as_close_as_possible="true"
+			should_hard_despawn_on_manager_blocked="true"/>
+
+	</npc_manager>
+	
+	<!--**************************************************************ShelteredHumansFurnishApartments**************************************************************-->
+
+	<npc_manager id="TC_ShelteredHumansFurnishApartments" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="0" max_turns_between_activity="0"
+			max_security_clearance_of_seed_spot="2" target_territory_trigger="ShelteredHumansFurnishApartments"
+			only_targets_territory_trigger_if_required_deterrence_percentage_at_least="0"
+			only_targets_territory_trigger_if_required_deterrence_percentage_less_than="1000000"
+			threat_radius="30" home_radius="15">
+			<gate_by_city required_city_flag="HasRoomForMoreApartmentFurnishings"/>
+		</periodic_data>
+
+		<unit id="0" to_spawn="ShelteredCitizenCrowd_Better" stance_to_start_in="FurnishApartments"
+			should_be_specific_cohort="ShelteredHumans"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="12" max_to_have_extant_per_structure="12" lang_key_for_extra_info="Mngr_TerrCon_Furnish"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="4" spawn_radius_relaxed_max="7"
+			skip_ever_making_player_focus_on_these="true"
+			spawn_as_close_as_possible="true"
+			should_hard_despawn_on_manager_blocked="true"/>
+
+	</npc_manager>
+
+	<!--**************************************************************Next**************************************************************-->
+</root>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<job id="LOXBunker" display_name="LOX Bunker" marker_color="VolatileRed" ui_color="#fefefe"
+		is_locked_before_unlock="ThisIsABomb"
+		description="Liquid oxygen is highly explosive. Keep it away from anything you don't want accidentally blown-up."
+		strategy_tip_optional="Scrapping the building detonates it."
+		icon_name="WEmblem011" turns_to_install="3" required_structure_type="BunkerA" job_work_order_priority="100"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage" extra_code_on_area_explosion="LOXBunkerExplosion"
+		job_classes="VolatileStorage" internal_robotics_type_needed="Archivist" internal_robots_count_needed="10" tags="Procurement"
+		resource_cap_to_increase_1="LiquidOxygen" resource_cap_increased_flat1="646066000000" shuts_off_at_percentage_electricity="10" portrait_icon_name="BuildingHexDark">
+		<initial_actor_rating data_type="RequiredElectricity" value="27" />
+		<resource_cost resource_type="Microbuilders" cost="120" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Hand" sort_index="100" />
+	</job>
+
+</root>

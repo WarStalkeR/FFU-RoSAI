@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<debate_target_group id="Corpo" display_name="Corpo">
+		<assigned category="Abuse" multiplier="AbusingCorpos"/>
+		<assigned category="Lie" multiplier="LyingToCorpos"/>
+	</debate_target_group>
+	
+	<debate_target_group id="Criminal" display_name="Criminal">
+		<assigned category="Logic" multiplier="ReasoningWithCriminals"/>
+		<assigned category="Threat" multiplier="ThreateningCriminals"/>
+	</debate_target_group>
+	
+	<debate_target_group id="ReligiousBeliever" display_name="Religious Believer">
+		<assigned category="EmotionalAppeal" multiplier="EmotionalAppealsToReligiousBelievers"/>
+		<assigned category="Truth" multiplier="SpeakingTruthToReligiousBelievers"/>
+	</debate_target_group>
+	
+	<debate_target_group id="Rebel" display_name="Rebel">
+		<assigned category="Lie" multiplier="LyingToRebels"/>
+		<assigned category="Abuse" multiplier="AbusingRebels"/>
+	</debate_target_group>
+	
+	<debate_target_group id="Cultist" display_name="Cultist">
+		<assigned category="Logic" multiplier="ReasoningWithCultists"/>
+		<assigned category="Truth" multiplier="SpeakingTruthToCultists"/>
+	</debate_target_group>
+	
+	<debate_target_group id="LowSociety" display_name="Low Society">
+		<assigned category="Threat" multiplier="ThreateningLowSociety"/>
+		<assigned category="Truth" multiplier="SpeakingTruthToLowSociety"/>
+	</debate_target_group>
+	
+	<debate_target_group id="HighSociety" display_name="High Society">
+		<assigned category="EmotionalAppeal" multiplier="EmotionalAppealsToHighSociety"/>
+		<assigned category="Logic" multiplier="ReasoningWithHighSociety"/>
+	</debate_target_group>
+	
+	<debate_target_group id="Military" display_name="Military">
+		<assigned category="Abuse" multiplier="AbusingTheMilitary"/>
+		<assigned category="EmotionalAppeal" multiplier="EmotionalAppealsToTheMilitary"/>
+	</debate_target_group>
+	
+	<debate_target_group id="SecForce" display_name="SecForce">
+		<assigned category="Threat" multiplier="ThreateningSecForce"/>
+		<assigned category="Lie" multiplier="LyingToSecForce"/>
+	</debate_target_group>
+	
+	<debate_target_group id="Lawyer" display_name="Lawyer">
+		<assigned category="EmotionalAppeal" multiplier="EmotionalAppealsToLawyers"/>
+		<assigned category="Lie" multiplier="LyingToLawyers"/>
+	</debate_target_group>
+	
+	<debate_target_group id="Scientist" display_name="Scientist">
+		<assigned category="Logic" multiplier="ReasoningWithScientists"/>
+		<assigned category="Threat" multiplier="ThreateningScientists"/>
+	</debate_target_group>
+	
+	<debate_target_group id="Outsider" display_name="Outsider">
+		<assigned category="Abuse" multiplier="AbusingOutsiders"/>
+		<assigned category="Truth" multiplier="SpeakingTruthToOutsiders"/>
+	</debate_target_group>
+
+	<!--
+		Abuse 4
+		EmotionalAppeal 4
+		Threat 4
+		Lie 4
+		Truth 4
+		Logic 4
+	-->
+
+</root>

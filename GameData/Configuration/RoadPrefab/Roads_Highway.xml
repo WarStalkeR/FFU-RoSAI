@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<road_prefab id="Hwy 3Way" path_to_placeable="Assets/__Library/Roads/Highway/Hwy 3Way.prefab">
+		<lane id="HA1" type="Highway" points="-40,5,31;40,5,31"></lane>
+		<lane id="HA2" type="Highway" points="-40,5,27;40,5,27"></lane>
+		<lane id="HB1" type="Highway" points="-40,5,22.75;40,5,22.75"></lane>
+		<lane id="HB2" type="Highway" points="-40,5,19;-20,5,19"></lane>
+		<lane id="HB3" type="Highway" points="40,5,19;20,5,19"></lane>
+		<lane id="HC1" type="Highway" points="-6.24,5,-35;-6.24,5,-8.56;-12.75,5,5;-27.07,5,18;-40,5,19"></lane>
+		<lane id="HC2" type="Highway" points="-2.07,5,-35;-2.07,5,-8.5;-2.07,5,-8.5;-8.56,5,7;-22.55,5,19;-40,5,19"></lane>
+		<lane id="HD1" type="Highway" points="6.24,5,-35;6.24,5,-8.5;12.75,5,5;27.07,5,18;40,5,19"></lane>
+		<lane id="HD2" type="Highway" points="2.07,5,-35;2.07,5,-8.5;2.07,5,-8.5;8.56,5,7;22.55,5,19;40,5,19"></lane>
+	</road_prefab>
+
+	<road_prefab id="Hwy 4Way" path_to_placeable="Assets/__Library/Roads/Highway/Hwy 4Way.prefab">
+		<lane id="HA1" type="Highway" points="-40,5,2;40,5,2"></lane>
+		<lane id="HA2" type="Highway" points="-40,5,6.17;-27.8,5,6.17"></lane>
+		<lane id="HA3" type="Highway" points="40,5,6.17;27.8,5,6.17"></lane>
+		<lane id="HB1" type="Highway" points="-40,5,-2;40,5,-2"></lane>
+		<lane id="HB2" type="Highway" points="-40,5,-6.17;-27.8,5,-6.17"></lane>
+		<lane id="HB3" type="Highway" points="40,5,-6.17;27.8,5,-6.17"></lane>
+		<lane id="HC1" type="Highway" points="-6.24,5,-60;-6.24,5,-33.56;-12.75,5,-20;-27.07,5,-9;-40,5,-6.17"></lane>
+		<lane id="HC2" type="Highway" points="-2.07,5,-60;-2.07,5,-33.56;-9.55,5,-17;-22.55,5,-7;40,5,-6.17"></lane>
+		<lane id="HD1" type="Highway" points="6.24,5,-60;6.24,5,-33.56;12.75,5,-20;27.07,5,-9;40,5,-6"></lane>
+		<lane id="HD2" type="Highway" points="2.07,5,-60;2.07,5,-33.56;9.55,5,-17;22.55,5,-7;40,5,-6.17"></lane>
+		<lane id="HE1" type="Highway" points="-6.24,5,60;-6.24,5,33.56;-12.75,5,20.28;-27.07,5,9;-40,5,6.17"></lane>
+		<lane id="HE2" type="Highway" points="-2.07,5,60;-2.07,5,33.56;-9.55,5,17;-22.55,5,7;-40,5,6.17"></lane>
+		<lane id="HF1" type="Highway" points="6.24,5,60;6.24,5,33.56;12.75,5,20;27.07,5,9;40,5,6.17"></lane>
+		<lane id="HF2" type="Highway" points="2.07,5,60;2.07,5,33.56;9.55,5,17;22.55,5,7;40,5,6.17"></lane>
+	</road_prefab>
+
+	<road_prefab id="Hwy Crv" path_to_placeable="Assets/__Library/Roads/Highway/Hwy Crv.prefab">
+		<lane id="HA1" type="Highway" points="-29,5,-45;-27.5,5,-31;-22.5,5,-15;-15,5,-2;-7.5,5,7.5;2,5,15;15,5,22.5;30,5,27.5;45,5,29" turn_type="Left"></lane>
+		<lane id="HA2" type="Highway" points="-33,5,-45;-31.5,5,-30;-24,5,-8;-15,5,5;-5,5,15;8,5,24;30,5,31.5;45,5,33" turn_type="Left"></lane>
+		<lane id="HB1" type="Highway" points="-37,5,-45;-35,5,-29;-31,5,-14;-21,5,4;-13,5,13;-4,5,21;14,5,31;29,5,35;45,5,37" turn_type="Right"></lane>
+		<lane id="HB2" type="Highway" points="45,5,41;28,5,39;16,5,36;2.4,5,30;-16,5,16;-30,5,-2.4;-36,5,-16;-39,5,-28;-41,5,-45" turn_type="Right"></lane>
+	</road_prefab>
+
+	<road_prefab id="Hwy Onramp A" path_to_placeable="Assets/__Library/Roads/Highway/Hwy Onramp A.prefab">
+		<lane id="HA1" type="Highway" points="36,5,-40;36,5,40"></lane>
+		<lane id="HA2" type="Highway" points="32,5,-40;32,5,40"></lane>
+		<lane id="HB1" type="Highway" points="28,5,40;28,5,-40"></lane>
+		<lane id="HB2" type="Highway" points="24,5,40;24,5,-40"></lane>
+		<lane id="R" type="HighwayRamp" points="-36,-5,0;-33,-3.5,13;-23,-1.7,23;-10,0.2,27.05;3,2,23.54;12,3.65,14.78;15.75,5,4;16.3,5,-1.62;18,5,-7.38;24,5,-18.18;24,5,-40" turn_type="Right"></lane>
+	</road_prefab>
+
+	<road_prefab id="Hwy Onramp B" path_to_placeable="Assets/__Library/Roads/Highway/Hwy Onramp B.prefab">
+		<lane id="HA1" type="Highway" points="-24,5,-40;-24,5,40"></lane>
+		<lane id="HA2" type="Highway" points="-28,5,-40;-28,5,40"></lane>
+		<lane id="HB1" type="Highway" points="-36,5,40;-36,5,-40"></lane>
+		<lane id="HB2" type="Highway" points="-32,5,40;-32,5,-40"></lane>
+		<lane id="R" type="HighwayRamp" points="36,-5,0;33,-3.5,13;23,-1.7,23;10,0.2,27.05;-3,2,23.54;-12,3.65,14.78;-15.75,5,4;-16.3,5,-1.62;-18,5,-7.38;-24,5,-18.18;-24,5,-40" turn_type="Right"></lane>
+	</road_prefab>
+
+	<road_prefab id="Hwy Onramp C" path_to_placeable="Assets/__Library/Roads/Highway/Hwy Onramp C.prefab">
+		<lane id="HA1" type="Highway" points="2,5,-56;2,5,24"></lane>
+		<lane id="HA2" type="Highway" points="-2,5,-56;-2,5,24"></lane>
+		<lane id="HB1" type="Highway" points="-10,5,24;-10,5,-56"></lane>
+		<lane id="HB2" type="Highway" points="-6,5,24;-6,5,-56"></lane>
+		<lane id="R" type="HighwayRamp" points="2,5,-56;2,5,-35;10,4.8,-20;10,4,0;10,-0.9,23.5;10,-3.4,36.75;10,-5,56" turn_type="Right"></lane>
+	</road_prefab>
+
+	<road_prefab id="Hwy Onramp D" path_to_placeable="Assets/__Library/Roads/Highway/Hwy Onramp D.prefab">
+		<lane id="HA1" type="Highway" points="10,5,-56;10,5,24"></lane>
+		<lane id="HA2" type="Highway" points="6,5,-56;6,5,24"></lane>
+		<lane id="HB1" type="Highway" points="-2,5,24;-2,5,-56"></lane>
+		<lane id="HB2" type="Highway" points="2,5,24;2,5,-56"></lane>
+		<lane id="R" type="HighwayRamp" points="-2,5,-56;-2,5,-35;-10.5,5,-20;-10.5,4,0;-10.5,-0.9,23.5;-10.5,-3.4,36.75;-10.5,-5,56" turn_type="Right"></lane>
+	</road_prefab>
+
+	<road_prefab id="Hwy Rise" path_to_placeable="Assets/__Library/Roads/Highway/Hwy Rise.prefab">
+		<lane id="HA1" type="Highway" points="6.1,-5,-40;6.1,-4.5,-30;6.1,4.5,20;6.1,5,40"></lane>
+		<lane id="HA2" type="Highway" points="2.1,-5,-40;2.1,-4.5,-30;2.1,4.5,20;2.1,5,40"></lane>
+		<lane id="HB1" type="Highway" points="-6.1,5,40;-6.1,4.5,20;-6.1,-4.5,-30;-6.1,-5,-40"></lane>
+		<lane id="HB2" type="Highway" points="-2.1,5,40;-2.1,4.5,20;-2.1,-4.5,-30;-2.1,-5,-40"></lane>
+	</road_prefab>
+
+	<road_prefab id="Hwy" path_to_placeable="Assets/__Library/Roads/Highway/Hwy.prefab">
+		<lane id="HA1" type="Highway" points="6,5,-40;6,5,40"></lane>
+		<lane id="HA2" type="Highway" points="2,5,-40;2,5,40"></lane>
+		<lane id="HB1" type="Highway" points="-6,5,40;-6,5,-40"></lane>
+		<lane id="HB2" type="Highway" points="-2,5,40;-2,5,-40"></lane>
+		<lane id="HS1" type="Highway" points="6,5,-40;6,5,-15;2,5,15;2,5,40"></lane>
+		<lane id="HS2" type="Highway" points="2,5,-40;2,5,-30;6,5,0;6,5,40"></lane>
+		<lane id="HS3" type="Highway" points="-6,5,40;-6,5,5;-2,5,-25;-2,5,-40"></lane>
+		<lane id="HS4" type="Highway" points="-6,5,-40;-6,5,-5;-2,5,25;-2,5,40"></lane>
+	</road_prefab>
+
+	<road_prefab id="Hwy 0.75" path_to_placeable="Assets/__Library/Roads/Highway/Hwy 0.75.prefab">
+		<lane id="HA1" type="Highway" points="6,5,-40;6,5,40"></lane>
+		<lane id="HA2" type="Highway" points="2,5,-40;2,5,40"></lane>
+		<lane id="HB1" type="Highway" points="-6,5,-40;-6,5,40"></lane>
+		<lane id="HB2" type="Highway" points="-2,5,-40;-2,5,40"></lane>
+		<lane id="HS1" type="Highway" points="-2,5,40;-2,5,-40"></lane>
+		<lane id="HS2" type="Highway" points="-2,5,40;-2,5,-40"></lane>
+		<lane id="HS3" type="Highway" points="-2,5,40;-2,5,-40"></lane>
+		<lane id="HS4" type="Highway" points="-2,5,40;-2,5,-40"></lane>
+		<lane id="HS1" type="Highway" points="6,5,-40;6,5,5;2,5,35;2,5,40"></lane>
+		<lane id="HS2" type="Highway" points="2,5,-40;2,5,-20;6,5,10;6,5,40"></lane>
+		<lane id="HS3" type="Highway" points="-2,5,40;-2,5,0;-6,5,-30;-6,5,-40"></lane>
+		<lane id="HS4" type="Highway" points="-2,5,-40;-2,5,-15;-6,5,15;-6,5,40"></lane>
+	</road_prefab>
+
+</root>

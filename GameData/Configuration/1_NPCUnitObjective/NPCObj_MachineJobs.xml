@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--**************************************************************HumanApartments**************************************************************-->
+
+	<npc_objective id="TentConversion" display_name="Tents To Trees" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_MachineJobs"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		objective_style="CustomActionAgainstBuilding" popup_text_on_complete="Tents Converted" on_complete="TentsConverted"
+		popup_text_scale="0.6" popup_color="#3FF7A5" popup_color_hdr_intensity="1.8"
+		icon_name="CleanSimple_Heal19" icon_color="#3FF799" icon_color_hdr_intensity="1.8" icon_scale="0.6"
+		log_completion_to_event_log="true"
+	>
+	</npc_objective>
+	
+</root>

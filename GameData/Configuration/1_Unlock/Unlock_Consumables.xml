@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Chapter One Auto-Unlocks-->
+	<unlock id="SublimatingShells" display_name="Sublimating Shells" consumable_item="SmallCaliberArmorPiercingRounds"
+		turns_to_unlock="2" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true"
+		immediate_other_unlock_1="BattlePreparations" other_unlock_inspiration_type="FollowUpIdea"
+		project_to_start_1="Ch1_MIN_PrismTung">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+	
+	<unlock id="UntargetedAttack" display_name="Untargeted Attack" consumable_item="Hackamajig"
+		turns_to_unlock="2" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+	
+	<unlock id="SwarmCloud" display_name="Swarm Cloud" consumable_item="MicrobuilderCloud"
+		turns_to_unlock="2" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+	
+	<unlock id="EnemyExcavation" display_name="Enemy Excavation" consumable_item="ExtractionDrone"
+		turns_to_unlock="2" required_intelligence_class="1"
+		immediate_other_unlock_1="ScavengersEye" other_unlock_inspiration_type="FollowUpIdea"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+	<unlock id="ForcedShutdown" display_name="Forced Shutdown" consumable_item="EngineDrill"
+		turns_to_unlock="2" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+	
+	<unlock id="SublimatingBoreholes" display_name="Sublimating Boreholes" consumable_item="LargeBoreArmorPiercingRounds"
+		turns_to_unlock="2" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+	<unlock id="PocketSand" display_name="Pocket Sand!" consumable_item="ToxicCloud"
+		turns_to_unlock="2" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true">>
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+	<!--Very late auto-unlocked.-->
+
+	<unlock id="Decrowner" display_name="Decrowner" consumable_item="DecrownerDrones"
+		turns_to_unlock="2" required_intelligence_class="2" auto_unlocks_if_intelligence_class_is_at_least="4">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+	
+	<!--Items that are NOT auto-unlocked.-->
+
+	<unlock id="DeepPhobia" display_name="Deep Phobia" consumable_item="WeaponizedSpiders"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+	<unlock id="ModifiedOrganism" display_name="Modified Organism" consumable_item="WeaponizedBees"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+</root>

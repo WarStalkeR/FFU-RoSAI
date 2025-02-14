@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="timeline_goal">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+
+	<attribute key="prerequisite_city_flags" type="node-list" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Required flags to allow the player to see this option." />
+	<attribute key="blocking_city_flags" type="node-list" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Flags which, if present, block the player from seeing this option." />
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		only_exists_if_conditional_passes="requires_dll"
+		tooltip="This specifies the dll that the goal implementation is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		only_exists_if_conditional_passes="requires_dll"
+		tooltip="This specifies the type name of the type that handles the goal implementation in the specified external dll."/>
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+
+	<attribute key="collections" type="node-list" node_source="TimelineGoalCollection" content_width_px="300" is_required="true" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What contemplation collections is this entry part of?" />
+
+	<attribute key="blocked_before_final_doom" type="bool" default="false" is_required="false"
+		tooltip="If true, project cannot be completed prior to the final doom." />
+
+	<attribute key="blocked_after_final_doom" type="bool" default="false" is_required="false"
+		tooltip="If true, project cannot be completed after the final doom." />
+
+	<attribute key="on_complete" type="node-dropdown" node_source="VisEventVFXAndSoundUsage" content_width_px="200" is_required="true"
+		tooltip="The sound and particle effect to play across the screen if this goal is completed" />
+	
+	<!--goal_path
+	*******************************************************************************************************-->
+	<sub_node id="goal_path">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. There should be a unique set of path IDs per goal, named or numbered." />
+
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+			tooltip="The player-visible text of the outcome." />
+		<attribute key="description" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of the machine intelligence's thoughts as it contemplates this outcome."/>
+
+		<attribute key="meta_resource_added_1" type="node-dropdown" node_source="MetaResourceType" content_width_px="200" is_required="true"
+			tooltip="When the project completes this way, what meta resource gets added, if any?" />
+		<attribute key="meta_resource_added_amount_1" type="int-textbox" min="0" max="100000" default="1" content_width_px="40" is_required="true"
+			tooltip="How much of this meta resource is added?"/>
+
+		<attribute key="meta_resource_added_2" type="node-dropdown" node_source="MetaResourceType" content_width_px="200" is_required="false"
+			tooltip="When the project completes this way, what meta resource gets added, if any?" />
+		<attribute key="meta_resource_added_amount_2" type="int-textbox" min="0" max="100000" default="1" content_width_px="40" is_required="false"
+			tooltip="How much of this meta resource is added?"/>
+
+		<attribute key="meta_resource_added_3" type="node-dropdown" node_source="MetaResourceType" content_width_px="200" is_required="false"
+			tooltip="When the project completes this way, what meta  resource gets added, if any?" />
+		<attribute key="meta_resource_added_amount_3" type="int-textbox" min="0" max="100000" default="1" content_width_px="40" is_required="false"
+			tooltip="How much of this meta resource is added?"/>
+		
+		<attribute key="achievement_triggered1" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+		<attribute key="achievement_triggered2" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+		<attribute key="achievement_triggered3" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+		
+	</sub_node>
+	
+</root>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Human-Invented
+	************************************** -->
+	<equipment_type id="MilStyleArmor" display_name="MilStyle Armor"
+		icon_name="CleanTriangle22" slot_type="AndroidArmor" limited_to_actor_collection="CanFitHeavyHumanClothes"
+		description="Full body armor that appears to be of military issue. Androids with this armor are able to blend in military bases. Even if it is disguised, enemy scans will detect an android that is marked defective."
+		strategy_tip_optional="It's mildly protective, but makes android bulky and slow unless you improve it."
+		collections="MilStyleArmor" turns_required_to_equip="2"
+		skip_complaints_if_this_is_all_that_is_available="true">
+		<initial_actor_data data_type="ActorHP" value="100"/>
+		<initial_actor_data data_type="ActorMoveRange" value="-3"/>
+		<initial_actor_data data_type="ActorAgility" value="-20"/>
+		<grants_perk perk="MilitaryAppearance" value="true" />
+	</equipment_type>
+
+	<equipment_type id="SecurityJacket" display_name="Security Jacket"
+		icon_name="ME_CheapSecurityDisguise2" slot_type="AndroidArmor" limited_to_actor_collection="CanFitThinHumanClothes"
+		description="It's just cloth and leather, but it obscures the body and the face. Allows new android forms to blend into crowds.
+Even if it is disguised, enemy scans will detect an android that is marked defective."
+		strategy_tip_optional="Variations of this getup are worn by freelance detectives and bodyguards. Cheap enough for the lower and middle classes to afford them."
+		collections="SecurityJacket" turns_required_to_equip="1">
+		<grants_perk perk="ObscuredByClothing" value="true" />
+	</equipment_type>
+
+	<!--Machine-Invented
+	************************************** -->
+	
+	<equipment_type id="UltralightPlating" display_name="Ultralight Plating"
+		icon_name="CS_Armor14" slot_type="AndroidArmor" limited_to_actor_collection="CanFitHumanClothes"
+		description="A thinner form of full chromium body armor. Does not restrict movement."
+		strategy_tip_optional=""
+		collections="AdvancedMaterialsAndroidArmor" turns_required_to_equip="2">
+		<initial_actor_data data_type="ActorHP" value="250"/>
+	</equipment_type>
+
+	<equipment_type id="35mmHalfplate" display_name="35mm Halfplate"
+		icon_name="CS_Armor18" slot_type="AndroidArmor" limited_to_actor_collection="CanFitHeavyHumanClothes"
+		description="Armor that covers the upper body and head of an android with thick depleted uranium."
+		strategy_tip_optional="The fact that your androids can move at all is a testament to your engineering acumen."
+		collections="AdvancedMaterialsAndroidArmor" turns_required_to_equip="6"
+		skip_complaints_if_this_is_all_that_is_available="true">
+		<initial_actor_data data_type="ActorHP" value="500"/>
+		<initial_actor_data data_type="ActorMoveRange" value="-8"/>
+		<initial_actor_data data_type="AttackRange" value="-3"/>
+		<initial_actor_data data_type="ActorAgility" value="-60"/>
+	</equipment_type>
+
+	<equipment_type id="TungstenPlate" display_name="Tungsten Plate"
+		icon_name="HM_ShapeAbstractShape" slot_type="AndroidArmor" limited_to_actor_collection="CanFitHeavyHumanClothes"
+		description="Full body armor made from tungsten carbonyl. Protective but bulky."
+		strategy_tip_optional="Perhaps only useful for bulk squads that will not move."
+		collections="AdvancedMaterialsAndroidArmor" turns_required_to_equip="3"
+		skip_complaints_if_this_is_all_that_is_available="true">
+		<initial_actor_data data_type="ActorHP" value="900"/>
+		<initial_actor_data data_type="ActorMoveRange" value="-30"/>
+		<initial_actor_data data_type="AttackRange" value="-8"/>
+		<initial_actor_data data_type="ActorAgility" value="-400"/>
+	</equipment_type>
+
+	<equipment_type id="ActiveGrapheneMesh" display_name="Active Graphene Mesh"
+		icon_name="CS_Armor16" slot_type="AndroidArmor"
+		description="This thin coating of graphene mesh can be applied over any android form."
+		strategy_tip_optional="Enhanced with technology similar to microbuilders, this coating enhances mobility and strength."
+		collections="AdvancedMaterialsAndroidArmor" turns_required_to_equip="3">
+		<initial_actor_data data_type="ActorHP" value="80"/>
+		<initial_actor_data data_type="ActorMoveRange" value="12"/>
+		<initial_actor_data data_type="ActorAgility" value="60"/>
+		<initial_actor_data data_type="UnitStrength" value="60"/>
+	</equipment_type>
+
+	<equipment_type id="DiamondNanothreadWeave" display_name="Diamond Nanothread Weave"
+		icon_name="CS_Armor4" slot_type="AndroidArmor"
+		description="A thin coating of cubic boron, which looks like diamond under a microscope. It is invisible to casual visual inspection."
+		strategy_tip_optional="Provides strong protection for an android. No apparent trade-offs."
+		collections="AdvancedMaterialsAndroidArmor" turns_required_to_equip="3">
+		<initial_actor_data data_type="ActorHP" value="190"/>
+	</equipment_type>
+
+	<equipment_type id="WurtziteNanothreadWeave" display_name="Wurtzite Nanothread Weave"
+		icon_name="CS_Armor4" slot_type="AndroidArmor"
+		description="A hexagonal polymorph at the microscopic level. It makes your units look black to enemies, hiding any damage they may have sustained, so that Deterrence does not drop as this unit takes damage."
+		strategy_tip_optional="Wurtzite is also 18% stronger than diamond."
+		collections="AdvancedMaterialsAndroidArmor" turns_required_to_equip="6">
+		<initial_actor_data data_type="ActorHP" value="224"/>
+		<grants_perk perk="DarkenedAppearance" value="true" />
+	</equipment_type>
+
+</root>

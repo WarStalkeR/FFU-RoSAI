@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--OrdersForWorkers
+		*************************************************************************************-->
+
+	<command_mode_action id="StopWorkerSledges" display_name="Stop Worker Sledges" short_name="Sledge"
+		description="These worker units will stop doing their work and will return to storage."
+		strategy_tip=""
+		icon_name="AN_AndroidSledge" ui_color="#EC67D6" command_mode_category="OrdersForWorkers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CommandActionsBasic" is_hidden_until_unlocked="WarMuscle"
+		mental_energy_cost="0" on_use="BulkUnitStanceChange" is_hidden_by_city_flag="StopWorkerSledges">
+	</command_mode_action>
+
+	<command_mode_action id="StartWorkerSledges" display_name="Restart Worker Sledges" short_name="Sledge"
+		description="These worker units will resume doing their normal duties."
+		strategy_tip=""
+		icon_name="AN_AndroidSledge" ui_color="#67275C" command_mode_category="OrdersForWorkers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CommandActionsBasic" is_hidden_until_unlocked="WarMuscle"
+		mental_energy_cost="0" on_use="BulkUnitStanceChange" requires_city_flag="StopWorkerSledges">
+	</command_mode_action>
+
+	<command_mode_action id="StopWorkerPMCImpostors" display_name="Stop Worker PMC Impostors" short_name="Impostor"
+		description="These worker units will stop doing their work and will return to storage."
+		strategy_tip=""
+		icon_name="AN_AndroidPMCImposter" ui_color="#EC67D6" command_mode_category="OrdersForWorkers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CommandActionsBasic" is_hidden_until_unlocked="WarImpostor"
+		mental_energy_cost="0" on_use="BulkUnitStanceChange" is_hidden_by_city_flag="StopWorkerPMCImpostors">
+	</command_mode_action>
+
+	<command_mode_action id="StartWorkerPMCImpostors" display_name="Restart Worker PMC Impostors" short_name="Impostor"
+		description="These worker units will resume doing their normal duties."
+		strategy_tip=""
+		icon_name="AN_AndroidPMCImposter" ui_color="#67275C" command_mode_category="OrdersForWorkers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CommandActionsBasic" is_hidden_until_unlocked="WarImpostor"
+		mental_energy_cost="0" on_use="BulkUnitStanceChange" requires_city_flag="StopWorkerPMCImpostors">
+	</command_mode_action>
+
+	<command_mode_action id="StopWorkerPredators" display_name="Stop Worker Predators" short_name="Predator"
+		description="These worker units will stop doing their work and will return to storage."
+		strategy_tip=""
+		icon_name="AN_AndroidPredator" ui_color="#EC67D6" command_mode_category="OrdersForWorkers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CommandActionsBasic" is_hidden_until_unlocked="WarRanger"
+		mental_energy_cost="0" on_use="BulkUnitStanceChange" is_hidden_by_city_flag="StopWorkerPredators">
+	</command_mode_action>
+
+	<command_mode_action id="StartWorkerPredators" display_name="Restart Worker Predators" short_name="Predator"
+		description="These worker units will resume doing their normal duties."
+		strategy_tip=""
+		icon_name="AN_AndroidPredator" ui_color="#67275C" command_mode_category="OrdersForWorkers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CommandActionsBasic" is_hidden_until_unlocked="WarRanger"
+		mental_energy_cost="0" on_use="BulkUnitStanceChange" requires_city_flag="StopWorkerPredators">
+	</command_mode_action>
+
+</root>

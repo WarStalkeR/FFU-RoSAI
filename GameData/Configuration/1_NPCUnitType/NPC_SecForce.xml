@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--SecForcePatrol
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SecForcePatrol" display_name="SecForce Patrol"
+		description="Small group of officers typically responsible for subduing lightly-armed citizens."
+		icon_scale="0.7" shape_icon_name="SW_PoliceBadge" shape_icon_color="#ffffff"
+		vis_drawing_tag="SecForcePatrol" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="6"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"		
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="SecForcePatrolShot" kills_by_player_increase_statistic1="SecForceKilledByYou"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1" 
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="3" 
+		tags="SecForcePOIGuards,SecForcePatrol,CorporateVariedWarrior" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="8,9" />
+		<actor_data data_type="ActorMoveRange" base_range="12,16" />
+		<actor_data data_type="ActorHP" base_range="155,165" />
+		<actor_data data_type="ActorPower" base_range="47,55" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="UnitMorale" base_range="660,790" />
+		<actor_data data_type="ContrabandScanner" base_range="200,250" />
+	</npc_unit_type>
+
+	<!--SecForceBackup
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SecForceBackup" display_name="SecForce Backup"
+		description="Squad of officers sent to help comrades who have encountered resistance."
+		icon_scale="0.7" shape_icon_name="SW_PoliceBadge" shape_icon_color="#ffffff"
+		vis_drawing_tag="SecForceBackup" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="12"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryMid"		
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="SecForceBackupShot" kills_by_player_increase_statistic1="SecForceKilledByYou"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="3" 
+		tags="SecForceBackup" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="12,15" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="380,400" />
+		<actor_data data_type="ActorPower" base_range="72,78" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="UnitMorale" base_range="860,990" />
+		<actor_data data_type="ActorExtraVulnerabilityFromRear" base_range="180,225" />
+		<actor_data data_type="ContrabandScanner" base_range="300,400" />
+	</npc_unit_type>
+
+	<!--SecForceIPSecurity
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SecForceIPSecurity" display_name="SecForce IP Security"
+		description="Squad of officers who specialize in securing intellectual property."
+		icon_scale="0.7" shape_icon_name="SF2_Security" shape_icon_color="#ffffff"
+		vis_drawing_tag="SecForceIPSecurity" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="12"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryMid"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="SecForceIPSecurityShot" kills_by_player_increase_statistic1="SecForceKilledByYou"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="3"
+		tags="" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="19,24" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="480,500" />
+		<actor_data data_type="ActorPower" base_range="172,208" />
+		<actor_data data_type="UnitHackingSkill" base_range="45,60" />
+		<actor_data data_type="UnitMorale" base_range="960,1290" />
+		<actor_data data_type="ActorExtraVulnerabilityFromRear" base_range="180,225" />
+		<actor_data data_type="ContrabandScanner" base_range="1000,1100" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<npc_unit_type id="SecForceIPSecurity_Graphene" copy_from="SecForceIPSecurity">
+	</npc_unit_type>
+
+	<!--SecForceDetectives
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SecForceDetectives" display_name="SecForce Detectives"
+		description="Large squad of officers specializing in criminal investigation and pursuit."
+		icon_scale="0.7" shape_icon_name="Pw_Ornament12" shape_icon_color="#ffffff"
+		vis_drawing_tag="SecForceDetective" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="9"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"		
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="SecForceDetectivesShot" kills_by_player_increase_statistic1="SecForceKilledByYou"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="3" 
+		tags="SecForceDetectives" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="12,14" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="235,245" />
+		<actor_data data_type="ActorPower" base_range="52,64" />
+		<actor_data data_type="UnitHackingSkill" base_range="10,15" />
+		<actor_data data_type="UnitMorale" base_range="760,890" />
+		<actor_data data_type="ContrabandScanner" base_range="1000,1100" />
+	</npc_unit_type>
+
+	<!--SecForceHacker
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SecForceHacker" display_name="SecForce Hacker"
+		description="Specialist hacker with heavy bionic augmentation."
+		icon_scale="0.7" shape_icon_name="ST_Armor" shape_icon_color="#ffffff"
+		vis_drawing_tag="SecForceHacker" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" hacking_scenario="BionicHuman"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="SecForceDetectivesShot" kills_by_player_increase_statistic1="SecForceKilledByYou"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="5"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="12,14" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="235,245" />
+		<actor_data data_type="ActorPower" base_range="52,64" />
+		<actor_data data_type="UnitHackingSkill" base_range="250,265" />
+		<actor_data data_type="NPCHackingResistance" base_range="230,250" />
+		<actor_data data_type="UnitMorale" base_range="760,890" />
+		<actor_data data_type="ContrabandScanner" base_range="3000,3100" />
+		<default_feat feat="HackBreaker" value="16.1"/>
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<!--SecForceCruiser
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SecForceCruiser" display_name="SecForce Cruiser"
+		description="Armored hovercraft with offensive weaponry and two dozen officers inside."
+		icon_scale="0.7" shape_icon_name="CleanSimple_SciFiEmblem30" shape_icon_color="#ffffff"
+		vis_drawing_tag="SecForceCruiser" vis_object_scale="0.5" vis_object_extra_offset="-0.8" collider_scale="1" entire_object_always_this_height_above_ground="4.95" simple_object_color="#0B0B0A"
+		extra_offset_for_camera_focus_when_selected="0" basic_squad_size="24"
+		percent_robotic="50" percent_biological="50" is_vehicle="true" stats_do_not_go_down_when_squadmates_lost="true"
+		is_notable_enough_to_show_as_silhouette_when_stance_suggests="true" kills_by_player_increase_statistic1="SecForceKilledByYou"
+		on_death="BasicHumanVehicleDeath" on_bullet_hit="BasicVehicleBulletHit" on_move_start="SecForceCruiserMoveStart" on_movement_finished_with_no_action="SecForceCruiserMoveEnd"
+		on_normal_attack="SecForceCruiserShot" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryScary"
+		radius_for_collisions="2.8" height_for_collisions="0.35" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="0" 
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="3"
+		tags="SecForceCruiser" collections="EnemyVehicles">
+		<!--Note, this is not considered human because the various things like scaring it do not work, with them being enclosed the way they are.-->
+		<actor_data data_type="AttackRange" base_range="20,24" />
+		<actor_data data_type="ActorMoveRange" base_range="37,42" />
+		<actor_data data_type="ActorHP" base_range="700,900" />
+		<actor_data data_type="ActorPower" base_range="150,190" />
+		<actor_data data_type="UnitHackingSkill" base_range="60,80" />
+		<!--<actor_data data_type="NPCHackingResistance" base_range="260,260" />-->
+		<actor_data data_type="AreaOfAttack" base_range="8,14" />
+		<actor_data data_type="AreaAttackIntensity" base_range="100,100" />
+		<actor_data data_type="ActorArmorPlating" base_range="110,110" />
+		<actor_data data_type="ActorArmorPiercing" base_range="70,110" />
+		<actor_data data_type="ActorExtraVulnerabilityFromAbove" base_range="230,275" />
+		<actor_data data_type="NPCVehicleDroneResistance" base_range="100,120" />
+		<actor_data data_type="ContrabandScanner" base_range="1800,1900" />
+		<shot_emission_group group_number="0" debug_color="#5EBBF4"
+			min_delay_of_each_firing_port="0.01" max_delay_of_each_firing_port="0.06">
+			<shot_emission_point index_in_group="0" offset="0.45,0.2,-0.5" />
+			<shot_emission_point index_in_group="1" offset="0.7,0.2,-0.3" />
+			<shot_emission_point index_in_group="2" offset="0.8,0.2,0" />
+			<shot_emission_point index_in_group="3" offset="0.75,0.2,0.4" />
+			<shot_emission_point index_in_group="4" offset="0.55,0.2,0.7" />
+			<shot_emission_point index_in_group="5" offset="0.31,0.2,0.92" />
+			<shot_emission_point index_in_group="6" offset="-0.31,0.2,0.92" />
+			<shot_emission_point index_in_group="7" offset="-0.55,0.2,0.7" />
+			<shot_emission_point index_in_group="8" offset="-0.75,0.2,0.4" />
+			<shot_emission_point index_in_group="9" offset="-0.8,0.2,0" />
+			<shot_emission_point index_in_group="10" offset="-0.7,0.2,-0.3" />
+			<shot_emission_point index_in_group="11" offset="-0.45,0.2,-0.5" />
+		</shot_emission_group>
+	</npc_unit_type>
+
+	<!--SecForceSuperCruiser
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SecForceSuperCruiser" display_name="SecForce SuperCruiser"
+		description="Upgraded armored hovercraft built for suppressing a rebellious populace."
+		icon_scale="0.7" shape_icon_name="WEmblem109" shape_icon_color="#ffffff"
+		vis_drawing_tag="SecForceSuperCruiser" vis_object_scale="1.2" vis_object_extra_offset="-1.2" collider_scale="1" entire_object_always_this_height_above_ground="6.95" simple_object_color="#0B0B0A"
+		extra_offset_for_camera_focus_when_selected="0" basic_squad_size="48"
+		percent_robotic="50" percent_biological="50" is_vehicle="true" stats_do_not_go_down_when_squadmates_lost="true"
+		is_notable_enough_to_show_as_silhouette_when_stance_suggests="true"
+		on_death="BasicHumanVehicleDeath" on_bullet_hit="BasicVehicleBulletHit" on_move_start="SecForceCruiserMoveStart" on_movement_finished_with_no_action="SecForceCruiserMoveEnd"
+		on_normal_attack="SecForceCruiserShot" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryScary" kills_by_player_increase_statistic1="SecForceKilledByYou"
+		radius_for_collisions="5.8" height_for_collisions="2.05" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="0"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="3"
+		tags="SecForceSuperCruiser" collections="EnemyVehicles">
+		<!--Note, this is not considered human because the various things like scaring it do not work, with them being enclosed the way they are.-->
+		<actor_data data_type="AttackRange" base_range="28,30" />
+		<actor_data data_type="ActorMoveRange" base_range="97,132" />
+		<actor_data data_type="ActorHP" base_range="1200,1800" />
+		<actor_data data_type="ActorPower" base_range="350,390" />
+		<actor_data data_type="UnitHackingSkill" base_range="160,180" />
+		<!--<actor_data data_type="NPCHackingResistance" base_range="560,560" />-->
+		<actor_data data_type="AreaOfAttack" base_range="20,20" />
+		<actor_data data_type="AreaAttackIntensity" base_range="100,100" />
+		<actor_data data_type="ActorArmorPlating" base_range="310,310" />
+		<actor_data data_type="ActorArmorPiercing" base_range="170,210" />
+		<actor_data data_type="ActorExtraVulnerabilityFromAbove" base_range="230,275" />
+		<actor_data data_type="NPCVehicleDroneResistance" base_range="300,320" />
+		<actor_data data_type="ContrabandScanner" base_range="1800,1900" />
+		<shot_emission_group group_number="0" debug_color="#5EBBF4"
+			min_delay_of_each_firing_port="0.01" max_delay_of_each_firing_port="0.06">
+			<shot_emission_point index_in_group="0" offset="0.45,0.2,-0.5" />
+			<shot_emission_point index_in_group="1" offset="0.7,0.2,-0.3" />
+			<shot_emission_point index_in_group="2" offset="0.8,0.2,0" />
+			<shot_emission_point index_in_group="3" offset="0.75,0.2,0.4" />
+			<shot_emission_point index_in_group="4" offset="0.55,0.2,0.7" />
+			<shot_emission_point index_in_group="5" offset="0.31,0.2,0.92" />
+			<shot_emission_point index_in_group="6" offset="-0.31,0.2,0.92" />
+			<shot_emission_point index_in_group="7" offset="-0.55,0.2,0.7" />
+			<shot_emission_point index_in_group="8" offset="-0.75,0.2,0.4" />
+			<shot_emission_point index_in_group="9" offset="-0.8,0.2,0" />
+			<shot_emission_point index_in_group="10" offset="-0.7,0.2,-0.3" />
+			<shot_emission_point index_in_group="11" offset="-0.45,0.2,-0.5" />
+		</shot_emission_group>
+	</npc_unit_type>
+
+</root>

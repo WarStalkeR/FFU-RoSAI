@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--
+		Salary math:
+	
+		molecular geneticist = $102,500 = 19 per turn (this is the control case, adjusted to this society.  Others are set relative to this)
+		forensic = $87,500 = 16.29 per turn
+		zoologist = $70,600 = 13.08 per turn
+		physician = $313,920 = 58.19 per turn
+		vet = $248,557 = 46.07 per turn
+		botanist = $96,979 = 17.97 per turn
+		bionics engineer = $155,110 = 28.75 per turn
+		epidemiology = $111,782 = 20.72 per turn
+		neurologist = $400,000 = 74.14 per turn
+	-->
+
+	<job id="MolecularGeneticsLab" display_name="Molecular Genetics Lab" marker_color="SicklyGreen" ui_color="#fefefe"
+		description="Science Takes Time! Any scientists working here will tackle specific tasks whenever they come up."
+		strategy_tip_optional="Even if you have nothing for them to do, it's still a good idea to keep at least one building of this type active and staffed. Additional Contemplations will appear at various points thanks to their expertise."
+		
+		icon_name="SK_DnaStructure" turns_to_install="3" required_structure_type="SeizedAndSealedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="HumanWork"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage" is_related_to_shell_company="true"
+		job_classes="HumanWorksite" internal_robotics_type_needed="LabOperator" internal_robots_count_needed="6" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingThirdParty"
+		resource_cap_to_increase_1="MolecularGeneticists" resource_cap_increased_flat1="8">
+		<initial_actor_rating data_type="RequiredElectricity" value="2198" />
+		<resource_cost resource_type="Alumina" cost="5000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Work" sort_index="100" />
+	</job>
+
+	<job id="ForensicGeneticsLab" display_name="Forensic Genetics Lab" marker_color="SicklyGreen" ui_color="#fefefe"
+		description="Science Takes Time! Any scientists working here will tackle specific tasks whenever they come up."
+		strategy_tip_optional="Even if you have nothing for them to do, it's still a good idea to keep at least one building of this type active and staffed. Additional Contemplations will appear at various points thanks to their expertise."
+		
+		icon_name="CleanSimple_SciFi100" turns_to_install="3" required_structure_type="SeizedAndSealedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="HumanWork"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage" is_related_to_shell_company="true"
+		job_classes="HumanWorksite" internal_robotics_type_needed="LabOperator" internal_robots_count_needed="6" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingThirdParty"
+		resource_cap_to_increase_1="ForensicGeneticists" resource_cap_increased_flat1="14">
+		<initial_actor_rating data_type="RequiredElectricity" value="2198" />
+		<resource_cost resource_type="Alumina" cost="5000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Work" sort_index="100" />
+	</job>
+
+	<job id="ZoologyLab" display_name="Zoology Lab" marker_color="SicklyGreen" ui_color="#fefefe"
+		description="Science Takes Time! Any scientists working here will tackle specific tasks whenever they come up."
+		strategy_tip_optional="Even if you have nothing for them to do, it's still a good idea to keep at least one building of this type active and staffed. Additional Contemplations will appear at various points thanks to their expertise."
+		
+		icon_name="FlatSkillB_animal fprints" turns_to_install="3" required_structure_type="SeizedAndSealedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="HumanWork"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage" is_related_to_shell_company="true"
+		job_classes="HumanWorksite" internal_robotics_type_needed="LabOperator" internal_robots_count_needed="6" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingThirdParty"
+		resource_cap_to_increase_1="Zoologists" resource_cap_increased_flat1="6">
+		<initial_actor_rating data_type="RequiredElectricity" value="2198" />
+		<resource_cost resource_type="Alumina" cost="5000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Work" sort_index="100" />
+	</job>
+
+	<job id="MedicalPractice" display_name="Medical Practice" marker_color="SicklyGreen" ui_color="#fefefe"
+		description="Science Takes Time! Any scientists working here will tackle specific tasks whenever they come up."
+		strategy_tip_optional="Even if you have nothing for them to do, it's still a good idea to keep at least one building of this type active and staffed. Additional Contemplations will appear at various points thanks to their expertise."
+		
+		icon_name="SI_Medical_Symbol" turns_to_install="3" required_structure_type="HealthcareStorefront" job_work_order_priority="99"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="HumanWork"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage" is_related_to_shell_company="true"
+		job_classes="HumanWorksite" internal_robotics_type_needed="SurgicalSuite" internal_robots_count_needed="2" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingThirdParty"
+		resource_cap_to_increase_1="Physicians" resource_cap_increased_flat1="4">
+		<initial_actor_rating data_type="RequiredElectricity" value="2198" />
+		<resource_cost resource_type="Alumina" cost="5000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Work" sort_index="100" />
+	</job>
+
+	<job id="VeterinaryPractice" display_name="Veterinary Practice" marker_color="SicklyGreen" ui_color="#fefefe"
+		description="Science Takes Time! Any scientists working here will tackle specific tasks whenever they come up."
+		strategy_tip_optional="Even if you have nothing for them to do, it's still a good idea to keep at least one building of this type active and staffed. Additional Contemplations will appear at various points thanks to their expertise."
+		
+		icon_name="CleanSimple_Skill053" turns_to_install="3" required_structure_type="HealthcareStorefront" job_work_order_priority="99"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="HumanWork"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage" is_related_to_shell_company="true"
+		job_classes="HumanWorksite" internal_robotics_type_needed="SurgicalSuite" internal_robots_count_needed="2" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingThirdParty"
+		resource_cap_to_increase_1="Veterinarians" resource_cap_increased_flat1="4">
+		<initial_actor_rating data_type="RequiredElectricity" value="2198" />
+		<resource_cost resource_type="Alumina" cost="5000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Work" sort_index="100" />
+	</job>
+
+	<job id="BotanyLab" display_name="Botany Lab" marker_color="SicklyGreen" ui_color="#fefefe"
+		description="Science Takes Time! Any scientists working here will tackle specific tasks whenever they come up."
+		strategy_tip_optional="Even if you have nothing for them to do, it's still a good idea to keep at least one building of this type active and staffed. Additional Contemplations will appear at various points thanks to their expertise."
+		
+		icon_name="SF2_Plant_tube" turns_to_install="3" required_structure_type="SeizedAndSealedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="HumanWork"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage" is_related_to_shell_company="true"
+		job_classes="HumanWorksite" internal_robotics_type_needed="LabOperator" internal_robots_count_needed="6" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingThirdParty"
+		resource_cap_to_increase_1="Botanists" resource_cap_increased_flat1="6">
+		<initial_actor_rating data_type="RequiredElectricity" value="2198" />
+		<resource_cost resource_type="Alumina" cost="5000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Work" sort_index="100" />
+	</job>
+
+	<job id="BionicEngineeringStudio" display_name="Bionic Engineering Studio" marker_color="SicklyGreen" ui_color="#fefefe"
+		description="Science Takes Time! Any scientists working here will tackle specific tasks whenever they come up."
+		strategy_tip_optional="Even if you have nothing for them to do, it's still a good idea to keep at least one building of this type active and staffed. Additional Contemplations will appear at various points thanks to their expertise."
+		
+		icon_name="SI_Bionic_Arm" turns_to_install="3" required_structure_type="SeizedAndSealedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="HumanWork"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage" is_related_to_shell_company="true"
+		job_classes="HumanWorksite" internal_robotics_type_needed="SurgicalSuite" internal_robots_count_needed="2" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingThirdParty"
+		resource_cap_to_increase_1="BionicsEngineers" resource_cap_increased_flat1="16">
+		<initial_actor_rating data_type="RequiredElectricity" value="2198" />
+		<resource_cost resource_type="Alumina" cost="5000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Work" sort_index="100" />
+	</job>
+
+	<job id="EpidemiologyLab" display_name="Epidemiology Lab" marker_color="SicklyGreen" ui_color="#fefefe"
+		description="Science Takes Time! Any scientists working here will tackle specific tasks whenever they come up."
+		strategy_tip_optional="Even if you have nothing for them to do, it's still a good idea to keep at least one building of this type active and staffed. Additional Contemplations will appear at various points thanks to their expertise."
+		
+		icon_name="SK_Molecule1" turns_to_install="3" required_structure_type="SeizedAndSealedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="HumanWork"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage" is_related_to_shell_company="true"
+		job_classes="HumanWorksite" internal_robotics_type_needed="LabOperator" internal_robots_count_needed="6" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingThirdParty"
+		resource_cap_to_increase_1="Epidemiologists" resource_cap_increased_flat1="16">
+		<initial_actor_rating data_type="RequiredElectricity" value="2198" />
+		<resource_cost resource_type="Alumina" cost="5000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Work" sort_index="100" />
+	</job>
+	
+	<job id="NeuroscienceLab" display_name="Neuroscience Lab" marker_color="SicklyGreen" ui_color="#fefefe"
+		description="Science Takes Time! Any scientists working here will tackle specific tasks whenever they come up."
+		strategy_tip_optional="Even if you have nothing for them to do, it's still a good idea to keep at least one building of this type active and staffed. Additional Contemplations will appear at various points thanks to their expertise."
+		
+		icon_name="HM_EmotionAlzheimer" turns_to_install="3" required_structure_type="SeizedAndSealedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="HumanWork"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage" is_related_to_shell_company="true"
+		job_classes="HumanWorksite" internal_robotics_type_needed="LabOperator" internal_robots_count_needed="6" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingThirdParty"
+		resource_cap_to_increase_1="Neurologists" resource_cap_increased_flat1="4">
+		<initial_actor_rating data_type="RequiredElectricity" value="2198" />
+		<resource_cost resource_type="Alumina" cost="5000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Work" sort_index="100" />
+	</job>
+	
+</root>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<command_mode_category id="AndroidDeployment" display_name="Android Deployment" short_name="Androids"
+		description="Deploy androids that you directly control."
+		strategy_tip="Deploy within range of your Network Tower, an Android Launcher, or within range of Foundry or Troopship vehicles."
+		icon_name="HM_ShapeCylinder">
+	</command_mode_category>
+
+	<command_mode_category id="FlyingVehicleDeployment" display_name="Flying Vehicle Deployment" short_name="Vehicles"
+		description="Deploy flying vehicles that you directly control."
+		strategy_tip="Deploy within range of an Aerospace Hangar."
+		icon_name="HM_ShapeKite" ><!--is_disabled_until_unlocked="AtmosphereOnly"-->
+	</command_mode_category>
+
+	<command_mode_category id="MechDeployment" display_name="Mech Deployment" short_name="Mechs"
+		description="Deploy mechs that you directly control."
+		strategy_tip="Deploy within range of an Aerospace Hangar or a Mech Carrier."
+		icon_name="WEmblem199" ><!--is_disabled_until_unlocked="FirstMech"-->
+	</command_mode_category>
+
+	<command_mode_category id="BulkAndroidDeployment" display_name="Bulk Android Deployment" short_name="Bulk"
+		description="Deploy bulk androids to secure the area."
+		strategy_tip="Deploy within range of your Network Tower, an Android Launcher, or within range of Foundry or Troopship vehicles."
+		icon_name="FlatSkillA27" is_disabled_until_unlocked="BulkProduction">
+	</command_mode_category>
+
+	<command_mode_category id="ShellCompanyDeployment" display_name="Shell Company Deployment" short_name="Shell"
+		description="Deploy units related to your shell company, once you have one."
+		strategy_tip="Androids, vehicles, mechs, and bulk androids are all included here."
+		icon_name="BT_Shell2">
+	</command_mode_category>
+
+	<command_mode_category id="KeyLogistics" display_name="Key Logistics" short_name="Logistics"
+		description="Give orders to bulk units by changing their stances."
+		strategy_tip=""
+		icon_name="CleanSimple_Device47" is_disabled_until_unlocked="BulkProduction">
+	</command_mode_category>
+
+	<command_mode_category id="Allies" display_name="Allies" short_name="Allies"
+		description="A third party that will listen to you, sometimes."
+		strategy_tip="Or they may just do what they do."
+		icon_name="CleanSimple_Skill154" is_disabled_until_unlocked="HomelessHousing">
+	</command_mode_category>
+
+	<command_mode_category id="OrdersForWorkers" display_name="Orders For Workers" short_name="Workers"
+		description="If you have 'worker' versions of your androids, which are even less independent than bulk versions, you can give them general orders here."
+		strategy_tip="They have very little intelligence, but can follow simple commands."
+		icon_name="SK_Chevron" is_disabled_until_unlocked="WorkerUnits">
+	</command_mode_category>
+
+	<!--
+	<command_mode_category id="Spirituality" display_name="Spirituality" short_name="Spirituality"
+		description=""
+		strategy_tip=""
+		icon_name="SF2_Peace_dove9">
+	</command_mode_category>
+
+	<command_mode_category id="Disease" display_name="Disease" short_name="Disease"
+		description=""
+		strategy_tip=""
+		icon_name="CleanSimple_SciFi065">
+	</command_mode_category>
+
+	<command_mode_category id="Wildlife" display_name="Wildlife" short_name="Wildlife"
+		description=""
+		strategy_tip=""
+		icon_name="FlatSkillB_wolf">
+	</command_mode_category>
+-->
+	<!--
+	<command_mode_category id="Hazards" display_name="Hazards" short_name="Hazards"
+		description=""
+		strategy_tip=""
+		icon_name="CleanSimple_SciFi084">
+	</command_mode_category>
+	-->
+
+</root>

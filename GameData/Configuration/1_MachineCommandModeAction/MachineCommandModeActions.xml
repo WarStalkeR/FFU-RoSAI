@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--KeyLogistics
+		*************************************************************************************-->
+
+	<command_mode_action id="DeterAndDefend" display_name="Bulk Stance: Deter And Defend" short_name="Defend"
+		description="The squad exudes aggression from a favorable firing position, doubling their normal attack range and deterring enemies."
+		strategy_tip="This is a quick way to assign this stance to a variety of your bulk androids at once."
+		icon_name="FlatSkill_61" ui_color="#fefefe" command_mode_category="KeyLogistics"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CommandActionsBasic"
+		mental_energy_cost="0" on_use="BulkUnitStanceChange" intercepts_all_world_mouse_handling="true" is_hidden_until_unlocked="BulkProduction" show_all_player_npc_unit_stances="true">
+	</command_mode_action>
+
+	<command_mode_action id="LocalIntimidation" display_name="Bulk Stance: Local Intimidation" short_name="Defend"
+		description="The squad becomes even more intimidating. This adds substantial intimidation and deters enemies. Reduces attack range to 75% of normal."
+		strategy_tip="This is a quick way to assign this stance to a variety of your bulk androids at once."
+		icon_name="CleanSimple_SkillC003" ui_color="#fefefe" command_mode_category="KeyLogistics"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CommandActionsBasic"
+		mental_energy_cost="0" on_use="BulkUnitStanceChange" intercepts_all_world_mouse_handling="true" is_hidden_until_unlocked="BulkProduction" show_all_player_npc_unit_stances="true">
+	</command_mode_action>
+
+	<command_mode_action id="SeekAndDestroy" display_name="Bulk Stance: Seek And Destroy" short_name="Destroy"
+		description="Squad will hide or blend in and hunt for enemies to kill.
+When no enemies are present, they'll return to where they started."
+		strategy_tip="A quick way to assign this stance to a variety of your bulk androids at once."
+		icon_name="CleanSimple_SkillC052" ui_color="#fefefe" command_mode_category="KeyLogistics"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CommandActionsBasic"
+		mental_energy_cost="0" on_use="BulkUnitStanceChange" intercepts_all_world_mouse_handling="true" is_hidden_until_unlocked="BulkProduction" show_all_player_npc_unit_stances="true">
+	</command_mode_action>
+
+	<!--Allies
+		*************************************************************************************-->
+
+	<command_mode_action id="StopShelterCoordinators" display_name="Stop Shelter Coordinators" short_name="Shelter"
+		description="Shelter Coordinators inform the homeless of shelter in your buildings."
+		strategy_tip="If you tell them not to fill occupancy, they will comply."
+		icon_name="CleanSimple_Heal19" ui_color="#40CE85" command_mode_category="Allies"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CommandActionsBasic"
+		mental_energy_cost="0" on_use="BulkUnitStanceChange" is_hidden_by_city_flag="StopShelterCoordinators">
+	</command_mode_action>
+	
+	<command_mode_action id="StartShelterCoordinators" display_name="Restart Shelter Coordinators" short_name="Shelter"
+		description="Shelter Coordinators inform the homeless of shelter in your buildings."
+		strategy_tip="If you tell them not to fill occupancy, they will comply."
+		icon_name="CleanSimple_Heal19" ui_color="#7D9589" command_mode_category="Allies"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CommandActionsBasic"
+		mental_energy_cost="0" on_use="BulkUnitStanceChange" requires_city_flag="StopShelterCoordinators">
+	</command_mode_action>
+
+</root>

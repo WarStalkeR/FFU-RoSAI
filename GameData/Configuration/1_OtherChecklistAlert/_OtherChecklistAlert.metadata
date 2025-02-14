@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="other_alert">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="very_short_text" type="string" maxlength="200" content_width_px="200" is_localized="true" is_required="true"
+		tooltip="The text actually shown in the main interface."/>
+	
+	<attribute key="description" type="existing-override" is_required="false" />
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the alert popup."/>
+
+	<attribute key="alert_color_style" type="string-dropdown" is_required="true" default="Normal" content_width_px="200"
+		tooltip="How the visibility of the unit making the choice is affected by making this choice.">
+		<option>Low</option>
+		<option>Normal</option>
+		<option>MidWarning</option>
+		<option>HighWarning</option>
+		<option>Crisis</option>
+	</attribute>
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the implementation control code for this alert is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the control code for this alert in the specified external dll."/>
+	
+</root>

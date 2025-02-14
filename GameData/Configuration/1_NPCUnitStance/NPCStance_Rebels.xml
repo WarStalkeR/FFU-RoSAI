@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Rebel Behaviors
+		***********************************************************-->
+	
+	<stance id="RebelAntiCorpOp" display_name="Anti-Corp Op"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Taking offensive action against SecForce and the military establishment of corporations in this area."
+		icon_name="FlatSkillB_flag_black" icon_color="#F7357F" icon_color_hdr_intensity="2.2" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true" will_hold_fire_against_regular_machine_structures="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>		
+		<action_consideration id="RunAfterThreats" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterThreatsNearMission" />
+		<action_consideration id="BackToMission" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<!--
+		<action_consideration id="RunAfterPeopleIShoot" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell" />
+		<action_consideration id="GoHome" sort_order="250" chance_of_attempting="100" action_to_attempt="ReturnToHomeDistrictIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="60" action_to_attempt="Wander"/>-->
+	</stance>
+	
+	<stance id="RebelAntiCorpOp_AutoBattle" display_name="Anti-Corp Op"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Taking offensive action against SecForce and the military establishment of corporations in this area."
+		icon_name="FlatSkillB_flag_black" icon_color="#F7357F" icon_color_hdr_intensity="2.2" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="false" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="false" will_attack_all_active_cohort_guards="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false" will_hold_fire_against_regular_machine_structures="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>		
+		<action_consideration id="RunAfterThreats" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterThreatsNearMission" />
+	</stance>
+
+	<stance id="RebelAntiMilitaryOp" display_name="Anti-Military Op"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Taking offensive action against hardened military targets."
+		icon_name="FlatSkillB_flag_black" icon_color="#F7357F" icon_color_hdr_intensity="2.2" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="false" will_attack_all_active_cohort_guards="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true" will_hold_fire_against_regular_machine_structures="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<action_consideration id="RunAfterThreats" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterThreatsNearMission" />
+		<action_consideration id="BackToMission" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+
+	<stance id="RebelAntiMilitaryOp_HighVis" display_name="Anti-Military Op"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Taking offensive action against hardened military targets."
+		icon_name="FlatSkillB_flag_black" icon_color="#F7357F" icon_color_hdr_intensity="2.2" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="false" will_attack_all_active_cohort_guards="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true" will_hold_fire_against_regular_machine_structures="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<action_consideration id="RunAfterThreats" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterThreatsNearMission" />
+		<action_consideration id="BackToMission" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+	
+	<stance id="RebelWatchdog" display_name="Watchdog"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Observing corporate activity in the local area."
+		icon_name="FlatSkillC163" icon_color="#7F55EC" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true" will_hold_fire_against_regular_machine_structures="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="30" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="RebelsAmbushingSecForceAndYou" display_name="Ambushing SecForce And You"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="They have a particular grudge against both you and SecForce."
+		icon_name="FlatSkillB_flag_black" icon_color="#F735EF" icon_color_hdr_intensity="2.4" icon_scale="0.7"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" will_hold_fire_against_regular_machines_except_those_aggroed="false"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="RunAfterOutcasts" sort_order="140" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="RebelAntiAIOp" display_name="Anti-AI Op"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Taking offensive action against artificial intelligence in the area."
+		icon_name="WEmblem028" icon_color="#F335F7" icon_color_hdr_intensity="2.2" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true" will_hold_fire_against_regular_machine_structures="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterThreats" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterThreatsNearMission" />
+		<action_consideration id="BackToMission" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<!--
+		<action_consideration id="RunAfterPeopleIShoot" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell" />
+		<action_consideration id="GoHome" sort_order="250" chance_of_attempting="100" action_to_attempt="ReturnToHomeDistrictIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="60" action_to_attempt="Wander"/>-->
+	</stance>
+
+	<stance id="RebelDefendingFriends" display_name="Defending Friends"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Taking offensive action to protect their friends."
+		icon_name="FlatSkillB_flag_black" icon_color="#CB4E13" icon_color_hdr_intensity="2.8" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true" will_hold_fire_against_regular_machine_structures="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="false"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterThreats" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterThreatsNearMission" />
+		<action_consideration id="BackToMission" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<!--
+		<action_consideration id="RunAfterPeopleIShoot" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell" />
+		<action_consideration id="GoHome" sort_order="250" chance_of_attempting="100" action_to_attempt="ReturnToHomeDistrictIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="60" action_to_attempt="Wander"/>-->
+	</stance>
+
+	<stance id="RebelDefendingFriends_Leader" display_name="Defending Friends"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Taking offensive action to protect their friends."
+		icon_name="FlatSkillB_flag_white" icon_color="#CB4E13" icon_color_hdr_intensity="2.8" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true" will_hold_fire_against_regular_machine_structures="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="false"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterThreats" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterThreatsNearMission" />
+		<action_consideration id="BackToMission" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<!--
+		<action_consideration id="RunAfterPeopleIShoot" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell" />
+		<action_consideration id="GoHome" sort_order="250" chance_of_attempting="100" action_to_attempt="ReturnToHomeDistrictIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="60" action_to_attempt="Wander"/>-->
+	</stance>
+
+	<!--Nomad Behaviors
+		***********************************************************-->
+
+	<stance id="NomadsRespondingToAttack" display_name="Responding To Attack"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="The nomad families protect their own."
+		icon_name="WEmblem064" icon_color="#35F7C5" icon_color_hdr_intensity="2.2" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true" will_hold_fire_against_regular_machine_structures="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>		
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomeDistrictIfNotInIt"/>
+		<!--
+		<action_consideration id="RunAfterPeopleIShoot" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell" />
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="60" action_to_attempt="Wander"/>-->
+	</stance>
+	
+	<stance id="NomadsRespondingToAttack_AntiPlayer" display_name="Responding To Attack"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="The nomad families protect their own."
+		icon_name="WEmblem064" icon_color="#35F7C5" icon_color_hdr_intensity="2.2" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true" will_hold_fire_against_regular_machine_structures="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="false"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomeDistrictIfNotInIt"/>
+		<!--
+		<action_consideration id="RunAfterPeopleIShoot" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell" />
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="60" action_to_attempt="Wander"/>-->
+	</stance>
+	
+	<stance id="NomadsHelpingOthers" display_name="Helping Others"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="The nomad families rarely help others, but when they do they tend to have a good reason."
+		icon_name="WEmblem292" icon_color="#35F7F7" icon_color_hdr_intensity="2.2" icon_scale="0.6"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true" will_hold_fire_against_regular_machine_structures="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomeDistrictIfNotInIt"/>
+		<!--
+		<action_consideration id="RunAfterPeopleIShoot" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell" />
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="60" action_to_attempt="Wander"/>-->
+	</stance>
+	
+	<!--**************************************************************RebelsHelpingYouSearch**************************************************************-->
+	<stance id="RebelsHelpingYouSearch" display_name="Helping You Search"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="They're not going to make you look all on your own."
+		icon_name="SF2_Search" icon_color="#BEA059" icon_color_hdr_intensity="1.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" is_considered_noncombatant="false"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="80" action_to_attempt="Wander"/>
+		<action_consideration id="BackToMission" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+
+	<stance id="RebelLeader_SeekingMeetingWithShell" display_name="Seeking Meeting With Shell Company"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="This group wishes to meet with someone from your shell company. Time to get out a PMC Impostor."
+		icon_name="CleanSimple_SciFiEmblem21" icon_color="#F1C329" icon_color_hdr_intensity="2.2" icon_scale="0.6"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="1" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+	
+</root>

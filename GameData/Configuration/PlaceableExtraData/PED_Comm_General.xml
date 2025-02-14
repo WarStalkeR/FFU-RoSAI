@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<placeable id="DataCenter" path="Assets/__Library/Comm/General/Data Center.prefab"  display_name="Data Center" resistance_to_destruction_from_collisions="30" >
+		<seeding_group group="DataCenter" weight="100" />
+	</placeable>
+	
+	<placeable id="DataCenterLarge" path="Assets/__Library/Comm/General/Data Center Large.prefab"  display_name="Data Center Large" resistance_to_destruction_from_collisions="50" >
+		<seeding_group group="DataCenter" weight="100" />
+	</placeable>
+
+	<placeable id="RadioTower" path="Assets/__Library/Comm/General/Radio Tower.prefab"  display_name="Radio Tower" >
+		<seeding_group group="RadioTower" weight="100" />
+	</placeable>
+
+	<placeable id="RadarProtectiveScreenA" path="Assets/__Library/Comm/General/Radar Protective Screen A.prefab"  display_name="Radar Protective Screen A" 
+		skip_complaints_about_missing_building_prefabs="true" is_fence="true">
+	</placeable>
+
+	<placeable id="DeepSpaceCommunications" path="Assets/__Library/Comm/General/Radio Telescope A.prefab"  display_name="Deep Space Communications" resistance_to_destruction_from_collisions="50" >
+		<seeding_group group="DeepSpaceComm" weight="100" />
+	</placeable>
+
+	<placeable id="ScientificRadioTelescope" path="Assets/__Library/Comm/General/Radio Telescope B.prefab"  display_name="Scientific Radio Telescope" resistance_to_destruction_from_collisions="200" >
+	</placeable>
+
+	<placeable id="PointToPointMicrowaveTransmitter" path="Assets/__Library/Comm/General/Radio Telescope C.prefab"  display_name="Point To Point Microwave Transmitter"
+		skip_complaints_about_missing_building_prefabs="true" is_fence="true">
+	</placeable>
+
+	<placeable id="RadomeA" path="Assets/__Library/Comm/General/Radome A.prefab"  display_name="Radome A" resistance_to_destruction_from_collisions="50" >
+		<seeding_group group="Radome" weight="100" />
+	</placeable>
+	
+</root>

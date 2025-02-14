@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--
+	<severity_scale id="ScavengeSkillToPercentageStolen" is_rising="true"
+		internal_notes="When a unit has a scavenge skill, it translates into the following abilities to thieve.">
+		<severity_multiplicative cutoff="6" multiplier="0.05" color="GoodThing_Low0" />
+		<severity_multiplicative cutoff="10" multiplier="0.09" color="GoodThing_Low1" />
+		<severity_multiplicative cutoff="20" multiplier="0.13" color="GoodThing_Low3" />
+		<severity_multiplicative cutoff="30" multiplier="0.20" color="GoodThing_Mid1" />
+		<severity_multiplicative cutoff="40" multiplier="0.28" color="GoodThing_Mid2" />
+		<severity_multiplicative cutoff="50" multiplier="0.35" color="GoodThing_Mid3" />
+		<severity_multiplicative cutoff="60" multiplier="0.42" color="GoodThing_Mid4" />
+		<severity_multiplicative cutoff="70" multiplier="0.5" color="GoodThing_High1" />
+		<severity_multiplicative cutoff="80" multiplier="0.6" color="GoodThing_High2" />
+		<severity_multiplicative cutoff="90" multiplier="0.7" color="GoodThing_High3" />
+		<severity_multiplicative cutoff="100" multiplier="0.76" color="GoodThing_High4" />
+		<severity_multiplicative cutoff="110" multiplier="0.82" color="GoodThing_Extreme1" />
+		<severity_multiplicative cutoff="120" multiplier="0.87" color="GoodThing_Extreme2" />
+		<severity_multiplicative cutoff="999999999" multiplier="0.93" color="GoodThing_Extreme3" />
+	</severity_scale>
+
+	<severity_scale id="HackingSkillToPercentageDataStolen" is_rising="true"
+		internal_notes="When a unit has a scavenge skill, it translates into the following abilities to thieve.">
+		<severity_multiplicative cutoff="6" multiplier="1.01" color="GoodThing_Low0" />
+		<severity_multiplicative cutoff="10" multiplier="1.05" color="GoodThing_Low1" />
+		<severity_multiplicative cutoff="20" multiplier="1.09" color="GoodThing_Low3" />
+		<severity_multiplicative cutoff="30" multiplier="1.20" color="GoodThing_Mid1" />
+		<severity_multiplicative cutoff="40" multiplier="1.22" color="GoodThing_Mid2" />
+		<severity_multiplicative cutoff="50" multiplier="1.28" color="GoodThing_Mid3" />
+		<severity_multiplicative cutoff="60" multiplier="1.35" color="GoodThing_Mid4" />
+		<severity_multiplicative cutoff="70" multiplier="1.45" color="GoodThing_High1" />
+		<severity_multiplicative cutoff="80" multiplier="1.6" color="GoodThing_High2" />
+		<severity_multiplicative cutoff="90" multiplier="1.7" color="GoodThing_High3" />
+		<severity_multiplicative cutoff="100" multiplier="1.8" color="GoodThing_High4" />
+		<severity_multiplicative cutoff="110" multiplier="1.9" color="GoodThing_Extreme1" />
+		<severity_multiplicative cutoff="120" multiplier="2" color="GoodThing_Extreme2" />
+		<severity_multiplicative cutoff="999999999" multiplier="2.2" color="GoodThing_Extreme3" />
+	</severity_scale>
+
+
+	<severity_scale id="HackerPresenceToPercentageStolen" is_rising="true"
+		internal_notes="This specifies how much less players can get from a building based on the hacker presence there.">
+		<severity_multiplicative cutoff="10" multiplier="1" color="GoodThing_Low0" />
+		<severity_multiplicative cutoff="20" multiplier="0.95" color="BadThing_Low1" />
+		<severity_multiplicative cutoff="30" multiplier="0.9" color="BadThing_Low2" />
+		<severity_multiplicative cutoff="40" multiplier="0.85" color="BadThing_Low3" />
+		<severity_multiplicative cutoff="50" multiplier="0.8" color="BadThing_Mid1" />
+		<severity_multiplicative cutoff="60" multiplier="0.7" color="BadThing_Mid2" />
+		<severity_multiplicative cutoff="70" multiplier="0.65" color="BadThing_Mid3" />
+		<severity_multiplicative cutoff="80" multiplier="0.6" color="BadThing_Mid4" />
+		<severity_multiplicative cutoff="90" multiplier="0.5" color="BadThing_High1" />
+		<severity_multiplicative cutoff="100" multiplier="0.4" color="BadThing_High2" />
+		<severity_multiplicative cutoff="110" multiplier="0.3" color="BadThing_High3" />
+		<severity_multiplicative cutoff="150" multiplier="0.2" color="BadThing_High4" />
+		<severity_multiplicative cutoff="250" multiplier="0.1" color="BadThing_Extreme1" />
+		<severity_multiplicative cutoff="999999999" multiplier="0.05" color="BadThing_Extreme5" />
+	</severity_scale>
+
+	<severity_scale id="ResearchDataExpenditureYields" is_rising="true"
+		internal_notes="What sort of yield is given from data investments of various amounts.
+These really should all be at least 1 in the multiplier, or incautious players can wreck themselves.">
+		<severity_multiplicative cutoff="1000" multiplier="2.2" color="GoodThing_Mid1" />
+		<severity_multiplicative cutoff="1600" multiplier="2.94" color="GoodThing_Mid4" />
+		<severity_multiplicative cutoff="2000" multiplier="3.6" color="GoodThing_High2" />
+	</severity_scale>
+	-->
+
+	<severity_scale id="SkillToDCBonus" is_rising="true"
+		internal_notes="This converts skill values in the normal 0-1000 range into DC bonuses out of a scale of 30.">
+		<severity_regular cutoff="6" output="0"/>
+		<severity_regular cutoff="16" output="1" />
+		<severity_regular cutoff="26" output="2" />
+		<severity_regular cutoff="36" output="3" />
+		<severity_regular cutoff="46" output="4" />
+		<severity_regular cutoff="56" output="5" />
+		<severity_regular cutoff="66" output="6" />
+		<severity_regular cutoff="76" output="7" />
+		<severity_regular cutoff="86" output="8" />
+		<severity_regular cutoff="96" output="9" />
+		<severity_regular cutoff="146" output="10" />
+		<severity_regular cutoff="201" output="11" />
+		<severity_regular cutoff="251" output="12" />
+		<severity_regular cutoff="301" output="13" />
+		<severity_regular cutoff="351" output="14" />
+		<severity_regular cutoff="401" output="15" />
+		<severity_regular cutoff="451" output="16" />
+		<severity_regular cutoff="501" output="17" />
+		<severity_regular cutoff="551" output="18" />
+		<severity_regular cutoff="601" output="19" />
+		<severity_regular cutoff="651" output="20" />
+		<severity_regular cutoff="701" output="21" />
+		<severity_regular cutoff="751" output="22" />
+		<severity_regular cutoff="801" output="23" />
+		<severity_regular cutoff="851" output="24" />
+		<severity_regular cutoff="901" output="25" />
+		<severity_regular cutoff="951" output="26" />
+		<severity_regular cutoff="1001" output="27" />
+		<severity_regular cutoff="1501" output="28" />
+		<severity_regular cutoff="999999999" output="29" />
+	</severity_scale>
+
+	<severity_scale id="DC5AndUnderGapToPercentage" is_rising="true"
+		internal_notes="For DC checks 5 and under, this converts the gap (difference between dc bonuses and dc check) to a percent chance of success.">
+		<severity_regular cutoff="1" output="95"/>
+		<severity_regular cutoff="2" output="82" />
+		<severity_regular cutoff="3" output="67" />
+		<severity_regular cutoff="4" output="52" />
+		<severity_regular cutoff="5" output="36" />
+		<severity_regular cutoff="999999999" output="22" />
+	</severity_scale>
+
+	<severity_scale id="DC6to12GapToPercentage" is_rising="true"
+		internal_notes="For DC checks between 6 and 12, this converts the gap (difference between dc bonuses and dc check) to a percent chance of success.">
+		<severity_regular cutoff="1" output="95"/>
+		<severity_regular cutoff="2" output="91" />
+		<severity_regular cutoff="3" output="85" />
+		<severity_regular cutoff="4" output="78" />
+		<severity_regular cutoff="5" output="71" />
+		<severity_regular cutoff="6" output="62" />
+		<severity_regular cutoff="7" output="49" />
+		<severity_regular cutoff="8" output="38" />
+		<severity_regular cutoff="9" output="30" />
+		<severity_regular cutoff="10" output="21" />
+		<severity_regular cutoff="11" output="16" />
+		<severity_regular cutoff="12" output="10" />
+		<severity_regular cutoff="999999999" output="5" />
+	</severity_scale>
+
+	<severity_scale id="DC13to20GapToPercentage" is_rising="true"
+		internal_notes="For DC checks between 13 and 20, this converts the gap (difference between dc bonuses and dc check) to a percent chance of success.">
+		<severity_regular cutoff="1" output="94"/>
+		<severity_regular cutoff="2" output="89" />
+		<severity_regular cutoff="3" output="83" />
+		<severity_regular cutoff="4" output="76" />
+		<severity_regular cutoff="5" output="68" />
+		<severity_regular cutoff="6" output="60" />
+		<severity_regular cutoff="7" output="52" />
+		<severity_regular cutoff="8" output="44" />
+		<severity_regular cutoff="9" output="38" />
+		<severity_regular cutoff="10" output="32" />
+		<severity_regular cutoff="11" output="30" />
+		<severity_regular cutoff="12" output="24" />
+		<severity_regular cutoff="13" output="18" />
+		<severity_regular cutoff="14" output="12" />
+		<severity_regular cutoff="15" output="6" />
+		<!--Note: basically, anything with a gap of 16 or larger just sits here at 4%. We don't need to get that far into that range.-->
+		<severity_regular cutoff="999999999" output="4" />
+	</severity_scale>
+
+	<severity_scale id="DC21to30GapToPercentage" is_rising="true"
+		internal_notes="For DC checks between 21 and 30, this converts the gap (difference between dc bonuses and dc check) to a percent chance of success.">
+		<severity_regular cutoff="1" output="92"/>
+		<severity_regular cutoff="2" output="86" />
+		<severity_regular cutoff="3" output="80" />
+		<severity_regular cutoff="4" output="74" />
+		<severity_regular cutoff="5" output="67" />
+		<severity_regular cutoff="6" output="61" />
+		<severity_regular cutoff="7" output="55" />
+		<severity_regular cutoff="8" output="49" />
+		<severity_regular cutoff="9" output="43" />
+		<severity_regular cutoff="10" output="37" />
+		<severity_regular cutoff="11" output="31" />
+		<severity_regular cutoff="12" output="25" />
+		<severity_regular cutoff="13" output="19" />
+		<severity_regular cutoff="14" output="13" />
+		<severity_regular cutoff="15" output="7" />
+		<!--Note: basically, anything with a gap of 16 or larger just sits here at 2%. We don't need to get that far into that range.-->
+		<severity_regular cutoff="999999999" output="2" />
+	</severity_scale>
+	
+	<severity_scale id="OverdriveGenerationCapCumulativeMultiplier" is_rising="true"
+		internal_notes="This is not a linear multiplier, but a cumulative one. See the spreadsheet GameData/ScratchSheets/BoostMath.xlsx for details.
+The points below are the points where there is a jump up or down in the cumulative curve, based on the number of prior boost points generated.
+The cutoff is used as a less-than-or-equal-to here. That is different from most other severity scale usages, but it's easier to compare to the spreadsheet.">
+		<severity_multiplicative cutoff="1" multiplier="1" />
+		<severity_multiplicative cutoff="4" multiplier="2" />
+		<severity_multiplicative cutoff="9" multiplier="1.2" />
+		<severity_multiplicative cutoff="31" multiplier="1.1" />
+		<severity_multiplicative cutoff="35" multiplier="1.15" />
+		<severity_multiplicative cutoff="40" multiplier="1.05" />
+		<severity_multiplicative cutoff="75" multiplier="1.02" />
+		<severity_multiplicative cutoff="140" multiplier="1.01" />
+		<severity_multiplicative cutoff="1000" multiplier="1.005" />
+		<severity_multiplicative cutoff="999999" multiplier="1.001" />
+	</severity_scale>
+
+	<severity_scale id="IntelligenceClass" is_rising="true"
+		internal_notes="This converts NeuralExpansion amounts into intelligence class.">
+		<severity_regular cutoff="5100" output="1"/>
+		<severity_regular cutoff="46100" output="2" />
+		<severity_regular cutoff="1500400" output="3" />
+		<severity_regular cutoff="12200100" output="4" />
+		<severity_regular cutoff="36100100" output="5" />
+		<severity_regular cutoff="92000200" output="6" />
+		<severity_regular cutoff="670002000" output="7" />
+		<severity_regular cutoff="1120000400" output="8" />
+		<severity_regular cutoff="2270008000" output="9" />
+		<severity_regular cutoff="5860002000" output="10" />
+		<severity_regular cutoff="9320002000" output="11" />
+		<severity_regular cutoff="17110002000" output="12" />
+		<severity_regular cutoff="42220002000" output="13" />
+		<severity_regular cutoff="90770002000" output="14" />
+		<severity_regular cutoff="210330002000" output="15" />
+		<severity_regular cutoff="550550002000" output="16" />
+	</severity_scale>
+	
+</root>

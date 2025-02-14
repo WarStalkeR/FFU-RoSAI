@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_prefab id="RoofTentOrangeA" type="HomelessTent" display_name="Roof Tent Orange A"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Roof Tent Orange A.prefab">
+		<floors_group min="0" max="0" floor_size="0.25,0.25,0.25" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="4"/>
+	</building_prefab>
+
+	<building_prefab id="RoofTentOrangeB" type="HomelessTent" display_name="Roof Tent Orange B"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Roof Tent Orange B.prefab">
+		<floors_group min="0" max="0" floor_size="0.25,0.25,0.25" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="4"/>
+	</building_prefab>
+
+	<building_prefab id="RoofTentRedA" type="HomelessTent" display_name="Roof Tent Red A"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Roof Tent Red A.prefab">
+		<floors_group min="0" max="0" floor_size="0.25,0.25,0.25" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="4"/>
+	</building_prefab>
+
+	<building_prefab id="RoofTentRedB" type="HomelessTent" display_name="Roof Tent Red B"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Roof Tent Red B.prefab">
+		<floors_group min="0" max="0" floor_size="0.25,0.25,0.25" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="4"/>
+	</building_prefab>
+
+	<building_prefab id="SlumShackA" type="SlumShack" display_name="Slum Shack A"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Slum Shack A.prefab">
+		<floors_group min="0" max="0" floor_size="0.3,0.3,0.3" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="9"/>
+	</building_prefab>
+
+	<building_prefab id="SlumShackB" type="SlumShack" display_name="Slum Shack B"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Slum Shack B.prefab">
+		<floors_group min="0" max="0" floor_size="0.3,0.3,0.3" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="9"/>
+	</building_prefab>
+
+	<building_prefab id="TentSquareA1" type="HomelessTent" display_name="Tent Square A1"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Tent Square A1.prefab">
+		<floors_group min="0" max="0" floor_size="0.3,0.2,0.3" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="6"/>
+	</building_prefab>
+
+	<building_prefab id="TentSquareA2" type="HomelessTent" display_name="Tent Square A2"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Tent Square A2.prefab">
+		<floors_group min="0" max="0" floor_size="0.3,0.2,0.3" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="7"/>
+	</building_prefab>
+
+	<building_prefab id="TentSquareA3" type="HomelessTent" display_name="Tent Square A3"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Tent Square A3.prefab">
+		<floors_group min="0" max="0" floor_size="0.3,0.2,0.3" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="8"/>
+	</building_prefab>
+
+	<building_prefab id="TentTriangleA1" type="HomelessTent" display_name="Tent Triangle A1"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Tent Triangle A1.prefab">
+		<floors_group min="0" max="0" floor_size="0.35,0.15,0.35" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="3"/>
+	</building_prefab>
+
+	<building_prefab id="TentTriangleA2" type="HomelessTent" display_name="Tent Triangle A2"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Tent Triangle A2.prefab">
+		<floors_group min="0" max="0" floor_size="0.35,0.15,0.35" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="7"/>
+	</building_prefab>
+
+	<building_prefab id="TentTriangleA3" type="HomelessTent" display_name="Tent Triangle A3"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Tent Triangle A3.prefab">
+		<floors_group min="0" max="0" floor_size="0.35,0.15,0.35" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="8"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseA1" type="SlumSmallHome" display_name="Poor House A1"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House A1.prefab">
+		<floors_group min="0" max="1" floor_size="0.7,0.4,1.2" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="12"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-1.13,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseA2" type="SlumSmallHome" display_name="Poor House A2"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House A2.prefab">
+		<floors_group min="0" max="1" floor_size="0.7,0.4,1.2" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="10"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-1.13,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseB1" type="SlumSmallHome" display_name="Poor House B1"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House B1.prefab">
+		<floors_group min="0" max="0" floor_size="0.7,0.5,1.2" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="8"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.93,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseB2" type="SlumSmallHome" display_name="Poor House B2"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House B2.prefab">
+		<floors_group min="0" max="0" floor_size="0.7,0.5,1.2" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="9"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.93,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseC1" type="SlumSmallHome" display_name="Poor House C1"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House C1.prefab">
+		<floors_group min="0" max="2" floor_size="0.7,0.3,1.1" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="12"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.83,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseC2" type="SlumSmallHome" display_name="Poor House C2"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House C2.prefab">
+		<floors_group min="0" max="2" floor_size="0.7,0.3,1.1" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="14"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.83,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseD2" type="SlumSmallHome" display_name="Poor House D2"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House D2.prefab">
+		<floors_group min="0" max="0" floor_size="0.5,0.3,0.8" percentage_living_space="70" percentage_storage_space="30"/>
+		<floors_group min="1" max="1" floor_size="0.5,0.3,0.4" percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="9"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.83,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseF2" type="SlumSmallHome" display_name="Poor House F2"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House F2.prefab">
+		<floors_group min="0" max="0" floor_size="0.8,0.3,0.8" percentage_living_space="70" percentage_storage_space="30"/>
+		<floors_group min="1" max="1" floor_size="0.8,0.3,0.4" percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="12"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.83,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseG2" type="SlumSmallHome" display_name="Poor House G2"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House G2.prefab">
+		<floors_group min="0" max="0" floor_size="0.7,0.3,0.8" percentage_living_space="70" percentage_storage_space="30"/>
+		<floors_group min="1" max="2" floor_size="0.7,0.3,0.4" percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="12"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.83,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorShedA1" type="SlumShed" display_name="Poor Shed A1"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor Shed A1.prefab">
+		<floors_group min="0" max="0" floor_size="0.35,0.45,0.6" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="6"/>
+	</building_prefab>
+
+	<building_prefab id="PoorShedA2" type="SlumShed" display_name="Poor Shed A2"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor Shed A2.prefab">
+		<floors_group min="0" max="0" floor_size="0.35,0.45,0.6" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Homeless" max_residents="8"/>
+	</building_prefab>
+
+	<building_prefab id="PoorCamperTrailerA" type="SlumTrailer" display_name="Poor Camper Trailer A"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor Camper Trailer A.prefab" floors_offset="0.1,0,-0.05">
+		<floors_group min="0" max="0" floor_size="0.3,0.4,0.75" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="6"/>
+		<building_marker prefab="Skylight" offset="0.15,-0.13,0"/>
+	</building_prefab>
+
+	<building_prefab id="PoorCamperTrailerG" type="SlumTrailer" display_name="Poor Camper Trailer G"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor Camper Trailer G.prefab" floors_offset="0.1,0,-0.05">
+		<floors_group min="0" max="0" floor_size="0.3,0.4,0.75" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="4"/>
+		<building_marker prefab="Skylight" offset="0.15,-0.13,0"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseH" type="SlumSmallHome" display_name="Poor House H"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House H.prefab">
+		<floors_group min="0" max="0" floor_size="0.9,0.55,0.8" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="6"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.93,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseI" type="SlumSmallHome" display_name="Poor House I"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House I.prefab">
+		<floors_group min="0" max="0" floor_size="1.2,0.35,0.8" percentage_living_space="70" percentage_storage_space="30"/>
+		<floors_group min="1" max="1" floor_size="1.2,0.35,0.5" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="8"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.93,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseJ" type="SlumSmallHome" display_name="Poor House J"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House J.prefab">
+		<floors_group min="0" max="0" floor_size="1.2,0.35,0.8" percentage_living_space="70" percentage_storage_space="30"/>
+		<floors_group min="1" max="1" floor_size="0.8,0.35,0.5" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="8"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.93,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseK" type="SlumSmallHome" display_name="Poor House K"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House K.prefab">
+		<floors_group min="0" max="1" floor_size="0.5,0.35,0.8" percentage_living_space="70" percentage_storage_space="30"/>
+		<floors_group min="2" max="2" floor_size="0.5,0.35,0.5" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="8"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.83,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseL" type="SlumSmallHome" display_name="Poor House L"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House L.prefab">
+		<floors_group min="0" max="1" floor_size="0.75,0.35,0.8" percentage_living_space="70" percentage_storage_space="30"/>
+		<floors_group min="2" max="2" floor_size="0.75,0.35,0.5" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="10"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-1.03,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorHouseP" type="SlumSmallHome" display_name="Poor House P"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor House P.prefab">
+		<floors_group min="0" max="2" floor_size="0.5,0.3,0.8" percentage_living_space="70" percentage_storage_space="30"/>
+		<floors_group min="3" max="3" floor_size="0.5,0.5,0.5" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="8"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.93,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="PoorMiniBarA" type="Bar" display_name="Poor Mini Bar A"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Poor Mini Bar A.prefab">
+		<floors_group min="0" max="0" floor_size="0.4,0.4,0.3" percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2"/>
+	</building_prefab>
+
+	<building_prefab id="SlumRamshackleA" type="SlumTower" display_name="Slum Tower A" should_be_shown_in_map_mode="false"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Slum Ramshackle A.prefab">
+		<floors_group min="-5" max="-1" floor_size="1.4,0.3,1.3" percentage_living_space="50" percentage_storage_space="50" is_underground="true"/>
+		<floors_group min="0" max="3" floor_size="1.4,0.3,1.3" percentage_living_space="80" percentage_storage_space="20"/>
+		<floors_group min="4" max="6" floor_size="0.4,0.35,0.4" percentage_living_space="80" percentage_storage_space="20"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="1575"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.17,-0.73,-0.26"/>
+	</building_prefab>
+
+	<building_prefab id="SlumRamshackleB" type="SlumTower" display_name="Slum Tower B" should_be_shown_in_map_mode="false"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Slum Ramshackle B.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.7,0.3,0.7" percentage_living_space="50" percentage_storage_space="50" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.3,0.7" percentage_living_space="80" percentage_storage_space="20"/>
+		<floors_group min="2" max="3" floor_size="0.4,0.27,0.4" percentage_living_space="80" percentage_storage_space="20"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="1126"/>
+		<building_marker prefab="AntennaOneLight" offset="0.1,-0.83,0.05"/>
+	</building_prefab>
+
+	<building_prefab id="SlumRamshackleC" type="SlumTower" display_name="Slum Tower C" should_be_shown_in_map_mode="false"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Slum Ramshackle C.prefab">
+		<floors_group min="-6" max="-1" floor_size="0.4,0.17,0.4" percentage_living_space="50" percentage_storage_space="50" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="0.4,0.27,0.4" percentage_living_space="80" percentage_storage_space="20"/>
+		<floors_group min="3" max="4" floor_size="0.6,0.27,0.6" percentage_living_space="80" percentage_storage_space="20"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="768"/>
+		<building_marker prefab="AntennaOneLight" offset="0.1,-0.93,0.05"/>
+	</building_prefab>
+
+	<building_prefab id="SlumRamshackleD" type="SlumTower" display_name="Slum Tower D" should_be_shown_in_map_mode="false"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Slum Ramshackle D.prefab">
+		<floors_group min="-5" max="-1" floor_size="0.7,0.3,1.3" percentage_living_space="50" percentage_storage_space="50" is_underground="true"/>
+		<floors_group min="0" max="4" floor_size="0.7,0.27,1.3" percentage_living_space="80" percentage_storage_space="20"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="697"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.1,-0.83,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="SlumRamshackleE" type="SlumTower" display_name="Slum Tower E" should_be_shown_in_map_mode="false"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Slum Ramshackle E.prefab">
+		<floors_group min="-6" max="-1" floor_size="0.6,0.27,0.6" percentage_living_space="50" percentage_storage_space="50" is_underground="true"/>
+		<floors_group min="0" max="3" floor_size="0.6,0.28,0.6" percentage_living_space="80" percentage_storage_space="20"/>
+		<floors_group min="4" max="5" floor_size="0.8,0.29,0.8" percentage_living_space="80" percentage_storage_space="20"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="988"/>
+		<building_marker prefab="AntennaOneLight" offset="0.1,-0.73,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="SlumRamshackleF" type="SlumTower" display_name="Slum Tower F" should_be_shown_in_map_mode="true"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Slum Ramshackle F.prefab">
+		<floors_group min="-7" max="-1" floor_size="1.1,0.26,0.6" percentage_living_space="50" percentage_storage_space="50" is_underground="true"/>
+		<floors_group min="0" max="3" floor_size="0.8,0.26,0.6" percentage_living_space="80" percentage_storage_space="20"/>
+		<floors_group min="4" max="7" floor_size="0.6,0.29,0.6" percentage_living_space="80" percentage_storage_space="20"/>
+		<floors_group min="8" max="10" floor_size="0.4,0.29,0.4" percentage_living_space="80" percentage_storage_space="20"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="1526"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.3,-0.73,-0.06"/>
+	</building_prefab>
+
+	<building_prefab id="SlumRamshackleG" type="SlumTower" display_name="Slum Tower G" should_be_shown_in_map_mode="true"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Slum Ramshackle G.prefab">
+		<floors_group min="-6" max="-1" floor_size="0.6,0.27,0.6" percentage_living_space="50" percentage_storage_space="50" is_underground="true"/>
+		<floors_group min="0" max="3" floor_size="0.6,0.28,0.6" percentage_living_space="80" percentage_storage_space="20"/>
+		<floors_group min="4" max="5" floor_size="0.8,0.29,0.8" percentage_living_space="80" percentage_storage_space="20"/>
+		<floors_group min="6" max="6" floor_size="0.4,0.29,0.4" percentage_living_space="80" percentage_storage_space="20"/>
+		<floors_group min="7" max="8" floor_size="0.6,0.29,0.6" percentage_living_space="80" percentage_storage_space="20"/>
+		<floors_group min="9" max="10" floor_size="0.4,0.20,0.4" percentage_living_space="80" percentage_storage_space="20"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="1315"/>
+		<building_marker prefab="AntennaOneLight" offset="0.05,-0.73,0.05"/>
+	</building_prefab>
+
+	<building_prefab id="SlumRamshackleH" type="SlumTower" display_name="Slum Tower H" should_be_shown_in_map_mode="false"
+		path_to_placeable="Assets/__Library/Buildings/Poor/Slum Ramshackle H.prefab">
+		<floors_group min="-5" max="-1" floor_size="1.3,0.3,0.7" percentage_living_space="50" percentage_storage_space="50" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1.3,0.27,0.7" percentage_living_space="80" percentage_storage_space="20"/>
+		<floors_group min="3" max="4" floor_size="0.7,0.25,0.5" percentage_living_space="80" percentage_storage_space="20"/>
+		<floors_group min="5" max="7" floor_size="0.4,0.29,0.4" percentage_living_space="80" percentage_storage_space="20"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="1809"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.42,-0.73,-0.2"/>
+	</building_prefab>
+	
+</root>

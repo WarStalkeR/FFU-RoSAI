@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+		
+	<building_prefab id="SatelliteCommunicationsA" type="SatelliteCommunications" display_name="Satellite Communications A"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Satellite Communications A.prefab">
+	</building_prefab>
+
+	<building_prefab id="SatelliteCommunicationsB" type="SatelliteCommunications" display_name="Satellite Communications B"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Satellite Communications B.prefab">
+	</building_prefab>
+
+	<building_prefab id="SatelliteCommunicationsC" type="SatelliteCommunications" display_name="Satellite Communications C"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Satellite Communications C.prefab">
+	</building_prefab>
+
+	<building_prefab id="NanoResearchCenterB" type="NanoResearchCenter" display_name="Nano Research Center B"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/NanoResearchCenterB.prefab">
+		<floors_group min="-8" max="-1" floor_size="1.7,0.45,0.6" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.7,0.45,0.6"  percentage_work_space="70" percentage_storage_space="30"/>
+		<floors_group min="1" max="10" floor_size="1.7,0.35,0.6"  percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="64"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="128"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="16"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="20"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="40"/>
+		<building_marker prefab="AntennaOneLight" offset="0.4,-0.8,-0"/>
+	</building_prefab>
+
+	<building_prefab id="NanoResearchCenterC" type="NanoResearchCenter" display_name="Nano Research Center C"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/NanoResearchCenterC.prefab">
+		<floors_group min="-5" max="-1" floor_size="1,0.45,0.6" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.45,0.6"  percentage_work_space="70" percentage_storage_space="30"/>
+		<floors_group min="1" max="3" floor_size="0.8,0.35,0.6"  percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="12"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="24"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="4"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="6"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="8"/>
+		<building_marker prefab="AntennaOneLight" offset="0.2,-0.8,0"/>
+	</building_prefab>
+
+	<building_prefab id="MechPartsFactory" type="MechPartsFactory" display_name="Mech Parts Factory"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Mech Factory.prefab" should_be_shown_in_map_mode="false">
+		<floors_group min="-4" max="-1" floor_size="3.4,0.6,3.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="3.4,0.7,3.4" percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="130"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="250"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="50"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="60"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="60"/>
+		<building_marker prefab="AntennaThreeLight" offset="1.5,-0.6,0"  />
+		
+	</building_prefab>
+
+	<building_prefab id="SpaceFoodRationsFactory" type="SpaceFoodRationsFactory" display_name="Space Food Rations Factory"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Space Food Rations Factory.prefab">
+		<floors_group min="-2" max="-1" floor_size="3.2,0.6,4.5"  percentage_work_space="60" percentage_storage_space="40" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="3.2,0.9,4.5"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="120"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="250"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="50"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="80"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="350"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.3,-0.35"/>
+	</building_prefab>
+
+	<building_prefab id="RocketFuelRefinery" type="RocketFuelRefinery" display_name="Rocket Fuel Refinery"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Rocket Fuel Refinery.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.7,0.4,0.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.7,1.3,0.7" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="8"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="24"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0.09"/>
+	</building_prefab>
+
+	<building_prefab id="UndergroundScienceLabB" type="ScienceLab" display_name="Underground Science Lab B"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/UndergroundScienceLabB.prefab">
+		<floors_group min="-30" max="-20" floor_size="2.8,0.4,1.4"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-19" max="-1" floor_size="2.8,0.4,1.4"  percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.8,0.8,1.4"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="30"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="50"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="12"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="15"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="20"/>
+		<building_marker prefab="RoofLine" offset="0,0,0"/>		
+	</building_prefab>
+
+	<building_prefab id="SpaceportHangar" type="SpaceportHangar" display_name="Spaceport Hangar"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Spaceport Hangar.prefab" should_be_shown_in_map_mode="true">
+		<floors_group min="-3" max="-1" floor_size="3.4,1.1,6.8"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="3.4,1.1,6.8"  percentage_work_space="5" percentage_storage_space="95"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="5"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="2"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="2"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="10"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="30"/>
+		<building_marker prefab="Skylight" offset="-0.8,-0.5,-3.1" scale_multiplier="2"/>		
+		
+		
+	</building_prefab>
+
+	<building_prefab id="ThermalPowerPlantA" type="GeothermalPowerPlant" display_name="Geothermal Power Plant A"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Thermal Power Plant A.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,10,0.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.7,0.5,0.7" percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="3"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="6"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.08,-0.7,0"/>
+		
+	</building_prefab>
+
+	<building_prefab id="ThermalPowerPlantB" type="GeothermalPowerPlant" display_name="Geothermal Power Plant B"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Thermal Power Plant B.prefab">
+		<floors_group min="-1" max="-1" floor_size="2.4,6,2.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.4,0.5,2.4" percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="10"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="5"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="5"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="10"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="20"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,-0.04"/>
+		
+	</building_prefab>
+
+	<building_prefab id="RocketFuelStorage" type="RocketFuelStorage" display_name="Rocket Fuel Storage"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Rocket Fuel Storage.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,10,0.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.7,0.6,0.7"  percentage_work_space="20" percentage_storage_space="80"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="10"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0"/>
+	</building_prefab>
+
+	<building_prefab id="SpaceportTerminal" type="SpaceportTerminal" display_name="Spaceport Terminal"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Spaceport Terminal.prefab" should_be_shown_in_map_mode="true">
+		<floors_group min="-1" max="-1" floor_size="6.8,0.35,8.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="6.8,0.5,8.2" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="300"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="100"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="60"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="200"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="300"/>
+		<building_marker prefab="AntennaOneLight" offset="-2.2,-0.5,0"/>		
+		
+		
+	</building_prefab>
+
+	<building_prefab id="BatteryBackupA" type="BatteryBackup" display_name="Battery Backup A"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Battery Backup A.prefab">
+		<building_marker prefab="AntennaOneLight" offset="0,-0.6,0.36"/>
+	</building_prefab>
+
+	<building_prefab id="BatteryBackupB" type="BatteryBackup" display_name="Battery Backup B"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Battery Backup B.prefab">
+		<building_marker prefab="AntennaOneLight" offset="0,-0.6,-0.1"/>
+	</building_prefab>
+
+	<building_prefab id="SpaceportLightDutyLaunchA" type="SpaceportLightDutyLaunch" display_name="Spaceport Light Duty Launch A"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Spaceport Light Duty Launch A.prefab" should_be_shown_in_map_mode="true">
+		<floors_group min="-5" max="-1" floor_size="6.8,0.35,8.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="3" floor_size="6.8,0.35,8.8" percentage_work_space="80" percentage_storage_space="20"/>
+		<floors_group min="4" max="4" floor_size="1.8,0.8,1.8" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="600"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="300"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="150"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="300"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="600"/>
+		<building_marker prefab="Skylight" offset="-1.1,0,-1.13" scale_multiplier="2"/>
+	</building_prefab>
+
+	<building_prefab id="SpaceportCraneA" type="SpaceportCrane" display_name="Spaceport Crane A"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Spaceport Crane A.prefab">
+	</building_prefab>
+
+	<building_prefab id="SpaceportEngineTrolleyA" type="SpaceportEngineTrolley" display_name="Spaceport Engine Trolley A"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Spaceport Engine Trolley A.prefab">
+	</building_prefab>
+
+	<building_prefab id="SpaceportEngineTrolleyB" type="SpaceportEngineTrolley" display_name="Spaceport Engine Trolley B"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Spaceport Engine Trolley B.prefab">
+	</building_prefab>
+
+	<building_prefab id="SpaceportLaunchArmA1" type="SpaceportLaunchArm" display_name="Spaceport Launch Arm A1"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Spaceport Launch Arm A1.prefab">
+	</building_prefab>
+
+	<building_prefab id="SpaceportLaunchArmA2" type="SpaceportLaunchArm" display_name="Spaceport Launch Arm A2"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Spaceport Launch Arm A2.prefab">
+	</building_prefab>
+
+	<building_prefab id="SpaceportLaunchPadB1" type="SpaceportLaunchPad" display_name="Spaceport Launch Pad B1"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Spaceport Launch Pad B1.prefab">
+	</building_prefab>
+
+	<building_prefab id="SpaceportLaunchPadB2" type="SpaceportLaunchPad" display_name="Spaceport Launch Pad B2"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Spaceport Launch Pad B2.prefab">
+	</building_prefab>
+
+	<building_prefab id="SpaceportRocketHangarA" type="SpaceportRocketHangar" display_name="Spaceport Rocket Hangar A"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Spaceport Rocket Hangar A.prefab">
+		<floors_group min="0" max="0" floor_size="1.7,4.8,1.5"  percentage_work_space="5" percentage_storage_space="95"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="9"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="3"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="14"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="50"/>
+		
+		
+		<building_marker prefab="RoofLine" offset="0,0,0"  rotation_y="0"/>
+	</building_prefab>
+
+	<!--Decorative-->
+		<building_prefab id="SpaceportLaunchPadC" type="SpaceportLightDutyLaunch" display_name="Spaceport Light Duty Launch B"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/Spaceport Launch Pad C.prefab">
+	</building_prefab>
+
+	<building_prefab id="LightRocket" type="LightRocket" display_name="Light Rocket"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/LightRocket.prefab">
+	</building_prefab>
+
+	<building_prefab id="MediumRocket" type="MediumRocket" display_name="Medium Rocket"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/MediumRocket.prefab">
+	</building_prefab>
+
+	<building_prefab id="HeavyRocket" type="HeavyRocket" display_name="Heavy Rocket"
+		path_to_placeable="Assets/__Library/Buildings/Exo Base/HeavyRocket.prefab">
+	</building_prefab>
+	
+</root>

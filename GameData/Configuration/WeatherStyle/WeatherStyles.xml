@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Primary sets of weather-->
+	
+	<weather_style id="CyberDay" display_name="Cyber Day"
+		skybox="VibrantSunset" ground_style="Standard" fog_style="CyberDay"
+		sun_intensity="1.37" night_light_percent="0"
+		can_transition_to="WistfulEvening,RainyMorning,VibrantMorning,BlueDay"
+		low_wind_sound="ClearLowWind_Low" high_wind_sound="ClearLowWind_High"
+		camera_is_considered_high_at="22" >
+	</weather_style>
+
+	<weather_style id="BlueDay" display_name="Blue Day"
+		skybox="VibrantCyanClouds" ground_style="GS4" fog_style="BlueDay"
+		sun_intensity="1.37" night_light_percent="0"
+		can_transition_to="WistfulEvening,RainyMorning,VibrantMorning"
+		low_wind_sound="MoodyGustingWind_Low" high_wind_sound="MoodyGustingWind_High"
+		camera_is_considered_high_at="22" >
+	</weather_style>
+
+	<weather_style id="WistfulEvening" display_name="Wistful Evening"
+		skybox="DeepSunset" ground_style="GS2" fog_style="WistfulEvening"
+		sun_intensity="1.11" night_light_percent="5"
+		can_transition_to="RainyNight,SilentFog"
+		low_wind_sound="WindyTrees_Low" high_wind_sound="WindyTrees_High"
+		blocks_bird_sounds="true"
+		camera_is_considered_high_at="22" >
+	</weather_style>
+
+	<weather_style id="RainyNight" display_name="Rainy Night"
+		skybox="CloudyNight" ground_style="GS3" fog_style="RainyNight"
+		sun_intensity="1.01" night_light_percent="10" is_raining="true"
+		can_transition_to="RainyMorning,VibrantMorning"
+		low_wind_sound="DeepStorm_Low" high_wind_sound="DeepStorm_High"
+		low_rain_sound="LowMediumRain1,LowMediumRain2"
+		high_rain_sound="MediumRain1,MediumRain3"
+		indoor_rain_sound="InteriorMediumRain1,InteriorMediumRain2,InteriorMediumRain3"
+		blocks_bird_sounds="true"
+		camera_is_considered_high_at="22" >
+	</weather_style>
+	
+	<weather_style id="RainyMorning" display_name="Rainy Morning"
+		skybox="ScuddedPurple" ground_style="Standard" fog_style="RainyMorning"
+		sun_intensity="1.27" night_light_percent="3" is_raining="true"
+		can_transition_to="CyberDay,SilentFog,VibrantMorning,BlueDay"
+		low_wind_sound="LonelyMoanWind_Low" high_wind_sound="LonelyMoanWind_High"
+		low_rain_sound="LowSoftRain1,LowSoftRain2,LowSoftRain3,LowSoftRain4"
+		high_rain_sound="SoftRain2"
+		indoor_rain_sound="InteriorSoftRain1,InteriorSoftRain2"
+		camera_is_considered_high_at="22" >
+	</weather_style>
+
+	<weather_style id="VibrantMorning" display_name="Vibrant Morning"
+		skybox="GrayOvercast" ground_style="Standard" fog_style="VibrantMorning"
+		sun_intensity="1.27" night_light_percent="3"
+		can_transition_to="CyberDay,SilentFog,RainyMorning,BlueDay"
+		low_wind_sound="LonelyMoanWind_Low" high_wind_sound="MoodyGustingWind_High"
+		camera_is_considered_high_at="22" >
+	</weather_style>
+
+	<weather_style id="SilentFog" display_name="Silent Fog" is_default="true"
+		skybox="DeepBlue" ground_style="Standard" fog_style="SilentFog"
+		sun_intensity="1.37" night_light_percent="5"
+		can_transition_to="CyberDay,WistfulEvening,BlueDay"
+		low_wind_sound="BlusteryDay_Low" high_wind_sound="BlusteryDay_High"
+		blocks_bird_sounds="true"
+		camera_is_considered_high_at="22" >
+	</weather_style>
+
+	<weather_style id="RainFog" display_name="Rain Fog"
+		skybox="DeepBlue" ground_style="Standard" fog_style="RainFog"
+		sun_intensity="1.37" night_light_percent="5" is_raining="true"
+		can_transition_to="SilentFog"
+		low_wind_sound="HollowWind_Low" high_wind_sound="HollowWind_High"
+		low_rain_sound="LowHardRain1,LowHardRain2,LowHardRain3,LowHardRain4,LowHardRain5"
+		high_rain_sound="HardRain1,HardRain2"
+		indoor_rain_sound="InteriorHardRain1,InteriorHardRain2" 
+		blocks_bird_sounds="true"
+		camera_is_considered_high_at="22">
+	</weather_style>
+
+	<weather_style id="PostApocalypseA" display_name="Post-Apocalypse A" is_default="true"
+		skybox="GrayOvercast" ground_style="GS2" fog_style="PostApocalypseA"
+		sun_intensity="1.37" night_light_percent="5"
+		can_transition_to="PostApocalypseB"
+		low_wind_sound="BlusteryDay_Low" high_wind_sound="BlusteryDay_High"
+		blocks_bird_sounds="true"
+		camera_is_considered_high_at="22" >
+	</weather_style>
+
+	<weather_style id="PostApocalypseB" display_name="Post Apocalypse B"
+		skybox="GrayOvercast" ground_style="GS2" fog_style="PostApocalypseB"
+		sun_intensity="1.37" night_light_percent="5" is_raining="true"
+		can_transition_to="PostApocalypseA"
+		low_wind_sound="HollowWind_Low" high_wind_sound="HollowWind_High"
+		low_rain_sound="LowHardRain1,LowHardRain2,LowHardRain3,LowHardRain4,LowHardRain5"
+		high_rain_sound="HardRain1,HardRain2"
+		indoor_rain_sound="InteriorHardRain1,InteriorHardRain2"
+		blocks_bird_sounds="true"
+		camera_is_considered_high_at="22">
+	</weather_style>
+	
+	<!--Not used on the main streets-->
+	
+	<weather_style id="Alt_Map" is_hidden="true"
+		skybox="MapBack" ground_style="Standard" fog_style="Alt_Map"
+		sun_intensity="1.37" night_light_percent="0"
+		low_wind_sound="HollowWind_Low" high_wind_sound="HollowWind_High"
+		camera_is_considered_high_at="80" use_non_overridden_weather_sounds="true" >
+	</weather_style>
+
+	<weather_style id="Alt_ZodiacPods" is_hidden="true"
+		skybox="MapBack" ground_style="Standard" fog_style="Alt_ZodiacPods"
+		sun_intensity="1.37" night_light_percent="0"
+		low_wind_sound="HollowWind_Low" high_wind_sound="HollowWind_Low"
+		camera_is_considered_high_at="40" >
+	</weather_style>
+
+	<weather_style id="Alt_ZodiacHexes" is_hidden="true"
+		skybox="ArcenGalaxySky3" ground_style="Standard" fog_style="Alt_ZodiacHexes"
+		sun_intensity="1.37" night_light_percent="0"
+		low_wind_sound="HollowWind_Low" high_wind_sound="HollowWind_Low"
+		camera_is_considered_high_at="40" >
+	</weather_style>
+
+	<weather_style id="Alt_ZodiacNeurons" is_hidden="true"
+		skybox="NeuronSky" ground_style="Standard" fog_style="Alt_ZodiacNeurons"
+		sun_intensity="1.37" night_light_percent="0"
+		low_wind_sound="HollowWind_Low" high_wind_sound="HollowWind_Low"
+		camera_is_considered_high_at="40" >
+	</weather_style>
+
+	<weather_style id="Alt_Hacking" is_hidden="true"
+		skybox="NeuronSky" ground_style="Standard" fog_style="Alt_Hacking"
+		sun_intensity="1.37" night_light_percent="0"
+		low_wind_sound="HollowWind_Low" high_wind_sound="HollowWind_Low"
+		camera_is_considered_high_at="40" >
+	</weather_style>
+
+	<weather_style id="Alt_EndOfTime" is_hidden="true"
+		skybox="OceanSky" ground_style="Standard" fog_style="Alt_EndOfTime"
+		sun_intensity="1.37" night_light_percent="0" ocean_sound="EndOfTimeOcean"
+		low_wind_sound="EndOfTimeWind" high_wind_sound="EndOfTimeWind"
+		camera_is_considered_high_at="70"
+		ocean_volume_min_height="30" ocean_volume_max_height="90"
+		ocean_volume_at_min="1" ocean_volume_at_max="0.6"
+	>
+	</weather_style>
+
+	<weather_style id="Alt_HackingInterface" is_hidden="true"
+		skybox="NeuronSky" ground_style="Standard" fog_style="Alt_EndOfTime"
+		sun_intensity="1.37" night_light_percent="0" 
+		
+		low_rain_sound="HackingLayer1A,HackingLayer1B,HackingLayer1C"
+		high_rain_sound="HackingLayer2A,HackingLayer2B"
+		indoor_rain_sound="HackingLayer3A" 
+		
+		low_wind_sound="EndOfTimeWind" high_wind_sound="EndOfTimeWind"
+		camera_is_considered_high_at="70"
+	>
+	</weather_style>
+
+</root>

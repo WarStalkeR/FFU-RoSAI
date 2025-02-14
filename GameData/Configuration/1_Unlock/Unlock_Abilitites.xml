@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--General Abilities-->
+	
+	<!--Chapter Zero Auto-Unlocks-->
+	<unlock id="AndroidOverdrive" display_name="Android Overdrive" ability_type="AndroidBattleRecharge"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_zero="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+
+	<unlock id="TacticalCover" display_name="Tactical Cover" ability_type="AndroidTakeCover"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_zero="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+
+	<unlock id="FieldRepairs" display_name="Field Repairs" ability_type="AndroidNearbyRepair"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_zero="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+
+	<!--Chapter One Auto-Unlocks-->
+
+	<unlock id="IndiscriminateKiller" display_name="Indiscriminate Killer" ability_type="AndroidSlayerMode"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+
+	<unlock id="MercyTerror" display_name="Mercy Terror" ability_type="AndroidHorrifyMode"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+
+	<unlock id="DrainingHope" display_name="Draining Hope" ability_type="AndroidDemoralizeMode"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+	
+	<unlock id="FocusedTeams" display_name="Focused Teams" ability_type="AndroidStandby"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_meta_flag="CanUnitsStandby" immediate_unlock_inspiration_type="WorldExperience"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+
+	<unlock id="BattlePreparations" display_name="Battle Preparations" ability_type="AndroidUseItem"
+		turns_to_unlock="1" required_intelligence_class="1"
+		immediate_other_unlock_1="SwarmCloud" immediate_other_unlock_2="UntargetedAttack" other_unlock_inspiration_type="FollowUpIdea"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+	
+	<unlock id="RemoteDetonation" display_name="Remote Detonation" ability_type="Demolish"
+		turns_to_unlock="2" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+
+	<unlock id="DreadFire" display_name="Dread Fire" ability_type="Flamethrower"
+		turns_to_unlock="2" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+	
+	<unlock id="PropertyDamage" display_name="Property Damage" ability_type="Wallripper"
+		turns_to_unlock="2" required_intelligence_class="1"
+		immediate_other_unlock_1="ScavengersEye" other_unlock_inspiration_type="FollowUpIdea"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+
+	<unlock id="InvasiveProcedures" display_name="Invasive Procedures" ability_type="HackUnit"
+		turns_to_unlock="2" required_intelligence_class="2"
+		auto_unlocks_if_skipping_chapter_one="true" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+
+	<!--Does NOT Auto-Unlock-->
+	
+	<unlock id="OldSchoolPhreaker" display_name="Old-School Phreaker" ability_type="ProbeExoticComms"
+		turns_to_unlock="2" required_intelligence_class="1" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+
+	<unlock id="SilentScrapper" display_name="Silent Scrapper" ability_type="QuietlyLoot"
+		turns_to_unlock="2" required_intelligence_class="1" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+
+	<unlock id="MissionHandler" display_name="Mission Handler" ability_type="InfiltrationSysOp"
+		turns_to_unlock="2" required_intelligence_class="4" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Ability" sort_index="100" />
+		<part_of collection="AndroidAbility" sort_index="100" />
+	</unlock>
+	
+</root>

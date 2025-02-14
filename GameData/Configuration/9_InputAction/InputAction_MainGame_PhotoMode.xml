@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<input_action id="PhotoModeToggle" scope="MainGameOnly"
+      category="PhotoModeCamera" display_name="Photo Mode Toggle"
+      description="Enter or exit photo mode."
+      check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,PhotoMode,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="4" key="F2" />
+		<keybind id="5" key="" />
+	</input_action>
+
+	<input_action id="PhotoModeManualFocus" scope="MainGameOnly"
+      category="PhotoModeCamera" display_name="Hold For Manual Focus"
+      description="Hold down and move the mouse to manually focus the camera."
+      check_type="Custom" allowed_in_modes="PhotoMode" >
+		<keybind id="1" key="M" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="PhotoModeTakePhoto" scope="MainGameOnly"
+      category="PhotoModeCamera" display_name="Take Photo"
+      description="Press to take a photo."
+      check_type="Custom" allowed_in_modes="PhotoMode" >
+		<keybind id="1" key="Space" />
+		<keybind id="2" key="None" />
+	</input_action>
+	
+	<input_action id="PhotoModeCameraSpeedUp" scope="MainGameOnly"
+      category="PhotoModeCamera" display_name="Camera Speed Up"
+      description="Make all camera movements faster."
+      check_type="Custom" allowed_in_modes="PhotoMode" >
+		<keybind id="1" key="LeftShift" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+	<input_action id="PhotoModeCameraSlowDown" scope="MainGameOnly"
+		category="PhotoModeCamera" display_name="Camera Slow Down"
+		description="Make all camera movements slower."
+		check_type="Custom" allowed_in_modes="PhotoMode" >
+		<keybind id="1" key="LeftControl" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+	<input_action id="PhotoModeCameraForward"
+		category="PhotoModeCamera" display_name="Camera Forward" scope="MainGameOnly"
+		description="Pan the camera forward."
+		check_type="Custom" allowed_in_modes="PhotoMode" >
+		<keybind id="1" key="W" />
+		<keybind id="2" key="UpArrow" />
+	</input_action>
+	
+	<input_action id="PhotoModeCameraBackward" scope="MainGameOnly"
+		category="PhotoModeCamera" display_name="Camera Backward"
+		description="Pan the camera backward."
+		check_type="Custom" allowed_in_modes="PhotoMode">
+		<keybind id="1" key="S" />
+		<keybind id="2" key="DownArrow" />
+	</input_action>
+
+	<input_action id="PhotoModeCameraLeft" scope="MainGameOnly"
+		category="PhotoModeCamera" display_name="Camera Left"
+		description="Pan the camera left."
+		check_type="Custom" allowed_in_modes="PhotoMode" >
+		<keybind id="1" key="A" />
+		<keybind id="2" key="LeftArrow" />
+	</input_action>
+	
+	<input_action id="PhotoModeCameraRight" scope="MainGameOnly"
+		category="PhotoModeCamera" display_name="Camera Right"
+		description="Pan the camera right."
+		check_type="Custom" allowed_in_modes="PhotoMode" >
+		<keybind id="1" key="D" />
+		<keybind id="2" key="RightArrow" />
+	</input_action>
+
+	<input_action id="PhotoModeCameraUp" scope="MainGameOnly"
+		category="PhotoModeCamera" display_name="Camera Up"
+		description="Pan the camera upwards."
+		check_type="Custom" allowed_in_modes="PhotoMode" >
+		<keybind id="1" key="E" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="PhotoModeCameraDown" scope="MainGameOnly"
+		category="PhotoModeCamera" display_name="Camera Down"
+		description="Pan the camera downwards."
+		check_type="Custom" allowed_in_modes="PhotoMode">
+		<keybind id="1" key="Q" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+	<input_action id="PhotoModeCameraZoomInOutMouse" scope="MainGameOnly"
+		category="PhotoModeCamera" display_name="Camera Zoom In/Out (Mouse)"
+		description="Zoom the camera in and out with the mouse wheel."
+		check_type="Custom" allowed_in_modes="PhotoMode" >
+		<keybind id="1" key="MouseWheel" />
+	</input_action>
+	
+	<!--Photo mode camera memory-->
+
+	<input_action id="PhotoModeSetPosition1" scope="MainGameOnly" category="PhotoModeCamera" display_name="Set Position 1"
+      description="Remember the current position and rotation of the camera."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="1" modifier_1="LeftShift" key="Alpha1" />
+		<keybind id="2" key="" />
+	</input_action>
+	<input_action id="PhotoModeGoToPosition1" scope="MainGameOnly" category="PhotoModeCamera" display_name="Go To Position 1"
+      description="Go back to the saved position slot for the camera, if there is one."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="1" key="Alpha1" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="PhotoModeSetPosition2" scope="MainGameOnly" category="PhotoModeCamera" display_name="Set Position 2"
+      description="Remember the current position and rotation of the camera."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="2" modifier_1="LeftShift" key="Alpha2" />
+		<keybind id="3" key="" />
+	</input_action>
+	<input_action id="PhotoModeGoToPosition2" scope="MainGameOnly" category="PhotoModeCamera" display_name="Go To Position 2"
+      description="Go back to the saved position slot for the camera, if there is one."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="2" key="Alpha2" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="PhotoModeSetPosition3" scope="MainGameOnly" category="PhotoModeCamera" display_name="Set Position 3"
+      description="Remember the current position and rotation of the camera."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="3" modifier_1="LeftShift" key="Alpha3" />
+		<keybind id="4" key="" />
+	</input_action>
+	<input_action id="PhotoModeGoToPosition3" scope="MainGameOnly" category="PhotoModeCamera" display_name="Go To Position 3"
+      description="Go back to the saved position slot for the camera, if there is one."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="3" key="Alpha3" />
+		<keybind id="4" key="" />
+	</input_action>
+
+	<input_action id="PhotoModeSetPosition4" scope="MainGameOnly" category="PhotoModeCamera" display_name="Set Position 4"
+      description="Remember the current position and rotation of the camera."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="4" modifier_1="LeftShift" key="Alpha4" />
+		<keybind id="5" key="" />
+	</input_action>
+	<input_action id="PhotoModeGoToPosition4" scope="MainGameOnly" category="PhotoModeCamera" display_name="Go To Position 4"
+      description="Go back to the saved position slot for the camera, if there is one."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="4" key="Alpha4" />
+		<keybind id="5" key="" />
+	</input_action>
+
+	<input_action id="PhotoModeSetPosition5" scope="MainGameOnly" category="PhotoModeCamera" display_name="Set Position 5"
+      description="Remember the current position and rotation of the camera."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="5" modifier_1="LeftShift" key="Alpha5" />
+		<keybind id="6" key="" />
+	</input_action>
+	<input_action id="PhotoModeGoToPosition5" scope="MainGameOnly" category="PhotoModeCamera" display_name="Go To Position 5"
+      description="Go back to the saved position slot for the camera, if there is one."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="5" key="Alpha5" />
+		<keybind id="6" key="" />
+	</input_action>
+
+	<input_action id="PhotoModeSetPosition6" scope="MainGameOnly" category="PhotoModeCamera" display_name="Set Position 6"
+      description="Remember the current position and rotation of the camera."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="6" modifier_1="LeftShift" key="Alpha6" />
+		<keybind id="7" key="" />
+	</input_action>
+	<input_action id="PhotoModeGoToPosition6" scope="MainGameOnly" category="PhotoModeCamera" display_name="Go To Position 6"
+      description="Go back to the saved position slot for the camera, if there is one."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="6" key="Alpha6" />
+		<keybind id="7" key="" />
+	</input_action>
+
+	<input_action id="PhotoModeSetPosition7" scope="MainGameOnly" category="PhotoModeCamera" display_name="Set Position 7"
+      description="Remember the current position and rotation of the camera."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="7" modifier_1="LeftShift" key="Alpha7" />
+		<keybind id="8" key="" />
+	</input_action>
+	<input_action id="PhotoModeGoToPosition7" scope="MainGameOnly" category="PhotoModeCamera" display_name="Go To Position 7"
+      description="Go back to the saved position slot for the camera, if there is one."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="7" key="Alpha7" />
+		<keybind id="8" key="" />
+	</input_action>
+
+	<input_action id="PhotoModeSetPosition8" scope="MainGameOnly" category="PhotoModeCamera" display_name="Set Position 8"
+      description="Remember the current position and rotation of the camera."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="8" modifier_1="LeftShift" key="Alpha8" />
+		<keybind id="9" key="" />
+	</input_action>
+	<input_action id="PhotoModeGoToPosition8" scope="MainGameOnly" category="PhotoModeCamera" display_name="Go To Position 8"
+      description="Go back to the saved position slot for the camera, if there is one."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="8" key="Alpha8" />
+		<keybind id="9" key="" />
+	</input_action>
+
+	<input_action id="PhotoModeSetPosition9" scope="MainGameOnly" category="PhotoModeCamera" display_name="Set Position 9"
+      description="Remember the current position and rotation of the camera."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="9" modifier_1="LeftShift" key="Alpha9" />
+		<keybind id="10" key="" />
+	</input_action>
+	<input_action id="PhotoModeGoToPosition9" scope="MainGameOnly" category="PhotoModeCamera" display_name="Go To Position 9"
+      description="Go back to the saved position slot for the camera, if there is one."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting" allowed_in_modes="PhotoMode">
+		<keybind id="9" key="Alpha9" />
+		<keybind id="10" key="" />
+	</input_action>
+	
+</root>

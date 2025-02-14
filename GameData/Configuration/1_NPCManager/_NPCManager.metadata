@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="npc_manager">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="cohort_tag_a_will_be_local_authority_if_matches_this_tag" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+		tooltip="Wherever this manager is focused, cohort A will be the local authority if the local authority matches this tag. If it does not match this tag, it will use the regular cohort a logic instead." />
+	<attribute key="cohort_tag_a" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+		tooltip="During a specific interval of this manager, all units that say they want to be from this tag A will be from the same cohort." />
+	<attribute key="cohort_tag_b" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+		tooltip="During a specific interval of this manager, all units that say they want to be from this tag B will be from the same cohort." />
+	<attribute key="cohort_tag_c" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+		tooltip="During a specific interval of this manager, all units that say they want to be from this tag C will be from the same cohort." />
+	
+	<attribute key="activity_alert_to_show" type="node-dropdown" is_required="false" node_source="OtherNPCActivityChecklistAlert" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this manager should contribute to an alert about npc unit activity, then this is the alert it will contribute to." />
+
+	<attribute key="auto_marked_as_complete_if_skipping_chapter_zero" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically get marked as complete when skipping chapter zero?" />
+	<attribute key="auto_marked_as_complete_if_skipping_chapter_one" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically get marked as complete when skipping chapter one?" />
+
+	<attribute key="auto_marked_as_complete_if_city_flag_1_tripped" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+		tooltip="ID of a flag in the city. If this flag is true, then automatically mark this manager as complete right away." />
+	<attribute key="auto_marked_as_complete_if_city_flag_2_tripped" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+		tooltip="ID of a flag in the city. If this flag is true, then automatically mark this manager as complete right away." />
+	
+	<attribute key="debug_log_manager_details" type="bool" default="false" is_required="false"
+		tooltip="If true, then a variety of debug info will be logged every turn as this manager makes decisions." />
+
+	<attribute key="project_to_start_when_activates_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this manager starts a project when it first spawns a unit, then what project does it start?" />
+	<attribute key="project_to_start_when_activates_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this manager starts a project when it first spawns a unit, then what project does it start?" />
+	<attribute key="project_to_start_when_activates_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this manager starts a project when it first spawns a unit, then what project does it start?" />
+
+	<!--periodic_data
+	*******************************************************************************************************-->
+	<sub_node id="periodic_data">
+
+		<attribute key="min_turns_between_activity" type="int-textbox" min="1" max="99" default="10" content_width_px="50" is_required="true"
+			tooltip="At least how many turns of a gap should there be between one activity set and the next?"/>
+		<attribute key="max_turns_between_activity" type="int-textbox" min="1" max="99" default="10" content_width_px="50" is_required="true"
+			tooltip="At most how many turns of a gap should there be between one activity set and the next?"/>
+
+		<attribute key="cannot_start_until_turn" type="int-textbox" min="0" max="999999" default="0" content_width_px="50" is_required="true"
+			tooltip="If above zero, then this will be blocked until a specific turn, regardless of anything else."/>
+		<attribute key="cannot_start_until_doom_number" type="int-textbox" min="0" max="999999" default="0" content_width_px="50" is_required="true"
+			tooltip="If above zero, then this will be blocked until a specific doom number, regardless of anything else."/>
+
+		<attribute key="min_security_clearance_of_seed_spot" type="int-textbox" min="-1" max="5" default="-1" content_width_px="50" is_required="false"
+			tooltip="On a scale from 0 to 5, what is the lowest allowed security clearance for seed spots for this item?  Set to -1 to ignore."/>
+		<attribute key="max_security_clearance_of_seed_spot" type="int-textbox" min="-1" max="5" default="-1" content_width_px="50" is_required="false"
+			tooltip="On a scale from 0 to 5, what is the highest allowed security clearance for seed spots for this item?  Set to -1 to ignore."/>
+		<attribute key="target_building_tag" type="node-dropdown" is_required="false" node_source="BuildingTag" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="This is the tag of building where this manager will focus its attentions. Not used for job-related managers." />
+		<attribute key="target_job_tag" type="node-dropdown" is_required="false" node_source="MachineJobTag" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If this manager is for a specific machine job tag, then this specifies which machine job tag that is." />
+		<attribute key="target_territory_trigger" type="node-dropdown" is_required="false" node_source="TerritoryControlTrigger" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If this manager is for a specific territory control trigger, then this specifies which trigger that is." />
+		<attribute key="target_action_over_time" type="node-dropdown" is_required="false" node_source="ActionOverTimeType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If this manager is for when machine actors do a specific action over time, but no more details, then use this." />
+		<attribute key="target_action_over_time_investigation_type" type="node-dropdown" is_required="false" node_source="InvestigationType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If this manager is for a machine actor does any sort of action over time directly linked to this investigation type, then use this." />
+		<attribute key="target_action_over_time_danger_type" type="node-dropdown" is_required="false" node_source="ActivityDangerType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If this manager is for a machine actor does any sort of action over time directly linked to this danger type, then use this." />
+
+		<attribute key="only_targets_territory_trigger_if_required_deterrence_percentage_less_than" type="int-textbox" min="0" max="1000" default="100" content_width_px="50" is_required="false"
+			tooltip="This will only activate if the territory control flag is active, and its required deterrence level is less than this percentage (NOT equal to!). Defaults to 100."/>
+		<attribute key="only_targets_territory_trigger_if_required_deterrence_percentage_at_least" type="int-textbox" min="0" max="1000" default="0" content_width_px="50" is_required="false"
+			tooltip="This will only activate if the territory control flag is active, and its required deterrence level is greater than or equal to this number. Defaults to 0."/>
+
+		<attribute key="threat_radius" type="float-textbox" min="1" max="900" content_width_px="40" is_required="true"
+			tooltip="What range is considered to be the area of control for this manager, as far as the units within the manager are concerned?"/>
+		<attribute key="home_radius" type="float-textbox" min="1" max="900" content_width_px="40" is_required="true"
+			tooltip="What range is considered to be the home area in this manager that units will try to return to if out of it and instructed to?"/>
+
+		<!--seed_at_mission ......................-->
+		<sub_node id="seed_at_mission">
+			<attribute key="absolute_minimum_distance_must_seed_from_focus" type="int-textbox" min="0" max="1000" default="20" content_width_px="50" is_required="false"
+				tooltip="How far away, at minimum, the sub-focus of this unit activity must be from the starting focus of whatever is spawning this. One cell is 20 units. Setting this to a number like 500 will often yield no results as everything in the city is too close when the project is located some places."/>
+			<attribute key="preferred_1_min_distance_of_from_current_focus" type="int-textbox" min="0" max="1000" default="60" content_width_px="50" is_required="false"
+				tooltip="The first random selected building that is at least this far away will be chosen, or something closer if there are no other options."/>
+			<attribute key="preferred_1_max_distance_of_from_current_focus" type="int-textbox" min="0" max="1000" default="120" content_width_px="50" is_required="false"
+				tooltip="The first random selected building that is at least this close will be chosen, or something further away if there are no other options."/>
+			<attribute key="preferred_2_min_distance_of_from_current_focus" type="int-textbox" min="0" max="1000" default="60" content_width_px="50" is_required="false"
+				tooltip="If nothing matches the range 1, then the range 2 is used."/>
+			<attribute key="preferred_2_max_distance_of_from_current_focus" type="int-textbox" min="0" max="1000" default="120" content_width_px="50" is_required="false"
+				tooltip="If nothing matches the range 1, then the range 2 is used."/>
+		</sub_node>
+
+		<!--seed_near_machines ......................-->
+		<sub_node id="seed_near_machines">
+			<attribute key="min_distance_from_machine_areas" type="int-textbox" min="0" max="1000" default="0" content_width_px="50" is_required="false"
+				tooltip="With the default of zero, units can spawn in the radius of machine areas. This is often desirable. With a min distance 1 or some other very small number, they'll only seed around the periphery."/>
+			<attribute key="max_distance_from_machine_areas" type="int-textbox" min="0" max="1000" default="1" content_width_px="50" is_required="false"
+				tooltip="The default range of 1 might not seem like much room, but it gives a wide area of choice in most cases, assuming that the min is 0."/>
+			<attribute key="job_tag_1" type="node-dropdown" node_source="MachineJobTag" content_width_px="200" is_required="true"
+				tooltip="If there are any jobs of this tag, this will seed as close as possible to one of them." />
+		</sub_node>
+
+		<!--seed_near_a_machine_target ......................-->
+		<sub_node id="seed_near_a_machine_target">
+			<attribute key="job_tag_1" type="node-dropdown" node_source="MachineJobTag" content_width_px="200" is_required="true"
+				tooltip="If there are any jobs of this tag, this will seed as close as possible to one of them." />
+			<attribute key="job_tag_2" type="node-dropdown" node_source="MachineJobTag" content_width_px="200" is_required="false"
+				tooltip="If there were no jobs of tag 1, then it will try this tag instead." />
+			<attribute key="job_tag_3" type="node-dropdown" node_source="MachineJobTag" content_width_px="200" is_required="false"
+				tooltip="If there were no jobs of tag 1 or 2, then it will try this tag instead." />
+		</sub_node>
+
+		<!--seed_in_wasteland ......................-->
+		<sub_node id="seed_in_wasteland">
+			<attribute key="value" type="bool" default="false" is_required="true"
+				tooltip="Set to true to get this unit to seed out in the wasteland somewhere. Set to false to mod this out." />
+		</sub_node>
+
+		<!--seed_in_poi ......................-->
+		<sub_node id="seed_in_poi">
+			<attribute key="poi_tag" type="node-dropdown" node_source="POITag" content_width_px="200" is_required="true"
+				tooltip="This kind of manager will seed somewhere in one of the POIs matching this tag." />
+			<attribute key="min_distance_from_machine_areas" type="int-textbox" min="-1" max="1000" default="-1" content_width_px="50" is_required="true"
+				tooltip="If set below zero, it won't use this at all. If set to zero or above, it will force it to be a certain amount away from machine stuff."/>
+		</sub_node>
+		
+		<!--seed_in_district ......................-->
+		<sub_node id="seed_in_district">
+			<attribute key="district_tag" type="node-dropdown" node_source="DistrictTag" content_width_px="200" is_required="true"
+				tooltip="This kind of manager will seed somewhere in one of the districts matching this tag." />
+			<attribute key="min_distance_from_machine_areas" type="int-textbox" min="-1" max="1000" default="-1" content_width_px="50" is_required="true"
+				tooltip="If set below zero, it won't use this at all. If set to zero or above, it will force it to be a certain amount away from machine stuff."/>
+		</sub_node>
+
+		<!--gate_by_city ......................-->
+		<sub_node id="gate_by_city">
+			<attribute key="minimum_chapter" type="int-textbox" min="0" max="999" default="1" content_width_px="50" is_required="false"
+				tooltip="If this should not appear until a certain chapter. Defaults to chapter 1."/>
+			<attribute key="maximum_chapter" type="int-textbox" min="0" max="999" default="999" content_width_px="50" is_required="false"
+				tooltip="If this should not appear after a certain chapter. Defaults to act 999."/>
+
+			<attribute key="must_be_at_least_turn" type="int-textbox" min="0" max="999999" default="0" content_width_px="50" is_required="true"
+				tooltip="If above zero, then this will be blocked until a specific turn, regardless of anything else."/>
+			<attribute key="must_be_at_least_doom_number" type="int-textbox" min="0" max="999999" default="0" content_width_px="50" is_required="true"
+				tooltip="If above zero, then this will be blocked until a specific doom number, regardless of anything else."/>
+			
+			<attribute key="blocked_by_city_flag" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the city. If that flag is true, this manager will be dormant." />
+			<attribute key="blocked_by_city_flag2" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the city. If that flag is true, this manager will be dormant." />
+			<attribute key="required_city_flag" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the city. This manager will be dormant until that flag is true." />
+
+			<attribute key="blocked_by_meta_flag" type="node-dropdown" node_source="MetaFlag" default="" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the metagame. If that flag is true, this manager will be dormant." />
+			<attribute key="required_meta_flag" type="node-dropdown" node_source="MetaFlag" default="" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the metagame. This manager will be dormant until that flag is true." />
+
+			<attribute key="blocked_by_city_task" type="node-dropdown" node_source="CityTask" default="" content_width_px="130" is_required="false"
+				tooltip="ID of a task in the city. If that task is complete, this manager will be dormant." />
+			<attribute key="required_city_task" type="node-dropdown" node_source="CityTask" default="" content_width_px="130" is_required="false"
+				tooltip="ID of a task in the city. This manager will be dormant until that task is complete." />
+
+			<attribute key="blocked_by_deal_active" type="node-dropdown" node_source="NPCDeal" default="" content_width_px="130" is_required="false"
+				tooltip="ID of a deal in the city. If that deal is active, this manager will be dormant." />
+			<attribute key="required_deal_active" type="node-dropdown" node_source="NPCDeal" default="" content_width_px="130" is_required="false"
+				tooltip="ID of a deal in the city. This manager will be dormant until that deal is active." />
+
+			<attribute key="required_job_active" type="node-dropdown" node_source="MachineJob" default="" content_width_px="130" is_required="false"
+				tooltip="ID of a machine job. This manager will be dormant until that job exists and is functional and active." />
+
+			<attribute key="blocked_by_dialog_complete" type="node-dropdown" node_source="NPCDialog" default="" content_width_px="130" is_required="false"
+				tooltip="If this dialog has already happened, this will be blocked." />
+			<attribute key="required_dialog_complete" type="node-dropdown" node_source="NPCDialog" default="" content_width_px="130" is_required="false"
+				tooltip="This will be blocked if the specified dialog has not yet happened." />
+
+			<attribute key="blocked_by_unlock" type="node-dropdown" node_source="Unlock" default="" content_width_px="130" is_required="false"
+				tooltip="If this unlock has already been fully researched, this will be blocked." />
+			<attribute key="required_unlock" type="node-dropdown" node_source="Unlock" default="" content_width_px="130" is_required="false"
+				tooltip="This will be blocked if the specified unlock has not yet been fully researched." />
+
+			<attribute key="required_beyond_turn" type="node-dropdown" node_source="CityStatistic" default="" content_width_px="130" is_required="false"
+				tooltip="If this is set, then the value must be above 0 for it to count, and the current turn must be beyond whatever this number is." />
+
+			<attribute key="blocked_by_countdown_complete" type="node-dropdown" node_source="OtherCountdownType" default="" content_width_px="130" is_required="false"
+				tooltip="If this countdown has already happened, this will be blocked." />
+			<attribute key="required_countdown_complete" type="node-dropdown" node_source="OtherCountdownType" default="" content_width_px="130" is_required="false"
+				tooltip="This will be blocked if the specified countdown has not yet happened." />
+
+			<attribute key="required_npc_manager_complete" type="node-dropdown" node_source="NPCManager" default="" content_width_px="130" is_required="false"
+				tooltip="This manager will be dormant until this other manager is fully complete." />
+			<attribute key="required_npc_manager_complete2" type="node-dropdown" node_source="NPCManager" default="" content_width_px="130" is_required="false"
+				tooltip="This manager will be dormant until this other manager is fully complete." />
+			<attribute key="required_npc_manager_complete3" type="node-dropdown" node_source="NPCManager" default="" content_width_px="130" is_required="false"
+				tooltip="This manager will be dormant until this other manager is fully complete." />
+
+			<attribute key="blocked_if_project_ever_started_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+				tooltip="If specified, this will not be valid if this project was ever started in this timeline." />
+			<attribute key="blocked_if_project_ever_started_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+				tooltip="If specified, this will not be valid if this project was ever started in this timeline." />
+			
+			<attribute key="required_project_active" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+				tooltip="When specified, this project must be active at the moment." />
+			<attribute key="required_project_ever_started1" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+				tooltip="When specified, this project must have started at some point in the past." />
+			<attribute key="required_project_ever_started2" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+				tooltip="When specified, this project must have started at some point in the past." />
+			<attribute key="required_project_complete_any_outcome1" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+				tooltip="When specified, this project must be complete, but the outcome does not matter." />
+			<attribute key="required_project_complete_any_outcome2" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+				tooltip="When specified, this project must be complete, but the outcome does not matter." />
+			<attribute key="required_project_complete_any_outcome3" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+				tooltip="When specified, this project must be complete, but the outcome does not matter." />
+			<attribute key="blocked_by_project_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent project (will error if no parent project and this is used). If that flag is true, this manager will be dormant." />
+			<attribute key="required_project_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent project (will error if no parent project and this is used). This manager will be dormant until that flag is true." />
+			<attribute key="required_project_flag2" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent project (will error if no parent project and this is used). This manager will be dormant until that flag is true." />
+			<attribute key="required_project_flag3" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent project (will error if no parent project and this is used). This manager will be dormant until that flag is true." />
+
+			<attribute key="related_npc_cohort" type="node-dropdown" is_required="false" node_source="NPCCohort" default="" content_width_px="300" linebreak_after="PreferNot"
+				tooltip="This may optionally be related to an npc cohort, even if it's also linked to the other types of parents." />
+			<attribute key="blocked_by_cohort_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used). If that flag is true, this manager will be dormant." />
+			<attribute key="required_cohort_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used). This manager will be dormant until that flag is true." />
+			<attribute key="required_cohort_flag2" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used). This manager will be dormant until that flag is true." />
+			<attribute key="required_cohort_flag3" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used). This manager will be dormant until that flag is true." />
+
+			<attribute key="required_mission_active" type="node-dropdown" is_required="false" node_source="NPCMission" default="" content_width_px="300" linebreak_after="PreferNot"
+				tooltip="When specified, this npc mission must be active at the moment." />
+			<attribute key="blocked_by_mission_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). If that mission is active, this manager will be dormant." />
+			<attribute key="blocked_by_mission_flag2" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). If that mission is active, this manager will be dormant." />
+			<attribute key="required_mission_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). This manager will be dormant until that mission is active." />
+			<attribute key="required_mission_flag2" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). This manager will be dormant until that mission is active." />
+			<attribute key="required_mission_flag3" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). This manager will be dormant until that mission is active." />
+
+			<attribute key="required_key_contact_flag_1" type="string" maxlength="300" content_width_px="130" is_required="false"
+				tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this to pass. KeyContact:Flag" />
+			<attribute key="required_key_contact_flag_2" type="string" maxlength="300" content_width_px="130" is_required="false"
+				tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this to pass. KeyContact:Flag" />
+			<attribute key="required_key_contact_flag_3" type="string" maxlength="300" content_width_px="130" is_required="false"
+				tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this to pass. KeyContact:Flag" />
+			<attribute key="blocked_by_key_contact_flag_1" type="string" maxlength="300" content_width_px="130" is_required="false"
+				tooltip="ID of a key contact, then a colon, then id of the flag that must be un-tripped for this to pass. KeyContact:Flag" />
+			<attribute key="blocked_by_key_contact_flag_2" type="string" maxlength="300" content_width_px="130" is_required="false"
+				tooltip="ID of a key contact, then a colon, then id of the flag that must be un-tripped for this to pass. KeyContact:Flag" />
+			<attribute key="blocked_by_key_contact_flag_3" type="string" maxlength="300" content_width_px="130" is_required="false"
+				tooltip="ID of a key contact, then a colon, then id of the flag that must be un-tripped for this to pass. KeyContact:Flag" />
+
+			<attribute key="required_key_contact_must_be_met_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+				tooltip="If this key contact has not been met or is dead, then this will be blocked." />
+			<attribute key="required_key_contact_must_be_met_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+				tooltip="If this key contact has not been met or is dead, then this will be blocked." />
+			<attribute key="required_key_contact_must_be_alive_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+				tooltip="If this key contact is not alive, then this will be blocked." />
+			<attribute key="required_key_contact_must_be_alive_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+				tooltip="If this key contact is not alive, then this will be blocked." />
+			<attribute key="required_key_contact_must_be_dead_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+				tooltip="If this key contact is not dead, then this will be blocked." />
+			<attribute key="required_key_contact_must_be_dead_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+				tooltip="If this key contact is not dead, then this will be blocked." />
+
+			<sub_node id="required_city_statistic">
+				<attribute key="statistic_type" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="true"
+					tooltip="To pass, the related statistic must be some value." />
+				<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
+					tooltip="The value that will be compared against. Set to -1 to mod this out."/>
+				<attribute key="at_least" type="bool" default="false" is_required="true"
+					tooltip="If true, the statistic must be at least this high to pass. If false, it must be at most this high." />
+			</sub_node>
+			<sub_node id="required_meta_statistic">
+				<attribute key="statistic_type" type="node-dropdown" node_source="MetaStatistic" content_width_px="200" is_required="true"
+					tooltip="To pass, the related statistic must be some value." />
+				<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
+					tooltip="The value that will be compared against. Set to -1 to mod this out."/>
+				<attribute key="at_least" type="bool" default="false" is_required="true"
+					tooltip="If true, the statistic must be at least this high to pass. If false, it must be at most this high." />
+			</sub_node>
+			<sub_node id="required_resource">
+				<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+					tooltip="To pass, the related resource must be some value." />
+				<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
+					tooltip="The value that will be compared against. Set to -1 to mod this out."/>
+				<attribute key="at_least" type="bool" default="false" is_required="true"
+					tooltip="If true, the resource must be at least this high to pass. If false, it must be at most this high." />
+			</sub_node>
+		</sub_node>
+		
+	</sub_node>
+	
+	<!--unit
+	*******************************************************************************************************-->
+	<sub_node id="unit">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to referblocked_by_flagto it. There should be a unique set of available-unit IDs per manager, named or numbered." />
+		<attribute key="to_spawn" type="node-dropdown" node_source="NPCUnitType" content_width_px="200" is_required="true"
+			tooltip="This is the specific type of unit that can be called into being for some reason during the life of this project." />
+		<attribute key="stance_to_start_in" type="node-dropdown" node_source="NPCUnitStance" content_width_px="200" is_required="true"
+			tooltip="This is the stance that the unit will start in, which is very important for them behaving properly in whatever their role is intended to be." />
+
+		<attribute key="required_key_contact_flag_1" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this specific unit to spawn. KeyContact:Flag" />
+		<attribute key="required_key_contact_flag_2" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this specific unit to spawn. KeyContact:Flag" />
+
+		<attribute key="required_key_contact_must_be_met_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact has not been met or is dead, then this unit will not spawn." />
+		<attribute key="required_key_contact_must_be_met_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact has not been met or is dead, then this unit will not spawn." />
+		<attribute key="required_key_contact_must_be_alive_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not alive, then this unit will not spawn." />
+		<attribute key="required_key_contact_must_be_alive_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not alive, then this unit will not spawn." />
+		<attribute key="required_key_contact_must_be_dead_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not dead, then this unit will not spawn." />
+		<attribute key="required_key_contact_must_be_dead_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not dead, then this unit will not spawn." />
+		
+		<attribute key="cohort_tag" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+			tooltip="This is the tag of npc cohorts from which a random cohort can be chosen. Exactly one of the group logic options must be chosen." />
+		<attribute key="cohort_should_be_local_authority_if_matches_tag_else_tag_cohort_a" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+			tooltip="If the local authority where this unit spawns matches this tag, then spawn as this type. Otherwise, spawn as the 'cohort a' tag from the manager." />
+		<attribute key="should_be_specific_cohort" type="node-dropdown" node_source="NPCCohort" content_width_px="200" is_required="false"
+			tooltip="This is the specific npc cohort which should be used to spawn units of this type." />
+		<attribute key="cohort_should_be_cohort_a" type="bool" default="false" is_required="true"
+			tooltip="If true, then units of this type will belong to whatever this manager selects as the A cohort for this interval. All units subscribing to this on a manger wave will be the same, but between waves it will not be the same." />
+		<attribute key="cohort_should_be_cohort_b" type="bool" default="false" is_required="true"
+			tooltip="If true, then units of this type will belong to whatever this manager selects as the B cohort for this interval. All units subscribing to this on a manger wave will be the same, but between waves it will not be the same." />
+		<attribute key="cohort_should_be_cohort_c" type="bool" default="false" is_required="true"
+			tooltip="If true, then units of this type will belong to whatever this manager selects as the C cohort for this interval. All units subscribing to this on a manger wave will be the same, but between waves it will not be the same." />
+
+		<attribute key="dialog_to_show" type="node-dropdown" node_source="NPCDialog" content_width_px="200" is_required="false"
+			tooltip="This is the dialog that this npc should show when clicked, rather than the default action of attacking them." />
+		<attribute key="mission_to_start_on_attacked_or_killed" type="node-dropdown" node_source="NPCMission" content_width_px="200" is_required="false"
+			tooltip="This is the mission that should start if this unit is attacked or killed, if that mission is not already in progress." />
+		<attribute key="project_to_start_on_attacked_or_killed" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="This is the project that should start if this unit is attacked or killed, if that project is not already in progress." />
+
+		<attribute key="dialog_if_forced_1" type="node-dropdown" node_source="NPCDialog" content_width_px="200" is_required="false"
+			tooltip="This is the first discussion you can have with this unit if you force them to." />
+		<attribute key="dialog_if_forced_2" type="node-dropdown" node_source="NPCDialog" content_width_px="200" is_required="false"
+			tooltip="This is the first discussion you can have with this unit if you force them to." />
+		
+		<attribute key="dialog_can_be_done_by_regular_units" type="bool" default="true"
+			tooltip="If true, then this dialog can be done by regular units. Defaults to true." />
+		<attribute key="dialog_can_be_done_by_shell_company_units" type="bool" default="false"
+			tooltip="If true, then this dialog can be done by shell company units." />
+		<attribute key="dialog_can_be_done_by_pmc_impostor" type="bool" default="false"
+			tooltip="If true, then this dialog can be done by PMC Impostors." />
+		
+		<attribute key="units_warp_out_after_turns" type="int-textbox" min="0" max="99" default="0" content_width_px="50" is_required="false"
+			tooltip="If greater than 0, then the unit will warp out after some number of turns of existing."/>
+		<attribute key="units_warp_out_after_turns_percent_chance" type="int-textbox" min="0" max="99" default="0" content_width_px="50" is_required="false"
+			tooltip="If greater than 0 and less than 100, then each time the unit would try to warp out, it does a random check instead. If it passes, it warps out.  Otherwise not yet."/>
+		<attribute key="lang_key_for_warp_out_after_turns" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+			tooltip="Link to a language entry that is the text for what pops up when the unit warps out after a specified number of turns, if that happens." />
+		
+		<attribute key="warps_out_when_threat_neutralized" type="bool" default="false" is_required="false"
+			tooltip="If true, then this unit will leave when the threat has been neutralized, whatever that means to this manager. This is mostly related to things with actions over time.
+For things with actions over time, if the AOT succeeds, this unit will remain and will still harass the player, because they failed to mitigate the threat. But if the unit doing the AOT is killed, then this unit leaves." />
+		<attribute key="lang_key_for_threat_neutralized" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+			tooltip="Link to a language entry that is the text for what pops up when the threat is neutralized, if that happens." />
+
+		<attribute key="is_deep_threat_to_sheltered_humans" type="bool" default="false" is_required="false"
+			tooltip="If this is true, then the shelter coordinators should not do any work, and potentially other things should also be on hold." />
+		
+		<attribute key="is_blocked_from_any_killing" type="bool" default="false" is_required="false"
+			tooltip="This is true if the player and other units in the game world are not allowed to kill this unit. They are probably here to talk or something." />
+		<attribute key="lang_key_for_killing_block" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+			tooltip="Link to a language entry that is the text for why this unit is blocked from being killed if that's a thing." />
+
+		<attribute key="lang_key_for_extra_info" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+			tooltip="Link to a language entry that is the text extra info to show about this unit in their tooltips. Must be specified, but leave it blank to skip it." />
+		
+		<attribute key="skip_ever_making_player_focus_on_these" type="bool" default="false" is_required="false"
+			tooltip="If true, then don't make the player focus on these when they appear. Normally this is true." />
+		
+		<attribute key="building_spawn_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="false"
+			tooltip="When specified, the unit will only be spawned at buildings matching this tag, within the radii mentioned. Optional." />
+
+		<attribute key="min_to_spawn" type="int-textbox" min="0" max="10" default="1" content_width_px="50" is_required="false"
+			tooltip="How many separate squads of this type to spawn at once. If this is higher than the max, then this number will be used as a fixed value."/>
+		<attribute key="max_to_spawn" type="int-textbox" min="0" max="10" default="1" content_width_px="50" is_required="false"
+			tooltip="How many separate squads of this type to spawn at once. If this is higher than the min, then a random value inclusively between them will be chosen."/>
+		<attribute key="min_squad_size_multiplier" type="float-textbox" min="-1" max="10" default="1" content_width_px="50" is_required="false"
+			tooltip="If set above zero, then the normal squad size of this npc unit type will be multiplied by the specified value, making them stronger or weaker than usual. If this is higher than the max, then this number will be used as a fixed value."/>
+		<attribute key="max_squad_size_multiplier" type="float-textbox" min="-1" max="10" default="1" content_width_px="50" is_required="false"
+			tooltip="If set above zero, then the normal squad size of this npc unit type will be multiplied by the specified value, making them stronger or weaker than usual. If this is higher than the min, then a random value inclusively between them will be chosen."/>
+
+		<attribute key="max_to_have_extant_across_spawns" type="int-textbox" min="-1" max="100" default="-1" content_width_px="50" is_required="false"
+			tooltip="If above zero, then this will limit how many individuals with this managed_unit profile can be active at once, across spawns from this manager. This is applied across all jobs if it's job-related."/>
+		<attribute key="max_to_have_extant_per_structure" type="int-textbox" min="-1" max="100" default="-1" content_width_px="50" is_required="false"
+			tooltip="If above zero, then this will limit how many individuals with this managed_unit profile can be active at once, per structure this manager is related to. Only affects those related to jobs."/>
+		<attribute key="max_to_ever_spawn_in_total" type="int-textbox" min="0" max="100000" default="99999" content_width_px="50" is_required="false"
+			tooltip="Will limit how many individuals with this managed_unit profile can ever be spawned from this manager in a given timeline. Has no effect on managers related to jobs."/>
+		<attribute key="activity_display_max_to_spawn_as" type="int-textbox" min="-1" max="100000" default="-1" content_width_px="50" is_required="false"
+			tooltip="If above -1, then this will override max_to_ever_spawn_in_total as the total to spawn for a type, only so far as the activity alerts are considered. If set to 0, then these are ignored."/>
+		<attribute key="only_spawns_more_if_none_extant" type="bool" default="false" is_required="false"
+			tooltip="If true, then no more will spawn until the current extant ones are gone." />
+
+		<attribute key="will_not_attack_player_if_city_flag_false" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If this city flag is not tripped (true), then units spawned this way will not attack player units." />
+		<attribute key="will_not_attack_anyone_if_city_flag_false" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If this city flag is not tripped (true), then units spawned this way will not attack any units." />
+		
+		<attribute key="on_appear" type="node-dropdown" node_source="VisParticleAndSoundUsage" content_width_px="200" is_required="false"
+			tooltip="Optional alternative sound for when this unit appears, and particles if you wish. If the usage is classified as a 'big scary sound', then it will play at the camera." />
+		
+		<attribute key="project_flag_on_damaged" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent project (will error if no parent project and this is used), which will be flipped to true if any unit from this activity group is damaged." />
+		<attribute key="cohort_flag_on_damaged" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used), which will be flipped to true if any unit from this activity group is damaged." />
+		<attribute key="mission_flag_on_damaged" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used), which will be flipped to true if any unit from this activity group is damaged." />
+		<attribute key="mission_flag_on_damaged_by_player" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used), which will be flipped to true if any unit from this activity group is damaged by the player." />
+
+		<attribute key="meta_flag_on_damaged" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="true"
+			tooltip="This meta flag will be tripped if this unit is damaged in combat." />
+		<attribute key="meta_flag_on_damaged_by_player" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="true"
+			tooltip="This meta flag will be tripped if this unit is damaged by a machine unit or vehicle in combat." />
+		<attribute key="city_flag_on_damaged" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="true"
+			tooltip="This city flag will be tripped if this unit is damaged in combat." />
+		<attribute key="city_flag_on_damaged_by_player" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="true"
+			tooltip="This city flag will be tripped if this unit is damaged by a machine unit or vehicle in combat." />
+
+		<attribute key="project_flag_on_death" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent project (will error if no parent project and this is used), which will be flipped to true if any unit from this activity group is killed." />
+		<attribute key="project_metric_on_death" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a metric in the parent project (will error if no parent project and this is used), which will be incremented by one every time a unit from this activity group is killed." />
+
+		<attribute key="cohort_flag_on_death" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used), which will be flipped to true if any unit from this activity group is killed." />
+		<attribute key="cohort_metric_on_death" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a metric in the parent npc cohort (will error if no parent npc cohort and this is used), which will be incremented by one every time a unit from this activity group is killed." />
+
+		<attribute key="mission_flag_on_death" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used), which will be flipped to true if any unit from this activity group is killed." />
+		<attribute key="mission_metric_on_death" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a metric in the parent mission (will error if no parent mission and this is used), which will be incremented by one every time a unit from this activity group is killed." />
+
+		<attribute key="mission_progress_on_death" type="int-textbox" min="0" max="500000" default="0" content_width_px="50" is_required="false"
+			tooltip="How much mission progress should be granted when these die."/>
+		
+		<attribute key="meta_flag_on_death" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="true"
+			tooltip="This meta flag will be tripped if this unit is killed in combat." />
+		<attribute key="city_flag_on_death" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="true"
+			tooltip="This city flag will be tripped if this unit is killed in combat." />
+
+		<attribute key="extra_aggro_against_machine_structures" type="node-dropdown" node_source="MachineJobTag" content_width_px="200" is_required="true"
+			tooltip="If this unit should have extra aggro against the specific kind of machine structure job." />
+		<attribute key="extra_aggro_against_machine_structures_amount" type="int-textbox" min="0" max="500000" default="1000" content_width_px="50" is_required="false"
+			tooltip="How much extra aggro they should have against that kind of machine structure job."/>
+
+		<attribute key="blocked_if_dialog_complete" type="node-dropdown" node_source="NPCDialog" content_width_px="200" is_required="true"
+			tooltip="This specific kind of unit won't spawn if this dialog has been completed." />
+
+		<attribute key="resource_change_on_death1" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="This resource of the player goes up or down related to this death." />
+		<attribute key="resource_change_on_death2" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="This resource of the player goes up or down related to this death." />
+		<attribute key="resource_change_on_death1_amount" type="int-textbox" min="-99999999" max="99999999" default="0" content_width_px="150" is_required="false"
+			tooltip="If a resource is changing, how much is it changing by?"/>
+		<attribute key="resource_change_on_death2_amount" type="int-textbox" min="-99999999" max="99999999" default="0" content_width_px="150" is_required="false"
+			tooltip="If a resource is changing, how much is it changing by?"/>
+
+		<attribute key="resource_change_on_spawn1" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="When these units are spawned, is a resource changed?" />
+		<attribute key="resource_change_on_spawn1_amount_per_squad_size" type="int-textbox" min="-99999999" max="99999999" default="0" content_width_px="150" is_required="false"
+			tooltip="If a resource is changing, how much is it changing by per squad member?"/>
+		
+		<attribute key="spawn_as_close_as_possible" type="bool" default="false" is_required="false"
+			tooltip="Set to true to get this unit to seed as close as possible to the manager." />
+		<attribute key="spawn_radius_min" type="int-textbox" min="0" max="9000" default="100" content_width_px="150" is_required="false"
+			tooltip="If this is above zero, then the defender units of this type must be spawned at least this far from the thing that is causing them to spawn."/>
+		<attribute key="spawn_radius_max" type="int-textbox" min="0" max="9000" default="100" content_width_px="150" is_required="true"
+			tooltip="Required. Units of this type cannot be spawned any further away than this from the thing that is causing them to spawn."/>
+		<attribute key="spawn_radius_relaxed_max" type="int-textbox" min="0" max="9000" default="100" content_width_px="150" is_required="true"
+			tooltip="Required. If there absolutely are no spots in the regular radius, then how about within this relaxed radius?"/>
+
+		<attribute key="min_security_clearance_of_seed_spot" type="int-textbox" min="-1" max="5" default="-1" content_width_px="50" is_required="false"
+			tooltip="On a scale from 0 to 5, what is the lowest allowed security clearance for seed spots for this unit?  Set to -1 to ignore."/>
+		<attribute key="max_security_clearance_of_seed_spot" type="int-textbox" min="-1" max="5" default="-1" content_width_px="50" is_required="false"
+			tooltip="On a scale from 0 to 5, what is the highest allowed security clearance for seed spots for this unit?  Set to -1 to ignore."/>
+
+		<attribute key="should_soft_despawn_on_manager_interval_ends" type="bool" default="false" is_required="true"
+			tooltip="If true, then this will despawn when the overall manager interval reaches zero after spawning it -- but only after finishing their current objective, if they are in progress on an objective." />
+		<attribute key="should_hard_despawn_on_manager_interval_ends" type="bool" default="false" is_required="true"
+			tooltip="If true, then this will despawn when the overall manager interval reaches zero after spawning it -- immediately." />
+
+		<attribute key="should_soft_despawn_on_project_or_mission_complete" type="bool" default="false" is_required="true"
+			tooltip="If true, then this will despawn when the parent project is completed -- but only after finishing their current objective, if they are in progress on an objective." />
+		<attribute key="should_hard_despawn_on_project_or_mission_complete" type="bool" default="false" is_required="true"
+			tooltip="If true, then this will despawn when the parent project is completed -- immediately." />
+
+		<attribute key="should_soft_despawn_on_manager_blocked" type="bool" default="false" is_required="true"
+			tooltip="If true, then this will despawn when the overall manager becomes blocked by flags -- but only after finishing their current objective, if they are in progress on an objective." />
+		<attribute key="should_hard_despawn_on_manager_blocked" type="bool" default="false" is_required="true"
+			tooltip="If true, then this will despawn when the overall manager becomes blocked by flags -- immediately." />
+		<attribute key="should_ignore_resource_portion_of_manager_blocked_for_despawn_logic" type="bool" default="false" is_required="true"
+			tooltip="If true, and there is a resource component to why the manager is blocked, that part gets ignored." />
+
+		<!--initial_data_adjustment on npc_unit_to_spawn of mission_unit...................... -->
+		<sub_node id="initial_data_adjustment">
+			<attribute key="data_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="true"
+				tooltip="This changes some data on the newly-spawned unit. What data will it change?" />
+			<attribute key="min" type="int-textbox" min="-1000" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is the lowest amount of the random range the data will be changed by?"/>
+			<attribute key="max" type="int-textbox" min="-1000" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is the highest amount of the random range the data will be changed by?"/>
+		</sub_node>
+
+		<!--starting_status on npc_unit_to_spawn of mission_unit...................... -->
+		<sub_node id="starting_status">
+			<attribute key="status_type" type="node-dropdown" node_source="ActorStatus" content_width_px="200" is_required="true"
+				tooltip="This starts the new actor out with some initial status. What is it?" />
+			<attribute key="min_intensity" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is the lowest intensity that will be added?"/>
+			<attribute key="max_intensity" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is the highest intensity that will be added?"/>
+			<attribute key="min_turns" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is the lowest number of turns this will last for?"/>
+			<attribute key="max_turns" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is the highest number of turns this will last for?"/>
+		</sub_node>
+	</sub_node>
+	
+</root>

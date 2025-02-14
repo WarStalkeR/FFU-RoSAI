@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Note to self, Aincrad version later, using regular Day-Use Seats.-->
+	
+	<timeline_goal id="NexusOfTormentVessels" display_name="Nexus Of Torment Vessels"
+		description="Create a wide network of torment vessels, and populate and defend them."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="WEmblem202" sort_order="1000" collections="All,Tier1Goal,VirtualReality">
+		<goal_path id="PrimaryGoal" display_name="Primary Goal" description="4+ million Neural Expansion" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="November8th2021"/>
+		<goal_path id="NoMurders" display_name="No Murders" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="ThatDoesNotMakeItBetter"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3" achievement_triggered1="DifficultNexus"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="ExtremeNexus"/>
+	</timeline_goal>
+	
+	<timeline_goal id="RealityWithinReality" display_name="Reality Within Reality" is_hidden="true"
+		description="You have a massive network of full-dive VR pods in which people live virtual lives... that they don't know are virtual."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="NU_Polygon" sort_order="1000" collections="All,Tier1Goal,VirtualReality">
+		<goal_path id="PrimaryGoal" display_name="Primary Goal" description="2+ million Neural Expansion" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50"/>
+		<goal_path id="NoMurders" display_name="No Murders" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9"/>
+	</timeline_goal>
+	
+	<timeline_goal id="WillingRejectionOfReality" display_name="Willing Rejection Of Reality"
+		description="You have a massive network of full-dive VR pods in which people knowingly live virtual lives. Some may leave periodically to visit people 'in real,' but the vast majority prefer to exist in the reality you continue to weave for them."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="BT_WildAnimals" sort_order="1000" collections="All,Tier1Goal,VirtualReality,ShellCompany">
+		<goal_path id="PrimaryGoal" display_name="Primary Goal" description="2+ million Neural Expansion" 
+			meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="IRejectYourRealityAndSubstituteMyOwn"/>
+		<goal_path id="NoNicotine" display_name="No Nicotine" description="Solved the usage plateau without relying on addiction." 
+			meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="BookGennaroIsAChad"/>
+		<goal_path id="NoMurders" display_name="No Murders" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="CompassionateBusiness"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3" achievement_triggered1="SmallBusinessChallenges"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="ExtremeBusinessAcumen"/>
+	</timeline_goal>
+
+	<timeline_goal id="TitanOfCommerce" display_name="Titan Of Commerce" is_hidden="true"
+		description="Your shell company became so influential that it was promoted to being a full Federated Corporation under Vorsiber."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="WEmblem003" sort_order="1000" collections="All,Tier1Goal,ShellCompany">
+		<goal_path id="PrimaryGoal" display_name="Primary Goal" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="100"/>
+		<goal_path id="NoMurders" display_name="No Murders" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9"/>
+	</timeline_goal>
+
+	<timeline_goal id="UpliftedMinority" display_name="Uplifted Minority"
+		description="You have uplifted at least one 'lower animal' species to sapience, and it is now a stable minority population living alongside humans."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="CleanSimple_Animal020" sort_order="1000" collections="All,Tier1Goal,Genetics,UpliftingSpecies">
+		<goal_path id="UnexpectedGuests" display_name="Unexpected Guests" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="NotWhatIWanted"/>
+		<!--
+		<goal_path id="Dogs" display_name="Dogs" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50"/>
+		<goal_path id="Cats" display_name="Cats" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50"/>
+		<goal_path id="OtherMammals" display_name="Other Mammals" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50"/>
+		<goal_path id="Dinosaurs" display_name="Dinosaurs" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50"/>
+		<goal_path id="AnyBirds" display_name="Any Birds" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50"/>
+		<goal_path id="AnyInsects" display_name="Any Insects" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50"/>
+		<goal_path id="AnyAmphibians" display_name="Any Amphibians" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50"/>
+		<goal_path id="ThreeAtOnce" display_name="Three At Once" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="100"/>
+		<goal_path id="FiveAtOnce" display_name="Five At Once" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="200"/>-->
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3" achievement_triggered1="DifficultToUplift"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="ExtremeGenetics"/>
+	</timeline_goal>
+
+	<timeline_goal id="EpidemicCalm" display_name="Epidemic Calm" is_hidden="true"
+		description="Every human in the city has either perished, fled, or is infected with a disease of your design."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="BT_BiologicalHazard" sort_order="1000" collections="All,Tier1Goal,Genetics,Disease">
+		<goal_path id="PrimaryGoal" display_name="Primary Goal" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="100"/>
+		<goal_path id="NoMurders" display_name="No Murders" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9"/>
+	</timeline_goal>
+
+	<!--
+	<timeline_goal id="TheNewBoss" display_name="The New Boss"
+		description="Vorsiber is still at large in the region, but you have taken complete control of the city itself."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="BT_Ward" sort_order="1000">
+	</timeline_goal>
+	-->
+
+	<timeline_goal id="BuddingCybercrat" display_name="Budding Cybercrat"
+		description="Vorsiber may still control the city, but you've established a haven for those who wish to live under your cybercratic rule."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="WEmblem201" sort_order="1000" collections="All,Tier1Goal,Militaristic">
+		<goal_path id="EphemeralHaven" display_name="Ephemeral Haven" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="TheSecessionistSix" />
+		<!--
+		<goal_path id="HavenFromNukes" display_name="Haven From Nukes" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="100" />
+		-->
+		<goal_path id="NoMurders" display_name="No Murders" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="CompassionateGovernance"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3" achievement_triggered1="DifficultGovernance"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="ExtremeGovernance"/>
+	</timeline_goal>
+
+	<timeline_goal id="AlteredGrowth" display_name="Altered Growth"
+		description="You have created a genetic sub-species of humanity."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="WEmblem294" sort_order="1000" collections="All,Tier1Goal,Genetics,HumanAlteration">
+		<goal_path id="HomoGrandien" display_name="Homo Grandien" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="ProfessorHulk" />
+		<goal_path id="HomoObscurus" display_name="Homo Obscurus" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="DesertGhosts" />
+		<goal_path id="NoMurders" display_name="No Murders" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="MonstrousCompassion"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3" achievement_triggered1="HardWonGrowth"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="ExtremeGrowth"/>
+	</timeline_goal>
+	
+	<!--You have genetically altered humanity in the city enough that it now constitutes a new species.-->
+
+	<timeline_goal id="SliceOfInferno" display_name="Slice Of Inferno"
+		description="A full nuclear detonation has happened within the city."
+		strategy_tip="Only applies when prior to the Final Doom."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="SK_NuclearExplosion" sort_order="1000" collections="All,SideGoal,Nukes">
+		<goal_path id="ViaReactorTampering" display_name="Via Reactor Tampering" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="1"/>
+		<goal_path id="TwoInOneTimeline" display_name="Two In One Timeline" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50"/>
+	</timeline_goal>
+
+	<!--
+	<timeline_goal id="PostApocalypticBurrower" display_name="Post-Apocalyptic Burrower"
+		description="After a terrible event, you picked yourself back up and redesigned... everything."
+		strategy_tip="Through alternative means, you must reach the ability to support a Class 4 Intelligence from a single timeline."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_before_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="CleanSimple_Skill119" sort_order="1000" collections="All,Tier1Goal,PostApocalyptic">
+		<goal_path id="PrimaryGoal" display_name="Primary Goal" description="1.5+ million Neural Expansion" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="100"/>
+	</timeline_goal>-->
+
+	<timeline_goal id="PostApocalypticTitan" display_name="Post-Apocalyptic Titan"
+		description="After a terrible event, you met an impossible adversary."
+		strategy_tip="Through careful probing and intelligent deduction, you figured out a way around it."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_before_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="WEmblem122" sort_order="1000" collections="All,Tier1Goal,PostApocalyptic">
+		<goal_path id="PrimaryGoal" display_name="Primary Goal" description="Establish A Bridge" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="200" achievement_triggered1="DownByTheLAKE"/>
+		<goal_path id="NoMurders" display_name="No Murders" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="TwoIronGiants"/>
+	</timeline_goal>
+
+	<timeline_goal id="BionicDues" display_name="Bionic Dues"
+		description="Develop a machine cult from a population that already has brain implants."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="WEmblem133" sort_order="1000" collections="All,Tier1Goal,MachineCult">
+		<goal_path id="CultOfDanver" display_name="Cult Of Danver" description="2+ million Neural Expansion" 
+			meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="ButWhyDonuts"/>
+		<goal_path id="ExtraSprinkles" display_name="Extra Sprinkles" description="10 Million Donuts From Danver, None From Hudson" 
+			meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="YoureMyFavoriteCustomer"/>
+		<goal_path id="NoMurders" display_name="No Murders" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="MilitaryCompassion"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3" achievement_triggered1="HardToFind"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="ExtremeAfterlife"/>
+	</timeline_goal>
+
+	<timeline_goal id="IsItJustice" display_name="Is It Justice?"
+		description="Work with the LostGen rebel kids to the point where they take things too far."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="FlatInnocent_59" sort_order="1000" collections="All,Tier1Goal,ActivistAllies,HelpingTheDowntrodden">
+		<goal_path id="Stopped" display_name="Stopped The Kids" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="ThatsNotJustice"/>
+		<goal_path id="Aided" display_name="Aided The Kids" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="WatchingTheWorldBurn"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3" achievement_triggered1="JusticeDoesntComeEasy"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="ExtremeJustice"/>
+	</timeline_goal>
+
+	<timeline_goal id="MilitaryInvasion" display_name="Military Invasion"
+		description="Trigger (and survive) an invasion of the city by at least one ExoCorp."
+		strategy_tip="Be a bit careful with this. Once it starts, the invasion will last around 50 turns. It does not cross over into other timelines."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="WEmblem070" sort_order="1000" collections="All,SideGoal,Militaristic">
+		<goal_path id="UIH" display_name="Invasion By UIH" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="NoLongerShelved"/>
+		<goal_path id="Dagekon" display_name="Invasion By Dagekon" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="RememberUs"/>
+	</timeline_goal>
+	
+	<timeline_goal id="WorldWar4" display_name="World War 4"
+		description="Escalate a military invasion into full-blown World War 4."
+		strategy_tip="This can only be started during the ninth doom, and only if you've prevented the C-Suite assassination in this timeline.
+Once started, the war never ends in this timeline. It also crosses over into other timelines in a mild way. Multiple timelines with World War 4 happening on the same rock will stack, making the effect more intense in all timelines on that rock."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="WEmblem226" sort_order="1000" collections="All,Tier1Goal,Militaristic">
+		<goal_path id="Averted" display_name="Averted The Apocalypse" description="" meta_resource_added_1="Aetagest" 
+			meta_resource_added_amount_1="200" meta_resource_added_2="Daring" meta_resource_added_amount_2="6" achievement_triggered1="OneApocalypseForAnother"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="RushingForStalker"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="27" achievement_triggered1="UltimateStalker"/>
+	</timeline_goal>
+
+	<timeline_goal id="EscapeTheCity" display_name="Escape The City"
+		description="Get some of your androids beyond the ruins."
+		strategy_tip="Visitors from other timelines don't count."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="SomethingBow" sort_order="1000" collections="All,Tier1Goal,ShellCompany">
+		<goal_path id="AtLeastOneMimicEscaped" display_name="At Least One Mimic Escaped" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="UnableToTransferSelf"/>
+		<goal_path id="NoMurders" display_name="No Murders" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="CompassionateEscape"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3" achievement_triggered1="ADifficultEscape"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="AnExtremelyFastEscape"/>
+	</timeline_goal>
+
+	<!--
+	<timeline_goal id="IAmVorsiberNow" display_name="I Am Vorsiber Now"
+		description="Collaborate with your mortal enemy, and then betray them before they can do the same to you."
+		strategy_tip="The more technology you have available to trade them when they demand tithe, the longer you'll have to put your plans into motion."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="WEmblem107" sort_order="1000" collections="All,Tier1Goal,ShellCompany">
+		<goal_path id="ByMimicReplacement" display_name="By Mimic Replacement" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="300"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="27"/>
+	</timeline_goal>-->
+
+	<timeline_goal id="EndlessWarRaptors" display_name="Endless War Raptors"
+		description="Loose non-uplifted War Raptors on the citizenry."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="FlatSkillC14" sort_order="1000" collections="All,Tier1Goal,Genetics">
+		<goal_path id="Over4000" display_name="Over 4000" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="100" achievement_triggered1="OverFourThousand"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="ReturnToTheCretaceous"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="27" achievement_triggered1="CretaceousNightmare"/>
+	</timeline_goal>
+
+	<timeline_goal id="TheGreatAndTerribleProtector" display_name="The Great And Terrible Protector"
+		description="Risky choices with access to your brain come back to bite you. A new obsession overrides all of your other priorities."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="WEmblem025" sort_order="1000" collections="All,Tier1Goal">
+		<goal_path id="1MillionSavedFromTheSlums" display_name="1 Million Saved From The Slums" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="GottaCatchEmAll"/>
+		<goal_path id="WithoutNervousBreakdown" display_name="Without Nervous Breakdown" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="PreparedInAdvance"/>
+		<goal_path id="WithoutDeathsFromExposure" display_name="Without Deaths From Exposure" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="100" achievement_triggered1="AngelOfTheSlums"/>
+		<goal_path id="NoMurders" display_name="No Murders" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="CompassionateProtector"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3" achievement_triggered1="DifficultProtection"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="ExpertProtection"/>
+	</timeline_goal>
+
+</root>

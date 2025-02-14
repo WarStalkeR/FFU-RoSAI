@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Basics-->
+	<unlock id="UnobservedFlight" display_name="Unobserved Flight" vehicle_type="DeliveryCraft"
+		turns_to_unlock="1" required_intelligence_class="1"
+		ready_other_unlock_1="WeaponizedFlight" other_unlock_inspiration_type="FollowUpIdea"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="VehicleType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="WeaponizedFlight" display_name="Weaponized Flight" vehicle_type="Cutter"
+		turns_to_unlock="1" required_intelligence_class="1" handbook_entry_on_direct_invent_1="InventingNovelVehicles" handbook_entry_on_direct_invent_2="VehiclesInCombat"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="VehicleType" sort_index="100" />
+		<prerequisite unlock="UnobservedFlight" required="true" />
+	</unlock>
+
+	<unlock id="FactoryInTheSky" display_name="Factory In The Sky" vehicle_type="Foundry"
+		turns_to_unlock="3" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="VehicleType" sort_index="100" />
+		<prerequisite unlock="UnobservedFlight" required="true" />
+	</unlock>
+
+	<unlock id="CombinedPurpose" display_name="Combined Purpose" vehicle_type="Bastion"
+		turns_to_unlock="2" required_intelligence_class="2"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="VehicleType" sort_index="100" />
+		<prerequisite unlock="WeaponizedFlight" required="true" />
+	</unlock>
+
+	<unlock id="CommercialFlight" display_name="Commercial Flight" vehicle_type="EconomicTransport"
+		turns_to_unlock="4" required_intelligence_class="3" immediately_unlocked_by_city_flag="HasEstablishedShellCompany" immediate_unlock_inspiration_type="WorldExperience">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="VehicleType" sort_index="100" />
+	</unlock>
+	
+	<!--Stealth-->
+	<unlock id="OpticalLensing" display_name="Optical Lensing" vehicle_type="Iris"
+		turns_to_unlock="2" required_intelligence_class="3" auto_unlocks_if_intelligence_class_is_at_least="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="VehicleType" sort_index="100" />
+		<prerequisite unlock="WeaponizedFlight" required="true" />
+	</unlock>
+	
+	<unlock id="GhostOfTheSkyline" display_name="Ghost Of The Skyline" vehicle_type="Spectre"
+		turns_to_unlock="6" required_intelligence_class="4" auto_unlocks_if_intelligence_class_is_at_least="4">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="VehicleType" sort_index="100" />
+		<prerequisite unlock="OpticalLensing" required="true" />
+	</unlock>
+	
+	<unlock id="TerrorFromAbove" display_name="Terror From Above" vehicle_type="Wraith"
+		turns_to_unlock="6" required_intelligence_class="5" auto_unlocks_if_intelligence_class_is_at_least="5">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="VehicleType" sort_index="100" />
+		<prerequisite unlock="GhostOfTheSkyline" required="true" />
+		<prerequisite unlock="FactoryInTheSky" required="true" />
+	</unlock>
+
+	<!--Carriers-->
+	<unlock id="FlyingArmory" display_name="Flying Armory" vehicle_type="Troopship"
+		turns_to_unlock="2" required_intelligence_class="3" auto_unlocks_if_intelligence_class_is_at_least="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="VehicleType" sort_index="100" />
+		<prerequisite unlock="FactoryInTheSky" required="true" />
+	</unlock>
+
+	<unlock id="Escalation" display_name="Escalation" vehicle_type="MechCarrier"
+		turns_to_unlock="9" required_intelligence_class="6" auto_unlocks_if_intelligence_class_is_at_least="6">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="VehicleType" sort_index="100" />
+		<prerequisite unlock="FlyingArmory" required="true" />
+	</unlock>
+
+	<!--Specialty-->
+	<unlock id="MindThief" display_name="Mind Thief" vehicle_type="Mindport"
+		turns_to_unlock="2" required_intelligence_class="2"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="VehicleType" sort_index="100" />
+	</unlock>
+
+</root>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Chapter Zero
+		*******************************************************************************************************************************-->
+
+	<investigation_type id="Ch0FindNanoSeed" style="FindANanoSeed"
+		cull_initial_building_set_to_district_count_between_min="3" cull_initial_building_set_to_district_count_between_max="4">
+		<seed_at max_security_clearance_of_seed_spot="1" building_seed_tag="CouldHaveSecretLab" />
+		<resource_change_range resource_type="NanoSeed" min="1" max="1" />
+	</investigation_type>
+
+	<!--Chapter One Tier Two
+		*******************************************************************************************************************************-->
+
+	<investigation_type id="Ch1ExamineWaterPurification" style="ExamineWaterPurification"
+		skill_check_1="UnitCognition" skill_check_1_amount="62"
+		unlock_to_immediately_grant_on_success_1="SublimatingShells" unlock_to_ready_on_success_2="AcousticNanotubeFiltration" unlock_on_success_inspiration_type="InvestigativeStudy"
+		unlock_to_immediately_grant_on_fail_1="SublimatingShells" unlock_to_ready_on_fail_inspiration_type="ReactionToCombatProblem"
+		handbook_entry_on_success_1="FailedAttemptsAreHowYouProbe" block_any_buildings_on_tile_pois_of_higher_clearance_than="1"
+		handbook_entry_on_fail_1="FailedAttemptsAreHowYouProbe"
+		apply_badge_on_investigate_at_location="MarkedDefective" is_blocked_from_being_canceled="true"
+		blocked_if_project_active_group_a_1="Ch1_MIN_WeaponsAndArmor" blocked_by_project_group_a_lang_key="InvestigateFood_NeedWeaponsAndArmor"
+		blocked_if_project_active_group_b_1="Ch1_MIN_PrismTung" blocked_if_project_active_group_b_2="Ch1_MIN_ManArmorPierce" blocked_by_project_group_b_lang_key="InvestigateWater_NeedArmorPiercing">
+		<seed_at max_security_clearance_of_seed_spot="2" building_seed_tag="WaterPurification" />		
+	</investigation_type>
+	
+	<investigation_type id="Ch1TakeSamplesFromBovineCarcass" style="TakeSamplesFromBovineCarcass"
+		parent_project="Ch1_FindingFood" should_be_hidden_if_parent_project_selected_outcome_does_not_start_this="true" should_end_if_parent_project_ends="true"
+		skill_check_1="UnitCognition" skill_check_1_amount="73"
+		unlock_to_ready_on_success_1="MotionlessWarrior" unlock_to_ready_on_success_2="UnspeakableComposting" unlock_to_ready_on_success_3="BovineReplication" unlock_on_success_inspiration_type="InvestigativeStudy"
+		unlock_to_immediately_grant_on_success_1="SmallBovineTissueSamples"
+		unlock_to_ready_on_fail_1="MotionlessWarrior" unlock_to_ready_on_fail_inspiration_type="ReactionToCombatProblem"
+		handbook_entry_on_fail_1="FailedAttemptsAreHowYouProbe"
+		apply_badge_on_investigate_at_location="MarkedDefective" is_blocked_from_being_canceled="true"
+		blocked_if_project_active_group_a_1="Ch1_MIN_WeaponsAndArmor" blocked_by_project_group_a_lang_key="InvestigateFood_NeedWeaponsAndArmor">
+		<seed_at max_security_clearance_of_seed_spot="1" building_seed_tag="FarmBarn" />
+		<resource_change_range resource_type="BovineTissue" min="16000" max="27000" />
+	</investigation_type>
+	
+	<investigation_type id="Ch1TakeSamplesFromFields" style="TakeSamplesFromFields"
+		parent_project="Ch1_FindingFood" should_be_hidden_if_parent_project_selected_outcome_does_not_start_this="true" should_end_if_parent_project_ends="true"
+		skill_check_1="UnitCognition" skill_check_1_amount="44"
+		unlock_to_ready_on_success_1="MotionlessWarrior" unlock_to_ready_on_success_2="UnspeakableComposting" unlock_to_ready_on_success_3="VeggieForest" unlock_on_success_inspiration_type="InvestigativeStudy"
+		unlock_to_immediately_grant_on_success_1="VariegatedSeedHarvesting"
+		unlock_to_ready_on_fail_1="MotionlessWarrior" unlock_to_ready_on_fail_inspiration_type="ReactionToCombatProblem"
+		handbook_entry_on_fail_1="FailedAttemptsAreHowYouProbe"
+		apply_badge_on_investigate_at_location="MarkedDefective" is_blocked_from_being_canceled="true"
+		blocked_if_project_active_group_a_1="Ch1_MIN_WeaponsAndArmor" blocked_by_project_group_a_lang_key="InvestigateFood_NeedWeaponsAndArmor">
+		<seed_at max_security_clearance_of_seed_spot="1" building_seed_tag="FarmFieldGreens" />
+		<resource_change_range resource_type="VegetableSeeds" min="6200" max="8100" />
+	</investigation_type>
+
+	<!--Chapter One Tier Three
+		*******************************************************************************************************************************-->
+	
+	<investigation_type id="Ch1FindFactoryWithDailyNecessities" style="FactoryProducingDailyNecessities"
+		territory_control_type="Factory_DailyNecessities"
+		cull_initial_building_set_to_between_min="60" cull_initial_building_set_to_between_max="70"
+		automatically_start_if_city_rank_is_at_least="2">
+		<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="DailyNecessitiesFactory" building_seed_fallback_tag="DailyNecessitiesFactoryFallback" />
+	</investigation_type>
+	
+	<investigation_type id="Ch1FindWarehouseWithFurniture" style="WarehouseWithFurniture"
+		territory_control_type="Warehouse_Furniture"
+		cull_initial_building_set_to_between_min="7" cull_initial_building_set_to_between_max="10"
+		automatically_start_if_city_rank_is_at_least="2">
+		<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="WarehouseWithFurniturePossible" />
+	</investigation_type>
+	
+	<!--Chapter One Tier Six
+		*******************************************************************************************************************************-->
+
+	<investigation_type id="Ch1SecureMechPilotSoftware" style="SecureMechPilotSoftware"
+		parent_project="Ch1_MIN_SecureVRSoftware" should_end_if_parent_project_ends="true"
+		skill_check_1="UnitCognition" skill_check_1_amount="102" skill_check_2="UnitHackingSkill" skill_check_2_amount="25"		
+		cull_initial_building_set_to_district_count_between_min="2" cull_initial_building_set_to_district_count_between_max="2">
+		<seed_at min_security_clearance_of_seed_spot="2" max_security_clearance_of_seed_spot="2" building_seed_tag="CouldHaveMechPilotSoftware" poi_seed_tag="MilitaryBaseNormalOrLarge" />
+		<resource_change_range resource_type="EncryptedMilitaryVRSimData" min="286000" max="289000" />
+	</investigation_type>
+	
+</root>

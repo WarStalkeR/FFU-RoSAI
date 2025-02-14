@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="city_timeline_crossover">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="is_good" type="bool" is_required="true" default="false"
+		tooltip="If true, this is considered a good crossover." />
+
+	<attribute key="unlock_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, then this will cause a given unlock to happen in adjacent timelines." />
+	<attribute key="unlock_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, then this will cause a given unlock to happen in adjacent timelines." />
+	<attribute key="unlock_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, then this will cause a given unlock to happen in adjacent timelines." />
+	<attribute key="unlock_4" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, then this will cause a given unlock to happen in adjacent timelines." />
+
+	<attribute key="city_flag_to_trip_1" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, then this will cause a given city flag to trip in adjacent timelines." />
+	<attribute key="city_flag_to_trip_2" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, then this will cause a given city flag to trip in adjacent timelines." />
+
+</root>

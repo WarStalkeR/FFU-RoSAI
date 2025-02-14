@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="networking_framework">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="abbreviation" type="string" maxlength="16" content_width_px="200" linebreak_before="Always" is_required="true" is_localized="false"
+		tooltip="The abbreviation to refer to the networking framework."/>
+
+	<attribute key="client_connect_tooltip" type="string-multiline" maxlength="800" show_lines="5" is_required="true" is_localized="false"
+		content_width_px="600"
+		tooltip="Tooltip for the client connection window with this style."/>
+
+	<attribute key="client_connect_window_text" type="string" maxlength="100" is_localized="false" content_width_px="400"
+		tooltip="Text for the client connection window with this tooltip type."/>
+
+	<attribute key="client_connect_window_text_size" type="float-textbox" min="0" max="200" content_width_px="150"
+		tooltip="The text size to draw in the client connection window."/>
+
+	<attribute key="special_type" type="string-dropdown" default="None" content_width_px="200"
+		tooltip="If there is a special network handler associated with this type.">
+		<option>None</option>
+		<option>NullHandler</option>
+		<option>SteamMultiSocketsRelay</option>
+		<option>SteamMultiSocketsDirect</option>
+		<option>GOG</option>
+	</attribute>
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="Only when the special_type is None or blank. This specifies the dll that the network socket code is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="Only when the special_type is None or blank. This specifies the type name of the network socket code in the specified external dll."/>
+	
+</root>

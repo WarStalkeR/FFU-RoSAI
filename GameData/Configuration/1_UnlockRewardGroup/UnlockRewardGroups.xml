@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--ChapterZeroChain
+		************************************************-->
+
+	<unlock_reward_group id="ChapterZeroChain" 
+		options_to_show="1" minimum_options_to_be_upgrades="0" required_intelligence_class="1">
+		<available_unlock unlock="AHomeOfYourOwn" value="true" />
+	</unlock_reward_group>
+
+	<!--EarlyMissionRewards
+		************************************************-->
+	
+	<unlock_reward_group id="EarlyMissionRewards" options_to_show="3" minimum_options_to_be_upgrades="1" required_intelligence_class="1"
+		internal_notes="These are mission rewards for chapter zero and chapter one."
+		upgrades_from="EarlyMissionRewards">
+	</unlock_reward_group>
+
+	<!--ValuableSideMissionRewards
+		************************************************-->
+
+	<unlock_reward_group id="ValuableSideMissionRewards" options_to_show="3" minimum_options_to_be_upgrades="1" required_intelligence_class="1"
+		internal_notes="These are mission rewards for chapter zero and chapter one."
+		upgrades_from="ValuableSideMissionRewards">
+	</unlock_reward_group>
+
+	<!--AndroidOptimization
+		************************************************-->
+	<unlock_reward_group id="AndroidOptimization1" next_reward_group="" options_to_show="4" minimum_options_to_be_upgrades="1" required_intelligence_class="1"
+		upgrades_from="AndroidOptimization">
+	</unlock_reward_group>
+	
+	<!--SmallArmsResearch
+		************************************************-->
+
+	<unlock_reward_group id="SmallArmsResearch1" next_reward_group="" options_to_show="7" minimum_options_to_be_upgrades="1" required_intelligence_class="1"
+		upgrades_from="SmallArmsResearch">
+	</unlock_reward_group>
+
+	<!--StructuralImprovement
+		************************************************-->
+	
+	<unlock_reward_group id="StructuralImprovement1" options_to_show="4" minimum_options_to_be_upgrades="1" required_intelligence_class="1"
+		upgrades_from="StructuralImprovement">
+	</unlock_reward_group>
+
+	<!--HousingExpansion
+		************************************************-->
+
+	<unlock_reward_group id="HousingExpansion1" options_to_show="4" minimum_options_to_be_upgrades="1" required_intelligence_class="1"
+		upgrades_from="HousingExpansion">
+	</unlock_reward_group>
+
+	
+	<!--MartialExpansion
+		************************************************-->
+
+	<unlock_reward_group id="MartialExpansion1" options_to_show="4" minimum_options_to_be_upgrades="1" required_intelligence_class="1"
+		upgrades_from="MartialExpansion">
+	</unlock_reward_group>
+
+	<!--ItemDevelopment
+		************************************************-->
+
+	<unlock_reward_group id="ItemDevelopment1" options_to_show="4" minimum_options_to_be_upgrades="1" required_intelligence_class="1"
+		upgrades_from="ItemDevelopment">
+	</unlock_reward_group>
+
+	<!--VehicularDevelopment
+		************************************************-->
+
+	<unlock_reward_group id="VehicularDevelopment1" options_to_show="4" minimum_options_to_be_upgrades="1" required_intelligence_class="1"
+		upgrades_from="VehicularDevelopment">
+	</unlock_reward_group>
+
+	<!--ProcurementEfficacy
+		************************************************-->
+
+	<unlock_reward_group id="ProcurementEfficacy1" options_to_show="4" minimum_options_to_be_upgrades="1" required_intelligence_class="1"
+		upgrades_from="ProcurementEfficacy">
+	</unlock_reward_group>
+
+	<!--ComputingOptimization
+		************************************************-->
+
+	<unlock_reward_group id="ComputingOptimization1" options_to_show="4" minimum_options_to_be_upgrades="1" required_intelligence_class="1"
+		must_do_all_unlocks_before_next_group="true" next_reward_group="ComputingOptimization2"
+		upgrades_from="ComputingOptimization1">
+	</unlock_reward_group>
+
+	<unlock_reward_group id="ComputingOptimization2" options_to_show="4" minimum_options_to_be_upgrades="1" required_intelligence_class="1"
+		upgrades_from="ComputingOptimization2">
+	</unlock_reward_group>
+	
+</root>

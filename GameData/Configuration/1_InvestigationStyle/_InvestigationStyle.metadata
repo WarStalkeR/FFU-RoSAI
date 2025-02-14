@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="investigation_style">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information, and this one is optional because so much other information is provided already in these tips."/>
+
+	<attribute key="method_details" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of what will be done during the investigation."/>
+
+	<attribute key="is_every_possibility_a_valid_choice" type="bool" default="false" is_required="false"
+		tooltip="If true, then we're not searching for a single needle in a haystack. Instead, the player is being allowed to pick which venue they want for something to happen in." />
+
+	<attribute key="must_eliminate_all" type="bool" default="false" is_required="false"
+		tooltip="If true, then we're not searching for a single needle in a haystack. We're doing a broad survey of what is going on." />
+
+	<attribute key="is_infiltration" type="bool" default="false" is_required="false"
+		tooltip="If true, and also is_every_possibility_a_valid_choice is true, then we're doing an infiltration." />
+	
+	<attribute key="number_of_separate_buildings_required_as_choices" type="int-textbox" min="1" max="1000" content_width_px="40" is_required="false"
+		tooltip="Only relevant when is_every_possibility_a_valid_choice is true. When that is true, specific buildings have to be interacted-with before the investigation is over." />
+	<attribute key="each_building_must_be_separate_variant" type="bool" default="false" is_required="false"
+		tooltip="If true, then number_of_separate_buildings_required_as_choices applies for individual building variants, not specific actual buildings." />
+
+	<attribute key="show_all_results_as_beacon_style" type="bool" default="false" is_required="false"
+		tooltip="If true, then all of the results will be shown with extra fanfare to make their locations extra obvious." />
+
+	<attribute key="show_rings_around_every_cell" type="bool" default="false" is_required="false"
+		tooltip="If true, then all of the results will be shown with a ring around the cell they are in." />
+
+	<attribute key="number_of_turns_required_to_investigate_a_location" type="int-textbox" min="0" max="9" content_width_px="40" is_required="false"
+		tooltip="Only relevant when is_every_possibility_a_valid_choice is true. When that is true, this is how many turns are required in an action-over-time for the unit doing the investigating." />
+
+	<attribute key="is_territory_control_style" type="bool" default="false" is_required="false"
+		tooltip="If true, then this is not for androids to investigate, but instead is for the territory control style of logic." />
+	
+</root>

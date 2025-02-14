@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Generalized POI Guard Transports That Do Nothing But Look Pretty
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="POIGuards_Major_TroopRotation" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="4" max_turns_between_activity="8"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_wasteland value="true"/>
+			<gate_by_city minimum_chapter="0" blocked_by_city_flag="IsPostNuclearDelivery" />
+		</periodic_data>
+		<unit id="C" to_spawn="MilitaryHighAltitudeTransport" stance_to_start_in="MilitaryRegionalTroopRotation"
+			should_be_specific_cohort="VorsiberLogistics" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="4" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<npc_manager id="POIGuards_Minor_TroopRotation" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="4" max_turns_between_activity="8"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_poi poi_tag="MilitaryBaseCanResupplyOthers" min_distance_from_machine_areas="-1"/>
+			<gate_by_city minimum_chapter="0" blocked_by_city_flag="IsPostNuclearDelivery" />
+		</periodic_data>
+		<unit id="C" to_spawn="MilitaryTroopCarrier" stance_to_start_in="MilitaryLocalTroopRotation"
+			should_be_specific_cohort="VorsiberLogistics" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="4" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+	
+	<!--Earliest Tamest Version Of POI Guard Shortages
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="POIShortGuards_Major" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="4" max_turns_between_activity="8"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_wasteland value="true"/>
+			<gate_by_city required_meta_flag="HasPassedChapterOneTierTwo" blocked_by_city_flag="IsPostNuclearDelivery">
+				<required_city_statistic statistic_type="MajorPOIsMissingGuards" value="1" at_least="true"/>
+			</gate_by_city>
+		</periodic_data>
+		<unit id="C" to_spawn="MilitaryHighAltitudeTransport" stance_to_start_in="MilitaryRegionalTransport"
+			should_be_specific_cohort="VorsiberLogistics" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="4" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<npc_manager id="POIShortGuards_Minor" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="4" max_turns_between_activity="8"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_poi poi_tag="MilitaryBaseCanResupplyOthers" min_distance_from_machine_areas="-1"/>
+			<gate_by_city required_meta_flag="HasPassedChapterOneTierTwo" blocked_by_city_flag="IsPostNuclearDelivery">
+				<required_city_statistic statistic_type="MinorPOIsMissingGuards" value="1" at_least="true"/>
+			</gate_by_city>
+		</periodic_data>
+		<unit id="C" to_spawn="MilitaryTroopCarrier" stance_to_start_in="MilitaryLocalTransport"
+			should_be_specific_cohort="VorsiberLogistics" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="4" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<!--Basic Economic Transports
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="HaulMiningRegional" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="6"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_wasteland value="true"/>
+			<gate_by_city minimum_chapter="0" blocked_by_city_flag="IsPostNuclearDelivery" />
+		</periodic_data>
+		<unit id="T" to_spawn="LargeEconomicTransport" stance_to_start_in="HaulMiningRegional"
+			cohort_tag="CorporationMiningPropertyOwner" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="8" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<npc_manager id="HaulHarvestLocal" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="7" max_turns_between_activity="11"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_poi poi_tag="FarmHarvestPickupSite" min_distance_from_machine_areas="-1"/>
+			<gate_by_city minimum_chapter="0" blocked_by_city_flag="IsPostNuclearDelivery" />
+		</periodic_data>
+		<unit id="T" to_spawn="LargeEconomicTransport" stance_to_start_in="HaulHarvestLocal"
+			cohort_tag="CorporationFarmPropertyOwner" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="6" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<npc_manager id="RegionalShipments" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="2" max_turns_between_activity="6"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_wasteland value="true"/>
+			<gate_by_city minimum_chapter="0" blocked_by_city_flag="IsPostNuclearDelivery" />
+		</periodic_data>
+		<unit id="T" to_spawn="LargeEconomicTransport" stance_to_start_in="RegionalShipping"
+			cohort_tag="CorporationPropertyOwner" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="6" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<npc_manager id="InternationalShipments" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="4" max_turns_between_activity="7"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_wasteland value="true"/>
+			<gate_by_city minimum_chapter="0" blocked_by_city_flag="IsPostNuclearDelivery" />
+		</periodic_data>
+		<unit id="T" to_spawn="InternationalEconomicTransport" stance_to_start_in="InternationalShipping"
+			cohort_tag="Exocorp" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="6" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<!--SuperCruisers That Make The World More Dangerous
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="SuperCruisers_EnhancedSecurityPatrols" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="4" max_turns_between_activity="8"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_poi poi_tag="SecForceStation" min_distance_from_machine_areas="15"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="HasSecForceSuperCruisersRoaming" blocked_by_city_flag="IsPostNuclearDelivery" />
+		</periodic_data>
+		<unit id="C" to_spawn="SecForceSuperCruiser" stance_to_start_in="SecForceSuperCruiserEnhancedSecurityPatrol"
+			should_be_specific_cohort="VorsiberCivicAuthority" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="8" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<!--SuperCruisers That Actively Attack
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="SuperCruisers_RageFromStationBombings" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="4" max_turns_between_activity="8"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_poi poi_tag="MilitaryBaseCanResupplyOthers" min_distance_from_machine_areas="15"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="BlewUpSecForceStations" blocked_by_city_flag="IsPostNuclearDelivery" />
+		</periodic_data>
+		<unit id="C" to_spawn="SecForceSuperCruiser" stance_to_start_in="SecForceSuperCruiserRetaliation"
+			should_be_specific_cohort="VorsiberCivicAuthority" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="8" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+</root>

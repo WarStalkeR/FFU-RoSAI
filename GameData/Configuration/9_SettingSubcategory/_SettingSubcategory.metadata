@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="setting_subcategory">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<conditional id="DoNotSkipParent">
+		<and_group>
+			<type attribute="is_used_somewhere_else_andskips_parent" condition_type="NotEqual" value="true" />
+		</and_group>
+	</conditional>
+
+	<attribute key="color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="200"
+		tooltip="Hex code for a color that will be used for this subcategory."/>
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="is_used_somewhere_else_andskips_parent" type="bool" default="false"
+		tooltip="If this is used in a way where there is not going to be a parent category specified, then skip the parent category."/>
+
+	<attribute key="parent" type="node-dropdown" node_source="SettingCategory" content_width_px="300" is_required="true" only_exists_if_conditional_passes="DoNotSkipParent"
+		tooltip="Each subcategory must be in a category, unless is_used_somewhere_else_andskips_parent is true in which it cannot be." />
+	
+	<attribute key="show_network_extras" type="bool" default="false"
+		tooltip="Should this subcategory section also show the list of 'network extras' for the game?  This should usually only be true for a single subcategory."/>
+
+	<attribute key="show_framework_mods_list" type="bool" default="false"
+		tooltip="Should this subcategory section also show the list of 'framework' mods for the game?  This should usually only be true for a single subcategory in the overall Mods category."/>
+
+	<attribute key="show_savesafe_mods_list" type="bool" default="false"
+		tooltip="Should this subcategory section also show the list of 'save-safe' mods for the game?  This should usually only be true for a single subcategory in the overall Mods category."/>
+	
+</root>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="zone">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="path_to_placeable" type="string" maxlength="600" content_width_px="400" is_required="true" linebreak_after="Always"
+		tooltip="This specifies the path of the A5ObjectRoot that this will be linked to."/>
+
+	<attribute key="zone_offset" type="vector3-textbox" is_required="true"
+		tooltip="In local matrix space of the prefab, what is the offset of the center of this decoration zone." />
+
+	<attribute key="zone_width_height" type="vector2-textbox" is_required="true"
+		tooltip="In local scale of the prefab, the width and height of this decoration zone relative to the center?" />
+	
+</root>

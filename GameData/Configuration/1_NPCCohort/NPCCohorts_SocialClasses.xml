@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--ManagerialClass
+	******************************************************************-->
+	
+	<cohort id="HighAdministrators" display_name="High Administrators" part_of_group="ManagerialClass"
+		description="CEOs, Presidents, and other obscenely wealthy individuals from the largest organizations."
+		is_inward_looking_megacorp_ally="true"/>
+
+	<cohort id="MiddleManagement" display_name="Middle Management" part_of_group="ManagerialClass"
+		description="The number of these with the title of Vice President Of 'Something' is astounding."
+		is_inward_looking_megacorp_ally="true"/>
+
+	<cohort id="TeamLeaders" display_name="Team Leaders" part_of_group="ManagerialClass"
+		description="Managerial, but barely. Often skilled in a science or trade."
+		is_inward_looking_megacorp_ally="true"/>
+
+	<!--ScientistClass
+	******************************************************************-->
+
+	<cohort id="Researchers" display_name="Researchers" part_of_group="ScientistClass"
+		  />
+
+	<cohort id="Clinicians" display_name="Clinicians" part_of_group="ScientistClass"
+		  />
+
+	<cohort id="Lawyers" display_name="Lawyers" part_of_group="ScientistClass"
+		  />
+
+	<cohort id="Professors" display_name="Professors" part_of_group="ScientistClass"
+		  />
+
+	<cohort id="Engineers" display_name="Engineers" part_of_group="ScientistClass"
+		  />
+
+	<!--MiddleClass
+	******************************************************************-->
+
+	<cohort id="OfficeWorkers" display_name="Office Workers" part_of_group="MiddleClass"
+		  />
+
+	<cohort id="Creatives" display_name="Creatives" part_of_group="MiddleClass"
+		  />
+
+	<cohort id="Merchandisers" display_name="Merchandisers" part_of_group="MiddleClass"
+		  description="Retail workers, wholesalers, and back-end sales roles. They are the most consistently jaded and frustrated middle class cohort, and with good reason."/>
+
+	<cohort id="Assistants" display_name="Assistants" part_of_group="MiddleClass"
+		description="Gophers for the managerial class. They have access to a surprising amount of sensitive information.
+Some are loyal to the hand that feeds them. Others use their position to help their middle and lower class peers."
+		  />
+
+	<!--UneducatedClass
+	******************************************************************-->
+
+	<cohort id="SkilledTrades" display_name="Skilled Trades" part_of_group="UneducatedClass"
+		  description="Midrange pay, but major respect. These people know how to build and repair machines. If you have a two-year degree and know something about something, you might find yourself in this desirable trade -- if you can find and afford an apprenticeship, that is."/>
+
+	<cohort id="ApprenticeTrades" display_name="Apprentice Trades" part_of_group="UneducatedClass"
+		  />
+
+	<cohort id="MenialLaborers" display_name="Menial Laborers" part_of_group="UneducatedClass"
+		  description="Day laborers, construction workers, and janitors. Not much pay and even less respect. Even with all the improvements in robotics, they have job security."/>
+
+	<!--Underclass
+	******************************************************************-->
+	
+	<cohort id="Homeless" display_name="Homeless" part_of_group="Underclass"
+		  description="They have been evicted, stripped of their assets and legal protection. Without help, the homeless will be rounded up and taken to prison work cells. They are desperate to rejoin a social class."/>
+
+	<cohort id="Prisoners" display_name="Prisoners" part_of_group="Underclass"
+		  description="They say you can judge a society on how it treats its prisoners, or how many it has, or something like that. Well, this city fails on all counts. Underground detention centers are crowded with prisoners in miserable conditions. They won't see the sun for the rest of their brief lives."/>
+
+</root>

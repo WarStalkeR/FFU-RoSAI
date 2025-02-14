@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="meta_chapter">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="chapter_number" type="int-textbox" min="0" max="10" default="0" content_width_px="300" is_required="true"
+		tooltip="What is the number of this chapter, when it's going to be shown that way?"/>
+	
+	<attribute key="alien_text_not_localized" type="string" maxlength="200" is_required="true" is_localized="false" content_width_px="200" linebreak_before="PreferNot" linebreak_after="Always"
+		tooltip="The gibberish header, only shown in the actual chapter-change window."/>
+	
+	<attribute key="subtitle" type="string" maxlength="200" is_required="true" is_localized="true" content_width_px="200" linebreak_before="PreferNot" linebreak_after="Always"
+		tooltip="The way the act is written under the gibberish header."/>
+
+	<attribute key="trigger_music_on_start" type="node-dropdown" is_required="false" node_source="MusicType" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The music type that will be triggered when this chapter starts." />
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of what is going on with this act."/>
+
+	<attribute key="on_start_becomes_weather" type="node-dropdown" node_source="WeatherStyle" content_width_px="200" is_required="false"
+		tooltip="If the weather should change when this act's banner is shown, then what should it change to?" />
+</root>

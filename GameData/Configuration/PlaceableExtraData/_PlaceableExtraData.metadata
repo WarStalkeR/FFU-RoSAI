@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="placeable">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="path" type="string" maxlength="600" content_width_px="400" is_required="true"
+		tooltip="This specifies the path of the A5ObjectRoot that this will be linked to."/>
+
+	<attribute key="selection_group_shared_name" type="string" maxlength="20" content_width_px="80" is_required="false"
+		tooltip="If 'select all of this type' is indicated, then any with this matching string will also be selected."/>
+
+	<attribute key="is_meta_other_object_collision_target" type="bool" default="false"
+		tooltip="When meta regions look for 'other objects' to collide with, is this one of them?"/>
+
+	<attribute key="requires_individual_collider_checking_during_bounding_collision_checks" type="bool" default="false"
+		tooltip="When this is colliding with something else, such as for meta region checks for instance, do we have to check the individual colliders for a positive result?  
+		
+If this is false, which is the default, then we are able to just use the bounding box for approximation."/>
+
+	<attribute key="expand_individual_collider_checking_up_and_down_a_lot_in_collision_checks" type="bool" default="false"
+		tooltip="When this is colliding with something else, such as decorations that might be seeded on or under this, should we expand all our colliders up and down a lot to prevent that sort of under-seeding and over-seeding?
+		
+This is good to turn on for water, which is hyper-thin, but not great to turn on to much else."/>
+
+	<attribute key="is_minor_decoration" type="bool" default="false"
+		tooltip="If this is part of a decoration zone, is this considered a 'minor decoration' that should not be interactive in any fashion?"/>
+
+	<attribute key="is_fence" type="bool" default="false"
+		tooltip="If this is a fence, then it will be part of the other skeleton objects group draw-wise, and will block mechs from standing so that they intersect with it."/>
+	<attribute key="is_skipped_during_relaxed_collisions" type="bool" default="false"
+		tooltip="If this is a fence, then during related collisions it will be skipped."/>
+
+	<attribute key="included_shaders_that_do_not_use_instancing" type="string" maxlength="600" content_width_px="400"
+		tooltip="If there are any shaders included which do not use instancing, then provide a comma-separated list of those."/>
+
+	<attribute key="skips_road_collisions" type="bool" default="false"
+		tooltip="If this is a road-type tile, but it should skip collision checks with other roads in the level editor, then let us know here!"/>
+
+	<attribute key="skip_complaints_about_missing_building_prefabs" type="bool" default="false"
+		tooltip="If the LevelEditorPaletteGroup says is_expected_to_have_buildings_on_each_item is true, but that doesn't actually apply to us specifically, then this overrides to not complain about missing buildings."/>
+
+	<attribute key="skips_collidable_hiding" type="bool" default="false"
+		tooltip="If this is true, then things like mechs won't cause this to become invisible when standing on it."/>
+
+	<attribute key="resistance_to_destruction_from_collisions" type="int-textbox" min="0" max="100" default="0" content_width_px="80" is_required="false"
+		tooltip="If above 0, then this is resistant to being stepped on and destroyed. Buildings with a resistance equal to or lower than the strength of the unit doing the stepping-on will be destroyed."/>
+
+	<attribute key="can_be_overbuilt_by_freestanding_construction" type="bool" default="false"
+		tooltip="If this is true, then freestanding structures can squish this. Applies to non-buildings only."/>
+
+	<attribute key="is_valid_starting_spot_for_players_prologue" type="bool" default="false"
+		tooltip="If this is the sort of place that a player could start the game when they are doing the prologue." />
+
+	<attribute key="is_valid_starting_spot_for_players_first_tower" type="bool" default="false"
+		tooltip="If this is the sort of place that a player could start the game when it's their first tower being spawned, not during the prologue." />
+
+	<attribute key="is_ziggurat" type="bool" default="false"
+		tooltip="For the end of time. Well. Is it?" />
+	
+	<attribute key="box_scale_sensitivity" type="float-textbox" min="0.1" max="2" default="1" precision="2" content_width_px="150"
+		tooltip="Does this have a scale other than 1 for purposes of box scaling?  That makes it move more or less intensely in the level editor with your mouse movements"/>
+		
+	<!--This section is meta-specific.
+		********************************************-->
+	<attribute key="meta_only_short_id" type="string" maxlength="10" content_width_px="60" is_required="false"
+		tooltip="If this is a meta region, this is how we'll know what its function is."/>
+	
+	<attribute key="meta_only_collides_with_other_regions" type="bool" default="false"
+		tooltip="If this is a meta region, does it collide with other regions?"/>
+
+	<attribute key="meta_only_is_region_collision_target" type="bool" default="false"
+		tooltip="If this is a meta region, is this the sort that other regions can collide with?"/>
+
+	<attribute key="meta_only_collides_with_other_objects" type="bool" default="false"
+		tooltip="If this is a meta region, does it collide with other objects?"/>
+
+	<attribute key="meta_only_hides_when_decoration_zones_hidden" type="bool" default="false"
+		tooltip="If this is a meta region, does it hide itself when the 'decoration meta zones' are hidden?"/>
+
+	<attribute key="meta_only_min_side_size" type="float-textbox" min="0" max="200" precision="2" content_width_px="150"
+		tooltip="If this is a meta region, then what is the minimum side-size for it?"/>
+
+	<attribute key="meta_only_max_side_size" type="float-textbox" min="0" max="200" precision="2" content_width_px="150"
+		tooltip="If this is a meta region, then what is the maximum side-size for it?"/>
+	
+	<!--This section is all about mirroring.
+		********************************************-->
+
+	<attribute key="is_symmetrical_for_x_mirroring" type="bool" default="false"
+		tooltip="If this is part of a skeleton that is requested to be mirrored on the x axis, is this already fine?"/>
+
+	<attribute key="is_symmetrical_for_z_mirroring" type="bool" default="false"
+		tooltip="If this is part of a skeleton that is requested to be mirrored on the z axis, is this already fine?"/>
+
+	<attribute key="path_of_mirror_x_replacement" type="string" maxlength="300" content_width_px="300" is_required="false"
+		tooltip="If this is part of a skeleton that is requested to be mirrored on the x axis, and we are not already fine, what do we get replaced with?"/>
+
+	<attribute key="path_of_mirror_z_replacement" type="string" maxlength="300" content_width_px="300" is_required="false"
+		tooltip="If this is part of a skeleton that is requested to be mirrored on the z axis, and we are not already fine, what do we get replaced with?"/>
+
+	<attribute key="rotate_180_degrees_for_x_mirror" type="bool" default="false"
+		tooltip="If this is part of a skeleton that is requested to be mirrored on the x axis, whatever else happens, should it rotate the target by 180 degrees?"/>
+
+	<attribute key="rotate_180_degrees_for_z_mirror" type="bool" default="false"
+		tooltip="If this is part of a skeleton that is requested to be mirrored on the z axis, whatever else happens, should it rotate the target by 180 degrees?"/>
+	
+	<!--seeding_group-->	
+	<sub_node id="seeding_group">
+		<attribute key="group" type="node-dropdown" node_source="PlaceableSeedingGroup" content_width_px="300" is_required="true"
+			tooltip="What seeding group do we want to add ourselves to?" />
+		<attribute key="weight" type="int-textbox" min="0" max="9000" default="100" content_width_px="150"
+			tooltip="When adding ourselves to this seeding group, how much weight should we put for ourselves compared to the average of 100?  
+			
+100 means absolutely normal, 1 would be 1% of normal, 25 is 25% of normal, 0 is literally not-at-all, and 200 would be 200% of normal."/>
+	</sub_node>
+	
+</root>

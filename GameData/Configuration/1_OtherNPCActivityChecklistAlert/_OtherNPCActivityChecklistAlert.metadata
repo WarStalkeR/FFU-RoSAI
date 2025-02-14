@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="other_npc_activity_alert">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="alert_color_style" type="string-dropdown" is_required="true" default="Normal" content_width_px="200"
+		tooltip="How the visibility of the unit making the choice is affected by making this choice.">
+		<option>Low</option>
+		<option>Normal</option>
+		<option>MidWarning</option>
+		<option>HighWarning</option>
+		<option>Crisis</option>
+	</attribute>
+
+	<attribute key="header_if_more_coming" type="string" maxlength="200" content_width_px="200" is_localized="true" is_required="true" can_localization_merge="true"
+		tooltip="The short header if there are more units coming, but none out right now."/>
+	<attribute key="description_if_more_coming" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="Full description."/>	
+	<attribute key="strategy_tip_if_more_coming" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="Strategy tip."/>
+
+	<attribute key="header_if_more_coming_and_extant" type="string" maxlength="200" content_width_px="200" is_localized="true" is_required="true" can_localization_merge="true"
+		tooltip="The short header if there are more units coming, and some out right now. {0} is the number of units."/>
+	<attribute key="description_if_more_coming_and_extant" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="Full description. {0} is the number of units."/>
+	<attribute key="strategy_tip_if_more_coming_and_extant" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="Strategy tip. {0} is the number of units."/>
+
+	<attribute key="header_if_extant_only" type="string" maxlength="200" content_width_px="200" is_localized="true" is_required="true" can_localization_merge="true"
+		tooltip="The short header if there are units out right now, but no more coming. {0} is the number of units."/>
+	<attribute key="description_if_extant_only" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="Full description. {0} is the number of units."/>
+	<attribute key="strategy_tip_if_extant_only" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="Strategy tip. {0} is the number of units."/>
+
+	<attribute key="is_danger_style_music" type="bool" is_required="true" default="false"
+		tooltip="Does this cause the danger-style music to play?" />
+
+</root>

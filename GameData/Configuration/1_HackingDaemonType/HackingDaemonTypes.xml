@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<daemon id="Gnath" display_name="Gnath"
+		description=""
+		strategy_tip=""
+		visible_icon_name="SomethingJaws" visible_color="#B05C40" visible_idle_color="#A09191" visible_scale="0.9"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.5" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#DDDDDD" hidden_scale="1" is_hostile_daemon="true"
+		required_danger_level="150" reduces_danger_level_by="70" seed_weight="100" max_to_seed="5"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
+		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon" 
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownDaemon" 
+		>
+		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="1" />
+		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="1" />
+		<included_in tag="CodePriestSpawns_SimpleMechIntro" value="true" />
+		<included_in tag="CodePriestSpawns_SimpleMech" value="true" />
+		<included_in tag="InitialDaemons_SimpleMech" value="true" />
+	</daemon>
+	
+	<daemon id="CodePriest" display_name="Code Priest"
+		description="Converts your consciousness shard into a daemon when eating it."
+		strategy_tip=""
+		visible_icon_name="CleanSimple_SkillC034" visible_color="#A75CBB" visible_idle_color="#806090" visible_scale="0.8"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.6" visible_idle_hdr_intensity="1.4"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#DDDDDD" hidden_scale="1" is_hostile_daemon="true"
+		required_danger_level="100" reduces_danger_level_by="150" seed_weight="100" max_to_seed="3"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
+		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownDaemon"
+		>
+		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="3" />
+		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="2" />
+		<included_in tag="CodePriestSpawns_SimpleMech" value="true" />
+		<included_in tag="InitialDaemons_SimpleMech" value="true" />
+	</daemon>
+
+	<daemon id="RecursiveLoop" display_name="Recursive Loop"
+		description="Duplicates itself whenever it eats a consciousness shard."
+		strategy_tip=""
+		visible_icon_name="HM_ShapeAbstract3" visible_color="#68983D" visible_idle_color="#A09191" visible_scale="1"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.7" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1" is_hostile_daemon="true"
+		required_danger_level="100" reduces_danger_level_by="120" seed_weight="100" max_to_seed="5"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
+		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon" 
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownDaemon" 
+		>
+		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="2" />
+		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="1" />
+		<included_in tag="CodePriestSpawns_SimpleMech" value="true" />
+		<included_in tag="InitialDaemons_SimpleMech" value="true" />
+	</daemon>
+
+	<daemon id="Triswarm" display_name="Triswarm"
+		description="Fast and relentless. Breaks into three fragments when corrupted."
+		strategy_tip=""
+		visible_icon_name="CleanSimple_Skill069" visible_color="#D1C976" visible_idle_color="#A09191" visible_scale="0.9"
+		hidden_hdr_intensity="1" visible_hdr_intensity="0.8" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1" is_hostile_daemon="true"
+		required_danger_level="360" reduces_danger_level_by="150" seed_weight="20" max_to_seed="3"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
+		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon" 
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownDaemon" 
+		>
+		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="3" />
+		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="1" />
+		<included_in tag="InitialDaemons_SimpleMech" value="true" />
+	</daemon>
+
+	<daemon id="TriswarmFragment" display_name="Triswarm Fragment"
+		description="Fast and relentless, but thankfully are gone for good when corrupted."
+		strategy_tip=""
+		visible_icon_name="SomethingTriangle" visible_color="#C6B14E" visible_idle_color="#A09191" visible_scale="0.45"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.7" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1" is_hostile_daemon="true"
+		required_danger_level="100" reduces_danger_level_by="0" seed_weight="100" max_to_seed="20"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_TriswarmSplit" can_daemon_be_hunted_by_friendly_daemons="true"
+		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownDaemon"
+		>
+		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="2" />
+		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="1" />
+	</daemon>
+
+	<daemon id="Bomb" display_name="Bomb"
+		description=""
+		strategy_tip=""
+		visible_icon_name="SW_DonutChart6" visible_color="#D46844" visible_idle_color="#A09191" visible_scale="1"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1" is_hostile_daemon="true"
+		required_danger_level="100" reduces_danger_level_by="20" seed_weight="100" max_to_seed="3"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
+		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon" 
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownDaemon" 
+		>
+	</daemon>
+
+	<daemon id="Mirror" display_name="Mirror"
+		description=""
+		strategy_tip=""
+		visible_icon_name="CleanSimple_Power09" visible_color="#D46844" visible_idle_color="#A09191" visible_scale="1"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1" is_hostile_daemon="true"
+		required_danger_level="100" reduces_danger_level_by="20" seed_weight="100" max_to_seed="2"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
+		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon" 
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownDaemon" 
+		>
+	</daemon>
+
+	<!-- Positive items -->
+	
+	<daemon id="LeafNode" display_name="Leaf Node"
+		description="Exposed edge of some larger digital system. Harmless."
+		strategy_tip="Destroy all hostile daemons to gain access to the unknown system." always_show_strategy_tip="true"
+		visible_icon_name="SF2_Geometricshape_146" visible_color="#6DB821" visible_idle_color="#A09191" visible_scale="0.8"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="5"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_LeafNodeOpen"
+		lang_key_for_known_entity_type="Hacking_EntityType_SoftwareInterface" 
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownSoftware" 
+		>
+	</daemon>
+
+	<daemon id="RingNode" display_name="Ring Node"
+		description="Hardened edge of some larger digital system."
+		strategy_tip="Destroy all hostile daemons to gain access to the unknown system." always_show_strategy_tip="true"
+		visible_icon_name="CleanTriangle19" visible_color="#6DB821" visible_idle_color="#A09191" visible_scale="1.15"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.6" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="5"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_RingNodeHealthLost" instead_of_death_becomes="RingNode2"
+		lang_key_for_known_entity_type="Hacking_EntityType_SoftwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownSoftware"
+		>
+		<math_int id="HealthRemaining" display_name="Health Remaining" icon_name="CleanSimple_Shield11" icon_color="#A6E1FC" int_min="4" />
+	</daemon>	
+	
+	<daemon id="RingNode2" copy_from="RingNode" instead_of_death_becomes="RingNode3"> <math_int id="HealthRemaining" int_min="3" is_partial_record="true" /> </daemon>
+	<daemon id="RingNode3" copy_from="RingNode" instead_of_death_becomes="RingNode4"> <math_int id="HealthRemaining" int_min="2" is_partial_record="true" /> </daemon>
+	<daemon id="RingNode4" copy_from="RingNode" instead_of_death_becomes="" on_death="Hacking_LeafNodeOpen"> <math_int id="HealthRemaining" int_min="1" is_partial_record="true" /> </daemon>
+	
+	<!-- Targets -->
+	
+	<daemon id="IOPort" display_name="I/O Port"
+		description=""
+		strategy_tip=""
+		visible_icon_name="CleanSimple_Controls022" visible_color="#D46844" visible_idle_color="#A09191" visible_scale="1"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="2" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt="1"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface" 
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware" 
+		>
+	</daemon>
+
+	<daemon id="ElectricalBackbone" display_name="Electrical Backbone"
+		description=""
+		strategy_tip=""
+		visible_icon_name="CS_CityElectricTower" visible_color="#D46844" visible_idle_color="#A09191" visible_scale="1"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface" 
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware" 
+		>
+	</daemon>
+
+	<daemon id="ArmorPlatingServicePanels" display_name="Armor Plating Service Panels"
+		description="If the service panels are opened in this unit's armor plating, the armor will lose much of its effectiveness. The wider they are opened, the more effectiveness is lost."
+		strategy_tip="Fully corrupt this interface to finish the hacking session and cause a debuff to the unit being hacked." always_show_strategy_tip="true"
+		visible_icon_name="AN_Kerchief" visible_color="#7FD3E1" visible_idle_color="#A09191" visible_scale="0.9"
+		hidden_hdr_intensity="1" visible_hdr_intensity="0.6" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="ArmorPlatingServicePanelsOpen" cost_type_to_corrupt="Wisdom" cost_amount_to_corrupt="4"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface" 
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware" 
+		 >
+		<!-- <included_in tag="LeafNodeContents_SimpleMech" value="true" />-->
+	</daemon>
+
+	<daemon id="MachineVisionProcessing" display_name="Machine Vision Processing"
+		description=""
+		strategy_tip=""
+		visible_icon_name="SI_Eyetap" visible_color="#7FD3E1" visible_idle_color="#A09191" visible_scale="1"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.8" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath"
+		lang_key_for_known_entity_type="Hacking_EntityType_SoftwareInterface" 
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownSoftware" 
+		>
+		<!-- <included_in tag="LeafNodeContents_SimpleMech" value="true" />-->
+	</daemon>
+
+	<daemon id="MechPilotCradle" display_name="Mech Pilot Cradle"
+		description="A lone pilot is in this mech, suspended in full-dive VR. This is the hardware interface to where they are located."
+		strategy_tip="Corrupt this interface to finish the hacking session, trap the pilot, and convert the mech to your forces." always_show_strategy_tip="true"
+		visible_icon_name="WEmblem233" visible_color="#AE8F46" visible_idle_color="#A09191" visible_scale="0.95"
+		hidden_hdr_intensity="1" visible_hdr_intensity="2.4" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic" cost_type_to_corrupt="Determination" cost_amount_to_corrupt="20"
+		on_death="Hacking_MechConverted"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		 >
+		<included_in tag="LeafNodeContents_SimpleMechIntro" value="true" />
+		<included_in tag="LeafNodeContents_SimpleMech" value="true" />
+	</daemon>
+
+	<daemon id="HydraulicActuators" display_name="Hydraulic Actuators"
+		description="If the hydraulic systems are disrupted, this target will have trouble moving, though it will still be able to attack within its range."
+		strategy_tip="Fully corrupt this interface to finish the hacking session and cause a debuff to the unit being hacked." always_show_strategy_tip="true"
+		visible_icon_name="CS_Piston" visible_color="#7FD3E1" visible_idle_color="#A09191" visible_scale="0.9"
+		hidden_hdr_intensity="1" visible_hdr_intensity="0.8" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="MechHydraulicsDisrupted" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt="2"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		>
+	</daemon>
+
+	<daemon id="WeaponSystems" display_name="Weapon Systems"
+		description="If the weapons systems are disrupted, this target will do far less damage until it fixes the problem."
+		strategy_tip="Fully corrupt this interface to finish the hacking session and cause a debuff to the unit being hacked." always_show_strategy_tip="true"
+		visible_icon_name="SI_Machine_Gun11" visible_color="#7FD3E1" visible_idle_color="#A09191" visible_scale="0.95"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="WeaponsSystemsDisrupted" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt="6"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface" 
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware" 
+		>
+	</daemon>
+
+	<daemon id="AugmentedOrgans" display_name="Augmented Organs"
+		description="This bionic human has several critical internal organs which have been replaced with machine parts."
+		strategy_tip="Corrupt this interface to cause cardiac arrest." always_show_strategy_tip="true"
+		visible_icon_name="SI_Heart1" visible_color="#E1857F" visible_idle_color="#A09191" visible_scale="0.95"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" cost_type_to_corrupt="Determination" cost_amount_to_corrupt="1"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		>
+	</daemon>
+
+	<daemon id="AdrenalineRegulator" display_name="Adrenaline Regulator"
+		description="This bionic human has an adrenaline regulator, which keeps them calm, but still provides boosts of extra energy when needed."
+		strategy_tip="Corrupt this interface to cause emotional overload that prevents them from doing much." always_show_strategy_tip="true"
+		visible_icon_name="FlatSkill_47" visible_color="#C36C45" visible_idle_color="#A09191" visible_scale="0.95"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="EmotionalOverload" cost_type_to_corrupt="Wisdom" cost_amount_to_corrupt="2"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		>
+	</daemon>
+
+	<daemon id="AugmentedVision" display_name="Augmented Vision"
+		description="This bionic human has artificial eyes, which work far better than regular human eyes."
+		strategy_tip="Corrupt this interface to blind them." always_show_strategy_tip="true"
+		visible_icon_name="WEmblem319" visible_color="#6AABD4" visible_idle_color="#A09191" visible_scale="0.95"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="Blindness" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt="1"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		>
+	</daemon>
+
+	<daemon id="BionicUplink" display_name="Bionic Uplink"
+		description="All humans in the city have some level of uplink to the city feed, but this bionic human has an unusually-powerful and deeply-embedded router in their brain."
+		strategy_tip="Corrupt this interface to block them from all network activities." always_show_strategy_tip="true"
+		visible_icon_name="SF2_Wifi_active" visible_color="#67B860" visible_idle_color="#A09191" visible_scale="0.95"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="DisconnectedFromNetwork" cost_type_to_corrupt="Determination" cost_amount_to_corrupt="2"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		>
+	</daemon>
+
+	<daemon id="OfficePrinter" display_name="Office Printer"
+		description=""
+		strategy_tip=""
+		visible_icon_name="Pw_CopyMachine" visible_color="#D46844" visible_idle_color="#A09191" visible_scale="1"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface" 
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware" 
+		>
+	</daemon>
+	
+</root>

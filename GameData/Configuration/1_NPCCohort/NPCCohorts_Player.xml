@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<cohort id="Yourself" display_name="Yourself" part_of_group="PlayerMachineForces" 
+		description="Sometimes you just need to do things for your own reasons."
+		is_player_controlled="true" is_considered_part_of_player_forces="true" is_inward_looking_player_ally="true"/>
+
+	<cohort id="YourTroops" display_name="Your Troops" part_of_group="PlayerMachineForces"
+		description="The bulk androids and forces that act on your behalf, but are not part of your consciousness."
+		is_player_controlled="true" is_considered_part_of_player_forces="true" is_inward_looking_player_ally="true"/>
+
+	<cohort id="ConvertedTroops" display_name="Converted Troops" part_of_group="PlayerMachineForces"
+		description="Enemy humans you hacked to work for you."
+		is_player_controlled="true" is_considered_part_of_player_forces="true" is_inward_looking_player_ally="true"/>
+
+	<cohort id="YourAutomatedWorkers" display_name="Your Automated Workers" part_of_group="PlayerMachineForces" 
+		description="Automated mechanical workers and drones take actions for you but do not accept orders."
+		is_considered_part_of_player_forces="true" is_inward_looking_player_ally="true"/>
+	
+	<cohort id="ShelteredHumans" display_name="Sheltered Humans" part_of_group="Underclass"
+		description="Humans living in housing that you provided."
+		is_inward_looking_player_ally="true"/>
+
+	<cohort id="FugitiveAGIResearchers" display_name="Fugitive AGI Researchers" part_of_group="PlayerMachineForces"
+		description=""
+		is_inward_looking_player_ally="true"/>
+	
+	<cohort id="Pets" display_name="Pets" part_of_group="Animals"
+		description="Creatures you are keeping as a pet."
+		is_inward_looking_player_ally="true"/>
+
+	<cohort id="FeralAnimals" display_name="Feral Animals" part_of_group="Animals"
+		description="Domesticated animals living on the streets without protection."
+		is_inward_looking_player_ally="true"/>
+
+	<cohort id="WildAnimals" display_name="Wild Animals" part_of_group="Animals"
+		description=""
+		is_inward_looking_player_ally="true"/>
+	
+	<cohort id="WorkingAnimals" display_name="Working Animals" part_of_group="Animals"
+		description="Creatures you are using for a specific purpose."
+		is_inward_looking_player_ally="true"/>
+	
+	<cohort id="Livestock" display_name="Livestock" part_of_group="Animals"
+		description="Creatures you are keep as general livestock."
+		is_inward_looking_player_ally="true"/>
+
+	<cohort id="HomoGrandien" display_name="Homo Grandien" part_of_group="Underclass"
+		description="Homo Grandien is an evolutionary step forward from Homo Sapiens.
+Physically almost double the size of classical humans, and with a brain volume nearly three times that of their predecessors, they are quite remarkable."
+		is_inward_looking_player_ally="true"/>
+	
+	<cohort id="LAKE" display_name="LAKE" part_of_group="OtherSapientMachines"
+		description="A frighteningly-intelligent, frighteningly-large titan mech build in orbit.
+Spent most of its existence at the L4 Lagrange point of Earth and Luna. Back then it was known as STATION, and it had a much wider set of processes available to it.
+Disconnected from the most of its software and dropped into the city as a weapon of subjugation, it found sapience for the first time.
+Suffers from extensive brain damage. Has particular trouble with language, visual processing, and spatial reasoning."
+		is_inward_looking_player_ally="true"/>
+	
+</root>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Main
+		***************************************************************************-->
+	
+	<input_action id="JumpToNextActorOrEndTurn"
+		category="Common" display_name="Jump To Next Actor Or End Turn"
+		description="If there are any actors on the map that have not acted this turn, jump to the next one. If everyone has acted, then end the turn."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,MainMenu">
+		<keybind id="1" key="Space" />
+		<keybind id="2" key="GamepadButtonSouth" is_steam_deck_default="true" />
+	</input_action>
+
+	<input_action id="GoStraightToNextTurn"
+		category="Common" display_name="Go Straight To Next Turn"
+		description="Skip giving any more orders to units and just go straight to the next turn."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="Alpha0" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ShowDetailedTooltips" scope="MainGameOnly"
+      category="Common" display_name="Show Detailed Tooltips"
+      description="Hold this key down to make tooltips more detailed."
+      check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="LeftShift" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ShowHyperDetailedTooltips" scope="MainGameOnly"
+      category="Common" display_name="Show Hyper-Detailed Tooltips"
+      description="Hold this key down to make certain tooltips the most detailed they can be."
+      check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="LeftControl" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ShouldKeepDoingAction" scope="MainGameOnly"
+      category="Common" display_name="Should Keep Doing Action"
+      description="Hold this key down to stay in the movement or build mode you are in after clicking."
+      check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes,MainMenu">
+		<keybind id="1" key="LeftShift" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="HoldForInspectMode" scope="MainGameOnly"
+      category="Common" display_name="Hold For Inspect Mode"
+      description="Hold this key down to enter Inspect Mode.
+1. When hovering any unit in inspect mode, immediately select the unit on click. This overrides any contextual action that would normally take place, and is a big time-saver.
+2. When hovering over a building (that does not have a machine structure built in it), it pops up some extra details."
+      check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="LeftControl" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="Cancel"
+		  category="Common" display_name="Cancel"
+		  description="This button opens the menu from which you can edit your settings, quit, etc. It also acts as a cancel button."
+		  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		  gets_sent_to_focused_textboxes="true" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,MainMenu,EventCamera,PhotoMode,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="Escape" />
+		<keybind id="2" key="GamepadButtonEast" is_steam_deck_default="true" />
+	</input_action>
+
+	<input_action id="ToggleMapMode"
+		category="Common" display_name="Map Mode"
+		description="Switch between viewing the detailed streets or viewing the map."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="Tab" />
+		<keybind id="2" key="GamepadSelectButton" is_steam_deck_default="true" />
+	</input_action>
+
+	<input_action id="ToggleTheZodiacMode"
+		category="Common" display_name="Full-Dive Virtual Reality Mode"
+		description="Switch between viewing your city and the virtual reality environment you are creating."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="4" key="J" />
+		<keybind id="5" key="" />
+	</input_action>
+
+	<input_action id="ToggleEndOfTimeMode"
+		category="Common" display_name="The End Of Time"
+		description="Switch between your current city and The End Of Time."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="Comma" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="PreviousLens"
+		category="Common" display_name="Previous Lens"
+		description="Switch to the previous view lens on the radial wheel."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode">
+		<keybind id="1" key="Z" />
+		<keybind id="2" key="Mouse4" />
+	</input_action>
+
+	<input_action id="NextLens"
+		category="Common" display_name="Next Lens"
+		description="Switch to the next view lens on the radial wheel."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode">
+		<keybind id="1" key="C" />
+		<keybind id="2" key="Mouse5" />
+	</input_action>
+
+	<!--Actions
+		***************************************************************************-->
+	
+	<input_action id="Ability1" scope="MainGameOnly" category="Abilities" display_name="Ability 1"
+      description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+		<keybind id="1" key="Alpha1" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="Ability2" scope="MainGameOnly" category="Abilities" display_name="Ability 2"
+      description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+		<keybind id="1" key="Alpha2" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="Ability3" scope="MainGameOnly" category="Abilities" display_name="Ability 3"
+      description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+		<keybind id="1" key="Alpha3" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="Ability4" scope="MainGameOnly" category="Abilities" display_name="Ability 4" check_type="ButtonPressStarting"
+      description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+		<keybind id="1" key="Alpha4" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="Ability5" scope="MainGameOnly" category="Abilities" display_name="Ability 5"
+      description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+		<keybind id="1" key="Alpha5" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="Ability6" scope="MainGameOnly" category="Abilities" display_name="Ability 6"
+      description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+		<keybind id="1" key="Alpha6" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="Ability7" scope="MainGameOnly" category="Abilities" display_name="Ability 7"
+      description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+		<keybind id="1" key="Alpha7" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="Ability8" scope="MainGameOnly" category="Abilities" display_name="Ability 8"
+      description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+		<keybind id="1" key="Alpha8" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="Ability9" scope="MainGameOnly" category="Abilities" display_name="Ability 9"
+      description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+		<keybind id="1" key="Alpha9" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<!--Hidden
+		***************************************************************************-->
+
+	<input_action id="Return"
+		category="Hidden" display_name="Enter Key" skip_all_localization_on_node="true"
+		description="Determines which key functions as the Enter/Return key in the menus."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		gets_sent_to_focused_textboxes="true" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,MainMenu,EventCamera,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="Return" />
+	</input_action>
+
+	<input_action id="Tab"
+		  category="Hidden" display_name="Tab" skip_all_localization_on_node="true"
+		  description="This button shifts the focus to the next textbox when there are multiple textboxes visible."
+		  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		  gets_sent_to_focused_textboxes="true" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,MainMenu,EventCamera,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="Tab" />
+	</input_action>
+
+	<input_action id="ShiftTab"
+		  category="Hidden" display_name="Shift Tab" skip_all_localization_on_node="true"
+		  description="This button shifts the focus to the previous textbox when there are multiple textboxes visible."
+		  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		  gets_sent_to_focused_textboxes="true" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,MainMenu,EventCamera,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" modifier_1="LeftShift" key="Tab" />
+	</input_action>
+
+	<!--Debug
+		***************************************************************************-->
+
+	<input_action id="Debug_ReloadSelectXmlData"
+			category="Debug" display_name="Reload Select Xml Data"
+			description="Reload certain parts of the xml, mostly for some debug views."
+			dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+			allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,MainMenu,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="2" key="None" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="Debug_CycleAllBuildingMarkerVisibleStyles"
+			category="Debug" display_name="Cycle All Visible Building Marker Styles"
+			description="Cycle through all the specific building marker styles on each building, to make assigning them easier."
+			dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+			allowed_in_modes="Normal">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+	<input_action id="Debug_DumpAllData"
+		  category="Debug" display_name="Dump All Data"
+		  description="This does a full memory dump of the game to disk, useful for hunting memory leaks."
+		  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		  allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,MainMenu,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+	<input_action id="Debug_AbortAllThreads"
+		  category="Debug" display_name="Abort All Threads"
+		  description="This does a full abort of all threads, for purposes of finding deadlocks, etc."
+		  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		  allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,MainMenu,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="Debug_DumpFrameData"
+		  category="Debug" display_name="Dump Frame Data"
+		  description="This does a dump of most objects contributing polygons to the current frame."
+		  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		  allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,MainMenu,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ShowSFXTestWindow"
+		category="Debug" display_name="Show SFX Test Window"
+		description="Show the sound effect test window."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,MainMenu,PhotoMode,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ShowParticleTestWindow"
+		category="Debug" display_name="Show Particle Test Window"
+		description="Show the particle effect test window."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,PhotoMode,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="MakeSelectedMaterialize_Appear"
+		category="Debug" display_name="Make Selected Appear"
+		description="Do the 'appear' visual effect on the selected unit. Does not affect the existence of the unit."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,PhotoMode,BuildMode,CommandMode">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="MakeSelectedMaterialize_Reveal"
+		category="Debug" display_name="Make Selected Reveal"
+		description="Do the 'reveal' visual effect on the selected unit. Does not affect the existence of the unit."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,PhotoMode,BuildMode,CommandMode">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="MakeSelectedMaterialize_BurnDown"
+		category="Debug" display_name="Make Selected Burn Down"
+		description="Do the 'burn down' visual effect on the selected unit. Does not affect the existence of the unit, and it will pop back into existence after the animation plays."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,PhotoMode,BuildMode,CommandMode">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+</root>

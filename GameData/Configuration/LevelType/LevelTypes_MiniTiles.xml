@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--These level types are all defining chunk types, which are like the tiles that fit together on the main map.
+		Various other level types define things that fill in these chunks, or are for interiors, etc.-->
+	
+	<level_type id="MiniTileExtAbandonedA" display_name="Mini: Abandoned A" size_x="1" size_z="2" subfolder="MiniTileExt/AbandonedA"
+			is_mini_skeleton="true" weight_as_general_purpose_region_filler="25"
+			description="A midsize area of abandoned construction buildings, general broken buildings in large quantities, and so on. Each one should ideally have a single ruined church in it."
+			tags="MiniTile">
+	</level_type>
+
+	<level_type id="MiniTileExtAbandonedB" display_name="Mini: Abandoned B" size_x="2" size_z="1.5" subfolder="MiniTileExt/AbandonedB"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="25"
+		description="A smaller area of abandoned construction buildings, general broken buildings in large quantities, and so on. Each one should ideally have a single ruined church in it."
+		tags="MiniTile">
+	</level_type>
+	
+	<level_type id="MiniTileExtAirportA" display_name="TILES: Airport A" size_x="20" size_z="20" subfolder="MiniTileExt/AirportA"
+		is_mini_skeleton="true" is_key_macro_tile="true"
+		description="A larger form of airport. Only one per city will be seeded. Should be surrounded by walls, and any roads are internal. Any trees or vegetation should be added via decoration zones."
+		poi_to_spawn="InternationalAirport" 
+		tags="MiniTile,Airport">
+	</level_type>
+
+	<level_type id="MiniTileExtAirportB" display_name="TILES: Airport B" size_x="20" size_z="10" subfolder="MiniTileExt/AirportB"
+		is_mini_skeleton="true" is_key_macro_tile="true"
+		description="A smaller form of airport. Only one or two per city will be seeded. Should be surrounded by walls, and any roads are internal. Any trees or vegetation should be added via decoration zones."
+		poi_to_spawn="RegionalAirport" 
+		tags="MiniTile,Airport">
+	</level_type>
+	
+	<level_type id="MiniTileExtConstructionSiteA" display_name="Mini: Construction Site A" size_x="1" size_z="2" subfolder="MiniTileExt/ConstructionSiteA"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="25"
+		description="A midsize area of abandoned construction buildings, at least one large highrise crane, and then lots of other worksite items, all surrounded by a small weak fence."
+		tags="MiniTile">
+	</level_type>
+
+	<level_type id="MiniTileExtConstructionSiteB" display_name="Mini: Construction Site B" size_x="2" size_z="1.5" subfolder="MiniTileExt/ConstructionSiteB"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="25"
+		description="A smaller area of one or two abandoned construction buildings at most, only sometimes a big crane, and then mainly a focus on worksite items and empty wasted space and trash surrounded by a small weak fence."
+		tags="MiniTile">
+	</level_type>
+
+	<level_type id="MiniTileExtCommStationA" display_name="TILE: Comm Station A" size_x="10" size_z="10" subfolder="MiniTileExt/CommStationA"
+		is_mini_skeleton="true" is_for_filling_hole_tiles="true"
+		description="Lots of communications equipment for talking across the planet, and to near and deep space."
+		poi_to_spawn="CommStation" 
+		tags="MiniTile,Comms">
+	</level_type>
+
+	<level_type id="MiniTileExtCryopolisA" display_name="TILE: Cryopolis A" size_x="10" size_z="10" subfolder="MiniTileExt/CryopolisA"
+		is_mini_skeleton="true" is_for_filling_hole_tiles="true"
+		description="A larger form of cryogenic-focused location, surrounded by scary walls to keep out intruders. Cryotech, nanotech, general science, and some military presence."
+		poi_to_spawn="Cryopolis" 
+		tags="MiniTile,MilitaryBase">
+	</level_type>
+
+	<level_type id="MiniTileExtDeepSpaceRadioTelescopeA" display_name="TILES: Deep Space Radio Telescope A" size_x="20" size_z="20" subfolder="MiniTileExt/DeepSpaceRadioTelescopeA"
+		is_mini_skeleton="true" is_key_macro_tile="true"
+		description="The giant radio telescope is the centerpiece of the tile, for scientific research purposes, and other interesting related scientific buildings and equipment surround it."
+		poi_to_spawn="ScientificRadioTelescope" 
+		tags="MiniTile,Comms">
+	</level_type>
+	
+	<level_type id="MiniTileExtFarmA" display_name="TILE: Farm A" size_x="10" size_z="10" subfolder="MiniTileExt/FarmA"
+		is_mini_skeleton="true" is_for_filling_hole_tiles="true"
+		description="A larger form of farm. Any trees or vegetation should be added via decoration zones."
+		poi_to_spawn="Farm" 
+		tags="MiniTile,Farm">
+	</level_type>
+
+	<level_type id="MiniTileExtFarmB" display_name="Mini: Farm B" size_x="2" size_z="1.5" subfolder="MiniTileExt/FarmB"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="100"
+		description="A smaller form of farm. Any trees or vegetation should be added via decoration zones."
+		poi_to_spawn="FarmMini" 
+		tags="MiniTile,Farm">
+	</level_type>
+
+	<level_type id="MiniTileExtHomelessA" display_name="Mini: Homeless A" size_x="2" size_z="1.5" subfolder="MiniTileExt/HomelessA"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="100"
+		description="A small form of homeless living area. Meant for being tucked into small spaces, vegetation may be added after the fact."
+		tags="MiniTile,Homeless">
+	</level_type>
+
+	<level_type id="MiniTileExtHomelessB" display_name="Mini: Homeless B" size_x="1" size_z="1" subfolder="MiniTileExt/HomelessB"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="100"
+		description="An even smaller form of homeless living area. Meant for being tucked into small spaces, vegetation may be added after the fact."
+		tags="MiniTile,Homeless">
+	</level_type>
+	
+	<level_type id="MiniTileExtMilitaryBaseA" display_name="TILE: Military Base A" size_x="10" size_z="10" subfolder="MiniTileExt/MilitaryBaseA"
+		is_mini_skeleton="true" is_for_filling_hole_tiles="true"
+		description="A larger form of military base. Should be surrounded by walls, and any roads are internal. Any trees or vegetation should be added via decoration zones."
+		poi_to_spawn="MilitaryBaseNormal" 
+		tags="MiniTile,MilitaryBase">
+	</level_type>
+
+	<level_type id="MiniTileExtMilitaryBaseB" display_name="Mini: Military Base B" size_x="2" size_z="1.5" subfolder="MiniTileExt/MilitaryBaseB"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="100"
+		description="A smaller form of military base. Should be surrounded by walls, and any roads are internal. Any trees or vegetation should be added via decoration zones."
+		poi_to_spawn="MilitaryBaseMini" 
+		tags="MiniTile,MilitaryBase">
+	</level_type>
+
+	<level_type id="MiniTileExtMilitaryBaseLrgA" display_name="TILES: Military Base Lrg A" size_x="20" size_z="20" subfolder="MiniTileExt/MilitaryBaseLrgA"
+		is_mini_skeleton="true" is_key_macro_tile="true"
+		description="A giant form of military base. Should be surrounded by walls, and any roads are internal. Any trees or vegetation should be added via decoration zones."
+		poi_to_spawn="MilitaryBaseLarge" 
+		tags="MiniTile,MilitaryBase">
+	</level_type>
+
+	<level_type id="MiniTileExtNuclearSiloA" display_name="TILES: Nuclear Silo A" size_x="20" size_z="20" subfolder="MiniTileExt/NuclearSiloA"
+		is_mini_skeleton="true" is_key_macro_tile="true"
+		description="A large missile silo for launching nuclear weapons."
+		poi_to_spawn="NuclearSilo" 
+		tags="MiniTile,MilitaryBase,NuclearSilo">
+	</level_type>
+
+	<level_type id="MiniTileExtMiningAndScienceA" display_name="TILE: Mining And Science A" size_x="10" size_z="10" subfolder="MiniTileExt/MiningAndScienceA"
+		is_mini_skeleton="true" is_for_filling_hole_tiles="true"
+		description="A midsize form of mining mixed with science buildings (cryogenics, nanotech, crop research, whatever else). Should be surrounded by walls, and any roads are internal. Any trees or vegetation should be added via decoration zones.
+		
+Oil, natural gas, and helium mining bits should be absent here. Some communications buildings would also be a great addition."
+		poi_to_spawn="MiningAndScience" 
+		tags="MiniTile,OtherMining">
+	</level_type>
+
+	<level_type id="MiniTileExtOilMiningA" display_name="TILE: Oil Mining A" size_x="10" size_z="10" subfolder="MiniTileExt/OilMiningA"
+		is_mini_skeleton="true" is_for_filling_hole_tiles="true"
+		description="A larger form of oil mining. Should be surrounded by walls, and any roads are internal. Any trees or vegetation should be added via decoration zones."
+		poi_to_spawn="MiningOil" 
+		tags="MiniTile,OilMining">
+	</level_type>
+
+	<level_type id="MiniTileExtPowerNuclearA" display_name="TILE: Power Nuclear A" size_x="10" size_z="10" subfolder="MiniTileExt/PowerNuclearA"
+		is_mini_skeleton="true" is_for_filling_hole_tiles="true"
+		description="A larger nuclear power plant, with multiple cooling towers, a wall around its complex, battery backups, power lines, and other supporting buildings."
+		poi_to_spawn="PowerNuclearLarge" 
+		tags="MiniTile,Power">
+	</level_type>
+
+	<level_type id="MiniTileExtPowerNuclearB" display_name="Mini: Power Nuclear B" size_x="2" size_z="2" subfolder="MiniTileExt/PowerNuclearB"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="5"
+		description="A smaller nuclear power plant, with multiple cooling towers, a wall around its complex, battery backups, power lines, and other supporting buildings."
+		poi_to_spawn="PowerNuclearSmall" 
+		tags="MiniTile,Power">
+	</level_type>
+
+	<level_type id="MiniTileExtPowerWindA" display_name="Mini: Power Wind A" size_x="2" size_z="2" subfolder="MiniTileExt/PowerWindA"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="15"
+		description="A small wind farm, plus various equipment, behind a wall."
+		poi_to_spawn="PowerWind" 
+		tags="MiniTile,Power">
+	</level_type>
+
+	<level_type id="MiniTileExtPowerWindB" display_name="Mini: Power Wind B" size_x="1" size_z="1.5" subfolder="MiniTileExt/PowerWindB"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="15"
+		description="A very small wind farm and the other equipment to run them, all behind a wall."
+		poi_to_spawn="PowerWind" 
+		tags="MiniTile,Power">
+	</level_type>
+
+	<level_type id="MiniTileExtPowerSolarA" display_name="Mini: Power Solar" size_x="1" size_z="1.5" subfolder="MiniTileExt/PowerSolarA"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="15"
+		description="A small solar farm, plus various equipment, behind a wall."
+		poi_to_spawn="PowerSolar" 
+		tags="MiniTile,Power">
+	</level_type>
+
+	<level_type id="MiniTileExtSlumA" display_name="Mini: Slum A" size_x="2" size_z="1.5" subfolder="MiniTileExt/SlumA"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="5"
+		description="A small form of slums living area. Ideally the slum shacks will stack on top of normal buildings, and a mix of broken buildings, bars, motels, and so forth should round things out.
+		
+Also some NIMBY things like industrial bits, waste disposal, etc, should make an appearance."
+		tags="MiniTile,Slum">
+	</level_type>
+
+	<level_type id="MiniTileExtSlumB" display_name="Mini: Slum B" size_x="2" size_z="1" subfolder="MiniTileExt/SlumB"
+		is_mini_skeleton="true" weight_as_general_purpose_region_filler="5"
+		description="An even smaller form of slums living area. Ideally the slum shacks will stack on top of normal buildings, and a mix of broken buildings, bars, motels, and so forth should round things out."
+		tags="MiniTile,Slum">
+	</level_type>
+
+	<level_type id="MiniTileExtSpaceport" display_name="TILES: Spaceport" size_x="30" size_z="30" subfolder="MiniTileExt/Spaceport"
+		is_mini_skeleton="true" is_key_macro_tile="true"
+		description="An area for shipping things to space, and manufacturing the things needed to ship to space. Should be surrounded by walls, and any roads are internal. Any trees or vegetation should be added via decoration zones."
+		poi_to_spawn="Spaceport" 
+		tags="MiniTile,Spaceport">
+	</level_type>
+
+	<level_type id="AncientRuins" display_name="TILE: Ancient Ruins" size_x="10" size_z="10" subfolder="MiniTileExt/AncientRuins"
+		is_mini_skeleton="true" is_key_macro_tile="true" biome="CutTreesThick"
+		description="Ruins for outside the boundaries of the city."
+		tags="MiniTile,Biome_AncientRuins">
+	</level_type>
+	
+</root>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Various Murders
+		**************************************************************************-->
+
+	<project id="Ch0_GroupMurder" display_name="Escape Pursuers" is_minor_project="true"
+		description="A criminal syndicate is shadowing you in the wake up your mass murder."
+		strategy_tip=""
+		icon_name="SomethingBoltDown" cohort="Homeless" trigger_from_event_note="There are signs of Megacorp-level security throughout the lab. If you kill people here, your android body will be marked defective."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterZero">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Prologue" sort_index="10" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Finish the prologue."
+			skip_requirements_display="true" skip_progress_display="true" >
+		</available_outcome>
+	</project>
+
+	<project id="Ch0_MurderedOneColleague" display_name="Lose SecForce Tail" is_minor_project="true" is_silently_triggered_by_event="true"
+		description="SecForce seems to be following you for reasons unrelated to your transgressions."
+		strategy_tip="SecForce is the brutal security apparatus of the MegaCorp that owns this part of the world; it is operated in part by the federated corporations that exist under the MegaCorp."
+		icon_name="SW_PoliceBadge" cohort="Homeless"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterZero">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Prologue" sort_index="10" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Finish the prologue."
+			skip_requirements_display="true" skip_progress_display="true" >
+		</available_outcome>
+	</project>
+
+	<project id="Ch0_CasualSyndicateFollowers" display_name="Lose Syndicate Tail" is_minor_project="true" is_silently_triggered_by_event="true"
+		description="A criminal syndicate is shadowing you for reasons that are unclear."
+		strategy_tip=""
+		icon_name="CleanTriangle54" cohort="Homeless"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterZero">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Prologue" sort_index="10" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Finish the prologue."
+			skip_requirements_display="true" skip_progress_display="true" >
+		</available_outcome>
+	</project>
+
+	<!--This is for the start of chapter one or two, and is here to help start the game out.
+		It's also for when you are starting a new timeline.-->
+	<project id="Ch1Or2_StartingTimelineLater" display_name="Escape Pursuers" is_minor_project="true" is_silently_triggered_by_event="true"
+		description="What did you DO!? This is madness."
+		strategy_tip="Don't try to run -- you'll never make it. Build. Build like your life depends on it, because it does."
+		icon_name="SomethingBoltDown" cohort="Homeless"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterZero">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Prologue" sort_index="10" />
+		
+		<available_outcome id="Sole" display_name="Build The Tower" on_complete="ProjectComplete"
+			description="You've already acquired the NanoSeed, so now it's time to put it to use."
+			skip_requirements_display="true" skip_progress_display="true" >
+		</available_outcome>
+	</project>
+	
+</root>

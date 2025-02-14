@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Human Designs are skipped-->
+	<unlock id="Engineering101" display_name="Engineering 101" unit_type="Technician"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_dialog_complete="Ch1_AGIResearcherWarning3" immediate_unlock_inspiration_type="AGIResearcherGift"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+
+	<unlock id="Engineering201" display_name="Engineering 201" unit_type="SeniorTechnician"
+		turns_to_unlock="4" required_intelligence_class="3" immediately_unlocked_by_city_flag="HasEstablishedShellCompany" immediate_unlock_inspiration_type="WorldExperience">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="ArtificialCondition" display_name="Artificial Condition" unit_type="CombatUnit"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_dialog_complete="Ch1_AGIResearcherWarning3" immediate_unlock_inspiration_type="AGIResearcherGift"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+
+	<unlock id="ItComesInRed" display_name="It Comes In Red" unit_type="CombatUnitRed"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<prerequisite unlock="ArtificialCondition" required="true" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+
+	<unlock id="RememberingRed" display_name="Remembering Red" alt_icon_name="AN_AndroidHarbinger"
+		description="Reinvent the Red CombatUnit for use after the apocalypse."
+		turns_to_unlock="1" required_intelligence_class="1"
+		concept_type="MinorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+
+	<unlock id="CheapWorkmanship" display_name="Cheap Workmanship" unit_type="Nickelbot"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_dialog_complete="Ch1_AGIResearcherWarning3" immediate_unlock_inspiration_type="AGIResearcherGift"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+		
+	<!--Strength-->
+	<unlock id="Termination" display_name="Termination" unit_type="Predator"
+		turns_to_unlock="5" required_intelligence_class="3" auto_unlocks_if_intelligence_class_is_at_least="3" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="MercurialForm" display_name="Mercurial Form" unit_type="LiquidMetal"
+		turns_to_unlock="9" required_intelligence_class="3">
+		<prerequisite unlock="Termination" required="true" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+
+	<unlock id="ShellProtector" display_name="Shell Protector" unit_type="Peacekeeper"
+		turns_to_unlock="4" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="AbsoluteUnit" display_name="Absolute Unit" unit_type="Sledge"
+		turns_to_unlock="2" required_intelligence_class="1" handbook_entry_on_direct_invent_1="InventingNovelAndroids" handbook_entry_on_direct_invent_2="AndroidArchetypes"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+	
+	<!--Agility-->
+	<unlock id="FastFist" display_name="Fast Fist" unit_type="Keanu"
+		turns_to_unlock="2" required_intelligence_class="2"
+		immediate_other_unlock_1="PocketSand" other_unlock_inspiration_type="FollowUpIdea">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="NightmareFuel" display_name="Nightmare Fuel" unit_type="Carver"
+		turns_to_unlock="4" required_intelligence_class="1"
+		immediate_other_unlock_1="PocketSand" other_unlock_inspiration_type="FollowUpIdea">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+
+	<unlock id="TheNightmareReturns" display_name="The Nightmare Returns" alt_icon_name="AN_AndroidCarver"
+		description="Reinvent the Carver for use after the apocalypse."
+		turns_to_unlock="1" required_intelligence_class="1"
+		concept_type="MinorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="IronicBlade" display_name="Ironic Blade" unit_type="Exator"
+		turns_to_unlock="4" required_intelligence_class="1"
+		immediate_other_unlock_1="PocketSand" other_unlock_inspiration_type="FollowUpIdea">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+
+	<unlock id="DoubleIrony" display_name="Double Irony" alt_icon_name="AN_AndroidExator"
+		description="Reinvent the Exator for use after the apocalypse."
+		turns_to_unlock="1" required_intelligence_class="1"
+		concept_type="MinorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+
+	<!--Infiltration-->
+	<unlock id="NondescriptArmor" display_name="Nondescript Armor" unit_type="PMCImpostor"
+		turns_to_unlock="2" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="ExMachina" display_name="Ex Machina" unit_type="FemaleMimic"
+		turns_to_unlock="9" required_intelligence_class="5">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="HumanStudy" display_name="Human Study" unit_type="MaleMimic"
+		turns_to_unlock="9" required_intelligence_class="5">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+
+	<!--Intelligence-->
+	<unlock id="NetWalking" display_name="Net Walking" unit_type="Mindrunner"
+		turns_to_unlock="1" required_intelligence_class="4" auto_unlocks_if_intelligence_class_is_at_least="4"
+		immediate_other_unlock_1="MissionHandler" immediate_other_unlock_2="PocketSand" other_unlock_inspiration_type="FollowUpIdea">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+		<prerequisite unlock="DigitalSystems" required="true" />
+	</unlock>
+	
+	<unlock id="DigitalSystems" display_name="Digital Systems" unit_type="Raven"
+		turns_to_unlock="2" required_intelligence_class="2"
+		immediate_other_unlock_1="InvasiveProcedures" immediate_other_unlock_2="ReactiveLanthanides" immediate_other_unlock_3="PocketSand" other_unlock_inspiration_type="FollowUpIdea"
+		auto_unlocks_if_skipping_chapter_one="true" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="TerrorTactics" display_name="Terror Tactics" unit_type="Harbinger"
+		turns_to_unlock="7" required_intelligence_class="1"
+		immediate_other_unlock_1="PocketSand" other_unlock_inspiration_type="FollowUpIdea">
+		<prerequisite unlock="DigitalSystems" required="true" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+
+	<unlock id="ReinforcedTerror" display_name="Reinforced Terror" alt_icon_name="AN_AndroidHarbinger"
+		description="Reinvent the Harbinger for use after the apocalypse."
+		turns_to_unlock="1" required_intelligence_class="1"
+		concept_type="MinorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="AndroidType" sort_index="100" />
+	</unlock>
+
+
+</root>

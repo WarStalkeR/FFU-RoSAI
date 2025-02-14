@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Defense
+	**********************************************************************************************************************************************-->
+	
+
+	<!--Physical
+	**********************************************************************************************************************************************-->
+
+	
+	<!--Mental
+	**********************************************************************************************************************************************-->
+
+	<equipment_type id="VehicleAdditionalCPU" display_name="Additional CPU"
+		icon_name="CleanSimple_SkillB017" slot_type="VehicularAugment"
+		description="Improves general engineering capabilities. Only useful if the unit is going to be engaged in that kind of work."
+		strategy_tip_optional="Androids under human control are often expected to fabricate replacements for themselves, so this is nothing new to you."
+		collections="VehicleAugments,HumanInvented,CPUs" intentionally_has_no_unlock="true" turns_required_to_equip="1">
+		<!--<initial_actor_data data_type="UnitCognition" value="20"/>-->
+		<initial_actor_data data_type="ActorEngineeringSkill" value="40"/>
+	</equipment_type>
+
+	<equipment_type id="VehicleOpticalProcessing" display_name="Optical Processing Priority"
+		icon_name="SF2_Camera_lens" slot_type="VehicularAugment"
+		description=""
+		strategy_tip_optional="This mod was common in the secret lab where you used to work."
+		collections="VehicleAugments,HumanInvented,OpticalProcessing" intentionally_has_no_unlock="true" turns_required_to_equip="2">
+		<initial_actor_data data_type="AttackRange" value="12"/>
+	</equipment_type>
+
+	<equipment_type id="VehicleDroneCommandCircuit" display_name="Drone Command Circuit"
+		icon_name="SK_Drone" slot_type="VehicularAugment"
+		description=""
+		strategy_tip_optional=""
+		collections="VehicleAugments" turns_required_to_equip="2">
+		<initial_actor_data data_type="VehicleDroneQuality" value="90"/>
+		<initial_actor_data data_type="UnitScavengingSkill" value="90"/>
+	</equipment_type>
+	
+	<!--Hacking
+	**********************************************************************************************************************************************-->
+
+	<!--Skills
+	**********************************************************************************************************************************************-->
+
+</root>

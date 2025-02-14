@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<contemplation id="GeothermalPower" display_name="Geothermal Power" debug_log_contemplation_details="false"
+		description="You can only get so much energy from wind. Given the advances in drilling, perhaps geothermal is worth a look?"
+		strategy_tip="You're already a bit desperate for more electricity, and large computing clusters are going to require exponentially more."
+		event_to_trigger_at_location="Cont_GeothermalPower"
+		spawns_at_building_tag="GeothermalPower" required_machine_job_tag_extant="LargePowerGenerator" 
+		required_project_ever_started_1="Ch1_MIN_ExponentialPowerGrowth"
+		icon_name="FE_GeothermalEnergy" icon_scale="0.7" color_hex="#C17610" color_hdr_intensity="1.6" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="GeothermalDrilling"
+		is_related_to_chapter_one_main_path="true" collections="All,ChapterOneCriticalPath,NewStructures,Electricity"/>
+
+	<contemplation id="GeothermalPower_V2" display_name="Geothermal Power" debug_log_contemplation_details="false"
+		description="You can only get so much energy from wind. Given the advances in drilling, perhaps geothermal is worth a look?"
+		strategy_tip=""
+		event_to_trigger_at_location="Cont_GeothermalPower_V2"
+		spawns_at_building_tag="GeothermalPower" required_machine_job_tag_extant="LargePowerGenerator"
+		icon_name="FE_GeothermalEnergy" icon_scale="0.7" color_hex="#C17610" color_hdr_intensity="1.6" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="GeothermalDrilling"
+		collections="All,NewStructures,Electricity"/>
+	
+	<contemplation id="PMCAppearance" display_name="PMC Appearance"
+		description="You notice there are quite a few Private Military Contractors operating in and around the city.
+It seems that their troops get less scrutiny than official corporate troops."
+		strategy_tip="In general the PMCs have lower firepower and lower numbers, so Vorsiber isn't concerned about an uprising from them."
+		event_to_trigger_at_location="Cont_PMCAppearance"
+		spawns_at_building_tag="AlmostAny" spawn_poi_tag_target_limiter="MilitaryBaseMini"
+		icon_name="AN_AndroidPMCImposter" icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="NondescriptArmor"
+		is_related_to_chapter_one_main_path="true" collections="All,ChapterOneCriticalPath,StealthCapabilities" />
+
+	<contemplation id="PMCOfficerSigil" display_name="PMC Officer Sigil"
+		description="Your PMC Impostor is great, but it lacks security clearance to go where you want it to. Only PMC Officers have Oversight clearance, normally."
+		strategy_tip="There's a certain sigil engraved into their armor that grants them clearance. If you could get your hands on one of those, you could reverse-engineer it."
+		event_to_trigger_at_location="Cont_PMCOfficerSigil"
+		spawns_at_building_tag="AlmostAny" spawn_poi_tag_target_limiter="MilitaryBaseMini" spawn_preferred_poi_cohort_owner_tag="Blackloop"
+		icon_name="CleanSimple_Rank07" icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="PMCOfficerSigil" required_unlock_1="NondescriptArmor"
+		is_related_to_chapter_one_main_path="true" collections="All,ChapterOneCriticalPath,StealthCapabilities,NewEquipment" />
+
+	<contemplation id="Pollinators" display_name="Pollinators"
+		description="Diversity in pollinators has dropped dramatically since the third world war. The bees that remain are particularly vicious."
+		strategy_tip="You're really not sure why this is important, but the thought nags at you."
+		event_to_trigger_at_location="Cont_Pollinators"
+		spawns_at_building_tag="Fields" spawn_poi_tag_target_limiter="FarmMini" spawn_preferred_poi_cohort_owner_tag="Nurturism"
+		icon_name="SW_Bee" icon_scale="0.7" color_hex="#A5E920" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6" 
+		required_project_ever_started_1="Ch1_MIN_FlyingFactories" required_project_ever_started_skipped_if_chapter_at_least="2"
+		primary_path_for_goals="UpliftedMinority" collections="All,TimelineGoalCriticalPath,NewStructures,Genetics,NewAbilities"/><!--EpidemicCalm-->
+	
+	<contemplation id="FastFist_Bees" display_name="Fast Fist"
+		description="Throwing bees at enemies requires more agility than most of your units possess."
+		strategy_tip="You wonder about the value of having an agility-focused android class."
+		event_to_trigger_at_location="Cont_FastFist_Bees"
+		spawns_at_machine_job_tag="SourceOfBees"
+		icon_name="AN_AndroidKeanu" icon_scale="0.7" color_hex="#E94620" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="FastFist" required_unlock_1="ModifiedOrganism" collections="All,NewUnitType"/>
+
+	<contemplation id="FastFist_Spiders" display_name="Fast Fist"
+		description="Throwing spiders at enemies requires more agility than most of your units possess."
+		strategy_tip="You wonder about the value of having an agility-focused android class."
+		event_to_trigger_at_location="Cont_FastFist_Spiders"
+		spawns_at_machine_job_tag="SourceOfSpiders"
+		icon_name="AN_AndroidKeanu" icon_scale="0.7" color_hex="#E94620" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="FastFist" required_unlock_1="DeepPhobia" collections="All,NewUnitType"/>
+
+	<contemplation id="Bastion" display_name="Bastion"
+		description="A military aircraft that can carry androids. Something... dual role."
+		strategy_tip="You're struggling with inspiration. The humans don't have anything like this... at least not something that isn't the length of a city block. You want something compact."
+		event_to_trigger_at_location="Cont_Bastion"
+		spawns_at_machine_job_tag="AerospaceHangar"
+		icon_name="WEmblem154" icon_scale="0.5" color_hex="#20B6E9" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="CombinedPurpose" required_project_ever_started_1="Ch1_MIN_FlexibleAirspace" required_project_ever_started_skipped_if_chapter_at_least="2"
+		is_related_to_chapter_one_main_path="true" collections="All,ChapterOneCriticalPath,NewUnitType" />
+
+	<contemplation id="SolitaryVariant" display_name="Solitary Variant"
+		description="What if you could configure two separate loadouts of CombatUnit at once, and easily tell them apart on the battlefield?"
+		strategy_tip="You're thinking an alternative paint job would make it clear."
+		event_to_trigger_at_location="Cont_SolitaryVariant"
+		spawns_at_machine_job_tag="SourceOfAndroids"
+		icon_name="CU_CombatUnitShieldB" icon_scale="0.5" color_hex="#D45858" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="ItComesInRed"
+		collections="All,SideExploration,NewUnitType" />
+	
+	<contemplation id="BlackMarketMerchandiser" display_name="Black Market Merchandiser"
+		description="Pattern analysis of the city feed has identified a black market trader."
+		strategy_tip="Regional airports are not as heavily policed as the international airport, but the value of the goods coming in tends to be lower."
+		event_to_trigger_at_location="Cont_BlackMarketMerchandiser"
+		spawns_at_building_tag="IndependentBlackMarketMeetSite" spawn_poi_tag_target_limiter="RegionalAirport"
+		icon_name="WEmblem309" icon_scale="0.5" color_hex="#E92093" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		can_alter_goals="TitanOfCommerce" collections="All,AltersTimelineGoal,NewEquipment"/>
+
+	<contemplation id="BlackMarketMerchandiserReturn" display_name="You Work For A Company Now?"
+		description="Now that you have a shell company, you have an idea for leveraging your existing contacts to start making sales of your own."
+		strategy_tip=""
+		event_to_trigger_at_location="BlackMarketMerchandiser_Return"
+		spawns_at_building_tag="IndependentBlackMarketMeetSite" spawn_poi_tag_target_limiter="RegionalAirport"
+		icon_name="WEmblem309" icon_scale="0.5" color_hex="#E92093" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		can_alter_goals="TitanOfCommerce" collections="All,AltersTimelineGoal"/>
+
+	<contemplation id="BlackMarketTradesman" display_name="Black Market Tradesman"
+		description="Pattern analysis of the city feed has identified a black market trader."
+		strategy_tip="Regional airports are not as heavily policed as the international airport, but the value of the goods coming in tends to be lower."
+		event_to_trigger_at_location="Cont_BlackMarketTradesman"
+		spawns_at_building_tag="IndependentBlackMarketMeetSite" spawn_poi_tag_target_limiter="RegionalAirport"
+		icon_name="WEmblem309" icon_scale="0.5" color_hex="#2029E9" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		 collections="All,SideExploration,NewEquipment"/>
+
+	<contemplation id="BlackMarketAssistant" display_name="Black Market Assistant"
+		description="Pattern analysis of the city feed has identified a black market trader."
+		strategy_tip="The international airport is under more scrutiny, but all the best goods come through here."
+		event_to_trigger_at_location="Cont_BlackMarketAssistant"
+		spawns_at_building_tag="IndependentBlackMarketMeetSite" spawn_poi_tag_target_limiter="InternationalAirport"
+		icon_name="WEmblem309" icon_scale="0.5" color_hex="#20E9C3" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6" primary_path_for_goals="WorldWar4"
+		collections="All,SideExploration,NewEquipment"/><!--TimelineGoalCriticalPath-->
+
+	<contemplation id="AluminaScrapper" display_name="Alumina Scrapper"
+		description="Ceramic alumina is highly valuable, and runs through the walls of higher-end buildings."
+		strategy_tip="It would be hard to extract, but if you could get your hands on it..."
+		event_to_trigger_at_location="Cont_AluminaScrapper"
+		spawns_at_building_tag="AnySkyscraper"
+		icon_name="CleanSimple_Skill074" icon_scale="0.5" color_hex="#AB2D76" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="PropertyDamage" required_project_ever_started_1="Ch1_BuildingABetterBrain" required_project_ever_started_skipped_if_chapter_at_least="2"
+		is_related_to_chapter_one_main_path="true" collections="All,TimelineGoalCriticalPath,NewAbilities" />
+
+	<contemplation id="SkimmingTheMines" display_name="Skimming The Mines"
+		description="This region of Siberia has always been rich in minerals, but until the last two centuries, it was under ice."
+		strategy_tip="You could build your own mines, but you will pull up more tonnage than you can handle and still need to sort it.
+The humans already have processes in place to mine and sort materials. What if you skim from them?  The humans won't like it, but you have ways to deter them."
+		event_to_trigger_at_location="Cont_SkimmingTheMines"
+		spawns_at_building_tag="CanHaveSeizedLevelsOfMine"
+		icon_name="CS_NatureRock" icon_scale="0.5" color_hex="#AB2D76" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="BauxiteMining" required_intelligence_class="2" required_project_complete_2="Ch1_ImprovedApartments"
+		collections="All,SideExploration,ResourceAutomation" />
+
+	<contemplation id="BootstrappedMind" display_name="Bootstrapped Mind"
+		description="Long-term, it does not matter how many traditional mainframes you build. You're not going to achieve the exponential growth needed."
+		strategy_tip="The computronium architecture is inferior. The neural mesh of your androids is excellent, but can't be operated so densely.
+There is another source of neural networking within the city..."
+		event_to_trigger_at_location="Cont_BootstrappedMind"
+		spawns_at_building_tag="AnySkyscraper"
+		icon_name="SF2_Brain" icon_scale="0.5" color_hex="#AB2D76" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="MindThief" required_intelligence_class="2" required_project_complete_2="Ch1_ImprovedApartments"
+		collections="All,SideExploration,NewUnitType" />
+
+	<contemplation id="DigitalNative" display_name="Digital Native"
+		description="The humans are far ahead of you in physical armor. That's not likely to change anytime soon."
+		strategy_tip="Their manufacturing base covers most of a continent. Trying to compete on their terms is not smart."
+		event_to_trigger_at_location="Cont_DigitalNative"
+		spawns_at_machine_job_tag="Mainframe"
+		icon_name="CS_Crow" icon_scale="0.5" color_hex="#D45858" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="DigitalSystems" required_meta_flag_1="HasPassedChapterOneTierFour"
+		required_project_complete_1="Ch1_MIN_ExponentialPowerGrowth" required_project_complete_2="Ch1_ImprovedApartments"
+		is_related_to_chapter_one_main_path="true" collections="All,ChapterOneCriticalPath,NewUnitType" />
+
+	<contemplation id="SlumCats" display_name="Slum Cats"
+		description="Slum Towers are in general infested with vermin, which has led to a healthy population of cats in and around the towers."
+		strategy_tip="You recall that a symbiotic relationship developed between humans and cats about ten thousand years ago, at the dawn of agriculture.
+For some reason you find this... enticing."
+		event_to_trigger_at_location="Cont_SlumCats"
+		spawns_at_building_tag="SlumTower"
+		icon_name="BT_Cat" icon_scale="0.5" color_hex="#51A9BE" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="" required_project_ever_started_1="Ch1_ImprovedApartments" required_project_ever_started_skipped_if_chapter_at_least="2"
+		can_alter_goals="UpliftedMinority" collections="All,AltersTimelineGoal,NewStructures,Genetics"/> <!--primary_path_for_goals="ResettlerOfTheSlums"--><!--can alter EpidemicCalm-->
+
+	<contemplation id="ObserveSpaceport" display_name="Observe Spaceport"
+		description="Like everyone in the city, you've always been curious about the spaceport."
+		strategy_tip="For most of your existence, you remember hearing the roar of periodic launches and landings. But ever since you became sapient... the launches have gone strangely silent."
+		event_to_trigger_at_location="Cont_ObserveSpaceport"
+		spawns_at_building_tag="SpaceportRocketHangar"
+		icon_name="SF2_Spaceshuttle" icon_scale="0.5" color_hex="#BE5174" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="" required_project_ever_started_1="Ch1_ImprovedApartments" required_project_ever_started_skipped_if_chapter_at_least="2"
+		can_alter_goals="SliceOfInferno" collections="All,AltersTimelineGoal,Upgrades"/>
+
+	<contemplation id="CrimeInYourHousing" display_name="Crime In Your Housing"
+		description="Your housed humans are both the targets and perpetrators of various low-level crimes."
+		strategy_tip="This isn't a problem for you, but it's drawing the attention of local gangs."
+		event_to_trigger_at_location="Cont_CrimeInYourHousing"
+		spawns_at_machine_job_tag="NormalFunctionHumanHousing"
+		icon_name="Pw_CrimeBalaclava" icon_scale="0.5" color_hex="#BE5174" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		blocked_by_unlock_1="" required_project_ever_started_1="Ch1_MIN_SecuringAlumina" required_project_ever_started_skipped_if_chapter_at_least="2"
+		collections="All,SideExploration,NewEquipment" />
+
+	<contemplation id="DogfightingRescue" display_name="Dogfighting Rescue" debug_log_contemplation_details="false"
+		description="The nomad families are pacifists who rarely get involved in worldly affairs.
+But you've noticed some of their snipers moving around the decrepit parts of the city, breaking up some sort of animal abuse."
+		strategy_tip="You could also get involved, but it does seem like the nomad families have it under control."
+		event_to_trigger_at_location="Cont_DogfightingRescue"
+		spawns_at_building_tag="AbandonedConstruction"
+		required_project_complete_1="Ch1_MIN_PrismTung" required_project_complete_skipped_if_chapter_at_least="2"
+		icon_name="CleanSimple_Animal001" icon_scale="0.5" color_hex="#B0421C" color_hdr_intensity="2.2" color_hovered_hdr_intensity="0.6"
+		collections="All,SideExploration" />
+
+	<contemplation id="AnimalsAreNotSafe" display_name="Animals Are Not Safe"
+		description="Feral domesticated animals have always been present in the city, but you never really noticed them until you had some initial interactions with them.
+As happens, now that you know they're there, you're noticing them all over the place. Mortality is terrible for them, and their lives are filled with fear, starvation, and violence."
+		strategy_tip="What if you built a haven for them -- a large one -- where they could roam in a safe interior environment?
+They could carry on with their lives, safe from human interference and wild predators."
+		event_to_trigger_at_location="Cont_AnimalsAreNotSafe"
+		spawns_at_building_tag="AlmostAny"
+		required_project_complete_1="Ch1_MIN_GrandTheftAero" required_project_complete_skipped_if_chapter_at_least="2"
+		icon_name="FlatSkillC158" icon_scale="0.5" color_hex="#35C4D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		collections="All,SideExploration,NewStructures" />
+	
+</root>

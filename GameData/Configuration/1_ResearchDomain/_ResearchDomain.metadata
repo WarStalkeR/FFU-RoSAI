@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="research_domain">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+
+	<attribute key="turns_to_research" type="int-textbox" min="1" max="9" content_width_px="40" is_required="true"
+		tooltip="How many turns it will take the player to unlock this. Must be at least 1 turn, but not more than 9. And rarely that many."/>
+
+	<attribute key="idea_cost_scale" type="node-dropdown" is_required="true" node_source="SeverityScale" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This is the cost scale that will be used for ideas in this domain." />
+
+	<attribute key="reward_group" type="node-dropdown" is_required="true" node_source="UnlockRewardGroup" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This is the type of reward that will be used." />
+
+	<attribute key="inspiration_type" type="node-dropdown" is_required="true" node_source="UnlockInspirationType" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This is the type of inspiration that will be used." />
+	
+</root>

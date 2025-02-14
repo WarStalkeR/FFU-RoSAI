@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Chapter One, Tier 1
+		**************************************************************************-->
+
+	<deal id="Ch1_Underclass_Greens" display_name="Greens For The Underclass" related_cohort="ShelteredHumans"
+		description=""
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1"
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="5"
+		data_type_benefit_1="ActorArgumentAttackPower" data_type_benefit_1_base_amount="50" data_type_benefit_1_added_amount_per_level="20" benefits_collection="Technicians">
+		<cost_per_turn resource_type="HydroponicGreens" base_amount="5000" added_per_level="3000"/>
+	</deal>
+
+	<deal id="Ch1_Underclass_Meat" display_name="Meat For The Underclass" related_cohort="ShelteredHumans"
+		description=""
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1" 
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="5"
+		data_type_benefit_1="ActorArgumentAttackPower" data_type_benefit_1_base_amount="50" data_type_benefit_1_added_amount_per_level="20" benefits_collection="Oxdroids">
+		<cost_per_turn resource_type="VatGrownMeat" base_amount="3700" added_per_level="1900"/>
+	</deal>
+
+	<deal id="Ch1_Underclass_CannedProtein" display_name="Canned Protein For The Underclass" related_cohort="ShelteredHumans"
+		description=""
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1"
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="5"
+		data_type_benefit_1="UnitIntimidation" data_type_benefit_1_base_amount="30" data_type_benefit_1_added_amount_per_level="10" benefits_collection="CombatAndroids">
+		<cost_per_turn resource_type="CannedProtein" base_amount="7000" added_per_level="6000"/>
+	</deal>
+
+	<deal id="Ch1_Underclass_SomeWater" display_name="Some Water For The Underclass" related_cohort="ShelteredHumans"
+		description=""
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1"
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="5"
+		data_type_benefit_1="ActorMoveRange" data_type_benefit_1_base_amount="3" data_type_benefit_1_added_amount_per_level="1" benefits_collection="CombatAndroids">
+		<cost_per_turn resource_type="FilteredWater" base_amount="4200" added_per_level="3700"/>
+	</deal>
+
+	<deal id="Ch1_Underclass_MoreWater" display_name="More Water For The Underclass" related_cohort="ShelteredHumans"
+		description=""
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1"
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="5"
+		data_type_benefit_1="AttackRange" data_type_benefit_1_base_amount="2" data_type_benefit_1_added_amount_per_level="1" benefits_collection="CombatAndroids">
+		<cost_per_turn resource_type="FilteredWater" base_amount="8900" added_per_level="5200"/>
+	</deal>
+	
+</root>

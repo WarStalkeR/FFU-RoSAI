@@ -1,0 +1,1484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Housing First Chain
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch2_HousingAgencyAnger" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="HousingAgency"/>
+			<gate_by_city required_project_active="Ch2_MIN_SolveHomelessness" />
+		</periodic_data>
+
+		<unit id="Sharpshooter" to_spawn="GangSharpshooter" stance_to_start_in="GangFrustrationAtAI" extra_aggro_against_machine_structures="HousingAgency" extra_aggro_against_machine_structures_amount="400"
+			should_be_specific_cohort="WillOfThePeople"
+			min_to_spawn="2" max_to_spawn="3" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="28"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" dialog_if_forced_1="Ch1_HousingGang_First" blocked_if_dialog_complete="Ch2_HousingGang_First_Win"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Breacher" to_spawn="RebelBreacher" stance_to_start_in="RebelAntiAIOp" extra_aggro_against_machine_structures="HousingAgency" extra_aggro_against_machine_structures_amount="80000"
+			should_be_specific_cohort="NOAI"
+			min_to_spawn="2" max_to_spawn="3" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="16"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" dialog_if_forced_1="Ch1_HousingReb_First"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	
+	</npc_manager>
+
+	<!--Prisoner Doom-Related Managers
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="HasActivePrisonerDrive_Mech1A" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="Housing"
+			threat_radius="100" home_radius="15">
+			<seed_in_district district_tag="PoorAreas" min_distance_from_machine_areas="15"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="HasActivePrisonerDrive" />
+		</periodic_data>
+		<unit id="0" to_spawn="MechMachinistV2" stance_to_start_in="Corpo_ImprisoningLowerClassCitizens"
+			should_be_specific_cohort="FalsomDetention" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="false" should_hard_despawn_on_manager_blocked="false"
+			units_warp_out_after_turns="5" units_warp_out_after_turns_percent_chance="50" lang_key_for_warp_out_after_turns="CollectionComplete"/>
+
+	</npc_manager>
+
+	<npc_manager id="HasActivePrisonerDrive_Mech1B" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="Housing"
+			threat_radius="100" home_radius="15">
+			<seed_in_district district_tag="PoorAreas" min_distance_from_machine_areas="15"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="HasActivePrisonerDrive" />
+		</periodic_data>
+		<unit id="0" to_spawn="MechMachinistV2" stance_to_start_in="Corpo_ImprisoningLowerClassCitizens"
+			should_be_specific_cohort="FalsomDetention" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="false" should_hard_despawn_on_manager_blocked="false"
+			units_warp_out_after_turns="5" units_warp_out_after_turns_percent_chance="50" lang_key_for_warp_out_after_turns="CollectionComplete"/>
+
+	</npc_manager>
+
+	<npc_manager id="HasActivePrisonerDrive_Mech2A" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="Housing"
+			threat_radius="100" home_radius="15">
+			<seed_in_district district_tag="PoorAreas" min_distance_from_machine_areas="15"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="HasActivePrisonerDrive" />
+		</periodic_data>
+
+		<unit id="0" to_spawn="MechMachinistV2" stance_to_start_in="Corpo_ImprisoningLowerClassCitizens"
+			should_be_specific_cohort="ShusoCorrections" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="false" should_hard_despawn_on_manager_blocked="false"
+			units_warp_out_after_turns="5" units_warp_out_after_turns_percent_chance="50" lang_key_for_warp_out_after_turns="CollectionComplete"/>
+
+	</npc_manager>
+
+	<npc_manager id="HasActivePrisonerDrive_Mech2B" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="Housing"
+			threat_radius="100" home_radius="15">
+			<seed_in_district district_tag="PoorAreas" min_distance_from_machine_areas="15"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="HasActivePrisonerDrive" />
+		</periodic_data>
+
+		<unit id="0" to_spawn="MechMachinistV2" stance_to_start_in="Corpo_ImprisoningLowerClassCitizens"
+			should_be_specific_cohort="ShusoCorrections" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="false" should_hard_despawn_on_manager_blocked="false"
+			units_warp_out_after_turns="5" units_warp_out_after_turns_percent_chance="50" lang_key_for_warp_out_after_turns="CollectionComplete"/>
+
+	</npc_manager>
+
+	<!--Space Nation Doom-Related Managers
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+	
+	<npc_manager id="HasActiveSpaceNationInvasion1A" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="Housing"
+			threat_radius="100" home_radius="15">
+			<seed_in_wasteland value="true"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="HasActiveSpaceNationInvasion" />
+		</periodic_data>
+		<unit id="0" to_spawn="SpaceNationFighter" stance_to_start_in="SpaceNationAirSupport"
+			should_be_specific_cohort="SpaceNationStrikeForce" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="7" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="false" should_hard_despawn_on_manager_blocked="false"
+			units_warp_out_after_turns="7" units_warp_out_after_turns_percent_chance="60" lang_key_for_warp_out_after_turns="ReturningToOrbit"/>
+
+		<unit id="1" to_spawn="SpaceNationBomber" stance_to_start_in="SpaceNationBombingRun"
+			should_be_specific_cohort="SpaceNationStrikeForce" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="7" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="false" should_hard_despawn_on_manager_blocked="false"
+			units_warp_out_after_turns="7" units_warp_out_after_turns_percent_chance="60" lang_key_for_warp_out_after_turns="ReturningToOrbit"/>
+
+	</npc_manager>
+
+	<!--CultistBombers Doom-Related Managers
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="HasActiveChildrenOfGaiaCultistSabotage" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="6" max_turns_between_activity="14"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_poi poi_tag="CultistTemple" min_distance_from_machine_areas="15"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="HasActiveChildrenOfGaiaCultistSabotage" />
+		</periodic_data>
+		<unit id="C" to_spawn="CultistBomber" stance_to_start_in="CultMachineSaboteur"
+			should_be_specific_cohort="ChildrenOfGaia" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="3" max_to_spawn="7" max_to_have_extant_across_spawns="80" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+	</npc_manager>
+
+
+	<!--Post-Apocalyptic Managers
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="SummonTheTitan" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="800">
+			<seed_in_district district_tag="Spaceport" min_distance_from_machine_areas="-1"/>
+			<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_SearchingForFriends" />
+		</periodic_data>
+		<unit id="0" to_spawn="MechTitan" stance_to_start_in="SpaceNationTitanWrath"
+			should_be_specific_cohort="SpaceNationStrikeForce" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="30" spawn_radius_relaxed_max="300" spawn_as_close_as_possible="true"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="true"
+			skip_ever_making_player_focus_on_these="false" should_hard_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<!--AGI Researcher Path Managers
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch2AGIEspia_Stealth"
+			cohort_tag_a="EspiaTelecom"
+			auto_marked_as_complete_if_skipping_chapter_one="false" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15"
+			target_action_over_time_investigation_type="Ch2AGIEspia_Stealth">
+			<gate_by_city minimum_chapter="2"/>
+		</periodic_data>
+		<unit id="A" to_spawn="SecForceHacker" stance_to_start_in="SecForceHackerIntrusionPrevention"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="3" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+
+	<npc_manager id="Ch2AGIEspia_Hacking"
+			cohort_tag_a="EspiaTelecom"
+			auto_marked_as_complete_if_skipping_chapter_one="false" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15"
+			target_action_over_time_investigation_type="Ch2AGIEspia_Hacking">
+			<gate_by_city minimum_chapter="2"/>
+		</periodic_data>
+		<unit id="A" to_spawn="SecForceIPSecurity" stance_to_start_in="SecForceSecuringIP"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+		<unit id="H" to_spawn="SecForceHacker" stance_to_start_in="SecForceHackerCounterHacker"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+
+	<npc_manager id="Ch2AGIOerlRescue_Stealth"
+			cohort_tag_a="OerlIntegrated"
+			auto_marked_as_complete_if_skipping_chapter_one="false" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="4" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15"
+			target_action_over_time_investigation_type="Ch2AGIOerlRescue_Stealth">
+			<gate_by_city minimum_chapter="2"/>
+		</periodic_data>
+		<unit id="A" to_spawn="SecForceHacker" stance_to_start_in="SecForceHackerIntrusionPrevention"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="4"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="3" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+		<unit id="MA" to_spawn="MilitaryAblator" stance_to_start_in="MilitaryShowOfForce"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="4"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="3" lang_key_for_extra_info="Mngr_Ch2_OerlSuspicion"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+		<unit id="G" to_spawn="Grenadier" stance_to_start_in="MilitaryShowOfForce"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="4"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="2" lang_key_for_extra_info="Mngr_Ch2_OerlSuspicion"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+
+
+	<!--Ch2_OerlAfterAGIResearchers
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch2_OerlAfterAGI_Dispatch" debug_log_manager_details="false">
+		<periodic_data 
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="8"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_mission_active="Ch2_OerlAfterAGIResearchers"/>
+		</periodic_data>
+		<unit id="StrongDetectives" to_spawn="SecForceDetectives" max_to_have_extant_across_spawns="6" max_to_ever_spawn_in_total="999" stance_to_start_in="SecForceTrackingFugitives"
+			should_be_specific_cohort="OerlIntegrated" max_security_clearance_of_seed_spot="3" meta_flag_on_damaged_by_player=""
+			min_to_spawn="1" max_to_spawn="3" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1.72" max_squad_size_multiplier="2.2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" mission_flag_on_damaged="DetectivesAttacked"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="WeakDetectives" to_spawn="SecForceDetectives" max_security_clearance_of_seed_spot="3" max_to_have_extant_across_spawns="9" max_to_ever_spawn_in_total="999" stance_to_start_in="SecForceTrackingFugitives"
+			should_be_specific_cohort="OerlIntegrated" meta_flag_on_damaged_by_player=""
+			min_to_spawn="2" max_to_spawn="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1.25" max_squad_size_multiplier="1.4"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" mission_flag_on_damaged="DetectivesAttacked"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitarySecuringArea"
+			should_be_specific_cohort="VorsiberEnforcement" max_security_clearance_of_seed_spot="3" max_to_ever_spawn_in_total="999"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+
+	<npc_manager id="Ch2_OerlAfterAGI_Mechs" debug_log_manager_details="false">
+		<periodic_data 
+			min_turns_between_activity="3" max_turns_between_activity="3"
+			max_security_clearance_of_seed_spot="3" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="8"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_mission_active="Ch2_OerlAfterAGIResearchers"/>
+		</periodic_data>
+		<unit id="0" to_spawn="MechPantherV2" stance_to_start_in="MilitarySecuringArea"
+			should_be_specific_cohort="OerlIntegrated" max_security_clearance_of_seed_spot="3"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" activity_display_max_to_spawn_as="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" spawn_as_close_as_possible="true"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="true"
+			skip_ever_making_player_focus_on_these="false" should_hard_despawn_on_manager_blocked="true"
+			should_soft_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+	
+	<npc_manager id="Ch2_OerlAfterAGI_RebelObserv" debug_log_manager_details="false">
+		<periodic_data 
+			min_turns_between_activity="4" max_turns_between_activity="12"
+			max_security_clearance_of_seed_spot="2" target_building_tag="Any"
+			threat_radius="50" home_radius="15">
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="4"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="12"/>
+			<gate_by_city minimum_chapter="0" required_mission_active="Ch2_OerlAfterAGIResearchers" blocked_by_mission_flag="RebelsTippedOff" blocked_by_city_flag="ChosePrintersOverID"/>
+		</periodic_data>
+		<unit id="U" to_spawn="RebelObserver" stance_to_start_in="RebelWatchdog"
+			should_be_specific_cohort="TheBleedingEye"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="0.9"
+			spawn_radius_min="9" lang_key_for_extra_info=""
+			spawn_radius_max="14" spawn_radius_relaxed_max="26" max_security_clearance_of_seed_spot="0" mission_flag_on_damaged="RebelsTippedOff"
+			should_hard_despawn_on_project_or_mission_complete="true" should_hard_despawn_on_manager_blocked="true"
+			dialog_to_show="" meta_flag_on_damaged_by_player=""/>
+	</npc_manager>
+	
+	<npc_manager id="Ch2_OerlAfterAGI_VorsiberSVP" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="1" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="6"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_mission_active="Ch2_OerlAfterAGIResearchers" blocked_by_mission_flag="RebelsTippedOff" blocked_by_mission_flag2="SVPAttacked"/>
+		</periodic_data>
+		<unit id="0" to_spawn="CorpoSVPMan" stance_to_start_in="SVP_ObservingFeds"
+			should_be_specific_cohort="VorsiberCivicAuthority" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.72" max_squad_size_multiplier="1.2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"  mission_flag_on_damaged="SVPAttacked"
+			dialog_to_show="" dialog_if_forced_1="Ch3_Oerl_VS_SVP_First" dialog_if_forced_2="Ch3_Oerl_VS_SVP_Second"
+			skip_ever_making_player_focus_on_these="false" should_soft_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+	
+	<npc_manager id="Ch2_OerlAfterAGI_RebelReaction" debug_log_manager_details="false">
+		<periodic_data 
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="BasicCommon"
+			threat_radius="50" home_radius="15">
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="8"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_mission_active="Ch2_OerlAfterAGIResearchers" required_mission_flag="RebelsTippedOff" blocked_by_city_flag="ChosePrintersOverID"/>
+		</periodic_data>
+		<unit id="U" to_spawn="RebelStrikeforce" stance_to_start_in="RebelAntiCorpOp"
+			should_be_specific_cohort="Antico"
+			min_to_spawn="4" max_to_spawn="6" max_to_have_extant_across_spawns="12" lang_key_for_extra_info="Mngr_Ch2_Antico"
+			min_squad_size_multiplier="1.22" max_squad_size_multiplier="1.9"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_soft_despawn_on_project_or_mission_complete="true"/>
+	</npc_manager>
+
+	<!--Activist Allies Path Managers
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch2_LostKidsAttackYou" debug_log_manager_details="false"
+		auto_marked_as_complete_if_city_flag_1_tripped="Ch2_TalkedDownRebelKids">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="0" max_distance_from_machine_areas="1" job_tag_1="AGISecondKindOfSafeouse" />
+			<gate_by_city minimum_chapter="2" required_project_active="Ch2_MIN_DealWithTheRebels" blocked_by_city_flag="Ch2_TalkedDownRebelKids"/>
+		</periodic_data>
+		<unit id="A" to_spawn="LostKidGrunt" stance_to_start_in="RebelDefendingFriends"
+			should_be_specific_cohort="LostGen" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="12" max_to_ever_spawn_in_total="12" lang_key_for_extra_info="Mngr_Ch2_RebelKids"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"/>
+		<unit id="B" to_spawn="LostKidSupport" stance_to_start_in="RebelDefendingFriends"
+			should_be_specific_cohort="LostGen" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="5" max_to_have_extant_across_spawns="12" max_to_ever_spawn_in_total="12" lang_key_for_extra_info="Mngr_Ch2_RebelKids"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"/>
+		<unit id="G" to_spawn="LostKidBoss" stance_to_start_in="RebelDefendingFriends_Leader"
+			should_be_specific_cohort="LostGen" max_security_clearance_of_seed_spot="2"
+			dialog_if_forced_1="Ch2_RebelKids_First"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="6" max_to_ever_spawn_in_total="6" lang_key_for_extra_info="Mngr_Ch2_RebelKids"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+
+	<!--Searching For Wastelander Managers
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="SearchingForWastelanders_1A" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="60">
+			<seed_in_district district_tag="DecrepitPartOfTown" min_distance_from_machine_areas="0"/>
+			<gate_by_city minimum_chapter="2" required_project_active="Ch2_MIN_SearchingForWastelanders" />
+		</periodic_data>
+		<unit id="0" to_spawn="LostKidSupport" stance_to_start_in="RebelsHelpingYouSearch"
+			should_be_specific_cohort="LostGen" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="20" spawn_radius_relaxed_max="30" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="true" should_hard_despawn_on_manager_blocked="true"
+			should_soft_despawn_on_manager_interval_ends="true"/>
+
+	</npc_manager>
+
+	<npc_manager id="SearchingForWastelanders_1B" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="60">
+			<seed_in_district district_tag="DecrepitPartOfTown" min_distance_from_machine_areas="0"/>
+			<gate_by_city minimum_chapter="2" required_project_active="Ch2_MIN_SearchingForWastelanders" />
+		</periodic_data>
+		<unit id="0" to_spawn="LostKidSupport" stance_to_start_in="RebelsHelpingYouSearch"
+			should_be_specific_cohort="LostGen" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="20" spawn_radius_relaxed_max="30" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="true" should_hard_despawn_on_manager_blocked="true"
+			should_soft_despawn_on_manager_interval_ends="true"/>
+
+	</npc_manager>
+
+	<npc_manager id="SearchingForWastelanders_2A" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="60">
+			<seed_in_district district_tag="DecrepitPartOfTown" min_distance_from_machine_areas="0"/>
+			<gate_by_city minimum_chapter="2" required_project_active="Ch2_MIN_SearchingForWastelanders" />
+		</periodic_data>
+
+		<unit id="0" to_spawn="LostKidGrunt" stance_to_start_in="RebelsHelpingYouSearch"
+			should_be_specific_cohort="LostGen" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="12" spawn_radius_relaxed_max="24" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="true" should_hard_despawn_on_manager_blocked="true"
+			should_soft_despawn_on_manager_interval_ends="true"/>
+		<unit id="1" to_spawn="LostKidBoss" stance_to_start_in="RebelsHelpingYouSearch"
+			should_be_specific_cohort="LostGen" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="12" spawn_radius_relaxed_max="24" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="true" should_hard_despawn_on_manager_blocked="true"
+			should_soft_despawn_on_manager_interval_ends="true"/>
+
+	</npc_manager>
+
+	<npc_manager id="SearchingForWastelanders_2C" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="60">
+			<seed_in_district district_tag="DecrepitPartOfTown" min_distance_from_machine_areas="0"/>
+			<gate_by_city minimum_chapter="2" required_project_active="Ch2_MIN_SearchingForWastelanders" />
+		</periodic_data>
+
+		<unit id="0" to_spawn="LostKidGrunt" stance_to_start_in="RebelsHelpingYouSearch"
+			should_be_specific_cohort="LostGen" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="12" spawn_radius_relaxed_max="24" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="true" should_hard_despawn_on_manager_blocked="true"
+			should_soft_despawn_on_manager_interval_ends="true"/>
+		<unit id="1" to_spawn="LostKidBoss" stance_to_start_in="RebelsHelpingYouSearch"
+			should_be_specific_cohort="LostGen" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="12" spawn_radius_relaxed_max="24" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="true" should_hard_despawn_on_manager_blocked="true"
+			should_soft_despawn_on_manager_interval_ends="true"/>
+
+	</npc_manager>
+
+	<!--Liquid Metal Further Prison Break Managers
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="LiquidMetalFurtherPrisonBreaks"
+			cohort_tag_a="EspiaTelecom"
+			auto_marked_as_complete_if_skipping_chapter_one="false" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15"
+			target_action_over_time_investigation_type="Ch2LiquidMetalFurtherPrisonBreaks">
+			<gate_by_city minimum_chapter="2"/>
+		</periodic_data>
+
+		<unit id="H" to_spawn="SecForceHacker" stance_to_start_in="SecForceHackerIntrusionSupport"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+
+		<unit id="C" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidPrisonResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="4" max_to_spawn="8" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_min="4" spawn_radius_max="18" spawn_radius_relaxed_max="50"/>
+		<unit id="N" to_spawn="HumeOwnedNickelbotThatCanBecomePredator" stance_to_start_in="AndroidPrisonResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_min="4" spawn_radius_max="18" spawn_radius_relaxed_max="50"/>
+		<unit id="V" to_spawn="VorsiberSoldier" stance_to_start_in="PrisonResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_min="6" spawn_radius_max="24" spawn_radius_relaxed_max="50"/>
+		<unit id="S" to_spawn="FractiveSniper" stance_to_start_in="PrisonResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_min="9" spawn_radius_max="30" spawn_radius_relaxed_max="50"/>
+
+	</npc_manager>
+
+	<!--Wastelander Path Managers
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch2YinshiUmbilicals"
+			cohort_tag_a="YinshiWellness"
+			auto_marked_as_complete_if_skipping_chapter_one="false" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15"
+			target_action_over_time_investigation_type="Ch2YinshiUmbilicals">
+			<gate_by_city minimum_chapter="2"/>
+		</periodic_data>
+		<unit id="A" to_spawn="SecForceHacker" stance_to_start_in="SecForceHackerIntrusionPrevention"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="3" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+
+	<npc_manager id="Ch2YinshiCosmeticRevengeA" debug_log_manager_details="false"
+			cohort_tag_a="YinshiWellness">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="5" max_distance_from_machine_areas="12"/>
+			<gate_by_city minimum_chapter="2" required_countdown_complete="YinshiCosmeticRevenge" />
+		</periodic_data>
+
+		<unit id="A" to_spawn="MilitaryAblator" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="7" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="4"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="G" to_spawn="Grenadier" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="5" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.2" max_squad_size_multiplier="3"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="MilitarySniper" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="6" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		
+	</npc_manager>
+
+	<npc_manager id="Ch2YinshiCosmeticRevengeB" debug_log_manager_details="false"
+			cohort_tag_a="YinshiWellness">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="5" max_distance_from_machine_areas="12"/>
+			<gate_by_city minimum_chapter="2" required_countdown_complete="YinshiCosmeticRevenge" />
+		</periodic_data>
+		<unit id="S" to_spawn="FractiveSniper" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<npc_manager id="Ch2YinshiCosmeticRevengeC" debug_log_manager_details="false"
+			cohort_tag_a="YinshiWellness">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="7"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="5" max_distance_from_machine_areas="12"/>
+			<gate_by_city minimum_chapter="2" required_countdown_complete="YinshiCosmeticRevenge" />
+		</periodic_data>
+		
+		<unit id="S" to_spawn="HumeOwnedNickelbotThatCanBecomePredator" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<npc_manager id="Ch2UterineReplicators"
+			cohort_tag_a="DyadInstruments"
+			auto_marked_as_complete_if_skipping_chapter_one="false" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15"
+			target_action_over_time_investigation_type="Ch2UterineReplicators">
+			<gate_by_city minimum_chapter="2"/>
+		</periodic_data>
+		<unit id="A" to_spawn="SecForceHacker" stance_to_start_in="SecForceHackerIntrusionSupport"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="8" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+
+		<unit id="C" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidHospitalResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="5" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_min="4" spawn_radius_max="18" spawn_radius_relaxed_max="50"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+		
+		<unit id="N" to_spawn="HumeOwnedNickelbotThatCanBecomePredator" stance_to_start_in="AndroidHospitalResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_min="4" spawn_radius_max="18" spawn_radius_relaxed_max="50"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+
+
+	<!--Cyberocracy Chain
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch2_Cyberocracy" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="3"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="CyberocracyHub"/>
+			<gate_by_city required_project_active="Ch2_MIN_SecureACybercraticHaven" />
+		</periodic_data>
+		
+		<unit id="S" to_spawn="HumeOwnedNickelbotThatCanBecomePredator" stance_to_start_in="MilitarySecuringArea"
+			should_be_specific_cohort="VorsiberEnforcement" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="V" to_spawn="VorsiberSoldier" stance_to_start_in="MilitarySecuringArea"
+			should_be_specific_cohort="VorsiberEnforcement" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_min="6" spawn_radius_max="24" spawn_radius_relaxed_max="50"/>
+		
+		<unit id="Breacher" to_spawn="RebelBreacher" stance_to_start_in="RebelAntiAIOp" extra_aggro_against_machine_structures="CyberocracyHub" extra_aggro_against_machine_structures_amount="80000"
+			should_be_specific_cohort="NOAI"
+			min_to_spawn="2" max_to_spawn="3" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="16"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" dialog_if_forced_1=""
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+
+	</npc_manager>
+
+
+	<!--Slum Obsession Chain
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch2_SlumObsession" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="3"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="SlumDeconstructionHub"/>
+			<gate_by_city required_project_active="Ch2_MIN_FrustrationMounts" />
+		</periodic_data>
+
+		<unit id="S" to_spawn="HumeOwnedNickelbotThatCanBecomePredator" stance_to_start_in="MilitarySecuringArea"
+			should_be_specific_cohort="VorsiberEnforcement" max_security_clearance_of_seed_spot="2" extra_aggro_against_machine_structures="SlumDeconstructionHub" extra_aggro_against_machine_structures_amount="80000"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="V" to_spawn="Slumlord" stance_to_start_in="SlumlordAnger"
+			cohort_tag="FederatedCorporation" max_security_clearance_of_seed_spot="2" extra_aggro_against_machine_structures="SlumDeconstructionHub" extra_aggro_against_machine_structures_amount="80000"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_min="6" spawn_radius_max="24" spawn_radius_relaxed_max="50"/>
+
+		<unit id="Breacher" to_spawn="RebelBreacher" stance_to_start_in="RebelAntiAIOp" extra_aggro_against_machine_structures="SlumDeconstructionHub" extra_aggro_against_machine_structures_amount="80000"
+			should_be_specific_cohort="NOAI"
+			min_to_spawn="0" max_to_spawn="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="16"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" dialog_if_forced_1=""
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+
+	</npc_manager>
+
+
+	<!--Torment Nexus Path Managers
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch2NathTPN"
+			cohort_tag_a="NathVertical"
+			auto_marked_as_complete_if_skipping_chapter_one="false" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15"
+			target_action_over_time_investigation_type="Ch2NathTPN">
+			<gate_by_city minimum_chapter="2"/>
+		</periodic_data>
+		<unit id="A" to_spawn="SecForceHacker" stance_to_start_in="SecForceHackerIntrusionPrevention"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="3" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+
+	<npc_manager id="Ch2NathTPNRevengeA" debug_log_manager_details="false"
+			cohort_tag_a="NathVertical">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="5" max_distance_from_machine_areas="12"/>
+			<gate_by_city minimum_chapter="2" required_countdown_complete="NathTPNRevenge" />
+		</periodic_data>
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="5" max_to_spawn="7" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="18" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="4"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="MilitarySniper" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="6" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<npc_manager id="Ch2NathTPNRevengeB" debug_log_manager_details="false"
+			cohort_tag_a="NathVertical">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="5" max_distance_from_machine_areas="12"/>
+			<gate_by_city minimum_chapter="2" required_countdown_complete="NathTPNRevenge" />
+		</periodic_data>
+		<unit id="G" to_spawn="Grenadier" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="5" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.2" max_squad_size_multiplier="3"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="FractiveSniper" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<npc_manager id="Ch2NathTPNRevengeC" debug_log_manager_details="false"
+			cohort_tag_a="NathVertical">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="7"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="5" max_distance_from_machine_areas="12"/>
+			<gate_by_city minimum_chapter="2" required_countdown_complete="NathTPNRevenge" />
+		</periodic_data>
+
+		<unit id="C" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="9" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="S" to_spawn="HumeOwnedNickelbotThatCanBecomePredator" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+	
+	<!--Torment Vessel Religious Backlash - During
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch2_AggressiveExpansionA" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="6" max_turns_between_activity="14"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="TormentVessel"/>
+			<gate_by_city required_project_active="Ch2_AggressiveExpansion" />
+		</periodic_data>
+
+		<unit id="Sharpshooter" to_spawn="GangSharpshooter" stance_to_start_in="GangFrustrationAtAI" extra_aggro_against_machine_structures="TormentVessel" extra_aggro_against_machine_structures_amount="400"
+			should_be_specific_cohort="WillOfThePeople"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="28"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Breacher" to_spawn="RebelBreacher" stance_to_start_in="RebelAntiAIOp" extra_aggro_against_machine_structures="TormentVessel" extra_aggro_against_machine_structures_amount="80000"
+			should_be_specific_cohort="NOAI"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="16"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" 
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<npc_manager id="Ch2_AggressiveExpansionB" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="2" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="TormentVessel"/>
+			<gate_by_city required_project_active="Ch2_AggressiveExpansion" />
+		</periodic_data>
+
+		<unit id="W" to_spawn="ReligiousWarrior" stance_to_start_in="HolyMissionAgainstYou" extra_aggro_against_machine_structures="TormentVessel" extra_aggro_against_machine_structures_amount="400"
+			should_be_specific_cohort="OriginalistWorldTempleExtremist"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="28"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Z" to_spawn="ReligiousZealot" stance_to_start_in="HolyMissionAgainstYou" extra_aggro_against_machine_structures="TormentVessel" extra_aggro_against_machine_structures_amount="80000"
+			should_be_specific_cohort="OriginalistWorldTempleExtremist"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="16"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<npc_manager id="Ch2_AggressiveExpansionC" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="5"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="TormentVessel"/>
+			<gate_by_city required_project_active="Ch2_AggressiveExpansion" />
+		</periodic_data>
+
+		<unit id="W" to_spawn="ReligiousWarrior" stance_to_start_in="HolyMissionAgainstYou" extra_aggro_against_machine_structures="TormentVessel" extra_aggro_against_machine_structures_amount="400"
+			should_be_specific_cohort="OriginalistWorldTempleExtremist"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="28"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Z" to_spawn="ReligiousZealot" stance_to_start_in="HolyMissionAgainstYou" extra_aggro_against_machine_structures="TormentVessel" extra_aggro_against_machine_structures_amount="80000"
+			should_be_specific_cohort="OriginalistWorldTempleExtremist"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="16"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+
+	<!--Torment Vessel Religious Backlash - After
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch2_AggressiveExpansionAfterA" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="8" max_turns_between_activity="20"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="TormentVessel"/>
+			<gate_by_city required_project_complete_any_outcome1="Ch2_AggressiveExpansion" />
+		</periodic_data>
+
+		<unit id="Sharpshooter" to_spawn="GangSharpshooter" stance_to_start_in="GangFrustrationAtAI" extra_aggro_against_machine_structures="TormentVessel" extra_aggro_against_machine_structures_amount="400"
+			should_be_specific_cohort="WillOfThePeople"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="28"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Breacher" to_spawn="RebelBreacher" stance_to_start_in="RebelAntiAIOp" extra_aggro_against_machine_structures="TormentVessel" extra_aggro_against_machine_structures_amount="80000"
+			should_be_specific_cohort="NOAI"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="16"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<npc_manager id="Ch2_AggressiveExpansionAfterB" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="5" max_turns_between_activity="11"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="TormentVessel"/>
+			<gate_by_city required_project_complete_any_outcome1="Ch2_AggressiveExpansion" />
+		</periodic_data>
+
+		<unit id="W" to_spawn="ReligiousWarrior" stance_to_start_in="HolyMissionAgainstYou" extra_aggro_against_machine_structures="TormentVessel" extra_aggro_against_machine_structures_amount="400"
+			should_be_specific_cohort="OriginalistWorldTempleExtremist"
+			min_to_spawn="0" max_to_spawn="3" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="28"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Z" to_spawn="ReligiousZealot" stance_to_start_in="HolyMissionAgainstYou" extra_aggro_against_machine_structures="TormentVessel" extra_aggro_against_machine_structures_amount="80000"
+			should_be_specific_cohort="OriginalistWorldTempleExtremist"
+			min_to_spawn="0" max_to_spawn="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="16"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<npc_manager id="Ch2_AggressiveExpansionAfterC" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="6" max_turns_between_activity="12"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="TormentVessel"/>
+			<gate_by_city required_project_complete_any_outcome1="Ch2_AggressiveExpansion" />
+		</periodic_data>
+
+		<unit id="W" to_spawn="ReligiousWarrior" stance_to_start_in="HolyMissionAgainstYou" extra_aggro_against_machine_structures="TormentVessel" extra_aggro_against_machine_structures_amount="400"
+			should_be_specific_cohort="OriginalistWorldTempleExtremist"
+			min_to_spawn="0" max_to_spawn="3" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="28"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Z" to_spawn="ReligiousZealot" stance_to_start_in="HolyMissionAgainstYou" extra_aggro_against_machine_structures="TormentVessel" extra_aggro_against_machine_structures_amount="80000"
+			should_be_specific_cohort="OriginalistWorldTempleExtremist"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="16"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<!--Mind Farm Attacks - During
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch2_VRPodRevisions" cohort_tag_a="CriminalSyndicateAny"  debug_log_manager_details="false"> <!--SyndicateShakedownOfBusiness-->
+		<periodic_data
+			min_turns_between_activity="9" max_turns_between_activity="12"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="MindFarm"/>
+			<gate_by_city required_project_active="Ch2_VRPodRevisions" />
+		</periodic_data>
+
+		<unit id="A" to_spawn="SyndicateGunnerAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="G" to_spawn="SyndicateSharpshooterAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="SyndicateHeavyAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<npc_manager id="Ch2_VRPodRevisions2" cohort_tag_a="CriminalSyndicateAny"  debug_log_manager_details="false" > <!--SyndicateShakedownOfBusiness-->
+		<periodic_data
+			min_turns_between_activity="9" max_turns_between_activity="12"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="MindFarm"/>
+			<gate_by_city required_project_active="Ch2_VRPodRevisions2" />
+		</periodic_data>
+
+		<unit id="A" to_spawn="SyndicateGunnerAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="G" to_spawn="SyndicateSharpshooterAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="0" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="SyndicateHeavyAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<npc_manager id="Ch2_MIN_GrandOpening" cohort_tag_a="CriminalSyndicateAny"  debug_log_manager_details="false" > <!--SyndicateShakedownOfBusiness-->
+		<periodic_data
+			min_turns_between_activity="9" max_turns_between_activity="12"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="MindFarm"/>
+			<gate_by_city required_project_active="Ch2_MIN_GrandOpening" />
+		</periodic_data>
+
+		<unit id="A" to_spawn="SyndicateGunnerAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="G" to_spawn="SyndicateSharpshooterAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="0" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="SyndicateHeavyAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<npc_manager id="Ch2_MIN_FailureToThrive" cohort_tag_a="CriminalSyndicateAny"  debug_log_manager_details="false" > <!--SyndicateShakedownOfBusiness-->
+		<periodic_data
+			min_turns_between_activity="4" max_turns_between_activity="7"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="MindFarm"/>
+			<gate_by_city required_project_active="Ch2_MIN_FailureToThrive" />
+		</periodic_data>
+
+		<unit id="A" to_spawn="SyndicateGunnerAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="G" to_spawn="SyndicateSharpshooterAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="0" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="SyndicateHeavyAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<npc_manager id="Ch2_MIN_InfluencerMarketing" cohort_tag_a="CriminalSyndicateAny"  debug_log_manager_details="false" > <!--SyndicateShakedownOfBusiness-->
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="5"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="MindFarm"/>
+			<gate_by_city required_project_active="Ch2_MIN_InfluencerMarketing" />
+		</periodic_data>
+
+		<unit id="A" to_spawn="SyndicateGunnerAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="G" to_spawn="SyndicateSharpshooterAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="1" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="SyndicateHeavyAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="0" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<npc_manager id="Ch2_MIN_CompanyGrowth" cohort_tag_a="CriminalSyndicateAny"  debug_log_manager_details="false" > <!--SyndicateShakedownOfBusiness-->
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="6"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_a_machine_target job_tag_1="MindFarm"/>
+			<gate_by_city required_project_active="Ch2_MIN_CompanyGrowth" />
+		</periodic_data>
+
+		<unit id="A" to_spawn="SyndicateGunnerAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="G" to_spawn="SyndicateSharpshooterAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="1" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="SyndicateHeavyAntiShell" stance_to_start_in="SyndicateAttackingShellCompanyStructureStory"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="1"
+			min_to_spawn="0" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MindFarmExtort"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<!--Cult Cits - During
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch2_MeetingOfTheMinds" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="2" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="0" max_distance_from_machine_areas="1"/>
+			<gate_by_city minimum_chapter="2" blocked_by_dialog_complete="Ch2_BionicDues3" required_unlock="DigitalAfterlife" required_job_active="TempleOfMinds">
+				<required_resource resource_type="DonutsByDanver" value="5000000" at_least="true" />
+				<!--<required_resource resource_type="DonutsByHudson" value="1" at_least="false" />-->
+			</gate_by_city>
+		</periodic_data>
+		<unit id="0" to_spawn="SergeantMajor" stance_to_start_in="SergeantMajorSeekingMeetingWithYou"
+			should_be_specific_cohort="MilitaryNoncoms" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.72" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="7"
+			should_soft_despawn_on_manager_interval_ends="true"
+			dialog_to_show="Ch2_BionicDues"
+			is_blocked_from_any_killing="true" lang_key_for_killing_block="MoreInterestedInWhatTheyHaveToSay"
+			skip_ever_making_player_focus_on_these="true"/>
+	</npc_manager>
+
+	<!--Exploiting Fed Corp Chain
+		**************************************************************************-->
+
+	<npc_manager id="Ch2StealCorporateRecords"
+			cohort_tag_a="ArkorNexus"
+			auto_marked_as_complete_if_skipping_chapter_one="false" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15"
+			target_action_over_time_investigation_type="Ch2StealCorporateRecords">
+			<gate_by_city minimum_chapter="2"/>
+		</periodic_data>
+		<unit id="A" to_spawn="SecForceIPSecurity" stance_to_start_in="SecForceSecuringIP"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="6" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+		<unit id="H" to_spawn="SecForceHacker" stance_to_start_in="SecForceHackerCounterHacker"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+
+	<npc_manager id="Ch2_YinshiSVPHereToBuyAnthro" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="2" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="0" max_distance_from_machine_areas="1"/>
+			<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_DesignHumanCompatibleNeuroweave"
+				blocked_by_city_flag="IsFinishedWithYinshiSaleDiscussion" />
+		</periodic_data>
+		<unit id="0" to_spawn="CorpoSVPMan" stance_to_start_in="VP_SeekingMeetingWithShell"
+			should_be_specific_cohort="YinshiWellness" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.72" max_squad_size_multiplier="1.2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			dialog_to_show="Ch2_YinshiSVPHereToBuyAnthro" dialog_can_be_done_by_regular_units="false" dialog_can_be_done_by_pmc_impostor="true"
+			is_blocked_from_any_killing="true" lang_key_for_killing_block="MoreInterestedInWhatTheyHaveToSay"
+			skip_ever_making_player_focus_on_these="false" should_soft_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<npc_manager id="Ch2_Yinshi_PostDeal" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="2" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="0" max_distance_from_machine_areas="1"/>
+			<gate_by_city minimum_chapter="2" required_beyond_turn="DoFurtherYinishiSolicitingAfterThisTurn"
+				blocked_by_city_flag="IsFinishedWithAnthroneuroweaveChoice" />
+		</periodic_data>
+		<unit id="0" to_spawn="RebelLeadership" stance_to_start_in="RebelLeader_SeekingMeetingWithShell"
+			should_be_specific_cohort="VoxPopulei" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.72" max_squad_size_multiplier="1.2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			dialog_to_show="Ch2_Yinshi_Rebels" dialog_can_be_done_by_regular_units="false" dialog_can_be_done_by_pmc_impostor="true"
+			is_blocked_from_any_killing="true" lang_key_for_killing_block="MoreInterestedInWhatTheyHaveToSay"
+			skip_ever_making_player_focus_on_these="false" should_soft_despawn_on_manager_blocked="true"/>
+
+		<unit id="1" to_spawn="SyndicateOverseerMale" stance_to_start_in="SyndicateOverseer_SeekingMeetingWithShell"
+			should_be_specific_cohort="ExoticImporters" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.72" max_squad_size_multiplier="1.2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			dialog_to_show="Ch2_Yinshi_Syndicate" dialog_can_be_done_by_regular_units="false" dialog_can_be_done_by_pmc_impostor="true"
+			is_blocked_from_any_killing="true" lang_key_for_killing_block="MoreInterestedInWhatTheyHaveToSay"
+			skip_ever_making_player_focus_on_these="false" should_soft_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<npc_manager id="Ch2_AtcaPresidentIsHereToNegotiate" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="2" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="0" max_distance_from_machine_areas="1"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="HasThreatenedToExposeAtcaRetail"
+				blocked_by_city_flag="DoneWithAtcaRetailPresident" />
+		</periodic_data>
+		<unit id="0" to_spawn="CorpoPresidentMan" stance_to_start_in="Pres_SeekingMeeting"
+			should_be_specific_cohort="AtcaRetail" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.72" max_squad_size_multiplier="1.2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			dialog_to_show="Ch2_AtcaPresidentHereToNegotiate" dialog_can_be_done_by_regular_units="true" dialog_can_be_done_by_pmc_impostor="false"
+			is_blocked_from_any_killing="true" lang_key_for_killing_block="MoreInterestedInFaceToFace"
+			skip_ever_making_player_focus_on_these="false" should_soft_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+	
+	<!--VoxPopuliAttackingAfterAnthroneuroweave Managers
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="VoxPAttAAnthroneuro_1A" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="2" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="60">
+			<seed_in_poi poi_tag="MilitaryBaseNormalOrLarge" min_distance_from_machine_areas="0"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="VoxPopuliAttackingAfterAnthroneuroweave" />
+		</periodic_data>
+		<unit id="0" to_spawn="RebelBreacherExtraAP" stance_to_start_in="RebelAntiMilitaryOp"
+			should_be_specific_cohort="VoxPopulei" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="2" lang_key_for_extra_info="Mngr_Ch2_VoxAnthro"
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="20" spawn_radius_relaxed_max="30" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="true" should_hard_despawn_on_manager_blocked="true"
+			should_soft_despawn_on_manager_interval_ends="true"/>
+
+	</npc_manager>
+
+	<npc_manager id="VoxPAttAAnthroneuro_1B" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="2" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="60">
+			<seed_in_poi poi_tag="MilitaryBaseNormalOrLarge" min_distance_from_machine_areas="0"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="VoxPopuliAttackingAfterAnthroneuroweave" />
+		</periodic_data>
+		<unit id="0" to_spawn="RebelGunslingerExtraAP" stance_to_start_in="RebelAntiMilitaryOp"
+			should_be_specific_cohort="VoxPopulei" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="2" lang_key_for_extra_info="Mngr_Ch2_VoxAnthro"
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="20" spawn_radius_relaxed_max="30" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="true" should_hard_despawn_on_manager_blocked="true"
+			should_soft_despawn_on_manager_interval_ends="true"/>
+
+	</npc_manager>
+
+	<npc_manager id="VoxPAttAAnthroneuro_2A" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="4"
+			max_security_clearance_of_seed_spot="2" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="60">
+			<seed_in_poi poi_tag="MilitaryBaseNormalOrLarge" min_distance_from_machine_areas="0"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="VoxPopuliAttackingAfterAnthroneuroweave" />
+		</periodic_data>
+
+		<unit id="0" to_spawn="RebelStrikeforceExtraAP" stance_to_start_in="RebelAntiMilitaryOp"
+			should_be_specific_cohort="VoxPopulei" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="2" lang_key_for_extra_info="Mngr_Ch2_VoxAnthro"
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="12" spawn_radius_relaxed_max="24" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false"
+			skip_ever_making_player_focus_on_these="true" should_hard_despawn_on_manager_blocked="true"
+			should_soft_despawn_on_manager_interval_ends="true"/>
+		<unit id="1" to_spawn="RebelLeadershipExtraAP" stance_to_start_in="RebelAntiMilitaryOp_HighVis"
+			should_be_specific_cohort="VoxPopulei" max_security_clearance_of_seed_spot="0"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="2" lang_key_for_extra_info="Mngr_Ch2_VoxAnthro"
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="12" spawn_radius_relaxed_max="24" spawn_as_close_as_possible="false"
+			dialog_to_show="" is_deep_threat_to_sheltered_humans="false" 
+			dialog_if_forced_1="Ch2_Yinshi_Rebels2A" dialog_can_be_done_by_regular_units="false" dialog_can_be_done_by_pmc_impostor="true"
+			skip_ever_making_player_focus_on_these="true" should_hard_despawn_on_manager_blocked="true"
+			should_soft_despawn_on_manager_interval_ends="true"/>
+
+	</npc_manager>
+
+	<npc_manager id="Ch2AtcaBankRecords"
+			cohort_tag_a="AtcaRetail"
+			auto_marked_as_complete_if_skipping_chapter_one="false" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15"
+			target_action_over_time_investigation_type="Ch2AtcaBankRecords">
+			<gate_by_city minimum_chapter="2"/>
+		</periodic_data>
+		<unit id="A" to_spawn="SecForceIPSecurity" stance_to_start_in="SecForceSecuringIP"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="6" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+		<unit id="H" to_spawn="SecForceHacker" stance_to_start_in="SecForceHackerCounterHacker"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+
+		<unit id="S" to_spawn="MechMachinist_LowAlt1" stance_to_start_in="SecForceSecuringIP"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="2" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="true"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+	
+	<npc_manager id="Ch2AtcaBankTheftRevengeA" debug_log_manager_details="false"
+			cohort_tag_a="AtcaRetail">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="5" max_distance_from_machine_areas="12"/>
+			<gate_by_city minimum_chapter="2" required_countdown_complete="AtcaBankTheftRevenge" />
+		</periodic_data>
+
+		<unit id="A" to_spawn="MilitaryAblator" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="7" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="4"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="G" to_spawn="Grenadier" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="5" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.2" max_squad_size_multiplier="3"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="MilitarySniper" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="6" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<npc_manager id="Ch2AtcaBankTheftRevengeB" debug_log_manager_details="false"
+			cohort_tag_a="AtcaRetail">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="5" max_distance_from_machine_areas="12"/>
+			<gate_by_city minimum_chapter="2" required_countdown_complete="AtcaBankTheftRevenge" />
+		</periodic_data>
+		<unit id="S" to_spawn="FractiveSniper" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<npc_manager id="Ch2AtcaBankTheftRevengeC" debug_log_manager_details="false"
+			cohort_tag_a="AtcaRetail">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="7"
+			max_security_clearance_of_seed_spot="0" target_building_tag="AlmostAny"
+			threat_radius="100" home_radius="15">
+			<seed_near_machines min_distance_from_machine_areas="5" max_distance_from_machine_areas="12"/>
+			<gate_by_city minimum_chapter="2" required_countdown_complete="AtcaBankTheftRevenge" />
+		</periodic_data>
+
+		<unit id="S" to_spawn="MechMachinist_LowAlt1" stance_to_start_in="BlackOpsRevengeAgainstPlayer"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+	
+	<!--Next
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+</root>

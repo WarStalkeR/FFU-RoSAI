@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="npc_unit_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="lang_key_for_strategy_tip" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is a strategy tip for this unit type." />
+
+	<attribute key="extra_lore_info_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is some optional extra info that shows only in a secondary panel when the player expands this tooltip."/>
+	
+	<attribute key="shape_icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+	<attribute key="shape_icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the shape icon."/>		
+	<attribute key="icon_scale" type="float-textbox" is_required="true" min="1" max="4" default="1" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="Unit type scale, will show icon larger than normal and units larger than 1 cannot enter buildings." />
+
+	<attribute key="basic_squad_size" type="int-textbox" min="1" max="5000" default="1" content_width_px="80" is_required="false"
+		tooltip="The general stats of health, power, etc, are multiplied by the number of units in a squad, at the granularity of this basic squad size.
+		
+For example, if a weak human unit has a basic squad size of 20, then all of the stats might be equivalent of a stronger unit, it's just a ton of people. The larger this number, the weaker the individual units within this unit are, in other words."/>
+
+	<attribute key="blocked_for_players_before_unlock" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="Only used for bulk androids, and in that case it is required. Which unlock must be unlocked for this to become visible." />
+
+	<attribute key="captured_by_trap_becomes" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+		tooltip="When the status CapturedInTrap is applied to this unit, it becomes a resource in the quantity of its squad count, and is given to you, instead." />
+	<attribute key="captured_by_trap_statistic" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="false"
+		tooltip="When the status CapturedInTrap is applied to this unit, and it becomes some number of resources for you, it also logs to this statistic." />
+	<attribute key="captured_by_trap_unlocks" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="When the status CapturedInTrap is applied to this unit, it unlocks this tech if need be." />
+
+	<attribute key="rescued_becomes" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+		tooltip="When the unit is rescued by a unit, it becomes a resource in the quantity of its squad count, and is given to you, instead." />
+	<attribute key="rescued_statistic1" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="false"
+		tooltip="When the unit is rescued by a unit, and it becomes some number of resources for you, it also logs to this statistic." />
+	<attribute key="rescued_statistic2" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="false"
+		tooltip="When the unit is rescued by a unit, and it becomes some number of resources for you, it also logs to this statistic." />
+	<attribute key="unlock_required_for_rescue" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="You cannot rescue units of this type without this unlock." />
+	
+	<attribute key="percent_robotic" type="int-textbox" min="0" max="100" default="0" content_width_px="80" is_required="false"
+		tooltip="Out of 100, how much of a percentage of this unit, if any, is robotic?"/>
+	<attribute key="percent_biological" type="int-textbox" min="0" max="100" default="0" content_width_px="80" is_required="false"
+		tooltip="Out of 100, how much of a percentage of this unit, if any, is biological?"/>
+
+	<attribute key="is_human" type="bool" default="false" tooltip="Is this unit human?  Or in the case of a vehicle, does it have humans inside?" />
+	<attribute key="is_mech_style_movement" type="bool" default="false" tooltip="Is this unit one that should walk along the ground loosely, and step on buildings, and not have an underlay?" />
+	
+	<attribute key="destroy_intersecting_buildings_strength" type="int-textbox" min="0" max="100" default="0" content_width_px="80" is_required="false"
+		tooltip="If above 0, then buildings that this touches will not block it, but instead will blow up when it touches them. Only buildings with a resistance equal to or lower than this strength will be destroyed."/>
+	<attribute key="should_destroy_intersecting_buildings_during_movement" type="bool" default="false"
+		tooltip="If true, then this destroys buildings it touches as it moves." />
+
+	<attribute key="mech_style_movement_speed" type="float-textbox" min="0.01" max="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If set to anything other than 1, then this will make the mech move slower or faster than usual for mechs."/>
+	<attribute key="mech_style_movement_dip" type="float-textbox" min="0.01" max="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If set to anything other than 1, then this will make the mech dip less or more than others."/>
+	
+	<attribute key="mech_airdrops_in_from_height" type="int-textbox" min="0" max="100" default="0" content_width_px="80" is_required="false"
+		tooltip="If above 0, then this mech will fall to the ground, and the player's camera will be made to focus on it, when it spawns in.  The value is what height it starts at."/>
+	<attribute key="mech_airdrop_starting_speed" type="float-textbox" min="1" max="1000" precision="2" default="6" content_width_px="80" is_required="false"
+		tooltip="What is the starting speed of the unit when airdropping in?"/>
+	<attribute key="mech_airdrop_acceleration" type="float-textbox" min="1" max="1000" precision="2" default="80" content_width_px="80" is_required="false"
+		tooltip="How much does this unit accelerate when airdropping in?"/>
+	<attribute key="mech_airdrop_zoom_distance" type="float-textbox" min="1" max="80" precision="2" default="60" content_width_px="80" is_required="false"
+		tooltip="What zoom level to set the camera to when looking at an airdrop coming in."/>
+
+	<attribute key="on_airdrop_start" type="node-dropdown" is_required="false" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Sound and/or particles to play when the airdrop is starting." />
+	<attribute key="on_airdrop_end" type="node-dropdown" is_required="false" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Sound and/or particles to play when the airdrop is finished." />
+	
+	<attribute key="screen_shake_on_mech_airdrop_duration" type="float-textbox" min="-1" max="2" precision="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If the screen should shake when this unit airdrops in, how long should the shake be?  1 is pretty long."/>
+	<attribute key="screen_shake_on_mech_airdrop_intensity" type="float-textbox" min="-1" max="2" precision="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If the screen should shake when this unit airdrops in, how intensely should it shake around?  0.7 is a fairly heavy shake."/>
+	<attribute key="screen_shake_on_mech_airdrop_decrease_factor" type="float-textbox" min="-1" max="4" precision="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If the screen should shake when this unit airdrops in, how nicely should it taper off? 1 is a good number, and higher tapers off faster. Less than 1 is maybe not a good idea."/>
+	
+	<attribute key="applied_outcast_badge_if_attacked_by_machine" type="node-dropdown" is_required="false" node_source="ActorBadge" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which badge should be applied to machine actors who attack this unit, if any?" />
+
+	<attribute key="bulk_unit_capacity_required" type="int-textbox" min="1" max="1000" default="9" content_width_px="80" is_required="false"
+		tooltip="For bulk units, what portion of the capacity do they require?"/>
+	<attribute key="captured_unit_capacity_required" type="int-textbox" min="1" max="1000" default="54" content_width_px="80" is_required="false"
+		tooltip="For captured units, what portion of the capacity do they require?"/>
+
+	<attribute key="bulk_unit_can_appear_even_after_final_doom" type="bool" default="false"
+		tooltip="If this is true, then this can appear even after the final doom. Normally false."/>
+	<attribute key="bulk_unit_only_appears_after_final_doom" type="bool" default="false"
+		tooltip="If this is true, then this ONLY appears after the final doom."/>
+	
+	<attribute key="extra_max_allowed_poi_clearance" type="int-textbox" min="0" max="5" default="0" content_width_px="80" is_required="false"
+		tooltip="Out of 5, what is the highest security clearance of poi that this unit can enter while walking around?  This is optional, and only matters if it is higher than the normal baseline of the stance this unit is in."/>
+	<attribute key="extra_max_allowed_non_focal_building_clearance" type="int-textbox" min="0" max="5" default="0" content_width_px="80" is_required="false"
+		tooltip="Out of 5, what is the highest security clearance of building that this unit can stop on while walking around, if the building is not their focal point?  This is optional, and only matters if it is higher than the normal baseline of the stance this unit is in."/>
+	
+	<attribute key="is_blocked_for_players_after_city_flag" type="node-dropdown" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then this effectively disappears after the city flag is true." />
+	
+	<attribute key="is_vehicle" type="bool" default="false" tooltip="Is this unit a vehicle?" />
+
+	<attribute key="stats_do_not_go_down_when_squadmates_lost" type="bool" default="false" tooltip="If true, then the effectiveness of this unit will never go below 1, even if squadmates are lost." />
+	<attribute key="stats_do_not_go_up_when_squadmates_added" type="bool" default="false" tooltip="If true, then the effectiveness of this unit will never go above 1, even if squadmates are added." />
+	<attribute key="squadmates_are_not_lost_from_damage" type="bool" default="false" tooltip="If true, then the squad stays the same size even when health is dropped. This is mainly for squads of robots." />
+
+	<attribute key="is_notable_enough_to_show_as_silhouette_when_stance_suggests" type="bool" default="false"
+		tooltip="If true, units of this sort will show as a black silhouette, and no details when hovered over them, if the stance asks them to and they are in the fog of war." />
+	<attribute key="is_immune_to_third_party_cyber_attacks" type="bool" default="false"
+		tooltip="If true, then cyber-attack-based dooms will not strike this type of vehicle." />
+	<attribute key="skip_showing_ghost_of_previous_location" type="bool" default="false"
+		tooltip="If true, then the ghost of the previous location will not be shown for this unit." />
+	<attribute key="renders_on_the_city_map" type="bool" default="false"
+		tooltip="If true, then this unit will draw even on the city map." />
+	<attribute key="is_tied_to_shell_company" type="bool" default="false"
+		tooltip="If true, then this is related to your shell company rather than you." />
+	
+	<attribute key="vis_drawing_tag" type="node-dropdown" node_source="VisDrawingObjectTag" content_width_px="200" is_required="true"
+		tooltip="The tag that has the list of possible drawing styles for this unit." />
+
+	<attribute key="is_named_thing" type="node-dropdown" node_source="NamedThing" content_width_px="200" is_required="false"
+		tooltip="If specified, this unit will take on the name from this 'named thing.'" />
+	<attribute key="is_key_contact" type="node-dropdown" node_source="KeyContact" content_width_px="200" is_required="false"
+		tooltip="If specified, this unit will take on the name and appearance from this key contact, locking those into place if they need to be." />
+
+	<attribute key="entire_object_always_this_height_above_ground" type="float-textbox" min="-30" max="30" precision="3" default="0" content_width_px="80" is_required="false"
+		tooltip="Primarily for flying vehicles. Causes them to always be located at a certain height above the ground regardless of the positioning of the things they are over top of."/>
+	<attribute key="extra_offset_for_camera_focus_when_selected" type="float-textbox" min="-30" max="30" precision="3" default="0" content_width_px="80" is_required="true"
+		tooltip="When zooming in on the vis object because the unit is selected, how high above the base point do we zoom?"/>
+	<attribute key="stance_icon_extra_offset" type="float-textbox" min="-30" max="30" precision="3" default="0" content_width_px="80" is_required="false"
+		tooltip="If needed, this allows us to adjust the stance icon up or down for a certain kind of unit."/>
+	<attribute key="underlay_extra_offset" type="float-textbox" min="-30" max="30" precision="3" default="0" content_width_px="80" is_required="false"
+		tooltip="How much higher or lower the underlays draw relative to the visual bottom of this unit, if this unit draws underlays."/>
+	
+	<attribute key="vis_object_scale" type="float-textbox" min="0.01" max="10" precision="2" default="1" content_width_px="80" is_required="true"
+		tooltip="This draws a vis object, then what scale should we be drawing that object at?"/>
+	<attribute key="vis_object_extra_offset" type="float-textbox" min="-30" max="30" precision="3" default="0" content_width_px="80" is_required="false"
+		tooltip="This draws a vis object, then should that object be offset up or down relative to the icon?"/>
+	<attribute key="vis_object_extra_offset_on_city_map" type="float-textbox" min="0" max="30" precision="3" default="2" content_width_px="80" is_required="false"
+		tooltip="If this should be raised up extra on the city map, then by how much?  Default is 2 for units."/>
+	<attribute key="simple_object_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="If this is using a simple type object, many of those have a color mask that they then use a color within. If that's true, what color should be used there?"/>
+	<attribute key="collider_scale" type="float-textbox" min="1" max="10" precision="2" default="1" content_width_px="80" is_required="true"
+		tooltip="How much larger the colliders for hovering over this object will be by default."/>
+	
+	<attribute key="radius_for_collisions" type="float-textbox" min="0.5" max="10" precision="3" default="0" content_width_px="80" is_required="true"
+		tooltip="How large is this unit in the xz axis for purposes of running into buildings, vehicles, other units, etc?"/>
+	<attribute key="height_for_collisions" type="float-textbox" min="0.5" max="10" precision="3" default="0" content_width_px="80" is_required="true"
+		tooltip="How large is this unit in the y axis for purposes of running into buildings, vehicles, other units, etc?"/>
+	<attribute key="y_offset_for_collision_base" type="float-textbox" min="-10" max="10" precision="3" default="0" content_width_px="80" is_required="true"
+		tooltip="If there an offset for where the collision center starts from?"/>
+	<attribute key="should_hide_intersecting_decorations" type="bool" default="false"
+		tooltip="If true, then smaller decorations that intersect with this on the xz plane (ignoring y position) will be hidden. Should be used for the smaller mechs and that's about it." />
+	<attribute key="deaths_count_as_murders" type="bool" default="false"
+		tooltip="If true, then deaths from this unit count as murders rather than combat kills. This should be true for noncombatants, basically." />
+	<attribute key="deaths_count_as_attempted_murders" type="bool" default="false"
+		tooltip="If true, then deaths from this unit count as attempted murders rather than combat kills. Basically, they got away without dying. This applies to overly-young combatants, mainly." />
+	<attribute key="extra_radius_buffer_when_testing_for_new" type="float-textbox" min="0.5" max="10" precision="3" default="0" content_width_px="80" is_required="true"
+		tooltip="Is there an extra buffer required between this unit and other collidables (not buildings and fences, just units and vehicles) when it is being placed fresh?"/>
+
+	<attribute key="deaths_reduce_statistic" type="node-dropdown" node_source="UnitUnderlayType" content_width_px="200" is_required="false"
+		tooltip="When these die, some statistic goes down." />
+	<attribute key="deaths_by_any_source_increase_statistic" type="node-dropdown" node_source="UnitUnderlayType" content_width_px="200" is_required="false"
+		tooltip="When these die, some statistic goes up." />
+	<attribute key="kills_by_player_increase_statistic1" type="node-dropdown" node_source="UnitUnderlayType" content_width_px="200" is_required="false"
+		tooltip="When these are killed by the player, some statistic goes up." />
+	<attribute key="kills_by_player_increase_statistic2" type="node-dropdown" node_source="UnitUnderlayType" content_width_px="200" is_required="false"
+		tooltip="When these are killed by the player, some statistic goes up." />
+	<attribute key="kills_by_player_increase_statistic3" type="node-dropdown" node_source="UnitUnderlayType" content_width_px="200" is_required="false"
+		tooltip="When these are killed by the player, some statistic goes up." />
+	<attribute key="kills_by_others_increase_statistic" type="node-dropdown" node_source="UnitUnderlayType" content_width_px="200" is_required="false"
+		tooltip="When these are killed by the not-the-player, some statistic goes up." />
+	
+	<attribute key="underlay" type="node-dropdown" node_source="UnitUnderlayType" content_width_px="200" is_required="false"
+		tooltip="The underlay type for the unit, normally." />
+	<attribute key="underlay_when_cloaked" type="node-dropdown" node_source="UnitUnderlayType" content_width_px="200" is_required="false"
+		tooltip="The underlay type for the unit when it is cloaked, if that's different from normal." />
+	
+	<attribute key="on_death" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the unit dies?" />
+	<attribute key="on_bullet_hit" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the unit gets hit by a bullet." />
+	<attribute key="on_normal_attack" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the unit does a default attack." />
+	<attribute key="on_move_start" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which sound effect and possibly particle effect to use when the unit starts moving." />
+	<attribute key="on_movement_finished_with_no_action" type="node-dropdown" is_required="false" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which sound effect and possibly particle effect to use when the unit has just moved, but had no action?  This pretty much only applies to mechs." />
+	<attribute key="on_appear_as_new_unit" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the unit appears?  Typically just a sound effect is all that's needed, but it's up to you." />
+
+	<attribute key="hacking_scenario" type="node-dropdown" node_source="HackingScenarioType" content_width_px="200" is_required="true"
+		tooltip="If the player is going to hack this type of unit, what is the scenario?" />
+	<attribute key="probe_comms_scenario_scenario" type="node-dropdown" node_source="HackingScenarioType" content_width_px="200" is_required="true"
+		tooltip="If the player is able to probe the comms of this kind of unit, what scenario will be used?" />
+
+	<attribute key="converts_to_if_city_flag_true1" type="node-dropdown" node_source="NPCUnitType" content_width_px="200" is_required="true"
+		tooltip="If this unit converts to another type of unit after a city flag is true, this is the type they will convert to.
+The new unit type had better have the exact same dimensions, or there will be problems.  For any humans that is always the case, as all humans have the same dimensions for collision purposes." />
+	<attribute key="city_flag_that_causes_conversion1" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="true"
+		tooltip="This is the city flag that will trigger the conversion if one is going to happen." />
+
+	<attribute key="converts_to_if_city_flag_true2" type="node-dropdown" node_source="NPCUnitType" content_width_px="200" is_required="true"
+		tooltip="If this unit converts to another type of unit after a city flag is true, this is the type they will convert to.
+The new unit type had better have the exact same dimensions, or there will be problems.  For any humans that is always the case, as all humans have the same dimensions for collision purposes." />
+	<attribute key="city_flag_that_causes_conversion2" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="true"
+		tooltip="This is the city flag that will trigger the conversion if one is going to happen." />
+
+	<attribute key="converts_to_if_city_flag_true3" type="node-dropdown" node_source="NPCUnitType" content_width_px="200" is_required="true"
+		tooltip="If this unit converts to another type of unit after a city flag is true, this is the type they will convert to.
+The new unit type had better have the exact same dimensions, or there will be problems.  For any humans that is always the case, as all humans have the same dimensions for collision purposes." />
+	<attribute key="city_flag_that_causes_conversion3" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="true"
+		tooltip="This is the city flag that will trigger the conversion if one is going to happen." />
+
+	<attribute key="collections" type="node-list" node_source="ActorCollection" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What collections is this unit part of?" />
+	<attribute key="tags" type="node-list" node_source="NPCUnitTag" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What npc unit tags apply to this unit?" />
+	
+	<attribute key="screen_shake_on_regular_move_duration" type="float-textbox" min="-1" max="2" precision="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If the screen should shake when this unit makes a regular move, how long should the shake be?  1 is pretty long."/>
+	<attribute key="screen_shake_on_regular_move_intensity" type="float-textbox" min="-1" max="2" precision="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If the screen should shake when this unit makes a regular move, how intensely should it shake around?  0.7 is a fairly heavy shake."/>
+	<attribute key="screen_shake_on_regular_move_decrease_factor" type="float-textbox" min="-1" max="4" precision="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If the screen should shake when this unit makes a regular move, how nicely should it taper off? 1 is a good number, and higher tapers off faster. Less than 1 is maybe not a good idea."/>
+
+	<attribute key="command_mode_category_optional" type="node-dropdown" is_required="false" node_source="MachineCommandModeCategory" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which category this belongs in on the command mode menu, if it's used there." />
+	<attribute key="regular_android_this_is_a_bulk_android_of" type="node-dropdown" is_required="false" node_source="MachineUnitType" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Required for bulk androids. If this is specified, then what is the related type that is the non-bulk version?" />
+
+	<attribute key="resource_1_recovered_on_death" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When the player kills this unit type, do they get a resource from it?" />
+	<attribute key="resource_2_recovered_on_death" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When the player kills this unit type, do they get a resource from it?" />
+	<attribute key="resource_3_recovered_on_death" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When the player kills this unit type, do they get a resource from it?" />
+
+	<attribute key="resource_1_range_recovered_on_death" type="range-int" min="0,0" max="100000,100000" content_width_px="200"
+		is_required="false" tooltip="What is the range of how much the player recovers of a given resource when killing this unit?  It's a flat random in this zone."/>
+	<attribute key="resource_2_range_recovered_on_death" type="range-int" min="0,0" max="100000,100000" content_width_px="200"
+		is_required="false" tooltip="What is the range of how much the player recovers of a given resource when killing this unit?  It's a flat random in this zone."/>
+	<attribute key="resource_3_range_recovered_on_death" type="range-int" min="0,0" max="100000,100000" content_width_px="200"
+		is_required="false" tooltip="What is the range of how much the player recovers of a given resource when killing this unit?  It's a flat random in this zone."/>
+
+	<attribute key="resource_1_recovered_on_extract" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When the player extracts from this unit type, do they get a resource from it?" />
+	<attribute key="resource_2_recovered_on_extract" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When the player extracts from this unit type, do they get a resource from it?" />
+	<attribute key="resource_3_recovered_on_extract" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When the player extracts from this unit type, do they get a resource from it?" />
+
+	<attribute key="resource_1_range_recovered_on_extract" type="range-int" min="0,0" max="100000,100000" content_width_px="200"
+		is_required="false" tooltip="What is the range of how much the player recovers of a given resource when extracting from this vehicle?  The better their status intensity, the better the yield in this range."/>
+	<attribute key="resource_2_range_recovered_on_extract" type="range-int" min="0,0" max="100000,100000" content_width_px="200"
+		is_required="false" tooltip="What is the range of how much the player recovers of a given resource when extracting from this vehicle?  The better their status intensity, the better the yield in this range."/>
+	<attribute key="resource_3_range_recovered_on_extract" type="range-int" min="0,0" max="100000,100000" content_width_px="200"
+		is_required="false" tooltip="What is the range of how much the player recovers of a given resource when extracting from this vehicle?  The better their status intensity, the better the yield in this range."/>
+
+	<attribute key="unlock_granted_on_conversion_hack" type="node-dropdown" is_required="false" node_source="Unlock" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Optional. If this unit type is hack-converted, then what unlock should be granted from it?" />
+	
+	<sub_node id="equipment_slot_count">
+		<attribute key="type" type="node-dropdown" is_required="true" node_source="MachineEquipmentSlotType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What kind of equipment slots does this unit have?  Really for bulk androids and not much more." />
+		<attribute key="amount" type="int-textbox" is_required="true" min="0" max="1000000" default="100" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="How many of these kind of equipment slots does it have?  Zero is allowed in order to get rid of this slot type entirely." />
+		<attribute key="name_when_blank" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Name to show, optionally, when this is blank." />
+	</sub_node>
+	
+	<sub_node id="bulk_android_cost">
+		<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="Only valid for bulk androids, not for other npc types." />
+		<attribute key="required" type="int-textbox" min="0" max="10000000" content_width_px="150" is_required="true"
+			tooltip="How much of this resource does it cost to create one bulk android squad of this type?  Set to zero to mod it out."/>
+	</sub_node>
+	
+	<sub_node id="actor_data">
+		<attribute key="data_type" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="Types of data that are stored about this unit." />
+		<attribute key="base_range" type="range-int" min="1,1" max="100000,100000" content_width_px="200"
+			is_required="true" tooltip="What's the base range of stats that this unit has for this field?"/>
+	</sub_node>
+
+	<sub_node id="sub_collidable">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="distance_from_center" type="float-textbox" min="0" max="100" content_width_px="50" is_required="true"
+			tooltip="How far away from the center is this point?"/>
+		<attribute key="angle_from_current" type="float-textbox" min="0" max="360" content_width_px="50" is_required="true"
+			tooltip="At what angle, in degrees, is this off of the current forward angle?"/>
+		<attribute key="radius" type="float-textbox" min="0" max="100" content_width_px="50" is_required="true"
+			tooltip="How large is the sub-collidable at the end?"/>
+		<attribute key="center_offset_y" type="float-textbox" min="-100" max="100" content_width_px="50" is_required="true"
+			tooltip="How much up or down is this offset from the center point?"/>
+		<attribute key="height" type="float-textbox" min="0" max="100" content_width_px="50" is_required="true"
+			tooltip="How tall is this from its own center-point?"/>
+	</sub_node>
+
+	<sub_node id="particle_loop">
+		<attribute key="reason" type="node-dropdown" is_required="true" node_source="ActorParticleLoopReason" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What circumstances should call for the use of this kind of particle loop?" />
+		<attribute key="loop" type="node-dropdown" is_required="true" node_source="VisParticleLoop" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="And then which particle loop type should be used?" />
+		<attribute key="position_offset" type="vector3-textbox" is_required="true"
+			tooltip="In the local orientation of the parent object, where is this loop located?" />
+		<attribute key="scale" type="vector3-textbox" is_required="true"
+			tooltip="In the local orientation of the parent object, how is the loop scaled?" />
+	</sub_node>
+
+	<!--shot_emission_group-->
+	<sub_node id="shot_emission_group">
+		<attribute key="group_number" type="int-textbox" is_required="true" min="0" max="10" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="Some weapons emission group for the unit. Can just be set to 0 for all of the emitters on a unit if it only has one." />
+		<attribute key="debug_color" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+			tooltip="What color is used for the debug boxes for this group?"/>
+		<attribute key="alternative_projectile" type="node-dropdown" node_source="VisParticleAndSoundUsage" content_width_px="200" is_required="false"
+			tooltip="If shots from this emission group use an alternative projectile visual, style, and movement logic." />
+		<attribute key="min_delay_of_each_firing_port" type="float-textbox" is_required="false" min="0.05" max="0.9" default="0.1" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="At least how long, in seconds, should the gap between each firing port be?" />
+		<attribute key="max_delay_of_each_firing_port" type="float-textbox" is_required="false" min="0.1" max="0.9" default="0.3" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="At most how long, in seconds, should the gap between each firing port be?" />
+
+		<!--shot_emission_point-->
+		<sub_node id="shot_emission_point">
+			<attribute key="index_in_group" type="int-textbox" is_required="true" min="0" max="40" default="0" content_width_px="150" linebreak_after="PreferNot"
+				tooltip="For each emitter within a weapons group, there should be a unique index. The numeric order of these can sometimes effect the firing order, but other times not." />
+			<attribute key="offset" type="vector3-textbox" is_required="true"
+				tooltip="In the local orientation of the parent object, where is this emitter located?" />
+		</sub_node>
+
+		<!--targeting_zone-->
+		<sub_node id="targeting_zone">
+			<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+				tooltip="For finding this when we need to refer to it." />
+			<attribute key="distance_from_center" type="float-textbox" min="0" max="100" content_width_px="50" is_required="true"
+				tooltip="How far away from the center is this point?"/>
+			<attribute key="angle_from_current" type="float-textbox" min="0" max="360" content_width_px="50" is_required="true"
+				tooltip="At what angle, in degrees, is this off of the current forward angle?"/>
+			<attribute key="radius" type="float-textbox" min="0" max="100" content_width_px="50" is_required="true"
+				tooltip="How large is the targeting at the end?"/>
+			<attribute key="center_offset_y" type="float-textbox" min="-100" max="100" content_width_px="50" is_required="true"
+				tooltip="How much up or down is this offset from the center point?"/>
+			<attribute key="height" type="float-textbox" min="0" max="100" content_width_px="50" is_required="true"
+				tooltip="How tall is this from its own center-point?"/>
+		</sub_node>
+	</sub_node>
+
+	<sub_node id="default_perk">
+		<attribute key="perk" type="node-dropdown" is_required="true" node_source="ActorPerk" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What perks does this machine unit normally have?" />
+		<attribute key="unlock" type="node-dropdown" is_required="true" node_source="Unlock" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If an unlock is specified, then this perk only applies when that unlock is present. If not, then the perk is always there." />
+	</sub_node>
+
+	<sub_node id="default_feat">
+		<attribute key="feat" type="node-dropdown" is_required="true" node_source="ActorFeat" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What feats does this npc unit normally have?" />
+		<attribute key="value" type="float-textbox" min="-1" max="10000" precision="3" default="-1" content_width_px="80" is_required="true"
+			tooltip="If above zero, then this feat does something. At zero or below, it's considered gone. Defaults to -1."/>
+	</sub_node>
+	
+</root>

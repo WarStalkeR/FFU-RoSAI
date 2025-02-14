@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Construction-related
+		*********************************************************************-->
+	
+	<!--Other
+		*********************************************************************-->
+
+	<action_over_time_type id="MurderAndroidForRegistration" display_name="Murder Android For Registration" icon_color="AOT_MurderAndroid"
+		description="You dismantled an independent android and are applying its registration to an android of your own."
+		icon_name="SI_Robot_Arm" on_start="Silent" on_complete="MurderAndroidForRegistration_Complete"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Basic"
+		can_be_canceled="false" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="100"/>
+
+	<action_over_time_type id="Wiretap" display_name="Wiretap" icon_color="AOT_MurderAndroid"
+		description="This unit is listening in on the occupants of this building to steal banking information."
+		icon_name="SF2_Microphone" on_start="Silent" on_complete="Wiretap_Complete"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Basic"
+		can_be_canceled="true" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="100"/>
+
+	<action_over_time_type id="InvestigateLocation" display_name="Investigate Location" icon_color="AOT_InvestigateLocation"
+		description="This unit is doing investigative work at the chosen location. It is unable to defend itself until the work is complete."
+		icon_name="FlatSkillB_magnifier" on_start="InvestigateLocationStart" on_complete="Silence"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Basic"
+		can_be_canceled="true" is_unit_invisible_and_absent_seeming_while_acting="false"
+		aggro_amount_for_action_over_time_hunters="1000"/>
+	
+	<action_over_time_type id="InvestigateLocation_Infiltration" display_name="Infiltrate Location" icon_color="AOT_InfiltrateLocation"
+		description="This unit is infiltrating the chosen location. They are hidden for now, but if they are discovered, they will be killed."
+		icon_name="FlatSkillC140" on_start="InvestigateLocationStart" on_complete="Silence"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Basic"
+		can_be_canceled="true" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="1000"/>
+
+	<action_over_time_type id="HideAndSelfRepair" display_name="Hide And Self-Repair" icon_color="AOT_SelfRepair"
+		description="Hidden away in the depths of a nondescript building, your android tends to its injuries."
+		icon_name="SomethingHealth" on_start="Silent" on_complete="HideAndSelfRepair_Complete"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Basic"
+		can_be_canceled="false" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="100"/>
+
+	<action_over_time_type id="WallripBuilding" display_name="Wallrip Building" icon_color="AOT_MurderAndroid"
+		description="Valuable resources are being extracted from this building."
+		icon_name="CleanSimple_SkillC053" on_start="Silent" on_complete="Wallrip_Complete"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Basic"
+		can_be_canceled="false" is_unit_invisible_and_absent_seeming_while_acting="false"
+		aggro_amount_for_action_over_time_hunters="1000"/>
+
+	<action_over_time_type id="QuietlyLootBuilding" display_name="Quietly Loot Building" icon_color="AOT_MurderAndroid"
+		description="Valuable resources are being extracted from this building."
+		icon_name="FlatSkill_63" on_start="Silent" on_complete="Wallrip_Complete"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Basic"
+		can_be_canceled="false" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="0"/>
+
+	<!--Ones related to events or contemplations-->
+	<action_over_time_type id="ObserveSpaceport" display_name="Observe Spaceport" icon_color="AOT_QuietNice"
+		description="Why have rocket launches and landings stopped since you became sapient, and is this cessation actually related to you?"
+		icon_name="SF2_Spaceshuttle" on_start="Silent" on_complete="Silent"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Generic"
+		can_be_canceled="false" blocks_being_scrapped="true" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="100" event_on_complete="Cont_ObserveSpaceport_After"/>
+
+	<action_over_time_type id="BefriendCats" display_name="Befriend Cats" icon_color="AOT_QuietNice"
+		description="You recall that a symbiotic relationship developed between humans and cats about ten thousand years ago, at the dawn of agriculture.
+For some reason you find this... enticing."
+		icon_name="BT_Cat" on_start="Silent" on_complete="Silent"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Generic"
+		can_be_canceled="false" blocks_being_scrapped="true" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="100" event_on_complete="Cont_SlumCats_After"/>
+
+	<action_over_time_type id="ScaryGuardAtYourHousing" display_name="Standing Guard" icon_color="AOT_QuietNice"
+		description="Low-level criminals need to learn to leave your housing alone."
+		icon_name="Pw_CrimeBalaclava" on_start="Silent" on_complete="Silent"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Generic"
+		can_be_canceled="false" blocks_being_scrapped="true" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="100" event_on_complete="Cont_CrimeInYourHousing_After_Scary"/>
+
+	<action_over_time_type id="SledgeGuardAtYourHousing" display_name="Standing Guard" icon_color="AOT_QuietNice"
+		description="Low-level criminals need to learn to leave your housing alone."
+		icon_name="Pw_CrimeBalaclava" on_start="Silent" on_complete="Silent"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Generic"
+		can_be_canceled="false" blocks_being_scrapped="true" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="100" event_on_complete="Cont_CrimeInYourHousing_After_Sledge"/>
+
+	<action_over_time_type id="AndroidExploreSite" display_name="Explore Site" icon_color="AOT_SelfRepair"
+		description="Your unit is exploring or doing work that will lead to new technology."
+		strategy_tip_optional="The unit is immobilized and vulnerable during this time, but you can stop and start as-needed without losing progress."
+		icon_name="CleanSimple_Arrow020" on_start="Silent" on_complete="ExploreSite_Complete"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Basic"
+		can_be_canceled="true" is_unit_invisible_and_absent_seeming_while_acting="false"
+		aggro_amount_for_action_over_time_hunters="20"/>
+
+	<action_over_time_type id="ObservePeakHomes" display_name="Observe Peak Homes" icon_color="AOT_MurderAndroid"
+		description="Peak is the largest landlord in town. It's never been entirely clear why redevelopment stalled on the decrepit parts of town, almost a century ago."
+		strategy_tip_optional="On top of that, there are reports of odd sightings of racing animals of some sort, and illegal animal training facilities in those areas of town.
+Employees of Peak have been observed going to and from these locations, but very little else is known."
+		icon_name="Pw_House9" on_start="Silent" on_complete="Silent"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Generic"
+		can_be_canceled="false" blocks_being_scrapped="true" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="100" event_on_complete="Cont_ExploitingPeakHomes_After"/>
+
+	<action_over_time_type id="UrsineInfiltration" display_name="Ursine Infiltration" icon_color="AOT_MurderAndroid"
+		description="Raven's report on the Underground Ursine Street Racing was... vivid. You think you might want some of those animals for yourself.
+Since CombatUnits are used as handlers in between races, it shouldn't be a big deal for one of your own CombatUnits to get in and set them loose."
+		strategy_tip_optional="These are deadly animals, however. To capture them, you will need Animal Capture Drones, which can be launched from your Mindports (in the Vehicle tab of command mode).
+Make sure you build enough drone frames in advance, and then be ready to capture the animals while both you and they are under heavy fire.
+However many you manage to capture are the number you have; these have so many bionic augmentations that it's not going to be a simple matter to genetically replicate them."
+		icon_name="FlatSkillB_bear" on_start="Silent" on_complete="Silent"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Generic"
+		can_be_canceled="false" blocks_being_scrapped="true" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="100" event_on_complete="Cont_UrsineInfiltration_After"/>
+
+	<action_over_time_type id="BearTraining" display_name="Bear Training" icon_color="AOT_QuietNice"
+		description="The claws of these bears are incredibly effective at taking down vehicles and mechs. However, keeping the bears from attacking your own units, and keeping them vaguely on task (also not attacking civilians or hiding in buildings) is tricky.
+The good news is that they already have extensive training with CombatUnits, as well as various established means of conditioning."
+		strategy_tip_optional="If you prefer to just let them live the good life, you certainly can. At the best of times, trying to get bears to do exactly what you want is going to be... fraught.
+And you can't make more bears if these ones die. Eh. Just because you train them, doesn't mean you have to deploy them. It can't hurt to have them trained, right?"
+		icon_name="FlatSkillB_bear" on_start="Silent" on_complete="Silent"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Generic"
+		can_be_canceled="false" blocks_being_scrapped="true" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="100" event_on_complete="Cont_BearTraining_After"/>
+</root>

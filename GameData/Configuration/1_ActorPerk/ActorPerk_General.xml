@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Highest Possible Importance (sort order 99, also the flag)
+		*********************************************************************************-->
+
+	<actor_perk id="InnatelyAlarming" display_name="Innately Alarming"
+		description="This unit is noticeable and scary. Unless it's cloaked, it's going to be a target."
+		strategy_tip_optional="SecForce and military will shoot on sight, even guards on passive duty."
+		icon_name="FlatSkillC161" icon_color="#B65040" causes_actor_to_be_considered_outcast_level="10" tooltip_color="ActorStatus_Bad"
+		sort_order="98">
+		<blocks_other other_perk="VehicleBlendingInAirTraffic" value="true" />
+		<blocks_other other_perk="BlendingIn" value="true" />
+		<blocks_other other_perk="Shadowdweller" value="true" />
+		<blocks_other other_perk="ExpertShadowdweller" value="true" />
+		<blocks_other other_perk="Authoritative" value="true" />
+		<blocks_other other_perk="Adorable" value="true" />
+	</actor_perk>
+	
+	<!--Very High Importance (sort order 100, also the flag)
+		*********************************************************************************-->
+
+	<actor_perk id="VehicleBlendingInAirTraffic" display_name="Blending In - Air Traffic"
+		description="This vehicle is not suspicious if it does not stop in restricted airspace."
+		icon_name="WEmblem236" icon_color="#AD60E1" tooltip_color="ActorStatus_LesserHidden"
+		sort_order="100" is_high_importance="true"
+		unit_unremarkable_up_to_security_clearance="1">
+	</actor_perk>
+	
+	<actor_perk id="BlendingIn" display_name="Blending In"
+		description="This unit is not visually notable. They are ignored as long as they go only where they have security clearance, do not carry conspicuous weapons or act aggressive."
+		icon_name="CleanSimple_SkillB090" icon_color="#AD60E1" tooltip_color="ActorStatus_LesserHidden"
+		sort_order="100" is_high_importance="true"
+		unit_unremarkable_up_to_security_clearance="1">
+	</actor_perk>
+
+	<actor_perk id="ObscuredByClothing" display_name="Obscured By Clothing"
+		description="This unit is wearing clothing that blends in. They are ignored as long as they go only where they have security clearance, do not carry conspicuous weapons or act aggressive."
+		icon_name="ME_Jacket2" icon_color="#AD60E1" tooltip_color="ActorStatus_LesserHidden"
+		sort_order="100" is_high_importance="true"
+		unit_unremarkable_up_to_security_clearance="1">
+		<blocks_other other_perk="InnatelyAlarming" value="true" />
+		<blocks_other other_perk="BlendingIn" value="true" />
+	</actor_perk>
+
+	<actor_perk id="PMCAppearance" display_name="PMC Appearance"
+		description="This unit looks like part of a human Private Military Contractor. Unless it attacks, it can move freely up to clearance level 2 (Oversight)."
+		icon_name="CS_MilitaryDogTag" icon_color="#AD60E1" tooltip_color="ActorStatus_Stealth"
+		sort_order="100" is_high_importance="true"
+		unit_unremarkable_up_to_security_clearance="2">
+		<blocks_other other_perk="InnatelyAlarming" value="true" />
+	</actor_perk>
+
+	<actor_perk id="PMCOfficerAppearance" display_name="PMC Officer Appearance"
+		description="This unit gives off a magneto-harmonic radio signature that identifies it as an officer of a Private Military Contractor. Unless it attacks, it can move freely up to clearance level 3 (Secret)."
+		icon_name="CleanSimple_Rank07" icon_color="#AD60E1" tooltip_color="ActorStatus_Stealth"
+		sort_order="100" is_high_importance="true"
+		unit_unremarkable_up_to_security_clearance="3">
+		<blocks_other other_perk="PMCAppearance" value="true" />
+		<blocks_other other_perk="InnatelyAlarming" value="true" />
+	</actor_perk>	
+
+	<actor_perk id="MilitaryOfficerCodex" display_name="Military Officer Codex"
+		description="This unit gives off a series of codes that identify it as having a very high military authorization. Most people will assume this unit works personally for a Senior Officer of some sort -- Colonel, General, possibly Commandant. Unless it attacks, this unit can move freely up to clearance level 4 (Top Secret)."
+		icon_name="CleanSimple_Rank11" icon_color="#AD60E1" tooltip_color="ActorStatus_Stealth"
+		sort_order="100" is_high_importance="true"
+		unit_unremarkable_up_to_security_clearance="4">
+		<blocks_other other_perk="PMCAppearance" value="true" />
+		<blocks_other other_perk="PMCOfficerAppearance" value="true" />
+		<blocks_other other_perk="MilitaryAppearance" value="true" />
+		<blocks_other other_perk="InnatelyAlarming" value="true" />
+	</actor_perk>
+
+	<actor_perk id="MilitaryAppearance" display_name="Military Appearance"
+		description="This unit looks like a member of the human military. Unless it attacks, it can move freely up to clearance level 2 (Oversight)."
+		icon_name="CleanTriangle22" icon_color="#AD60E1" tooltip_color="ActorStatus_Stealth"
+		sort_order="100" is_high_importance="true"
+		unit_unremarkable_up_to_security_clearance="2">
+		<blocks_other other_perk="InnatelyAlarming" value="true" />
+	</actor_perk>
+
+	<actor_perk id="Shadowdweller" display_name="Shadowdweller"
+		description="This unit is able to hide in the shadows and go undetected by enemies when it is at a building. Unless it attacks, it can move freely up to clearance level 3 (Secret). Provides no protection when not at a building."
+		icon_name="CleanSimple_SkillC084" icon_color="#AD60E1" tooltip_color="ActorStatus_Stealth"
+		sort_order="100" is_high_importance="true"
+		unit_unremarkable_up_to_building_only_security_clearance="3">
+	</actor_perk>
+
+	<actor_perk id="ExpertShadowdweller" display_name="Expert Shadowdweller"
+		description="This unit is able to hide in the shadows and go undetected by enemies when it is at a building. Unless it attacks, it can move freely up to clearance level 4 (Top Secret). Provides no protection when not at a building."
+		icon_name="WEmblem097" icon_color="#AD60E1" tooltip_color="ActorStatus_Stealth"
+		sort_order="100" is_high_importance="true"
+		unit_unremarkable_up_to_building_only_security_clearance="4">
+		<blocks_other other_perk="Shadowdweller" value="true" />
+	</actor_perk>
+
+	<actor_perk id="Adorable" display_name="Adorable"
+		description="Humans find this unit to be adorable. They aren't bothered by it unless it takes hostile actions."
+		icon_name="CleanSimple_Skill030" icon_color="#AD60E1" tooltip_color="ActorStatus_LesserHidden"
+		sort_order="100" is_high_importance="true"
+		unit_unremarkable_up_to_security_clearance="0">
+	</actor_perk>
+
+	<actor_perk id="Authoritative" display_name="Authoritative"
+		description="This unit looks commanding and official, and humans assume that it is where it's supposed to be. Unless it attacks, it can move freely up to clearance level 3 (Secret)."
+		icon_name="WEmblem232" icon_color="#AD60E1" tooltip_color="ActorStatus_LesserHidden"
+		sort_order="100" is_high_importance="true"
+		unit_unremarkable_up_to_security_clearance="3">
+	</actor_perk>
+
+	<actor_perk id="ShellCompanyOperative" display_name="Shell Company Operative"
+		description="This unit has no ties to your machine tower. As far as the world is concerned, it has no relation to 'you' -- only to your shell company, which is not tied to you in any way."
+		icon_name="CS_OrigamiShell" icon_color="#7B60E1" tooltip_color="ActorStatus_MinorGood"
+		sort_order="100" is_high_importance="true"
+		unit_unremarkable_up_to_security_clearance="1">
+	</actor_perk>
+
+	<actor_perk id="DarkenedAppearance" display_name="Darkened Appearance"
+		description="This unit looks black to enemies. The Deterrence and Protection of this unit does not drop as it loses health."
+		icon_name="CleanSimple_Hex11" icon_color="#4E7CE7" tooltip_color="ActorStatus_MinorGood"
+		sort_order="100" is_high_importance="true" causes_actor_to_not_lose_deterrence_or_protection_from_lost_health="true">
+		<blocks_other other_perk="BlendingIn" value="true" />
+		<blocks_other other_perk="ObscuredByClothing" value="true" />
+		<blocks_other other_perk="PMCAppearance" value="true" />
+		<blocks_other other_perk="PMCOfficerAppearance" value="true" />
+		<blocks_other other_perk="Adorable" value="true" />
+	</actor_perk>
+	
+	<!--High Importance (sort order 200, no flag)
+		*********************************************************************************-->
+
+	<actor_perk id="Achilles" display_name="Achilles"
+		description="This unit gets spatial bonuses regardless of their position relative to enemy targets."
+		icon_name="FlatSkill_39" icon_color="#E1A260" tooltip_color="ActorStatus_MinorGood"
+		sort_order="200">
+	</actor_perk>
+
+	<actor_perk id="Superspeed" display_name="Superspeed"
+		description="This unit does full damage when making melee leaps (instead of half damage)."
+		icon_name="SR_Running" icon_color="#E1A260" tooltip_color="ActorStatus_MinorGood"
+		sort_order="200">
+	</actor_perk>
+
+	<actor_perk id="Stubborn" display_name="Stubborn"
+		description="Immune to argument-based morale attacks."
+		icon_name="BT_Llama" icon_color="#E96754" tooltip_color="ActorStatus_Bad"
+		sort_order="200">
+	</actor_perk>
+	
+	<actor_perk id="Fearless" display_name="Fearless"
+		description="Immune to fear-based morale attacks."
+		icon_name="FlatSkillB_bear" icon_color="#E96754" tooltip_color="ActorStatus_Bad"
+		sort_order="200">
+	</actor_perk>
+
+	<!--BT_Buffalo WEmblem022 FlatSkillC76 CleanTriangle02 CleanSimple_Skill127-->
+	<!--Normal Importance (sort order 300)
+		*********************************************************************************-->
+	
+	<!--Low Importance (sort order 400)
+		*********************************************************************************-->
+	
+</root>

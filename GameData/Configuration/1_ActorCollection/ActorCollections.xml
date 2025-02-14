@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Broadest collections
+	**********************************************************************************************************************************************-->
+	<actor_collection id="AllForces" display_name="All Forces" />
+	<actor_collection id="AllAndroids" display_name="All Androids" />
+	<actor_collection id="AllVehicles" display_name="All Vehicles" />
+	<actor_collection id="AllMechs" display_name="All Mechs" />
+
+	<actor_collection id="StandardUnits" display_name="Standard Units" translation_notes="In general, this is just units of yours that humans get used to over time, versus being constantly surprised by the giant mech or dragon or whatever." />
+	<actor_collection id="ShadowUnits" display_name="Shadow Units" translation_notes="In general, this is just units that have Shadowdweller or Expert Shadowdweller." />
+	
+	<actor_collection id="AndroidsInventedByHumans" display_name="Android Invented By Humans" />
+	<actor_collection id="VehiclesInventedByHumans" display_name="Vehicle Invented By Humans" />
+	<actor_collection id="MechsInventedByHumans" display_name="Mech Invented By Humans" />
+
+	<actor_collection id="AndroidsKnownToBeInventedByAI" display_name="Android Known To Be Invented By AI" />
+	<actor_collection id="AndroidsInventedByAI" display_name="Android Invented By AI" />
+	<actor_collection id="VehiclesInventedByAI" display_name="Vehicle Invented By AI" />
+	<actor_collection id="MechsInventedByAI" display_name="Mech Invented By AI" />
+
+	<actor_collection id="CombatMechsAndVehicles" display_name="Combat Mech Or Vehicle" />
+	<actor_collection id="LargeCombatMechsAndVehicles" display_name="Large Combat Mech Or Vehicle" />
+	
+	<actor_collection id="ShellCompanyOperatives" display_name="Shell Company Operative" />
+	<actor_collection id="ShellCompanyMechs" display_name="Shell Company Mech" />
+	
+	<actor_collection id="EnemyVehicles" display_name="Enemy Vehicle" />
+
+	<!--Other collections
+	**********************************************************************************************************************************************-->
+	<actor_collection id="Combatants" display_name="Combatant" />
+	<actor_collection id="SupportUnits" display_name="Support Unit" />
+
+	<actor_collection id="CombatAndroids" display_name="Combat Android" />
+	<actor_collection id="Portdroids" display_name="Portdroid" is_primary_archetype="true" translation_notes="Referring to a large group of android classes. Short for 'Support Android.'" />
+
+	<actor_collection id="CombatMechs" display_name="Combat Mech" is_primary_archetype="true" />
+	<actor_collection id="Portmechs" display_name="Portmech" is_primary_archetype="true" translation_notes="Referring to a large group of mech classes. Short for 'Support Mech.'" />
+	
+	<actor_collection id="Oxdroids" display_name="Oxdroid" is_primary_archetype="true" translation_notes="Referring to a large group of android classes. A different way of saying 'Strength-Focused Android.'" />
+	<actor_collection id="Dynadroids" display_name="Dynadroid" is_primary_archetype="true" translation_notes="Referring to a large group of android classes. A different way of saying 'Agility-Focused Android.'" />
+	<actor_collection id="Infildroids" display_name="Infildroid" is_primary_archetype="true" translation_notes="Referring to a large group of android classes. Short for Infiltration Android."  />
+	<actor_collection id="Souldroids" display_name="Souldroid" is_primary_archetype="true" translation_notes="Referring to a large group of android classes. Souldroid is a way of saying 'Intelligence-And-Hacking-And-Fear-Focused Android.' Basically, the Souldroids are focused on either taking over enemy networks or units by 'stealing their souls' (them being mechanical obviously, so not a literal soul in anyone's sense of that). And the Harbinger is all about scaring the crap out of humans or making them see things that are not there. There are some psyops elements to some of the Dynadroids as well, so it's all a bit loose."  />
+
+	<actor_collection id="SouldroidsAndTechnicians" display_name="Souldroid Or Technician" />
+	
+	<actor_collection id="OxdroidsOrSupportVehicles" display_name="Oxdroid Or Support Vehicle" />
+	
+	<actor_collection id="SmallMechs" display_name="Small Mechs" />
+	<actor_collection id="LargeMechs" display_name="Large Mechs" />
+	
+	<actor_collection id="SupportVehicles" display_name="Support Vehicles" />
+	<actor_collection id="CombatVehicles" display_name="Combat Vehicles" />
+	<actor_collection id="Carriers" display_name="Carriers" />
+	
+	<actor_collection id="HumansOnFoot" display_name="Humans On Foot" />
+	<actor_collection id="HumansWithExposedSkin" display_name="Humans With Exposed Skin" />
+	<actor_collection id="Flammable" display_name="Flammable" />
+	<actor_collection id="AnimalsThatCanBeCaptured" display_name="Animals That Can Be Captured" />
+	<actor_collection id="HumansThatCanBeSentToTormentVessel" display_name="Humans That Can Be Sent To Torment Vessel" />
+
+	<actor_collection id="VisuallyIntimidatingAndroid" display_name="Visually Intimidating Android" />
+	
+	<!--Equipment-Related collections
+	**********************************************************************************************************************************************-->
+
+	<actor_collection id="CanFitThinHumanClothes" display_name="Can Fit Thin Human Clothes" />
+	<actor_collection id="CanFitHumanClothes" display_name="Can Fit Human Clothes" />
+	<actor_collection id="CanFitHeavyHumanClothes" display_name="Can Fit Heavy Human Clothes" />
+	<actor_collection id="CanHandleAndroidHeavyWeapons" display_name="Can Handle Heavy Weapons" />
+	<actor_collection id="CanHandleAndroidLightFirearms" display_name="Can Handle Light Firearms" />
+	<actor_collection id="CanHandleAndroidRifles" display_name="Can Handle Rifles" />
+	<actor_collection id="CanHandleAndroidThrowables" display_name="Can Handle Throwables" />
+	<actor_collection id="CanHandleAndroidBlades" display_name="Can Handle Blades" />
+	<actor_collection id="CanHandleAndroidClaws" display_name="Can Handle Claws" />
+	<actor_collection id="CanHandleAndroidStaves" display_name="Can Handle Staves" />
+	<actor_collection id="CanHandleAndroidDualPistols" display_name="Can Handle Dual Pistols" />
+	<actor_collection id="CanHandleAndroidKnuckles" display_name="Can Handle Knuckles" />
+	<actor_collection id="CanHandleAndroidShoulderMounts" display_name="Can Handle Shoulder Mounts" />
+	<actor_collection id="CanHandleAndroidGrenades" display_name="Can Handle Grenades" />
+	<actor_collection id="CanHandleNanowireWhips" display_name="Can Handle Nanowire Whips" />
+	<actor_collection id="CanHandleAndroidTechPistols" display_name="Can Handle Tech Pistols" />
+
+	<!--Single Androids
+	**********************************************************************************************************************************************-->
+
+	<!--Invented By Humans -->
+	<actor_collection id="Technicians" display_name="Technician" />
+	<actor_collection id="CombatUnits" display_name="CombatUnit" />
+	<actor_collection id="CombatUnitsRegular" display_name="CombatUnit" />
+	<actor_collection id="CombatUnitsRed" display_name="CombatUnit Red" />
+	<actor_collection id="Nickelbots" display_name="Nickelbot" />
+
+	<actor_collection id="TechniciansAndNickelbots" display_name="Technician Or Nickelbot" />
+
+	<!--Strength-Focused-->
+	<actor_collection id="Predators" display_name="Predator" />
+	<actor_collection id="LiquidMetalAndroids" display_name="Liquid Metal Android" />
+	<actor_collection id="Peacekeepers" display_name="Peacekeeper" />
+	<actor_collection id="Sledges" display_name="Sledge" />
+
+	<!--Agility-Focused-->
+	<actor_collection id="Keanus" display_name="Keanu" />
+	<actor_collection id="Carvers" display_name="Carver" />
+	<actor_collection id="Exators" display_name="Exator" />
+
+	<!--Infiltrators-->
+	<actor_collection id="Mimics" display_name="Mimic" />
+	<actor_collection id="PMCImpostors" display_name="PMC Impostor" />
+
+	<!--Intelligence-Focused-->
+	<actor_collection id="Mindrunners" display_name="Mindrunner" />
+	<actor_collection id="Ravens" display_name="Raven" />
+	<actor_collection id="Harbingers" display_name="Harbinger" />
+
+	<!--Single Mechs
+	**********************************************************************************************************************************************-->
+	<actor_collection id="Machinists" display_name="Machinist" />
+	<actor_collection id="Panthers" display_name="Panther" />
+	<actor_collection id="Diplomats" display_name="Diplomat" />
+	<actor_collection id="Convicters" display_name="Convicter" />
+
+	<actor_collection id="Telemechs" display_name="Telemech" />
+	<actor_collection id="Hellfires" display_name="Hellfire" />
+	<actor_collection id="Tailstocks" display_name="Tailstock" />
+	
+	<actor_collection id="LiquidMetalMechs" display_name="Liquid Metal Mech" />
+	<actor_collection id="LiquidMetalTigers" display_name="Liquid Metal Tiger" />
+	<actor_collection id="LiquidMetalGreatWyrms" display_name="Liquid Metal Great Wyrm" />
+	<actor_collection id="LiquidMetalFellBeasts" display_name="Liquid Metal Fell Beast" />
+
+	<actor_collection id="Mantles" display_name="Mantle" />
+	<actor_collection id="Gauntlets" display_name="Gauntlet" />
+	<actor_collection id="Stalkers" display_name="Stalker" />
+	<actor_collection id="Titans" display_name="Titan" />
+	
+	<!--Single Vehicles
+	**********************************************************************************************************************************************-->
+	<actor_collection id="DeliveryCraft" display_name="Delivery Craft" />
+	<actor_collection id="Mindport" display_name="Mindport" />
+	
+</root>

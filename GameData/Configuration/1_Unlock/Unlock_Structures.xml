@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Chapter Zero-->
+	<unlock id="AHomeOfYourOwn" display_name="A Home Of Your Own" structure_type="ImposingTower"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_zero="true">
+		<!--<other_key_message message_to_ready="InvestigationsIntro" value="2" />-->
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Concept" sort_index="100" />
+	</unlock>
+
+	<!--Chapter One Auto-Unlocks-->
+	<unlock id="FreestandingConstruction" display_name="Freestanding Construction" alt_icon_name="CleanSimple_SciFi037"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_meta_flag="HasFiguredOutFreestandingStructures" immediate_unlock_inspiration_type="WorldExperience"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		description="To build structures of your own.">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Concept" sort_index="100" />
+	</unlock>
+	
+	<!--Auto-Unlocks-->
+
+	<!--Conditional Unlocks-->
+	
+	<unlock id="EmergencyShelter" display_name="Emergency Shelter" structure_type="EmergencyNetworkSource"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<!--<other_key_message message_to_ready="InvestigationsIntro" value="2" />-->
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Concept" sort_index="100" />
+	</unlock>
+
+	<!--Never Unlocked-->
+	
+
+</root>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+  <!-- Game -->
+
+	<setting id="ShowAdvancedSettings" category="Game" display_name="Show Advanced Settings" type="BoolToggle" default_bool="false" ignores_defaults="true" ignores_defaults_lang_key="SetDefaults_Ignores"
+          description="" />
+
+	<setting id="AutosaveInterval" category="Game"
+		display_name="Autosave Interval" type="IntDropdown" dropdown_filler_dll_name="HotMExternalVisualizationCode" dropdown_filler_type_name="Arcen.HotM.ExternalVis.AutosaveIntervalFiller" default_int="2"
+		description="The game prompts you for save on exit. You can save at any time. Autosaves are an additional bit of insurance if you wish to go back and change your mind about something."
+		default_should_override_user_value_if_older_than_version="0_511_MondayCrew"/>
+
+	<setting id="AutosavesToKeep" category="Game"
+		display_name="Autosaves To Keep" type="IntDropdown" dropdown_filler_dll_name="HotMExternalVisualizationCode" dropdown_filler_type_name="Arcen.HotM.ExternalVis.AutosavesToKeepFiller" default_int="5"
+		description="Autosaves are not very large individually, but a lot of them can slow down cloud sync." />
+
+	<setting id="AllowExitingWithoutSaving" category="Game" display_name="Allow Exiting Without Saving" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly"
+		description="Enable to have the game ask you instead of automatically saving the game on exit"/>
+
+	<!-- Game: UIElements -->
+	<setting id="ShowControlTipsWhenSystemMenuOpen" category="Game" subcategory="UIElements" display_name="Show Control Tips When System Menu Open" type="BoolToggle" default_bool="true"
+		scope="MainGameOnly"
+		description="" />
+
+	<setting id="AlwaysShowMinorIcons" category="Game" subcategory="UIElements" display_name="Always Show Minor Icons" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly"
+		description="Normally these only appear when you hold the 'Show Detailed Tooltips' button, but if you would like them to show at all times, you can use this option." />
+	
+	<setting id="SecondsForRecentResourceChangesToRemain" category="Game" subcategory="UIElements" display_name="Seconds For Recent Resource Changes To Remain" type="IntSlider" default_int="6" min_int="0" max_int="30"
+		scope="MainGameOnly"
+		description="How long should recent resource changes hover near their icons?  You can click to dismiss those notices early, or set this to zero to not have them appear at all." />
+
+	<setting id="MaxDistanceToShowMinorIcons" category="Game" subcategory="UIElements" display_name="Max Distance To Show Minor Icons" type="IntSlider" default_int="60" min_int="20" max_int="120"
+		scope="MainGameOnly"
+		description="" />
+	
+	<setting id="MaxDistanceToShowJobIcons" category="Game" subcategory="UIElements" display_name="Max Distance To Show Job Icons" type="IntSlider" default_int="120" min_int="60" max_int="180"
+		scope="MainGameOnly"
+		description="" />
+
+	<setting id="MaxDistanceToShowUnitOutlinesBehindObjects" category="Game" subcategory="UIElements" display_name="Max Distance To Show Unit Outlines Behind Objects" type="IntSlider" default_int="60" min_int="0" max_int="100"
+		scope="MainGameOnly"
+		description="" />
+
+	<setting id="DamagePopup_LingerTime" category="Game" subcategory="UIElements" display_name="Damage Popup Linger Time" type="IntSlider" default_int="4" min_int="2" max_int="20"
+		scope="MainGameOnly" description="How long damage popup text hangs around after a unit takes damage." />
+
+	<setting id="MinorActionPopup_LingerTime" category="Game" subcategory="UIElements" display_name="Minor Action Popup Linger Time" type="IntSlider" default_int="4" min_int="2" max_int="20"
+		scope="MainGameOnly" description="How long damage popup text hangs around after a unit does a minor action." />
+
+	<setting id="MajorActionPopup_LingerTime" category="Game" subcategory="UIElements" display_name="Major Action Popup Linger Time" type="IntSlider" default_int="8" min_int="2" max_int="20"
+		scope="MainGameOnly" description="How long damage popup text hangs around after a unit does a major action." />
+	
+	<setting id="ShowNetworkLinks" category="Game" subcategory="UIElements" display_name="Show Network Links" type="BoolToggle" default_bool="true"
+		scope="MainGameOnly" is_advanced_setting="true"
+		description="The blue lines from networks to subnets. Turn off if you find it to be too much information." />
+
+	<setting id="ShowSubnetLinks" category="Game" subcategory="UIElements" display_name="Show Subnet Links" type="BoolToggle" default_bool="true"
+		scope="MainGameOnly" is_advanced_setting="true"
+		description="The yellow lines between buildings in a subnet. Turn off if you find it to be too much information." />
+
+	<setting id="ShowNetworkSidebarIcon" category="Game" subcategory="UIElements" display_name="Show Network Sidebar Icon" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" is_advanced_setting="true"
+		description="The network sidebar icon will only appear in the top-right header menu if this is enabled." />
+	
+	<setting id="ShowTopRightBar" category="Game" subcategory="UIElements" display_name="Show Top-Right Bar" type="BoolToggle" default_bool="true"
+		scope="MainGameOnly" is_advanced_setting="true"
+		description="Typically you would only turn this off for cinematic screenshots or video." />
+
+	<setting id="ShowTopRightChecklist" category="Game" subcategory="UIElements" display_name="Show Top-Right Checklist" type="BoolToggle" default_bool="true"
+		scope="MainGameOnly" is_advanced_setting="true"
+		description="Typically you would only turn this off for cinematic screenshots or video." />
+
+	<setting id="ShowTooltips" category="Game" subcategory="UIElements" display_name="Show Tooltips" type="BoolToggle" default_bool="true"
+		scope="MainGameOnly" is_advanced_setting="true"
+		description="Typically you would only turn this off for cinematic screenshots or video." />
+	
+	<setting id="ShowBottomRightNotices" category="Game" subcategory="UIElements" display_name="Show Bottom-Right Notices " type="BoolToggle" default_bool="true"
+		scope="MainGameOnly" is_advanced_setting="true"
+		description="Typically you would only turn this off for cinematic screenshots or video." />
+
+	<setting id="BottomRightNotice_LingerTime" category="Game" subcategory="UIElements" display_name="Bottom-Right Notice Linger Time" type="IntSlider" default_int="8" min_int="3" max_int="20" is_advanced_setting="true"
+		scope="MainGameOnly" description="How long these notices hang around before disappearing." />
+
+	<setting id="BottomRightNotice_DelayBetween" category="Game" subcategory="UIElements" display_name="Delay Between Bottom-Right Notices" type="FloatSlider" default_float="0.8" min_float="0.1" max_float="3" rounding_type="Tenths" is_advanced_setting="true"
+		scope="MainGameOnly" description="How long after one appears before the next will appear." />
+
+	<setting id="BottomRightNotice_PausePriorityLevel" category="Game" subcategory="UIElements"
+		display_name="Bottom-Right Notice Pause Level" type="IntDropdown" dropdown_filler_dll_name="HotMExternalVisualizationCode" dropdown_filler_type_name="Arcen.HotM.ExternalVis.NotePriorityPauseLevelFiller" default_int="4"
+		description="The lower this is set, the more notifications you will have to manually dismiss -- however, you won't be at risk of missing them."/>
+	
+	<setting id="ShowUnitHealthAndAboveHeadIcons" category="Game" subcategory="UIElements" display_name="Show Unit Health And Above-Head Icons" type="BoolToggle" default_bool="true"
+		scope="MainGameOnly" is_advanced_setting="true"
+		description="Typically you would only turn this off for cinematic screenshots or video." />
+
+	<!--Game: GameFlow-->
+
+	<setting id="NotificationsAreDismissedBeforeSwitchingUnits" category="Game" subcategory="GameFlow" display_name="Notifications Are Dismissed Before Switching Units" type="BoolToggle" default_bool="true"
+		scope="MainGameOnly"
+		description="With this option on, using the spacebar or similar will interact with notifications before cycling through your units.
+With this off, it won't interact with the notifications until the end of your turn." />
+	
+	<setting id="NPCActionsView" category="Game" subcategory="GameFlow"
+		display_name="NPC Actions View" type="IntDropdown" dropdown_filler_dll_name="HotMExternalVisualizationCode" dropdown_filler_type_name="Arcen.HotM.ExternalVis.NPCActionsViewFiller" default_int="0"
+		description="Normally, NPCs act without making you watch them. This tends to feel the most natural, and because of the Enemy Attacks Planned notice, you are not missing anything.
+If you wish to watch all NPCs do their actions, or just ones that are attacking you or otherwise high-priority, then you can select those options. You will need to hit the Spacebar key to move to each group of NPCs, in that case." />
+
+	<!--Game: ThematicBehavior-->
+
+	<setting id="MainGameCarsDriveOnTheRight" category="Game" subcategory="ThematicBehavior" display_name="Right-Handed Roads"
+		type="BoolToggle" default_bool="true"
+		scope="MainGameOnly"
+		description="" />
+
+	<setting id="Weather_DisableRain" category="Game" subcategory="ThematicBehavior" display_name="Disable Rain"
+		type="BoolToggle" default_bool="false"
+		scope="MainGameOnly"
+		description="" />
+
+	<setting id="Weather_MinTurnsForChange" category="Game" subcategory="ThematicBehavior" display_name="Minimum Turns Before Weather Changes" type="IntSlider" default_int="7" min_int="1" max_int="50"
+		scope="MainGameOnly" is_advanced_setting="true"
+		description="" />
+
+	<setting id="Weather_MaxTurnsForChange" category="Game" subcategory="ThematicBehavior" display_name="Maximum Turns Before Weather Changes" type="IntSlider" default_int="12" min_int="1" max_int="50"
+		scope="MainGameOnly" is_advanced_setting="true"
+		description="" />
+	
+	<!--Game: Accessibility-->
+
+	<setting id="UseHighVisibilityUnitColors" category="Game" subcategory="Accessibility" display_name="Use High Visibility Unit Colors"
+		type="BoolToggle" default_bool="false" scope="MainGameOnly"
+		description="Normally only shown when you hold the Inspect key. Enemies glow bright red, your units bright gold, semi-allies-or-better bright blue, and guard units and secondary units a dimmer purple.
+Only applies to human-sized units and very small vehicles; not mechs or larger vehicles." />
+	
+	<setting id="NPCExtraHitboxScaleDuringTargeting" category="Game" subcategory="Accessibility"
+		display_name="Larger NPC Hitboxes During Targeting" type="FloatSlider" default_float="1.5" min_float="1" max_float="3" rounding_type="Tenths"
+		description="Only applies to human-scale units, not larger vehicles or mechs.
+When you have one of your units selected, the clickable region around every NPC unit scales up so that they are easier to target." />
+
+	<setting id="SkipScreenShake" category="Game" subcategory="Accessibility" display_name="Skip Screen Shake"
+		type="BoolToggle" default_bool="false" scope="MainGameOnly"
+		description="" />
+
+	<setting id="DisableStreetTraffic" category="Game" subcategory="Accessibility" display_name="Disable Street Traffic"
+		type="BoolToggle" default_bool="false" scope="MainGameOnly"
+		description="This is visual flavor. If the visual movement is distracting, you can disable it." />
+
+	<setting id="DisableDeliveryDrones" category="Game" subcategory="Accessibility" display_name="Disable Delivery Drones"
+		type="BoolToggle" default_bool="false" scope="MainGameOnly"
+		description="This is visual flavor. If the visual movement is distracting, you can disable it." />
+	
+	<setting id="DisableBackgroundGunfights" category="Game" subcategory="Accessibility" display_name="Disable Background Gunfights"
+		type="BoolToggle" default_bool="false" scope="MainGameOnly"
+		description="This is visual flavor. If the visual movement is distracting, you can disable it." />
+
+	<!--Game: MoveSpeeds -->
+
+	<setting id="BackgroundTrafficOnlyMovesWhenUnitsMove" category="Game" subcategory="MoveSpeeds" display_name="Background Traffic Only Moves When Units Move" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly"
+		description="" />
+
+	<setting id="MoveSpeed_PlayerAndroid" category="Game" subcategory="MoveSpeeds"
+		display_name="Player Android Move Speed" type="FloatSlider" default_float="1" min_float="0.4" max_float="2" rounding_type="Twentieths"
+		description="" />
+
+	<setting id="MoveSpeed_PlayerMech" category="Game" subcategory="MoveSpeeds"
+		display_name="Player Mech Move Speed" type="FloatSlider" default_float="1" min_float="0.4" max_float="2" rounding_type="Twentieths"
+		description="" />
+
+	<setting id="MoveSpeed_PlayerVehicle" category="Game" subcategory="MoveSpeeds"
+		display_name="Player Vehicle Move Speed" type="FloatSlider" default_float="1" min_float="0.4" max_float="2" rounding_type="Twentieths"
+		description="" />
+
+	<setting id="MoveSpeed_SmallNPC" category="Game" subcategory="MoveSpeeds"
+		display_name="Small NPC Move Speed" type="FloatSlider" default_float="1" min_float="0.4" max_float="2" rounding_type="Twentieths"
+		description="" />
+
+	<setting id="MoveSpeed_NPCMech" category="Game" subcategory="MoveSpeeds"
+		display_name="NPC Mech Move Speed" type="FloatSlider" default_float="1" min_float="0.4" max_float="2" rounding_type="Twentieths"
+		description="" />
+
+	<setting id="MoveSpeed_NPCVehicle" category="Game" subcategory="MoveSpeeds"
+		display_name="NPC Vehicle Move Speed" type="FloatSlider" default_float="1" min_float="0.4" max_float="2" rounding_type="Twentieths"
+		description="" />
+
+	<!-- Hidden -->
+	<setting id="MainGameLastFile" category="Game" display_name="" type="StringHidden"
+			skip_all_localization_on_node="true"
+			  scope="MainGameOnly" description="" />
+	
+</root>

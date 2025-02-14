@@ -1,0 +1,30 @@
+Traffic And Pedestrian Density
+When traffic and pedestrians are more dense, it looks great, but can affect performance negatively.  It has no effect on gameplay.
+Skip Loading Decorations For Building Zones
+The city will be more barren, but will load notably faster and also have less to draw in the background.
+			 
+Parametrically-applied trees and flowers and trash and such around buildings will be absent, leading to a more minimalist effect.
+Skip Loading Decorations For Decoration Zones
+The city will be more barren, but will load faster and also have less to draw in the background.
+			 
+Parametrically-applied trees and flowers and trash and such in the areas that are specifically designated for them will be omitted, making for some odd gaps visually, but otherwise it's functional.
+Skip Loading Decorations For Wilderness Cells
+The city will be more barren, but will load faster and also have less to draw in the background.
+			 
+Parametrically-applied trees and flowers and trash and such in the areas of 'wilderness' cells within the city will be blank instead, but this does not affect function in any way.
+Cell Draw Distance: Buildings
+The game is broken up into visual cells for drawing.  How many cells away should be drawn when looking sideways, as far as buildings go?  Larger amounts will look cooler for photos, but give a lower framerate.
+		   
+The default of 5 is not a bad idea in most cases, because buildings are large but only so numerous.  This keeps the skyline the most accurate and avoids pop-in.
+Cell Draw Distance: Roads
+The game is broken up into visual cells for drawing.  How many cells away should be drawn when looking sideways, as far as roads go?  Larger amounts will look cooler for photos, but give a lower framerate.
+			 
+Roads are more numerous than buildings, and in a lot of cases you can't even see roads that are too distant past all of the buildings.  The default of 4 should work well even in parts of the city that are not densely populated.
+Cell Draw Distance: Major Decorations
+The game is broken up into visual cells for drawing.  How many cells away should be drawn when looking sideways, as far as major decorations go?  Larger amounts will look cooler for photos, but give a lower framerate.
+			 
+Major decorations showing out to a distance of 4 as a default should work well for parts of the city that are not densely populated.
+Cell Draw Distance: Minor Decorations
+The game is broken up into visual cells for drawing.  How many cells away should be drawn when looking sideways, as far as minor decorations go?  Larger amounts will look cooler for photos, but give a lower framerate.
+			 
+Minor decorations showing out to a distance of 1 as a default should be sufficient in most cases even on very powerful games.

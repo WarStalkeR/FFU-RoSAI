@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="job">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="ui_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be for the build menu ui."/>
+
+	<attribute key="marker_color" type="node-dropdown" is_required="true" node_source="BuildingMarkerColor" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The color of marker to display when this job is at a building." />
+	<attribute key="build_mode_category" type="node-dropdown" is_required="true" node_source="MachineBuildModeCategory" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The way that this is categorized for the build menu." />
+
+	<attribute key="required_structure_type" type="node-dropdown" is_required="true" node_source="MachineStructureType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This job can normally only go in this kind of structure." />
+	<attribute key="required_structure_type2" type="node-dropdown" is_required="false" node_source="MachineStructureType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This job can alternatively also go in this structure type. Mainly for purposes of things like relays and network towers.
+Any job that increases resource caps cannot go into a second structure type." />
+	<attribute key="portrait_icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the portraits on the sidebar."/>
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	<attribute key="icon_scale_multiplier" type="float-textbox" min="-1" max="5" default="-1" content_width_px="40" is_required="false"
+		tooltip="If above zero, then the scale of the icon for this job will be multiplier by this amount"/>
+	
+	<attribute key="turns_stunned_when_subnet_attacked" type="int-textbox" min="0" max="9" default="0" content_width_px="300" is_required="false"
+		tooltip="This job's structure will be stunned for the specified number of turns whenever any structure on the same subnet is attacked."/>
+	
+	<attribute key="requires_x_staff_to_provide_passive_effects" type="int-textbox" min="0" max="1000000" default="0" content_width_px="300" is_required="false"
+		tooltip="If set above 0, then passive effects from this job will only be provided if it has the requisite amount of staff.
+How the staff is calculated is entirely up to the custom code for the job."/>
+
+	<attribute key="max_explosion_range_on_death" type="float-textbox" min="0" max="9" default="0" content_width_px="300" is_required="false"
+		tooltip="If above zero, then this will explode on death and take out all of the buildings, units, and non-armored npc units in its range. on_explosion is required if this is used.
+If this provides resource storage, then the explosion range will be shrunk based on the percentage of resources actually stored here."/>
+	<attribute key="min_explosion_range_on_death" type="float-textbox" min="0" max="9" default="0" content_width_px="300" is_required="false"
+		tooltip="If the max range is specified, then the min range also needs to be specified, and at least 1. This is the smallest the explosion can be if the structure has fewer goods in it that are explosive."/>
+	<attribute key="chance_of_exploding_when_damaged" type="int-textbox" min="0" max="100" default="0" content_width_px="300" is_required="false"
+		tooltip="If above zero, and max_explosion_range_on_death is above zero, then this building has a chance of exploding (and being destroyed) by even small bits of damage to itself."/>
+	<attribute key="shuts_off_at_percentage_electricity" type="int-textbox" min="-1" max="100" default="0" content_width_px="300" is_required="true"
+		tooltip="If above zero, then it will shut off at a certain percentage. If zero, it will use backup generator power. If -1, it's not shown at all and so probably is a power generator."/>
+	
+	<attribute key="turns_to_install" type="int-textbox" min="0" max="9" default="9" content_width_px="300" is_required="true"
+		tooltip="How many turns it will take to install this job into a structure. Zero is fine for small jobs."/>
+	<attribute key="job_work_order_priority" type="float-textbox" min="-100000" max="100000" content_width_px="80" is_required="true"
+		tooltip="The lower the number, including negative, the earlier it happens. The higher the number, the later it happens, in the order of a turn."/>
+
+	<attribute key="is_locked_until_at_least_one_resource_it_stores_is_unlocked" type="bool" default="false"
+		tooltip="If true, then this job will be locked until at least one of the resources it stores is unlocked."/>
+	<attribute key="is_suggested_to_always_build_maximum_possible" type="bool" default="false"
+		tooltip="If true, then the build menu will always suggest building as many of these as possible."/>
+	<attribute key="is_suggested_to_always_build_at_least" type="int-textbox" min="0" max="100" default="0" content_width_px="300" is_required="true"
+		tooltip="If above zero, then it will always be suggested to build at least this many of whatever you have going on."/>
+
+	<attribute key="cannot_be_built_until_chapter_two" type="bool" default="false"
+		tooltip="If true, then this job will be blocked until chapter two."/>
+	<attribute key="cannot_be_built_until_shell_company_established" type="bool" default="false"
+		tooltip="If true, then this job will be blocked until the player has established a shell company."/>
+	<attribute key="can_appear_even_after_final_doom" type="bool" default="false"
+		tooltip="If true, then this job will still be something you can build after the final doom happens."/>
+	<attribute key="only_appears_after_final_doom" type="bool" default="false"
+		tooltip="If this is true, then this ONLY appears after the final doom."/>
+
+	<attribute key="cannot_be_directly_built" type="bool" default="false"
+		tooltip="If this is true, then players cannot build this. These typically come about from other sources, like one job becoming another."/>
+	<attribute key="can_only_ever_have_one" type="bool" default="false"
+		tooltip="If this is true, then you can only build one, period."/>
+	<attribute key="cannot_be_scrapped_or_disabled" type="bool" default="false"
+		tooltip="If this is true, then you can never intentionally scrap or disable this."/>
+	<attribute key="is_blocked_after_city_flag" type="node-dropdown" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then this effectively disappears after the city flag is true." />
+
+	<attribute key="extra_notes_go_to_ultra_detailed_tooltips" type="bool" default="false"
+		tooltip="If true, then the extra notes are only shown in the ultra-detailed tooltips."/>
+	<attribute key="strategy_tips_go_to_ultra_detailed_tooltips" type="bool" default="false"
+		tooltip="If true, then the strategy tips are only shown in the ultra-detailed tooltips."/>
+
+	<attribute key="scrap_if_above_internal_robotics_cap" type="bool" default="false"
+		tooltip="If true, then this will get rid of excess buildings that are above the internal robotics cap."/>
+
+	<attribute key="only_show_description_in_english" type="bool" default="false"
+		tooltip="If true, then this will only show the description in English. Usually because localization is in progress."/>
+	<attribute key="only_show_strategy_tip_in_english" type="bool" default="false"
+		tooltip="If true, then this will only show the strategy tip in English. Usually because localization is in progress."/>
+
+	<attribute key="internal_robotics_type_needed" type="node-dropdown" is_required="true" node_source="UpgradeInt" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="What kind of internal robotics does this use?" />
+	<attribute key="internal_robots_count_needed" type="int-textbox" min="0" max="1000000" default="9" content_width_px="300" is_required="true"
+		tooltip="How many of the internal robots are needed?"/>
+	
+	<attribute key="on_installation_start" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the player initializes installation?" />
+	<attribute key="on_installation_complete" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when installation completes?" />
+
+	<attribute key="on_explosion" type="node-dropdown" is_required="false" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use if this is a job that explodes in a range when destroyed, or damaged. If this is a regular job that just disappears when the building is destroyed, then this will have no effect." />
+
+	<attribute key="extra_code_on_area_explosion" type="node-dropdown" is_required="false" node_source="ExtraCodeHandler" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If extra code should be run when this is being destroyed by an AOE building-destroyer explosion." />
+
+	<attribute key="job_cap" type="node-dropdown" is_required="true" node_source="UpgradeInt" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which upgradeable int determines the cap for this job?  If multiple jobs use the same upgradeable int, they all still have their own separate caps." />
+	<attribute key="distance_restriction" type="node-dropdown" is_required="false" node_source="MachineJobDistanceRestriction" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then this job can't be too close to other jobs with of this same restriction type." />
+
+	<attribute key="actor_data_set" type="node-dropdown" is_required="true" node_source="ActorDataTypeSet" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Required. Which kind of data does this job use?" />
+
+	<attribute key="counterstrike_type" type="node-dropdown" is_required="false" node_source="ActivityDangerType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Optional. If this will cause a counterstrike from an enemy faction, then here we are." />
+
+	<attribute key="resource_cap_to_increase_1" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This job is going to increase some resource's cap. Which one?  All resource caps increased by this job go up by the same amount." />
+	<attribute key="resource_cap_to_increase_2" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This job is going to increase some resource's cap. Which one?  All resource caps increased by this job go up by the same amount." />
+	<attribute key="resource_cap_to_increase_3" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This job is going to increase some resource's cap. Which one?  All resource caps increased by this job go up by the same amount." />
+	<attribute key="resource_cap_to_increase_4" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This job is going to increase some resource's cap. Which one?  All resource caps increased by this job go up by the same amount." />
+	<attribute key="resource_cap_to_increase_5" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This job is going to increase some resource's cap. Which one?  All resource caps increased by this job go up by the same amount." />
+	<attribute key="resource_cap_increased_per_unit_of_area1" type="float-textbox" min="-1" max="5" content_width_px="40" is_required="false"
+		tooltip="Should be 0 or -1 if resource_cap_to_increase 1 is blank. If positive, then this is how much cap is granted per unit of floor area in the structure where a job is housed."/>
+	<attribute key="resource_cap_increased_per_unit_of_area2" type="float-textbox" min="-1" max="5" content_width_px="40" is_required="false"
+		tooltip="Should be 0 or -1 if resource_cap_to_increase 2 is blank. If positive, then this is how much cap is granted per unit of floor area in the structure where a job is housed."/>
+	<attribute key="resource_cap_increased_per_unit_of_area3" type="float-textbox" min="-1" max="5" content_width_px="40" is_required="false"
+		tooltip="Should be 0 or -1 if resource_cap_to_increase 3 is blank. If positive, then this is how much cap is granted per unit of floor area in the structure where a job is housed."/>
+	<attribute key="resource_cap_increased_per_unit_of_area4" type="float-textbox" min="-1" max="5" content_width_px="40" is_required="false"
+		tooltip="Should be 0 or -1 if resource_cap_to_increase 4 is blank. If positive, then this is how much cap is granted per unit of floor area in the structure where a job is housed."/>
+	<attribute key="resource_cap_increased_per_unit_of_area5" type="float-textbox" min="-1" max="5" content_width_px="40" is_required="false"
+		tooltip="Should be 0 or -1 if resource_cap_to_increase 5 is blank. If positive, then this is how much cap is granted per unit of floor area in the structure where a job is housed."/>
+	<attribute key="resource_cap_increased_per_unit_of_volume1" type="float-textbox" min="-1" max="5" content_width_px="40" is_required="false"
+		tooltip="Should be 0 or -1 if resource_cap_to_increase 1 is blank. If positive, then this is how much cap is granted per unit of interior volume in the structure where a job is housed."/>
+	<attribute key="resource_cap_increased_per_unit_of_volume2" type="float-textbox" min="-1" max="5" content_width_px="40" is_required="false"
+		tooltip="Should be 0 or -1 if resource_cap_to_increase 2 is blank. If positive, then this is how much cap is granted per unit of interior volume in the structure where a job is housed."/>
+	<attribute key="resource_cap_increased_per_unit_of_volume3" type="float-textbox" min="-1" max="5" content_width_px="40" is_required="false"
+		tooltip="Should be 0 or -1 if resource_cap_to_increase 3 is blank. If positive, then this is how much cap is granted per unit of interior volume in the structure where a job is housed."/>
+	<attribute key="resource_cap_increased_per_unit_of_volume4" type="float-textbox" min="-1" max="5" content_width_px="40" is_required="false"
+		tooltip="Should be 0 or -1 if resource_cap_to_increase 4 is blank. If positive, then this is how much cap is granted per unit of interior volume in the structure where a job is housed."/>
+	<attribute key="resource_cap_increased_per_unit_of_volume5" type="float-textbox" min="-1" max="5" content_width_px="40" is_required="false"
+		tooltip="Should be 0 or -1 if resource_cap_to_increase 5 is blank. If positive, then this is how much cap is granted per unit of interior volume in the structure where a job is housed."/>
+	<attribute key="resource_cap_increased_flat1" type="int-textbox" min="0" max="10000000" content_width_px="40" is_required="false"
+		tooltip="Flat amount that this cap is increased at any building."/>
+	<attribute key="resource_cap_increased_flat2" type="int-textbox" min="0" max="10000000" content_width_px="40" is_required="false"
+		tooltip="Flat amount that this cap is increased at any building."/>
+	<attribute key="resource_cap_increased_flat3" type="int-textbox" min="0" max="10000000" content_width_px="40" is_required="false"
+		tooltip="Flat amount that this cap is increased at any building."/>
+	<attribute key="resource_cap_increased_flat4" type="int-textbox" min="0" max="10000000" content_width_px="40" is_required="false"
+		tooltip="Flat amount that this cap is increased at any building."/>
+	<attribute key="resource_cap_increased_flat5" type="int-textbox" min="0" max="10000000" content_width_px="40" is_required="false"
+		tooltip="Flat amount that this cap is increased at any building."/>
+
+	<attribute key="flat_number_to_gain_on_construction_complete1" type="int-textbox" min="0" max="10000000" content_width_px="40" is_required="false"
+		tooltip="Flat bonus amount that is granted, optionally, if this is completed and it grants this kind of resource."/>
+	<attribute key="flat_number_to_gain_on_construction_complete2" type="int-textbox" min="0" max="10000000" content_width_px="40" is_required="false"
+		tooltip="Flat bonus amount that is granted, optionally, if this is completed and it grants this kind of resource."/>
+	<attribute key="flat_number_to_gain_on_construction_complete3" type="int-textbox" min="0" max="10000000" content_width_px="40" is_required="false"
+		tooltip="Flat bonus amount that is granted, optionally, if this is completed and it grants this kind of resource."/>
+	<attribute key="flat_number_to_gain_on_construction_complete4" type="int-textbox" min="0" max="10000000" content_width_px="40" is_required="false"
+		tooltip="Flat bonus amount that is granted, optionally, if this is completed and it grants this kind of resource."/>
+	<attribute key="flat_number_to_gain_on_construction_complete5" type="int-textbox" min="0" max="10000000" content_width_px="40" is_required="false"
+		tooltip="Flat bonus amount that is granted, optionally, if this is completed and it grants this kind of resource."/>
+
+	
+	<attribute key="related_resource_1" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+		tooltip="Optional. If specified, then this will cause the resource in question to be included in the top bar when related buildings and such are hovered or selected.
+Resources where caps are increased already do this, so no need to duplicate those." />
+	<attribute key="related_resource_2" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+		tooltip="Optional. If specified, then this will cause the resource in question to be included in the top bar when related buildings and such are hovered or selected.
+Resources where caps are increased already do this, so no need to duplicate those." />
+	<attribute key="related_resource_3" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+		tooltip="Optional. If specified, then this will cause the resource in question to be included in the top bar when related buildings and such are hovered or selected.
+Resources where caps are increased already do this, so no need to duplicate those." />
+	<attribute key="related_resource_4" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+		tooltip="Optional. If specified, then this will cause the resource in question to be included in the top bar when related buildings and such are hovered or selected.
+Resources where caps are increased already do this, so no need to duplicate those." />
+	<attribute key="related_resource_5" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+		tooltip="Optional. If specified, then this will cause the resource in question to be included in the top bar when related buildings and such are hovered or selected.
+Resources where caps are increased already do this, so no need to duplicate those." />
+	
+	<attribute key="boosts_vehicles_in_range" type="bool" default="false"
+		tooltip="If true, then provides a passive boost to any machine vehicles in range."/>
+	<attribute key="boosts_units_in_range" type="bool" default="false"
+		tooltip="If true, then provides a passive boost to any machine units in range."/>
+	<attribute key="is_a_storage_bunker" type="bool" default="false"
+		tooltip="If true, then this acts as a storage bunker for players."/>
+	<attribute key="is_mass_animal_housing" type="bool" default="false"
+		tooltip="If true, then this acts as mass animal housing for players."/>
+	<attribute key="are_resources_losses_skipped_even_when_blows_up" type="bool" default="false"
+		tooltip="If true, then this skips the stored resources from being lost even when there is an explosion of this structure."/>
+	<attribute key="has_initial_wave_regardless_of_deterrence" type="bool" default="false"
+		tooltip="If true, then this structure will get an initial wave against it even if there is enough deterrence."/>
+	<attribute key="is_related_to_shell_company" type="bool" default="false"
+		tooltip="If true, then this structure is related to your shell company, not to you."/>
+
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of what is going on with this job."/>
+	<attribute key="extra_notes_lang_key" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="false"
+		tooltip="This specifies the language key that will be used for extra notes shown under the strategy tip in gray."/>
+	<attribute key="specialty_header_lang_key" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="false"
+		tooltip="This specifies the language key that will be used for the set-specialty window's header when it's for this job."/>
+	<attribute key="activation_list_header_lang_key" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="false"
+		tooltip="This specifies the language key that will be used for the activation-choice-list window's header when it's for this job."/>
+	<attribute key="activation_alt_list_header_lang_key" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="false"
+		tooltip="This specifies the language key that will be used for the alt-activation-choice-list window's header when it's for this job."/>
+	<attribute key="specialty_missing_lang_key" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="false"
+		tooltip="This specifies the language key that will be used for the error complaint when this job is missing a specialty."/>
+
+	<attribute key="multiplier_target" type="node-dropdown" is_required="false" node_source="MachineJobClass" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This is the type of class that any of the efficiency multipliers will target." />
+	
+	<attribute key="is_locked_before_unlock" type="node-dropdown" is_required="false" node_source="Unlock" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players until the specified Unlock is invented. This is not locked by an Unlock in the traditional way; typically these are multi-unlocks." />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the job logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the job logic in the specified external dll."/>
+
+	<attribute key="job_classes" type="node-list" node_source="MachineJobClass" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What classes is this job part of?" />
+	
+	<attribute key="tags" type="node-list" node_source="MachineJobTag" content_width_px="300" is_required="false"
+		tooltip="What tags are associated with this job type?" />
+
+	<!--poi_status_caused
+	*******************************************************************************************************-->
+	<sub_node id="poi_status_caused">
+		<attribute key="poi_tag" type="node-dropdown" is_required="true" node_source="POITag" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What poi tag will this apply the status to?" />
+		<attribute key="poi_status" type="node-dropdown" is_required="true" node_source="POIStatus" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What poi status does this cause within its job range, or when it's physically within that poi?" />
+	</sub_node>
+	
+	<!--poi_status_blocked
+	*******************************************************************************************************-->
+	<sub_node id="poi_status_blocked">
+		<attribute key="poi_status" type="node-dropdown" is_required="true" node_source="POIStatus" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What poi status does this block within its job range, or when it's physically within that poi?" />
+		<attribute key="value" type="bool" is_required="true" default="true"
+			tooltip="Normally set to true to indicate the grant. Set to false to mod it out, typically." />
+	</sub_node>
+
+	<!--initial_actor_rating
+	*******************************************************************************************************-->
+	<sub_node id="initial_actor_rating">
+		<attribute key="data_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="true"
+			tooltip="This ActorDataType will be the baseline for all jobs of this type. One location compared to another never differs if they are the same type.
+
+Specifically, this is what they boost on whatever vehicles or units or whatever are near them." />
+		<attribute key="value" type="int-textbox" min="-10000000" max="10000000" content_width_px="150" is_required="true"
+			tooltip="The range you can set on this is wide. If set to 0 (by mod or otherwise), then it will effectively not exist for this job type unless machine upgrades later raise it."/>
+		<attribute key="alt_stat_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Alternative name by which to refer to this stat (and therefore its purpose) at this job." />
+	</sub_node>
+
+	<!--resource_cost
+	*******************************************************************************************************-->
+	<sub_node id="resource_cost">
+		<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="To choose this interaction option, the player must have the required amount of ALL resources specified this way." />
+		<attribute key="cost" type="int-textbox" min="0" max="1000000" content_width_px="150" is_required="true"
+			tooltip="This is the constant amount of resources that it will cost to do this action."/>
+	</sub_node>
+
+	<!--math_int
+	*******************************************************************************************************-->
+	<sub_node id="math_int">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="int_min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="int_max" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+
+		<attribute key="provides_upgrade_int" type="node-dropdown" node_source="UpgradeInt" content_width_px="200" is_required="true"
+			tooltip="If this is added to some upgrade, then that's specified here." />
+		<attribute key="provides_upgrade_float" type="node-dropdown" node_source="UpgradeFloat" content_width_px="200" is_required="true"
+			tooltip="If this is added to some upgrade, then that's specified here." />
+
+		<attribute key="expense_resource_cannot_reduce_below" type="int-textbox" is_required="false" min="0" max="20000000" default="0" content_width_px="80"
+			tooltip="If above 0, and income_or_expense_resource is an expense, then this can't reduce the income_or_expense_resource resource below the number specified here.
+Prevents depletion from things like bovine replicators." />
+
+		<attribute key="income_or_expense_resource" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="If this is a resource that is income or expense for the production chain, then this is what it is." />
+
+		<attribute key="is_part_of_production_chain" type="bool" default="false"
+			tooltip="If true, then this will show up in a secondary section related to production-chain stuff."/>
+		
+		<attribute key="math_type" type="string-dropdown" is_required="true" default="" content_width_px="200"
+			tooltip="How the job will be using this information.">
+			<option>InputCost</option>
+			<option>OutputResult</option>
+			<option>SomethingElse</option>
+		</attribute>
+	</sub_node>
+
+	<!--math_float
+	*******************************************************************************************************-->
+	<sub_node id="math_float">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+
+		<attribute key="is_part_of_production_chain" type="bool" default="false"
+			tooltip="If true, then this will show up in a secondary section related to production-chain stuff."/>
+		
+		<attribute key="math_type" type="string-dropdown" is_required="true" default="" content_width_px="200"
+			tooltip="How the job will be using this information.">
+			<option>InputCost</option>
+			<option>OutputResult</option>
+			<option>SomethingElse</option>
+		</attribute>
+	</sub_node>
+
+	<sub_node id="part_of">
+		<attribute key="collection" type="node-dropdown" is_required="true" node_source="MachineJobCollection" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What collection is this in?" />
+		<attribute key="sort_index" type="int-textbox" is_required="true" min="0" max="1000000" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="How is this sorted within that collection?  If set to zero, it is modded out of that collection." />
+	</sub_node>
+
+</root>

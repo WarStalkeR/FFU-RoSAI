@@ -1,0 +1,4 @@
+Export Data Tables As Loaded And Reloaded (Skip GamEntity)
+After the xml files are initially loaded, or are reloaded into the in-memory data tables (from changing active mods or expansions), write a text file for each one into a DataTablesAfterInitial and DataTablesAfterReload subfolders in the PlayerData folder.  
+
+The purpose of this is mainly to use with diffing tools between this copy and the on-main-load copy and see if something went wrong during the reload.  If you are modding and made changes to some ships and want to see how those changes cascaded, this would be one way to do that.  This is also a way for us to verify correctness when we make structural changes internally.

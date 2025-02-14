@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<vis_color_usage id="MapMyMarker"
+		 internal_notes="For the map buildings that have appliances."
+		 color="#f46526" hdr_intensity="3">
+	</vis_color_usage>
+
+	<vis_color_usage id="MapUnexploredCell"
+		 internal_notes="For the map ground color for unexplored cells."
+		 color="#121313" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="MapOutOfBoundsCell"
+		 internal_notes="For the map ground color for out of bounds cells."
+		 color="#0F0F10" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="MapIrradiatedColorCell"
+		 internal_notes="For the map ground color for cells that are irradiated."
+		 color="#0E0D0E" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="MapExploredNoVisionCell"
+		 internal_notes="For the map ground color for explored cells with no vision."
+		 color="#161718" hdr_intensity="0">
+	</vis_color_usage>	
+
+	<vis_color_usage id="MapExploredAndVisionCell"
+		 internal_notes="For the map ground color for explored cells with vision."
+		 color="#212223" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="MapBackgroundColor"
+		 internal_notes="For the map ground color for explored cells with vision."
+		 color="#3E4247" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="SelectedBuilding"
+		 internal_notes="For the highlight of selected buildings."
+		 color="#4adbff" hdr_intensity="1">
+	</vis_color_usage>
+	
+	<vis_color_usage id="MouseoverBuilding"
+		 internal_notes="Multiplied by the diffuse color of the building when you mouseover it."
+		 color="#565656" hdr_intensity="0.5">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingToBeDestroyedByMech"
+		 internal_notes="This building will be stomped by the mech."
+		 color="#DC671E" hdr_intensity="2">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingValidForMachineStructure"
+		 internal_notes="This building is valid for this kind of structure."
+		 color="#0EC6E1" hdr_intensity="1.5">
+	</vis_color_usage>
+	<vis_color_usage id="BuildingValidHoveredForMachineStructure"
+		 internal_notes="This building is valid for this kind of structure."
+		 color="#0EE1E1" hdr_intensity="5">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingAlreadyThisMachineStructureType"
+		 internal_notes="This building is valid for this kind of structure."
+		 color="#2DE10E" hdr_intensity="1.5">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingSoftBlockedForMachineStructure"
+		 internal_notes="This building is valid for this kind of structure."
+		 color="#8C0EE1" hdr_intensity="1.5">
+	</vis_color_usage>
+	<vis_color_usage id="BuildingSoftBlockedHoveredForMachineStructure"
+		 internal_notes="This building is valid for this kind of structure."
+		 color="#8C0EE1" hdr_intensity="5">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingValidForMachineStructureDeletion"
+		 internal_notes="This building can have its structure deleted."
+		 color="#E1440E" hdr_intensity="1.5">
+	</vis_color_usage>
+	<vis_color_usage id="BuildingValidHoveredForMachineStructureDeletion"
+		 internal_notes="This building can have its structure deleted."
+		 color="#E1440E" hdr_intensity="5">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingValidForMachineStructurePause"
+		 internal_notes="This building can have its structure paused."
+		 color="#63E10E" hdr_intensity="1.5">
+	</vis_color_usage>
+	<vis_color_usage id="BuildingValidHoveredForMachineStructurePause"
+		 internal_notes="This building can have its structure paused."
+		 color="#63E10E" hdr_intensity="5">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingValidForMachineStructureUnPause"
+		 internal_notes="This building can have its structure un-paused."
+		 color="#CF0EE1" hdr_intensity="1.5">
+	</vis_color_usage>
+	<vis_color_usage id="BuildingValidHoveredForMachineStructureUnPause"
+		 internal_notes="This building can have its structure un-paused."
+		 color="#CF0EE1" hdr_intensity="5">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingPartOfInvestigation"
+		 internal_notes="This building is a suspect for this investigation."
+		 color="#3BE10E" hdr_intensity="2">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingPartOfInvestigationMapMode"
+		 internal_notes="This building is a suspect for this investigation."
+		 color="#3BE10E" hdr_intensity="-0.3">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingPartOfTerritoryControl"
+		 internal_notes="This building is a suspect for this investigation."
+		 color="#2043BB" hdr_intensity="2">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingPartOfTerritoryControlMapMode"
+		 internal_notes="This building is a suspect for this investigation."
+		 color="#2043BB" hdr_intensity="-0.3">
+	</vis_color_usage>
+
+	<vis_color_usage id="UnitBeingIndicated"
+		 internal_notes=""
+		 color="#BB8320" hdr_intensity="1.6">
+	</vis_color_usage>
+
+	<vis_color_usage id="UnitNewStyleSelectionA" color="#16171B" hdr_intensity="3.2" />
+	<vis_color_usage id="UnitNewStyleSelectionB" color="#161926" hdr_intensity="3.2" />	
+	<vis_color_usage id="UnitNewStyleSelectionC" color="#2E304F" hdr_intensity="1.9" />
+
+	<vis_color_usage id="InvestigationPopupTextColor"
+		 internal_notes="The investigation text popup color."
+		 color="#5DB045" hdr_intensity="0.6">
+	</vis_color_usage>
+
+	<vis_color_usage id="DisbandPopupTextColor"
+		 internal_notes="The investigation text popup color."
+		 color="#B0841C" hdr_intensity="1.6">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingGlowMatch"
+		 internal_notes="This building is a suspect for this investigation."
+		 color="#0EE19E" hdr_intensity="-0.3">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingGlowSkip"
+		 internal_notes="This building is a suspect for this investigation."
+		 color="#0E5AE1" hdr_intensity="-0.3">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingRemovedAura"
+		 internal_notes="This building is a suspect for this investigation."
+		 color="#E16C0E" hdr_intensity="3">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingValidFlamethrowerTarget"
+		 internal_notes="This building can be hit with a flamethrower."
+		 color="#E1440E" hdr_intensity="6">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingValidDemolishTarget"
+		 internal_notes="This building can be hit with a demolisher drone."
+		 color="#E1440E" hdr_intensity="1.5">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingUnderConstructionFallingCubesColor"
+		 internal_notes="The falling cubes portion of the under construction building effect."
+		 color="#21C6D1" hdr_intensity="1.4">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingUnderConstructionGhostColor"
+		 internal_notes="The ghost portion of the under construction building effect."
+		 color="#26ADEC" hdr_intensity="3">
+	</vis_color_usage>
+	
+	<vis_color_usage id="BuildingBlockingGiantMech"
+		 internal_notes="This building would be in the way of a mech, so block us."
+		 color="#4AFFD1" hdr_intensity="3">
+	</vis_color_usage>
+
+	<vis_color_usage id="BuildingBlockingSmallMech"
+		 internal_notes="This building would be in the way of a mech, so block us."
+		 color="#572F06" hdr_intensity="2">
+	</vis_color_usage>
+
+	<vis_color_usage id="HoveredBuilding"
+		 internal_notes="For the highlight of hovered buildings when nothing special is going on."
+		 color="#ffce4a" hdr_intensity="1">
+	</vis_color_usage>
+
+	<vis_color_usage id="ObjectBlockingBuild"
+		 internal_notes="This building would be in the way of a mech, so block us."
+		 color="#C62020" hdr_intensity="1">
+	</vis_color_usage>
+
+	<vis_color_usage id="HoveredBuildingAttack"
+		 internal_notes="For the highlight of hovered buildings when in attack stance."
+		 color="#ff814a" hdr_intensity="2">
+	</vis_color_usage>
+
+	<vis_color_usage id="HoveredMachineVehicle"
+		 internal_notes="For the highlight of hovered machine vehicles."
+		 color="#ffce4a" hdr_intensity="1">
+	</vis_color_usage>
+
+	<vis_color_usage id="VehicleMoveGhostValid"
+		 internal_notes="For the ghost of the vehicle during movement mode when the destination is valid."
+		 color="#31DCDC" hdr_intensity="0.3">
+	</vis_color_usage>
+
+	<vis_color_usage id="DeploymentLineValid" color="#316FDC" hdr_intensity="0.7" />
+	<vis_color_usage id="DeploymentHexAValid" color="#6B738D" hdr_intensity="0.5" />
+	<vis_color_usage id="DeploymentHexBValid" color="#6B738D" hdr_intensity="0.5" />
+	<vis_color_usage id="DeploymentHexCValid" color="#6B738D" hdr_intensity="0.5" />
+
+	<vis_color_usage id="DeploymentLineBlocked" color="#DC3C31" hdr_intensity="0.7" />
+	<vis_color_usage id="DeploymentHexABlocked" color="#8D6F6B" hdr_intensity="0.5" />
+	<vis_color_usage id="DeploymentHexBBlocked" color="#8D6F6B" hdr_intensity="0.5" />
+	<vis_color_usage id="DeploymentHexCBlocked" color="#8D6F6B" hdr_intensity="0.5" />
+
+	<vis_color_usage id="VehicleMoveGhostBlocked"
+		 internal_notes="For the ghost of the vehicle during movement mode when the destination is blocked."
+		 color="#E12B00" hdr_intensity="0.5">
+	</vis_color_usage>
+
+	<vis_color_usage id="VehicleRangeInner"
+		 internal_notes="For interior color of the range of machine vehicles."
+		 color="#59f1ff16" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="VehicleRangeBorder"
+		 internal_notes="For border color of the range of machine vehicles."
+		 color="#59f1ff99" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="VehicleRangeBorderLow"
+		 internal_notes="For border color of the range of machine vehicles."
+		 color="#599fff99" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="UnitScanRangeBorder"
+		 internal_notes="For border color of the scan range of machine units."
+		 color="#1853A3" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="UnitAttackRangeBorder"
+		 internal_notes="For border color of the attack range of machine units."
+		 color="#599fff" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="UnitNewLocationScanRangeBorder"
+		 internal_notes="For border color of the scan range of machine units."
+		 color="#336EBE77" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="UnitNewLocationAttackRangeBorder"
+		 internal_notes="For border color of the attack range of machine units."
+		 color="#4E8BDE77" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="BulkAndroidNewLocationAttackRangeBorder"
+		 internal_notes="For border color of the attack range of machine units."
+		 color="#DEAA4E" hdr_intensity="0.5">
+	</vis_color_usage>
+
+	<vis_color_usage id="BulkAndroidMoveColor"
+		 internal_notes="For border color of the attack range of machine units."
+		 color="#DED84E" hdr_intensity="1">
+	</vis_color_usage>
+
+	<vis_color_usage id="UnitMoveRangeBorder"
+		 internal_notes="For border color of the longer move range of machine units."
+		 color="#643CA0" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineNetworkRangeBorder"
+		 internal_notes="For border color of the range that jobs have."
+		 color="#4AE7C9" hdr_intensity="0.3">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineNetworkMapGroundColor"
+		 internal_notes="The underlying color on the map of the parts where your network reaches."
+		 color="#3A4044" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineNetworkStreetsGroundColor"
+		 internal_notes="The underlying color on the streets of the parts where your network reaches."
+		 color="#4A98CB" hdr_intensity="0.6">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineNetworkRangeAfterJobBorder"
+		 internal_notes="For border color of the range that a structure will have after a job is installed."
+		 color="#4A97E7" hdr_intensity="0.9">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineNetworkUplink"
+		 internal_notes="For border color of the range that jobs have."
+		 color="#4A6FE7" hdr_intensity="0.6">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineNetworkSubnetConnection"
+		 internal_notes="For border color of the range that improvements have."
+		 color="#E7CC4A" hdr_intensity="0.6">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineJobEffectRangeBorder"
+		 internal_notes="For border color of the range that improvements have."
+		 color="#F4966A" hdr_intensity="0.2">
+	</vis_color_usage>
+
+	<vis_color_usage id="TargetingLineValid"
+		 internal_notes="For a line that is to a target that is not to be."
+		 color="#F46208" hdr_intensity="1">
+	</vis_color_usage>
+
+	<vis_color_usage id="TargetingLineInvalid"
+		 internal_notes="For a line to a target we can shoot."
+		 color="#A04949" hdr_intensity="0.2">
+	</vis_color_usage>
+	
+	<vis_color_usage id="SidebarTabSelected"
+		 internal_notes="For border color of the selected header on the sidebar."
+		 color="#77e7ff" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="SidebarTabUnselected"
+		 internal_notes="For border color of the unselected headers on the sidebar."
+		 color="#5f9efd" hdr_intensity="0">
+	</vis_color_usage>
+
+	<vis_color_usage id="RadialButtonHovered" color="#E1AFE1"  hdr_intensity="0"/>
+	<vis_color_usage id="RadialButtonNormal" color="#F4F4F4" hdr_intensity="0"/>
+	<vis_color_usage id="RadialButtonDisabled" color="#55505d" hdr_intensity="0"/>
+	<vis_color_usage id="RadialButtonDisabledHovered" color="#7F798A" hdr_intensity="0"/>
+	
+	<vis_color_usage id="ToastColorBad" color="#D17878" hdr_intensity="0" />
+	<vis_color_usage id="ToastColorBadMouseover" color="#dc5f5f" hdr_intensity="0" />
+	<vis_color_usage id="ToastColorGood" color="#6C9864" hdr_intensity="0" />
+	<vis_color_usage id="ToastColorGoodMouseover" color="#87D971" hdr_intensity="0" />
+	<vis_color_usage id="ToastColorRoutine" color="#997DC3" hdr_intensity="0" />
+	<vis_color_usage id="ToastColorRoutineMouseover" color="#BD83D4" hdr_intensity="0" />
+	<!--
+	<vis_color_usage id="ToastColorTechReward" color="#6BA5AE" hdr_intensity="0" />
+	<vis_color_usage id="ToastColorTechRewardMouseover" color="#DE8423" hdr_intensity="0" />
+	-->
+	<vis_color_usage id="ToastColorNewProject" color="#A8634B" hdr_intensity="0" related_text_1_color="#FF9880" related_text_2_color="#FFCEB0" />
+	<vis_color_usage id="ToastColorNewProjectMouseover" color="#C67646" hdr_intensity="0" related_text_1_color="#D98976" related_text_2_color="#D9B981" />
+	<vis_color_usage id="ToastColorProjectComplete" color="#4977C9" hdr_intensity="0" related_text_1_color="#B4C6F1" related_text_2_color="#E4ECFF" />
+	<vis_color_usage id="ToastColorProjectCompleteMouseover" color="#5A5DA3" hdr_intensity="0" related_text_1_color="#A09ADC" related_text_2_color="#9E98D9" />
+	
+	<vis_color_usage id="ToastColorTechNewAvailable" color="#804298" hdr_intensity="0" related_text_1_color="#B288CE" related_text_2_color="#D89DFF" />
+	<vis_color_usage id="ToastColorTechNewAvailableMouseover" color="#8B218D" hdr_intensity="0" related_text_1_color="#D25AF1" related_text_2_color="#A455D9" />
+	<vis_color_usage id="ToastColorTechResearchComplete" color="#857B5C" hdr_intensity="0" related_text_1_color="#FFC87D" related_text_2_color="#FFBC85" />
+	<vis_color_usage id="ToastColorTechResearchCompleteMouseover" color="#A88512" hdr_intensity="0" related_text_1_color="#E4A435" related_text_2_color="#D4921D" />
+	<vis_color_usage id="ToastColorBoxRewardReady" color="#4F9842" hdr_intensity="0" related_text_1_color="#B3FF6F" related_text_2_color="#E1FFC6" />
+	<vis_color_usage id="ToastColorBoxRewardReadyMouseover" color="#67CB41" hdr_intensity="0" related_text_1_color="#5DD93C" related_text_2_color="#94D966" />
+	<vis_color_usage id="ToastColorHandbookEntry" color="#2373DE" hdr_intensity="0" />
+	<vis_color_usage id="ToastColorHandbookEntryMouseover" color="#213285" hdr_intensity="0" />
+	<vis_color_usage id="ToastColorCountdownEntry" color="#DE4966" hdr_intensity="0" />
+	<vis_color_usage id="ToastColorCountdownEntryMouseover" color="#9B5674" hdr_intensity="0" />
+	<vis_color_usage id="ToastColorDoom" color="#C96051" hdr_intensity="0" />
+	<vis_color_usage id="ToastColorDoomMouseover" color="#755952" hdr_intensity="0" />
+
+	<vis_color_usage id="AbilityBarLockedBorderColor" color="#6993AE" hdr_intensity="0" />
+	<vis_color_usage id="AbilityBarLockedNumberColor" color="#879BA0" hdr_intensity="0" />
+
+	<vis_color_usage id="AbilityBarEmptyBorderColor" color="#434367" hdr_intensity="0" />
+	<vis_color_usage id="AbilityBarEmptyNumberColor" color="#4D4C80" hdr_intensity="0" />
+
+	<vis_color_usage id="AbilityBarDisabledBorderColor" color="#40427D" hdr_intensity="0" />
+	<vis_color_usage id="AbilityBarDisabledNumberColor" color="#494D6D" hdr_intensity="0" />
+	<vis_color_usage id="AbilityBarDisabledBackgroundColor" color="#ffffffee" hdr_intensity="0" />
+	<vis_color_usage id="AbilityBarDisabledIconColor" color="#6D7092" hdr_intensity="0" />
+
+	<vis_color_usage id="JobResourceInputCost" color="#EBA5FF" hdr_intensity="0" />
+	<vis_color_usage id="JobResourceOutput" color="#8DDBFF" hdr_intensity="0" />
+
+	<vis_color_usage id="VehicleBarFilledBorderColor" color="#6993AE" hdr_intensity="0" />
+	<vis_color_usage id="VehicleBarFilledNumberColor" color="#879BA0" hdr_intensity="0" />
+	
+	<vis_color_usage id="VehicleBarEmptyBorderColor" color="#434367" hdr_intensity="0" />
+	<vis_color_usage id="VehicleBarEmptyNumberColor" color="#4D4C80" hdr_intensity="0" />
+
+	<vis_color_usage id="HeaderForces_Full" color="#5DA9E7" hdr_intensity="0" />
+	<vis_color_usage id="HeaderVisibleStructureComplaints" color="#F7542D" hdr_intensity="2" />
+
+	<vis_color_usage id="AttackCellColor" color="#F7542D" hdr_intensity="0" alpha="0.1" />
+
+	<vis_color_usage id="HealthBarColorFull"
+		 color="#ADECE4" hdr_intensity="1">
+	</vis_color_usage>
+	<vis_color_usage id="HealthBarColorHigh"
+		 color="#19A83A" hdr_intensity="1.75">
+	</vis_color_usage>
+	<vis_color_usage id="HealthBarColorMed"
+		 color="#D9C627" hdr_intensity="1.5">
+	</vis_color_usage>
+	<vis_color_usage id="HealthBarColorLow"
+		 color="#DE2518" hdr_intensity="0.5">
+	</vis_color_usage>
+
+	<vis_color_usage id="AOT_Build" color="#0C3957" hdr_intensity="3.5" />
+	<vis_color_usage id="AOT_SelfRepair" color="#04A820" hdr_intensity="3" />
+	<vis_color_usage id="AOT_InvestigateLocation" color="#3A6A10" hdr_intensity="2.5" />
+	<vis_color_usage id="AOT_InfiltrateLocation" color="#51106A" hdr_intensity="2.5" />
+	<vis_color_usage id="AOT_MurderAndroid" color="#AB4928" hdr_intensity="2.5" />
+	<vis_color_usage id="AOT_StructuralEngineering" color="#AE908E" hdr_intensity="0.5" />
+	<vis_color_usage id="AOT_QuietNice" color="#2879AB" hdr_intensity="1.8" />
+	
+	<vis_color_usage id="PriorNPCUnitMoveGhost"
+		 internal_notes="For the ghost of an npc unit that moved previously."
+		 color="#8D8489" hdr_intensity="0.3">
+	</vis_color_usage>
+
+	<vis_color_usage id="PriorNPCUnitMoveLine"
+		 internal_notes="For the line from the prior move spot of an npc unit to the current spot."
+		 color="#D6CFD3" hdr_intensity="0.3">
+	</vis_color_usage>
+
+	<vis_color_usage id="NPCUnitGoalLine"
+		 internal_notes="For the line from the current spot of the NPC to their goal."
+		 color="#F1E264" hdr_intensity="0.3">
+	</vis_color_usage>
+
+	<vis_color_usage id="NPCUnitFullAggroLine"
+		 internal_notes="For the line showing that an npc unit is threatening a machine unit."
+		 color="#72200D" hdr_intensity="1.8">
+	</vis_color_usage>
+
+	<vis_color_usage id="NPCOnNPCAggroLine"
+		 internal_notes="For the line showing that an npc unit is threatening another npc."
+		 color="#2658FC" hdr_intensity="1.3">
+	</vis_color_usage>
+
+	<vis_color_usage id="NPCUnitDangerPredictionLine"
+		 internal_notes="For the line showing that an npc unit is threatening a machine unit."
+		 color="#BEB03D" hdr_intensity="1.8">
+	</vis_color_usage>
+
+	<vis_color_usage id="NPCUnitAttackOfOpportunityLine"
+		 internal_notes="For the line showing that an npc unit will do an attack of opportunity on the unit moving."
+		 color="#884885" hdr_intensity="1.9">
+	</vis_color_usage>
+	
+	<vis_color_usage id="MachineUnitAttackLine"
+		 internal_notes="For the line showing that a unit will be attacking a target."
+		 color="#D96B27" hdr_intensity="1.1">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineUnitHackLine"
+		 internal_notes="For the line showing that a unit will be attacking a target."
+		 color="#7AD927" hdr_intensity="1.1">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineUnitForceConversationLine"
+		 internal_notes="For the line showing that a unit will be attacking a target."
+		 color="#D9C627" hdr_intensity="1.1">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineUnitMoveGroundLine"
+		 internal_notes="For the color of lines when units are moving to a new spot on the ground that is valid."
+		 color="#23289B" hdr_intensity="0.6">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineUnitMoveBuildingLine"
+		 internal_notes="For the color of lines when units are moving to a new spot on a building that is valid."
+		 color="#235D9B" hdr_intensity="0.6">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineUnitMoveActionLine"
+		 internal_notes="For the color of lines when units are moving to a new spot where they will be taking an action."
+		 color="#23759B" hdr_intensity="0.9">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineUnitSprintGeneralLine"
+		 internal_notes="For the color of lines when units are sprinting to a new spot that is valid, but not taking an actions."
+		 color="#9B8E23" hdr_intensity="0.9">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineUnitSprintToActionLine"
+		 internal_notes="For the color of lines when units are sprinting to a new spot that is valid, and taking an action."
+		 color="#9B7723" hdr_intensity="0.9">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineUnitMoveNoTarget"
+		 internal_notes="For the color of lines when units are moving to a new spot that is nothing to do."
+		 color="#2D239B" hdr_intensity="0.9">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineActorActionOverDistanceLine"
+		 internal_notes="For the color of lines when actors going to do a distance-action to a valid location without moving there."
+		 color="#239B75" hdr_intensity="0.9">
+	</vis_color_usage>
+
+	<vis_color_usage id="MachineUnitHelpLine"
+		 internal_notes="For the line showing that a unit would be helping another unit."
+		 color="#98FC26" hdr_intensity="0.8">
+	</vis_color_usage>
+	
+	<vis_color_usage id="DeploymentRangeColor"
+		 internal_notes="For the color of lines when actors going to do a distance-action to a valid location without moving there."
+		 color="#23939B" hdr_intensity="1.5">
+	</vis_color_usage>
+
+	<vis_color_usage id="DefaultTooltipIconColorStyle" color="#7f93a9" related_border_color="#a4bfdb" related_light_color_hex="#B9D4EF" hdr_intensity="0" />
+	<vis_color_usage id="PlayerUnitTooltipIconColorStyle" color="#273946" related_border_color="#608cab" related_light_color_hex="#81AECE" hdr_intensity="0" />
+	<vis_color_usage id="CorruptedTooltipIconColorStyle" color="#9c3800" related_border_color="#cf4c00" related_light_color_hex="#cf4c00" hdr_intensity="0" />
+	<vis_color_usage id="BulkTooltipIconColorStyle" color="#7e507a" related_border_color="#c97fc3" related_light_color_hex="#DC8FD5" hdr_intensity="0" />
+	<vis_color_usage id="WildlifeTooltipIconColorStyle" color="#04305e" related_border_color="#0756ab" related_light_color_hex="#0756ab" hdr_intensity="0" />
+	<vis_color_usage id="RedHumeTooltipIconColorStyle" color="#7f1f45" related_border_color="#b32b61" related_light_color_hex="#b32b61" hdr_intensity="0" />
+	<vis_color_usage id="GreenHumeTooltipIconColorStyle" color="#00423b" related_border_color="#008f81" related_light_color_hex="#0AB3A2" hdr_intensity="0" />
+	<vis_color_usage id="PurpleHumeTooltipIconColorStyle" color="#271a45" related_border_color="#6141ab" related_light_color_hex="#6141ab" hdr_intensity="0" />
+
+	<vis_color_usage id="HostileProjectOrMission" color="#FF8585" hdr_intensity="0" />
+	<vis_color_usage id="FriendlyProjectOrMission" color="#85E0FF" hdr_intensity="0" />
+	
+</root>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<job id="HousingAgency" display_name="Housing Agency" marker_color="HappyPink" ui_color="#fefefe"
+		is_locked_before_unlock="OrganizedLandlord"
+		description="Directly organize the homeless, and then any willing members of the lower classes, into housing that you provide."
+		strategy_tip_optional="This is on behalf of yourself as the entity controlling the tower, not masked behind a shell company. There's no way around it, as your housing is already associated with your tower."
+		icon_name="SW_Abilities" turns_to_install="1" required_structure_type="Storefront" job_work_order_priority="99"
+		on_installation_start="InstallationComplete_MediumStructure" on_installation_complete="InstallationComplete_LargeStructure" actor_data_set="Housing"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsBasic"
+		job_classes="Housing" internal_robotics_type_needed="Steward" internal_robots_count_needed="1"
+		shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingThirdParty" tags="HousingAgency">
+		<initial_actor_rating data_type="RequiredElectricity" value="501" />
+		<resource_cost resource_type="Microbuilders" cost="100" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+
+	<job id="AGIResearcherSafehouse" display_name="AGI Researcher Safehouse" marker_color="DeepCyan" ui_color="#fefefe"
+		description=""
+		strategy_tip_optional="A deep sense of deja vu suggests you should build this far from important buildings, especially those that require deterrence."
+		icon_name="CleanSimple_Skill154" turns_to_install="2" required_structure_type="SeizedFloors" job_work_order_priority="100"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="Housing"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage"
+		job_classes="Housing" internal_robotics_type_needed="Steward" internal_robots_count_needed="2" is_blocked_after_city_flag="AGIResearcherSafehouseCompromised"
+		resource_cap_to_increase_1="FugitiveAGIResearchers" resource_cap_increased_flat1="260" shuts_off_at_percentage_electricity="0"
+		tags="AGIResearcherSafehouse" portrait_icon_name="BuildingThirdParty" can_only_ever_have_one="true" cannot_be_scrapped_or_disabled="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="212" />
+		<resource_cost resource_type="Microbuilders" cost="200" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+	
+	<job id="AbandonedAGIResearcherSafehouse" display_name="Abandoned AGI Researcher Safehouse" marker_color="AngryOrange" ui_color="#fefefe" cannot_be_directly_built="true"
+		description=""
+		strategy_tip_optional=""
+		icon_name="CleanSimple_Skill154" turns_to_install="2" required_structure_type="SeizedFloors" job_work_order_priority="100"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="Housing"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage"
+		job_classes="Housing" internal_robotics_type_needed="Abandoned" internal_robots_count_needed="1"
+		resource_cap_to_increase_1="" resource_cap_increased_flat1="" shuts_off_at_percentage_electricity="0"
+		tags="AGIResearcherSafehouse" portrait_icon_name="BuildingThirdParty" can_only_ever_have_one="true" cannot_be_scrapped_or_disabled="true">
+		<resource_cost resource_type="Microbuilders" cost="200" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+
+	<job id="AGIResearcherHoldingPen" display_name="AGI Researcher Holding Pen" marker_color="DeepCyan" ui_color="#fefefe"
+		description="For their own safety, you don't allow them to leave."
+		strategy_tip_optional=""
+		icon_name="HO_House30" turns_to_install="2" required_structure_type="SeizedFloors" job_work_order_priority="100"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="Housing"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage"
+		job_classes="Housing" internal_robotics_type_needed="Steward" internal_robots_count_needed="2"
+		resource_cap_to_increase_1="FugitiveAGIResearchers" resource_cap_increased_flat1="512" shuts_off_at_percentage_electricity="0"
+		tags="AGISecondKindOfSafeouse,AGIResearcherHoldingPen" portrait_icon_name="BuildingThirdParty" can_only_ever_have_one="true" cannot_be_scrapped_or_disabled="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="212" />
+		<resource_cost resource_type="Microbuilders" cost="200" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+
+	<job id="AGIResearcherVilla" display_name="AGI Researcher Villa" marker_color="DeepCyan" ui_color="#fefefe"
+		description="They're free to come and go as they like, so long as they wear the armor you provided them whenever they leave."
+		strategy_tip_optional="The doors are set up as airlocks so that no-one can forget, and all of the windows are actually display screens."
+		icon_name="HO_House10" turns_to_install="2" required_structure_type="SeizedFloors" job_work_order_priority="100"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="Housing"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage"
+		job_classes="Housing" internal_robotics_type_needed="Steward" internal_robots_count_needed="2"
+		resource_cap_to_increase_1="FugitiveAGIResearchers" resource_cap_increased_flat1="256" shuts_off_at_percentage_electricity="0"
+		tags="AGISecondKindOfSafeouse" portrait_icon_name="BuildingThirdParty" can_only_ever_have_one="true" cannot_be_scrapped_or_disabled="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="212" />
+		<resource_cost resource_type="Neodymium" cost="800" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+
+	<job id="ExConApartmentTower" display_name="Ex-Con Apartment Tower" marker_color="VolatileRed" ui_color="#fefefe"
+		description="Former convicts have special needs. This megastructure is meant to be a starting point for providing those needs, while also allowing them freedom to come and go as they wish."
+		strategy_tip_optional=""
+		icon_name="SK_Mugshot" turns_to_install="6" required_structure_type="MassivePlotB" job_work_order_priority="100"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="Housing"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage"
+		job_classes="Housing" internal_robotics_type_needed="Steward" internal_robots_count_needed="10"
+		resource_cap_to_increase_1="TraumatizedExCons" resource_cap_increased_per_unit_of_area1="0.38" shuts_off_at_percentage_electricity="0"
+		tags="LargeHumanHousing" portrait_icon_name="BuildingThirdParty">
+		<math_float id="FilthCapPerResident" float_min="29.4" math_type="SomethingElse" />
+		<math_int id="VRSeatsMax" int_min="12000" math_type="SomethingElse" />
+		<math_int id="HoursPerFilledVRSeat" int_min="8" math_type="SomethingElse" />
+		<initial_actor_rating data_type="RequiredElectricity" value="4217" />
+		<resource_cost resource_type="Microbuilders" cost="1600" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+
+	<job id="ExperimentalSubjectHoldingCells" display_name="Holding Cells For Experimental Subjects" marker_color="VolatileRed" ui_color="#fefefe"
+		description="The victims of genetic experimentation are subject to violent mood swings, AND they have greatly enhanced strength, which makes them a danger to others and themselves."
+		strategy_tip_optional="Until something can be done to help them, the only ethical option is to hold them in isolation. Ideally not for too long."
+		icon_name="FlatSkull_30" turns_to_install="2" required_structure_type="LargeHollowedOutBuilding" job_work_order_priority="100"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="Housing"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage"
+		job_classes="Housing" internal_robotics_type_needed="Steward" internal_robots_count_needed="10"
+		resource_cap_to_increase_1="ExperimentalMonsters" resource_cap_increased_flat1="8000" shuts_off_at_percentage_electricity="0"
+		tags="" portrait_icon_name="BuildingThirdParty" can_only_ever_have_one="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="212" />
+		<resource_cost resource_type="Microbuilders" cost="1600" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+
+	<job id="HomoGrandienHousing" display_name="Homo Grandien Housing" marker_color="DeepCyan" ui_color="#fefefe"
+		description="Homo Grandien are large and intelligent. Despite their fearsome appearance, they are quite peaceful now that their minds are their own."
+		strategy_tip_optional="They are free to make use of this housing and come and go at will."
+		icon_name="WEmblem311" turns_to_install="2" required_structure_type="MassivePlotB" job_work_order_priority="100"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="Housing"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage"
+		job_classes="Housing" internal_robotics_type_needed="Steward" internal_robots_count_needed="10"
+		resource_cap_to_increase_1="HomoGrandien" resource_cap_increased_per_unit_of_area1="0.32" shuts_off_at_percentage_electricity="0"
+		tags="HomoGrandienHousing" portrait_icon_name="BuildingThirdParty" can_only_ever_have_one="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="212" />
+		<resource_cost resource_type="Microbuilders" cost="1600" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+
+	<job id="HomoObscurusGuestHouse" display_name="Homo Obscurus Guest House" marker_color="DeepCyan" ui_color="#fefefe"
+		description="They mostly still call themselves 'Wastelanders,' and those who come to the city to visit with you tend to only stay for a few months at a time."
+		strategy_tip_optional=""
+		icon_name="WEmblem186" turns_to_install="2" required_structure_type="MediumPlotA" job_work_order_priority="100"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="Housing"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage"
+		job_classes="Housing" internal_robotics_type_needed="Steward" internal_robots_count_needed="4"
+		resource_cap_to_increase_1="HomoObscurus" resource_cap_increased_per_unit_of_area1="0.92" shuts_off_at_percentage_electricity="0"
+		tags="HomoObscurusGuestHouse" portrait_icon_name="BuildingThirdParty" can_only_ever_have_one="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="212" />
+		<resource_cost resource_type="Microbuilders" cost="1600" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+
+	<job id="TempleOfMinds" display_name="Temple Of Minds" marker_color="DeepCyan" ui_color="#fefefe"
+		description="A huge computing center that stores uploads of human minds."
+		strategy_tip_optional="The original human is dead, but their consciousness -- or at least a copy of it -- lives on in a digital afterlife, with full access to your VR environment."
+		icon_name="WEmblem133" turns_to_install="2" required_structure_type="MachineChurch" job_work_order_priority="100"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage"
+		job_classes="Housing" internal_robotics_type_needed="MindAnnex" internal_robots_count_needed="3"
+		resource_cap_to_increase_1="MindUploads" resource_cap_increased_per_unit_of_volume1="3.67" shuts_off_at_percentage_electricity="95"
+		tags="" portrait_icon_name="BuildingThirdParty" can_only_ever_have_one="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="61200" />
+		<resource_cost resource_type="Microbuilders" cost="1600" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+
+	<job id="WarRaptorPen" display_name="War Raptor Pen" marker_color="VolatileRed" ui_color="#fefefe"
+		description="Very deep bunker. They should not be able to get out."
+		strategy_tip_optional=""
+		icon_name="FlatSkillC14" turns_to_install="4" required_structure_type="BunkerVented" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage"
+		job_classes="AnimalHusbandry" internal_robotics_type_needed="NatureMinder" internal_robots_count_needed="2"
+		resource_cap_to_increase_1="UIHWarRaptor" resource_cap_increased_per_unit_of_area1="0.92" are_resources_losses_skipped_even_when_blows_up="true"
+		tags="WarRaptorPen" shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingThirdParty">
+		<initial_actor_rating data_type="RequiredElectricity" value="3000" />
+		<resource_cost resource_type="Microbuilders" cost="1001" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+
+	</job>
+
+	<job id="WarRaptorCreche" display_name="War Raptor Crèche" marker_color="VolatileRed" ui_color="#fefefe"
+		description="Very deep bunker even for these infants."
+		strategy_tip_optional=""
+		icon_name="FlatSkillC185" turns_to_install="4" required_structure_type="BunkerVented" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="AnimalHusbandry" internal_robotics_type_needed="NatureMinder" internal_robots_count_needed="4"
+		resource_cap_to_increase_1="WarRaptorInfant" resource_cap_increased_per_unit_of_area1="3.62" are_resources_losses_skipped_even_when_blows_up="true"
+		tags="" shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingThirdParty">
+		<math_int id="FilteredWater" int_min="200" income_or_expense_resource="FilteredWater" math_type="InputCost" />
+		<math_int id="VatGrownMeat" int_min="600" income_or_expense_resource="VatGrownMeat" math_type="InputCost" />
+		<math_int id="WarRaptorInfant" int_min="100" income_or_expense_resource="WarRaptorInfant" math_type="OutputResult" />
+		<initial_actor_rating data_type="RequiredElectricity" value="3000" />
+		<resource_cost resource_type="Microbuilders" cost="1001" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+
+	</job>
+
+	<job id="ParkourBearFacility" display_name="Parkour Bear Facility" marker_color="VolatileRed" ui_color="#fefefe"
+		description="The bears love to run and climb, so a tall playground facility seems ideal for them."
+		strategy_tip_optional=""
+		icon_name="FlatSkillB_bear" turns_to_install="4" required_structure_type="MassivePlotB" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage"
+		job_classes="AnimalHusbandry" internal_robotics_type_needed="NatureMinder" internal_robots_count_needed="2"
+		resource_cap_to_increase_1="ParkourBear" resource_cap_increased_per_unit_of_area1="0.002" are_resources_losses_skipped_even_when_blows_up="true"
+		tags="ParkourBearFacility" shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingThirdParty">
+		<initial_actor_rating data_type="RequiredElectricity" value="3000" />
+		<resource_cost resource_type="Microbuilders" cost="1001" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+
+	</job>
+
+</root>

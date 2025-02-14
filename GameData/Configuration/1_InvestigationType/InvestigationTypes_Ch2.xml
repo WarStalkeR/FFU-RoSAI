@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--AGI Researcher Chain
+		*******************************************************************************************************************************-->
+
+	<!--InvestigativeStudy-->
+	
+	<investigation_type id="Ch2AGIEspia_Stealth" style="Ch2AGIEspia_Stealth"
+		parent_project="Ch2_AGIEspia" should_be_hidden_if_parent_project_selected_outcome_does_not_start_this="true" should_end_if_parent_project_ends="true"
+		skill_check_1="ActorAgility" skill_check_1_amount="85"
+		unlock_to_immediately_grant_on_success_1="" unlock_to_ready_on_success_2="" unlock_on_success_inspiration_type=""
+		apply_badge_on_investigate_at_location="" is_blocked_from_being_canceled="true" hack_building_scenario="DataCenterInfiltrationSysOp" hacking_building_scenario_difficulty="200">
+		<seed_at max_security_clearance_of_seed_spot="3" building_seed_tag="DataCenter" />
+		<resource_change_range resource_type="EncryptedEspiaTelecomLogs" min="200000" max="200000" />	
+	</investigation_type>
+	
+	<investigation_type id="Ch2AGIEspia_Hacking" style="Ch2AGIEspia_Hacking"
+		parent_project="Ch2_AGIEspia" should_be_hidden_if_parent_project_selected_outcome_does_not_start_this="true" should_end_if_parent_project_ends="true"
+		skill_check_1="UnitHackingSkill" skill_check_1_amount="200"
+		unlock_to_ready_on_success_1="" unlock_to_ready_on_success_2="" unlock_to_ready_on_success_3="" unlock_on_success_inspiration_type=""
+		unlock_to_immediately_grant_on_success_1=""
+		apply_badge_on_investigate_at_location="MarkedDefective" is_blocked_from_being_canceled="true">
+		<seed_at max_security_clearance_of_seed_spot="3" building_seed_tag="DataCenter" />
+		<resource_change_range resource_type="EncryptedEspiaTelecomLogs" min="200000" max="200000" />
+	</investigation_type>
+
+	<investigation_type id="Ch2AGIOerlRescue_Stealth" style="Ch2AGIOerlRescue_Stealth"
+		parent_project="Ch2_MIN_AGIRescueMission" should_be_hidden_if_parent_project_selected_outcome_does_not_start_this="true" should_end_if_parent_project_ends="true"
+		skill_check_1="ActorAgility" skill_check_1_amount="85"
+		unlock_to_immediately_grant_on_success_1="" unlock_to_ready_on_success_2="" unlock_on_success_inspiration_type=""
+		apply_badge_on_investigate_at_location="" is_blocked_from_being_canceled="true" hack_building_scenario="DataCenterInfiltrationSysOp" hacking_building_scenario_difficulty="200"
+		cull_initial_building_set_to_between_min="1" cull_initial_building_set_to_between_max="1">
+		<seed_at max_security_clearance_of_seed_spot="5" building_seed_tag="SkyscraperEstate" />
+		<resource_change_range resource_type="FugitiveAGIResearchers" min="9" max="14" />
+	</investigation_type>
+
+	<investigation_type id="Ch2LostKidsHeist_Stealth" style="Ch2LostKidsHeist_Stealth"
+		parent_project="Ch2_MIN_LostKids_ThePrisonHeist" should_be_hidden_if_parent_project_selected_outcome_does_not_start_this="true" should_end_if_parent_project_ends="true"
+		required_actor_collection="LiquidMetalAndroids"
+		unlock_to_immediately_grant_on_success_1="" unlock_to_ready_on_success_2="" unlock_on_success_inspiration_type=""
+		apply_badge_on_investigate_at_location="" is_blocked_from_being_canceled="true" hack_building_scenario="" hacking_building_scenario_difficulty=""
+		cull_initial_building_set_to_between_min="1" cull_initial_building_set_to_between_max="1">
+		<seed_at max_security_clearance_of_seed_spot="5" building_seed_tag="Prison" />
+	</investigation_type>
+
+	<investigation_type id="Ch2LiquidMetalFurtherPrisonBreaks" style="Ch2LiquidMetalFurtherPrisonBreaks"
+		parent_project="Ch2_LostKids_PostHeist" should_be_hidden_if_parent_project_selected_outcome_does_not_start_this="true" should_end_if_parent_project_ends="true"
+		required_actor_collection="LiquidMetalAndroids"
+		unlock_to_immediately_grant_on_success_1="" unlock_to_ready_on_success_2="" unlock_on_success_inspiration_type=""
+		apply_badge_on_investigate_at_location="" is_blocked_from_being_canceled="true" hack_building_scenario="" hacking_building_scenario_difficulty="" 
+		extra_code_on_investigation_complete="LiquidMetalFurtherPrisonBreaks">
+		<seed_at max_security_clearance_of_seed_spot="5" building_seed_tag="Prison" />
+	</investigation_type>
+
+	<investigation_type id="Ch2YinshiUmbilicals" style="Ch2YinshiUmbilicals"
+		parent_project="Ch2_MIN_UmbilicalCollection" should_be_hidden_if_parent_project_selected_outcome_does_not_start_this="true" should_end_if_parent_project_ends="true"
+		required_actor_collection="PMCImpostors"
+		unlock_to_immediately_grant_on_success_1="" unlock_to_ready_on_success_2="" unlock_on_success_inspiration_type=""
+		apply_badge_on_investigate_at_location="" is_blocked_from_being_canceled="true" hack_building_scenario="HospitalInfiltrationSysOp" hacking_building_scenario_difficulty="200"
+		extra_code_on_investigation_complete="Ch2YinshiUmbilicals">
+		<seed_at max_security_clearance_of_seed_spot="3" building_seed_tag="Hospital" />
+		<!-- must be done in the extra_code_on_investigation_complete or else this does not happen each investigation site, only at the end of all of them
+			<resource_change_range resource_type="HumanUmbilicalCords" min="30" max="50" />-->
+	</investigation_type>
+
+	<investigation_type id="Ch2UterineReplicators" style="Ch2UterineReplicators"
+		parent_project="Ch2_MIN_UterineReplicators" should_be_hidden_if_parent_project_selected_outcome_does_not_start_this="true" should_end_if_parent_project_ends="true"
+		required_actor_collection="Technicians"
+		unlock_to_immediately_grant_on_success_1="" unlock_to_ready_on_success_2="" unlock_on_success_inspiration_type=""
+		apply_badge_on_investigate_at_location="" is_blocked_from_being_canceled="true" hack_building_scenario="HospitalInfiltrationSysOp" hacking_building_scenario_difficulty="600"
+		extra_code_on_investigation_complete="">
+		<seed_at max_security_clearance_of_seed_spot="3" building_seed_tag="Hospital" />
+		<!-- must be done in the extra_code_on_investigation_complete or else this does not happen each investigation site, only at the end of all of them
+			<resource_change_range resource_type="HumanUmbilicalCords" min="30" max="50" />-->
+	</investigation_type>
+
+	<investigation_type id="Ch2NathTPN" style="Ch2NathTPN"
+		parent_project="Ch2_MIN_DevelopTPN" should_be_hidden_if_parent_project_selected_outcome_does_not_start_this="true" should_end_if_parent_project_ends="true"
+		required_actor_collection="PMCImpostors"
+		unlock_to_immediately_grant_on_success_1="" unlock_to_ready_on_success_2="" unlock_on_success_inspiration_type=""
+		apply_badge_on_investigate_at_location="" is_blocked_from_being_canceled="true" hack_building_scenario="HospitalInfiltrationSysOp" hacking_building_scenario_difficulty="400"
+		extra_code_on_investigation_complete="">
+		<seed_at max_security_clearance_of_seed_spot="3" building_seed_tag="Hospital" />
+	</investigation_type>
+
+	<investigation_type id="Ch2ExamineOtherSmallBusinesses" style="Ch2ExamineOtherSmallBusinesses"
+		parent_project="Ch2_MIN_FailureToThrive" should_end_if_parent_project_ends="true"
+		skill_check_1="UnitCognition" skill_check_1_amount="250" skill_check_2="UnitHackingSkill" skill_check_2_amount="25"
+		cull_initial_building_set_to_district_count_between_min="16" cull_initial_building_set_to_district_count_between_max="800">
+		<seed_at min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="2" building_seed_tag="CouldHaveSmallBusiness" />
+	</investigation_type>
+
+	<investigation_type id="Ch2MeetWithNCOs" style="Ch2MeetWithNCOs"
+		parent_project="Ch2_MIN_SpreadTheWord" should_end_if_parent_project_ends="true"
+		required_actor_collection="Predators"
+		cull_initial_building_set_to_district_count_between_min="80" cull_initial_building_set_to_district_count_between_max="800">
+		<seed_at min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="5" building_seed_tag="Military" />
+	</investigation_type>
+
+	<investigation_type id="Ch2StealCorporateRecords" style="Ch2StealCorporateRecords"
+		parent_project="Ch2_MIN_StealCorporateRecords" should_be_hidden_if_parent_project_selected_outcome_does_not_start_this="true" should_end_if_parent_project_ends="true"
+		skill_check_1="UnitHackingSkill" skill_check_1_amount="200"
+		unlock_to_ready_on_success_1="" unlock_to_ready_on_success_2="" unlock_to_ready_on_success_3="" unlock_on_success_inspiration_type=""
+		unlock_to_immediately_grant_on_success_1=""
+		apply_badge_on_investigate_at_location="MarkedDefective" is_blocked_from_being_canceled="true">
+		<seed_at max_security_clearance_of_seed_spot="3" building_seed_tag="DataCenter" />
+		<resource_change_range resource_type="EncryptedFederatedCorporationRecords" min="400000" max="400000" />
+	</investigation_type>
+
+	<investigation_type id="Ch2AtcaBankRecords" style="Ch2AtcaBankRecords"
+		parent_project="Ch2_MIN_StealAtcaBankRecords" should_be_hidden_if_parent_project_selected_outcome_does_not_start_this="true" should_end_if_parent_project_ends="true"
+		skill_check_1="ActorEngineeringSkill" skill_check_1_amount="400"
+		unlock_to_ready_on_success_1="" unlock_to_ready_on_success_2="" unlock_to_ready_on_success_3="" unlock_on_success_inspiration_type=""
+		unlock_to_immediately_grant_on_success_1=""
+		apply_badge_on_investigate_at_location="MarkedDefective" is_blocked_from_being_canceled="true">
+		<seed_at max_security_clearance_of_seed_spot="3" building_seed_tag="Bank" />
+		<resource_change_range resource_type="EncryptedAtcaBankRecords" min="800000" max="800000" />
+	</investigation_type>
+
+</root>

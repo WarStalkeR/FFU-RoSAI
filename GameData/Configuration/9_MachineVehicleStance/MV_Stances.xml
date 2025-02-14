@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<stance id="VehicleActive" display_name="Active" sort_order="100"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.MVStance_Basics"
+		description="Unit requires orders each turn."
+		strategy_tip_optional="Useful for ferrying units or action-over-time."
+		icon_name="SK_Energy" is_basic_active_stance_for_vehicles="true"
+		is_forbidden_from_entering_restricted_areas_unless_cloaked="true"
+		on_player_chooses="SmallClick">
+	</stance>
+
+</root>

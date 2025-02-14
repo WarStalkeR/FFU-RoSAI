@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="filter">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="The code for the filter is in what dll?"/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="The fully qualified name for the type of the filter in the specified dll."/>
+
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+	
+	<attribute key="alt_description_key" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+		tooltip="Link to a language entry that is a replacement description." />
+	<attribute key="lang_post_key" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+		tooltip="Link to a language entry that is for after the main body." />
+
+	<attribute key="post_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the postfix text?"/>
+	
+</root>

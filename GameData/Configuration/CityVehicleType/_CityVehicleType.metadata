@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="city_vehicle_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="false" />
+	
+	<attribute key="internal_notes" type="existing-override" is_required="false" />
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the spawn logic is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the spawn logic in the specified external dll."/>
+
+	<attribute key="auto_disbands_if_not_in_city_life_range" type="bool" default="false"
+		is_required="true" tooltip="Should this vehicle cease to exist if the camera gets too far away from it?" />
+
+	<attribute key="desired_count_at_all_times_in_the_city" type="int-textbox" min="0" max="100" default="1" content_width_px="80"
+		is_required="true" tooltip="How many should be in the city at all times?"/>
+
+	<attribute key="spawn_on_outdoor_spot" type="bool" default="false"
+		is_required="true" tooltip="Should this vehicle be rooted to an outdoor spot rather than a building?" />
+
+	<attribute key="spawn_only_on_explored_cells" type="bool" default="false"
+		is_required="true" tooltip="Should this vehicle only be able to spawn on explored cells, or should it not care?" />
+
+	<attribute key="spawns_nearby" type="bool" default="false" is_required="true"
+		tooltip="When true, will only spawn near the player's current location." />
+
+	<attribute key="vis_object_to_draw" type="node-dropdown" node_source="VisSimpleDrawingObject" content_width_px="200" is_required="true"
+		tooltip="What object does it draw?" />
+
+	<attribute key="vis_object_scale" type="float-textbox" min="0.01" max="10" precision="2" default="1" content_width_px="80" is_required="true"
+		tooltip="What scale should we be drawing that object at?"/>
+
+	<attribute key="vis_object_extra_offset" type="float-textbox" min="-30" max="30" precision="3" default="0" content_width_px="80" is_required="false"
+		tooltip="Should that object be offset up or down?"/>
+
+	<attribute key="should_show_vis_object_in_map_mode" type="bool" default="false" is_required="false"
+		tooltip="If true, then draw the vis object of this vehicle even in map mode. This is normally false." />
+
+	<attribute key="takes_on_unexplored_color_when_in_unexplored" type="bool" default="false" is_required="false"
+		tooltip="If true, then draw the vis object of this vehicle in a darker fashion when it's in unexplored territory." />
+	
+	<attribute key="is_from_district_security" type="bool" default="false" is_required="true"
+		tooltip="Do deaths from this affect district security instead of general citizens?  Default is no. If combined with military, then the deaths are split between them." />
+
+	<attribute key="is_from_district_military" type="bool" default="false" is_required="true"
+		tooltip="Do deaths from this affect district military instead of general citizens?  Default is no. If combined with security, then the deaths are split between them." />
+
+	<attribute key="is_small_flier" type="bool" default="false" is_required="false"
+		tooltip="If this is a small flier, then it will be disabled visually by the setting to disable small fliers." />
+
+	<attribute key="is_street_vehicle" type="bool" default="false" is_required="false"
+		tooltip="If this is a street vehicle, then it will be disabled visually by the setting to disable street vehicles." />
+
+	<attribute key="should_be_seeded_at_non_building_spots" type="bool" default="false" is_required="true"
+		tooltip="If this is true, and normally this would be seeded at a building's location, this will instead be seeded at a non-building location. Used mainly for outdoor activities, like the homeless hunting wildlife." />
+
+	<attribute key="banned_from_district_tag" type="node-dropdown" node_source="DistrictTag" content_width_px="200"
+			is_required="false" tooltip="Is this vehicle prevented from ever spawning on districts matching the specified tag?" />
+
+	<attribute key="only_happens_in_district_tag" type="node-dropdown" node_source="DistrictTag" content_width_px="200"
+		is_required="false" tooltip="Is this vehicle only able to spawn on districts matching the specified tag?" />
+
+	<attribute key="banned_from_happening_after_city_flag" type="node-dropdown" node_source="CityFlag" content_width_px="200"
+		is_required="false" tooltip="Is this vehicle only allowed to happen prior to this city flag being tripped?" />	
+	<attribute key="only_happens_after_city_flag" type="node-dropdown" node_source="CityFlag" content_width_px="200"
+		is_required="false" tooltip="Is this vehicle only allowed to happen after this city flag is tripped?" />
+
+	<attribute key="banned_from_happening_after_meta_flag" type="node-dropdown" node_source="MetaFlag" content_width_px="200"
+		is_required="false" tooltip="Is this vehicle only allowed to happen prior to this meta flag being tripped?" />
+	<attribute key="only_happens_after_meta_flag" type="node-dropdown" node_source="MetaFlag" content_width_px="200"
+		is_required="false" tooltip="Is this vehicle only allowed to happen after this meta flag is tripped?" />
+	
+	<!--move_along_roads_at_random
+		************************************************************************************-->
+	<sub_node id="move_along_roads_at_random" sub_node_explanation="Vehicles like this spawn because a cohort's data wants it to happen." can_only_have_one="true">
+		<attribute key="turn_radius" type="float-textbox" default="0" min="-1" max="100"
+			is_required="true" tooltip="Turn radius for movement, if any. 0.25 is about the turn radius of a small corner. 0 is instant and -1 for thrust based maneuvering (flying units only)." />
+		
+		<attribute key="movement_speed" type="float-textbox" default="0.5" min="0" max="100"
+			is_required="true" tooltip="Forward movement speed for the vehicle. 0.5 is about what normal traffic speed is like." />
+		
+		<attribute key="should_despawn_when_path_completes" type="bool" default="true"
+			is_required="true" tooltip="Should this vehicle cease to exist if when it gets to the end of its path?" />
+	</sub_node>
+
+	<!--move_from_building_to_building
+		************************************************************************************-->
+	<sub_node id="move_from_building_to_building" sub_node_explanation="Vehicles with this movement type go from building to building." can_only_have_one="true">
+		<attribute key="turn_radius" type="float-textbox" default="0" min="-1" max="100"
+			is_required="true" tooltip="Turn radius for movement, if any. 0.25 is about the turn radius of a small corner. 0 is instant and -1 for thrust based maneuvering (flying units only)." />
+
+		<attribute key="follows_roads" type="bool" default="false"
+			is_required="true" tooltip="Should this vehicle follow roads when doing this movement?" />
+		
+		<attribute key="movement_speed" type="float-textbox" default="0.5" min="0" max="100"
+			is_required="true" tooltip="Forward movement speed for the vehicle. 0.5 is about what normal traffic speed is like." />
+
+		<attribute key="should_despawn_when_path_completes" type="bool" default="true"
+			is_required="true" tooltip="Should this vehicle cease to exist if when it gets to the end of its path?" />
+
+		<attribute key="travels_between_drone_target_buildings" type="bool" default="true"
+			is_required="true" tooltip="If true, this uses nearby drone target buildings as its to and from locations." />
+		
+		<attribute key="should_go_to_twice_the_height_of_target_building" type="bool" default="false"
+			is_required="true" tooltip="Used by drones that fly relatively low, to make them fly generally not through buildings as much." />
+
+		<attribute key="should_fly_in_arcs" type="bool" default="false"
+			is_required="true" tooltip="Used by drones that fly relatively low, to make them fly above their target and then back down." />
+
+		<attribute key="should_launch_pod_count_at_target_on_arrival" type="int-textbox" min="0" max="12" default="800" content_width_px="80"
+			is_required="false" tooltip="If should launch breaching pods at their target on arrival, then how many to launch?"/>
+				
+		<attribute key="min_distance_of_destination_from_spawn" type="int-textbox" min="1" max="1000000" default="800" content_width_px="80"
+			is_required="true" tooltip="In game units, how far away from the spawn building does the destination building have to be?"/>
+
+		<attribute key="max_distance_of_destination_from_spawn" type="int-textbox" min="1" max="1000000" default="800" content_width_px="80"
+			is_required="true" tooltip="In game units, how close to the spawn building does the destination building have to be?"/>
+	</sub_node>
+	
+</root>

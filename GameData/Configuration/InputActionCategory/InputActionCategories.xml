@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<input_category id="Common" display_name="Common" description=""/>
+
+	<input_category id="CameraMovement" display_name="Camera Movement" description="" />
+	<input_category id="UnitShortcuts" display_name="Unit Shortcuts" description="" />
+	<input_category id="UIShortcuts" display_name="UI Shortcuts" description="" />
+	<input_category id="LensShortcuts" display_name="Lens Shortcuts" description="" />
+	<input_category id="BuildMode" display_name="Build Mode" description="Some normal keybinds are disabled in this mode, to make room for different ones in this context." />
+	<input_category id="CommandMode" display_name="Command Mode" description="Some normal keybinds are disabled in this mode, to make room for different ones in this context." />
+	
+	<input_category id="Abilities" display_name="Abilities" description="" />
+	<input_category id="Cosmetic" display_name="Cosmetic" description="" />
+	<input_category id="PhotoModeCamera" display_name="Photo Mode" description="Photo mode is purely cosmetic, and has its own set of controls." />
+
+	<input_category id="LevelEditor_EditingModes" display_name="Editing Modes"
+		skip_all_localization_on_node="true" />
+	
+	<input_category id="LevelEditor_ObjectManipulation" display_name="Object Manipulation"
+		skip_all_localization_on_node="true" />
+	<input_category id="LevelEditor_Layers" display_name="Layers"
+		skip_all_localization_on_node="true" />
+	<input_category id="LevelEditor_SceneGrid" display_name="Scene Grid"
+		skip_all_localization_on_node="true" />
+	<input_category id="LevelEditor_Grab" display_name="Selection Grab"
+		skip_all_localization_on_node="true" />
+	<input_category id="LevelEditor_OtoOSnap" display_name="Selection O-to-O Snap"
+		skip_all_localization_on_node="true" />
+	<input_category id="LevelEditor_GizmoSpecific" display_name="Gizmo-Specific"
+		skip_all_localization_on_node="true" />
+
+	<input_category id="Cheats" display_name="Cheats" description="Most cheats are accessed through an in-game menu, but others are more useful as hotkeys. Any cheats that affect gameplay can only happen in cheat mode." />
+
+	<input_category id="Debug" display_name="Debug" description="" />
+	<input_category id="Hidden" is_hidden="true" 
+		skip_all_localization_on_node="true"/>
+	
+</root>

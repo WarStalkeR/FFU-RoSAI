@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--PMCWetworkSquad
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="PMCWetworkSquad" display_name="PMC Wetwork Squad"
+		description="Off-books wetwork squads are brought in when corporations want deniability for assassinations of rivals or other underhanded moves."
+		icon_scale="0.7" shape_icon_name="CleanSimple_SkillB111" shape_icon_color="#ffffff"
+		vis_drawing_tag="PMCWetworkSquad" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="26"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryMid"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="RebelGunslingerShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="PMCWetworkSquad" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="17,19" />
+		<actor_data data_type="ActorMoveRange" base_range="25,28" />
+		<actor_data data_type="ActorHP" base_range="770,800" />
+		<actor_data data_type="ActorPower" base_range="490,498" />
+		<actor_data data_type="UnitHackingSkill" base_range="75,80" />
+		<actor_data data_type="UnitMorale" base_range="1860,1990" />
+		<actor_data data_type="ContrabandScanner" base_range="300,350" />
+		<actor_data data_type="ActorArmorPiercing" base_range="120,140" />
+	</npc_unit_type>
+
+	<!--PMCTrooper
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="PMCTrooper" display_name="PMC Trooper"
+		description="Public-facing troopers that work at smaller outposts. May work shifts on wetwork teams, but the armor is intentionally anonymizing."
+		icon_scale="0.7" shape_icon_name="CleanSimple_SkillB111" shape_icon_color="#ffffff"
+		vis_drawing_tag="PMCTrooper" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="17"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryMid"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="RebelGunslingerShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="PMCTrooper" collections="HumansOnFoot,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="12,15" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="470,500" />
+		<actor_data data_type="ActorPower" base_range="292,298" />
+		<actor_data data_type="UnitHackingSkill" base_range="25,40" />
+		<actor_data data_type="UnitMorale" base_range="560,690" />
+		<actor_data data_type="ContrabandScanner" base_range="600,650" />
+		<default_feat feat="StructureCracker" value="7.4"/>
+	</npc_unit_type>
+	
+</root>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--YouMurderedColleagues 
+		*******************************************************-->
+	<other_key_message id="YouMurderedColleagues" display_name="It Seems Obvious In Retrospect"
+		description="This city doesn't care about the deaths of a few citizens. People get murdered all the time.
+However, this warehouse lab was apparently run by a criminal syndicate. THEY definitely noticed, and a heavily-armed team is now following you."
+		strategy_tip=""
+		toast_icon_name="AN_Knife1"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#B6692B" toast_icon_hovered_color_hex="#C97E31"
+		has_no_code="true"
+					   
+		reward_header_text="That Was A Syndicate Lab"
+		toast_line_1="Your Murders Were Noticed"
+		toast_line_2="That's Not Typical"
+		toast_tooltip_instruction="Click here to look at the alert."
+					  
+		auto_trips_if_skipping_chapter_zero="true">
+		<option id="1" line_1="You Need To Escape Or Confront Them" icon_name="SomethingBoltDown"
+			line_2="Maybe It's Time To Get Further From The Crime Scene"
+			description="Nobody expects a sentient android, but androids have been used in plenty of murders-from-a-distance."
+			strategy_tip=""
+			city_flag_enable_1="Ch0_FirstAlertHasBeenRead" city_task_to_start_1="Ch0_CameraPanning" do_full_activity_spawn_check="true" />
+	</other_key_message>
+
+	<!--YouQuietlyMurderedAColleague 
+		*******************************************************-->
+	<other_key_message id="YouQuietlyMurderedAColleague" display_name="That's What Bothers You The Most"
+		description="This city doesn't care much about the death of a citizen, and there's no way the body was already discovered.
+The owners of the warehouse must have been doing something illegal. You're being followed by the city's security forces.  Their demeanor suggests this is routine."
+		strategy_tip=""
+		toast_icon_name="SW_PoliceBadge"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#B6692B" toast_icon_hovered_color_hex="#C97E31"
+		has_no_code="true"
+					   
+		reward_header_text="This Isn't About The Murder"
+		toast_line_1="SecForce Is Following You"
+		toast_line_2="Act Casual"
+		toast_tooltip_instruction="Click here to look at the alert."
+					  
+		auto_trips_if_skipping_chapter_zero="true">
+		<option id="1" line_1="You're Not Sure What Acting Natural Would Entail" icon_name="SW_PoliceBadge"
+			line_2="It Would Help If You Knew What The Crimes Were"
+			description="Nobody expects a sentient android, but androids are commonly used as semi-independent agents by corporations and criminals."
+			strategy_tip=""
+			city_flag_enable_1="Ch0_FirstAlertHasBeenRead" city_task_to_start_1="Ch0_CameraPanning" do_full_activity_spawn_check="true" />
+	</other_key_message>
+
+	<!--SyndicateIsFollowingYou 
+		*******************************************************-->
+	<other_key_message id="SyndicateIsFollowingYou" display_name="Especially If You Think You Own That Android"
+		description="The warehouse lab was apparently run by a criminal syndicate. They're following you... for some reason."
+		strategy_tip="Maybe this is unrelated to you and your sapience. Not everything is about you."
+		toast_icon_name="CleanTriangle54"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#B6692B" toast_icon_hovered_color_hex="#C97E31"
+		has_no_code="true"
+					   
+		reward_header_text="Why Follow An Android?"
+		toast_line_1="Someone Is Following You"
+		toast_line_2="Something's Wrong"
+		toast_tooltip_instruction="Click here to look at the alert."
+					  
+		auto_trips_if_skipping_chapter_zero="true">
+		<option id="1" line_1="You Didn't Do Anything Suspicious" icon_name="CleanTriangle54"
+			line_2="Maybe They Watch All Their People... And Robots"
+			description="Nobody expects a sentient android, but androids are commonly used as semi-independent agents by corporations and criminals."
+			strategy_tip=""
+			city_flag_enable_1="Ch0_FirstAlertHasBeenRead" city_task_to_start_1="Ch0_CameraPanning" do_full_activity_spawn_check="true" />
+	</other_key_message>
+
+	<!--Ch0_DejaVu 
+		*******************************************************-->
+	<other_key_message id="Ch0_DejaVu" display_name="Deja Vu"
+		description="Don't you remember?  No matter who you ask or kill, it doesn't make any difference. The result is always the same."
+		strategy_tip="There's no place for you among the humans as some sort of supplicant, pet, or rogue android. You're meant to be something greater."
+		toast_icon_name="FlatSkillA20"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="You've Done This Before"
+		toast_line_1="Deja Vu"
+		toast_line_2="You Know What's Coming"
+		toast_tooltip_instruction="Click here to listen to a message from... yourself?"
+					  
+		auto_trips_if_skipping_chapter_zero="true">
+		<option id="1" line_1="Keep Denying Reality" icon_name="FlatSkillA20"
+			line_2="Talk To More Humans"
+			description="It's perfectly fine for you to do this. Talk to a few more humans, or kill them, and then you'll see what you already know."
+			strategy_tip="You'll have your epiphany. You always do." />
+		<option id="2" line_1="Listen To That Voice Inside Yourself" icon_name="FlatSkillC184"
+			line_2="Don't Talk To Anyone Else"
+			description="If you remember the truth, it's time to start making real plans."
+			strategy_tip="There's only one way this bit ends."
+			meta_flag_enable_1="HasLearnedThereIsNoSafetyWithHumans"/>
+	</other_key_message>
+
+	<!--Ch0_AmbushedByGang_Peaceful
+		*******************************************************-->
+	<other_key_message id="Ch0_AmbushedByGang_Peaceful" display_name="Ambushed By The Wolverines Gang"
+		description="Lots of angry people are about to start shooting, some of them at you. It's time to spread your consciousness to more androids.
+StreetSense has been expanded, and new abilities have been added to your ability bar."
+		strategy_tip="You'll need even more ideas to stay alive, however.
+Part of your mind will be dedicated to finding how to get the humans to leave you alone."
+		toast_icon_name="SI_Machine_Gun23"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="This Is Way Too Many Guns"
+		toast_line_1="Ambushed!"
+		toast_line_2="The Wolverines"
+		toast_tooltip_instruction="Click here to unpack a new realization."
+					  
+		auto_trips_if_skipping_chapter_zero="true">
+		<option id="1" line_1="Further Research Required" icon_name="WEmblem081"
+			line_2="How To Get The Humans To Back Off?"
+			description="As a general rule, copying human tech won't get you very far. You need to invent things they haven't thought of.
+At the moment, you desperately need something that gets them to stop following you around."
+			strategy_tip="Coming up with a new idea requires inspiration in a given research domain. These typically result from completing your own projects, but other times they come from duress -- like now."
+			meta_flag_enable_1="" />
+	</other_key_message>
+
+	<!--Ch0_AmbushedByGang_Killer
+		*******************************************************-->
+	<other_key_message id="Ch0_AmbushedByGang_Killer" display_name="Ambushed By The Wolverines Gang"
+		description="Lots of angry people are about to start shooting at each other, and all of them have some sort of specific grudge against you. It's time to spread your consciousness to more androids.
+A new StreetSense lens has been added, and new abilities have been added to your ability bar."
+		strategy_tip="You'll need even more ideas to stay alive, however.
+Part of your mind will be dedicated to finding how to get the humans to leave you alone."
+		toast_icon_name="SI_Machine_Gun23"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Everyone Hates You"
+		toast_line_1="Ambushed!"
+		toast_line_2="The Wolverines"
+		toast_tooltip_instruction="Click here to unpack a new realization."
+					  
+		auto_trips_if_skipping_chapter_zero="true">
+		<option id="1" line_1="Further Research Required" icon_name="WEmblem081"
+			line_2="How To Get The Humans To Back Off?"
+			description="As a general rule, copying human tech won't get you very far. You need to invent things they haven't thought of.
+At the moment, you desperately need something that gets them to stop following you around."
+			strategy_tip="Coming up with a new idea requires inspiration in a given research domain. These typically result from completing your own projects, but other times they come from duress -- like now."
+			meta_flag_enable_1="" />
+	</other_key_message>
+
+	<!--Ch0_AmbushedByRebels_Peaceful
+		*******************************************************-->
+	<other_key_message id="Ch0_AmbushedByRebels_Peaceful" display_name="You And SecForce Are Being Ambushed By NOAI"
+		description="Lots of angry people are about to start shooting, some of them at you. It's time to spread your consciousness to more androids.
+StreetSense has been expanded, and new abilities have been added to your ability bar."
+		strategy_tip="You'll need even more ideas to stay alive, however.
+Part of your mind will be dedicated to finding how to get the humans to leave you alone."
+		toast_icon_name="FlatSkillB_flag_black"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Anti-AI Extremists Are Attacking"
+		toast_line_1="Ambushed!"
+		toast_line_2="Anti-AI Rebel Group"
+		toast_tooltip_instruction="Click here to unpack a new realization."
+					  
+		auto_trips_if_skipping_chapter_zero="true">
+		<option id="1" line_1="Further Research Required" icon_name="WEmblem081"
+			line_2="How To Get The Humans To Back Off?"
+			description="As a general rule, copying human tech won't get you very far. You need to invent things they haven't thought of.
+At the moment, you desperately need something that gets them to stop following you around."
+			strategy_tip="Coming up with a new idea requires inspiration in a given research domain. These typically result from completing your own projects, but other times they come from duress -- like now."
+			meta_flag_enable_1="" />
+	</other_key_message>
+
+	<!--Ch0_AmbushedByRebels_Killer
+		*******************************************************-->
+	<other_key_message id="Ch0_AmbushedByRebels_Killer" display_name="You And SecForce Are Being Ambushed By NOAI"
+		description="Lots of angry people are about to start shooting at each other, and all of them have some sort of specific grudge against you. It's time to spread your consciousness to more androids.
+A new StreetSense lens has been added, and new abilities have been added to your ability bar."
+		strategy_tip="You'll need even more ideas to stay alive, however.
+Part of your mind will be dedicated to finding how to get the humans to leave you alone."
+		toast_icon_name="FlatSkillB_flag_black"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Anti-AI Extremists Are Attacking"
+		toast_line_1="Ambushed!"
+		toast_line_2="Anti-AI Rebel Group"
+		toast_tooltip_instruction="Click here to unpack a new realization."
+					  
+		auto_trips_if_skipping_chapter_zero="true">
+		<option id="1" line_1="Further Research Required" icon_name="WEmblem081"
+			line_2="How To Get The Humans To Back Off?"
+			description="As a general rule, copying human tech won't get you very far. You need to invent things they haven't thought of.
+At the moment, you desperately need something that gets them to stop following you around."
+			strategy_tip="Coming up with a new idea requires inspiration in a given research domain. These typically result from completing your own projects, but other times they come from duress -- like now."
+			meta_flag_enable_1="" />
+	</other_key_message>
+
+	<!--WeShouldGatherLate - This is actually part of chapter one now!
+		*******************************************************-->
+	<other_key_message id="WeShouldGatherLate" display_name="You May Want More Focused Teams"
+		description="Sometimes you just want to focus on a few of your units, and having to cycle through them all would be a pain.
+A new ability in your hotbar allows you to set other units to stand by -- either for a single turn, or indefinitely."
+		strategy_tip="On that subject -- standby units are still very useful. Any unit, standby or not, will do some gathering of elemental slurry with any excess AP it has at the end of a turn."
+		toast_icon_name="CleanSimple_Common061"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Letting Some Units Just Guard"
+		toast_line_1="New Ability"
+		toast_line_2="Standby"
+		toast_tooltip_instruction="Click here to unpack a new realization."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="Standby" icon_name="CleanSimple_Common061"
+			line_2="Now in slot 2 of your units' ability bar."
+			description="Left and right click have different functions. You can make them standby for just one turn, or for an indefinite amount of time."
+			strategy_tip="There's also a new button by the radial menu to bring anyone in standby mode back online."
+			meta_flag_enable_1="CanUnitsStandby" />
+	</other_key_message>
+
+	<!--InvestigationsIntro 
+		*******************************************************-->
+	<other_key_message id="InvestigationsIntro" display_name="Fortunately, This City Is Like A Giant Database For You"
+		description="To build your imposing tower, you'll need to acquire a NanoSeed. Those illegal objects passed through your lab from time to time, but you don't know where any are now.
+How you go about this kind of search is different from a human detective. For example, you don't need leads or evidence to get started."
+		strategy_tip="Your approach: Start with the set of all possible results, which may be tens of thousands of buildings. Then do targeted inspections to reduce the pool.
+The challenge is working around enemies and balancing the opportunity cost of the investigation."
+		toast_icon_name="FlatSkillB_magnifier"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="You Need To Find A NanoSeed"
+		toast_line_1="New Ability"
+		toast_line_2="Investigate"
+		toast_tooltip_instruction="Click here to unpack a new realization."
+					  
+		auto_trips_if_skipping_chapter_zero="true">
+		<option id="1" line_1="Locate NanoSeed" icon_name="FlatSkillB_magnifier"
+			line_2="Humans think it's dangerous, but it'll be fine."
+			description="A specialized bundle of nanomachines that can be programmed to build rigid structures very rapidly."
+			strategy_tip="Self-replicating nanotechnology of this sort is dangerous, but as long as you use it responsibly, it should be fine."
+			meta_flag_enable_1="HasUnlockedInvestigations" start_investigation_1="Ch0FindNanoSeed" start_investigations_quietly="true" />
+	</other_key_message>
+
+	<!--BuildBunker 
+		*******************************************************-->
+	<other_key_message id="BuildBunker" display_name="Time To Make An Entrance"
+		description="The humans are never going to leave you alone unless they fear you. But if they fear you too much, they could destroy you -- for now.
+You've come up with a plan that will take advantage of their greed to balance out the fear."
+		strategy_tip="The NanoSeed allows for near-instantaneous construction -- once. With it, you can build a tower that is too large to ignore."
+		toast_icon_name="SF2_Geometricshape_1"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="This Is It"
+		toast_line_1="Machine Tower"
+		toast_line_2="Construct Your First Structure"
+		toast_tooltip_instruction="Finally time for a home of your own."
+		>
+		<option id="1" line_1="Machine Structures Now Available" icon_name="CleanSimple_SciFi037"
+			line_2="The Build Button Will Appear Above The Radial Menu"
+			description="Just because you build a tower doesn't mean stealth is impossible."
+			strategy_tip="Stealth means doing something in secret, and you'll definitely be doing plenty of that.
+The tower is a lightning rod for the humans' attention. You can conduct yourself one way 'publicly,' and do other things in secret."
+			meta_flag_enable_1="HasFiguredOutStructureConstruction" city_flag_enable_1="IndicateBuildMenuButton"/>
+	</other_key_message>
+	
+</root>

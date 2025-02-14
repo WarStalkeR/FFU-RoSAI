@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<stance id="ExperimentalMonsterRage" display_name="Rage-Blind"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These 'monsters' are experiencing rage-blindness."
+		icon_name="WEmblem311" icon_color="#AB290B" icon_color_hdr_intensity="2.5" icon_scale="0.6"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="false"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="0" is_hyper_aggressive_against_all_but_its_own_cohort="false"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+		<action_consideration id="RunAfterMachineStructuresFallback" sort_order="500" chance_of_attempting="100" action_to_attempt="RunAfterMachineStructures" />
+	</stance>
+	
+	<stance id="ExperimentalMonsterConfusedRage" display_name="Confused Rage"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These 'monsters' are confused and angry. This isn't the city as they remember it. How did they get here?"
+		icon_name="WEmblem311" icon_color="#930BAB" icon_color_hdr_intensity="2.5" icon_scale="0.6"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="false"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="0" is_hyper_aggressive_against_all_but_its_own_cohort="false"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+		<action_consideration id="RunAfterMachineStructuresFallback" sort_order="500" chance_of_attempting="100" action_to_attempt="RunAfterMachineStructures" />
+	</stance>
+
+	<stance id="HomoGrandienLivingLife" display_name="Living Life"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="They hang around in small groups, discussing whatever comes to mind, and thinking about the future. For now they exist and have relative peace, which is enough."
+		icon_name="WEmblem311" icon_color="#0B78AB" icon_color_hdr_intensity="2.5" icon_scale="0.6"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_attack_outcast_machines_at_or_above_level="0" is_hyper_aggressive_against_all_but_its_own_cohort="false"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="ParkourBearRunning" display_name="Running Wild"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="They are fast and motivated to escape. Capture them quickly!"
+		icon_name="FlatSkillB_bear" icon_color="#0B8FAE" icon_color_hdr_intensity="2.2" icon_scale="0.5"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="false" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1" is_hyper_aggressive_against_all_but_its_own_cohort="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="30" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="Wander" sort_order="180" chance_of_attempting="100" action_to_attempt="Wander" />
+	</stance>
+	
+</root>

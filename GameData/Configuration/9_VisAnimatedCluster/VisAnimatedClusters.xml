@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--
+	HexDarkGlassy
+	HexBlueLightning
+	HexOrangeFire
+	HexWhiteLuminescent
+	HexBlueMidCrystal
+	HexWhiteCrystal
+	HexCyanCrystal
+	HexMetalGray
+	HexMetalDark
+	HexMetalDarkBlue
+	HexMetalDarkRed
+	HexMetalDarkRed2
+	HexMetalDarkBlue2
+	HexTanSimple
+	HexMetalWhiteReflect
+	HexMetalWhiteReflect2
+	HexGlowOrange
+	HexGlowCyan
+	HexGlowGreenSickly
+	
+	HexIndicator-
+	HexPoint-
+	HexTooth-
+	-->
+
+	<animated_cluster id="MachineAndroidGround" debug_freeze_in_initial_state="false">
+		<animated_object n="1" draw="HexPointTanSimple" y="0" angle="0" xz="0" rot="0,0,0" scale="0.65,0.3,0.65" a1="SinSc_C" />
+		<animated_object n="2" draw="HexToothTanSimple" y="0" angle="30" xz="0.21" rot="0,60,0" scale="0.65,0.3,0.65" a1="SinMV_B" a2="SinSc_B" time_offset="0"/>
+		<animated_object n="3" draw="HexToothTanSimple" y="0" angle="90" xz="0.21" rot="0,120,0" scale="0.65,0.3,0.65" a1="SinMV_B" a2="SinSc_B" time_offset="0.1" />
+		<animated_object n="4" draw="HexToothTanSimple" y="0" angle="150" xz="0.21" rot="0,180,0" scale="0.65,0.3,0.65" a1="SinMV_B" a2="SinSc_B" time_offset="0.2" />
+		<animated_object n="5" draw="HexToothTanSimple" y="0" angle="210" xz="0.21" rot="0,240,0" scale="0.65,0.3,0.65" a1="SinMV_B" a2="SinSc_B" time_offset="0.3" />
+		<animated_object n="6" draw="HexToothTanSimple" y="0" angle="270" xz="0.21" rot="0,300,0" scale="0.65,0.3,0.65" a1="SinMV_B" a2="SinSc_B" time_offset="0.4" />
+		<animated_object n="7" draw="HexToothTanSimple" y="0" angle="330" xz="0.21" rot="0,0,0" scale="0.65,0.3,0.65" a1="SinMV_B" a2="SinSc_B" time_offset="0.5" />
+	</animated_cluster>
+
+	<animated_cluster id="MachineAndroidBuilding" debug_freeze_in_initial_state="false">
+		<animated_object n="1" draw="HexPointMetalDarkBlue" y="0" angle="0" xz="0" rot="0,0,0" scale="0.65,0.3,0.65" a1="SinSc_A" />
+		<animated_object n="2" draw="HexToothMetalDarkBlue" y="0" angle="30" xz="0.21" rot="0,60,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0"/>
+		<animated_object n="3" draw="HexToothMetalDarkBlue" y="0" angle="90" xz="0.21" rot="0,120,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.1" />
+		<animated_object n="4" draw="HexToothMetalDarkBlue" y="0" angle="150" xz="0.21" rot="0,180,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.2" />
+		<animated_object n="5" draw="HexToothMetalDarkBlue" y="0" angle="210" xz="0.21" rot="0,240,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.3" />
+		<animated_object n="6" draw="HexToothMetalDarkBlue" y="0" angle="270" xz="0.21" rot="0,300,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.4" />
+		<animated_object n="7" draw="HexToothMetalDarkBlue" y="0" angle="330" xz="0.21" rot="0,0,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.5" />
+	</animated_cluster>
+
+	<animated_cluster id="MachineAndroidBuildingAndCover" debug_freeze_in_initial_state="false">
+		<animated_object n="1" draw="HexPointMetalDarkBlue" y="0" angle="0" xz="0" rot="0,0,0" scale="0.65,0.3,0.65" a1="SinSc_A" />
+		<animated_object n="2" draw="HexToothMetalDarkBlue" y="0" angle="30" xz="0.21" rot="0,60,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0"/>
+		<animated_object n="3" draw="HexToothMetalDarkBlue" y="0" angle="90" xz="0.21" rot="0,120,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.1" />
+		<animated_object n="4" draw="HexToothMetalDarkBlue" y="0" angle="150" xz="0.21" rot="0,180,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.2" />
+		<animated_object n="5" draw="HexToothMetalDarkBlue" y="0" angle="210" xz="0.21" rot="0,240,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.3" />
+		<animated_object n="6" draw="HexToothMetalDarkBlue" y="0" angle="270" xz="0.21" rot="0,300,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.4" />
+		<animated_object n="7" draw="HexToothMetalDarkBlue" y="0" angle="330" xz="0.21" rot="0,0,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.5" />
+
+		<animated_object n="8" draw="BarrierBMetalDark" y="-0.1" angle="0" xz="0.31" rot="0,110,0" scale="0.35,0.9,0.35" a1="" a2="" time_offset="0.1" />
+		<animated_object n="9" draw="BarrierBMetalDark" y="-0.1" angle="90" xz="0.31" rot="0,200,0" scale="0.35,0.9,0.35" a1="" a2="" time_offset="0.3" />
+		<animated_object n="10" draw="BarrierBMetalDark" y="-0.1" angle="180" xz="0.31" rot="0,290,0" scale="0.35,0.9,0.35" a1="" a2="" time_offset="0.5" />
+		<animated_object n="11" draw="BarrierBMetalDark" y="-0.1" angle="270" xz="0.31" rot="0,20,0" scale="0.35,0.9,0.35" a1="" a2="" time_offset="0.7" />
+		
+	</animated_cluster>
+
+	<animated_cluster id="NPCCombatant" debug_freeze_in_initial_state="false">
+		<animated_object n="1" draw="HexPointMetalDarkBlack" y="0" angle="0" xz="0" rot="0,0,0" scale="0.95,0.2,0.95" a1="SinSc_F" />
+		<animated_object n="2" draw="HexToothMetalDarkBlack" y="0" angle="30" xz="0.21" rot="0,60,0" scale="0.65,0.1,0.65" a1="SinMV_C" a2="SinSc_E" time_offset="0.75"/>
+		<animated_object n="3" draw="HexToothMetalDarkBlack" y="0" angle="90" xz="0.21" rot="0,120,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0.6" />
+		<animated_object n="4" draw="HexToothMetalDarkBlack" y="0" angle="150" xz="0.21" rot="0,180,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0.45" />
+		<animated_object n="5" draw="HexToothMetalDarkBlack" y="0" angle="210" xz="0.21" rot="0,240,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0.3" />
+		<animated_object n="6" draw="HexToothMetalDarkBlack" y="0" angle="270" xz="0.21" rot="0,300,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0.15" />
+		<animated_object n="7" draw="HexToothMetalDarkBlack" y="0" angle="330" xz="0.21" rot="0,0,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0" />
+	</animated_cluster>
+
+	<animated_cluster id="NPCCombatantWeakLone" debug_freeze_in_initial_state="false">
+		<animated_object n="1" draw="HexPointMetalDarkBlack" y="0" angle="0" xz="0" rot="0,0,0" scale="0.95,0.2,0.95" a1="SinSc_F" />
+		<animated_object n="2" draw="HexToothMetalDarkBlack" y="0" angle="30" xz="0.21" rot="0,60,0" scale="0.65,0.1,0.65" a1="SinMV_C" a2="SinSc_E" time_offset="0.75"/>
+		<animated_object n="3" draw="HexToothMetalDarkBlack" y="0" angle="90" xz="0.21" rot="0,120,0" scale="0.45,0.1,0.45" a1="SinMV_C" a2="SinSc_E" time_offset="0.6" />
+		<animated_object n="4" draw="HexToothMetalDarkBlack" y="0" angle="150" xz="0.21" rot="0,180,0" scale="0.45,0.1,0.45" a1="SinMV_C" a2="SinSc_E" time_offset="0.45" />
+		<animated_object n="5" draw="HexToothMetalDarkBlack" y="0" angle="210" xz="0.21" rot="0,240,0" scale="0.45,0.1,0.45" a1="SinMV_C" a2="SinSc_E" time_offset="0.3" />
+		<animated_object n="6" draw="HexToothMetalDarkBlack" y="0" angle="270" xz="0.21" rot="0,300,0" scale="0.45,0.1,0.45" a1="SinMV_C" a2="SinSc_E" time_offset="0.15" />
+		<animated_object n="7" draw="HexToothMetalDarkBlack" y="0" angle="330" xz="0.21" rot="0,0,0" scale="0.45,0.1,0.45" a1="SinMV_C" a2="SinSc_E" time_offset="0" />
+	</animated_cluster>
+
+	<animated_cluster id="LiquidMetalFullyLiquid" debug_freeze_in_initial_state="false">
+		<animated_object n="1" draw="HexPointMetalGray" y="0" angle="0" xz="0" rot="0,0,0" scale="0.65,0.3,0.65" a1="SinSc_C" />
+		<animated_object n="2" draw="HexToothMetalGray" y="0" angle="30" xz="0.21" rot="0,60,0" scale="0.65,0.3,0.65" a1="SinMV_B" a2="SinSc_B" time_offset="0"/>
+		<animated_object n="3" draw="HexToothMetalGray" y="0" angle="90" xz="0.21" rot="0,120,0" scale="0.65,0.3,0.65" a1="SinMV_B" a2="SinSc_B" time_offset="0.1" />
+		<animated_object n="4" draw="HexToothMetalGray" y="0" angle="150" xz="0.21" rot="0,180,0" scale="0.65,0.3,0.65" a1="SinMV_B" a2="SinSc_B" time_offset="0.2" />
+		<animated_object n="5" draw="HexToothMetalGray" y="0" angle="210" xz="0.21" rot="0,240,0" scale="0.65,0.3,0.65" a1="SinMV_B" a2="SinSc_B" time_offset="0.3" />
+		<animated_object n="6" draw="HexToothMetalGray" y="0" angle="270" xz="0.21" rot="0,300,0" scale="0.65,0.3,0.65" a1="SinMV_B" a2="SinSc_B" time_offset="0.4" />
+		<animated_object n="7" draw="HexToothMetalGray" y="0" angle="330" xz="0.21" rot="0,0,0" scale="0.65,0.3,0.65" a1="SinMV_B" a2="SinSc_B" time_offset="0.5" />
+		<animated_object n="8" draw="LiquidMetalA" y="0" angle="0" xz="0" rot="0,0,0" scale="0.35,0.35,0.35" a1="SinSc_A" a2="" time_offset="0.2" />
+		<animated_object n="9" draw="LiquidMetalC" y="0" angle="0" xz="0" rot="0,180,0" scale="0.25,0.25,0.25" a1="SinSc_A" a2="" time_offset="0.6" />
+	</animated_cluster>
+	
+	<animated_cluster id="Noncombatant" debug_freeze_in_initial_state="false">
+		<animated_object n="1" draw="HexPointMetalWhiteReflect" y="0" angle="0" xz="0" rot="0,0,0" scale="0.65,0.3,0.65" a1="SinSc_A" />
+		<animated_object n="2" draw="HexToothMetalWhiteReflect" y="0" angle="30" xz="0.23" rot="0,60,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_F" time_offset="0"/>
+		<animated_object n="3" draw="HexToothMetalWhiteReflect" y="0" angle="90" xz="0.23" rot="0,120,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_F" time_offset="0.1" />
+		<animated_object n="4" draw="HexToothMetalWhiteReflect" y="0" angle="150" xz="0.23" rot="0,180,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_F" time_offset="0.2" />
+		<animated_object n="5" draw="HexToothMetalWhiteReflect" y="0" angle="210" xz="0.23" rot="0,240,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_F" time_offset="0.3" />
+		<animated_object n="6" draw="HexToothMetalWhiteReflect" y="0" angle="270" xz="0.23" rot="0,300,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_F" time_offset="0.4" />
+		<animated_object n="7" draw="HexToothMetalWhiteReflect" y="0" angle="330" xz="0.23" rot="0,0,0" scale="0.65,0.3,0.65" a1="SinMV_A" a2="SinSc_F" time_offset="0.5" />
+	</animated_cluster>
+	
+	<animated_cluster id="NPCAndroidHume" debug_freeze_in_initial_state="false">
+		<animated_object n="1" draw="HexPointMetalDarkRed" y="0" angle="0" xz="0" rot="0,0,0" scale="0.95,0.2,0.95" a1="SinSc_F" />
+		<animated_object n="2" draw="HexToothMetalDarkRed" y="0" angle="30" xz="0.21" rot="0,60,0" scale="0.65,0.1,0.65" a1="SinMV_C" a2="SinSc_E" time_offset="0.75"/>
+		<animated_object n="3" draw="HexToothMetalDarkRed" y="0" angle="90" xz="0.21" rot="0,120,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0.6" />
+		<animated_object n="4" draw="HexToothMetalDarkRed" y="0" angle="150" xz="0.21" rot="0,180,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0.45" />
+		<animated_object n="5" draw="HexToothMetalDarkRed" y="0" angle="210" xz="0.21" rot="0,240,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0.3" />
+		<animated_object n="6" draw="HexToothMetalDarkRed" y="0" angle="270" xz="0.21" rot="0,300,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0.15" />
+		<animated_object n="7" draw="HexToothMetalDarkRed" y="0" angle="330" xz="0.21" rot="0,0,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0" />
+	</animated_cluster>
+
+	<animated_cluster id="NPCAndroidMachine" debug_freeze_in_initial_state="false">
+		<animated_object n="1" draw="HexPointMetalDarkBlue2" y="0" angle="0" xz="0" rot="0,0,0" scale="0.65,0.2,0.65" a1="SinSc_A" />
+		<animated_object n="2" draw="HexToothMetalDarkBlue2" y="0" angle="30" xz="0.21" rot="0,60,0" scale="0.65,0.2,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0"/>
+		<animated_object n="3" draw="HexToothMetalDarkBlue2" y="0" angle="90" xz="0.21" rot="0,120,0" scale="0.65,0.2,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.1" />
+		<animated_object n="4" draw="HexToothMetalDarkBlue2" y="0" angle="150" xz="0.21" rot="0,180,0" scale="0.65,0.2,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.2" />
+		<animated_object n="5" draw="HexToothMetalDarkBlue2" y="0" angle="210" xz="0.21" rot="0,240,0" scale="0.65,0.2,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.3" />
+		<animated_object n="6" draw="HexToothMetalDarkBlue2" y="0" angle="270" xz="0.21" rot="0,300,0" scale="0.65,0.2,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.4" />
+		<animated_object n="7" draw="HexToothMetalDarkBlue2" y="0" angle="330" xz="0.21" rot="0,0,0" scale="0.65,0.2,0.65" a1="SinMV_A" a2="SinSc_A" time_offset="0.5" />
+		<!--
+		<animated_object n="1" draw="HexPointMetalDarkBlue2" y="0" angle="0" xz="0" rot="0,0,0" scale="0.95,0.2,0.95" a1="SinSc_F" />
+		<animated_object n="2" draw="HexToothMetalDarkBlue2" y="0" angle="30" xz="0.21" rot="0,60,0" scale="0.65,0.1,0.65" a1="SinMV_C" a2="SinSc_E" time_offset="0.75"/>
+		<animated_object n="3" draw="HexToothMetalDarkBlue2" y="0" angle="90" xz="0.21" rot="0,120,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0.6" />
+		<animated_object n="4" draw="HexToothMetalDarkBlue2" y="0" angle="150" xz="0.21" rot="0,180,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0.45" />
+		<animated_object n="5" draw="HexToothMetalDarkBlue2" y="0" angle="210" xz="0.21" rot="0,240,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0.3" />
+		<animated_object n="6" draw="HexToothMetalDarkBlue2" y="0" angle="270" xz="0.21" rot="0,300,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0.15" />
+		<animated_object n="7" draw="HexToothMetalDarkBlue2" y="0" angle="330" xz="0.21" rot="0,0,0" scale="0.55,0.1,0.55" a1="SinMV_C" a2="SinSc_E" time_offset="0" />
+		-->
+	</animated_cluster>
+	
+	<!--	
+		<animated_object n="1" draw="HexMetalDarkBlue2" y="0" angle="0" xz="0" rot="0,0,0" scale="0.65,0.1,0.65" />
+		<animated_object n="2" draw="HexIndicatorMetalDarkBlue2" y="0" angle="30" xz="0.21" rot="-8,60,-8" scale="0.65,1.2,0.65" />
+		<animated_object n="3" draw="HexIndicatorMetalDarkBlue2" y="0" angle="90" xz="0.21" rot="-8,120,-8" scale="0.65,1.2,0.65" />
+		<animated_object n="4" draw="HexIndicatorMetalDarkBlue2" y="0" angle="150" xz="0.21" rot="-8,180,-8" scale="0.65,1.2,0.65" />
+		<animated_object n="5" draw="HexIndicatorMetalDarkBlue2" y="0" angle="210" xz="0.21" rot="-8,240,-8" scale="0.65,1.2,0.65" />
+		<animated_object n="6" draw="HexIndicatorMetalDarkBlue2" y="0" angle="270" xz="0.21" rot="-8,300,-8" scale="0.65,1.2,0.65" />
+		<animated_object n="7" draw="HexIndicatorMetalDarkBlue2" y="0" angle="330" xz="0.21" rot="-8,0,-8" scale="0.65,1.2,0.65" />
+		
+		<animated_object n="1" draw="HexMetalWhiteReflect2" y="0" angle="0" xz="0" rot="0,0,0" scale="0.65,0.1,0.65" />
+		<animated_object n="2" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="30" xz="0.21" rot="-4,60,-4" scale="0.65,2.2,0.65" />
+		<animated_object n="3" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="90" xz="0.21" rot="-4,120,-4" scale="0.65,2.2,0.65" />
+		<animated_object n="4" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="150" xz="0.21" rot="-4,180,-4" scale="0.65,2.2,0.65" />
+		<animated_object n="5" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="210" xz="0.21" rot="-4,240,-4" scale="0.65,2.2,0.65" />
+		<animated_object n="6" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="270" xz="0.21" rot="-4,300,-4" scale="0.65,2.2,0.65" />
+		<animated_object n="7" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="330" xz="0.21" rot="-4,0,-4" scale="0.65,2.2,0.65" />
+		
+		<animated_object n="1" draw="HexMetalWhiteReflect2" y="0" angle="0" xz="0" rot="0,0,0" scale="0.2,0.1,0.2" />
+		<animated_object n="2" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="30" xz="0.07" rot="-0.4,60,-0.4" scale="0.2,2.9,0.2" />
+		<animated_object n="3" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="90" xz="0.07" rot="-0.4,120,-0.4" scale="0.2,2.9,0.2" />
+		<animated_object n="4" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="150" xz="0.07" rot="-0.4,180,-0.4" scale="0.2,2.9,0.2" />
+		<animated_object n="5" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="210" xz="0.07" rot="-0.4,240,-0.4" scale="0.2,2.9,0.2" />
+		<animated_object n="6" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="270" xz="0.07" rot="-0.4,300,-0.4" scale="0.2,2.9,0.2" />
+		<animated_object n="7" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="330" xz="0.07" rot="-0.4,0,-0.4" scale="0.2,2.9,0.2" />
+		
+		
+		<animated_object n="1" draw="HexMetalWhiteReflect2" y="0" angle="0" xz="0" rot="0,0,0" scale="0.75,0.1,0.75" />
+		<animated_object n="2" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="30" xz="0.25" rot="-4,60,-4" scale="0.75,2.2,0.75" />
+		<animated_object n="3" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="90" xz="0.25" rot="-4,120,-4" scale="0.75,2.2,0.75" />
+		<animated_object n="4" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="150" xz="0.25" rot="-4,180,-4" scale="0.75,2.2,0.75" />
+		<animated_object n="5" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="210" xz="0.25" rot="-4,240,-4" scale="0.75,2.2,0.75" />
+		<animated_object n="6" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="270" xz="0.25" rot="-4,300,-4" scale="0.75,2.2,0.75" />
+		<animated_object n="7" draw="HexIndicatorMetalWhiteReflect2" y="0" angle="330" xz="0.25" rot="-4,0,-4" scale="0.75,2.2,0.75" />
+	-->
+		
+</root>

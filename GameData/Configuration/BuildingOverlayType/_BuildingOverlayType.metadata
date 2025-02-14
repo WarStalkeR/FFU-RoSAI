@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="building_overlay">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the overlay is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the overlay in the specified external dll."/>
+
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="is_visualization_enabled" type="bool" default="false"
+		tooltip="Should this do the whole-screen visualization where the ground goes white?  
+		
+False on normal mode, and true on others that are not are_district_color_overlays_enabled or uses_building_highlights." />
+	
+	<attribute key="are_district_color_overlays_enabled" type="bool" default="false"
+		tooltip="Should the district color overlays be shown?  If this is true, then this is another case where often the is_visualization_enabled should be false." />
+
+	<attribute key="uses_building_highlights" type="bool" default="false"
+		tooltip="Should the building highlights be used?  Typically used when is_visualization_enabled is false." />
+
+	<attribute key="change_ground_visualization" type="bool" default="false"
+		tooltip="Should the ground and such draw as white in the main, or should the usual fog of war and such apply for the ground?" />
+	
+	<attribute key="color_gradient_positive" type="node-dropdown" node_source="ColorGradientType" content_width_px="300" is_required="true"
+		tooltip="What is the normal color gradient?" />
+
+	<attribute key="color_gradient_negative" type="node-dropdown" node_source="ColorGradientType" content_width_px="300" is_required="true"
+		tooltip="If this has two sides to its color gradients, what is the second side like?" />
+	
+</root>

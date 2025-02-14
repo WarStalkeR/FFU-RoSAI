@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="threading_request_type">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="can_only_run_one_at_a_time" type="bool" default="true"
+		tooltip="When the program requests to run a thread of this type, is it only able to run a single copy of it?"/>
+
+	<attribute key="seconds_after_which_to_warn_of_long_running" type="int-textbox" min="0" max="9000" default="5000" content_width_px="300" is_required="true"
+		tooltip="If we want to be alerted after a certain number of seconds if this is still running, then enter some low number. Otherwise put in something like 5000, which should not really come up."/>
+	
+</root>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Incomes-->
+	<trend_change_reason id="Income_EventChoice" display_name="Event Choice" is_income="true" />
+	<trend_change_reason id="Income_ActionOverTimeRefund" display_name="Action-Over-Time Refund" is_income="true" />
+	<trend_change_reason id="Income_Cheat" display_name="Cheats" is_income="true" />
+	<trend_change_reason id="Income_Other" display_name="Other" is_income="true" />
+	<trend_change_reason id="Income_Tutorial" display_name="Tutorial" is_income="true" />
+	<trend_change_reason id="Income_BaselineMentalEnergyBudget" display_name="Baseline Mental Energy Budget" is_income="true" />
+	<trend_change_reason id="Income_Investigation" display_name="Investigation" is_income="true" />
+	<trend_change_reason id="Income_RefundFromActionOverTimeCancellation" display_name="Refund From Action-Over-Time Cancellation" is_income="true" />
+	<trend_change_reason id="Income_RefundFromActionOverTimeFailed" display_name="Refund From Action-Over-Time Failure" is_income="true" />
+	<trend_change_reason id="Income_ExcessConvertedToProperStorage" display_name="Excess Converted To Proper Storage" is_income="true" />
+	<trend_change_reason id="Income_ActiveDeal" display_name="Active Deal" is_income="true" />
+	<trend_change_reason id="Income_FromKillOfEnemyUnit" display_name="From Kill Of Enemy Unit" is_income="true" />
+	<trend_change_reason id="Income_FromExtractionOfEnemyUnit" display_name="From Extraction Of Enemy Unit" is_income="true" />
+	<trend_change_reason id="Income_GatheredFromTerritoryControlResourceSites" display_name="Gathered From Territory Control Resource Sites" is_income="true" />
+	<trend_change_reason id="Income_WiretapTheft" display_name="Wiretap Theft" is_income="true" />
+	<trend_change_reason id="Income_Wallripper" display_name="Wallripper" is_income="true" />
+	<trend_change_reason id="Income_QuietLooting" display_name="Quiet Looting" is_income="true" />
+	<trend_change_reason id="Income_FromCombatDeath" display_name="From Combat Death" is_income="true" />
+	<trend_change_reason id="Income_ProjectOutcome" display_name="Project Outcome" is_income="true" />
+	<trend_change_reason id="Income_TimelineGoalCompleted" display_name="Timeline Goal Completed" is_income="true" />
+	<trend_change_reason id="Income_StreetLevelIncomeFromProject" display_name="Street-Level Income From Project" is_income="true" />
+	<trend_change_reason id="Income_GainedFromCommsProbe" display_name="Gained From Comms Probe" is_income="true" />
+	<trend_change_reason id="Income_IncomeFromMindFarms" display_name="Income From Mind Farms" is_income="true" />
+	<trend_change_reason id="Income_SaleOfTechnology" display_name="Sale Of Technology" is_income="true" />
+	<trend_change_reason id="Income_FromBrainPalsSold" display_name="From BrainPals Sold" is_income="true" />
+	<trend_change_reason id="Income_FromBlackmailingAtcaRetail" display_name="From Blackmailing Atca Retail" is_income="true" />
+
+	<!--Expenses-->
+	<trend_change_reason id="Expense_EventChoice" display_name="Event Choice" is_income="false" />
+	<trend_change_reason id="Expense_Other" display_name="Other" is_income="false" />
+	<trend_change_reason id="Expense_UnitAbilities" display_name="Unit Abilities" is_income="false" />
+	<trend_change_reason id="Expense_UnitActions" display_name="Unit Actions" is_income="false" />
+	<trend_change_reason id="Expense_BulkAndroidReposition" display_name="Bulk Android Reposition" is_income="false" />
+	<trend_change_reason id="Expense_CapturedMechReposition" display_name="Captured Mech Reposition" is_income="false" />
+	<trend_change_reason id="Expense_OtherCapturedUnitReposition" display_name="Other Captured Unit Reposition" is_income="false" />
+	<trend_change_reason id="Expense_UnitSprinting" display_name="Unit Sprinting" is_income="false" />
+	<trend_change_reason id="Expense_Investigation" display_name="Investigation" is_income="false" />
+	<trend_change_reason id="Expense_JobInstallation" display_name="Job Installation" is_income="false" />
+	<trend_change_reason id="Expense_BuiltStructures" display_name="Built Structures" is_income="false" />
+	<trend_change_reason id="Expense_UsedForStructureRepairs" display_name="Used For Structure Repairs" is_income="false" />
+	<trend_change_reason id="Expense_UsedForContrabandJamming" display_name="Used For Contraband Jamming" is_income="false" />
+	<trend_change_reason id="Expense_UsedForUnitRepairs" display_name="Used For Unit Repairs" is_income="false" />
+	<trend_change_reason id="Expense_ProjectOutcome" display_name="Project Outcome" is_income="false" />
+	<trend_change_reason id="Expense_StorageDestruction" display_name="Storage Destruction" is_income="false" />
+	<trend_change_reason id="Expense_UsedToCreateConsumable" display_name="Used To Create Consumable" is_income="false" />
+	<trend_change_reason id="Expense_UsedToCreateBulkAndroids" display_name="Used To Create Bulk Androids" is_income="false" />
+	<trend_change_reason id="Expense_UsedToCreateAndroid" display_name="Used To Create Android" is_income="false" />
+	<trend_change_reason id="Expense_UsedToCreateMech" display_name="Used To Create Mech" is_income="false" />
+	<trend_change_reason id="Expense_UsedToCreateVehicle" display_name="Used To Create Vehicle" is_income="false" />
+	<trend_change_reason id="Expense_ActiveDeal" display_name="Active Deal" is_income="false" />
+	<trend_change_reason id="Expense_CommandActions" display_name="Command Actions" is_income="false" />
+	<trend_change_reason id="Expense_UsedByShelteredHumans" display_name="Used By Sheltered Humans" is_income="false" />
+	<trend_change_reason id="Expense_DistributedToStructure" display_name="Distributed To Structure" is_income="false" />
+	<trend_change_reason id="Expense_ExhaustedByNewExperiences" display_name="Exhausted By New Experiences" is_income="false" />
+	<trend_change_reason id="Expense_FromCombatDeath" display_name="From Combat Death" is_income="false" />
+	<trend_change_reason id="Expense_CorruptedADaemon" display_name="Corrupted A Hardware Interface Via Hacking" is_income="false" />
+	<trend_change_reason id="Expense_StreetLevelProjectExpense" display_name="Street-Level Project Expense" is_income="false" />
+	<trend_change_reason id="Expense_CalledNewTimeline" display_name="Called New Timeline" is_income="false" />
+	<trend_change_reason id="Expense_MolecularGeneticistWages" display_name="Molecular Geneticist Wages" is_income="false" />
+	<trend_change_reason id="Expense_ForensicGeneticistWages" display_name="Forensic Geneticist Wages" is_income="false" />
+	<trend_change_reason id="Expense_ZoologistWages" display_name="Zoologist Wages" is_income="false" />
+	<trend_change_reason id="Expense_PhysicianWages" display_name="Physician Wages" is_income="false" />
+	<trend_change_reason id="Expense_VeterinarianWages" display_name="Veterinarian Wages" is_income="false" />
+	<trend_change_reason id="Expense_BotanistWages" display_name="Botanist Wages" is_income="false" />
+	<trend_change_reason id="Expense_BionicsEngineerWages" display_name="Bionics Engineer Wages" is_income="false" />
+	<trend_change_reason id="Expense_EpidemiologistWages" display_name="Epidemiologist Wages" is_income="false" />
+	<trend_change_reason id="Expense_NeurologistWages" display_name="Neurologist Wages" is_income="false" />
+	<trend_change_reason id="Expense_ConsumptionByTormentedHumans" display_name="Consumption By Tormented Humans" is_income="false" />
+	<trend_change_reason id="Expense_ConsumptionByHumansInMindFarms" display_name="Consumption By Humans In Mind Farms" is_income="false" />
+	<trend_change_reason id="Expense_DeathsFromExposure" display_name="Deaths From Exposure" is_income="false" />
+	<trend_change_reason id="Expense_MovedIntoHousing" display_name="Moved Into Housing" is_income="false" />
+	<trend_change_reason id="Expense_UsedForBulkUnitAttacks" display_name="Used For Bulk Unit Attacks" is_income="false" />
+	<trend_change_reason id="Expense_UsedForCapturedUnitAttacks" display_name="Used For Captured Unit Attacks" is_income="false" />
+	<trend_change_reason id="Expense_UsedForUnitAttacks" display_name="Used For Unit Attacks" is_income="false" />
+
+	<!--Increases-->
+	<trend_change_reason id="Increase_ColdBlood" display_name="Cold Blood" is_income="true" />
+	<trend_change_reason id="Increase_IdleUnitGathering" display_name="Idle Unit Gathering" is_income="true" />
+	<trend_change_reason id="Increase_EmergencyExcessGathering" display_name="Emergency Excess Gathering" is_income="true" />
+	<trend_change_reason id="Increase_StructuresRefund" display_name="Structures Refund" is_income="true" />
+	<trend_change_reason id="Increase_JobInstallationRefund" display_name="Job Installation Refund" is_income="true" />
+	<trend_change_reason id="Increase_HomelessMovingOutOfTents" display_name="Homeless Moving Out Of Tents" is_income="true" />
+	<trend_change_reason id="Increase_AbandonedCitizensMovingBackIn" display_name="Abandoned Citizens Moving Back In" is_income="true" />
+	<trend_change_reason id="Increase_AbandonedCitizensBecomingRefugees" display_name="Abandoned Citizens Becoming Refugees" is_income="true" />
+	<trend_change_reason id="Increase_DisplacedAbandonedCitizensMovingInForTheFirstTime" display_name="Displaced Abandoned Citizens Moving In For The First Time" is_income="true" />
+	<trend_change_reason id="Increase_DesperateHomelessMovingIn" display_name="Desperate Homeless Moving In" is_income="true" />
+	<trend_change_reason id="Increase_RefundFromReturningBulkAndroids" display_name="Refund From Returning Bulk Androids To Inventory" is_income="true" />
+	<trend_change_reason id="Increase_ShelteredHumansBecomingRefugees" display_name="Sheltered Humans Becoming Refugees" is_income="true" />
+	<trend_change_reason id="Increase_JobInstallationComplete" display_name="Job Installation Complete" is_income="true" />
+	<trend_change_reason id="Increase_CapturedUnits" display_name="Captured Units" is_income="true" />
+	<trend_change_reason id="Increase_FromNewUnitCreation" display_name="From New Unit Creation" is_income="true" />
+	<trend_change_reason id="Increase_CameBackFromTheWorld" display_name="Came Back From The World" is_income="true" />
+	<trend_change_reason id="Increase_KidnappedByYourWorkers" display_name="Kidnapped By Your Workers" is_income="true" />
+	<trend_change_reason id="Increase_WalkInCustomers" display_name="Walk-In Customers" is_income="true" />
+	<trend_change_reason id="Increase_ReferredCustomers" display_name="Referred Customers" is_income="true" />
+	<trend_change_reason id="Increase_CouponProgram" display_name="Coupon Program" is_income="true" />
+	<trend_change_reason id="Increase_AddictedCustomers" display_name="Addicted Customers" is_income="true" />
+	<trend_change_reason id="Increase_DisplacedByConstruction" display_name="Displaced By Construction" is_income="true" />
+	<trend_change_reason id="Increase_LossOfYourShelter" display_name="Loss Of Your Shelter" is_income="true" />
+	<trend_change_reason id="Increase_RescuedByAndroid" display_name="Rescued By Android" is_income="true" />
+
+	<!--Decreases-->
+	<trend_change_reason id="Decrease_HadMoreThanCap" display_name="Had More Than Cap" is_income="false" />
+	<trend_change_reason id="Decrease_ShiftedToExcess" display_name="Shifted To Excess" is_income="false" />
+	<trend_change_reason id="Decrease_ProgressPointsReachedTarget" display_name="Progress Points Reached Target" is_income="false" />
+	<trend_change_reason id="Decrease_CriticalSaveAvoidedConsciousnessCollapse" display_name="Critical Save - Avoided Consciousness Collapse" is_income="false" />
+	<trend_change_reason id="Decrease_RefugeesMovingIntoPermanentHousing" display_name="Refugees Moving Into Permanent Housing" is_income="false" />
+	<trend_change_reason id="Decrease_ShelteredHumansBecomingRefugees" display_name="Sheltered Humans Becoming Refugees" is_income="false" />
+	<trend_change_reason id="Decrease_StolenByCorporation" display_name="Stolen By Corporation" is_income="false" />
+	<trend_change_reason id="Decrease_LeftDueToMissedPayroll" display_name="Left Due To Missed Payroll" is_income="false" />
+	<trend_change_reason id="Decrease_DeathByMisadventure" display_name="Death By Misadventure" is_income="false" />
+	<trend_change_reason id="Decrease_DeathByStarvation" display_name="Death By Starvation" is_income="false" />
+	<trend_change_reason id="Decrease_EmergedIntoTheWorld" display_name="Emerged Into The World" is_income="false" />
+	<trend_change_reason id="Decrease_FromUnitReturningToBase" display_name="From Unit Returning To Base" is_income="true" />
+	<trend_change_reason id="Decrease_CouponProgram" display_name="Coupon Program" is_income="true" />
+	
+</root>

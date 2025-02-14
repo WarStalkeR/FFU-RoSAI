@@ -1,0 +1,1574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--EnergyBursts
+	***********************************************************************-->
+
+	<!--EnergyBurstSparkles-->
+	
+	<vis_particle_effect id="EnergyBurstSparklesBlue"
+		time_to_live="1.6" y_offset_from_requested="0.003" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstSparkles"/>
+
+	<vis_particle_effect id="EnergyBurstSparklesGold"
+		time_to_live="1.6" y_offset_from_requested="0.003" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstSparkles"/>
+
+	<vis_particle_effect id="EnergyBurstSparklesGreen"
+		time_to_live="1.6" y_offset_from_requested="0.003" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstSparkles"/>
+
+	<vis_particle_effect id="EnergyBurstSparklesPink"
+		time_to_live="1.6" y_offset_from_requested="0.003" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstSparkles"/>
+
+	<vis_particle_effect id="EnergyBurstSparklesPurple"
+		time_to_live="1.6" y_offset_from_requested="0.003" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstSparkles"/>
+
+	<vis_particle_effect id="EnergyBurstLightingGold"
+		time_to_live="1.6" y_offset_from_requested="0.003" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstSparkles"/>
+
+	<!--EnergyBurstSpikes-->
+	
+	<vis_particle_effect id="EnergyBurstSpikesBlue"
+		time_to_live="0.9" y_offset_from_requested="0.003" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstSpikes"/>
+
+	<vis_particle_effect id="EnergyBurstSpikesGold"
+		time_to_live="0.9" y_offset_from_requested="0.003" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstSpikes"/>
+
+	<vis_particle_effect id="EnergyBurstSpikesGreen"
+		time_to_live="0.9" y_offset_from_requested="0.003" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstSpikes"/>
+
+	<vis_particle_effect id="EnergyBurstSpikesPink"
+		time_to_live="0.9" y_offset_from_requested="0.003" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstSpikes"/>
+
+	<vis_particle_effect id="EnergyBurstSpikesPurple"
+		time_to_live="0.9" y_offset_from_requested="0.003" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstSpikes"/>
+
+	<!--EnergyBurstStorm-->
+
+	<vis_particle_effect id="EnergyBurstStormBlue"
+		time_to_live="1.4" y_offset_from_requested="0.004" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstStorm"/>
+
+	<vis_particle_effect id="EnergyBurstStormGreen"
+		time_to_live="1.4" y_offset_from_requested="0.004" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="EnergyBursts,EnergyBurstStorm"/>
+
+	<!--Explosions
+	***********************************************************************-->
+
+	<vis_particle_effect id="ExplosionNuke"
+		time_to_live="15" y_offset_from_requested="0.3" base_rotation="0,0,0" base_scale="0.3,0.3,0.3" causes_infinite_building_draw_distance="true"
+		tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionNukeB"
+		time_to_live="15" y_offset_from_requested="0.3" base_rotation="0,0,0" base_scale="0.3,0.3,0.3" causes_infinite_building_draw_distance="true"
+		tags="Explosions"/>
+
+	<!--Explosions2
+	***********************************************************************-->
+
+	<vis_particle_effect id="ExplosionStyle1Large"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle1Med"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle1Small"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyle2Large"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle2Med"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle2Small"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyle3Large"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle3Med"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle3Small"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyle4Giant"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle4Large"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle4Med"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle4Small"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyle5Large"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle5Med"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle5Small"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyle6Large"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle6Med"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle6Small"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyle7Large"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle7Med"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle7Small"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyleCircLarge"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleCircMed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleCircSmall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyleNukeLarge"
+		time_to_live="8" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleNukeMed"
+		time_to_live="8" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleNukeSmall"
+		time_to_live="8" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyleSmokeLarge"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleSmokeMed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleSmokeSmall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyleVertLarge"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleVertMed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleVertSmall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyleVert2Large"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleVert2Med"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleVert2Small"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyle4AirGiant"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle4AirLarge"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle4AirMed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle4AirSmall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyle5AirLarge"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle5AirMed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle5AirSmall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyle6AirLarge"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle6AirMed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle6AirSmall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyle7AirLarge"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle7AirMed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyle7AirSmall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyleCircAirLarge"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleCircAirMed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleCircAirSmall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyleNukeAirLarge"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleNukeAirMed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleNukeAirSmall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyleSmokeAirLarge"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleSmokeAirMed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleSmokeAirSmall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyleVertAirLarge"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleVertAirMed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleVertAirSmall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionStyleVert2AirLarge"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleVert2AirMed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionStyleVert2AirSmall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<!--Explosions3
+	***********************************************************************-->
+	<vis_particle_effect id="ExplosionAreaAir1A"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaAir1B"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaAir1C"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionAreaAir2A"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaAir2B"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaAir2C"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionAreaAir3A"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaAir3B"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaAir3C"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionAreaGround1A"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaGround1B"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionAreaGround2A"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaGround2B"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionAreaGround3A"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaGround3B"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionAreaGroundMuzzleHitAir1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaGroundMuzzleHitAir2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaGroundMuzzleHitAir3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionAreaGroundUp1A"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaGroundUp1B"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionAreaGroundUp2A"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaGroundUp2B"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	
+	<vis_particle_effect id="ExplosionAreaGroundUp3A"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionAreaGroundUp3B"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosiveHitBlue1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitBlueSplash1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitDarkSplash1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitFireBulb1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitFireCircle1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitFireDark1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitGold1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitGreenTechnical"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitGreenTechnical2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitMagmaSplash1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitPurple1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitPurpleLightning1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitPurpleMagma"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitRedLightning1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveHitWhiteLightning1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	
+	<vis_particle_effect id="ExplosiveImpactGround1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGround2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundBlue1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundBlue2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundBomb1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundEnergyBall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundGas"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundLaser1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundLaser2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundObsidian"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundPoison"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundPurple1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundPurple2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundRed1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosiveImpactGroundRed2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<!--Explosions4
+	***********************************************************************-->
+	<vis_particle_effect id="ExplosionFStyle1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle4"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle5"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle6"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle7"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle8"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle9"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle10"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle11"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle12"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle13"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle14"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle15"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle16"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle17"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle18"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle19"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle20"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle21"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle22"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle23"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle24"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle31"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle32"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle33"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle34"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle35"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle36"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyle37"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionFStyleAir2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir4"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir5"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir6"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir7"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir8"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir9"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir10"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir11"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir12"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir13"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir14"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir15"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir16"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir17"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir18"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir19"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir20"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir21"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAir22"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionFStyleAirDust2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust4"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust5"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust6"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust7"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust8"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust9"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust10"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust11"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust12"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust13"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust14"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust17"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleAirDust18"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+	<vis_particle_effect id="ExplosionFStyleDust1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust4"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust5"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust6"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust7"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust8"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust9"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust10"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust11"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust12"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust13"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust14"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust15"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust16"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust17"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust18"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust23"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleDust24"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	
+	<vis_particle_effect id="ExplosionFStyleRun25"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleRun26"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleRun27"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleRun28"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleRun29"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleRun30"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+
+
+	<vis_particle_effect id="ExplosionFStyleRunDust25"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleRunDust26"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleRunDust27"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleRunDust28"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleRunDust29"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	<vis_particle_effect id="ExplosionFStyleRunDust30"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1" tags="Explosions"/>
+	
+	<!--OtherEffects
+	***********************************************************************-->
+
+	<vis_particle_effect id="BuffGoldBlueRiser"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffNature"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+
+	<vis_particle_effect id="BuffCircleElectricalSparks"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="270,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffCircleFire"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="270,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffCircleFireBulb"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="270,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffCircleGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="270,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffCircleShieldBlue"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="270,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffCircleWater"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="270,0,0" base_scale="1,1,1"/>
+
+	<vis_particle_effect id="BurstBlueUpwardsSignal"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstElectric"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstFiery"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="270,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstGoldTime"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstGreenSwirlRiser"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstPink"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstPunchGold"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstRedWavy"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstTinyThinGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="FlashYellow"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GoldBlobs"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="IceSwirl"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="KnifeRain"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+
+	<!--MiscA
+	***********************************************************************-->
+
+	<vis_particle_effect id="BuffDown"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffGold"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffGoldSparkle"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffGreenHealing"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffHearts"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffHeartsAir"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffUp"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffWater"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="BurstBlackAndWhite"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstCracklesOrange"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstCracklesThinOrange"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstOrange"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstOrange2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstOrange3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstPaleRagged"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstPlasma"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstSmokePurple"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstSmokeRed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="ChargeOrange"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ChargeOrange2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ChargeOrange3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="Dust1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="Dust2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="Dust3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="Dust4"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="DustHit1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="DustHit2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="DustJump1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="DustJump2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="DustJump3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="DustStorm"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="EnergyStrike1Lightning"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="EnergyStrike2Red"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="EnergyStrike3Cyan"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="EnergyStrike4RedBlack"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="EnergyStrike5BlueLines"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="EnergyStrike6PunchOrange"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+
+	<vis_particle_effect id="CritGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CritCyan"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CritBlue"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CritRed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CritOrange"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CritYellow"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CritPurple"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+
+	<vis_particle_effect id="CriticalIceBlue"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CriticalIceCyan"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CriticalIceGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CriticalIceOrange"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CriticalIcePurple"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CriticalIceRed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CriticalIceYellow"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CritIceWhite"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="ExplosionStyleAir5"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosionStyleAir6"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosionStyleAir6Ground"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosionStyleAir7PurpleSlash"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="Flash1Gold"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="Flash2Green"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="Flash3Sparkles"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="Flash4Purple"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="Flash5White"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="MarbleBurst1Purple"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MarbleBurst2Green"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MarbleBurst3Gold"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MarbleBurst4Red"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="PoisonSkull"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="PoisonSmoke"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="SlashesDoubleGold"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SlashesDoubleOrange"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="SplashCyan"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashMolten"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="SwirlOrange"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SwirlOrange2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SwirlOrange3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+
+	<!--MiscB
+	***********************************************************************-->
+	
+	<vis_particle_effect id="BlackAndPurpleRain"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="ExplosionStyleAir1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosionStyleAir1Floor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosionStyleAir2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosionStyleAir2Floor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosionStyleAir3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosionStyleAir3Floor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosionStyleAir4"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosionStyleAir4Floor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="FlashSpikesRed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="FlashSpikesRedFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="GroundBlueEnergyUpdraft"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GroundBlueOrangeColorChangeUpdraft"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GroundBlueSpikeUpdraft"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GroundCracksBurstUpdraft"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GroundEnergyGreenUpdraft"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GroundGoldHelixUpdraft"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GroundGreenEnergyUpdraft"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GroundTarSplash"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="LightningStrike"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MeteorCrash"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ReaperAppears"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="SlashesMonochrome"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SlashesMonochromeFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="SplashCrossSlash"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashDustBlackFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<vis_particle_effect id="SplashDustDark"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashDustDarkFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashElectric"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashElectricFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashEnergyBlue"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashEnergyBlueFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashEnergyGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashEnergyGreenFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashEnergyRed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashEnergyRedFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashEyeRed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashEyeRedFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashFear"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashFearFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashFire"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashFireFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashGlass"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashGlassFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>	
+	<vis_particle_effect id="SplashHitEffect1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashHitEffect1Floor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashHitEffect2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashHitEffect2Floor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashIce"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashIceFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashInsects"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashInsectsFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashLava"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashLavaFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashLight"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashLightFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashLightWind"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashLightWindFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashPoison"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashPoisonFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashPoisonGasSphere"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashPoisonGasSphereFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashPortalDown"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashPurpleGlobe"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashPurpleGlobeFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashPurpleRing"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashPurpleRingFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashShadow"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashShadowFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashSpark"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashSparkFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashWater"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashWaterFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashWind"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SplashWindFloor"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ThornsUpLineGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ThornsUpPurple"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+
+	<!--MiscC
+	***********************************************************************-->
+	<vis_particle_effect id="BlueCyanStar"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffThinCyan"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffThinGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffWideCircleCyan"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BuffWideCircleGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstCyanRings"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstFireRing"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstGoldElectric"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstGoldRingSlashes"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstGreenElectric"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstHearts"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstPointCircleCyan"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstPointDust"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstPointFire"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstPointPurple"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstPurpleBokeh"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstPurpleElectric"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstRainbowBokeh"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstRing"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstSpikeSparkles"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstWaterRing"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="BurstYellowSharp"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CylinderBurstShockBlue"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="CylinderBurstShockGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosiveDXBlue"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosiveDXBlueB"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosiveDXBlueLightning"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosiveDXBlueRiser"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosiveDXGoldLightning"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosiveDXPoison"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosiveDXRadial"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="ExplosiveDXRed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GemBurstBlue"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GemBurstBlueFlash"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GemBurstRed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GemBurstRedFlash"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GemBurstWhite"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GemBurstWhiteAura"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="GemBurstWhiteFlash"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="LootFlicker"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="LootRise"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="LootSmash"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SlashGrinderCyanHalf"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SlashGrinderCyanLong"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SlashGrinderFireHalf"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SlashGrinderFireLong"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SlashGrinderOrangeHalf"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SlashGrinderOrangeLong"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SlashGrinderPurpleHalf"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SlashGrinderPurpleLong"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SpikeMotesBlue"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SpikeMotesGray"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SpikeMotesGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SpikeMotesOrange"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SpikeMotesPurple"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="SpikeMotesRed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="TeleportBlue"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="TeleportGreen"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="TeleportOrange"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="TeleportRed"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+
+	<!--MuzzleFlash
+	***********************************************************************-->
+	<vis_particle_effect id="MuzzleFlashBackdraft"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashBlue"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashBlue1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashBlueSplash"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashBombEjector"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashDark"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashEnergyBall"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashFireDark1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashGas"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashGold1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashGreenTechnical1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashGreenTechnical2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashLaser1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashLaser2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashMagmaSplash"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashObsidian"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashPinkCoil"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashPoison"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashPurple1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashPurpleDarkCloud"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashPurpleLightning"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashPurpleSwirl"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashRed1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashRed2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashRed3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashRedCircle1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashRedHitWall1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashRedHitWall2"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashRedHitWall3"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashRedLightning1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashSmoke1"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	<vis_particle_effect id="MuzzleFlashWhiteLightning"
+		time_to_live="5" y_offset_from_requested="0" base_rotation="0,0,0" base_scale="1,1,1"/>
+	
+	<!--OtherEffects
+	***********************************************************************-->
+
+	<vis_particle_effect id="Bombardment"
+		time_to_live="3.8" y_offset_from_requested="0.01" base_rotation="0,0,0" base_scale="1,1,1"
+		tags="OtherEffects"/>
+	
+	<vis_particle_effect id="EMPBurst"
+		time_to_live="1.3" y_offset_from_requested="0.6" base_rotation="0,0,0" base_scale="1,1,1"
+		tags="OtherEffects"/>
+
+	<vis_particle_effect id="ExplosiveRing"
+		time_to_live="1.8" y_offset_from_requested="0.6" base_rotation="0,0,0" base_scale="0.6,0.6,0.6"
+		tags="OtherEffects"/>
+
+	<vis_particle_effect id="Heal"
+		time_to_live="2" y_offset_from_requested="0.01" base_rotation="0,0,0" base_scale="1,1,1"
+		tags="OtherEffects"/>
+
+	<!--Weapons
+	***********************************************************************-->
+
+	<!--FlamethrowerPointy-->
+
+	<vis_particle_effect id="FlamethrowerPointyBlue"
+		time_to_live="3.9" y_offset_from_requested="0.3" base_rotation="0,0,0" base_scale="1,1,1"
+		tags="Weapons,FlamethrowerPointy"/>
+
+	<vis_particle_effect id="FlamethrowerPointyGreen"
+		time_to_live="3.9" y_offset_from_requested="0.3" base_rotation="0,0,0" base_scale="1,1,1"
+		tags="Weapons,FlamethrowerPointy"/>
+
+	<vis_particle_effect id="FlamethrowerPointyPink"
+		time_to_live="3.9" y_offset_from_requested="0.3" base_rotation="0,0,0" base_scale="1,1,1"
+		tags="Weapons,FlamethrowerPointy"/>
+
+	<vis_particle_effect id="FlamethrowerPointyRed"
+		time_to_live="3.9" y_offset_from_requested="0.3" base_rotation="0,0,0" base_scale="1,1,1"
+		tags="Weapons,FlamethrowerPointy"/>
+
+	<vis_particle_effect id="FlamethrowerPointyYellow"
+		time_to_live="3.9" y_offset_from_requested="0.3" base_rotation="0,0,0" base_scale="1,1,1"
+		tags="Weapons,FlamethrowerPointy"/>
+
+	<!--SlashWide-->
+
+	<vis_particle_effect id="SlashWideBlue"
+		time_to_live="0.8" y_offset_from_requested="0.3" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="Weapons,SlashWide"/>
+
+	<vis_particle_effect id="SlashWideGold"
+		time_to_live="0.8" y_offset_from_requested="0.3" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="Weapons,SlashWide"/>
+
+
+	<vis_particle_effect id="SlashWideGreen"
+		time_to_live="0.8" y_offset_from_requested="0.3" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="Weapons,SlashWide"/>
+
+
+	<vis_particle_effect id="SlashWidePurple"
+		time_to_live="0.8" y_offset_from_requested="0.3" base_rotation="-90,0,0" base_scale="1,1,1"
+		tags="Weapons,SlashWide"/>
+
+	<!--TriangularBlast-->
+
+	<vis_particle_effect id="TriangularBlastGold"
+		time_to_live="2" y_offset_from_requested="0.3" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		tags="Weapons,TriangularBlast"/>
+
+	<vis_particle_effect id="TriangularBlastBlue"
+		time_to_live="2" y_offset_from_requested="0.3" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		tags="Weapons,TriangularBlast"/>
+
+	<!--Projectiles
+	***********************************************************************-->
+
+	<!--ProjectileSniper-->
+
+	<vis_particle_effect id="ProjectileSniperBlue"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSniper"/>
+
+	<vis_particle_effect id="ProjectileSniperGold"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSniper"/>
+
+	<vis_particle_effect id="ProjectileSniperGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSniper"/>
+
+	<vis_particle_effect id="ProjectileSniperPink"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSniper"/>
+
+	<vis_particle_effect id="ProjectileSniperRed"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSniper"/>
+
+	<!--ProjectileLaser-->
+
+	<vis_particle_effect id="ProjectileLaserBlue"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.07,0.07,0.8"
+		travels_to_target="true" tags="Projectiles,ProjectileLaser"/>
+
+	<vis_particle_effect id="ProjectileLaserGold"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.07,0.07,0.8"
+		travels_to_target="true" tags="Projectiles,ProjectileLaser"/>
+
+	<vis_particle_effect id="ProjectileLaserGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.07,0.07,0.8"
+		travels_to_target="true" tags="Projectiles,ProjectileLaser"/>
+
+	<vis_particle_effect id="ProjectileLaserPink"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.07,0.07,0.8"
+		travels_to_target="true" tags="Projectiles,ProjectileLaser"/>
+
+	<!--ProjectileLightning-->
+	
+	<vis_particle_effect id="ProjectileLightningBlue"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.4,0.4,0.8"
+		travels_to_target="true" tags="Projectiles,ProjectileLightning"/>
+
+	<vis_particle_effect id="ProjectileLightningGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.4,0.4,0.8"
+		travels_to_target="true" tags="Projectiles,ProjectileLightning"/>
+
+	<vis_particle_effect id="ProjectileLightningOrange"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.4,0.4,0.8"
+		travels_to_target="true" tags="Projectiles,ProjectileLightning"/>
+
+	<!--ProjectileMisc-->
+	
+	<vis_particle_effect id="ProjectileFlameRed"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFlameGold"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.8,0.8,0.8"
+		travels_to_target="true" tags="Projectiles"/>
+
+	<vis_particle_effect id="ProjectileGooGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+
+	<vis_particle_effect id="ProjectileLightningBoltThick"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+
+	<vis_particle_effect id="ProjectileLightningDarkSparks"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.35,0.35,1"
+		travels_to_target="true" tags="Projectiles"/>
+
+	<vis_particle_effect id="ProjectileWhirling"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.4,0.4,0.4"
+		travels_to_target="true" tags="Projectiles"/>
+
+	<vis_particle_effect id="ProjectileInsanityGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+
+	<!--ProjectileLine-->
+	
+	<vis_particle_effect id="ProjectileLineSparkBlue"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileLineSparkGold"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileLineSparkGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileLineSparkPurple"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileLineSparkRed"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+	
+	<vis_particle_effect id="ProjectileLineWhiteWind"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+	
+	<!--ProjectilePlasma-->
+
+	<vis_particle_effect id="ProjectilePlasmaBlue"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectilePlasma"/>
+	
+	<vis_particle_effect id="ProjectilePlasmaGold"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectilePlasma"/>
+
+	<vis_particle_effect id="ProjectilePlasmaGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectilePlasma"/>
+
+	<vis_particle_effect id="ProjectilePlasmaPink"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectilePlasma"/>
+
+	<vis_particle_effect id="ProjectilePlasmaRed"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectilePlasma"/>
+
+	<vis_particle_effect id="ProjectilePlasmaYellow"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectilePlasma"/>
+
+	<!--ProjectileSparky-->
+
+	<vis_particle_effect id="ProjectileSparkyGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSparky"/>
+	<vis_particle_effect id="ProjectileSparkyBlue"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSparky"/>
+	<vis_particle_effect id="ProjectileSparkyGold"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSparky"/>
+	<vis_particle_effect id="ProjectileSparkyPink"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSparky"/>
+	<vis_particle_effect id="ProjectileSparkyRed"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSparky"/>
+
+	<!--ProjectileSpike-->
+	
+	<vis_particle_effect id="ProjectileSpikeBlue"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.5,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSpike"/>
+
+	<vis_particle_effect id="ProjectileSpikeGold"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.5,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSpike"/>
+
+	<vis_particle_effect id="ProjectileSpikeGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.5,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSpike"/>
+
+	<vis_particle_effect id="ProjectileSpikePink"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.5,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSpike"/>
+
+	<vis_particle_effect id="ProjectileSpikePurple"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.5,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSpike"/>
+
+	<vis_particle_effect id="ProjectileSpikeRed"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.5,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSpike"/>
+
+	<!--ProjectileStorm-->
+
+	<vis_particle_effect id="ProjectileStormBlue"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileStorm"/>
+
+	<vis_particle_effect id="ProjectileStormGold"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileStorm"/>
+
+	<vis_particle_effect id="ProjectileStormRed"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileStorm"/>
+
+	<vis_particle_effect id="ProjectileStormWhite"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileStorm"/>
+
+	<!--ProjectileSwirl-->
+	
+	<vis_particle_effect id="ProjectileSwirlBlue"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSwirl"/>
+
+	<vis_particle_effect id="ProjectileSwirlNature"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSwirl"/>
+
+	<vis_particle_effect id="ProjectileSwirlPink"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSwirl"/>
+
+	<vis_particle_effect id="ProjectileSwirlPurple"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSwirl"/>
+
+	<vis_particle_effect id="ProjectileSwirlWhite"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles,ProjectileSwirl"/>
+	
+	<!--Misc-->
+
+	<vis_particle_effect id="ProjectileGlowyCircleOrange"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+
+	<vis_particle_effect id="ProjectileSparklesGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+
+	<!--Projectiles3-->
+
+	<vis_particle_effect id="ProjectileBulletBlue"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.1,0.1,0.1"	
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileBulletCyan"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileBulletGreenB"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.1,0.1,0.1"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileBulletGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileBulletPink"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.1,0.1,0.1"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileBulletPurpleB"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.1,0.1,0.1"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileBulletPurple"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileBulletRedB"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileBulletRedC"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.1,0.1,0.1"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileBulletRed"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileBulletYellow"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.1,0.1,0.1"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileDiamondBlue"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileDiamondDoubleCyan"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.3,0.3,0.3"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileDiamondGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileDiamondPurple"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileDiamondRotation"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXEnergyBall"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.25,0.25"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXFireball"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.25,0.25"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXFirePiercer"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.25,0.25"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXGas"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.25,0.25"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXGrinderPurple"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXIce"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.25,0.25"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXKunai"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.25,0.25"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXLaser1"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.25,0.25"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXLaser2"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.25,0.25"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXPoison"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.25,0.25"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXPurpleFireball"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.35,0.35,0.35"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXShuriken"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.25,0.25,0.25"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXThinBlue"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.4,0.4,0.4"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXThinGreen"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.4,0.4,0.4"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXThinOrange"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.4,0.4,0.4"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXThinPink"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.4,0.4,0.4"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXThinPurple"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.4,0.4,0.4"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXThinPurpleElectric"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.4,0.4,0.4"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXThinWhite"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.4,0.4,0.4"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectileFXTinyBlueFireball"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="0.5,0.5,0.5"
+		travels_to_target="true" tags="Projectiles"/>
+	<vis_particle_effect id="ProjectilePlasmaPurple"
+		time_to_live="20" y_offset_from_requested="0.5" base_rotation="0,0,0" base_scale="1,1,1"
+		travels_to_target="true" tags="Projectiles"/>
+
+	<!--Slashes-->
+
+	<vis_particle_effect id="SlashCircleTechBlue"
+		time_to_live="3" y_offset_from_requested="0.004" base_rotation="0,0,0" base_scale="1,1,1"
+		tags=""/>
+	
+	<vis_particle_effect id="SlashTechBlue"
+		time_to_live="1.4" y_offset_from_requested="0.1" base_rotation="0,0,0" base_scale="1,1,1"
+		tags=""/>
+
+	<vis_particle_effect id="SlashTechGold"
+		time_to_live="1.4" y_offset_from_requested="0.1" base_rotation="0,0,0" base_scale="1,1,1"
+		tags=""/>
+
+	<vis_particle_effect id="SlashTechGreen"
+		time_to_live="1.4" y_offset_from_requested="0.1" base_rotation="0,0,0" base_scale="1,1,1"
+		tags=""/>
+
+	<vis_particle_effect id="SlashTechPurple"
+		time_to_live="1.4" y_offset_from_requested="0.1" base_rotation="0,0,0" base_scale="1,1,1"
+		tags=""/>
+
+	<vis_particle_effect id="SlashTechRed"
+		time_to_live="1.4" y_offset_from_requested="0.1" base_rotation="0,0,0" base_scale="1,1,1"
+		tags=""/>
+	
+</root>

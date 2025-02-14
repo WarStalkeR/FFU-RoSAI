@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<district_type id="CityCenter" display_name="City Center" char_for_district_debug_map="1"
+		 description="Downtown, the beating heart of the city. This district is prized by the wealthy."		 
+		 rand_split_districts_that_are_above_size_min="800" rand_split_districts_that_are_above_size_max="900"
+	     do_not_assign_if_fewer_than_x_cells="4"
+		 decoration_biome="Biome_CityCenter" name_pool="CityCenter" use_name_pool="true"
+		 is_standard_district_type_for_cohort_purposes="true"
+		 is_worker_district_type_for_cohort_purposes="true"
+		 district_owner_chosen_from="MegaCorpCivicHub"
+		 tags="AnyRegularDistrict,CityCenter,CivicHubs,AnyDistrict,MostlyNormalDistrict,NonRestrictedDistrict">		
+	</district_type>
+
+	<district_type id="SecondaryCivicHub" display_name="Secondary Civic Hub" char_for_district_debug_map="2"
+		 description="A smaller region of intense development and progress separate from the central city hub."		 
+		 rand_split_districts_that_are_above_size_min="800" rand_split_districts_that_are_above_size_max="900"
+	     do_not_assign_if_fewer_than_x_cells="4"
+		 decoration_biome="Biome_SecondaryCivicHub" name_pool="SecondaryCivicHub" use_name_pool="true"
+		 is_standard_district_type_for_cohort_purposes="true"
+		 is_worker_district_type_for_cohort_purposes="true"
+		 district_owner_chosen_from="MegaCorpCivicHub"
+		 tags="AnyRegularDistrict,SecondaryCivicHub,CivicHubs,AnyDistrict,MostlyNormalDistrict,NonRestrictedDistrict">
+	</district_type>
+
+	<district_type id="DecrepitPartOfTown" display_name="Decrepit Part Of Town" char_for_district_debug_map="d"
+		 description="This part of town has been left to rot. It is full of the city's 'undesirables' such as cults, religions, rebel groups, and law firms."		 
+		 rand_split_districts_that_are_above_size_min="15" rand_split_districts_that_are_above_size_max="20"
+	     do_not_assign_if_fewer_than_x_cells="3"
+		 decoration_biome="Biome_DecrepitPartOfTown" name_pool="DecrepitPartOfTown" use_name_pool="true"
+		 is_standard_district_type_for_cohort_purposes="true"
+		 district_owner_chosen_from="DecrepitPartOfTownOwners"
+		 tags="AnyRegularDistrict,DecrepitPartOfTown,PoorAreas,AnyDistrict,MostlyNormalDistrict,NonRestrictedDistrict">
+	</district_type>
+
+	<district_type id="Slum" display_name="Slum" char_for_district_debug_map="s"
+		 description="Very poor district."		 
+		 rand_split_districts_that_are_above_size_min="10" rand_split_districts_that_are_above_size_max="15"
+	     do_not_assign_if_fewer_than_x_cells="4"
+		 decoration_biome="Biome_Slum" name_pool="Slum" use_name_pool="true"
+		 is_standard_district_type_for_cohort_purposes="true"
+		 district_owner_chosen_from="CorporationPropertyOwner"
+		 tags="AnyRegularDistrict,Slum,PoorAreas,AnyDistrict,MostlyNormalDistrict,NonRestrictedDistrict">
+	</district_type>
+
+	<district_type id="Suburban" display_name="Suburban" char_for_district_debug_map="u"
+		 description="Suburban-style living in the city. Full of middle-class troublemakers."		 
+		 rand_split_districts_that_are_above_size_min="30" rand_split_districts_that_are_above_size_max="40"
+		 do_not_assign_if_fewer_than_x_cells="4"
+		 decoration_biome="Biome_Suburban" name_pool="Suburban" use_name_pool="true"
+		 is_standard_district_type_for_cohort_purposes="true"
+		 district_owner_chosen_from="MegaCorpSuburbs"
+		 tags="AnyRegularDistrict,Suburban,AnyDistrict,MostlyNormalDistrict,NonRestrictedDistrict">
+	</district_type>
+
+	<district_type id="IndustrialDistrict" display_name="Industrial District" char_for_district_debug_map="i"
+		 description=""		 
+		 rand_split_districts_that_are_above_size_min="10" rand_split_districts_that_are_above_size_max="12"
+	     do_not_assign_if_fewer_than_x_cells="3"
+		 decoration_biome="Biome_Industrial" name_pool="Industrial" use_name_pool="true"
+		 is_standard_district_type_for_cohort_purposes="true"
+		 is_worker_district_type_for_cohort_purposes="true"
+		 district_owner_chosen_from="CorporationIndustrialPropertyOwner"
+		 tags="AnyRegularDistrict,IndustrialDistrict,MidriseAreas,AnyDistrict,MostlyNormalDistrict,NonRestrictedDistrict">
+	</district_type>
+
+	<district_type id="CommercialDistrict" display_name="Commercial District" char_for_district_debug_map="c"
+		 description=""		 
+		 rand_split_districts_that_are_above_size_min="10" rand_split_districts_that_are_above_size_max="12"
+		 do_not_assign_if_fewer_than_x_cells="3"
+		 decoration_biome="Biome_Commercial" name_pool="Commercial" use_name_pool="true"
+		 is_standard_district_type_for_cohort_purposes="true"
+		 is_worker_district_type_for_cohort_purposes="true"
+		 district_owner_chosen_from="CorporationCommercialPropertyOwner"
+		 tags="AnyRegularDistrict,CommercialDistrict,MidriseAreas,AnyDistrict,MostlyNormalDistrict,NonRestrictedDistrict">
+	</district_type>
+
+	<district_type id="BasicDistrict" display_name="City Ward" char_for_district_debug_map="b"
+		 description=""		 
+		 rand_split_districts_that_are_above_size_min="16" rand_split_districts_that_are_above_size_max="18"
+	     do_not_assign_if_fewer_than_x_cells="4"
+		 decoration_biome="Biome_AnyBasic" lang_key_for_numbered_name="BasicDistrict_NameFormat" min_name_number="10" max_name_number="99" use_numbered_name_style="true"
+		 is_standard_district_type_for_cohort_purposes="true"
+		 is_worker_district_type_for_cohort_purposes="true"
+		 district_owner_chosen_from="CorporationPropertyOwner"
+		 tags="AnyRegularDistrict,BasicDistrict,MidriseAreas,AnyDistrict,MostlyNormalDistrict,NonRestrictedDistrict">
+	</district_type>
+
+	<district_type id="MilitaryBase" display_name="Military Base" char_for_district_debug_map="M"
+		 description="Large military strongholds."		 
+		 rand_split_districts_that_are_above_size_min="800" rand_split_districts_that_are_above_size_max="900"
+		 prefer_avoid_adding_other_cells_to_self="true"
+		 decoration_biome="Biome_MilitaryBase" name_pool="LargeMilitaryBase" use_name_pool="true"
+		 district_owner_chosen_from="CorporationMilitaryPropertyOwner"
+		 tags="AnyRegularDistrict,MilitaryBase,AnyDistrict,AbnormalDistrict,RestrictedDistrict">
+	</district_type>
+
+	<district_type id="NuclearSilo" display_name="Nuclear Silo" char_for_district_debug_map="N"
+		 description="Nuclear launch facilities."		 
+		 rand_split_districts_that_are_above_size_min="800" rand_split_districts_that_are_above_size_max="900"
+		 prefer_avoid_adding_other_cells_to_self="true"
+		 do_not_draw_holo_walls_around_self="true"
+		 decoration_biome="Biome_NuclearSilo" name_pool="NuclearSilo" use_name_pool="true"
+		 district_owner_chosen_from="MegaCorpNuclearWeapons"
+		 tags="AnyRegularDistrict,NuclearSilo,AnyDistrict,AbnormalDistrict,RestrictedDistrict">
+	</district_type>
+
+	<district_type id="NuclearPowerPlant" display_name="Nuclear Power Plant" char_for_district_debug_map="n"
+		 description="Nuclear power generation facilities."		 
+		 rand_split_districts_that_are_above_size_min="800" rand_split_districts_that_are_above_size_max="900"
+		 prefer_avoid_adding_other_cells_to_self="true"
+		 decoration_biome="Biome_NuclearPowerPlant" name_pool="NuclearPowerPlant" use_name_pool="true"
+		 district_owner_chosen_from="CorporationNuclearPowerOwner"
+		 tags="AnyRegularDistrict,NuclearPowerPlant,AnyDistrict,AbnormalDistrict,RestrictedDistrict">
+	</district_type>
+
+	<district_type id="ScientificResearch" display_name="Scientific Research" char_for_district_debug_map="%"
+		 description="A region focused on Scientific Research."		 
+		 rand_split_districts_that_are_above_size_min="800" rand_split_districts_that_are_above_size_max="900"
+		 prefer_avoid_adding_other_cells_to_self="true"
+		 do_not_draw_holo_walls_around_self="true"
+		 decoration_biome="Biome_ScientificResearch" name_pool="ScientificResearch" use_name_pool="true"
+		 district_owner_chosen_from="CorporationSciencePropertyOwner"
+		 tags="AnyRegularDistrict,ScientificResearch,AnyDistrict,AbnormalDistrict,NonRestrictedDistrict">
+	</district_type>
+
+	<district_type id="CommStation" display_name="Comm Station" char_for_district_debug_map="C"
+		 description="Important communications hub."		 
+		 rand_split_districts_that_are_above_size_min="800" rand_split_districts_that_are_above_size_max="900"
+		 prefer_avoid_adding_other_cells_to_self="true"
+		 do_not_draw_holo_walls_around_self="true"
+		 decoration_biome="Biome_CommStation" name_pool="CommStation" use_name_pool="true"
+		 district_owner_chosen_from="CorporationTelecomPropertyOwner"
+		 tags="AnyRegularDistrict,CommStation,AnyDistrict,AbnormalDistrict,NonRestrictedDistrict">
+	</district_type>
+
+	<district_type id="Spaceport" display_name="Spaceport" char_for_district_debug_map="Q"
+		 description="The only spaceport in the city."		 
+		 rand_split_districts_that_are_above_size_min="800" rand_split_districts_that_are_above_size_max="900"
+		 prefer_avoid_adding_other_cells_to_self="true"
+		 do_not_draw_holo_walls_around_self="true"
+		 decoration_biome="Biome_Spaceport" name_pool="Spaceport" use_name_pool="true"
+		 district_owner_chosen_from="MegaCorpSpaceport"
+		 tags="AnyRegularDistrict,Spaceport,AnyDistrict,AbnormalDistrict,RestrictedDistrict">
+	</district_type>
+
+	<district_type id="AncientRuins" display_name="Ancient Ruins" char_for_district_debug_map="R"
+		 description="Ruins left over from prior wars. Nothing lives here."				   
+		 rand_split_districts_that_are_above_size_min="100000" rand_split_districts_that_are_above_size_max="120000"
+		 do_not_draw_holo_walls_around_self="true"
+		 district_owner_chosen_from="WastelandOwners"
+		 decoration_biome="Biome_AncientRuins" name_pool="AncientRuins" use_name_pool="true"
+		 tags="AncientRuins">
+	</district_type>
+
+</root>

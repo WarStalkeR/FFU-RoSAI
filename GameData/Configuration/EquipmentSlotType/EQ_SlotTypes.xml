@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<equipment_slot_type id="AndroidPrimary" display_name="Android Primary" sort_order="100"
+		description="Typically consist of weapons, but there are some non-combat options as well."
+		strategy_tip_optional=""
+		icon_name="CleanTriangle57" equipment_prefix="Primary" actor_data_set="PlayerAndroids" equipment_prefix_color="#E4A2A2"
+		/>
+
+	<equipment_slot_type id="AndroidSecondary" display_name="Android Secondary" sort_order="200"
+		description="Often combines with the primary. May be an additional weapon, or may be a support or non-combat item."
+		strategy_tip_optional=""
+		icon_name="CleanTriangle58" equipment_prefix="Secondary" actor_data_set="PlayerAndroids" equipment_prefix_color="#E4A2A2"
+		/>
+
+	<equipment_slot_type id="AndroidArmor" display_name="Android Armor" sort_order="300"
+		description="Protection and upgrades that cover all or part of the body."
+		strategy_tip_optional=""
+		icon_name="CleanTriangle03" equipment_prefix="Armor" actor_data_set="PlayerAndroids" equipment_prefix_color="#98B8D9"
+		 />
+	
+	<equipment_slot_type id="AndroidAugment" display_name="Android Augment" sort_order="400"
+		description="Broad body-mod upgrades that may range from neural upgrades to physical improvements."
+		strategy_tip_optional=""
+		icon_name="CleanTriangle59" equipment_prefix="Augment" actor_data_set="PlayerAndroids" equipment_prefix_color="#E4BF8D"
+		 />
+	
+	<equipment_slot_type id="WeaponHardpoint" display_name="Weapon Hardpoint" sort_order="1100"
+		description="Mount spot for weapons or other attachments."
+		strategy_tip_optional=""
+		icon_name="CleanTriangle57" equipment_prefix="Weapon" actor_data_set="PlayerMechs" equipment_prefix_color="#E4A2A2"
+		 />
+
+	<equipment_slot_type id="MechArmor" display_name="Mech Armor" sort_order="1200"
+		description="Protection and upgrades that cover all or part of the chassis."
+		strategy_tip_optional=""
+		icon_name="CleanTriangle03" equipment_prefix="Armor" actor_data_set="PlayerMechs" equipment_prefix_color="#98B8D9"
+		 />
+
+	<equipment_slot_type id="MechAugment" display_name="Mech Augment" sort_order="1300"
+		description="Broad range of internal and external improvements."
+		strategy_tip_optional=""
+		icon_name="CleanTriangle22" equipment_prefix="Augment" actor_data_set="PlayerMechs" equipment_prefix_color="#E4BF8D"
+		 />
+
+	<equipment_slot_type id="VehicularArmor" display_name="Vehicular Armor" sort_order="2200"
+		description="Protection and upgrades that cover all or part of the chassis."
+		strategy_tip_optional=""
+		icon_name="CleanTriangle03" equipment_prefix="Armor" actor_data_set="PlayerVehicles" equipment_prefix_color="#98B8D9"
+		 />
+	
+	<equipment_slot_type id="VehicularAugment" display_name="Vehicular Augment" sort_order="2300"
+		description="Broad range of internal and external improvements."
+		strategy_tip_optional=""
+		icon_name="CleanTriangle59" equipment_prefix="Augment" actor_data_set="PlayerVehicles" equipment_prefix_color="#E4BF8D"
+		 />
+	
+</root>

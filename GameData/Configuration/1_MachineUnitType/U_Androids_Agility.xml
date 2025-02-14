@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Keanu
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="Keanu" display_name="Keanu"
+		description="Stealthy dynadroid. Dual-wields small arms and has higher AP than average."
+		short_description="Agility And Stealth" unit_capacity_cost="8"
+		tooltip_icon_name="Keanu1" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="AN_AndroidKeanu" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="Keanu1" vis_object_aggressive="Keanu2" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" 
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle"
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_prefix="Keanu" name_style="UnitBarcode"
+		sort_order="5100" command_mode_category="AndroidDeployment" ap_cost_per_attack="1"
+		can_make_ranged_attacks_by_default="false" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByAI,AndroidsKnownToBeInventedByAI,ShadowUnits,Combatants,CombatAndroids,Dynadroids,Keanus,CanFitThinHumanClothes,CanHandleAndroidDualPistols,CanHandleAndroidKnuckles,CanHandleAndroidShoulderMounts" is_considered_android="true">
+		<equipment_slot_count type="AndroidPrimary" amount="1" name_when_blank="Fists" />
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidAugment" amount="2" />
+		
+		<actor_data data_type="AttackRange" base_range="14,14" />
+		<actor_data data_type="ActorMoveRange" base_range="80,80" />
+		<actor_data data_type="ActorHP" base_range="144,144" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="5,5"/>
+		<actor_data data_type="ActorPower" base_range="85,85" />
+		<actor_data data_type="ActorAgility" base_range="90,90" />
+		<actor_data data_type="UnitCognition" base_range="31,31" />
+		<actor_data data_type="UnitIntimidation" base_range="82,82" />
+		<actor_data data_type="ActorFearAttackPower" base_range="65,65" />
+		<actor_data data_type="ActorEngineeringSkill" base_range="64,64" />
+		<actor_data data_type="UnitScavengingSkill" base_range="110,110" />
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="AndroidNearbyRepair" />
+		<ability_slot slot_index="6" ability_type="AndroidHorrifyMode" />
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />
+		
+		<default_perk perk="Shadowdweller" unlock="" />
+		<default_perk perk="Superspeed" unlock="" />
+		<default_feat feat="Ambush" value="2"/>
+		<unit_cost resource_type="MentalEnergy" required="1" />
+		<unit_cost resource_type="Neuroweave" required="1500" should_mirror_to_bulk="true" />
+		<unit_cost resource_type="ElementalSlurry" required="1400" should_multiply_by_squad_size_to_bulk="true" />
+	</machine_unit_type>
+
+	<!--Carver
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="Carver" display_name="Carver"
+		description="Carvers are agile and intimidating. They strike hard and fast, and then melt into the shadows."
+		short_description="Agility And Fear" unit_capacity_cost="8"
+		tooltip_icon_name="Carver3" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="AN_AndroidCarver" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="Carver1" vis_object_aggressive="Carver2" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" bypass_final_doom_block="TheNightmareReturns"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" 
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle"
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_prefix="Carver" name_style="UnitBarcode"
+		sort_order="5200" command_mode_category="AndroidDeployment" ap_cost_per_attack="1"
+		can_make_ranged_attacks_by_default="false" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByAI,AndroidsKnownToBeInventedByAI,ShadowUnits,Combatants,CanFitThinHumanClothes,CombatAndroids,Dynadroids,Carvers,CanHandleAndroidClaws,CanHandleAndroidShoulderMounts,VisuallyIntimidatingAndroid" is_considered_android="true">
+		<equipment_slot_count type="AndroidPrimary" amount="1" name_when_blank="Claws" />
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidAugment" amount="1" />
+		
+		<actor_data data_type="AttackRange" base_range="7,7" />
+		<actor_data data_type="ActorMoveRange" base_range="80,80" />
+		<actor_data data_type="ActorHP" base_range="140,140" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="5,5"/>
+		<actor_data data_type="ActorPower" base_range="176,176" />
+		<actor_data data_type="ActorFearAttackPower" base_range="170,170" />
+		<actor_data data_type="ActorAgility" base_range="85,85" />
+		<actor_data data_type="UnitCognition" base_range="12,12" />
+		<actor_data data_type="UnitIntimidation" base_range="165,165" />
+		<actor_data data_type="UnitScavengingSkill" base_range="200,200" />
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="AndroidHorrifyMode" />
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />
+		
+		<default_perk perk="ExpertShadowdweller" unlock="" />
+		<default_perk perk="Superspeed" unlock="" />
+		<default_feat feat="Ambush" value="3"/>
+		<unit_cost resource_type="MentalEnergy" required="1" />
+		<unit_cost resource_type="Neuroweave" required="2000" should_mirror_to_bulk="true" />
+		<unit_cost resource_type="ElementalSlurry" required="6000" should_multiply_by_squad_size_to_bulk="true" />
+	</machine_unit_type>
+
+	<!--Exator
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="Exator" display_name="Exator"
+		description="Intelligent and agile, Exators carry a large number of augments. Their facial design gives the appearance of mirth, but they are deadly efficient."
+		short_description="Versatile Agility" unit_capacity_cost="8"
+		tooltip_icon_name="Exator0" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="AN_AndroidExator" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="Exator1" vis_object_aggressive="Exator2" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" bypass_final_doom_block="DoubleIrony"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" 
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle"
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_prefix="Exator" name_style="UnitBarcode"
+		sort_order="5300" command_mode_category="AndroidDeployment" ap_cost_per_attack="1"
+		can_make_ranged_attacks_by_default="false" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByAI,AndroidsKnownToBeInventedByAI,CanFitThinHumanClothes,ShadowUnits,Combatants,CombatAndroids,Dynadroids,Exators,CanHandleAndroidBlades,CanHandleAndroidShoulderMounts,VisuallyIntimidatingAndroid" is_considered_android="true">
+		<equipment_slot_count type="AndroidPrimary" amount="1" name_when_blank="Katana" />
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidAugment" amount="3" />
+		
+		<actor_data data_type="AttackRange" base_range="7,7" />
+		<actor_data data_type="ActorMoveRange" base_range="80,80" />
+		<actor_data data_type="ActorHP" base_range="130,130" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="5,5"/>
+		<actor_data data_type="ActorPower" base_range="164,164" />
+		<actor_data data_type="ActorAgility" base_range="90,90" />
+		<actor_data data_type="UnitCognition" base_range="65,65" />
+		<actor_data data_type="UnitStrength" base_range="80,80" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="60,60" />
+		<actor_data data_type="ActorFearAttackPower" base_range="90,90" />
+		<actor_data data_type="UnitIntimidation" base_range="10,10" />
+		<actor_data data_type="UnitScavengingSkill" base_range="200,200" />
+		<!--
+		<actor_data data_type="UnitSupervision" base_range="80,80" />-->
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="AndroidHorrifyMode" />
+		<ability_slot slot_index="6" ability_type="AndroidDemoralizeMode" />
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />
+		
+		<default_perk perk="ExpertShadowdweller" unlock="" />
+		<default_perk perk="Superspeed" unlock="" />
+		<default_feat feat="Ambush" value="3"/>
+		<unit_cost resource_type="MentalEnergy" required="1" />
+		<unit_cost resource_type="Neuroweave" required="2000" should_mirror_to_bulk="true" />
+		<unit_cost resource_type="ElementalSlurry" required="6000" should_multiply_by_squad_size_to_bulk="true" />
+	</machine_unit_type>
+	
+</root>

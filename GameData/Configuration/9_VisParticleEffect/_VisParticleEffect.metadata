@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="vis_particle_effect">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="time_to_live" type="float-textbox" min="0.1" max="40" default="1.2" content_width_px="60" is_required="true"
+		tooltip="After how long will this particle effect disappear?"/>
+
+	<attribute key="time_to_last_after_destination" type="float-textbox" min="0.1" max="40" default="3" content_width_px="60" is_required="true"
+		tooltip="Only for particles that move to a target. How long should they linger after reaching the destination?  This gives their particles time to disappear."/>
+	
+	<attribute key="y_offset_from_requested" type="float-textbox" min="-3" max="3" default="0" content_width_px="60" is_required="false"
+		tooltip="How far above the requested position (typically the ground or a roof) should this particle effect appear?"/>
+
+	<attribute key="base_rotation" type="vector3-textbox"
+		tooltip="Some particle effects need to be rotated on the x or z axis to appear properly. If that is the case, indicate it here." />
+
+	<attribute key="base_scale" type="vector3-textbox"
+		tooltip="What is the typical scale of this particle system for most usages?  Specific usages can of course override this." />
+	
+	<attribute key="travels_to_target" type="bool" default="false"
+		tooltip="Is this a shot-type particle effect that must travel to a target, or is it more like an explosion that appears in one spot for a while and then disappears?" />
+
+	<attribute key="causes_infinite_building_draw_distance" type="bool" default="false"
+		tooltip="Is this so important and giant that it should alter the way that the entire city is drawn to make sure transparency works right?" />
+
+	<attribute key="tags" type="node-list" node_source="VisParticleEffectTag" content_width_px="300" is_required="true"
+		tooltip="What tags are associated with this vis particle system?" />
+	
+</root>

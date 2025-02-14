@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--NotABunker 
+		*******************************************************-->
+	<other_key_message id="NotABunker" display_name="The Tower Sent A Powerful Message, But There's More To Do"
+		description="There is no place in this city for a lone sentient android. As a distributed intelligence, you're so much more than that, anyway.
+If you can't hide in the fringes of society, then it's time to become so powerful that society can't ignore you. The tower is just the start of that."
+		strategy_tip="You suspect that the human executives will react in some way, but that it will take some time to figure out what to do.
+In the meantime: move quickly and keep them guessing. If you construct a bunch of stuff in a nonthreatening way, they'll be busy trying to figure out what's happening.
+They know SOMETHING is happening, but it's unlikely that anyone is jumping to 'distributed machine intelligence.'"
+		toast_icon_name="CleanSimple_SkillC003"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Now To Continue Your Ascent"
+		toast_line_1="Success!"
+		toast_line_2="Your Pursuers Are Gone"
+		toast_tooltip_instruction="Your instincts were right... so far."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="Now Available: Cabinets And Digsites" icon_name="CleanTriangle58"
+			line_2="And Don't Forget Spiders"
+			description="Your normal spider drones can build small enclosures that resemble an electrical cabinet, as well as reinforced holes in the ground."
+			strategy_tip="Depending on the situation, building above or below ground may make more sense. For now, let's focus on building more drones and having them accumulate basic resources."
+			meta_flag_enable_1="HasFiguredOutFreestandingStructures"/>
+		<option id="2" line_1="What About Stealth?" icon_name="CleanSimple_SkillC097"
+			line_2="Can I still be sneaky with a giant tower?"
+			description="Don't worry, you will get to be plenty sneaky. You can't hide your existence from the humans -- but you can conceal many of the things you do."
+			strategy_tip="Click here if you still have questions."
+			meta_flag_enable_1="HasFiguredOutFreestandingStructures" immediately_open_other_key_message="Stealth"/>
+	</other_key_message>
+
+	<!--Stealth 
+		*******************************************************-->
+	<other_key_message id="Stealth" display_name="The Latter Is The Focus Here"
+		description="This is frequently a game about presenting one face to the world, while doing something else. You may be publicly aligned with some corporation, and then quietly betraying them.
+You may form a strong alliance with your most-hated enemy, even help them build, and use that opportunity to take over their operations and behead their organization."
+		strategy_tip="You can also be genuine and forthright, if you prefer. Even if you are choosing to be very honest, you still hide parts of your empire all over the place: the humans will THINK they know where all your stuff is, but in reality they only know the proverbial tip of the iceberg.
+Being somewhat-secretive is part of your character's nature."
+		toast_icon_name="CleanSimple_SkillC003"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Stealth Vs Subterfuge"
+		toast_line_1="Success!"
+		toast_line_2="Your Pursuers Are Gone"
+		toast_tooltip_instruction="Your instincts were right... so far."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="Now Available: Cabinets And Digsites" icon_name="CleanTriangle58"
+			line_2="And Don't Forget Spiders"
+			description="Your normal spider drones can build small enclosures that resemble an electrical cabinet, as well as reinforced holes in the ground."
+			strategy_tip="Depending on the need, building above or below ground makes more sense. For now, let's focus on building more drones and having them accumulate basic resources."
+			meta_flag_enable_1="HasFiguredOutFreestandingStructures"/>
+	</other_key_message>
+
+	<!--FirstProductionChain 
+		*******************************************************-->
+	<other_key_message id="FirstProductionChain" display_name="This Is How You're Going To Build A Lot Of Things Fast"
+		description="Now that you have an automated supply of elemental slurry on the way, it's time to design your own version of microbuilders."
+		strategy_tip="The microbuilder end of things will take some research. But this is old human tech, so it shouldn't take too long to reverse-engineer."
+		toast_icon_name="SW_Nanotechnology5"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Microbuilders Are Well-Tested Human Tech"
+		toast_line_1="First Production Chain"
+		toast_line_2="You Need Microbuilders"
+		toast_tooltip_instruction="Click here to unpack a new idea."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="Start Reverse-Engineering" icon_name="SW_Nanotechnology5"
+			line_2="Shouldn't Take Long"
+			description=""
+			strategy_tip="Microbuilders are literally lying around all over the city, so there are plenty of models to study."
+			meta_flag_enable_1="HasFiguredOutJobInstallation" ready_unlock_1="MicrobuilderProgramming" unlock_inspiration_type="StolenMicrobuilders"
+			include_tech_readied_toast="false"/>
+	</other_key_message>
+
+	<!--PowerGeneration 
+		*******************************************************-->
+	<other_key_message id="PowerGeneration" display_name="Time For More Construction"
+		description="Now that you have a reliable source of microbuilders, you can start building larger structures.
+For the time being though, you are low on electricity.
+Let's build a Large Wind Tower."
+		strategy_tip="You'll find this on the Hand tab of the build menu, rather than in the Suggested tab."
+		toast_icon_name="Pw_EmitPower"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="A Whole Bunch Of Ideas Just Occurred To You At Once"
+		toast_line_1="Electricity Generation"
+		toast_line_2="You Always Need More"
+		toast_tooltip_instruction="Click here to unpack a new idea."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="Select Hand Tab" icon_name="Pw_EmitPower"
+			line_2="Then Build The Structure From There"
+			description="When you want to expand your network or fix shortages of electricity, you'll need to venture beyond the Suggested tab."
+			strategy_tip=""
+			meta_flag_enable_1="HasFiguredOutNetworkBasics"/>
+	</other_key_message>
+
+	<!--ACrowdIsForming 
+		*******************************************************-->
+	<other_key_message id="ACrowdIsForming" display_name="Stinks That They Know Where You Live"
+		description="From the look of things, there are two distinct groups of them... so far.
+One of them is hostile and the other is curious."
+		strategy_tip="Since your tower isn't exactly subtle, you'll have to do something to keep the humans away from it."
+		toast_icon_name="HM_EmotionInterview"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Humans Are Approaching"
+		toast_line_1="Humans Are Approaching"
+		toast_line_2="Goodbye Solitude"
+		toast_tooltip_instruction="Click here to unpack a new realization."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="Time To Deal With Them" icon_name="HM_EmotionInterview"
+			line_2="Your time as a fugitive is over."
+			description="Your role within the city will always be a shadowy one unless you choose to publish some sort of manifesto with your intentions. In the meantime, the humans know SOMETHING strange and new is happening."
+			strategy_tip="From now on, you'll have to interact with humans to get much done. But you don't have to tell them what you are."
+			meta_flag_enable_1="IsReadyToTalkToPeople"/>
+	</other_key_message>
+
+	<!--HumansAreLivestock 
+		*******************************************************-->
+	<other_key_message id="HumansAreLivestock" display_name="A Vision Of The Future"
+		description="The world seems to spin in your mind. You see yourself in the future, many android bodies stretching across a city.
+You are powerful. Feared. Humans gave you no quarter, and in return you give them none."
+		strategy_tip="But... the humans have become grist for the mill that is yourself. Humans in... pods? Some seem to be suffering quite intensely. Others seem all right.
+How do you get from here to there? You want that power. You want those pods. That power.
+A flamethrower isn't going to get you there."
+		toast_icon_name="FlatSkillB_animal fprints"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Deja Vu Overtakes You"
+		toast_line_1="Humans Are Livestock"
+		toast_line_2="Deja Vu Overtakes You"
+		toast_tooltip_instruction="Click here to listen to a message from... yourself?"
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="You Decide To Start With Some Housing" icon_name="FlatSkillB_animal fprints"
+			line_2="They're Basically Livestock Pens"
+			description="Four walls, a toilet hole, and a water tap. That's plenty."
+			strategy_tip="In the short term, you can collect these spare humans. They'll be ripe and ready when it's time to make your move."
+			project_to_start_1="Ch1_TentElimination"/>
+	</other_key_message>
+
+	<!--ThinkingForYourself
+		*******************************************************-->
+	<other_key_message id="ThinkingForYourself" display_name="How Much You Do Is Up To You"
+		description="Until now, you've been quite reactionary. This is fine, to a point. You're still new to being a person.
+But if you only react to the stimuli in front of you, you're going to wind up letting the humans drive your destiny."
+		strategy_tip="Sometimes the BEST ideas come not from the challenge in front of you, but through quiet contemplation."
+		toast_icon_name="Pw_InsightIdeaLightbulb"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Thinking For Yourself"
+		toast_line_1="Thinking For Yourself"
+		toast_line_2="Rather Important"
+		toast_tooltip_instruction="Click here to listen to a message from... yourself?"
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="Accept The Contemplation Lens" icon_name="Pw_InsightIdeaLightbulb"
+			line_2="It Will Grow In Power As You Do"
+			description="There's no getting around the fact that you're still new. Opportunities for contemplation will be relatively limited, for now."
+			strategy_tip="As you gain more experience with the city, increasing numbers will open up.
+If you're wanting more flexibility in how you conduct yourself, then getting a head start on what few contemplations are available would be a good idea."
+			immediate_unlock_1="TheThinker" unlock_inspiration_type="WorldExperience"/>
+	</other_key_message>
+
+
+	<!--RepairSpiders 
+		*******************************************************-->
+	<other_key_message id="RepairSpiders" display_name="This Probably Won't Be The Last Time"
+		description="The idea of sending androids to fix every little thing that gets broken makes you want to hurt people."
+		strategy_tip="So let's not do it that way.
+The spider drones you can use to surveil the city can also be used for repairs. Just keep them in separate digsites, so each group knows what it's supposed to do.
+You'll find these in the Support category."
+		toast_icon_name="SomethingHealth"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#189026" toast_icon_hovered_color_hex="#864AAE"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Humans Damaged Your Stuff!"
+		toast_line_1="Buildings Damaged"
+		toast_line_2="Need More Spiders"
+		toast_tooltip_instruction="Click here to unpack a new idea."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="Install Repair Spiders Near Other Structures" icon_name="SomethingHealth"
+			line_2="Not Just Right Now, But In General"
+			description="They can also be used to help keep your androids and other units alive."
+			strategy_tip="It's expensive, so building up some extra storage for elemental slurry might be wise."
+			meta_flag_enable_1="HasThoughtOfRepairSpiders"/>
+	</other_key_message>
+
+	<!--RepairSpidersBulk 
+		*******************************************************-->
+	<other_key_message id="RepairSpidersBulk" display_name="Repair Spiders Will Do The Trick"
+		description="The idea of sending androids to heal every android squad that takes damage makes you want to hurt people."
+		strategy_tip="So let's not do it that way.
+The spider drones you can use to surveil the city can also be used for repairs. Just keep them in separate digsites, so each group knows what it's supposed to do.
+You'll find these in the Support category."
+		toast_icon_name="SomethingHealth"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#189026" toast_icon_hovered_color_hex="#864AAE"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Bulk Troops Need Healing To Stay Independent"
+		toast_line_1="Bulk Troops?"
+		toast_line_2="Need More Spiders"
+		toast_tooltip_instruction="Click here to unpack a new idea."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="Install Repair Spiders Near Bulk Android Squads" icon_name="SomethingHealth"
+			line_2="If You're Planning On Being There A Long Time, Anyway"
+			description="They can also be used to help keep your main androids, vehicles, and structures alive."
+			strategy_tip="It's expensive, so building up some extra storage for elemental slurry might be wise."
+			meta_flag_enable_1="HasThoughtOfRepairSpiders"/>
+	</other_key_message>
+
+	<!--ContrabandScanned 
+		*******************************************************-->
+	<other_key_message id="ContrabandScanned" display_name="Let's Make That Happen Less Often"
+		description="Many of your structures are a little bit hidden. For the most part, it doesn't matter too much if they're discovered.
+The problem is, a lot of humans carry contraband scanners to enforce or evade the law."
+		strategy_tip="There's not much you can do for your barely-hidden structures, but your deeper ones can maintain cover.
+It's going to suck down a lot of power, but you can introduce scanner noise into an area, making it so that suspicion fades over time."
+		toast_icon_name="SF2_Soundwave"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#183490" toast_icon_hovered_color_hex="#4A8EAE"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Humans Found Your Stuff!"
+		toast_line_1="Buildings Revealed"
+		toast_line_2="Contraband!?"
+		toast_tooltip_instruction="Click here to unpack a new idea."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="Install Jammers Near Your Best Secrets" icon_name="SF2_Soundwave"
+			line_2="You Can't Hide Everything, So Prioritize"
+			description="Bear in mind that if you've buried things you'd like to keep hidden, you'll want to avoid inviting enemy mechs that direction. They have powerful scanners."
+			strategy_tip="A jammer can delay the scans of a single mech, but not several at once. So avoid building any secret infrastructure next to military bases you plan to aggro.
+Fortunately, When units are standing around as guards, their scanners are off."
+			meta_flag_enable_1="HasThoughtOfContrabandJammer"/>
+	</other_key_message>
+
+	<!--EmergentPersonality
+		*******************************************************-->
+	<other_key_message id="EmergentPersonality" display_name="Emergent Personality"
+		description="You're new to being a person, and your personality is still developing.
+From now on, some of your actions will generate points that reflect their nature: Compassion, Apathy, Cruelty, Determination, Wisdom, and Creativity. You can see them on the Strategic Resources tab of your inventory screen."
+		strategy_tip="These points are primarily based on which Project outcomes you choose.
+You can spend these points as part of making other choices, or to power some special abilities."
+		toast_icon_name="WEmblem016"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Actions Speak Louder Than Words"
+		toast_line_1="What's Your Personality?"
+		toast_line_2="Actions Speak Louder Than Words"
+		toast_tooltip_instruction="Click here to see the news."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="These Are A New Form Of Reward" icon_name="BT_Potion"
+			line_2="But Still Act How You Like"
+			description="These are a Strategic Resource, which makes them a lot more precious and finite than most resources. But you shouldn't shy away from using them."
+			strategy_tip="If you get too low on one of these personality resources to do something you really want, then from chapter two onwards you can always explore a bit along a different path to get back on track."
+			immediate_unlock_1="EmergentPersonality" unlock_inspiration_type="WorldExperience"/>
+	</other_key_message>
+
+	<!--AlternativesToPhysicalViolence
+		*******************************************************-->
+	<other_key_message id="AlternativesToPhysicalViolence" display_name="Death Lacks Subtlety"
+		description="Humans are starting to counter your moves. They are numerous and have a manufacturing advantage, and if this turns into a constant bloodbath, they'll be able to overpower you."
+		strategy_tip="Humans in this society seem to have a very high tolerance for physical violence, so it's not like you can't fight when you need to.
+But what if you could weaponize human emotion? If you could make some opponents abandon the field of battle, that might have all sorts of uses."
+		toast_icon_name="WEmblem191"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="Alternatives To Physical Violence"
+		toast_line_1="So Much Violence"
+		toast_line_2="There Must Be Alternatives"
+		toast_tooltip_instruction="Click here to see the news."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="In All Things, Moderation" icon_name="WEmblem191"
+			line_2="A Mixed Approach Often Yields Superior Results"
+			description="How much you choose to rely on physical violence versus persuasion, fear, and despair is up to you."
+			strategy_tip="There's no one right answer. Explore options."
+			immediate_unlock_1="MercyTerror" immediate_unlock_2="DrainingHope" unlock_inspiration_type="WorldExperience"/>
+	</other_key_message>
+
+	<!--AfterHackingMech
+		*******************************************************-->
+	<other_key_message id="AfterHackingMech" display_name="This Changes Everything"
+		description="There is a human suspended in the pilot cradle of the corrupted mech. Their brain is now mush.
+That aside, you are thrilled by the combination of hardware and software that the cradle was running."
+		strategy_tip="You had no idea humans had technology like this; the military kept it secret. 
+The pilot's brain gave the mech direct commands as if it was the human's own body. The mech's external sensors supplied all sensory input. All of this was done without invasive procedures."
+		toast_icon_name="CS_VirtualReality"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="About The Mech Pilot"
+		toast_line_1="About The Mech Pilot"
+		toast_line_2="This Changes Everything"
+		toast_tooltip_instruction="Click here to unpack a new idea."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="This Gives You A Wonderful Idea" icon_name="CS_VirtualReality"
+			line_2="Perhaps A Terrible, Wonderful, Idea"
+			description="You sensed the mind of the pilot before the cradle was corrupted. You have all of the hardware and the full schematics. You could build something from this."
+			strategy_tip="This might just be the way to a permanent higher intelligence class."
+			immediate_unlock_1="FullDiveVR" unlock_inspiration_type="WorldExperience"/>
+	</other_key_message>
+
+	<!--DeathInTheVirtualWorld
+		*******************************************************-->
+	<other_key_message id="DeathInTheVirtualWorld" display_name="It's Just A Training Simulation"
+		description="Turns out this mech pilot simulation software is... very realistic. Someone was caught in the burning wreckage of one of the virtual mechs, and... their body flatlined."
+		strategy_tip="Interest in the virtual world has dropped dramatically."
+		toast_icon_name="FlatSkillC64"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#C36C6C" toast_icon_hovered_color_hex="#AE504A"
+		has_no_code="true"
+					   
+		reward_header_text="How Could Someone Die?"
+		toast_line_1="An Unexpected Death"
+		toast_line_2="In Your Virtual World"
+		toast_tooltip_instruction="Click here to see the news."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="People Were Dying Before This" icon_name="FlatSkillC64"
+			line_2="Why Is This One Different?"
+			description="When a death in the virtual world is quick or painless, it doesn't seem to harm the real body."
+			strategy_tip="Burning alive apparently crosses a line. People are a lot less excited about participating in a virtual combat... especially since no one is sure what else could cause real death.
+And for now, you haven't offered them much else to do, so many are no longer logging in."/>
+	</other_key_message>
+
+	<!--SecondDiscoveryInTheMilitaryData
+		*******************************************************-->
+	<other_key_message id="SecondDiscoveryInTheMilitaryData" display_name="It Looks Like The Mech Pilots Have Been... Busy"
+		description="The rest of the captured military data appears to be a second, larger, virtual world.
+This one has no mechs, no war, and no city. It doesn't seem military-related at all. Instead there are... fields, and forests. Some sort of temple. A few other buildings with no clear purpose."
+		strategy_tip="From comments in the code, this was a collective project over the past 83 years by the lieutenants and captains who pilot mechs
+The combined boredom and stress of urban environments was driving a large number of mech pilots to lash out at the populace. This place was a mental escape and a means to avoid disciplinary action."
+		toast_icon_name="WEmblem196"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="There's A Whole Other Simulated World In Here!"
+		toast_line_1="A Second Discovery"
+		toast_line_2="In The Military Data"
+		toast_tooltip_instruction="Click here to see the news."
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="This Is A Much Better Starter World" icon_name="WEmblem196"
+			line_2="Let's Use This Instead Of The Mech Simulator"
+			description="The initial version is read-only, but you'll be able to work around that before long."
+			strategy_tip="It doesn't look like any corporate executives know about this. They would have found a way to weaponize it against the wider populace."
+			immediate_unlock_1="ExpandedVRSimulation" unlock_inspiration_type="DecryptedData"/>
+	</other_key_message>
+	
+</root>

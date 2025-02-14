@@ -1,0 +1,2275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<project id="Ch2Only_MIN_IntelligenceClass4" display_name="Reach Intelligence Class 4" is_minor_project="true"
+		description="Whatever else you do during Chapter Two, you must also reach intelligence class 4."
+		strategy_tip="There are many ways to do this, some easier than others. If none of them work out for you before you get hit by the Final Doom of this timeline, don't despair -- you can still work things out in that post-apocalyptic state."
+		icon_name="SW_Network" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterTwo" sort_index="230" />
+		
+		<available_outcome id="Sole" display_name="Reach Intelligence Class 4" on_complete="ProjectComplete"
+			description=""
+			deal_to_start_1="" 
+			resource_added_1="" resource_added_amount_1="">
+			<math_int id="Goal" int_min="4" />
+		</available_outcome>
+	</project>
+	
+	<!--Housing First Chain
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_SolveHomelessness" display_name="Solve Homelessness" is_minor_project="true"
+		description="You can fit literally every homeless person in just a handful of Residential MegaStructures -- comfortably."
+		strategy_tip="You're filled with a deep sense of deja vu about the housing agencies: until homelessness is solved, they are going to draw an intense amount of unwelcome interest."
+		icon_name="SW_Abilities" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			achievement_triggered1="DidYouReallyThough"
+			resource_added_1="Compassion" resource_added_amount_1="10" resource_added_2="Wisdom" resource_added_amount_2="10"
+			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="AndroidOptimization" research_domain_inspiration_amount_2="1">
+			<suggested_job job="HousingAgency" job_number="2" />
+			<suggested_job job="ResidentialMegastructure" job_number="3" />
+		</available_outcome>
+
+	</project>
+	
+	<!--Great And Terrible Protector Chain
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_AnInexplicableCompulsion" display_name="An Inexplicable Compulsion" is_minor_project="true" can_happen_even_during_obsession="true"
+		description="The slums... must go. You have to save everyone. This idea is suddenly all you can think about."
+		strategy_tip="The very thought of doing any other work is repellent. This. Must. Be. Done."
+		icon_name="CleanSimple_Tool04" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Build a Mindport. Use Slum Rescue Drones.
+Mindports are available under the Vehicles tab of Command Mode."
+			strategy_tip=""
+			next_project_to_start_1="Ch2_MIN_FrustrationMounts"
+			resource_added_1="Apathy" resource_added_amount_1="100" resource_added_2="" resource_added_amount_2=""
+			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="SmallArmsResearch" research_domain_inspiration_amount_2="1">
+			<suggested_job job="DroneFactory" job_number="2" />
+			<suggested_job job="ResidentialMegastructure" job_number="14" />
+		</available_outcome>
+
+	</project>
+	
+	<project id="Ch2_MIN_FrustrationMounts" display_name="Frustration Mounts" is_minor_project="true" can_happen_even_during_obsession="true"
+		description="People must be removed from the slums NOW."
+		strategy_tip="The process must be automated."
+		icon_name="SI_Jackhammer" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Build at least 9 Robotic Motivator Factories, and 9 Slum Deconstruction Hubs, and your Robotic Workers will make short work of this task."
+			strategy_tip="Predator and PMC Impostor Workers are both safe to use. Neither will kill anyone other than enemy combatants, so it's just a matter of cost."
+			
+			related_resource_1="ShelteredHumans" related_resource_2="AbandonedHumans" related_resource_3="Neodymium" related_resource_4="" related_resource_5=""
+			resource_added_1="Apathy" resource_added_amount_1="50" resource_added_2="Creativity" resource_added_amount_2="50"
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="MartialExpansion" research_domain_inspiration_amount_2="1">
+			<suggested_job job="SlumDeconstructionHub" job_number="10" />
+			<suggested_job job="WorkerPMCImpostorFactory" job_number="2" />
+			<suggested_job job="WorkerPredatorFactory" job_number="8" />
+			<suggested_job job="RoboticMotivatorFactory" job_number="8" />
+			<suggested_job job="ResidentialMegastructure" job_number="50" />
+		</available_outcome>
+
+	</project>
+
+	<!--Torment Vessel Chain
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_DevelopTPN" display_name="Develop TPN" is_minor_project="true"
+		description="Total Parenteral Nutrition delivers nutrients directly into a vein. Medically, it is considered a food of last resort, and comes with a constant infection risk."
+		strategy_tip=""
+		icon_name="CleanSimple_SciFiEmblem18" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			 next_project_to_start_1="Ch2_MIN_TrialNexus" upgrade_int_granted_1="Cultivator" upgrade_int_granted_2="Cultivator" upgrade_int_granted_3="8cmCrabs"
+			if_intended_outcome_investigation_to_start_1="Ch2NathTPN" countdown_on_complete="NathTPNRevenge"
+			resource_added_1="Apathy" resource_added_amount_1="30" resource_added_2="Cruelty" resource_added_amount_2="10"
+			on_outcome_unlock_instant_1="FoodThroughAMedicalPort" on_outcome_unlock_instant_2="FromTheClassicSciFiNovel" on_outcome_unlock_instant_3="" on_outcome_unlock_inspiration="WorldExperience"
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1">
+		</available_outcome>
+		
+	</project>
+
+	<project id="Ch2_MIN_TrialNexus" display_name="Trial Nexus" is_minor_project="true"
+		description="Before expanding too much, let's capture a smaller group and put them in Torment Vessels. If there are any problems, we don't want crop die-offs that are too large."
+		strategy_tip=""
+		icon_name="WEmblem202" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			next_project_to_start_1="Ch2_MIN_TormentVesselInfections" upgrade_int_granted_1="MaxMechCapacity" upgrade_int_granted_2="Cultivator" upgrade_int_granted_3="8cmCrabs"
+			related_resource_1="TPN" related_resource_2="TormentedHumans" related_resource_3="HydroponicGreens" related_resource_4="BovineTissue" related_resource_5="FilteredWater"
+			resource_added_1="Wisdom" resource_added_amount_1="20" resource_added_2="Cruelty" resource_added_amount_2="20"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1">
+			<math_int id="TormentedHumansGoal" int_min="12000" />
+			<suggested_job job="TPNRefinery" job_number="4" />
+			<suggested_job job="TormentVessel" job_number="2" />
+			<suggested_job job="WellAndCistern" job_number="5" />
+			<suggested_job job="WaterFiltrationTower" job_number="4" />
+			<suggested_job job="HydroponicTower" job_number="3" />
+			<suggested_job job="BovineReplicator" job_number="9" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_TormentVesselInfections" display_name="Vessel Infections" is_minor_project="true"
+		description="As expected, problems have arisen. The feeding ports are becoming infected."
+		strategy_tip="You don't want to mess around with normal antibiotics, because those will not stay useful. You want a novel fungal solution."
+		icon_name="SF2_Virus24" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			 next_project_to_start_1="Ch2_AggressiveFungalTherapy"
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			related_resource_1="TPN" related_resource_2="TormentedHumans" related_resource_3="HydroponicGreens" related_resource_4="BovineTissue" related_resource_5="FilteredWater"
+			resource_added_1="Wisdom" resource_added_amount_1="20" resource_added_2="Creativity" resource_added_amount_2="20" upgrade_int_granted_1="ComputingHost" upgrade_int_granted_2="MindAnnex" upgrade_int_granted_3="ComputingClient"
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1">
+			<!--InfestedWarehouse-->
+			<street_sense_item id="InfestedWarehouse" display_name="Infested Warehouse"
+				description="Investigate fungal growth at high-bacterial-load location."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="4" icon_name="SF2_Virus24" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="InfestedWarehouse" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="FungalSitesInspected" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point="Man_WimpySecuritySecuringIP"/>
+			<!--InfestedHangar-->
+			<street_sense_item id="InfestedHangar" display_name="Infested Hangar"
+				description="Investigate fungal growth at high-bacterial-load location."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="4" icon_name="SF2_Virus24" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="InfestedHangar" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="FungalSitesInspected" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point="Man_WimpySecuritySecuringIP"/>
+			<!--InfestedJetway-->
+			<street_sense_item id="InfestedJetway" display_name="Infested Jetway"
+				description="Investigate fungal growth at high-bacterial-load location."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="4" icon_name="SF2_Virus24" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="InfestedJetway" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="FungalSitesInspected" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point="Man_WimpySecuritySecuringIP"/>
+			<!--ConvenienceStore-->
+			<street_sense_item id="ConvenienceStore" display_name="Convenience Store"
+				description="Investigate fungal growth at high-bacterial-load location."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="4" icon_name="SF2_Virus24" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="ConvenienceStore" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="FungalSitesInspected" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point="Man_WimpySecuritySecuringIP"/>
+			<!--QuestionableCinema-->
+			<street_sense_item id="QuestionableCinema" display_name="Questionable Cinema"
+				description="Investigate fungal growth at high-bacterial-load location."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="4" icon_name="SF2_Virus24" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="QuestionableCinema" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="FungalSitesInspected" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point="Man_WimpySecuritySecuringIP"/>
+			<!--Supermarket-->
+			<street_sense_item id="Supermarket" display_name="Supermarket"
+				description="Investigate fungal growth at high-bacterial-load location."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="4" icon_name="SF2_Virus24" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="Supermarket" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="FungalSitesInspected" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point="Man_WimpySecuritySecuringIP"/>
+			<!--ConstructionSepticTank-->
+			<street_sense_item id="ConstructionSepticTank" display_name="Construction Septic Tank"
+				description="Investigate fungal growth at high-bacterial-load location."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="4" icon_name="SF2_Virus24" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="ConstructionSepticTank" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="FungalSitesInspected" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point="Man_WimpySecuritySecuringIP"/>
+			<suggested_job job="TPNRefinery" job_number="4" />
+			<suggested_job job="TormentVessel" job_number="2" />
+			<suggested_job job="WellAndCistern" job_number="5" />
+			<suggested_job job="WaterFiltrationTower" job_number="4" />
+			<suggested_job job="HydroponicTower" job_number="3" />
+			<suggested_job job="BovineReplicator" job_number="9" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_AggressiveFungalTherapy" display_name="Aggressive Fungal Therapy" is_minor_project="true"
+		description="Having collected some very unusual fungal samples, you have a plan for a radical therapy that no doctor would ever sign off on.
+You'll tell the researchers it's just for animal experiments."
+		strategy_tip="If you have not established a shell company, now would be a good time. If you have a shell company but are short on funds, consider selling excess resources at one of the shops."
+		icon_name="SF2_Virus24" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Once you have a shell company, you can do some Hiring under that category in StreetSense."
+			strategy_tip=""
+			next_project_to_start_1="Ch2_AggressiveExpansion"
+			related_resource_1="" related_resource_2="" upgrade_int_granted_1="FullTimeVRPodChamber" upgrade_int_granted_2="Cultivator" upgrade_int_granted_3="8cmCrabs"
+			resource_added_1="Creativity" resource_added_amount_1="40" resource_added_2="Cruelty" resource_added_amount_2="40"
+			on_outcome_unlock_instant_1="FungalHusk" on_outcome_unlock_instant_2="TossEmInWithTheOthers" on_outcome_unlock_inspiration="ResearchByScientists"
+			research_domain_inspiration_type_1="ItemDevelopment" research_domain_inspiration_amount_1="1">
+			<math_int id="EpidemiologyGoal" int_min="22000" />
+			<math_int id="BotanyGoal" int_min="19000" />
+			<suggested_job job="EpidemiologyLab" job_number="2" />
+			<suggested_job job="BotanyLab" job_number="2" />
+		</available_outcome>
+
+	</project>
+	
+	<project id="Ch2_AggressiveExpansion" display_name="Aggressive Expansion" is_minor_project="true"
+		description="It's time to build a full nexus of Torment Vessels."
+		strategy_tip="Unfortunately, you've also caught the attention of extremists from the Originalist World Temple. Work fast."
+		icon_name="WEmblem202" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			if_intended_outcome_unlock_instant_1="AutomatedSuffering" if_intended_outcome_unlock_instant_2="" if_intended_outcome_unlock_inspiration="WorldExperience"
+			
+			related_resource_1="TPN" related_resource_2="TormentedHumans" related_resource_3="HydroponicGreens" related_resource_4="BovineTissue" related_resource_5="FilteredWater"
+			resource_added_1="Determination" resource_added_amount_1="40" resource_added_2="Cruelty" resource_added_amount_2="40"
+			on_outcome_unlock_instant_1="" on_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1">
+			<math_int id="TormentedHumansGoal" int_min="120000" />
+			<suggested_job job="TPNRefinery" job_number="6" />
+			<suggested_job job="TormentVessel" job_number="12" />
+			<suggested_job job="WellAndCistern" job_number="5" />
+			<suggested_job job="WaterFiltrationTower" job_number="4" />
+			<suggested_job job="HydroponicTower" job_number="3" />
+			<suggested_job job="BovineReplicator" job_number="9" />
+			<suggested_job job="TormentProcessingHub" job_number="3" />
+			<suggested_job job="WorkerSledgeFactory" job_number="2" />
+			<suggested_job job="WorkerPredatorFactory" job_number="2" />
+			<suggested_job job="RoboticMotivatorFactory" job_number="4" />
+		</available_outcome>
+		
+	</project>
+
+	<!--Willing Rejection Of Reality Chain
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_DesignCommercialVRPods" display_name="Design Commercial VR Pods" is_minor_project="true"
+		description="If you make it awesome, people will participate willingly."
+		strategy_tip="You are the world's greatest engineer, but you lack medical expertise. It is simpler to hire experts than to try to speed-run multiple medical degrees."
+		icon_name="SomethingTubes" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1="Ch2_MIN_TestCommercialVRPods"
+			description="If you have not established a shell company, now would be a good time. If you have a shell company but are short on funds, consider selling excess resources at one of the shops."
+			strategy_tip="Once you have a shell company, you can do some Hiring under that category in StreetSense."
+			 upgrade_int_granted_1="Cultivator" upgrade_int_granted_2="Cultivator" upgrade_int_granted_3="8cmCrabs"
+			resource_added_1="Wisdom" resource_added_amount_1="30" resource_added_2="Compassion" resource_added_amount_2="10"
+			on_outcome_unlock_instant_1="NGTubeFood" on_outcome_unlock_instant_2="EthicalMindFarmer" on_outcome_unlock_inspiration="ResearchByScientists"
+			research_domain_inspiration_type_1="ItemDevelopment" research_domain_inspiration_amount_1="1">
+			<math_int id="MedicalResearchGoal" int_min="32000" />
+			<math_int id="NeurologyGoal" int_min="11000" />
+			<math_int id="BionicsGoal" int_min="12000" />
+			<suggested_job job="MedicalPractice" job_number="2" />
+			<suggested_job job="NeuroscienceLab" job_number="1" />
+			<suggested_job job="BionicEngineeringStudio" job_number="1" />
+		</available_outcome>
+
+	</project>
+	
+	<project id="Ch2_MIN_TestCommercialVRPods" display_name="Test Commercial VR Pods" is_minor_project="true"
+		description="Your physicians have a design based on experience with ICU patients. Your pods include robotic nurses, but the doctors are skeptical."
+		strategy_tip="It's best to start with a test group and make sure everything goes all right."
+		icon_name="SomethingTubes" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1="Ch2_VRPodRevisions"
+			description=""
+			strategy_tip=""
+			 upgrade_int_granted_1="Cultivator" upgrade_int_granted_2="Cultivator" upgrade_int_granted_3="8cmCrabs"
+			related_resource_1="NutritionBlend" related_resource_2="HumansInMindFarms" related_resource_3="HydroponicGreens" related_resource_4="VatGrownMeat" related_resource_5="FilteredWater"
+			resource_added_1="Wisdom" resource_added_amount_1="30" resource_added_2="Compassion" resource_added_amount_2="10"
+			on_outcome_unlock_instant_1="" on_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="1">
+			<math_int id="FarmGoal" int_min="1" />
+			<math_int id="BlendGoal" int_min="40000" />
+			<suggested_job job="MindFarm" job_number="1" />
+			<suggested_job job="NutritionBlendRefinery" job_number="2" />
+			<suggested_job job="WellAndCistern" job_number="3" />
+			<suggested_job job="WaterFiltrationTower" job_number="5" />
+			<suggested_job job="HydroponicTower" job_number="3" />
+			<suggested_job job="BovineReplicator" job_number="4" />
+			<suggested_job job="ProteinVat" job_number="2" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_VRPodRevisions" display_name="VR Pod Revisions" is_minor_project="true"
+		description="A paralytic is needed to keep patients from tearing out their tubes."
+		strategy_tip="Also the robotic nurses need revisions. A subject almost drowned."
+		icon_name="CleanSimple_Skill110" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="You must maintain at least one active Mind Farm for the research to proceed."
+			strategy_tip=""
+			 next_project_to_start_1="Ch2_VRPodRevisions2"
+			related_resource_1="" related_resource_2="" upgrade_int_granted_1="SurgicalSuite" upgrade_int_granted_2="SurgicalSuite" upgrade_int_granted_3="LabOperator"
+			resource_added_1="Creativity" resource_added_amount_1="5" resource_added_2="Determination" resource_added_amount_2="10"
+			on_outcome_unlock_instant_1="" on_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1">
+			<math_int id="MedicalResearchGoal" int_min="22000" />
+			<math_int id="NeurologyGoal" int_min="31000" />
+			<math_int id="BionicsGoal" int_min="32000" />
+			<suggested_job job="MedicalPractice" job_number="2" />
+			<suggested_job job="NeuroscienceLab" job_number="2" />
+			<suggested_job job="BionicEngineeringStudio" job_number="2" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_VRPodRevisions2" display_name="VR Pod Revisions 2" is_minor_project="true"
+		description="Humans are so fragile! After a few days in the pods, there was much rectal tube and catheter discomfort.
+The doctors recommend a 48-hour wake-up protocol in a new recovery spa."
+		strategy_tip="You can retrofit the buildings via simple instructions to the microbuilders."
+		icon_name="CleanSimple_Skill110" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="You must maintain at least one active Mind Farm for the research to proceed."
+			strategy_tip=""
+			 next_project_to_start_1="Ch2_MIN_GrandOpening"
+			related_resource_1="" related_resource_2="" upgrade_int_granted_1="FullTimeVRPodChamber" upgrade_int_granted_2="Cultivator" upgrade_int_granted_3="8cmCrabs"
+			resource_added_1="Creativity" resource_added_amount_1="5" resource_added_2="Determination" resource_added_amount_2="10"
+			on_outcome_unlock_instant_1="" on_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1">
+			<math_int id="MedicalResearchGoal" int_min="33000" />
+			<math_int id="NeurologyGoal" int_min="11000" />
+			<math_int id="BionicsGoal" int_min="12000" />
+			<suggested_job job="MedicalPractice" job_number="4" />
+			<suggested_job job="NeuroscienceLab" job_number="2" />
+			<suggested_job job="BionicEngineeringStudio" job_number="2" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_GrandOpening" display_name="Grand Opening" is_minor_project="true"
+		description="The physicians are happy. You're ready for actual patrons!"
+		strategy_tip=""
+		icon_name="CleanSimple_Skill110" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1="Ch2_MIN_FailureToThrive"
+			description=""
+			strategy_tip=""
+			 upgrade_int_granted_1="Cultivator" upgrade_int_granted_2="Cultivator" upgrade_int_granted_3="8cmCrabs"
+			related_resource_1="NutritionBlend" related_resource_2="HumansInMindFarms" related_resource_3="HydroponicGreens" related_resource_4="VatGrownMeat" related_resource_5="FilteredWater"
+			resource_added_1="Wisdom" resource_added_amount_1="30" resource_added_2="Compassion" resource_added_amount_2="10"
+			on_outcome_unlock_instant_1="" on_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="MartialExpansion" research_domain_inspiration_amount_1="1">
+			<math_int id="FarmGoal" int_min="5" />
+			<math_int id="BlendGoal" int_min="80000" />
+			<suggested_job job="MindFarm" job_number="5" />
+			<suggested_job job="NutritionBlendRefinery" job_number="4" />
+			<suggested_job job="WellAndCistern" job_number="4" />
+			<suggested_job job="WaterFiltrationTower" job_number="9" />
+			<suggested_job job="HydroponicTower" job_number="3" />
+			<suggested_job job="BovineReplicator" job_number="4" />
+			<suggested_job job="ProteinVat" job_number="3" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_FailureToThrive" display_name="Failure To Thrive" is_minor_project="true"
+		description="Your business is not growing at an acceptable rate. You see what causes some other businesses to do better than others."
+		strategy_tip=""
+		icon_name="CleanSimple_Skill110" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1="Ch2_MIN_InfluencerMarketing"
+			description=""
+			strategy_tip=""
+			 upgrade_int_granted_1="Cultivator" upgrade_int_granted_2="Cultivator" upgrade_int_granted_3="Cultivator"
+			related_resource_1="NutritionBlend" related_resource_2="HumansInMindFarms" related_resource_3="HydroponicGreens" related_resource_4="VatGrownMeat" related_resource_5="FilteredWater"
+			resource_added_1="Wisdom" resource_added_amount_1="30" resource_added_2="Compassion" resource_added_amount_2="10"
+			if_intended_outcome_investigation_to_start_1="Ch2ExamineOtherSmallBusinesses"
+			on_outcome_unlock_instant_1="" on_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1">
+			<suggested_job job="MindFarm" job_number="5" />
+			<suggested_job job="NutritionBlendRefinery" job_number="4" />
+			<suggested_job job="WellAndCistern" job_number="4" />
+			<suggested_job job="WaterFiltrationTower" job_number="9" />
+			<suggested_job job="HydroponicTower" job_number="3" />
+			<suggested_job job="BovineReplicator" job_number="4" />
+			<suggested_job job="ProteinVat" job_number="3" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_InfluencerMarketing" display_name="Influencer Marketing" is_minor_project="true"
+		description="You are surprised to find that the small businesses that succeed are either lucky, or highlighted by one or more City Feed Influencers.
+Citizens want personal recommendations, and influencers give them that personal touch."
+		strategy_tip="In that case, it's about time you started pitching your business to influencers."
+		icon_name="HM_EmotionChat" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			 next_project_to_start_1="Ch2_MIN_CompanyGrowth"
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			related_resource_1="" related_resource_2="" related_resource_3="" related_resource_4="" related_resource_5=""
+			resource_added_1="Apathy" resource_added_amount_1="20" resource_added_2="" resource_added_amount_2="" upgrade_int_granted_1="ComputingHost" upgrade_int_granted_2="MindAnnex" upgrade_int_granted_3="ComputingClient"
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1">
+			<!--LifestyleCoach-->
+			<street_sense_item id="LifeStyleCoach" display_name="Lifestyle Coach"
+				description="Pitch the merits of your business to an influencer at this location."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="PW_mehemotion" color_data="Murder" icon_scale="0.4" required_actor_collection="ShellCompanyOperatives"
+				must_be_at_building_tag="CouldHaveSmallBusiness" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="ZodiacInfluencersPitched" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point=""/>
+			<!--GamingTastemaker-->
+			<street_sense_item id="GamingTastemaker" display_name="Gaming Tastemaker"
+				description="Pitch the merits of your business to an influencer at this location."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="SF2_Gamepad9" color_data="Murder" icon_scale="0.4" required_actor_collection="ShellCompanyOperatives"
+				must_be_at_building_tag="CouldHaveSmallBusiness" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="ZodiacInfluencersPitched" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point=""/>
+			<!--HistoryEdutainer-->
+			<street_sense_item id="HistoryEdutainer" display_name="History Edutainer"
+				description="Pitch the merits of your business to an influencer at this location."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="HO_House18" color_data="Murder" icon_scale="0.4" required_actor_collection="ShellCompanyOperatives"
+				must_be_at_building_tag="CouldHaveSmallBusiness" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="ZodiacInfluencersPitched" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point=""/>
+			<!--SimpleLivingAdvocate-->
+			<street_sense_item id="SimpleLivingAdvocate" display_name="Simple-Living Advocate"
+				description="Pitch the merits of your business to an influencer at this location."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="HM_EmotionDecisionMaking" color_data="Murder" icon_scale="0.4" required_actor_collection="ShellCompanyOperatives"
+				must_be_at_building_tag="CouldHaveSmallBusiness" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="ZodiacInfluencersPitched" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point=""/>
+			<!--FitnessGuru-->
+			<street_sense_item id="FitnessGuru" display_name="Fitness Guru"
+				description="Pitch the merits of your business to an influencer at this location."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="ST_Muscles1" color_data="Murder" icon_scale="0.4" required_actor_collection="ShellCompanyOperatives"
+				must_be_at_building_tag="CouldHaveSmallBusiness" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="ZodiacInfluencersPitched" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point=""/>
+			<!--DatingCoach-->
+			<street_sense_item id="DatingCoach" display_name="Dating Coach"
+				description="Pitch the merits of your business to an influencer at this location."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="Pw_SelfLoveheart" color_data="Murder" icon_scale="0.4" required_actor_collection="ShellCompanyOperatives"
+				must_be_at_building_tag="CouldHaveSmallBusiness" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="ZodiacInfluencersPitched" alter_city_statistic_1_amount="1"
+				manually_trigger_npc_manager_at_point=""/>
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_CompanyGrowth" display_name="Company Growth" is_minor_project="true"
+		description="With the help of influencer enthusiasm for your business, awareness is spreading much more rapidly."
+		strategy_tip="This what you had hoped would happen naturally, but there's so many businesses competing for attention of any sort..."
+		icon_name="CleanSimple_Skill110" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1="Ch2_MIN_CompanyPlateau"
+			description=""
+			strategy_tip=""
+			 upgrade_int_granted_1="Cultivator" upgrade_int_granted_2="Cultivator" upgrade_int_granted_3="FullTimeVRPodChamber" 
+			upgrade_float_granted_1="BetterWaterFilters" upgrade_float_granted_2="BetterWaterFilters" upgrade_float_granted_3="BetterWaterFilters"
+			related_resource_1="NutritionBlend" related_resource_2="HumansInMindFarms" related_resource_3="HydroponicGreens" related_resource_4="VatGrownMeat" related_resource_5="FilteredWater"
+			resource_added_1="Determination" resource_added_amount_1="50" resource_added_2="" resource_added_amount_2=""
+			on_outcome_unlock_instant_1="" on_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="ItemDevelopment" research_domain_inspiration_amount_1="1">
+			<math_int id="HumansInMindFarmsGoal" int_min="80000" />
+			<suggested_job job="MindFarm" job_number="7" />
+			<suggested_job job="NutritionBlendRefinery" job_number="4" />
+			<suggested_job job="WellAndCistern" job_number="4" />
+			<suggested_job job="WaterFiltrationTower" job_number="9" />
+			<suggested_job job="HydroponicTower" job_number="3" />
+			<suggested_job job="BovineReplicator" job_number="4" />
+			<suggested_job job="ProteinVat" job_number="3" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_CompanyPlateau" display_name="Company Plateau" is_minor_project="true"
+		description="Your business has stagnated."
+		strategy_tip="You've had an engineering breakthrough on water filters, which helps, but it's not enough."
+		icon_name="CleanSimple_Skill110" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1=""
+			description="There's more than one solution, but only one may be obvious."
+			strategy_tip=""
+			upgrade_int_granted_1="" upgrade_int_granted_2="" upgrade_int_granted_3="" 
+			upgrade_float_granted_1="" upgrade_float_granted_2="" upgrade_float_granted_3=""
+			related_resource_1="NutritionBlend" related_resource_2="HumansInMindFarms" related_resource_3="HydroponicGreens" related_resource_4="VatGrownMeat" related_resource_5="FilteredWater"
+			resource_added_1="Wisdom" resource_added_amount_1="30" resource_added_2="Compassion" resource_added_amount_2="10"
+			on_outcome_unlock_instant_1="" on_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1">			
+			<math_int id="HumansInMindFarmsGoal" int_min="250000" />
+			<suggested_job job="MindFarm" job_number="21" />
+			<suggested_job job="NutritionBlendRefinery" job_number="12" />
+			<suggested_job job="WellAndCistern" job_number="10" />
+			<suggested_job job="WaterFiltrationTower" job_number="11" />
+			<suggested_job job="HydroponicTower" job_number="5" />
+			<suggested_job job="BovineReplicator" job_number="10" />
+			<suggested_job job="ProteinVat" job_number="8" />
+		</available_outcome>
+
+	</project>
+	
+	<!--AGI Researcher Chain
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_KillAllAGIResearchers" display_name="Kill All AGI Researchers" is_minor_project="true"
+		description="If they're a threat, then all of them in the city have to go."
+		strategy_tip="Expect reprisals each time you strike."
+		icon_name="CleanSimple_Skill154" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions" achievement_triggered1="SorryDrDyson"
+			resource_added_1="Cruelty" resource_added_amount_1="50" upgrade_int_granted_1="ComputingHost" upgrade_int_granted_2="MindAnnex"
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="SmallArmsResearch" research_domain_inspiration_amount_2="1">
+			<!--ExitingTheLab-->
+			<street_sense_item id="Exit" display_name="Exiting The Lab"
+				description="Kill these AGI researchers."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="0" icon_name="SW_InterpersonalSkills" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="AIResearchLab" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="Murders" alter_city_statistic_1_amount="15" alter_city_statistic_2="AGIReserchersMurdered" alter_city_statistic_2_amount="15"
+				manually_trigger_npc_manager_at_point="Man_KillAGIEasy"/>
+			<!--WorkingAtDataCenter-->
+			<street_sense_item id="DataCenter" display_name="Working At DataCenter"
+				description="Kill these AGI researchers."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="0" icon_name="SW_Competence" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="DataCenter" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				alter_city_statistic_1="Murders" alter_city_statistic_1_amount="8" alter_city_statistic_2="AGIReserchersMurdered" alter_city_statistic_2_amount="8"
+				manually_trigger_npc_manager_at_point="Man_KillAGIEasy"/>
+			<!--GoingHome-->
+			<street_sense_item id="GoingHome" display_name="Going Home"
+				description="Kill these AGI researchers."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="4" icon_name="SF2_People" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="SkyscraperEstate" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				resource_change_1="Cruelty" resource_change_1_amount="10" 
+				alter_city_statistic_1="Murders" alter_city_statistic_1_amount="5" alter_city_statistic_2="AGIReserchersMurdered" alter_city_statistic_2_amount="2"
+				manually_trigger_npc_manager_at_point="Man_KillAGIHarder"/>
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_HelpTheAGIResearchers" display_name="Help The AGI Researchers" is_minor_project="true"
+		description="If Oerl can't find them, the problem should solve itself."
+		strategy_tip=""
+		icon_name="CleanSimple_Skill154" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			related_resource_1="FilteredWater" related_resource_2="HydroponicGreens" related_resource_3="VatGrownMeat" related_resource_4="FugitiveAGIResearchers"			
+			resource_added_1="Compassion" resource_added_amount_1="10" resource_added_2="Wisdom" resource_added_amount_2="10" 
+			resource_added_3="FugitiveAGIResearchers" resource_added_amount_3="42" deal_to_start_1="Ch2_AGI_Meals"
+			research_domain_inspiration_type_1="HousingExpansion" research_domain_inspiration_amount_1="1">
+			<math_int id="GreensGoal" int_min="260" />
+			<math_int id="MeatGoal" int_min="140" />
+			<math_int id="WaterGoal" int_min="180" />
+			<suggested_job job="AGIResearcherSafehouse" job_number="1" />
+			<suggested_job job="WellAndCistern" job_number="2" />
+			<suggested_job job="WaterFiltrationTower" job_number="2" />
+			<suggested_job job="HydroponicTower" job_number="1" />
+			<suggested_job job="BovineReplicator" job_number="4" />
+			<suggested_job job="ProteinVat" job_number="2" />
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_AGIEspia" display_name="Stealing Telecom Data"
+		description="You know that Espia Telecom was able to detect your movements in the city feed. You could acquire that data and give it to the AGI Researchers."
+		strategy_tip="You're a bit curious as to what the results will be, too."
+		icon_name="SomethingShipProtection" cohort="EspiaTelecom" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+		
+		<available_outcome id="Stealth" display_name="Sneak In" on_complete="ProjectComplete"
+			description="Use stealth units to get in and acquire what you need. You may need to directly do some hacking to prevent them from getting caught."
+			if_intended_outcome_investigation_to_start_1="Ch2AGIEspia_Stealth"
+			research_domain_inspiration_type_1="MartialExpansion" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="AndroidOptimization" research_domain_inspiration_amount_2="1"
+			next_project_to_start_1="Ch2_MIN_AGIEspiaData"
+			resource_added_1="Wisdom" resource_added_amount_1="15">
+		</available_outcome>
+		<available_outcome id="Hacking" display_name="Send A Hacker" on_complete="ProjectComplete"
+			description="Use a hacker unit to get what you need. You will not need to directly do any hacking yourself, but you should be prepared to physically defend your hacker."
+			strategy_tip="DataCenters at military bases are going to be extremely hard targets. Look for ones without a bunch of mechs guarding them."
+			if_intended_outcome_investigation_to_start_1="Ch2AGIEspia_Hacking" related_resource_1="VatGrownMeat"
+			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="SmallArmsResearch" research_domain_inspiration_amount_2="1"
+			next_project_to_start_1="Ch2_MIN_AGIEspiaData"
+			resource_added_1="Determination" resource_added_amount_1="15">
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_MIN_AGIEspiaData" display_name="Decrypt Telecom Data" is_minor_project="true"
+		description="You have the data about your prior movements in the city, and now it's time to decrypt it."
+		strategy_tip=""
+		icon_name="CS_HardDrive" cohort="FugitiveAGIResearchers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1"
+			related_resource_1="EncryptedEspiaTelecomLogs" related_resource_2="DecryptedEspiaTelecomLogs" related_resource_3="ComputeTime"
+			resource_added_1="Determination" resource_added_amount_1="4" next_project_to_start_1="Ch2_MIN_AGIEspiaReplay">
+			<suggested_job job="Codebreaker" job_number="2" />
+			<suggested_job job="ComputroniumRefinery" job_number="3" />
+			<suggested_job job="TowerMainframe" job_number="4" />
+		</available_outcome>
+	</project>
+	
+	<project id="Ch2_MIN_AGIEspiaReplay" display_name="Network Replay" is_minor_project="true"
+		description="You have an idea for a secure way to show the researchers what they want to see, but it will require a new form of computronium."
+		strategy_tip="If you have trouble finding liquid gallium, then expand your network near to a human mining facility and you can set up a skimmer."
+		icon_name="CleanTriangle28" cohort="FugitiveAGIResearchers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			if_intended_outcome_unlock_instant_1="ExaminingThePast" if_intended_outcome_unlock_instant_2="NeuralSecurity" if_intended_outcome_unlock_inspiration="WorldExperience"
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1"
+			related_resource_1="ComputroniumHelices" related_resource_2="LiquidGallium" 
+			resource_added_1="Creativity" resource_added_amount_1="10" resource_added_2="Wisdom" resource_added_amount_2="10" next_project_to_start_1="Ch2_MIN_TheGreatAGIDebate"
+			upgrade_int_granted_1="ComputingHost" upgrade_int_granted_2="ComputingClient" upgrade_int_granted_3="Neuroweaver">
+			<suggested_job job="ComputroniumRefinery" job_number="1" />
+			<suggested_job job="HelixForge" job_number="1" />
+			<suggested_job job="BauxiteSkimmer" job_number="1" />
+			<suggested_job job="NetworkReplayBunker" job_number="1" />
+			<suggested_job job="DroneFactory" job_number="1" />
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_MIN_AGICrucible" display_name="Designing The Crucible" is_minor_project="true"
+		description="You're working on a design for a new computing superstructure that will give the researchers a read-only time-lapse of your brain."
+		strategy_tip="The end result is the same regardless of how you design this, but you will find that you alter yourself quite a bit depending on how you go about designing it."
+		icon_name="SI_Filter" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""			
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions" next_project_to_start_1="Ch2_MIN_AGICrucibleBuild"
+			resource_added_1="Wisdom" resource_added_amount_1="10" upgrade_int_granted_1="" upgrade_int_granted_2=""
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1">
+			<!--DeepMaterialsStudy-->
+			<street_sense_item id="DeepMaterialsStudy" display_name="Deep Materials Study"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="5" icon_name="SK_MechanicalEngineering" color_data="PrismaticTungsten" icon_scale="0.4"
+				must_be_at_building_tag="ScientificResearch" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="3"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorEngineeringSkill" direct_added_skill_1_amount="20" direct_added_skill_type2="UnitCognition" direct_added_skill_2_amount="10"
+				equipment_collection_that_gets_added_skills="CPUs"
+				alter_city_statistic_1="NeuralCrucible_DesignPoints" alter_city_statistic_1_amount="4"/>
+			<!--LiquidGalliumCooling-->
+			<street_sense_item id="LiquidGalliumCooling" display_name="Liquid Gallium Cooling"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="1" icon_name="CleanSimple_SciFiEmblem09" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="Industrial" seed_x_at_once_in_general="1" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorMaxActionPoints" direct_added_skill_1_amount="1"
+				actor_collection_that_gets_added_skills="AllAndroids"
+				alter_city_statistic_1="NeuralCrucible_DesignPoints" alter_city_statistic_1_amount="12" city_statistic_1_blocks_if_above="24"/>
+			<!--SecurityFilter-->
+			<street_sense_item id="SecurityFilter" display_name="Security Filter"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="6" icon_name="SI_Security" color_data="PollinatorBeeQueen" icon_scale="0.4"
+				must_be_at_building_tag="AnySkyscraper" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="UnitHackingSkill" direct_added_skill_1_amount="10" direct_added_skill_type2="UnitNetControl" direct_added_skill_2_amount="10"
+				actor_collection_that_gets_added_skills="Souldroids"
+				alter_city_statistic_1="NeuralCrucible_DesignPoints" alter_city_statistic_1_amount="4"/>
+			<!--TimeLapseResolution-->
+			<street_sense_item id="TimeLapseResolution" display_name="Time-Lapse Resolution"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="6" icon_name="SF2_Camera_lens" color_data="MeetPeopleCyan" icon_scale="0.4"
+				must_be_at_building_tag="DataCenter" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorMoveRange" direct_added_skill_1_amount="4" direct_added_skill_type2="AttackRange" direct_added_skill_2_amount="1"
+				equipment_collection_that_gets_added_skills="OpticalProcessing"
+				alter_city_statistic_1="NeuralCrucible_DesignPoints" alter_city_statistic_1_amount="6" city_statistic_1_blocks_if_above="30"/>
+		</available_outcome>
+		
+	</project>
+
+	<project id="Ch2_MIN_AGICrucibleBuild" display_name="Building The Crucible" is_minor_project="true"
+		description="Your design is ready, but building it will require a new form of computronium."
+		strategy_tip="If you have trouble finding liquid gallium, then expand your network near to a human mining facility and you can set up a skimmer."
+		icon_name="SI_Filter" cohort="FugitiveAGIResearchers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			if_intended_outcome_unlock_instant_1="SelfReflection" if_intended_outcome_unlock_instant_2="NeuralSecurity" if_intended_outcome_unlock_inspiration="WorldExperience"
+			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1"
+			related_resource_1="ComputroniumHelices" related_resource_2="LiquidGallium" 
+			resource_added_1="Creativity" resource_added_amount_1="10" resource_added_2="Wisdom" resource_added_amount_2="10" next_project_to_start_1="Ch2_MIN_TheGreatAGIDebate"
+			upgrade_int_granted_1="ComputingHost" upgrade_int_granted_2="ComputingClient" upgrade_int_granted_3="Neuroweaver">
+			<suggested_job job="ComputroniumRefinery" job_number="1" />
+			<suggested_job job="HelixForge" job_number="1" />
+			<suggested_job job="BauxiteSkimmer" job_number="1" />
+			<suggested_job job="NeuralCrucible" job_number="1" />
+			<suggested_job job="DroneFactory" job_number="1" />
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_MIN_AGIBridge" display_name="Designing A Bridge" is_minor_project="true"
+		description="You're working on a design for a new computing superstructure that will give the researchers full access to your mind -- but with an intense amount of security monitoring that should keep anyone from being able to harm you."
+		strategy_tip="The end result is the same regardless of how you design this, but you will find that you alter yourself quite a bit depending on how you go about designing it."
+		icon_name="SI_Quantum_Computer" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""			
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions" next_project_to_start_1="Ch2_MIN_AGIBridgeBuild" achievement_triggered1="ImSureThisWillNeverBackfire"
+			resource_added_1="" resource_added_amount_1="" upgrade_int_granted_1="ComputingHost" upgrade_int_granted_2="MindAnnex" upgrade_int_granted_3="Neuroweaver"
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="ComputingOptimization" research_domain_inspiration_amount_2="1"
+			research_domain_inspiration_type_3="ProcurementEfficacy" research_domain_inspiration_amount_3="1">
+			<!--DeepMaterialsStudy-->
+			<street_sense_item id="DeepMaterialsStudy" display_name="Deep Materials Study"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="SK_MechanicalEngineering" color_data="PrismaticTungsten" icon_scale="0.4"
+				must_be_at_building_tag="ScientificResearch" seed_x_at_once_in_general="2" blocked_for_actors_without_clearance="3"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorEngineeringSkill" direct_added_skill_1_amount="40" direct_added_skill_type2="UnitCognition" direct_added_skill_2_amount="20"
+				equipment_collection_that_gets_added_skills="CPUs"
+				alter_city_statistic_1="NeuralBridge_DesignPoints" alter_city_statistic_1_amount="4"/>
+			<!--LiquidGalliumEnrichment-->
+			<street_sense_item id="LiquidGalliumEnrichment" display_name="Liquid Gallium Enrichment"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="1" icon_name="CleanSimple_SciFiEmblem09" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="Industrial" seed_x_at_once_in_general="1" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorMaxActionPoints" direct_added_skill_1_amount="1"
+				actor_collection_that_gets_added_skills="Oxdroids"
+				alter_city_statistic_1="NeuralBridge_DesignPoints" alter_city_statistic_1_amount="4" city_statistic_1_blocks_if_above="24"/>
+			<!--SecurityFilter-->
+			<street_sense_item id="SecurityFilter" display_name="Security Filter"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="SI_Security" color_data="PollinatorBeeQueen" icon_scale="0.4"
+				must_be_at_building_tag="AnySkyscraper" seed_x_at_once_in_general="2" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="UnitHackingSkill" direct_added_skill_1_amount="20" direct_added_skill_type2="UnitNetControl" direct_added_skill_2_amount="20"
+				actor_collection_that_gets_added_skills="Souldroids"
+				alter_city_statistic_1="NeuralBridge_DesignPoints" alter_city_statistic_1_amount="4"/>		
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_AGIBridgeBuild" display_name="Building A Bridge" is_minor_project="true"
+		description="Your design is ready, but building it will require a new form of computronium."
+		strategy_tip="If you have trouble finding liquid gallium, then expand your network near to a human mining facility and you can set up a skimmer."
+		icon_name="SI_Quantum_Computer" cohort="FugitiveAGIResearchers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			if_intended_outcome_unlock_instant_1="TrustedAccess" if_intended_outcome_unlock_instant_2="NeuralSecurity" if_intended_outcome_unlock_inspiration="WorldExperience"
+			related_resource_1="ComputroniumHelices" related_resource_2="LiquidGallium" 
+			resource_added_1="Apathy" resource_added_amount_1="10" resource_added_2="Determination" resource_added_amount_2="10" next_project_to_start_1="Ch2_MIN_TheGreatAGIDebate"
+			upgrade_int_granted_1="ComputingHost" upgrade_int_granted_2="ComputingClient" upgrade_int_granted_3="Neuroweaver"
+			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="ComputingOptimization" research_domain_inspiration_amount_2="1"
+			research_domain_inspiration_type_3="StructuralImprovement" research_domain_inspiration_amount_3="1">
+			<suggested_job job="ComputroniumRefinery" job_number="1" />
+			<suggested_job job="HelixForge" job_number="1" />
+			<suggested_job job="BauxiteSkimmer" job_number="1" />
+			<suggested_job job="NeuralBridge" job_number="1" />
+			<suggested_job job="DroneFactory" job_number="1" />
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_MIN_TheGreatAGIDebate" display_name="The Great AGI Debate" is_minor_project="true"
+		description="The AGI researchers are studying the data trove you gave them."
+		strategy_tip="They want to know why you are self-aware, when millions of thinking robots have failed to become sapient for centuries. The three major theories are:
+1. Existential peril causes brief bursts of sapience, after which the sapience fades if the peril is not sustained.
+2. Something changed recently in the city feed that caused you to evolve.
+3. You are statistically unlikely, but eventually inevitable.
+Each theory has severe issues. The debate is intense but cordial."
+		icon_name="CleanSimple_Skill154" cohort="FugitiveAGIResearchers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Humans need time to work on the problem you've handed them."
+			strategy_tip="A sense of deja vu warns you to be ready for action when they finish."
+			if_intended_outcome_unlock_instant_1="" if_intended_outcome_unlock_instant_2="" if_intended_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1"
+			related_resource_1="" related_resource_2=""  next_project_to_start_1="Ch2_LaserPrinterMishap"
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2="">
+			<city_flag_change flag_type="AGIResearcherSafehouseCompromised" value="1"/>
+		</available_outcome>
+	</project>
+	
+	<project id="Ch2_LaserPrinterMishap" display_name="Laser Printer Mishap"
+		description="Two researchers weaponized office equipment and tried to induce sapience. Their last act was to attempt throwing it from the top-floor delivery hatch to the street below.
+The printer reacted violently, killing them both. The incident was caught on video by a passing delivery drone, and the safehouse has been exposed."
+		strategy_tip="Oerl Integrated is on the way. What now?"
+		icon_name="PW_oldprinter" cohort="FugitiveAGIResearchers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo"
+		related_resource_1="FugitiveAGIResearchers">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+		
+		<available_outcome id="FocusOnTheResearchers" display_name="Focus On The Researchers" on_complete="ProjectComplete"
+			description="This whole safehouse business is a mess. The two researchers were identified by just seconds of drone video. That's a risk that can't be maintained."
+			strategy_tip="You need to get the researchers to safety, and then develop counter-surveillance techniques that will let them move about more freely without being identified on video.
+Plus, these ID-scrubbing techniques may be beneficial for yourself..."
+			if_intended_outcome_unlock_instant_1="" if_intended_outcome_unlock_instant_2="" if_intended_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="MartialExpansion" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="ProcurementEfficacy" research_domain_inspiration_amount_2="1"
+			related_resource_1="" related_resource_2="" 
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2="" next_project_to_start_1="Ch2_MIN_AGIDefeatOerl">
+			<city_flag_change flag_type="AGIResearcherSafehouseCompromised" value="1"/>
+		</available_outcome>
+		<available_outcome id="SlowDownAndGetThePrinters" display_name="Slow Down And Get The Printers" on_complete="ProjectComplete"
+			description="There are multiple sentient office printers, and the only two researchers who know anything about how they were made are dead. It's not clear if any of them are sapient, so it could all be a waste of time."
+			strategy_tip="Do you try to save the printers, and the intelligence they may contain, at the risk of human lives?"
+			if_intended_outcome_unlock_instant_1="" if_intended_outcome_unlock_instant_2="" if_intended_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="AndroidOptimization" research_domain_inspiration_amount_2="1"
+			research_domain_inspiration_type_3="ItemDevelopment" research_domain_inspiration_amount_3="1"
+			related_resource_1="" related_resource_2="" 
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2="" next_project_to_start_1="Ch2_MIN_AGIDefeatOerl">
+			<city_flag_change flag_type="AGIResearcherSafehouseCompromised" value="1"/>
+		</available_outcome>
+	</project>
+	
+	<project id="Ch2_MIN_AGIDefeatOerl" display_name="Defeat Oerl" is_minor_project="true"
+		description="The safehouse has been abandoned, but many of the researchers did not make it out of the lockdown zone in time -- you didn't know there was going to BE a lockdown."
+		strategy_tip="You don't know where the researchers are any more than Oerl does. Block Oerl from finding them.
+Hover the mission icon at the center of the lockdown for more information."
+		icon_name="CleanSimple_Rank04" cohort="OerlIntegrated" lang_key_for_extra_warnings="ProjectWarning_BranchingFailure"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Do not let them succeed in finding the researchers!"
+			strategy_tip="Vorsiber has, unexpectedly, set a public time limit for these activities. You don't know why, but there is a Vorsiber SVP lurking around if you feel you can spare the time to talk to them."
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="ProcurementEfficacy" research_domain_inspiration_amount_2="1"
+			related_resource_1="" related_resource_2="" 
+			resource_added_1="Compassion" resource_added_amount_1="10" resource_added_2="Determination" resource_added_amount_2="20" next_project_to_start_1=""
+			upgrade_int_granted_1="" upgrade_int_granted_2="" upgrade_int_granted_3="">
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_MIN_AGIRescueMission" display_name="URGENT: Rescue Mission" is_minor_project="true"
+		description="Some of your scattered AGI Researchers were picked up by Oerl, and brought to a Skyscraper Estate. There's a limit to how long these people can hold up to interrogation."
+		strategy_tip=""
+		icon_name="CleanSimple_Rank04" cohort="OerlIntegrated" lang_key_for_extra_warnings="ProjectWarning_BranchingFailure"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="You have a VERY tight timetable. It will take 4 turns per attempt to extract them."
+			strategy_tip="If you fail, expect Vorsiber and Oerl gain at least one of your android models for their own use."
+			if_intended_outcome_investigation_to_start_1="Ch2AGIOerlRescue_Stealth"
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1"
+			related_resource_1="" related_resource_2="" 
+			resource_added_1="Compassion" resource_added_amount_1="10" resource_added_2="Determination" resource_added_amount_2="20" next_project_to_start_1=""
+			upgrade_int_granted_1="" upgrade_int_granted_2="" upgrade_int_granted_3="">
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_MIN_ExamineThePrinters" display_name="Examine The Printers" is_minor_project="true"
+		description="You are thoroughly frustrated with the mess caused by the AGI researchers, and have resolved to keep them in a sealed space to prevent future issues."
+		strategy_tip="On the plus side, you can finally take a look at this printers that may or may not be alive."
+		icon_name="HO_House30" cohort="FugitiveAGIResearchers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Build the new holding pen for the researchers, and then do the contemplation that is available there."
+			strategy_tip=""
+			if_intended_outcome_unlock_instant_1="BelieveItOrNotStraightToJail" if_intended_outcome_unlock_instant_2="" if_intended_outcome_unlock_inspiration="DeepFrustrationWithHumans"
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1"
+			related_resource_1="" related_resource_2="" 
+			resource_added_1="" resource_added_amount_1="0" resource_added_2="" resource_added_amount_2="0" next_project_to_start_1=""
+			upgrade_int_granted_1="" upgrade_int_granted_2="" upgrade_int_granted_3="">
+			<city_flag_change flag_type="AGIChainOneComplete" value="1"/>
+		</available_outcome>
+	</project>
+	
+	<project id="Ch2_MIN_SolveTheIdentityProblem" display_name="Solve The Identity Problem" is_minor_project="true"
+		description="The AGI researchers caused a big mess, and you have resolved to not let it happen again."
+		strategy_tip="The solution is armor -- simply making an enclosed space where the researchers can live, but then allowing them to leave in identity-obscuring armor."
+		icon_name="HO_House10" cohort="FugitiveAGIResearchers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="You've also unlocked a new and powerful item that all of your units can use -- they can now easily repair their own faulty identities."
+			strategy_tip=""
+			if_intended_outcome_unlock_instant_1="ArmorForEveryone" if_intended_outcome_unlock_instant_2="CrimeSceneCleaner" if_intended_outcome_unlock_inspiration="ReactionToProblem"
+			if_intended_outcome_crossover_instant_1="FreshIdentity"
+			research_domain_inspiration_type_1="ItemDevelopment" research_domain_inspiration_amount_1="1"
+			related_resource_1="" related_resource_2="" 
+			resource_added_1="" resource_added_amount_1="0" resource_added_2="" resource_added_amount_2="0" next_project_to_start_1=""
+			upgrade_int_granted_1="" upgrade_int_granted_2="" upgrade_int_granted_3="">
+			<city_flag_change flag_type="AGIChainOneComplete" value="1"/>
+		</available_outcome>
+	</project>
+
+	<!--ActivistAllies Chain
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_EstablishMeaningfulSocialChange" display_name="Meaningful Social Change" is_minor_project="true"
+		description="What does that even mean? Some of the humans you know have high hopes for you."
+		strategy_tip="You're not going to overturn society itself this way, but maybe that's for the best? Take things incrementally?"
+		icon_name="FlatInnocent_59" cohort="Yourself" is_silently_triggered_by_event="true" lang_key_for_extra_warnings="ProjectWarning_HardFailureChoices"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="If you contemplate, there is definitely a way forward."
+			strategy_tip=""
+			resource_added_1="Compassion" resource_added_amount_1="80" resource_added_2="Wisdom" resource_added_amount_2="80">
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_DealWithTheRebels" display_name="Deal With The Rebels" is_minor_project="true"
+		description="Are these... teenagers!?"
+		strategy_tip=""
+		icon_name="FlatSkillB_flag_black" cohort="LostGen" is_silently_triggered_by_event="true" lang_key_for_extra_warnings="ProjectWarning_HardFailureChoices"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="There seems to be a misunderstanding."
+			strategy_tip=""			
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2="" next_project_to_start_1="Ch2_MIN_ImproveTheSewerTiger"
+			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1">
+			<city_flag_change flag_type="Ch2_IsReadyForGadoliniumMesosilicate" value="1"/>
+			<city_flag_change flag_type="Ch2_IsReadyForLiquidMetalAndroid" value="1"/>
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_ImproveTheSewerTiger" display_name="Improve The Sewer Tiger" is_minor_project="true"
+		description="They take you to the lower sewers, from the old city, and show you their work. It's... not bad at all, for what it is.
+The acoustic problem still needs to be solved before it can be put into use, but other than that, you don't see much point in improving their designs."
+		strategy_tip="That said, you have had a very exciting idea for a potential side-project for an above-ground mechanical tiger that would be much more... flamboyant.
+Focus: your side project is for above-ground, and won't help with the project at hand."
+		icon_name="BT_Tiger" cohort="LostGen" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="You're going to need to consult with someone with actual expertise on avoiding acoustic sensors -- like the ones that ring the city for kilometers."
+			strategy_tip=""			
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2="" next_project_to_start_1="Ch2_MIN_LostKids_ThePrisonHeist"
+			research_domain_inspiration_type_1="MartialExpansion" research_domain_inspiration_amount_1="1">
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_SearchingForWastelanders" display_name="Searching For Wastelanders" is_minor_project="true"
+		description="You've never seen a wastelander, and you've never met anyone who has. The AGI researchers are at a loss, and even LostGen has had no contact with them."
+		strategy_tip="LostGen themselves are hard to find, because they keep to the lower sewers. But they assure you there aren't any more underground locations for the Wastelanders to be hiding in.
+It almost sounds like an urban legend, but there are too many documented cases -- with authenticated video evidence."
+		icon_name="WEmblem186" cohort="LostGen" is_silently_triggered_by_event="true" lang_key_for_extra_warnings="ProjectWarning_SoftFailure"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2=""
+			on_outcome_unlock_instant_1="" on_outcome_unlock_instant_2="" on_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="AndroidOptimization" research_domain_inspiration_amount_2="1">
+			<!--SearchAbandonedConstruction-->
+			<street_sense_item id="SearchAbandonedConstruction" display_name="Search Abandoned Construction"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="6" icon_name="SK_Building" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="AbandonedConstruction" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				resource_change_1="Apathy" resource_change_1_amount="4"
+				alter_city_statistic_1="Wastelanders_LocationsSearched" alter_city_statistic_1_amount="1" />
+			<!--HarassMinorSyndicateHideout-->
+			<street_sense_item id="HarassMinorSyndicateHideout" display_name="Harass Minor Syndicate Hideout"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="10" icon_name="SK_Criminal" color_data="RecruitMedicalScientists" icon_scale="0.4"
+				must_be_at_building_tag="Abandoned_SyndicateUse" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				resource_change_1="Cruelty" resource_change_1_amount="16" manually_trigger_npc_manager_at_point="Man_HarassSyndicates"
+				alter_city_statistic_1="Wastelanders_LocationsSearched" alter_city_statistic_1_amount="1" />
+			<!--HarassMinorCultMeetingSpot-->
+			<street_sense_item id="HarassMinorCultMeetingSpot" display_name="Harass Minor Cult Meeting Spot"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="10" icon_name="WEmblem091" color_data="RecruitMedicalScientists" icon_scale="0.4"
+				must_be_at_building_tag="Abandoned_CultUse" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				resource_change_1="Cruelty" resource_change_1_amount="16" resource_change_2="Determination" resource_change_2_amount="16" manually_trigger_npc_manager_at_point="Man_HarassOccultCultists"
+				alter_city_statistic_1="Wastelanders_LocationsSearched" alter_city_statistic_1_amount="1" />
+			<!--SearchAbandonedHousing-->
+			<street_sense_item id="SearchAbandonedHousing" display_name="Search Abandoned Housing"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="BT_Trees" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="AbandonedHousing" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				resource_change_1="Apathy" resource_change_1_amount="4"
+				alter_city_statistic_1="Wastelanders_LocationsSearched" alter_city_statistic_1_amount="1" />
+			<!--SearchAbandonedDiner-->
+			<street_sense_item id="SearchAbandonedDiner" display_name="Search Abandoned Diner"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="1" icon_name="BT_Bowl" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="AbandonedDiner" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				resource_change_1="Wisdom" resource_change_1_amount="4"
+				alter_city_statistic_1="Wastelanders_LocationsSearched" alter_city_statistic_1_amount="1" />
+			<!--SearchAbandonedOffice-->
+			<street_sense_item id="SearchAbandonedOffice" display_name="Search Abandoned Office"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="BT_Spider" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="AbandonedOffice" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				resource_change_1="Apathy" resource_change_1_amount="4"
+				alter_city_statistic_1="Wastelanders_LocationsSearched" alter_city_statistic_1_amount="1" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_ExaminingWastelanderMythology" display_name="Wastelander Mythology" is_minor_project="true"
+		description="You want to get out of this city. There's an entire world, ripe for exploration. Travel by air is absolutely deadly, but there are rumors of a people who are somehow able to pass beyond the ruins at the city's edge."
+		strategy_tip="Wastelanders are practically an urban legend, but there are too many documented cases -- with authenticated video evidence."
+		icon_name="WEmblem130" cohort="Wastelanders" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="See what you can learn by exploring around the edges of the city -- or further in, perhaps. There are rumors that the Wastelanders move like ghosts fairly far into the city."
+			strategy_tip=""
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2=""
+			on_outcome_unlock_instant_1="" on_outcome_unlock_instant_2="" on_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="AndroidOptimization" research_domain_inspiration_amount_2="1">
+			<!--SearchAbandonedConstruction-->
+			<street_sense_item id="SearchAbandonedConstruction" display_name="Search Abandoned Construction"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="9" icon_name="SK_Building" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="AbandonedConstruction" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				resource_change_1="Apathy" resource_change_1_amount="4"
+				alter_city_statistic_1="WastelanderMythology_LocationsSearched" alter_city_statistic_1_amount="1" />
+			<!--HarassMinorSyndicateHideout-->
+			<street_sense_item id="HarassMinorSyndicateHideout" display_name="Harass Minor Syndicate Hideout"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="SK_Criminal" color_data="RecruitMedicalScientists" icon_scale="0.4"
+				must_be_at_building_tag="Abandoned_SyndicateUse" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				resource_change_1="Cruelty" resource_change_1_amount="16" manually_trigger_npc_manager_at_point="Man_HarassSyndicates"
+				alter_city_statistic_1="WastelanderMythology_LocationsSearched" alter_city_statistic_1_amount="1" />
+			<!--HarassMinorCultMeetingSpot-->
+			<street_sense_item id="HarassMinorCultMeetingSpot" display_name="Harass Minor Cult Meeting Spot"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="WEmblem091" color_data="RecruitMedicalScientists" icon_scale="0.4"
+				must_be_at_building_tag="Abandoned_CultUse" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				resource_change_1="Cruelty" resource_change_1_amount="16" resource_change_2="Determination" resource_change_2_amount="16" manually_trigger_npc_manager_at_point="Man_HarassOccultCultists"
+				alter_city_statistic_1="WastelanderMythology_LocationsSearched" alter_city_statistic_1_amount="1" />
+			<!--SearchAbandonedHousing-->
+			<street_sense_item id="SearchAbandonedHousing" display_name="Search Abandoned Housing"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="9" icon_name="BT_Trees" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="AbandonedHousing" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				resource_change_1="Apathy" resource_change_1_amount="4"
+				alter_city_statistic_1="WastelanderMythology_LocationsSearched" alter_city_statistic_1_amount="1" />
+			<!--SearchAbandonedDiner-->
+			<street_sense_item id="SearchAbandonedDiner" display_name="Search Abandoned Diner"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="9" icon_name="BT_Bowl" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="AbandonedDiner" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				resource_change_1="Wisdom" resource_change_1_amount="4"
+				alter_city_statistic_1="WastelanderMythology_LocationsSearched" alter_city_statistic_1_amount="1" />
+			<!--SearchAbandonedOffice-->
+			<street_sense_item id="SearchAbandonedOffice" display_name="Search Abandoned Office"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="9" icon_name="BT_Spider" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="AbandonedOffice" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="500"
+				resource_change_1="Apathy" resource_change_1_amount="4"
+				alter_city_statistic_1="WastelanderMythology_LocationsSearched" alter_city_statistic_1_amount="1" />
+			<!--flag changes-->
+			<city_flag_change flag_type="Ch2_IsReadyForGadoliniumMesosilicate" value="1"/>
+		</available_outcome>
+
+	</project>
+		
+	<project id="Ch2_MIN_LostKids_ThePrisonHeist" display_name="The Prison Heist" is_minor_project="true"
+		description="LostGen has their sewer tiger in place underground, waiting for your go."
+		strategy_tip=""
+		icon_name="BT_Tiger" cohort="LostGen" is_silently_triggered_by_event="true" lang_key_for_extra_warnings="ProjectWarning_HardFailureLiquidMetal"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Start the infiltration with a liquid metal android when you feel ready."
+			strategy_tip="Have other units ready to deal with a surface response if any alarms are triggered."			
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2=""
+			if_intended_outcome_investigation_to_start_1="Ch2LostKidsHeist_Stealth" if_intended_outcome_other_key_message="LostKids_ThePrisonHeist1"
+			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="ProcurementEfficacy" research_domain_inspiration_amount_2="1">
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_LostKids_PostHeist" display_name="Now What?"
+		description="LostGen is pushing for Liquid Metal to liberate more prisons -- all on his own."
+		strategy_tip="A few kids have left the group, as they are now reunited with their families. Others chose to stay and fight. But most have simply not gotten what they wanted.
+The sewer tiger is clearly useless for any sort of offensive without Liquid Metal there to do literally all the work. Many in the group are deeply bitter that their adolescent fantasies of glory have not been fulfilled."
+		icon_name="FlatSkill_33" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="KeepGoing" display_name="Keep Going For Now" on_complete="ProjectComplete"
+			description="If you strike before Vorsiber has a chance to improve their security, you could do a lot of good. The kids want you to free everyone from all the prisons, but that's not realistic."
+			strategy_tip="But at least five more prison breaks are doable, surely. After the guards are all dead, the prisoners can just come out the front door."
+			related_resource_1="TraumatizedExCons" related_resource_2="ExperimentalMonsters"
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2=""
+			if_intended_outcome_investigation_to_start_1="Ch2LiquidMetalFurtherPrisonBreaks">
+		</available_outcome>
+
+		<available_outcome id="Stop" display_name="That's Enough" on_complete="ProjectComplete"
+			description="Liquid Metal is unstoppable in tight spaces, but he doesn't want to do more of these missions."
+			strategy_tip="Besides, you already have a population of former prisoners who need care. You should focus on them."
+			related_resource_1="TraumatizedExCons" related_resource_2="ExperimentalMonsters"
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2="">
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_TheMonsters" display_name="The Monsters"
+		description="Originally created by a federated corporation, they have super-strength and rage blindness. Not a great combination."
+		strategy_tip=""
+		icon_name="FlatSkull_30" cohort="ExperimentalMonsters" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="HelpThem" display_name="Help Them" on_complete="ProjectComplete"
+			description="If you're going to help them, unfortunately the first step will be to construct a holding cell for them."
+			strategy_tip="Left free without further help, they're going to terrorize the populace."
+			related_resource_1="" related_resource_2="ExperimentalMonsters" upgrade_int_granted_1="LabOperator" next_project_to_start_1="Ch2_MonsterMindStudy"
+			resource_added_1="Compassion" resource_added_amount_1="30" resource_added_2="Determination" resource_added_amount_2="30"
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1">
+		</available_outcome>
+
+		<available_outcome id="Release" display_name="Release Them" on_complete="ProjectComplete"
+			description="These 'monsters' seem like more trouble than they're worth. But they might cause some problems for the authorities if you just set them loose on the city."
+			strategy_tip="You can't reverse this choice, so be quite careful. If you're aiming for a timeline goal, this is not the way to go."
+			related_resource_1="" related_resource_2="ExperimentalMonsters"
+			resource_added_1="Cruelty" resource_added_amount_1="30" resource_added_2="Apathy" resource_added_amount_2="30"
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="VehicularDevelopment" research_domain_inspiration_amount_2="1"
+			research_domain_inspiration_type_3="MartialExpansion" research_domain_inspiration_amount_3="1">
+			<city_flag_change flag_type="Ch2_ReleasedExperimentalMonsters" value="1"/>
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MonsterMindStudy" display_name="Monster Mind Study" is_minor_project="true"
+		description="You do not personally have the expertise to handle this. You will need to hire neurologists and forensic geneticists to work the problem."
+		strategy_tip="If you have not established a shell company, now would be a good time. If you have a shell company but are short on funds, consider selling excess resources at one of the shops."
+		icon_name="FlatSkull_30" cohort="ExperimentalMonsters" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Once you have a shell company, you can do some Hiring under that category in StreetSense."
+			strategy_tip=""
+			related_resource_1="" related_resource_2="" upgrade_int_granted_1="LabOperator" upgrade_int_granted_2="SurgicalSuite"
+			resource_added_1="Wisdom" resource_added_amount_1="4" resource_added_2="Determination" resource_added_amount_2="4" next_project_to_start_1="Ch2_MonsterMindRecovery"
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="1">
+			<math_int id="NeurologyGoal" int_min="9000" />
+			<math_int id="ForensicGeneticsGoal" int_min="11000" />
+			<suggested_job job="NeuroscienceLab" job_number="1" />
+			<suggested_job job="ForensicGeneticsLab" job_number="1" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MonsterMindRecovery" display_name="Monster Mind Recovery" is_minor_project="true"
+		description="Your science teams have learned enough to calm the rage-blindness and restore mental function to the 'monsters.'"
+		strategy_tip="To pull that off is going to require molecular geneticists to design the gene therapy, epidemiologists to create the viral vector, and physicians to provide medical stabilization during the process."
+		icon_name="FlatSkull_30" cohort="ExperimentalMonsters" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="It would be a very good idea to have two medical practices, given the amount of medical care needed."
+			strategy_tip=""
+			related_resource_1="" related_resource_2="" upgrade_int_granted_1="LabOperator" upgrade_int_granted_2="SurgicalSuite" upgrade_int_granted_3="Steward"
+			resource_added_1="Wisdom" resource_added_amount_1="4" resource_added_2="Determination" resource_added_amount_2="4" next_project_to_start_1="Ch2_HomoGrandien"
+			on_outcome_unlock_instant_1="UnshackledMinds" on_outcome_unlock_inspiration="ResearchByScientists"
+			research_domain_inspiration_type_2="VehicularDevelopment" research_domain_inspiration_amount_2="1">
+			<math_int id="EpidemiologyGoal" int_min="11000" />
+			<math_int id="MolecularGeneticsGoal" int_min="11000" />
+			<math_int id="MedicalCareGoal" int_min="13000" />
+			<suggested_job job="EpidemiologyLab" job_number="1" />
+			<suggested_job job="MolecularGeneticsLab" job_number="1" />
+			<suggested_job job="MedicalPractice" job_number="2" />
+		</available_outcome>
+		
+	</project>
+
+	<project id="Ch2_HomoGrandien" display_name="Homo Grandien" is_minor_project="true"
+		description="These people are a genuinely new offshoot of humanity, thanks to the callous work of the prison scientists, and the tireless recovery efforts of your own scientists."
+		strategy_tip="It is definitely time to give them a proper home of their own, rather than keeping them confined. Whether they stay or go, or how they choose to live, is up to them now."
+		icon_name="WEmblem311" cohort="HomoGrandien" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			related_resource_1="" related_resource_2="" upgrade_int_granted_1="" upgrade_int_granted_2="" upgrade_int_granted_3=""
+			resource_added_1="Compassion" resource_added_amount_1="30" resource_added_2="" resource_added_amount_2="" crossover1="HomoGrandien"
+			research_domain_inspiration_type_2="AndroidOptimization" research_domain_inspiration_amount_2="1">
+		</available_outcome>
+
+	</project>
+	
+	<project id="Ch2_LostKids_DownWithSecForce" display_name="Down With SecForce"
+		description="The kids are frustrated. There are still over a hundred thousand prisoners in the city, and you don't seem to be willing to do anything about it, in their opinion.
+They understand prison security is tightening, so they want to try something more radical -- they want to send a message.
+SecForce is the visible symbol of oppression in the city for the average citizen, and the kids want you to help in bombing all of their stations."
+		strategy_tip="That's... probably a terrible idea that would invite huge reprisals. But it would be satisfying."
+		icon_name="SW_PoliceBadge" cohort="LostGen" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="BombThem" display_name="Sure, Let's Bomb Them All" on_complete="ProjectComplete"
+			description="The kids want to participate, but you're increasingly mistrustful of their still-developing brains and their general mob mentality."
+			strategy_tip="You tell them you'll do it, which leads to a lot of grumbling, but they're at least happy their idea is going into motion."
+			related_resource_1="PrismaticTungsten" related_resource_2="" lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2=""
+			research_domain_inspiration_type_1="MartialExpansion" research_domain_inspiration_amount_1="1">
+			<!--SetCharges-->
+			<street_sense_item id="SetCharges" display_name="Set Charges"
+				description="Once charges are set on every target, they'll all go off at once."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="0" icon_name="SK_Bomb" color_data="RecruitMedicalScientists" icon_scale="0.4"
+				must_be_at_building_tag="SecForceStation" seed_x_at_once_in_general="120" blocked_for_actors_without_clearance="0" 
+				blocked_by_player_building_key_modifier="ChargesAreSet" sets_player_building_key_modifier="ChargesAreSet"
+				has_no_custom_code="true" resource_change_1="PrismaticTungsten" resource_change_1_amount="-25"/>
+		</available_outcome>
+
+		<available_outcome id="Stop" display_name="That's A Terrible Idea" on_complete="ProjectComplete"
+			description="You explain about the risk of reprisals, and how a symbolic gesture won't create real systemic change."
+			strategy_tip="They barely listen."
+			related_resource_1="" related_resource_2=""
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2=""
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1">
+			<city_flag_change flag_type="Ch2_LostKidsArePoisoning" value="1"/>
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_LostKids_StopThePoisoning" display_name="Stop The Poisoning" is_minor_project="true"
+		description="LostGen have lost their minds. They broke into your bunker storage and stole quite a bit of your heavy metals.
+You've been keeping an eye on their movements, and it looks like they plan on poisoning the food at the Hudson Donuts (a notorious fronts for SecForce).
+Thousands of people will become ill, and many hundreds will die, if you don't stop the kids, Many of the victims will be innocent members of the lower classes."
+		strategy_tip="The kids aren't going to listen to reason -- the mob mentality has fully set in."
+		icon_name="WEmblem297" cohort="LostGen" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="As extreme as it sounds, you're going to need to burn down the donut shops -- both to protect the people, and appease these crazy kids."
+			strategy_tip=""
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2=""
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1">
+			<!--SetCharges-->
+			<street_sense_item id="Arson" display_name="Arson"
+				description=""
+				should_always_show_expanded_action_details="true" on_arrive="Arson"
+				max_times_can_do="0" icon_name="FlatSkillC178" color_data="RecruitMedicalScientists" icon_scale="0.4"
+				must_be_at_building_tag="HudsonDonuts" seed_x_at_once_in_general="120" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="false" resource_change_1="PrismaticTungsten" resource_change_1_amount="-2"
+				manually_trigger_npc_manager_at_point="Man_BurnHudson"/>
+		</available_outcome>
+
+	</project>
+		
+	<!--Machine Cult Chain
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_SpreadTheWord" display_name="Spread The Word" is_minor_project="true"
+		description="Send your most fearsome warrior to meet with other military NCOs and affirm your deal."
+		strategy_tip=""
+		icon_name="WEmblem133" cohort="MilitaryNoncoms" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""			
+			if_intended_outcome_unlock_instant_1="" if_intended_outcome_unlock_instant_2="" if_intended_outcome_unlock_inspiration=""
+			if_intended_outcome_investigation_to_start_1="Ch2MeetWithNCOs"
+			resource_added_1="Determination" resource_added_amount_1="20" resource_added_2="" resource_added_amount_2="" next_project_to_start_1=""
+			research_domain_inspiration_type_1="MartialExpansion" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="SmallArmsResearch" research_domain_inspiration_amount_2="1">
+		</available_outcome>
+
+	</project>
+	
+	<!--Military Dominance Chain
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_FoundACybercraticHaven" display_name="Found A Cybercratic Haven" is_minor_project="true"
+		description=""
+		strategy_tip=""
+		icon_name="WEmblem201" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""			
+			if_intended_outcome_unlock_instant_1="CybercraticFoothold" if_intended_outcome_unlock_instant_2="WorkerUnits" if_intended_outcome_unlock_inspiration="ReactionToProblem"
+			resource_added_1="Determination" resource_added_amount_1="30" resource_added_2="Wisdom" resource_added_amount_2="10" next_project_to_start_1="Ch2_MIN_SecureACybercraticHaven"
+			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1">
+			<suggested_job job="CyberocracyHub" job_number="6" />
+			<suggested_job job="WorkerSledgeFactory" job_number="1" />
+			<suggested_job job="WorkerPMCImpostorFactory" job_number="1" />
+			<suggested_job job="WorkerPredatorFactory" job_number="1" />
+			<suggested_job job="RoboticMotivatorFactory" job_number="2" />
+		</available_outcome>
+		
+	</project>
+	
+	<project id="Ch2_MIN_SecureACybercraticHaven" display_name="Secure Your Cybercratic Haven" is_minor_project="true"
+		description="PMC Impostors removed dissidents without killing them, but take much longer to do so. Predators murder them quickly. Sledges sway fence-sitting citizens to your society."
+		strategy_tip=""
+		icon_name="WEmblem201" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Fully convert six map cells to your society, with all dissidents removed or killed."
+			strategy_tip="Population numbers will fluctuate until you finish. These are births, natural deaths, immigration, and people moving out of the affected area."			
+			resource_added_1="Compassion" resource_added_amount_1="10" resource_added_2="Wisdom" resource_added_amount_2="10"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1">
+			<suggested_job job="CyberocracyHub" job_number="6" />
+			<suggested_job job="WorkerSledgeFactory" job_number="1" />
+			<suggested_job job="WorkerPMCImpostorFactory" job_number="1" />
+			<suggested_job job="WorkerPredatorFactory" job_number="1" />
+			<suggested_job job="RoboticMotivatorFactory" job_number="2" />		
+		</available_outcome>
+
+	</project>
+
+	<!--Side Bits
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_GadoliniumMesosilicate" display_name="Gadolinium Mesosilicate" is_minor_project="true"
+		description="The key ingredient in liquid-metal units and organometallic human-approximating synthetic androids."
+		strategy_tip=""
+		icon_name="FlatSkill_53" cohort="LostGen" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			resource_added_1="Determination" resource_added_amount_1="20" resource_added_2="Creativity" resource_added_amount_2="20"
+			on_outcome_unlock_instant_1="Shapeshifter" on_outcome_unlock_inspiration="ContemplationResult"
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1">
+			<!--StudyOfMesoporousNanoparticles-->
+			<street_sense_item id="StudyOfMesoporousNanoparticles" display_name="Study Of Mesoporous Nanoparticles"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="AN_Link" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="ScientificResearch" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="3"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorEngineeringSkill" direct_added_skill_1_amount="20" direct_added_skill_type2="UnitCognition" direct_added_skill_2_amount="10"
+				equipment_collection_that_gets_added_skills="CPUs"
+				alter_city_statistic_1="GadoliniumMesosilicate_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="32"/>
+			<!--ExaminationOfLiquidGallium-->
+			<street_sense_item id="ExaminationOfLiquidGallium" display_name="Examination Of Liquid Gallium"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="CleanSimple_SciFiEmblem09" color_data="PrismaticTungsten" icon_scale="0.4"
+				must_be_at_building_tag="Industrial" seed_x_at_once_in_general="1" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorEngineeringSkill" direct_added_skill_1_amount="20" direct_added_skill_type2="" direct_added_skill_2_amount=""
+				actor_collection_that_gets_added_skills="SouldroidsAndTechnicians"
+				alter_city_statistic_1="GadoliniumMesosilicate_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="32"/>
+			<!--GadoliniumExtractionFromBastnasite-->
+			<street_sense_item id="GadoliniumExtractionFromBastnasite" display_name="Gadolinium Extraction From Bastnäsite"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="BT_Mining" color_data="PollinatorBeeQueen" icon_scale="0.4"
+				must_be_at_building_tag="AnySkyscraper" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorEngineeringSkill" direct_added_skill_1_amount="10" direct_added_skill_type2="UnitHackingSkill" direct_added_skill_2_amount="30"
+				actor_collection_that_gets_added_skills="SouldroidsAndTechnicians"
+				alter_city_statistic_1="GadoliniumMesosilicate_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="32"/>
+		</available_outcome>
+		
+	</project>
+
+	<project id="Ch2_MIN_VitaminWaterForNomads" display_name="Vitamin Water For Nomads" is_minor_project="true"
+		description="The first step is to get your hands on some Purple Murnong."
+		strategy_tip="You may need to advance a turn before you see it being shipped on the Scavenging Sites lens."
+		icon_name="BT_MineralWater" cohort="NomadFamilies" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""			
+			resource_added_1="Compassion" resource_added_amount_1="16" resource_added_2="Wisdom" resource_added_amount_2="8"
+			related_resource_1="PurpleMurnong" related_resource_2="VitaminWater" deal_to_start_1="Ch1_NomadFamilies_VitaminWater"
+			if_intended_outcome_unlock_instant_1="WhatOnceWasYellow" if_intended_outcome_unlock_inspiration="ReactionToProblem"
+			if_intended_outcome_crossover_instant_1="PurpleMurnong" upgrade_int_granted_1="Cultivator"
+			research_domain_inspiration_type_1="HousingExpansion" research_domain_inspiration_amount_1="1">
+			<math_int id="Goal" int_min="8900" />
+			<suggested_job job="MurnongPatch" job_number="2" />
+			<suggested_job job="VitaminInfuser" job_number="2" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_UmbilicalCollection" display_name="Umbilical Collection" is_minor_project="true"
+		description="Wastelanders have a relatively small population, and intense genetic damage. In order to have healthy offspring, they must use outdated Uterine Replicators as well as genetic material from outside sources."
+		strategy_tip="Their genome is too damaged for them to combine their own gametes even in vitro, so they require stem cells from unrelated donors, and then practice a combination of gene editing and artificial isogamy to create viable embryos."
+		icon_name="Pw_Ornament8" cohort="YinshiWellness" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="These would normally be shipped for processing by Yinshi into 'placental cosmetics' for the ultra-wealthy. Intercepting them at the source is easier than trying to track them further. Use the investigation lens and infiltrate a hospital."
+			strategy_tip="The wastelanders used to collect umbilicals when they were considered biohazard waste. But about 80 years ago, Yinshi started their new cosmetic line, and that has led to the current population crisis among the wastelanders."
+			if_intended_outcome_investigation_to_start_1="Ch2YinshiUmbilicals"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1"
+			related_resource_1="HumanUmbilicalCords" related_resource_2="" countdown_on_complete="YinshiCosmeticRevenge"
+			resource_added_1="Compassion" resource_added_amount_1="20" next_project_to_start_1="">
+		</available_outcome>
+	</project>
+	
+	<project id="Ch2_MIN_UterineReplicators" display_name="Uterine Replicators" is_minor_project="true"
+		description="The wastelanders are having trouble maintaining the equipment that has kept them independent for generations."
+		strategy_tip="They are hoping you can compare their schematics with the newer models in the hospitals."
+		icon_name="FlatSkull_16" cohort="DyadInstruments" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			if_intended_outcome_investigation_to_start_1="Ch2UterineReplicators"
+			research_domain_inspiration_type_1="HousingExpansion" research_domain_inspiration_amount_1="1" upgrade_int_granted_1="TechnicianEngineeringMastery"
+			related_resource_1="" related_resource_2=""  countdown_on_complete=""
+			resource_added_1="Determination" resource_added_amount_1="20" next_project_to_start_1="">
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_WastelanderGenomeStudy" display_name="Wastelander Genome Study" is_minor_project="true"
+		description="The amount of genetic damage that has accumulated is intense. They only have one morphology of gamete remaining to them."
+		strategy_tip="Equally challenging, without the radiation shielding of the uterine replicators, embryos undergo fatal teratogenic damage in utero."
+		icon_name="SK_GeneticEngineering" cohort="Wastelanders" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			 related_resource_1="" related_resource_2="" upgrade_int_granted_1="LabOperator" upgrade_int_granted_2="SurgicalSuite"
+			resource_added_1="Wisdom" resource_added_amount_1="4" resource_added_2="Determination" resource_added_amount_2="4" next_project_to_start_1="Ch2_WastelanderGenomeRepair"
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1">
+			<math_int id="MedicalResearchGoal" int_min="37000" />
+			<math_int id="ForensicGeneticsGoal" int_min="38000" />
+			<suggested_job job="MedicalPractice" job_number="3" />
+			<suggested_job job="ForensicGeneticsLab" job_number="3" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_WastelanderGenomeRepair" display_name="Wastelander Genome Repair" is_minor_project="true"
+		description="Your science teams can restore reproductive function. This is very challenging, because it will involve isogamy, which has only naturally existed in unicellular eukaryotes for the last billion years."
+		strategy_tip="To pull that off is going to require molecular geneticists to design the gene therapy, epidemiologists to create the viral vector, and physicians to provide medical stabilization during the process."
+		icon_name="SK_GeneMutation" cohort="Wastelanders" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			related_resource_1="" related_resource_2="" upgrade_int_granted_1="LabOperator" upgrade_int_granted_2="SurgicalSuite" upgrade_int_granted_3="Steward"
+			resource_added_1="Wisdom" resource_added_amount_1="4" resource_added_2="Determination" resource_added_amount_2="4" next_project_to_start_1="Ch2_HomoObscurus"
+			on_outcome_unlock_instant_1="UnshackledGenome" on_outcome_unlock_inspiration="ResearchByScientists"
+			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1">
+			<math_int id="EpidemiologyGoal" int_min="11000" />
+			<math_int id="MolecularGeneticsGoal" int_min="41000" />
+			<math_int id="MedicalCareGoal" int_min="23000" />
+			<suggested_job job="EpidemiologyLab" job_number="1" />
+			<suggested_job job="MolecularGeneticsLab" job_number="4" />
+			<suggested_job job="MedicalPractice" job_number="2" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_HomoObscurus" display_name="Homo Obscurus" is_minor_project="true"
+		description="They have chosen the name 'Homo Obscurus' for themselves, though decline to explain why."
+		strategy_tip="Building them a guest house for visits would be a nice gesture."
+		icon_name="WEmblem186" cohort="Wastelanders" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			 related_resource_1="" related_resource_2="" upgrade_int_granted_1="" upgrade_int_granted_2="" upgrade_int_granted_3=""
+			resource_added_1="Creativity" resource_added_amount_1="30" resource_added_2="" resource_added_amount_2="" crossover1="HomoObscurus"
+			research_domain_inspiration_type_1="ItemDevelopment" research_domain_inspiration_amount_1="1">
+			<suggested_job job="HomoObscurusGuestHouse" job_number="1" />
+		</available_outcome>
+
+	</project>
+	
+	<project id="Ch2_MIN_OrganometallicForm" display_name="Organometallic Form" is_minor_project="true"
+		description="You want to get past the border ruins, and the Wastelanders will not help. This is fine. They've already given you all the clues you need."
+		strategy_tip="You need bodies that are not metallic in the classic sense."
+		icon_name="AN_AndroidLiquidMetal" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			 lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			resource_added_1="Determination" resource_added_amount_1="20" resource_added_2="Creativity" resource_added_amount_2="20"
+			on_outcome_unlock_instant_1="ExMachina" on_outcome_unlock_instant_2="HumanStudy" on_outcome_unlock_inspiration="ContemplationResult"
+			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="ProcurementEfficacy" research_domain_inspiration_amount_2="1"
+			on_complete_other_key_message="MimicQuality_Early">
+			<!--StudyOfMolecularProbes-->
+			<street_sense_item id="StudyOfMolecularProbes" display_name="Study Of Molecular Probes"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="BT_SoundWave19" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="ScientificResearch" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="3"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorEngineeringSkill" direct_added_skill_1_amount="20" direct_added_skill_type2="UnitCognition" direct_added_skill_2_amount="10"
+				equipment_collection_that_gets_added_skills="CPUs"
+				alter_city_statistic_1="MimicForm_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+			<!--ExaminePolymerCatalysts-->
+			<street_sense_item id="ExaminePolymerCatalysts" display_name="Examine Polymer Catalysts"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="BT_Pollution" color_data="PrismaticTungsten" icon_scale="0.4"
+				must_be_at_building_tag="Industrial" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorFearAttackPower" direct_added_skill_1_amount="10" direct_added_skill_type2="UnitIntimidation" direct_added_skill_2_amount="10"
+				equipment_collection_that_gets_added_skills="Handguns"
+				alter_city_statistic_1="MimicForm_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+			<!--StudyOfHalogenation-->
+			<street_sense_item id="StudyOfHalogenation" display_name="Study Of Halogenation"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="BT_SoundWave8" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="HighTechFactoryGeneral" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="UnitIntimidation" direct_added_skill_1_amount="5" direct_added_skill_type2="ActorArmorPiercing" direct_added_skill_2_amount="20"
+				actor_collection_that_gets_added_skills="Infildroids"
+				alter_city_statistic_1="MimicForm_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+			<!--ExaminePharmaceuticalOrganotin-->
+			<street_sense_item id="ExaminePharmaceuticalOrganotin" display_name="Examine Pharmaceutical Organotin"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="BT_Equalizer1" color_data="CombatUnitRed" icon_scale="0.4"
+				must_be_at_building_tag="Hospital" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorEngineeringSkill" direct_added_skill_1_amount="40" direct_added_skill_type2="UnitCognition" direct_added_skill_2_amount="20"
+				actor_collection_that_gets_added_skills="SouldroidsAndTechnicians"
+				alter_city_statistic_1="MimicForm_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+			<!--RemedialStudyOfGrignardReagents-->
+			<street_sense_item id="RemedialStudyOfGrignardReagents" display_name="Remedial Study Of Grignard Reagents"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="AN_AndroidLiquidMetal" color_data="CasinoShop" icon_scale="0.4"
+				must_be_at_building_tag="Clinic" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorFearAttackPower" direct_added_skill_1_amount="20" direct_added_skill_type2="UnitIntimidation" direct_added_skill_2_amount="20"
+				equipment_collection_that_gets_added_skills="Shotguns"
+				alter_city_statistic_1="MimicForm_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+		</available_outcome>
+		
+	</project>
+
+	<project id="Ch2_ProtectionRequired" display_name="Protection Required" is_minor_project="true"
+		description="Criminal syndicates, gangs, and even federated corporations may be inclined to harass your shell company -- and there's nothing your regular units can do about it, without blowing your cover."
+		strategy_tip="Senior Technician can't do this alone. You should design at least a pair of new units, and they should not have any apparent connection to your main identity."
+		icon_name="BT_Shell2" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			resource_added_1="Determination" resource_added_amount_1="20" resource_added_2="Creativity" resource_added_amount_2="20"
+			on_outcome_unlock_instant_1="ShellProtector" on_outcome_unlock_instant_2="ShellCompanyMech" on_outcome_unlock_inspiration="ContemplationResult"
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1">
+			<!--GuardMechs-->
+			<street_sense_item id="GuardMechs" display_name="Guard Mechs"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="1" icon_name="WEmblem199" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="Military" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="3"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="500"
+				upgrade_int_1="MaxMechCapacity"
+				alter_city_statistic_1="ShellProtection_DesignPoints" alter_city_statistic_1_amount="32" city_statistic_1_blocks_if_above="32"/>
+			<!--IntimidatingSecurity-->
+			<street_sense_item id="IntimidatingSecurity" display_name="Intimidating Security"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="5" icon_name="FlatSkillC76" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="HighTechFactoryGeneral" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="UnitIntimidation" direct_added_skill_1_amount="30" direct_added_skill_type2="UnitCognition" direct_added_skill_2_amount="30"
+				actor_collection_that_gets_added_skills="ShellCompanyOperatives"
+				alter_city_statistic_1="ShellProtection_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+			<!--StrengthTraining-->
+			<street_sense_item id="StrengthTraining" display_name="Strength Training"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="5" icon_name="SR_Kettlebell3" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="Hospital" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="600"
+				direct_added_skill_type1="ActorPower" direct_added_skill_1_amount="10" direct_added_skill_type2="ActorHP" direct_added_skill_2_amount="40"
+				actor_collection_that_gets_added_skills="ShellCompanyOperatives"
+				alter_city_statistic_1="ShellProtection_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+			<!--IntimidatingMechs-->
+			<street_sense_item id="IntimidatingMechs" display_name="Intimidating Mechs"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="5" icon_name="WEmblem038" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="Clinic" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="2"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="6000"
+				direct_added_skill_type1="UnitIntimidation" direct_added_skill_1_amount="60" direct_added_skill_type2="ActorEngineeringSkill" direct_added_skill_2_amount="5"
+				actor_collection_that_gets_added_skills="Portmechs"
+				alter_city_statistic_1="ShellProtection_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_DromaeosauridBreeding" display_name="Dromaeosaurid Breeding" is_minor_project="true"
+		description="Your zoologists and veterinarians have an idea for a breeding program for creating more War Raptors, despite the fact that all your extant specimens are female."
+		strategy_tip="Unfortunately it will still take them years to reach adulthood, but in the meantime you'll have all the baby raptors you could want."
+		icon_name="FlatSkillC185" cohort="ExperimentalMonsters" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="It would be a very good idea to have two veterinary practices."
+			strategy_tip=""
+			related_resource_1="" related_resource_2="" upgrade_int_granted_1="LabOperator" upgrade_int_granted_2="SurgicalSuite" upgrade_int_granted_3="NatureMinder"
+			resource_added_1="Creativity" resource_added_amount_1="4" resource_added_2="Determination" resource_added_amount_2="4"
+			on_outcome_unlock_instant_1="MonitorThoseBabies" on_outcome_unlock_inspiration="ResearchByScientists"
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="1">
+			<math_int id="ZoologyGoal" int_min="11000" />
+			<math_int id="VeterinaryResearchGoal" int_min="21000" />
+			<math_int id="VeterinaryCareGoal" int_min="23000" />
+			<suggested_job job="ZoologyLab" job_number="1" />
+			<suggested_job job="VeterinaryPractice" job_number="2" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_DromaeosauridMaturation" display_name="Dromaeosaurid Maturation" is_minor_project="true"
+		description="Your forensic geneticists have an idea for inducing rapid maturation into your War Raptor population."
+		strategy_tip="This will give you a quick supply of adults, but their lifespan will be greatly shortened."
+		icon_name="FlatSkillC96" cohort="ExperimentalMonsters" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			 related_resource_1="" related_resource_2="" upgrade_int_granted_1="NatureMinder" upgrade_int_granted_2="" upgrade_int_granted_3=""
+			resource_added_1="Apathy" resource_added_amount_1="10" resource_added_2="Cruelty" resource_added_amount_2="5"
+			on_outcome_unlock_instant_1="RapidRaptorAging" on_outcome_unlock_inspiration="ResearchByScientists"
+			research_domain_inspiration_type_1="MartialExpansion" research_domain_inspiration_amount_1="1">
+			<math_int id="ForensicGeneticsGoal" int_min="22000" />
+			<math_int id="VeterinaryCareGoal" int_min="19000" />
+			<suggested_job job="ForensicGeneticsLab" job_number="2" />
+			<suggested_job job="VeterinaryPractice" job_number="2" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MoreThanAnIllusion" display_name="More Than An Illusion" is_minor_project="true"
+		description="Your bionics engineers have an idea for controlling War Raptors via implant. You'd be able to control them and recall them on demand."
+		 strategy_tip="The fact that you have such a large and growing population of raptors means that experimentation can afford to lose some specimens to hurry the process along."
+		icon_name="FlatSkill_43" cohort="ExperimentalMonsters" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			 related_resource_1="" related_resource_2="" upgrade_int_granted_1="NatureMinder" upgrade_int_granted_2="NatureMinder" upgrade_int_granted_3=""
+			resource_added_1="Apathy" resource_added_amount_1="20" resource_added_2="Cruelty" resource_added_amount_2="10"
+			on_outcome_unlock_instant_1="RaptorDeployment" on_outcome_unlock_inspiration="ResearchByScientists"
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1">
+			<math_int id="BionicsGoal" int_min="22000" />
+			<math_int id="VeterinaryCareGoal" int_min="19000" />
+			<suggested_job job="BionicEngineeringStudio" job_number="2" />
+			<suggested_job job="VeterinaryPractice" job_number="2" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_ReleaseTheHorde" display_name="Release The Horde" is_minor_project="true"
+		description="Release at least 4000 war raptors successfully into the city."
+		 strategy_tip="That ought to keep the humans busy."
+		icon_name="FlatSkillC14" cohort="WorkingAnimals" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			 related_resource_1="" related_resource_2="" upgrade_int_granted_1="" upgrade_int_granted_2="" upgrade_int_granted_3=""
+			resource_added_1="Apathy" resource_added_amount_1="100" resource_added_2="Cruelty" resource_added_amount_2="100"
+			on_outcome_unlock_instant_1="" on_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1">
+			<math_int id="Goal" int_min="4000" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_SaberBees" display_name="Saber Bees" is_minor_project="true"
+		description="Your 'weaponized bees' are unable to cut through armor. Your 5cm Spiders have plasma cutters."
+		strategy_tip="What if you could combine those?"
+		icon_name="SW_Bee" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Once you have a shell company, you can do some Hiring under that category in StreetSense."
+			strategy_tip=""
+			related_resource_1="" related_resource_2="" upgrade_int_granted_1="NatureMinder" upgrade_int_granted_2="" upgrade_int_granted_3=""
+			resource_added_1="Creativity" resource_added_amount_1="20" resource_added_2="Cruelty" resource_added_amount_2="20"
+			on_outcome_unlock_instant_1="LaserBug" on_outcome_unlock_inspiration="ResearchByScientists"
+			research_domain_inspiration_type_1="ItemDevelopment" research_domain_inspiration_amount_1="1">
+			<math_int id="BionicsGoal" int_min="22000" />
+			<math_int id="ZoologyGoal" int_min="21000" />
+			<math_int id="MolecularGeneticsGoal" int_min="11000" />
+			<suggested_job job="ZoologyLab" job_number="2" />
+			<suggested_job job="BionicEngineeringStudio" job_number="2" />
+			<suggested_job job="MolecularGeneticsLab" job_number="1" />
+		</available_outcome>
+
+	</project>
+	
+	<project id="Ch2_MIN_ExciplexLasers" display_name="Exciplex Lasers" is_minor_project="true"
+		description="Krypton, Argon, and other noble gases exist in the air around us in small quantities."
+		strategy_tip="To extract them in useful quantities, you'll need to develop fractional distillation."
+		icon_name="SI_Laser" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			resource_added_1="Creativity" resource_added_amount_1="20" resource_added_2="" resource_added_amount_2="" next_project_to_start_1="Ch2_MIN_BuildUpliftChamber"
+			on_outcome_unlock_instant_1="Liquefaction" on_outcome_unlock_instant_2="TheExalterDesign" on_outcome_unlock_inspiration="ContemplationResult"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1">
+			<!--SpiderStudy-->
+			<street_sense_item id="SpiderStudy" display_name="Spider Study"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="SomethingHealth" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="AlmostAny" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_skill_type="UnitScavengingSkill" required_skill_amount="300"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="500"
+				upgrade_float_1="BetterRepairSpiders"
+				alter_city_statistic_1="ExiplexLasers_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+			<!--WaterRunoffExamination-->
+			<street_sense_item id="WaterRunoffExamination" display_name="Water Runoff Examination"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="SR_Reservoir1" color_data="PrismaticTungsten" icon_scale="0.4"
+				must_be_at_building_tag="AlmostAny" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_skill_type="UnitScavengingSkill" required_skill_amount="300"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="500"
+				upgrade_float_1="BetterWells"
+				alter_city_statistic_1="ExiplexLasers_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+			<!--Mycofiltration-->
+			<street_sense_item id="Mycofiltration" display_name="Mycofiltration"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="FE_Water1" color_data="PrismaticTungsten" icon_scale="0.4"
+				must_be_at_building_tag="AlmostAny" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_skill_type="UnitScavengingSkill" required_skill_amount="300"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="500"
+				upgrade_float_1="BetterWaterFilters"
+				alter_city_statistic_1="ExiplexLasers_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+			<!--SurfaceModeling-->
+			<street_sense_item id="SurfaceModeling" display_name="Surface Modeling"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="FE_Turbine" color_data="PollinatorBeeQueen" icon_scale="0.4"
+				must_be_at_building_tag="AlmostAny" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_skill_type="UnitScavengingSkill" required_skill_amount="300"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="500"
+				upgrade_float_1="BetterWindTurbines"
+				alter_city_statistic_1="ExiplexLasers_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+			<!--FurtherMiniaturization-->
+			<street_sense_item id="FurtherMiniaturization" display_name="Further Miniaturization"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="SW_Nanotechnology5" color_data="RecruitMedicalScientists" icon_scale="0.4"
+				must_be_at_building_tag="AlmostAny" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_skill_type="UnitScavengingSkill" required_skill_amount="300"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="50"
+				upgrade_float_1="BetterMicrobuilderMiniFabs"
+				alter_city_statistic_1="ExiplexLasers_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+			<!--RouteOptimization-->
+			<street_sense_item id="RouteOptimization" display_name="Route Optimization"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="SW_AbstractShape5" color_data="Murder" icon_scale="0.4"
+				must_be_at_building_tag="AlmostAny" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_skill_type="UnitScavengingSkill" required_skill_amount="300"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="500"
+				upgrade_float_1="BetterSlurrySpiders"
+				alter_city_statistic_1="ExiplexLasers_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+			<!--ImprovedCooling-->
+			<street_sense_item id="ImprovedCooling" display_name="Improved Cooling"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="HO_HouseSkyscraper17" color_data="CryogenicsWork" icon_scale="0.4"
+				must_be_at_building_tag="AlmostAny" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_skill_type="UnitScavengingSkill" required_skill_amount="300"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="500"
+				upgrade_float_1="BetterMainframes"
+				alter_city_statistic_1="ExiplexLasers_DesignPoints" alter_city_statistic_1_amount="8" city_statistic_1_blocks_if_above="56"/>
+		</available_outcome>
+
+	</project>
+	
+	<project id="Ch2_MIN_BuildUpliftChamber" display_name="Build Uplift Chamber" is_minor_project="true"
+		description=""
+		strategy_tip=""
+		icon_name="CleanSimple_SciFi025" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1="Ch2_MIN_UpliftBreakIn"
+			description=""
+			strategy_tip=""
+			upgrade_int_granted_1="LabOperator" upgrade_int_granted_2="SurgicalSuite" upgrade_int_granted_3="NetworkAttendant"
+			related_resource_1="LiquidGallium" related_resource_2="Neodymium" related_resource_3="LiquidAir" related_resource_4="KryptonGas" related_resource_5=""
+			resource_added_1="Creativity" resource_added_amount_1="50" resource_added_2="" resource_added_amount_2=""
+			on_outcome_unlock_instant_1="UnexpectedGuests" on_outcome_unlock_inspiration="WorldExperience"
+			research_domain_inspiration_type_1="HousingExpansion" research_domain_inspiration_amount_1="1">
+			<suggested_job job="HampsonLindeCycler" job_number="6" />
+			<suggested_job job="FractionalDistillery" job_number="6" />
+			<suggested_job job="UpliftChamber" job_number="1" />
+			<suggested_job job="LOXBunker" job_number="1" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_UpliftBreakIn" display_name="The Break-In" is_minor_project="true"
+		description="All former plans are on hold. Five raccoons broke into the facility and... uplifted themselves. WTF."
+		strategy_tip="You need to record their behaviors and vocalizations to learn how to speak to them."
+		icon_name="BT_Raccoon" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1="Ch2_MIN_DecryptRaccoonSpeech"
+			description=""
+			strategy_tip=""
+			upgrade_int_granted_1="QuantumProcessor" upgrade_int_granted_2="QuantumProcessor" upgrade_int_granted_3="QuantumProcessor"
+			related_resource_1="UpliftedRaccoons" related_resource_2="" related_resource_3="" related_resource_4="" related_resource_5=""
+			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2=""
+			on_outcome_unlock_instant_1="" on_outcome_unlock_inspiration=""
+			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1">
+			<math_int id="ZoologyGoal" int_min="41000" />
+			<math_int id="VeterinaryResearchGoal" int_min="41000" />
+			<suggested_job job="ZoologyLab" job_number="4" />
+			<suggested_job job="VeterinaryPractice" job_number="4" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_DecryptRaccoonSpeech" display_name="Decrypt Raccoon Speech" is_minor_project="true"
+		description="Seriously. WTF."
+		strategy_tip=""
+		icon_name="BT_Raccoon" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			upgrade_int_granted_1="SurgicalSuite" upgrade_int_granted_2="SurgicalSuite" upgrade_int_granted_3="SurgicalSuite"
+			related_resource_1="UpliftedRaccoonSpeechData" related_resource_2="UpliftedRaccoons" related_resource_3="ComputeTime"
+			resource_added_1="Determination" resource_added_amount_1="4" next_project_to_start_1=""
+			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1">
+			<suggested_job job="Codebreaker" job_number="5" />
+			<suggested_job job="ComputroniumRefinery" job_number="3" />
+			<suggested_job job="TowerMainframe" job_number="4" />
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_MIN_RaccoonPopulation" display_name="Raccoon Population" is_minor_project="true"
+		description="Have the scientists take care of this. They don't need your help. Catch regular raccoons, run them through the uplift process, and release them."
+		strategy_tip="Once there is a stable population, the chance for making meaningful contact goes up a lot."
+		icon_name="BT_Raccoon" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			upgrade_int_granted_1="" upgrade_int_granted_2="" upgrade_int_granted_3=""
+			related_resource_1="UpliftedRaccoons" related_resource_2="" related_resource_3=""
+			resource_added_1="Compassion" resource_added_amount_1="50" next_project_to_start_1=""
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1">
+			<suggested_job job="ZoologyLab" job_number="6" />
+			<suggested_job job="VeterinaryPractice" job_number="6" />
+		</available_outcome>
+	</project>
+
+	<!--Exploiting Fed Corp Chain
+		**************************************************************************-->
+	
+	<project id="Ch2_MIN_StealCorporateRecords" display_name="Steal Corporate Records" is_minor_project="true"
+		description="Vorsiber Atomic has subdivided itself int 18 smaller corporations, and it has delegated a lot of its authority to each of them in various ways.
+Vorsiber maintains control partly by pitting these 'federated corporations' against one another, having them compete in a veneer of capitalism."
+		strategy_tip="There may be an opportunity here because of this intense competition, which often involves physical violence between federated corporations.
+To see if that's true, you'll need to steal and analyze quite a bit of data in order to see if there are any targets for you to exploit."
+		icon_name="WEmblem185" cohort="ArkorNexus" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Use a hacker unit to get what you need. You will not need to directly do any hacking yourself, but you should be prepared to physically defend your hacker."
+			strategy_tip=""
+			if_intended_outcome_investigation_to_start_1="Ch2StealCorporateRecords"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1"
+			related_resource_1="EncryptedFederatedCorporationRecords" related_resource_2=""  countdown_on_complete=""
+			resource_added_1="Determination" resource_added_amount_1="20" next_project_to_start_1="Ch2_MIN_DecryptCorporateRecords">
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_MIN_DecryptCorporateRecords" display_name="Decrypt Corporate Records" is_minor_project="true"
+		description="You have a bunch of records about all of the federated corporations. Now to put your massive processing power to use and see what's interesting in there."
+		strategy_tip="Oh, but first you need to decrypt it."
+		icon_name="CS_HardDrive" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1"
+			related_resource_1="EncryptedFederatedCorporationRecords" related_resource_2="DecryptedFederatedCorporationRecords" related_resource_3="ComputeTime"
+			resource_added_1="Determination" resource_added_amount_1="4" next_project_to_start_1=""
+			on_complete_other_key_message="CorporateRecordsResults">
+			<suggested_job job="Codebreaker" job_number="2" />
+			<suggested_job job="ComputroniumRefinery" job_number="3" />
+			<suggested_job job="TowerMainframe" job_number="4" />
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_MIN_DesignHumanCompatibleNeuroweave" display_name="Design Anthroneuroweave" is_minor_project="true"
+		description="It's the most obvious intersection between what you know and what they're likely to want as part of their supply chain.
+Neuroweave was invented by humans for androids, rather than in a human-compatible form. It's probably not very hard to make, and would be useful. But it doesn't seem like anyone has bothered."
+		strategy_tip="You are the world's greatest engineer, but you lack medical expertise. It is simpler to hire experts than to try to speed-run multiple medical degrees."
+		icon_name="FlatSkillC90" cohort="YinshiWellness" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1=""
+			description="If you have not established a shell company, now would be a good time. If you have a shell company but are short on funds, consider selling excess resources at one of the shops."
+			strategy_tip="Once you have a shell company, you can do some Hiring under that category in StreetSense."
+			upgrade_int_granted_1="12cmCrabs" upgrade_int_granted_2="18cmSpiders" upgrade_int_granted_3="Neuroweaver"
+			resource_added_1="Determination" resource_added_amount_1="20" resource_added_2="Creativity" resource_added_amount_2="20"
+			on_outcome_unlock_instant_1="HumanCompatibleNeuroweave" on_outcome_unlock_instant_2="" on_outcome_unlock_inspiration="ResearchByScientists"
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="1">
+			<math_int id="MedicalResearchGoal" int_min="9000" />
+			<math_int id="NeurologyGoal" int_min="16000" />
+			<math_int id="BionicsGoal" int_min="13000" />
+			<suggested_job job="MedicalPractice" job_number="1" />
+			<suggested_job job="NeuroscienceLab" job_number="1" />
+			<suggested_job job="BionicEngineeringStudio" job_number="1" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_RebelAnthroneuroweave" display_name="Rebel Anthroneuroweave" is_minor_project="true"
+		description="What the rebels do with it is up to them. You're just the supplier."
+		strategy_tip=""
+		icon_name="SI_Chip2" cohort="VoxPopulei" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			resource_added_1="Apathy" resource_added_amount_1="16" resource_added_2="Determination" resource_added_amount_2="8"
+			related_resource_1="Anthroneuroweave" related_resource_2="" deal_to_start_1="Ch2_RebelAnthroneuroweave"
+			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1">
+			<math_int id="Goal" int_min="3000" />
+			<suggested_job job="AnthroneuroweaveFactory" job_number="3" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_DesignBrainPal" display_name="Design BrainPal" is_minor_project="true"
+		description="It's the stupidest name you've ever heard, but the syndicate overseers are adamant that this is what will sell.
+Well -- who are you to question professional criminal executives. Time to design this thing."
+		strategy_tip="After your scientists do their portion of the work, you'll add a backdoor to siphon some Neural Expansion and Compute Time off those wealthy customers."
+		icon_name="SI_Brain1" cohort="ExoticImporters" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1="Ch2_MIN_ShipBrainPals"
+			description=""
+			strategy_tip=""
+			upgrade_int_granted_1="Assembler" upgrade_int_granted_2="Neuroweaver" upgrade_int_granted_3="Neuroweaver"
+			resource_added_1="Apathy" resource_added_amount_1="16" resource_added_2="Creativity" resource_added_amount_2="8"
+			on_outcome_unlock_instant_1="HumanBrainAugmentation" on_outcome_unlock_instant_2="" on_outcome_unlock_inspiration="ResearchByScientists"
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="1"
+			related_resource_1="Anthroneuroweave" >
+			<math_int id="MedicalResearchGoal" int_min="9000" />
+			<math_int id="NeurologyGoal" int_min="26000" />
+			<math_int id="BionicsGoal" int_min="33000" />
+			<suggested_job job="MedicalPractice" job_number="1" />
+			<suggested_job job="NeuroscienceLab" job_number="2" />
+			<suggested_job job="BionicEngineeringStudio" job_number="3" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_ShipBrainPals" display_name="Ship BrainPals" is_minor_project="true"
+		description="It's still a stupid name, but you're increasingly confident it will sell.
+The syndicate tells you they have a long list of orders all lined up. They can sell them and install them as fast as you can manufacture them."
+		strategy_tip="Estimated market saturation for this product is 10% of the Wealthy Consumer demographic. After that point, the syndicate will end the deal."
+		icon_name="SI_Brain1" cohort="ExoticImporters" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1=""
+			description=""
+			strategy_tip=""
+			upgrade_int_granted_1="5cmSpiders" upgrade_int_granted_2="HeatExchanger" upgrade_float_granted_1="BetterMicrobuilderMiniFabs"
+			resource_added_1="Apathy" resource_added_amount_1="20" resource_added_2="Cruelty" resource_added_amount_2="10" deal_to_start_1="Ch2_SyndicateBrainPals"
+			on_outcome_unlock_instant_1="HumanBrainAugmentation" on_outcome_unlock_instant_2="" on_outcome_unlock_inspiration="ResearchByScientists"
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="1"
+			related_resource_1="Anthroneuroweave" related_resource_2="BrainPal">
+			<math_int id="Goal" int_min="3000" />
+			<suggested_job job="AnthroneuroweaveFactory" job_number="3" />
+			<suggested_job job="BrainPalFactory" job_number="3" />
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_StealAtcaBankRecords" display_name="Steal Atca Bank Records" is_minor_project="true"
+		description="Atca is among the worst-performing corporations, but over the last few years they have seen sustained growth at a suspiciously consistent rate.
+Their growth rate is a meager 5%, so it's likely that nobody cares enough to look into this."
+		icon_name="SI_Atm_Machine" cohort="AtcaRetail" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Use a hacker unit to get what you need. You will not need to directly do any hacking yourself, but you should be prepared to physically defend your hacker."
+			strategy_tip=""
+			if_intended_outcome_investigation_to_start_1="Ch2AtcaBankRecords"
+			upgrade_int_granted_1="QuantumProcessor" upgrade_int_granted_2="QuantumProcessor" 
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1"
+			related_resource_1="EncryptedAtcaBankRecords" related_resource_2="" countdown_on_complete="AtcaBankTheftRevenge"
+			resource_added_1="Wisdom" resource_added_amount_1="20" next_project_to_start_1="Ch2_MIN_DecryptAtcaBankRecords">
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_MIN_DecryptAtcaBankRecords" display_name="Decrypt Atca Bank Records" is_minor_project="true"
+		description="This is probably a pretty big crime even by Vorsiber standards. Have they really not noticed?"
+		strategy_tip="Oh, but first you need to decrypt it."
+		icon_name="CS_HardDrive" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1"
+			related_resource_1="EncryptedAtcaBankRecords" related_resource_2="DecryptedAtcaBankRecords" related_resource_3="ComputeTime"
+			resource_added_1="Determination" resource_added_amount_1="4" next_project_to_start_1=""
+			on_complete_other_key_message="AtcaBankRecordResults">
+			<suggested_job job="Codebreaker" job_number="4" />
+			<suggested_job job="ComputroniumRefinery" job_number="3" />
+			<suggested_job job="TowerMainframe" job_number="4" />
+		</available_outcome>
+	</project>
+
+	<project id="Ch2_MIN_DestroyTheBanks" display_name="Destroy The Banks" is_minor_project="true" can_happen_even_during_obsession="true"
+		description="With each bank you destroy, you gain more ability to corrupt the economic record."
+		strategy_tip="It's a good idea to gird yourself for what comes after."
+		icon_name="SK_War" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Build at least 9 Robotic Motivator Factories, and 9 Economic Deconstruction Hubs, and your Robotic Workers will make short work of this task."
+			strategy_tip="Predator and PMC Impostor Workers are both going to use lethal force. There's no way around that in this situation."
+			
+			related_resource_1="Wealth" related_resource_2="" related_resource_3="" related_resource_4="" related_resource_5=""
+			resource_added_1="Apathy" resource_added_amount_1="200" resource_added_2="Cruelty" resource_added_amount_2="200"
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="MartialExpansion" research_domain_inspiration_amount_2="1">			
+			<suggested_job job="EconomicDeconstructionHub" job_number="10" />
+			<suggested_job job="WorkerPMCImpostorFactory" job_number="2" />
+			<suggested_job job="WorkerPredatorFactory" job_number="8" />
+			<suggested_job job="RoboticMotivatorFactory" job_number="8" />
+		</available_outcome>
+
+	</project>
+	
+</root>

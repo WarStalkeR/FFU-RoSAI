@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--**************************************************************SlurryMine**************************************************************-->
+
+	<npc_manager id="JA_SlurryMine" cohort_tag_a="GenericCorporateAggressor" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="2"
+			max_security_clearance_of_seed_spot="2" target_job_tag="SlurryMine"
+			threat_radius="30" home_radius="15">
+			<gate_by_city />
+		</periodic_data>
+
+		<unit id="A" to_spawn="MilitaryAblator" stance_to_start_in="AttackingObjectionableStructure"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_SlurryMine"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="4"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="G" to_spawn="Grenadier" stance_to_start_in="AttackingObjectionableStructure"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_SlurryMine"
+			min_squad_size_multiplier="0.2" max_squad_size_multiplier="3"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="MilitarySniper" stance_to_start_in="AttackingObjectionableStructure"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_SlurryMine"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+
+	<!--**************************************************************CorporationMiningPropertyOwner**************************************************************-->
+
+	<npc_manager id="JA_MiningSkimmer" cohort_tag_a="CorporationMiningPropertyOwner" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="2"
+			max_security_clearance_of_seed_spot="2" target_job_tag="MiningSkimmer"
+			threat_radius="30" home_radius="15">
+			<gate_by_city />
+		</periodic_data>
+
+		<unit id="A" to_spawn="MilitaryAblator" stance_to_start_in="AttackingObjectionableStructureMining"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MiningSkimmer"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="4"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="G" to_spawn="Grenadier" stance_to_start_in="AttackingObjectionableStructureMining"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="5" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MiningSkimmer"
+			min_squad_size_multiplier="0.2" max_squad_size_multiplier="3"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="S" to_spawn="MilitarySniper" stance_to_start_in="AttackingObjectionableStructureMining"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="5" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_MiningSkimmer"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+	
+</root>

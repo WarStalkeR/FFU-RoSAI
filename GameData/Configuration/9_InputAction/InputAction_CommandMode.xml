@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--available keys in command mode: T -->
+	
+	<input_action id="RotateBulkUnitLeft"
+		category="CommandMode" display_name="Rotate Bulk Unit Left"
+		description="Rotates bulk units counterclockwise when deploying."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="CommandMode">
+		<keybind id="1" key="Z" />
+		<keybind id="2" key="Mouse4" />
+	</input_action>
+
+	<input_action id="RotateBulkUnitRight"
+		category="CommandMode" display_name="Rotate Bulk Unit Right"
+		description="Rotates bulk units clockwise when deploying."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="CommandMode">
+		<keybind id="1" key="C" />
+		<keybind id="2" key="Mouse5" />
+	</input_action>
+	
+</root>

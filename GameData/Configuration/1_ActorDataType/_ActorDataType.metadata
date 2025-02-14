@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="actor_data_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="short_name" type="string" maxlength="20" content_width_px="200" is_required="true" is_localized="true"
+		tooltip="This is the name that is used on the column headers, which are short. An abbreviation is fine, players can hover to see the full thing."/>
+	
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information, and this one is optional because so much other information is provided already in these tips."/>
+
+	<attribute key="network_name_optional" type="string" maxlength="200" content_width_px="200" is_required="true" is_localized="true"
+		tooltip="Optional alternative name for this when it's a network-wide stat."/>
+	<attribute key="network_description_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" 
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description which is optionally replacing the main description when this is viewed at a network level."/>
+	<attribute key="network_strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible strategy tip which is optionally replacing the main description when this is viewed at a network level."/>
+
+	<attribute key="alternate_header_for_tooltip" type="string" maxlength="100" content_width_px="200" is_required="false" is_localized="true"
+		tooltip="Optional replacement text for headers where it would be confusing to say the normal name and then the current value."/>
+	<attribute key="alternate_maximum_label_for_tooltip" type="string" maxlength="100" content_width_px="200" is_required="false" is_localized="true"
+		tooltip="Optional replacement text for headers where it would be confusing to say word 'maximum' before the maximum of the value."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+
+	<attribute key="sidebar_icon_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the shape icon on the sidebar."/>
+	<attribute key="tooltip_icon_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the shape icon in tooltips."/>
+
+	<attribute key="skip_saving_to_map_actors" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then specific map actors will not save this into their data in a savegame. That means it will be loaded completely fresh every time the game is created.
+This will absolutely break the game if enabled on health or similar, but for things that are more... large stats (attack ranges, etc), it makes sense to not save this.
+If individuals are going to have a variance, this is fine, because they'll recalculate the variance the same way each time." />
+
+	<attribute key="only_visible_when_above" type="int-textbox" is_required="false" min="-1" max="20000000" default="-1" content_width_px="80"
+		tooltip="This field will only show itself when it's above the specified number." />
+	<attribute key="only_visible_when_below" type="int-textbox" is_required="false" min="-1" max="20000000" default="10000000" content_width_px="80"
+		tooltip="This field will only show itself when it's below the specified number." />
+	<attribute key="is_hidden_from_players_on_distant_npcs" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this data should only be shown on player-owned NPCs and player units in general." />
+	<attribute key="is_hidden_from_players_on_player_allied_npcs" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this data should only be shown on NPCs not allied to the player." />
+	
+	<attribute key="only_visible_in_tooltips_when_showing_details_if_player_allied" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this data should only be shown in unit tooltips when the details are being shown, if this is a player-allied npc or a unit owned by the player." />
+	<attribute key="only_visible_in_tooltips_when_showing_details_if_distant_npc" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this data should only be shown in unit tooltips when the details are being shown, if this is a distant npc." />
+	
+	<attribute key="only_visible_when_missing_some_or_expanded" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this data should only be shown when below its max, or when the stat sidebar is expanded." />
+	<attribute key="also_visible_when_in_danger" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this is true, then this stat will also show when the actor is in danger." />
+	<attribute key="only_visible_when_expanded_on_structures_that_exist" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this data is on a structure that exists, then it won't be shown unless the player expands it." />
+	<attribute key="only_visible_when_expanded_on_potential_structure_or_job" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this data is on a structure that exists, then it won't be shown unless the player expands it." />
+	<attribute key="only_visible_when_expanded_when_looking_at_type_at_all" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this data is on a tooltip for unit type that the player is looking at -- not an actual unit -- this will be invisible if not expanded." />
+	<attribute key="only_visible_when_expanded_when_looking_at_type_for_deployment" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this data is on a DEPLOYMENT tooltip for unit type that the player is looking at -- not an actual unit -- this will be invisible if not expanded." />
+	
+	<attribute key="current_is_always_max" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="This is primarily for fields that are not consumed data, but are actually something like a movement range." />
+
+	<attribute key="should_start_at_max" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="This is primarily for things like health that start out at a full number, but can be diminished." />
+
+	<attribute key="has_no_visible_max" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="This is primarily for things like heat, which count up from zero but don't really max out at any particular level." />
+	<attribute key="allow_freely_going_over_max" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="This is for things that track a maximum, but allow you to go over it. Like required deterrence." />
+
+	<attribute key="skips_all_normal_calculations" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, none of the normal math will be used for this type of data. Only to be used for things that have their own unique way of calculating, like deterrence.
+For anything else, it ignores all equipment, base traits of a unit, etc, etc." />
+
+	<attribute key="is_shown_on_territory_control" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="Most stats are not shown on territory control sites. Set this to true to have a stat show up even there." />
+	
+	<attribute key="up_is_bad" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="Normally up is good. But for the case of trends, if up is bad, then specify that here." />
+
+	<attribute key="perma_seed_part" type="int-textbox" is_required="false" min="10" max="200000" default="0" content_width_px="80"
+		tooltip="This is part of the random seed that is used on units to choose their value.
+The reason that this has to exist is to provide stability over versions (or across mods) when new actor data types are added.
+This should simply be some number between the two ranges. What the number is doesn't really matter as long as it never changes after being set once.
+Every stat could have the same number, but people would notice a pattern. But if two random stats have the same number, it really does not matter." />
+
+	<attribute key="max_cannot_be_reduced_below" type="int-textbox" is_required="false" min="0" max="200000" default="0" content_width_px="80"
+		tooltip="On actors only (so this does not apply to equipment), if they start out having any of this stat, then what is the lowest the max of the stat is allowed to go?
+		
+Normally this is 0, but for something like vision it should be 5, and HP obviously should be higher than 0, etc." />
+
+	<attribute key="tooltip_number_scale" type="string-dropdown" is_required="false" default="x100" content_width_px="200"
+		tooltip="Scaling used for the numbers in tooltips.">
+		<option>x100</option>
+		<option>x110</option>
+		<option>x90</option>
+	</attribute>
+	
+	<attribute key="tooltip_indent" type="string" maxlength="10" content_width_px="130" is_required="false"
+		tooltip="Extra whitespace for indenting this value in tooltips, if desired." />
+	
+	<attribute key="severity_scale_to_use_for_icon_color" type="node-dropdown" node_source="SeverityScale" content_width_px="200" is_required="false"
+		tooltip="If specified, then in the UI the icon color will be calculated from a severity scale, but that scale will have no other effect on anything." />
+
+	<attribute key="severity_scale_for_icon_color_uses_percent_of_max" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If using a severity scale to set the color of the icon, then with this true it will be off of a percentage of the maximum value. As false, it's off the raw value." />
+
+	<attribute key="hidden_before_unlock" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, then the UI will had this stat until this is unlocked." />
+
+	<attribute key="is_proportionate_to_current_members_in_the_squad_on_any_unit" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then the number of active members of a squad, if relevant, will cause this value to go up or down. Do not use this for HP!  You get into a feedback loop." />
+	<attribute key="is_proportionate_to_current_members_in_the_squad_on_soft_units_only" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then the number of active members of a squad, if relevant, will cause this value to go up or down. Do not use this for HP!  You get into a feedback loop.
+This version only applies to units like androids and humans who are in squads. It does not apply to vehicles or mechs that have squad members inside them." />
+	
+	<attribute key="is_proportionate_to_largest_members_in_the_squad" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then the number of largest number of members of a squad, if relevant, will cause this value to go up or down. This is the one to use for HP." />
+
+	<attribute key="is_equipment_multiplied_by_largest_squad_member_count" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then  on equipment, the largest number of members of a squad, if relevant, will cause this value to go up only. This is the one to use for HP." />
+	<attribute key="is_equipment_multiplied_by_current_squad_member_count" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then  on equipment, the current number of members of a squad, if relevant, will cause this value to go up only. This is the one to use for power and such." />
+
+	<attribute key="is_considered_structure_target_job_class_multiplier" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then when used on structures or jobs, it will cause the target-job-class to show after this field." />
+
+	<attribute key="if_would_auto_assign_then_complain_if_missing_instead" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then if this would be auto-assigned based on other stats, then instead it complains if it's not already there.
+Useful when it's actual specific values that need to be assigned and there should be self-checking." />
+	<attribute key="show_two_line_sidebar_entry_with_percent_out_of_max" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then rather than just showing the number for the value, it shows a percentage and the number." />
+	<attribute key="show_as_int_percentage" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, rather than showing the raw number, it will show the number as a percentage." />
+	<attribute key="show_as_float_multiplier_divided_by_100" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, rather than showing the raw number, it will divide it by 100 and then show that as a multiplier. So 120 would show as 1.2x, for example." />
+	<attribute key="show_maximum_as_main_value_and_current_as_second_expanded_line_in_tooltip" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="What is says on the tin. For deterrence and similar." />
+
+	<attribute key="included_in_sets" type="node-list" node_source="ActorDataTypeSet" content_width_px="300" is_required="true" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What data sets include this data type?  Any that don't include it can't use this data on themselves." />
+	<attribute key="auto_assigned_to_sets" type="node-list" node_source="ActorDataTypeSet" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
+		tooltip="Which sets auto-assign this data point as the minimum value on every actor of that type?" />
+		
+	<sub_node id="math_multiplicative_alteration">
+		<attribute key="target" type="node-dropdown" is_required="true" node_source="GMathTarget" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When a machine actor has this stat, then the target intermediate math result will be altered by this stat of the unit." />
+		<attribute key="alteration" type="node-dropdown" is_required="true" node_source="SeverityScale" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="This is the alteration that will be applied." />
+	</sub_node>
+
+	<sub_node id="added_to_container_at_ratio">
+		<attribute key="added_as" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When a unit is stored in a vehicle, then how does it add to its container?  This is the thing it will add." />
+		<attribute key="at_ratio" type="float-textbox" is_required="true" min="0" max="20000000" default="0" content_width_px="80"
+			tooltip="At what ratio is this added?  1 would be adding at a 1:1 ratio, whereas 1.5 would be giving a 50% boost. 0 Skips it entirely." />
+	</sub_node>
+
+	<sub_node id="math_int">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="int_min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="int_max" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<sub_node id="math_float">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+	
+</root>

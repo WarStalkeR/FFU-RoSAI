@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Player
+		***********************************************************-->
+	<stance id="Player_DeterAndDefend" display_name="Deter And Defend"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="The squad exudes aggression from a favorable firing position, doubling their normal attack range and deterring enemies."
+		icon_name="FlatSkill_61" icon_color="#6DFFC7" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		will_hold_fire_against_non_disruptive="true" will_hold_fire_against_cohort_guard="true" is_considered_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true"
+		will_hold_fire_against_city_economy="true" will_hold_fire_against_regional_economy="true" will_hold_fire_against_international_economy="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="500" is_stance_for_player_controlled_units="true"
+		is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true" will_hold_fire_against_passive_guards="true" will_hold_fire_against_noncombatants="true"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<actor_data_multiplier actor_data_type="AttackRange" multiplier="2" />
+		<blocks perk="VehicleBlendingInAirTraffic" value="true" />
+		<blocks perk="BlendingIn" value="true" />
+		<blocks perk="ObscuredByClothing" value="true" />
+		<blocks perk="PMCAppearance" value="true" />
+		<blocks perk="PMCOfficerAppearance" value="true" />
+		<blocks perk="MilitaryOfficerCodex" value="true" />
+		<blocks perk="MilitaryAppearance" value="true" />
+		<blocks perk="Shadowdweller" value="true" />
+		<blocks perk="ExpertShadowdweller" value="true" />
+		<blocks perk="Authoritative" value="true" />
+		<blocks perk="Adorable" value="true" />
+	</stance>
+
+	<stance id="Player_LocalIntimidation" display_name="Local Intimidation"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="The squad becomes even more intimidating. This adds substantial intimidation and deters enemies. Reduces attack range to 75% of normal."
+		icon_name="CleanSimple_SkillC003" icon_color="#C46DFF" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		will_hold_fire_against_non_disruptive="true" will_hold_fire_against_cohort_guard="true" is_considered_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true"
+		will_hold_fire_against_city_economy="true" will_hold_fire_against_regional_economy="true" will_hold_fire_against_international_economy="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="500" is_stance_for_player_controlled_units="true"
+		is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true" will_hold_fire_against_passive_guards="true" will_hold_fire_against_noncombatants="true"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<actor_data_multiplier actor_data_type="AttackRange" multiplier="0.75" />
+		<actor_data_added actor_data_type="UnitIntimidation" flat_added="200" />
+		<blocks perk="VehicleBlendingInAirTraffic" value="true" />
+		<blocks perk="BlendingIn" value="true" />
+		<blocks perk="ObscuredByClothing" value="true" />
+		<blocks perk="PMCAppearance" value="true" />
+		<blocks perk="PMCOfficerAppearance" value="true" />
+		<blocks perk="MilitaryOfficerCodex" value="true" />
+		<blocks perk="MilitaryAppearance" value="true" />
+		<blocks perk="Shadowdweller" value="true" />
+		<blocks perk="ExpertShadowdweller" value="true" />
+		<blocks perk="Authoritative" value="true" />
+		<blocks perk="Adorable" value="true" />
+	</stance>
+	
+	<stance id="Player_SeekAndDestroy" display_name="Seek And Destroy"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Squad will use any normal ability to hide. They will hunt enemies and take them out.
+When no enemies are present, they'll return to where they started."
+		icon_name="CleanSimple_SkillC052" icon_color="#E76122" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		will_hold_fire_against_non_disruptive="true" will_hold_fire_against_cohort_guard="true" is_considered_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="500" is_stance_for_player_controlled_units="true"
+		is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true" will_hold_fire_against_passive_guards="true" will_hold_fire_against_noncombatants="true"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterPeopleIShoot" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_Anywhere" />
+		<action_consideration id="GoHome" sort_order="250" chance_of_attempting="100" action_to_attempt="ReturnToCreationPosition"/>
+	</stance>
+
+	<!--Drones
+		***********************************************************-->
+
+	<!--**************************************************************PlayerHarvest**************************************************************-->
+	<stance id="PlayerHarvest" display_name="Harvesting Site"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Continuously pulling resources from the local site."
+		icon_name="CleanTriangle45" icon_color="#3FBEBE" icon_color_hdr_intensity="1.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="false" is_stance_always_drawn_in_city_map="false"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true"
+		this_unit_acts_before_player_looks_at_them="true" this_unit_is_never_ever_watched_by_the_player="true" is_passive_harvester_for_territory_control_flag="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="3" max_allowed_non_focal_building_clearance="3"
+		>
+	</stance>
+	
+</root>

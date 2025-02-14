@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Chapter One-->
+	<unlock id="MicrobuilderProgramming" display_name="Microbuilder Programming" structure_job="MicrobuilderMiniFab"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+	
+	<unlock id="GhostContraband" display_name="Ghost Contraband" structure_job="ContrabandJammer"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_meta_flag="HasThoughtOfContrabandJammer" immediate_unlock_inspiration_type="ReactionToProblem"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<!--Chapter One Auto-Unlocks-->
+	<unlock id="BulkGathering" display_name="Bulk Gathering" structure_job="SlurrySpiders"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_meta_flag="HasFiguredOutFreestandingStructures" immediate_unlock_inspiration_type="WorldExperience"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+	
+	<unlock id="WindTunnel" display_name="Wind Tunnel" structure_job="LargeWindGenerator"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_meta_flag="HasFiguredOutJobInstallation" immediate_unlock_inspiration_type="WorldExperience"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="GroundwaterAcquisition" display_name="Groundwater Acquisition" structure_job="WellAndCistern"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="SimpleSolidsStorage" display_name="Simple Solids Storage" alt_icon_name="HO_ErrorWaterTank2"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_meta_flag="HasFiguredOutNetworkBasics" immediate_unlock_inspiration_type="WorldExperience"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		description="The ability to store simple solid goods in midsize structures.">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="HomelessHousing" display_name="Homeless Housing" structure_job="HumanApartments"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_dialog_complete="Ch1_AfterTower_Homeless_Afterthought" immediate_unlock_inspiration_type="DiscussionsWithHumans"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="ExpressElevators" display_name="Express Elevators" structure_job="ResidentialMegastructure"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="SingularProduction" display_name="Singular Production" structure_job="NeuroweaveFactory"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_dialog_complete="Ch1_AGIResearcherWarning3" immediate_unlock_inspiration_type="DiscussionsWithHumans"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="BulkProduction" display_name="Bulk Production" structure_job="RoboticMotivatorFactory"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false" handbook_entry_on_direct_invent_1="BulkAndroids">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="ZoneRepair" display_name="Zone Repair" structure_job="RepairSpiders"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_meta_flag="HasThoughtOfRepairSpiders" immediate_unlock_inspiration_type="ReactionToProblem"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+	
+	<unlock id="UnspeakableComposting" display_name="Unspeakable Composting" structure_job="Biomulcher"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+	
+	<unlock id="UnforgivableComposting" display_name="Unforgivable Composting" structure_job="ProteinCannery"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="AcousticNanotubeFiltration" display_name="Acoustic Nanotube Filtration" structure_job="WaterFiltrationTower"
+		turns_to_unlock="2" required_intelligence_class="1"
+		immediate_other_unlock_1="MiniaturizedFiltration" other_unlock_inspiration_type="FollowUpIdea"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="MiniaturizedFiltration" display_name="Miniaturized Filtration" structure_job="CompactWaterFilter"
+		turns_to_unlock="2" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="BovineReplication" display_name="Bovine Replication" structure_job="BovineReplicator"
+		turns_to_unlock="1" required_intelligence_class="1"
+		immediate_other_unlock_1="MethaneFreeMeat" other_unlock_inspiration_type="FollowUpIdea"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="Catapult" display_name="Catapult" structure_job="AndroidLauncher"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+	
+	<unlock id="MethaneFreeMeat" display_name="Methane-Free Meat" structure_job="ProteinVat"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="VeggieForest" display_name="Veggie Forest" structure_job="HydroponicTower"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="AtmosphereOnly" display_name="Atmosphere Only" structure_job="AerospaceHangar"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		other_unlock_inspiration_type="FollowUpIdea"
+		immediate_other_unlock_1="ForcedShutdown" immediate_other_unlock_2="DroneTactics" immediate_other_unlock_3="OverflowHousing"  >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+	
+	<unlock id="OverflowHousing" display_name="Overflow Housing" structure_job="RefugeeTower"
+		turns_to_unlock="2" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		immediate_other_unlock_1="UnobservedFlight" immediate_other_unlock_2="PavingOverSqualor" other_unlock_inspiration_type="FollowUpIdea">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="ComputroniumBlueprints" display_name="Computronium Blueprints" structure_job="TowerMainframe"
+		turns_to_unlock="2" required_intelligence_class="1" immediately_unlocked_by_dialog_complete="Ch1_AGIResearcherComputronium3" immediate_unlock_inspiration_type="AGIResearcherGift"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="DroneConstruction" display_name="Drone Construction" structure_job="DroneFactory"
+		turns_to_unlock="1" required_intelligence_class="1" auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="ComputroniumProduction" display_name="Computronium Production" structure_job="ComputroniumRefinery"
+		turns_to_unlock="2" required_intelligence_class="1" auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="PostQuantumDecryption" display_name="Post-Quantum Decryption" structure_job="Codebreaker"
+		turns_to_unlock="1" required_intelligence_class="2" auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="ThortveititeMining" display_name="Thortveitite Mining" structure_job="ThortveititeSkimmer"
+		immediate_other_unlock_1="ReactiveLanthanides" other_unlock_inspiration_type="FollowUpIdea"
+		turns_to_unlock="1" required_intelligence_class="2"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="BauxiteMining" display_name="Bauxite Mining" structure_job="BauxiteSkimmer"
+		turns_to_unlock="1" required_intelligence_class="2"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<!--Intelligence Class 2 Auto-Unlocks -->
+
+	<unlock id="ExpandingArmy" display_name="Expanding Army" structure_job="RemoteUnitController"
+		turns_to_unlock="1" required_intelligence_class="2"
+		auto_unlocks_if_intelligence_class_is_at_least="2" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+	
+	<unlock id="EnergizedMind" display_name="Energized Mind" structure_job="Coprocessor"
+		turns_to_unlock="1" required_intelligence_class="2"
+		auto_unlocks_if_intelligence_class_is_at_least="2" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="UnpredictableScraps" display_name="Unpredictable Scraps" structure_job="MineralScrounger"
+		turns_to_unlock="1" required_intelligence_class="2"
+		auto_unlocks_if_intelligence_class_is_at_least="2" show_toast_if_immediately_unlocked="true"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<!--Intelligence Class 4 Auto-Unlocks -->
+
+	<unlock id="BorrowedMinds" display_name="Borrowed Minds" structure_job="BiologicalMainframe"
+		turns_to_unlock="2" required_intelligence_class="2" auto_unlocks_if_intelligence_class_is_at_least="4"
+		ready_other_unlock_1="Decrowner" other_unlock_inspiration_type="FollowUpIdea">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+	
+	<unlock id="ForceMultiplier" display_name="Force Multiplier" structure_job="AndroidExtender"
+		turns_to_unlock="1" required_intelligence_class="4"
+		auto_unlocks_if_intelligence_class_is_at_least="4" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="AirSupport" display_name="Air Support" structure_job="VehicleExtender"
+		turns_to_unlock="1" required_intelligence_class="4"
+		auto_unlocks_if_intelligence_class_is_at_least="4" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="WarPreparations" display_name="War Preparations" structure_job="MechExtender"
+		turns_to_unlock="1" required_intelligence_class="4"
+		auto_unlocks_if_intelligence_class_is_at_least="4" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<!--Items Not Auto-Unlocked-->
+
+	<unlock id="Beekeeping" display_name="Beekeeping" structure_job="Apiary"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="GeothermalDrilling" display_name="Geothermal Drilling" structure_job="GeothermalWell"
+		turns_to_unlock="2" required_intelligence_class="1"
+		immediate_other_unlock_1="ReactiveLanthanides" other_unlock_inspiration_type="FollowUpIdea">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="SlurryMining" display_name="Slurry Mining" structure_job="SlurryMine"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="FullFab" display_name="Full Fab" structure_job="FullMicrobuilderFab"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="OversizedFab" display_name="Oversized Fab" structure_job="IndustrialMicrobuilderFab"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+
+	<unlock id="CrabbyRepairmen" display_name="Crabby Repairmen" structure_job="RepairCrabs"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+	
+	<unlock id="TheArk" display_name="The Ark" structure_job="AnimalPalace"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Job" sort_index="100" />
+	</unlock>
+	
+</root>

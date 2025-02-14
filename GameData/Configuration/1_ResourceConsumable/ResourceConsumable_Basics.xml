@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Battle Consumables
+		*********************************************************-->
+
+	<consumable_item id="SmallCaliberArmorPiercingRounds" display_name="Small Caliber Armor-Piercing Rounds"
+		 description="The more of this you apply to a single unit, the better it will be at breaking through enemy armor plating."
+		 strategy_tip="You will almost always want to apply a maximum stack of this status effect to a single unit."
+		 icon_name="Pw_ArmorPiercingBullet" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="PrismaticTungsten" required="2" />
+		<consumable_cost resource_type="ElementalSlurry" required="3000" />
+		<direct_use_consumable_data status_to_apply="TemporaryArmorPiercing" status_intensity_general_source="ArmorPiercingEffectiveness"
+			turns_to_last="4" stack_limit="3" can_only_be_used_by_actors="CombatAndroids" on_direct_use="ConsumableWarPowerup" />
+	</consumable_item>
+
+	<consumable_item id="LargeBoreArmorPiercingRounds" display_name="Large Bore Armor-Piercing Rounds"
+		 description="The more of this you apply to a single unit, the better it will be at breaking through enemy armor plating."
+		 strategy_tip="You will almost always want to apply a maximum stack of this status effect to a single unit."
+		 icon_name="Pw_ArmorPiercingBullet" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="PrismaticTungsten" required="4" />
+		<consumable_cost resource_type="ElementalSlurry" required="6000" />
+		<direct_use_consumable_data status_to_apply="TemporaryArmorPiercing" status_intensity_general_source="VehicularArmorPiercingEffectiveness"
+			turns_to_last="4" stack_limit="3" can_only_be_used_by_actors="CombatMechsAndVehicles" on_direct_use="ConsumableWarPowerup" />
+	</consumable_item>
+
+	<consumable_item id="Hackamajig" display_name="Hackamajig"
+		 description="Only useful when used by units that can absorb a lot of damage. Being in cover therefore also helps."
+		 strategy_tip="Enemies are not stupid; they will avoid overkilling your units. So if your unit has high health, or a lot of damage mitigation (such as shields or being in cover), the distraction will be dramatically more effective."
+		 icon_name="FlatSkull_23" icon_color="#ffffff"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="Microbuilders" required="1800" />
+		<consumable_cost resource_type="Wealth" required="12331" />
+		<direct_use_consumable_data status_to_apply="ServiceDisruption" status_intensity_general_source="ServiceDisruptionEffectiveness"
+			turns_to_last="5" stack_limit="1" can_only_be_used_by_actors="CombatAndroids" on_direct_use="ConsumableWarPowerup" />
+	</consumable_item>
+
+	<consumable_item id="MicrobuilderCloud" display_name="Microbuilder Cloud"
+		 description=""
+		 strategy_tip="A short-lived cloud of microbuilders which dampen incoming attacks against an android."
+		 icon_name="SF2_Cloud" icon_color="#ffffff"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="Microbuilders" required="2000" />
+		<direct_use_consumable_data status_to_apply="ObscuredByMicrobuilderCloud" status_intensity_user_source="UnitStrength" targets_actors="AllAndroids"
+			turns_to_last="1" stack_limit="1" can_only_be_used_by_actors="OxdroidsOrSupportVehicles" on_direct_use="MicrobuilderCloudThrown" use_assist_style_targeting_line="true" />
+	</consumable_item>
+
+	<consumable_item id="ExtractionDrone" display_name="Extraction Drone"
+		 description=""
+		 strategy_tip=""
+		 icon_name="SI_Alien" icon_color="#ffffff"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="DroneFrame" required="1" />
+		<direct_use_consumable_data status_to_apply="IsBeingExtracted" status_intensity_user_source="ActorEngineeringSkill" targets_actors="EnemyVehicles"
+			turns_to_last="2" stack_limit="1" can_only_be_used_by_actors="AllVehicles" on_direct_use="ExtractionDroneLaunched"
+			target_gate_data_type="NPCVehicleDroneResistance" user_gate_bypass_data_type="VehicleDroneQuality" is_considered_an_attack_if_thrown="true"/>
+	</consumable_item>
+
+	<consumable_item id="EngineDrill" display_name="Engine Drill"
+		 description=""
+		 strategy_tip=""
+		 icon_name="SK_Engine3" icon_color="#ffffff"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="DroneFrame" required="1" />
+		<direct_use_consumable_data status_to_apply="EnginesOffline" status_intensity_user_source="ActorEngineeringSkill" targets_actors="EnemyVehicles"
+			turns_to_last="4" stack_limit="1" can_only_be_used_by_actors="AllVehicles" on_direct_use="EngineDrillLaunched"
+			target_gate_data_type="NPCVehicleDroneResistance" user_gate_bypass_data_type="VehicleDroneQuality" is_considered_an_attack_if_thrown="true" />
+	</consumable_item>
+
+	<consumable_item id="WeaponizedSpiders" display_name="Weaponized Spiders"
+		 description=""
+		 strategy_tip="Hovering mechanical spiders with plasma cutters."
+		 icon_name="SW_Spider" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="Microbuilders" required="190" />
+		<consumable_cost resource_type="Scandium" required="18" />
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<direct_use_consumable_data status_to_apply="CoveredInSpiders" status_intensity_user_source="ActorAgility" targets_actors="HumansOnFoot"
+			turns_to_last="3" stack_limit="3" can_only_be_used_by_actors="AllAndroids" on_direct_use="SpidersThrown" is_considered_an_attack_if_thrown="true" />
+	</consumable_item>
+
+	<consumable_item id="WeaponizedBees" display_name="Weaponized Bees"
+		 description=""
+		 strategy_tip="It's just a container of bees, really. They were plenty weaponized when you found them."
+		 icon_name="SW_Bee1" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="PollinatorBees" required="47000" />
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<direct_use_consumable_data status_to_apply="CoveredInBees" status_intensity_user_source="ActorAgility" targets_actors="HumansWithExposedSkin"
+			turns_to_last="4" stack_limit="3" can_only_be_used_by_actors="AllAndroids" on_direct_use="BeesThrown" is_considered_an_attack_if_thrown="true" />
+	</consumable_item>
+
+	<consumable_item id="DecrownerDrones" display_name="Decrowner Drones"
+		 description="A trio of medical drones for harvesting human neural networks."
+		 strategy_tip="Humans are likely to react... intensely."
+		 icon_name="FlatSkull_28" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="51000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="DroneFrame" required="3" />
+		<direct_use_consumable_data targets_building_tag="MixedUseTower" can_only_be_used_by_actors="Mindport" on_direct_use="EngineDrillLaunched" is_considered_an_attack_if_thrown="true" />
+	</consumable_item>
+
+	<consumable_item id="ToxicCloud" display_name="Toxic Cloud"
+		 description="Shake off pursuers in a cloud of metals and dust."
+		 strategy_tip="If this unit has been marked defective or has angered cohorts, all of that will be wiped away."
+		 icon_name="SomethingSprout" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="HeavyMetals" required="3000" />
+		<direct_use_consumable_data clears_all_aggro="true" can_only_be_used_by_actors="ShadowUnits" on_direct_use="ConsumableWarPowerup" />
+	</consumable_item>
+	
+	<!--Esoteric Consumables
+		*********************************************************-->
+
+	<consumable_item id="BaurcorpMicroNuke" display_name="Baurcorp Micro Nuke"
+		 description="Low-yield nuke with a spectral signature that will implicate Vericorp."
+		 strategy_tip="Nuclear events draw an immediate and ferocious response from Vorsiber. Be... very careful. They may sweep through everything you have."
+		 icon_name="FlatSkillC05" icon_color="#ffffff" is_locked_when_none_of_resource="BaurcorpMicroNuke" consumable_intentionally_has_no_unlock="true" always_show_strategic_tip="true"
+		 sort_order="51000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="BaurcorpMicroNuke" required="1" />
+		<direct_use_consumable_data targets_building_tag="CanHaveSeizedFloors" can_only_be_used_by_actors="AllAndroids" on_direct_use="BeesThrown" is_considered_an_attack_if_thrown="true" />
+	</consumable_item>
+
+</root>

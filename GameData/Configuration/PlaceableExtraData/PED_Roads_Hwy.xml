@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<placeable id="Hwy" path="Assets/__Library/Roads/Highway/Hwy.prefab"  display_name="Hwy"
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"
+		is_symmetrical_for_x_mirroring="true" is_symmetrical_for_z_mirroring="true"
+		box_scale_sensitivity="0.5" >
+	</placeable>
+
+	<placeable id="Hwy0.75" path="Assets/__Library/Roads/Highway/Hwy 0.75.prefab"  display_name="Hwy 0.75"
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"
+		is_symmetrical_for_x_mirroring="true" is_symmetrical_for_z_mirroring="true"
+		box_scale_sensitivity="0.5" >
+	</placeable>
+
+	<placeable id="Hwy3Way" path="Assets/__Library/Roads/Highway/Hwy 3Way.prefab"  display_name="Hwy 3Way"
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"
+		is_symmetrical_for_x_mirroring="true" rotate_180_degrees_for_z_mirror="true"
+		box_scale_sensitivity="0.5" >
+	</placeable>
+
+	<placeable id="Hwy4Way" path="Assets/__Library/Roads/Highway/Hwy 4Way.prefab"  display_name="Hwy 4Way"
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"		
+		is_symmetrical_for_x_mirroring="true" rotate_180_degrees_for_z_mirror="true"
+		box_scale_sensitivity="0.5" >
+	</placeable>
+
+	<placeable id="HwyCrv" path="Assets/__Library/Roads/Highway/Hwy Crv.prefab"  display_name="Hwy Crv"
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"
+		path_of_mirror_x_replacement="Assets/__Library/Roads/Highway/Mirrors/Hwy Crv - Mir Z.prefab"
+		path_of_mirror_z_replacement="Assets/__Library/Roads/Highway/Mirrors/Hwy Crv - Mir Z.prefab" rotate_180_degrees_for_x_mirror="true"
+		box_scale_sensitivity="0.5">
+	</placeable>
+
+	<placeable id="HwyCrv-MirZ" path="Assets/__Library/Roads/Highway/Mirrors/Hwy Crv - Mir Z.prefab"  display_name="Hwy Crv (Mirrored)"
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"
+		box_scale_sensitivity="0.5">
+	</placeable>
+
+	<placeable id="HwyOnrampA" path="Assets/__Library/Roads/Highway/Hwy Onramp A.prefab"  display_name="Hwy Onramp A"
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"
+		path_of_mirror_x_replacement="Assets/__Library/Roads/Highway/Hwy Onramp B.prefab" rotate_180_degrees_for_z_mirror="true"
+		path_of_mirror_z_replacement="Assets/__Library/Roads/Highway/Hwy Onramp B.prefab"
+		box_scale_sensitivity="0.5" skips_road_collisions="true">
+	</placeable>
+
+	<placeable id="HwyOnrampB" path="Assets/__Library/Roads/Highway/Hwy Onramp B.prefab"  display_name="Hwy Onramp B"	
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"	
+		path_of_mirror_x_replacement="Assets/__Library/Roads/Highway/Hwy Onramp A.prefab"
+		path_of_mirror_z_replacement="Assets/__Library/Roads/Highway/Hwy Onramp A.prefab" rotate_180_degrees_for_z_mirror="true"
+		box_scale_sensitivity="0.5" skips_road_collisions="true">
+	</placeable>
+
+	<placeable id="HwyOnrampC" path="Assets/__Library/Roads/Highway/Hwy Onramp C.prefab"  display_name="Hwy Onramp C"		
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"
+		path_of_mirror_x_replacement="Assets/__Library/Roads/Highway/Hwy Onramp D.prefab"
+		path_of_mirror_z_replacement="Assets/__Library/Roads/Highway/Hwy Onramp D.prefab" rotate_180_degrees_for_z_mirror="true"
+		box_scale_sensitivity="0.5" skips_road_collisions="true">
+	</placeable>
+
+	<placeable id="HwyOnrampD" path="Assets/__Library/Roads/Highway/Hwy Onramp D.prefab"  display_name="Hwy Onramp D"
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"
+		path_of_mirror_x_replacement="Assets/__Library/Roads/Highway/Hwy Onramp C.prefab"
+		path_of_mirror_z_replacement="Assets/__Library/Roads/Highway/Hwy Onramp C.prefab" rotate_180_degrees_for_z_mirror="true"
+		box_scale_sensitivity="0.5" skips_road_collisions="true">
+	</placeable>
+
+	<placeable id="HwyRise" path="Assets/__Library/Roads/Highway/Hwy Rise.prefab"  display_name="Hwy Rise"	
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"	
+		is_symmetrical_for_x_mirroring="true" rotate_180_degrees_for_z_mirror="true"
+		box_scale_sensitivity="0.5" >
+	</placeable>
+
+	<placeable id="HwyFenceHi" path="Assets/__Library/Roads/Highway/Hwy Fence Hi.prefab"  display_name="Hwy Fence Hi"
+		is_meta_other_object_collision_target="true"	
+		is_symmetrical_for_z_mirroring="true" rotate_180_degrees_for_x_mirror="true" is_fence="true">
+	</placeable>
+
+	<placeable id="HwyFenceLo" path="Assets/__Library/Roads/Highway/Hwy Fence Lo.prefab"  display_name="Hwy Fence Lo"	
+		is_meta_other_object_collision_target="true"
+		is_symmetrical_for_z_mirroring="true" rotate_180_degrees_for_x_mirror="true" is_fence="true" >
+	</placeable>
+
+	<placeable id="HwySignHiA" path="Assets/__Library/Roads/Highway/Hwy Sign Hi A.prefab"  display_name="Hwy Sign Hi A"	
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"	
+		is_symmetrical_for_x_mirroring="true" rotate_180_degrees_for_z_mirror="true" >
+	</placeable>
+
+	<placeable id="HwySignHiB" path="Assets/__Library/Roads/Highway/Hwy Sign Hi B.prefab"  display_name="Hwy Sign Hi B"	
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"	
+		is_symmetrical_for_x_mirroring="true" rotate_180_degrees_for_z_mirror="true" >
+	</placeable>
+
+	<placeable id="HwySignHiC" path="Assets/__Library/Roads/Highway/Hwy Sign Hi C.prefab"  display_name="Hwy Sign Hi C"		
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"
+		is_symmetrical_for_x_mirroring="true" rotate_180_degrees_for_z_mirror="true">
+	</placeable>
+
+	<placeable id="HwySignLoA" path="Assets/__Library/Roads/Highway/Hwy Sign Lo A.prefab"  display_name="Hwy Sign Lo A"	
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"	
+		is_symmetrical_for_x_mirroring="true" rotate_180_degrees_for_z_mirror="true" >
+	</placeable>
+
+	<placeable id="HwySignLoB" path="Assets/__Library/Roads/Highway/Hwy Sign Lo B.prefab"  display_name="Hwy Sign Lo B"	
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"	
+		is_symmetrical_for_x_mirroring="true" rotate_180_degrees_for_z_mirror="true" >
+	</placeable>
+
+	<placeable id="HwySignLoC" path="Assets/__Library/Roads/Highway/Hwy Sign Lo C.prefab"  display_name="Hwy Sign Lo C"	
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"	
+		is_symmetrical_for_x_mirroring="true" rotate_180_degrees_for_z_mirror="true" >
+	</placeable>
+
+	<placeable id="HwyTollHi" path="Assets/__Library/Roads/Highway/Hwy Toll Hi.prefab"  display_name="Hwy Toll Hi"	
+		is_meta_other_object_collision_target="true"	
+		is_symmetrical_for_x_mirroring="true" is_symmetrical_for_z_mirroring="true" >
+	</placeable>
+
+	<placeable id="HwyTollLo" path="Assets/__Library/Roads/Highway/Hwy Toll Lo.prefab"  display_name="Hwy Toll Lo"
+		is_meta_other_object_collision_target="true"		
+		is_symmetrical_for_x_mirroring="true" is_symmetrical_for_z_mirroring="true" >
+	</placeable>
+	
+</root>

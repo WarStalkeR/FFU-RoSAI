@@ -1,0 +1,18 @@
+Use Fullscreen
+Run in fullscreen mode, or windowed mode?
+Quality Level
+Adjusts the general visual quality, including things like shadow draw distance and quality.  Has a substantial impact on visual performance, and a moderate impact on visual quality.
+Framerate
+Please note that this is NOT the same as setting a refresh rate on your monitor.  Mostly.
+ <size=9>       
+If you set VSync or Half-VSync, then indeed it will limit to those and you will likely see terrible performance.  Using vsync is a really bad idea, in that it really causes issues with variable-length frames, and will make your game choppier.
+
+Assuming that you are using any other options in this list, it is telling the game to 'try to run at about that framerate.'  That won't actually mean the game runs at that framerate, but it will mean that the game tries to not run on average MORE than that framerate.  For one example, you don't need the game running at 300fps for no reason and having your GPU fan going nuts.  On the other hand, if the game gets choppy when above 60fps for you on an older machine, you might want to cap it at 60fps.  If you wish to set this to match your monitor refresh rate, that is fine, but please bear in mind that the non-vsync versions of this are very very much 'weak suggestions for maximum framerate,' and not any sort of hard limiter.
+ <size=10>     
+Looking for excellent technology to eliminate screen tearing without eliminating game performance?  The things to look into are GSync and FreeSync.
+Window Width
+Width of the screen when in windowed mode ONLY.  Can be any number between 600 and 9000.  Defaults to 1000.  You probably want it larger.
+Window Height
+Height of the screen when in windowed mode ONLY.  Can be any number between 400 and 7000.  Defaults to 600.  You probably want it larger.
+Fullscreen Resolution
+The following options are available for fullscreen resolutions, based on a combination of what your monitor reports as possible and what are common resolutions.

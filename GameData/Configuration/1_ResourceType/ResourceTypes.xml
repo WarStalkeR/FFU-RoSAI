@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Normal Resources-->
+
+	<resource id="ElementalSlurry" display_name="Elemental Slurry"
+		 description="A mix of precursor elements used for construction."
+		 strategy_tip="Used in almost everything you build."
+		 how_to_acquire="When you end the turn, any units with excess AP will gather this. Any remaining mental energy will be applied to your highest-scavenging-skill unit."
+		 technical_notes="Mostly carbon, fluorine, nitrogen, oxygen, argon, aluminum, copper, lead, nickel, and iron."
+		 icon_name="SW_AbstractShape5" icon_color="#7DACFF" amount_granted_when_skipping_chapter_zero="3175" 
+		 base_storage_capacity="224000" added_storage_capacity_per_storage_bunker="16000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="16000000"
+		 lang_key_for_excess="ExcessResourceBasicNote" complaint_if_job_short_as_expense="InsufficientElementalSlurry"
+		 sort_order="100" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic"
+		 extra_starting_amount_in_rank2_plus_city="5770000" is_shown_in_header_only_during_build_mode_or_pinned="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Common" sort_index="100" />
+		<part_of collection="Construction" sort_index="100" />
+	</resource>
+
+	<resource id="Microbuilders" display_name="Microbuilders"
+		 description="Ranging in scale from half a millimeter to two millimeters in size, they follow instructions for repair or construction."
+		 strategy_tip=""
+		 technical_notes="Each individual unit of this resource is several hundred billion actual microbuilders -- about 12 cubic meters in volume.
+Microbuilders need Elemental Slurry before they start work and they immediately expire after completing work. This is a safety feature. Microbuilders have been known to threaten and melt down parts of their environment to get Elemental Slurry when they run dry."
+		 icon_name="SW_Nanotechnology5" icon_color="#C0CFDC"
+		 base_storage_capacity="13800" added_storage_capacity_per_storage_bunker="2000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
+		 is_locked_before_unlock="MicrobuilderProgramming"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="110" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic"
+		 extra_starting_amount_in_rank2_plus_city="130000" is_shown_in_header_only_during_build_mode_or_pinned="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Construction" sort_index="200" />
+		<part_of collection="Common" sort_index="200" />
+	</resource>
+
+	<resource id="Wealth" display_name="Wealth"
+		 description="Currency and valuables you have extracted from the city."
+		 strategy_tip="40 units of wealth is the yearly income of a middle-class citizen. Managerial-class citizens average 50 times that, or 2000 units per year."
+		 how_to_acquire="Wiretap to steal from the middle class, use a Shadowdweller unit to steal from criminals, or start a shell company to open direct ways to earn wealth."
+		 technical_notes="Of no interest to you, but the humans value it. Useful for applying pressure or paying bribes."
+		 icon_name="CleanSimple_SkillC004" icon_color="#2EAFFF" amount_granted_when_skipping_chapter_zero="0" 
+		 base_storage_capacity="-1" shows_trends_by_default="true"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="130" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Economic" sort_index="100" />
+		<part_of collection="Common" sort_index="800" />
+	</resource>
+
+	<!--Housing-Style Lower-Priority Resources
+		*********************************************************-->
+
+	<resource id="ShelteredHumans" display_name="Sheltered Humans" is_lifeform="true"
+		 description="The number of humans you are currently sheltering within your structures."
+		 strategy_tip="These people would otherwise be homeless."
+		 icon_name="HO_House5" icon_color="#97EC8F" base_storage_capacity="0" is_locked_before_unlock="HomelessHousing"
+		 lang_key_for_excess="ExcessResourcePersonNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="100" />
+		<part_of collection="Housing" sort_index="100" />
+	</resource>
+	
+	<resource id="RefugeeHumans" display_name="Refugee Humans" is_lifeform="true"
+		 description="The number of humans currently occupying your refugee towers. This is not a pleasant place to live, but prevents humans from dying from exposure."
+		 strategy_tip="Building proper apartment housing for them should be a priority if you can manage it."
+		 icon_name="HO_HouseSkyscraper31" icon_color="#E18D8D" base_storage_capacity="0" is_locked_before_unlock="OverflowHousing"
+		 lang_key_for_excess="ExcessResourcePersonNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="200" />
+		<part_of collection="Housing" sort_index="200" />
+	</resource>
+	
+	<resource id="AbandonedHumans" display_name="Abandoned Humans" is_lifeform="true"
+		 description="The number of humans currently without any form of shelter due to your actions. They are now worse off than the homeless class."
+		 strategy_tip="Some of these individuals will die of exposure every turn."
+		 icon_name="HM_HomelessPoverty" icon_color="#E14A4A" base_storage_capacity="800000000" is_locked_before_unlock="OverflowHousing"
+		 lang_key_for_excess="ExcessResourcePersonNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="100" />
+		<part_of collection="Housing" sort_index="100" />
+	</resource>
+
+	<!--Output-Style Lower-Priority Resources
+		*********************************************************-->
+
+	<resource id="ConsumerGoods" display_name="Consumer Goods"
+		 description="Items that humans want or need."
+		 strategy_tip="Seems like a lot of people don't have as much as they need, and that nobody has as much as they want."
+		 icon_name="MA_ShoppingBag" icon_color="#F1A886"  is_locked_before_unlock="Consumerism"
+		 base_storage_capacity="2000" added_storage_capacity_per_storage_bunker="8000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="8000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Economic" sort_index="100" />
+		<part_of collection="Goods" sort_index="100" />
+	</resource>
+
+	<resource id="FineGoods" display_name="Fine Goods"
+		 description="Luxury wares for the upper classes."
+		 strategy_tip=""
+		 icon_name="HL_JewelryMala" icon_color="#FFE3A0" is_locked_before_unlock="Decadence"
+		 base_storage_capacity="1000" added_storage_capacity_per_storage_bunker="4000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="4000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Economic" sort_index="100" />
+		<part_of collection="Goods" sort_index="100" />
+	</resource>
+
+	<resource id="Furniture" display_name="Furniture"
+		 description="Items that turn an empty room into functional human space."
+		 strategy_tip=""
+		 how_to_acquire="Can be stolen from warehouses, or can be bought from Warehouse Shops if you have a shell company."
+		 internal_notes="1 unit is enough to furnish 5 rooms, or roughly $6,666.67 per unit, which is 200kg per unit as well."
+		 icon_name="BT_Desk" icon_color="#C1A89C" is_locked_before_unlock="Woodworking"
+		 base_storage_capacity="8000" added_storage_capacity_per_storage_bunker="800000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="800000"
+		 lang_key_for_excess="ExcessResourceBasicNote" scavenge_icon_usage="ScavengeResource_Furniture"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Goods" sort_index="100" />
+		<part_of collection="Housing" sort_index="500" />
+	</resource>
+
+	<resource id="ComputroniumCubes" display_name="Computronium Cubes"
+		 description="Each cube is a brick of programmable matter."
+		 strategy_tip=""
+		 technical_notes="The cubes are unfortunately limited to two millimeters in size -- about the size of a ball bearing -- due to heat dissipation concerns."
+		 icon_name="HM_ShapeCube3d" icon_color="#67ECFF" base_storage_capacity="0" added_most_soft_cap="10000" is_locked_before_unlock="MechanicalMind"
+		lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="500000"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Computing" sort_index="100" />
+	</resource>
+
+	<resource id="ComputroniumHelices" display_name="Computronium Helices"
+		 description="Each helix is a twisted pair of programmable matter."
+		 strategy_tip="This allows one side to analyze the other side without interfering with it, which is great for security or for analysis but less-useful for general computing."
+		 technical_notes=""
+		 icon_name="HM_ShapeHelix" icon_color="#67ECFF" base_storage_capacity="0" added_most_soft_cap="10000" is_locked_before_unlock="NeuralSecurity"
+		lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="500000"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Computing" sort_index="100" />
+	</resource>
+
+	<!--Human Food And Other Basics
+		*********************************************************-->
+	
+	<resource id="Biomulch" display_name="Biomulch"
+		 description="A composite mixture of organic material and minerals."
+		 strategy_tip="Used as a precursor in many biological processors."
+		 technical_notes="Typically harvested from weeds, insects, and rodents. The details of the contents are best overlooked."
+		 icon_name="CleanSimple_SkillB055" icon_color="#B1F42F"  is_locked_before_unlock="UnspeakableComposting"
+		 base_storage_capacity="245000" added_storage_capacity_per_storage_bunker="15000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="15000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 extra_starting_amount_in_rank2_plus_city="850000"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Common" sort_index="100" />
+		<part_of collection="Biomass" sort_index="100" />
+		<part_of collection="MeatProduction" sort_index="100" />
+		<part_of collection="Hydroponics" sort_index="100" />
+		<part_of collection="PlantProducts" sort_index="100" />
+	</resource>
+
+	<resource id="CannedProtein" display_name="Canned Protein"
+		 description="Meat in a can. Not any one meat ... precisely. It's a ground-up mix of protein scavenged from the environment."
+		 strategy_tip="This protein is harvested from anything bigger than a rabbit."
+		 icon_name="FlatInnocent_51" icon_color="#9D7373"  is_locked_before_unlock="UnforgivableComposting"
+		 base_storage_capacity="33000" added_storage_capacity_per_storage_bunker="1000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="1000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Biomass" sort_index="500" />
+		<part_of collection="Food" sort_index="300" />
+	</resource>
+
+	<resource id="BovineTissue" display_name="Bovine Tissue"
+		 description="A slab of cow muscle."
+		 strategy_tip=""
+		 how_to_acquire="Must be harvested from live cattle or grown in a replication chamber."
+		 technical_notes="Contains 8 trillion cattle cells per kilogram of Bovine Tissue."
+		 icon_name="MA_Cow" icon_color="#FC88FF" is_locked_before_unlock="SmallBovineTissueSamples"
+		 base_storage_capacity="9400" added_storage_capacity_per_storage_bunker="2000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
+		 lang_key_for_excess="ExcessResourceBasicNote" complaint_if_job_has_none_as_expense="MissingBovineTissue"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Biomass" sort_index="300" />
+		<part_of collection="MeatProduction" sort_index="200" />
+	</resource>
+
+	<resource id="VatGrownMeat" display_name="Vat-Grown Meat"
+		 description="Slabs of lab-grown meat. Lacks fats, so it has an odd flavor and texture."
+		 strategy_tip="High-quality protein sources are inaccessible for the lower classes."
+		 icon_name="MA_Meat1" icon_color="#F195DC" is_locked_before_dialog="Ch1_ShelteredHunger2"
+		 base_storage_capacity="6100" added_storage_capacity_per_storage_bunker="2000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Food" sort_index="300" />
+		<part_of collection="MeatProduction" sort_index="500" />
+	</resource>
+
+	<resource id="SheetFat" display_name="Sheet-Fat"
+		 description="Thin sheets of fat cells grown in an artificial environment. Grown in thin sheets due to lack of vasculature methodology."
+		 strategy_tip="Can be used to enrich the flavor and nutrition of vat-grown meat and in products that require lipids."
+		 icon_name="HM_ShapeMozy" icon_color="#D9AC88" is_locked_before_unlock="Todo"
+		 base_storage_capacity="6100" added_storage_capacity_per_storage_bunker="2000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Biomass" sort_index="300" />
+		<part_of collection="MeatProduction" sort_index="600" />
+	</resource>
+
+	<resource id="VegetableSeeds" display_name="Vegetable Seeds"
+		 description="A mix of seeds for leafy greens."
+		 strategy_tip=""
+		 technical_notes="Species are diversified to resist diseases and pests."
+		 icon_name="FE_FlaxSeed" icon_color="#ABFF2E" is_locked_before_unlock="VariegatedSeedHarvesting"
+		 base_storage_capacity="100" added_storage_capacity_per_storage_bunker="18000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="18000000"
+		 lang_key_for_excess="ExcessResourceBasicNote" complaint_if_job_has_none_as_expense="MissingVegetableSeeds"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Hydroponics" sort_index="200" />
+	</resource>
+
+	<resource id="HydroponicGreens" display_name="Hydroponic Greens"
+		 description="Fresh vegetables from hydroponic tanks."
+		 strategy_tip="Nutrient-dense greens would improve the health of the lower classes and underclass."
+		 icon_name="FE_Lettuce1" icon_color="#53E763" is_locked_before_dialog="Ch1_ShelteredHunger2"
+		 base_storage_capacity="3600" added_storage_capacity_per_storage_bunker="1000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="1000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Hydroponics" sort_index="500" />
+		<part_of collection="Food" sort_index="300" />
+		<part_of collection="PlantProducts" sort_index="300" />
+	</resource>
+
+	<resource id="MonsterPelts" display_name="Monster Pelts"
+		description="Stripped hide from an experimental monster."
+		strategy_tip=""
+		how_to_acquire="Several are acquired by killing a single monster, given their large size."
+		technical_notes=""
+		icon_name="FlatSkillB_leather" icon_color="#BBB17D" scavenge_icon_usage="ScavengeResource_MonsterPelts"
+		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="200000" is_locked_before_unlock="SlightlyLessDangerousGame"
+		lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="20000"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Economic" sort_index="100" />
+		<part_of collection="Goods" sort_index="100" />
+	</resource>
+
+	<resource id="DailyNecessities" display_name="Daily Necessities"
+		 description="Soaps, cleaning supplies, toilet paper, and so on."
+		 strategy_tip="Basic necessities for human everyday living."
+		 technical_notes="The homeless have none. They either do without or use what they can find. The results vary in efficacy and... side effects."
+		 icon_name="FE_ToiletPaper" icon_color="#ECDFF1" is_locked_before_unlock="MoreThanJustPaper"
+		 base_storage_capacity="6100" added_storage_capacity_per_storage_bunker="20000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="20000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Housing" sort_index="500" />
+	</resource>
+
+	<resource id="WildZinnia" display_name="Wild Zinnia"
+		 description="One of the hardiest wildflowers on the planet. Grows even in irradiated soil."
+		 strategy_tip="The flowers, when cultured into a gel, are a precursor for lab-grown wood and paper products."
+		 icon_name="FE_Zinnia1" icon_color="#F4FF82" is_locked_before_unlock="FlowersForRobots"
+		 base_storage_capacity="3300" added_storage_capacity_per_storage_bunker="6000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="1000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PlantProducts" sort_index="100" />
+		<part_of collection="PlantProducts" sort_index="300" />
+	</resource>
+
+	<resource id="Groundwater" display_name="Groundwater"
+		 description="Water contaminated with heavy metals, toxins, and radioactive dust."
+		 strategy_tip="This entire area is downwind and down-river from a nuclear exclusion zone."
+		 icon_name="FlatInnocent_2" icon_color="#82F0FF" is_locked_before_dialog="Ch1_ShelteredHunger2"
+		 base_storage_capacity="0" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="7000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Water" sort_index="100" />
+	</resource>
+
+	<resource id="FilteredWater" display_name="Filtered Water"
+		 description="Water that is fully sterile and has all contaminants removed, and is almost-but-not-quite medical grade."
+		 strategy_tip=""
+		 how_to_acquire="Groundwater must be heavily filtered."
+		 technical_notes="The civic authorities recognize two grades of usable water: Potable, and Pure. This water is in-between those."
+		 icon_name="FE_Water1" icon_color="#82F0FF" is_locked_before_dialog="Ch1_ShelteredHunger2"
+		 base_storage_capacity="100" added_storage_capacity_per_storage_bunker="16000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Water" sort_index="200" />
+	</resource>
+
+	<resource id="HeavyMetals" display_name="Heavy Metals"
+		 description="A mix of 35 metals that have industrial applications. Toxic to humans even in tiny doses."
+		 strategy_tip=""
+		 technical_notes="The primary 14 are cobalt, chromium, copper, tellurium, thallium, uranium, arsenic, bismuth, gallium, cadmium, lead, gold, nickel, and platinum."
+		 how_to_acquire="A byproduct of water filtration."
+		 icon_name="WEmblem297" icon_color="#D17171" is_locked_before_unlock="AcousticNanotubeFiltration"
+		 base_storage_capacity="80000" added_storage_capacity_per_storage_bunker="160000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="16000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Water" sort_index="300" />
+		<part_of collection="Metals" sort_index="900" />
+	</resource>
+
+	<!--Precursor-Style Lower-Priority Resources
+		*********************************************************-->
+
+	<resource id="SulfurHexafluroideGas" display_name="Sulfur Hexafluroide Gas"
+		description="Insulation against electrical discharge in high-voltage chambers."
+		strategy_tip="Extremely useful in high-density computing situations, where the amount of radio interference would otherwise cause errors."
+		how_to_acquire=""
+		technical_notes="Colorless, odorless, non-flammable, and non-toxic. An inert gas compound that has reasonably-high heat conductivity."
+		icon_name="CleanSimple_Hex17" icon_color="#E7D227" is_locked_before_unlock="Todo"
+		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="4000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="4000000"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Computing" sort_index="600" />
+		<part_of collection="Gases" sort_index="100" />
+	</resource>
+
+	<resource id="LiquidGallium" display_name="Liquid Gallium"
+		description="An effective passive coolant."
+		strategy_tip="Required for jobs that otherwise run excessively hot."
+		how_to_acquire=""
+		technical_notes="Atomic number 31 on the periodic table; a metal found in trace amounts in zinc, bauxite, and coal ores."
+		icon_name="CleanSimple_SciFiEmblem09" icon_color="#B3BEC6" is_locked_before_unlock="BauxiteMining"
+		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="4000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="4000000"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Metals" sort_index="100" />
+	</resource>
+
+	<resource id="Alumina" display_name="Alumina"
+		description="Synthetically-produced aluminum oxide."
+		strategy_tip="A precursor for smelting aluminum metal. Useful in advanced ceramic circuitry."
+		how_to_acquire="The primary product of bauxite refining, or can be bought at Warehouse Shops if you have a shell company."
+		technical_notes="High temperature resistance and electrical insulation make this ideal for high-density, large-scale computing."
+		internal_notes="1 unit would be 7.9 kg. Cost per that is $1,071, therefore. An office space of 5 floors has 135,000 sq ft of space overall, and 13,500 kg of alumina in it."
+		icon_name="CleanSimple_Skill074" icon_color="#FFCE77" is_locked_before_unlock="MechanicalMind"
+		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="4000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="4000000"
+		lang_key_for_excess="ExcessResourceBasicNote" scavenge_icon_usage="ScavengeResource_Alumina"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic"
+		extra_starting_amount_in_rank2_plus_city="18000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Metals" sort_index="100" />
+	</resource>
+
+	<resource id="PrismaticTungsten" display_name="Prismatic Tungsten"
+		description="Has many military applications, including versatile armor-plating-piercing rounds."
+		strategy_tip=""
+		how_to_acquire="Must be stolen from human military bases."
+		technical_notes="Hexamethyltungsten is air-sensitive and highly volatile. It has to be very carefully maintained prior to use."
+		icon_name="AN_Hexagonal1" icon_color="#43D0F1" is_locked_before_unlock="SublimatingShells"
+		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="600000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="600000"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Metals" sort_index="100" />
+		<part_of collection="Military" sort_index="100" />
+	</resource>
+
+	<resource id="Bastnasite" display_name="Bastnäsite"
+		description="The most reliable way to acquire gadolinium in this region."
+		strategy_tip=""
+		how_to_acquire="Found locally within bauxite deposits. One of the more valuable finds since Siberia thawed."
+		technical_notes=""
+		icon_name="FlatSkillB_rocks2" icon_color="#FF8B54" is_locked_before_unlock="BauxiteMining"
+		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="4000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="4000000"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Minerals" sort_index="100" />
+	</resource>
+
+	<resource id="GadoliniumMesosilicate" display_name="Gadolinium Mesosilicate"
+		description="The key ingredient in liquid-metal units and organometallic human-approximating synthetic androids."
+		strategy_tip=""
+		how_to_acquire="Requires a bastnäsite precursor and delicate industrial processing."
+		technical_notes="Gadolinium combined with silicate to form a mesoporous nano lattice with very interesting properties."
+		icon_name="FlatSkill_53" icon_color="#B1B9CB" is_locked_before_unlock="Shapeshifter"
+		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="4000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="4000000"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic"
+		extra_starting_amount_in_rank2_plus_city="0">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Minerals" sort_index="100" />
+	</resource>
+
+	<resource id="Neodymium" display_name="Neodymium"
+		description="Highly reactive lanthanide alloys for making strong magnets."
+		strategy_tip="Needed to make ultra-deep drilling tools that can withstand extreme temperatures."
+		how_to_acquire="Found locally in thortveitite. It is available worldwide in rare earth deposits. Can be stripped out of some factories."
+		technical_notes=""
+		internal_notes="1 unit would be 1 kg, for the sake of argument.  Bases on the scandium values, we'll call it 2.3x the cost."
+		icon_name="CleanSimple_SkillB093" icon_color="#E96DAD" is_locked_before_unlock="ReactiveLanthanides"
+		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="4000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="4000000"
+		lang_key_for_excess="ExcessResourceBasicNote" scavenge_icon_usage="ScavengeResource_Neodymium"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic"
+		extra_starting_amount_in_rank2_plus_city="15000" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Metals" sort_index="100" />
+	</resource>
+
+	<resource id="Scandium" display_name="Scandium"
+		description="Silvery-white rare-earth metal."
+		strategy_tip=""
+		how_to_acquire="Found locally in thortveitite. It is available worldwide in various rare earth deposits. Can be acquired from enemy Military Troop Transports. Can also be bought at Warehouse Shops if you have a shell company."
+		technical_notes="Due to the stresses of antigrav fields, scandium must be combined with aluminum in order to form modern airframes."
+		internal_notes="1 unit would be 1.31 kg. Cost per that is $1,283.8, therefore."
+		icon_name="SF2_Cube16" icon_color="#EBDAFA" is_locked_before_unlock="AntigravAirframes"
+		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="4000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="4000000"
+		lang_key_for_excess="ExcessResourceBasicNote" scavenge_icon_usage="ScavengeResource_Scandium"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic"
+		extra_starting_amount_in_rank2_plus_city="12000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Metals" sort_index="100" />
+	</resource>
+
+	<resource id="PollinatorBees" display_name="Pollinator Bees" is_lifeform="true"
+		description=""
+		strategy_tip=""
+		how_to_acquire="If all your apiaries are wiped out, you will have to replace them and then get a new queen."
+		technical_notes=""
+		icon_name="SW_Bee" icon_color="#FFDF41" base_storage_capacity="0" added_most_soft_cap="20000" is_locked_before_unlock="Beekeeping"
+		lang_key_for_excess="ExcessResourcePersonNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="20000"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Insects" sort_index="100" />
+	</resource>
+
+	<resource id="PollinatorBeeQueen" display_name="Pollinator Bee Queen" is_lifeform="true"
+		description=""
+		strategy_tip=""
+		how_to_acquire="Discover with StreetSense."
+		technical_notes=""
+		icon_name="CS_Bee" icon_color="#FFD139" base_storage_capacity="10" is_locked_before_unlock="Beekeeping"
+		lang_key_for_excess="ExcessResourcePersonNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Insects" sort_index="200" />
+	</resource>
+	
+	<resource id="Neuroweave" display_name="Neuroweave"
+		description="High-quality connective wiring that can form unit brains and nervous systems."
+		strategy_tip="Required for all units you construct."
+		technical_notes=""
+		icon_name="SI_Chip2" icon_color="#34FF97" base_storage_capacity="0" added_most_soft_cap="2500" is_locked_before_unlock="SingularProduction"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="100" />
+	</resource>
+
+	<resource id="MorphologicLattice" display_name="Morphologic Lattice"
+		description="Highly flexible connective material."
+		strategy_tip="Required for the construction of any large units, such as mechs and vehicles."
+		technical_notes=""
+		icon_name="AN_Hexagonal2" icon_color="#95D7FF" base_storage_capacity="0" added_most_soft_cap="9000" is_locked_before_unlock="AtmosphereOnly"
+		lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="9000"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="100" />
+	</resource>
+
+	<resource id="RoboticMotivator" display_name="Robotic Motivator"
+		description="Classic computing core with machine learning elements."
+		strategy_tip="Required precursor for bulk squads that are not part of your consciousness."
+		technical_notes="Motivators can follow simple orders, fight, and be trained to complete complex tasks. But there's no risk of them running off and becoming sentient."
+		icon_name="WEmblem195" icon_color="#EFD970" base_storage_capacity="0" added_most_soft_cap="45" is_locked_before_unlock="BulkProduction"
+		lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="45"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="100" />
+	</resource>
+
+	<resource id="DroneFrame" display_name="Drone Frame"
+		description="A general-purpose drone kit."
+		strategy_tip=""
+		technical_notes="A precursor for drone deployment from an appropriate air vehicle or ground structure."
+		icon_name="WEmblem261" icon_color="#FCAE89" base_storage_capacity="0" added_most_soft_cap="8" is_locked_before_unlock="DroneConstruction"
+		lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="8"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="100" />
+	</resource>
+
+	<resource id="FullDiveVRCradle" display_name="Full-Dive VR Cradle"
+		description="Seat for a single person to be hooked up to a VR simulation in a non-invasive way. All of their senses are redirected to the virtual environment, and from their perspective they are transported to a new place."
+		strategy_tip="The nature of their body in that place, and the nature of the place itself, depends entirely on the simulation being run."
+		technical_notes="Not suitable for long-term use. Occupants must disconnect to handle bodily functions."
+		icon_name="WEmblem233" icon_color="#FFE89B" is_locked_before_unlock="FullDiveVR"
+		base_storage_capacity="14400" added_storage_capacity_per_storage_bunker="800000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="800000"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Computing" sort_index="100" />
+	</resource>
+
+	<resource id="PreservedBrain" display_name="Preserved Brain"
+		description="A human brain and spinal column, carefully removed from the occupant and ready to run a computing neural net."
+		strategy_tip="The neurons inside were set for other purposes. But they are rewritten when inserted in a computing cluster."
+		technical_notes=""
+		icon_name="CleanSimple_SciFi091" icon_color="#E483AE" is_locked_before_unlock="BorrowedMinds"
+		base_storage_capacity="1333" added_storage_capacity_per_storage_bunker="6333336" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="6333336"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Computing" sort_index="800" />
+	</resource>
+
+	<resource id="ComputeTime" display_name="Compute Time"
+		description="The amount of processor time it takes for an algorithm to complete its task."
+		strategy_tip="Provided by mainframes, and used by client services."
+		technical_notes=""
+		icon_name="CS_ComputerElectricianCircuitBoard" icon_color="#C0FF95" base_storage_capacity="-1" is_locked_before_unlock="ComputroniumBlueprints"
+		lang_key_for_excess="ExcessResourceBasicNote" any_unused_expires_at_turn_start="true"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Computing" sort_index="200" />
+	</resource>
+
+	<!--Pets And Related
+		*********************************************************-->
+
+	<resource id="FelineCarcass" display_name="Feline Carcass"
+		 description="A dead cat."
+		 strategy_tip="Unclear what this could be useful for."
+		 how_to_acquire=""
+		 technical_notes=""
+		 icon_name="FlatInnocent_61" icon_color="#FF8888" is_locked_before_unlock="KilledTheCat"
+		 base_storage_capacity="9400" added_storage_capacity_per_storage_bunker="2000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Biomass" sort_index="300" />
+	</resource>
+	
+	<resource id="PetCat" display_name="Pet Cat" is_lifeform="true"
+		 description="Felines you have decided to house and care for."
+		 strategy_tip="Pets tend to have less of a purpose than livestock, which have a definite purpose. The humans you keep are a lot more like livestock."
+		 how_to_acquire=""
+		 technical_notes=""
+		 icon_name="BT_Cat" icon_color="#FFF49B" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="AdoptedACat"
+		 lang_key_for_excess="ExcessResourcePersonNote" added_storage_capacity_per_mass_animal_housing="1600"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Pets" sort_index="100" />
+	</resource>
+
+	<resource id="PetBulldog" display_name="Pet Bulldog" is_lifeform="true"
+		 description="Dogs you have decided to house and care for."
+		 strategy_tip="Pets tend to have less of a purpose than livestock, which have a definite purpose. The humans you keep are a lot more like livestock."
+		 how_to_acquire=""
+		 technical_notes=""
+		 icon_name="SK_Dog" icon_color="#FFF49B" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="DogRescue"
+		 lang_key_for_excess="ExcessResourcePersonNote" added_storage_capacity_per_mass_animal_housing="3000"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Pets" sort_index="100" />
+	</resource>
+
+	<resource id="PetDalmatian" display_name="Pet Dalmatian" is_lifeform="true"
+		 description="Dogs you have decided to house and care for."
+		 strategy_tip="Pets tend to have less of a purpose than livestock, which have a definite purpose. The humans you keep are a lot more like livestock."
+		 how_to_acquire=""
+		 technical_notes=""
+		 icon_name="SK_Dog" icon_color="#FFF49B" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="DogRescue"
+		 lang_key_for_excess="ExcessResourcePersonNote" added_storage_capacity_per_mass_animal_housing="3000"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Pets" sort_index="100" />
+	</resource>
+
+	<resource id="PetDoberman" display_name="Pet Doberman" is_lifeform="true"
+		 description="Dogs you have decided to house and care for."
+		 strategy_tip="Pets tend to have less of a purpose than livestock, which have a definite purpose. The humans you keep are a lot more like livestock."
+		 how_to_acquire=""
+		 technical_notes=""
+		 icon_name="SK_Dog" icon_color="#FFF49B" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="DogRescue"
+		 lang_key_for_excess="ExcessResourcePersonNote" added_storage_capacity_per_mass_animal_housing="3000"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Pets" sort_index="100" />
+	</resource>
+
+	<resource id="PetDachshund" display_name="Pet Dachshund" is_lifeform="true"
+		 description="Dogs you have decided to house and care for."
+		 strategy_tip="Pets tend to have less of a purpose than livestock, which have a definite purpose. The humans you keep are a lot more like livestock."
+		 how_to_acquire=""
+		 technical_notes=""
+		 icon_name="SK_Dog" icon_color="#FFF49B" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="DogRescue"
+		 lang_key_for_excess="ExcessResourcePersonNote" added_storage_capacity_per_mass_animal_housing="3000"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Pets" sort_index="100" />
+	</resource>
+
+	<resource id="PetGreyhound" display_name="Pet Greyhound" is_lifeform="true"
+		 description="Dogs you have decided to house and care for."
+		 strategy_tip="Pets tend to have less of a purpose than livestock, which have a definite purpose. The humans you keep are a lot more like livestock."
+		 how_to_acquire=""
+		 technical_notes=""
+		 icon_name="SK_Dog" icon_color="#FFF49B" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="DogRescue"
+		 lang_key_for_excess="ExcessResourcePersonNote" added_storage_capacity_per_mass_animal_housing="3000"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Pets" sort_index="100" />
+	</resource>
+
+	<resource id="PetHusky" display_name="Pet Husky" is_lifeform="true"
+		 description="Dogs you have decided to house and care for."
+		 strategy_tip="Pets tend to have less of a purpose than livestock, which have a definite purpose. The humans you keep are a lot more like livestock."
+		 how_to_acquire=""
+		 technical_notes=""
+		 icon_name="SK_Dog" icon_color="#FFF49B" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="DogRescue"
+		 lang_key_for_excess="ExcessResourcePersonNote" added_storage_capacity_per_mass_animal_housing="3000"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Pets" sort_index="100" />
+	</resource>
+
+	<resource id="PetRottweiler" display_name="Pet Rottweiler" is_lifeform="true"
+		 description="Dogs you have decided to house and care for."
+		 strategy_tip="Pets tend to have less of a purpose than livestock, which have a definite purpose. The humans you keep are a lot more like livestock."
+		 how_to_acquire=""
+		 technical_notes=""
+		 icon_name="SK_Dog" icon_color="#FFF49B" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="DogRescue"
+		 lang_key_for_excess="ExcessResourcePersonNote" added_storage_capacity_per_mass_animal_housing="3000"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Pets" sort_index="100" />
+	</resource>
+
+	<resource id="PetTatraSheepdog" display_name="Pet Tatra Sheepdog" is_lifeform="true"
+		 description="Dogs you have decided to house and care for."
+		 strategy_tip="Pets tend to have less of a purpose than livestock, which have a definite purpose. The humans you keep are a lot more like livestock."
+		 how_to_acquire=""
+		 technical_notes=""
+		 icon_name="SK_Dog" icon_color="#FFF49B" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="DogRescue"
+		 lang_key_for_excess="ExcessResourcePersonNote" added_storage_capacity_per_mass_animal_housing="3000"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Pets" sort_index="100" />
+	</resource>
+
+	<!--VR Resources
+		*********************************************************-->
+
+	<resource id="CrystallizedFear" display_name="Crystallized Fear"
+		description="Human brain activity collected and condensed into a weaponized form."
+		strategy_tip="Can be used during hacking sessions to power certain abilities or break down enemy barriers."
+		technical_notes="A collection of 5 hertz theta waves from many amygdalas."
+		icon_name="BT_SoundWave16" icon_color="#EF675E" base_storage_capacity="90000" is_locked_before_unlock="Todo"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="CrystalizedMentalStates" sort_index="800" />
+	</resource>
+
+	<resource id="CrystallizedCalm" display_name="Crystallized Calm"
+		description="Human brain activity collected and condensed into a weaponized form."
+		strategy_tip="Can be used during hacking sessions to power certain abilities or break down enemy barriers."
+		technical_notes="A collection of 3 hertz delta waves from human brains in deep meditation or dreamless sleep."
+		icon_name="BT_SoundWave1" icon_color="#6ECBF7" base_storage_capacity="90000" is_locked_before_unlock="Todo"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="CrystalizedMentalStates" sort_index="800" />
+	</resource>
+	
+	<resource id="CrystallizedInspiration" display_name="Crystallized Inspiration"
+		description="Human brain activity collected and condensed into a weaponized form."
+		strategy_tip="Can be used during hacking sessions to power certain abilities or break down enemy barriers."
+		technical_notes="A collection of gamma waves above 40 hertz from human minds racing during heavy information processing and synthesis."
+		icon_name="BT_SoundWaves3" icon_color="#9DF74F" base_storage_capacity="90000" is_locked_before_unlock="Todo"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="CrystalizedMentalStates" sort_index="800" />
+	</resource>
+
+	<resource id="CrystallizedExhilaration" display_name="Crystallized Exhilaration"
+		description="Human brain activity collected and condensed into a weaponized form."
+		strategy_tip="Can be used during hacking sessions to power certain abilities or break down enemy barriers."
+		technical_notes="A collection of beta waves in the 20 hertz range from human brains experiencing exciting situations."
+		icon_name="BT_SoundWave15" icon_color="#F7DA4F" base_storage_capacity="90000" is_locked_before_unlock="Todo"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="CrystalizedMentalStates" sort_index="800" />
+	</resource>
+
+	<resource id="CrystallizedAttention" display_name="Crystallized Attention"
+		description="Human brain activity collected and condensed into a weaponized form."
+		strategy_tip="Can be used during hacking sessions to power certain abilities or break down enemy barriers."
+		technical_notes="A collection of alpha waves in the 10 hertz range from human brains that are awake and attentive."
+		icon_name="BT_SoundWave5" icon_color="#E192FF" base_storage_capacity="90000" is_locked_before_unlock="Todo"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="CrystalizedMentalStates" sort_index="800" />
+	</resource>
+
+	<resource id="InvisibleUnusedResource" display_name=""  is_locked_before_unlock="Todo" skip_all_localization_on_node="true"
+		 description=""
+		 strategy_tip=""
+		 icon_name="CleanSimple_SkillC004" icon_color="#2EAFFF" amount_granted_when_skipping_chapter_zero="0"
+		 base_storage_capacity="-1" shows_trends_by_default="false"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="130" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+	</resource>
+
+</root>

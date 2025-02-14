@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--General Economic-->
+
+	<city_vehicle_type id="DeliveryCraft_ShortRange" display_name="Delivery Craft"	
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityVehicles_SpawnLogicGeneral"
+		desired_count_at_all_times_in_the_city="9" auto_disbands_if_not_in_city_life_range="true" spawns_nearby="true"
+		vis_object_to_draw="DeliveryDrone1" vis_object_scale="0.22" vis_object_extra_offset="0.4"
+		should_show_vis_object_in_map_mode="false" takes_on_unexplored_color_when_in_unexplored="true" is_small_flier="true">
+		<move_from_building_to_building should_despawn_when_path_completes="false" turn_radius="2" movement_speed="2.4"
+			travels_between_drone_target_buildings="true"
+			min_distance_of_destination_from_spawn="9" max_distance_of_destination_from_spawn="30" follows_roads="false"
+			should_go_to_twice_the_height_of_target_building="true" should_fly_in_arcs="true" should_launch_pod_count_at_target_on_arrival="2"/>
+	</city_vehicle_type>
+
+	<city_vehicle_type id="DeliveryCraft_LongerRange" display_name="Delivery Craft"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityVehicles_SpawnLogicGeneral"
+		desired_count_at_all_times_in_the_city="16" auto_disbands_if_not_in_city_life_range="false" spawns_nearby="true"
+		vis_object_to_draw="DeliveryDrone1" vis_object_scale="0.22" vis_object_extra_offset="0.4"
+		should_show_vis_object_in_map_mode="false" takes_on_unexplored_color_when_in_unexplored="true" is_small_flier="true">
+		<move_from_building_to_building should_despawn_when_path_completes="false" turn_radius="2" movement_speed="8"
+			travels_between_drone_target_buildings="true"
+			min_distance_of_destination_from_spawn="50" max_distance_of_destination_from_spawn="50" follows_roads="false"
+			should_go_to_twice_the_height_of_target_building="true" should_fly_in_arcs="true" should_launch_pod_count_at_target_on_arrival="2"/>
+	</city_vehicle_type>
+
+	<!--
+	<city_vehicle_type id="LongRangeEconomicTransport" display_name="Long-Range Economic Transport"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityVehicles_SpawnLogicGeneral"
+		desired_count_at_all_times_in_the_city="5" auto_disbands_if_not_in_city_life_range="false"
+		vis_object_to_draw="DeliveryDrone2" vis_object_scale="1.2" vis_object_extra_offset="28"
+		should_show_vis_object_in_map_mode="false">
+		<move_from_building_to_building should_despawn_when_path_completes="false" turn_radius="-1" movement_speed="1.3"
+			travels_between_drone_target_buildings="true"
+			min_distance_of_destination_from_spawn="300" max_distance_of_destination_from_spawn="800" follows_roads="false" should_launch_pod_count_at_target_on_arrival="8"/>		
+	</city_vehicle_type>
+-->
+</root>

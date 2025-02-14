@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="lower_mode_data">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="input_mode" type="node-dropdown" is_required="false" node_source="InputMode" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="What input mode does this use?" />
+
+	<attribute key="min_x" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the smallest allowed x the camera can move to?"/>
+	<attribute key="max_x" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the largest allowed x the camera can move to?"/>
+	<attribute key="min_z" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the smallest allowed z the camera can move to?"/>
+	<attribute key="max_z" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the largest allowed z the camera can move to?"/>
+
+	<attribute key="min_zoom" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the smallest zoom toward the focal point that is allowed?"/>
+	<attribute key="max_zoom" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the largest zoom toward the focal point that is allowed?"/>
+
+	<attribute key="anchor_y" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the anchor floor that is used when there no other focal point?"/>
+
+	<attribute key="hide_task_stack" type="bool" default="false"
+		tooltip="If this part of the ui should be hidden when in this mode."/>
+	<attribute key="hide_left_header" type="bool" default="false"
+		tooltip="If this part of the ui should be hidden when in this mode."/>
+	<attribute key="hide_right_header" type="bool" default="false"
+		tooltip="If this part of the ui should be hidden when in this mode."/>
+	<attribute key="hide_hide_radial_menu" type="bool" default="false"
+		tooltip="If this part of the ui should be hidden when in this mode."/>
+	<attribute key="hide_technology_section_of_left_menu" type="bool" default="false"
+		tooltip="If this part of the ui should be hidden when in this mode."/>
+	<attribute key="hide_right_header_except_maps" type="bool" default="false"
+		tooltip="If this part of the ui should be hidden when in this mode."/>
+	<attribute key="hide_right_header_full" type="bool" default="false"
+		tooltip="If this part of the ui should be hidden when in this mode."/>
+	
+	<attribute key="closes_like_a_window" type="bool" default="false"
+		tooltip="If this is true, then hitting escape exits this mode rather than opening the system menu, and the other mode-toggle windows won't open this automatically."/>
+	<attribute key="does_not_close_from_hotkeys" type="bool" default="false"
+		tooltip="If this is true, then hitting escape does nothing, and other hotkeys to change modes also do nothing.  The player will be trapped in here if something else, like a custom window, does not let them out!"/>
+	<attribute key="particle_tests_do_ui_style" type="bool" default="false"
+		tooltip="If this is true, particle tests that happen while in this mode will pretend a UI is open, even if that's not true."/>
+
+	<attribute key="min_x_for_photo_mode" type="float-textbox" min="-1000000" max="1000000" default="-100000" content_width_px="70" is_required="false"
+		tooltip="What x is least for photo mode?"/>
+	<attribute key="max_x_for_photo_mode" type="float-textbox" min="-1000000" max="1000000" default="100000" content_width_px="70" is_required="false"
+		tooltip="What x is most for photo mode?"/>
+	<attribute key="min_y_for_photo_mode" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="false"
+		tooltip="What y is the photo mode camera not allowed to go below in this mode?"/>
+	<attribute key="max_y_for_photo_mode" type="float-textbox" min="-10000" max="10000" default="1000" content_width_px="70" is_required="false"
+		tooltip="What y is the photo mode camera not allowed to go above in this mode?"/>
+	<attribute key="min_z_for_photo_mode" type="float-textbox" min="-1000000" max="1000000" default="-100000" content_width_px="70" is_required="false"
+		tooltip="What z is least for photo mode?"/>
+	<attribute key="max_z_for_photo_mode" type="float-textbox" min="-1000000" max="1000000" default="100000" content_width_px="70" is_required="false"
+		tooltip="What z is most for photo mode?"/>
+
+	<attribute key="ground_line_draw_level" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="At what y are lines 'just above ground level' drawn?"/>
+
+	<attribute key="photo_mode_speed_multiplier" type="float-textbox" min="0.01" max="50" default="1" content_width_px="70" is_required="true"
+		tooltip="How much faster or slower does the photo mode camera move in this mode?"/>
+	<attribute key="regular_camera_speed_multiplier" type="float-textbox" min="0.01" max="50" default="1" content_width_px="70" is_required="true"
+		tooltip="How much faster or slower does the regular camera move in this mode?"/>
+
+	<attribute key="overriding_music_type" type="node-dropdown" is_required="false" node_source="MusicType" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The music type that will be used, if one is going to be forced.  If one is not forced, then the main music from the main game will keep playing instead!" />
+	
+	<attribute key="overriding_weather" type="node-dropdown" is_required="false" node_source="WeatherStyle" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The weather style used, if one is going to be forced. Should not be used in streets mode or photo mode, as they pull their weather style from the current weather." />
+
+	<attribute key="lower_mode_content_bundle_name" type="string" maxlength="200" content_width_px="200" linebreak_before="Always" is_required="false"
+		tooltip="This specifies the asset bundle that has the content for this mode."/>
+	<attribute key="lower_mode_content_filename" type="string" maxlength="600" content_width_px="400" is_required="false"
+		tooltip="This specifies the path of the content prefab for this mode inside the specified asset bundle."/>
+	
+</root>

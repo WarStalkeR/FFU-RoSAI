@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="weather_style">
+
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="skybox" type="node-dropdown" is_required="false" node_source="VisSkybox" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The type of skybox used." />
+
+	<attribute key="ground_style" type="node-dropdown" is_required="false" node_source="VisGroundStyle" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The ground style used." />
+	<attribute key="fog_style" type="node-dropdown" is_required="false" node_source="VisFogStyle" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The fog style used." />
+
+	<attribute key="sun_intensity" type="float-textbox" min="0" max="10" default="1.37" content_width_px="70" is_required="true"
+		tooltip="How bright is the directional (sun) light?"/>
+	<attribute key="night_light_percent" type="float-textbox" min="0" max="10" default="0" content_width_px="70" is_required="true"
+		tooltip="How bright are the lights on cars and things, where 1 is pretty bright and 10 is the dead of night highbeams?"/>
+
+	<attribute key="camera_is_considered_high_at" type="float-textbox" min="10" max="500" default="20" content_width_px="70" is_required="true"
+		tooltip="At what height is the camera considered high in this weather?"/>
+
+	<attribute key="is_raining" type="bool" default="false"
+		tooltip="If the rain should be coming down." />
+
+	<attribute key="blocks_bird_sounds" type="bool" default="false"
+		tooltip="If there should not be any sounds of birds. Usually for the night, but not always." />
+	<attribute key="use_non_overridden_weather_sounds" type="bool" default="false"
+		tooltip="If this should use the weather sounds from another weather type, when this is an overriding type. Mainly for the city map." />
+
+	<attribute key="ocean_volume_min_height" type="float-textbox" min="0" max="100" default="26" content_width_px="70" is_required="false"
+		tooltip="What is the lowest height for ocean sounds, below which there is maximum volume?"/>
+	<attribute key="ocean_volume_max_height" type="float-textbox" min="0" max="100" default="40" content_width_px="70" is_required="false"
+		tooltip="What is the highest height for ocean sounds, above which there is lowest volume?"/>
+	<attribute key="ocean_volume_at_min" type="float-textbox" min="0" max="1" default="1" content_width_px="70" is_required="false"
+		tooltip="What is the volume used at the minimum height of the ocean?  Typically this is the loudest."/>
+	<attribute key="ocean_volume_at_max" type="float-textbox" min="0" max="1" default="0.1" content_width_px="70" is_required="false"
+		tooltip="What is the volume used at the maximum height of the ocean?  Typically this is the most quiet, we are furthest away."/>
+
+	<attribute key="low_wind_sound" type="node-dropdown" is_required="false" node_source="AmbientTrack" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="What sound is used for wind when the camera is relatively low?" />
+	<attribute key="high_wind_sound" type="node-dropdown" is_required="false" node_source="AmbientTrack" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="What sound is used for wind when the camera is relatively high?" />
+	<attribute key="ocean_sound" type="node-dropdown" is_required="false" node_source="AmbientTrack" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="What sound is used for the ocean, if any?" />
+	<attribute key="indoor_rain_sound" type="node-list" is_required="false" node_source="AmbientTrack" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="What sounds are used for rain when a menu is up?" />
+	<attribute key="low_rain_sound" type="node-list" is_required="false" node_source="AmbientTrack" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="What sounds are used for rain when lower-down in the city?" />
+	<attribute key="high_rain_sound" type="node-list" is_required="false" node_source="AmbientTrack" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="What sounds are used for rain when higher up in the city?" />
+
+	<attribute key="can_transition_to" type="node-list" is_required="true" node_source="WeatherStyle" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The list of other lighting styles that this style can transition to." />
+	
+</root>

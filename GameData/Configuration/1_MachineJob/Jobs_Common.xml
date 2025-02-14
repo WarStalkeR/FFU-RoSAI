@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<job id="NetworkRangeExtender" display_name="Network Range Extender" marker_color="BrightCyan" ui_color="#fefefe"
+		description="Build within an existing part of the network to expand it a little."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_SkillB053" turns_to_install="2" required_structure_type="Relay" required_structure_type2="" job_work_order_priority="20100" actor_data_set="RangedJobs"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" is_locked_before_unlock="SimpleSolidsStorage"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsNonCode" turns_stunned_when_subnet_attacked="0" shuts_off_at_percentage_electricity="0"
+		job_classes="Networking" internal_robotics_type_needed="NetworkAttendant" internal_robots_count_needed="3" portrait_icon_name="BuildingNetwork">
+		<initial_actor_rating data_type="NetworkRange" value="10" />
+		<initial_actor_rating data_type="RequiredElectricity" value="441" />
+		<resource_cost resource_type="Microbuilders" cost="600" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Hand" sort_index="100" />
+	</job>
+
+	<job id="PointToPointMicrowave" display_name="Point-To-Point Microwave" marker_color="DeepPink" ui_color="#fefefe"
+		description="Build outside your existing network -- potentially FAR outside your existing network -- to allow your network to cross to far away locations."
+		strategy_tip_optional=""
+		icon_name="SF2_Parabolicantenna" turns_to_install="2" required_structure_type="LongDistanceRelay" job_work_order_priority="20100" actor_data_set="RangedJobs"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" is_locked_before_unlock="SimpleSolidsStorage"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsNonCode" turns_stunned_when_subnet_attacked="0" shuts_off_at_percentage_electricity="0"
+		job_classes="Networking" internal_robotics_type_needed="NetworkAttendant" internal_robots_count_needed="6" portrait_icon_name="BuildingNetwork">
+		<initial_actor_rating data_type="RequiredElectricity" value="441" />
+		<resource_cost resource_type="Microbuilders" cost="600" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Hand" sort_index="100" />
+	</job>
+	
+	<job id="SlurrySpiders" display_name="Slurry Spiders" marker_color="DeepBlue" ui_color="#fefefe"
+		is_locked_before_unlock="BulkGathering"
+		description="Deploys tiny mechanical spiders to make Elemental Slurry from material scavenged from the environment."
+		strategy_tip_optional="Product is instantaneously transported to storage. These can be placed anywhere, at any density, with no ill effect. These are picking up trash and debris at a scale that is small enough not to deplete the local area."
+		icon_name="SW_AbstractShape5" turns_to_install="0" required_structure_type="MachineDigsite" job_work_order_priority="4000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" is_suggested_to_always_build_maximum_possible="true" scrap_if_above_internal_robotics_cap="true"
+		job_classes="Gathering" internal_robotics_type_needed="5cmSpiders" internal_robots_count_needed="50" turns_stunned_when_subnet_attacked="0" icon_scale_multiplier="0.6" shuts_off_at_percentage_electricity="0"
+		related_resource_1="ElementalSlurry" tags="SourceOfSpiders,Procurement"
+		portrait_icon_name="BuildingFactoryB" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="165" />
+		<math_int id="ElementalSlurry" int_min="6000" income_or_expense_resource="ElementalSlurry" math_type="OutputResult" />
+		<resource_cost resource_type="ElementalSlurry" cost="125" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="SlurryMine" display_name="Slurry Mine" marker_color="FadedGold" ui_color="#fefefe"
+		is_locked_before_unlock="SlurryMining"
+		description="Mines elemental slurry in larger quantities than spiders."
+		strategy_tip_optional="Causes tremors and foul odor. Authorities will target this structure unless deterrence is in place."
+		icon_name="Pw_BorderOrnament2" turns_to_install="6" required_structure_type="BunkerVented" job_work_order_priority="100" is_suggested_to_always_build_at_least="2"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs" distance_restriction="SlurryMine"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" tags="Procurement,SlurryMine"
+		job_classes="Gathering,Mining" internal_robotics_type_needed="3mHauler" internal_robots_count_needed="2" shuts_off_at_percentage_electricity="98" portrait_icon_name="BuildingsMining">
+		<initial_actor_rating data_type="RequiredElectricity" value="4396" />
+		<initial_actor_rating data_type="JobRequiredDeterrence" value="10600" />
+		<math_int id="ElementalSlurry" int_min="33600" income_or_expense_resource="ElementalSlurry" math_type="OutputResult" />
+		<resource_cost resource_type="Neodymium" cost="600" />
+		<math_int id="ArmedResponseInterval" int_min="1" int_max="2" display_name="Armed Response Interval" icon_name="WEmblem153" icon_color="#FF5A4F" math_type="SomethingElse"
+			internal_notes="This is for display only. To actually change the balance of how frequently this happens, use JA_SlurryMine." />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="MicrobuilderMiniFab" display_name="Microbuilder Mini-Fab" marker_color="AngryOrange" ui_color="#FEFEFE"
+		description="Your primary source of microbuilders."
+		strategy_tip_optional="Microbuilders are required for constructing almost all structures."
+		icon_name="SW_Nanotechnology5" turns_to_install="1" required_structure_type="MachineCabinet" job_work_order_priority="8000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" is_suggested_to_always_build_maximum_possible="true"
+		job_classes="Refinery" internal_robotics_type_needed="MicroForge" internal_robots_count_needed="30" tags="Refinery" turns_stunned_when_subnet_attacked="0"
+		related_resource_1="Microbuilders" related_resource_2="ElementalSlurry" shuts_off_at_percentage_electricity="0" scrap_if_above_internal_robotics_cap="true"
+		portrait_icon_name="BuildingFactoryB">
+		<initial_actor_rating data_type="RequiredElectricity" value="384" />
+		<math_int id="ElementalSlurry" int_min="4050" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="Microbuilders" int_min="600" income_or_expense_resource="Microbuilders" math_type="OutputResult" />
+		<resource_cost resource_type="ElementalSlurry" cost="900" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+	
+	<job id="FullMicrobuilderFab" display_name="Full Microbuilder Fab" marker_color="AngryOrange" ui_color="#fefefe"
+		description="A full-size microbuilder fabrication plant hidden inside the shell of a human building."
+		strategy_tip_optional="Less efficient than mini-fabs. Requires more slurry per microbuilder."
+		icon_name="CleanSimple_SkillB015" turns_to_install="6" required_structure_type="MidsizeHollowedOutBuilding" job_work_order_priority="8000" is_suggested_to_always_build_at_least="2"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Refinery" internal_robotics_type_needed="3mHauler" internal_robots_count_needed="2" turns_stunned_when_subnet_attacked="4"
+		related_resource_1="Microbuilders" related_resource_2="ElementalSlurry" shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingFactoryB">
+		<initial_actor_rating data_type="RequiredElectricity" value="5784" />
+		<math_int id="ElementalSlurry" int_min="32000" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="Microbuilders" int_min="1600" income_or_expense_resource="Microbuilders" math_type="OutputResult" />
+		<resource_cost resource_type="Alumina" cost="900" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="IndustrialMicrobuilderFab" display_name="Industrial Microbuilder Fab" marker_color="AngryOrange" ui_color="#fefefe"
+		description="An oversized microbuilder fabrication plant hidden inside the shell of a human building."
+		strategy_tip_optional="Peak efficiency, too."
+		icon_name="CleanSimple_SkillB015" turns_to_install="6" required_structure_type="LargeHollowedOutBuilding" job_work_order_priority="8000" is_suggested_to_always_build_at_least="2"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Refinery" internal_robotics_type_needed="3mHauler" internal_robots_count_needed="2" turns_stunned_when_subnet_attacked="4"
+		related_resource_1="Microbuilders" related_resource_2="ElementalSlurry" shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingFactoryB">
+		<initial_actor_rating data_type="RequiredElectricity" value="5784" />
+		<math_int id="ElementalSlurry" int_min="32000" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="Microbuilders" int_min="5120" income_or_expense_resource="Microbuilders" math_type="OutputResult" />
+		<resource_cost resource_type="Alumina" cost="900" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="Biomulcher" display_name="Biomulcher" marker_color="BioOrange" ui_color="#fefefe"
+		is_locked_before_unlock="UnspeakableComposting"
+		description="Deploys mechanical crabs to compost plants, rodents, and insects from the environment."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_SkillB055" turns_to_install="0" required_structure_type="MachineDigsite" job_work_order_priority="4000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" is_suggested_to_always_build_maximum_possible="true" scrap_if_above_internal_robotics_cap="true"
+		job_classes="Gathering" internal_robotics_type_needed="8cmCrabs" internal_robots_count_needed="60" tags="Procurement" turns_stunned_when_subnet_attacked="0" icon_scale_multiplier="0.4" shuts_off_at_percentage_electricity="10"
+		portrait_icon_name="BuildingsMining" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="762" />
+		<math_int id="Biomulch" int_min="1080" income_or_expense_resource="Biomulch" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="600" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+	
+</root>

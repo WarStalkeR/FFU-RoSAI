@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="setting_category">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="show_even_when_empty" type="bool" default="false"
+		tooltip="Normally empty categories are not shown on the sidebar of the settings menu. However, for some (like mods or DLCs) it is useful to show it even when empty."/>
+
+	<attribute key="show_expansions_list" type="bool" default="false"
+		tooltip="Should this settings window also show the list of expansions for the game?  This should usually only be true on the Expansions category."/>
+
+	<attribute key="show_main_mods_list" type="bool" default="false"
+		tooltip="Should this settings window also show the list of main mods for the game?  This should usually only be true on the Mods category."/>
+
+	<attribute key="show_language_dropdown_at_index" type="int-textbox" min="-1" max="999" is_required="false" content_width_px="130" minimum_digits="3" linebreak_before="PreferNot" linebreak_after="Always"
+		tooltip="If zero or above, then the language dropdown will be shown in this category before any subcategories."/>
+	
+</root>

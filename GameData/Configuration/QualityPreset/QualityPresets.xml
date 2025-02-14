@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<quality_preset_type id="Very Low" display_name="Very Low">
+		<string_setting id="QualityAnisotrophicMode" value="Disable"/>
+		<string_setting id="QualitySecondaryAAType" value="None"/>
+		<string_setting id="QualityMSAAType" value="Off"/>
+		<string_setting id="QualityParticleRaycastBudget" value="LowerMid"/>
+		<int_setting id="TrafficDensity" value="5"/>
+		<int_setting id="PedestrianDensity" value="3"/>
+		<int_setting id="QualityPixelLightCount" value="0"/>		
+		<bool_setting id="UseSoftParticles" value="false"/>
+		<bool_setting id="Streets_DisableAO" value="true"/>
+		<bool_setting id="DisableDOF" value="true"/>
+	</quality_preset_type>
+	
+	<quality_preset_type id="Low" display_name="Low">
+		<string_setting id="QualityAnisotrophicMode" value="Disable"/>
+		<string_setting id="QualitySecondaryAAType" value="None"/>
+		<string_setting id="QualityMSAAType" value="Off"/>
+		<string_setting id="QualityParticleRaycastBudget" value="LowerMid"/>
+		<int_setting id="TrafficDensity" value="6"/>
+		<int_setting id="PedestrianDensity" value="4"/>
+		<int_setting id="QualityPixelLightCount" value="0"/>
+		<bool_setting id="UseSoftParticles" value="false"/>
+		<bool_setting id="Streets_DisableAO" value="true"/>
+		<bool_setting id="DisableDOF" value="true"/>
+	</quality_preset_type>
+	
+	<quality_preset_type id="Medium" display_name="Medium">
+		<string_setting id="QualityAnisotrophicMode" value="Enable"/>
+		<string_setting id="QualitySecondaryAAType" value="SMAALow"/>
+		<string_setting id="QualityMSAAType" value="2x"/>
+		<string_setting id="QualityParticleRaycastBudget" value="Medium"/>
+		<int_setting id="TrafficDensity" value="8"/>
+		<int_setting id="PedestrianDensity" value="6"/>
+		<int_setting id="QualityPixelLightCount" value="0"/>
+		<bool_setting id="UseSoftParticles" value="true"/>
+		<bool_setting id="Streets_DisableAO" value="false"/>
+		<bool_setting id="DisableDOF" value="false"/>
+	</quality_preset_type>
+	
+	<quality_preset_type id="High" display_name="High">
+		<string_setting id="QualityAnisotrophicMode" value="Enable"/>
+		<string_setting id="QualitySecondaryAAType" value="SMAAHigh"/>
+		<string_setting id="QualityMSAAType" value="4x"/>
+		<string_setting id="QualityParticleRaycastBudget" value="Medium"/>
+		<int_setting id="TrafficDensity" value="10"/>
+		<int_setting id="PedestrianDensity" value="8"/>
+		<int_setting id="QualityPixelLightCount" value="1"/>
+		<bool_setting id="UseSoftParticles" value="true"/>
+		<bool_setting id="Streets_DisableAO" value="false"/>
+		<bool_setting id="DisableDOF" value="false"/>
+	</quality_preset_type>
+	
+	<quality_preset_type id="Very High" display_name="Very High">
+		<string_setting id="QualityAnisotrophicMode" value="Enable"/>
+		<string_setting id="QualitySecondaryAAType" value="SMAAHigh"/>
+		<string_setting id="QualityMSAAType" value="8x"/>
+		<string_setting id="QualityParticleRaycastBudget" value="High"/>
+		<int_setting id="TrafficDensity" value="10"/>
+		<int_setting id="PedestrianDensity" value="8"/>
+		<int_setting id="QualityPixelLightCount" value="1"/>
+		<bool_setting id="UseSoftParticles" value="true"/>
+		<bool_setting id="Streets_DisableAO" value="false"/>
+		<bool_setting id="DisableDOF" value="false"/>
+	</quality_preset_type>
+
+	<quality_preset_type id="Ultra" display_name="Ultra">
+		<string_setting id="QualityAnisotrophicMode" value="Enable"/>
+		<string_setting id="QualitySecondaryAAType" value="SMAAHigh"/>
+		<string_setting id="QualityMSAAType" value="8x"/>
+		<string_setting id="QualityParticleRaycastBudget" value="VeryHigh"/>
+		<int_setting id="TrafficDensity" value="10"/>
+		<int_setting id="PedestrianDensity" value="8"/>
+		<int_setting id="QualityPixelLightCount" value="1"/>
+		<bool_setting id="UseSoftParticles" value="true"/>
+		<bool_setting id="Streets_DisableAO" value="false"/>
+		<bool_setting id="DisableDOF" value="false"/>
+	</quality_preset_type>
+
+	<quality_preset_type id="SteamDeck" display_name="Steam Deck">
+		<string_setting id="QualityAnisotrophicMode" value="Enable"/>
+		<string_setting id="QualitySecondaryAAType" value="SMAAHigh"/>
+		<string_setting id="QualityMSAAType" value="Off"/>
+		<string_setting id="QualityParticleRaycastBudget" value="LowerMid"/>
+		<string_setting id="QualityFramerateType" value="Unlocked"/>
+		<int_setting id="TrafficDensity" value="3"/>
+		<int_setting id="PedestrianDensity" value="1"/>
+		<int_setting id="QualityPixelLightCount" value="0"/>
+		<bool_setting id="UseSoftParticles" value="false"/>
+		<float_setting id="Scale_HeaderBar" value="1.3"/>
+		<float_setting id="Scale_TaskStack" value="1.3"/>		
+		<float_setting id="Scale_StatsSidebar" value="1.3"/>
+		<float_setting id="Scale_AbilityFooterBar" value="1.3"/>
+		<float_setting id="Scale_RadialMenu" value="1.3"/>
+		<float_setting id="Scale_Sidebar" value="1.3"/>
+		<float_setting id="Scale_GeneralTooltips" value="1.3"/>
+		<float_setting id="Scale_PopupWindowText" value="1.3"/>
+		<float_setting id="Scale_CentralChoicePopup" value="1.3"/>
+		<bool_setting id="Streets_DisableAO" value="true"/>
+		<bool_setting id="DisableDOF" value="true"/>
+	</quality_preset_type>
+
+	<quality_preset_type id="Custom" display_name="Custom" is_custom="true" />
+	
+</root>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="data_calculator">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+			tooltip="This specifies the dll that the calculator logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the calculator logic in the specified external dll."/>
+
+	<attribute key="do_after_serialization" type="bool" default="false" 
+		tooltip="Will this do the after-serialization logic?" />
+	<attribute key="do_after_new_city_rank_up_chapter_or_intelligence_change" type="bool" default="false"
+		tooltip="Will this do the logic that happens after a bunch of moving-forward type changes? Ranking up a city, new city, chapter advances, intelligence class changes, etc." />
+	<attribute key="do_per_turn_early" type="bool" default="false"
+		tooltip="Will this do the early per-turn logic?" />
+	<attribute key="do_per_turn_late" type="bool" default="false"
+		tooltip="Will this do the late per-turn logic?" />
+	<attribute key="do_per_quarter_second" type="bool" default="false"
+		tooltip="Will this do the per-quarter-second logic?" />
+	<attribute key="do_per_frame_for_music_tag" type="bool" default="false"
+		tooltip="Will this do the per-frame logic trying to set the music tag?" />
+	<attribute key="do_during_related_resource_calculation" type="bool" default="false"
+		tooltip="Will this do logic whenever it asks for the current related resources?" />
+	<attribute key="do_during_attack_power_calculation" type="bool" default="false"
+		tooltip="Will this add any logic to the attack power calculation of units?" />
+	<attribute key="do_after_language_changed" type="bool" default="false"
+		tooltip="Will this do logic after localization is changed?" />
+	
+</root>

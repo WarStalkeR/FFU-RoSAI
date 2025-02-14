@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Visual Scaling
+	******************************************************************************************-->
+
+	<math_value id="UnitExtraScaleOnCityMap" float_min="4" internal_notes="When the unit is being drawn in map view, then how extra large to draw it."/>
+	
+	<math_value id="VehicleExtraScaleOnCityMap" float_min="4" internal_notes="When the vehicle is being drawn in map view, then how extra large to draw it."/>
+	<math_value id="VehicleExtraYOffsetOnCityMap" float_min="12" internal_notes="When the vehicle is being drawn in map view, then how much higher should it draw than in streets view."/>
+
+	<math_value id="VehicleMaxDeploymentDistanceFromHangar" float_min="50" internal_notes="How far away a vehicle can be spawned from an aerospace hangar."/>
+	<math_value id="MechMaxDeploymentDistanceFromHangar" float_min="50" internal_notes="How far away a mech can be spawned from an aerospace hangar."/>
+	<math_value id="AndroidMaxDeploymentDistanceFromLauncher" float_min="40" internal_notes="How far away an android can be spawned from a launcher."/>
+
+	<math_value id="ScreenSpaceTextRiseSpeed" float_min="0.23" internal_notes="How fast in world space a screen-space bit of text popup rises."/>
+	<math_value id="ScreenSpaceTextTimeToLast" float_min="3" internal_notes="How long one of these should last."/>
+	<math_value id="ScreenStartingOffsetY" float_min="80" internal_notes="In screen space units, how far up or down this should be."/>
+	<math_value id="ScreenAdditionalLineOffsetY" float_min="0.4" internal_notes="In world space units, how far up or down this should be when adding more lines."/>
+
+	<!--Difficulty Level Balance
+	******************************************************************************************-->
+
+	<math_value id="HardModeSquadMultiplierRange" float_min="1.5" float_max="1.8" />
+	<math_value id="ExtremeModeSquadMultiplierRange" float_min="3.1" float_max="3.6" />
+	
+	<!--Hacking Balance
+	******************************************************************************************-->
+
+	<math_value id="PlayerHackerMoveSpeed" float_min="29.28"/>
+	<math_value id="PlayerHackerTargetingMoveSpeed" float_min="190"/>
+	<math_value id="OtherHackerEntityMoveSpeed" float_min="29.28"/>
+	
+	<!--Selected Hex Sizing
+	******************************************************************************************-->
+
+	<math_value id="SelectedHexA_Y_Offset" float_min="0"/>
+	<math_value id="SelectedHexA_XZ_Size" float_min="0.11"/>
+	<math_value id="SelectedHexA_XZ_AddedSize" float_min="0.01"/>
+	<math_value id="SelectedHexA_XZ_Speed" float_min="4"/>
+	<math_value id="SelectedHexA_XZ_Thickness" float_min="1"/>
+
+	<math_value id="SelectedHexB_Y_Offset" float_min="-0.04"/>
+	<math_value id="SelectedHexB_XZ_Size" float_min="0.45"/>
+	<math_value id="SelectedHexB_XZ_AddedSize" float_min="0.05"/>
+	<math_value id="SelectedHexB_XZ_Speed" float_min="0"/>
+	<math_value id="SelectedHexB_XZ_Thickness" float_min="1"/>
+
+	<math_value id="SelectedHexC_Y_Offset" float_min="-0.02"/>
+	<math_value id="SelectedHexC_XZ_Size" float_min="0.4"/>
+	<math_value id="SelectedHexC_XZ_AddedSize" float_min="0.05"/>
+	<math_value id="SelectedHexC_XZ_Speed" float_min="0"/>
+	<math_value id="SelectedHexC_XZ_Thickness" float_min="1"/>
+
+	<!--Deployment Hex Sizing
+	******************************************************************************************-->
+
+	<math_value id="DeploymentHexA_Y_Offset" float_min="0"/>
+	<math_value id="DeploymentHexA_Y_Angle" float_min="0"/>
+	<math_value id="DeploymentHexA_XZ_Size" float_min="16"/>
+	<math_value id="DeploymentHexA_XZ_AddedSize" float_min="0.3"/>
+	<math_value id="DeploymentHexA_XZ_Speed" float_min="2"/>
+	<math_value id="DeploymentHexA_XZ_Thickness" float_min="1"/>
+
+	<math_value id="DeploymentHexB_Y_Offset" float_min="0"/>
+	<math_value id="DeploymentHexB_Y_Angle" float_min="0"/>
+	<math_value id="DeploymentHexB_XZ_Size" float_min="48"/>
+	<math_value id="DeploymentHexB_XZ_AddedSize" float_min="0.2"/>
+	<math_value id="DeploymentHexB_XZ_Speed" float_min="2"/>
+	<math_value id="DeploymentHexB_XZ_Thickness" float_min="1"/>
+
+	<math_value id="DeploymentHexC_Y_Offset" float_min="0"/>
+	<math_value id="DeploymentHexC_Y_Angle" float_min="0"/>
+	<math_value id="DeploymentHexC_XZ_Size" float_min="64"/>
+	<math_value id="DeploymentHexC_XZ_AddedSize" float_min="0.2"/>
+	<math_value id="DeploymentHexC_XZ_Speed" float_min="2"/>
+	<math_value id="DeploymentHexC_XZ_Thickness" float_min="1"/>
+
+	<!--Tooltip Shadows
+	******************************************************************************************-->
+
+	<math_value id="TooltipShadow_Standard_Alpha" float_min="1"/>
+	<math_value id="TooltipShadow_Standard_Size" float_min="48"/>
+	<math_value id="TooltipShadow_Standard_Softness" float_min="81"/>
+
+	<math_value id="TooltipShadow_TightDark_Alpha" float_min="1"/>
+	<math_value id="TooltipShadow_TightDark_Size" float_min="14"/>
+	<math_value id="TooltipShadow_TightDark_Softness" float_min="18"/>
+
+	<math_value id="TooltipShadow_WideDark_Alpha" float_min="1"/>
+	<math_value id="TooltipShadow_WideDark_Size" float_min="30"/>
+	<math_value id="TooltipShadow_WideDark_Softness" float_min="36"/>
+
+	<math_value id="TooltipShadow_Arrow_Alpha" float_min="1"/>
+	<math_value id="TooltipShadow_Arrow_Size" float_min="70"/>
+	<math_value id="TooltipShadow_Arrow_Softness" float_min="100"/>
+		
+	<!--Human Housing Balance
+	******************************************************************************************-->
+
+	<math_value id="FilthPerTurnPerShelteredHuman" float_min="1.4"/>
+	<math_value id="FilthPerTurnPerRefugee" float_min="1.2"/>
+	<math_value id="FilthCanceledPerDailyNecessities" float_min="1.7"/>
+	<math_value id="FurniturePerShelteredHuman" float_min="0.22"/>
+	<math_value id="FurniturePerRefugee" float_min="0.19"/>
+
+	<math_value id="NeuralExpansionPerDayUseHour" float_min="0.36"/>
+	
+	<!--Misc Balance
+	******************************************************************************************-->
+	
+	<math_value id="AttackOfOpportunityDamageRange" float_min="0.15" float_max="0.45" internal_notes="The range of damage that an attack of opportunity will have on your unit."/>
+
+	<math_value id="AreaOfAttackMultiplier" float_min="0.4" internal_notes="Because the normal area of attack numbers are not floating point, this needs to be applied to scale them down."/>
+
+	<!--Territory Control Flags
+	******************************************************************************************-->
+	
+	<math_value id="TerritoryControlLinkRange" float_min="3.6" internal_notes="How far away a territory control flag can be from that which it is trying to link to."/>
+	<math_value id="TerritoryControlFogCutRange" float_min="5" internal_notes="How much a territory control flag cuts through the fog."/>
+
+	<math_value id="TerritoryControlFlagScaleNormal" float_min="1.4" internal_notes="Scale of the flags in the normal view."/>
+	<math_value id="TerritoryControlFlagScaleCityMap" float_min="4.5" internal_notes="Scale of the flags in the map view."/>
+
+	<math_value id="TerritoryControlFlagIconBaseScale" float_min="0.7" internal_notes="Base size of the icon compared to the flag. Scaled automatically with the flag."/>
+	<math_value id="TerritoryControlFlagIconYOffset" float_min="2.8" internal_notes="How far up the icon goes on the flag. Different scales of the flag will automatically adjust this."/>
+	<math_value id="TerritoryControlFlagIconShiftsForwardBy" float_min="0.08" internal_notes="How far forward the icon moves in front of the flag."/>
+	
+	<!--Visual Targeting
+	******************************************************************************************-->
+	<math_value id="VehicleTargetingP1Adjustments" float_min="0.2" float_max="1.3" internal_notes="Min is portion along the curve from 0-1, max is the amount adjusted up or down in world units."/>
+	<math_value id="VehicleTargetingP2Adjustments" float_min="0.8" float_max="-0.6" internal_notes="Min is portion along the curve from 0-1, max is the amount adjusted up or down in world units."/>
+
+	<math_value id="MechTargetingP1Adjustments" float_min="0.3" float_max="1.2" internal_notes="Min is portion along the curve from 0-1, max is the amount adjusted up or down in world units."/>
+	<math_value id="MechTargetingP2Adjustments" float_min="0.7" float_max="0.6" internal_notes="Min is portion along the curve from 0-1, max is the amount adjusted up or down in world units."/>
+
+	<math_value id="AndroidTargetingP1Adjustments" float_min="0.3" float_max="1.2" internal_notes="Min is portion along the curve from 0-1, max is the amount adjusted up or down in world units."/>
+	<math_value id="AndroidTargetingP2Adjustments" float_min="0.7" float_max="0.6" internal_notes="Min is portion along the curve from 0-1, max is the amount adjusted up or down in world units."/>
+
+	<math_value id="WillSelectScalingRangeMin" float_min="4" internal_notes=""/>
+	<math_value id="WillSelectScalingRangeMax" float_min="120" internal_notes=""/>
+	<math_value id="WillSelectScalingMultiplierMax" float_min="40" internal_notes=""/>
+
+	<!--Per-Turn Gathering
+	******************************************************************************************-->
+	<math_value id="BaseElementalSlurryPerTurnPerAP" float_min="5" internal_notes=""/>
+	<math_value id="AddedElementalSlurryPerScavengingSkillPerTurnPerAP" float_min="0.64" internal_notes=""/>
+
+	<!--Health Bars
+	******************************************************************************************-->
+	<math_value id="HealthBar_Scale" float_min="0.4" internal_notes="Min is the scale used."/>
+	<math_value id="HealthBar_Dialog_InitialOffset" float_min="-0.05" internal_notes="How far to jump down before the dialog icons row."/>
+
+	<math_value id="HealthBar_StatusIcons_Scale" float_min="1" internal_notes="The icons of the damage types under the health bars."/>
+	<math_value id="HealthBar_StatusIcons_InitialOffset" float_min="-0.05" internal_notes="How far to jump down before the damage icons row."/>
+	<math_value id="HealthBar_StatusIcons_XMovementPer" float_min="0.23" internal_notes="Spacing per icon when multiple."/>
+
+	<math_value id="HealthBarLow_YMovementPer" float_min="-0.26" internal_notes="Negative means it goes down rather than up."/>
+	<math_value id="HealthBarMid_YMovementPer" float_min="-0.26" internal_notes="Negative means it goes down rather than up."/>
+	<math_value id="HealthBarHigh_YMovementPer" float_min="-0.26" internal_notes="Negative means it goes down rather than up."/>
+	
+	<math_value id="LowHealthPipScale" float_min="0.5" />
+	<math_value id="MidHealthPipScale" float_min="0.65" />
+	<math_value id="HighHealthPipScale" float_min="0.65" />
+	
+	<!--Icons
+	******************************************************************************************-->
+	<math_value id="ComplaintIcons_XMovementPer" float_min="0.23" internal_notes="Spacing per icon when multiple."/>
+
+	<math_value id="ContemplationIconScale" float_min="3" internal_notes="Min is the scale used."/>
+	<math_value id="ExplorationSiteIconScale" float_min="2" internal_notes="Min is the scale used."/>
+
+	<math_value id="StreetSenseMapIconScale" float_min="2" internal_notes="Min is the scale used."/>
+	<math_value id="StreetSenseStreetsIconScale" float_min="0.7" internal_notes="Min is the scale used."/>
+
+	<math_value id="SwarmMapIconScale" float_min="2" internal_notes="Min is the scale used."/>
+	<math_value id="SwarmStreetsIconScale" float_min="0.7" internal_notes="Min is the scale used."/>
+
+	<!--Event Camera
+	******************************************************************************************-->
+	<math_value id="EventCameraLeftOffsetX" float_min="-0.35" internal_notes=""/>
+	<math_value id="EventCameraLeftOffsetY" float_min="-0.47" internal_notes=""/>
+	<math_value id="EventCameraLeftOffsetZ" float_min="0.8" internal_notes=""/>
+	<math_value id="EventCameraLeftRotationY" float_min="290" internal_notes=""/>
+
+	<math_value id="EventCameraRightOffsetX" float_min="0.5" internal_notes=""/>
+	<math_value id="EventCameraRightOffsetY" float_min="-0.37" internal_notes=""/>
+	<math_value id="EventCameraRightOffsetZ" float_min="1.2" internal_notes=""/>
+	<math_value id="EventCameraRightRotationY" float_min="30" internal_notes=""/>
+	
+	<!--Visual Bits
+	******************************************************************************************-->
+	<math_value id="LockedAbilityBackgroundBrightness" float_min="0.5" internal_notes=""/>
+	<math_value id="LockedAbilityBackgroundSaturationShift" float_min="0.2" internal_notes=""/>
+
+	<math_value id="TooltipWidthFudge" float_min="1.03" internal_notes="If this is set too low, then math errors in TextMeshPro make tooltips wrap more than they should and go off the bottom of their panel.
+If it's set too high, then tooltips wind up wrapping less than expected, and having blank lines at the bottom. This latter case is the preferable one, but still sucks."/>
+
+	<math_value id="VehicleActionHoverYOffset" float_min="-7" internal_notes=""/>
+
+	<math_value id="AndroidCursorFollowSpeed" float_min="240" internal_notes=""/>
+	
+	<!--Key Effects
+	******************************************************************************************-->
+
+	<math_value id="FullNukeRadius" float_min="50" internal_notes="How far out buildings are devastated from a normal nuke."/>
+	<math_value id="MicroNukeRadius" float_min="10" internal_notes="How far out buildings are devastated from a micro-nuke."/>
+
+	<!--Other
+	******************************************************************************************-->
+	
+</root>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--FemaleMimic
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="FemaleMimic" display_name="Female Mimic"
+		description="Female-form Mimic (android designed to look human). Presents as unarmed, but has dual pistols in a torso compartment."
+		short_description="Infiltration" unit_capacity_cost="4"
+		tooltip_icon_name="CyborgA1" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="AN_AndroidSyntheticfeMale" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="CyborgA1" vis_object_aggressive="CyborgA2" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" 
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle"
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_prefix="Mimic" name_style="UnitBarcode"
+		sort_order="9200" command_mode_category="ShellCompanyDeployment"
+		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true" is_tied_to_shell_company="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByAI,StandardUnits,ShellCompanyOperatives,Combatants,CombatAndroids,Dynadroids,Infildroids,Mimics,CanFitThinHumanClothes,CanFitHumanClothes,CanHandleAndroidDualPistols,CanHandleAndroidKnuckles" is_considered_android="true">
+		<equipment_slot_count type="AndroidPrimary" amount="1" name_when_blank="Dual Pistols" />
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidAugment" amount="1" />
+		<default_feat feat="Ambush" value="2"/>
+		
+		<actor_data data_type="AttackRange" base_range="18,18" />
+		<actor_data data_type="ActorMoveRange" base_range="60,60" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="4,4"/>
+		<actor_data data_type="ActorPower" base_range="40,40" />
+		<actor_data data_type="ActorAgility" base_range="70,70" />
+		<actor_data data_type="UnitCognition" base_range="75,75" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="145,145" />
+		<actor_data data_type="UnitHackingSkill" base_range="50,50" />
+		<actor_data data_type="UnitSyntheticRealism" base_range="15,15" />
+		<!--
+		<actor_data data_type="UnitSupervision" base_range="90,90" />-->
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="AndroidForceConversation" />
+		<ability_slot slot_index="6" ability_type="AndroidDemoralizeMode" />
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />
+		
+		<default_perk perk="BlendingIn" unlock="" />
+		<default_perk perk="ShellCompanyOperative" unlock="" />
+		<unit_cost resource_type="MentalEnergy" required="1" />
+		<unit_cost resource_type="Neuroweave" required="1500" />
+		<unit_cost resource_type="GadoliniumMesosilicate" required="500" />
+		<unit_cost resource_type="HeavyMetals" required="12000" />
+	</machine_unit_type>
+
+	<!--MaleMimic
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="MaleMimic" display_name="Male Mimic"
+		description="Male-form Mimic (android designed to look human). Presents as unarmed, but it has a folding katana in a torso compartment."
+		short_description="Infiltration" unit_capacity_cost="4"
+		tooltip_icon_name="CyborgB3" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="AN_AndroidSyntheticMale" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="CyborgB1" vis_object_aggressive="CyborgB2" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" 
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle"
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_prefix="Mimic" name_style="UnitBarcode"
+		sort_order="9300" command_mode_category="ShellCompanyDeployment"
+		can_make_ranged_attacks_by_default="false" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true" is_tied_to_shell_company="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByAI,StandardUnits,ShellCompanyOperatives,SupportUnits,Portdroids,Infildroids,Mimics,CanFitThinHumanClothes,CanFitHumanClothes,CanHandleAndroidBlades" is_considered_android="true">
+		<equipment_slot_count type="AndroidPrimary" amount="1" name_when_blank="Katana" />
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidAugment" amount="1" />
+		<default_feat feat="Ambush" value="2"/>
+		
+		<actor_data data_type="AttackRange" base_range="9,9" />
+		<actor_data data_type="ActorMoveRange" base_range="60,60" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="4,4"/>
+		<actor_data data_type="ActorPower" base_range="60,60" />
+		<actor_data data_type="ActorAgility" base_range="70,70" />
+		<actor_data data_type="UnitCognition" base_range="75,75" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="145,145" />
+		<actor_data data_type="UnitHackingSkill" base_range="50,50" />
+		<actor_data data_type="UnitSyntheticRealism" base_range="15,15" />
+		<!--
+		<actor_data data_type="UnitSupervision" base_range="90,90" />-->
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="AndroidForceConversation" />
+		<ability_slot slot_index="6" ability_type="AndroidDemoralizeMode" />
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />
+		
+		<default_perk perk="BlendingIn" unlock="" />
+		<default_perk perk="ShellCompanyOperative" unlock="" />
+		<unit_cost resource_type="MentalEnergy" required="1" />
+		<unit_cost resource_type="Neuroweave" required="1500" />
+		<unit_cost resource_type="GadoliniumMesosilicate" required="500" />
+		<unit_cost resource_type="HeavyMetals" required="12000" />
+	</machine_unit_type>
+
+	<!--PMCImpostor
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="PMCImpostor" display_name="PMC Impostor"
+		description="Built to look like a PMC operative."
+		short_description="Infiltration" unit_capacity_cost="12"
+		tooltip_icon_name="SecurityImposter1" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="AN_AndroidPMCImposter" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="SecurityImposter1" vis_object_aggressive="SecurityImposter2" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" 
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle"
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_prefix="IMP" name_style="UnitBarcode"
+		sort_order="9100" command_mode_category="AndroidDeployment"	
+		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true" is_pmc_impostor="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByAI,StandardUnits,Combatants,CombatAndroids,Infildroids,PMCImpostors,CanHandleAndroidRifles,CanHandleAndroidLightFirearms,CanHandleAndroidShoulderMounts" is_considered_android="true">
+		<equipment_slot_count type="AndroidPrimary" amount="1" name_when_blank="Basic Rifle" />
+		<equipment_slot_count type="AndroidSecondary" amount="1" />
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidAugment" amount="1" />
+		<default_feat feat="Ambush" value="1.5"/>
+		
+		<actor_data data_type="AttackRange" base_range="12,12" />
+		<actor_data data_type="ActorMoveRange" base_range="36,36" />
+		<actor_data data_type="ActorHP" base_range="160,160" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="3,3"/>
+		<actor_data data_type="ActorPower" base_range="120,120" />
+		<actor_data data_type="ActorAgility" base_range="60,60" />
+		<actor_data data_type="UnitStrength" base_range="80,80" />
+		<actor_data data_type="UnitCognition" base_range="60,60" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="55,55" />
+		<actor_data data_type="UnitHackingSkill" base_range="20,20" />
+		<actor_data data_type="UnitScavengingSkill" base_range="110,110" />
+		<!--
+		<actor_data data_type="UnitSupervision" base_range="110,110" />-->
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="AndroidForceConversation" />
+		<ability_slot slot_index="6" ability_type="AndroidDemoralizeMode" />
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />
+		
+		<default_perk perk="PMCAppearance" unlock="" />
+		<default_perk perk="PMCOfficerAppearance" unlock="PMCOfficerSigil" />
+		<default_perk perk="MilitaryOfficerCodex" unlock="OfficerCodex" />
+		<!--
+		<default_feat feat="Entrench" value="1"/>-->
+		<unit_cost resource_type="MentalEnergy" required="2" />
+		<unit_cost resource_type="Neuroweave" required="1500" should_mirror_to_bulk="true" />
+		<unit_cost resource_type="ElementalSlurry" required="1400" should_multiply_by_squad_size_to_bulk="true" />
+	</machine_unit_type>
+	
+</root>

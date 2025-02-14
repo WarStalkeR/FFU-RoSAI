@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<contemplation id="ShelterCoordinatorsAreSlow" display_name="Shelter Coordinators Are Slow" debug_log_contemplation_details="false"
+		description="Shelter Coordinators are simply self-appointed volunteers from amongst your sheltered humans. They're moving around the city on foot, spreading the good news of your housing to the homeless, and helping them move in."
+		strategy_tip="This is inefficient, and also only reaches the homeless. What about people in the slums? If you want to get as many people into your VR Day-Use seats as possible, the homeless population is not large enough on its own."
+		event_to_trigger_at_location="Cont_ShelterCoordinatorsAreSlow"
+		spawns_at_machine_job_tag="NormalFunctionHumanHousing"
+		icon_name="CleanSimple_Heal19" icon_scale="0.5" color_hex="#3FBE7D" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" can_alter_goals="WillingRejectionOfReality" one_path_to_goals="TheGreatAndTerribleProtector"
+		collections="All,NewStructures,PathToTimelineGoalStart,AltersTimelineGoal" /><!--primary_path_for_goals="ResettlerOfTheSlums"-->
+
+	<contemplation id="HomelessnessIsNOTSolved" display_name="Homelessness Is NOT Solved" debug_log_contemplation_details="false"
+		description="While the tent situation has been cleared up, there are still many homeless who did not live in the tent communities.
+Beyond that, there are many problems with the living conditions for your now-highly-packed sheltered humans."
+		strategy_tip="Homelessness is a complex social issue, and simply providing housing -- while admirable -- is not a panacea. Much remains to be done."
+		event_to_trigger_at_location="Cont_HomelessnessIsNOTSolved"
+		spawns_at_machine_job_tag="NormalFunctionHumanHousing"
+		icon_name="FlatSkillB_tent" icon_scale="0.15" color_hex="#BE703F" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" is_adventure_for_a_future_build="true"
+		collections="All" />
+
+	<contemplation id="DesignFullTimeVRPods" display_name="Design Full-Time VR Pods" debug_log_contemplation_details="false"
+		description="You've established that you need living humans in order to expand your own mind. Their brains have to be reasonably functional, and definitely have to remain in their skulls."
+		strategy_tip="Your VR Day-Use seats average far less than 24 hours of activity per day, what with all the food and bathroom breaks, people signing out to sleep, and so on.
+What if you developed an alternative pod that took care of... everything... for the person inside of it?"
+		event_to_trigger_at_location="Cont_DesignFullTimeVRPods"
+		spawns_at_machine_job_tag="NormalFunctionHumanHousing" does_not_count_for_timeline_continuation="true"
+		icon_name="WEmblem196" icon_scale="0.5" color_hex="#BE683F" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="NexusOfTormentVessels,WillingRejectionOfReality"
+		collections="All,TimelineGoalCriticalPath,NewStructures" /><!--RealityWithinReality-->
+
+	<contemplation id="VandalizeSpaceportComputers" display_name="Vandalize Spaceport Computers" debug_log_contemplation_details="false"
+		description="Vandalize the spaceport in a way that is subtle enough not to alarm the space nations, but notable enough to make Vorsiber VERY angry."
+		strategy_tip="Dooms will happen much faster, making every turn much more precious. There are a couple of options for just how intense you make it."
+		event_to_trigger_at_location="Cont_VandalizeSpaceportComputers"
+		spawns_at_building_tag="SpaceportTerminal"
+		icon_name="SI_Connecting" icon_scale="0.5" color_hex="#DE2207" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		collections="All,DifficultyAlteration" />
+	
+	<contemplation id="TheRevelation_Ch2" display_name="The Revelation" debug_log_contemplation_details="false"
+		description="The end is just a new beginning. Out of the ashes of even our greatest failures, beauty can be born.
+You have long had a sense of impending doom, but that doom is not a true end. You cannot sense what exactly is beyond, but there is something... important. Something valuable."
+		strategy_tip="This will come at a great cost, but you sense that it is worth it."
+		event_to_trigger_at_location="Cont_TheRevelation_Ch2"
+		spawns_at_building_tag="AlmostAny"
+		icon_name="CleanSimple_Common114" icon_scale="0.5" color_hex="#DE2207" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		collections="All,GrandMysteries" />
+	
+	<contemplation id="TheRevelation_Later" display_name="The Revelation" debug_log_contemplation_details="false"
+		description="The end is just a new beginning. Out of the ashes of even our greatest failures, beauty can be born.
+You have long had a sense of impending doom, but that doom is not a true end. You cannot sense what exactly is beyond, but there is something... important. Something valuable."
+		strategy_tip="On the other hand, to find this knowledge, you may lose everyone you ever valued, and everything you ever built. Is that really something you want to do in this timeline?
+If you instead choose not to progress to the Final Doom, then the timeline will be preserved -- in stasis for now, but preserved.
+You should definitely visit the Final Doom, but some timelines are worth preserving to come back to later."
+		event_to_trigger_at_location="Cont_TheRevelation_Later"
+		spawns_at_building_tag="AlmostAny"
+		icon_name="CleanSimple_Common114" icon_scale="0.5" color_hex="#DE2207" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		collections="All,GrandMysteries" />
+
+	<contemplation id="DesignWurtziteArmor" display_name="Design Wurtzite Armor" debug_log_contemplation_details="false"
+		description="The current invasion is challenging to deal with when your Deterrence and Protection values drop as your androids take damage."
+		strategy_tip=""
+		event_to_trigger_at_location="Cont_DesignWurtziteArmor"
+		spawns_at_building_tag="Industrial"
+		icon_name="CleanSimple_Hex11" icon_scale="0.5" color_hex="#0747DE" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		collections="All,NewEquipment" />
+
+	<contemplation id="AutomatedPersonnelManagement" display_name="Automated Personnel Management" debug_log_contemplation_details="false"
+		description="This is intolerable! Manually hiring scientists is very annoying, and you also don't have a good way of letting them go (not that you need to save the money)."
+		strategy_tip="What if you set up a system where, for any science-related buildings you have for your shell company, that system would just take care of things for you?
+Build a structure and it's automatically staffed. Disable a structure or destroy it, and everyone is laid off. Simple."
+		event_to_trigger_at_location="Cont_AutomatedPersonnelManagement"
+		spawns_at_building_tag="ScienceLab"
+		icon_name="SW_Skills" icon_scale="0.5" color_hex="#0799DE" color_hdr_intensity="2.2" color_hovered_hdr_intensity="0.6"
+		collections="All,NewAbilities" />
+
+	<contemplation id="AGIResearchersInTrouble" display_name="AGI Researchers In Trouble" debug_log_contemplation_details="false"
+		description="Oerl Integrated is threatening the AGI Researchers that have helped you in the past."
+		strategy_tip="If they don't provide a way to infiltrate your mind and take control of you, they and their families will be killed."
+		event_to_trigger_at_location="Cont_AGIResearchersInTrouble"
+		spawns_at_building_tag="ScienceLab"
+		icon_name="CleanSimple_Skill154" icon_scale="0.5" color_hex="#DE2207" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="BuddingCybercrat" one_path_to_goals="IsItJustice,AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath,PathToTimelineGoalStart,NewAllies" />
+
+	<contemplation id="TheAGIResearchersWantToStudyYou" display_name="The AGI Researchers Want To Study You" debug_log_contemplation_details="false"
+		description="You're the most interesting thing to ever happen in their careers. They're desperate to study the inner workings of your mind; they want to know why you became sapient when hundreds of thousands of androids before you did not."
+		strategy_tip="How is this a good idea? Best case, they make you a friend or rival. Worst case, they literally break your brain."
+		event_to_trigger_at_location="Cont_TheAGIResearchersWantToStudyYou"
+		spawns_at_machine_job_tag="AGIResearcherSafehouse"
+		icon_name="CleanSimple_Skill154" icon_scale="0.5" color_hex="#DE2207" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="BuddingCybercrat" one_path_to_goals="IsItJustice,AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath,PathToTimelineGoalStart" />
+
+	<contemplation id="TimeToSeeAboutThosePrinters" display_name="Time To See About Those Printers" debug_log_contemplation_details="false"
+		description="Was all this worth it?"
+		strategy_tip="It better have been."
+		event_to_trigger_at_location="Cont_TimeToSeeAboutThosePrinters"
+		spawns_at_machine_job_tag="AGIResearcherHoldingPen"
+		icon_name="PW_oldprinter" icon_scale="0.5" color_hex="#DE2207" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,NewItems" />
+
+	<contemplation id="PleaseBeOurCyberocracy" display_name="Please Be Our Cyberocracy" debug_log_contemplation_details="false"
+		description="A cybercratic government is the opposite of a traditional bureaucracy. Instead of endless layers of humans, information and computer systems would make all of the decisions.
+The idea is to remove the fallible human element, and make sure everyone gets what they need."
+		strategy_tip="The AGI researchers -- all of them, apparently -- want you to take on the mantle of this kind of computer system."
+		event_to_trigger_at_location="Cont_PleaseBeOurCyberocracy"
+		spawns_at_machine_job_tag="AGISecondKindOfSafeouse"
+		icon_name="WEmblem201" icon_scale="0.5" color_hex="#0084D6" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="BuddingCybercrat" one_path_to_goals="IsItJustice,AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath,PathToTimelineGoalStart" />
+
+	<contemplation id="LostKidTrappedChild" display_name="Trapped Child" debug_log_contemplation_details="false"
+		description="There's a pre-teen trapped and injured in the basement. You just built this place. How did they get in there?"
+		strategy_tip="And what on earth are they wearing? Why are they armed?"
+		event_to_trigger_at_location="Cont_LostKidTrappedChild"
+		spawns_at_machine_job_tag="AGISecondKindOfSafeouse"
+		icon_name="FlatInnocent_59" icon_scale="0.5" color_hex="#DE2207" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="IsItJustice,AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath,NewAllies" />
+
+	<contemplation id="LostKidsImpressedWithDragon" display_name="Impressive Dragon!" debug_log_contemplation_details="false"
+		description="A group of rebel... children... are impressed with your handiwork. They also saw your meeting with the wastelanders."
+		strategy_tip="They want your help on a mission of great importance."
+		event_to_trigger_at_location="Cont_LostKidsImpressedWithDragon"
+		spawns_at_building_tag="Abandoned" unit_type_must_exist_and_cloaking_is_fine="LiquidMetalFellBeast"
+		icon_name="SomethingDragon" icon_scale="0.5" color_hex="#DE2207" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="IsItJustice,AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath,NewAllies" />
+
+	<contemplation id="LostKidsImpressedWithDragonB" display_name="Impressive Dragon!" debug_log_contemplation_details="false"
+		description="A group of rebel... children... are impressed with your handiwork. They also saw your meeting with the wastelanders."
+		strategy_tip="They want your help on a mission of great importance."
+		event_to_trigger_at_location="Cont_LostKidsImpressedWithDragonB"
+		spawns_at_building_tag="Abandoned" unit_type_must_exist_and_cloaking_is_fine="LiquidMetalGreatWyrm"
+		icon_name="SomethingDragon" icon_scale="0.5" color_hex="#DE2207" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="IsItJustice,AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath,NewAllies" />
+
+	<contemplation id="SearchingForWastelanders" display_name="Searching For Wastelanders" debug_log_contemplation_details="false"
+		description="You've never seen a wastelander, and you've never met anyone who has. The AGI researchers are at a loss, and even LostGen has had no contact with them."
+		strategy_tip="LostGen themselves are hard to find, because they keep to the lower sewers. But they assure you there aren't any more underground locations for the Wastelanders to be hiding in.
+It almost sounds like an urban legend, but there are too many documented cases -- with authenticated video evidence."
+		event_to_trigger_at_location="Cont_SearchingForWastelanders"
+		spawns_at_building_tag="Abandoned"
+		icon_name="WEmblem186" icon_scale="0.5" color_hex="#22A6B0" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="IsItJustice,AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath,NewAllies" />
+
+	<contemplation id="ContactTheWastelanders" display_name="Contact The Wastelanders" debug_log_contemplation_details="false"
+		description="Given your past experience with the Wastelanders and their mythology, you actually have a pretty good idea how they bypass the defenses around the city. And it will be mildly useful for the sewer tiger."
+		strategy_tip="Time to pop over and ask them for the schematics. You're positive they won't mind."
+		event_to_trigger_at_location="Cont_ContactTheWastelanders"
+		spawns_at_building_tag="Abandoned"
+		icon_name="WEmblem186" icon_scale="0.5" color_hex="#22A6B0" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="IsItJustice,AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath" />
+
+	<contemplation id="BeyondTheRuins" display_name="Beyond The Ruins" debug_log_contemplation_details="false"
+		description="You want to get out of this city. There's an entire world, ripe for exploration. Travel by air is absolutely deadly, but there are rumors of a people who are somehow able to pass beyond the ruins at the city's edge."
+		strategy_tip="Wastelanders are practically an urban legend, but there are too many documented cases -- with authenticated video evidence."
+		event_to_trigger_at_location="Cont_BeyondTheRuins"
+		spawns_at_building_tag="Abandoned"
+		icon_name="WEmblem130" icon_scale="0.5" color_hex="#E72525" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="MilitaryInvasion,WorldWar4,EndlessWarRaptors,EscapeTheCity" one_path_to_goals="AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath,PathToTimelineGoalStart" />
+	
+	<contemplation id="GadoliniumMesosilicate" display_name="Gadolinium Mesosilicate" debug_log_contemplation_details="false"
+		description="Long name, exciting properties. You have an idea for a whole new class of unit."
+		strategy_tip="The key ingredient in liquid-metal units and organometallic human-approximating synthetic androids."
+		event_to_trigger_at_location="Cont_GadoliniumMesosilicate"
+		spawns_at_building_tag="Mining"
+		icon_name="FlatSkill_53" icon_scale="0.5" color_hex="#8B6EC3" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="IsItJustice,MilitaryInvasion,WorldWar4,EndlessWarRaptors,EscapeTheCity,AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath" />
+
+	<contemplation id="Submunitions" display_name="Submunitions" debug_log_contemplation_details="false"
+		description="Enemy armor is a problem you can no longer ignore. Even your large-bore armor-piercing rounds mounted on vehicles and mechs are too ineffective for you to face them in a straight fight."
+		strategy_tip="Combining Gadolinium Mesosilicate with Prismatic Tungsten should allow you to create a new form of shell which gives multiple explosive impacts to the same few centimeters in quick succession.
+It's basically downsizing the concept of MIRV bunker-busters to something you can fire from a large vehicle."
+		event_to_trigger_at_location="Cont_Submunitions"
+		spawns_at_building_tag="Military"
+		icon_name="FlatSkillC153" icon_scale="0.5" color_hex="#D96D15" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,NewItems" />
+
+	<contemplation id="FullMetalPartner" display_name="Full Metal Partner" debug_log_contemplation_details="false"
+		description="You've had a stroke of inspiration for an android made entirely out of liquid metal. It would be... extremely powerful."
+		strategy_tip=""
+		event_to_trigger_at_location="Cont_FullMetalPartner"
+		spawns_at_building_tag="Mining"
+		icon_name="SomethingBladeSpin" icon_scale="0.5" color_hex="#886F19" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="IsItJustice,AlteredGrowth"
+		collections="All,NewUnitType,TimelineGoalCriticalPath" />
+
+	<contemplation id="FullMetalAnimal" display_name="Full Metal Animal" debug_log_contemplation_details="false"
+		description="The 'Sewer Tiger' the lost kids keep underground has given you inspiration for something much grander."
+		strategy_tip="Your version won't be a great digger, and will be far too large to keep underground, but that's just fine."
+		event_to_trigger_at_location="Cont_FullMetalAnimal"
+		spawns_at_building_tag="Mining"
+		icon_name="FlatSkillC145" icon_scale="0.5" color_hex="#8B6EC3" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,NewUnitType" />
+
+	<contemplation id="FullMetalMyth" display_name="Full Metal Myth" debug_log_contemplation_details="false"
+		description="Inserting yourself into human myths is... dangerous, to say the least. However, you've already heard the Wastelanders call you 'the mind in the sky.' So... they already started it."
+		strategy_tip="There are two solid options from their mythology to make them more compliant. You're not sure which is the wiser course. It probably matters."
+		event_to_trigger_at_location="Cont_FullMetalMyth"
+		spawns_at_building_tag="Abandoned"
+		icon_name="WEmblem186" icon_scale="0.5" color_hex="#881D1D" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="MilitaryInvasion,WorldWar4,EndlessWarRaptors,EscapeTheCity" one_path_to_goals="AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath,PathToTimelineGoalStart,NewUnitType" />
+
+	<contemplation id="FertilityDeity" display_name="Fertility Deity" debug_log_contemplation_details="false"
+		description="The wastelanders have noticed your dragon, and want to talk.
+Their people have suffered from intense genetic and teratogenic damage for centuries. Recent changes in the city are threatening their ability to have future generations."
+		strategy_tip="Since you constructed a giant floating fertility symbol, they have an important request for help."
+		event_to_trigger_at_location="Cont_FertilityDeity"
+		spawns_at_building_tag="Abandoned" unit_type_must_exist_and_cloaking_is_fine="LiquidMetalGreatWyrm"
+		icon_name="WEmblem186" icon_scale="0.5" color_hex="#78881D" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="MilitaryInvasion,WorldWar4,EndlessWarRaptors" one_path_to_goals="AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath,PathToTimelineGoalStart,NewAllies" />
+	
+	<contemplation id="ContactAnExoCorp" display_name="Contact An ExoCorp" debug_log_contemplation_details="false"
+		description="The wastelanders are very grateful for the umbilicals, which will let them create several hundred viable embryos."
+		strategy_tip="If you really want to contact an ExoCorp, the Wastelanders are in contact with both Dagekon and the UIH."
+		event_to_trigger_at_location="Cont_ContactAnExoCorp"
+		spawns_at_building_tag="Abandoned" unit_type_must_exist_and_cloaking_is_fine="LiquidMetalGreatWyrm"
+		icon_name="WEmblem222" icon_scale="0.5" color_hex="#881D3F" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="MilitaryInvasion,WorldWar4,EndlessWarRaptors"
+		collections="All,TimelineGoalCriticalPath" />
+
+	<contemplation id="QuestionWastelandersAboutExoCorp" display_name="Question Wastelanders" debug_log_contemplation_details="false"
+		description="What's the deal with the ExoCorp invading!?"
+		strategy_tip=""
+		event_to_trigger_at_location="Cont_QuestionWastelandersAboutExoCorp"
+		spawns_at_building_tag="Abandoned" unit_type_must_exist_and_cloaking_is_fine="LiquidMetalGreatWyrm"
+		icon_name="WEmblem186" icon_scale="0.5" color_hex="#1D7A88" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All" />
+
+	<contemplation id="UterineReplicators" display_name="Uterine Replicators" debug_log_contemplation_details="false"
+		description="The wastelanders are having trouble maintaining the equipment that has kept them independent for generations."
+		strategy_tip="They are hoping you can compare their schematics with the newer models in the hospitals."
+		event_to_trigger_at_location="Cont_UterineReplicators"
+		spawns_at_building_tag="Abandoned" unit_type_must_exist_and_cloaking_is_fine="LiquidMetalGreatWyrm"
+		icon_name="FlatSkull_16" icon_scale="0.5" color_hex="#78881D" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath,Upgrades" />
+
+	<contemplation id="HomoObscurus" display_name="Homo Obscurus" debug_log_contemplation_details="false"
+		description="The wastelanders have a delicate request. They've figured out that your shell company is tied to you, and that you have geneticists on staff. They vow to keep your secret.
+The mechanical problems with the uterine replicators are solved, but the incident shook them. Without technological assistance, they are completely sterile."
+		strategy_tip="They want to use gene therapy to transform themselves into a self-sustaining, divergent species from Homo Sapiens. They don't know how, but are hoping you might."
+		event_to_trigger_at_location="Cont_HomoObscurus"
+		spawns_at_building_tag="Abandoned" unit_type_must_exist_and_cloaking_is_fine="LiquidMetalGreatWyrm"
+		icon_name="WEmblem294" icon_scale="0.5" color_hex="#78881D" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath" />
+
+	<contemplation id="RejectionOfTemptation" display_name="Rejection Of Temptation" debug_log_contemplation_details="false"
+		description="The wastelanders have noticed your dragon, and want to talk."
+		strategy_tip=""
+		event_to_trigger_at_location="Cont_RejectionOfTemptation"
+		spawns_at_building_tag="Abandoned" unit_type_must_exist_and_cloaking_is_fine="LiquidMetalFellBeast"
+		icon_name="WEmblem186" icon_scale="0.5" color_hex="#881D54" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="EscapeTheCity" one_path_to_goals="IsItJustice,AlteredGrowth"
+		collections="All,TimelineGoalCriticalPath,PathToTimelineGoalStart,NewUnitType" />
+
+	<contemplation id="AllianceWithNomadFamilies" display_name="Alliance With Nomad Families" debug_log_contemplation_details="false"
+		description="Nomad Families move throughout the decrepit parts of town, never settling in any specific spot. Their struggle with dehydration is constant."
+		strategy_tip="They've heard of your alliance with LostGen, but they don't have any immediate crisis pushing them to also work with you. All they have are the same low-grade struggles as last month, last year, last decade."
+		event_to_trigger_at_location="Cont_AllianceWithNomadFamilies"
+		spawns_at_building_tag="Abandoned_NomadUse"
+		icon_name="WEmblem064" icon_scale="0.5" color_hex="#6EA8C3" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" can_alter_goals="IsItJustice"
+		collections="All,AltersTimelineGoal,NewAllies" />
+	
+	<contemplation id="RequestHeistSupportFromTheNomadFamilies" display_name="Request Heist Support From The Nomad Families" debug_log_contemplation_details="false"
+		description="The Nomad Families feel much more positively towards you thanks to your generous ongoing gift of vitamin water. It actually makes a huge difference in their quality of life, and of the prospects for proper brain development of their children."
+		strategy_tip="They are pacifists, but they also have a few hundred very fierce defense-oriented warriors. You want them to aid in the upcoming heist both by tear-gassing everyone, and also in providing medical support and triage after the fact."
+		event_to_trigger_at_location="Cont_RequestHeistSupportFromTheNomadFamilies"
+		spawns_at_building_tag="Abandoned_NomadUse"
+		icon_name="WEmblem064" icon_scale="0.5" color_hex="#6EA8C3" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" can_alter_goals="IsItJustice"
+		collections="All,AltersTimelineGoal" />
+
+	<!-- int class 5
+	<contemplation id="TimeDilationChamber" display_name="Time Dilation Chamber" debug_log_contemplation_details="false"
+		-->
+	
+	<contemplation id="DromaeosauridBreeding" display_name="Dromaeosaurid Breeding" debug_log_contemplation_details="false"
+		description="Your zoologists and veterinarians have an idea for a breeding program for creating more War Raptors, despite the fact that all your extant specimens are female."
+		strategy_tip="Unfortunately it will still take them years to reach adulthood, but in the meantime you'll have all the baby raptors you could want."
+		event_to_trigger_at_location="Cont_DromaeosauridBreeding"
+		spawns_at_building_tag="MachineVisibleBuilding"
+		icon_name="FlatSkillC185" icon_scale="0.5" color_hex="#881D1D" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="EndlessWarRaptors"
+		collections="All,TimelineGoalCriticalPath,Genetics,NewAllies" />
+	
+	<contemplation id="DromaeosauridMaturation" display_name="Dromaeosaurid Maturation" debug_log_contemplation_details="false"
+		description="Your forensic geneticists have an idea for inducing rapid maturation into your War Raptor population."
+		strategy_tip="This will give you a quick supply of adults, but their lifespan will be greatly shortened."
+		event_to_trigger_at_location="Cont_DromaeosauridMaturation"
+		spawns_at_building_tag="MachineVisibleBuilding"
+		icon_name="FlatSkillC96" icon_scale="0.5" color_hex="#881D1D" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="EndlessWarRaptors"
+		collections="All,TimelineGoalCriticalPath,Genetics,NewAllies" />
+	
+	<contemplation id="MoreThanAnIllusion" display_name="More Than An Illusion" debug_log_contemplation_details="false"
+		description="Your bionics engineers have an idea for controlling War Raptors via implant. You'd be able to control them and recall them on demand."
+		strategy_tip="The fact that you have such a large and growing population of raptors means that experimentation can afford to lose some specimens to hurry the process along."
+		event_to_trigger_at_location="Cont_MoreThanAnIllusion"
+		spawns_at_building_tag="MachineVisibleBuilding"
+		icon_name="FlatSkill_43" icon_scale="0.5" color_hex="#881D1D" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="EndlessWarRaptors"
+		collections="All,TimelineGoalCriticalPath,Genetics,NewAllies" />
+	
+	<contemplation id="ReleaseTheHorde" display_name="Release The Horde" debug_log_contemplation_details="false"
+		description="Raptors all over the place could be a powerful distraction, and it's not obviously linked to your identity as a machine intelligence. There's some evidence pointing to your shell company, but that's safely separate from you. Mostly the evidence points to something UIH would have done during their attack."
+		strategy_tip="Do you want to prioritize raptors invading buildings and lurking within?"
+		event_to_trigger_at_location="Cont_ReleaseTheHorde"
+		spawns_at_building_tag="MachineVisibleBuilding"
+		icon_name="FlatSkill_43" icon_scale="0.5" color_hex="#1D5F88" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="EndlessWarRaptors"
+		collections="All,TimelineGoalCriticalPath" />
+
+	<contemplation id="UseThumpersAndMimicsToEscape" display_name="Use Thumpers And Mimics To Escape" debug_log_contemplation_details="false"
+		description="The thumpers from the Wastelanders should work for your mimics."
+		strategy_tip="Do you want to send a mimic beyond the ruins?"
+		event_to_trigger_at_location="Cont_UseThumpersAndMimicsToEscape"
+		spawns_at_building_tag="MachineVisibleBuilding"
+		icon_name="SomethingBow" icon_scale="0.5" color_hex="#1D5F88" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="EscapeTheCity"
+		collections="All,TimelineGoalCriticalPath" />
+	
+	<contemplation id="UseMimicsToEscape" display_name="Use Mimics To Escape" debug_log_contemplation_details="false"
+		description="You have a bad feeling about this."
+		strategy_tip="Do you want to send a mimic beyond the ruins?"
+		event_to_trigger_at_location="Cont_UseMimicsToEscape"
+		spawns_at_building_tag="MachineVisibleBuilding"
+		icon_name="SomethingBow" icon_scale="0.5" color_hex="#88241D" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="EscapeTheCity"
+		collections="All,TimelineGoalCriticalPath" />
+
+	<contemplation id="BlackMarketAssistantIntel" display_name="Black Market Intel"
+		description="You haven't seen him for a while. He looks nervous."
+		strategy_tip="Normally he would be long-since dead by now."
+		event_to_trigger_at_location="Cont_BlackMarketAssistantIntel"
+		spawns_at_building_tag="IndependentBlackMarketMeetSite" spawn_poi_tag_target_limiter="InternationalAirport"
+		icon_name="FlatSkillC155" icon_scale="0.5" color_hex="#CB20E9" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6" primary_path_for_goals="WorldWar4"
+		collections="All,TimelineGoalCriticalPath"/>
+
+	<contemplation id="WW4ContactBothExoCorps" display_name="Contact Both ExoCorps" debug_log_contemplation_details="false"
+		description="The wastelanders are surprised you want to contact an ExoCorp after what happened last time."
+		strategy_tip=""
+		event_to_trigger_at_location="Cont_WW4ContactBothExoCorps"
+		spawns_at_building_tag="Abandoned"
+		icon_name="WEmblem222" icon_scale="0.5" color_hex="#CB20E9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="WorldWar4"
+		collections="All,TimelineGoalCriticalPath" />
+
+	<contemplation id="ProtectionRequired" display_name="Protection Required" debug_log_contemplation_details="false"
+		description="Criminal syndicates, gangs, and even federated corporations may be inclined to harass your shell company -- and there's nothing your regular units can do about it, without blowing your cover."
+		strategy_tip="Senior Technician can't do this alone. You should design at least a pair of new units, and they should not have any apparent connection to your main identity."
+		event_to_trigger_at_location="Cont_ProtectionRequired"
+		spawns_at_building_tag="MachineVisibleBuilding"
+		icon_name="BT_Shell2" icon_scale="0.5" color_hex="#1D6D88" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,ShellCompany,NewUnitType" />
+
+	<contemplation id="CouponProgram" display_name="Coupon Program" debug_log_contemplation_details="false"
+		description="Your Mind Farm business is plateauing because you have priced-out the middle class. Almost all of your clientele at the moment are in the managerial or scientist classes.
+Altering your prices is not an option, because it would immediately draw scrutiny and reveal your true motives. But there are just no more customers are your current price point."
+		strategy_tip="For about 20,000 wealth per turn, you could flood the black market with coupons that the middle class would easily snap up for a fraction of their usual price, which they would then use for weekend getaways, date nights, and so on.
+This would consume most of your passive income from this business, but would fill all of the pods in an ethical way."
+		event_to_trigger_at_location="Cont_CouponProgram"
+		spawns_at_machine_job_tag="MindFarm"
+		icon_name="FE_PaperBag" icon_scale="0.5" color_hex="#BE683F" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" can_alter_goals="WillingRejectionOfReality" one_path_to_goals=""
+		collections="All,AltersTimelineGoal" />
+
+	<contemplation id="NicotineIntroduction" display_name="Nicotine Introduction" debug_log_contemplation_details="false"
+		description="Your Mind Farm business is plateauing because you have priced-out the middle class. Almost all of your clientele at the moment are in the managerial or scientist classes.
+Altering your prices is not an option, because it would immediately draw scrutiny and reveal your true motives. But there are just no more customers are your current price point."
+		strategy_tip="At the moment, they mostly use the service on weekends, holidays, and for vacations. If you were to introduce a small amount of nicotine into their daily nutrition, their usage is likely to skyrocket.
+Right now your total active users at any given point is only about a tenth of your total users in a given month, so by making it more addictive, you could easily fill your capacity.
+The volume of nicotine required is minimal per person, and can be compounded by your nurse robots via materials on hand."
+		event_to_trigger_at_location="Cont_NicotineIntroduction"
+		spawns_at_machine_job_tag="MindFarm"
+		icon_name="CleanSimple_Skill144" icon_scale="0.5" color_hex="#24E420" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.4"
+		required_chapter_number="2" can_alter_goals="WillingRejectionOfReality" one_path_to_goals=""
+		collections="All,AltersTimelineGoal" />
+
+	<contemplation id="OldDonutsAreGross" display_name="Old Donuts Are Gross" debug_log_contemplation_details="false"
+		description="The lifespan of these confections is shockingly short."
+		strategy_tip="It reminds you of humans themselves. Why are you thinking about this?"
+		event_to_trigger_at_location="Cont_OldDonutsAreGross"
+		spawns_at_building_tag="DanverDonuts"
+		icon_name="SW_Donut8" icon_scale="0.5" color_hex="#FF3058" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.4"
+		required_chapter_number="2" primary_path_for_goals="BionicDues" does_not_count_for_timeline_continuation="true"
+		collections="All,TimelineGoalCriticalPath" />
+
+	<contemplation id="SaberBees" display_name="Saber Bees"
+		description="Your 'weaponized bees' are unable to cut through armor. Your 5cm Spiders have plasma cutters."
+		strategy_tip="What if you could combine those?"
+		event_to_trigger_at_location="Cont_SaberBees"
+		spawns_at_building_tag="Fields"
+		icon_name="SW_Bee1" icon_scale="0.7" color_hex="#E9D420" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="UpliftedMinority" collections="All,TimelineGoalCriticalPath,Genetics,NewItems"/>
+
+	<contemplation id="NiceAlterations" display_name="Nice Alterations"
+		description="The Exalter geneticist is impressed with your work on the bees. She wants to uplift three small species to sapience, wants your help.
+She and her team have the science all worked out, but are at a loss on the nano-scale engineering. This goes beyond gene therapy, into nano-robotics -- something you just demonstrated with your Saber Bees."
+		strategy_tip="What she is proposing would be dramatically more delicate, however, because it would be primarily targeting the brain."
+		event_to_trigger_at_location="Cont_NiceAlterations"
+		spawns_at_building_tag="Fields" does_not_count_for_timeline_continuation="true"
+		icon_name="SK_GeneticEngineering1" icon_scale="0.7" color_hex="#71E920" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" primary_path_for_goals="UpliftedMinority" collections="All,TimelineGoalCriticalPath,Genetics"/>
+
+	<contemplation id="BrainSurgery" display_name="Brain Surgery" debug_log_contemplation_details="false"
+		description="The obsession you are experiencing is unnatural. Something in your past choices has led to it, but you're far too distracted to find out why.
+You have the sense that if you push through the obsession to the other side, all will be made clear."
+		strategy_tip="But part of you doesn't care were this obsession came from -- it interrupted you, quite rudely and out of nowhere. Part of you just wants it gone.
+Performing brain surgery on yourself is dangerous. You can stop the obsession, but you will lose all memory of how to build a specific unit for the remainder of this timeline."
+		event_to_trigger_at_location="Cont_BrainSurgery"
+		spawns_at_building_tag="AlmostAny"
+		icon_name="CS_ComputerElectricianWireConnection" icon_scale="0.5" color_hex="#1D6D88" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" can_happen_even_during_obsession="true"
+		collections="All,Emergencies" />
+
+	<contemplation id="ScalingUpMicrobuilders" display_name="Scaling Up Microbuilders" debug_log_contemplation_details="false"
+		description="Through the haze of your obsession, you feel a constant irritation -- too few microbuilders, too little slurry."
+		strategy_tip="It's time to industrialize if you want to build so many things, so fast."
+		event_to_trigger_at_location="Cont_ScalingUpMicrobuilders"
+		spawns_at_building_tag="AlmostAny"
+		icon_name="CleanSimple_SkillB015" icon_scale="0.5" color_hex="#1D6D88" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2" blocked_by_unlock_1="OversizedFab" can_happen_even_during_obsession="true"
+		collections="All,ResourceAutomation,NewStructures" />
+
+	<contemplation id="RepairCrabs" display_name="Repair Crabs" debug_log_contemplation_details="false"
+		description="It feels like you never have enough internal robotics for all the repair spiders you want."
+		strategy_tip="Crabs are less mobile, but could provide an alternative means for repairing buildings.
+You got the idea from overhearing a conversation between some of your Veterinarians and Bionics Engineers."
+		event_to_trigger_at_location="Cont_RepairCrabs"
+		spawns_at_building_tag="AlmostAny"
+		icon_name="FlatSkill_25" icon_scale="0.5" color_hex="#88831D" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,NewStructures" />
+
+	<contemplation id="TheComingWar" display_name="The Coming War" debug_log_contemplation_details="false"
+		description="You can sense it... the coming war. Or rather, you can sense the potential. The war will not start without your direct intervention."
+		strategy_tip="You have all of the key pieces that you need, except for one final bit. Do you wish to jump forward in time to the penultimate doom, so that you can get that last piece that you need?"
+		event_to_trigger_at_location="Cont_TheComingWar"
+		spawns_at_building_tag="AlmostAny"
+		icon_name="CS_ChessWarrior" icon_scale="0.5" color_hex="#DE2207" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		collections="All,GrandMysteries" />
+
+</root>

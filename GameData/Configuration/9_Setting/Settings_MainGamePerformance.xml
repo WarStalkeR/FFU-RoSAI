@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+  <!-- Performance -->
+
+	<setting id="QualityPreset" category="Performance" is_stored_in_graphics_settings_file="true" display_name="Quality Preset" type="IntDropdown" dropdown_filler_dll_name="HotMExternalVisualizationCode" dropdown_filler_type_name="Arcen.HotM.ExternalVis.QualityPresetFiller" default_int="3"
+		description="Allows you to quickly set many of the options on this page. You can further tune from there if you wish." 
+		ignores_defaults="true" ignores_defaults_lang_key="SetDefaults_Ignores" />
+
+	<setting id="QualityFramerateType" category="Performance" is_stored_in_graphics_settings_file="true" display_name="Framerate / VSync" type="IntDropdown" dropdown_filler_dll_name="HotMExternalVisualizationCode" dropdown_filler_type_name="Arcen.HotM.ExternalVis.QualityFramerateTypeFiller" default_int="6"
+		description=""
+		ignores_defaults="true" ignores_defaults_lang_key="SetDefaults_Ignores" />
+
+	<!-- Performance: PerformanceDetails -->
+	<setting id="QualityMSAAType" category="Performance" subcategory="PerformanceDetails" 
+		is_stored_in_graphics_settings_file="true" display_name="MSAA" type="IntDropdown" dropdown_filler_dll_name="HotMExternalVisualizationCode" dropdown_filler_type_name="Arcen.HotM.ExternalVis.QualityMSAATypeFiller" default_int="2"
+		description="Multisample Anti-Aliasing, or MSAA, is one of the more powerful anti-aliasing solutions, but on older GPUs it can lower your framerate." />
+
+	<setting id="QualitySecondaryAAType" category="Performance" subcategory="PerformanceDetails"
+		is_stored_in_graphics_settings_file="true" display_name="Secondary AA" type="IntDropdown" dropdown_filler_dll_name="HotMExternalVisualizationCode" dropdown_filler_type_name="Arcen.HotM.ExternalVis.QualitySecondaryAATypeFiller" default_int="4"
+		description="In addition (or instead of) MSAA, other anti-aliasing options are available. FXAA is the cheapest to run, but looks muddy. TAA is the newest, but uses a lot of power. SMAA can be set to three different levels for quality versus speed." />
+
+	<setting id="UseSoftParticles" category="Performance" subcategory="PerformanceDetails" display_name="Soft Particles"
+		type="BoolToggle" default_bool="true" is_advanced_setting="true" is_stored_in_graphics_settings_file="true"
+		scope="MainGameOnly" description="Only disable on older GPUs." />
+
+	<setting id="QualityPixelLightCount" category="Performance" subcategory="PerformanceDetails" display_name="Pixel Light Count"
+		type="IntSlider" default_int="1" min_int="0" max_int="4" is_stored_in_graphics_settings_file="true" is_advanced_setting="true"
+		scope="MainGameOnly"
+		description="More than 1 doesn't make any difference, and setting this to 0 improves performance slightly without changing the visuals much." />
+	
+	<setting id="QualityAnisotrophicMode" category="Performance" subcategory="PerformanceDetails" is_advanced_setting="true"
+		is_stored_in_graphics_settings_file="true" display_name="Anisotrophic Mode" type="IntDropdown" dropdown_filler_dll_name="HotMExternalVisualizationCode" dropdown_filler_type_name="Arcen.HotM.ExternalVis.QualityAnisotrophicModeFiller" default_int="1"
+		description="Only disable on older GPUs." />
+
+	<setting id="QualityParticleRaycastBudget" category="Performance" subcategory="PerformanceDetails" is_advanced_setting="true"
+		is_stored_in_graphics_settings_file="true" display_name="Particle Raycast Budget" type="IntDropdown" dropdown_filler_dll_name="HotMExternalVisualizationCode" dropdown_filler_type_name="Arcen.HotM.ExternalVis.QualityParticleRaycastBudgetFiller" default_int="2"
+		description="This affects how particles interact with the environment. That is not very crucial in this game. Below 'Lower Mid' may actually worsen performance, but above 'Medium' is probably excess for little reason." />
+
+	<setting id="DisableHalfBloom" category="Performance" subcategory="PerformanceDetails" display_name="Disable Half Bloom"
+		type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+		scope="MainGameOnly"
+		description="Reduces the quality of some of the bloom, but improves performance on lower-power devices." />
+
+	<setting id="DisableDOF" category="Performance" subcategory="PerformanceDetails" display_name="Disable Depth Of Field"
+		type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+		scope="MainGameOnly"
+		description="If you're not a fan of it, or to save performance in general." />
+	
+	<!-- Performance: GraphicsGPULoad_StreetsView -->
+
+	<setting id="Streets_DisableAO" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Disable Ambient Occlusion"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+			 scope="MainGameOnly"
+			 description="Will skip some shadows and depth creases around objects in exchange for performance." />
+
+	<!--
+	<setting id="UseHalfResolutionAO" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Use Half-Resolution AO"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+			 scope="MainGameOnly"
+			 description="If ambient occlusion is on, then it will use a half-resolution quality in order to save on performance. May lead to flickering when moving the camera, depending on your hardware." />
+	
+	<setting id="TestDisableUIBloom" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Test Disable UI Bloom"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+			 scope="MainGameOnly"
+			 description="" />
+
+	<setting id="TestDisableBeautify" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Test Disable Beautify"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+			 scope="MainGameOnly"
+			 description="" />
+
+	<setting id="TestDisablePostProcessingStack" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Test Disable Post Processing Stack"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+			 scope="MainGameOnly"
+			 description="" />
+
+	<setting id="TestDisableIconOverlayCamera" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Test Disable Icon Overlay Camera"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+			 scope="MainGameOnly"
+			 description="" />
+
+	<setting id="TestDisableIconMixedInCamera" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Test Disable Icon Mixed-In Camera"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+			 scope="MainGameOnly"
+			 description="" />
+	-->
+	
+	<setting id="TrafficDensity" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Traffic Density"
+			 type="IntSlider" default_int="10" min_int="0" max_int="30" is_stored_in_graphics_settings_file="true" 
+			 scope="MainGameOnly"
+			 description="Higher density can affect performance negatively. It has no effect on gameplay." />
+
+	<!--
+	<setting id="PedestrianDensity" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Pedestrian Density"
+			 type="IntSlider" default_int="8" min_int="0" max_int="30" is_stored_in_graphics_settings_file="true" 
+			 scope="MainGameOnly"
+			 description="Higher density can affect performance negatively. It has no effect on gameplay." />-->
+
+	<!--
+	<setting id="SkipDrawing_MinorDecorations" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Skip Drawing Minor Decorations" 
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true" 
+			 scope="MainGameOnly" is_advanced_setting="true"
+			 description="Will abstain from drawing small construction materials, graves, bushes, trash, small rocks, and similar. Overall does not have a large impact on the look, or performance." />
+
+	<setting id="SkipDrawing_MajorDecorations" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Skip Drawing Major Decorations"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+			 scope="MainGameOnly" is_advanced_setting="true"
+			 description="Will abstain from drawing trees, some of the smaller fences, and so  on. Some people prefer a cleaner look in general, but this gets to looking very empty." />
+
+	<setting id="SkipDrawing_Roads" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Skip Drawing Roads"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+			 scope="MainGameOnly" is_advanced_setting="true"
+			 description="Will abstain from drawing roads. This looks quite empty indeed, but may be a look you enjoy. It doesn't save much performance." />
+
+	<setting id="SkipDrawing_Pedestrians" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Skip Drawing Pedestrians"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true" 
+			 scope="MainGameOnly" is_advanced_setting="true"
+			 description="Will abstain from drawing pedestrians walking around doing things." />
+
+	<setting id="SkipDrawing_StreetVehicles" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Skip Drawing Street Vehicles"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+			 scope="MainGameOnly" is_advanced_setting="true"
+			 description="Will abstain from drawing vehicles driving around on the streets." />
+
+	<setting id="SkipDrawing_SmallFliers" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Skip Drawing Small Fliers"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+			 scope="MainGameOnly" is_advanced_setting="true"
+			 description="Will abstain from drawing small fliers moving around the city." />
+
+	<setting id="SkipDrawing_NPCExhaust" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Skip Drawing NPC Exhaust"
+			 type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+			 scope="MainGameOnly" is_advanced_setting="true"
+			 description="Will abstain from drawing exhaust smoke from NPC units." />
+			 -->
+			  
+  <setting id="Streets_CellDrawDist_Buildings" category="Performance" subcategory="GraphicsGPULoad_StreetsView" is_stored_in_graphics_settings_file="true" display_name="Cell Draw Distance: Buildings"
+		type="IntSlider" default_int="5" min_int="1" max_int="10" default_should_override_user_value_if_older_than_version="0_601_PerformanceOptimization"
+		scope="MainGameOnly"
+		description="The game is broken up into visual cells for drawing. How many cells away should be drawn when looking sideways?  This has a minimal effect on framerate on most hardware." />
+
+	<setting id="Streets_CellDrawDist_Roads" category="Performance" subcategory="GraphicsGPULoad_StreetsView" is_stored_in_graphics_settings_file="true" display_name="Cell Draw Distance: Roads"
+		type="IntSlider" default_int="5" min_int="1" max_int="10" default_should_override_user_value_if_older_than_version="0_601_PerformanceOptimization"
+		scope="MainGameOnly"
+		description="The game is broken up into visual cells for drawing. How many cells away should be drawn when looking sideways?  This has a minimal effect on framerate on most hardware." />
+
+	<setting id="Streets_CellDrawDist_MajorDecorations" category="Performance" subcategory="GraphicsGPULoad_StreetsView" is_stored_in_graphics_settings_file="true" display_name="Cell Draw Distance: Major Decorations"
+		type="IntSlider" default_int="4" min_int="1" max_int="10" default_should_override_user_value_if_older_than_version="0_601_PerformanceOptimization"
+		scope="MainGameOnly"
+		description="The game is broken up into visual cells for drawing. How many cells away should be drawn when looking sideways?  This has a minimal effect on framerate on most hardware." />
+
+	<setting id="Streets_CellDrawDist_MinorDecorations" category="Performance" subcategory="GraphicsGPULoad_StreetsView" is_stored_in_graphics_settings_file="true" display_name="Cell Draw Distance: Minor Decorations"
+		type="IntSlider" default_int="3" min_int="1" max_int="10" default_should_override_user_value_if_older_than_version="0_601_PerformanceOptimization"
+		scope="MainGameOnly"
+		description="The game is broken up into visual cells for drawing. How many cells away should be drawn when looking sideways?  This has a minimal effect on framerate on most hardware." />
+
+	<!--
+	<setting id="City_RenderDistrictBorders" category="Performance" subcategory="GraphicsGPULoad_StreetsView" display_name="Render District Borders"
+		type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" is_advanced_setting="true"
+		description="By default, this is off, to keep things less cluttered. If you prefer to see it, it's not all that much extra load (unlike in the map mode)." />
+		-->
+	
+	<!-- Performance: GraphicsGPULoad_MapMode -->
+
+
+	<setting id="Map_DisableAO" category="Performance" subcategory="GraphicsGPULoad_MapMode" display_name="Disable Ambient Occlusion In Map"
+		type="BoolToggle" default_bool="false" is_stored_in_graphics_settings_file="true"
+		scope="MainGameOnly"
+		description="Will skip some shadows and depth creases around objects in exchange for performance." />
+
+	<!--
+	<setting id="MapMode_RenderDistrictBorders" category="Performance" subcategory="GraphicsGPULoad_MapMode" display_name="Render District Borders"
+		type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" is_advanced_setting="true"
+		description="By default, this is off, to be friendly to older GPUs in particular. If you have a high-end GPU, feel free to turn this on." />
+		-->
+
+</root>

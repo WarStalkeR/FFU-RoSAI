@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<seeding_logic_type id="DowntownCityCenter" percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="5000"
+		mini_tiles_to_seed_in_regions="MiniTileExtMilitaryBaseB,MiniTileExtPowerNuclearB" fallback_seeding_logic_type="GeneralFallback">
+		<no_nsew_indicator_mega_group mega_group="DowntownTallBuildingsAndSimilarWithNoSides" weight="100"/>
+		<regular_mega_group mega_group="DowntownTallBuildingsAndSimilarWithNoSides" weight="100"/>
+	</seeding_logic_type>
+
+	<seeding_logic_type id="DowntownCityArea"  percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="5000"
+		mini_tiles_to_seed_in_regions="MiniTileExtFarmB" fallback_seeding_logic_type="GeneralFallback">
+		<no_nsew_indicator_mega_group mega_group="DowntownTallBuildingsAndSimilarWithNoSides" weight="100"/>
+		<regular_mega_group mega_group="DowntownMidriseResidentialFrontFacing" weight="230"/>
+		<regular_mega_group mega_group="MostlyTallBuildings" weight="100"/>
+	</seeding_logic_type>
+
+	<seeding_logic_type id="ResidentialTallBuildings"  percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="0"
+		is_valid_player_starting_location="true" fallback_seeding_logic_type="GeneralFallback">
+		<no_nsew_indicator_mega_group mega_group="ResidentialTallBuildingsWithNoSides" weight="100"/>
+		<regular_mega_group mega_group="DowntownMidriseResidentialFrontFacing" weight="100"/>
+		<regular_mega_group mega_group="MostlyResidentialTallBuildings" weight="100"/>
+	</seeding_logic_type>
+
+	<seeding_logic_type id="MixedUseTallBuildings"  percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="0" 
+		fallback_seeding_logic_type="GeneralFallback">
+		<no_nsew_indicator_mega_group mega_group="MixedUseTallBuildingsWithNoSides" weight="100"/>
+		<regular_mega_group mega_group="MostlyMixedUseTallBuildings" weight="100"/>
+	</seeding_logic_type>
+
+	<seeding_logic_type id="DowntownMidrise" percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="15000"
+		is_valid_player_starting_location="true" fallback_seeding_logic_type="GeneralFallback"
+		mini_tiles_to_seed_in_regions="MiniTileExtHomelessA,MiniTileExtHomelessB,MiniTileExtFarmB,MiniTileExtMilitaryBaseB,MiniTileExtPowerSolarA,MiniTileExtPowerWindA,MiniTileExtPowerWindB">
+		<no_nsew_indicator_mega_group mega_group="DowntownMidriseResidentialFrontFacing" weight="100"/>
+		<regular_mega_group mega_group="DowntownMidriseResidentialFrontFacing" weight="100"/>
+	</seeding_logic_type>
+
+	<seeding_logic_type id="AbandonedConstruction" percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="30000"
+		mini_tiles_to_seed_in_regions="MiniTileExtConstructionSiteA,MiniTileExtConstructionSiteB,PowerSolarA,PowerWindA,PowerWindB"
+		extra_buildings_1_to_try_to_seed_per_region="500"
+		is_valid_player_starting_location="true"  fallback_seeding_logic_type="GeneralFallback">
+		<no_nsew_indicator_mega_group mega_group="AbandonedConstruction" weight="100"/>
+		<regular_mega_group mega_group="AbandonedConstruction" weight="100"/>
+		<extra_buildings_1_mega_group mega_group="AbandonedConstruction" weight="100"/>
+	</seeding_logic_type>
+
+	<seeding_logic_type id="DecrepitPartOfTown" percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="15000"
+		mini_tiles_to_seed_in_regions="MiniTileExtAbandonedA,MiniTileExtAbandonedB"
+		extra_buildings_1_to_try_to_seed_per_region="500"
+		is_valid_player_starting_location="true"  fallback_seeding_logic_type="GeneralFallback">
+		<no_nsew_indicator_mega_group mega_group="BrokenAndAbandoned" weight="100"/>
+		<regular_mega_group mega_group="BrokenAndAbandoned" weight="100"/>
+		<extra_buildings_1_mega_group mega_group="BrokenAndAbandoned" weight="100"/>
+	</seeding_logic_type>
+
+	<seeding_logic_type id="IndustrialAndWarehouses" percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="0"
+		is_valid_player_starting_location="true" fallback_seeding_logic_type="GeneralFallback">
+		<no_nsew_indicator_mega_group mega_group="IndustrialNoSides" weight="100"/>
+		<regular_mega_group mega_group="IndustrialAndWarehouseSides" weight="100"/>
+	</seeding_logic_type>
+
+	<seeding_logic_type id="CommerceGeneral" percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="0"
+		is_valid_player_starting_location="true" fallback_seeding_logic_type="GeneralFallback">
+		<no_nsew_indicator_mega_group mega_group="CommerceNoSides" weight="100"/>
+		<regular_mega_group mega_group="CommerceSides" weight="100"/>
+	</seeding_logic_type>
+
+	<seeding_logic_type id="SuburbsGeneral" percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="10000"
+		mini_tiles_to_seed_in_regions="MiniTileExtMilitaryBaseB,MiniTileExtPowerWindA,MiniTileExtPowerWindB,MiniTileExtFarmB"
+		fallback_seeding_logic_type="SuburbsFallback">
+		<no_nsew_indicator_mega_group mega_group="SuburbsNoSides" weight="100"/>
+		<regular_mega_group mega_group="SuburbsSides" weight="100"/>
+	</seeding_logic_type>
+
+	<seeding_logic_type id="SlumGeneral" percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="90000"
+		mini_tiles_to_seed_in_regions="MiniTileExtSlumA,MiniTileExtSlumB"
+		extra_buildings_1_to_try_to_seed_per_region="500"
+		extra_buildings_2_to_try_to_seed_per_region="500" fallback_seeding_logic_type="GeneralFallback">
+		<no_nsew_indicator_mega_group mega_group="SlumNoSides" weight="100"/>
+		<regular_mega_group mega_group="SlumSides" weight="100"/>
+		<extra_buildings_1_mega_group mega_group="SlumExtras1" weight="100"/>
+		<extra_buildings_2_mega_group mega_group="SlumExtras2" weight="100"/>
+	</seeding_logic_type>
+
+	<seeding_logic_type id="GeneralFallback" percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="1"
+		mini_tiles_to_seed_in_regions="MiniTileExtSlumA,MiniTileExtSlumB"
+		extra_buildings_1_to_try_to_seed_per_region="500">
+		<no_nsew_indicator_mega_group mega_group="GeneralFallback" weight="100"/>
+		<regular_mega_group mega_group="GeneralFallback" weight="100"/>
+		<extra_buildings_1_mega_group mega_group="GeneralFallback" weight="100"/>
+	</seeding_logic_type>
+
+	<seeding_logic_type id="SuburbsFallback" percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand="1"
+		mini_tiles_to_seed_in_regions="MiniTileExtMilitaryBaseB,MiniTileExtFarmB"
+		extra_buildings_1_to_try_to_seed_per_region="500">
+		<no_nsew_indicator_mega_group mega_group="SuburbsFallback" weight="100"/>
+		<regular_mega_group mega_group="SuburbsFallback" weight="100"/>
+		<extra_buildings_1_mega_group mega_group="SuburbsFallback" weight="100"/>
+	</seeding_logic_type>
+	
+</root>

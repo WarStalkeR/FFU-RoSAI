@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Sort order is important!  Those with lower sort_order values will be assigned first, so if things are too crowded they are what will show up.
+		********************************************************************-->
+	
+	<!--Sort order is still important!  But all of these aggregate-style ones are done after ALL non-aggregate ones.
+		********************************************************************-->
+
+	<location_calculation id="Projects_StreetSenseFromActive" action_on_building_arrive="ProjectStreetSenseAction" sort_order="16535"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocCalcs_Basic" />
+	
+	<location_calculation id="StreetSense_MinorEvents" action_on_building_arrive="MinorEvent" sort_order="20535"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocCalcs_Basic" security_min="0" security_max="5" 
+		internal_notes="It's super important that it not block clearance higher than the unit has, or else a bunch of events never even show up!" can_happen_even_during_obsession="true" />
+	
+	<location_calculation id="StealVehicle" action_on_building_arrive="StealVehicle" sort_order="20550"
+		security_min="0" security_max="1" related_building_tag="BasicCommon" can_happen_even_during_obsession="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocCalcs_Basic" />
+
+	<location_calculation id="RecruitAndroid" action_on_building_arrive="RecruitAndroid" sort_order="20570"
+		security_min="0" security_max="1" related_building_tag="BasicCommon" can_happen_even_during_obsession="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocCalcs_Basic" />
+
+	<!--This is, paradoxically, handled last from the normal-priority stuff so that anything that would involve 
+		less-frequent items blocks this rather than the other way around.
+		********************************************************************-->
+	<location_calculation id="StreetSense_KeyLocationEvents" action_on_building_arrive="MinorEvent" sort_order="30300"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocCalcs_Basic" can_happen_even_during_obsession="true" />
+
+
+	<!--These are ultra-low-priority items, and peppered in at the very last for a reason.
+		********************************************************************-->
+
+	<location_calculation id="ColdBlood" action_on_building_arrive="ColdBlood" sort_order="40200"
+		security_min="0" security_max="1" related_building_tag="HasManyPeople" can_happen_even_during_obsession="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocCalcs_Basic" />
+
+	<location_calculation id="MurderAndroidForRegistration" action_on_building_arrive="MurderAndroidForRegistration" sort_order="40300"
+		related_building_tag="AndroidHaunt" security_min="0" security_max="1" can_happen_even_during_obsession="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocCalcs_Basic" />
+
+	<location_calculation id="HideAndSelfRepair" action_on_building_arrive="HideAndSelfRepair" sort_order="40400"
+		security_min="0" security_max="1" can_happen_even_during_obsession="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocCalcs_Basic" />
+	
+	<location_calculation id="Wiretap" action_on_building_arrive="Wiretap" sort_order="40600"
+		related_building_tag="Offices" security_min="0" security_max="1"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocCalcs_Basic" />
+	
+</root>

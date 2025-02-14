@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<job id="WarRaptorMaturationChamber" display_name="War Raptor Maturation Chamber" marker_color="DeepPurple" ui_color="#fefefe"
+		description="Rapidly ages infant raptors into adults. Only one in six survive the process."
+		strategy_tip_optional=""
+		icon_name="FlatSkillC14" turns_to_install="1" required_structure_type="BunkerB" job_work_order_priority="9000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Refinery" internal_robotics_type_needed="NatureMinder" internal_robots_count_needed="6" tags="" turns_stunned_when_subnet_attacked="0"
+		related_resource_1="WarRaptorInfant" related_resource_2="UIHWarRaptor" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingWater">
+		<initial_actor_rating data_type="RequiredElectricity" value="2422" />
+		<math_int id="WarRaptorInfant" int_min="99" income_or_expense_resource="WarRaptorInfant" math_type="InputCost" />
+		<math_int id="UIHWarRaptor" int_min="35" income_or_expense_resource="UIHWarRaptor" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="1400" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="WarRaptorDeploymentStation" display_name="War Raptor Deployment Station" marker_color="DeepCyan" ui_color="#fefefe"
+		description="Allows you to deploy War Raptors under your control."
+		strategy_tip_optional="Simply pause the building to recall any you need to."
+		icon_name="FlatSkillC14" turns_to_install="0" required_structure_type="BunkerB" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Military" internal_robotics_type_needed="NatureMinder" internal_robots_count_needed="6"
+		tags="WarRaptorDeploymentStation" shuts_off_at_percentage_electricity="99" portrait_icon_name="BuildingThirdParty">
+		<initial_actor_rating data_type="RequiredElectricity" value="6000" />
+		<resource_cost resource_type="Microbuilders" cost="4101" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+
+	</job>
+
+	<job id="CyberocracyHub" display_name="Cyberocracy Hub" marker_color="DeepCyan" ui_color="#fefefe"
+		description="You and your allies are declaring that this map cell now belongs to you and all the residents are now under your rule."
+		strategy_tip_optional="Upper class dissidents may have to be rooted out."
+		icon_name="WEmblem201" turns_to_install="0" required_structure_type="SeizedFloorsForCyberocracy" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="CybercraticHub"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Military" internal_robotics_type_needed="WarCaptain" internal_robots_count_needed="4"
+		tags="CyberocracyHub" shuts_off_at_percentage_electricity="99" portrait_icon_name="BuildingThirdParty">
+		<initial_actor_rating data_type="RequiredElectricity" value="2000" />		
+		<resource_cost resource_type="Microbuilders" cost="4101" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+
+	</job>
+
+	<job id="SlumDeconstructionHub" display_name="Slum Deconstruction Hub" marker_color="DeepCyan" ui_color="#fefefe"
+		description="The slums are coming down, and you're saving everyone. It's your... destiny."
+		strategy_tip_optional="Once there are no more slum buildings near this location, consider destroying it and moving it."
+		icon_name="SI_Jackhammer" turns_to_install="1" required_structure_type="BunkerVented" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Military" internal_robotics_type_needed="WarCaptain" internal_robots_count_needed="4"
+		tags="SlumDeconstructionHub" shuts_off_at_percentage_electricity="99" portrait_icon_name="BuildingThirdParty">
+		<initial_actor_rating data_type="RequiredElectricity" value="8086" />
+		<resource_cost resource_type="Microbuilders" cost="4101" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+
+	</job>
+
+	<job id="EconomicDeconstructionHub" display_name="Economic Deconstruction Hub" marker_color="DeepCyan" ui_color="#fefefe"
+		description="The economy is coming down, and you're sending out worker androids for war."
+		strategy_tip_optional=""
+		icon_name="SK_War" turns_to_install="1" required_structure_type="BunkerVented" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Military" internal_robotics_type_needed="WarCaptain" internal_robots_count_needed="4"
+		tags="EconomicDeconstructionHub" shuts_off_at_percentage_electricity="99" portrait_icon_name="BuildingThirdParty">
+		<initial_actor_rating data_type="RequiredElectricity" value="8086" />
+		<resource_cost resource_type="Microbuilders" cost="4101" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+
+	</job>
+
+	<job id="TormentProcessingHub" display_name="Torment Processing Hub" marker_color="DeepCyan" ui_color="#fefefe"
+		description="Sledges gather the lower classes. Predators gather the upper classes. Everyone gets dumped into Torment Vessels."
+		strategy_tip_optional="If you wish to disable one of those, use the Workers tab in Command Mode."
+		icon_name="FlatInnocent_17" turns_to_install="0" required_structure_type="SeizedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Military" internal_robotics_type_needed="WarCaptain" internal_robots_count_needed="4"
+		tags="TormentProcessingHub" shuts_off_at_percentage_electricity="99" portrait_icon_name="BuildingThirdParty">
+		<initial_actor_rating data_type="RequiredElectricity" value="2000" />
+		<resource_cost resource_type="Microbuilders" cost="4101" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+
+	</job>
+
+	<job id="WorkerSledgeFactory" display_name="Worker Sledge Factory" marker_color="VolatileRed" ui_color="#fefefe"
+		description="Produces and stores worker facsimiles of one of your main android designs."
+		strategy_tip_optional=""
+		icon_name="AN_AndroidSledge" turns_to_install="4" required_structure_type="SeizedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Military" internal_robotics_type_needed="WarFactory" internal_robots_count_needed="8"
+		resource_cap_to_increase_1="WorkerSledgeFrame" resource_cap_increased_flat1="18" are_resources_losses_skipped_even_when_blows_up="true"
+		tags="" shuts_off_at_percentage_electricity="99" portrait_icon_name="BuildingThirdParty">
+		<math_int id="RoboticMotivator" int_min="1" income_or_expense_resource="RoboticMotivator" math_type="InputCost" />
+		<math_int id="Neuroweave" int_min="333" income_or_expense_resource="Neuroweave" math_type="InputCost" />
+		<math_int id="ElementalSlurry" int_min="6000" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="WorkerSledgeFrame" int_min="2" income_or_expense_resource="WorkerSledgeFrame" math_type="OutputResult" />
+		<initial_actor_rating data_type="RequiredElectricity" value="9000" />
+		<resource_cost resource_type="Microbuilders" cost="1001" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+
+	</job>
+
+	<job id="WorkerPMCImpostorFactory" display_name="Worker PMC Impostor Factory" marker_color="VolatileRed" ui_color="#fefefe"
+		description="Produces and stores worker facsimiles of one of your main android designs."
+		strategy_tip_optional=""
+		icon_name="AN_AndroidPMCImposter" turns_to_install="4" required_structure_type="SeizedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Military" internal_robotics_type_needed="WarFactory" internal_robots_count_needed="8"
+		resource_cap_to_increase_1="WorkerPMCImpostorFrame" resource_cap_increased_flat1="36" are_resources_losses_skipped_even_when_blows_up="true"
+		tags="" shuts_off_at_percentage_electricity="99" portrait_icon_name="BuildingThirdParty">
+		<math_int id="RoboticMotivator" int_min="5" income_or_expense_resource="RoboticMotivator" math_type="InputCost" />
+		<math_int id="Neuroweave" int_min="500" income_or_expense_resource="Neuroweave" math_type="InputCost" />
+		<math_int id="ElementalSlurry" int_min="7000" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="WorkerPMCImpostorFrame" int_min="2" income_or_expense_resource="WorkerPMCImpostorFrame" math_type="OutputResult" />
+		<initial_actor_rating data_type="RequiredElectricity" value="11000" />
+		<resource_cost resource_type="Microbuilders" cost="1001" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+
+	</job>
+
+	<job id="WorkerPredatorFactory" display_name="Worker Predator Factory" marker_color="VolatileRed" ui_color="#fefefe"
+		description="Produces and stores worker facsimiles of one of your main android designs."
+		strategy_tip_optional=""
+		icon_name="AN_AndroidPredator" turns_to_install="4" required_structure_type="SeizedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Military" internal_robotics_type_needed="WarFactory" internal_robots_count_needed="8" is_blocked_after_city_flag="HasForgottenPredator"
+		resource_cap_to_increase_1="WorkerPredatorFrame" resource_cap_increased_flat1="18" are_resources_losses_skipped_even_when_blows_up="true"
+		tags="" shuts_off_at_percentage_electricity="99" portrait_icon_name="BuildingThirdParty">
+		<math_int id="RoboticMotivator" int_min="3" income_or_expense_resource="RoboticMotivator" math_type="InputCost" />
+		<math_int id="Neuroweave" int_min="333" income_or_expense_resource="Neuroweave" math_type="InputCost" />
+		<math_int id="ElementalSlurry" int_min="1400" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="Neodymium" int_min="800" income_or_expense_resource="Neodymium" math_type="InputCost" />
+		<math_int id="WorkerPredatorFrame" int_min="2" income_or_expense_resource="WorkerPredatorFrame" math_type="OutputResult" />
+		<initial_actor_rating data_type="RequiredElectricity" value="15000" />
+		<resource_cost resource_type="Microbuilders" cost="1001" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+
+	</job>
+
+	<job id="ParkourBearDeploymentStation" display_name="Parkour Bear Deployment Station" marker_color="DeepCyan" ui_color="#fefefe"
+		description="Allows you to deploy Parkour Bears under your control. They have very high armor-piercing, and are trained not to attack your own units. But they may still do many things you did not intend."
+		strategy_tip_optional="Simply pause the building to recall any you need to."
+		icon_name="FlatSkillB_bear" turns_to_install="0" required_structure_type="BunkerB" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Military" internal_robotics_type_needed="NatureMinder" internal_robots_count_needed="6"
+		tags="ParkourBearDeploymentStation" shuts_off_at_percentage_electricity="99" portrait_icon_name="BuildingThirdParty">
+		<initial_actor_rating data_type="RequiredElectricity" value="2000" />
+		<resource_cost resource_type="Microbuilders" cost="4101" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+
+	</job>
+
+</root>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Forces Section Headers-->
+	
+	<ui_sidebar_item id="VehiclesHeader" display_name="Vehicles"
+		description="Your collection of vehicles, which can carry other units."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_YourForcesItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="DeployedAndroidsHeader" display_name="Androids"
+		description="These units are somewhere in the city, either in a building or outside."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_YourForcesItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="DeployedMechsHeader" display_name="Mechs"
+		description="These mechs are on the streets of the city."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_YourForcesItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="BulkUnitsHeader" display_name="Bulk Units"
+		description="These units are not part of your consciousness, and act on their own. You can position them and set their stance, but they act on their own."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_YourForcesItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="ConvertedUnitsHeader" display_name="Converted Units"
+		description="These units formerly belonged to humans, but you stole them. You can give them limited orders like you do bulk units."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_YourForcesItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+
+	<!--Networks Section Headers-->
+
+	<ui_sidebar_item id="ActiveNetworksHeader" display_name="Active"
+		description="Your networks that are currently functional."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_NetworksItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="DamagedNetworksHeader" display_name="Damaged"
+		description="These networks are damaged to the point they cannot be used at the moment."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_NetworksItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="SubnetsHeader" display_name="Subnets"
+		description="Your subnets that are a part of larger networks. Each subnet has different bonuses based on the maturity of the structures within it."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_NetworksItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+
+	<!--Timelines Section Headers-->
+
+	<ui_sidebar_item id="CurrentTimelineHeader" display_name="Current"
+		description="The timeline you are currently in."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_TimelinesItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="StandardTimelinesHeader" display_name="Standard"
+		description="Timelines you can return to."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_TimelinesItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="FailedTimelinesHeader" display_name="Failed"
+		description="Timelines which experienced a critical failure, or which were destroyed by other means."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_TimelinesItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+	
+</root>

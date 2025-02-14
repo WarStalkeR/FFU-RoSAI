@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="mission">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+	<attribute key="trigger_from_event_note" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description shown when they are contemplating unlocking this mission via an event. Invalid otherwise."/>
+	<attribute key="progress_label_text" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true"
+		tooltip="This is the text that will be shown to the player to explain how much progress has been made so far. What is the progress someone is making?" />
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	<attribute key="color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the icon of this project?"/>
+	<attribute key="color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, for the glowing version."/>
+	<attribute key="color_hovered_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, when being hovered."/>
+	<attribute key="icon_scale" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="How large the icon will be drawn when floating in world space compared to normal."/>
+	
+	<attribute key="cohort" type="node-dropdown" node_source="NPCCohort" content_width_px="200" is_required="true"
+		tooltip="Which npc cohort is the source of this activity?" />
+
+	<attribute key="is_hostile_to_player" type="bool" default="false" is_required="true"
+		tooltip="If true, then the stuff happening here is considered hostile to the player. If false, it's probably neutral to them, but maybe positive for them." />
+	<attribute key="progress_points_needed_to_complete" type="int-textbox" min="1" max="90000" default="100" content_width_px="50" is_required="true"
+		tooltip="The npcs doing this activity will have completed the activity when the total progress points meet or exceed this number. Must be above zero."/>
+	<attribute key="turns_before_expiration" type="int-textbox" min="4" max="99" default="1" content_width_px="50" is_required="true"
+		tooltip="The npcs doing this activity will fail to do it and will give up if they have not completed it after this many turns. Must be at least 4 turns."/>
+	<attribute key="max_times_can_be_started" type="int-textbox" min="1" max="999" default="1" content_width_px="50" is_required="true"
+		tooltip="How many times this can be started within a single timeline."/>
+	<attribute key="can_start_without_trigger" type="bool" default="true" is_required="true"
+		tooltip="If true, then this can spontaneously start around the city when the gating conditions are met." />
+	<attribute key="debug_log_mission_spawn_details" type="bool" default="false" is_required="false"
+		tooltip="If true, then if this is trying to spawn, it will log details of that to the log." />
+
+	<attribute key="on_start" type="node-dropdown" is_required="false" node_source="VisParticleAndSoundUsage" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This is the sound effect and visual effect that will play when it's started. Optional." />
+	<attribute key="on_active_complete" type="node-dropdown" node_source="VisParticleAndSoundUsage" content_width_px="200" is_required="true"
+		tooltip="The sound and particle effect to play at the building of this mission if it is actively completed. Required." />
+	<attribute key="on_expired_complete" type="node-dropdown" node_source="VisParticleAndSoundUsage" content_width_px="200" is_required="true"
+		tooltip="The sound and particle effect to play at the building of this mission if it expires. Required." />
+
+	<attribute key="lockdown_while_active" type="node-dropdown" node_source="LockdownType" content_width_px="200" is_required="false"
+		tooltip="Should there be a lockdown type around this mission while?  Optional." />
+
+	<attribute key="expiration_reward_group" type="node-dropdown" node_source="UnlockRewardGroup" content_width_px="200" is_required="false"
+		tooltip="Should there be a reward for the player if this mission expires?  Optional." />
+	<attribute key="expiration_reward_inspiration_type" type="node-dropdown" node_source="UnlockRewardGroup" content_width_px="200" is_required="false"
+		tooltip="If there is a reward for the player on expiration, then what is the inspiration type?  Required if expiration_reward_group is specified." />
+
+	<attribute key="active_completion_reward_group" type="node-dropdown" node_source="UnlockRewardGroup" content_width_px="200" is_required="false"
+		tooltip="Should there be a reward for the player if this mission is actively completed?  Optional." />
+	<attribute key="active_completion_reward_inspiration_type" type="node-dropdown" node_source="UnlockRewardGroup" content_width_px="200" is_required="false"
+		tooltip="If there is a reward for the player on active completion, then what is the inspiration type?  Required if active_completion_reward_group is specified." />
+	
+	<attribute key="next_mission_to_start_on_complete" type="node-dropdown" node_source="NPCMission" content_width_px="200" is_required="false"
+		tooltip="If this mission is completed, then what other mission gets auto-started?  Optional." />
+	<attribute key="next_mission_to_start_on_expires" type="node-dropdown" node_source="NPCMission" content_width_px="200" is_required="false"
+		tooltip="If this mission expires, then what other mission gets auto-started?  Optional." />
+
+	<attribute key="swarm_to_start_or_spread_on_complete" type="node-dropdown" node_source="Swarm" content_width_px="200" is_required="false"
+		tooltip="If this mission is completed, then what swarm either starts at this building, or spreads to this building?  Optional." />
+	<attribute key="swarm_to_start_or_spread_on_expires" type="node-dropdown" node_source="Swarm" content_width_px="200" is_required="false"
+		tooltip="If this mission expires, then what swarm either starts at this building, or spreads to this building?  Optional." />
+
+	<attribute key="city_flag_1_on_complete" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If this mission is completed, then is there a city flag that is tripped from that?  Optional." />
+	<attribute key="city_flag_2_on_complete" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If this mission is completed, then is there a city flag that is tripped from that?  Optional." />
+	<attribute key="city_flag_1_on_expires" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If this mission expires, then is there a city flag that is tripped from that?  Optional." />
+	<attribute key="city_flag_2_on_expires" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If this mission expires, then is there a city flag that is tripped from that?  Optional." />
+
+	<attribute key="meta_flag_1_on_complete" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+		tooltip="If this mission is completed, then is there a meta flag that is tripped from that?  Optional." />
+	<attribute key="meta_flag_2_on_complete" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+		tooltip="If this mission is completed, then is there a meta flag that is tripped from that?  Optional." />
+	<attribute key="meta_flag_1_on_expires" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+		tooltip="If this mission expires, then is there a meta flag that is tripped from that?  Optional." />
+	<attribute key="meta_flag_2_on_expires" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+		tooltip="If this mission expires, then is there a meta flag that is tripped from that?  Optional." />
+
+	<attribute key="other_key_message_on_complete" type="node-dropdown" node_source="OtherKeyMessage" content_width_px="200" is_required="false"
+		tooltip="If this mission is completed, then is there an OKM style key message that becomes ready for viewing?  Optional." />
+	<attribute key="other_key_message_on_expires" type="node-dropdown" node_source="OtherKeyMessage" content_width_px="200" is_required="false"
+		tooltip="If this mission expires, then is there an OKM style key message that becomes ready for viewing?  Optional." />
+
+	<!--metric
+	*******************************************************************************************************-->
+	<sub_node id="metric">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. There should be a unique set of metric IDs per npc mission, named or numbered." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+			tooltip="The player-visible text of the metric." />
+		<attribute key="max_value" type="int-textbox" min="0" max="9000" default="100" content_width_px="150" is_required="true"
+			tooltip="If set above 0, then there will be a max cap that will be shown for this, and the metric value will be limited to that during the game.
+Otherwise, there is no cap and the metric just counts up."/>
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<!--flag
+	*******************************************************************************************************-->
+	<sub_node id="flag">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. There should be a unique set of flag IDs per npc mission, named or numbered." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<!--seed_at
+	*******************************************************************************************************-->
+	<sub_node id="seed_at">
+		<attribute key="building_seed_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="true"
+			tooltip="When specified, then this item will be seeded as visible at the following kind of building tag." />
+		<attribute key="building_seed_fallback_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="false"
+			tooltip="Optional. If the primary building seed tag fails, then this should provide another source of possibilities." />
+		<attribute key="poi_seed_tag" type="node-dropdown" node_source="POITag" content_width_px="200" is_required="false"
+			tooltip="When specified, then this item will be seeded as visible at the following kind of poi tag. Optional. If specified, then combines with the building seed tag." />
+		<attribute key="min_security_clearance_of_seed_spot" type="int-textbox" min="-1" max="5" default="-1" content_width_px="50" is_required="false"
+			tooltip="On a scale from 0 to 5, what is the lowest allowed security clearance for seed spots for this item?  Set to -1 to ignore."/>
+		<attribute key="max_security_clearance_of_seed_spot" type="int-textbox" min="-1" max="5" default="-1" content_width_px="50" is_required="false"
+			tooltip="On a scale from 0 to 5, what is the highest allowed security clearance for seed spots for this item?  Set to -1 to ignore."/>
+		<attribute key="min_rough_distance_from_machines" type="float-textbox" min="-1" max="900" default="-1" content_width_px="50" is_required="false"
+			tooltip="How far, roughly, should this be from machine subnets and towers?  Will fail if not yet any of those. Set to -1 to ignore."/>
+		<attribute key="max_rough_distance_from_machines" type="float-textbox" min="-1" max="900" default="-1" content_width_px="50" is_required="false"
+			tooltip="How far, roughly, should this be from machine subnets and towers?  Will fail if not yet any of those. Set to -1 to ignore."/>
+		<sub_node id="required_building_data">
+			<attribute key="data_type" type="node-dropdown" node_source="LocationDataType" content_width_px="200" is_required="true"
+				tooltip="To match, a building must have certain qualities relating to this data type." />
+			<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
+				tooltip="The value that will be compared against. Set to -1 to mod this out."/>
+			<attribute key="at_least" type="bool" default="false" is_required="true"
+				tooltip="If true, the building data must be at least this high to pass. If false, it must be at most this high." />
+		</sub_node>
+	</sub_node>
+
+	<!--gate_by_city
+	*******************************************************************************************************-->
+	<sub_node id="gate_by_city">
+		<attribute key="minimum_chapter" type="int-textbox" min="0" max="999" default="1" content_width_px="50" is_required="false"
+			tooltip="If this should not appear until a certain chapter. Defaults to chapter 1."/>
+		<attribute key="maximum_chapter" type="int-textbox" min="0" max="999" default="999" content_width_px="50" is_required="false"
+			tooltip="If this should not appear after a certain chapter. Defaults to act 999."/>
+
+		<attribute key="must_be_at_least_turn" type="int-textbox" min="0" max="999999" default="0" content_width_px="50" is_required="true"
+			tooltip="If above zero, then this will be blocked until a specific turn, regardless of anything else."/>
+		<attribute key="must_be_at_least_doom_number" type="int-textbox" min="0" max="999999" default="0" content_width_px="50" is_required="true"
+			tooltip="If above zero, then this will be blocked until a specific doom number, regardless of anything else."/>
+		
+		<attribute key="blocked_by_city_flag" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the city. If that flag is true, this manager will be dormant." />
+		<attribute key="blocked_by_city_flag2" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the city. If that flag is true, this manager will be dormant." />
+		<attribute key="required_city_flag" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the city. This manager will be dormant until that flag is true." />
+
+		<attribute key="blocked_by_meta_flag" type="node-dropdown" node_source="MetaFlag" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the metagame. If that flag is true, this manager will be dormant." />
+		<attribute key="required_meta_flag" type="node-dropdown" node_source="MetaFlag" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the metagame. This manager will be dormant until that flag is true." />
+
+		<attribute key="blocked_by_city_task" type="node-dropdown" node_source="CityTask" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a task in the city. If that task is complete, this manager will be dormant." />
+		<attribute key="required_city_task" type="node-dropdown" node_source="CityTask" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a task in the city. This manager will be dormant until that task is complete." />
+
+		<attribute key="blocked_by_deal_active" type="node-dropdown" node_source="NPCDeal" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a deal in the city. If that deal is active, this manager will be dormant." />
+		<attribute key="required_deal_active" type="node-dropdown" node_source="NPCDeal" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a deal in the city. This manager will be dormant until that deal is active." />
+
+		<attribute key="required_job_active" type="node-dropdown" node_source="MachineJob" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a machine job. This manager will be dormant until that job exists and is functional and active." />
+
+		<attribute key="blocked_by_dialog_complete" type="node-dropdown" node_source="NPCDialog" default="" content_width_px="130" is_required="false"
+			tooltip="If this dialog has already happened, this will be blocked." />
+		<attribute key="required_dialog_complete" type="node-dropdown" node_source="NPCDialog" default="" content_width_px="130" is_required="false"
+			tooltip="This will be blocked if the specified dialog has not yet happened." />
+
+		<attribute key="blocked_by_unlock" type="node-dropdown" node_source="Unlock" default="" content_width_px="130" is_required="false"
+			tooltip="If this unlock has already been fully researched, this will be blocked." />
+		<attribute key="required_unlock" type="node-dropdown" node_source="Unlock" default="" content_width_px="130" is_required="false"
+			tooltip="This will be blocked if the specified unlock has not yet been fully researched." />
+
+		<attribute key="required_beyond_turn" type="node-dropdown" node_source="CityStatistic" default="" content_width_px="130" is_required="false"
+			tooltip="If this is set, then the value must be above 0 for it to count, and the current turn must be beyond whatever this number is." />
+
+		<attribute key="blocked_by_countdown_complete" type="node-dropdown" node_source="OtherCountdownType" default="" content_width_px="130" is_required="false"
+			tooltip="If this countdown has already happened, this will be blocked." />
+		<attribute key="required_countdown_complete" type="node-dropdown" node_source="OtherCountdownType" default="" content_width_px="130" is_required="false"
+			tooltip="This will be blocked if the specified countdown has not yet happened." />
+
+		<attribute key="required_npc_manager_complete" type="node-dropdown" node_source="NPCManager" default="" content_width_px="130" is_required="false"
+			tooltip="This will not appear until this manager is fully complete." />
+		<attribute key="required_npc_manager_complete2" type="node-dropdown" node_source="NPCManager" default="" content_width_px="130" is_required="false"
+			tooltip="This will not appear until this manager is fully complete." />
+		<attribute key="required_npc_manager_complete3" type="node-dropdown" node_source="NPCManager" default="" content_width_px="130" is_required="false"
+			tooltip="This will not appear until this manager is fully complete." />
+
+		<attribute key="blocked_if_project_ever_started_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="If specified, this will not be valid if this project was ever started in this timeline." />
+		<attribute key="blocked_if_project_ever_started_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="If specified, this will not be valid if this project was ever started in this timeline." />
+		
+		<attribute key="required_project_active" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When specified, this project must be active at the moment." />
+		<attribute key="required_project_complete_any_outcome1" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When specified, this project must be complete, but the outcome does not matter." />
+		<attribute key="required_project_complete_any_outcome2" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When specified, this project must be complete, but the outcome does not matter." />
+		<attribute key="required_project_complete_any_outcome3" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When specified, this project must be complete, but the outcome does not matter." />
+		<attribute key="blocked_by_project_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent project (will error if no parent project and this is used). If that flag is true, this manager will be dormant." />
+		<attribute key="required_project_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent project (will error if no parent project and this is used). This manager will be dormant until that flag is true." />
+		<attribute key="required_project_flag2" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent project (will error if no parent project and this is used). This manager will be dormant until that flag is true." />
+		<attribute key="required_project_flag3" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent project (will error if no parent project and this is used). This manager will be dormant until that flag is true." />
+
+		<attribute key="related_npc_cohort" type="node-dropdown" is_required="false" node_source="NPCCohort" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="This may optionally be related to an npc cohort, even if it's also linked to the other types of parents." />
+		<attribute key="blocked_by_cohort_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used). If that flag is true, this manager will be dormant." />
+		<attribute key="required_cohort_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used). This manager will be dormant until that flag is true." />
+		<attribute key="required_cohort_flag2" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used). This manager will be dormant until that flag is true." />
+		<attribute key="required_cohort_flag3" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used). This manager will be dormant until that flag is true." />
+		
+		<attribute key="required_mission_active" type="node-dropdown" is_required="false" node_source="NPCMission" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When specified, this npc mission must be active at the moment." />
+		<attribute key="blocked_by_mission_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). If that mission is active, this manager will be dormant." />
+		<attribute key="blocked_by_mission_flag2" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). If that mission is active, this manager will be dormant." />
+		<attribute key="required_mission_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). This manager will be dormant until that mission is active." />
+		<attribute key="required_mission_flag2" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). This manager will be dormant until that mission is active." />
+		<attribute key="required_mission_flag3" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). This manager will be dormant until that mission is active." />
+
+		<attribute key="required_key_contact_flag_1" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this to pass. KeyContact:Flag" />
+		<attribute key="required_key_contact_flag_2" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this to pass. KeyContact:Flag" />
+		<attribute key="required_key_contact_flag_3" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this to pass. KeyContact:Flag" />
+		<attribute key="blocked_by_key_contact_flag_1" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be un-tripped for this to pass. KeyContact:Flag" />
+		<attribute key="blocked_by_key_contact_flag_2" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be un-tripped for this to pass. KeyContact:Flag" />
+		<attribute key="blocked_by_key_contact_flag_3" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be un-tripped for this to pass. KeyContact:Flag" />
+
+		<attribute key="required_key_contact_must_be_met_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact has not been met or is dead, then this will be blocked." />
+		<attribute key="required_key_contact_must_be_met_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact has not been met or is dead, then this will be blocked." />
+		<attribute key="required_key_contact_must_be_alive_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not alive, then this will be blocked." />
+		<attribute key="required_key_contact_must_be_alive_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not alive, then this will be blocked." />
+		<attribute key="required_key_contact_must_be_dead_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not dead, then this will be blocked." />
+		<attribute key="required_key_contact_must_be_dead_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not dead, then this will be blocked." />
+		
+		<sub_node id="required_city_statistic">
+			<attribute key="statistic_type" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="true"
+				tooltip="To pass, the related statistic must be some value." />
+			<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
+				tooltip="The value that will be compared against. Set to -1 to mod this out."/>
+			<attribute key="at_least" type="bool" default="false" is_required="true"
+				tooltip="If true, the statistic must be at least this high to pass. If false, it must be at most this high." />
+		</sub_node>
+		<sub_node id="required_meta_statistic">
+			<attribute key="statistic_type" type="node-dropdown" node_source="MetaStatistic" content_width_px="200" is_required="true"
+				tooltip="To pass, the related statistic must be some value." />
+			<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
+				tooltip="The value that will be compared against. Set to -1 to mod this out."/>
+			<attribute key="at_least" type="bool" default="false" is_required="true"
+				tooltip="If true, the statistic must be at least this high to pass. If false, it must be at most this high." />
+		</sub_node>
+		<sub_node id="required_resource">
+			<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+				tooltip="To pass, the related resource must be some value." />
+			<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
+				tooltip="The value that will be compared against. Set to -1 to mod this out."/>
+			<attribute key="at_least" type="bool" default="false" is_required="true"
+				tooltip="If true, the resource must be at least this high to pass. If false, it must be at most this high." />
+		</sub_node>
+	</sub_node>
+
+	<!--city_statistic_change
+	*******************************************************************************************************-->
+	<sub_node id="city_statistic_change">
+		<attribute key="statistic" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="true"
+			tooltip="If this mission is completed, it increases some city statistic. Which one?" />
+		<attribute key="value" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+			tooltip="What is amount the data will be changed by?"/>
+	</sub_node>
+
+	<!--meta_statistic_change
+	*******************************************************************************************************-->
+	<sub_node id="meta_statistic_change">
+		<attribute key="statistic" type="node-dropdown" node_source="MetaStatistic" content_width_px="200" is_required="true"
+			tooltip="If this mission is completed, it increases some meta statistic. Which one?" />
+		<attribute key="value" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+			tooltip="What is amount the data will be changed by?"/>
+	</sub_node>
+	
+</root>

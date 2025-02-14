@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="display_style">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="The code for the filter is in what dll?"/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="The fully qualified name for the type of the filter in the specified dll."/>
+
+	<attribute key="description" type="existing-override" is_required="true" />
+	
+</root>

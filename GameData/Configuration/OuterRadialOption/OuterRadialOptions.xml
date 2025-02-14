@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<outer_radial_option id="GoStraightToNextTurn" display_name="Go Straight To Next Turn"
+		 description="Skip giving any more orders to units and just go straight to the next turn."
+		 strategy_tip="Any units without orders will automatically perform a Gather."
+		 icon_name="CleanSimple_SkillB003"
+		 only_available_after_chapter="-1" show_in_streets_view="true" show_in_map_view="true" hotkey_to_display_as_related="GoStraightToNextTurn"
+		 dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OuterRadialOptions">
+	</outer_radial_option>
+
+	<outer_radial_option id="LensFilters" display_name="Lens Filters"
+		description="Lenses can be further customized, with elements turned on or off."
+		strategy_tip="Each lens has its own separate set of options."
+		icon_name="SF2_Filter"
+		only_available_after_chapter="-1" show_in_streets_view="true" show_in_map_view="true" hotkey_to_display_as_related="OpenLensFilters"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OuterRadialOptions">
+	</outer_radial_option>
+
+	<outer_radial_option id="TakeAllUnitsOutOfStandby" display_name="Take All Units Out Of Standby"
+		description="If some of your units are in standby mode, bring them all out of that mode."
+		strategy_tip="To put some of them back into standby mode, you'll need to review each one individually and use the ability bar to do so."
+		icon_name="CleanSimple_Common061"
+		only_available_after_chapter="-1" hidden_before_unlock="FocusedTeams" show_in_streets_view="true" show_in_map_view="true" hotkey_to_display_as_related=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OuterRadialOptions">
+	</outer_radial_option>
+
+</root>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="action_over_time_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information, and this one is optional because so much other information is provided already in these tips."/>
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+			tooltip="This specifies the dll that the action over time logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the action over time logic in the specified external dll."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+
+	<attribute key="can_be_canceled" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="A good idea to set this to true, unless the unit needs to be locked into this action for some reason." />
+	<attribute key="blocks_being_scrapped" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this is true, then the unit cannot be scrapped while it's doing this action." />
+
+	<attribute key="is_unit_invisible_and_absent_seeming_while_acting" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="Should be true if this is a covert dispatch where the actor is ostensibly off invisibly doing things. Otherwise should be false." />
+	<attribute key="unit_moves_at_random_while_invisibly_acting" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, and this unit is invisible and absent-seeming, then this unit will wander around at random while doing this action." />
+
+	<attribute key="action_is_completed_at_turn_change_without_asking_user_to_look_at_it" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then when this is complete it will automatically just do the completion rather than waiting to do any particles and sound effects when the user goes to see it." />
+	
+	<attribute key="should_show_aggressive_pose" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="When true, then an android performing this action will use its aggressive stance rather than the usual casual one." />
+
+	<attribute key="aggro_amount_for_action_over_time_hunters" type="int-textbox" is_required="true" min="0" max="50000" default="1000" content_width_px="80"
+		tooltip="How much aggro will be generated for action-over-time hunters." />
+
+	<attribute key="icon_color" type="node-dropdown" is_required="true" node_source="VisColorUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which color theme will be used for this action over time?" />
+
+	<attribute key="on_start" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the player initially starts this action?" />	
+	<attribute key="on_complete" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the player comes back to this unit on the turn after this action is complete?" />
+
+	<attribute key="event_on_complete" type="node-dropdown" is_required="false" node_source="NPCEvent" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this should start an event after it is completed, this is the event." />
+
+	<attribute key="tags" type="node-list" node_source="ActionOverTimeTag" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What tags apply to this type, if any?  Normally this is not needed, but some abilities might pull all of the actions-over-time that are of a certain tag." />
+
+	<sub_node id="math_int">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="int_min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="int_max" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<sub_node id="math_float">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+	
+</root>

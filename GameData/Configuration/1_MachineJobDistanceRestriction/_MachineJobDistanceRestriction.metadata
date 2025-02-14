@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="machine_job_restriction">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="distance_these_must_be_from_one_another" type="float-textbox" min="1" max="90" content_width_px="40" is_required="true"
+		tooltip="The distance that jobs of this type have to be placed from each other."/>
+
+</root>

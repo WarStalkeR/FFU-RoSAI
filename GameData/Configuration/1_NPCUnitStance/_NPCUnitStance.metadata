@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="stance">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the stance logic is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the stance logic in the specified external dll."/>
+
+	<attribute key="description" type="existing-override" is_required="true" />
+	
+	<attribute key="extra_lore_info_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is some optional extra info that shows only in a secondary panel when the player expands this tooltip."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+
+	<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be for the emission of the icon when this stance is on a unit."/>
+
+	<attribute key="icon_color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="true" tooltip="HDR intensity to make the color glow, if we want to have that."/>
+
+	<attribute key="icon_scale" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="true" tooltip="The default is 1, but you can adjust it up or down if need be."/>
+
+	<attribute key="max_height_allowed" type="float-textbox" min="-1" max="20" default="-1" content_width_px="50"
+		is_required="false" tooltip="If higher than zero, this unit will not be allowed to move to buildings where they would be higher than a certain amount. 3 is a pretty decent midrise, for scale. Machine cabinets are just over 1."/>
+
+	<attribute key="causes_unit_to_always_be_visible_as_if_out_of_fog_of_war" type="bool" default="false"
+		tooltip="If true, units in this stance will always be visible to players as if they were not in the fog of war." />	
+	<attribute key="causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough" type="bool" default="false"
+		tooltip="If true, units in this stance will show in the fog of war as a black silhouette, and no details when hovered over them, if the unit is marked as being notable enough for that to happen." />
+	<attribute key="is_stance_always_drawn_in_city_map" type="bool" default="false"
+		tooltip="If true, units in this stance will show up in the overview view of the city map." />
+	<attribute key="is_stance_always_drawn_in_streets" type="bool" default="false"
+		tooltip="If true, units in this stance will always show their stance icon even when you're not mousing over them in the streets view." />
+	<attribute key="this_unit_acts_before_player_looks_at_them" type="bool" default="false"
+		tooltip="If true, units in this stance will act on their own, without any need for the player to focus on them. Good for more background-y type stances." />
+	<attribute key="this_unit_is_never_ever_watched_by_the_player" type="bool" default="false"
+		tooltip="If true, then even if the player has set to watch background NPCs, these still won't be included. This is good for things like transports and other bulk units that just... would be insane overkill to look at." />
+	<attribute key="this_unit_is_of_very_low_log_importance" type="bool" default="false"
+		tooltip="If true, and this is attacking or attacked by another unit where this is due, it skips damage popups and log messages related to the unit.
+This is basically for large-scale war situations, where all the background units should not be flooding the player's log to the point they can't read anything." />
+	<attribute key="always_show_health_bar" type="bool" default="false"
+		tooltip="If true, units in this stance will always show their health bars for decision-making purposes." />
+	<attribute key="is_considered_enemy_hacker" type="bool" default="false"
+		tooltip="If true, this is considered an enemy hacker." />
+	<attribute key="is_considered_enemy_hacker_that_threatens_infiltrators" type="bool" default="false"
+		tooltip="If true, this is considered an enemy hacker that actively threatens infiltration units of your own." />
+	<attribute key="is_considered_enemy_hacker_that_steals_secrets" type="bool" default="false"
+		tooltip="If true, this is considered an enemy hacker that actively steals your secrets." />
+	<attribute key="is_never_targeted_by_npcs" type="bool" default="false"
+		tooltip="If true, then other NPCs will never try to shoot these units. Nor will your own NPC units." />
+
+	<attribute key="is_considered_basic_guard" type="bool" default="false"
+		tooltip="If true, then units looking for enemies won't naturally include this unit." />
+	
+	<attribute key="is_considered_cohort_guard" type="bool" default="false"
+		tooltip="If true, units in this stance will be considered part of the general cohort guarding the city." />
+	<attribute key="is_beneficial_to_the_cohort_guard" type="bool" default="false"
+		tooltip="If true, units in the cohort guard will not mess with this, and vice versa. But units that do want to mess with the cohort guard also won't seek this out" />
+	<attribute key="is_considered_active_cohort_guard" type="bool" default="false"
+		tooltip="If true, units in this stance will be considered part of the general cohort guarding the city AND active and on the move." />
+	<attribute key="is_considered_disruptive" type="bool" default="false"
+		tooltip="If true, units in this stance will be considered some sort of criminal disruption outside of the norm." />
+	<attribute key="is_considered_wealthy_civilian" type="bool" default="false"
+		tooltip="If true, units in this stance will be considered a wealthy civilian." />
+	<attribute key="is_considered_lowermiddle_civilian" type="bool" default="false"
+		tooltip="If true, units in this stance will be considered a standard lower or middle class civilian." />
+	<attribute key="is_considered_noncombatant" type="bool" default="false"
+		tooltip="If true, units in this stance will be considered a complete noncombatant." />
+	<attribute key="is_considered_passive_guard" type="bool" default="false"
+		tooltip="If true, units in this stance will be considered a passive guard if you're not in the place they are guarding." />
+	<attribute key="is_part_of_city_economy" type="bool" default="false"
+		tooltip="If true, units in this stance are doing work for the city economy." />
+	<attribute key="is_part_of_regional_economy" type="bool" default="false"
+		tooltip="If true, units in this stance are doing work for the regional economy." />
+	<attribute key="is_part_of_international_economy" type="bool" default="false"
+		tooltip="If true, units in this stance are doing work for the international economy." />
+	
+	<attribute key="will_hold_fire_against_non_disruptive" type="bool" default="false"
+		tooltip="If true, units in this stance will avoid shooting other units that are not presently considered disruptive." />
+	<attribute key="will_hold_fire_against_cohort_guard" type="bool" default="false"
+		tooltip="If true, units in this stance will avoid shooting other units considered part of the cohort guard." />
+	<attribute key="will_hold_fire_against_wealthy_civilians" type="bool" default="false"
+		tooltip="If true, units in this stance will avoid shooting wealthy civilians." />
+	<attribute key="will_hold_fire_against_city_economy" type="bool" default="true"
+		tooltip="If true, the default, units in this stance will avoid shooting pieces of the city economy." />
+	<attribute key="will_hold_fire_against_regional_economy" type="bool" default="true"
+		tooltip="If true, the default, units in this stance will avoid shooting pieces of the regional economy." />
+	<attribute key="will_hold_fire_against_international_economy" type="bool" default="true"
+		tooltip="If true, the default, units in this stance will avoid shooting pieces of the international economy." />
+	<attribute key="will_hold_fire_against_noncombatants" type="bool" default="true"
+		tooltip="If true, the default, units in this stance will hold fire against noncombatants." />
+	<attribute key="will_hold_fire_against_passive_guards" type="bool" default="true"
+		tooltip="If true, the default, units in this stance will hold fire against passive guards unless you're in the spot they are guarding." />
+
+	<attribute key="is_stance_for_player_controlled_units" type="bool" default="false"
+		tooltip="If true, then this is something that player-controlled units can be assigned at will." />
+	<attribute key="is_passive_harvester_for_territory_control_flag" type="bool" default="false"
+		tooltip="If true, units in this stance will be cause any of the territory flags within their attack range to be able to passively harvest." />
+	
+	<attribute key="will_hold_fire_against_regular_machine_structures" type="bool" default="false"
+		tooltip="If true, units in this stance will avoid shooting machine structures (shell company structures are irrelevant). Note that this is very important for noncombatants to have, because otherwise there's nothing stopping them from wandering up and punching machine structures." />
+	<attribute key="will_attack_shell_company_structures" type="bool" default="false"
+		tooltip="If true, attack shell company structures, which units normally do not do." />
+	<attribute key="will_hold_fire_if_at_full_health" type="bool" default="false"
+		tooltip="If true, units in this stance will avoid shooting anybody unless they have been damaged previously." />
+	<attribute key="is_hyper_aggressive_against_all_but_its_own_cohort" type="bool" default="false"
+		tooltip="If true, units in this stance will attack anyone and everyone that is not from their own cohort, regardless of anything except 'hold fire if at full health'." />
+	<attribute key="will_ignore_damage_to_machine_structures_in_damage_calculations" type="bool" default="false"
+		tooltip="If true, units in this stance will not include machine structures in their damage calculations, area-of-effect or otherwise." />
+	<attribute key="will_hold_fire_against_lowermiddle_civilians" type="bool" default="false"
+		tooltip="If true, units in this stance will avoid shooting standard lower or middle class civilians." />
+	<attribute key="will_attack_all_active_cohort_guards" type="bool" default="false"
+		tooltip="If true, units in this stance will attack any cohort guards that are also active. This overrides their normal hold-fire against cohort guards, if that's also on." />
+	<attribute key="is_allowed_to_aggro_poi_guards" type="bool" default="false"
+		tooltip="If true, units in this stance are allowed too attack poi guards that are not yet aggroed, thus making the poi go on alert. When this is false, they cannot." />
+	<attribute key="is_on_orders_from_the_local_megacorp" type="bool" default="false"
+		tooltip="If true, units in this stance will not fire on other units for whom this is true, or who are on regular cohort-guard duty.
+This allows for multiple hostile corporations to cooperate with one another, since the parent megacorp said to do something. Otherwise they tend to shoot at each other." />
+
+	<attribute key="will_attack_outcast_machines_at_or_above_level" type="int-textbox" is_required="true" min="0" max="10000" default="0" content_width_px="80"
+		tooltip="If above zero, units in this stance will attack any machine that is seen as an outcast of that level or higher right now." />
+	<attribute key="will_hold_fire_against_regular_machines_except_those_aggroed" type="bool" default="false"
+		tooltip="If true, units in this stance will hold fire against any regular machine, even outcasts, so long as their group isn't aggroed by that specific regular machine." />
+
+	<attribute key="will_attack_shell_company_machines_even_if_not_aggroed" type="bool" default="false"
+		tooltip="If true, units in this stance will attack shell company machines even if those are not aggroed." />
+	
+	<attribute key="is_contained_to_poi" type="bool" default="false"
+		tooltip="If true, then this unit is deployed related to the POI it is in, and definitely should not leave that POI, and potentially should not fire on units outside of it (only fire on them if aggroed, probably)." />
+	<attribute key="is_contained_to_district" type="bool" default="false"
+		tooltip="If true, then this unit is deployed related to the district it is in, and probably should not leave that district, but potentially can fire across district lines." />
+
+	<attribute key="targeting_order" type="int-textbox" is_required="true" min="0" max="10000" default="0" content_width_px="80"
+		tooltip="Required for all NPCs. The higher the number, the later they will make their attack choice.
+This is mostly relevant for AOE, or other factors where earlier decisions block later ones that would overkill them.
+Any unit with an AOE attack will multiply the specified targeting order by 10x automatically, so that's important to know when planning these." />
+	<attribute key="targeting_logic" type="node-dropdown" is_required="true" node_source="NPCUnitTargetingLogic" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Required for all NPCs. What targeting logic should they use when selecting a target to shoot out of the targets within their range?" />
+	
+	<attribute key="switch_to_stance_when_damaged" type="node-dropdown" is_required="false" node_source="NPCUnitStance" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When an npc unit is using this stance, and they take damage, then do they switch to a different stance?" />
+	<attribute key="switch_to_stance_when_home_poi_alarmed_against_player" type="node-dropdown" is_required="false" node_source="NPCUnitStance" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When an npc unit is using this stance, and their home poi is alarmed, should they switch to another stance?" />
+	<attribute key="switch_to_stance_when_home_poi_alarmed_against_third_party" type="node-dropdown" is_required="false" node_source="NPCUnitStance" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When an npc unit is using this stance, and their home poi is alarmed, should they switch to another stance?" />
+	<attribute key="switch_to_stance_when_home_poi_not_alarmed_against_player" type="node-dropdown" is_required="false" node_source="NPCUnitStance" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When an npc unit is using this stance, and they have a home poi and it is not alarmed, should they switch to another stance?" />
+	<attribute key="switch_to_stance_when_home_poi_not_alarmed_against_any" type="node-dropdown" is_required="false" node_source="NPCUnitStance" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When an npc unit is using this stance, and they have a home poi and it is not alarmed, should they switch to another stance?" />
+
+	<attribute key="immediately_do_action_when_damaged_by_any" type="node-dropdown" is_required="false" node_source="NPCUnitAction" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When an npc unit is damaged by any source, then they will immediately take this action. Even if they take this while dying." />
+	<attribute key="immediately_do_action_when_damaged_by_player" type="node-dropdown" is_required="false" node_source="NPCUnitAction" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="When an npc unit is damaged by a player or player ally, then they will immediately take this action. Even if they take this while dying." />
+
+	<attribute key="when_damaged_increase_alarm_of_poi_for_at_least_x_turns" type="range-int" min="0,0" max="90,90" content_width_px="200"
+		is_required="false" tooltip="If this unit has a home poi, and is attacked, then for how many turns should it raise the alarm?"/>
+	
+	<attribute key="reinforcement_chance" type="int-textbox" is_required="false" min="0" max="100" default="0" content_width_px="80"
+		tooltip="What chance, if any, is there of a unit in this stance taking a reinforcement action on any given turn?" />
+	<attribute key="reinforcement_tag" type="node-dropdown" is_required="false" node_source="NPCUnitTag" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If the reinforcement action is used by a unit in this stance, then they will pull an npc unit from this collection. It will be the switch_to_stance_when_reinforcing stance, and belong to the same group as this unit." />
+	<attribute key="switch_to_stance_when_reinforcing" type="node-dropdown" is_required="false" node_source="NPCUnitStance" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If the reinforcement action is used by a unit in this stance, then they will switch to this other stance as well as assigning this stance to the new unit." />
+	<attribute key="disband_when_calling_reinforcements" type="bool" default="false"
+		tooltip="If true, then this unit disbands when it tries to call reinforcements." />
+
+	<attribute key="should_use_blue_outline" type="bool" default="false"
+		tooltip="If true, units of this sort will show blue icons rather than red when third parties, even if they are willing to shoot the player." />
+	<attribute key="should_use_purple_outline" type="bool" default="false"
+		tooltip="If true, units of this sort will show purple icons rather than red when third parties, if they would normally show red." />
+
+	<attribute key="max_allowed_poi_clearance" type="int-textbox" min="0" max="5" default="0" content_width_px="80" is_required="true"
+		tooltip="Out of 5, what is the highest security clearance of poi that units in this stance can enter while walking around?"/>
+	<attribute key="max_allowed_non_focal_building_clearance" type="int-textbox" min="0" max="5" default="0" content_width_px="80" is_required="true"
+		tooltip="Out of 5, what is the highest security clearance of building that units in this stance can stop on while walking around, if the building is not their focal point?"/>
+
+	<attribute key="disband_chance" type="int-textbox" is_required="false" min="0" max="100" default="0" content_width_px="80"
+		tooltip="What chance, if any, is there of a unit in this stance disbanding and fading into the bushes?" />
+	<attribute key="disband_after_x_consecutive_turns_in_this_stance" type="int-textbox" is_required="false" min="0" max="30" default="0" content_width_px="80"
+		tooltip="If units in this stance will automatically disband after a certain number of consecutive turns in this stance, then how many turns is it?" />
+	
+	<sub_node id="grants">
+		<attribute key="perk" type="node-dropdown" is_required="true" node_source="ActorPerk" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When an npc unit is using this stance, then what perks do they automatically get?" />
+		<attribute key="value" type="bool" is_required="true" default="true"
+			tooltip="Normally set to true to indicate the grant. Set to false to mod it out, typically." />
+	</sub_node>
+
+	<sub_node id="blocks">
+		<attribute key="perk" type="node-dropdown" is_required="true" node_source="ActorPerk" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When a machine unit is using this stance, then what perks are blocked by it?" />
+		<attribute key="value" type="bool" is_required="true" default="true"
+			tooltip="Normally set to true to indicate the blockage. Set to false to mod it out, typically." />
+	</sub_node>
+
+	<sub_node id="actor_data_multiplier">
+		<attribute key="actor_data_type" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When an npc unit is using this stance, what data type of theirs is being multiplied by some value?" />
+		<attribute key="multiplier" type="float-textbox" is_required="true" min="-1" max="1000" default="-1" content_width_px="80"
+			tooltip="What is the multiplier for that data type?  If less than 0, it will be ignored. If 0, that data will be set to zero for that NPC.
+If anything above zero, and the actor started with data of this sort above zero, then it will not reduce the final amount below 1." />
+	</sub_node>
+	
+	<sub_node id="actor_data_added">
+		<attribute key="actor_data_type" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When an npc unit is using this stance, what data type of theirs is being multiplied by some value?" />
+		<attribute key="flat_added" type="int-textbox" is_required="true" min="-1000" max="1000" default="0" content_width_px="80"
+			tooltip="What is the flat amount added?  If the unit naturally has absolutely none of this type, it may not apply." />
+	</sub_node>
+
+	<sub_node id="math_int">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="int_min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="int_max" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<sub_node id="math_float">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<sub_node id="action_consideration">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. Should be unique per stance or you're going to have a bad time." />
+		<attribute key="sort_order" type="int-textbox" min="-1000" max="1000" default="0" content_width_px="50" is_required="true"
+			tooltip="The lower the number, the earlier it is considered in the decision-making of npc units in this stance."/>
+		<attribute key="chance_of_attempting" type="int-textbox" min="0" max="100" default="100" content_width_px="50" is_required="true"
+			tooltip="The percent chance on any given turn of this action being done if it is reached in the consideration list."/>
+		
+		<attribute key="must_be_this_many_turns_old" type="int-textbox" min="0" max="100" default="100" content_width_px="50" is_required="false"
+			tooltip="This will only be considered if the unit is this many turns old."/>
+		<attribute key="skip_age_requirement_if_city_flag_is_true" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If specified, then must_be_this_many_turns_old is canceled when this is true." />
+		
+		<attribute key="target_building_must_have_no_swarm" type="bool" default="false"
+			tooltip="If true, then any considered buildings cannot have swarms at them already." />
+		<attribute key="target_building_can_have_this_swarm" type="node-dropdown" is_required="false" node_source="Swarm" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If specified, then the normal restriction of 'no swarm' does not apply if this swarm type is there." />
+
+		<attribute key="target_building_must_be_violent_cyberocracy_target_on_cyberocracy_cell" type="bool" default="false"
+			tooltip="If true, then the building it would consider must be a violent target for the cyberocracy, and be in a cell that has a cybercratic hub." />
+		<attribute key="target_building_must_be_peaceful_cyberocracy_target_on_cyberocracy_cell" type="bool" default="false"
+			tooltip="If true, then the building it would consider must be a peaceful target for the cyberocracy, and be in a cell that has a cybercratic hub." />
+
+		<attribute key="target_building_must_have_lower_class_citizen_count_of_at_least" type="int-textbox" is_required="false" min="0" max="10000" default="0" content_width_px="80"
+			tooltip="If above zero, then the building it would consider must have lower-class citizens that can be grabbed above the specified amount." />
+		<attribute key="target_building_must_have_upper_class_citizen_count_of_at_least" type="int-textbox" is_required="false" min="0" max="10000" default="0" content_width_px="80"
+			tooltip="If above zero, then the building it would consider must have upper-class citizens that can be grabbed above the specified amount." />
+
+		<attribute key="skip_any_home_district_or_poi_restrictions" type="bool" default="false"
+			tooltip="If true, then this unit won't stay in its home poi or district if it is normally supposed to." />
+		<attribute key="poi_must_be_able_to_accept_reinforcements_to_get_to_minimum" type="bool" default="false"
+			tooltip="If true, then when targeting POIs, only those that are not blocked from getting reinforcements, and have less than their desired minimum, will be targeted." />
+		<attribute key="poi_must_be_able_to_accept_any_reinforcements_to_below_maximum" type="bool" default="false"
+			tooltip="If true, then when targeting POIs, only those that are not blocked from getting reinforcements, and have less than their full maximum, will be targeted." />
+		<attribute key="absolute_min_distance_objective_must_be_from_current_location" type="int-textbox" min="0" max="1000" default="1" content_width_px="50" is_required="false"
+			tooltip="How far away, at minimum, the objective must be for the unit to do it. One cell is 20 units. Setting this to a number like 500 will often yield no results as everything in the city is too close when the unit stands some places."/>
+		<attribute key="absolute_max_distance_objective_must_be_from_current_location" type="int-textbox" min="0" max="1000" default="80" content_width_px="50" is_required="false"
+			tooltip="How far away, at most, the objective can be for the unit to do it. One cell is 20 units. So a default of 80 means a pretty sizable chunk, 4 cells in all directions."/>
+		<attribute key="preferred_min_distance_of_objective_from_current_location" type="int-textbox" min="0" max="1000" default="60" content_width_px="50" is_required="false"
+			tooltip="The first random selected building that is at least this far away will be chosen, or something closer if there are no other options."/>
+		<attribute key="preferred_max_distance_of_objective_from_current_location" type="int-textbox" min="0" max="1000" default="120" content_width_px="50" is_required="false"
+			tooltip="The first random selected building that is at least this close will be chosen, or something further away if there are no other options."/>
+		<attribute key="use_mission_center_for_preferred_distances_if_relevant" type="bool" default="false"
+			tooltip="If true, and the unit is related to a mission, then the preferred distances will be related to the mission center instead of their own center." />
+		<attribute key="use_project_center_for_preferred_distances_if_relevant" type="bool" default="false"
+			tooltip="If true, and the unit is related to a mission, then the preferred distances will be related to the center of the mission's project instead of their own center." />
+		<attribute key="max_failure_wait_turns_for_blocked_objective" type="int-textbox" min="0" max="10" default="5" content_width_px="50" is_required="false"
+			tooltip="If the unit finds itself blocked from pursuing an objective, how many turns should it wait for?"/>
+
+		<attribute key="target_closest_possible_building" type="bool" default="false"
+			tooltip="If true, then this unit will target the closest building it is able to." />
+		<attribute key="can_target_building_have_machine_structure" type="bool" default="false"
+			tooltip="If true, then this can target buildings that have a structure inside them." />
+
+		<attribute key="when_targeting_building_block_poi_reinforcements_for_minimum_of_turns" type="int-textbox" min="0" max="10" default="0" content_width_px="50" is_required="false"
+			tooltip="If this unit starts moving toward this building as an objective, then block new reinforcements actions targeting the poi of that building for at least this many turns. Defaults to 0."/>
+		<attribute key="when_targeting_building_block_poi_reinforcements_for_maximum_of_turns" type="int-textbox" min="0" max="10" default="0" content_width_px="50" is_required="false"
+			tooltip="If this unit starts moving toward this building as an objective, then block new reinforcements actions targeting the poi of that building for at most this many turns. Defaults to 0."/>
+
+		<attribute key="action_to_attempt" type="node-dropdown" node_source="NPCUnitAction" content_width_px="200" is_required="false"
+			tooltip="If specified, then this is the action that the npc will try." />
+		<attribute key="objective_to_attempt_to_start" type="node-dropdown" is_required="false" node_source="NPCUnitObjective" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If specified, then this is the type of objective the npc will try to start working on." />
+
+		<attribute key="only_start_if_accumulator_less_than" type="node-dropdown" is_required="false" node_source="NPCUnitAccumulator" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If specified, then this npc must have this accumulator less than the related value, or it will skip this action." />
+		<attribute key="only_start_if_accumulator_greater_than_or_equal_to" type="node-dropdown" is_required="false" node_source="NPCUnitAccumulator" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If specified, then this npc must have this accumulator greater than or equal to the related value, or it will skip this action." />
+		<attribute key="accumulator_comparison_number" type="int-textbox" min="-20000000" max="20000000" default="100" content_width_px="50" is_required="false"
+			tooltip="The number that the accumulator comparisons are compared against. By default is 100, but can be anything."/>
+
+		<attribute key="increase_accumulator_if_fails_to_find_target" type="node-dropdown" is_required="false" node_source="NPCUnitAccumulator" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If specified, and this action fails to find a target, then increase the accumulator by a certain amount." />
+		<attribute key="accumulator_increase_amount_on_fail" type="int-textbox" min="0" max="20000000" default="100" content_width_px="50" is_required="false"
+			tooltip="The amount the accumulator should increase by if it fails to find a target."/>
+
+		<attribute key="badge_to_apply_on_successfully_starting" type="node-dropdown" is_required="false" node_source="ActorBadge" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If specified, and a unit successfully starts doing this action, then this badge is applied to them." />
+
+		<attribute key="target_npc_unit_tag" type="node-dropdown" is_required="false" node_source="NPCUnitTag" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="For AttackTargetNPCUnitFromGroup and CustomActionAgainstNPCUnitFromGroup only. Invalid for others. Target npc of some collection with this action." />
+		<attribute key="target_building_tag" type="node-dropdown" is_required="false" node_source="BuildingTag" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="For CustomActionAgainstBuildingFromTag only. Invalid for others. Target building of some tag with this action." />
+		<attribute key="target_poi_tag" type="node-dropdown" is_required="false" node_source="POITag" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="Only applies when target_building_tag is used. Causes this to be further limited down to a poi of a certain tag." />
+		<attribute key="target_district_tag" type="node-dropdown" is_required="false" node_source="DistrictTag" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="Only applies when target_building_tag is used. Causes this to be further limited down to a district of a certain tag." />
+
+		<attribute key="switch_to_stance_when_action_success" type="node-dropdown" is_required="false" node_source="NPCUnitStance" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If specified, then the unit will switch to another stance if the action is done successfully or objective is started successfully. Optional." />
+		<attribute key="switch_to_stance_when_action_fail" type="node-dropdown" is_required="false" node_source="NPCUnitStance" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If specified, then the unit will switch to another stance if the action fails or the objective fail to start. Optional." />
+
+		<attribute key="popup_text_on_disband" type="string" maxlength="200" content_width_px="200" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="What text should pop up out of the unit if it's being asked to disband by this action consideration?"/>
+		<attribute key="popup_text_scale" type="float-textbox" min="0.01" max="10" default="0.8" content_width_px="50"
+			is_required="false" tooltip="The default is 0.8, but you can adjust it up or down if need be."/>
+		<attribute key="popup_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be for the emission of the popup text."/>
+		<attribute key="popup_color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+			is_required="false" tooltip="HDR intensity to make the color glow, if we want to have that."/>
+		
+	</sub_node>
+	
+</root>

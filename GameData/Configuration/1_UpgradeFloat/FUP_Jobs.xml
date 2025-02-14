@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Job Caps (Priority Group 700, to max 1199)
+	******************************************************************************************-->
+
+	<!--generic icon for any here: CS_Upgrade-->
+
+	<upgrade_float id="BetterRepairSpiders" display_name="Better Repair Spiders"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SomethingHealth"
+		float_original="1" float_increment="0.4" float_cap="4.2" show_data_as_percentage="true"
+		description="Allows repair spiders to accomplish more per turn."
+		show_on_upgrades_screen_as_part_of_priority_group="810">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobImprovement" sort_index="100" />
+		<data_target_int_multiplied_structure_jobs id="1" target_int_id="MaxTotalRepairsToBuildingsPerTurn" >
+			<applies_to structure_job="RepairSpiders" allowed="true" />
+		</data_target_int_multiplied_structure_jobs>
+		<data_target_int_multiplied_structure_jobs id="2" target_int_id="MaxHealingPerUnitPerTurn" >
+			<applies_to structure_job="RepairSpiders" allowed="true" />
+		</data_target_int_multiplied_structure_jobs>
+	</upgrade_float>
+	
+	<upgrade_float id="BetterWells" display_name="Better Wells"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FlatInnocent_2"
+		float_original="1" float_increment="0.5" float_cap="6" show_data_as_percentage="true"
+		description="Wells pull up more groundwater."
+		show_on_upgrades_screen_as_part_of_priority_group="810">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobImprovement" sort_index="100" />
+		<data_target_int_multiplied_structure_jobs id="1" target_int_id="Groundwater" >
+			<applies_to structure_job="WellAndCistern" allowed="true" />
+		</data_target_int_multiplied_structure_jobs>
+	</upgrade_float>
+
+	<upgrade_float id="BetterWaterFilters" display_name="Better Water Filters"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FE_Water1"
+		float_original="1" float_increment="0.5" float_cap="6" show_data_as_percentage="true"
+		description="Water Filters do more work."
+		show_on_upgrades_screen_as_part_of_priority_group="810">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobImprovement" sort_index="100" />
+		<data_target_int_multiplied_structure_jobs id="1" target_int_id="Groundwater" >
+			<applies_to structure_job="CompactWaterFilter" allowed="true" />
+			<applies_to structure_job="WaterFiltrationTower" allowed="true" />
+		</data_target_int_multiplied_structure_jobs>
+		<data_target_int_multiplied_structure_jobs id="2" target_int_id="FilteredWater" >
+			<applies_to structure_job="CompactWaterFilter" allowed="true" />
+			<applies_to structure_job="WaterFiltrationTower" allowed="true" />
+		</data_target_int_multiplied_structure_jobs>
+		<data_target_int_multiplied_structure_jobs id="3" target_int_id="HeavyMetals" >
+			<applies_to structure_job="CompactWaterFilter" allowed="true" />
+			<applies_to structure_job="WaterFiltrationTower" allowed="true" />
+		</data_target_int_multiplied_structure_jobs>
+	</upgrade_float>
+
+	<upgrade_float id="BetterSlurrySpiders" display_name="Better Slurry Spiders"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SW_AbstractShape5"
+		float_original="1" float_increment="0.75" float_cap="8.5" show_data_as_percentage="true"
+		description="Slurry spiders are better at finding the elements they need."
+		show_on_upgrades_screen_as_part_of_priority_group="810">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobImprovement" sort_index="100" />
+		<data_target_int_multiplied_structure_jobs id="1" target_int_id="ElementalSlurry" >
+			<applies_to structure_job="SlurrySpiders" allowed="true" />
+		</data_target_int_multiplied_structure_jobs>
+	</upgrade_float>
+
+	<upgrade_float id="BetterBiomulchers" display_name="Better Biomulchers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_SkillB055"
+		float_original="1" float_increment="0.25" float_cap="4" show_data_as_percentage="true"
+		description="Biomulcher crabs and dragonflies are better at finding the elements they need."
+		show_on_upgrades_screen_as_part_of_priority_group="810">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobImprovement" sort_index="100" />
+		<data_target_int_multiplied_structure_jobs id="1" target_int_id="Biomulch" >
+			<applies_to structure_job="Biomulcher" allowed="true" />
+		</data_target_int_multiplied_structure_jobs>
+	</upgrade_float>
+
+	<upgrade_float id="BetterWindTurbines" display_name="Better Wind Turbines"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FE_Turbine"
+		float_original="1" float_increment="0.5" float_cap="8" show_data_as_percentage="true"
+		description="Wind generators produce more power."
+		show_on_upgrades_screen_as_part_of_priority_group="810">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobImprovement" sort_index="100" />
+		<job_actor_data_multiplicative_upgrade id="1" data_to_upgrade="GeneratedElectricity" >
+			<applies_to structure_job="LargeWindGenerator" allowed="true" />
+		</job_actor_data_multiplicative_upgrade>
+	</upgrade_float>
+
+	<upgrade_float id="BetterMicrobuilderMiniFabs" display_name="Better Microbuilder Mini-Fabs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SW_Nanotechnology5"
+		float_original="1" float_increment="0.25" float_cap="4" show_data_as_percentage="true"
+		description="Technically this is refining rather than procurement, but it's very low in many production chains."
+		show_on_upgrades_screen_as_part_of_priority_group="810">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobImprovement" sort_index="100" />
+		<data_target_int_multiplied_structure_jobs id="1" target_int_id="Microbuilders" >
+			<applies_to structure_job="MicrobuilderMiniFab" allowed="true" />
+		</data_target_int_multiplied_structure_jobs>
+	</upgrade_float>
+
+	<upgrade_float id="BetterMainframes" display_name="Better Mainframes"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="HO_HouseSkyscraper17"
+		float_original="1" float_increment="0.25" float_cap="4" show_data_as_percentage="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="810">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobImprovement" sort_index="100" />
+		<job_actor_data_multiplicative_upgrade id="1" data_to_upgrade="NeuralExpansion" >
+			<applies_to structure_job="TowerMainframe" allowed="true" />
+			<applies_to structure_job="BiologicalMainframe" allowed="true" />
+		</job_actor_data_multiplicative_upgrade>
+		<data_target_int_multiplied_structure_jobs id="2" target_int_id="ComputeTime" >
+			<applies_to structure_job="TowerMainframe" allowed="true" />
+			<applies_to structure_job="BiologicalMainframe" allowed="true" />
+		</data_target_int_multiplied_structure_jobs>
+	</upgrade_float>
+	
+	<!--generic icon for any here: CS_Upgrade-->
+	
+</root>

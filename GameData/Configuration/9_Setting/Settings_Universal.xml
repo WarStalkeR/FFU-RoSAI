@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+
+	<!-- none currently -->
+	
+
+  <!-- Networking -->
+
+	<!--
+  <setting id="Debug_ShowNetworkSyncDetailsInEscapeMenu" category="Networking" display_name="Helpful: Show Network Sync Details In Escape Menu" type="BoolToggle" default_bool="false"
+            skip_all_localization_on_node="true"
+			  description="Only applies when you are in multiplayer, and has different outputs on the host versus clients. Gives statistics on how much the game has had to correct in terms of divergent data between the client and the host.
+            
+Note: The PKIDs and squads are actually checked for divergences, and those are shown in more detail on the client than the host. All the other things are sent in a periodic overwriting fashion, without checking for divergences, as the bandwidth used (which you can see with this setting on) is less disruptive than the CPU cycles required to do divergence checks." />
+
+  <setting id="Debug_ShowNetworkStatsInUpperRight" category="Networking" display_name="Show Network Stats In Upper Right" type="BoolToggle" default_bool="false"
+            skip_all_localization_on_node="true"
+			  description="Only applies when you are in multiplayer, and has different outputs on the host versus clients. Gives statistics on how far the client is behind the host from each point of view, and how many turns the client is running behind.
+            
+This also shows a network round trip time from the client to the host, which is sort of like a ping time but does include software decoding time, so it's a bit more accurate than a ping (for telling effective time to transmit something and get a response that is fully decoded, not just transit time between the two network cards), as well as being networking-agnostic. Just note that the effective round trip time would potentially be larger than the ping, if you separately measure that somewhere, and that's not a bug." />
+  
+  <setting id="NetworkPort" category="Networking" display_name="Network Port" type="IntTextbox" default_int="32340" min_int="10000" max_int="65535"
+           skip_all_localization_on_node="true"
+			  description="This is the networking 'port' that one player is hosting on and that other players will try to connect to. />
+
+  <setting id="HideIPAddressInLobbyAndEscMenu" category="Networking" subcategory="NetPrivacy" display_name="Hide IP Address In Lobby And Esc Menu" type="BoolToggle" default_bool="false"
+            skip_all_localization_on_node="true"
+			  description="Normally we show your IP Address in those windows in case you need them. However, if you are planning to stream the game, this is not information you would want visible in your stream, so this lets you turn it off.
+            
+Please note that you would still need to obscure the actual connection screen with your streaming software, because we can't really hide that IP while still making the screen useful to you." />
+
+
+  <setting id="Debug_SendFullMetadata" category="Networking" display_name="Heavy: Send Full Metadata" type="BoolToggle" default_bool="false"
+            skip_all_localization_on_node="true"
+			  description="If you want to turn this on, the host or a client can do so at will, and the game will adjust automatically.
+            
+This setting causes a vast increase (about 50x) in the amount of data being sent across the network (you can see the amounts in the escape menu), because it will send the metadata about each piece of data, and not just the data itself.
+
+This is not normally a setting you'd want to turn on, but if you get any sort of network send errors, or in particular a 'canary' is hit, then you can have everyone disconnect, turn this setting on, and reconnect. Shortly you should get a much more informative (to us) error about what data was malformed.
+
+Canaries are our way of finding that there is an error in a general area, but this metadata setting is the way to pinpoint an exact problematic line so that we can fix it.
+
+If a client is getting errors on their end, then the host needs to turn this on so that their data being sent out has the metadata in it. If a host is getting errors on their end, then the client sending the errors needs to turn on this field so that their data has metadata inside it." />
+-->
+  
+
+  <!-- Invisible stuff: uses the types IntHidden, BoolHidden, FloatHidden -->
+  
+  <setting id="LastIPTriedToConnectTo" category="Invisible" display_name="Last IP Tried To Connect To" type="StringHidden" default_string="127.0.0.1"
+           skip_all_localization_on_node="true" ignores_defaults="true" ignores_defaults_lang_key="SetDefaults_Ignores"
+			  description="HIDDEN" />
+  <setting id="LastChosenNetworkType" category="Invisible" display_name="Last Chosen Network Type" type="StringHidden" default_string=""
+           skip_all_localization_on_node="true" ignores_defaults="true" ignores_defaults_lang_key="SetDefaults_Ignores"
+			  description="HIDDEN" />
+
+	<setting id="Debug_AllowAchievementsToTripEvenInCheatMode" category="Invisible" display_name="Allow Achievements To Trip Even In Cheat Mode"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="HIDDEN" skip_all_localization_on_node="true" />
+
+</root>

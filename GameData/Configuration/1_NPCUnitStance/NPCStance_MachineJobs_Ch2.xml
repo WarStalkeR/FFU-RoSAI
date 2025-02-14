@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--**************************************************************WarRaptorDeploymentStation**************************************************************-->
+	<stance id="WarRaptorRoam" display_name="Roaming"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Your raptors hunt midsize wildlife (including humans), defend themselves, and in general menace the city."
+		icon_name="FlatSkillC14" icon_color="#BC59BE" icon_color_hdr_intensity="1.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="30" action_to_attempt="Wander"/>
+		<action_consideration id="HideInBuilding" sort_order="300" chance_of_attempting="100" objective_to_attempt_to_start="RaptorHideInside"
+			target_building_tag="AnimalLargeHidingValid" skip_any_home_district_or_poi_restrictions="true" 
+			must_be_this_many_turns_old="6" skip_age_requirement_if_city_flag_is_true="WarRaptorsHaveBeenFreed"
+			target_building_must_have_no_swarm="true" target_building_can_have_this_swarm="LurkingWarRaptors"
+			absolute_min_distance_objective_must_be_from_current_location="10" absolute_max_distance_objective_must_be_from_current_location="200"
+			preferred_min_distance_of_objective_from_current_location="30" preferred_max_distance_of_objective_from_current_location="90"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"/>
+		<action_consideration id="WanderFallback" sort_order="400" chance_of_attempting="100" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="WarRaptorRoamConfused" copy_from="WarRaptorRoam"
+		description="Phased across timelines, not that they've particularly noticed. They're on the hunt."/>
+
+	<!--**************************************************************ParkourBearDeploymentStation**************************************************************-->
+	<stance id="ParkourBearAttack" display_name="Bear Attack"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Your trained bears can take down vehicles and mechs, but how they behave is not always ideal."
+		icon_name="FlatSkillB_bear" icon_color="#D46E3F" icon_color_hdr_intensity="1.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="true" will_hold_fire_against_non_disruptive="false"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="100" action_to_attempt="Wander"/>
+	</stance>
+	
+	<!--**************************************************************CyberocracyHub**************************************************************-->
+	<stance id="PlayerWorkerMurderDissidents" display_name="Murder Dissidents"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Predators quickly and efficiently kill anyone who does not wish to be part of your cyberocracy."
+		icon_name="FlatSkillC81" icon_color="#D12121" icon_color_hdr_intensity="2.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="PlayerWorkerMurderDissidents" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="PlayerWorkerMurderDissidents"
+			target_building_tag="Any" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true" target_closest_possible_building="true"
+			target_building_must_have_no_swarm="true" target_building_can_have_this_swarm="CybercraticCitizens"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="200"
+			preferred_min_distance_of_objective_from_current_location="1" preferred_max_distance_of_objective_from_current_location="30"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"
+			target_building_must_be_violent_cyberocracy_target_on_cyberocracy_cell="true"/>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="30" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="PlayerWorkerRemoveDissidents" display_name="Remove Dissidents"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="PMC Impostors take more time to displace people who do not wish to be part of your cyberocracy, but they do it without violence."
+		icon_name="SK_PoliceLine" icon_color="#C9471A" icon_color_hdr_intensity="2.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="PlayerWorkerRemoveDissidents" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="PlayerWorkerRemoveDissidents"
+			target_building_tag="Any" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true" target_closest_possible_building="true"
+			target_building_must_have_no_swarm="true" target_building_can_have_this_swarm="CybercraticCitizens"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="200"
+			preferred_min_distance_of_objective_from_current_location="1" preferred_max_distance_of_objective_from_current_location="30"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"
+			target_building_must_be_violent_cyberocracy_target_on_cyberocracy_cell="true"/>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="30" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="PlayerWorkerInstallCyberocracy" display_name="Install Cyberocracy"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Sledges spread the good news to willing citizens, and get them to join your cyberocracy."
+		icon_name="FlatSkillA31" icon_color="#8AD121" icon_color_hdr_intensity="1.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="PlayerWorkerInstallCyberocracy" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="PlayerWorkerInstallCyberocracy"
+			target_building_tag="Any" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true" target_closest_possible_building="true"
+			target_building_must_have_no_swarm="true" target_building_can_have_this_swarm="CybercraticCitizens"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="200"
+			preferred_min_distance_of_objective_from_current_location="1" preferred_max_distance_of_objective_from_current_location="30"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"
+			target_building_must_be_peaceful_cyberocracy_target_on_cyberocracy_cell="true"/>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="30" action_to_attempt="Wander"/>
+	</stance>
+
+	<!--**************************************************************TormentProcessingHub**************************************************************-->
+	<stance id="PlayerWorkerKidnapUpperClass" display_name="Upper-Class Kidnapping"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Predators grab members of the upper classes and put them into your Torment Vessels."
+		icon_name="FlatInnocent_17" icon_color="#C221D1" icon_color_hdr_intensity="2.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="PlayerWorkerKidnapUpperClass" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="PlayerWorkerKidnapUpperClass"
+			target_building_tag="Any" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true" target_closest_possible_building="true"
+			target_building_must_have_no_swarm="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="200"
+			preferred_min_distance_of_objective_from_current_location="1" preferred_max_distance_of_objective_from_current_location="30"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"
+			target_building_must_have_upper_class_citizen_count_of_at_least="400"/>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="30" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="PlayerWorkerKidnapLowerClass" display_name="Lower-Class Kidnapping"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Sledges grab members of the lower classes and put them into your Torment Vessels. They're good at it, since they seem trustworthy."
+		icon_name="FlatInnocent_17" icon_color="#D12121" icon_color_hdr_intensity="1.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="PlayerWorkerKidnapLowerClass" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="PlayerWorkerKidnapLowerClass"
+			target_building_tag="Any" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true" target_closest_possible_building="true"
+			target_building_must_have_no_swarm="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="200"
+			preferred_min_distance_of_objective_from_current_location="1" preferred_max_distance_of_objective_from_current_location="30"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"
+			target_building_must_have_lower_class_citizen_count_of_at_least="400"/>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="30" action_to_attempt="Wander"/>
+	</stance>
+
+
+	<!--**************************************************************ClearOutSlums**************************************************************-->
+	<stance id="PlayerWorkerClearOutSlums_LargeBuildings" display_name="Clear Out Large Buildings"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Focus on the larger buildings of the slums."
+		icon_name="CleanSimple_SkillB045" icon_color="#218ED1" icon_color_hdr_intensity="2.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="ClearOutSlumBuilding" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="ClearOutSlumBuilding"
+			target_building_tag="SlumDroneTarget" skip_any_home_district_or_poi_restrictions="true" target_closest_possible_building="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="600"
+			preferred_min_distance_of_objective_from_current_location="1" preferred_max_distance_of_objective_from_current_location="70"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"/>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="30" action_to_attempt="Wander"/>
+	</stance>
+
+	<!--"Clear Out All Buildings" description="Clear out any slum building that can be found."-->
+	<stance id="PlayerWorkerClearOutSlums_AllBuildings" display_name="Clear Out Large Buildings"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Focus on the larger buildings of the slums."
+		icon_name="SomethingWingspan" icon_color="#21A4D1" icon_color_hdr_intensity="2.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="ClearOutSlumBuilding" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="ClearOutSlumBuilding"
+			target_building_tag="SlumDroneTarget" skip_any_home_district_or_poi_restrictions="true" target_closest_possible_building="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="600"
+			preferred_min_distance_of_objective_from_current_location="1" preferred_max_distance_of_objective_from_current_location="70"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"/>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="30" action_to_attempt="Wander"/>
+	</stance>
+
+	<!--**************************************************************DemolishBanks**************************************************************-->
+	<stance id="PlayerWorkerDemolishBanks" display_name="Demolish All Banks"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Collapse the economy, one bank at a time."
+		icon_name="CleanSimple_SkillB045" icon_color="#D13721" icon_color_hdr_intensity="2.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="DemolishBank" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="DemolishBank"
+			target_building_tag="Bank" skip_any_home_district_or_poi_restrictions="true" target_closest_possible_building="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="600"
+			preferred_min_distance_of_objective_from_current_location="1" preferred_max_distance_of_objective_from_current_location="70"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"/>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="30" action_to_attempt="Wander"/>
+	</stance>
+	
+</root>

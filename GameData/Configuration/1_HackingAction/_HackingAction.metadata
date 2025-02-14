@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="hacking_action">
+
+	<attribute key="short_name" type="string" maxlength="20" content_width_px="200" is_required="true" is_localized="true"
+		tooltip="This is the name that is used on the button, which is very short. An abbreviation is fine, players can hover to see the full thing."/>
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the action logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the action logic in the specified external dll."/>
+
+	<attribute key="on_use" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the player uses this action?" />
+
+	<attribute key="requires_unlock" type="node-dropdown" is_required="false" node_source="Unlock" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, this option will be locked until the unlock in question is done." />
+
+	<attribute key="requires_meta_flag" type="node-dropdown" is_required="false" node_source="MetaFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, this option will be locked unless that meta flag is true." />
+	
+	<attribute key="is_available_in_infiltration_sysop" type="bool" default="false"
+		tooltip="If true, this can be done in infiltration sysops." />
+	<attribute key="is_available_in_regular_hacking" type="bool" default="true"
+		tooltip="If true, this can be done during regular hacking." />
+	
+	<sub_node id="math_int">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="int_min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="int_max" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<sub_node id="math_float">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<sub_node id="sub_described_item">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="description" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of how to use this information."/>
+		<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of how to use this information."/>
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+</root>

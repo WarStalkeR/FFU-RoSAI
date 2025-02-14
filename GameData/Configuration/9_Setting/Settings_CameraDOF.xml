@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!-- Display: MainCameraDOF -->
+	<setting id="Camera_lastDepthOfFieldEnabled" category="Display" subcategory="MainCameraDOF"
+			display_name="Depth Of Field Enabled" type="BoolToggle" default_bool="true"
+			description="Visual effect during normal gameplay." />
+
+	<setting id="Camera_depthOfFieldAutofocusDistanceShift" category="Display" subcategory="MainCameraDOF" is_advanced_setting="true" is_stored_in_graphics_settings_file="true"
+			 display_name="Autofocus Distance Offset" type="FloatSlider" default_float="0" min_float="-3" max_float="3" rounding_type="Tenths"
+			 description="" />
+
+	<setting id="Camera_depthOfFieldDownsampling" category="Display" subcategory="MainCameraDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="Downsampling" type="IntSlider" default_int="2" min_int="1" max_int="5"
+			 description="Above 1 gives better performance but worse image quality (mainly edges)." />
+
+	<setting id="Camera_depthOfFieldMaxSamples" category="Display" subcategory="MainCameraDOF" is_advanced_setting="true" is_stored_in_graphics_settings_file="true"
+			 display_name="Max Samples" type="IntSlider" default_int="4" min_int="2" max_int="16"
+			 description="Higher numbers offers more quality at the cost of some performance." />
+
+	<setting id="Camera_depthOfFieldImageSensorHeight" category="Display" subcategory="MainCameraDOF" is_advanced_setting="true" is_stored_in_graphics_settings_file="true"
+			 display_name="Image Sensor Height" type="FloatSlider" default_float="24" min_float="1" max_float="48" rounding_type="Tenths"
+			 description="No impact on performance, but affects how the camera behaves." />
+
+	<setting id="Camera_depthOfFieldFStop" category="Display" subcategory="MainCameraDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="F-Stop" type="FloatSlider" default_float="7" min_float="1" max_float="32" rounding_type="Tenths"
+			 default_should_override_user_value_if_older_than_version="0_043_DOFChanges"
+			 description="If you choose 2.6, then that would be an f-stop of 1/2.6 for photographers. 
+The smaller the number, the shallower the depth of field (the smaller the amount of the image that will be in focus, and the more dramatic the background focus)." />
+
+	<setting id="Camera_depthOfFieldFocalLengthReal" category="Display" subcategory="MainCameraDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="Focal Length" type="FloatSlider" default_float="24" min_float="1" max_float="300" rounding_type="Tenths"
+			 default_should_override_user_value_if_older_than_version="0_043_DOFChanges"
+			 description="The simulated distance between the lens and the image sensor, in millimeters." />
+
+	<setting id="Camera_depthOfFieldForegroundDistance" category="Display" subcategory="MainCameraDOF" is_advanced_setting="true" is_stored_in_graphics_settings_file="true"
+			 display_name="Foreground Distance" type="FloatSlider" default_float="0.25" min_float="0.01" max_float="1"
+			 description="How close to the camera foreground blur should kick in. The default leads to a 'small world' visual effect.  Reduce this number to make things seem larger scale." />
+
+	<setting id="Camera_depthOfFieldBokehThreshold" category="Display" subcategory="MainCameraDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="Bokeh Threshold" type="FloatSlider" default_float="1" min_float="0.3" max_float="3" rounding_type="Tenths"
+			 description="At what level of light we start seeing bokeh, or visual artifacts from out of focus elements?" />
+
+	<setting id="Camera_depthOfFieldBokehIntensity" category="Display" subcategory="MainCameraDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="Bokeh Intensity" type="FloatSlider" default_float="2" min_float="0" max_float="8" rounding_type="Tenths"
+			 description="" />
+
+	<!-- PhotoMode: PhotoModeDOF -->
+
+	<setting id="PhotoMode_depthOfFieldAutofocusDistanceShift" category="PhotoMode" subcategory="PhotoModeDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="Autofocus Distance Offset" type="FloatSlider" default_float="0" min_float="-3" max_float="3" rounding_type="Tenths"
+			 scope="MainGameOnly"
+			 description="" />
+
+	<setting id="PhotoMode_depthOfFieldDownsampling" category="PhotoMode" subcategory="PhotoModeDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="Downsampling" type="IntSlider" default_int="1" min_int="1" max_int="5"
+			 scope="MainGameOnly"
+			 description="Above 1 gives better performance but worse image quality (mainly edges)." />
+
+	<setting id="PhotoMode_depthOfFieldMaxSamples" category="PhotoMode" subcategory="PhotoModeDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="Max Samples" type="IntSlider" default_int="8" min_int="2" max_int="16"
+			 scope="MainGameOnly"
+			 description="Higher numbers gives a bit more quality at the cost of some performance." />
+
+	<setting id="PhotoMode_depthOfFieldImageSensorHeight" category="PhotoMode" subcategory="PhotoModeDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="Image Sensor Height" type="FloatSlider" default_float="24" min_float="1" max_float="48" rounding_type="Tenths"
+			 scope="MainGameOnly"
+			 description="Height of the simulated image sensor. No impact on performance, but impacts how the camera effect behaves." />
+
+	<setting id="PhotoMode_depthOfFieldFStop" category="PhotoMode" subcategory="PhotoModeDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="F-Stop" type="FloatSlider" default_float="2" min_float="1" max_float="32" rounding_type="Tenths"
+			 scope="MainGameOnly"
+			 description="If you choose 2.6, then that would be an f-stop of 1/2.6 for photographers. 
+The smaller the number, the shallower the depth of field (the smaller the amount of the image that will be in focus, and the more dramatic the background focus)." />
+
+	<setting id="PhotoMode_depthOfFieldFocalLengthReal" category="PhotoMode" subcategory="PhotoModeDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="Focal Length" type="FloatSlider" default_float="50" min_float="1" max_float="300" rounding_type="Tenths"
+			 scope="MainGameOnly"
+			 description="What is the focal length of the simulated camera lens?  The focal length of the lens is the distance between the lens and the image sensor when the subject is in focus, in millimeters.
+This affects the magnification of the scene. The default of 50mm is fine for most purposes." />
+
+	<setting id="PhotoMode_depthOfFieldForegroundDistance" category="PhotoMode" subcategory="PhotoModeDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="Foreground Distance" type="FloatSlider" default_float="0.25" min_float="0.01" max_float="1"
+			 scope="MainGameOnly"
+			 description="How close to the camera foreground blur should kick in. The default leads to a 'small world' visual effect.  Reduce this number to make things seem larger scale." />
+
+	<setting id="PhotoMode_depthOfFieldBokehThreshold" category="PhotoMode" subcategory="PhotoModeDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="Bokeh Threshold" type="FloatSlider" default_float="0.8" min_float="0.3" max_float="3" rounding_type="Tenths"
+			 scope="MainGameOnly"
+			 description="At what level of light do we start seeing bokeh, or visual artifacts from out of focus elements?" />
+
+	<setting id="PhotoMode_depthOfFieldBokehIntensity" category="PhotoMode" subcategory="PhotoModeDOF" is_stored_in_graphics_settings_file="true"
+			 display_name="Bokeh Intensity" type="FloatSlider" default_float="2" min_float="0" max_float="8" rounding_type="Tenths"
+			 scope="MainGameOnly"
+			 description="" />
+
+</root>

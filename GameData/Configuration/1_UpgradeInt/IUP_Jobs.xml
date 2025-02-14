@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Job Internal Robotics (Priority Group 700, to max 1199) - PER-TURN ECONOMY ONLY
+	******************************************************************************************-->
+
+	<upgrade_int id="5cmSpiders" display_name="5cm Spiders"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="Pw_FastPower"
+		int_original="150" int_increment="50" int_cap="1200"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Mechanical spiders."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+	
+	<upgrade_int id="18cmSpiders" display_name="18cm Spiders"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="Pw_FastPower"
+		int_original="60" int_increment="30" int_cap="540"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Mechanical spiders."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="MicroForge" display_name="MicroForge"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="60" int_increment="30" int_cap="690"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Immobile robot excellent for the creation of micro-scale components."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+	
+	<upgrade_int id="8cmCrabs" display_name="8cm Crabs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="Pw_FastPower"
+		int_original="180" int_increment="80" int_cap="1780"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Mechanical crabs."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="NetworkAttendant" display_name="Network Attendant"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="18" int_increment="3" int_cap="90"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="AvionicsCore" display_name="Avionics Core"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="18" int_increment="6" int_cap="162"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="WindEngine" display_name="Wind Engine"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="2" int_increment="1" int_cap="32"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="HeatExchanger" display_name="Heat Exchanger"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="4" int_increment="2" int_cap="16"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<!--todo upgrades at some point for this-->
+	<upgrade_int id="PetSitter" display_name="Pet Sitter"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="18" int_increment="3" int_cap="98"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Mechanical animal caretakers."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="Archivist" display_name="Archivist"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="40" int_increment="40" int_cap="240"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Mechanical caretakers of large storage facilities."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="Neuroweaver" display_name="Neuroweaver"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="15" int_increment="3" int_cap="78"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+	
+	<upgrade_int id="AndroidDropShuttle" display_name="Android Drop-Shuttle"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="3" int_increment="1" int_cap="15"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<!--Job Internal Robotics (Priority Group 700, to max 1199) - PER-SEASON ECONOMY ONLY
+	******************************************************************************************-->
+
+	<upgrade_int id="12cmCrabs" display_name="12cm Crabs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="Pw_FastPower"
+		int_original="72" int_increment="48" int_cap="552"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Mechanical crabs."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="3mHauler" display_name="3m Hauler"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="12" int_increment="2" int_cap="60"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Oversized humanoid robot with four arms."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="ComputingHost" display_name="Computing Host"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="12" int_increment="6" int_cap="132"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="ComputingClient" display_name="Computing Client"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="6" int_increment="2" int_cap="40"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="MindAnnex" display_name="Mind Annex"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="2" int_increment="1" int_cap="12"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Doesn't make you smarter, but offloads enough calculations that you're able to get more done at once."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="QuantumProcessor" display_name="Quantum Processor"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="2" int_increment="1" int_cap="12"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Uses qubits to do certain kinds of calculations very fast. Not useful for general computing, but extremely effective at cracking encryption."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="Assembler" display_name="Assembler"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="120" int_increment="20" int_cap="720"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="LabOperator" display_name="Lab Operator"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="40" int_increment="10" int_cap="220"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="SurgicalSuite" display_name="Surgical Suite"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="8" int_increment="2" int_cap="44"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="Cultivator" display_name="Cultivator"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="90" int_increment="20" int_cap="990"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="HookDrone" display_name="Hook Drone"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="20" int_increment="2" int_cap="60"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Disguised as a small delivery craft."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="Steward" display_name="Steward"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="20" int_increment="8" int_cap="500"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="NatureMinder" display_name="Nature Minder"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="28" int_increment="9" int_cap="298"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Mechanical animal caretakers."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="Abandoned" display_name="Abandoned"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="999" int_increment="1" int_cap="1000"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="WarCaptain" display_name="War Captain"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="32" int_increment="16" int_cap="160"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="WarFactory" display_name="War Factory"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="32" int_increment="16" int_cap="160"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip=""
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="FullTimeVRPodChamber" display_name="VR Pod Chamber"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Robot_Arm1"
+		int_original="180" int_increment="60" int_cap="780"
+		description="These are the internal robotics that power one or more kinds of structures you can build.
+By increasing the cap of this kind of robotics, you can build more of the related structure types."
+		strategy_tip="Oversized humanoid robot with four arms."
+		show_on_upgrades_screen_as_part_of_priority_group="701">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="JobInternalRobotics" sort_index="100" />
+	</upgrade_int>
+
+</root>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="severity_scale">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="is_rising" type="bool" default="false" is_required="false"
+		tooltip="If true, things get more severe as the numbers get larger. If false, then they get more severe as the numbers are smaller." />
+
+	<!--severity_regular****************************-->
+	<sub_node id="severity_regular">
+		<attribute key="cutoff" type="int-textbox" is_required="true" min="-1000000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="This is a transition point from one severity level to the next on this scale." />
+
+		<attribute key="output" type="int-textbox" is_required="true" min="-1000000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="This is a different-scaled output number that means something different depending on the scale.
+			
+If you want to remove a severity entry from this scale via a mod, then set this value to -10017." />
+		
+		<attribute key="color" type="node-dropdown" is_required="true" node_source="VisColorUsage" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="This is the color style to be used at this severity level." />
+
+		<attribute key="streets_icon_color_scale" type="node-dropdown" is_required="false" node_source="VisIconUsage" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="Optional specification, which is only used for floating icons in streets view. 
+The icon itself won't be used, but the color, glow amount, and scale will be pulled from this reference if one is specified." />
+	</sub_node>
+
+	<!--severity_multiplicative****************************-->
+	<sub_node id="severity_multiplicative">
+		<attribute key="cutoff" type="int-textbox" is_required="true" min="-1000000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="This is a transition point from one severity level to the next on this scale." />
+
+		<attribute key="multiplier" type="float-textbox" is_required="true" min="-1000000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="This is a multiplier output number that means something different depending on the scale.
+			
+If you want to remove a severity entry from this scale via a mod, then set this value to any number -1000 or lower." />
+
+		<attribute key="color" type="node-dropdown" is_required="true" node_source="VisColorUsage" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="This is the color style to be used at this severity level." />
+
+		<attribute key="streets_icon_color_scale" type="node-dropdown" is_required="false" node_source="VisIconUsage" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="Optional specification, which is only used for floating icons in streets view. 
+The icon itself won't be used, but the color, glow amount, and scale will be pulled from this reference if one is specified." />
+	</sub_node>
+	
+</root>

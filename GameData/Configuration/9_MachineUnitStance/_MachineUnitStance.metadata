@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="stance">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the stance logic is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the stance logic in the specified external dll."/>
+
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+
+	<attribute key="is_basic_active_stance_for_androids" type="bool" default="false"
+		tooltip="If true, then this is the default active stance for androids." />
+	<attribute key="is_basic_active_stance_for_mechs" type="bool" default="false"
+		tooltip="If true, then this is the default active stance for mechs." />
+	
+	<attribute key="can_be_used_by_androids" type="bool" default="false"
+		tooltip="If true, then this can be used by androids." />
+	<attribute key="can_be_used_by_mechs" type="bool" default="false"
+		tooltip="If true, then this can be used by mechs." />
+	<attribute key="should_show_aggressive_pose" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="When true, then an android in this stance will use its aggressive stance rather than the usual casual one." />
+	<attribute key="should_not_be_auto_selected_for_orders" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="When true, this unit will not come up in the rotation to say 'give me orders'." />
+	<attribute key="should_block_android_movement" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="When true, androids using this stance cannot move while in this stance." />
+	<attribute key="is_forbidden_from_entering_restricted_areas_unless_cloaked" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="When true, the unit cannot go into restricted areas unless it is cloaked." />
+	<attribute key="is_new_attack_range_projected" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="When true, the unit will show the attack range of where it would be moving to." />
+	<attribute key="blocks_switching_from_this_stance_unless_invalid" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="When true, the player cannot switch this unit away from this stance unless this stance is now invalid." />
+		
+	<attribute key="on_player_chooses" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the player explicitly chooses this stance?  Will not be played if the stance is auto-assigned." />
+	
+	<attribute key="action_on_outdoor_arrive" type="node-dropdown" node_source="LocationActionType" content_width_px="200" is_required="true"
+		tooltip="The action that units will take when they move to a location that is not a building." />
+
+	<attribute key="action_on_building_in_range_no_action_arrive" type="node-dropdown" node_source="LocationActionType" content_width_px="200" is_required="true"
+		tooltip="The action that units will take when a building that IS in range, but which doesn't have any action popped up for them." />
+
+	<sub_node id="grants">
+		<attribute key="perk" type="node-dropdown" is_required="true" node_source="ActorPerk" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When a machine unit is using this stance, then what perks do they automatically get?" />
+		<attribute key="value" type="bool" is_required="true" default="true"
+			tooltip="Normally set to true to indicate the grant. Set to false to mod it out, typically." />
+	</sub_node>
+
+	<sub_node id="blocks">
+		<attribute key="perk" type="node-dropdown" is_required="true" node_source="ActorPerk" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When a machine unit is using this stance, then what perks are blocked by it?" />
+		<attribute key="value" type="bool" is_required="true" default="true"
+			tooltip="Normally set to true to indicate the blockage. Set to false to mod it out, typically." />
+	</sub_node>
+
+	<sub_node id="math_int">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="int_min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="int_max" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<sub_node id="math_float">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+	
+</root>

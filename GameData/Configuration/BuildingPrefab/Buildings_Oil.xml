@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_prefab id="OilAccumulator1" type="OilMiningAccumulator" display_name="Oil Accumulator 1"
+		path_to_placeable="Assets/__Library/Oil/General/Oil Accumulator 1.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.7,10,1.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.7,0.9,1.7" percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="400"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="10"/>
+		<building_marker prefab="Skylight" offset="0,-0.1,-0.24" scale_multiplier="2"/>
+	</building_prefab>
+
+	<building_prefab id="OilConverter" type="OilMiningConverter" display_name="Oil Converter"
+		path_to_placeable="Assets/__Library/Oil/General/Oil Converter.prefab">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="10"/>
+	</building_prefab>
+
+	<building_prefab id="OilCooler" type="OilMiningCooler" display_name="Oil Cooler"
+		path_to_placeable="Assets/__Library/Oil/General/Oil Cooler.prefab">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="8"/>
+	</building_prefab>
+
+	<building_prefab id="OilDegasser" type="OilMiningDegasser" display_name="Oil Degasser"
+		path_to_placeable="Assets/__Library/Oil/General/Oil Degasser.prefab">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="5"/>
+	</building_prefab>
+
+	<building_prefab id="OilDrillingRig" type="OilMiningDrillingRig" display_name="Oil Drilling Rig"
+		path_to_placeable="Assets/__Library/Oil/General/Oil Drilling Rig.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.9,10,3.6"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.9,0.45,3.6"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="2" max="4" floor_size="0.5,0.5,0.5"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="20"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="10"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="10"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="760"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="500"/>
+		
+		<building_marker prefab="Chimney" offset="-0.06,-2.2,0.9"/>
+	</building_prefab>
+
+	<building_prefab id="OilFilters" type="OilMiningFilters" display_name="Oil Filters"
+		path_to_placeable="Assets/__Library/Oil/General/Oil Filters.prefab">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="16"/>
+	</building_prefab>
+
+	<building_prefab id="OilSeparator" type="OilMiningSeparator" display_name="Oil Separator"
+		path_to_placeable="Assets/__Library/Oil/General/Oil Separator.prefab">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="12"/>
+	</building_prefab>
+
+	<building_prefab id="OilContainerB" type="OilMiningTank" display_name="Oil Container B"
+		path_to_placeable="Assets/__Library/Oil/General/Oil Container B.prefab">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="16"/>
+	</building_prefab>
+	
+</root>

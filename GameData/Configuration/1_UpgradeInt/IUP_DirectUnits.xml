@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Upgrades To Units Directly (Priority Group 5000, to unspecified max)
+	******************************************************************************************-->
+
+
+	<!--Androids
+	******************************************************************************************-->
+
+	<upgrade_int id="HardenedPortdroids" display_name="Hardened Portdroids"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_Activity051"
+		int_original="0" int_increment="40" int_cap="200" shows_plus_number_upgrade_style="true" is_always_considered_unlocked_from_the_start="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AndroidImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorHP" required_collection="Portdroids" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+	
+	<upgrade_int id="HardenedDynadroids" display_name="Hardened Dynadroids"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_Activity051"
+		int_original="0" int_increment="70" int_cap="350" shows_plus_number_upgrade_style="true" is_always_considered_unlocked_from_the_start="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AndroidImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorHP" required_collection="Dynadroids" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="HardenedOxdroids" display_name="Hardened Oxdroids"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_Activity051"
+		int_original="0" int_increment="90" int_cap="450" shows_plus_number_upgrade_style="true" is_always_considered_unlocked_from_the_start="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AndroidImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorHP" required_collection="Oxdroids" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="FasterPortdroids" display_name="Faster Portdroids"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_SkillB035"
+		int_original="0" int_increment="8" int_cap="40" shows_plus_number_upgrade_style="true" is_always_considered_unlocked_from_the_start="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AndroidImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorMoveRange" required_collection="Portdroids" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="FasterDynadroids" display_name="Faster Dynadroids"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_SkillB035"
+		int_original="0" int_increment="8" int_cap="40" shows_plus_number_upgrade_style="true" is_always_considered_unlocked_from_the_start="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AndroidImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorMoveRange" required_collection="Dynadroids" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="FasterOxdroids" display_name="Faster Oxdroids"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_SkillB035"
+		int_original="0" int_increment="4" int_cap="20" shows_plus_number_upgrade_style="true" is_always_considered_unlocked_from_the_start="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AndroidImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorMoveRange" required_collection="Oxdroids" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="PortdroidCognition" display_name="Portdroid Cognition"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_SciFi086"
+		int_original="0" int_increment="30" int_cap="150" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AndroidImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="UnitCognition" required_collection="Portdroids" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="CombatAndroidIntimidation" display_name="Combat Android Intimidation"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FlatSkillC76"
+		int_original="0" int_increment="30" int_cap="150" shows_plus_number_upgrade_style="true" is_always_considered_unlocked_from_the_start="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AndroidImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="UnitIntimidation" required_collection="CombatAndroids" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<!--Esoteric Specifics
+	******************************************************************************************-->
+
+	<upgrade_int id="TechnicianEngineeringMastery" display_name="Technician Engineering Mastery"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_SciFi086"
+		int_original="0" int_increment="175" int_cap="350" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AndroidImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorEngineeringSkill" required_collection="Technicians" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<!--Vehicles
+	******************************************************************************************-->
+
+	<upgrade_int id="CombatVehicleDroneQuality" display_name="Combat Vehicle Drone Quality"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Alien"
+		int_original="0" int_increment="50" int_cap="250" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="VehicleImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="VehicleDroneQuality" required_collection="CombatVehicles" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="SupportVehicleDroneQuality" display_name="Support Vehicle Drone Quality"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SI_Alien"
+		int_original="0" int_increment="80" int_cap="400" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="VehicleImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="VehicleDroneQuality" required_collection="SupportVehicles" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="SupportVehicleHullStrength" display_name="Support Vehicle Hull Strength"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_Activity051"
+		int_original="0" int_increment="40" int_cap="200" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="VehicleImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorHP" required_collection="SupportVehicles" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="CombatVehicleHullStrength" display_name="Combat Vehicle Hull Strength"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_Activity051"
+		int_original="0" int_increment="70" int_cap="350" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="VehicleImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorHP" required_collection="CombatVehicles" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="CarrierHullStrength" display_name="Carrier Hull Strength"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_Activity051"
+		int_original="0" int_increment="100" int_cap="240" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorHP" required_collection="Carriers" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="SupportVehicleArmorPlating" display_name="Support Vehicle Armor Plating"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="AN_EmergencySign"
+		int_original="0" int_increment="10" int_cap="50" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="VehicleImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorArmorPlating" required_collection="SupportVehicles" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="CombatVehicleArmorPlating" display_name="Combat Vehicle Armor Plating"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="AN_EmergencySign"
+		int_original="0" int_increment="14" int_cap="70" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="VehicleImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorArmorPlating" required_collection="CombatVehicles" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="CarrierArmorPlating" display_name="Carrier Armor Plating"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="AN_EmergencySign"
+		int_original="0" int_increment="16" int_cap="70" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="VehicleImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorArmorPlating" required_collection="Carriers" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<!--Mechs
+	******************************************************************************************-->
+	
+	
+</root>

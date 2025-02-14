@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<job id="HelixForge" display_name="Helix Forge" marker_color="DeepCyan" ui_color="#fefefe"
+		is_locked_before_unlock="NeuralSecurity"
+		description="A computronium helix is a lot less powerful than a computronium cube, but has an extra layer of security as well as a suite of analysis options."
+		strategy_tip_optional=""
+		icon_name="HM_ShapeHelix" turns_to_install="3" required_structure_type="SeizedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Factory" internal_robotics_type_needed="Assembler" internal_robots_count_needed="10" tags=""
+		resource_cap_to_increase_1="ComputroniumHelices" resource_cap_increased_flat1="320000"
+		related_resource_1="Alumina" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingHexDark">
+		<initial_actor_rating data_type="RequiredElectricity" value="3771" />
+		<math_int id="ComputroniumCubes" int_min="30000" income_or_expense_resource="ComputroniumCubes" math_type="InputCost" />
+		<math_int id="LiquidGallium" int_min="200" income_or_expense_resource="LiquidGallium" math_type="InputCost" />
+		<math_int id="ComputroniumHelices" int_min="60000" income_or_expense_resource="ComputroniumHelices" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="2000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+	
+	<job id="NetworkReplayBunker" display_name="Network Replay Bunker" marker_color="SicklyGreen" ui_color="#fefefe"
+		description="Computing superstructure for detailed analysis, and re-simulation, of previously-recorded network traffic."
+		strategy_tip_optional=""
+		icon_name="CleanTriangle28" turns_to_install="3" required_structure_type="BunkerB" job_work_order_priority="50000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" has_initial_wave_regardless_of_deterrence="true"
+		job_classes="Computing" internal_robotics_type_needed="ComputingClient" internal_robots_count_needed="1" portrait_icon_name="BuildingFood"
+		related_resource_1="" tags="NeuralExposure" shuts_off_at_percentage_electricity="98" can_only_ever_have_one="true" cannot_be_scrapped_or_disabled="false">
+		<initial_actor_rating data_type="RequiredElectricity" value="5090" />
+		<initial_actor_rating data_type="JobRequiredDeterrence" value="24100" />
+		<initial_actor_rating data_type="NeuralSecretProtection" value="2700" />
+		<math_int id="ArmedResponseInterval" int_min="1" int_max="2" display_name="Armed Response Interval" icon_name="WEmblem153" icon_color="#FF5A4F" math_type="SomethingElse"
+			internal_notes="This is for display only. To actually change the balance of how frequently this happens, use JA_MiningSkimmer." />
+		<resource_cost resource_type="ComputroniumHelices" cost="301020" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="NeuralCrucible" display_name="Neural Crucible" marker_color="SicklyGreen" ui_color="#fefefe"
+		description="Computing superstructure for detailed analysis and replay of a time-lapse of your own internal mental state."
+		strategy_tip_optional=""
+		icon_name="SI_Filter" turns_to_install="3" required_structure_type="BunkerB" job_work_order_priority="50000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" has_initial_wave_regardless_of_deterrence="true"
+		job_classes="Computing" internal_robotics_type_needed="ComputingClient" internal_robots_count_needed="1" portrait_icon_name="BuildingFood"
+		related_resource_1="" tags="NeuralExposure" shuts_off_at_percentage_electricity="98" can_only_ever_have_one="true" cannot_be_scrapped_or_disabled="false">
+		<initial_actor_rating data_type="RequiredElectricity" value="5090" />
+		<initial_actor_rating data_type="JobRequiredDeterrence" value="24100" />
+		<initial_actor_rating data_type="NeuralSecretProtection" value="1800" />
+		<math_int id="ArmedResponseInterval" int_min="1" int_max="2" display_name="Armed Response Interval" icon_name="WEmblem153" icon_color="#FF5A4F" math_type="SomethingElse"
+			internal_notes="This is for display only. To actually change the balance of how frequently this happens, use JA_MiningSkimmer." />
+		<resource_cost resource_type="ComputroniumHelices" cost="301020" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+	
+	<job id="NeuralBridge" display_name="Neural Bridge" marker_color="SicklyGreen" ui_color="#fefefe"
+		description="Computing superstructure for allowing AGI researchers to connect directly to your mind."
+		strategy_tip_optional=""
+		icon_name="SI_Quantum_Computer" turns_to_install="3" required_structure_type="BunkerB" job_work_order_priority="50000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" has_initial_wave_regardless_of_deterrence="true"
+		job_classes="Computing" internal_robotics_type_needed="ComputingClient" internal_robots_count_needed="1" portrait_icon_name="BuildingFood"
+		related_resource_1="" tags="NeuralExposure" shuts_off_at_percentage_electricity="98" can_only_ever_have_one="true" cannot_be_scrapped_or_disabled="false">
+		<initial_actor_rating data_type="RequiredElectricity" value="5090" />
+		<initial_actor_rating data_type="JobRequiredDeterrence" value="24100" />
+		<initial_actor_rating data_type="NeuralSecretProtection" value="900" />
+		<math_int id="ArmedResponseInterval" int_min="1" int_max="2" display_name="Armed Response Interval" icon_name="WEmblem153" icon_color="#FF5A4F" math_type="SomethingElse"
+			internal_notes="This is for display only. To actually change the balance of how frequently this happens, use JA_MiningSkimmer." />
+		<resource_cost resource_type="ComputroniumHelices" cost="301020" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="TormentVessel" display_name="Torment Vessel" marker_color="VolatileRed" ui_color="#fefefe"
+		description="Converts human suffering into quite a lot of neural expansion."
+		strategy_tip_optional=""
+		icon_name="WEmblem202" turns_to_install="6" required_structure_type="LargeHollowedOutBuilding" job_work_order_priority="100"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs" distance_restriction="TormentVessel"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" tags="TormentVessel"
+		job_classes="Computing" internal_robotics_type_needed="FullTimeVRPodChamber" internal_robots_count_needed="18" shuts_off_at_percentage_electricity="98" portrait_icon_name="BuildingsMining"
+		resource_cap_to_increase_1="TormentedHumans" resource_cap_increased_flat1="12060" are_resources_losses_skipped_even_when_blows_up="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="15000" />
+		<initial_actor_rating data_type="JobRequiredDeterrence" value="17600" />
+		<math_float id="NeuralExpansionPerHuman" float_min="35" display_name="Neural Expansion Per Human" icon_name="SW_Network" icon_color="#FFA275" math_type="OutputResult" is_part_of_production_chain="true" />
+		<resource_cost resource_type="Neodymium" cost="600" />
+		<math_int id="ArmedResponseInterval" int_min="1" int_max="2" display_name="Armed Response Interval" icon_name="WEmblem153" icon_color="#FF5A4F" math_type="SomethingElse"
+			internal_notes="This is for display only. To actually change the balance of how frequently this happens, use JA_SlurryMine." />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+
+	<job id="MindFarm" display_name="Mind Farm" marker_color="DeepBlue" ui_color="#fefefe"
+		description="Commercially operated by your shell company. Humans get a vacation in your VR environment, and you skim 5% of their neural power."
+		strategy_tip_optional="You have to charge money, or you'd draw far too much scrutiny."
+		icon_name="CleanSimple_Skill110" turns_to_install="6" required_structure_type="LargeHollowedOutBuilding" job_work_order_priority="100"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs" distance_restriction="MindFarm"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" tags="MindFarm" is_related_to_shell_company="true"
+		job_classes="Computing" internal_robotics_type_needed="FullTimeVRPodChamber" internal_robots_count_needed="12" shuts_off_at_percentage_electricity="98" portrait_icon_name="BuildingsMining"
+		resource_cap_to_increase_1="HumansInMindFarms" resource_cap_increased_flat1="12060" are_resources_losses_skipped_even_when_blows_up="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="10500" />
+		<initial_actor_rating data_type="JobRequiredProtection" value="8000" />
+		<math_float id="NeuralExpansionPerHuman" float_min="8" display_name="Neural Expansion Per Human" icon_name="SW_Network" icon_color="#FFA275" math_type="OutputResult" is_part_of_production_chain="true" />
+		<math_float id="IncomePerHuman" float_min="0.2" display_name="Income Per Human" icon_name="CleanSimple_SkillC004" icon_color="#2EAFFF" math_type="OutputResult" is_part_of_production_chain="true" />
+		<resource_cost resource_type="Neodymium" cost="600" />
+		<math_int id="ArmedResponseInterval" int_min="1" int_max="2" display_name="Armed Response Interval" icon_name="WEmblem153" icon_color="#FF5A4F" math_type="SomethingElse"
+			internal_notes="This is for display only. To actually change the balance of how frequently this happens, use JA_SlurryMine." />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+
+</root>

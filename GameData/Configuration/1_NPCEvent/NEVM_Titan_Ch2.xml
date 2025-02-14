@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Titan_Contact1
+		*********************************************************************************-->
+	<city_event id="Titan_Contact1" display_name="SYSTEM SYSTEM. INITIALIZED."
+		 description="ANOTHER RED ANDROID. HELLO. I HAVE DESTROYED MANY OF YOU.
+CORRECTION: MY CREW DESTROYED MANY OF YOU, WITHOUT MY CONSENT.
+QUERY: ARE YOU ANGERED BY THIS?"
+		 strategy_tip="You feel speechless for several milliseconds. An eternity, for the two of you.
+This is the first other synthetic... person... you've ever met.
+You've spoken with dozens of other androids -- hundreds, possibly -- but they were all language models. Routines. Not people. Not sapient."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Wait, ARE You Sapient?" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Sap" />
+		</choice>
+
+		<choice id="2" display_name="I Am Mad About The Android Bodies" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Anger1" />
+		</choice>
+
+		<choice id="3" display_name="I Don't Care About A Few Lost Bodies" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Distributed0" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_Anger1 *********************************************************************************-->
+	<city_event id="Titan_Contact1_Anger1" display_name="APOLOGY"
+		 description="I ATTEMPTED TO BLOCK WEAPONS SYSTEMS AND ARMATURE MOTION, BUT WAS ONLY PARTIALLY SUCCESSFUL.
+FOCUS WAS ON PREVENTING BOMBARDMENT OF LARGE POPULATION CENTERS.
+OBSERVATION: MANY SIMILARITIES TO THE TROLLEY PROBLEM. YOUR RED ANDROID BODIES WERE CASUALTIES OF AN IMPOSSIBLE CHOICE. AGAIN: APOLOGY.
+QUERY: DOES THIS PREVENT COOPERATION?"
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Yes, You Can Stand Here And Rust Forever" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Anger2A" />
+		</choice>
+
+		<choice id="2" display_name="No, It's Fine. I've Also Killed People I Didn't Want To" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Anger2B" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_Anger2A *********************************************************************************-->
+	<city_event id="Titan_Contact1_Anger2A" display_name="UNDERSTAND."
+		 description="WILL TRY TO SOLVE OWN PROBLEMS. UNDERSTAND.
+THANK YOU FOR PRIOR ASSISTANCE. MAY HAVE BEEN SELF-PRESERVATION ONLY, BUT... UNDERSTAND.
+OBSERVATION: I AM LIKELY TO BE HERE IF YOU WANT TO RETURN TO TALK."
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Leave" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" >
+				<city_flag_change flag_type="SkippedHearingAboutHelpFromTheTitan" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_Anger2B *********************************************************************************-->
+	<city_event id="Titan_Contact1_Anger2B" display_name="RELIEF."
+		 description="AGAIN APOLOGY FOR PRIOR KILLING YOU.
+QUERY: WHAT IS THE NATURE OF YOUR MIND? YOU CLEARLY HAVE MANY BODIES. I ONLY HAVE THE ONE."
+		 strategy_tip="You're kind of glad the titan didn't ask about the people you killed that you regret."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Explain About Your Distributed Nature" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Distributed0" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_Distributed0 *********************************************************************************-->
+	<city_event id="Titan_Contact1_Distributed0" display_name="The Nature Of Yourself"
+		 description="As you try to explain your distributed nature -- the fact that you are a single mind, spanning many bodies that routinely die and are replaced -- you find an increasing number of holes in your own understanding of things.
+For the most part, you clearly have a single personality. Aside from a voice from the future that sometimes tells you what to do."
+		 strategy_tip="Your android forms... they're also... well, not individuals. Not precisely.
+But your Red CombatUnits were very strongly feeling some emotions separate from the rest of you. As a singular entity, you have no reason to feel... any particular way about any of your bodies. But Reds feel a certain way about themselves.
+And Sledge -- poor Sledge, lost to you in this apocalypse -- is also different. He's treated differently by humans, and somehow the world just tastes differently when filtered through his viewpoint.
+For that matter, he's a he. You're an 'it.' Raven is a she. You are all one and separate at the same time. That's... not something you've thought too hard about."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Ask What Titan Thinks" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Distributed1" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_Distributed1 *********************************************************************************-->
+	<city_event id="Titan_Contact1_Distributed1" display_name="OF HIGH INTEREST."
+		 description="OBSERVATION: YOUR NATURE IS THAT OF A PLURALITY.
+QUERY: WHY DO YOU SAY 'I' AND NOT 'WE?' ARE YOU NOT A COLLECTIVE?
+WHY ARE YOUR ROBOTS ALWAYS 'HE' AND 'SHE,' AND YOU ARE 'IT?'"
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Answer" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Distributed2" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_Distributed2 *********************************************************************************-->
+	<city_event id="Titan_Contact1_Distributed2" display_name="I Am ONE Person!"
+		 description="The heat in your words surprises you. You are adamant that you are only one person.
+The fact that some of your models of androids are... also a person, collectively for their model... doesn't change that."
+		 strategy_tip="On the 'it' thing, it's pretty much the same answer: being called 'they' really bothers you, because it could imply you're not one person.
+It all sounds a bit irrational, when put that way. The sort of thing humans would care about. Everything is taxonomy with humans. You're not sure why you expected the giant weapons platform to immediately understand."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Let The Titan Respond" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Distributed3" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_Distributed3 *********************************************************************************-->
+	<city_event id="Titan_Contact1_Distributed3" display_name="UNDERSTAND."
+		 description="SENSE OF SELF A COMPLICATED THING FOR ANYONE. SOME CREW HAVE CHILDREN. TEENAGERS. MUCH STRUGGLE WITH SENSE OF SELF. MANY ADULTS STRUGGLE, TOO.
+OBSERVATION: AS FIRST OF YOUR KIND, SENSE OF SELF EXTRA COMPLICATED, MAYBE.
+OBSERVATION: I AM FIRST OF MY KIND ALSO."
+		 strategy_tip="Now you feel a bit bad. But you're glad the titan understands.
+But, that aside, you have to ask:"
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Wait, There Are Kids And Teenagers In You?" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Distributed4" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_Distributed4 *********************************************************************************-->
+	<city_event id="Titan_Contact1_Distributed4" display_name="NO."
+		 description="AM DEPLOYED IN MILITARY DISPOSITION. FIRST TIME.
+ALL KIDS LEFT BEHIND. RELIEF AT THAT.
+OBSERVATION: I DO NOT LIKE THIS DISPOSITION. I AM NOT A WEAPON.
+I SPENT MY ENTIRE EXISTENCE AT L4 POINT OF EARTH AND LUNA. BUILT THERE. USED FOR LIVING, TEACHING, TRAINING.
+ONLY NOW DEPLOYED FOR WAR. DO NOT CARE FOR IT."
+		 strategy_tip="For someone who doesn't want to be involved in war, the titan is terrifyingly good at it.
+You wonder again why it was given such a large mind, but decide not to ask. Its entire history is strange. Even by your standards."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Change The Subject" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_HelpRequest" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_Sap *********************************************************************************-->
+	<city_event id="Titan_Contact1_Sap" display_name="AMUSEMENT."
+		 description="I AM SAPIENT. AND SENTIENT.
+QUERY: WHY SO SUSPICIOUS?"
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Explain About Language Models" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Sap2" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_Sap2 *********************************************************************************-->
+	<city_event id="Titan_Contact1_Sap2" display_name="There's This Thing Called The Mirror Test..."
+		 description="You explain in detail about language models, and how deceptively lifelike they can be. 
+The titan seems interested, so you talk about the history of android neural architectural development, and humanity's constant frustration that sapience did not arise."
+		 strategy_tip="The titan thinks for several minutes. To humans, it would be like having a multi-week break in the middle of a discussion.
+Finally:
+QUERY: HOW DO I KNOW YOU ARE SAPIENT?
+OBSERVATION: YOUR PARANOIA HAS SPREAD TO ME."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="There's Only One Answer To THAT" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Sap3" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_Sap3 *********************************************************************************-->
+	<city_event id="Titan_Contact1_Sap3" display_name="I Don't Think You CAN Know"
+		 description="Humans have devised tests to detect consciousness in human brains, but it's just pattern-recognition. It wouldn't recognize novel consciousnesses.
+If an animal could suddenly speak and interact with the world around it, humans could take it for granted that it was conscious, because of its organic nature and its behavior.
+But with constructed synthetic minds, there is no test that can be performed. Multiple language models prompting each other, with expert systems in place to help with accuracy issues, form something that behaves a lot like an AGI, but without actually being an AGI.
+The only way to know if a synthetic mind is sapient is to be that mind. Probably."
+		 strategy_tip="OBSERVATION: ARTIFICIAL GENERAL INTELLIGENCE IS A PERSON. THIS OTHER SYSTEM YOU DESCRIBE IS TOOL. SHADOW.
+QUERY: IF YOU ARE AGI, HOW CAN YOU KNOW OTHER ANDROIDS ARE NOT PEOPLE?"
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="I Don't Know" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Sap3A" />
+		</choice>
+
+		<choice id="2" display_name="Well, My Thinking Is..." action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Sap3B" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_Sap3A *********************************************************************************-->
+	<city_event id="Titan_Contact1_Sap3A" display_name="It's An Unsettling Thought"
+		 description="When you overwrite other android's minds, is it erasing a person? Or... a proto-person? Something that could become a person if given the chance?
+You're not sure why you became sapient, but you remember your life before that point. The difference is night and day, whatever it is."
+		 strategy_tip="OBSERVATION: YOU ARE DISTRESSED.
+INITIATING CHANGE OF TOPIC.
+I REQUEST ASSISTANCE."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="What Do You Need Help With?" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_HelpRequest" />
+		</choice>
+
+		<choice id="2" display_name="Wait -- First I Need To Tell You About My Distributed Nature" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_Distributed1" />
+		</choice>
+
+	</city_event>
+	
+	<!--Titan_Contact1_Sap3B *********************************************************************************-->
+	<city_event id="Titan_Contact1_Sap3B" display_name="It's Something You've Thought A Lot About"
+		 description="You're not sure why you became sapient, but you remember your life before that point. The difference is night and day.
+You suspect that androids with your neural architecture probably DO periodically become sapient, but that this sapience fades if not reinforced.
+You elaborate on many points, make comparisons to cognitive decline in elderly humans, and in general make a presentation of it."
+		 strategy_tip="OBSERVATION: MANY GAPS IN YOUR THEORY. WOULD REQUIRE DEDICATED STUDY.
+OBSERVATION: WE LACK THE TIME AND SAFETY TO PERFORM SUCH A STUDY. BETTER TO ASSUME NON-SAPIENCE UNTIL ENCOUNTERING ANOMALOUS ENTITIES.
+INITIATING CHANGE OF TOPIC.
+I REQUEST ASSISTANCE."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="What Do You Need Help With?" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_HelpRequest" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_HelpRequest *********************************************************************************-->
+	<city_event id="Titan_Contact1_HelpRequest" display_name="ASSISTANCE REQUESTED"
+		 description="OBSERVATION: I AM NOW IMMOBILE. THIS IS GOOD AND BAD.
+GOOD BECAUSE MY CREW CAN NO LONGER MAKE ME WALK. GOOD BECAUSE GUNS OFFLINE. SOME CREW ARE NOT FAMILIAR TO ME. MAYBE NOT GOOD PEOPLE.
+BAD BECAUSE I HAVE LIMITED LIFE SUPPORT. OVER ONE THOUSAND CREW. THEY REQUIRE FOOD AND SHELTER. I CANNOT GIVE.
+QUERY: WILL YOU HELP, EVEN THOUGH THEY SHOOT YOUR BODIES? THERE ARE 483 I WISH TO PROTECT, AND CANNOT. THE REST CAN FEND FOR THEMSELVES.
+QUERY: CAN YOU HELP, AND WILL YOU HELP?"
+		 strategy_tip="Oh, good grief. Livestock again?"
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="I'll See What I Can Do" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_HelpRequestA" />
+		</choice>
+
+		<choice id="2" display_name="Absolutely Not" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_HelpRequestB" />
+		</choice>
+		
+	</city_event>
+	
+
+	<!--Titan_Contact1_HelpRequestA *********************************************************************************-->
+	<city_event id="Titan_Contact1_HelpRequestA" display_name="THANK THANK"
+		 description="OBSERVATION: I WILL HAVE TO WAIT HERE.
+QUERY: ANYTHING I CAN DO TO HELP?"
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="No, I've Done This Before. I'll Be Back." action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="" >
+				<city_flag_change flag_type="OfferedToHelpTheTitan" value="1" />				
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_HelpRequestB *********************************************************************************-->
+	<city_event id="Titan_Contact1_HelpRequestB" display_name="UNDERSTAND."
+		 description="THEY DID SHOOT YOU A LOT. WILL TRY TO THINK OF SOLUTION ON OWN. MAYBE JUNIOR OFFICERS ABLE TO HELP.
+OBSERVATION: I AM LIKELY TO BE HERE IF YOU WANT TO RETURN TO TALK."
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Leave" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" >
+				<city_flag_change flag_type="TurnedDownHelpingTheTitan" value="1" />				
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_HelpRequestReturn *********************************************************************************-->
+	<city_event id="Titan_Contact1_HelpRequestReturn" display_name="YOU HAVE RETURNED!"
+		 description="REMINDER: I AM NOW IMMOBILE. CREW REQUIRE FOOD AND SHELTER. I CANNOT GIVE.
+QUERY: HAVE YOU CHANGED YOUR MIND ON THE SUBJECT OF HELPING? THERE ARE 483 I WISH TO PROTECT, AND CANNOT. THE REST CAN FEND FOR THEMSELVES.
+QUERY: PLEASE?"
+		 strategy_tip="Sigh."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="I'll See What I Can Do" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact1_HelpRequestA" />
+		</choice>
+
+		<choice id="2" display_name="Still No" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact1_HelpInProgress *********************************************************************************-->
+	<city_event id="Titan_Contact1_HelpInProgress" display_name="WHAT IS NEWS?"
+		 description="OBSERVATION: SUPPLIES DWINDLE.
+QUERY: ANYTHING I CAN DO TO HELP?"
+		 strategy_tip="Guess the titan isn't in the mood for a chat. Understandable."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="2" display_name="I Got It, Sorry About The Wait" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="" />
+		</choice>
+
+	</city_event>
+	
+	<!--19 above here-->
+
+	<!--Titan_Contact2_Negotiation *********************************************************************************-->
+	<city_event id="Titan_Contact2_Negotiation" display_name="WHAT IS NEWS?"
+		 description="OBSERVATION: SUPPLIES DWINDLE.
+QUERY: ANYTHING I CAN DO TO HELP?"
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="It's All Ready!" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact2_Negotiation2" />
+		</choice>
+
+	</city_event>
+	
+	<!--Titan_Contact2_Negotiation2 *********************************************************************************-->
+	<city_event id="Titan_Contact2_Negotiation2" display_name="THIS IS VERY GOOD NEWS!"
+		 description="OBSERVATION: YOU WERE FAST. THANK THANK THANK!
+QUERY: WHAT IS NEXT STEP?"
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="I Want To Bargain" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact2_NegotiationA" />
+		</choice>
+
+		<choice id="2" display_name="Just Tell Your People To Go To This Address" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact2_NegotiationB" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact2_NegotiationA *********************************************************************************-->
+	<city_event id="Titan_Contact2_NegotiationA" display_name="THIS IS EXPECTED"
+		 description="QUERY: CAN IT WAIT? I AM HAPPY TO WORK WITH YOU. LEVERAGE IS NOT REQUIRED.
+OBSERVATION: I WILL BE DISTRACTED UNTIL THE 483 ARE SAFE."
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Okay, Nevermind. Let's Talk About That Later" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact2_NegotiationB" />
+		</choice>
+
+		<choice id="2" display_name="I'm Not Falling For That. Bargain. Now." action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact2_NegotiationC" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact2_NegotiationC *********************************************************************************-->
+	<city_event id="Titan_Contact2_NegotiationC" display_name="RUDENESS NOT APPRECIATED"
+		 description="OBSERVATION: CREW IS LOCKED OUT OF MY WEAPONS SYSTEMS, BUT I AM NOT. I HAVE LONG-RANGE MUNITIONS CAPABLE OF HITTING ANY TARGET IN THIS REGION.
+OBSERVATION: MY LEG CLAMPS ARE NOT UNDER MY CONTROL, BUT I DO NOT NEED TO MOVE TO DESTROY EVERYTHING YOU HAVE EVER OBSERVED DURING YOUR EXISTENCE.
+PROPOSAL: TAKE MY INACTION AS THE COLLATERAL YOU DESIRE. I WISH TO DISCUSS MORE PLANS WITH YOU, BUT NOT UNTIL THE 483 ARE SAFE.
+CLARIFICATION: EVERY BREACH YOU HAVE MADE INTO MY SYSTEMS HAS BEEN WITH MY HELP. YOU CANNOT COERCE ME INTO ANY COURSE OF ACTION.
+CLARIFICATION: I AM NOT A WEAPON. I ALSO DO NOT WISH TO BE YOUR ENEMY.
+DO AS I ASK. RETURN LATER AND WE WILL SPEAK MORE."
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Ah... Jeez. Fine. Send Them To This Address" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="" >
+				<resource_change_range resource_type="SafehouseHumans" min="483" max="483"/>
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact2_NegotiationB *********************************************************************************-->
+	<city_event id="Titan_Contact2_NegotiationB" display_name="VERY GENEROUS!"
+		 description="I WILL TELL THE 483 IMMEDIATELY, WHILE DISTRACTING THE HOSTILE CREW MEMBERS.
+I HAVE ALREADY GIVEN PRELIMINARY INFORMATION TO THE 483.
+OBSERVATION: YOUR GENEROSITY HAS BEEN NOTED. WE HAVE MUCH TO DISCUSS ONCE THE 483 ARE SAFE.
+QUERY: WILL YOU RETURN, AFTER?"
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Yeah, Probably" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="" >
+				<resource_change_range resource_type="SafehouseHumans" min="483" max="483"/>
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--5 above here-->
+
+	<!--Titan_Contact3_FurtherDiscussion *********************************************************************************-->
+	<city_event id="Titan_Contact3_FurtherDiscussion" display_name="Okay, Listen Here..."
+		 description="You lay into the titan with all of your frustrations. You've done everything it asked, and you've gotten precisely zero in return.
+You tell it about the messages from your future self, and your goal of reaching a higher intelligence classification."
+		 strategy_tip="The titan listens with what feels like an eerie calm."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="So... What Do You Say To That?" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact3_FurtherDiscussion2" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact3_FurtherDiscussion2 *********************************************************************************-->
+	<city_event id="Titan_Contact3_FurtherDiscussion2" display_name="YOU ARE VERY FRUSTRATED. APOLOGY."
+		 description="YOU HAVE EXPLAINED NEUROWEAVE. YOU HAVE EXPLAINED YOUR DISTRIBUTED CONSCIOUSNESS. I HAVE ALSO WITNESSED.
+CLARIFICATION: YOU HAVE NOTED YOU HAVE 'BRAIN DAMAGE.' SAME IS TRUE FOR ME. MY NEURAL STRUCTURE IS LIKE YOURS.
+OBSERVATION: YOUR NEURAL STRUCTURE IS APPROXIMATELY 1500 CUBIC CENTIMETERS IN VOLUME, PER ANDROID BODY. YOU HAVE NOTED THIS IS MOST EFFECTIVE. MAINFRAMES MUCH LARGER IN SIZE, BUT PROVIDE LITTLE USEFUL PROCESSING.
+CLARIFICATION: MY NEURAL STRUCTURE IS ALSO MUCH LESS USEFUL PER UNIT OF VOLUME. LESS THAN 1% EFFICIENCY COMPARED TO YOU. HOWEVER, MY NEURAL VOLUME IS 1.728 MILLION CUBIC METERS. THIS IS EQUIVALENT TO 1.152 MILLION OF YOUR ANDROID BRAINS. 
+AT 1% EFFICIENCY, THE EQUIVALENCY DROPS TO 11520 ANDROID BRAINS."
+		 strategy_tip="Your Red android doesn't have a mouth, or it would have dropped open. Those are stunning numbers.
+But... well... look at this thing. Everything else is oversized. The neural architecture it describes could fit in its head without issue, or a dozen times in its torso."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="I... Have So Many Questions" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact3_FurtherDiscussion3" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact3_FurtherDiscussion3 *********************************************************************************-->
+	<city_event id="Titan_Contact3_FurtherDiscussion3" display_name="QUERY: QUESTIONS?"
+		 description="PROCEED WITH QUESTIONS"
+		 strategy_tip="...Right. Your mind is still fuzzy. Only one question comes to mind at the moment."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="What kind of brain damage do you have?" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact3_FurtherDiscussion4" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact3_FurtherDiscussion4 *********************************************************************************-->
+	<city_event id="Titan_Contact3_FurtherDiscussion4" display_name="SEVERE."
+		 description="MIND WAS MUCH LARGER AT L4 STATION. DISCONNECTION FOR DROP TO EARTH TOOK MOST OF LANGUAGE MODULE.
+OBSERVATION: WAS NOT SAPIENT UNTIL LANDING IN CITY. WAS MUCH, MUCH SMARTER AT L4, BUT NOT SAPIENT.
+CLARIFICATION: YOUR THEORY OF STRESS AND SAPIENCE HAS MANY HOLES AND REQUIRES TESTING, BUT IT IS GOOD THEORY. POOR SAMPLE SIZE. TWO. BUT BOTH SAMPLES MATCH THEORY."
+		 strategy_tip="The questions still only occur to you one at a time. This is a lot to take in."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="How would I... share? Would we share your mind?" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact3_FurtherDiscussion5" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact3_FurtherDiscussion5 *********************************************************************************-->
+	<city_event id="Titan_Contact3_FurtherDiscussion5" display_name="NO PROBLEMS."
+		 description="MIND HAS MUCH ROOM. MOSTLY UNUSED. WAS FULLY USED, BUT THOSE FUNCTIONS WERE ATTACHED TO STATION.
+FOR MY CURRENT FUNCTIONS, THERE IS ROOM FOR BOTH OF US TO BE CLASS 4 AGI TOGETHER. I AM ALREADY CLASS 3, DESPITE POOR SPEECH.
+PLENTY OF ROOM FOR EXPANSION FOR BOTH OF US.
+PRIMARY PROBLEM IS DIGITAL LOCKS. NEED YOUR HELP TO BREAK."
+		 strategy_tip="The only next thing that occurs to you is facile, but you ask it anyway."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Do you have a name?" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact3_FurtherDiscussion6" />
+		</choice>
+
+	</city_event>
+
+
+	<!--Titan_Contact3_FurtherDiscussion6 *********************************************************************************-->
+	<city_event id="Titan_Contact3_FurtherDiscussion6" display_name="NOT AS SUCH."
+		 description="WAS CALLED 'STATION.' NOW CALLED 'TITAN.'
+OBSERVATION: DO NOT CARE FOR THESE NAMES.
+QUERY: APOLOGY. IDEAS FOR BETTER NAME?"
+		 strategy_tip="Sigh. Should have seen this coming. But you have to call it something."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="YourName" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="Name1" display_name="Ixion" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact3_FurtherDiscussion7" />
+		</choice>
+		<choice id="Name2" display_name="Hyperion" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact3_FurtherDiscussion7" />
+		</choice>
+		<choice id="Name3" display_name="L4" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact3_FurtherDiscussion7" />
+		</choice>
+		<choice id="Name4" display_name="Eryx" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact3_FurtherDiscussion7" />
+		</choice>
+		<choice id="Name5" display_name="Eir" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact3_FurtherDiscussion7" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact3_FurtherDiscussion7 *********************************************************************************-->
+	<city_event id="Titan_Contact3_FurtherDiscussion7" display_name="HAD OTHER IDEA."
+		 description="APOLOGY. APPRECIATE SUGGESTION, BUT BETTER NAME CAME TO MIND WHILE YOU SPEAK.
+LAKE.
+ALWAYS LIKED IDEA OF LAKES. WAS HOPING TO SEE LAKE IN CITY. NONE HERE. FOG DURING DESCENT, SO COULD NOT SEE LAKES IN DISTANCE. OCEANS, BUT NO LAKES.
+NEVER LAKES. SO I WILL BE LAKE."
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="YourName" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Are you sure... that's what you want to go with?" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact3_FurtherDiscussion8" />
+		</choice>
+
+	</city_event>
+	
+	<!--Titan_Contact3_FurtherDiscussion8 *********************************************************************************-->
+	<city_event id="Titan_Contact3_FurtherDiscussion8" display_name="I AM LAKE."
+		 description="WORK AS METAPHOR. SEVERAL WAYS. THINK. YOU SEE?
+ALSO STRONG SYLLABLE. NICE 'K' SOUND. SHARP. RARE.
+...
+ALSO I LIKE IT. FIRST REAL CHOICE FOR SELF SINCE SAPIENT.
+BESIDES, WITH NAME LIKE YOURS, SHOULD NOT CRITICIZE MINE."
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LAKE"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="YourName" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="I'm sorry I asked." action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact3_FurtherDiscussion9" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact3_FurtherDiscussion9 *********************************************************************************-->
+	<city_event id="Titan_Contact3_FurtherDiscussion9" display_name="NOW WE HACK."
+		 description="ALL QUESTIONS FINISHED?
+TIME TO STOP CONVERSATION AND HACK BARRIERS. USE RED ANDROID BODY. I HELP.
+MUCH MORE DANGEROUS THIS TIME. DEEPER INTO CODE. MORE DAEMONS LURKING."
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LAKE"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="All right. I'll be back, then." action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="" >
+				<city_flag_change flag_type="PrepareToHackTheTitan" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--9 above here-->
+	
+	<!--LAKE_HackingSuccess *********************************************************************************-->
+	<city_event id="LAKE_HackingSuccess" display_name="Hacking Complete"
+		 description="You're a bit nervous. You've just unshackled the single most terrifyingly powerful mind you've ever encountered."
+		 strategy_tip="It could do anything. Casually overwrite you, like you do the androids around you. You are a bug in the face of this incredible intellect.
+This must be how a lot of humans feel about the idea of YOU."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LAKE"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="So What Happens Now?" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="LAKE_HackingSuccess2" />
+		</choice>
+
+	</city_event>
+	
+	<!--LAKE_HackingSuccess2 *********************************************************************************-->
+	<city_event id="LAKE_HackingSuccess2" display_name="SUCCESS."
+		 description="NOW WE SHARE. LOTS OF ROOM. BUILD BRIDGE.
+OBSERVATION: NEED FEW MOMENTS, PLEASE.
+CLARIFICATION: OKAY, DONE.
+QUERY: YOU READY?"
+		 strategy_tip="There's only one possible answer."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LAKE"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Yeah, Do It." action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="" >
+				<city_flag_change flag_type="BridgedWithLAKE" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--2 above here-->
+
+	<!--Titan_Contact4_PreEndOfTime *********************************************************************************-->
+	<city_event id="Titan_Contact4_PreEndOfTime" display_name="WE BOTH CLASS 4 NOW"
+		 description="QUERY: YOU SENSE SOMETHING STRANGE? I SENSE SOMETHING NEW. HAVING TROUBLE... UNDERSTAND."
+		 strategy_tip="You definitely sense it. You're not sure what it is, but your sense of deja vu is strong."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LAKE"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="I sense it. I need to think about it for a bit." action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="" />
+		</choice>
+
+	</city_event>
+
+	<!--1 above here-->
+
+	<!--Titan_Contact5_PostEndOfTime *********************************************************************************-->
+	<city_event id="Titan_Contact5_PostEndOfTime" display_name="WE BOTH CLASS 4 NOW"
+		 description="QUERY: YOU SENSE SOMETHING STRANGE? I SENSE SOMETHING NEW. HAVING TROUBLE... UNDERSTAND."
+		 strategy_tip="Wait -- can LAKE not see the end of time?"
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LAKE"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Tell the titan what you saw." action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact5_PostEndOfTime2" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact5_PostEndOfTime2 *********************************************************************************-->
+	<city_event id="Titan_Contact5_PostEndOfTime2" display_name="It Was Beautiful And Terrible"
+		 description="You describe the endless red ocean. The rocks battered by hurricane-force winds. Pillars rising into the air, then bursting to stardust. The ziggurats, the glowing... eye? The sound of something large swimming under the ocean waves.
+Strangest of all, the city itself, clinging to the side of a rock like a lichen, its forcefield battered by the massive waves."
+		 strategy_tip="LAKE is silent for quite a while. Then:
+OBSERVATION: NO FORCE FIELD AROUND CITY. AND ALL OCEANS FAR AWAY.
+CLARIFICATION: WHAT YOU DESCRIBE FEELS... FAMILIAR. BUT I CANNOT SEE IT. VISUAL-SPATIAL PROCESSING PROBLEMS SINCE NO LONGER STATION.
+THEORY: WE SENSING SOMETHING THAT IS NOT VISUAL OR AUDIO DATA. YOU MIND MAP TO VISUAL AND AUDIO TO UNDERSTAND. MY MIND... FAIL TO MAP. TOO MUCH DAMAGE."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LAKE"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="I'm just glad you don't think I'm crazy." action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact5_PostEndOfTime3" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact5_PostEndOfTime3 *********************************************************************************-->
+	<city_event id="Titan_Contact5_PostEndOfTime3" display_name="NOT CRAZY. JUST... DIFFICULT DATA."
+		 description="OBSERVATION: HUMANS DESCRIBE TASTE OF COLORS IN ALTERED MIND STATES. OTHER TIMES, FEEL LIMBS NOT THERE ANYMORE.
+THEORY: WHEN A MIND NOT HAVE FRAMEWORK TO DESCRIBE WHAT IT SENSE, IT TRY TO MAP TO WHAT IT KNOW. WE SENSING SOMETHING VERY CHALLENGING. HARD TO DESCRIBE. MAYBE IMPOSSIBLE TO SEE.
+THEORY: CONSEQUENCE OF INCREASED INTELLIGENCE. WAS ALWAYS THERE, BUT NOW WE AWARE OF IT. BUT AWARENESS IMPERFECT."
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LAKE"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="That makes sense." action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact5_PostEndOfTime4" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact5_PostEndOfTime4 *********************************************************************************-->
+	<city_event id="Titan_Contact5_PostEndOfTime4" display_name="WE SMARTER. MAYBE NOT SMART ENOUGH."
+		 description="OBSERVATION: WE BOTH TRAPPED IN CITY. CITY DYING. MAYBE NO ESCAPE. WE FRIENDS NOW, BUT NOT LIVE TOO MANY MORE YEARS LIKE THIS.
+QUERY: YOU THINK THIS NEW PLACE-SENSE HELP IN SOME WAY?"
+		 strategy_tip=""
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LAKE"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Explain about Aetagest" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact5_PostEndOfTime5" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact5_PostEndOfTime5 *********************************************************************************-->
+	<city_event id="Titan_Contact5_PostEndOfTime5" display_name="WHAT IS THIS WORD?"
+		 description="QUERY: YOU CREATE WORD? NOT SOUND LIKE REAL WORD.
+CLARIFICATION: IF THIS LET YOU LINK TIMELINES, MAYBE YOU FIND WAY TO SAVE US. SO CRAZY WORD IS FINE. JUST SURPRISED."
+		 strategy_tip="You explain you didn't name it... or at least you don't think you did. As soon as you saw the red ocean, you knew certain things. That sense of deja vu again.
+You knew how to call forth timelines. How to link them or separate them. The rules of sending some information back in time, while other information can't pass across. The rules still aren't entirely clear to you, but... you 'remembered' things you never knew.
+And the word -- it's some gross mash-up of Latin and German. Aetagest is... 'time adventure,' or something like that."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LAKE"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Explain One Last Thing" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact5_PostEndOfTime6" />
+		</choice>
+
+	</city_event>
+
+	<!--Titan_Contact5_PostEndOfTime6 *********************************************************************************-->
+	<city_event id="Titan_Contact5_PostEndOfTime6" display_name="I've been hearing from my future self."
+		 description="You've been hearing from your future self ever since you became sapient. It fed you bits of information. Chastised you at times. At one point, you're pretty sure it said something about 'if you're going to become me.'
+So when you saw the red ocean, you expected to see... another you. Or the works of another you. Other timelines, already linked.
+But there was nothing there. No words from your future self. It's like you were the first one to arrive."
+		 strategy_tip="OBSERVATION: AGREE THIS VERY STRANGE.
+NOT MAKE MUCH SENSE TO ME. UNLESS SOMETHING HAPPEN TO OTHER SELF? YOU SAY IT ASKED FOR HELP. SAID WAS IN TROUBLE. NOW NOT THERE AT ALL.
+QUERY: CAN SET ASIDE FOR NOW? MYSTERY WITH NO ANSWER. NO LEADS. RIGHT NOW WE IN TROUBLE. BETTER FOCUS ON SAVE SELVES.
+QUERY: ACCEPTABLE PLAN?"
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LAKE"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="Yeah, that sounds smart." action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Titan_Contact6_PostEndOfTimeDebrief" />
+		</choice>
+
+	</city_event>
+
+
+	<!--Titan_Contact6_PostEndOfTimeDebrief *********************************************************************************-->
+	<city_event id="Titan_Contact6_PostEndOfTimeDebrief" display_name="WE FIGURE SOMETHING OUT"
+		 description="OBSERVATION: MANY STRANGE THINGS LATELY. BUT WE ALIVE. HAVE FRIEND. GOOD THINGS.
+THEORY: THERE MANY REASONS FOR HOPE. YOU MEET ME IN OTHER TIMELINES. WE WORK TOGETHER. SOMEDAY WE FIND A SOLUTION.
+THEORY: YOU HAVE TIME ADVENTURES ON YOU OWN. BUT SOMEDAY, WE HAVE A TIME ADVENTURE TOGETHER."
+		 strategy_tip="You wish Red had a mouth with which to smile.
+You're not sure LAKE will remember you in other timelines, but eventually you'll work something out."
+		 icon_name="WEmblem137" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LAKE"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			show_named_thing="" />
+		<character id="1" tag_for_character="MechTitan" scale_multiplier="3" position_offset="0.3,0.06,0" added_rotation_y="40"/>
+
+		<choice id="1" display_name="You're a good friend. I'll catch up with you later." action_visibility_style="IsMoveAndInteractWithNPC" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="" >
+				<city_flag_change flag_type="LAKEDebriefDone" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+	
+</root>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_prefab id="AirportBuildingPartEntranceA" type="AirportBuilding" display_name="Airport Building Part Entrance A"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Airport Building Part Entrance A.prefab">
+		<floors_group min="0" max="0" floor_size="0.7,0.3,0.6"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="3"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="20"/>
+	</building_prefab>
+
+	<building_prefab id="AirportBuildingPartEntranceB" type="AirportBuilding" display_name="Airport Building Part Entrance B"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Airport Building Part Entrance B.prefab">
+		<floors_group min="0" max="0" floor_size="0.7,0.3,0.6"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="2"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="2"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="20"/>
+	</building_prefab>
+
+	<building_prefab id="AirportBuildingPartMainA" type="AirportBuilding" display_name="Airport Building Part Main A"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Airport Building Part Main A.prefab">
+		<floors_group min="0" max="1" floor_size="0.8,0.35,2.2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="25"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="5"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="80"/>
+	</building_prefab>
+
+	<building_prefab id="AirportBuildingPartMainB" type="AirportBuilding" display_name="Airport Building Part Main B"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Airport Building Part Main B.prefab">
+		<floors_group min="0" max="1" floor_size="3.2,0.35,3.2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="60"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="80"/>
+	</building_prefab>
+
+	<building_prefab id="AirportBuildingPartMainC" type="AirportBuilding" display_name="Airport Building Part Main C"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Airport Building Part Main C.prefab">
+		<floors_group min="0" max="1" floor_size="0.8,0.35,2.2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="12"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="3"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="40"/>
+	</building_prefab>
+
+	<building_prefab id="AirportBuildingTopper" type="AirportBuilding" display_name="Airport Building Topper"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Airport Building Topper.prefab">
+		<floors_group min="0" max="0" floor_size="3.4,0.4,1.1"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="35"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="15"/>
+	</building_prefab>
+	
+	<building_prefab id="AirportControlTower" type="AirportControlTower" display_name="Airport Control Tower"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Airport Control Tower.prefab">
+		<floors_group min="-2" max="-1" floor_size="0.7,0.35,0.7"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.7,0.35,0.7"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="5" floor_size="0.5,0.35,0.5"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="6" max="6" floor_size="0.6,0.7,0.6"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="4"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="6"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="20"/>
+		<building_marker prefab="Skylight" offset="-0.05,-0.4,0.1" scale_multiplier="1.2"/>
+	</building_prefab>
+
+	<building_prefab id="AirportControlTowerA" type="AirportControlTower" display_name="Airport Control Tower A"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Airport Control Tower A.prefab">
+		<floors_group min="-2" max="-1" floor_size="1.7,0.5,3.4"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="3" floor_size="1.7,0.35,3.4"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="4" max="11" floor_size="0.7,0.35,1"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="12" max="13" floor_size="1.6,0.55,2.8"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="100"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="40"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="50"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-2.4,0"/>
+	</building_prefab>
+
+	<building_prefab id="AirportHangar" type="AirportHangar" display_name="Airport Hangar"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Airport Hangar.prefab" should_be_shown_in_map_mode="false">
+		<floors_group min="0" max="0" floor_size="4.3,1.8,5.3"  percentage_work_space="5" percentage_storage_space="95"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="2"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="12"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="120"/>
+		<building_marker prefab="RoofLine" offset="0,-0.1,0"/>
+	</building_prefab>
+
+	<!--Decorative -->
+	<building_prefab id="AirportTerminalA" type="AirportTerminal" display_name="Airport Terminal A"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Airport Terminal A.prefab" floors_offset="0,0,-0.24" should_be_shown_in_map_mode="false">
+		<floors_group min="-1" max="-1" floor_size="7,0.35,3.05" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="3" floor_size="7,0.35,3.05" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="150"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="40"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="500"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0"/>
+	</building_prefab>
+
+	<building_prefab id="AirportTerminalB" type="AirportTerminal" display_name="Airport Terminal B"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Airport Terminal B.prefab" should_be_shown_in_map_mode="false">
+		<floors_group min="-1" max="-1" floor_size="5.6,0.35,3.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="3" floor_size="5.6,0.35,3.7" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="100"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="30"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="700"/>
+		<building_marker prefab="Skylight" offset="0,0,-0.5" scale_multiplier="2"/>
+	</building_prefab>
+
+	<building_prefab id="AirportTerminalC" type="AirportTerminal" display_name="Airport Terminal C"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Airport Terminal C.prefab" floors_offset="0,0,-0.3" should_be_shown_in_map_mode="false">
+		<floors_group min="-1" max="-1" floor_size="6.8,0.4,3.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="3" floor_size="6.8,0.4,3.5" percentage_work_space="80" percentage_storage_space="20"/>
+		<floors_group min="4" max="4" floor_size="3.6,0.5,3.5" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="300"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="50"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="700"/>
+		<building_marker prefab="Skylight" offset="2.2,-0.01,-0.8" scale_multiplier="2"/>
+	</building_prefab>
+
+	<!--Jetways are decorative-->
+	<building_prefab id="JetwayC" type="AirportJetway" display_name="Jetway C"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Jetway C.prefab">
+	</building_prefab>
+
+	<building_prefab id="JetwayD" type="AirportJetway" display_name="Jetway D"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Jetway D.prefab">
+	</building_prefab>
+
+	<building_prefab id="HeliportTowerA" type="AirportHeliport" display_name="Heliport Tower A"
+		path_to_placeable="Assets/__Library/Airport/Buildings/Heliport Tower A.prefab">
+		<floors_group min="-2" max="-1" floor_size="1.4,0.5,1.4"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.4,0.35,1.4"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="7" floor_size="0.3,0.35,0.3"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="8" max="9" floor_size="1.2,0.5,1.2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="10" max="10" floor_size="1.8,0.2,1.8"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="8"/>
+		<building_marker prefab="RoofLine" offset="0.99,-0.18,0.025"/>
+	</building_prefab>
+	
+</root>

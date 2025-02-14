@@ -1,0 +1,76 @@
+UI Elements
+Some people prefer a less cluttered UI, others want more guides to things that are going on.
+Experiments
+These are experimental gameplay behaviors that we'd usually like feedback on.
+Fullscreen Mode
+These settings only apply when the game is running in fullscreen (not windowed!) mode.
+Windowed Mode
+These settings only apply when the game is running in windowed (not fullscreen!) mode.
+Fullscreen Effects (Post-Processing)
+Adjust things related to screen-wide post-processing effects in the game.  Whether these are related to personal preference, hardware compatibility, or otherwise.
+Anti-Aliasing
+Adjust things related to anti-aliasing, which is another fullscreen effect.
+Tooltips
+Adjustments to what is shown in tooltips
+HUD
+Configuration relating to the heads up display (most of the interface) for the game.
+Sidebar
+Configuration relating to the sidebar in the game.
+Selected Ships/Fleets Window
+Configuration relating to the window that shows the selected ships display in the bottom-right corner of the screen.
+Master Controls
+The overall controls for audio.
+Sound Mixing
+Adjust the relative volume of a lot of different parts of the game.
+Settings for the normal top-down camera view.
+Main Camera Control Speeds
+Settings for the speed of controls while using the normal city camera.
+Battle Camera Control Speeds
+Settings for the speed of controls while using the top-down battle mode camera.
+Main Camera Depth Of Field
+Settings for the depth of field for the camera when it is not in photo mode.
+Photo Mode Camera
+Settings for the camera in photo mode.
+Photo Mode Depth Of Field
+Settings for the depth of field of the camera in photo mode (in photo mode, depth of field cannot be disabled).
+Mouse Controls
+Adjust how your mouse behaves.
+Visual Load Reduction
+These items generally reduce the amount of visual load (mix of CPU and GPU, but mostly GPU) that the game requires.
+CPU Load Reduction
+These items generally reduce the amount of CPU load that the game requires.
+GPU Load Reduction
+These items generally reduce the amount of GPU load that the game requires.
+Logging
+These items generally give you information about how things are performing, but slow them down a bit while doing so.
+Privacy
+If you are streaming multiplayer, you may wish to hide certain info for privacy.  There's a limit to just how much we can hide while still having it be functional, though.  So that's the amount we hide.
+Your IP Address Information
+Information about your IP Addresses for your convenience if you need it.
+Map Related
+Settings related to the map or mapgen.
+Debug Tooltips
+Settings to showing extra debugging in tooltips.
+Game Logging
+Settings to write extra logs about what the game is doing.
+Draco's Items
+Settings to show things that help Draco debug some of his items.
+Settings for debug items that don't fit anywhere else.
+Escape Menu Additions
+These add extra information to the escape menu.
+Data Integrity
+These write logs to disk about various pieces of data so that we can verify intended changes over time, or verify correctness after changes.
+Serialization
+These write logs to disk when data is serialized or deserialized for purposes of writing savegames.
+Game Framework
+These let us debug various parts of the underlying game framework.
+Network Logging
+The ability to log all sorts of things about the network to your disk if there are problems happening.
+Save-Safe Mods
+These mods don't require all the players in a multiplayer game to have them on.  Additionally, you can load a savegame that had such a mod without it showing as present.
+      
+A number of these change balance for the game, and in multiplayer it's a good idea for all players to have those same mods on, but it's not required.  In cases where ships stats or other mechanics differ, the host's simulation will take precedence.
+
+In other cases, if these are purely cosmetic, then it really doesn't matter what things look like to you versus someone else.
+Framework Mods
+These mods don't do anything directly.  They provide functionality for other mods to use.  Other mods will turn them on if they are needed.

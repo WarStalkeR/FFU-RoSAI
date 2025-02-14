@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="timeline_doom_type">
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		only_exists_if_conditional_passes="requires_dll"
+		tooltip="This specifies the dll that the conflict implementation is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		only_exists_if_conditional_passes="requires_dll"
+		tooltip="This specifies the type name of the type that handles the conflict implementation in the specified external dll."/>
+	<attribute key="starting_conflicts" type="node-list" is_required="false" node_source="CityConflict" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which conflicts are going to be active at the start of chapter one, two, or similar?" />
+
+	<!--doom_event
+	*******************************************************************************************************-->
+	<sub_node id="doom_event">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. There should be a unique set of doom_event IDs per timeline_doom_type, named or numbered." />
+
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+			tooltip="The player-visible text of the outcome." />		
+		<attribute key="description" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of the machine intelligence's thoughts as it contemplates this outcome."/>
+		<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of any special notes about this outcome."/>
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+
+		<attribute key="standard_turn_offset" type="int-textbox" is_required="true" min="100" max="4000" default="0" content_width_px="80"
+			tooltip="How many turns beyond the start of doom tracking should this strike?  Should normally be in increments of 100." />
+
+		<attribute key="never_opens_doom_list_on_toast" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+			tooltip="When true, clicking the toast does not open the list of dooms. Should only be used for the final doom." />
+		
+		<attribute key="music_to_play" type="node-dropdown" node_source="MusicType" content_width_px="200" is_required="false"
+			tooltip="What music will play when this doom event starts? Optional, but recommended except for the final doom." />
+
+		<attribute key="achievement_triggered1" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+		<attribute key="achievement_triggered2" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+		<attribute key="achievement_triggered3" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+
+	</sub_node>
+
+	<!--doom_alt_event
+	*******************************************************************************************************-->
+	<sub_node id="doom_alt_event">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. There should be a unique set of doom_alt_event IDs per timeline_doom_type, named or numbered." />
+
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+			tooltip="The player-visible text of the outcome." />
+		<attribute key="description" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of the machine intelligence's thoughts as it contemplates this outcome."/>
+		<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of any special notes about this outcome."/>
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+
+		<attribute key="music_to_play" type="node-dropdown" node_source="MusicType" content_width_px="200" is_required="false"
+			tooltip="What music will play when this doom event starts? Optional, but recommended except for the final doom." />
+
+		<attribute key="achievement_triggered1" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+		<attribute key="achievement_triggered2" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+		<attribute key="achievement_triggered3" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+
+	</sub_node>
+	
+</root>

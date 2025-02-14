@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="activity_danger_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information, and this one is optional because so much other information is provided already in these tips."/>
+
+	<attribute key="counterstrike_manually_triggers" type="node-dropdown" is_required="false" node_source="NPCManager" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Optional. If this is used as a counterstrike, then this is the manager it will trigger." />
+	
+</root>

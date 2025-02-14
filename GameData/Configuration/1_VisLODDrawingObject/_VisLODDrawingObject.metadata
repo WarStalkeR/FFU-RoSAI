@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="vis_lod_obj">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="city_map_mult_base_lods" type="float-textbox" min="0.01" max="10" precision="2" default="1" content_width_px="80" is_required="true"
+		tooltip="This multiplies the base LOD distances (but not any overrides) by a flat amount, on the city map."/>
+	
+	<attribute key="city_map_overriding_lod_distances" type="string" maxlength="2000" content_width_px="600" is_required="false"
+		tooltip="Replaces the specified LOD distances, for the city map. This is a raw string of floats that are camera distances, comma-separated." />
+
+	<attribute key="streets_mult_base_lods" type="float-textbox" min="0.01" max="10" precision="2" default="1" content_width_px="80" is_required="true"
+		tooltip="This multiplies the base LOD distances (but not any overrides) by a flat amount, on the streets view."/>
+
+	<attribute key="streets_overriding_lod_distances" type="string" maxlength="2000" content_width_px="600" is_required="false"
+		tooltip="Replaces the specified LOD distances, for the streets view. This is a raw string of floats that are camera distances, comma-separated." />
+
+	<attribute key="event_camera_scale" type="float-textbox" min="0" max="100" default="1" precision="3" content_width_px="300" is_required="false"
+		tooltip="The scale this will be drawn at when used as a character in the event window."/>
+
+	<attribute key="event_camera_extra_y_offset" type="float-textbox" min="-10" max="10" default="0" precision="3" content_width_px="300" is_required="false"
+		tooltip="The extra offset that this object will have on the y axis when used as a character in the event window."/>
+	<attribute key="event_camera_extra_y_rotation" type="float-textbox" min="-10" max="10" default="0" precision="3" content_width_px="300" is_required="false"
+		tooltip="The extra y rotation used in the event window when drawing this character."/>
+
+	<attribute key="name_bank" type="node-dropdown" node_source="NamePoolTypeTag" content_width_px="300"
+		tooltip="If this needs names from a bank, which name bank does it use?" />
+
+	<attribute key="t_i_c_s" type="node-dropdown" is_required="false" node_source="VisColorUsage" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The type of background color for the plated tooltip images.  Optional." />
+	
+	<attribute key="tags" type="node-list" node_source="VisDrawingObjectTag" content_width_px="300" is_required="true"
+		tooltip="What tags are associated with this vis embedded object?" />
+
+	<attribute key="tooltip_icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+		tooltip="Which icon to use in tooltips, where we can see something larger."/>
+	<attribute key="intentionally_has_no_tooltip_icon" type="bool" default="false"
+		tooltip="If this is not going to be have a tooltip icon, then this needs to be false." />
+
+	<attribute key="final_offset_x" type="float-textbox" min="-1001" max="10" default="-1000" precision="3" content_width_px="300" is_required="false"
+		tooltip="If set to more than -10, then when rendered this will be offset in the x (side to side) axis."/>
+	<attribute key="final_offset_z" type="float-textbox" min="-1001" max="10" default="-1000" precision="3" content_width_px="300" is_required="false"
+		tooltip="If set to more than -10, then when rendered this will be offset in the z (front to back) axis."/>
+
+</root>

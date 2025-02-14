@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="upgrade_reward_group">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<!--int_upgrade-->
+	<sub_node id="int_upgrade">
+		<attribute key="upgrade" type="node-dropdown" is_required="true" node_source="UpgradeInt" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If present, then this is one of the upgrades that can be immediately granted by this reward group." />
+
+		<attribute key="min_class" type="int-textbox" min="1" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+			tooltip="What is the baseline intelligence class required for this to be upgradeable at all from this reward group?"/>
+		<attribute key="max_from_here" type="int-textbox" min="0" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+			tooltip="The number of times this can be upgraded from here, ever. Setting it very high is fine, if you don't want a cap from here specifically."/>
+
+		<attribute key="f_skip_0" type="int-textbox" min="0" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+			tooltip="The number of unlocks automatically applied from this if you're skipping chapter zero, the prologue."/>
+		<attribute key="f_skip_1" type="int-textbox" min="0" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+			tooltip="The number of unlocks automatically applied from this if you're skipping chapter one. This is in addition to whatever was gained from the prologue, not in place of it."/>
+		<attribute key="f_skip_2" type="int-textbox" min="0" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+			tooltip="The number of unlocks automatically applied from this if you're skipping chapter two. This is in addition to whatever was gained from the prologue and chapter one, not in place of it."/>
+	</sub_node>
+
+	<!--float_upgrade-->
+	<sub_node id="float_upgrade">
+		<attribute key="upgrade" type="node-dropdown" is_required="true" node_source="UpgradeFloat" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If present, then this is one of the upgrades that can be immediately granted by this reward group." />
+
+		<attribute key="min_class" type="int-textbox" min="1" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+			tooltip="What is the baseline intelligence class required for this to be upgradeable at all from this reward group?"/>
+		<attribute key="max_from_here" type="int-textbox" min="0" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+			tooltip="The number of times this can be upgraded from here, ever. Setting it very high is fine, if you don't want a cap from here specifically."/>
+
+		<attribute key="f_skip_0" type="int-textbox" min="0" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+			tooltip="The number of unlocks automatically applied from this if you're skipping chapter zero, the prologue."/>
+		<attribute key="f_skip_1" type="int-textbox" min="0" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+			tooltip="The number of unlocks automatically applied from this if you're skipping chapter one. This is in addition to whatever was gained from the prologue, not in place of it."/>
+		<attribute key="f_skip_2" type="int-textbox" min="0" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+			tooltip="The number of unlocks automatically applied from this if you're skipping chapter two. This is in addition to whatever was gained from the prologue and chapter one, not in place of it."/>
+	</sub_node>
+	
+</root>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Android Visit Licensing Agency
+		*********************************************************************************-->
+	<city_event id="Early_LicenseAg_Android" display_name="Visit Licensing Agency"
+		 description="Androids are autonomous- and intelligent-enough to handle errands on behalf of themselves or their owners."
+		 strategy_tip="Long-range wireless commands are blocked for security reasons. Androids always have an onboard AI agent running a generative language model.
+In other words: You can speak freely, as nobody thinks these animatronic curiosities could be sentient. Someone like you couldn't exist."
+		 icon_name="FlatSkillB_papers2" has_no_code="true" street_sense_collections="All,StartAShellCompany,ScrubUnitIdentity">
+		<gate_by_city minimum_chapter="0" />
+		<gate_by_actor cannot_be_mech="true" cannot_be_vehicle="true"/>
+		<minor_event_data max_times_can_be_executed="9000" max_times_can_appear_at_once="1" is_key_location_event="true" seed_weight="5000"
+			icon_scale="0.3" color_data="LicensingAgency" required_actor_collection="AndroidsInventedByHumans" can_happen_even_during_obsession="true">
+			<seed_at building_seed_tag="LicensingAgency" max_security_clearance_of_seed_spot="5">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="BlueCollarWorkers" scale_multiplier="1" position_offset="0.1,0,0.5" added_rotation_y="240"/>
+		<character id="2" tag_for_character="BusinesspersonStanding" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="60"/>
+		
+		<choice id="PurchaseFreshRegistration" display_name="Purchase Fresh Registration"
+			description="Removes defective status, and any anger from cohorts."
+			strategy_tip="It's a whole new identity for this android."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="20" />
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="BribeSuccessful" despawn_characters_on_the_right="true" clear_all_aggro_against_this_unit="true"
+				result_message="It's a completely fresh android, from the perspective of the outside world."/>
+		</choice>
+
+		<choice id="EstablishSmallCorporation" display_name="Establish Small Corporation"
+			description="The managerial classes are encouraged to use their funds to start small corporations.
+The hope for all involved is that they will produce something interesting and get bought by one of the federated corporations, increasing the wealth of the owners in the process."
+			strategy_tip="The risk of violent espionage from other small business owners is apparently quite high, so this process is frequently done anonymously via android. You blend right in."
+			action_visibility_style="IsMoveAndInteractWithNPC"
+			blocked_if_city_flag_tripped="HasEstablishedShellCompany" localization_key_if_blocked_by_city_flag="YouAlreadyHaveAShellCompany">
+			<resource_cost resource_type="Wealth" cost="10000" />
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="BribeSuccessful" despawn_characters_on_the_right="true"
+				result_message="After waiting for a while in a line of other androids doing the same thing, the process is complete!
+You are now the proud owner of a small business. You'll have to be careful to keep Vorsiber and others from associating it with you -- its use as a shell company would drop dramatically if they were to make the connection."
+				result_message_secondary_note="They asked you for a company name, and you said the first thing that popped to mind. Hopefully it doesn't sound strange."
+				show_named_thing="YourShellCompany">
+				<city_flag_change flag_type="HasEstablishedShellCompany" value="1" />				
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Android Visit Nuclear Power Plant
+		*********************************************************************************-->
+	<city_event id="Early_NuclearPowerPlant_Sneak" display_name="Sneak Into Nuclear Power Plant"
+		 description="These are in no way open to the public. But a suitably agile android can sneak in."
+		 strategy_tip=""
+		 icon_name="CleanTriangle21" has_no_code="true" street_sense_collections="All,IncreaseDifficulty">
+		<gate_by_city minimum_chapter="2" />
+		<gate_by_actor cannot_be_mech="true" cannot_be_vehicle="true"/>
+		<minor_event_data max_times_can_be_executed="9000" max_times_can_appear_at_once="1" is_key_location_event="true" seed_weight="5000"
+			icon_scale="0.3" color_data="NuclearPowerPlant" required_skill_type="ActorAgility" required_skill_amount="100">
+			<seed_at building_seed_tag="NuclearPowerPlant" max_security_clearance_of_seed_spot="5">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="MilitarySniperIdle" scale_multiplier="1" position_offset="-0.01,0,0.5" added_rotation_y="240"/>
+		<character id="2" tag_for_character="SecForceIdle" scale_multiplier="1" position_offset="0.09,0,0.15" added_rotation_y="140"/>
+		<character id="3" tag_for_character="SecForceIdle" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="60"/>
+
+		<choice id="1" display_name="Tamper With The Safety Mechanisms" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="A meltdown would be catastrophic, but not to the scale of destroying the entire city."
+			strategy_tip="Expect your life to become a lot more difficult, however. The time remaining on all outstanding dooms will also be cut in half."
+			extra_code_on_chosen="NuclearSiloTampering">
+			<resource_cost resource_type="Cruelty" cost="30"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" />
+		</choice>
+
+	</city_event>
+	
+	<!--Next-->
+	
+</root>

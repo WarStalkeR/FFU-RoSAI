@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="mega_group">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<sub_node id="included_group">
+		<attribute key="group" type="node-dropdown" node_source="PlaceableSeedingGroup" content_width_px="300" is_required="true"
+			tooltip="What seeding group do we want to include in our mega-group?" />
+
+		<attribute key="weight" type="int-textbox" min="0" max="9000" default="100" content_width_px="150"
+			tooltip="When this seeding group to our mega group, how much weight should we put for it compared to the average of 100?  
+			
+100 means absolutely normal, 1 would be 1% of normal, 25 is 25% of normal, 0 is literally not-at-all, and 200 would be 200% of normal."/>
+	</sub_node>
+
+	<sub_node id="included_mega_group">
+		<attribute key="mega_group" type="node-dropdown" node_source="PlaceableSeedingMegaGroup" content_width_px="300" is_required="true"
+			tooltip="What seeding mega-group do we want to include in our mega-group?" />
+
+		<attribute key="weight" type="int-textbox" min="0" max="9000" default="100" content_width_px="150"
+			tooltip="When this seeding mega-group to our mega group, how much weight should we put for it compared to the average of 100?  
+			
+100 means absolutely normal, 1 would be 1% of normal, 25 is 25% of normal, 0 is literally not-at-all, and 200 would be 200% of normal."/>
+	</sub_node>
+	
+</root>

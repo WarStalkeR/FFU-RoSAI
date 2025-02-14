@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--ActorData BOOKMARK
+	ScanRange
+	AttackRange
+	AreaOfAttack
+	AreaAttackIntensity
+		
+	ActorMoveRange
+	ActorMaxActionPoints	
+		
+	ActorHP
+	ActorPower
+	ActorAgility
+	
+	AreaOfAttack
+	AreaAttackIntensity
+	
+	ActorArmorPlating
+	ActorArmorPiercing
+	ActorExtraVulnerabilityFromRear
+	ActorExtraVulnerabilityFromAbove
+		
+	UnitStrength
+	UnitScavengingSkill
+	UnitCognition
+	UnitHackingSkill
+	UnitNetControl
+	VehicleDroneQuality
+	NPCVehicleDroneResistance
+	NPCHackingResistance
+	
+	UnitSyntheticRealism
+		
+	ActorEngineeringSkill
+	UnitIntimidation
+	UnitSupervision
+	UnitDeterrence
+	UnitProtection
+	RequiredDeterrence
+	AvailableResourcePerTurn
+		
+	ContrabandScanner
+	
+	ActorFearAttackPower
+	ActorArgumentAttackPower
+	
+	UnitMorale
+		
+	-->
+
+	<!--Primary unit and vehicle stats (50-199)
+		*********************************************************************************-->
+
+	<actor_data_type id="ActorHP" display_name="Health" short_name="Health"
+		description="This is destroyed if health reaches zero."
+		icon_name="CleanSimple_Activity051" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC"
+		sort_order="50" perma_seed_part="54534"
+		should_start_at_max="true" is_proportionate_to_largest_members_in_the_squad="true" is_equipment_multiplied_by_largest_squad_member_count="true"
+		severity_scale_to_use_for_icon_color="UnitSidebarHealth" severity_scale_for_icon_color_uses_percent_of_max="true"
+		max_cannot_be_reduced_below="11" tooltip_number_scale="x110"
+		show_two_line_sidebar_entry_with_percent_out_of_max="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits,SimpleJobs,RangedJobs,TerritoryControl,Housing,HumanWork,CybercraticHub"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type><!--FlatSkillA44 CleanSimple_SkillC073 FlatSkillA38-->
+
+	<actor_data_type id="ActorPower" display_name="Combat Power" short_name="Power"
+		description="Amount of damage done by this unit."
+		icon_name="WEmblem026" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="51" perma_seed_part="576576" tooltip_number_scale="x110" only_visible_when_above="0"
+		current_is_always_max="true" max_cannot_be_reduced_below="0" is_proportionate_to_current_members_in_the_squad_on_soft_units_only="true" is_equipment_multiplied_by_current_squad_member_count="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type><!--CleanSimple_SciFi092-->
+
+	<actor_data_type id="ActorFearAttackPower" display_name="Fear Attack Power" short_name="Fear Power"
+		description="Amount of fear-based damage this unit does to enemy morale.
+Unrelated to the Intimidation skill."
+		strategy_tip_optional="If a unit's morale drops to zero, they will leave combat.
+Robotic enemies are not vulnerable to morale attacks, and some biological enemies have Bravery that gives them extra resistance to fear-based morale damage."
+		icon_name="AN_Scythe" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="55" perma_seed_part="576576" tooltip_number_scale="x110" only_visible_when_above="0"
+		current_is_always_max="true" max_cannot_be_reduced_below="0" is_proportionate_to_current_members_in_the_squad_on_soft_units_only="true" is_equipment_multiplied_by_current_squad_member_count="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type><!--PW_screamingemotion-->
+	
+	<actor_data_type id="ActorArgumentAttackPower" display_name="Argument Attack Power" short_name="Argue Power"
+		description="Amount of argument-based damage this unit does to enemy morale."
+		strategy_tip_optional="If a unit's morale drops to zero, they will leave combat.
+Robotic enemies are not vulnerable to morale attacks, and some biological enemies have Stubbornness that gives them extra resistance to argument-based morale damage."
+		icon_name="HM_LegalLawful" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="60" perma_seed_part="576576" tooltip_number_scale="x110" only_visible_when_above="0"
+		current_is_always_max="true" max_cannot_be_reduced_below="0" is_proportionate_to_current_members_in_the_squad_on_soft_units_only="true" is_equipment_multiplied_by_current_squad_member_count="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="ScanRange" display_name="Scan Range" short_name="Scan Range"
+		description="Radius at which the fog of war is cut away."
+		strategy_tip_optional="This has a visual effect of revealing buildings and the ground. Activities and hostile units are revealed further out -- to your unit's full movement range.
+Structures with scanner capability reveal out to their network or job range, whichever is larger."
+		icon_name="SF2_Radar" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="110" perma_seed_part="675" is_hidden_from_players_on_distant_npcs="true"
+		current_is_always_max="true" max_cannot_be_reduced_below="5"
+		included_in_sets="SimpleJobs,RangedJobs"
+		auto_assigned_to_sets="">
+	</actor_data_type>
+	
+	<actor_data_type id="AttackRange" display_name="Attack Range" short_name="Attack Range"
+		description="Maximum distance for ranged attacks. If beyond that range, a leaping melee attack happens."
+		icon_name="SF2_Solarsystem_1" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="115" perma_seed_part="829"
+		current_is_always_max="true" max_cannot_be_reduced_below="5"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_in_tooltips_when_showing_details_if_distant_npc="true" only_visible_when_expanded_when_looking_at_type_at_all="false"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="AreaOfAttack" display_name="Area Of Attack" short_name="AOE"
+		description="Any secondary targets within this distance from the primary target are also struck by attacks."
+		icon_name="FlatSkillC154" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="115.6" perma_seed_part="128763"
+		current_is_always_max="true" only_visible_when_above="0" only_visible_when_expanded_when_looking_at_type_for_deployment="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="AreaAttackIntensity" display_name="Area Attack Intensity" short_name="AOE Intensity"
+		description="The percentage of damage applied to secondary targets in an area of attack."
+		icon_name="CleanSimple_Skill022" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true" only_visible_when_expanded_when_looking_at_type_for_deployment="true"
+		sort_order="115.8" perma_seed_part="126" show_as_int_percentage="true" only_visible_when_above="0" only_visible_when_below="100"
+		current_is_always_max="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="ActorMoveRange" display_name="Movement Range" short_name="Movement"
+		description="Maximum distance per individual move."
+		icon_name="CleanSimple_Skill013" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="120.2" perma_seed_part="48" is_hidden_from_players_on_distant_npcs="true"
+		current_is_always_max="true" max_cannot_be_reduced_below="0"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_in_tooltips_when_showing_details_if_distant_npc="true" only_visible_when_expanded_when_looking_at_type_at_all="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits"> <!--CleanSimple_SciFiEmblem28 CleanSimple_Skill005-->
+	</actor_data_type>
+
+	<actor_data_type id="ActorMaxActionPoints" display_name="Action Points Per Turn" short_name="Max AP"
+		description="The higher this number, the more actions this unit can make per turn."
+		icon_name="CleanSimple_Arrow028" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="195" perma_seed_part="4398" is_hidden_from_players_on_distant_npcs="true"
+		current_is_always_max="true" max_cannot_be_reduced_below="2"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_when_expanded_when_looking_at_type_at_all="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles">
+	</actor_data_type>
+
+	<actor_data_type id="ActorArmorPlating" display_name="Armor Plating" short_name="Armor"
+		description="Armor plating reduces incoming damage by a percentage (so 100+ armor plating prevents all damage)."
+		strategy_tip_optional="Armor piercing has a linear effect on the effective armor of a target.
+Example: If a target has 50 armor, and the attacker has 40 armor piercing, the effective armor on the target will be 10. Incoming damage is reduced by 10% instead of 50%."
+		icon_name="AN_EmergencySign" sidebar_icon_color="#E96754" tooltip_icon_color="#EF988C" skip_saving_to_map_actors="true"
+		sort_order="197" perma_seed_part="546"
+		current_is_always_max="true" only_visible_when_above="0" only_visible_when_expanded_when_looking_at_type_for_deployment="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="ActorArmorPiercing" display_name="Armor Piercing" short_name="Piercing"
+		description="Piercing reduces a target's effective armor."
+		strategy_tip_optional="If a target is not armored, this has no effect.
+Example: If a target has 50 armor, and the attacker has 40 armor piercing, the effective armor on the target will be 10. Incoming damage is reduced by 10% instead of 50%."
+		icon_name="Pw_ArmorPiercingBullet" sidebar_icon_color="#E96754" tooltip_icon_color="#EF988C" skip_saving_to_map_actors="true"
+		sort_order="198" perma_seed_part="643"
+		current_is_always_max="true" only_visible_when_above="0"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="ActorExtraVulnerabilityFromRear" display_name="Extra Vulnerability From Rear" short_name="Vul. Rear"
+		description="This unit takes extra damage if attacked from behind."
+		strategy_tip_optional="Often two units are required to attack a unit from behind. When the target turn to face the first attacker, the other unit can attack from behind."
+		icon_name="CleanSimple_Arrow013" sidebar_icon_color="#79D2F1" tooltip_icon_color="#B5DEEC" skip_saving_to_map_actors="true" only_visible_when_above="0"
+		sort_order="199" perma_seed_part="7937" show_as_float_multiplier_divided_by_100="true"
+		current_is_always_max="true" is_hidden_from_players_on_player_allied_npcs="true"
+		included_in_sets="NPCUnits,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="ActorExtraVulnerabilityFromAbove" display_name="Extra Vulnerability From Above" short_name="Vul. Above"
+		description="This unit takes extra damage if attacked from above."
+		strategy_tip_optional="You may need to lure this enemy to a location where you can find high ground.
+If you have armed flying vehicles, choose one that flies at a higher altitude than this target."
+		icon_name="CleanSimple_Arrow008" sidebar_icon_color="#79D2F1" tooltip_icon_color="#B5DEEC" skip_saving_to_map_actors="true" only_visible_when_above="0"
+		sort_order="199.4" perma_seed_part="5260" show_as_float_multiplier_divided_by_100="true"
+		current_is_always_max="true" is_hidden_from_players_on_player_allied_npcs="true"
+		included_in_sets="NPCUnits,PlayerNPCUnits">
+	</actor_data_type>
+
+	<!--Secondary unit  stats (200-900)
+		*********************************************************************************-->
+
+	<actor_data_type id="ActorAgility" display_name="Agility" short_name="Agility"
+		description="Ability of unit to perform agility-based actions."
+		icon_name="SR_Horse" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="255" perma_seed_part="3863"
+		current_is_always_max="true" only_visible_when_above="0"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_in_tooltips_when_showing_details_if_distant_npc="true" only_visible_when_expanded_when_looking_at_type_at_all="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type>
+	
+	<actor_data_type id="UnitStrength" display_name="Strength" short_name="Strength"
+		description="Ability of unit to perform strength-based actions."
+		icon_name="SR_Kettlebell3" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="257" perma_seed_part="842"
+		current_is_always_max="true" is_proportionate_to_current_members_in_the_squad_on_soft_units_only="true" only_visible_when_above="0" is_equipment_multiplied_by_current_squad_member_count="true"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_in_tooltips_when_showing_details_if_distant_npc="true" only_visible_when_expanded_when_looking_at_type_at_all="true"
+		included_in_sets="PlayerAndroids,NPCUnits,PlayerNPCUnits,PlayerVehicles"
+		auto_assigned_to_sets="PlayerAndroids,PlayerNPCUnits,PlayerVehicles">
+	</actor_data_type>
+
+	<actor_data_type id="UnitScavengingSkill" display_name="Scavenging Skill" short_name="Scavenging"
+		description="Units bring in more resources if they have leftover AP at the end of a turn."
+		icon_name="FlatSkillC33" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="260" perma_seed_part="29857" is_hidden_from_players_on_distant_npcs="true"
+		current_is_always_max="true" only_visible_when_above="0"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_when_expanded_when_looking_at_type_at_all="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles">
+		<!--
+		<math_multiplicative_alteration target="PercentageMicrobuildersStolenDuringQuietRaid" alteration="ScavengeSkillToPercentageStolen"/>
+		<math_multiplicative_alteration target="PercentageDataStolenDuringQuietRaid" alteration="ScavengeSkillToPercentageStolen"/>
+		-->
+	</actor_data_type>
+	
+	<actor_data_type id="UnitCognition" display_name="Cognition" short_name="Cognition"
+		description="Mental capabilities of this unit."
+		icon_name="SF2_AI" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="300" perma_seed_part="3848"
+		current_is_always_max="true" max_cannot_be_reduced_below="3" only_visible_when_above="0"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_in_tooltips_when_showing_details_if_distant_npc="true" only_visible_when_expanded_when_looking_at_type_at_all="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerNPCUnits">
+	</actor_data_type>
+	
+	<actor_data_type id="UnitHackingSkill" display_name="Hacking Skill" short_name="Hacking"
+		description="Take control of targets that don't belong to you."
+		icon_name="FlatEquip_37" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="305" perma_seed_part="9384" is_hidden_from_players_on_player_allied_npcs="true"
+		current_is_always_max="true" is_proportionate_to_current_members_in_the_squad_on_any_unit="true" only_visible_when_above="0" is_equipment_multiplied_by_current_squad_member_count="false"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_in_tooltips_when_showing_details_if_distant_npc="true" only_visible_when_expanded_when_looking_at_type_at_all="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+		<!--
+		<math_multiplicative_alteration target="PercentageDataStolenDuringQuietRaid" alteration="HackingSkillToPercentageDataStolen"/>-->
+	</actor_data_type>
+
+	<actor_data_type id="UnitNetControl" display_name="Net Control" short_name="Net Control"
+		description="A sophisticated processor that can insert itself into the data flow and hide as a legitimate part of the network."
+		icon_name="CleanSimple_SciFi078" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="310" perma_seed_part="98374" is_hidden_from_players_on_player_allied_npcs="true"
+		current_is_always_max="true" is_proportionate_to_current_members_in_the_squad_on_any_unit="true" only_visible_when_above="0" is_equipment_multiplied_by_current_squad_member_count="false"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_in_tooltips_when_showing_details_if_distant_npc="true" only_visible_when_expanded_when_looking_at_type_at_all="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+		<!--
+		<math_multiplicative_alteration target="PercentageDataStolenDuringQuietRaid" alteration="HackingSkillToPercentageDataStolen"/>-->
+	</actor_data_type>
+
+	<actor_data_type id="VehicleDroneQuality" display_name="Drone Quality" short_name="Drone Quality"
+		description="Drone performance is determined by the programming of the deploying vehicle."
+		icon_name="SK_Drone" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="320" perma_seed_part="81274" is_hidden_from_players_on_distant_npcs="true" is_hidden_from_players_on_player_allied_npcs="true"
+		current_is_always_max="true" is_proportionate_to_current_members_in_the_squad_on_soft_units_only="true" only_visible_when_above="0"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_when_expanded_when_looking_at_type_at_all="true"
+		included_in_sets="PlayerVehicles"
+		auto_assigned_to_sets="PlayerVehicles">
+	</actor_data_type>
+
+	<actor_data_type id="NPCVehicleDroneResistance" display_name="Drone Resistance" short_name="Drone Resist"
+		description="The difficulty of infiltrating this target with drones."
+		strategy_tip_optional="Drone resistance comes predominantly from the vehicle crew. The resistance drops if they take casualties."
+		icon_name="CleanSimple_Badge02" sidebar_icon_color="#E96754" tooltip_icon_color="#EF988C" skip_saving_to_map_actors="true"
+		sort_order="321" perma_seed_part="11278" is_hidden_from_players_on_player_allied_npcs="true"
+		current_is_always_max="true" is_proportionate_to_current_members_in_the_squad_on_any_unit="true" only_visible_when_above="0"
+		included_in_sets="NPCUnits,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="NPCHackingResistance" display_name="Hacking Resistance" short_name="Hacking Resist"
+		description="The difficulty of infiltrating this target by hacking them."
+		strategy_tip_optional=""
+		icon_name="SI_Microchip5" sidebar_icon_color="#E96754" tooltip_icon_color="#EF988C" skip_saving_to_map_actors="true"
+		sort_order="327" perma_seed_part="11278" is_hidden_from_players_on_player_allied_npcs="true"
+		current_is_always_max="true" is_proportionate_to_current_members_in_the_squad_on_any_unit="true" only_visible_when_above="0"
+		included_in_sets="NPCUnits,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="UnitSyntheticRealism" display_name="Synthetic Realism" short_name="Realism"
+		description="Ability to blend in with other humans."
+		icon_name="CleanSimple_SciFi056" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="335" perma_seed_part="4784" is_hidden_from_players_on_distant_npcs="true"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_when_expanded_when_looking_at_type_at_all="true"
+		current_is_always_max="true" only_visible_when_above="0"
+		included_in_sets="PlayerAndroids,NPCUnits,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="ActorEngineeringSkill" display_name="Engineering Skill" short_name="Engineering"
+		description="Required for structure construction, job installation, repairs, and engineering skill checks."
+		icon_name="CleanSimple_SciFi043" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="410" perma_seed_part="87345"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_in_tooltips_when_showing_details_if_distant_npc="true" only_visible_when_expanded_when_looking_at_type_at_all="true"
+		current_is_always_max="true" only_visible_when_above="0"  max_cannot_be_reduced_below="20"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="UnitIntimidation" display_name="Intimidation" short_name="Intimidation"
+		description="Perform intimidation-related actions, and improve the amount of Deterrence provided by this unit. Higher intimidation draws more aggro when attacking."
+		strategy_tip_optional="Does not affect fear-based attacks."
+		icon_name="FlatSkillC76" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		sort_order="450" perma_seed_part="47865"
+		current_is_always_max="true" is_proportionate_to_current_members_in_the_squad_on_any_unit="true" only_visible_when_above="0"
+		is_equipment_multiplied_by_current_squad_member_count="true"
+		only_visible_in_tooltips_when_showing_details_if_player_allied="true" only_visible_in_tooltips_when_showing_details_if_distant_npc="true" only_visible_when_expanded_when_looking_at_type_at_all="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type>
+	
+	<!--
+	<actor_data_type id="UnitSupervision" display_name="Supervision" short_name="Supervision"
+		description="Reduces the intensity of certain kinds of mischief within this unit's attack range.
+Some locations are prone to petty crime, rogue scientists, animal escapes, cultist disobedience, and so on."
+		strategy_tip_optional="Providing some supervision reduces the chance of those things happening, while providing excessive supervision can squander any sort of eureka moments that might also happen.
+Cloaking or blending in does not affect this unit's ability to supervise, as this is not based on threats or fear."
+		icon_name="WEmblem025" sidebar_icon_color="#8DA4F0" tooltip_icon_color="#8DA4F0" skip_saving_to_map_actors="true" only_visible_when_above="0"
+		sort_order="549" perma_seed_part="235" tooltip_number_scale="x110" is_proportionate_to_current_members_in_the_squad_on_soft_units_only="true" is_equipment_multiplied_by_current_squad_member_count="true"
+		current_is_always_max="true" is_hidden_from_players_on_distant_npcs="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits"
+		auto_assigned_to_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,PlayerNPCUnits">
+	</actor_data_type>-->
+
+	<actor_data_type id="UnitDeterrence" display_name="Deterrence" short_name="Deterrence"
+		description="Prevents certain kinds of enemy ambushes within this unit's attack range.
+There are some locations that draw ambushes if a sufficient amount of Deterrence is not present."
+		strategy_tip_optional="Calculated from the unit's current health, power and intimidation, even if they are blending in.
+Cloaked units cannot provide Deterrence."
+		icon_name="WEmblem217" sidebar_icon_color="#8DA4F0" tooltip_icon_color="#8DA4F0" skip_saving_to_map_actors="true" only_visible_when_above="0"
+		sort_order="550" perma_seed_part="842" tooltip_number_scale="x110"
+		current_is_always_max="true" is_hidden_from_players_on_distant_npcs="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="UnitProtection" display_name="Protection" short_name="Protection"
+		description="Prevents certain kinds of harassment of your shell company buildings within this unit's attack range.
+There are some locations that criminal or corporate harassment becomes a problem if a sufficient amount of Protection is not present."
+		strategy_tip_optional="Calculated from the unit's current health, power and intimidation, even if they are cloaked or blending in."
+		icon_name="BT_Shell2" sidebar_icon_color="#8DA4F0" tooltip_icon_color="#8DA4F0" skip_saving_to_map_actors="true" only_visible_when_above="0"
+		sort_order="550" perma_seed_part="842" tooltip_number_scale="x110"
+		current_is_always_max="true" is_hidden_from_players_on_distant_npcs="true"
+		included_in_sets="PlayerAndroids,PlayerMechs,PlayerVehicles,NPCUnits,PlayerNPCUnits">
+	</actor_data_type>
+
+	<actor_data_type id="FlagRequiredDeterrence" display_name="Required Deterrence" short_name="Req. Deterrence"
+		description="Twenty percent of this amount is required to activate the flag.
+Enemies will stay away if you maintain deterrence at or above 100% after a single wave."
+		strategy_tip_optional="Attacks will become relentless if have less than 100%.
+To maximize Deterrence, use bulk androids with high power, health, and intimidation."
+		icon_name="WEmblem217" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC" skip_saving_to_map_actors="true"
+		alternate_header_for_tooltip="Deterrence From Your Nearby Units" alternate_maximum_label_for_tooltip="Deterrence Goal"
+		sort_order="551" perma_seed_part="842"
+		severity_scale_to_use_for_icon_color="RequiredDeterrence" severity_scale_for_icon_color_uses_percent_of_max="true"
+		allow_freely_going_over_max="true" skips_all_normal_calculations="true" show_two_line_sidebar_entry_with_percent_out_of_max="true" is_shown_on_territory_control="true"
+		show_maximum_as_main_value_and_current_as_second_expanded_line_in_tooltip="true"
+		included_in_sets="TerritoryControl">
+	</actor_data_type>
+
+	<actor_data_type id="JobRequiredDeterrence" display_name="Required Deterrence" short_name="Req. Deterrence"
+		description="You can run this job with low deterrence, but it will be attacked."
+		strategy_tip_optional="Having enough deterrence in range will keep enemies at bay."
+		icon_name="WEmblem217" sidebar_icon_color="#E96754" tooltip_icon_color="#EF988C" skip_saving_to_map_actors="true"
+		alternate_header_for_tooltip="Deterrence From Your Nearby Units" alternate_maximum_label_for_tooltip="Deterrence Goal"
+		sort_order="551.2" perma_seed_part="842"
+		severity_scale_to_use_for_icon_color="RequiredDeterrence" severity_scale_for_icon_color_uses_percent_of_max="true"
+		allow_freely_going_over_max="true" skips_all_normal_calculations="true" show_two_line_sidebar_entry_with_percent_out_of_max="true"
+		show_maximum_as_main_value_and_current_as_second_expanded_line_in_tooltip="true"
+		included_in_sets="SimpleJobs,RangedJobs,Housing,CybercraticHub">
+	</actor_data_type>
+
+	<actor_data_type id="JobRequiredProtection" display_name="Required Protection" short_name="Req. Protection"
+		description="You can run this job with low protection, but it will be harassed by criminals or federated corporations."
+		strategy_tip_optional="Having enough protection in range will keep enemies at bay."
+		icon_name="BT_Shell2" sidebar_icon_color="#E96754" tooltip_icon_color="#EF988C" skip_saving_to_map_actors="true"
+		alternate_header_for_tooltip="Protection From Your Nearby Units" alternate_maximum_label_for_tooltip="Protection Goal"
+		sort_order="551.2" perma_seed_part="842"
+		severity_scale_to_use_for_icon_color="RequiredDeterrence" severity_scale_for_icon_color_uses_percent_of_max="true"
+		allow_freely_going_over_max="true" skips_all_normal_calculations="true" show_two_line_sidebar_entry_with_percent_out_of_max="true"
+		show_maximum_as_main_value_and_current_as_second_expanded_line_in_tooltip="true"
+		included_in_sets="SimpleJobs,RangedJobs,HumanWork">
+	</actor_data_type>
+
+	<actor_data_type id="AvailableResourcePerTurn" display_name="Resource Per Turn" short_name="Resource/Turn"
+		description="When you have a drone swarm harvesting from this site, this is how much they will be able to gather per turn."
+		strategy_tip_optional="Some resource sites require something more complex than a drone swarm, but this one is simple."
+		icon_name="CleanSimple_Game16" sidebar_icon_color="#79D2F1" tooltip_icon_color="#B5DEEC" skip_saving_to_map_actors="true"
+		sort_order="555" perma_seed_part="842"
+		severity_scale_to_use_for_icon_color="AvailableResourcePerTurn" severity_scale_for_icon_color_uses_percent_of_max="true"
+		allow_freely_going_over_max="true" skips_all_normal_calculations="true" show_two_line_sidebar_entry_with_percent_out_of_max="true" is_shown_on_territory_control="true"
+		included_in_sets="TerritoryControl">
+	</actor_data_type>
+	
+	<!--More stuff for just vehicles and structures (1000-2000)
+		*********************************************************************************-->
+
+	<!--Secondary vehicle abilities (3000-4000)
+		*********************************************************************************-->
+
+	<!--Secondary traits on NPCs (4000-5000)
+		*********************************************************************************-->
+
+	<actor_data_type id="ContrabandScanner" display_name="Contraband Scanner" short_name="Contraband Scan"
+		description="Reduces how well a structure is hidden the start of each turn."
+		strategy_tip_optional="Applies to any of your structures within the unit's attack range.
+Once a structure is fully revealed, it can never be hidden again. Humans cannot target a structure that is at least partially concealed."
+		icon_name="CleanSimple_SkillB058" sidebar_icon_color="#E96754" tooltip_icon_color="#EF988C" skip_saving_to_map_actors="true"
+		sort_order="4101" perma_seed_part="643" is_hidden_from_players_on_player_allied_npcs="true"
+		only_visible_in_tooltips_when_showing_details_if_distant_npc="true"
+		current_is_always_max="true" only_visible_when_above="1"
+		included_in_sets="NPCUnits">
+	</actor_data_type>
+	
+	<!--Human bits-->
+	
+	<actor_data_type id="UnitMorale" display_name="Morale" short_name="Morale"
+		description="Unit will disband if this reaches zero."
+		strategy_tip_optional="This is one of the primary nonlethal ways of defeating units."
+		icon_name="FlatSkillA12" sidebar_icon_color="#D9B9D9" tooltip_icon_color="#DCD0DC"
+		sort_order="4110" perma_seed_part="2398" should_start_at_max="true"
+		severity_scale_to_use_for_icon_color="UnitSidebarAlternateHealthPercent" severity_scale_for_icon_color_uses_percent_of_max="true"
+		included_in_sets="NPCUnits,PlayerNPCUnits"
+		show_two_line_sidebar_entry_with_percent_out_of_max="true">
+	</actor_data_type> <!--CleanSimple_SciFiEmblem26 FlatSkillC172 rabbit running  CleanSimple_SkillC077 scary bat-->
+	
+</root>

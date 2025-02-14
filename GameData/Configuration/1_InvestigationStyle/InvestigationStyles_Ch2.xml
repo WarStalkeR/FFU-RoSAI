@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<investigation_style id="Ch2AGIEspia_Stealth" display_name="Sneak In"
+		description="Use stealth units to get in and acquire what you need. You may need to directly do some hacking to prevent them from getting caught."
+		strategy_tip="You know that Espia Telecom was able to detect your movements in the city feed. You could acquire that data and give it to the AGI Researchers."
+		is_every_possibility_a_valid_choice="true" is_infiltration="true" number_of_turns_required_to_investigate_a_location="6"
+		show_all_results_as_beacon_style="true"
+		/>
+
+	<investigation_style id="Ch2AGIEspia_Hacking" display_name="Send A Hacker"
+		description="Use a hacker unit to get what you need. You will not need to directly do any hacking yourself, but you should be prepared to physically defend your hacker."
+		strategy_tip="You know that Espia Telecom was able to detect your movements in the city feed. You could acquire that data and give it to the AGI Researchers."
+		is_every_possibility_a_valid_choice="true" number_of_turns_required_to_investigate_a_location="6"
+		show_all_results_as_beacon_style="true"
+		/>
+
+	<investigation_style id="Ch2AGIOerlRescue_Stealth" display_name="Sneak In"
+		description="Use stealth units to get in and save the AGI Researchers captured by Oerl Integrated. You may need to do some hacking to prevent them from getting caught."
+		strategy_tip="Of course, if the building and the people in it no longer existed... that would solve your problems without any need to be sneaky."
+		is_every_possibility_a_valid_choice="true" is_infiltration="true" number_of_turns_required_to_investigate_a_location="4"
+		show_all_results_as_beacon_style="true"
+		/>
+
+	<investigation_style id="Ch2LostKidsHeist_Stealth" display_name="The Prison Heist"
+		description="LostGen has their sewer tiger in place underground, waiting for your go."
+		strategy_tip=""
+		is_every_possibility_a_valid_choice="true" is_infiltration="true" number_of_turns_required_to_investigate_a_location="12"
+		show_all_results_as_beacon_style="true"
+		/>
+
+	<investigation_style id="Ch2LiquidMetalFurtherPrisonBreaks" display_name="Another Prison Break"
+		description="Liquid Metal will take care of everything inside. The kids have been asked to stay away. All you have to do is guard the exterior."
+		strategy_tip="Vorsiber is going to adapt to these attacks very soon. But for now, you can push the advantage while you're able to."
+		is_every_possibility_a_valid_choice="true" is_infiltration="true" number_of_turns_required_to_investigate_a_location="6" number_of_separate_buildings_required_as_choices="5"
+		show_all_results_as_beacon_style="true"
+		/>
+	
+	<investigation_style id="Ch2YinshiUmbilicals" display_name="Infiltrate Hospital"
+		description="Acquire umbilicals from the childbirth ward. These would normally be shipped for processing by Yinshi into 'placental cosmetics' for the ultra-wealthy."
+		strategy_tip="You may need to do some hacking to prevent your stealth unit from getting caught."
+		is_every_possibility_a_valid_choice="true" is_infiltration="true" number_of_turns_required_to_investigate_a_location="6" number_of_separate_buildings_required_as_choices="2"
+		show_all_results_as_beacon_style="true"
+		/>
+
+	<investigation_style id="Ch2UterineReplicators" display_name="Infiltrate Hospital"
+		description="Scan modern uterine replicators to help the wastelanders improve their outdated designs."
+		strategy_tip=""
+		is_every_possibility_a_valid_choice="true" is_infiltration="true" number_of_turns_required_to_investigate_a_location="12" number_of_separate_buildings_required_as_choices="1"
+		show_all_results_as_beacon_style="true"
+		/>
+
+	<investigation_style id="Ch2NathTPN" display_name="Infiltrate Hospital"
+		description="Examine hospital stores of TPN to inspire your own creation."
+		strategy_tip="You may need to do some hacking to prevent your stealth unit from getting caught."
+		is_every_possibility_a_valid_choice="true" is_infiltration="true" number_of_turns_required_to_investigate_a_location="4" number_of_separate_buildings_required_as_choices="1"
+		show_all_results_as_beacon_style="true"
+		/>
+
+	<investigation_style id="Ch2ExamineOtherSmallBusinesses" display_name="Examine Other Small Businesses"
+		description="Your business is not growing at an acceptable rate. You see what causes some other businesses to do better than others."
+		strategy_tip="You need to get your hands on their records of activity from the last few years."
+		method_details=""
+		is_every_possibility_a_valid_choice="false" must_eliminate_all="true"
+		/>
+
+	<investigation_style id="Ch2MeetWithNCOs" display_name="Meet With NCOs"
+		description="Send your most fearsome warrior to meet with other military NCOs and affirm your deal."
+		strategy_tip=""
+		method_details=""
+		is_every_possibility_a_valid_choice="false" must_eliminate_all="true"
+		/>
+
+	<investigation_style id="Ch2StealCorporateRecords" display_name="Steal Corporate Records"
+		description="Use a hacker unit to get what you need. You will not need to directly do any hacking yourself, but you should be prepared to physically defend your hacker."
+		strategy_tip=""
+		is_every_possibility_a_valid_choice="true" is_infiltration="false" number_of_turns_required_to_investigate_a_location="6" number_of_separate_buildings_required_as_choices="1"
+		show_all_results_as_beacon_style="true"
+		/>
+
+	<investigation_style id="Ch2AtcaBankRecords" display_name="Steal Atca Bank Records"
+		description="Use a hacker unit to get what you need. You will not need to directly do any hacking yourself, but you should be prepared to physically defend your hacker."
+		strategy_tip=""
+		is_every_possibility_a_valid_choice="true" is_infiltration="false" number_of_turns_required_to_investigate_a_location="6" number_of_separate_buildings_required_as_choices="1"
+		show_all_results_as_beacon_style="true"
+		/>
+
+</root>

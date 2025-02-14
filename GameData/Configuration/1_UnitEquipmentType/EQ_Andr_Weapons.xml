@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Handguns
+	**********************************************************************************************************************************************-->
+	<equipment_type id="RL44PulseRevolver" display_name="RL-44 Pulse Revolver"
+		icon_name="CleanSimple_Skill009" slot_type="AndroidSecondary"
+		description="Cheap, lightweight, and reliable. Weapon of choice for gang members and some private citizens."
+		collections="AndroidWeapons,Handguns,HumanInvented" turns_required_to_equip="1"
+		is_ranged_weapon="true" on_attack="PistolTiny" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="16"/>
+		<initial_actor_data data_type="UnitIntimidation" value="20"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="20"/>
+	</equipment_type>
+
+	<equipment_type id="SmartPistol" display_name="Smart Pistol"
+		icon_name="PW_lasergun" slot_type="AndroidSecondary"
+		description="Very low combat capability out of the box, but has substantial onboard chips to boost cognition, scanning, and hacking."
+		strategy_tip_optional="Based off of the pulse revolver. One of your first original designs for a weapon. It's... okay."
+		collections="AndroidWeapons,Handguns,MachineInvented" turns_required_to_equip="1"
+		is_ranged_weapon="true" on_attack="PistolTiny" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="9"/>
+		<initial_actor_data data_type="UnitCognition" value="20"/>
+		<initial_actor_data data_type="UnitHackingSkill" value="60"/>
+		<initial_actor_data data_type="ActorArgumentAttackPower" value="20"/>
+	</equipment_type>
+
+	<equipment_type id="PP7Handgun" display_name="PP7 Handgun"
+		icon_name="CleanSimple_SciFi082" slot_type="AndroidSecondary"
+		description="Silenced handgun of choice for syndicates and higher-end gangs."
+		collections="AndroidWeapons,Handguns,HumanInvented,AndroidAntiHackerWeapons" turns_required_to_equip="1"
+		is_ranged_weapon="true" on_attack="PistolSilenced" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="18"/>
+		<initial_actor_data data_type="ActorAgility" value="20"/>
+		<initial_actor_data data_type="ActorMoveRange" value="2"/>
+		<grants_feat feat="WeakenEnemyHacker" value="25"/>
+	</equipment_type>
+
+	<equipment_type id="PKP9ElectroPistol" display_name="PK-P9 Electro Pistol"
+		icon_name="CleanSimple_Skill010" slot_type="AndroidSecondary"
+		description="Used by the Military Police and other augmented personnel, this automatic pistol requires heavy energy cells for sustained use."
+		collections="AndroidWeapons,Handguns,HumanInvented,AndroidElectroWeapons" turns_required_to_equip="1" limited_to_actor_collection="CanHandleAndroidTechPistols"
+		is_ranged_weapon="true" on_attack="PistolLaser" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="17"/>
+		<initial_actor_data data_type="AttackRange" value="4"/>
+		<initial_actor_data data_type="ActorArmorPiercing" value="10"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="12"/>
+		<grants_feat feat="Taser" value="15"/>
+	</equipment_type>
+
+	<equipment_type id="K6DisruptionRevolver" display_name="K6 Disruption Revolver"
+		icon_name="PW_revolvergun2" slot_type="AndroidSecondary"
+		description="Reduces the amount of damage that enemies can deal, as well as greatly increasing movement range."
+		collections="AndroidWeapons,Handguns,MachineInvented,AndroidDisruptionWeapons" turns_required_to_equip="1" limited_to_actor_collection="CanHandleAndroidTechPistols"
+		is_ranged_weapon="true" on_attack="PistolLaser" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="13"/>
+		<initial_actor_data data_type="ActorMoveRange" value="9"/>
+		<grants_feat feat="WeaponDisruptor" value="20"/>
+	</equipment_type>
+	
+	<!--Dual Handguns
+	**********************************************************************************************************************************************-->
+
+	<equipment_type id="DualBC8Handguns" display_name="Dual BC8 Handguns"
+		icon_name="FlatSkillA02" slot_type="AndroidPrimary"
+		description="Agility-focused dual silenced handguns."
+		collections="AndroidWeapons,Handguns,HumanInvented" turns_required_to_equip="2" limited_to_actor_collection="CanHandleAndroidDualPistols"
+		is_ranged_weapon="true" on_attack="PistolSilenced" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="28"/>
+		<initial_actor_data data_type="ActorAgility" value="30"/>
+		<initial_actor_data data_type="ActorMoveRange" value="6"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="14"/>
+	</equipment_type>
+
+	<equipment_type id="DualB12ElectroPistols" display_name="Dual B12 Electro Pistols"
+		icon_name="FlatSkillA02" slot_type="AndroidPrimary"
+		description="Agility-focused dual silenced handguns."
+		collections="AndroidWeapons,Handguns,MachineInvented,AndroidElectroWeapons" turns_required_to_equip="2" limited_to_actor_collection="CanHandleAndroidDualPistols"
+		is_ranged_weapon="true" on_attack="PistolSilenced" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="24"/>
+		<grants_feat feat="Taser" value="30"/>
+	</equipment_type>
+	
+	
+	<!--Shotgun-like
+	**********************************************************************************************************************************************-->
+	<equipment_type id="TS29Shotgun" display_name="TS-29 Shotgun"
+		icon_name="CleanSimple_SciFi062" slot_type="AndroidPrimary"
+		description="SecForce's standard model. Can be customized to your specifications."
+		collections="AndroidWeapons,Shotguns,HumanInvented" turns_required_to_equip="3" limited_to_actor_collection="CanHandleAndroidHeavyWeapons"
+		is_ranged_weapon="true" on_attack="ShotgunBasic" on_attack_priority="10">
+		<initial_actor_data data_type="ActorPower" value="60"/>
+	</equipment_type>
+
+	<equipment_type id="TS11Shotgun" display_name="TS-11 Light Shotgun"
+		icon_name="SK_Shotgun2" slot_type="AndroidPrimary"
+		description="Half the power of the TS-29. Has more range, and smaller-frame androids can wield this."
+		strategy_tip_optional=""
+		collections="AndroidWeapons,Shotguns,MachineInvented" turns_required_to_equip="3" limited_to_actor_collection="CanHandleAndroidLightFirearms"
+		is_ranged_weapon="true" on_attack="ShotgunBasic" on_attack_priority="10">
+		<initial_actor_data data_type="ActorPower" value="30"/>
+		<initial_actor_data data_type="AttackRange" value="4"/>
+	</equipment_type>
+
+	<equipment_type id="AG31Relumine" display_name="AG-31 Relumine"
+		icon_name="SK_Shotgun3" slot_type="AndroidPrimary"
+		description="Powerful shotgun flings glowing ordinance in a frightening manner."
+		collections="AndroidWeapons,Shotguns,MachineInvented,AndroidFearWeapons" turns_required_to_equip="3" limited_to_actor_collection="CanHandleAndroidHeavyWeapons"
+		is_ranged_weapon="true" on_attack="ShotgunBasic" on_attack_priority="10">
+		<initial_actor_data data_type="ActorPower" value="60"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="40"/>
+	</equipment_type>
+
+	<equipment_type id="AG30Flex" display_name="AG-30 Flex"
+		icon_name="SK_Shotgun1" slot_type="AndroidPrimary"
+		description="Lightweight shotgun for combat androids."
+		collections="AndroidWeapons,Shotguns,MachineInvented" turns_required_to_equip="3" limited_to_actor_collection="CanHandleAndroidLightFirearms"
+		is_ranged_weapon="true" on_attack="ShotgunBasic" on_attack_priority="10">
+		<initial_actor_data data_type="ActorPower" value="25"/>
+		<initial_actor_data data_type="ActorMoveRange" value="9"/>
+		<initial_actor_data data_type="AttackRange" value="3"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="15"/>
+	</equipment_type>
+
+	<equipment_type id="AG40OsmiumMusket" display_name="AG-40 Osmium Musket"
+		icon_name="CleanSimple_SciFi066" slot_type="AndroidPrimary"
+		description="Handheld railgun/shotgun crossover."
+		collections="AndroidWeapons,Shotguns,MachineInvented" turns_required_to_equip="4" limited_to_actor_collection="CanHandleAndroidHeavyWeapons"
+		is_ranged_weapon="true" on_attack="ShotgunHeavy" on_attack_priority="20"
+		skip_complaints_if_this_is_all_that_is_available="true">
+		<initial_actor_data data_type="ActorPower" value="90"/>
+		<initial_actor_data data_type="ActorMoveRange" value="-3"/>
+		<initial_actor_data data_type="ActorAgility" value="-30"/>
+		<initial_actor_data data_type="ActorArmorPiercing" value="60"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="40"/>
+		<cost_per_attack resource="PrismaticTungsten" amount="2" />
+	</equipment_type>
+	
+	<equipment_type id="AG50PuntGun" display_name="AG-50 Punt Gun"
+		icon_name="CleanSimple_SciFi066" slot_type="AndroidPrimary"
+		description="This Railgun is too heavy for humans to lift unassisted, with recoil that would rend even an augmented human arms from their torso."
+		collections="AndroidWeapons,Shotguns,MachineInvented,AndroidFearWeapons" turns_required_to_equip="4" limited_to_actor_collection="CanHandleAndroidHeavyWeapons"
+		is_ranged_weapon="true" on_attack="ShotgunHeavy" on_attack_priority="20"
+		skip_complaints_if_this_is_all_that_is_available="true">
+		<initial_actor_data data_type="ActorPower" value="200"/>
+		<initial_actor_data data_type="ActorMoveRange" value="-6"/>
+		<initial_actor_data data_type="ActorAgility" value="-50"/>
+		<initial_actor_data data_type="UnitIntimidation" value="60"/>
+		<initial_actor_data data_type="ActorArmorPiercing" value="200"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="80"/>
+		<cost_per_attack resource="PrismaticTungsten" amount="12" />
+		<cost_per_attack resource="MentalEnergy" amount="1" />
+	</equipment_type>
+	
+	<!--Other Heavy Weapons
+	**********************************************************************************************************************************************-->
+
+	<equipment_type id="RiotShield" display_name="Riot Shield"
+		icon_name="SK_Shield" slot_type="AndroidPrimary"
+		description="Protection and damage-reduction."
+		collections="AndroidWeapons,MachineInvented" turns_required_to_equip="4" limited_to_actor_collection="CanHandleAndroidHeavyWeapons"
+		is_ranged_weapon="true" on_attack="PistolLaser" on_attack_priority="1"
+		skip_complaints_if_this_is_all_that_is_available="true">
+		<initial_actor_data data_type="ActorHP" value="100"/>
+		<initial_actor_data data_type="ActorArmorPlating" value="30"/>
+	</equipment_type>
+	
+	<!--Bulk-Only Weapons
+	**********************************************************************************************************************************************-->
+	
+	<equipment_type id="NanowireWhip" display_name="Nanowire Whip"
+		icon_name="SR_Force" slot_type="AndroidPrimary"
+		description="Strikes every enemy within the attack range of this bulk unit."
+		strategy_tip_optional="Will not strike un-alerted guards."
+		collections="AndroidWeapons,MachineInvented" turns_required_to_equip="4" limited_to_actor_collection="CanHandleNanowireWhips"
+		is_ranged_weapon="true" on_attack="PistolLaser" on_attack_priority="1"
+		skip_complaints_if_this_is_all_that_is_available="true" is_not_yet_functional="true">
+	</equipment_type>
+	
+	<!--Rifles
+	**********************************************************************************************************************************************-->
+
+	<equipment_type id="AN14Achilles" display_name="AN-14 Achilles"
+		icon_name="AN_GunAssaultRifle" slot_type="AndroidPrimary"
+		description="An unusual rifle of your design. Exploits the spatial weaknesses of targets. Requires the locking arms of Nickelbots."
+		collections="AndroidWeapons,Rifles,MachineInvented" turns_required_to_equip="2" limited_to_actor_collection="Nickelbots"
+		is_ranged_weapon="true" on_attack="AchillesRifle" on_attack_priority="20">
+		<initial_actor_data data_type="ActorPower" value="35"/>
+		<initial_actor_data data_type="AttackRange" value="4"/>
+		<grants_perk perk="Achilles" value="true" />
+	</equipment_type>
+
+	<equipment_type id="AR52Black" display_name="AR-52 Black"
+		icon_name="CS_GunAssaultRifle" slot_type="AndroidPrimary"
+		description="Available via the black market. Dependable and has an exceptional range."
+		collections="AndroidWeapons,Rifles,HumanInvented" turns_required_to_equip="2" limited_to_actor_collection="CanHandleAndroidRifles"
+		is_ranged_weapon="true" on_attack="BlackRifle" on_attack_priority="20">
+		<initial_actor_data data_type="ActorPower" value="35"/>
+		<initial_actor_data data_type="AttackRange" value="12"/>
+		<grants_feat feat="SuppressingFire" value="25"/>
+	</equipment_type>
+
+	<equipment_type id="M2Gallant" display_name="M2 Gallant"
+		icon_name="CS_GunRifle" slot_type="AndroidPrimary"
+		description="Standard issue for the local infantry. Decent range and power. Some armor-piercing."
+		collections="AndroidWeapons,Rifles,HumanInvented" turns_required_to_equip="2" limited_to_actor_collection="CanHandleAndroidRifles"
+		is_ranged_weapon="true" on_attack="GallantRifle" on_attack_priority="20">
+		<initial_actor_data data_type="ActorPower" value="24"/>
+		<initial_actor_data data_type="AttackRange" value="6"/>
+		<initial_actor_data data_type="ActorArmorPiercing" value="20"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="24"/>
+		<grants_feat feat="SuppressingFire" value="50"/>
+	</equipment_type>
+
+	<equipment_type id="N150Tactical" display_name="N150 Tactical"
+		icon_name="AN_GunSniperRifle2" slot_type="AndroidPrimary"
+		description="You adapted local military sniper weapons to work with the locking arms of Nickelbots. Damage is lower, but range and mobility are improved."
+		collections="AndroidWeapons,Rifles,HumanInvented" turns_required_to_equip="4" limited_to_actor_collection="Nickelbots"
+		is_ranged_weapon="true" on_attack="TacticalRifle" on_attack_priority="20">
+		<initial_actor_data data_type="ActorPower" value="40"/>
+		<initial_actor_data data_type="AttackRange" value="22"/>
+		<initial_actor_data data_type="ActorArmorPiercing" value="10"/>
+	</equipment_type>
+
+	<!--Grenades
+	**********************************************************************************************************************************************-->
+	
+	<equipment_type id="GC20AreaGrenade" display_name="GC-20 Area Grenade"
+		icon_name="SK_Grenade" slot_type="AndroidPrimary"
+		description=""
+		intentionally_has_no_unlock="true" is_locked_before_unlock="AbsoluteUnit"
+		collections="AndroidWeapons,Grenades,MachineInvented" turns_required_to_equip="3" limited_to_actor_collection="CanHandleAndroidGrenades"
+		is_ranged_weapon="true" on_attack="GrenadierShot" on_attack_priority="20">
+		<initial_actor_data data_type="ActorPower" value="20"/>
+		<initial_actor_data data_type="AreaAttackIntensity" value="30"/>
+		<initial_actor_data data_type="AreaOfAttack" value="14"/>
+	</equipment_type>
+
+	<equipment_type id="GS1ElectroGrenade" display_name="GS-1 Electro Grenade"
+		icon_name="FlatSkillA39" slot_type="AndroidPrimary"
+		description=""
+		intentionally_has_no_unlock="true" is_locked_before_unlock="AbsoluteUnit"
+		collections="AndroidWeapons,Grenades,MachineInvented,AndroidElectroWeapons" turns_required_to_equip="3" limited_to_actor_collection="CanHandleAndroidGrenades"
+		is_ranged_weapon="true" on_attack="GrenadierShot" on_attack_priority="20">
+		<initial_actor_data data_type="ActorPower" value="8"/>
+		<initial_actor_data data_type="AreaAttackIntensity" value="40"/>
+		<initial_actor_data data_type="AreaOfAttack" value="2"/>
+		<grants_feat feat="Taser" value="60"/>
+	</equipment_type>
+
+	<equipment_type id="GS2DisruptionGrenade" display_name="GS-1 Disruption Grenade"
+		icon_name="SK_SmokeGrenade" slot_type="AndroidPrimary"
+		description=""
+		intentionally_has_no_unlock="true" is_locked_before_unlock="AbsoluteUnit"
+		collections="AndroidWeapons,Grenades,MachineInvented,AndroidDisruptionWeapons" turns_required_to_equip="3" limited_to_actor_collection="CanHandleAndroidGrenades"
+		is_ranged_weapon="true" on_attack="GrenadierShot" on_attack_priority="20">
+		<initial_actor_data data_type="AreaOfAttack" value="20"/>
+		<grants_feat feat="WeaponDisruptor" value="12"/>
+	</equipment_type>
+
+	<equipment_type id="GR59FragGrenade" display_name="GR-59 Frag Grenade"
+		icon_name="SW_Grenade" slot_type="AndroidPrimary"
+		description="Devastating fragmentary grenade."
+		collections="AndroidWeapons,Grenades,MachineInvented" turns_required_to_equip="3" limited_to_actor_collection="CanHandleAndroidGrenades"
+		is_ranged_weapon="true" on_attack="GR59FragGrenadeShot" on_attack_priority="20">
+		<initial_actor_data data_type="ActorPower" value="80"/>
+		<initial_actor_data data_type="UnitIntimidation" value="30"/>
+		<initial_actor_data data_type="AreaAttackIntensity" value="40"/>
+	</equipment_type>
+
+	<equipment_type id="GF60StunGrenade" display_name="GF-60 Stun Grenade"
+		icon_name="CleanSimple_SkillC088" slot_type="AndroidPrimary"
+		description="Intensely frightening, but not very damaging."
+		collections="AndroidWeapons,Grenades,MachineInvented,AndroidFearWeapons" turns_required_to_equip="3" limited_to_actor_collection="CanHandleAndroidGrenades"
+		is_ranged_weapon="true" on_attack="GF60StunGrenadeShot" on_attack_priority="20">
+		<initial_actor_data data_type="ActorPower" value="30"/>
+		<initial_actor_data data_type="UnitIntimidation" value="10"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="140"/>
+		<initial_actor_data data_type="AreaOfAttack" value="12"/>
+	</equipment_type>
+
+	<!--Staves
+	**********************************************************************************************************************************************-->
+	
+	<equipment_type id="StaffOfSilence" display_name="Staff Of Silence"
+		icon_name="FlatSkillC57" slot_type="AndroidPrimary"
+		description=""
+		intentionally_has_no_unlock="true" is_locked_before_unlock="TerrorTactics"
+		collections="AndroidWeapons,Staves,MachineInvented,AndroidAntiHackerWeapons,MeleeWeapons" turns_required_to_equip="1" limited_to_actor_collection="CanHandleAndroidStaves"
+		is_ranged_weapon="false" on_attack="BasicAndroidMeleeAttack" on_attack_priority="5">
+		<initial_actor_data data_type="ActorFearAttackPower" value="40"/>
+		<initial_actor_data data_type="ActorMoveRange" value="6"/>
+		<grants_feat feat="WeakenEnemyHacker" value="100"/>
+	</equipment_type>
+	
+	<equipment_type id="BatonOfJudgment" display_name="Baton Of Judgment"
+		icon_name="SW_BatonStick" slot_type="AndroidPrimary"
+		description=""
+		intentionally_has_no_unlock="true" is_locked_before_unlock="TerrorTactics"
+		collections="AndroidWeapons,Staves,MachineInvented,AndroidFearWeapons,MeleeWeapons" turns_required_to_equip="1" limited_to_actor_collection="CanHandleAndroidStaves"
+		is_ranged_weapon="false" on_attack="BasicAndroidMeleeAttack" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="10"/>
+		<initial_actor_data data_type="UnitIntimidation" value="300"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="400"/>
+	</equipment_type>
+	
+	<!--Claws
+	**********************************************************************************************************************************************-->
+
+	<equipment_type id="ClawsOfIntimidation" display_name="Claws Of Intimidation"
+		icon_name="FlatSkillC60" slot_type="AndroidPrimary"
+		description=""
+		intentionally_has_no_unlock="true" is_locked_before_unlock="NightmareFuel"
+		collections="AndroidWeapons,Claws,MachineInvented,AndroidFearWeapons,MeleeWeapons" turns_required_to_equip="1" limited_to_actor_collection="CanHandleAndroidClaws"
+		is_ranged_weapon="false" on_attack="BasicAndroidMeleeAttack" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="20"/>
+		<initial_actor_data data_type="UnitIntimidation" value="200"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="150"/>
+	</equipment_type>
+
+	<equipment_type id="DisruptionClaws" display_name="Disruption Claws"
+		icon_name="SomethingSlashes" slot_type="AndroidPrimary"
+		description=""
+		intentionally_has_no_unlock="true" is_locked_before_unlock="NightmareFuel"
+		collections="AndroidWeapons,Claws,MachineInvented,AndroidDisruptionWeapons,MeleeWeapons" turns_required_to_equip="1" limited_to_actor_collection="CanHandleAndroidClaws"
+		is_ranged_weapon="false" on_attack="BasicAndroidMeleeAttack" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="40"/>
+		<initial_actor_data data_type="UnitIntimidation" value="20"/>
+		<grants_feat feat="WeaponDisruptor" value="40"/>
+	</equipment_type>
+
+	<!--Knuckles
+	**********************************************************************************************************************************************-->
+
+	<equipment_type id="ElectroKnuckles" display_name="Electro Knuckles"
+		icon_name="CleanSimple_Power19" slot_type="AndroidPrimary"
+		description=""
+		intentionally_has_no_unlock="true" is_locked_before_unlock="FastFist"
+		collections="AndroidWeapons,Knuckles,MachineInvented,AndroidElectroWeapons,MeleeWeapons" turns_required_to_equip="1" limited_to_actor_collection="CanHandleAndroidKnuckles"
+		is_ranged_weapon="false" on_attack="BasicAndroidMeleeAttack" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="15"/>
+		<initial_actor_data data_type="ActorArmorPiercing" value="30"/>
+		<grants_feat feat="Taser" value="55"/>
+	</equipment_type>
+	
+	<equipment_type id="ResonanceKnuckles" display_name="Resonance Knuckles"
+		icon_name="BT_SoundWave11" slot_type="AndroidPrimary"
+		description=""
+		intentionally_has_no_unlock="true" is_locked_before_unlock="FastFist"
+		collections="AndroidWeapons,Knuckles,MachineInvented,AndroidAntiHackerWeapons,MeleeWeapons" turns_required_to_equip="1" limited_to_actor_collection="CanHandleAndroidKnuckles"
+		is_ranged_weapon="false" on_attack="BasicAndroidMeleeAttack" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="12"/>
+		<initial_actor_data data_type="UnitIntimidation" value="40"/>
+		<initial_actor_data data_type="ActorMoveRange" value="6"/>
+		<grants_feat feat="WeakenEnemyHacker" value="20"/>
+	</equipment_type>
+	
+	<!--Swords
+	**********************************************************************************************************************************************-->
+
+	<equipment_type id="ElectroSword" display_name="Electro Sword"
+		icon_name="SK_GrenadeLauncher" slot_type="AndroidPrimary"
+		description=""
+		intentionally_has_no_unlock="true" is_locked_before_unlock="IronicBlade"
+		collections="AndroidWeapons,Swords,MachineInvented,AndroidElectroWeapons,MeleeWeapons" turns_required_to_equip="1" limited_to_actor_collection="CanHandleAndroidBlades"
+		is_ranged_weapon="false" on_attack="BasicAndroidMeleeAttack" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="50"/>
+		<initial_actor_data data_type="ActorArmorPiercing" value="20"/>
+		<grants_feat feat="Taser" value="45"/>
+	</equipment_type>
+
+	<equipment_type id="JudgmentBlade" display_name="Judgment Blade"
+		icon_name="SI_Sword1" slot_type="AndroidPrimary"
+		description=""
+		intentionally_has_no_unlock="true" is_locked_before_unlock="IronicBlade"
+		collections="AndroidWeapons,Swords,MachineInvented,AndroidFearWeapons,MeleeWeapons" turns_required_to_equip="1" limited_to_actor_collection="CanHandleAndroidBlades"
+		is_ranged_weapon="false" on_attack="BasicAndroidMeleeAttack" on_attack_priority="5">
+		<initial_actor_data data_type="ActorPower" value="100"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="200"/>
+	</equipment_type>
+	
+</root>

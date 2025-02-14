@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="tutorial_checklist">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the implementation checklist logic is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the checklist logic in the specified external dll."/>
+	
+</root>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="note_collection">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="exclude_ephemeral" type="bool" default="false"
+		tooltip="If this category will exclude ephemeral entries later on."/>
+	
+	<attribute key="exclude_permanent" type="bool" default="false"
+		tooltip="If this category will exclude permanent entries later on."/>
+
+	<attribute key="exclude_header_lines" type="bool" default="false"
+		tooltip="If during display, this will skip extra header lines from showing."/>
+	
+</root>

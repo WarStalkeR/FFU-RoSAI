@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Debate Against Specific Groups (Priority Group 700, to max 1199)
+	******************************************************************************************-->
+
+	<!--Corpo
+		**************************************************************-->
+	
+	<upgrade_float id="AbusingCorpos" display_name="Abusing Corpos"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.4" float_increment="0.1" float_cap="2.1" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<upgrade_float id="LyingToCorpos" display_name="Lying To Corpos"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="1.1" float_increment="0.1" float_cap="3" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+	
+	<!--Criminal
+		**************************************************************-->
+
+	<upgrade_float id="ReasoningWithCriminals" display_name="Reasoning With Criminals"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.4" float_increment="0.1" float_cap="2" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+	
+	<upgrade_float id="ThreateningCriminals" display_name="Threatening Criminals"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.7" float_increment="0.1" float_cap="2.1" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<!--ReligiousBeliever
+		**************************************************************-->
+
+	<upgrade_float id="EmotionalAppealsToReligiousBelievers" display_name="Emotional Appeals To Religious Believers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="1.25" float_increment="0.1" float_cap="3" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+	
+	<upgrade_float id="SpeakingTruthToReligiousBelievers" display_name="Speaking Truth To Religious Believers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="1.05" float_increment="0.1" float_cap="2.1" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<!--Rebels
+		**************************************************************-->
+
+	<upgrade_float id="LyingToRebels" display_name="Lying To Rebels"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="1.35" float_increment="0.1" float_cap="3" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<upgrade_float id="AbusingRebels" display_name="Abusing Rebels"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.8" float_increment="0.1" float_cap="2.1" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<!--Cultists
+		**************************************************************-->
+
+	<upgrade_float id="ReasoningWithCultists" display_name="Reasoning With Cultists"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.45" float_increment="0.1" float_cap="1.3" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<upgrade_float id="SpeakingTruthToCultists" display_name="Speaking Truth To Cultists"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.45" float_increment="0.1" float_cap="1.3" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<!--LowSociety
+		**************************************************************-->
+
+	<upgrade_float id="ThreateningLowSociety" display_name="Threatening Low Society"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="1.6" float_increment="0.1" float_cap="4" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<upgrade_float id="SpeakingTruthToLowSociety" display_name="Speaking Truth To Low Society"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="1.4" float_increment="0.1" float_cap="4" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<!--HighSociety
+		**************************************************************-->
+
+	<upgrade_float id="EmotionalAppealsToHighSociety" display_name="Emotional Appeals To High Society"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.5" float_increment="0.1" float_cap="1.5" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+	
+	<upgrade_float id="ReasoningWithHighSociety" display_name="Reasoning With High Society"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.6" float_increment="0.1" float_cap="1.9" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<!--Military
+		**************************************************************-->
+
+	<upgrade_float id="AbusingTheMilitary" display_name="Abusing The Military"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.1" float_increment="0.1" float_cap="2" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<upgrade_float id="EmotionalAppealsToTheMilitary" display_name="Emotional Appeals To The Military"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.4" float_increment="0.1" float_cap="1" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<!--SecForce
+		**************************************************************-->
+
+	<upgrade_float id="ThreateningSecForce" display_name="Threatening SecForce"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.1" float_increment="0.1" float_cap="1" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<upgrade_float id="LyingToSecForce" display_name="Lying To SecForce"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.3" float_increment="0.1" float_cap="2" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<!--Lawyer
+		**************************************************************-->
+
+	<upgrade_float id="EmotionalAppealsToLawyers" display_name="Emotional Appeals To Lawyers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.2" float_increment="0.1" float_cap="1.5" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<upgrade_float id="LyingToLawyers" display_name="Lying To Lawyers"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.1" float_increment="0.1" float_cap="2" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<!--Scientist
+		**************************************************************-->
+
+	<upgrade_float id="ReasoningWithScientists" display_name="Reasoning With Scientists"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="1.8" float_increment="0.1" float_cap="4" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<upgrade_float id="ThreateningScientists" display_name="Threatening Scientists"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="1.2" float_increment="0.1" float_cap="2" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<!--Outsider
+		**************************************************************-->
+
+	<upgrade_float id="AbusingOutsiders" display_name="Abusing Outsiders"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="0.8" float_increment="0.1" float_cap="3" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+
+	<upgrade_float id="SpeakingTruthToOutsiders" display_name="Speaking Truth To Outsiders"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem060"
+		float_original="1.7" float_increment="0.1" float_cap="4" show_data_as_percentage="true"
+		description="Different debate opponents are resistant or weak to your various techniques. The more debates you win against each type of person, the better you get at using each kind of action against them."
+		show_on_upgrades_screen_as_part_of_priority_group="702">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Debate" sort_index="100" />
+		<part_of collection="DebateExperience" sort_index="100" />
+	</upgrade_float>
+	
+	<!--
+		Abuse 4
+		EmotionalAppeal 4
+		Threat 4
+		Lie 4
+		Truth 4
+		Logic 4
+	-->
+
+</root>

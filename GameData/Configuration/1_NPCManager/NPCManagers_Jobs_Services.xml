@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--**************************************************************NormalFunctionHumanHousing**************************************************************-->
+	<npc_manager id="HA_HomelessGather" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="0" max_turns_between_activity="0"
+			max_security_clearance_of_seed_spot="0" target_job_tag="NormalFunctionHumanHousing"
+			threat_radius="100" home_radius="15">
+			<gate_by_city required_city_flag="HasRoomForMoreShelteredHumans" blocked_by_city_flag2="StopShelterCoordinators" blocked_by_city_flag="IsPostNuclearDelivery">
+				<required_city_statistic statistic_type="HomelessTentsRemaining" at_least="true" value="1"/>
+				<required_resource resource_type="AbandonedHumans" at_least="false" value="1"/>
+				<required_resource resource_type="RefugeeHumans" at_least="false" value="1"/>
+			</gate_by_city>
+		</periodic_data>
+		<unit id="0" to_spawn="ShelterCoordinator" stance_to_start_in="ShelterCoordinator"
+			should_be_specific_cohort="ShelteredHumans"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="3" max_to_have_extant_per_structure="1" lang_key_for_extra_info="Mngr_POI_HomelessGather"
+			min_squad_size_multiplier="0.72" max_squad_size_multiplier="1.2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			skip_ever_making_player_focus_on_these="true"
+			spawn_as_close_as_possible="true"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<!--**************************************************************FirstPetCatWander**************************************************************-->
+	<npc_manager id="HA_FirstPetCatWander" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="0" max_turns_between_activity="0"
+			max_security_clearance_of_seed_spot="0" target_job_tag="CatHouse"
+			threat_radius="100" home_radius="15">
+			<gate_by_city blocked_by_city_flag="FirstPetCatHasDied" blocked_by_city_flag2="IsPostNuclearDelivery">
+				<required_resource resource_type="PetCat" at_least="true" value="1"/>
+			</gate_by_city>
+		</periodic_data>
+		<unit id="0" to_spawn="FirstPetCat" stance_to_start_in="PetCatWander"
+			should_be_specific_cohort="Pets"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" max_to_have_extant_per_structure="1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.72" max_squad_size_multiplier="1.2" city_flag_on_damaged=""
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			skip_ever_making_player_focus_on_these="true"
+			spawn_as_close_as_possible="true"
+			should_hard_despawn_on_manager_blocked="true" city_flag_on_death="FirstPetCatHasDied"
+			resource_change_on_death1="PetCat" resource_change_on_death1_amount="-1"
+			resource_change_on_death2="FelineCarcass" resource_change_on_death2_amount="1"/>
+	</npc_manager>
+	
+</root>

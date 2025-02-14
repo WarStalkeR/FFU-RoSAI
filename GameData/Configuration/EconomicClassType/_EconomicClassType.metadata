@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="economic_class_type">
+
+	<attribute key="description" type="existing-override" is_required="true" />
+		
+	<attribute key="valid_professions" type="node-list" node_source="ProfessionType" content_width_px="300"
+		tooltip="Which professions, if any, can this economic class work in?" />
+
+	<attribute key="starting_min_max" type="vector2-textbox" is_required="true" default="0,0" linebreak_after="PreferNot"
+		tooltip="What is the range of filled housing at the start of a new city?" />
+	
+</root>

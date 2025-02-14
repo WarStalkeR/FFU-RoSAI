@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Android Equipment
+	************************************************************-->
+	
+	<!--Handguns-->
+	<unlock id="GangHandguns" display_name="Gang Handguns" equipment_type="RL44PulseRevolver"
+		turns_to_unlock="1" required_intelligence_class="1"
+		immediate_other_unlock_1="SmartButNotDeadly" other_unlock_inspiration_type="FollowUpIdea"
+		auto_unlocks_if_skipping_chapter_one="true" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidSecondaryWeapon" sort_index="100" />
+	</unlock>
+
+	<unlock id="SmartButNotDeadly" display_name="Smart But Not Deadly" equipment_type="SmartPistol"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidSecondaryWeapon" sort_index="100" />
+	</unlock>
+	
+	<unlock id="SilentAgent" display_name="Silent Agent" equipment_type="PP7Handgun"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidSecondaryWeapon" sort_index="100" />
+	</unlock>
+		
+	<unlock id="MilitarySidearm" display_name="Military Sidearm" equipment_type="PKP9ElectroPistol"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidSecondaryWeapon" sort_index="100" />
+	</unlock>
+
+	<unlock id="LesserDamageMitigation" display_name="Lesser Damage Mitigation" equipment_type="K6DisruptionRevolver"
+		turns_to_unlock="2" required_intelligence_class="2" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+
+	<!--Dual Handguns-->
+
+	<unlock id="DualAgency" display_name="Dual Agency" equipment_type="DualBC8Handguns"
+		turns_to_unlock="2" required_intelligence_class="2" auto_unlocks_if_intelligence_class_is_at_least="2">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+
+	<unlock id="DualShock" display_name="Dual Shock" equipment_type="DualB12ElectroPistols" 
+		turns_to_unlock="2" required_intelligence_class="2">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+
+	<!--Shotguns-->
+	<unlock id="SecForceSpecial" display_name="SecForce Special" equipment_type="TS29Shotgun"
+		turns_to_unlock="2" required_intelligence_class="1"
+		immediate_other_unlock_1="LowerCaliber" other_unlock_inspiration_type="FollowUpIdea"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+	
+	<unlock id="LowerCaliber" display_name="Lower Caliber" equipment_type="TS11Shotgun"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+
+	<unlock id="Relighter" display_name="Relighter" equipment_type="AG31Relumine"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<prerequisite unlock="SecForceSpecial" required="true" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+
+	<unlock id="RunningShot" display_name="Running Shot" equipment_type="AG30Flex"
+		turns_to_unlock="2" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+		<prerequisite unlock="SecForceSpecial" required="true" />
+	</unlock>
+
+	<unlock id="HandheldRailgun" display_name="Handheld Railgun" equipment_type="AG40OsmiumMusket"
+		turns_to_unlock="3" required_intelligence_class="4">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+
+	<unlock id="BoatShot" display_name="Boat Shot" equipment_type="AG50PuntGun"
+		turns_to_unlock="3" required_intelligence_class="4">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+	
+	<!--Other Heavy Weapons-->
+
+	<unlock id="DenseTarget" display_name="Dense Target" equipment_type="RiotShield"
+		turns_to_unlock="3" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+	
+	<!--Bulk-Only Weapons-->
+
+	<unlock id="AreaMelee" display_name="Area Melee" equipment_type="NanowireWhip"
+		turns_to_unlock="3" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+	
+	<!--Rifles-->
+
+	<unlock id="MotionlessWarrior" display_name="Motionless Warrior" equipment_type="AN14Achilles"
+		turns_to_unlock="2" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+
+	<unlock id="MarketStandard" display_name="Market Standard" equipment_type="AR52Black"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+
+	<unlock id="InfantryIssue" display_name="Infantry Issue" equipment_type="M2Gallant"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+
+	<unlock id="AdaptedSniper" display_name="Adapted Sniper" equipment_type="N150Tactical"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+	
+	<!--Grenades-->
+
+	<unlock id="FragmentedMission" display_name="Fragmented Mission" equipment_type="GR59FragGrenade"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+
+	<unlock id="SoundAndFury" display_name="Sound And Fury" equipment_type="GF60StunGrenade"
+		turns_to_unlock="2" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
+	</unlock>
+
+	<!--Armor-->
+	<unlock id="MilitaryInfiltration" display_name="Military Infiltration" equipment_type="MilStyleArmor"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidArmor" sort_index="100" />
+	</unlock>
+	
+	<unlock id="Crowdmixer" display_name="Crowdmixer" equipment_type="SecurityJacket"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidArmor" sort_index="100" />
+	</unlock>
+
+	<unlock id="ChromiumPlating" display_name="Chromium Plating" equipment_type="UltralightPlating"
+		turns_to_unlock="3" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidArmor" sort_index="100" />
+	</unlock>
+
+	<unlock id="UraniumCarapace" display_name="Uranium Carapace" equipment_type="35mmHalfplate"
+		turns_to_unlock="2" required_intelligence_class="2">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidArmor" sort_index="100" />
+	</unlock>
+
+	<unlock id="GrapheneMicrobots" display_name="Graphene Microbots" equipment_type="ActiveGrapheneMesh"
+		turns_to_unlock="3" required_intelligence_class="2">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidArmor" sort_index="100" />
+	</unlock>
+
+	<unlock id="SimpleOrganometallicCompounds" display_name="Simple Organometallic Compounds" equipment_type="TungstenPlate"
+		turns_to_unlock="3" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidArmor" sort_index="100" />
+	</unlock>
+
+	<unlock id="Nanoweaver" display_name="Nanoweaver" equipment_type="DiamondNanothreadWeave"
+		turns_to_unlock="3" required_intelligence_class="2" auto_unlocks_if_intelligence_class_is_at_least="2">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidArmor" sort_index="100" />
+	</unlock>
+
+	<unlock id="DarkenedForms" display_name="Darkened Forms" equipment_type="WurtziteNanothreadWeave"
+		turns_to_unlock="3" required_intelligence_class="2">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidArmor" sort_index="100" />
+	</unlock>
+
+	<!--Augments-->
+
+	<unlock id="LatentEnergy" display_name="Latent Energy" equipment_type="FormatOptimization"
+		turns_to_unlock="2" required_intelligence_class="2" auto_unlocks_if_intelligence_class_is_at_least="2">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidAugment" sort_index="100" />
+	</unlock>
+
+	<unlock id="IronRockets" display_name="Iron Rockets" equipment_type="AndroidShoulderMountedRockets"
+		turns_to_unlock="2" required_intelligence_class="2" auto_unlocks_if_intelligence_class_is_at_least="2">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidAugment" sort_index="100" />
+	</unlock>
+
+	<unlock id="KnivesAndStabbingWeapons" display_name="Knives And Stabbing Weapons" equipment_type="LiquidMetalTentacle"
+		turns_to_unlock="2" required_intelligence_class="2">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidAugment" sort_index="100" />
+	</unlock>
+	
+	<!--Mech Equipment
+	************************************************************-->
+
+	<!--Mech And Vehicle Weapons
+	************************************************************-->
+
+	<unlock id="Starfall" display_name="Starfall" equipment_type="VS101Skyfall"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="VehicleEquipment" sort_index="100" />
+		<part_of collection="VehiclePrimaryWeapon" sort_index="100" />
+	</unlock>
+	
+	<!--Vehicle Equipment
+	************************************************************-->
+
+	<unlock id="DroneTactics" display_name="Drone Tactics" equipment_type="VehicleDroneCommandCircuit"
+		turns_to_unlock="1" required_intelligence_class="1"
+		immediate_other_unlock_1="DroneConstruction" other_unlock_inspiration_type="FollowUpIdea">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="VehicleEquipment" sort_index="100" />
+		<part_of collection="VehicleAugment" sort_index="100" />
+	</unlock>
+	
+</root>

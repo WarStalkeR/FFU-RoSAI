@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Wealthy Behaviors
+		***********************************************************-->
+	<stance id="WealthyCommuteHome" display_name="Commute Home"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Heading home after a work shift."
+		icon_name="CleanSimple_Arrow092" icon_color="#95E450" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true" is_considered_wealthy_civilian="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="CommuteHome" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="GoInside"
+			target_building_tag="WealthyHome" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="40" absolute_max_distance_objective_must_be_from_current_location="440"
+			preferred_min_distance_of_objective_from_current_location="90" preferred_max_distance_of_objective_from_current_location="340"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="false"/>
+	</stance>
+
+	<stance id="WealthyCommuteToWork" display_name="Commute To Work"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Heading to the office or lab."
+		icon_name="CleanSimple_Arrow093" icon_color="#95E450" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true" is_considered_wealthy_civilian="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="CommuteToWork" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="GoInside"
+			target_building_tag="WealthyHome" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="40" absolute_max_distance_objective_must_be_from_current_location="440"
+			preferred_min_distance_of_objective_from_current_location="90" preferred_max_distance_of_objective_from_current_location="340"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="false"/>
+	</stance>
+
+	<!--Homeless Behaviors
+		***********************************************************-->
+
+	<stance id="HomelessOnlooker" display_name="Onlooker"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="A homeless citizen is curious about what is happening near their street."
+		icon_name="HM_EmotionQuestion" icon_color="#BE903F" icon_color_hdr_intensity="1.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="0.01" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="ShelteredRummageFood" display_name="Rummaging For Food"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These humans live in housing you provide, but they don't have food. They're searching for anything to eat... in increasingly unlikely places. They aren't finding much."
+		icon_name="FlatSkillC211" icon_color="#BE903F" icon_color_hdr_intensity="1.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="0.01" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="ShelteredRummagePaperAndLeaves" display_name="Rummaging For Paper And Leaves"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These humans have housing, food, and water, thanks to you. However, there are some of basic necessities that they have to... forage for."
+		icon_name="FE_ToiletPaper" icon_color="#BE5F3F" icon_color_hdr_intensity="1.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="0.01" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="ShelteredBoredAndAngry" display_name="Bored And Angry"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These humans have all of their basic needs met, thanks to you. But they're isolated from the rest of society, have no prospects for the future, and nothing to do."
+		icon_name="CleanSimple_Misc35" icon_color="#D93C25" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="0.01" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<!--Scientist Behaviors
+		***********************************************************-->
+
+	<stance id="Scientist_Admirer" display_name="Admirer"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These scientists think they know what you are, and they're smitten."
+		icon_name="CleanSimple_Skill154" icon_color="#55ECE2" icon_color_hdr_intensity="1.2" icon_scale="0.6"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="1" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="Scientist_SeekingMeeting" display_name="Seeking Meeting"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These scientists know what you are, and they'd like to talk to you about their ideas."
+		icon_name="CleanSimple_SciFiEmblem15" icon_color="#D47C20" icon_color_hdr_intensity="1.6" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="1" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="Lawyer_SeekingMeeting" display_name="Seeking Meeting"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These lawyers wish to meet with you."
+		icon_name="FlatInnocent_25" icon_color="#D47C20" icon_color_hdr_intensity="1.6" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="1" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+
+	<stance id="VP_SeekingMeeting" display_name="Seeking Meeting"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="This low-level 'top executive' wishes to meet with you. What a contradiction."
+		icon_name="CleanSimple_Device91" icon_color="#D47C20" icon_color_hdr_intensity="1.6" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="1" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+
+	<stance id="Pres_SeekingMeeting" display_name="Seeking Meeting"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="The fact that a company president is out here to talk to you is nothing short of astounding. You figured they would be in a bunker or dacha somewhere."
+		icon_name="CleanSimple_Device91" icon_color="#D47C20" icon_color_hdr_intensity="1.6" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="1" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+
+	<stance id="VP_SeekingMeetingWithShell" display_name="Seeking Meeting With Shell Company"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="This executive wishes to meet with someone from your shell company. Time to get out a PMC Impostor."
+		icon_name="CleanSimple_Device91" icon_color="#AB62DC" icon_color_hdr_intensity="1.6" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="1" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+
+	<stance id="SVP_ObservingFeds" display_name="Observing Federated Corporation"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Sent by Vorsiber to monitor a 'sensitive' action by one or more federated corporations."
+		icon_name="CleanSimple_Tool32" icon_color="#D47C20" icon_color_hdr_intensity="1.6" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="1" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+
+	<!--
+	<stance id="FieldResearcher_ObservingTower" display_name="Observing Tower"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These researchers work for Vorsiber Atomic, and they've been dispatched to have a look at this new tower you've constructed."
+		icon_name="SI_Microscope" icon_color="#55ECE2" icon_color_hdr_intensity="1.2" icon_scale="0.6"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0">
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+	-->
+
+	<!--Transport Behaviors
+		***********************************************************-->
+	
+	<stance id="HaulMiningRegional" display_name="Regional Mining Hauler"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Minerals, ores, coal, and gases extracted from under the city are packaged and delivered elsewhere in the Vorsiber region."
+		icon_name="SK_Mine" icon_color="#AE200B" icon_color_hdr_intensity="1.6" icon_scale="0.7"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false" is_stance_always_drawn_in_streets="false" is_stance_always_drawn_in_city_map="false"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_attack_outcast_machines_at_or_above_level="100" will_hold_fire_if_at_full_health="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_never_ever_watched_by_the_player="true"
+		is_part_of_regional_economy="true" should_use_blue_outline="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="Gather" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="LoadMinedResources"
+			target_building_tag="Any" can_target_building_have_machine_structure="true" target_poi_tag="MiningPickupSite" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="60" absolute_max_distance_objective_must_be_from_current_location="800"
+			preferred_min_distance_of_objective_from_current_location="120" preferred_max_distance_of_objective_from_current_location="500"
+			max_failure_wait_turns_for_blocked_objective="5"
+			only_start_if_accumulator_less_than="NDAC1" accumulator_comparison_number="8"/>
+		<action_consideration id="LeaveCity" sort_order="200" chance_of_attempting="100" action_to_attempt="ReturnToCreationPositionAndThenDespawn"
+			only_start_if_accumulator_greater_than_or_equal_to="NDAC1" accumulator_comparison_number="8"
+			popup_text_on_disband="Leaving City" popup_text_scale="0.8" popup_color="#AE200B" popup_color_hdr_intensity="2"/>
+		<!--They do not get the TransportUnloaded status, because they are leaving with goods.-->
+	</stance>
+
+	<stance id="HaulHarvestLocal" display_name="Local Harvest Hauler"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Most agriculture in the city is only for the wealthy classes."
+		icon_name="SI_Tractor" icon_color="#6CAE0B" icon_color_hdr_intensity="1.3" icon_scale="0.7"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false" is_stance_always_drawn_in_streets="false" is_stance_always_drawn_in_city_map="false"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="false"
+		will_attack_outcast_machines_at_or_above_level="10" will_hold_fire_if_at_full_health="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_never_ever_watched_by_the_player="true"
+		is_part_of_city_economy="true" should_use_blue_outline="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="Gather" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="LoadHarvest"
+			target_building_tag="Any" can_target_building_have_machine_structure="true" target_poi_tag="FarmHarvestPickupSite" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="30" absolute_max_distance_objective_must_be_from_current_location="800"
+			preferred_min_distance_of_objective_from_current_location="120" preferred_max_distance_of_objective_from_current_location="500"
+			max_failure_wait_turns_for_blocked_objective="5"
+			only_start_if_accumulator_less_than="NDAC1" accumulator_comparison_number="3"
+			when_targeting_building_block_poi_reinforcements_for_minimum_of_turns="5" when_targeting_building_block_poi_reinforcements_for_maximum_of_turns="8"/>		
+		<action_consideration id="Deliver" sort_order="200" chance_of_attempting="100" objective_to_attempt_to_start="DeliverHarvest"
+			target_building_tag="AnySkyscraper" can_target_building_have_machine_structure="true" target_district_tag="CivicHubs" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="800"
+			preferred_min_distance_of_objective_from_current_location="60" preferred_max_distance_of_objective_from_current_location="500"
+			max_failure_wait_turns_for_blocked_objective="5"
+			only_start_if_accumulator_greater_than_or_equal_to="NDAC1" accumulator_comparison_number="3"/>
+	</stance>
+	
+	<stance id="RegionalShipping" display_name="Regional Shipping"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="This city is not self-sustaining, so huge quantities of goods are brought in through regional airports."
+		extra_lore_info_optional="The physical layout of the airports are a relic from before the development of antigrav technology. But they still remain an excellent means for centralized control."
+		icon_name="FlatSkillC236" icon_color="#AE920B" icon_color_hdr_intensity="1.6" icon_scale="0.7"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false" is_stance_always_drawn_in_streets="false" is_stance_always_drawn_in_city_map="false"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_attack_outcast_machines_at_or_above_level="100" will_hold_fire_if_at_full_health="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_never_ever_watched_by_the_player="true"
+		is_part_of_regional_economy="true" should_use_blue_outline="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="Deliver" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="RegionalDelivery"
+			target_building_tag="Any" can_target_building_have_machine_structure="true" target_poi_tag="RegionalAirport" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="60" absolute_max_distance_objective_must_be_from_current_location="800"
+			preferred_min_distance_of_objective_from_current_location="120" preferred_max_distance_of_objective_from_current_location="500"
+			max_failure_wait_turns_for_blocked_objective="5"
+			only_start_if_accumulator_less_than="NDAC1" accumulator_comparison_number="1"/>
+		<action_consideration id="LeaveCity" sort_order="200" chance_of_attempting="100" action_to_attempt="ReturnToCreationPositionAndThenDespawn"
+			only_start_if_accumulator_greater_than_or_equal_to="NDAC1" accumulator_comparison_number="1"
+			popup_text_on_disband="Leaving City" popup_text_scale="0.8" popup_color="#AE200B" popup_color_hdr_intensity="2"
+			badge_to_apply_on_successfully_starting="TransportUnloaded"/>
+	</stance>
+
+
+	<stance id="InternationalShipping" display_name="International Shipping"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Trade with the other Megacorps is forbidden except with approval from Vorsiber."
+		extra_lore_info_optional="An unusual amount of international trade is allowed here because this city is the crown jewel of Vorsiber's holdings."
+		icon_name="FlatSkillC220" icon_color="#A38626" icon_color_hdr_intensity="1.3" icon_scale="0.7"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false" is_stance_always_drawn_in_streets="false" is_stance_always_drawn_in_city_map="false"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_attack_outcast_machines_at_or_above_level="100" will_hold_fire_if_at_full_health="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_never_ever_watched_by_the_player="true"
+		is_part_of_international_economy="true" should_use_blue_outline="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="Deliver" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="InternationalTrade"
+			target_building_tag="Any" can_target_building_have_machine_structure="true" target_poi_tag="InternationalAirport" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="60" absolute_max_distance_objective_must_be_from_current_location="800"
+			preferred_min_distance_of_objective_from_current_location="120" preferred_max_distance_of_objective_from_current_location="500"
+			max_failure_wait_turns_for_blocked_objective="5"
+			only_start_if_accumulator_less_than="NDAC1" accumulator_comparison_number="1"/>
+		<action_consideration id="LeaveCity" sort_order="200" chance_of_attempting="100" action_to_attempt="ReturnToCreationPositionAndThenDespawn"
+			only_start_if_accumulator_greater_than_or_equal_to="NDAC1" accumulator_comparison_number="1"
+			popup_text_on_disband="Leaving City" popup_text_scale="0.8" popup_color="#AE200B" popup_color_hdr_intensity="2"/>
+		<!--They do not get the TransportUnloaded status, because they are leaving with goods.-->
+	</stance>
+	
+</root>

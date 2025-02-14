@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="localization_type">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="filename" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The filename this localization text is located in."/>
+
+	<attribute key="is_original_english" type="bool" default="false"
+		tooltip="If true, then this does not load from a file, but is the original stuff from xml." />
+
+	<attribute key="steam_lang_id" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The ID for this language on Steam."/>
+	<attribute key="epic_lang_id" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The ID for this language on Epic Game Store."/>
+	
+	<attribute key="column_style_a_left" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for the A style of column's left-hand column."/>
+	<attribute key="column_style_a_right" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for the A style of column's right-hand column."/>
+	<attribute key="column_style_a_right_sub" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for the A style of column's right-hand column sub-data."/>
+
+	<attribute key="column_style_b_left" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for the B style of column's left-hand column."/>
+	<attribute key="column_style_b_right" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for the B style of column's right-hand column."/>
+	<attribute key="column_style_b_right_sub" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for the B style of column's right-hand column sub-data."/>
+	
+	<attribute key="column_style_c_left" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for the C style of column's left-hand column."/>
+	<attribute key="column_style_c_right" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for the C style of column's right-hand column."/>
+	<attribute key="column_style_c_right_sub" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for the C style of column's right-hand column sub-data."/>
+	
+	<attribute key="column_style_d_left" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for the D style of column's left-hand column."/>
+	<attribute key="column_style_d_right" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for the D style of column's right-hand column."/>
+	<attribute key="column_style_d_right_sub" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for the D style of column's right-hand column sub-data."/>
+
+	<attribute key="line_height_a" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The line-height A style."/>
+	<attribute key="line_height_b" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The line-height B style."/>
+	<attribute key="line_height_c" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The line-height C style."/>
+	<attribute key="line_height_d" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The line-height D style."/>
+	<attribute key="line_height_e" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The line-height E style."/>
+
+	<attribute key="table_a1" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for this column of this style of table."/>
+	<attribute key="table_a2" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for this column of this style of table."/>
+	<attribute key="table_a3" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for this column of this style of table."/>
+	<attribute key="table_a4" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for this column of this style of table."/>
+	<attribute key="table_a5" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for this column of this style of table."/>
+	<attribute key="table_a6" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for this column of this style of table."/>
+
+	<attribute key="table_b1" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for this column of this style of table."/>
+	<attribute key="table_b2" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for this column of this style of table."/>
+	<attribute key="table_b3" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for this column of this style of table."/>
+	<attribute key="table_b4" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for this column of this style of table."/>
+	<attribute key="table_b5" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for this column of this style of table."/>
+	<attribute key="table_b6" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="The offset text for this column of this style of table."/>
+
+	<attribute key="number_decimal_separator" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip=". in the US and , in the UK, for example."/>
+	<attribute key="number_group_separator" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip=", in the US and . in the UK, for example."/>
+
+	<attribute key="uses_24_hour_clock" type="bool" default="false"
+		tooltip="If true, then this uses the 24 hour clock." />
+
+</root>

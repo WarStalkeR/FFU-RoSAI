@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Highest Possible Importance (sort order 99 or lower)
+		*********************************************************************************-->
+	
+	<actor_badge id="MarkedDefective" display_name="Marked Defective"
+		description="This unit's transgressions have been noticed."
+		strategy_tip_optional="SecForce, the military, and corporations will shoot on sight. Rebels, criminals, cults, and other non-official groups don't care."
+		icon_name="SomethingBoltDown" icon_color="#B65040" is_lost_on_death="true" causes_actor_to_be_considered_outcast_level="1" tooltip_color="ActorStatus_Bad"
+		sort_order="98">
+		<blocks perk="VehicleBlendingInAirTraffic" value="true" />
+		<blocks perk="BlendingIn" value="true" />
+		<blocks perk="ObscuredByClothing" value="true" />
+		<blocks perk="PMCAppearance" value="true" />
+		<blocks perk="PMCOfficerAppearance" value="true" />
+		<blocks perk="MilitaryOfficerCodex" value="true" />
+		<blocks perk="MilitaryAppearance" value="true" />
+		<blocks perk="Shadowdweller" value="true" />
+		<blocks perk="ExpertShadowdweller" value="true" />
+		<blocks perk="Authoritative" value="true" />
+		<blocks perk="Adorable" value="true" />
+	</actor_badge>
+	
+	<actor_badge id="WatchedByCriminals" display_name="Watched By Criminals"
+		description="This unit is tracked by criminal syndicates, gangs... or both."
+		strategy_tip_optional="Any ability to blend in is blocked."
+		icon_name="SK_Binoculars" icon_color="#B65040" is_lost_on_death="true" tooltip_color="ActorStatus_Bad"
+		causes_actor_to_be_tracked_by_criminal_syndicates="true" causes_actor_to_be_tracked_by_gangs="true" is_negative_status_tied_to_id="true"
+		sort_order="99">
+		<blocks perk="VehicleBlendingInAirTraffic" value="true" />
+		<blocks perk="BlendingIn" value="true" />
+		<blocks perk="ObscuredByClothing" value="true" />
+		<blocks perk="PMCAppearance" value="true" />
+		<blocks perk="PMCOfficerAppearance" value="true" />
+		<blocks perk="MilitaryOfficerCodex" value="true" />
+		<blocks perk="MilitaryAppearance" value="true" />
+		<blocks perk="Shadowdweller" value="true" />
+		<blocks perk="ExpertShadowdweller" value="true" />
+		<blocks perk="Authoritative" value="true" />
+		<blocks perk="Adorable" value="true" />
+	</actor_badge>
+
+	<actor_badge id="WatchedBySecForce" display_name="Watched By SecForce"
+		description="This unit is tracked by SecForce, but not yet declared hostile."
+		strategy_tip_optional="Any ability to blend in is blocked."
+		icon_name="SW_PoliceBadge" icon_color="#B65040" is_lost_on_death="true" tooltip_color="ActorStatus_Bad"
+		is_negative_status_tied_to_id="true"
+		sort_order="99">
+		<blocks perk="VehicleBlendingInAirTraffic" value="true" />
+		<blocks perk="BlendingIn" value="true" />
+		<blocks perk="ObscuredByClothing" value="true" />
+		<blocks perk="PMCAppearance" value="true" />
+		<blocks perk="PMCOfficerAppearance" value="true" />
+		<blocks perk="MilitaryOfficerCodex" value="true" />
+		<blocks perk="MilitaryAppearance" value="true" />
+		<blocks perk="Shadowdweller" value="true" />
+		<blocks perk="ExpertShadowdweller" value="true" />
+		<blocks perk="Authoritative" value="true" />
+		<blocks perk="Adorable" value="true" />
+	</actor_badge>
+
+	<actor_badge id="FreshBody" display_name="Fresh Body"
+		description="Your consciousness invaded this android during an act of desperation. This unit is effectively invisible until it attacks or moves."
+		strategy_tip_optional="If enemies are searching for you, it would be a very good idea to move out of range of them with your first move."
+		icon_name="WEmblem086" icon_color="#4089B6" tooltip_color="ActorStatus_MinorGood"
+		is_lost_on_death="true" is_lost_on_move="true" is_lost_on_attack="true" causes_actor_to_be_considered_cloaked="true"
+		sort_order="99">
+	</actor_badge>
+
+	<!--Very High Importance (sort order 100+)
+		*********************************************************************************-->
+	
+	<actor_badge id="Cloaked" display_name="Cloaked"
+		description="Completely invisible to enemies."
+		strategy_tip_optional="Unless it attacks, the unit can move freely while remaining cloaked."
+		icon_name="FlatInnocent_6" icon_color="#AD60E1" is_lost_on_death="true" is_lost_on_attack="true" causes_actor_to_be_considered_cloaked="true" tooltip_color="ActorStatus_Stealth"
+		sort_order="105">
+		<blocks perk="VehicleBlendingInAirTraffic" value="true" />
+		<blocks perk="BlendingIn" value="true" />
+		<blocks perk="ObscuredByClothing" value="true" />
+		<blocks perk="PMCAppearance" value="true" />
+		<blocks perk="PMCOfficerAppearance" value="true" />
+		<blocks perk="MilitaryOfficerCodex" value="true" />
+		<blocks perk="MilitaryAppearance" value="true" />
+		<blocks perk="Shadowdweller" value="true" />
+		<blocks perk="ExpertShadowdweller" value="true" />
+	</actor_badge>
+
+	<actor_badge id="LiquidMetalStealth" display_name="Liquid Metal Stealth"
+		description="This liquid metal unit is effectively invisible."
+		strategy_tip_optional="The unit can move freely while cloaked, but it must solidify and reveal itself to attack."
+		icon_name="FlatSkillC252" icon_color="#AD60E1" is_lost_on_death="true" is_lost_on_attack="true" causes_actor_to_be_considered_cloaked="true" tooltip_color="ActorStatus_Stealth"
+		sort_order="105">
+		<blocks perk="VehicleBlendingInAirTraffic" value="true" />
+		<blocks perk="BlendingIn" value="true" />
+		<blocks perk="ObscuredByClothing" value="true" />
+		<blocks perk="PMCAppearance" value="true" />
+		<blocks perk="PMCOfficerAppearance" value="true" />
+		<blocks perk="MilitaryOfficerCodex" value="true" />
+		<blocks perk="MilitaryAppearance" value="true" />
+		<blocks perk="Shadowdweller" value="true" />
+		<blocks perk="ExpertShadowdweller" value="true" />
+		<blocks perk="Adorable" value="true" />
+		<blocks perk="Authoritative" value="true" />
+	</actor_badge>
+	
+	<actor_badge id="TakingCover" display_name="Taking Cover"
+		description="This unit is taking cover to avoid damage from enemy fire. Damage is reduced by 50-70%."
+		strategy_tip_optional="This unit can fire from cover, but it will lose its cover if it moves."
+		icon_name="CleanSimple_Shield02" icon_color="#4089B6" is_lost_on_death="true" is_lost_on_move="true" causes_actor_to_be_considered_taking_cover="true" tooltip_color="ActorStatus_MinorGood"
+		sort_order="115">
+	</actor_badge>
+
+	<actor_badge id="ShieldsUp" display_name="Shields Up"
+		description="This unit is employing an electromagnetic field, which reduces incoming damage by 50-70%."
+		strategy_tip_optional="It can fire from this position, but movement will dispel the shield. Attacks of opportunity will hit the shield before the shield goes down."
+		icon_name="CleanSimple_Shield01" icon_color="#4089B6" is_lost_on_death="true" is_lost_on_move="true" causes_actor_to_be_considered_taking_cover="true" tooltip_color="ActorStatus_MinorGood"
+		sort_order="115">
+	</actor_badge>
+
+	<actor_badge id="TransportUnloaded" display_name="Transport Unloaded"
+		description="This transport is fully unloaded, and can move swiftly back to its origin."
+		icon_name="SW_DonutChart1" icon_color="#E47720" is_lost_on_death="true" is_lost_on_move="false" tooltip_color="ActorStatus_Bad"
+		sort_order="150">
+		<actor_data_multiplier data_type="ActorMoveRange" multiplier="2" />
+	</actor_badge>
+
+	<actor_badge id="AlreadyExtracted" display_name="Already Extracted"
+		description="This unit has already been extracted."
+		icon_name="CleanSimple_Device32" icon_color="#E44620" is_lost_on_death="true" is_lost_on_move="false" tooltip_color="ActorStatus_Bad"
+		sort_order="150" blocks_status_1="IsBeingExtracted">
+		<actor_data_multiplier data_type="ActorHP" multiplier="0.7" />
+	</actor_badge>
+
+	<actor_badge id="HardenedEngines" display_name="Hardened Engines"
+		description="This vehicle has countermeasures that prevent its engine from being drilled."
+		icon_name="SK_Engineering1" icon_color="#E44620" is_lost_on_death="true" is_lost_on_move="false" tooltip_color="ActorStatus_Bad"
+		sort_order="150" blocks_status_1="EnginesOffline">
+		<actor_data_multiplier data_type="ActorMoveRange" multiplier="0.75" />
+	</actor_badge>
+
+	<actor_badge id="RottedMinds" display_name="Rotted Minds"
+		description="The brains in this facility have degraded. While they still provide some general computing, the neural structure supporting your mental expansion has collapsed."
+		strategy_tip_optional="Humans brains do not seem to last very long outside of a functioning body."
+		icon_name="CleanSimple_Misc24" icon_color="#B65040" tooltip_color="ActorStatus_Bad"
+		sort_order="100">
+		<actor_data_multiplier data_type="NeuralExpansion" multiplier="0.05" />
+	</actor_badge>
+
+	<!--
+	<actor_badge id="ShortResourcesForAttack" display_name="Short Resources"
+		description="Cannot attack due to shortage of resources."
+		strategy_tip_optional="Consider changing the equipment of this unit type, or else get more of the type of resource it requires."
+		icon_name="DebateDown2X" icon_color="#B65040" tooltip_color="ActorStatus_Bad"
+		sort_order="100">
+	</actor_badge>-->
+	
+	<!--High Importance (sort order 200+)
+		*********************************************************************************-->
+
+	<!--Normal Importance (sort order 300+)
+		*********************************************************************************-->
+	
+	<!--Low Importance (sort order 400+)
+		*********************************************************************************-->
+	
+</root>

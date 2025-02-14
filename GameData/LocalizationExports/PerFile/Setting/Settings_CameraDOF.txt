@@ -1,0 +1,58 @@
+Main Camera: Depth Of Field Enabled
+If you dislike the depth of field visual effect during normal gameplay, you can turn it off.
+Main DOF: Autofocus Distance Offset
+If you would like for the autofocus of the depth of field to skew higher or lower, then you can adjust this positive or negative.  The default of 0 means no offset.
+Main DOF: Downsampling
+With downsampling above 1, you'll get better performance, but progressively worse image quality (mainly edges not lining up correctly).  With a downsampling of 1, no downsampling is done.
+			 
+Defaults to 2 on the main camera.
+Main DOF: Max Samples
+More samples leads to a higher quality visual effect, but at the cost of performance.
+			 
+Defaults to 4 on the main camera.
+Main DOF: Image Sensor Height
+How high is the simulated image sensor?  No impact on performance, but impacts how the camera effect behaves.  Default is 24.
+Main DOF: F-Stop
+What is the f-stop of the simulated camera lens?  The f-stop of camera is fractional, so this is the denominator of that fraction.  If you choose 2.6, then that would be an f-stop of 1/2.6 for photographers.
+			 
+The smaller the number, the shallower the depth of field (the smaller the amount of the image that will be in focus, and the more dramatic the background focus), while the larger the number, the wider the focus.
+
+In the normal camera mode, we use a default of 7, which is not on the wider end, making blur far less dramatic than in photo mode.
+Main DOF: Focal Length
+What is the focal length of the simulated camera lens?  The focal length of the lens is the distance between the lens and the image sensor when the subject is in focus, in millimeters.
+			 
+This affects the magnification of the scene, for depth of field purposes.  The default of 24mm keeps most of the image crisp in the regular mode, but also fairly flat.
+Main DOF: Foreground Distance
+This has no analogue in physical cameras.  This specifies how close to the camera foreground blur should kick in.  The default of 0.25 leads to a 'small world' visual effect, since we are simulating everything at 1/10th normal scale.
+			 
+To get something that seems more like normal scale, reduce this number, potentially as low as 0.025.
+Main DOF: Bokeh Threshold
+At what level of light do we start seeing bokeh, or visual artifacts from out of focus elements?  The default of 1 will only show it for very bright objects, mostly lights.
+Main DOF: Bokeh Intensity
+How visually intense are the bokeh artifacts?  The default of 2 is likely fine unless you want really specific visual effects.
+Photo Mode DOF: Autofocus Distance Offset
+Photo Mode DOF: Downsampling
+With downsampling above 1, you'll get better performance, but progressively worse image quality (mainly edges not lining up correctly).  With a downsampling of 1, no downsampling is done.
+			 
+Defaults to 1 on the photo mode camera.
+Photo Mode DOF: Max Samples
+More samples leads to a higher quality visual effect, but at the cost of performance.
+			 
+Defaults to 8 on the photo mode camera.
+Photo Mode DOF: Image Sensor Height
+Photo Mode DOF: F-Stop
+What is the f-stop of the simulated camera lens?  The f-stop of camera is fractional, so this is the denominator of that fraction.  If you choose 2.6, then that would be an f-stop of 1/2.6 for photographers.
+			 
+The smaller the number, the shallower the depth of field (the smaller the amount of the image that will be in focus, and the more dramatic the background focus), while the larger the number, the wider the focus.
+
+In the photo mode camera, we use a default of 2, which is on the narrow end of things.
+Photo Mode DOF: Focal Length
+What is the focal length of the simulated camera lens?  The focal length of the lens is the distance between the lens and the image sensor when the subject is in focus, in millimeters.
+			 
+This affects the magnification of the scene, for depth of field purposes.  The default of 50mm is probably fine for most purposes.
+Photo Mode DOF: Foreground Distance
+Photo Mode DOF: Bokeh Threshold
+At what level of light do we start seeing bokeh, or visual artifacts from out of focus elements?  The default of 0.8 will show it for fairly bright objects, with brighter objects having a stronger effect.
+			 
+Turn this up to 1, or above, if you want a flatter blur.
+Photo Mode DOF: Bokeh Intensity

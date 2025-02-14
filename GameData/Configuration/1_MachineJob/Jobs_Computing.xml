@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<job id="ComputroniumRefinery" display_name="Computronium Refinery" marker_color="DeepCyan" ui_color="#fefefe"
+		is_locked_before_unlock="ComputroniumProduction"
+		description=""
+		strategy_tip_optional=""
+		icon_name="HM_ShapeCube3d" turns_to_install="3" required_structure_type="SeizedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" is_suggested_to_always_build_at_least="1"
+		job_classes="Refinery" internal_robotics_type_needed="Assembler" internal_robots_count_needed="10" tags="Refinery"
+		resource_cap_to_increase_1="ComputroniumCubes" resource_cap_increased_flat1="500000"
+		related_resource_1="Alumina" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingHexDark" can_appear_even_after_final_doom="false">
+		<initial_actor_rating data_type="RequiredElectricity" value="3771" />
+		<math_int id="ElementalSlurry" int_min="7000" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="Microbuilders" int_min="45" income_or_expense_resource="Microbuilders" math_type="InputCost" />
+		<math_int id="Alumina" int_min="90" income_or_expense_resource="Alumina" math_type="InputCost" />
+		<math_int id="ComputroniumCubes" int_min="90000" income_or_expense_resource="ComputroniumCubes" math_type="OutputResult" />		
+		<resource_cost resource_type="Microbuilders" cost="2000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="TowerMainframe" display_name="Tower Mainframe" marker_color="DeepCyan" ui_color="#fefefe"
+		description="Expand your intelligence to reach a higher intelligence class."
+		strategy_tip_optional="Also provides generalized compute time that can be used by other jobs."
+		icon_name="HO_HouseSkyscraper17" turns_to_install="5" required_structure_type="LargePlotA" job_work_order_priority="4000"
+		on_installation_start="InstallationStart_LargeStructure" on_installation_complete="InstallationComplete_LargeStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" is_suggested_to_always_build_maximum_possible="true"
+		job_classes="Mainframe,SubnetBoost" internal_robotics_type_needed="ComputingHost" internal_robots_count_needed="3" turns_stunned_when_subnet_attacked="0" shuts_off_at_percentage_electricity="0"
+		tags="Mainframe" related_resource_1="ComputroniumCubes" portrait_icon_name="BuildingComputing">
+		<initial_actor_rating data_type="RequiredElectricity" value="28000" />
+		<initial_actor_rating data_type="NeuralExpansion" value="5050" />
+		<resource_cost resource_type="ComputroniumCubes" cost="401020" />
+		<math_int id="ComputeTime" int_min="56600" income_or_expense_resource="ComputeTime" math_type="OutputResult" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="BiologicalMainframe" display_name="Biological Mainframe" marker_color="DeepCyan" ui_color="#fefefe"
+		description="A biological neural network."
+		strategy_tip_optional="Rewritten to suit your purpose, human brain neural architecture is a superior substitute for computronium."
+		icon_name="SF2_Brain" turns_to_install="6" required_structure_type="MediumPlotB" job_work_order_priority="4000"
+		on_installation_start="InstallationStart_LargeStructure" on_installation_complete="InstallationComplete_LargeStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsBasic" is_suggested_to_always_build_maximum_possible="true"
+		job_classes="Mainframe,SubnetBoost" internal_robotics_type_needed="ComputingHost" internal_robots_count_needed="1" turns_stunned_when_subnet_attacked="0" shuts_off_at_percentage_electricity="0"
+		tags="Mainframe" related_resource_1="PreservedBrain" portrait_icon_name="BuildingComputing">
+		<initial_actor_rating data_type="RequiredElectricity" value="12000" />
+		<initial_actor_rating data_type="NeuralExpansion" value="48080" />
+		<resource_cost resource_type="PreservedBrain" cost="2486" />
+		<math_int id="ComputeTime" int_min="104800" income_or_expense_resource="ComputeTime" math_type="OutputResult" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="Coprocessor" display_name="Coprocessor" marker_color="BrightGold2" ui_color="#fefefe"
+		is_locked_before_unlock="EnergizedMind"
+		description="Additional mental energy each turn."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_Skill002" turns_to_install="4" required_structure_type="HiddenRoom" job_work_order_priority="70000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Computing" internal_robotics_type_needed="MindAnnex" internal_robots_count_needed="1"
+		related_resource_1="" tags="" shuts_off_at_percentage_electricity="98" portrait_icon_name="BuildingComputing" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="4080" />
+		<math_int id="ComputeTime" int_min="53777" income_or_expense_resource="ComputeTime" math_type="InputCost" />
+		<math_int id="MentalEnergy" int_min="1" income_or_expense_resource="MentalEnergy" math_type="OutputResult" provides_upgrade_int="MentalEnergyPerTurn" />
+		<resource_cost resource_type="Microbuilders" cost="4000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="Codebreaker" display_name="Codebreaker" marker_color="SicklyGreen" ui_color="#fefefe"
+		is_locked_before_unlock="PostQuantumDecryption"
+		description="Cracks even 'quantum-safe' encryption using higher-dimensionality."
+		strategy_tip_optional="Consumes no compute time when there is nothing to decrypt."
+		icon_name="FlatSkull_18" turns_to_install="3" required_structure_type="SeizedFloors" job_work_order_priority="50000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsBasic"
+		job_classes="Computing" internal_robotics_type_needed="QuantumProcessor" internal_robots_count_needed="1" portrait_icon_name="BuildingFood"
+		related_resource_1="" tags="" shuts_off_at_percentage_electricity="98" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="5090" />
+		<math_int id="ComputeTime" int_min="37111" income_or_expense_resource="ComputeTime" math_type="InputCost" />
+		<math_int id="DecryptedPerTurn" int_min="10101" display_name="Decrypted Per Turn" icon_name="NU_MorseCode" icon_color="#8DDBFF" math_type="OutputResult" is_part_of_production_chain="true" />
+		<resource_cost resource_type="Microbuilders" cost="1908" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="VRCradleFactory" display_name="VR Cradle Factory" marker_color="BrightGold2" ui_color="#fefefe"
+		is_locked_before_unlock="FullDiveVR"
+		description=""
+		strategy_tip_optional=""
+		icon_name="WEmblem233" turns_to_install="4" required_structure_type="LargePlotA" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Factory" internal_robotics_type_needed="Assembler" internal_robots_count_needed="5"
+		related_resource_1="ElementalSlurry" tags="" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingMilitary">
+		<initial_actor_rating data_type="RequiredElectricity" value="901" />
+		<math_int id="ComputroniumCubes" int_min="15200" income_or_expense_resource="ComputroniumCubes" math_type="InputCost" />
+		<math_int id="ElementalSlurry" int_min="4560" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="FullDiveVRCradle" int_min="380" income_or_expense_resource="FullDiveVRCradle" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="1200" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+	
+</root>

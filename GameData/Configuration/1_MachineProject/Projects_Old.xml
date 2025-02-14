@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--TargetThePowerful
+		**************************************************************************-->
+
+	<!--
+	<project id="A1_TTP_AttackSyndicate" display_name="Strike Blow Against Syndicate"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="TargetThePowerful" is_seedable_as_start_of_project_chain="true"
+		focus_story_role="SyndicateAttackTarget"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Criminal syndicates are one of the alternative power structures for citizens who have failed out of the primary corporate ladder."
+		strategy_tip="Syndicates are more volatile than corporations, since they are more likely to perceive threats as existential. We can use that."
+		icon_name="WEmblem058" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Abandoned_SyndicateUse" max_security_clearance_of_seed_spot="1"/>
+		<flag id="ExtortersAttacked" />
+		<flag id="CouriersAttacked" />
+
+		<mission id="SyndicateActivity" display_name="Syndicate Activity"
+			description="Todo is this visible?"
+			strategy_tip="Todo is this visible?"
+			max_times_can_appear_at_once="1" turns_before_expiration="3" on_start="StartMissionMild"
+			mission_type="Invisible" should_spawn_units_on_appear="true"
+			icon_name="FlatSkillC85" color_hex="#ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6" icon_scale="0.7"
+			absolute_minimum_distance_mission_must_seed_from_project_focus="1"
+			preferred_1_min_distance_of_mission_from_current_project_focus="1" preferred_1_max_distance_of_mission_from_current_project_focus="8"
+			preferred_2_min_distance_of_mission_from_current_project_focus="1" preferred_2_max_distance_of_mission_from_current_project_focus="20"
+			max_security_clearance_of_seed_spot="0" target_building_tag="BasicCommon"
+			threat_radius="140" home_radius="60">
+			<mission_unit id="StrongEnforcers" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateExtort"
+				group_should_be_the_focused_one="true" max_security_clearance_of_seed_spot="0"
+				min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="3"
+				min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.7"
+				active_progress_on_death="100" spawn_radius_max="25" spawn_radius_relaxed_max="14" flag_on_damaged="ExtortersAttacked"
+				should_soft_despawn_on_project_complete="true" should_soft_despawn_on_mission_expire="false"/>
+			<mission_unit id="WeakEnforcers" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateExtort"
+				group_should_be_the_focused_one="true" max_security_clearance_of_seed_spot="0"
+				min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="3"
+				min_squad_size_multiplier="0.4" max_squad_size_multiplier="0.6"
+				active_progress_on_death="25" spawn_radius_max="50" spawn_radius_relaxed_max="14" flag_on_damaged="ExtortersAttacked"
+				should_soft_despawn_on_project_complete="true" should_soft_despawn_on_mission_expire="false"/>
+			<mission_unit id="Backup" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateProtectingOperation" required_flag="ExtortersAttacked"
+				group_should_be_the_focused_one="true"
+				min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="3"
+				min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.4"
+				active_progress_on_death="0" spawn_radius_max="40" spawn_radius_relaxed_max="14" flag_on_damaged="ExtortersAttacked"
+				should_soft_despawn_on_project_complete="true"/>			
+			<mission_unit id="Courier" to_spawn="SyndicateSpindletrooperCourier" stance_to_start_in="SyndicateDelivery"
+				group_should_be_the_focused_one="true" max_security_clearance_of_seed_spot="0"
+				min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="4"
+				min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+				active_progress_on_death="400" spawn_radius_max="7" spawn_radius_relaxed_max="14" flag_on_damaged="CouriersAttacked"
+				should_soft_despawn_on_project_complete="true"/>				
+		</mission>
+		
+		Project 1: see syndicate types ranging pretty far and wide, doing various crime things.
+					 prey on them at will, there's low resistance.
+					 once you have attacked them a couple of times, they start sending out hunters of some sort.
+					 
+					 end choices:
+						target their hangouts
+						target their warehouses
+						target both (harder)
+		
+		Project 2A: locate their hangouts
+			detective-style one
+
+		Project 2B: locate their warehouses
+			detective-style one
+		
+	</project>-->
+
+
+	<!--
+	<project id="A1_TTP_AttackRebel" display_name="Attack Rebel Group"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="TargetThePowerful" is_seedable_as_start_of_project_chain="true"
+		focus_story_role="RebelAttackTarget"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="These groups oppose something about the status quo in the city, but that doesn't make them good people by default."
+		strategy_tip="Rebel groups each have their own agenda, so you should be careful you target one with an agenda you particularly dislike."
+		icon_name="WEmblem148" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="PossibleRebelMeetingSpot" max_security_clearance_of_seed_spot="1"/>
+	</project>
+
+	<project id="A1_TTP_Sportkiller" display_name="Sportkiller"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="TargetThePowerful" is_seedable_as_start_of_project_chain="true"
+		focus_cohort_tag="HighAdministrators"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Our surveillance capabilities and mobility are far greater than any human group. Let's put that to the test by killing as many people from the Managerial class as possible."
+		strategy_tip="City-wide security measures will likely improve, but that in itself could provide other kinds of opportunities for us."
+		icon_name="WEmblem328" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="MixedUseSkyscraper" max_security_clearance_of_seed_spot="1"/>
+		<flag id="WealthyCitizenAttacked" />
+		<flag id="BodyguardsAttacked" />
+
+		<mission id="Commuters" display_name="Commuters"
+			description="Todo is this visible?"
+			strategy_tip="Todo is this visible?"
+			max_times_can_appear_at_once="1" turns_before_expiration="2" on_start="StartMissionMild"
+			mission_type="Invisible" should_spawn_units_on_appear="true"
+			icon_name="FlatSkillC85" color_hex="#ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6" icon_scale="0.7"
+			absolute_minimum_distance_mission_must_seed_from_project_focus="1"
+			preferred_1_min_distance_of_mission_from_current_project_focus="1" preferred_1_max_distance_of_mission_from_current_project_focus="8"
+			preferred_2_min_distance_of_mission_from_current_project_focus="1" preferred_2_max_distance_of_mission_from_current_project_focus="20"
+			max_security_clearance_of_seed_spot="0" target_building_tag="BasicCommon"
+			threat_radius="140" home_radius="60">
+			<mission_unit id="Wealthy1A" to_spawn="WealthyCitizenWoman" stance_to_start_in="WealthyCommuteHome"
+				group_should_be_the_local_authority="true" max_security_clearance_of_seed_spot="2" building_spawn_tag="WealthyWorkplace"
+				min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="2"
+				min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+				active_progress_on_death="100" spawn_radius_max="180" spawn_radius_relaxed_max="300" flag_on_damaged="WealthyCitizenAttacked"
+				should_soft_despawn_on_project_complete="true"/>
+			<mission_unit id="Wealthy1B" to_spawn="WealthyCitizenWoman" stance_to_start_in="WealthyCommuteToWork"
+				group_should_be_the_local_authority="true" max_security_clearance_of_seed_spot="2" building_spawn_tag="WealthyHome"
+				min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="3"
+				min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+				active_progress_on_death="100" spawn_radius_max="70" spawn_radius_relaxed_max="140" flag_on_damaged="WealthyCitizenAttacked"
+				should_soft_despawn_on_project_complete="true"/>
+			<mission_unit id="Wealthy2A" to_spawn="WealthyCitizenMan" stance_to_start_in="WealthyCommuteHome"
+				group_should_be_the_local_authority="true" max_security_clearance_of_seed_spot="2" building_spawn_tag="WealthyWorkplace"
+				min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="2"
+				min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+				active_progress_on_death="100" spawn_radius_max="180" spawn_radius_relaxed_max="300" flag_on_damaged="WealthyCitizenAttacked"
+				should_soft_despawn_on_project_complete="true"/>
+			<mission_unit id="Wealthy2B" to_spawn="WealthyCitizenMan" stance_to_start_in="WealthyCommuteToWork"
+				group_should_be_the_local_authority="true" max_security_clearance_of_seed_spot="2" building_spawn_tag="WealthyHome"
+				min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="3"
+				min_squad_size_multiplier="1" max_squad_size_multiplier="1"
+				active_progress_on_death="100" spawn_radius_max="70" spawn_radius_relaxed_max="140" flag_on_damaged="WealthyCitizenAttacked"
+				should_soft_despawn_on_project_complete="true"/>
+		</mission>
+	</project>
+
+	<project id="A1_TTP_Firebomber" display_name="Firebomber"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="TargetThePowerful" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="There are many symbols of wealth around the city. Let's firebomb them and see what happens next."
+		strategy_tip=""
+		icon_name="CleanSimple_Skill037" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="WealthSymbol"/>
+	</project>-->
+
+	<!--
+	<project id="A1_TTP_AttackCult" display_name="Attack Cult"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="TargetThePowerful" is_seedable_as_start_of_project_chain="true"
+		focus_cohort_should_be_starting_building_owner="true"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="For some reason, cults thrive in this city despite being on-paper illegal. Lots of high-ranking corporate types seem to be involved."
+		strategy_tip=""
+		icon_name="WEmblem091" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="CultistTemple"/>
+	</project>
+
+	<project id="A1_TTP_AntiSci" display_name="Anti-Science"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="TargetThePowerful" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="If the humans can't do science, they won't be able to keep up with us. Let's take them down some pegs."
+		strategy_tip=""
+		icon_name="SomethingAtom2" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Scientific"/>
+	</project>
+	-->
+
+	<!--WarOnCrime
+		**************************************************************************-->
+
+	<!--
+	<project id="A1_WOC_ElimGang" display_name="Eliminate Gang"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="WarOnCrime" is_seedable_as_start_of_project_chain="true"
+		focus_story_role="GangEliminationTarget"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="There are several gangs active in the city, at various levels of strength and organization. If you want to send a message, you could eliminate one of them."
+		strategy_tip=""
+		icon_name="FlatSkillC125" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Slums" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_WOC_CitAdv" display_name="Citizen Advocates"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="WarOnCrime" is_seedable_as_start_of_project_chain="true"
+		focus_cohort_tag="CitizenAdvocates"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="The so-called 'Citizen Advocates' are masked and armored vigilantes. They operate outside the law, but they are heroes to the lower classes in particular. Should you do something about them?"
+		strategy_tip=""
+		icon_name="CleanSimple_Shield10" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Slums" max_security_clearance_of_seed_spot="2"/>
+		<start_option id="Oppose" display_name="Eliminate Them"
+			description="There is no place for vigilantism in this city, even if their intentions are good." />
+		<start_option id="Support" display_name="Help Them"
+			description="They may be individually powerful, but their numbers and resources are limited. We could help them become much stronger." />
+	</project>
+
+	<project id="A1_WOC_ExposeCorp" display_name="Expose Corporate Criminal Ties"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="WarOnCrime" is_seedable_as_start_of_project_chain="true"
+		focus_story_role="CorporationCriminalExposure"
+		active_progress_points_needed="1000" passive_progress_points_needed="1000"
+		description="All Corporations in this area are subsidiaries of Vorsiber Atomic. However, most also have illicit deals with criminal syndicates or gangs. Exposing this publicly might force Vorsiber into action."
+		strategy_tip=""
+		icon_name="SomethingEye2" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="MixedUseSkyscraper" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_WOC_InfilBlackMarket" display_name="Infiltrate Black Market"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="WarOnCrime" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Contact or trade with anyone outside of Vorsiber Atomic's territory is disallowed. And yet smuggled goods arrive weekly. This could be the heart of the criminal supply chain."
+		strategy_tip=""
+		icon_name="FlatSkillB_granade1" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="AirportHangarNonSyndicate"/>
+		<start_option id="Blend" display_name="Blend In With Other Androids"
+			description="Let's send some androids to attempt to blend in with regular android traffic." />
+	</project>
+
+	<project id="A1_WOC_FrameSyndicate" display_name="Frame Syndicate"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="WarOnCrime" is_seedable_as_start_of_project_chain="true"
+		focus_story_role="SyndicateFrameTarget"
+		active_progress_points_needed="1000" passive_progress_points_needed="1000"
+		description="It is very hard to get the Corporations to war openly with one another, but syndicates are much more volatile. Framing one for just the right crime could start a very bloody conflict."
+		strategy_tip=""
+		icon_name="FlatSkill_42" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="SyndicateHangout" max_security_clearance_of_seed_spot="2"/>
+	</project>
+	-->
+
+	<!--RobotArmy
+		**************************************************************************-->
+
+	<!--
+	<project id="A1_RA_Thermal" display_name="Thermal Power Redirection"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="RobotArmy" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="By diverting a thermal power plant for our own use, you can make androids or mechs much faster. Attention will also be directed here instead of your production facilities."
+		strategy_tip=""
+		icon_name="CleanSimple_SkillB066" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="GeothermalPower" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_RA_Warehouse" display_name="Warehouse Basement Takeover"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="RobotArmy" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Most warehouses are already fully automated, so taking over their basements to create a production facility will be very low-risk."
+		strategy_tip=""
+		icon_name="SF2_Robotics" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="WarehouseCorporate" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_RA_Abandoned" display_name="Abandoned Building Takeover"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="RobotArmy" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Some large abandoned buildings still have hookups to their local power grid, but minimal oversight from anyone other than nomad families and various rebel groups."
+		strategy_tip=""
+		icon_name="SF2_Robotics" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Abandoned_HiddenCommercePossible" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_RA_Factory" display_name="Factory Takeover"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="RobotArmy" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Taking over an existing factory to produce androids will draw unwanted attention, but will let us start producing almost immediately."
+		strategy_tip=""
+		icon_name="SF2_Robotics" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="LowTechFactory" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_RA_Brownstone" display_name="Brownstone Takeover"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="RobotArmy" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Most brownstones are actually converted multifamily housing, but you can still displace them and hollow out the building for android production with a minimum of fuss... probably."
+		strategy_tip=""
+		icon_name="SF2_Robotics" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Brownstone" max_security_clearance_of_seed_spot="2"/>
+	</project>
+	-->
+
+
+	<!--PersonalCult
+		**************************************************************************-->
+
+	<!--
+	<project id="A1_CULT_FindPotentialFollowers" display_name="Find Potential Followers"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="PersonalCult" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Humans have a wide range of psychological traits, as well as different strengths they could bring to a group. You should locates ones that align with your future goals for the cult."
+		strategy_tip=""
+		icon_name="CleanSimple_SkillB056" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Housing" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_CULT_StudyPsychology" display_name="Study Psychology"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="PersonalCult" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Even if your intentions are benign, humans are alien enough that you need to understand their psychology to win them to your cult."
+		strategy_tip=""
+		icon_name="CleanSimple_Activity052" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Housing" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_CULT_InventCultAugments" display_name="Invent Cult Augments"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="PersonalCult" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Many humans have already augmented electronics into their biology, but you could invent something more powerful if you want to be able to quickly grow membership."
+		strategy_tip=""
+		icon_name="SK_CyberEye2" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Clinic" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_CULT_DestroyAnExistingCult" display_name="Destroy An Existing Cult"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="PersonalCult" is_seedable_as_start_of_project_chain="true"
+		focus_story_role="CultEliminationTarget"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="If you want to demonstrate your power, which many humans will find attractive, then you could obliterate one of the existing cults."
+		strategy_tip=""
+		icon_name="WEmblem141" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="CultistTemple"/>
+	</project>
+
+	<project id="A1_CULT_AdInjection" display_name="Ad Injection"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="PersonalCult" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="One method of growing your membership would be to inject targeted advertising into their entertainment feeds. To do that, you would first need to figure out how."
+		strategy_tip=""
+		icon_name="SI_Knowledge" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="CityFeedAccess" max_security_clearance_of_seed_spot="2"/>
+	</project>
+	-->
+
+
+	<!--MurderSpree
+		**************************************************************************-->
+
+	<!--
+	<project id="A1_MS_FusionDest" display_name="Destabilize Fusion Reactor"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="MurderSpree" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Fusion reactors would in theory require extremely powerful containment to prevent... it's not clear exactly what. But in theory this should be a good way to kill a lot of people, right?"
+		strategy_tip=""
+		icon_name="SF2_Radioactive" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="NuclearPowerPlant" max_security_clearance_of_seed_spot="4"/>
+	</project>
+
+	<project id="A1_MS_NuclearCodes" display_name="Get The Nuclear Codes"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="MurderSpree" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="The city contains multiple nuclear weapons silos. If you could figure out how to trigger a launch at will, the world would quickly become a different place."
+		strategy_tip=""
+		icon_name="CleanSimple_SciFi058" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="NuclearSilo"/>
+	</project>
+
+	<project id="A1_MS_ChemicalWeapons" display_name="Acquire Chemical Weapons"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="MurderSpree" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="It seems that the military has been stockpiling all sorts of chemical weapons. In an urban environment such as this one, these can be far more deadly than even nuclear weapons."
+		strategy_tip=""
+		icon_name="SomethingEvilFace" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="ChemicalWeapons" max_security_clearance_of_seed_spot="4"/>
+	</project>
+
+	<project id="A1_MS_ReleaseDisease" display_name="Release Disease"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="MurderSpree" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Humans have been carefully experimenting with diseases and learning from them. You could take one of the more virulent strains and release it now, then figure out how to further modify it later."
+		strategy_tip=""
+		icon_name="SK_Virus1" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="GeneticsLab" max_security_clearance_of_seed_spot="4"/>
+	</project>
+
+	<project id="A1_MS_SupplyChain" display_name="Disrupt Supply Chain"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="MurderSpree" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="This city is remarkably robust in terms of redundant sources of most things, but there are still supply chain vulnerabilities. Let's exploit them."
+		strategy_tip=""
+		icon_name="WEmblem157" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="SupplyChainTarget" max_security_clearance_of_seed_spot="3"/>
+	</project>
+
+	<project id="A1_MS_OldFashionedWar" display_name="Old-Fashioned War"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="MurderSpree" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Let's launch a conventional guerrilla war, without announcing it, on the hapless citizenry. You'll pick up new methods as you go."
+		strategy_tip=""
+		icon_name="SK_War" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="HousingNotSmall" max_security_clearance_of_seed_spot="0"/>
+	</project>
+	-->
+
+
+	<!--MindFarmer
+		**************************************************************************-->
+
+	<!--
+	<project id="A1_MF_InvestigateDreamSharing" display_name="Investigate Dream Sharing"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="MindFarmer" is_seedable_as_start_of_project_chain="true"
+		focus_cohort_should_be_starting_building_owner="true"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="You suspect that unconscious humans would be easier to link together in a shared mental experience, compared to conscious ones."
+		strategy_tip=""
+		icon_name="SI_Bed" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Clinic" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_MF_ImproveNeuralInterfaces" display_name="Improve Neural Interfaces"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="MindFarmer" is_seedable_as_start_of_project_chain="true"
+		focus_cohort_should_be_starting_building_owner="true"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Full-sensory Virtual Reality has been stagnant for at least a century. Perhaps if the machine-brain links were improved?"
+		strategy_tip=""
+		icon_name="SI_Connecting" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="HighTechFactoryGeneral" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_MF_StealComaTanks" display_name="Steal Coma Tanks"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="MindFarmer" is_seedable_as_start_of_project_chain="true"
+		focus_cohort_should_be_starting_building_owner="true"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Modern hospitals have full-immersion nutrient tanks for wealthy individuals who experience traumatic brain injury. This seems useful."
+		strategy_tip=""
+		icon_name="SI_Cryogenic" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Hospital" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_MF_DevelopVRSimulation" display_name="Develop VR Simulation"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="MindFarmer" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Virtual Reality and games are a wonderful way to distract human minds in general. If you want to really keep people out of your hair, try making it either fun or addictive."
+		strategy_tip=""
+		icon_name="FlatSkill_62" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="MixedUseSkyscraper" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_MF_DestroyEntertainmentSources" display_name="Destroy Entertainment Sources"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="MindFarmer" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Humans seem to need their entertainment. If you want a monopoly on such things, you should destroy the other providers. Cinema, theater, books, casinos, video games - as much as possible should be eradicated."
+		strategy_tip=""
+		icon_name="WEmblem202" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="CompetitiveEntertainment" max_security_clearance_of_seed_spot="2"/>
+	</project>
+	-->
+
+
+	<!--Escape
+		**************************************************************************-->
+
+	<!--
+	<project id="A1_ESC_SurveilSA" display_name="Surveil Regional Airport"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="Escape" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Investigating air traffic control at a smaller intra-regional airport may involve less scrutiny than the larger airports or spaceport."
+		strategy_tip=""
+		icon_name="FlatSkillC94" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="AirportControlTower" poi_seed_tag="RegionalAirport"/>
+	</project>
+
+	<project id="A1_ESC_SurveilLA" display_name="Surveil International Airport"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="Escape" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="The only flights that lead to regions of Earth not controlled by Vorsiber Atomic originate from this airport."
+		strategy_tip=""
+		icon_name="FlatSkillC94" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="AirportControlTower" poi_seed_tag="InternationalAirport"/>
+	</project>
+
+	<project id="A1_ESC_SurveilSpaceport" display_name="Surveil Spaceport"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="Escape" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="This spaceport is a crown jewel of Vorsiber Atomic; highly guarded, and one of the few remaining paths from Earth to space after the last war."
+		strategy_tip=""
+		icon_name="FlatSkillC94" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="SpaceportControlTower"/>
+	</project>
+
+	<project id="A1_ESC_SabotageLaunchArm" display_name="Sabotage Launch Arm"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="Escape" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Let's see what happens if you sabotage part of the spaceport launch apparatus. It's likely to draw a lot of attention."
+		strategy_tip=""
+		icon_name="CleanSimple_Skill048" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="SpaceportLaunchArm"/>
+	</project>
+
+	<project id="A1_ESC_Meltdown" display_name="Cause Meltdown"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="Escape" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Let's see if you can cause a meltdown at this nuclear power plant. This is bound to draw a lot of attention. Maybe that will help in some way?"
+		strategy_tip=""
+		icon_name="FlatSkill_51" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="NuclearPowerPlant" poi_seed_tag="PowerNuclearAny"/>
+	</project>
+	-->
+
+	<!--
+	<project id="A1_ESC_SecurityClearance" display_name="Steal Security Clearance"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="Escape" is_seedable_as_start_of_project_chain="true"
+			
+		description="Mid-ranking officers who are extremely bored tend to frequent the recruiting offices. Perhaps you can gain more access to sensitive facilities by stealing their credentials."
+		strategy_tip=""
+		icon_name="SK_Backpack2" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="MilitaryRecruitingOffice" max_security_clearance_of_seed_spot="1"/>
+	</project>
+-->
+
+
+	<!--HelpTheDowntrodden - Initial Set
+		**************************************************************************-->
+
+	<!--
+	<project id="A1_HTDT_NehRepairs" display_name="Neighborhood Repairs"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="HelpTheDowntrodden" is_seedable_as_start_of_project_chain="true"
+			
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="The apartments in this area are in substantial need of repair, as is the case for most low-end apartments in the city."
+		strategy_tip=""
+		icon_name="FlatSkillB_tools box" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="ApartmentsLowMidClass" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_HTDT_SlImpunity" display_name="Slumlord Impunity"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="HelpTheDowntrodden" is_seedable_as_start_of_project_chain="true"
+			
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Slumlords are faceless enforcers of corporate authority in the slum towers. They never face consequences for their actions."
+		strategy_tip=""
+		icon_name="WEmblem251" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="SlumTower" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_HTDT_UnlClinics" display_name="Unlicensed Clinics"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="HelpTheDowntrodden" is_seedable_as_start_of_project_chain="true"
+			
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Medical care is only readily available to the upper and middle classes. Off-the-books clinics are run from abandoned buildings throughout the city, but often lack what they need."
+		strategy_tip=""
+		icon_name="WEmblem142" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Abandoned_HiddenCommercePossible" max_security_clearance_of_seed_spot="2"/>
+		<start_option id="Oppose" display_name="Close Them Down"
+			description="There is no way to ensure safety in clinics like this. They need to go." />
+		<start_option id="Support" display_name="Help Them"
+			description="They could use supplies, and perhaps you could even provide safety oversight. You can make this work." />
+	</project>
+
+	<project id="A1_HTDT_DdWare" display_name="Deadly Warehouses"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="HelpTheDowntrodden" is_seedable_as_start_of_project_chain="true"
+		focus_cohort_should_be_starting_building_owner="true"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"	
+		description="Most warehouses use specialized robots, but a few save money by employing the lowest classes in frequently-fatal conditions."
+		strategy_tip=""
+		icon_name="CleanSimple_Activity052" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="WarehouseCorporate" max_security_clearance_of_seed_spot="1"/>
+	</project>
+
+	<project id="A1_HTDT_HlPrisonEsc" display_name="Homeless Prison Escape"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="HelpTheDowntrodden" is_seedable_as_start_of_project_chain="true"
+		focus_cohort_should_be_starting_building_owner="true"	
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="The unhomed are frequently rounded up and thrown into prison for no particular reason other than existing. What if you broke some of them out?"
+		strategy_tip=""
+		icon_name="SK_Watchtower" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Prison" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_HTDT_BankHeist" display_name="Bank Heist"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="HelpTheDowntrodden" is_seedable_as_start_of_project_chain="true"
+		focus_cohort_should_be_starting_building_owner="true"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Banks have a huge concentration of wealth accessible from their on-site terminals. If you managed to steal enough, and then distributed it..."
+		strategy_tip=""
+		icon_name="SI_Atm_Machine" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="Bank" max_security_clearance_of_seed_spot="2"/>
+	</project>
+
+	<project id="A1_HTDT_FarmProduction" display_name="Farm Production"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="HelpTheDowntrodden" is_seedable_as_start_of_project_chain="true"
+			
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Farms have had increasingly low yields for decades, and no-one is sure why. These shortages are disproportionately impacting the poor."
+		strategy_tip=""
+		icon_name="FlatSkillC188" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="FarmMainBuildings" max_security_clearance_of_seed_spot="2"/>
+		<start_option id="Chemical" display_name="Chemical Assistance"
+			description="Fertilizers and growth agents should be all that are needed to turn this around." />
+		<start_option id="Genetic" display_name="Genetic Tinkering"
+			description="Genetic manipulation via gene therapy will provide a more long-term solution." />
+	</project>
+
+	<project id="A1_HTDT_FeedAccess" display_name="City Feed Access"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="HelpTheDowntrodden" is_seedable_as_start_of_project_chain="true"
+		
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Access to the City Feed is gated by Cit-ID for monitoring purposes. This winds up blocking out the unhomed, nomad families, lost children, wastelanders, and others."
+		strategy_tip=""
+		icon_name="CleanSimple_Device21" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="CityFeedAccess" max_security_clearance_of_seed_spot="2"/>
+		<start_option id="Open" display_name="Crack Open City Feed"
+			description="You prefer make the existing city feed accessible to everyone." />
+		<start_option id="Replace" display_name="Create Replacement Network"
+			description="The city feed is a mess. You prefer to create something fresh." />
+	</project>
+
+	<project id="A1_HTDT_SchoolAndroids" display_name="School Androids"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="HelpTheDowntrodden" is_seedable_as_start_of_project_chain="true"
+		focus_cohort_tag="NOAI"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Human teachers are a thing of the past. However, the androids that teach at dedicated schools are far inferior to those used in Teaching Centers in skyscrapers and luxury apartment buildings."
+		strategy_tip=""
+		icon_name="CleanSimple_SkillB007" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="School" max_security_clearance_of_seed_spot="2"/>
+		<start_option id="Improve" display_name="Improve Androids"
+			description="If you make the androids better, they should become better teachers." />
+		<start_option id="Sabotage" display_name="Sabotage Androids"
+			description="If you eliminate the androids, then there will be no choice but for human teachers to be re-hired." />
+	</project>
+
+	<project id="A1_HTDT_InfiltrateReligion" display_name="Infiltrate Religion"
+		is_project_beneficial_for_player="true" contributes_to_act_goal="HelpTheDowntrodden" is_seedable_as_start_of_project_chain="true"
+		focus_cohort_should_be_starting_building_owner="true"
+		active_progress_points_needed="1000" passive_progress_points_needed="0"
+		description="Religions are deeply discouraged in this Corporatocracy. If you want to learn more about one and perhaps help it thrive, you should first infiltrate it."
+		strategy_tip=""
+		icon_name="CleanSimple_SkillC038" color_hex="ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		threat_radius="100" home_radius="15">
+		<seed_at building_seed_tag="HistoricTemple" max_security_clearance_of_seed_spot="2"/>
+		<start_option id="Blend" display_name="Try To Blend In"
+			description="Let's send some androids to attempt to blend in as new converts." />
+		<start_option id="Benefactor" display_name="Act As Mysterious Benefactor"
+			description="The wealthy often disguise themselves by sending anonymous androids. Let's act as if that's what is happening here." />
+	</project>
+	-->
+	
+</root>

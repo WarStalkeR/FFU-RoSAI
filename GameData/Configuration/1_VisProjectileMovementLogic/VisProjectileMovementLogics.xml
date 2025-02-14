@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--StraightShot
+	
+		int_1:	If 1+, then it will be stop at the target location. Otherwise, the projectile visually passes through the target by a lot. Just visual flair, no gameplay impact.
+		float_1:	Reduction in speed per second after hitting the target if it keeps going.
+		float_2:	Added time in seconds to exist after reaching the destination.
+		float_6:	Shrink speed after reaching the target.-->
+	<projectile_movement_logic id="StraightShot_Pierce" int_1="0" float_1="800" float_2="1" float_6="5" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_StraightShot"/>
+	<projectile_movement_logic id="StraightShot_Impactor" int_1="1" float_2="1" float_6="10" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_StraightShot"/>
+
+	<!--ArcShot
+	
+		float_1:	How high the arc of the parabola will be as this shot travels.
+		float_2:	Added time in seconds to exist after reaching the destination.
+		float_6:	Shrink speed after reaching the target.-->
+	<projectile_movement_logic id="ArcShot_Low" float_1="2" float_2="1" float_6="5" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_ArcShot"/>
+	<projectile_movement_logic id="ArcShot_Mid" float_1="4" float_2="1" float_6="5" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_ArcShot"/>
+	<projectile_movement_logic id="ArcShot_VeryHigh" float_1="6" float_2="1" float_6="5" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_ArcShot"/>
+
+	<!--HomingShot
+	
+		float_1:	How far up to go before aiming at the target.
+		float_2:	How far away from the center of mass of the firing unit to go.
+		float_3:	Rotation rate for steering.
+		float_4:	Added rotation rate per second shot exists.
+		float_5:	Initial y offset from firing ports.
+		float_6:	Shrink speed after reaching the target.
+		int_1:		Care about highest distance if above 0
+		vector_1:	Initial rotation of the shot.-->
+	<projectile_movement_logic id="HomingShot_Cruiser" float_1="6" float_2="10" float_3="900" float_4="3280" float_5="-1" int_1="0" vector_1="270,0,0" float_6="40" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_HomingShot"/>
+	<projectile_movement_logic id="HomingShot_MachinistRocket" float_1="6" float_2="5" float_3="1800" float_4="4180" float_5="-1" int_1="0"  vector_1="270,0,0" float_6="40" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_HomingShot"/>
+	<projectile_movement_logic id="HomingShot_PantherRocket" float_1="6" float_2="5" float_3="1800" float_4="4180" float_5="-1" int_1="0"  vector_1="270,0,0" float_6="40" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_HomingShot"/>
+	<projectile_movement_logic id="HomingShot_PantherFireball" float_1="1" float_2="4" float_3="800" float_4="4180" float_5="-1" int_1="0"  vector_1="0,0,0" float_6="40" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_HomingShot"/>
+	<projectile_movement_logic id="HomingShot_DiplomatRocket" float_1="4" float_2="0" float_3="1800" float_4="4180" float_5="-1" int_1="0"  vector_1="270,0,0" float_6="40" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_HomingShot"/>
+	<projectile_movement_logic id="HomingShot_ConvicterRocket" float_1="6" float_2="5" float_3="1800" float_4="4180" float_5="-1" int_1="0"  vector_1="270,0,0" float_6="40" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_HomingShot"/>
+	<projectile_movement_logic id="HomingShot_ConvicterFireball" float_1="4" float_2="2" float_3="800" float_4="4180" float_5="-1" int_1="0"  vector_1="0,0,0" float_6="40" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_HomingShot"/>
+	<projectile_movement_logic id="HomingShot_Iris" float_1="0" float_2="0" float_3="400" float_4="1200" float_5="-0.5" int_1="0" vector_1="0,0,0" float_6="40"  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projectile_HomingShot"/>
+	
+
+</root>

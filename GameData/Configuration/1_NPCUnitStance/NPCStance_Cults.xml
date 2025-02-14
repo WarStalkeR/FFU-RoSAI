@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<stance id="CultMachineSaboteur" display_name="Saboteur"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="They're on a mission to destroy as many of your works as they can."
+		icon_name="WEmblem128" icon_color="#DA35F7" icon_color_hdr_intensity="1.5" icon_scale="0.8"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<action_consideration id="RunAfterMachineStructures" sort_order="100" chance_of_attempting="100" action_to_attempt="RunAfterMachineStructures" />
+	</stance>
+
+	<stance id="CultRevenge" display_name="Revenge"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="The cultists are angry about recent events and are making sure everyone knows it."
+		icon_name="WEmblem171" icon_color="#F335F7" icon_color_hdr_intensity="2.5" icon_scale="0.6"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" is_considered_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="0"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+	</stance>
+	
+</root>

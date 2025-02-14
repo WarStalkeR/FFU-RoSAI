@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_prefab id="Crane" type="ConstructionCrane" display_name="Crane"
+		path_to_placeable="Assets/__Library/Worksite/General/Crane.prefab">
+	</building_prefab>
+
+	<building_prefab id="PortableOfficeB1" type="ConstructionPortableOffice" display_name="Portable Office B1"
+		path_to_placeable="Assets/__Library/Worksite/General/Portable Office B1.prefab">
+		<floors_group min="0" max="0" floor_size="0.3,0.4,0.55" percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="2"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<building_marker prefab="RoofLine" offset="0,-0.01,-0.02"/>
+	</building_prefab>
+
+	<building_prefab id="SepticTank" type="ConstructionSepticTank" display_name="Septic Tank"
+		path_to_placeable="Assets/__Library/Worksite/General/Septic Tank.prefab">
+	</building_prefab>
+	
+</root>

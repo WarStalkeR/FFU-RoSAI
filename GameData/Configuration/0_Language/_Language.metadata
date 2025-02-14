@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="lang">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="text" type="string-multiline" show_lines="8" maxlength="6000" is_required="true" is_localized="true" can_localization_merge="true" content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="Whatever the old id was, map to this new id when reading data tables. This would be for deserialization purposes only."/>
+
+</root>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--Core Periodic Threads -->
+	<threading_request_type id="_Univ.TimeBasedPools.ProcessOneSec" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="10" />
+	<threading_request_type id="_Univ.RapidAntiLeakPools.PeriodicCheckForMemoryLeaks" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="10" />
+	
+	<threading_request_type id="_Main.Pools.Init" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="30" />
+
+	<threading_request_type id="_Net.NetworkAuthority.PerUpdate" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="300" />
+
+	<!--UI Bits That Run Only One At A Time -->
+	<threading_request_type id="_UI.TryConnectToIP" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="10" />
+	<threading_request_type id="_UI.GetMyPublicIPAddress" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="30" />
+
+	<!--Example Bits -->
+	<threading_request_type id="_Example.ExampleMessageHandler" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="30" />
+	
+	<!--Data Loading Threads -->
+	<threading_request_type id="_Data.LevelEditor_CalculateBoundsOverlap" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="5" />
+	<threading_request_type id="_Data.LoadReferenceLevel" can_only_run_one_at_a_time="false" seconds_after_which_to_warn_of_long_running="60" />
+	<threading_request_type id="_Data.LoadManyReferenceLevels" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="300" />
+	<threading_request_type id="_Data.PopulateRegion" can_only_run_one_at_a_time="false" seconds_after_which_to_warn_of_long_running="300" />
+	<threading_request_type id="_Data.DoPopulationOfManyTiles" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="900" />
+	<threading_request_type id="_Data.DoDecorationPopulationOfTile" can_only_run_one_at_a_time="false" seconds_after_which_to_warn_of_long_running="300" />
+	<threading_request_type id="_Data.DoSubCellPopulationOfTile" can_only_run_one_at_a_time="false" seconds_after_which_to_warn_of_long_running="300" />
+	<threading_request_type id="_Data.SeedMoreMapTiles" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="300" />
+	<threading_request_type id="_Data.BackgroundCheckForCollisions" can_only_run_one_at_a_time="false" seconds_after_which_to_warn_of_long_running="30" />
+	<threading_request_type id="_Data.LinkIcons" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="60" />
+	<threading_request_type id="_Data.CalculateNetwork" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="300" />
+	<threading_request_type id="_Data.CalculateNetwork_SubCellList" can_only_run_one_at_a_time="false" seconds_after_which_to_warn_of_long_running="300" />
+	<threading_request_type id="_Data.AddSeedSpotsAndPOIGuards" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="300" />
+	<threading_request_type id="_Data.AddSeedSpotsSubThread" can_only_run_one_at_a_time="false" seconds_after_which_to_warn_of_long_running="300" />
+
+	<!--Per-Turn Execution Threads -->
+	<threading_request_type id="_Turn.RunNext" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="180" />
+
+	<!--Initialization Execution Threads -->
+	<threading_request_type id="_Initialize.PopulationAndDiffusion" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="300" />
+
+	<!--Per-Second Execution Threads -->
+	<threading_request_type id="_PerFullSec.Run" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="180" />
+	<threading_request_type id="_PerQuarterSec.Run" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="180" />
+	<threading_request_type id="_PerSec.AssignFactionWorkers" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="600" />
+
+	<!--Intermittent Execution Threads -->
+	<threading_request_type id="_Inter.RunVisibilityHelperCalculations" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="180" />
+	<threading_request_type id="_Inter.RunNetworkConnectionCalculations" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="180" />
+	<threading_request_type id="_Inter.DestroyBuildingsInRadius" can_only_run_one_at_a_time="false" seconds_after_which_to_warn_of_long_running="60" />
+	<threading_request_type id="_Inter.DoCheatLogic" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="180" />
+	<threading_request_type id="_Inter.NPCTargeting" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="180" />
+	<threading_request_type id="_Inter.BuildingListCalculation" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="180" />
+	<threading_request_type id="_Inter.ContemplationTargetCalculation" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="180" />
+	<threading_request_type id="_Inter.ExplorationSiteTargetCalculation" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="180" />
+	<threading_request_type id="_Inter.CityConflictTargetCalculation" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="180" />
+	<threading_request_type id="_Inter.StreetSenseTargetCalculation" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="180" />
+
+	<!--Data Saving/Loading Threads -->
+	<threading_request_type id="_Save.SaveOuterThread" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="60" />
+	<threading_request_type id="_Load.DiskLoadThread" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="60" />
+	<threading_request_type id="_Load.LoadOuterThread" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="60" />
+	
+	<threading_request_type id="_VSim.Pathfinding" can_only_run_one_at_a_time="true" seconds_after_which_to_warn_of_long_running="30" />
+	
+</root>

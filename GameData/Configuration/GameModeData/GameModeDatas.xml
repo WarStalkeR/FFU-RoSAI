@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<game_mode_data id="Streets" 
+		runs_city_life="true" input_mode="Normal"
+		is_depth_of_field_optional_on="true"
+		ground_line_draw_level="0.1" min_y_for_photo_mode="0.1" />
+
+	<game_mode_data id="CityMap"
+		runs_city_life="false" are_depth_flags_always_cleared_on_overlay_camera="true" input_mode="MapMode"
+		is_depth_of_field_forced_on="false"
+		ground_line_draw_level="1.01" min_y_for_photo_mode="1.01" photo_mode_speed_multiplier="4"		
+		overriding_weather="Alt_Map"/>
+
+	<game_mode_data id="TheEndOfTime"
+		runs_city_life="false" are_depth_flags_always_cleared_on_overlay_camera="true" input_mode="EndOfTime"
+		is_depth_of_field_optional_on="true"
+		min_x="-600" max_x="600" min_z="-600" max_z="700" min_zoom="2" max_zoom="200" anchor_y="26"
+		ground_line_draw_level="0.1" min_y_for_photo_mode="24" photo_mode_speed_multiplier="6" regular_camera_speed_multiplier="2.5"
+		overriding_weather="Alt_EndOfTime" overriding_music_type="EndOfTime"
+		added_content_bundle_name="hotm_content" added_content_filename="Assets/__Library/_OuterMap/Core/5thDimensionContent.prefab"/>
+
+</root>

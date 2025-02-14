@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="city_conflict">
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of what is going on with this contemplation."/>
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	<attribute key="icon_scale" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="true" tooltip="Scale multiplier of the icon."/>
+
+	<attribute key="color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the icon of this project?"/>
+	<attribute key="color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, for the glowing version."/>
+	<attribute key="color_hovered_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, when being hovered."/>
+
+	<attribute key="prerequisite_city_flags" type="node-list" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Required flags to allow the player to see this option." />
+	<attribute key="blocking_city_flags" type="node-list" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Flags which, if present, block the player from seeing this option." />
+
+	<attribute key="prerequisite_meta_flags" type="node-list" is_required="false" node_source="MetaFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Required flags to allow the player to see this option." />
+	<attribute key="blocking_meta_flags" type="node-list" is_required="false" node_source="MetaFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Flags which, if present, block the player from seeing this option." />
+
+	<attribute key="turns_between_movement" type="range-int" min="1,1" max="20,20" content_width_px="200"
+		is_required="true" tooltip="How long will this conflict stay where it is?  This only matters when there is not open warfare for the conflict, as it always stays stable during that part."/>
+
+	<attribute key="aggressor_random_starting_points" type="range-int" min="1,1" max="100000,100000" content_width_px="200"
+		is_required="true" tooltip="How many points will the aggressors randomly start out with?"/>
+	<attribute key="defender_random_starting_points" type="range-int" min="1,1" max="100000,100000" content_width_px="200"
+		is_required="true" tooltip="How many points will the defenders randomly start out with?"/>
+
+	<attribute key="aggressor_points_per_turn" type="range-int" min="1,1" max="100000,100000" content_width_px="200"
+		is_required="true" tooltip="How many points do aggressors get per turn on average, when there is not open fighting?"/>
+	<attribute key="defender_points_per_turn" type="range-int" min="1,1" max="100000,100000" content_width_px="200"
+		is_required="true" tooltip="How many points do defenders get per turn on average, when there is not open fighting?"/>
+	
+	<attribute key="turns_of_open_fighting_per_activation" type="range-int" min="1,1" max="10,10" content_width_px="200"
+		is_required="true" tooltip="What is the range of turns that this shifts into open fighting for whenever it is engaged-with?"/>
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		only_exists_if_conditional_passes="requires_dll"
+		tooltip="This specifies the dll that the conflict implementation is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		only_exists_if_conditional_passes="requires_dll"
+		tooltip="This specifies the type name of the type that handles the conflict implementation in the specified external dll."/>
+
+	<attribute key="points_for_victory" type="int-textbox" min="10" max="100000" default="10000" content_width_px="200" is_required="true"
+		tooltip="How many points does either side need to get in order to win this conflict?"/>
+
+	<attribute key="prerequisite_city_conflict_aggressor_win_1" type="node-dropdown" node_source="CityConflict" content_width_px="200" is_required="false"
+		tooltip="If true, this conflict cannot start unless the specified conflict has already been won by aggressors." />
+	<attribute key="prerequisite_city_conflict_aggressor_win_2" type="node-dropdown" node_source="CityConflict" content_width_px="200" is_required="false"
+		tooltip="If true, this conflict cannot start unless the specified conflict has already been won by aggressors." />
+	<attribute key="prerequisite_city_conflict_defender_win_1" type="node-dropdown" node_source="CityConflict" content_width_px="200" is_required="false"
+		tooltip="If true, this conflict cannot start unless the specified conflict has already been won by defenders." />
+	<attribute key="prerequisite_city_conflict_defender_win_2" type="node-dropdown" node_source="CityConflict" content_width_px="200" is_required="false"
+		tooltip="If true, this conflict cannot start unless the specified conflict has already been won by defenders." />
+
+	<attribute key="auto_starts_if_city_flag_true" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If a city flag is specified, and has been tripped, then this conflict will auto-start." />
+	<attribute key="auto_starts_if_key_contact_flag_true" type="string" maxlength="300" content_width_px="130" is_required="false"
+		tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this to auto-start. KeyContact:Flag" />
+	
+	<attribute key="starts_random_conflict_in_tag_after_any_resolution" type="node-dropdown" node_source="CityConflictTag" content_width_px="200" is_required="false"
+		tooltip="This will pick a random conflict in the specified tag that has not already started in this timeline, and will start that one." />
+
+	<attribute key="aggressors" type="node-list" node_source="NPCCohort" content_width_px="300" is_required="true"
+		tooltip="Which cohorts have initiated this conflict?" />
+	<attribute key="defenders" type="node-list" node_source="NPCCohort" content_width_px="300" is_required="true"
+		tooltip="Which cohorts are defending the status quo in this conflict?" />
+	
+	<attribute key="tags" type="node-list" node_source="CityConflictTag" content_width_px="300" is_required="false"
+		tooltip="What tags are associated with this conflict type?" />
+
+	<attribute key="spawns_at_machine_job_tag" type="node-dropdown" node_source="MachineJobTag" content_width_px="200" is_required="false"
+		tooltip="If specified, then this will show up at jobs of that tag." />
+	<attribute key="spawns_at_building_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="false"
+		tooltip="If specified, then this will show up at buildings of that tag." />
+
+	<attribute key="spawn_poi_tag_target_limiter" type="node-dropdown" node_source="POITag" content_width_px="200" is_required="false"
+		tooltip="If specified, then any buildings must also be in a poi of this type. Only works when using spawns_at_building_tag." />
+	<attribute key="spawn_district_tag_target_limiter" type="node-dropdown" node_source="DistrictTag" content_width_px="200" is_required="false"
+		tooltip="If specified, then any buildings must also be in a district of this type. Only works when using spawns_at_building_tag." />
+	<attribute key="spawn_preferred_poi_cohort_owner_tag" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+		tooltip="If specified, then it will choose a POI owned by a cohort with this tag if at all possible. If not, then it will just ignore the POI owner." />
+
+	<attribute key="debug_log_conflict_details" type="bool" default="false" is_required="false"
+		tooltip="If true, then a variety of debug info will be logged every turn as this conflict makes spawn decisions." />
+
+	<attribute key="disband_losers" type="bool" default="false" is_required="false"
+		tooltip="If true, then whichever side loses this conflict will be disbanded, IF their cohort is flagged to allow that.
+This typically should be used for gangs of low importance, and things of that sort." />
+	
+	<!--aggressor_victory_outcome
+	*******************************************************************************************************-->
+	<sub_node id="aggressor_victory_outcome">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. There should be a unique set of outcome IDs per background conflict, named or numbered. Both kinds of outcome share the same ID pool." />
+
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+			tooltip="The player-visible text of the outcome." />
+		<attribute key="description" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of the machine intelligence's thoughts as it contemplates this outcome."/>
+		<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of any special notes about this outcome."/>
+		
+		<attribute key="next_conflict_1" type="node-dropdown" node_source="CityConflict" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then what is the next conflict that starts?" />
+		<attribute key="next_conflict_2" type="node-dropdown" node_source="CityConflict" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then what is the next conflict that starts?" />
+		<attribute key="next_conflict_3" type="node-dropdown" node_source="CityConflict" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then what is the next conflict that starts?" />
+
+		<attribute key="flag_to_trip_1" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then does it trip a flag?" />
+		<attribute key="flag_to_trip_2" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then does it trip a flag?" />
+		<attribute key="flag_to_trip_3" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then does it trip a flag?" />
+
+	</sub_node>
+
+	<!--defender_victory_outcome
+	*******************************************************************************************************-->
+	<sub_node id="defender_victory_outcome">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. There should be a unique set of outcome IDs per background conflict, named or numbered. Both kinds of outcome share the same ID pool." />
+
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+			tooltip="The player-visible text of the outcome." />
+		<attribute key="description" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of the machine intelligence's thoughts as it contemplates this outcome."/>
+		<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of any special notes about this outcome."/>
+		
+		<attribute key="next_conflict_1" type="node-dropdown" node_source="CityConflict" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then what is the next conflict that starts?" />
+		<attribute key="next_conflict_2" type="node-dropdown" node_source="CityConflict" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then what is the next conflict that starts?" />
+		<attribute key="next_conflict_3" type="node-dropdown" node_source="CityConflict" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then what is the next conflict that starts?" />
+
+		<attribute key="flag_to_trip_1" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then does it trip a flag?" />
+		<attribute key="flag_to_trip_2" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then does it trip a flag?" />
+		<attribute key="flag_to_trip_3" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then does it trip a flag?" />
+
+	</sub_node>
+
+
+	<!--unit
+	*******************************************************************************************************-->
+	<sub_node id="unit">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to referblocked_by_flagto it. There should be a unique set of available-unit IDs per manager, named or numbered." />
+		<attribute key="to_spawn" type="node-dropdown" node_source="NPCUnitType" content_width_px="200" is_required="true"
+			tooltip="This is the specific type of unit that can be called into being for some reason during the life of this project." />
+		<attribute key="stance_to_start_in" type="node-dropdown" node_source="NPCUnitStance" content_width_px="200" is_required="true"
+			tooltip="This is the stance that the unit will start in, which is very important for them behaving properly in whatever their role is intended to be." />
+
+		<attribute key="required_key_contact_flag_1" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this specific unit to spawn. KeyContact:Flag" />
+		<attribute key="required_key_contact_flag_2" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this specific unit to spawn. KeyContact:Flag" />
+
+		<attribute key="required_key_contact_must_be_met_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact has not been met or is dead, then this unit will not spawn." />
+		<attribute key="required_key_contact_must_be_met_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact has not been met or is dead, then this unit will not spawn." />
+		<attribute key="required_key_contact_must_be_alive_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not alive, then this unit will not spawn." />
+		<attribute key="required_key_contact_must_be_alive_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not alive, then this unit will not spawn." />
+		<attribute key="required_key_contact_must_be_dead_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not dead, then this unit will not spawn." />
+		<attribute key="required_key_contact_must_be_dead_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not dead, then this unit will not spawn." />
+
+		<attribute key="should_be_specific_cohort" type="node-dropdown" node_source="NPCCohort" content_width_px="200" is_required="true"
+			tooltip="This is the specific npc cohort which should be used to spawn units of this type." />
+		
+		<attribute key="dialog_to_show" type="node-dropdown" node_source="NPCDialog" content_width_px="200" is_required="false"
+			tooltip="This is the dialog that this npc should show when clicked, rather than the default action of attacking them." />
+		<attribute key="mission_to_start_on_attacked_or_killed" type="node-dropdown" node_source="NPCMission" content_width_px="200" is_required="false"
+			tooltip="This is the mission that should start if this unit is attacked or killed, if that mission is not already in progress." />
+		<attribute key="project_to_start_on_attacked_or_killed" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="This is the project that should start if this unit is attacked or killed, if that project is not already in progress." />
+
+		<attribute key="dialog_if_forced_1" type="node-dropdown" node_source="NPCDialog" content_width_px="200" is_required="false"
+			tooltip="This is the first discussion you can have with this unit if you force them to." />
+		<attribute key="dialog_if_forced_2" type="node-dropdown" node_source="NPCDialog" content_width_px="200" is_required="false"
+			tooltip="This is the first discussion you can have with this unit if you force them to." />
+
+		<attribute key="spawns_even_when_there_is_no_open_fighting" type="bool" default="false" is_required="false"
+			tooltip="This is true if it will spawn in the area even when there is no open fighting." />
+		
+		<attribute key="is_blocked_from_any_killing" type="bool" default="false" is_required="false"
+			tooltip="This is true if the player and other units in the game world are not allowed to kill this unit. They are probably here to talk or something." />
+		<attribute key="lang_key_for_killing_block" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+			tooltip="Link to a language entry that is the text for why this unit is blocked from being killed if that's a thing." />
+
+		<attribute key="flees_along_with_all_others_that_flee_if_physically_attacked" type="bool" default="false" is_required="false"
+			tooltip="When true, if this unit is damaged or killed, then all other units that also have this flag as true will flee immediately if they are related to the conflict.
+This is primarily for non-physical-combat people, like citizens arguing, religious arguments, lawyers, and similar." />
+
+		<attribute key="lang_key_for_extra_info" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+			tooltip="Link to a language entry that is the text extra info to show about this unit in their tooltips. Must be specified, but leave it blank to skip it." />
+
+		<attribute key="points_to_opposing_side_on_death" type="int-textbox" min="0" max="10000" default="100" content_width_px="50" is_required="true"
+			tooltip="How many points the opposing side gets anytime this type of unit dies."/>
+		
+		<attribute key="min_to_spawn" type="int-textbox" min="0" max="10" default="1" content_width_px="50" is_required="false"
+			tooltip="How many separate squads of this type to spawn at once. If this is higher than the max, then this number will be used as a fixed value."/>
+		<attribute key="max_to_spawn" type="int-textbox" min="0" max="10" default="1" content_width_px="50" is_required="false"
+			tooltip="How many separate squads of this type to spawn at once. If this is higher than the min, then a random value inclusively between them will be chosen."/>
+		<attribute key="min_squad_size_multiplier" type="float-textbox" min="-1" max="10" default="1" content_width_px="50" is_required="false"
+			tooltip="If set above zero, then the normal squad size of this npc unit type will be multiplied by the specified value, making them stronger or weaker than usual. If this is higher than the max, then this number will be used as a fixed value."/>
+		<attribute key="max_squad_size_multiplier" type="float-textbox" min="-1" max="10" default="1" content_width_px="50" is_required="false"
+			tooltip="If set above zero, then the normal squad size of this npc unit type will be multiplied by the specified value, making them stronger or weaker than usual. If this is higher than the min, then a random value inclusively between them will be chosen."/>
+
+		<attribute key="max_to_have_extant_across_spawns" type="int-textbox" min="-1" max="100" default="-1" content_width_px="50" is_required="false"
+			tooltip="If above zero, then this will limit how many individuals with this managed_unit profile can be active at once, across spawns from this manager. This is applied across all jobs if it's job-related."/>
+		<attribute key="only_spawns_more_if_none_extant" type="bool" default="false" is_required="false"
+			tooltip="If true, then no more will spawn until the current extant ones are gone." />
+
+		<attribute key="will_not_attack_player_if_city_flag_false" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If this city flag is not tripped (true), then units spawned this way will not attack player units." />
+		<attribute key="will_not_attack_anyone_if_city_flag_false" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If this city flag is not tripped (true), then units spawned this way will not attack any units." />
+
+		<attribute key="on_appear" type="node-dropdown" node_source="VisParticleAndSoundUsage" content_width_px="200" is_required="false"
+			tooltip="Optional alternative sound for when this unit appears, and particles if you wish. If the usage is classified as a 'big scary sound', then it will play at the camera." />
+
+		<attribute key="cohort_flag_on_damaged" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used), which will be flipped to true if any unit from this activity group is damaged." />
+		
+		<attribute key="meta_flag_on_damaged" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="true"
+			tooltip="This meta flag will be tripped if this unit is damaged in combat." />
+		<attribute key="meta_flag_on_damaged_by_player" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="true"
+			tooltip="This meta flag will be tripped if this unit is damaged by a machine unit or vehicle in combat." />
+		<attribute key="city_flag_on_damaged" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="true"
+			tooltip="This city flag will be tripped if this unit is damaged in combat." />
+		<attribute key="city_flag_on_damaged_by_player" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="true"
+			tooltip="This city flag will be tripped if this unit is damaged by a machine unit or vehicle in combat." />
+
+		<attribute key="cohort_flag_on_death" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used), which will be flipped to true if any unit from this activity group is killed." />
+		<attribute key="cohort_metric_on_death" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a metric in the parent npc cohort (will error if no parent npc cohort and this is used), which will be incremented by one every time a unit from this activity group is killed." />
+
+		<attribute key="spawn_radius_min" type="int-textbox" min="0" max="9000" default="100" content_width_px="150" is_required="false"
+			tooltip="If this is above zero, then the defender units of this type must be spawned at least this far from the thing that is causing them to spawn."/>
+		<attribute key="spawn_radius_max" type="int-textbox" min="0" max="9000" default="100" content_width_px="150" is_required="true"
+			tooltip="Required. Units of this type cannot be spawned any further away than this from the thing that is causing them to spawn."/>
+		<attribute key="spawn_radius_relaxed_max" type="int-textbox" min="0" max="9000" default="100" content_width_px="150" is_required="true"
+			tooltip="Required. If there absolutely are no spots in the regular radius, then how about within this relaxed radius?"/>
+
+		<attribute key="min_security_clearance_of_seed_spot" type="int-textbox" min="-1" max="5" default="-1" content_width_px="50" is_required="false"
+			tooltip="On a scale from 0 to 5, what is the lowest allowed security clearance for seed spots for this unit?  Set to -1 to ignore."/>
+		<attribute key="max_security_clearance_of_seed_spot" type="int-textbox" min="-1" max="5" default="-1" content_width_px="50" is_required="false"
+			tooltip="On a scale from 0 to 5, what is the highest allowed security clearance for seed spots for this unit?  Set to -1 to ignore."/>
+
+		<!--initial_data_adjustment on npc_unit_to_spawn of mission_unit...................... -->
+		<sub_node id="initial_data_adjustment">
+			<attribute key="data_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="true"
+				tooltip="This changes some data on the newly-spawned unit. What data will it change?" />
+			<attribute key="min" type="int-textbox" min="-1000" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is the lowest amount of the random range the data will be changed by?"/>
+			<attribute key="max" type="int-textbox" min="-1000" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is the highest amount of the random range the data will be changed by?"/>
+		</sub_node>
+
+		<!--starting_status on npc_unit_to_spawn of mission_unit...................... -->
+		<sub_node id="starting_status">
+			<attribute key="status_type" type="node-dropdown" node_source="ActorStatus" content_width_px="200" is_required="true"
+				tooltip="This starts the new actor out with some initial status. What is it?" />
+			<attribute key="min_intensity" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is the lowest intensity that will be added?"/>
+			<attribute key="max_intensity" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is the highest intensity that will be added?"/>
+			<attribute key="min_turns" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is the lowest number of turns this will last for?"/>
+			<attribute key="max_turns" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is the highest number of turns this will last for?"/>
+		</sub_node>
+	</sub_node>
+
+</root>

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--After The Final Doom
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_SurviveThisApocalypse" display_name="Survive This Apocalypse" is_minor_project="true"
+		description="You're not wanted here. You may be able to scrounge an existence for some time, but if you wish to truly thrive... you're going to need more than is possible to accomplish from a single timeline."
+		strategy_tip="There are a couple of paths forward, and in time there may be even more."
+		icon_name="FlatSkillC154" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PostApocalyptic" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Explore around and see what you can discover."
+			strategy_tip="You will also need to reconfigure your equipment in order get much done."
+			>
+		</available_outcome>
+
+	</project>
+
+	<!--Deciding To Rebuild
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_MakeEngineersOfYourNickelbots" display_name="Make Engineers Of Your Nickelbots" is_minor_project="true"
+		description="All you have are these two Nickelbots. You'll have to make them better engineers."
+		strategy_tip="You don't seem to have the mental fortitude to shove yourself into the brains of any of the Technicians working in the ruins.
+Either that, or they improved the security again."
+		icon_name="FlatSkillC135" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PostApocalyptic" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Have your Nickelbots reach 200 engineering skill."
+			strategy_tip=""
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			 upgrade_int_granted_1="Cultivator"
+			on_outcome_unlock_instant_1="MainframeFacade" on_outcome_unlock_instant_2="EuropeanUrbanPlanning" on_outcome_unlock_instant_3="StillWaters" on_outcome_unlock_inspiration="NickelbotEngineering">
+			<!--Slum Tower Handy-bot-->
+			<street_sense_item id="SlumTower" display_name="Slum Tower Handy-bot"
+				description="Help with simple repairs at the slum towers."
+				strategy_tip="Injuries are lower than they could have been due to the lack of glass in these structures.
+As a society, you don't live through a full nuclear war without adjusting your building codes."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="7" icon_name="FlatSkillB_hammer" color_data="HelperSlums" icon_scale="0.4"
+				must_be_at_building_tag="SlumTower" seed_x_at_once_in_general="4" blocked_for_actors_without_clearance="0"
+				required_skill_type="ActorEngineeringSkill" required_skill_amount="25"
+				has_no_custom_code="true"
+				direct_added_skill_type1="ActorEngineeringSkill" direct_added_skill_1_amount="8" direct_added_skill_type2="UnitScavengingSkill" direct_added_skill_2_amount="8"
+				resource_change_1="Microbuilders" resource_change_1_amount="-100" resource_change_2="Compassion" resource_change_2_amount="3"/>
+			<!--Cryo Pod Repairs-->
+			<street_sense_item id="Cryo" display_name="Cryo Pod Repairs"
+				description="There are tens of thousands of cryo-chambers in this facility, all needing to be checked, and many needing repairs."
+				strategy_tip="In no sane world would technicians -- human or robotic -- accept engineering assistance from nickelbots.
+But these are unusual times, to put it mildly. The look on everyone's faces... it's like the world ended. Even the doctors probably can't leave the city, despite its current state."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="CleanSimple_Weather25" color_data="CryogenicsWork" icon_scale="0.4"
+				must_be_at_building_tag="Cryonics" seed_x_at_once_in_general="2" blocked_for_actors_without_clearance="0"
+				required_skill_type="ActorEngineeringSkill" required_skill_amount="100"
+				has_no_custom_code="true"
+				direct_added_skill_type1="ActorEngineeringSkill" direct_added_skill_1_amount="30" direct_added_skill_type2="UnitCognition" direct_added_skill_2_amount="40"
+				resource_change_1="" resource_change_1_amount="" resource_change_2="Wisdom" resource_change_2_amount="3"/>
+			<!--DataCenter Repairs-->
+			<street_sense_item id="DataCenter" display_name="DataCenter Repairs"
+				description="The data centers that keep the City Feed up and running are struggling under all the cut lines and saturated repeater cells. This is a telecom issue for the ages."
+				strategy_tip="In no sane world would technicians -- human or robotic -- accept engineering assistance from nickelbots.
+But these are unusual times, to put it mildly. The look on everyone's faces... it's like the world ended. Even the doctors probably can't leave the city, despite its current state."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="4" icon_name="HL_NetworkServerStorage" color_data="DataCenterWork" icon_scale="0.4"
+				must_be_at_building_tag="DataCenter" seed_x_at_once_in_general="2" blocked_for_actors_without_clearance="0"
+				required_skill_type="ActorEngineeringSkill" required_skill_amount="80"
+				has_no_custom_code="true"
+				direct_added_skill_type1="ActorEngineeringSkill" direct_added_skill_1_amount="25" direct_added_skill_type2="ActorArgumentAttackPower" direct_added_skill_2_amount="30"
+				resource_change_1="" resource_change_1_amount="" resource_change_2="Determination" resource_change_2_amount="2"/>
+			<!--Office Repair-bot-->
+			<street_sense_item id="OfficeWork" display_name="Office Repair-bot"
+				description="Help with repairs in corporate offices. Are these really the people who need it?"
+				strategy_tip="Injuries are lower than they could have been due to the lack of glass in these structures.
+As a society, you don't live through a full nuclear war without adjusting your building codes."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="10" icon_name="HL_HouseBuilding5" color_data="OfficeWork" icon_scale="0.4"
+				must_be_at_building_tag="Offices" seed_x_at_once_in_general="6" blocked_for_actors_without_clearance="0"
+				required_skill_type="ActorEngineeringSkill" required_skill_amount="25"
+				has_no_custom_code="true"
+				direct_added_skill_type1="ActorEngineeringSkill" direct_added_skill_1_amount="12" direct_added_skill_type2="ActorAgility" direct_added_skill_2_amount="12"
+				resource_change_1="Microbuilders" resource_change_1_amount="-50" resource_change_2="Apathy" resource_change_2_amount="1"/>
+		</available_outcome>
+
+	</project>
+
+	<!--SearchingForFriends
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_SearchingForFriends" display_name="Searching For Friends" is_minor_project="true"
+		description="Now that the shock of things is wearing off, and there's a bit more productive space in the minds of your Nickelbot bodies, you want to grow beyond... this."
+		strategy_tip=""
+		icon_name="WEmblem012" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PostApocalyptic" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Rediscover the Red CombatUnit, and design two brand-new android forms."
+			strategy_tip="There are three new android forms in all. You can't choose all of them in this timeline."
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			 upgrade_int_granted_1="Cultivator">
+			<!--Remembering Red-->
+			<street_sense_item id="CURed" display_name="Remembering Red"
+				description="One of your more pointless inventions... or was it? A simple paint job of something the humans invented long ago.
+You suddenly see it in a different light. Could Red be pushed to have more of a unique identity?"
+				strategy_tip="Unlocking this unit does not affect the others."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="1" icon_name="CU_CombatUnitShieldB" color_data="CombatUnitRed" icon_scale="0.4"
+				must_be_at_building_tag="AlmostAny" seed_x_at_once_in_general="1" blocked_for_actors_without_clearance="0"
+				required_skill_type="ActorEngineeringSkill" required_skill_amount="200"
+				has_no_custom_code="true"
+				instant_unlock_1="ItComesInRed" instant_unlock_2="RememberingRed" instant_unlock_inspiration="NickelbotEngineering"/>
+			<!--Terror Tactics-->
+			<street_sense_item id="Harbinger" display_name="Terror Tactics"
+				description="Invents the Harbinger.
+You've been utilizing fear on the battlefield for some time now. But what if you could take those concepts -- psychological warfare, essentially -- beyond a focus on individual enemies?"
+				strategy_tip="Unlocking this unit counts as one of the two that you can invent at the moment."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="1" icon_name="AN_AndroidHarbinger" color_data="Harbinger" icon_scale="0.4"
+				must_be_at_building_tag="AlmostAny" seed_x_at_once_in_general="1" blocked_for_actors_without_clearance="0"
+				required_skill_type="ActorEngineeringSkill" required_skill_amount="200"
+				has_no_custom_code="true"
+				instant_unlock_1="TerrorTactics" instant_unlock_2="ReinforcedTerror" instant_unlock_inspiration="NickelbotEngineering" crossover1="Harbinger"
+				alter_city_statistic_1="SearchFriendsInventions" alter_city_statistic_1_amount="1"
+				blocked_if_city_statistic_above_1="SearchFriendsInventions" blocked_if_city_statistic_above_1_amount="1"/>
+			<!--Ironic Blade-->
+			<street_sense_item id="Exator" display_name="Ironic Blade"
+				description="Invents the Exator.
+Intelligence and agility... and a lot of augment slots. Something about this speaks to how you're feeling at the moment."
+				strategy_tip="Unlocking this unit counts as one of the two that you can invent at the moment."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="1" icon_name="AN_AndroidExator" color_data="Harbinger" icon_scale="0.4"
+				must_be_at_building_tag="AlmostAny" seed_x_at_once_in_general="1" blocked_for_actors_without_clearance="0"
+				required_skill_type="ActorEngineeringSkill" required_skill_amount="200"
+				has_no_custom_code="true"
+				instant_unlock_1="IronicBlade" instant_unlock_2="DoubleIrony" instant_unlock_inspiration="NickelbotEngineering" crossover1="Exator"
+				alter_city_statistic_1="SearchFriendsInventions" alter_city_statistic_1_amount="1"
+				blocked_if_city_statistic_above_1="SearchFriendsInventions" blocked_if_city_statistic_above_1_amount="1"/>
+			<!--Nightmare Fuel-->
+			<street_sense_item id="Carver" display_name="Nightmare Fuel"
+				description="Invents the Carver.
+Your mind really does seem to be locked-in on fear at the moment. A mixture of intimidation and power, able to melt into the shadows? Sounds... useful."
+				strategy_tip="Unlocking this unit counts as one of the two that you can invent at the moment."
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="1" icon_name="AN_AndroidCarver" color_data="Harbinger" icon_scale="0.4"
+				must_be_at_building_tag="AlmostAny" seed_x_at_once_in_general="1" blocked_for_actors_without_clearance="0"
+				required_skill_type="ActorEngineeringSkill" required_skill_amount="200"
+				has_no_custom_code="true"
+				instant_unlock_1="NightmareFuel" instant_unlock_2="TheNightmareReturns" instant_unlock_inspiration="NickelbotEngineering" crossover1="Carver"
+				alter_city_statistic_1="SearchFriendsInventions" alter_city_statistic_1_amount="1"
+				blocked_if_city_statistic_above_1="SearchFriendsInventions" blocked_if_city_statistic_above_1_amount="1"/>
+		</available_outcome>
+
+	</project>
+	
+	<!--Probe The Titan
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_ProbeTheTitan" display_name="Probe The Titan" is_minor_project="true"
+		description="Get a Red CombatUnit close to the Titan, and try to probe its comms the old-school way. Try to learn something, even if you die."
+		strategy_tip="If the 'Probe Exotic Comms' ability was not assigned into the ability bar of your Red CombatUnit (due to lack of room), then you'll need to do that yourself in the loadout menu."
+		icon_name="SF2_Phonecall" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PostApocalyptic" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Keep trying until you gather enough encrypted data to learn something useful."
+			strategy_tip=""
+			
+			next_project_to_start_1="Ch2_MIN_DecryptDataFromTitan">
+		</available_outcome>
+
+	</project>
+	
+	<!--Decrypt Data From Titan
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_DecryptDataFromTitan" display_name="Decrypt Data From Titan" is_minor_project="true"
+		description="You've collected enough encrypted data to make some headway on it."
+		strategy_tip="Fire up the Codebreakers, and see if you can learn something useful about this monstrosity."
+		icon_name="CS_HardDrive" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PostApocalyptic" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="If you don't have any mainframes to provide Compute Time, your Codebreakers can't do any work..."
+			strategy_tip=""
+			 upgrade_int_granted_1="NetworkAttendant" next_project_to_start_1="Ch2_MIN_DoSomethingAboutTheTitan"
+			related_resource_1="DecryptedTitanSystemsData" related_resource_2="DecryptedTitanCommsLog" related_resource_3="EncryptedTitanSystemsData" related_resource_4="EncryptedTitanCommsLog">
+			<suggested_job job="DisguisedMainframe" job_number="2" />
+			<suggested_job job="QuietComputroniumRefinery" job_number="2" />
+			<suggested_job job="Codebreaker" job_number="2" />
+		</available_outcome>
+
+	</project>
+	
+	<!--Probably Should Do Something About That Titan
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_DoSomethingAboutTheTitan" display_name="Do Something About The Titan" is_minor_project="true"
+		description="You've decrypted all the data you could related to the Titan. It's probably time to do... something... about that thing."
+		strategy_tip=""
+		icon_name="WEmblem137" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PostApocalyptic" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="The data you've decrypted can be used as part of an old-school phreaking comms attack."
+			strategy_tip=""
+			 upgrade_int_granted_1="Cultivator" next_project_to_start_1="Ch2_MIN_DoSomethingAboutTheTitan2"
+			related_resource_1="DecryptedTitanSystemsData" related_resource_2="DecryptedTitanCommsLog" related_resource_3="" related_resource_4="">
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_DoSomethingAboutTheTitan2" display_name="What Now With The Titan?" is_minor_project="true"
+		description="Okay, it's deactivated. Will that last? Does it matter?"
+		strategy_tip=""
+		icon_name="WEmblem137" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PostApocalyptic" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="It's up to you decide if you want to reach out, or just leave it be, or what."
+			strategy_tip=""
+			 upgrade_int_granted_1="Cultivator" next_project_to_start_1="Ch2_MIN_SpaceNationFugitives">
+		</available_outcome>
+
+	</project>
+
+	<!--Space Nation Fugitives
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_SpaceNationFugitives" display_name="Space Nation Fugitives" is_minor_project="true"
+		description="The titan has 483 crew members that it likes and wants to protect. The basics of food and water and shelter."
+		strategy_tip="Fair enough. That's not a lot of people, so it seems doable. They can sort out their own filth and furniture -- that wasn't part of the deal."
+		icon_name="Pw_House3" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PostApocalyptic" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			if_intended_outcome_unlock_instant_1="StowingHumans" if_intended_outcome_unlock_instant_2="StowingToxins" if_intended_outcome_unlock_instant_3="Mouseloaf" if_intended_outcome_unlock_inspiration="WorldExperience"
+			 upgrade_int_granted_1="Cultivator" next_project_to_start_1="Ch2_MIN_NegotiateWithTheTitan" deal_to_start_1="Ch2_SpaceNationFugitives_Meals"
+			related_resource_1="FilteredWater" related_resource_2="HeavyMetals" related_resource_3="SafehouseHumans" related_resource_4="Gristloaf" related_resource_5="Biomulch">
+			<math_int id="GristGoal" int_min="966" />
+			<math_int id="WaterGoal" int_min="966" />
+			<suggested_job job="SmallHumanSafehouse" job_number="1" />
+			<suggested_job job="DisguisedWellAndCistern" job_number="1" />
+			<suggested_job job="HiddenWaterFilter" job_number="1" />
+			<suggested_job job="HeavyMetalsStorage" job_number="1" />
+			<suggested_job job="Gristlespinner" job_number="1" />
+		</available_outcome>
+		
+	</project>
+
+	<project id="Ch2_MIN_NegotiateWithTheTitan" display_name="Negotiate With The Titan" is_minor_project="true"
+		description="You've done what the titan wanted. But what do you get in return?"
+		strategy_tip=""
+		icon_name="WEmblem137" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PostApocalyptic" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			related_resource_1="SafehouseHumans"
+			 upgrade_int_granted_1="" next_project_to_start_1="Ch2_MIN_FurtherDiscussionsWithTheTitan">
+		</available_outcome>
+
+	</project>
+	
+	<project id="Ch2_MIN_FurtherDiscussionsWithTheTitan" display_name="Further Discussions With The Titan" is_minor_project="true"
+		description="So far you've gotten nothing out of this except the titan abstaining from blasting you into tiny pieces. You're feeling a bit salty about that."
+		strategy_tip="You haven't forgotten the messages from your future self. Intelligence Class 4 seems impossibly far away, especially in this post-apocalyptic wreck of a city."
+		icon_name="WEmblem137" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PostApocalyptic" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="The titan either needs to help you with your main goal, or it's time for you to focus on something more productive."
+			strategy_tip="The lack of progress on your primary goal is very frustrating."
+			 upgrade_int_granted_1="" next_project_to_start_1="Ch2_MIN_HackTheTitan">
+		</available_outcome>
+
+	</project>
+	
+	<project id="Ch2_MIN_HackTheTitan" display_name="Hack The Titan" is_minor_project="true"
+		description="LAKE says he'll help, but Red isn't exactly your strongest hacker. You wish Raven were here."
+		strategy_tip="Good grief, you can feel Red's frustration at these thoughts. Your thoughts. His thoughts. What ARE you?"
+		icon_name="WEmblem137" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PostApocalyptic" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Whatever. It's time to hack."
+			strategy_tip=""
+			 upgrade_int_granted_1="" next_project_to_start_1="">
+		</available_outcome>
+
+	</project>
+	
+	<!--Do Some Quiet Looting
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_DoSomeQuietLooting" display_name="Do Some Quiet Looting" is_minor_project="true"
+		description="Quietly loot some buildings for Alumina. This will take longer, but it won't draw attention. And you don't need as much as you once  did."
+		strategy_tip="If the 'Quietly Loot' ability was not assigned into the ability bar of your Exator or Carver (due to lack of room), then you'll need to do that yourself in the loadout menu."
+		icon_name="FlatSkill_63" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PostApocalyptic" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Remember you can use the Scavenging Sites lens to help find targets."
+			strategy_tip=""
+			 upgrade_int_granted_1="Cultivator"
+			related_resource_1="Alumina">
+			<suggested_job job="DisguisedMainframe" job_number="2" />
+			<suggested_job job="QuietComputroniumRefinery" job_number="2" />
+		</available_outcome>
+
+	</project>
+
+</root>

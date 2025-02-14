@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Infantry
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="Infantry" display_name="Infantry"
+		description="Rotated in from outside the city, they guard things for specific Corporations or PMCs. High amounts of resentment from their isolation."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Skill145" shape_icon_color="#ffffff"
+		vis_drawing_tag="MilitaryRifle" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="16"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="CorporalShot" kills_by_player_increase_statistic1="SoldiersKilledByYou" deaths_by_any_source_increase_statistic="SoldiersWhoDiedAndHaveNotYetBeenUploaded"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1" 
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4"
+		tags="MilitaryPOIGuards,CorporateVariedWarrior" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="8,9" />
+		<actor_data data_type="ActorMoveRange" base_range="12,16" />
+		<actor_data data_type="ActorHP" base_range="195,225" />
+		<actor_data data_type="ActorPower" base_range="65,85" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="ActorArmorPiercing" base_range="20,20" />
+		<actor_data data_type="UnitMorale" base_range="660,790" />
+		<actor_data data_type="ContrabandScanner" base_range="200,250" />
+	</npc_unit_type>
+
+	<!--MilitaryAblator
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="MilitaryAblator" display_name="Ablator"
+		description="Armed with explosive munitions meant for peeling structures to pieces."
+		icon_scale="0.7" shape_icon_name="SF2_Flame" shape_icon_color="#ffffff"
+		vis_drawing_tag="MilitaryAblator" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="16"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="AblatorShot" kills_by_player_increase_statistic1="SoldiersKilledByYou" deaths_by_any_source_increase_statistic="SoldiersWhoDiedAndHaveNotYetBeenUploaded"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1" 
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4"
+		tags="CorporateVariedWarrior" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="9,11" />
+		<actor_data data_type="ActorMoveRange" base_range="10,14" />
+		<actor_data data_type="ActorHP" base_range="135,185" />
+		<actor_data data_type="ActorPower" base_range="175,207" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="ActorArmorPiercing" base_range="20,20" />
+		<actor_data data_type="UnitMorale" base_range="660,790" />
+		<actor_data data_type="ContrabandScanner" base_range="400,450" />
+		<default_feat feat="StructureCracker" value="11.2"/>
+	</npc_unit_type>
+
+	<!--Grenadier
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="Grenadier" display_name="Grenadier"
+		description="High-powered grenades with anti-structural properties."
+		icon_scale="0.7" shape_icon_name="FlatSkillB_granade2" shape_icon_color="#ffffff"
+		vis_drawing_tag="MilitaryGrenade" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="16"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="GrenadierShot" kills_by_player_increase_statistic1="SoldiersKilledByYou" deaths_by_any_source_increase_statistic="SoldiersWhoDiedAndHaveNotYetBeenUploaded"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1" 
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4"
+		tags="CorporateVariedWarrior" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="11,12" />
+		<actor_data data_type="ActorMoveRange" base_range="10,14" />
+		<actor_data data_type="ActorHP" base_range="135,185" />
+		<actor_data data_type="ActorPower" base_range="245,267" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="UnitMorale" base_range="660,790" />
+		<actor_data data_type="AreaOfAttack" base_range="5,8" />
+		<actor_data data_type="AreaAttackIntensity" base_range="80,80" />
+		<actor_data data_type="ContrabandScanner" base_range="400,450" />
+		<default_feat feat="StructureCracker" value="4.8"/>
+	</npc_unit_type>
+
+	<!--Corporal
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="Corporal" display_name="Corporal"
+		description="The lowest level of non-commissioned military officer. In charge of small groups of infantry."
+		icon_scale="0.7" shape_icon_name="FlatSkillB_dogtags" shape_icon_color="#ffffff"
+		vis_drawing_tag="MilitaryCorporal" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="4"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="CorporalShot" kills_by_player_increase_statistic1="SoldiersKilledByYou" deaths_by_any_source_increase_statistic="SoldiersWhoDiedAndHaveNotYetBeenUploaded"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4" 
+		tags="Corporal" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="8,9" />
+		<actor_data data_type="ActorMoveRange" base_range="14,18" />
+		<actor_data data_type="ActorHP" base_range="270,310" />
+		<actor_data data_type="ActorPower" base_range="85,105" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="ActorArmorPiercing" base_range="40,40" />
+		<actor_data data_type="UnitMorale" base_range="660,790" />
+		<actor_data data_type="ContrabandScanner" base_range="200,250" />
+	</npc_unit_type>
+
+	<!--SergeantMajor
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SergeantMajor" display_name="Sergeant Major"
+		description="The highest-ranking non-commissioned military officers in the city. All higher-ranking NCOs are elsewhere."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Rank08" shape_icon_color="#ffffff"
+		vis_drawing_tag="MilitaryCorporal" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="CorporalShot" kills_by_player_increase_statistic1="SoldiersKilledByYou" deaths_by_any_source_increase_statistic="SoldiersWhoDiedAndHaveNotYetBeenUploaded"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4"
+		tags="Corporal" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="8,9" />
+		<actor_data data_type="ActorMoveRange" base_range="14,18" />
+		<actor_data data_type="ActorHP" base_range="470,510" />
+		<actor_data data_type="ActorPower" base_range="185,205" />
+		<actor_data data_type="UnitHackingSkill" base_range="45,50" />
+		<actor_data data_type="ActorArmorPiercing" base_range="80,80" />
+		<actor_data data_type="UnitMorale" base_range="960,1090" />
+		<actor_data data_type="ContrabandScanner" base_range="800,850" />
+		<default_perk perk="Fearless" unlock="" />
+	</npc_unit_type>
+
+	<!--ArmedMilitaryCaptain
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ArmedMilitaryCaptain" display_name="Captain"
+		description="Officer caught by surprise."
+		icon_scale="0.7" shape_icon_name="CleanTriangle22" shape_icon_color="#ffffff"
+		vis_drawing_tag="MilitaryArmedCaptain" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="ArmedMilitaryCaptainShot" kills_by_player_increase_statistic1="SoldiersKilledByYou" deaths_by_any_source_increase_statistic="SoldiersWhoDiedAndHaveNotYetBeenUploaded"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4" 
+		tags="ArmedMilitaryCaptain" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="18,21" />
+		<actor_data data_type="ActorMoveRange" base_range="12,16" />
+		<actor_data data_type="ActorHP" base_range="40,60" />
+		<actor_data data_type="ActorPower" base_range="45,65" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="ActorArmorPiercing" base_range="70,70" />
+		<actor_data data_type="UnitMorale" base_range="660,790" />
+		<actor_data data_type="ContrabandScanner" base_range="100,150" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<!--MilitarySniper
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="MilitarySniper" display_name="Military Sniper"
+		description="Specialists in extremely long-range attacks."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Game03" shape_icon_color="#ffffff"
+		vis_drawing_tag="MilitarySniper" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="MilitarySniperShot" kills_by_player_increase_statistic1="SoldiersKilledByYou" deaths_by_any_source_increase_statistic="SoldiersWhoDiedAndHaveNotYetBeenUploaded"
+		kills_by_player_increase_statistic2="SnipersKilledByYou"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4" 
+		tags="MilitarySniper,CorporateVariedWarrior" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="70,70" />
+		<actor_data data_type="ActorMoveRange" base_range="12,16" />
+		<actor_data data_type="ActorHP" base_range="205,260" />
+		<actor_data data_type="ActorPower" base_range="145,275" />
+		<actor_data data_type="ActorArmorPiercing" base_range="200,200" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="UnitMorale" base_range="460,590" />
+		<actor_data data_type="ContrabandScanner" base_range="300,350" />
+	</npc_unit_type>
+
+	<!--FractiveSniper
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="FractiveSniper" display_name="Fractive Sniper"
+		description="Specialists in extremely long-range attacks."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Game03" shape_icon_color="#ffffff"
+		vis_drawing_tag="MilitarySniper" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="MilitarySniperShot" kills_by_player_increase_statistic1="SoldiersKilledByYou" deaths_by_any_source_increase_statistic="SoldiersWhoDiedAndHaveNotYetBeenUploaded"
+		kills_by_player_increase_statistic2="SnipersKilledByYou"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4"
+		tags="FractiveSniper" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="70,70" />
+		<actor_data data_type="ActorMoveRange" base_range="30,30" />
+		<actor_data data_type="ActorHP" base_range="505,660" />
+		<actor_data data_type="ActorPower" base_range="145,275" />
+		<actor_data data_type="ActorArmorPiercing" base_range="200,200" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="UnitMorale" base_range="460,590" />
+		<actor_data data_type="ContrabandScanner" base_range="300,350" />
+		<actor_data data_type="ActorExtraVulnerabilityFromRear" base_range="190,245" />
+		<default_feat feat="StructureCracker" value="12.2"/>
+	</npc_unit_type>
+
+	<!--VorsiberSoldier
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="VorsiberSoldier" display_name="Vorsiber Soldier"
+		description="Elite troopers that guard special areas of The MegaCorp."
+		icon_scale="0.7" shape_icon_name="SI_Sword" shape_icon_color="#ffffff"
+		vis_drawing_tag="VorsiberSoldier" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="40"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryScary"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="VorsiberSoldierShot" kills_by_player_increase_statistic1="SoldiersKilledByYou" deaths_by_any_source_increase_statistic="SoldiersWhoDiedAndHaveNotYetBeenUploaded"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="5" extra_max_allowed_non_focal_building_clearance="5" 
+		tags="MegaCorpPOIGuards,VorsiberSoldier,CorporateVariedWarrior" collections="HumansOnFoot,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="18,21" />
+		<actor_data data_type="ActorMoveRange" base_range="28,30" />
+		<actor_data data_type="ActorHP" base_range="1155,1225" />
+		<actor_data data_type="ActorPower" base_range="855,865" />
+		<actor_data data_type="ActorArmorPiercing" base_range="300,300" />
+		<actor_data data_type="UnitHackingSkill" base_range="135,150" />
+		<actor_data data_type="UnitMorale" base_range="4960,5090" />
+		<actor_data data_type="ContrabandScanner" base_range="900,1100" />
+		<default_perk perk="Fearless" unlock="" />
+	</npc_unit_type>
+
+	<!--VorsiberInquisitor
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="VorsiberInquisitor" display_name="Vorsiber Inquisitor"
+		description="The best of the best. Ruthless humans with intense bionic augments."
+		icon_scale="0.7" shape_icon_name="SI_Sword" shape_icon_color="#ffffff"
+		vis_drawing_tag="VorsiberInquisitor" vis_object_scale="0.5" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="40"
+		percent_robotic="25" percent_biological="75" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryScary"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="VorsiberInquisitorShot" kills_by_player_increase_statistic1="SoldiersKilledByYou" deaths_by_any_source_increase_statistic="SoldiersWhoDiedAndHaveNotYetBeenUploaded"
+		radius_for_collisions="0.5" height_for_collisions="1" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="5" extra_max_allowed_non_focal_building_clearance="5"
+		tags="VorsiberInquisitor" collections="HumansOnFoot,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="18,21" />
+		<actor_data data_type="ActorMoveRange" base_range="58,60" />
+		<actor_data data_type="ActorHP" base_range="3455,3725" />
+		<actor_data data_type="ActorPower" base_range="1255,1465" />
+		<actor_data data_type="ActorArmorPiercing" base_range="700,800" />
+		<actor_data data_type="ActorArmorPlating" base_range="100,100" />
+		<actor_data data_type="UnitHackingSkill" base_range="435,550" />
+		<actor_data data_type="UnitMorale" base_range="4960,5090" />
+		<actor_data data_type="ContrabandScanner" base_range="5900,6100" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<!--MilitaryHighAltitudeTransport
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="MilitaryHighAltitudeTransport" display_name="High-Altitude Military Transport"
+		description="Highly dangerous transport for moving mechs and troops into the city from bases elsewhere in the Vorsiber corporate holdings."
+		icon_scale="0.7" shape_icon_name="WEmblem055" shape_icon_color="#ffffff"
+		vis_drawing_tag="MilitaryHighAltitudeTransport" vis_object_scale="4" vis_object_extra_offset="-3.6" collider_scale="1" entire_object_always_this_height_above_ground="28.3" stance_icon_extra_offset="1.6" simple_object_color="#0B0B0A"
+		extra_offset_for_camera_focus_when_selected="0" basic_squad_size="4000"
+		percent_robotic="50" percent_biological="50" is_vehicle="true" stats_do_not_go_down_when_squadmates_lost="true"
+		is_notable_enough_to_show_as_silhouette_when_stance_suggests="true" is_immune_to_third_party_cyber_attacks="true"
+		on_death="BasicHumanVehicleDeath" on_bullet_hit="BasicVehicleBulletHit" on_move_start="SecForceCruiserMoveStart" on_movement_finished_with_no_action="SecForceCruiserMoveEnd"
+		on_normal_attack="MilitaryHighAltitudeTransportShot" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryScary"
+		radius_for_collisions="17.8" height_for_collisions="7.35" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="0" 
+		extra_max_allowed_poi_clearance="5" extra_max_allowed_non_focal_building_clearance="5"
+		tags="MilitaryHighAltitudeTransport" collections="EnemyVehicles">
+		<!--Note, this is not considered human because the various things like scaring it do not work, with them being enclosed the way they are.-->
+		<actor_data data_type="AttackRange" base_range="30,32" />
+		<actor_data data_type="ActorMoveRange" base_range="87,102" />
+		<actor_data data_type="ActorHP" base_range="2500,2700" />
+		<actor_data data_type="ActorPower" base_range="650,790" />
+		<actor_data data_type="AreaOfAttack" base_range="18,22" />
+		<actor_data data_type="AreaAttackIntensity" base_range="100,100" />
+		<actor_data data_type="ActorArmorPlating" base_range="3600,3600" />
+		<actor_data data_type="ActorArmorPiercing" base_range="1200,1400" />
+		<actor_data data_type="NPCVehicleDroneResistance" base_range="400,560" />
+		<shot_emission_group group_number="0" debug_color="#5EBBF4"
+			min_delay_of_each_firing_port="0" max_delay_of_each_firing_port="0.01">
+			<shot_emission_point index_in_group="0" offset="4.2,0.1,14.65" />
+			<shot_emission_point index_in_group="1" offset="-4.2,0.1,14.65" />
+			<targeting_zone id="1" distance_from_center="22" angle_from_current="0" radius="5" center_offset_y="-3" height="3.6"/>
+			<targeting_zone id="2" distance_from_center="35" angle_from_current="0" radius="8" center_offset_y="-10" height="20"/>
+			<targeting_zone id="3" distance_from_center="49" angle_from_current="0" radius="9" center_offset_y="-30" height="60"/>
+		</shot_emission_group>
+		<shot_emission_group group_number="1" debug_color="#65BB38" alternative_projectile="MilitaryHighAltitudeTransportFrontRocket"
+			min_delay_of_each_firing_port="0" max_delay_of_each_firing_port="0.01">
+			<shot_emission_point index_in_group="0" offset="4,-1.7,-3.3" />
+			<shot_emission_point index_in_group="1" offset="-4,-1.7,-3.3" />
+			<shot_emission_point index_in_group="2" offset="4,-1.7,-1.16" />
+			<shot_emission_point index_in_group="3" offset="-4,-1.7,-1.16" />
+			<shot_emission_point index_in_group="4" offset="4,-1.7,1.45" />
+			<shot_emission_point index_in_group="5" offset="-4,-1.7,1.45" />
+			<targeting_zone id="1" distance_from_center="25" angle_from_current="0" radius="24" center_offset_y="-30" height="25"/>
+		</shot_emission_group>
+		<shot_emission_group group_number="2" debug_color="#B838BB" alternative_projectile="MilitaryHighAltitudeTransportRocketUp"
+			min_delay_of_each_firing_port="0.05" max_delay_of_each_firing_port="0.08">
+			<shot_emission_point index_in_group="0" offset="4.50,2.7,-1.45" />
+			<shot_emission_point index_in_group="1" offset="-4.5,2.7,-1.45" />
+			<shot_emission_point index_in_group="2" offset="-5.50,1.7,-7.45" />
+			<shot_emission_point index_in_group="3" offset="5.5,1.7,-7.45" />
+		</shot_emission_group>
+	</npc_unit_type>
+
+	<!--MilitaryTroopCarrier
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="MilitaryTroopCarrier" display_name="Military Troop Carrier"
+		description="Armed and armored inner-city troop carrier."
+		icon_scale="0.7" shape_icon_name="WEmblem257" shape_icon_color="#ffffff"
+		vis_drawing_tag="MilitaryTroopCarrier" vis_object_scale="0.7" vis_object_extra_offset="-0.8" collider_scale="1" entire_object_always_this_height_above_ground="4.2" simple_object_color="#0B0B0A"
+		extra_offset_for_camera_focus_when_selected="0" basic_squad_size="200"
+		percent_robotic="50" percent_biological="50" is_vehicle="true" stats_do_not_go_down_when_squadmates_lost="true"
+		is_notable_enough_to_show_as_silhouette_when_stance_suggests="true"
+		on_death="BasicHumanVehicleDeath" on_bullet_hit="BasicVehicleBulletHit" on_move_start="SecForceCruiserMoveStart" on_movement_finished_with_no_action="SecForceCruiserMoveEnd"
+		on_normal_attack="MilitaryTroopCarrierShot" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryScary"
+		radius_for_collisions="4.4" height_for_collisions="1.15" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="0" kills_by_player_increase_statistic1="SoldiersKilledByYou" deaths_by_any_source_increase_statistic="SoldiersWhoDiedAndHaveNotYetBeenUploaded"
+		extra_max_allowed_poi_clearance="5" extra_max_allowed_non_focal_building_clearance="5"
+		resource_1_recovered_on_death="Scandium" resource_1_range_recovered_on_death="110,290"
+		resource_1_recovered_on_extract="Scandium" resource_1_range_recovered_on_extract="1001,4440"
+		tags="MilitaryTroopCarrier" collections="EnemyVehicles">
+		<!--Note, this is not considered human because the various things like scaring it do not work, with them being enclosed the way they are.-->
+		<actor_data data_type="AttackRange" base_range="16,19" />
+		<actor_data data_type="ActorMoveRange" base_range="67,72" />
+		<actor_data data_type="ActorHP" base_range="750,900" />
+		<actor_data data_type="ActorPower" base_range="250,290" />
+		<actor_data data_type="AreaOfAttack" base_range="5,7" />
+		<actor_data data_type="AreaAttackIntensity" base_range="100,100" />
+		<actor_data data_type="ActorArmorPlating" base_range="55,80" />
+		<actor_data data_type="ActorArmorPiercing" base_range="90,140" />
+		<actor_data data_type="ActorExtraVulnerabilityFromAbove" base_range="230,275" />
+		<actor_data data_type="ContrabandScanner" base_range="1200,1400" />
+		<actor_data data_type="NPCVehicleDroneResistance" base_range="110,130" />
+		<shot_emission_group group_number="0" debug_color="#5EBBF4"
+			min_delay_of_each_firing_port="0.04" max_delay_of_each_firing_port="0.08">
+			<shot_emission_point index_in_group="0" offset="1.45,-0.1,0.8" />
+			<shot_emission_point index_in_group="1" offset="-1.45,-0.1,0.8" />
+			<shot_emission_point index_in_group="2" offset="1.5,-0.1,0.3" />
+			<shot_emission_point index_in_group="3" offset="-1.5,-0.1,0.3" />
+			<shot_emission_point index_in_group="4" offset="1.6,-0.1,-0.3" />
+			<shot_emission_point index_in_group="5" offset="-1.6,-0.1,-0.3" />
+			<targeting_zone id="1" distance_from_center="7" angle_from_current="0" radius="3" center_offset_y="-4" height="7"/>
+			<targeting_zone id="2" distance_from_center="19" angle_from_current="0" radius="12" center_offset_y="-4" height="12"/>
+		</shot_emission_group>
+		<shot_emission_group group_number="1" debug_color="#B838BB" alternative_projectile="MilitaryTroopCarrierRocketUp"
+			min_delay_of_each_firing_port="0" max_delay_of_each_firing_port="0.01">
+			<shot_emission_point index_in_group="0" offset="0.50,0.2,-2.45" />
+			<shot_emission_point index_in_group="1" offset="-0.50,0.2,-2.45" />
+			<shot_emission_point index_in_group="2" offset="1.15,0.2,-2.05" />
+			<shot_emission_point index_in_group="3" offset="-1.15,0.2,-2.05" />
+		</shot_emission_group>
+	</npc_unit_type>
+	
+</root>

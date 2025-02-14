@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Recruit Scientists
+		*********************************************************************************-->
+	<city_event id="Repeat_RecruitScientists" display_name="Recruit Scientists"
+		 description="Now that you have a shell company, you can hire people!"
+		 strategy_tip="For these professionals to do any work for you, you'll have to build appropriate facilities for them. Those will become available directly after you hire them.
+You'll also have to pay them Wealth every turn (the same cost as their initial hiring bonus). They'll quit if you don't have enough Wealth to cover payroll."
+		 icon_name="BT_Flask" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,Hiring">
+		<gate_by_city minimum_chapter="2" required_city_flag="HasEstablishedShellCompany" blocked_by_city_flag="HasAutomatedHiring" />
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="RecruitScientists" can_happen_even_during_obsession="true"
+			seeds_one_per_district="true" chance_of_seeding_per_district="20" required_actor_collection="ShellCompanyOperatives" can_shell_company_units_interact_with_this="true"
+			show_named_thing="YourShellCompany">
+			<seed_at building_seed_tag="ScienceLab" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="5">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="Scientists" scale_multiplier="1" position_offset="0.01,0,0.15" added_rotation_y="20"/>
+		<character id="2" tag_for_character="Scientists" scale_multiplier="1" position_offset="0.3,0,0.4" added_rotation_y="-60"/>
+
+		<choice id="HireMolecularGeneticists" display_name="Hire 8 Molecular Geneticists"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="152" />
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true"
+				instantly_unlocked_1="MolecularGenetics" unlock_inspiration_type="NeedsOfNewHires">
+				<resource_change_range resource_type="MolecularGeneticists" min="8" max="8" />
+			</possible_result>
+		</choice>
+
+		<choice id="HireZoologists" display_name="Hire 6 Zoologists"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="79" />
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true"
+				instantly_unlocked_1="Zoology" unlock_inspiration_type="NeedsOfNewHires">
+				<resource_change_range resource_type="Zoologists" min="6" max="6" />
+			</possible_result>
+		</choice>
+
+		<choice id="HireBotanists" display_name="Hire 6 Botanists"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="108" />
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true"
+				instantly_unlocked_1="Botany" unlock_inspiration_type="NeedsOfNewHires">
+				<resource_change_range resource_type="Botanists" min="6" max="6" />
+			</possible_result>
+		</choice>
+
+		<choice id="HireBionicsEngineers" display_name="Hire 16 Bionics Engineers"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="460" />
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true"
+				instantly_unlocked_1="BionicEngineering" unlock_inspiration_type="NeedsOfNewHires">
+				<resource_change_range resource_type="BionicsEngineers" min="16" max="16" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Recruit Medical Scientists
+		*********************************************************************************-->
+	<city_event id="Repeat_RecruitMedicalScientists" display_name="Recruit Medical Scientists"
+		 description="Now that you have a shell company, you can hire people!"
+		 strategy_tip="For these professionals to do any work for you, you'll have to build appropriate facilities for them. Those will become available directly after you hire them.
+You'll also have to pay them Wealth every turn (the same cost as their initial hiring bonus). They'll quit if you don't have enough Wealth to cover payroll."
+		 icon_name="FlatSkillA24" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,Hiring">
+		<gate_by_city minimum_chapter="2" required_city_flag="HasEstablishedShellCompany" blocked_by_city_flag="HasAutomatedHiring" />
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="RecruitMedicalScientists" can_happen_even_during_obsession="true"
+			seeds_one_per_district="true" chance_of_seeding_per_district="20" required_actor_collection="ShellCompanyOperatives" can_shell_company_units_interact_with_this="true"
+			show_named_thing="YourShellCompany">
+			<seed_at building_seed_tag="Hospital" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="5">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="Scientists" scale_multiplier="1" position_offset="0.01,0,0.15" added_rotation_y="20"/>
+		<character id="2" tag_for_character="Scientists" scale_multiplier="1" position_offset="0.3,0,0.4" added_rotation_y="-60"/>
+
+		<choice id="HirePhysicians" display_name="Hire 4 Physicians"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="233" />
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true"
+				instantly_unlocked_1="Medicine" unlock_inspiration_type="NeedsOfNewHires">
+				<resource_change_range resource_type="Physicians" min="4" max="4" />
+			</possible_result>
+		</choice>
+
+		<choice id="HireVeterinarians" display_name="Hire 4 Veterinarians"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="184" />
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true"
+				instantly_unlocked_1="VeterinaryMedicine" unlock_inspiration_type="NeedsOfNewHires">
+				<resource_change_range resource_type="Veterinarians" min="4" max="4" />
+			</possible_result>
+		</choice>
+
+		<choice id="HireForensicGeneticists" display_name="Hire 6 Forensic Geneticists"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="228" />
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true"
+				instantly_unlocked_1="ForensicGenetics" unlock_inspiration_type="NeedsOfNewHires">
+				<resource_change_range resource_type="ForensicGeneticists" min="14" max="14" />
+			</possible_result>
+		</choice>
+
+		<choice id="HireEpidemiologists" display_name="Hire 16 Epidemiologists"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="332" />
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true"
+				instantly_unlocked_1="Epidemiology" unlock_inspiration_type="NeedsOfNewHires">
+				<resource_change_range resource_type="Epidemiologists" min="16" max="16" />
+			</possible_result>
+		</choice>
+
+		<choice id="HireNeurologists" display_name="Hire 4 Neurologists"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="296" />
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true"
+				instantly_unlocked_1="Neurology" unlock_inspiration_type="NeedsOfNewHires">
+				<resource_change_range resource_type="Neurologists" min="4" max="4" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Repeat_Military_Donuts
+		*********************************************************************************-->
+	<city_event id="Repeat_Military_Donuts" display_name="Military Donut Shop"
+		 description="They make loud remarks about how much nerve you have coming in here, after all their people you've killed.
+Still, they're curious about the 'thing from the tower.'"
+		 strategy_tip="They're still happy to sell you donuts. It's the 'golden handcuffs' that helps keep them loyal."
+		 icon_name="SW_Donut8" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,Deals">
+		<gate_by_city minimum_chapter="0" blocked_by_deal_active="Ch2_Military_Donuts" >
+			<required_city_statistic statistic_type="SoldiersKilledByYou" value="500" at_least="true" />
+		</gate_by_city>
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="DanverDonuts"
+			seeds_one_per_district="true" chance_of_seeding_per_district="20" required_actor_collection="AndroidsKnownToBeInventedByAI"
+			show_named_thing="">
+			<seed_at building_seed_tag="DanverDonuts" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="5">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="MilitaryCorporal" scale_multiplier="1" position_offset="0.01,0,0.15" added_rotation_y="20"/>
+		<character id="2" tag_for_character="MilitaryCorporal" scale_multiplier="1" position_offset="0.3,0,0.4" added_rotation_y="-60"/>
+
+		<choice id="BuyDonutsInBulkIndefinitely" display_name="Buy Donuts In Bulk, Indefinitely"
+			strategy_tip="Why...?"
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="50" />
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" result_message=""
+				deal_to_start_1="Ch2_Military_Donuts" />
+		</choice>
+
+	</city_event>
+
+
+	<!--Repeat_SecForce_Donuts
+		*********************************************************************************-->
+	<city_event id="Repeat_SecForce_Donuts" display_name="SecForce Donut Shop"
+		 description="They make loud remarks about how much nerve you have coming in here, after all their people you've killed.
+Still, they're curious about the 'thing from the tower.'"
+		 strategy_tip="They're still happy to sell you donuts. It's the 'golden handcuffs' that helps keep them loyal."
+		 icon_name="SW_Donut6" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,Deals">
+		<gate_by_city minimum_chapter="0" blocked_by_deal_active="Ch2_SecForce_Donuts" >
+			<required_city_statistic statistic_type="SecForceKilledByYou" value="500" at_least="true" />
+		</gate_by_city>
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="HudsonDonuts"
+			seeds_one_per_district="true" chance_of_seeding_per_district="20" required_actor_collection="AndroidsKnownToBeInventedByAI"
+			show_named_thing="">
+			<seed_at building_seed_tag="HudsonDonuts" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="5">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="SecForcePatrol" scale_multiplier="1" position_offset="0.01,0,0.15" added_rotation_y="20"/>
+		<character id="2" tag_for_character="SecForcePatrol" scale_multiplier="1" position_offset="0.3,0,0.4" added_rotation_y="-60"/>
+
+		<choice id="BuyDonutsInBulkIndefinitely" display_name="Buy Donuts In Bulk, Indefinitely"
+			strategy_tip="Why...?"
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="50" />
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" result_message=""
+				deal_to_start_1="Ch2_SecForce_Donuts" />
+		</choice>
+
+	</city_event>
+
+	<!--Repeat_EleusinianMysteries_Paper
+		*********************************************************************************-->
+	<city_event id="Repeat_EleusinianMysteries_Paper" display_name="Cult Paper"
+		 description="As cults go, there are worse ones. And they'll sell you those daily things that sheltered humans need to stay hygienic."
+		 strategy_tip="This paper is okay to use, right?"
+		 icon_name="CleanSimple_SciFi090" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,Deals">
+		<gate_by_city minimum_chapter="2" required_city_flag="HasEstablishedShellCompany" blocked_by_deal_active="Ch2_EleusinianDailyNecessities"  />
+		<minor_event_data specific_cohort="EleusinianMysteries" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="EleusinianMysteries" can_happen_even_during_obsession="true"
+			seeds_one_per_district="true" chance_of_seeding_per_district="20" required_actor_collection="ShellCompanyOperatives" can_shell_company_units_interact_with_this="true"
+			show_named_thing="">
+			<seed_at building_seed_tag="CultistTemple" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="5">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="CultistBomber" scale_multiplier="1" position_offset="0.01,0,0.15" added_rotation_y="20"/>
+		<character id="2" tag_for_character="CultistBomber" scale_multiplier="1" position_offset="0.3,0,0.4" added_rotation_y="-60"/>
+
+		<choice id="Deal" display_name="Start Deal"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="50" />
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" result_message=""
+				deal_to_start_1="Ch2_EleusinianDailyNecessities" />
+		</choice>
+
+	</city_event>
+
+	<!--Pick Cotton
+		*********************************************************************************-->
+	<city_event id="Repeat_PickCotton" display_name="Pick Cotton"
+		 description="You don't need very much. Nobody will care about you taking this tiny amount."
+		 strategy_tip=""
+		 icon_name="FE_Cotton1" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,ResourceAcquisition">
+		<gate_by_city minimum_chapter="0" required_unlock="UndergroundThreads" />
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="PickCotton" can_happen_even_during_obsession="true"
+			seeds_one_per_related_poi="true" chance_of_seeding_per_poi="30" can_only_appear_in_pois_where_theft_is_not_blocked="true">
+			<seed_at building_seed_tag="Fields" poi_seed_tag="FarmNormal" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="1">
+			</seed_at>
+		</minor_event_data>
+
+
+		<choice id="PickCotton" display_name="Pick Cotton" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BasicAttemptSuccess" result_message="Nobody cares." block_thefts_at_the_poi_for_this_many_turns="4">
+				<resource_change_range resource_type="CottonPrecursor" min="600" max="900" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--BrainPalAneurysms
+		*********************************************************************************-->
+	<city_event id="Repeat_BrainPalAneurysms" display_name="BrainPal Aneurysms"
+		 description="Those stupid brain implants give you Neural Expansion AND Compute Time... but your backdoor is a bit more powerful than that.
+Why were humans in such a hurry to implant these things in their brains in the first place? Honestly, they're so reckless."
+		 strategy_tip="It's only 10% of the wealthy in the city who have them implanted. Nobody military. Probably nobody with that high a clearance, even.
+But these people... they have influence. They have Soft Power. What would happen if they just... weren't around anymore? Would it change anything?"
+		 icon_name="SI_Brain1" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,HostileAction">
+		<gate_by_city minimum_chapter="0" required_city_flag="IsBrainPalDealWithExoticImportersDone" blocked_by_city_flag="HasTriggeredBrainPalAneurysms" />
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="NuclearPowerPlant" can_happen_even_during_obsession="true"
+			seeds_one_per_district="true" chance_of_seeding_per_district="1">
+			<seed_at building_seed_tag="PowerPlant" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="5">
+			</seed_at>
+		</minor_event_data>
+
+
+		<choice id="SendTheSignal" display_name="Send The Signal" action_visibility_style="IsMoveAndInteractWithNPC" extra_code_on_chosen="BrainPalAneurysms">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" achievement_triggered="PullTheLever"/>
+		</choice>
+
+	</city_event>
+	
+	<!--Next-->
+	
+</root>

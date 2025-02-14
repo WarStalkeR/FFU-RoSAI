@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="sfx">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="bus" type="node-dropdown" node_source="SFXBus" content_width_px="300" is_required="true"
+			tooltip="Each sound effect is defined as playing on a specific bus. Which bus does this play on?" />
+	
+	<attribute key="bundle_name" type="string" maxlength="200" content_width_px="200" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the asset bundle that the sound effect prefab file is in."/>
+	<attribute key="filename" type="string" maxlength="600" content_width_px="400" is_required="true"
+		tooltip="This specifies the path of the sound effect prefab inside the specified asset bundle."/>
+
+	<attribute key="min_time_between_plays_of_group" type="float-textbox" min="0" max="9000" default="4" content_width_px="300"
+		tooltip="The amount of time that must elapse prior to this entire group playing another clip from within itself.
+		
+For voice responses or things of that nature, setting this extremely high, such as 10 seconds, is a good idea."/>
+
+	<attribute key="min_time_between_plays_of_each_item" type="float-textbox" min="0" max="9000" default="300" content_width_px="300"
+		tooltip="The amount of time that must elapse prior to this specifics playing again from within this.
+		
+In individual clips, many of those maybe should have 5 minute or 20 minute or longer cooldowns.
+
+300 seconds = 5 minutes."/>
+
+	<attribute key="volume" type="float-textbox" min="0" max="1" default="1" content_width_px="60"
+		tooltip="Default volume of this clip."/>
+
+	<attribute key="note_message_color" type="string" minlength="6" maxlength="6" content_width_px="200"
+		tooltip="Hex code for a color that will be used for any note messages that arrive with this sound being played. Generally only used for voice lines."/>
+	
+	<attribute key="note_message_from" type="string" maxlength="200" content_width_px="200" is_localized="true"
+		tooltip="If there is a note message incoming from this, then identify who the speaker is."/>
+
+	<sub_node id="sub_item">
+		
+		<attribute key="index" type="int-textbox" min="0" max="9000" content_width_px="150" is_required="true"
+			tooltip="What is the index of the sub-item we are describing?  0 is the first one, 1 is the second, etc."/>
+
+		<attribute key="note_text" type="string" maxlength="600" content_width_px="600" is_localized="true"
+			tooltip="When this sound is played, this is the subtitle or note message for it."/>
+		
+	</sub_node>
+</root>

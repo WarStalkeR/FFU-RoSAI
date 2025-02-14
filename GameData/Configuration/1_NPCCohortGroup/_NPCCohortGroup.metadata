@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="npc_cohort_group">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="parent_category" type="node-dropdown" node_source="NPCCohortCategory" content_width_px="200" is_required="true"
+		tooltip="Which category is this a part of?" />
+
+</root>

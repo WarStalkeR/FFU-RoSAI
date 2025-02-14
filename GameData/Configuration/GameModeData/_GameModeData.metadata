@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="game_mode_data">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="runs_city_life" type="bool" default="false"
+		tooltip="Should the city life vehicles and pedestrians be simulated during this game mode?" />
+
+	<attribute key="are_depth_flags_always_cleared_on_overlay_camera" type="bool" default="false"
+		tooltip="When true, the floating icons will always be above everything else, rather than mixed-in." />
+	
+	<attribute key="input_mode" type="node-dropdown" is_required="false" node_source="InputMode" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="What input mode does this use?" />
+
+	<attribute key="is_depth_of_field_forced_on" type="bool" default="false"
+		tooltip="Should depth of field be used no matter what?" />
+	<attribute key="is_depth_of_field_optional_on" type="bool" default="false"
+		tooltip="Should depth of field be used if the player has enabled it?" />
+	<attribute key="is_depth_of_field_forced_off" type="bool" default="false"
+		tooltip="Should depth of field be barred from being enabled no matter what?" />
+	
+	<attribute key="min_x" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the smallest allowed x the camera can move to?"/>
+	<attribute key="max_x" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the largest allowed x the camera can move to?"/>
+	<attribute key="min_z" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the smallest allowed z the camera can move to?"/>
+	<attribute key="max_z" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the largest allowed z the camera can move to?"/>
+
+	<attribute key="min_zoom" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the smallest zoom toward the focal point that is allowed?"/>
+	<attribute key="max_zoom" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the largest zoom toward the focal point that is allowed?"/>
+
+	<attribute key="anchor_y" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="Only applies to modes that do not use the main city map. What is the anchor floor that is used when there no other focal point?"/>
+
+	<attribute key="min_y_for_photo_mode" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="What y is the photo mode camera not allowed to go below in this mode?"/>
+
+	<attribute key="ground_line_draw_level" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="true"
+		tooltip="At what y are lines 'just above ground level' drawn?"/>
+
+	<attribute key="photo_mode_speed_multiplier" type="float-textbox" min="0.01" max="50" default="1" content_width_px="70" is_required="true"
+		tooltip="How much faster or slower does the photo mode camera move in this mode?"/>
+	<attribute key="regular_camera_speed_multiplier" type="float-textbox" min="0.01" max="50" default="1" content_width_px="70" is_required="true"
+		tooltip="How much faster or slower does the regular camera move in this mode?"/>
+
+	<attribute key="overriding_music_type" type="node-dropdown" is_required="false" node_source="MusicType" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The music type that will be used, if one is going to be forced.  If one is not forced, then the main music from the main game will keep playing instead!" />
+
+	<attribute key="overriding_weather" type="node-dropdown" is_required="false" node_source="WeatherStyle" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The weather style used, if one is going to be forced. Should not be used in streets mode or photo mode, as they pull their weather style from the current weather." />
+
+	<attribute key="added_content_bundle_name" type="string" maxlength="200" content_width_px="200" linebreak_before="Always" is_required="false"
+		tooltip="This specifies the asset bundle that has added content."/>
+	<attribute key="added_content_filename" type="string" maxlength="600" content_width_px="400" is_required="false"
+		tooltip="This specifies the path of the added content prefab inside the specified asset bundle."/>
+	
+</root>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+
+	<!-- Audio -->
+
+	<!-- Audio: OverallControls -->
+	<setting id="EnableGameplaySound" category="Audio" subcategory="OverallControls" display_name="Gameplay Sound" type="BoolToggle" default_bool="true"
+			 description="Attacks, abilities, unit movement, UI elements."/>
+	<setting id="EnableMusic" category="Audio" subcategory="OverallControls" display_name="Music" type="BoolToggle" default_bool="true"
+			 description="" />
+	<setting id="EnableAmbientSound" category="Audio" subcategory="OverallControls" display_name="Ambient Sound" type="BoolToggle" default_bool="true"
+			 description="Traffic, bird calls, rain sounds." />
+	
+	<setting id="Volume_Overall" category="Audio" subcategory="OverallControls" display_name="Overall Volume" type="IntSlider" default_int="80" min_int="0" max_int="110"
+			 description="Global volume adjustment for everything." default_should_override_user_value_if_older_than_version="0_6001_Tuning" />
+	<setting id="Volume_Music" category="Audio" subcategory="OverallControls" display_name="Main Menu Music Volume" type="IntSlider" default_int="90" min_int="0" max_int="110"
+			 description="Volume of the music on the main menu." default_should_override_user_value_if_older_than_version="0_6001_Tuning" />
+	<setting id="Volume_InGameMusic" category="Audio" subcategory="OverallControls" display_name="In-Game Music Volume" type="IntSlider" default_int="85" min_int="0" max_int="110"
+			 description="Volume of the music during gameplay, relative to all non-music sound." default_should_override_user_value_if_older_than_version="0_6001_Tuning" />
+	<setting id="Volume_GameplaySound" category="Audio" subcategory="OverallControls" display_name="Gameplay Sound Volume" type="IntSlider" default_int="100" min_int="0" max_int="110"
+			 description="Action confirmation sounds, gunfire, explosions, etc." />
+	<setting id="Volume_Ambient" category="Audio" subcategory="OverallControls" display_name="Ambient Sound Volume" type="IntSlider" default_int="95" min_int="0" max_int="110"
+			description="Bird calls, rain, and other background sounds." default_should_override_user_value_if_older_than_version="0_6001_Tuning" />
+
+	<!-- Audio: FineTuning -->
+	<setting id="MuteGameWhenUnfocused" category="Audio" subcategory="FineTuning" display_name="Mute Game When Unfocused" type="BoolToggle" default_bool="false"
+		description="" />
+	
+	<setting id="EnableAmbientBirds" category="Audio" subcategory="FineTuning" display_name="Ambient Birds" type="BoolToggle" default_bool="true"
+		description="" />
+	<setting id="EnableAmbientTraffic" category="Audio" subcategory="FineTuning" display_name="Ambient Traffic Sounds" type="BoolToggle" default_bool="true"
+		description="" />
+	<setting id="EnableAmbientFlyovers" category="Audio" subcategory="FineTuning" display_name="Ambient Flyover Sounds" type="BoolToggle" default_bool="true"
+		description="" />
+	<setting id="EnableAmbientWind" category="Audio" subcategory="FineTuning" display_name="Ambient Wind" type="BoolToggle" default_bool="true"
+		description="" />
+
+	<setting id="EnableDeliveryCraftSounds" category="Audio" subcategory="FineTuning" display_name="Delivery Craft Sounds" type="BoolToggle" default_bool="true"
+		description="" />
+
+	<setting id="InGameMusic_MinGap" category="Audio" subcategory="FineTuning" display_name="In-Game Music Min Gap" type="IntSlider" default_int="8" min_int="0" max_int="120"
+		description="It's typically nice to have a gap for the ambient soundscape to play between music tracks." />
+	<setting id="InGameMusic_MaxGap" category="Audio" subcategory="FineTuning" display_name="In-Game Music Max Gap" type="IntSlider" default_int="22" min_int="0" max_int="180"
+		description="It's typically nice to have a gap for the ambient soundscape to play between music tracks." />
+	
+</root>

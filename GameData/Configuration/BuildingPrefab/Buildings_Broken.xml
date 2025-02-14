@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Did not apply floors to BrokenChimneyA or BrokenCoolingTowerA. These seemed more decorative than functional -->
+	
+	<building_prefab id="BrokenShop" type="AbandonedShop" display_name="Broken Shop" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Shop.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.4,0.4,1.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.4,0.45,1.4"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="2" floor_size="1.4,0.45,1.4" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="35"/>
+		<building_marker prefab="Skylight" offset="0.1,-0.1,0.1"  rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="Diner" type="AbandonedDiner" display_name="Diner" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Diner.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.5,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.5,0.45,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="12"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.05,0"  rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenApartmentsA" type="AbandonedApartments" display_name="Broken Apartments A" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Apartments A.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.8,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.2,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="3" floor_size="0.8,0.2,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="4" max="4" floor_size="0.3,0.2,0.6" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="25"/>
+		<building_marker prefab="Chimney" offset="-0.3,-0.25,0.05"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenApartmentsB" type="AbandonedApartments" display_name="Broken Apartments B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Apartments B.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.8,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.3,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="1" floor_size="0.8,0.3,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="16"/>
+		<building_marker prefab="AntennaOneLight" offset="0.25,-0.35,-0.35" scale_multiplier="0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenOfficeA" type="AbandonedOffice" display_name="Broken Office A" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Office A.prefab">
+		<floors_group min="-4" max="-1" floor_size="0.9,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.9,0.35,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="4" floor_size="0.9,0.25,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="32"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.06,0" scale_multiplier="1.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenOfficeB" type="AbandonedOffice" display_name="Broken Office B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Office B.prefab">
+		<floors_group min="-4" max="-1" floor_size="0.9,0.3,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.9,0.3,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="0.9,0.2,0.75"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="22"/>
+		<building_marker prefab="Skylight" offset="-0.3,-0.03,0.38"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenApartmentB" type="AbandonedApartments" display_name="Broken Apartment B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Apartment B.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.8,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.2,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="4" floor_size="0.8,0.2,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="90"/>
+		<building_marker prefab="Skylight" offset="0.15,-0.01,0.15"  rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenBarnA1" type="AbandonedBuildingRuin" display_name="Broken Barn A1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Barn A1.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.9,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.9,0.7,1.3"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="15"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenBarnA2" type="AbandonedBuildingRuin" display_name="Broken Barn A2" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Barn A2.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.9,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.9,0.7,1.3"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="15"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenBarracks" type="AbandonedBuildingRuin" display_name="Broken Barracks" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Barracks.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.4,1.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.7,0.5,1.4"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="30"/>
+		<building_marker prefab="Chimney" offset="-0.3,-0.25,0.05"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenBuildingA" type="AbandonedBuildingRuin" display_name="Broken Building A" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Building A.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.35,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="2" floor_size="0.8,0.35,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="30"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.01,0.09"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenBuildingB" type="AbandonedBuildingRuin" display_name="Broken Building B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Building B.prefab" floors_offset="0.06,0,-0.13">
+		<floors_group min="-1" max="-1" floor_size="1,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1,0.35,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="2" floor_size="1,0.35,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="20"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.25,-0.25,-0.05" scale_multiplier="0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenBuildingC" type="AbandonedBuildingRuin" display_name="Broken Building C" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Building C.prefab" floors_offset="-0.07,0,0">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.35,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="4" floor_size="0.8,0.3,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="40"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.25,-0.25,-0.05" scale_multiplier="0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenBuildingD" type="AbandonedBuildingRuin" display_name="Broken Building D" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Building D.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.5,0.3,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.5,0.3,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="10"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenBuildingE" type="AbandonedBuildingRuin" display_name="Broken Building E"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Building E.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.3,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.45,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="15"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenBuildingF" type="AbandonedBuildingRuin" display_name="Broken Building F" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Building F.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.3,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.8,0.3,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="0.8,0.2,0.75"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="25"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseD" type="AbandonedHouse" display_name="Broken House D" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House D.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.75,0.3,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.75,0.3,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="14"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseF1" type="AbandonedHouse" display_name="Broken House F1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House F1.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.1,0.3,1.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.1,0.3,1.4"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="0.8,0.2,1"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="10"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.25,-0.35,-0.05" scale_multiplier="0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseF2" type="AbandonedHouse" display_name="Broken House F2" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House F2.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.1,0.3,1.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.1,0.3,1.4"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="0.8,0.2,1"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="8"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.25,-0.35,-0.05" scale_multiplier="0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseG1" type="AbandonedHouse" display_name="Broken House G1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House G1.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.3,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.8,0.3,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="0.75,0.2,0.65"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="8"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.25,-0.4,-0.05" scale_multiplier="0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseG2" type="AbandonedHouse" display_name="Broken House G2" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House G2.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.3,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.8,0.3,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="0.75,0.2,0.65"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="10"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.25,-0.4,-0.05" scale_multiplier="0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseG3" type="AbandonedHouse" display_name="Broken House G3" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House G3.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.3,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.8,0.3,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="0.75,0.2,0.65"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="9"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.25,-0.4,-0.05" scale_multiplier="0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseH1" type="AbandonedHouse" display_name="Broken House H1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House H1.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.2,0.3,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.2,0.3,1.1"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="0.7,0.2,0.65"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="12"/>
+		<building_marker prefab="AntennaOneLight" offset="0.12,-0.45,-0.35" scale_multiplier="0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseH2" type="AbandonedHouse" display_name="Broken House H2" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House H2.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.9,0.3,0.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.9,0.35,0.7"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="14"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseI1" type="AbandonedHouse" display_name="Broken House I1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House I1.prefab" floors_offset="0.05,0,-0.05">
+		<floors_group min="-1" max="-1" floor_size="1.2,0.3,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.2,0.35,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="8"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseI2" type="AbandonedHouse" display_name="Broken House I2"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House I2.prefab" floors_offset="0.01,0,-0.05">
+		<floors_group min="-1" max="-1" floor_size="1.2,0.3,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.2,0.35,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="8"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseJ" type="AbandonedHouse" display_name="Broken House J" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House J.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.3,0.3,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.3,0.3,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="1.2,0.2,0.7"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="30"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.60,-0.4,-0.0" scale_multiplier="0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseK" type="AbandonedHouse" display_name="Broken House K" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House K.prefab">
+		<floors_group min="-1" max="-1" floor_size="1,0.3,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1,0.3,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="3" max="3" floor_size="1,0.2,0.7"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="20"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.45,-0.35,-0.0" scale_multiplier="0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenHouseL" type="AbandonedHouse" display_name="Broken House L" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken House L.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.3,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.8,0.3,0.8"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="0.8,0.2,0.7"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="12"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.32,-0.35,-0.0" scale_multiplier="0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenOfficeC1" type="AbandonedOffice" display_name="Broken Office C1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Office C1.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.3,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.3,0.3,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="2" floor_size="1.3,0.3,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="3" max="3" floor_size="0.7,0.3,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="30"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.07,0.09"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenOfficeC2" type="AbandonedOffice" display_name="Broken Office C2" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Office C2.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.3,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.3,0.3,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="2" floor_size="1.3,0.3,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="3" max="3" floor_size="0.7,0.3,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="35"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.07,0.09"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenOfficeD1" type="AbandonedOffice" display_name="Broken Office D1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Office D1.prefab" floors_offset="-0.05,0,-0.05">
+		<floors_group min="-4" max="-1" floor_size="0.8,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.35,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="5" floor_size="0.8,0.25,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="40"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.07,0.09"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenOfficeD2" type="AbandonedOffice" display_name="Broken Office D2" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Office D2.prefab" floors_offset="-0.05,0,-0.05">
+		<floors_group min="-4" max="-1" floor_size="0.8,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.35,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="5" floor_size="0.8,0.25,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="45"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.07,0.09"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenOfficeD3" type="AbandonedOffice" display_name="Broken Office D3" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Office D3.prefab" floors_offset="-0.05,0,-0.05">
+		<floors_group min="-4" max="-1" floor_size="0.8,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.35,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="5" floor_size="0.8,0.25,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="50"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.07,-0.09"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenOfficeE1" type="AbandonedOffice" display_name="Broken Office E1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Office E1.prefab" floors_offset="0,0,0.05">
+		<floors_group min="-4" max="-1" floor_size="0.8,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.3,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="3" floor_size="0.8,0.3,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="30"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.07,0.09"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenOfficeE2" type="AbandonedOffice" display_name="Broken Office E2"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Office E2.prefab" floors_offset="0,0,0.05">
+		<floors_group min="-4" max="-1" floor_size="0.8,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.3,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="3" floor_size="0.8,0.3,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="25"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.07,0.09"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenOfficeG1" type="AbandonedOffice" display_name="Broken Office G1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Office G1.prefab">
+		<floors_group min="-4" max="-1" floor_size="0.8,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.35,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="1" floor_size="0.8,0.4,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="20"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.07,0.09"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenOfficeG2" type="AbandonedOffice" display_name="Broken Office G2" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Office G2.prefab">
+		<floors_group min="-4" max="-1" floor_size="0.8,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.35,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="1" floor_size="0.8,0.4,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="25"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.07,0.09"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenShopB" type="AbandonedShop" display_name="Broken Shop B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Shop B.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.4,0.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.7,0.3,0.7"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="1" floor_size="0.7,0.3,0.7" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="15"/>
+		<building_marker prefab="Skylight" offset="-0,-0.09,0.09"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenStandA" type="AbandonedShop" display_name="Broken Stand A" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Stand A.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.4,0.4,0.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.4,0.3,0.4"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="4"/>
+	</building_prefab>
+
+	<building_prefab id="BrokenTownHallA" type="AbandonedBuildingRuin" display_name="Broken Town Hall A" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Broken/Broken Town Hall A.prefab" floors_offset="0,0,-0.14">
+		<floors_group min="-1" max="-1" floor_size="1.65,0.4,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.65,0.45,1"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="1" floor_size="1.65,0.4,1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="18"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.2,-0.8,-0.3"/>
+	</building_prefab>
+	
+</root>

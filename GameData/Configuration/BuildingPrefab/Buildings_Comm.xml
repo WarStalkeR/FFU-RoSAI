@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_prefab id="DataCenter" type="DataCenter" display_name="Data Center"
+		path_to_placeable="Assets/__Library/Comm/General/Data Center.prefab" should_be_shown_in_map_mode="false">
+		<floors_group min="-5" max="-1" floor_size="3,0.45,1.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="3,0.45,1.7"  percentage_work_space="70" percentage_storage_space="30"/>
+		<floors_group min="1" max="3" floor_size="3,0.4,1.7"  percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="160"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="10"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="80"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="20"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="10"/>
+		<building_marker prefab="Skylight" offset="-1.3,-1.03,-0.5" scale_multiplier="2"/>
+	</building_prefab>
+	
+	<building_prefab id="DataCenterLarge" type="DataCenter" display_name="Data Center"
+		path_to_placeable="Assets/__Library/Comm/General/Data Center Large.prefab" should_be_shown_in_map_mode="false">
+		<floors_group min="-15" max="-1" floor_size="8,0.35,3.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="8,0.45,3.7"  percentage_work_space="70" percentage_storage_space="30"/>
+		<floors_group min="1" max="4" floor_size="8,0.35,3.7"  percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="1020"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="2010"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="100"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="330"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="230"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="70"/>
+		<building_marker prefab="Skylight" offset="-2.3,-5.33,1.5" scale_multiplier="2"/>
+	</building_prefab>
+
+	<building_prefab id="RadioTower" type="RadioTower" display_name="Radio Tower"
+		path_to_placeable="Assets/__Library/Comm/General/Radio Tower.prefab">
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="3"/>
+	</building_prefab>
+
+	<building_prefab id="DeepSpaceCommunications" type="DeepSpaceCommunications" display_name="Deep Space Communications"
+		path_to_placeable="Assets/__Library/Comm/General/Radio Telescope A.prefab">
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="30"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.145,-2.85,-1.35" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="ScientificRadioTelescope" type="ScientificRadioTelescope" display_name="Scientific Radio Telescope"
+		path_to_placeable="Assets/__Library/Comm/General/Radio Telescope B.prefab">
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="80"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="125"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="300"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="65"/>
+		<building_marker prefab="AntennaThreeLight" offset="0,-0.33,0"/>
+	</building_prefab>
+
+	<building_prefab id="RadomeA" type="Radome" display_name="Radome A"
+		path_to_placeable="Assets/__Library/Comm/General/Radome A.prefab">
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="25"/>
+ 		<max_jobs_by_profession profession="HighSciences" max_jobs="8"/>
+		<building_marker prefab="Skylight" offset="0,-0.03,0" scale_multiplier="2"/>
+	</building_prefab>
+	
+</root>

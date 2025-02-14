@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<cost_scale_type id="Basic" initial_cost="1200" max_level="99"
+		multiplier_of_prior_level="1">
+		<adjusted_multiplier_to_prior_starting_at starting_level="2" adjustment_to_base_multiplier="0.2"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="10" adjustment_to_base_multiplier="0.2"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="20" adjustment_to_base_multiplier="0.2"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="30" adjustment_to_base_multiplier="0.2"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="40" adjustment_to_base_multiplier="0.2"/>
+	</cost_scale_type>
+
+	<cost_scale_type id="AIProgress" initial_cost="30" max_level="99"
+		multiplier_of_prior_level="1.6">
+		<adjusted_multiplier_to_prior_starting_at starting_level="3" adjustment_to_base_multiplier="-0.1"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="6" adjustment_to_base_multiplier="-0.15"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="9" adjustment_to_base_multiplier="-0.08"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="14" adjustment_to_base_multiplier="-0.08"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="18" adjustment_to_base_multiplier="-0.06"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="20" adjustment_to_base_multiplier="-0.02"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="24" adjustment_to_base_multiplier="-0.03"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="30" adjustment_to_base_multiplier="-0.04"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="50" adjustment_to_base_multiplier="-0.01"/>
+		<adjusted_multiplier_to_prior_starting_at starting_level="70" adjustment_to_base_multiplier="-0.01"/>
+	</cost_scale_type>
+
+	<cost_scale_type id="Flat" initial_cost="1100" multiplier_of_prior_level="1" max_level="99">
+		<adjusted_multiplier_to_prior_starting_at starting_level="2" adjustment_to_base_multiplier="0.4"/>
+	</cost_scale_type>
+
+	<cost_scale_type id="Steep" initial_cost="900" multiplier_of_prior_level="1" max_level="99">
+		<adjusted_multiplier_to_prior_starting_at starting_level="2" adjustment_to_base_multiplier="2"/>
+	</cost_scale_type>
+
+</root>

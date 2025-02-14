@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--DisarmedGangLookout
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="DisarmedGangLookout" display_name="Disarmed Gang Lookout"
+		description=""
+		icon_scale="0.7" shape_icon_name="CleanSimple_Skill009" shape_icon_color="#ffffff"
+		vis_drawing_tag="GangLookout" vis_object_scale="0.3" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatantWeakLone" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"		 
+		tags="DisarmedGangLookout" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="12,16" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="1,2" />
+		<actor_data data_type="UnitHackingSkill" base_range="1,2" />
+		<actor_data data_type="UnitMorale" base_range="54,74" />
+	</npc_unit_type>
+
+	<!--ArmedGangLookout
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ArmedGangLookout" display_name="Armed Gang Lookout"
+		description=""
+		icon_scale="0.7" shape_icon_name="CleanSimple_Skill009" shape_icon_color="#ffffff"
+		vis_drawing_tag="GangLookout" vis_object_scale="0.3" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatantWeakLone" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="WeakHumanGunfire"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1" 
+		tags="ArmedGangLookout" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="8,9" />
+		<actor_data data_type="ActorMoveRange" base_range="12,16" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="11,12" />
+		<actor_data data_type="ActorFearAttackPower" base_range="44,57" />
+		<actor_data data_type="UnitHackingSkill" base_range="1,2" />
+		<actor_data data_type="UnitMorale" base_range="90,112" />
+	</npc_unit_type>
+
+	<!--GangAkimbo (full color prestige unit)
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="GangAkimbo" display_name="Gang Akimbo"
+		description="Group of gang members who charge around with pistols."
+		icon_scale="0.7" shape_icon_name="SK_Gun6" shape_icon_color="#ffffff"
+		vis_drawing_tag="GangAkimbo" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="24"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="GangAkimboShot" 
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="GangMidleveReinforcements,GangAkimbo" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="8,9" />
+		<actor_data data_type="ActorMoveRange" base_range="20,26" />
+		<actor_data data_type="ActorHP" base_range="390,455" />
+		<actor_data data_type="ActorPower" base_range="232,339" />
+		<actor_data data_type="ActorFearAttackPower" base_range="320,345" />
+		<actor_data data_type="UnitMorale" base_range="500,530" />
+		<actor_data data_type="ContrabandScanner" base_range="100,150" />
+	</npc_unit_type>
+
+	<!--GangSharpshooter
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="GangSharpshooter" display_name="Gang Sharpshooter"
+		description="Gang members with rifles. A lack of armor and spatial awareness leaves them extra vulnerable to attacks from above."
+		icon_scale="0.7" shape_icon_name="SI_Machine_Gun18" shape_icon_color="#ffffff"
+		vis_drawing_tag="GangSharpshooter" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="9"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="GangSharpshooterShot" 
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="GangMidleveReinforcements,GangSharpshooter" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="15,16" />
+		<actor_data data_type="ActorMoveRange" base_range="12,16" />
+		<actor_data data_type="ActorHP" base_range="175,185" />
+		<actor_data data_type="ActorPower" base_range="52,68" />
+		<actor_data data_type="ActorFearAttackPower" base_range="170,190" />
+		<actor_data data_type="UnitMorale" base_range="320,350" />
+		<actor_data data_type="ContrabandScanner" base_range="100,150" />
+		<actor_data data_type="ActorExtraVulnerabilityFromAbove" base_range="180,210" />
+	</npc_unit_type>
+	
+	<!--todo GangGunner-->
+	
+	<!--todo GangBionic-->
+
+
+
+</root>

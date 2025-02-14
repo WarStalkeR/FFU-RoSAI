@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="achievement">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="api_key" type="string" maxlength="200" is_required="true" content_width_px="300" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the actual key that we send to Steam, GOG, etc, to tell them that an achievement is done (or to check achievement status)."/>
+
+	<attribute key="api_b_part" type="string" maxlength="200" is_required="true" content_width_px="300" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What gets used for Steam localization bits."/>
+
+	<attribute key="epic_xp" type="int-textbox" min="0" max="1000" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="Used by the Epic Game Store."/>
+
+	<attribute key="description" type="existing-override" is_required="true"
+		tooltip="This is the player-visible description of the achievement that is shown on Steam, GOG, or in-game."/>
+	
+	<attribute key="expansion" type="node-dropdown" node_source="Expansion" content_width_px="300"
+		tooltip="If this achievement is tied to an expansion, then it will be ignored when that expansion is not installed and enabled, but it will still exist in the data table." />
+
+	<attribute key="vfx_and_sound" type="node-dropdown" node_source="VisEventVFXAndSoundUsage" content_width_px="300" is_required="true"
+		tooltip="When triggered, what visuals and sound are played?" />
+
+	<attribute key="collections" type="node-list" node_source="AchievementCollection" content_width_px="300" is_required="true" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What contemplation collections is this entry part of?" />
+
+</root>

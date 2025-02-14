@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<input_action id="ToggleBuildMode"
+		category="UIShortcuts" display_name="Build Mode"
+		description="Build or delete structures and assign them jobs."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,ZodiacNeurons">
+		<keybind id="1" key="B" />
+		<keybind id="2" key="GamepadButtonNorth" is_steam_deck_default="true" />
+	</input_action>
+
+	<input_action id="ToggleCommandMode"
+		category="UIShortcuts" display_name="Command Mode"
+		description="Deploy bulk troops, rapidly alter unit stances, etc."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="V" />
+		<keybind id="2" key="GamepadButtonWest" is_steam_deck_default="true" />
+	</input_action>
+
+	<input_action id="Inventory"
+		category="UIShortcuts" display_name="Inventory"
+		description="Inventory for a city or for the end of time."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="I" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ToggleResearch"
+		category="UIShortcuts" display_name="Research"
+		description="Research selection window."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="T" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ToggleForcesSidebar"
+		category="UIShortcuts" display_name="Forces Sidebar"
+		description="The list of units under your control."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,ZodiacNeurons,ZodiacHexes,BuildMode,CommandMode">
+		<keybind id="1" key="F" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ToggleCultActionsSidebar"
+		category="UIShortcuts" display_name="Cult Actions Sidebar"
+		description="Actions that your cultists can perform for you."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,ZodiacNeurons,ZodiacHexes,BuildMode,CommandMode">
+		<keybind id="1" key="Period" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ToggleHistory"
+		category="UIShortcuts" display_name="History"
+		description="All of the retained logs and statistics from your time in this city."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="2" key="O" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="ToggleVictoryPath"
+		category="UIShortcuts" display_name="Victory Path"
+		description="View your progress toward various victory conditions, in this and other timelines."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="Y" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ToggleHardware"
+		category="UIShortcuts" display_name="Hardware"
+		description="View and analyze all of the unit types, equipment, and consumable items in your possession."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,ZodiacNeurons,ZodiacHexes">
+		<keybind id="2" key="U" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="ToggleStructuresWithComplaints"
+		category="UIShortcuts" display_name="Structures With Complaints"
+		description="Alerts you to structures that have problems and allows you to cycle through them."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" key="G" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="Handbook"
+		  category="UIShortcuts" display_name="Handbook"
+		  description="Open the machine handbook."
+		  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		  scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes,Hacking">
+		<keybind id="1" key="H" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="RecentEvents"
+		  category="UIShortcuts" display_name="Recent Events"
+		  description="Detailed log of combat and NPC activity from the last few turns."
+		  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		  scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="M" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ToggleDeepCheatSidebar"
+		category="UIShortcuts" display_name="Deep-Cheat Sidebar"
+		description="Extra windows and controls, only available in cheat mode.  You can also click the cheat-mode icon on the radial menu."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,ZodiacNeurons,ZodiacHexes,BuildMode,CommandMode">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+	<input_action id="ToggleNetworksSidebar"
+		category="UIShortcuts" display_name="Networks Sidebar"
+		description="The list of your networks and subnets.
+Does not apply in the End of Time."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,ZodiacNeurons,ZodiacHexes,BuildMode,CommandMode">
+		<keybind id="4" key="None" />
+		<keybind id="5" key="" />
+	</input_action>
+
+	<input_action id="ToggleTimelinesSidebar"
+		category="UIShortcuts" display_name="Timelines Sidebar"
+		description="The list of known timelines.
+Only works in the End of Time."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="EndOfTime">
+		<keybind id="2" key="Slash" />
+		<keybind id="3" key="" />
+	</input_action>
+	
+	<input_action id="SaveGame"
+		category="UIShortcuts" display_name="Save Game"
+		description="Open the save game dialog."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="3" key="F5" />
+		<keybind id="4" key="" />
+	</input_action>
+
+	<input_action id="LoadGame"
+		category="UIShortcuts" display_name="Load Game"
+		description="Open the load game dialog."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes,MainMenu">
+		<keybind id="3" key="F8" />
+		<keybind id="4" key="" />
+	</input_action>
+
+	<input_action id="ShowPerformanceStats"
+		category="UIShortcuts" display_name="Show Performance Stats"
+		description="Show the performance stats window."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes,MainMenu">
+		<keybind id="1" key="F3" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="OpenSettings"
+		category="UIShortcuts" display_name="Open Settings"
+		description="Open the settings window."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,MainMenu,PhotoMode,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="F6" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="OpenControls"
+		category="UIShortcuts" display_name="Open Controls"
+		description="Open the controls window."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,MainMenu,PhotoMode,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="F7" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="OpenBuildingOverlays"
+		category="UIShortcuts" display_name="Open Building Overlays"
+		description="Open the building overlays window."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,EventCamera">
+		<keybind id="2" key="None" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="QuitToMainMenu"
+		category="UIShortcuts" display_name="Quit To Main Menu"
+		description="Leave the current game and go to the main menu."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="F10" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ExitToOS"
+		category="UIShortcuts" display_name="Exit To OS"
+		description="Close the entire game program and go to the operating system."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes,MainMenu">
+		<keybind id="1" key="F10" modifier_1="LeftControl" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+</root>

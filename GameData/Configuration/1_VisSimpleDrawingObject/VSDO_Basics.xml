@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<vis_simp_obj id="BasicCube" tags="AnyCube,BasicCube" intentionally_has_no_tooltip_icon="true"/>
+	<vis_simp_obj id="BasicCylinder" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="MetallicCube" tags="AnyCube,MetallicCube" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="MetallicCubeTransparent" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="MapModeCube" intentionally_has_no_tooltip_icon="true" />
+	
+	<vis_simp_obj id="HoloWall" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BattleZoneWall" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="PersonAverage1" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonAverage2" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonBubble2" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonChild1" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonCoiled2" tags="Person,PersonSportsTeam2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonCoiledTall1" tags="Person,PersonSportsTeam2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonCrazyArms" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonCrossedArms1" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonHooped0" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonHooped4" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonRound1" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonRound2" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonRoundTall1" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonRoundTall2" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonSweptArms1" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonSwingTall1" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonSwirlsBody1" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonTall1" tags="Person,PersonSportsTeam1" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonTall2" tags="Person,PersonSportsTeam1" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonWigglyArms" tags="Person" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PersonWormy2" tags="Person" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="BGGangMemberRifle" tags="BGWarrior_Gang" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BGGangMemberRifleStanding" tags="BGWarrior_Gang" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BGMilitaryPistolAimUp" tags="BGWarrior_Military" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BGMilitaryPistolShieldAim" tags="BGWarrior_Military" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BGMilitaryShotgunCrouchAim" tags="BGWarrior_Military" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BGParamilitaryRifleCrouchFire" tags="BGWarrior_Paramilitary" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BGParamilitaryRifleCrouchHide" tags="BGWarrior_Paramilitary" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BGSecForceRifleCrouchAim" tags="BGWarrior_SecForce" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BGSecForceRifleCrouchAim2" tags="BGWarrior_SecForce" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BGSecForceShieldCrouchAim2" tags="BGWarrior_SecForce" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BGSecForceShieldRaisedAim3" tags="BGWarrior_SecForce" intentionally_has_no_tooltip_icon="true" />
+	
+	<vis_simp_obj id="ShipFighter" random_color_type="MilitaryCraft" create_auto_pooled_floating_object="true" event_camera_scale="0.1" tags="SpaceNationFighter" tooltip_icon_name="ShipFighter_2" t_i_c_s="PlayerUnitTooltipIconColorStyle"/>
+	<vis_simp_obj id="Bomber1" random_color_type="MilitaryCraft" create_auto_pooled_floating_object="true" event_camera_scale="0.1" tooltip_icon_name="Bomber1_1" t_i_c_s="PlayerUnitTooltipIconColorStyle"/>
+	<vis_simp_obj id="Bomber2" random_color_type="MilitaryCraft" create_auto_pooled_floating_object="true" event_camera_scale="0.1" tags="SpaceNationBomber" tooltip_icon_name="Bomber2_1" t_i_c_s="PlayerUnitTooltipIconColorStyle"/>
+	<vis_simp_obj id="DeliveryDrone1" random_color_type="MilitaryCraft" create_auto_pooled_floating_object="true" event_camera_scale="0.1" event_camera_extra_y_offset="0.25" tooltip_icon_name="DeliveryDrone1_1" t_i_c_s="PlayerUnitTooltipIconColorStyle"/>
+	<vis_simp_obj id="DeliveryDrone2" random_color_type="MilitaryCraft" create_auto_pooled_floating_object="true" event_camera_scale="0.1" tags="LargeEconomicTransport" tooltip_icon_name="DeliveryDrone2_1" t_i_c_s="PlayerUnitTooltipIconColorStyle"/>
+	<vis_simp_obj id="MilitaryCarrier" random_color_type="MilitaryCraft" create_auto_pooled_floating_object="true" event_camera_scale="0.1" tags="MilitaryTroopCarrier" tooltip_icon_name="MilitaryCarrier1_1" t_i_c_s="PlayerUnitTooltipIconColorStyle"/>
+	<vis_simp_obj id="MilitaryCarrier2" random_color_type="MilitaryCraft" create_auto_pooled_floating_object="true" event_camera_scale="0.1" tooltip_icon_name="MilitaryCarrier2_1" t_i_c_s="PlayerUnitTooltipIconColorStyle"/>
+	<vis_simp_obj id="MilitaryTransport1" random_color_type="MilitaryCraft" create_auto_pooled_floating_object="true" event_camera_scale="0.1" tags="MilitaryHighAltitudeTransport" tooltip_icon_name="MilitaryTransport1_1" t_i_c_s="PlayerUnitTooltipIconColorStyle"/>
+	<vis_simp_obj id="MilitaryTransport2" random_color_type="MilitaryCraft" create_auto_pooled_floating_object="true" event_camera_scale="0.1" tags="SecForceSuperCruiser" tooltip_icon_name="MilitaryTransport2_1" t_i_c_s="PlayerUnitTooltipIconColorStyle"/>
+	<vis_simp_obj id="SecurityHovercraft" random_color_type="MilitaryCraft" create_auto_pooled_floating_object="true" event_camera_scale="0.1" tags="SecForceCruiser" tooltip_icon_name="SecurityHovercraft_1" t_i_c_s="PlayerUnitTooltipIconColorStyle"/>
+
+	<vis_simp_obj id="PlayerDrone4" random_color_type="PlayerOminous" tooltip_icon_name="PlayerDrone4_1" t_i_c_s="PlayerUnitTooltipIconColorStyle" create_auto_pooled_floating_object="true" />
+
+	<vis_simp_obj id="PlayerBreachingPod" random_color_type="PlayerOminous" tags="HarvesterDrone" tooltip_icon_name="PlayerBreachingPod_1" t_i_c_s="PlayerUnitTooltipIconColorStyle" create_auto_pooled_floating_object="true"
+		internal_notes="Used as a harvesting drone, actually." />
+	
+	<vis_simp_obj id="PlayerDrone1" random_color_type="PlayerOminous" create_auto_pooled_floating_object="true" event_camera_scale="0.12" event_camera_extra_y_offset="0.45" tooltip_icon_name="PlayerDrone1_1" t_i_c_s="PlayerUnitTooltipIconColorStyle"/>
+	<vis_simp_obj id="PlayerDrone2" random_color_type="PlayerOminous" create_auto_pooled_floating_object="true" event_camera_scale="0.2" event_camera_extra_y_offset="0.42" tooltip_icon_name="PlayerDrone2_1" t_i_c_s="PlayerUnitTooltipIconColorStyle" />
+	<vis_simp_obj id="PlayerDrone3" random_color_type="PlayerOminous" create_auto_pooled_floating_object="true" event_camera_scale="0.1" tooltip_icon_name="PlayerDrone3_1" t_i_c_s="PlayerUnitTooltipIconColorStyle" />
+	<vis_simp_obj id="PlayerDropPod1" random_color_type="PlayerOminous" create_auto_pooled_floating_object="true" event_camera_scale="0.1" tooltip_icon_name="PlayerDropPod1_1" t_i_c_s="PlayerUnitTooltipIconColorStyle" />
+	<vis_simp_obj id="PlayerSpyDrone1" random_color_type="PlayerOminous" create_auto_pooled_floating_object="true" event_camera_scale="0.15" event_camera_extra_y_offset="0.42" tooltip_icon_name="PlayerSpyDrone1_1" t_i_c_s="PlayerUnitTooltipIconColorStyle" />
+	<vis_simp_obj id="PlayerSpyDrone2" random_color_type="PlayerOminous" create_auto_pooled_floating_object="true" event_camera_scale="0.26" event_camera_extra_y_offset="0.42" tooltip_icon_name="PlayerSpyDrone2_1" t_i_c_s="PlayerUnitTooltipIconColorStyle" />
+
+	<vis_simp_obj id="PlayerDropship1" random_color_type="PlayerOminous" create_auto_pooled_floating_object="true" event_camera_scale="0.07"  event_camera_extra_y_offset="0.18" tooltip_icon_name="PlayerDropship1_1" t_i_c_s="PlayerUnitTooltipIconColorStyle" />
+	<vis_simp_obj id="PlayerDropship2" random_color_type="PlayerOminous" create_auto_pooled_floating_object="true" event_camera_scale="0.06" event_camera_extra_y_offset="0.2" tooltip_icon_name="PlayerDropship2_1" t_i_c_s="PlayerUnitTooltipIconColorStyle" />
+	<vis_simp_obj id="PlayerDropship3" random_color_type="PlayerOminous" create_auto_pooled_floating_object="true" event_camera_scale="0.1" tooltip_icon_name="PlayerDropship3_1" t_i_c_s="PlayerUnitTooltipIconColorStyle" />
+	<vis_simp_obj id="PlayerDropship4" random_color_type="PlayerOminous" create_auto_pooled_floating_object="true" event_camera_scale="0.07" event_camera_extra_y_offset="0.25" tooltip_icon_name="PlayerDropship4_1" t_i_c_s="PlayerUnitTooltipIconColorStyle" />
+	<vis_simp_obj id="PlayerDropship5" random_color_type="PlayerOminous" create_auto_pooled_floating_object="true" event_camera_scale="0.09" event_camera_extra_y_offset="0.17" tooltip_icon_name="PlayerDropship5_1" t_i_c_s="PlayerUnitTooltipIconColorStyle" />
+
+	<vis_simp_obj id="GroundCube" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="GroundCubeVis" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="GroundCubeAttack" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="GroundCubeFogOfWar" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="GroundCubeOutOfBounds" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="GroundCylinder" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="GroundCylinderVis" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="GroundCubeUnder" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="UnitBaseRoundA" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundB" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundC" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundD" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundE" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundF" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundG" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundH" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundI" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundJ" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundK" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundL" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundM" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundN" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundO" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundP" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="UnitBaseRoundA_Unselected" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundJ_Unselected" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundK_Unselected" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundN_Unselected" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundO_Unselected" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBaseRoundP_Unselected" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="UnitBasePentA" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBasePentB" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBasePentC" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBasePentD" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBasePentE" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBasePentF" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBasePentG" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBasePentH" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="UnitBasePentI" intentionally_has_no_tooltip_icon="true" />
+	
+	<vis_simp_obj id="FloorCubeBlue" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="FloorCubeCyan" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="FloorCubeGreen" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="FloorCubeOrange" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="FloorCubePink" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="FloorCubePurple" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="FloorCubeRed" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="FloorCubeYellow" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="HexDarkGlassy" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexBlueLightning" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexOrangeFire" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexWhiteLuminescent" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexBlueMidCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexWhiteCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexCyanCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexMetalGray" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexMetalDark" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexMetalDarkBlue" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexMetalDarkRed" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexMetalDarkRed2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexMetalDarkBlue2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexTanSimple" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexMetalWhiteReflect" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexMetalWhiteReflect2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexGlowOrange" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexGlowCyan" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexGlowGreenSickly" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexMetalDarkBlack" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="HexPointDarkGlassy" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointBlueLightning" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointOrangeFire" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointWhiteLuminescent" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointBlueMidCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointWhiteCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointCyanCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointMetalGray" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointMetalDark" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointMetalDarkBlue" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointMetalDarkRed" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointMetalDarkRed2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointMetalDarkBlue2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointTanSimple" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointMetalWhiteReflect" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointMetalWhiteReflect2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointGlowOrange" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointGlowCyan" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointGlowGreenSickly" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexPointMetalDarkBlack" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="HexToothDarkGlassy" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothBlueLightning" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothOrangeFire" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothWhiteLuminescent" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothBlueMidCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothWhiteCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothCyanCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothMetalGray" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothMetalDark" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothMetalDarkBlue" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothMetalDarkRed" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothMetalDarkRed2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothMetalDarkBlue2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothTanSimple" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothMetalWhiteReflect" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothMetalWhiteReflect2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothGlowOrange" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothGlowCyan" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothGlowGreenSickly" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexToothMetalDarkBlack" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="HexIndicatorDarkGlassy" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorBlueLightning" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorOrangeFire" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorWhiteLuminescent" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorBlueMidCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorWhiteCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorCyanCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorMetalGray" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorMetalDark" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorMetalDarkBlue" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorMetalDarkRed" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorMetalDarkRed2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorMetalDarkBlue2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorTanSimple" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorMetalWhiteReflect" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorMetalWhiteReflect2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorGlowOrange" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorGlowCyan" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorGlowGreenSickly" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="HexIndicatorMetalDarkBlack" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="BarrierMetalDark" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierMetalDarkBlue" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierMetalDarkBlue2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierMetalDarkRed" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierMetalDarkRed2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierMetalGray" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierMetalWhiteReflect" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierMetalWhiteReflect2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierTanSimple" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierWhiteCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierWhiteLuminescent" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="BarrierBMetalDark" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierBMetalDarkBlue" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierBMetalDarkBlue2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierBMetalDarkRed" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierBMetalDarkRed2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierBMetalGray" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierBMetalWhiteReflect" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierBMetalWhiteReflect2" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierBTanSimple" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierBWhiteCrystal" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="BarrierBWhiteLuminescent" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="LiquidMetalA" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="LiquidMetalB" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="LiquidMetalC" intentionally_has_no_tooltip_icon="true" />
+	
+	<vis_simp_obj id="BoxTruck" tags="RoadVehicle" random_color_type="GroundVehicles" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="CityBus3" tags="RoadVehicle" random_color_type="GroundVehicles" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="DumpTruck" tags="RoadVehicle" random_color_type="GroundVehicles" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="MuscleCar" tags="RoadVehicle" random_color_type="GroundVehicles" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="PickupTruck" tags="RoadVehicle" random_color_type="GroundVehicles" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="SmallSplitRacerCar" tags="RoadVehicle" random_color_type="GroundVehicles" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="SmallTruck" tags="RoadVehicle" random_color_type="GroundVehicles" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="TankerTruck" tags="RoadVehicle" random_color_type="GroundVehicles" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="Taxi" tags="RoadVehicle" random_color_type="Taxis" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="TinyCar" tags="RoadVehicle" random_color_type="GroundVehicles" intentionally_has_no_tooltip_icon="true" />
+	
+	<vis_simp_obj id="BasicMissile" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="ShotSmall" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="ShotMed" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="ShotLong" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="FirePuff" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="SmokePuff" intentionally_has_no_tooltip_icon="true" />
+	
+	<vis_simp_obj id="3DAura" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="3DDarkCloud" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="3DDarkerCloud" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="3DLightCloud" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="3DLightCloud2" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="ArcenDepthMask" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="FogOfWarForObjects" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="FogOfWarForPlane" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="GroundBasic" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="GroundForPlane" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="GroundVis" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="ObjectVis" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="OutOfBoundsForPlane" intentionally_has_no_tooltip_icon="true" />
+
+	<vis_simp_obj id="SphereShieldBlueTech" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="SphereShieldGreenAura" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="SphereShieldPeachGlobe" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="SphereShieldPurple" intentionally_has_no_tooltip_icon="true" />
+	
+	<vis_simp_obj id="DimmingPlane1" tags="" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="DimmingPlane2" tags="" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="DimmingPlane3" tags="EventDimming_General" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="DimmingPlane4" tags="EventDimming_ChapterZero,FocusDimming_General" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="DimmingPlane5" tags="" intentionally_has_no_tooltip_icon="true" />
+	<vis_simp_obj id="DimmingPlane6" tags="" intentionally_has_no_tooltip_icon="true"/>
+	
+</root>

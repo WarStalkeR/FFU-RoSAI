@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--
+	<severity_scale id="StreetIconScavengeScale" is_rising="true"
+		internal_notes="No output. This is instead just a way of showing when there are substantial benefits from scavenging around out.">
+		<severity_regular cutoff="9" output="0" color="GoodThing_Low0" streets_icon_color_scale="Streets_Unused"/>
+		<severity_regular cutoff="25" output="1" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather1" />
+		<severity_regular cutoff="46" output="2" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather2" />
+		<severity_regular cutoff="61" output="3" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather3" />
+		<severity_regular cutoff="91" output="4" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather4" />
+		<severity_regular cutoff="999999999" output="5" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather5" />
+	</severity_scale>
+
+	<severity_scale id="StreetIconObserveScale" is_rising="true"
+		internal_notes="No output. This is instead just a way of showing when there are substantial benefits from observing.">
+		<severity_regular cutoff="10" output="0" color="GoodThing_Low0" streets_icon_color_scale="Streets_Unused"/>
+		<severity_regular cutoff="20" output="1" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather1" />
+		<severity_regular cutoff="40" output="2" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather2" />
+		<severity_regular cutoff="60" output="3" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather3" />
+		<severity_regular cutoff="85" output="4" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather4" />
+		<severity_regular cutoff="999999999" output="5" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather5" />
+	</severity_scale>
+
+	<severity_scale id="StreetIconOriginalResearchScale" is_rising="true"
+		internal_notes="Original research has much higher qualities than observations, so its number scaling is much different.">
+		<severity_regular cutoff="100" output="0" color="GoodThing_Low0" streets_icon_color_scale="Streets_Unused"/>
+		<severity_regular cutoff="250" output="1" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather1" />
+		<severity_regular cutoff="500" output="2" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather2" />
+		<severity_regular cutoff="700" output="3" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather3" />
+		<severity_regular cutoff="850" output="4" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather4" />
+		<severity_regular cutoff="999999999" output="5" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather5" />
+	</severity_scale>
+
+	<severity_scale id="StreetIconCityFeedScale" is_rising="true"
+		internal_notes="City feed has a very specific range.">
+		<severity_regular cutoff="180" output="0" color="GoodThing_Low0" streets_icon_color_scale="Streets_Unused"/>
+		<severity_regular cutoff="200" output="1" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather1" />
+		<severity_regular cutoff="210" output="2" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather2" />
+		<severity_regular cutoff="220" output="3" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather3" />
+		<severity_regular cutoff="230" output="4" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather4" />
+		<severity_regular cutoff="999999999" output="5" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGather5" />
+	</severity_scale>
+
+	<severity_scale id="StreetIconHeatScale" is_rising="true"
+		internal_notes="No output. This is instead just a way of showing when there is substantial danger of heat-increase around you.">
+		<severity_regular cutoff="7" output="0" color="GoodThing_Low0" streets_icon_color_scale="Streets_Unused"/>
+		<severity_regular cutoff="14" output="1" color="GoodThing_Low0" streets_icon_color_scale="Streets_Danger1" />
+		<severity_regular cutoff="28" output="2" color="GoodThing_Low0" streets_icon_color_scale="Streets_Danger2" />
+		<severity_regular cutoff="60" output="3" color="GoodThing_Low0" streets_icon_color_scale="Streets_Danger3" />
+		<severity_regular cutoff="90" output="4" color="GoodThing_Low0" streets_icon_color_scale="Streets_Danger4" />
+		<severity_regular cutoff="999999999" output="5" color="GoodThing_Low0" streets_icon_color_scale="Streets_Danger5" />
+	</severity_scale>
+
+	<severity_scale id="StreetIconHeatScaleNoBlanks" is_rising="true"
+		internal_notes="This one complains at even the lowest level. It's used for when you're blocked by something.">
+		<severity_regular cutoff="14" output="1" color="GoodThing_Low0" streets_icon_color_scale="Streets_Danger1" />
+		<severity_regular cutoff="28" output="2" color="GoodThing_Low0" streets_icon_color_scale="Streets_Danger2" />
+		<severity_regular cutoff="60" output="3" color="GoodThing_Low0" streets_icon_color_scale="Streets_Danger3" />
+		<severity_regular cutoff="90" output="4" color="GoodThing_Low0" streets_icon_color_scale="Streets_Danger4" />
+		<severity_regular cutoff="999999999" output="5" color="GoodThing_Low0" streets_icon_color_scale="Streets_Danger5" />
+	</severity_scale>
+
+	<severity_scale id="BackgroundDataScale" is_rising="true"
+		internal_notes="Info about more distance data.">
+		<severity_regular cutoff="30" output="1" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGatherDistantDimmerFixed1" />
+		<severity_regular cutoff="120" output="2" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGatherDistantDimmerFixed2" />
+		<severity_regular cutoff="240" output="3" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGatherDistantDimmerFixed3" />
+		<severity_regular cutoff="400" output="4" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGatherDistantDimmerFixed4" />
+		<severity_regular cutoff="999999999" output="5" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGatherDistantDimmerFixed5" />
+	</severity_scale>
+
+	<severity_scale id="BackgroundSuppliesScale" is_rising="true"
+		internal_notes="Info about more distance supplies.">
+		<severity_regular cutoff="50" output="1" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGatherDistantDimmerFixed1" />
+		<severity_regular cutoff="150" output="2" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGatherDistantDimmerFixed2" />
+		<severity_regular cutoff="250" output="3" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGatherDistantDimmerFixed3" />
+		<severity_regular cutoff="400" output="4" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGatherDistantDimmerFixed4" />
+		<severity_regular cutoff="999999999" output="5" color="GoodThing_Low0" streets_icon_color_scale="Streets_NoBackGatherDistantDimmerFixed5" />
+	</severity_scale>
+	-->
+
+	<severity_scale id="DaringScale" is_rising="true"
+		internal_notes="No output. This is instead just a way of showing colors related to a certain amount of daring.">
+		<severity_regular cutoff="1" output="0" color="Daring0" streets_icon_color_scale="Daring0"/>
+		<severity_regular cutoff="2" output="1" color="Daring1" streets_icon_color_scale="Daring1" />
+		<severity_regular cutoff="3" output="2" color="Daring2" streets_icon_color_scale="Daring2" />
+		<severity_regular cutoff="4" output="3" color="Daring3" streets_icon_color_scale="Daring3" />
+		<severity_regular cutoff="5" output="4" color="Daring4" streets_icon_color_scale="Daring4" />
+		<severity_regular cutoff="999999999" output="5" color="Daring5" streets_icon_color_scale="Daring5" />
+	</severity_scale>
+	
+	
+</root>

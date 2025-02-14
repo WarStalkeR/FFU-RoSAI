@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="building_status">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="color_hex" type="string" minlength="6" maxlength="6" content_width_px="200"
+		tooltip="Hex code for a color that will be used to show this status."/>
+
+	<attribute key="should_building_be_invisible" type="bool" default="false"
+		tooltip="Is this building messed up to the point that it should be invisible?" />
+
+	<attribute key="should_building_be_nonfunctional" type="bool" default="false"
+		tooltip="Is this building messed up to the point that it should not be able to work?" />
+
+	<attribute key="should_building_be_burned_visually" type="bool" default="false"
+		tooltip="Is this building of a sort that should draw as burned out?" />
+
+	<attribute key="is_building_considered_to_be_under_construction" type="bool" default="false"
+		tooltip="Is this building being built?" />
+	
+</root>

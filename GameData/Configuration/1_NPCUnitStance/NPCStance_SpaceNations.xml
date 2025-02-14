@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<stance id="SpaceNationBombingRun" display_name="Bombing Run"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="The space nations are bombing targets, doing quite a bit of collateral damage in the process."
+		icon_name="CleanSimple_Misc64" icon_color="#AE0BA7" icon_color_hdr_intensity="3" icon_scale="0.7"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false" is_stance_always_drawn_in_streets="false" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="false" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_attack_outcast_machines_at_or_above_level="1" will_hold_fire_if_at_full_health="false" this_unit_acts_before_player_looks_at_them="true" this_unit_is_never_ever_watched_by_the_player="true"
+		is_beneficial_to_the_cohort_guard="false" is_on_orders_from_the_local_megacorp="false" is_considered_disruptive="true" will_hold_fire_against_passive_guards="false"
+		will_attack_all_active_cohort_guards="true" is_allowed_to_aggro_poi_guards="true" is_hyper_aggressive_against_all_but_its_own_cohort="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAnyWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_Anywhere" />
+	</stance>
+
+	<stance id="SpaceNationAirSupport" display_name="Air Support"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These fighters are running interference for the bombers, striking at aircraft within the city."
+		icon_name="SK_FighterJet1" icon_color="#AE350B" icon_color_hdr_intensity="3" icon_scale="0.7"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false" is_stance_always_drawn_in_streets="false" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="false" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_attack_outcast_machines_at_or_above_level="1" will_hold_fire_if_at_full_health="false" this_unit_acts_before_player_looks_at_them="true" this_unit_is_never_ever_watched_by_the_player="true"
+		is_beneficial_to_the_cohort_guard="false" is_on_orders_from_the_local_megacorp="false" is_considered_disruptive="true" will_hold_fire_against_passive_guards="false"
+		will_attack_all_active_cohort_guards="true" is_allowed_to_aggro_poi_guards="true" is_hyper_aggressive_against_all_but_its_own_cohort="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAnyWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_Anywhere" />
+	</stance>
+
+	<stance id="SpaceNationTitanWrath" display_name="Wrath Of The Titan"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="The space nations have had enough. What is going ON in this city? They've dropped in a monstrous mech to investigate, not caring about collateral damage.
+That said, the response seems oddly... muted? The mech moves infrequently, and most weapons are not firing. Is it malfunctioning?"
+		icon_name="WEmblem122" icon_color="#AE350B" icon_color_hdr_intensity="3" icon_scale="0.7"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false" is_stance_always_drawn_in_streets="false" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="false" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="false"
+		will_attack_outcast_machines_at_or_above_level="1" will_hold_fire_if_at_full_health="false" this_unit_acts_before_player_looks_at_them="false" this_unit_is_never_ever_watched_by_the_player="false"
+		is_beneficial_to_the_cohort_guard="false" is_on_orders_from_the_local_megacorp="false" is_considered_disruptive="true" will_hold_fire_against_passive_guards="false"
+		will_attack_all_active_cohort_guards="true" is_allowed_to_aggro_poi_guards="true" is_hyper_aggressive_against_all_but_its_own_cohort="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="Wander" sort_order="100" chance_of_attempting="10" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="SpaceNationTitanDeactivated" display_name="Titan Deactivated"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="You have assisted the titan in disabling its legs and its weapons systems. Its brain is still fully functional, and its crew is still inside."
+		icon_name="WEmblem137" icon_color="#AE350B" icon_color_hdr_intensity="3" icon_scale="0.7"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false" is_stance_always_drawn_in_streets="false" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="false" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="false"
+		will_attack_outcast_machines_at_or_above_level="1" will_hold_fire_if_at_full_health="false" this_unit_acts_before_player_looks_at_them="false" this_unit_is_never_ever_watched_by_the_player="false"
+		is_beneficial_to_the_cohort_guard="false" is_on_orders_from_the_local_megacorp="false" is_considered_disruptive="true" will_hold_fire_against_passive_guards="false"
+		will_attack_all_active_cohort_guards="true" is_allowed_to_aggro_poi_guards="true" is_hyper_aggressive_against_all_but_its_own_cohort="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+	</stance>
+
+</root>

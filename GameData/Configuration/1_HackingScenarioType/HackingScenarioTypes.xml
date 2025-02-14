@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<hacking_scenario id="SimpleMechIntro" display_name="Intro To Hacking"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingScenariosBasic" >
+		<assigned tag_use="LeafNodeContents" tag="LeafNodeContents_SimpleMechIntro" />
+		<assigned tag_use="CodePriestSpawns" tag="CodePriestSpawns_SimpleMechIntro" />
+		
+		<quick_hack_option daemon="MechPilotCradle" value="true"/>
+		<quick_hack_option daemon="ArmorPlatingServicePanels" value="true"/>
+		<quick_hack_option daemon="WeaponSystems" value="true"/>
+		<quick_hack_option daemon="HydraulicActuators" value="true"/>
+	</hacking_scenario>
+	
+	<hacking_scenario id="SimpleMech" display_name="Hacking Enemy Mech"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingScenariosBasic"
+		requires_meta_flag="HasDoneFirstSimpleMechHack" replacement_scenario_if_meta_flag_not_met="SimpleMechIntro" >
+		<assigned tag_use="LeafNodeContents" tag="LeafNodeContents_SimpleMech" />
+		<assigned tag_use="CodePriestSpawns" tag="CodePriestSpawns_SimpleMech" />
+		<assigned tag_use="InitialDaemons" tag="InitialDaemons_SimpleMech" />
+		
+		<quick_hack_option daemon="MechPilotCradle" value="true"/>
+		<quick_hack_option daemon="ArmorPlatingServicePanels" value="true"/>
+		<quick_hack_option daemon="WeaponSystems" value="true"/>
+		<quick_hack_option daemon="HydraulicActuators" value="true"/>
+	</hacking_scenario>
+
+	<hacking_scenario id="BionicHuman" display_name="Hacking Bionic Human"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingScenariosBasic" >
+		<assigned tag_use="LeafNodeContents" tag="LeafNodeContents_SimpleMech" />
+		<assigned tag_use="CodePriestSpawns" tag="CodePriestSpawns_SimpleMech" />
+		<assigned tag_use="InitialDaemons" tag="InitialDaemons_SimpleMech" />
+
+		<quick_hack_option daemon="AugmentedOrgans" value="true"/>
+		<quick_hack_option daemon="AdrenalineRegulator" value="true"/>
+		<quick_hack_option daemon="AugmentedVision" value="true"/>
+		<quick_hack_option daemon="BionicUplink" value="true"/>
+	</hacking_scenario>
+
+	<hacking_scenario id="TitanMechProbeComms" display_name="Probe Comms Of The Titan Mech"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingScenariosBasic" >
+		<assigned tag_use="LeafNodeContents" tag="LeafNodeContents_SimpleMech" />
+		<assigned tag_use="CodePriestSpawns" tag="CodePriestSpawns_SimpleMech" />
+		<assigned tag_use="InitialDaemons" tag="InitialDaemons_SimpleMech" />
+	</hacking_scenario>
+
+	<hacking_scenario id="DataCenterInfiltrationSysOp" display_name="DataCenter InfiltrationSysOp"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.InfiltrationSysOpScenariosBasic" >
+		<assigned tag_use="InitialDaemons" tag="InitialDaemons_InfiltrationSysOp" />
+	</hacking_scenario>
+
+	<hacking_scenario id="HospitalInfiltrationSysOp" display_name="Hospital InfiltrationSysOp"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.InfiltrationSysOpScenariosBasic" >
+		<assigned tag_use="InitialDaemons" tag="InitialDaemons_InfiltrationSysOp" />
+	</hacking_scenario>
+	
+</root>

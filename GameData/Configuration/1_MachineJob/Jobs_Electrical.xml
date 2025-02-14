@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Early jobs-->
+
+	<job id="LargeWindGenerator" display_name="Large Wind Generator" marker_color="FadedGold" ui_color="#fefefe"
+		is_locked_before_unlock="WindTunnel"
+		description="A series of wind turbines harvest energy."
+		strategy_tip_optional=""
+		icon_name="FE_Turbine" turns_to_install="2" required_structure_type="LargePlotB" required_structure_type2="" job_work_order_priority="100"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsNonCode" tags="LargePowerGenerator,Electrical" is_suggested_to_always_build_maximum_possible="true"
+		job_classes="Electrical" internal_robotics_type_needed="WindEngine" internal_robots_count_needed="1" shuts_off_at_percentage_electricity="-1" scrap_if_above_internal_robotics_cap="true"
+		portrait_icon_name="BuildingFactoryB">
+		<initial_actor_rating data_type="GeneratedElectricity" value="45406" />
+		<resource_cost resource_type="Microbuilders" cost="440" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Hand" sort_index="100" />
+	</job>
+
+	<job id="GeothermalWell" display_name="Geothermal Well" marker_color="FadedGold" ui_color="#fefefe"
+		is_locked_before_unlock="GeothermalDrilling"
+		description="Neodymium is required to drill a geothermal well. Once drilled, this quietly produces massive amounts of energy."
+		strategy_tip_optional="Geothermal wells are drilled 8km deep using a neodymium components to withstand the heat. Uses a binary-cycle approach to produce energy. If destroyed by enemies, it will have to be re-drilled."
+		icon_name="FE_GeothermalEnergy" turns_to_install="4" required_structure_type="BunkerVented" job_work_order_priority="100" is_suggested_to_always_build_maximum_possible="true"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs" scrap_if_above_internal_robotics_cap="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsNonCode" tags="LargePowerGenerator,Electrical"
+		job_classes="Electrical" internal_robotics_type_needed="HeatExchanger" internal_robots_count_needed="1" shuts_off_at_percentage_electricity="-1" portrait_icon_name="BuildingFactoryB">
+		<initial_actor_rating data_type="GeneratedElectricity" value="169787" />
+		<resource_cost resource_type="Neodymium" cost="4100" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Hand" sort_index="100" />
+	</job>
+	
+</root>

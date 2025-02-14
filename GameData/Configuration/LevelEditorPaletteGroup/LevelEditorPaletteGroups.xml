@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<level_editor_palette_group id="RoadsDowntown" display_name="Roads (Downtown)"
+			bundle_name="hotm_content" path="Assets/__Library/Roads/RoadsDowntownDict.prefab"
+			allowed_in_tags="Skele,Outdoor,Airport,Spaceport,OilMining,MilitaryBase" is_default_for_tags="Skele"/>
+
+	<level_editor_palette_group id="RoadsHighways" display_name="Roads (Hwy)"
+			bundle_name="hotm_content" path="Assets/__Library/Roads/RoadsHighwaysDict.prefab"
+			allowed_in_tags="Skele,Outdoor" />
+	
+	<level_editor_palette_group id="Roadside" display_name="Roadside"
+			bundle_name="hotm_content" path="Assets/__Library/Roads/RoadsideDict.prefab"
+			allowed_in_tags="Outdoor,Airport,Spaceport,MilitaryBase,OilMining,BldgDowntownTall,BldgDowntownMid,VegetationDowntownAccent,MiniTile" />
+
+	<level_editor_palette_group id="Bridges" display_name="Bridges"
+			bundle_name="hotm_content" path="Assets/__Library/Roads/BridgesDict.prefab"
+			allowed_in_tags="Skele,Outdoor,Airport,Spaceport,MilitaryBase,OilMining" />
+
+	<level_editor_palette_group id="BuildingsAddons" display_name="Bldg (Addons)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingAddonsDict.prefab"
+			allowed_in_tags="Outdoor,MiniTile,BldgDowntownTall,BldgDowntownMid" />
+	
+	<level_editor_palette_group id="BuildingsBroken" display_name="Bldg (Broken)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsBrokenDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,BldgDowntownMid,Slum,MiniTile"/>
+
+	<level_editor_palette_group id="BuildingsCommerce" display_name="Bldg (Commerce)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsCommerceDict.prefab"
+		is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,Farm,MilitaryBase,Airport,BldgDowntownTall,BldgDowntownMid,Slum" />
+
+	<level_editor_palette_group id="BuildingsConstruction" display_name="Bldg (Construction)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsConstructionDict.prefab"
+		is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,MiniTile,BldgDowntownTall,BldgDowntownMid,OtherMining" />
+	
+	<level_editor_palette_group id="BuildingsDowntown" display_name="Bldg (Downtown)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsDowntownDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,BldgDowntownTall,BldgDowntownMid" />
+
+	<level_editor_palette_group id="BuildingsExoBase" display_name="Bldg (Exo Base)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsExoBaseDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,Spaceport,Airport,MilitaryBase,BldgDowntownTall,BldgDowntownMid,Slum,OtherMining,Power,Comms" />
+	
+	<level_editor_palette_group id="BuildingsFuturistic" display_name="Bldg (Fut)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsFuturisticDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,Spaceport,Airport,MilitaryBase,BldgDowntownTall,BldgDowntownMidSlum,OtherMining,Power,Comms,MiniTile" />
+
+	<level_editor_palette_group id="BuildingsIndustrial" display_name="Bldg (Indust)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsIndustrialDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,Spaceport,Airport,MilitaryBase,Farm,BldgDowntownTall,BldgDowntownMid,Slum,OtherMining,Power" />
+
+	<level_editor_palette_group id="BuildingsPoor" display_name="Bldg (Poor)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsPoorDict.prefab"
+		is_expected_to_have_buildings_on_each_item="true"
+		allowed_in_tags="Outdoor,Farm,BldgDowntownTall,BldgDowntownMid,Homeless,Slum" />
+
+	<level_editor_palette_group id="BuildingsServices" display_name="Bldg (Services)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsServicesDict.prefab"
+		is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,Farm,MilitaryBase,BldgDowntownMid" />
+	
+	<level_editor_palette_group id="BuildingsSkyscrapers" display_name="Bldg (Skysc)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsSkyscrapersDict.prefab"
+		is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,BldgDowntownTall" is_default_for_tags="BldgDowntownTall" />
+
+	<level_editor_palette_group id="BuildingsSuburbs" display_name="Bldg (Suburbs)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsSuburbsDict.prefab"
+		is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,Suburban" />
+	
+	<level_editor_palette_group id="BuildingsWarehouses" display_name="Bldg (Warehouses)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsWarehousesDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,Farm,BldgDowntownMid,Airport,Spaceport,MilitaryBase,OilMining,OtherMining" />
+	
+	<level_editor_palette_group id="BuildingsWilderness" display_name="Bldg (Wilderness)"
+			bundle_name="hotm_content" path="Assets/__Library/Buildings/BuildingsWildernessDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,Farm" />
+
+	<level_editor_palette_group id="PipesMed" display_name="Pipes (Med)"
+			bundle_name="hotm_content" path="Assets/__Library/Pipes/PipesMedDict.prefab"
+			allowed_in_tags="Outdoor,MiniTile" />
+
+	<level_editor_palette_group id="PipeTanks" display_name="Pipe Tanks"
+			bundle_name="hotm_content" path="Assets/__Library/Pipes/PipeTanksDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,MiniTile" />
+
+	<level_editor_palette_group id="FarmBuildings" display_name="Farm Buildings"
+			bundle_name="hotm_content" path="Assets/__Library/Farm/FarmBuildingsDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,Farm" />
+	
+	<level_editor_palette_group id="FarmFences" display_name="Farm Fences"
+			bundle_name="hotm_content" path="Assets/__Library/Farm/FarmFencesDict.prefab"
+			allowed_in_tags="Outdoor,MiniTile,VegetationGarden" />
+
+	<level_editor_palette_group id="FarmFields" display_name="Farm Fields"
+			bundle_name="hotm_content" path="Assets/__Library/Farm/FarmFieldsDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,Farm" />
+
+	<level_editor_palette_group id="FarmProps" display_name="Farm Props"
+			bundle_name="hotm_content" path="Assets/__Library/Farm/FarmPropsDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,MiniTile,VegetationDowntownAccent" />
+	
+	<level_editor_palette_group id="MilitaryBuildings" display_name="Military Buildings"
+			bundle_name="hotm_content" path="Assets/__Library/Military/MilitaryBuildingsDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,MilitaryBase" />
+
+	<level_editor_palette_group id="MilitaryFences" display_name="Military Fences"
+			bundle_name="hotm_content" path="Assets/__Library/Military/MilitaryFencesDict.prefab"
+			allowed_in_tags="Outdoor,MiniTile,VegetationGarden,Homeless,Slum" />
+	
+	<level_editor_palette_group id="MilitaryFlightLine" display_name="Military Flight Line"
+			bundle_name="hotm_content" path="Assets/__Library/Military/MilitaryFlightLineDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,MiniTile,BldgDowntownTall,BldgDowntownMid,VegetationDowntownAccent" />
+
+	<level_editor_palette_group id="MilitaryProps" display_name="Military Props"
+			bundle_name="hotm_content" path="Assets/__Library/Military/MilitaryPropsDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,MiniTile,BldgDowntownTall,BldgDowntownMid,VegetationDowntownAccent" />
+
+	<level_editor_palette_group id="NuclearSilo" display_name="Nuclear Silo"
+			bundle_name="hotm_content" path="Assets/__Library/Military/NuclearSiloDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,NuclearSilo" />
+	
+	<level_editor_palette_group id="Power" display_name="Power"
+			bundle_name="hotm_content" path="Assets/__Library/Power/PowerlDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,MiniTile,BldgDowntownTall,BldgDowntownMid" />
+		
+	<level_editor_palette_group id="Communications" display_name="Comms"
+			bundle_name="hotm_content" path="Assets/__Library/Comm/CommDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,MiniTile,BldgDowntownTall,BldgDowntownMid,Comms" />
+
+	<level_editor_palette_group id="Oil" display_name="Oil Mining"
+			bundle_name="hotm_content" path="Assets/__Library/Oil/OilDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,OilMining" />
+
+	<level_editor_palette_group id="WaterSupply" display_name="Water Supply"
+			bundle_name="hotm_content" path="Assets/__Library/Water/WaterSupplyDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,MiniTile" />
+
+	<level_editor_palette_group id="AirportBuildings" display_name="Airport (Buildings)"
+			bundle_name="hotm_content" path="Assets/__Library/Airport/AirportBuildingsDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,Spaceport,Airport" />
+	
+	<level_editor_palette_group id="AirportRunway" display_name="Airport (Runway)"
+			bundle_name="hotm_content" path="Assets/__Library/Airport/AirportRunwayDict.prefab"
+			allowed_in_tags="Outdoor,Spaceport,Airport" />
+
+	<level_editor_palette_group id="EarthWater" display_name="Earth (Water)"
+			bundle_name="hotm_content" path="Assets/__Library/Earth/EarthWaterDict.prefab"
+			allowed_in_tags="Skele,Outdoor" />
+	
+	<level_editor_palette_group id="Trees" display_name="Trees"
+			bundle_name="hotm_content" path="Assets/__Library/Vegetation/TreesDict.prefab"
+			allowed_in_tags="Outdoor,VegetationWild,Park,VegetationGarden,VegetationWoodcutter,VegetationDowntownAccent,Suburban" />
+	
+	<level_editor_palette_group id="LowVegAndRocks" display_name="Low Veg And Rocks"
+			bundle_name="hotm_content" path="Assets/__Library/Vegetation/LowVegAndRocksDict.prefab"
+			allowed_in_tags="Outdoor,VegetationWild,Park,VegetationGarden,VegetationWoodcutter,VegetationDowntownAccent,Suburban" />
+
+	<level_editor_palette_group id="StrangePlants" display_name="Strange Plants"
+			bundle_name="hotm_content" path="Assets/__Library/Vegetation/StrangeDict.prefab"
+			allowed_in_tags="Outdoor,VegetationWild,Park,VegetationGarden,VegetationWoodcutter,VegetationDowntownAccent,Suburban" />
+	
+	<level_editor_palette_group id="PropsBillboards" display_name="Props Billboards"
+			bundle_name="hotm_content" path="Assets/__Library/Props/PropsBillboardsDict.prefab"
+			allowed_in_tags="Outdoor,MiniTile,BldgDowntownTall,BldgDowntownMid" />
+
+	<level_editor_palette_group id="PropsCargoContainers" display_name="Props Cargo Conts"
+			bundle_name="hotm_content" path="Assets/__Library/Props/PropsCargoContainersDict.prefab"
+			allowed_in_tags="Outdoor,MiniTile,BldgDowntownTall,BldgDowntownMid" />
+	
+	<level_editor_palette_group id="PropsGarden" display_name="Props Garden"
+			bundle_name="hotm_content" path="Assets/__Library/Props/PropsGardenDict.prefab"
+			allowed_in_tags="Outdoor,MiniTile,BldgDowntownTall,BldgDowntownMid,VegetationGarden" />
+
+	<level_editor_palette_group id="PropsGraveyard" display_name="Props Graveyard"
+			bundle_name="hotm_content" path="Assets/__Library/Props/PropsGraveyardDict.prefab"
+			allowed_in_tags="Outdoor,MiniTile" />
+	
+	<level_editor_palette_group id="PropsPark" display_name="Props Park"
+			bundle_name="hotm_content" path="Assets/__Library/Props/PropsParkDict.prefab"
+			allowed_in_tags="Outdoor,MiniTile,BldgDowntownTall,BldgDowntownMid,VegetationGarden" />
+	
+	<level_editor_palette_group id="PropsWoodcutting" display_name="Props Woodcutting"
+			bundle_name="hotm_content" path="Assets/__Library/Props/PropsWoodcuttingDict.prefab"
+			allowed_in_tags="Outdoor,MiniTile,VegetationWoodcutter" />
+
+	<level_editor_palette_group id="Junk" display_name="Junk"
+			bundle_name="hotm_content" path="Assets/__Library/Worksite/JunkDict.prefab"
+			allowed_in_tags="Outdoor,MiniTile" />
+
+	<level_editor_palette_group id="Worksite" display_name="Worksite"
+			bundle_name="hotm_content" path="Assets/__Library/Worksite/WorksiteDict.prefab"
+			is_expected_to_have_buildings_on_each_item="true"
+			allowed_in_tags="Outdoor,MiniTile" />
+	
+	<level_editor_palette_group id="MetaRegions" display_name="Meta Regions"
+			bundle_name="hotm_content" path="Assets/__Library/Meta/MetaRegionsDict.prefab"
+			allowed_in_tags="Skele,Outdoor,Airport,Farm,MilitaryBase,OilMining,Spaceport,Park,OtherMining,MiniTile" />
+
+	<level_editor_palette_group id="Pathing" display_name="Pathing"
+			bundle_name="hotm_content" path="Assets/__Library/Meta/PathingDict.prefab"
+			allowed_in_tags="Outdoor,MiniTile" />
+
+	<level_editor_palette_group id="MirroredObjects" display_name="Mirrored Objects"
+			bundle_name="hotm_content" path="Assets/__Library/_Mirrors/MirrorsDict.prefab"
+			allowed_in_tags="Outdoor" />
+	
+	<level_editor_palette_group id="OOBRuins" display_name="OOB Ruins"
+			bundle_name="hotm_content" path="Assets/__Library/OutOfBounds/OOBRuinsDict.prefab"
+			allowed_in_tags="Outdoor,Biome_AncientRuins" />
+
+	<level_editor_palette_group id="BuildingMarkers" display_name="Building Markers"
+			bundle_name="hotm_content" path="Assets/__Library/BuildingMarkers/BuildingMarkersDict.prefab"
+			allowed_in_tags="Outdoor" />
+
+	<level_editor_palette_group id="MachineStructure" display_name="Machine Structure"
+			bundle_name="hotm_content" path="Assets/__Library/MachineStructure/MachineStructureDict.prefab"
+			allowed_in_tags="Outdoor" />
+
+	<level_editor_palette_group id="EndOfTimeRocks" display_name="End of Time Rocks"
+			bundle_name="hotm_content" path="Assets/__Library/_OuterMap/OuterMapRocks.prefab"
+			allowed_in_tags="Outdoor" />
+
+	<level_editor_palette_group id="OuterMapCities" display_name="End of Time Cities"
+			bundle_name="hotm_content" path="Assets/__Library/_OuterMap/OuterMapCities.prefab"
+			allowed_in_tags="Outdoor" />
+	
+</root>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<build_mode_category id="Main_Recommended" display_name="Suggestions" short_name="Suggested" is_suggested="true"
+		description="Recommendations based on your current needs."
+		strategy_tip="These are actually good. Don't ignore them!"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildModeCategoriesBasic"
+		icon_name="CleanSimple_Common114" is_available_in_main_game="true" sort_order="1000">
+	</build_mode_category>
+
+	<build_mode_category id="Main_Hand" display_name="Hand" short_name="Hand"
+		description="Structures you will tend to build of your own accord rather than having them recommended."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildModeCategoriesBasic"
+		icon_name="glyph_l" is_available_in_main_game="true" sort_order="2000">
+	</build_mode_category>
+	
+	<build_mode_category id="Main_Self" display_name="Self" short_name="Self"
+		description="Military and computing production and rewards."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildModeCategoriesBasic"
+		icon_name="glyph_b" is_available_in_main_game="true" sort_order="3000">
+	</build_mode_category>
+
+	<build_mode_category id="Main_Chain" display_name="Chain" short_name="Chain"
+		description="Most production-chain structures, many of which can be ignored when not in the recommended tab."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildModeCategoriesBasic"
+		icon_name="glyph_x" is_available_in_main_game="true" sort_order="5000">
+	</build_mode_category>
+
+	<build_mode_category id="Main_Home" display_name="Home" short_name="Home"
+		description="Housing and other forms of containment for biological life."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildModeCategoriesBasic"
+		icon_name="glyph_a" is_available_in_main_game="true" sort_order="6000">
+	</build_mode_category>
+
+	<build_mode_category id="Main_Work" display_name="Work" short_name="Work"
+		description="Putting humans or other animals to work."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildModeCategoriesBasic"
+		icon_name="glyph_q" is_available_in_main_game="true" sort_order="11000">
+	</build_mode_category>
+
+	<build_mode_category id="Main_New" display_name="New" short_name="New"
+		description="Structures you have yet to build in any timeline."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildModeCategoriesBasic" is_icon_skipped="true"
+		icon_name="CleanSimple_Common114" is_available_in_main_game="true" sort_order="13000">
+	</build_mode_category>
+
+	<build_mode_category id="Main_Unbuilt" display_name="Unbuilt" short_name="Unbuilt"
+		description="Structures you have yet to build in this timeline."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildModeCategoriesBasic" is_icon_skipped="true"
+		icon_name="CleanSimple_Common114" is_available_in_main_game="true" sort_order="14000">
+	</build_mode_category>
+	
+	<build_mode_category id="Main_CurrentlyBuildable" display_name="Currently Buildable" short_name="Buildable"
+		description="Structures that you can build at this very moment."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildModeCategoriesBasic" is_icon_skipped="true"
+		icon_name="FlatSkillB_hammer" is_available_in_main_game="true" sort_order="14000">
+	</build_mode_category>
+
+	<build_mode_category id="Main_All" display_name="All" short_name="All" is_all="true"
+		description="Everything in one big list by name."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildModeCategoriesBasic"
+		icon_name="CleanSimple_Common003" is_available_in_main_game="true" sort_order="15000">
+	</build_mode_category>
+	
+</root>

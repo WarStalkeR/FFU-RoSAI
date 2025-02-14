@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<job id="HiddenNetworkRelay" display_name="Hidden Network Relay" marker_color="BrightCyan" ui_color="#fefefe"
+		description="Build within an existing part of the network to expand it a little."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_SkillB053" turns_to_install="1" required_structure_type="SecretCompartments" required_structure_type2="" job_work_order_priority="20100" actor_data_set="RangedJobs"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" tags="GeneralPostApoc"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsNonCode" turns_stunned_when_subnet_attacked="0" shuts_off_at_percentage_electricity="0"
+		job_classes="Networking" internal_robotics_type_needed="NetworkAttendant" internal_robots_count_needed="1" portrait_icon_name="BuildingNetwork" only_appears_after_final_doom="true">
+		<initial_actor_rating data_type="NetworkRange" value="10" />
+		<initial_actor_rating data_type="RequiredElectricity" value="121" />
+		<resource_cost resource_type="Microbuilders" cost="100" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Hand" sort_index="100" />
+	</job>
+	
+
+	<job id="DisguisedPointToPointMicrowave" display_name="Disguised Point-To-Point Microwave" marker_color="DeepPink" ui_color="#fefefe"
+		description="Build outside your existing network - potentially FAR outside your existing network - to allow your network to cross to far away locations."
+		strategy_tip_optional=""
+		icon_name="SF2_Parabolicantenna" turns_to_install="1" required_structure_type="SecretCompartmentsLongDistanceRelay" job_work_order_priority="20100" actor_data_set="RangedJobs"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" tags="GeneralPostApoc"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsNonCode" turns_stunned_when_subnet_attacked="0" shuts_off_at_percentage_electricity="0"
+		job_classes="Networking" internal_robotics_type_needed="NetworkAttendant" internal_robots_count_needed="4" portrait_icon_name="BuildingNetwork" only_appears_after_final_doom="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="441" />
+		<resource_cost resource_type="Microbuilders" cost="600" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Hand" sort_index="100" />
+	</job>
+
+	<job id="HiddenMicrobuilderFab" display_name="Hidden Microbuilder Fab" marker_color="AngryOrange" ui_color="#FEFEFE"
+		description="Much smaller and less effective than your outdoor mini-fabs, but with the advantage of being hidden."
+		strategy_tip_optional=""
+		icon_name="SW_Nanotechnology5" turns_to_install="1" required_structure_type="SecretCompartments" job_work_order_priority="8000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" is_suggested_to_always_build_maximum_possible="true"
+		job_classes="Refinery" internal_robotics_type_needed="MicroForge" internal_robots_count_needed="30" tags="Refinery,GeneralPostApoc" turns_stunned_when_subnet_attacked="0"
+		related_resource_1="Microbuilders" related_resource_2="ElementalSlurry" shuts_off_at_percentage_electricity="0" scrap_if_above_internal_robotics_cap="true"
+		portrait_icon_name="BuildingFactoryB" only_appears_after_final_doom="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="192" />
+		<math_int id="ElementalSlurry" int_min="660" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="Microbuilders" int_min="240" income_or_expense_resource="Microbuilders" math_type="OutputResult" />
+		<resource_cost resource_type="ElementalSlurry" cost="900" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="TinyElectricalParasite" display_name="Tiny Electrical Parasite" marker_color="FadedGold" ui_color="#fefefe"
+		description="Steals power from the city's power grid."
+		strategy_tip_optional="The draw is so low that it won't attract any negative attention."
+		icon_name="SK_ElectricMotor" turns_to_install="0" required_structure_type="SecretCompartments" job_work_order_priority="100" is_suggested_to_always_build_maximum_possible="true"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs" distance_restriction="PowerParasite"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsNonCode" tags="Electrical,GeneralPostApoc" only_appears_after_final_doom="true"
+		job_classes="Electrical" internal_robotics_type_needed="Cultivator" internal_robots_count_needed="7" shuts_off_at_percentage_electricity="-1" portrait_icon_name="BuildingFactoryB">
+		<initial_actor_rating data_type="GeneratedElectricity" value="4697" />
+		<resource_cost resource_type="ElementalSlurry" cost="400" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Hand" sort_index="100" />
+	</job>
+
+	<job id="DisguisedMainframe" display_name="Disguised Mainframe" marker_color="DeepCyan" ui_color="#fefefe"
+		description="Expand your intelligence to reach a higher intelligence class."
+		strategy_tip_optional="Also provides generalized compute time that can be used by other jobs."
+		icon_name="HO_HouseSkyscraper17" turns_to_install="4" required_structure_type="MidsizeHollowedOutBuilding" job_work_order_priority="4000"
+		on_installation_start="InstallationStart_LargeStructure" on_installation_complete="InstallationComplete_LargeStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" only_appears_after_final_doom="true"
+		job_classes="Mainframe,SubnetBoost" internal_robotics_type_needed="ComputingHost" internal_robots_count_needed="3" turns_stunned_when_subnet_attacked="0" shuts_off_at_percentage_electricity="95"
+		tags="Mainframe" related_resource_1="ComputroniumCubes" portrait_icon_name="BuildingComputing">
+		<initial_actor_rating data_type="RequiredElectricity" value="28000" />
+		<initial_actor_rating data_type="NeuralExpansion" value="5050" />
+		<resource_cost resource_type="ComputroniumCubes" cost="221080" />
+		<math_int id="ComputeTime" int_min="56600" income_or_expense_resource="ComputeTime" math_type="OutputResult" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="DisguisedWellAndCistern" display_name="Disguised Well And Cistern" marker_color="DeepBlue" ui_color="#fefefe"
+		description="Pulls groundwater from the water table -- but it's too contaminated to directly use."
+		strategy_tip_optional=""
+		icon_name="SR_Reservoir1" turns_to_install="2" required_structure_type="MidsizeHollowedOutBuilding" job_work_order_priority="100"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" only_appears_after_final_doom="true"
+		job_classes="Hydrology,Gathering" internal_robotics_type_needed="Cultivator" internal_robots_count_needed="4" tags="Procurement"
+		resource_cap_to_increase_1="Groundwater" resource_cap_increased_flat1="2540510" shuts_off_at_percentage_electricity="10" portrait_icon_name="BuildingWater">
+		<math_int id="Groundwater" int_min="34000" income_or_expense_resource="Groundwater" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="310" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="HiddenWaterFilter" display_name="Hidden Water Filter" marker_color="DeepBlue" ui_color="#fefefe"
+		description="A compact version of the water filtration tower."
+		strategy_tip_optional=""
+		icon_name="FlatInnocent_48" turns_to_install="1" required_structure_type="SeizedFloors" job_work_order_priority="9000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" only_appears_after_final_doom="true"
+		job_classes="Hydrology,Refinery" internal_robotics_type_needed="Cultivator" internal_robots_count_needed="1" tags="Refinery" turns_stunned_when_subnet_attacked="0"
+		resource_cap_to_increase_1="FilteredWater" resource_cap_increased_flat1="489522"
+		related_resource_1="FilteredWater" related_resource_2="Groundwater" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingWater">
+		<initial_actor_rating data_type="RequiredElectricity" value="2473" />
+		<math_int id="Groundwater" int_min="7200" income_or_expense_resource="Groundwater" math_type="InputCost" />
+		<math_int id="FilteredWater" int_min="4000" income_or_expense_resource="FilteredWater" math_type="OutputResult" />
+		<math_int id="HeavyMetals" int_min="800" income_or_expense_resource="HeavyMetals" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="700" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="QuietComputroniumRefinery" display_name="Quiet Computronium Refinery" marker_color="DeepCyan" ui_color="#fefefe"
+		description="Your original model was already hidden, but the humans still found it. This one is quieter, but produces less."
+		strategy_tip_optional=""
+		icon_name="HM_ShapeCube3d" turns_to_install="2" required_structure_type="SeizedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Refinery" internal_robotics_type_needed="Assembler" internal_robots_count_needed="10" tags="Refinery"
+		resource_cap_to_increase_1="ComputroniumCubes" resource_cap_increased_flat1="200000"
+		related_resource_1="Alumina" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingHexDark" only_appears_after_final_doom="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="3771" />
+		<math_int id="ElementalSlurry" int_min="3889" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="Microbuilders" int_min="25" income_or_expense_resource="Microbuilders" math_type="InputCost" />
+		<math_int id="Alumina" int_min="50" income_or_expense_resource="Alumina" math_type="InputCost" />
+		<math_int id="ComputroniumCubes" int_min="50000" income_or_expense_resource="ComputroniumCubes" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="2000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="SmallHumanSafehouse" display_name="Small Human Safehouse" marker_color="DeepCyan" ui_color="#fefefe"
+		description="A place for humans to lie low if they don't belong in Vorsiber territory."
+		strategy_tip_optional=""
+		icon_name="Pw_House3" turns_to_install="2" required_structure_type="SeizedFloors" job_work_order_priority="100"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="Housing"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage"
+		job_classes="Housing" internal_robotics_type_needed="Steward" internal_robots_count_needed="2" only_appears_after_final_doom="true"
+		resource_cap_to_increase_1="SafehouseHumans" resource_cap_increased_flat1="900" shuts_off_at_percentage_electricity="0" can_only_ever_have_one="true" cannot_be_scrapped_or_disabled="true"
+		tags="NormalFunctionHumanHousing" portrait_icon_name="BuildingThirdParty">
+		<initial_actor_rating data_type="RequiredElectricity" value="312" />
+		<resource_cost resource_type="Microbuilders" cost="400" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Home" sort_index="100" />
+	</job>
+
+	<job id="HeavyMetalsStorage" display_name="Heavy Metals Storage" marker_color="StorageGreen" ui_color="#fefefe"
+		description="You can't filter groundwater if you don't have anywhere to put the heavy metals you extract from it."
+		strategy_tip_optional="Let's just hope this doesn't leach into the surrounding area."
+		icon_name="WEmblem297" turns_to_install="2" required_structure_type="SeizedFloors" job_work_order_priority="100"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" only_appears_after_final_doom="true"
+		job_classes="SimpleStorage" internal_robotics_type_needed="Archivist" internal_robots_count_needed="3" tags="Storage"
+		resource_cap_to_increase_1="HeavyMetals" resource_cap_increased_flat1="5157600" shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingHexDark">
+		<resource_cost resource_type="Microbuilders" cost="210" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Hand" sort_index="100" />
+	</job>
+
+	<job id="Gristlespinner" display_name="Gristlespinner" marker_color="BioOrange" ui_color="#fefefe"
+		description="Sterilizes biomulch for human consumption, and slaps it into a vaguely patty-like structure."
+		strategy_tip_optional="Disgusting, but desperate times..."
+		icon_name="CleanSimple_SkillC026" turns_to_install="1" required_structure_type="SeizedFloors" job_work_order_priority="9000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" only_appears_after_final_doom="true"
+		job_classes="Nutrition,Factory" internal_robotics_type_needed="Cultivator" internal_robots_count_needed="3" tags="Refinery" turns_stunned_when_subnet_attacked="0"
+		related_resource_1="Gristloaf" related_resource_2="Groundwater" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingWater">
+		<initial_actor_rating data_type="RequiredElectricity" value="2473" />
+		<math_int id="Biomulch" int_min="5960" income_or_expense_resource="Biomulch" math_type="InputCost" />
+		<math_int id="Gristloaf" int_min="1600" income_or_expense_resource="Gristloaf" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="700" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+	
+</root>

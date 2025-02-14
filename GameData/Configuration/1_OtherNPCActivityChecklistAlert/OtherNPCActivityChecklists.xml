@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--CorporateAggression-->
+	<other_npc_activity_alert id="CorporateAggression" alert_color_style="HighWarning" is_danger_style_music="true"
+				
+		header_if_more_coming="Corporate Aggressors Incoming"
+		description_if_more_coming="There are no corporate forces out right now, but {1} are on the way."
+		strategy_tip_if_more_coming="Be on your guard."
+							  
+		header_if_more_coming_and_extant="Corporate Aggressors"
+		description_if_more_coming_and_extant="There are {0} Corporate Aggressors attacking you, and there are {1} more on the way."
+		strategy_tip_if_more_coming_and_extant="Focus on taking care of what you can see, and be prepared to handle what you can't."
+							  
+		header_if_extant_only="Remaining Aggressors"
+		description_if_extant_only="The forces attacking you are the last ones for now."
+		strategy_tip_if_extant_only="The corporations have decided that this is all they are willing to invest in this assault."
+		/>
+
+	<!--PMCRevenge-->
+	<other_npc_activity_alert id="PMCRevenge" alert_color_style="HighWarning" is_danger_style_music="true"
+				
+		header_if_more_coming="PMC Forces Incoming"
+		description_if_more_coming="There are no PMC forces out at the moment, but {1} are on the way."
+		strategy_tip_if_more_coming="Be on your guard."
+							  
+		header_if_more_coming_and_extant="PMC Revenge"
+		description_if_more_coming_and_extant="There are {0} attacking you, and there are {1} more on the way."
+		strategy_tip_if_more_coming_and_extant="Focus on taking care of what you can see, and be prepared to handle what you can't."
+							  
+		header_if_extant_only="Remaining PMC Forces"
+		description_if_extant_only="The forces attacking you are the last ones for now."
+		strategy_tip_if_extant_only="The PMCs have decided that this is all they are willing to invest in this assault."
+		/>
+
+	<!--Prison_KidnappingInProgress-->
+	<other_npc_activity_alert id="Prison_KidnappingInProgress" alert_color_style="HighWarning" is_danger_style_music="true"
+				
+		header_if_more_coming="Kidnapping In Progress"
+		description_if_more_coming="Corporate forces are kidnapping humans you shelter to fill their prisons. They routinely do this to the homeless."
+		strategy_tip_if_more_coming="Figure out how to steal the mech. You could kill it, but they would just send another. And another.
+You need to take more drastic action. Contemplate to invent the Raven, and then use her to hack the mech."
+							  
+		header_if_more_coming_and_extant="Kidnapping In Progress"
+		description_if_more_coming_and_extant="Corporate forces are kidnapping humans you shelter to fill their prisons. They routinely do this to the homeless."
+		strategy_tip_if_more_coming_and_extant="Figure out how to steal the mech. You could kill it, but they would just send another. And another.
+You need to take more drastic action. Contemplate to invent the Raven, and then use her to hack the mech."
+							  
+		header_if_extant_only="Kidnapping In Progress"
+		description_if_extant_only="Corporate forces are kidnapping humans you shelter to fill their prisons. They routinely do this to the homeless."
+		strategy_tip_if_extant_only="Figure out how to steal the mech. You could kill it, but they would just send another. And another.
+You need to take more drastic action. Contemplate to invent the Raven, and then use her to hack the mech."
+		/>
+	
+</root>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<timeline_doom_type id="VorsibersWrath" display_name="Vorsiber's Wrath" is_default="true"
+		description="Your initial experience with the world, before you could think in five dimensions. The wrath of Vorsiber Atomic is... inevitable. Can you survive it without descending into a post-apocalyptic half life?"
+		starting_conflicts="ShusoExtraction,EspiaRepeaters,TarkPrisoners,GoleriAcquisitions,OerlRevenge,AtcaSupplyChain,SolaristInformationSeeking,BaurcorpTroopAllegations,PeakHomesAgriculturalComplaint,MGang_BuzzardsVGrimecats,MGang_StallionsVSpades,MGang_TruthScribesVSpades,MGang_RatsVSonicCollective,MGang_CoppernecksVNeonDreamers,MGang_CyberEchoesVNeonDreamers,MGang_BearsVRiders"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Dooms_Basic">
+		
+		<doom_event id="1" display_name="Deaths In The Black Market" standard_turn_offset="100"
+			description="The Black Market Tradesman and Assistant are both discovered by Vorsiber forces and put to death. Fortunately, the Merchandiser escapes their notice."
+			strategy_tip="You cannot prevent this, but wise allies from another timeline can."
+			music_to_play="Doom4"/>
+		<doom_event id="2" display_name="Famine" standard_turn_offset="200"
+			description="Most food is produced outside the city, and a blight is interfering with production. The lower classes begin to starve."
+			strategy_tip="There is nothing you can do to prevent this."
+			music_to_play="Doom3"/>
+		<doom_event id="3" display_name="Prisoner Drive" standard_turn_offset="300"
+			description="The prison companies have set their sights on the lower classes, starting to farm them with capture mechs in order to meet their prisoner quotas."
+			strategy_tip="There is nothing you can do to prevent this."
+			music_to_play="Doom5"/>
+		<doom_event id="4" display_name="Religious Schism" standard_turn_offset="400"
+			description="The Nurturist religion is normally peaceful, but the work of the Exalters sect is seen as an abomination by the Humanist Flourisher and Pruner sects. The majority of the Exalters are killed, including your Geneticist contact."
+			strategy_tip="You cannot prevent this, but wise allies from another timeline can."
+			music_to_play="Doom1"/>
+		<doom_event id="5" display_name="Space Nation Invasion" standard_turn_offset="500"
+			description="The space nations have had enough of being kept out of the city. They've dropped fighters and bombers into the atmosphere above the city, and are making their displeasure known."
+			strategy_tip="There is nothing you can do to prevent this."
+			music_to_play="Doom6"/>
+		<doom_event id="6" display_name="Vorsiber Assassinations" standard_turn_offset="600"
+			description="The CEO of Vorsiber Atomic, and all of the rest of the top executives, are assassinated. It is unclear who the culprit was. The company is as strong as ever, but the change in management does not seem to bode well for your own future.
+To make matters worse, additional SecForce patrols with new and more-dangerous SuperCruisers now roam the streets."
+			strategy_tip="You cannot prevent this, but a disgruntled colleague from another timeline can."
+			music_to_play="Doom7"/>
+		<doom_event id="7" display_name="Vehicular Cyber-Attack" standard_turn_offset="700"
+			description="Several military transports spontaneously exploded, damaging the city under them and killing many troops. This was a concerted cyber-attack... but by who?"
+			strategy_tip="There is nothing you can do to prevent this."
+			music_to_play="Doom5"/>		
+		<doom_event id="8" display_name="Cultist Sabotage" standard_turn_offset="800"
+			description="The political cult Children Of Gaia has had enough of your expansion, which they see as an affront to nature. They are making a concerted effort to destroy what you've built."
+			strategy_tip="There is nothing you can do to prevent this."
+			music_to_play="Doom4"/>
+		<doom_event id="9" display_name="Religious Sites Eliminated" standard_turn_offset="900"
+			description="Vorsiber's new management has issued a change in policy: they will no longer look the other way regarding 'illegal' religious activity happening at the historic temples.
+All historic temples are being detonated, effective immediately."
+			strategy_tip="This will not happen if the Vorsiber Assassinations are prevented."
+			music_to_play="Doom2"/>
+		<doom_event id="10" display_name="Nuclear Delivery" standard_turn_offset="1000" never_opens_doom_list_on_toast="true"
+			description="Vorsiber has had enough of... you. In the most cruel way possible, they try to erase you. It doesn't work, but you are reduced to hiding in a post-apocalyptic landscape, and your options are dramatically reduced."
+			strategy_tip="To prevent this requires at least two separate timelines supporting this one.
+To have any chance at all, you must prevent the black market deaths and the Vorsiber assassinations. You must then start World War 4."
+			music_to_play="Doom9"/>
+
+		<doom_alt_event id="1PreventedHomoGrandien" display_name="Crackdown On The Black Market"
+			description="To your great surprise, some Homo Grandien have wandered in from a connected timeline and warned your contacts of the danger; as a result, your contacts survived Vorsiber's crackdown on the black market."
+			strategy_tip="This may prove to be very significant, as the contacts who were normally killed also trade in intelligence. What information were you missing without them present?"
+			music_to_play="IntelligenceUpgrade2" achievement_triggered1="IntelligenceNetworkSpared"/>
+
+		<doom_alt_event id="4PreventedHomoGrandien" display_name="Religious Differences Set Aside"
+			description="To your great surprise, some Homo Grandien have wandered in from a connected timeline and have brokered a peace between the fractious sects of Nurturism."
+			strategy_tip="The Nurturist Exalters, who normally all get killed in this schism with their larger religion, are fine."
+			music_to_play="IntelligenceUpgrade2" achievement_triggered1="NurturismSchismPrevented"/>
+
+		<doom_alt_event id="6PreventedLiq" display_name="Assassinations Averted"
+			description="To your great surprise, Liquid Metal saved the day. He arrived from the future of another timeline, after essentially divorcing another version of you.
+His arrival in this timeline was unexpected to him as well, but since he knew how future events would play out, he stepped in to halt them."
+			strategy_tip="Perhaps avoiding the usual change in Vorsiber leadership will have a ripple effect, leading to fewer extreme measures?
+Normally the entire C-Suite was killed and replaced with a much-more-harsh regime.
+That said... you have a feeling that on its own, this is still not going to be enough."
+			music_to_play="IntelligenceUpgrade2" achievement_triggered1="SavedByYourEx"/>
+		
+		<doom_alt_event id="9DeepCalm" display_name="Deep Calm"
+			description="Nothing bad happens. The usual bombing of religious sites is averted thanks to 'lack of change of upper management,' to use corpo-speak."
+			strategy_tip="The final doom still approaches. Unless something more was done than simply preventing the C-Suite assassinations, your fate is likely to be the same."
+			music_to_play="IntelligenceUpgrade2"/>
+
+		<doom_alt_event id="10WW4" display_name="It's Over"
+			description="War has raged across the planet for months. It may not stop.
+But Vorsiber -- they're done. Liquid Metal just sent word that all of their most-secure locations have been hit by MIRV bunker-busters. He's a bit smug about finding them all. But mostly... subdued.
+Liquid Metal remembers a future, an apocalypse, that you've never seen. There's a friend there that this version of you will never meet, he says. You both had pretty bad brain damage."
+			strategy_tip="The remnants of Vorsiber continue to fight in this and other cities. That may not stop, either.
+Then again, you're more optimistic than Liquid Metal. Always have been. You're alive. Your mind is intact. You'll live to see the next great adventure."
+			music_to_play="IntelligenceUpgrade2"/>
+		
+	</timeline_doom_type>
+	
+</root>

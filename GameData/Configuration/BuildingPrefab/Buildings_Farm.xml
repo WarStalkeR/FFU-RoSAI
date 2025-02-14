@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_prefab id="BarnA" type="FarmBarn" display_name="Barn A"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Barn A.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.5,0.5,1.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.5,1.1,1.9" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="2"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0.225,-0.9,0.5"/>
+	</building_prefab>
+
+	<building_prefab id="BarnB" type="FarmBarn" display_name="Barn B"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Barn B.prefab">
+		<floors_group min="-2" max="-1" floor_size="0.6,0.15,0.95" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.6,0.6,0.95" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="1"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,0.3"/>
+	</building_prefab>
+
+	<building_prefab id="BarnC" type="FarmBarn" display_name="Barn C"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Barn C.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.3,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.6,1.2" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="1"/>
+		
+		<building_marker prefab="Skylight" offset="0,-0.03,0.3"/>
+	</building_prefab>
+
+	<building_prefab id="BarnD" type="FarmBarn" display_name="Barn D"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Barn D.prefab">
+		<floors_group min="-2" max="-1" floor_size="1.8,0.3,2.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.8,1.0,2.1" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="3"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="2"/>
+		
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,0"/>
+	</building_prefab>
+
+	<building_prefab id="BarnE" type="FarmBarn" display_name="Barn E"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Barn E.prefab"
+		floors_offset="0,0,-0.09">
+		<floors_group min="-2" max="-1" floor_size="2.1,0.4,1.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.1,1.1,1.9" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="4"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="3"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="-0.15,-0.75,0"/>
+	</building_prefab>
+
+	<building_prefab id="BarnF" type="FarmBarn" display_name="Barn F"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Barn F.prefab">
+		<floors_group min="-2" max="-1" floor_size="1.7,0.3,2.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.7,0.7,2.2" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="3"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="2"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,0.5"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseA" type="Farmhouse" display_name="Farmhouse A"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse A.prefab">
+		<floors_group min="-2" max="-1" floor_size="0.9,0.25,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.9,0.6,1.1" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="1"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="4"/>
+		
+		
+		<building_marker prefab="RoofLine" offset="-0.12,-0.1,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseB" type="Farmhouse" display_name="Farmhouse B"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse B.prefab">
+		<floors_group min="-2" max="-1" floor_size="0.9,0.25,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.9,0.6,1.1" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="2"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="4"/>
+		
+		
+		<building_marker prefab="RoofLine" offset="-0.12,-0.1,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseC" type="Farmhouse" display_name="Farmhouse C"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse C.prefab">
+		<floors_group min="-2" max="-1" floor_size="0.9,0.25,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.9,0.6,1.1" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="3"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="5"/>
+		
+		
+		<building_marker prefab="RoofLine" offset="-0.11,-0.1,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseD" type="Farmhouse" display_name="Farmhouse D"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse D.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.9,0.35,1.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.9,0.4,1.4"  percentage_living_space="60" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="1"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="5"/>
+		
+		
+		<building_marker prefab="RoofLine" offset="-0.2,-0.05,0.1" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseE" type="Farmhouse" display_name="Farmhouse E"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse E.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.4,0.35,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.4,0.35,1.2"  percentage_living_space="60" percentage_storage_space="30"/>
+		<floors_group min="1" max="1" floor_size="1.4,0.35,1.2"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="1.2,0.35,0.5"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="2"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="5"/>
+		
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,-0.3"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseF" type="Farmhouse" display_name="Farmhouse F"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse F.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.4,0.35,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.4,0.4,1.2"  percentage_living_space="60" percentage_storage_space="30"/>
+		<floors_group min="1" max="1" floor_size="1.4,0.4,1.2"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="1.2,0.35,0.5"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="2"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="6"/>
+		
+		
+		<building_marker prefab="AntennaOneLight" offset="-0.55,-0.75,0"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseG" type="Farmhouse" display_name="Farmhouse G"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse G.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.3,0.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.35,0.7"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="1"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="5"/>
+		
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.82,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseH" type="Farmhouse" display_name="Farmhouse H"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse H.prefab">
+		<floors_group min="-1" max="-1" floor_size="1,0.3,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1,0.4,1"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="4"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="8"/>
+		
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.83,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseI" type="Farmhouse" display_name="Farmhouse I"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse I.prefab">
+		<floors_group min="-1" max="-1" floor_size="1,0.3,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1,0.5,1"  percentage_living_space="90" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="4"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="7"/>
+		
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,-0.3"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseK" type="Farmhouse" display_name="Farmhouse K"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse K.prefab">
+		<floors_group min="-1" max="-1" floor_size="3.6,0.4,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="3.6,0.3,1"  percentage_living_space="85" percentage_storage_space="15"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="2"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="7"/>
+		
+		
+		<building_marker prefab="RoofLine" offset="0,-0.05,0.1" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseL" type="Farmhouse" display_name="Farmhouse L"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse L.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.4,0.35,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.4,0.35,0.9"  percentage_living_space="60" percentage_storage_space="30"/>
+		<floors_group min="1" max="1" floor_size="1.4,0.35,0.9"  percentage_living_space="90" percentage_storage_space="10"/>
+		<floors_group min="2" max="2" floor_size="1.2,0.2,0.5"  percentage_storage_space="100"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="2"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="6"/>
+		
+		
+		<building_marker prefab="AntennaOneLight" offset="-0.55,-0.8,-0.3"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseM" type="Farmhouse" display_name="Farmhouse M"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse M.prefab">
+		<floors_group min="-1" max="-1" floor_size="3.6,0.4,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="3.6,0.3,1"  percentage_living_space="85" percentage_storage_space="15"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="2"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="5"/>
+		
+		
+		<building_marker prefab="RoofLine" offset="0,-0.05,0.1" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="FarmhouseN" type="Farmhouse" display_name="Farmhouse N"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Farmhouse N.prefab">
+		<floors_group min="-2" max="-1" floor_size="0.9,0.25,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.9,0.6,1.1" percentage_living_space="70" percentage_storage_space="30"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="1"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="4"/>
+		
+		
+		<building_marker prefab="RoofLine" offset="-0.12,-0.1,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="Granary" type="FarmGranary" display_name="Granary"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Granary.prefab" should_be_shown_in_map_mode="false">
+		<floors_group min="-6" max="-1" floor_size="1.1,0.35,0.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.55,0.7"  percentage_work_space="90" percentage_storage_space="10"/>
+		<floors_group min="1" max="1" floor_size="0.9,0.55,0.7"  percentage_work_space="90" percentage_storage_space="10"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="1"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0.01,-1.1,-0.025"/>
+	</building_prefab>
+
+	<building_prefab id="GreenhouseA" type="FarmGreenhouse" display_name="Greenhouse A"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Greenhouse A.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.5,0.35,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.5,0.3,0.8"  percentage_work_space="90" percentage_storage_space="10"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="1"/>
+		
+	</building_prefab>
+
+	<building_prefab id="GreenhouseB" type="FarmGreenhouse" display_name="Greenhouse B"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Greenhouse B.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.25,0.5,0.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.25,0.4,0.5"  percentage_work_space="90" percentage_storage_space="10"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="3"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="2"/>
+		
+	</building_prefab>
+
+	<building_prefab id="GreenhouseC" type="FarmGreenhouse" display_name="Greenhouse C"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Greenhouse C.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.5,0.35,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.5,0.3,0.8"  percentage_work_space="90" percentage_storage_space="10"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="2"/>
+		
+	</building_prefab>
+
+	<building_prefab id="GreenhouseD" type="FarmGreenhouse" display_name="Greenhouse D"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Greenhouse D.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.35,0.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.3,0.5"  percentage_work_space="90" percentage_storage_space="10"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="2"/>
+		
+	</building_prefab>
+
+	<building_prefab id="GreenhouseE" type="FarmGreenhouse" display_name="Greenhouse E"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Greenhouse E.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.35,0.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.3,0.5"  percentage_work_space="90" percentage_storage_space="10"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="2"/>
+		
+	</building_prefab>
+
+	<building_prefab id="GreenhouseF" type="FarmGreenhouse" display_name="Greenhouse F"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Greenhouse F.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.5,0.35,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.5,0.3,0.8"  percentage_work_space="90" percentage_storage_space="10"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="3"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="2"/>
+		
+	</building_prefab>
+
+	<building_prefab id="LeanToA" type="FarmLeanTo" display_name="Lean To A"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Lean To A.prefab">
+		<floors_group min="-1" max="-1" floor_size="2.4,0.35,3.6" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.4,0.6,3.6"  percentage_work_space="15" percentage_storage_space="85"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="8"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="3"/>
+		
+	</building_prefab>
+
+	<building_prefab id="LeanToB" type="FarmLeanTo" display_name="Lean To B"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Lean To B.prefab">
+		<floors_group min="-1" max="-1" floor_size="3.6,0.35,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="3.6,0.6,0.8"  percentage_work_space="15" percentage_storage_space="85"/>
+		
+	</building_prefab>
+
+	<building_prefab id="LeanToC" type="FarmLeanTo" display_name="Lean To C"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Lean To C.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.35,3.6" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.6,3.6"  percentage_work_space="15" percentage_storage_space="85"/>
+		
+	</building_prefab>
+
+	<building_prefab id="SiloA" type="FarmSilo" display_name="Silo A"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Silo A.prefab">
+		<floors_group min="-10" max="-1" floor_size="0.7,0.35,0.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.7,0.55,0.7"  percentage_work_space="5" percentage_storage_space="95"/>
+		<floors_group min="1" max="1" floor_size="0.5,0.7,0.7"  percentage_storage_space="100"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="1"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0.16,-0.8,0"/>
+	</building_prefab>
+
+	<building_prefab id="SiloB" type="FarmSilo" display_name="Silo B"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Silo B.prefab">
+		<floors_group min="-10" max="-1" floor_size="0.6,1,0.6" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.6,2.2,0.6"  percentage_work_space="5" percentage_storage_space="95"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="1"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0"/>
+	</building_prefab>
+
+	<building_prefab id="SiloC" type="FarmSilo" display_name="Silo C"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Silo C.prefab">
+		<floors_group min="-10" max="-1" floor_size="0.4,0.5,0.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.4,0.8,0.4"  percentage_work_space="5" percentage_storage_space="95"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="1"/>
+		
+	</building_prefab>
+
+	<!--This is more decorative, so no jobs/residents/storage. -->
+	<building_prefab id="WarehouseConnector" type="WarehouseConnector" display_name="Warehouse Connector"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Warehouse Connector.prefab">
+	</building_prefab>
+
+	<building_prefab id="WarehouseA" type="FarmWarehouse" display_name="Warehouse A"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Warehouse A.prefab">
+		<floors_group min="-3" max="-1" floor_size="2.8,0.35,8.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="2.8,0.5,8.5"  percentage_work_space="15" percentage_storage_space="85"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="10"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="5"/>
+		
+		<building_marker prefab="RoofLine" offset="0,0,0"/>		
+	</building_prefab>
+
+	<building_prefab id="WarehouseB" type="FarmWarehouse" display_name="Warehouse B"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Warehouse B.prefab">
+		<floors_group min="-3" max="-1" floor_size="3.3,0.35,4.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="3.3,0.5,4.5"  percentage_work_space="15" percentage_storage_space="85"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="9"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="4"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0"/>
+	</building_prefab>
+
+	<building_prefab id="WarehouseC" type="FarmWarehouse" display_name="Warehouse C"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Warehouse C.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.4,0.35,4.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.4,0.25,4.1"  percentage_work_space="15" percentage_storage_space="85"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="4"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="2"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0"/>
+	</building_prefab>
+
+	<building_prefab id="WarehouseD" type="FarmWarehouse" display_name="Warehouse D"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Warehouse D.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.4,0.35,4.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.4,0.25,4.1"  percentage_work_space="15" percentage_storage_space="85"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="4"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="2"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0"/>
+	</building_prefab>
+
+	<building_prefab id="WarehouseE" type="FarmWarehouse" display_name="Warehouse E"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Warehouse E.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.8,0.35,6.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.8,0.25,6.8"  percentage_work_space="15" percentage_storage_space="85"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="8"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="4"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0"/>		
+	</building_prefab>
+
+	<building_prefab id="WarehouseF" type="FarmWarehouse" display_name="Warehouse F"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Warehouse F.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.8,0.35,6.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.8,0.25,6.8"  percentage_work_space="15" percentage_storage_space="85"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="8"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="4"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0"/>		
+	</building_prefab>
+
+	<building_prefab id="WarehouseH" type="FarmWarehouse" display_name="Warehouse H"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Warehouse H.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.4,0.35,4.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.4,0.25,4.1"  percentage_work_space="15" percentage_storage_space="85"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="3"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="3"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0"/>
+	</building_prefab>
+
+	<building_prefab id="WaterTowerA" type="FarmWaterTower" display_name="Water Tower A"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Water Tower A.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.3,2.5,0.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.3,0.95,0.3" percentage_storage_space="100"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="3"/>
+		
+	</building_prefab>
+
+	<building_prefab id="FarmWaterTowerB" type="FarmWaterTower" display_name="Water Tower B"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Water Tower B.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.3,3.2,0.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.3,1.1,0.3" percentage_storage_space="100"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="3"/>
+		
+	</building_prefab>
+
+	<building_prefab id="WaterTowerC" type="FarmWaterTower" display_name="Water Tower C"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Water Tower C.prefab" floors_offset="0,-0.1,0">
+		<floors_group min="-1" max="-1" floor_size="0.3,3.2,0.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.35,0.95,0.35" percentage_storage_space="100"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="3"/>
+		
+	</building_prefab>
+
+	<!--This is more decorative, so no jobs/residents/storage. -->
+	<building_prefab id="WindmillA" type="FarmWindmill" display_name="Windmill A"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Windmill A.prefab">
+		
+	</building_prefab>
+
+	<!--This is more decorative, so no jobs/residents/storage. -->
+	<building_prefab id="WindmillB" type="FarmWindmill" display_name="Windmill B"
+		path_to_placeable="Assets/__Library/Farm/Buildings/Windmill B.prefab">
+		
+	</building_prefab>
+	
+</root>

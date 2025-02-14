@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<biome_type id="DesertCacti">
+		<tree type="TreesCactusA" weight="100"/>
+		<tree type="TreesCactusB" weight="25"/>
+		<tree type="TreesCactusC" weight="15"/>
+		<tree type="TreesCactusD" weight="80"/>
+		<tree type="TreesCactusE" weight="70"/>
+		<tree type="TreesCactusF" weight="100"/>
+		<tree type="TreesCactusG" weight="80"/>
+		<tree type="TreesCactusH" weight="100"/>
+		<tree type="TreesCactusI" weight="100"/>
+	</biome_type>
+
+	<biome_type id="CutTreesThin">
+		<tree type="TreesTreeScoopB" weight="100"/>
+		<tree type="TreesTreeSpikeB" weight="100"/>
+		<tree type="TreesTreeSpikeC" weight="100"/>
+		<tree type="TreesTreePineB" weight="50"/>
+	</biome_type>
+	
+	<biome_type id="CutTreesThick">
+		<tree type="TreesTreeScoopB" weight="100"/>
+		<tree type="TreesTreeSpikeB" weight="100"/>
+		<tree type="TreesTreeSpikeC" weight="100"/>
+		<tree type="TreesTreePineB" weight="50"/>
+	</biome_type>
+
+	<biome_type id="DeadForest">
+		<tree type="TreesDeadTreeA" weight="100"/>
+		<tree type="TreesDeadTreeB" weight="100"/>
+		<tree type="TreesDeadTreeC" weight="100"/>
+		<tree type="TreesDeadTreeD" weight="100"/>
+		<tree type="TreesDeadTreeE" weight="100"/>
+		<tree type="TreesDeadTreeF" weight="100"/>
+	</biome_type>
+	
+	<biome_type id="DeciduousForestLowNutrients">
+		<tree type="TreesTreeAutumnSpikeA" weight="100"/>
+		<tree type="TreesTreeAutumnSpikeB" weight="100"/>
+		<tree type="TreesTreeAutumnSpikeC" weight="100"/>
+		<tree type="TreesDeadTreeE" weight="100"/>
+		<tree type="TreesDeadTreeF" weight="100"/>
+		<tree type="TreesTreeAutumnScoopA" weight="100"/>
+		<tree type="TreesTreeAutumnScoopB" weight="100"/>
+	</biome_type>
+
+	<biome_type id="DeciduousForestNormal">
+		<tree type="TreesTreeScoop" weight="100"/>
+		<tree type="TreesTreeScoopB" weight="100"/>
+		<tree type="TreesTreeScoopC" weight="100"/>
+		<tree type="TreesTreeSpikeA" weight="50"/>
+		<tree type="TreesTreeSpikeB" weight="50"/>
+		<tree type="TreesTreePineB" weight="25"/>
+	</biome_type>
+
+	<biome_type id="DeciduousForestGrowing">
+		<tree type="TreesTreeScoop" weight="100"/>
+		<tree type="TreesTreeScoopC" weight="100"/>
+	</biome_type>
+
+	<biome_type id="HomelessWasteland">
+		<tree type="TreesTreeScoop" weight="100"/>
+		<tree type="TreesTreeScoopC" weight="100"/>
+		<tree type="TreesTreeSpikeB" weight="10"/>
+	</biome_type>
+
+	<biome_type id="MixedForestNormal">
+		<tree type="TreesTreeFirA" weight="100"/>
+		<tree type="TreesTreeFirB" weight="100"/>
+		<tree type="TreesTreeSpikeA" weight="50"/>
+		<tree type="TreesTreeSpikeB" weight="50"/>
+		<tree type="TreesTreeScoopB" weight="100"/>
+		<tree type="TreesTreeScoopC" weight="100"/>
+		<tree type="TreesDeadTreeE" weight="100"/>
+		<tree type="TreesDeadTreeF" weight="100"/>
+		<tree type="TreesTreeBallsC" weight="50"/>
+	</biome_type>
+
+	<biome_type id="MixedForestDying">
+		<tree type="TreesTreeScoop" weight="60"/>
+		<tree type="TreesTreeScoopB" weight="60"/>
+		<tree type="TreesDeadTreeB" weight="100"/>
+		<tree type="TreesDeadTreeC" weight="100"/>
+	</biome_type>
+	
+	<biome_type id="EvergreenForestNormal">
+		<tree type="TreesTreePineA" weight="100"/>
+		<tree type="TreesTreePineB" weight="100"/>
+		<tree type="TreesTreeFirA" weight="50"/>
+	</biome_type>
+
+	<biome_type id="EvergreenForestGrowing">
+		<tree type="TreesTreePineA" weight="100"/>
+		<tree type="TreesTreePineB" weight="100"/>
+	</biome_type>
+
+</root>

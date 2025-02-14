@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="actor_perk">
+
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information, and this one is optional because so much other information is provided already in these tips."/>
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+
+	<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the shape icon."/>
+	
+	<attribute key="tooltip_color" type="node-dropdown" is_required="true" node_source="VisColorUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="In tooltips, what color will this be drawn?  Done via VisColorUsage for the sake of consistency -- that consistency is only for the tooltip lists, NOT for the glowing icons, because the glowing icons can't be consistent due to the nature of how they're lit." />
+
+	<attribute key="is_high_importance" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this perk is a very high importance one, it should be shown with extra prominence in the ui." />
+
+	<attribute key="is_not_yet_functional" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this feat does not actually work yet." />
+	
+	<attribute key="causes_actor_to_be_considered_outcast_level" type="int-textbox" min="0" max="100" content_width_px="50" is_required="false"
+		tooltip="If above 0, then the actor in question is targeted by certain guard-type units that otherwise would ignore it. If above 10, even guards are after it now."/>
+
+	<attribute key="causes_actor_to_be_tracked_by_criminal_syndicates" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then criminal syndicates can track this unit as long as that unit is not cloaked." />
+	<attribute key="causes_actor_to_be_tracked_by_gangs" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then gangs can track this unit as long as that unit is not cloaked." />
+	<attribute key="causes_actor_to_be_tracked_by_religions" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then religions can track this unit as long as that unit is not cloaked." />
+	<attribute key="causes_actor_to_be_tracked_by_cults" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then cults can track this unit as long as that unit is not cloaked." />
+	<attribute key="causes_actor_to_be_tracked_by_rebels" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then rebels can track this unit as long as that unit is not cloaked." />
+
+	<attribute key="causes_actor_to_not_lose_deterrence_or_protection_from_lost_health" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then lowered current health does not cause deterrence or protection to drop." />
+	
+	<attribute key="unit_unremarkable_up_to_security_clearance" type="int-textbox" min="-1" max="5" default="-1" content_width_px="40" is_required="true"
+		tooltip="If this is at 0 or higher, then the unit with this perk becomes not-noteworthy unless it's actively aggressive in places up to the stated security clearance."/>
+	<attribute key="unit_unremarkable_up_to_building_only_security_clearance" type="int-textbox" min="-1" max="5" default="-1" content_width_px="40" is_required="true"
+		tooltip="If this is at 0 or higher, then the unit with this perk becomes not-noteworthy IF it is at a building unless it's actively aggressive in places up to the stated security clearance."/>
+	
+	<sub_node id="blocks_other">
+		<attribute key="other_perk" type="node-dropdown" is_required="true" node_source="ActorPerk" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When an actor has this perk, then what other perks are removed by it?" />
+		<attribute key="value" type="bool" is_required="true" default="true"
+			tooltip="Normally set to true to indicate the removal. Set to false to mod it out, typically." />
+	</sub_node>
+	
+</root>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Highest Possible Importance (sort order 99, also the flag)
+		*********************************************************************************-->
+
+	<!--Very High Importance (sort order 100, also the flag)
+		*********************************************************************************-->
+	
+	<!--High Importance (sort order 200, no flag)
+		*********************************************************************************-->
+
+	<!--Normal Importance (sort order 300)
+		*********************************************************************************-->
+
+	<actor_feat id="Ambush" display_name="Ambush"
+		description="Damage multiplier against targets when this unit is in shadow or blending in."
+		icon_name="FlatSkill_55" icon_color="#D65E34" tooltip_color="ActorStatus_Bad"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActorFeats_General"
+		sort_order="100" is_high_importance="true"
+		has_code_when_dealing_damage="true">
+	</actor_feat>
+	
+	<actor_feat id="StructureCracker" display_name="Structure Cracker"
+		description="Damage multiplier against structures."
+		icon_name="FlatSkillC150" icon_color="#D65E34" tooltip_color="ActorStatus_Bad"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActorFeats_General"
+		sort_order="200" is_high_importance="true"
+		has_code_when_dealing_damage="true">
+	</actor_feat>
+
+	<actor_feat id="Taser" display_name="Taser"
+		description="If a target human's health is lower than this attacker's Engineering Skill, the target will be removed from battle.
+If not, then the human will be shocked and their attacks will be weaker over the next few turns."
+		icon_name="FlatSkillC169" icon_color="#D6BA34" tooltip_color="ActorStatus_Gold"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActorFeats_General"
+		sort_order="200" is_high_importance="true"
+		has_code_when_dealing_damage="true">
+	</actor_feat>
+
+	<actor_feat id="WeaponDisruptor" display_name="Weapon Disruptor"
+		description="Targets hit by this will have their attacks reduced by a percentage for one turn. This effect stacks."
+		icon_name="CleanSimple_Skill122" icon_color="#D66834" tooltip_color="ActorStatus_Gold"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActorFeats_General"
+		sort_order="200" is_high_importance="true"
+		has_code_when_dealing_damage="true">
+	</actor_feat>
+
+	<actor_feat id="WeakenEnemyHacker" display_name="Weaken Enemy Hacker"
+		description="Hackers hit by this have their hacking strength weakened. This attack does not trigger any normal hacker response, but also does not physically damage them."
+		icon_name="Pw_BlackMarketIncognito" icon_color="#C834D6" tooltip_color="ActorStatus_Gold"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActorFeats_General"
+		sort_order="200" is_high_importance="true"
+		has_code_when_dealing_damage="true">
+	</actor_feat>
+
+	<actor_feat id="SuppressingFire" display_name="Suppressing Fire"
+		description="Enemy units within the attack range of this unit have their attack and movement ranges reduced. This effect does not stack."
+		icon_name="CleanSimple_Misc66" icon_color="#D66834" tooltip_color="ActorStatus_Gold"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActorFeats_General"
+		sort_order="200" is_high_importance="true"
+		has_code_when_dealing_damage="true">
+	</actor_feat>
+	
+	<actor_feat id="HackBreaker" display_name="Hack Breaker"
+		description="Damage multiplier against targets with hacking skill. Targets with less than 150 hacking skill have a far smaller bonus, and targets with progressively more hacking skill get larger bonuses."
+		icon_name="WEmblem254" icon_color="#D65E34" tooltip_color="ActorStatus_Bad"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActorFeats_General"
+		sort_order="200" is_high_importance="true"
+		has_code_when_dealing_damage="true">
+	</actor_feat>
+
+	<actor_feat id="RobotCommander" display_name="Robot Commander"
+		description="All robotic allies within range of this unit get a bonus to their attack power."
+		icon_name="CS_ChessBishop2" icon_color="#D65E34" tooltip_color="ActorStatus_Bad"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActorFeats_General"
+		sort_order="200" is_high_importance="true" is_not_yet_functional="true">
+	</actor_feat>
+	
+	<actor_feat id="Entrench" display_name="Entrench"
+		description="Every turn this unit does not move, it gets more dug-in, leading to damage mitigation."
+		icon_name="FlatSkillB_shovel" icon_color="#D65E34" tooltip_color="ActorStatus_Bad"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActorFeats_General"
+		sort_order="200" is_high_importance="true" is_not_yet_functional="true">
+	</actor_feat>
+	
+	<!--Low Importance (sort order 400)
+		*********************************************************************************-->
+	
+</root>

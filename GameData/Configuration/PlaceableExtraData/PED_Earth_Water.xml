@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<placeable id="WaterBarrierA" path="Assets/__Library/Earth/Water/Water Barrier A.prefab"  display_name="Water Barrier A"
+		is_meta_other_object_collision_target="true"
+		is_symmetrical_for_x_mirroring="true" is_symmetrical_for_z_mirroring="true" >
+	</placeable>
+
+	<placeable id="WaterBarrierB" path="Assets/__Library/Earth/Water/Water Barrier B.prefab"  display_name="Water Barrier B"
+		is_meta_other_object_collision_target="true"
+		is_symmetrical_for_x_mirroring="true" is_symmetrical_for_z_mirroring="true" >
+	</placeable>
+
+	<placeable id="WaterCanalCurvePrefab" path="Assets/__Library/Earth/Water/Water Canal Curve Prefab.prefab"  display_name="Water Canal Curve A"
+		is_meta_other_object_collision_target="true" included_shaders_that_do_not_use_instancing="Arcen/Depth Mask"
+		path_of_mirror_x_replacement="Assets/__Library/Earth/Water/Water Canal Curve Prefab B.prefab" rotate_180_degrees_for_x_mirror="true"
+		path_of_mirror_z_replacement="Assets/__Library/Earth/Water/Water Canal Curve Prefab B.prefab">
+	</placeable>
+
+	<placeable id="WaterCanalCurvePrefabB" path="Assets/__Library/Earth/Water/Water Canal Curve Prefab B.prefab"  display_name="Water Canal Curve B"
+		is_meta_other_object_collision_target="true" included_shaders_that_do_not_use_instancing="Arcen/Depth Mask"
+		path_of_mirror_x_replacement="Assets/__Library/Earth/Water/Water Canal Curve Prefab.prefab" rotate_180_degrees_for_x_mirror="true"
+		path_of_mirror_z_replacement="Assets/__Library/Earth/Water/Water Canal Curve Prefab.prefab" >
+	</placeable>
+
+	<placeable id="WaterCanalEndPrefab" path="Assets/__Library/Earth/Water/Water Canal End Prefab.prefab"  display_name="Water Canal End"
+		is_meta_other_object_collision_target="true" included_shaders_that_do_not_use_instancing="Arcen/Depth Mask"
+		is_symmetrical_for_x_mirroring="true" rotate_180_degrees_for_z_mirror="true">
+	</placeable>
+
+	<placeable id="WaterCanalStraightPrefab" path="Assets/__Library/Earth/Water/Water Canal Straight Prefab.prefab"  display_name="Water Canal Straight"
+		is_meta_other_object_collision_target="true" included_shaders_that_do_not_use_instancing="Arcen/Depth Mask"
+		is_symmetrical_for_x_mirroring="true" is_symmetrical_for_z_mirroring="true" >
+	</placeable>
+
+	<placeable id="WaterEdgeA" path="Assets/__Library/Earth/Water/Water Edge A.prefab"  display_name="Water Edge A"
+		path_of_mirror_x_replacement="Assets/__Library/Earth/Water/Mirror/Water Edge A Mir X.prefab"
+		path_of_mirror_z_replacement="Assets/__Library/Earth/Water/Mirror/Water Edge A Mir X.prefab" rotate_180_degrees_for_z_mirror="true">
+	</placeable>
+	
+	<placeable id="WaterEdgeA-MirX" path="Assets/__Library/Earth/Water/Mirror/Water Edge A Mir X.prefab"  display_name="Water Edge A (Mirror)">
+	</placeable>
+
+	<placeable id="WaterEdgeB" path="Assets/__Library/Earth/Water/Water Edge B.prefab"  display_name="Water Edge B"
+		path_of_mirror_x_replacement="Assets/__Library/Earth/Water/Mirror/Water Edge B Mir X.prefab"
+		path_of_mirror_z_replacement="Assets/__Library/Earth/Water/Mirror/Water Edge B Mir X.prefab" rotate_180_degrees_for_z_mirror="true">
+	</placeable>
+	
+	<placeable id="WaterEdgeB-MirX" path="Assets/__Library/Earth/Water/Mirror/Water Edge B Mir X.prefab"  display_name="Water Edge B (Mirror)">
+	</placeable>
+
+	<placeable id="WaterEdgeC" path="Assets/__Library/Earth/Water/Water Edge C.prefab"  display_name="Water Edge C"
+		path_of_mirror_x_replacement="Assets/__Library/Earth/Water/Mirror/Water Edge C Mir X.prefab"
+		path_of_mirror_z_replacement="Assets/__Library/Earth/Water/Mirror/Water Edge C Mir X.prefab" rotate_180_degrees_for_z_mirror="true">
+	</placeable>
+	
+	<placeable id="WaterEdgeC-MirX" path="Assets/__Library/Earth/Water/Mirror/Water Edge C Mir X.prefab"  display_name="Water Edge C (Mirror)" >
+	</placeable>
+
+	<placeable id="WaterEdgeD" path="Assets/__Library/Earth/Water/Water Edge D.prefab"  display_name="Water Edge D"
+		path_of_mirror_x_replacement="Assets/__Library/Earth/Water/Mirror/Water Edge D Mir X.prefab"
+		path_of_mirror_z_replacement="Assets/__Library/Earth/Water/Mirror/Water Edge D Mir X.prefab" rotate_180_degrees_for_z_mirror="true">
+	</placeable>
+	
+	<placeable id="WaterEdgeD-MirX" path="Assets/__Library/Earth/Water/Mirror/Water Edge D Mir X.prefab"  display_name="Water Edge D (Mirror)">
+	</placeable>
+
+	<placeable id="WaterEdgeE" path="Assets/__Library/Earth/Water/Water Edge E.prefab"  display_name="Water Edge E"
+		path_of_mirror_x_replacement="Assets/__Library/Earth/Water/Mirror/Water Edge E Mir X.prefab"
+		path_of_mirror_z_replacement="Assets/__Library/Earth/Water/Mirror/Water Edge E Mir X.prefab" rotate_180_degrees_for_z_mirror="true">
+	</placeable>
+	
+	<placeable id="WaterEdgeE-MirX" path="Assets/__Library/Earth/Water/Mirror/Water Edge E Mir X.prefab"  display_name="Water Edge E (Mirror)">
+	</placeable>
+
+	<placeable id="WaterSurface" path="Assets/__Library/Earth/Water/Water Surface.prefab"  display_name="Water Surface"
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true" 
+		expand_individual_collider_checking_up_and_down_a_lot_in_collision_checks="true" included_shaders_that_do_not_use_instancing="Arcen/Depth Mask"
+		path_of_mirror_x_replacement="Assets/__Library/Earth/Water/Mirror/Water Surface Mir X.prefab"
+		path_of_mirror_z_replacement="Assets/__Library/Earth/Water/Mirror/Water Surface Mir X.prefab" rotate_180_degrees_for_z_mirror="true">
+	</placeable>
+
+	<placeable id="WaterSurface-MirX" path="Assets/__Library/Earth/Water/Mirror/Water Surface Mir X.prefab"  display_name="Water Surface (Mirror)"
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true" included_shaders_that_do_not_use_instancing="Arcen/Depth Mask"
+		expand_individual_collider_checking_up_and_down_a_lot_in_collision_checks="true">
+	</placeable>
+
+	<placeable id="WaterSurfaceHex" path="Assets/__Library/Earth/Water/Water Surface Hex.prefab"  display_name="Water Surface Hex"
+		is_meta_other_object_collision_target="true" requires_individual_collider_checking_during_bounding_collision_checks="true"
+		expand_individual_collider_checking_up_and_down_a_lot_in_collision_checks="true" included_shaders_that_do_not_use_instancing="Arcen/Depth Mask"
+		is_symmetrical_for_x_mirroring="true" is_symmetrical_for_z_mirroring="true">
+	</placeable>
+
+	<placeable id="WaterSurfaceRect" path="Assets/__Library/Earth/Water/Water Surface Rect.prefab"  display_name="Water Surface Rect"
+		is_meta_other_object_collision_target="true" included_shaders_that_do_not_use_instancing="Arcen/Depth Mask">
+	</placeable>
+	
+</root>

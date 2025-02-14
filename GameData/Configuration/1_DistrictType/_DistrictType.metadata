@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="district_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="char_for_district_debug_map" type="string" maxlength="1" content_width_px="20"
+			tooltip="This is never shown to end users, but when generating city maps, this is used to show what the districts are. This is separate from the tile generation export." />
+
+	<attribute key="rand_split_districts_that_are_above_size_min" type="int-textbox" min="1" max="900" default="3" content_width_px="150" is_required="true"
+		tooltip="When a district is larger than some random value, split it into at least two parts. What is the minimum range of that random value?"/>
+
+	<attribute key="rand_split_districts_that_are_above_size_max" type="int-textbox" min="1" max="900" default="3" content_width_px="150" is_required="true"
+		tooltip="When a district is larger than some random value, split it into at least two parts. What is the maximum range of that random value?"/>
+
+	<attribute key="do_not_assign_if_fewer_than_x_cells" type="int-textbox" min="0" max="900" default="0" content_width_px="150" is_required="true"
+		tooltip="When a would-be district is smaller than this, don't create it. Instead it will be absorbed into something adjacent. This is something to use mainly on the more 'generic' types of districts."/>
+
+	<attribute key="prefer_avoid_adding_other_cells_to_self" type="bool" default="false"
+		tooltip="If cells from another would-be district type were in a zone that is too small, then should they avoid adding themselves to this region, or is it okay?" />
+
+	<attribute key="decoration_biome" type="node-dropdown" node_source="LevelTag" content_width_px="200" is_required="true"
+		tooltip="What level tag will the decorations be pulled from for this district type?  Each specific district will be allocated a specific level type from within the chosen tag." />
+
+	<attribute key="district_owner_chosen_from" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+		tooltip="What npc cohort tag is used to choose the randomized owner of this kind of district?" />
+	
+	<attribute key="name_part_1_used" type="node-dropdown" node_source="RandomNamePartType" content_width_px="200" is_required="true"
+		tooltip="What is the first part of the naming structure for this district type?" />
+
+	<attribute key="name_part_2_optional_used" type="node-dropdown" node_source="RandomNamePartType" content_width_px="200" is_required="false"
+		tooltip="What is the second part of the naming structure for this district type, if it has one?" />
+
+	<attribute key="do_not_draw_holo_walls_around_self" type="bool" default="false"
+		tooltip="Holo walls should not be drawn separating this type of district from other districts. Generally those would be redundant or otherwise unhelpful." />
+
+	<attribute key="is_standard_district_type_for_cohort_purposes" type="bool" default="false"
+		tooltip="Standard districts get the regular gangs, corporate entities, and so on." />
+
+	<attribute key="is_worker_district_type_for_cohort_purposes" type="bool" default="false"
+		tooltip="Worker districts get the standard breakdowns of type of cohorts for how various forms of workers feel." />
+
+	<attribute key="tags" type="node-list" node_source="DistrictTag" content_width_px="300" is_required="true"
+		tooltip="What tags are associated with this district type?" />
+
+	<attribute key="name_pool" type="node-dropdown" node_source="NamePoolType" content_width_px="200" is_required="false"
+		tooltip="If a name pool will be used, then which pool will it be?" />
+
+	<attribute key="lang_key_for_numbered_name" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+		tooltip="Link to a language entry that is the format for this style of name if it's a numeric name." />
+
+	<attribute key="use_numbered_name_style" type="bool" default="false" is_required="false"
+		tooltip="If this is true, then this will use a single word with a number. Usually done for numerous districts like the basic kind." />
+	<attribute key="use_name_pool" type="bool" default="false" is_required="false"
+		tooltip="If this is true, then this will use the name pool specified above to generate the name." />
+	
+	<attribute key="min_name_number" type="int-textbox" min="0" max="9999" default="1" is_required="false" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The lowest number that can be used in the numbered name style."/>
+	<attribute key="max_name_number" type="int-textbox" min="0" max="9999" default="99" is_required="false" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The largest number that can be used in the numbered name style."/>
+	
+</root>

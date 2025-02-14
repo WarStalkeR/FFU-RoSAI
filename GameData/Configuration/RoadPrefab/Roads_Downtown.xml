@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<road_prefab id="Alley A" path_to_placeable="Assets/__Library/Roads/Downtown/Alley A.prefab">
+		<lane id="L1" type="Alley"
+			points="0,0,-6.02;0,0,6.02"/>
+		<lane id="S1" type="Sidewalk"
+			points="3.03,0,-6.02;3.03,0,6.02"/>
+		<lane id="S2" type="Sidewalk"
+			points="-3.03,0,-6.02;-3.03,0,6.02"/>
+	</road_prefab>
+
+	<road_prefab id="Alley B" path_to_placeable="Assets/__Library/Roads/Downtown/Alley B.prefab">
+		<lane id="L1" type="Alley"
+			points="0,0,-12.01;0,0,12.01"/>
+		<lane id="S1" type="Sidewalk"
+			points="3.03,0,-12.01;3.03,0,12.01"/>
+		<lane id="S2" type="Sidewalk"
+			points="-3.03,0,-12.01;-3.03,0,12.01"/>
+	</road_prefab>
+
+	<road_prefab id="Alley to Rd A" path_to_placeable="Assets/__Library/Roads/Downtown/Alley to Rd A.prefab">
+		<lane id="A1" type="Alley"
+			points="2,0,12;2,0,1"/>
+		<lane id="D1" type="Downtown"
+			points="2,0,1;2,0,-12;2,0,-12"/>
+		<lane id="DEnd" type="Downtown"
+			points="-2,0,-3.5;-2,0,-12"/>
+		<lane id="S1" type="Sidewalk"
+			points="5,0,-12;5,0,12"/>
+		<lane id="S2" type="Sidewalk"
+			points="-1,0,12;-1,0,3.5;-5,0,-3.5;-5,0,-12"/>
+	</road_prefab>
+
+	<road_prefab id="Alley to Rd B" path_to_placeable="Assets/__Library/Roads/Downtown/Alley to Rd B.prefab">
+		<lane id="A1" type="Alley"
+			points="-2,0,12;-2,0,1"/>
+		<lane id="D1" type="Downtown"
+			points="-2,0,1;-2,0,-12;-2,0,-12"/>
+		<lane id="DEnd" type="Downtown"
+			points="2,0,-12;2,0,-3.5"/>
+		<lane id="S1" type="Sidewalk"
+			points="5,0,-12;5,0,-3.5;1,0,3.5;1,0,12.11"/>
+		<lane id="S2" type="Sidewalk"
+			points="-5,0,12;-5,0,-12"/>
+	</road_prefab>
+
+	<road_prefab id="Parking A" path_to_placeable="Assets/__Library/Roads/Downtown/Parking A.prefab">
+		<lane id="D1" type="Downtown"
+			points="17,0,-24;17,0,24"
+			turn_type="None"/>
+		<lane id="D2" type="Downtown"
+			points="13,0,-24;13,0,24"
+			turn_type="None"/>
+		<lane id="C1" type="Crosswalk"
+			points="19,0,0;11,0,0;9,0,2;-9,0,2;-11,0,0;-19,0,0"
+			turn_type="None"/>
+		<lane id="C2" type="Crosswalk"
+			points="-19,0,0;-11,0,0;-9,0,-2;9,0,-2;11,0,0;19,0,0"
+			turn_type="None"/>
+		<lane id="1P1R" type="ParkingLot"
+			points="17,0,-24;17,0,-15;15.5,0,-12;11,0,-10;-10,0,-10;-13,0,-7;-13,0,10;-12,0,15;-12,0,17;-12,0,19"
+			is_dead_end="true" turn_type="Right"/>
+		<lane id="1P2R" type="ParkingLot"
+			points="17,0,-24;17,0,5;15,0,9;11,0,12;9,0,14;8.25,0,15;8,0,17;8,0,18;8,0,19"
+			is_dead_end="true" turn_type="Right"/>
+		<lane id="2P1L" type="ParkingLot"
+			points="17,0,24;17,0,18;15.5,0,15;12,0,14;8,0,14;4,0,13.5;0.5,0,11;0,0,9.5;0,0,6.5;0,0,5"
+			is_dead_end="true" turn_type="Left"/>
+		<lane id="2P2L" type="ParkingLot"
+			points="17,0,24;17,0,-6;15.25,0,-9.25;11.5,0,-10;7,0,-10;5,0,-11;4,0,-13;4,0,-15;4,0,-17;4,0,-19"
+			is_dead_end="true" turn_type="Left"/>
+		<lane id="2P1R" type="ParkingLot"
+			points="13,0,24;13,0,18;11.5,0,15;8,0,14;4,0,14;0,0,13.5;-3.5,0,11;-4,0,9.5;-4,0,6.5;-4,0,5"
+			is_dead_end="true" turn_type="Right"/>
+		<lane id="2P2R" type="ParkingLot"
+			points="13,0,24;13,0,-6;11.25,0,-9.25;7.5,0,-10;3,0,-10;1,0,-11;0,0,-13;0,0,-15;0,0,-17;0,0,-19"
+			is_dead_end="true" turn_type="Right"/>
+		<lane id="1P1L" type="ParkingLot"
+			points="13,0,-24;13,0,-19;11.5,0,-16;7,0,-14;-14,0,-14;-17,0,-11;-17,0,10;-16,0,15;-16,0,17;-16,0,19"
+			is_dead_end="true" turn_type="Left"/>
+		<lane id="1P2L" type="ParkingLot"
+			points="13,0,-24;13,0,5;11,0,9;7,0,12;5,0,14;4.5,0,15;4,0,17;4,0,18;4,0,19"
+			is_dead_end="true" turn_type="Left"/>
+		<lane id="S1" type="Sidewalk"
+			points="20,0,-24;20,0,0;20,0,24"
+			turn_type="None"/>
+		<lane id="S2" type="Sidewalk"
+			points="10,0,-24;10,0,-22;-20,0,-22;-20,0,0;-20,0,22;10,0,22;10,0,24"
+			turn_type="None"/>
+	</road_prefab>
+
+	<road_prefab id="Parking Garage" path_to_placeable="Assets/__Library/Roads/Downtown/Parking Garage.prefab">
+		<lane id="DInStub" type="Downtown"
+			points="-3,-14,-26;-3,-14,-20"/>
+		<lane id="DOutStub" type="Downtown"
+			points="-6.78,-14,-26;-6.78,-14,-20"/>
+		<lane id="PIn" type="ParkingLot"
+			points="3,-14,26;3,-14,20"/>
+		<lane id="POut" type="ParkingLot"
+			points="6.78,-14,26;6.78,-14,20"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 0.3Blank" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 0.3Blank.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-5;2,0,5"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,5;-2,0,-5"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,5;-5,0,-5"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,5;5,0,-5"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 0.5A" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 0.5A.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-5;2,0,5"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,5;-2,0,-5"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,5;-5,0,-5"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,5;5,0,-5"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 0.5Blank" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 0.5Blank.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-5;2,0,5"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,5;-2,0,-5"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,5;-5,0,-5"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,5;5,0,-5"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 0.9A" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 0.9A.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-6;2,0,6"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,6;-2,0,-6"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,6;-5,0,-6"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,6;5,0,-6"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 1A" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-6;2,0,6"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,6;-2,0,-6"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,6;-5,0,-6"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,6;5,0,-6"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 1.1A" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1.1A.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-6;2,0,6"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,6;-2,0,-6"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,6;-5,0,-6"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,6;5,0,-6"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 1W" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1W.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-6;2,0,6"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,6;-2,0,-6"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,6;-5,0,3;-5,0,-6"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,6;5,0,3;5,0,-6"/>
+		<lane id="C" type="Sidewalk"
+			points="-5,0,6;-4.5,0,3;4.5,0,3;5,0,6"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 1Wl" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1Wl.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-6;2,0,6"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,6;-2,0,-6"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,6;-5,0,-6"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,6;5,0,-6"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 1Ww" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1Ww.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-6;2,0,6"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,6;-2,0,-6"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,-6;-5,0,6"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,6;5,0,6;5,0,-6"/>
+		<lane id="C1" type="Sidewalk"
+			points="-5,0,6;-4.5,0,0;4.5,0,0;5,0,-6"/>
+		<lane id="C2" type="Sidewalk"
+			points="-5,0,-6;-4.5,0,0;4.5,0,0;5,0,6"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 2A" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 2A.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-7;2,0,7"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,7;-2,0,-7"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,7;-5,0,-7"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,7;5,0,-7"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 2.1A" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 2.1A.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-7;2,0,7"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,7;-2,0,-7"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,7;-5,0,-7"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,7;5,0,-7"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 4A" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 4A.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-8;2,0,8"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,8;-2,0,-8"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,8;-5,0,-8"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,8;5,0,-8"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 4.1A" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 4.1A.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-8;2,0,8"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,8;-2,0,-8"/>
+		<lane id="S1" type="Sidewalk"
+			points="-5,0,8;-5,0,-8"/>
+		<lane id="S2" type="Sidewalk"
+			points="5,0,8;5,0,-8"/>
+	</road_prefab>
+
+	<road_prefab id="Rd 4Way" path_to_placeable="Assets/__Library/Roads/Downtown/Rd 4Way.prefab">
+		<lane id="D1NS" type="Downtown"
+			points="-8,0,2;8,0,2"/>
+		<lane id="D2NS" type="Downtown"
+			points="-8,0,-2;8,0,-2"/>
+		<lane id="D1EW" type="Downtown"
+			points="2,0,-8;2,0,8"/>
+		<lane id="D2EW" type="Downtown"
+			points="-2,0,8;-2,0,-8"/>
+		<lane id="D2NE" type="Downtown"
+			points="2,0,-8;3.5,0,-3.5;8,0,-2"
+			turn_type="Right"/>
+		<lane id="D2WN" type="Downtown"
+			points="8,0,2;3.5,0,3.5;2,0,8"
+			turn_type="Right"/>
+		<lane id="D2SW" type="Downtown"
+			points="-2,0,8;-3.5,0,3.5;-8,0,2"
+			turn_type="Right"/>
+		<lane id="D2ES" type="Downtown"
+			points="-8,0,-2;-3.5,0,-3.5;-2,0,-8"
+			turn_type="Right"/>
+		<lane id="D2NW" type="Downtown"
+			points="2,0,-8;1,0,-2;-2,0,1;-8,0,2"
+			turn_type="Left"/>
+		<lane id="D2WS" type="Downtown"
+			points="-8,0,-2;-2,0,-1;1,0,2;2,0,8"
+			turn_type="Left"/>
+		<lane id="D2SE" type="Downtown"
+			points="-2,0,8;-1,0,2;2,0,-1;8,0,-2"
+			turn_type="Left"/>
+		<lane id="D2EN" type="Downtown"
+			points="8,0,2;2,0,1;-2,0,-2;-2,0,-8"
+			turn_type="Left"/>
+		<lane id="S1" type="Sidewalk"
+			points="-8,0,5;-6,0,6;-5,0,8"/>
+		<lane id="S2" type="Sidewalk"
+			points="8,0,5;6,0,6;5,0,8"/>
+		<lane id="S3" type="Sidewalk"
+			points="8,0,-5;6,0,-6;5,0,-8"/>
+		<lane id="S4" type="Sidewalk"
+			points="-5,0,-8;-6,0,-6;-8,0,-5"/>
+	</road_prefab>
+
+	<road_prefab id="Rd Crv L Plt" path_to_placeable="Assets/__Library/Roads/Downtown/Rd Crv L Plt.prefab">
+		<lane id="D1" type="Downtown"
+			points="-13,0,5;-8.5,0,4.5;-3,0,2;2,0,-3;4.5,0,-8.5;5,0,-13"
+			turn_type="Left"/>
+		<lane id="D2" type="Downtown"
+			points="9,0,-13;8.5,0,-7.75;6.5,0,-2.5;2.75,0,2.75;-2.5,0,6.5;-8.5,0,8.5;-13,0,9"
+			turn_type="Right"/>
+		<lane id="S1" type="Sidewalk"
+			points="-13,0,2;-7,0,0.75;-2.5,0,-2.5;0.75,0,-7;2,0,-13"/>
+		<lane id="S2" type="Sidewalk"
+			points="-13,0,12;-6,0,11;2,0,7.5;7.5,0,2;11,0,-6;12,0,-13"/>
+	</road_prefab>
+
+	<road_prefab id="Rd Crv L" path_to_placeable="Assets/__Library/Roads/Downtown/Rd Crv L.prefab">
+		<lane id="D1" type="Downtown"
+			points="-13,0,5;-8.5,0,4.5;-3,0,2;2,0,-3;4.5,0,-8.5;5,0,-13"
+			turn_type="Left"/>
+		<lane id="D2" type="Downtown"
+			points="9,0,-13;8.5,0,-7.75;6.5,0,-2.5;2.75,0,2.75;-2.5,0,6.5;-8.5,0,8.5;-13,0,9"
+			turn_type="Right"/>
+		<lane id="S1" type="Sidewalk"
+			points="-13,0,2;-7,0,0.75;-2.5,0,-2.5;0.75,0,-7;2,0,-13"/>
+		<lane id="S2" type="Sidewalk"
+			points="-13,0,12;-6,0,11;2,0,7.75;7.5,0,2;11,0,-6;12,0,-13"/>
+	</road_prefab>
+
+	<road_prefab id="Rd Crv S Plt" path_to_placeable="Assets/__Library/Roads/Downtown/Rd Crv S Plt.prefab">
+		<lane id="D1" type="Downtown"
+			points="-7,0,-1;-4,0,-2;-2,0,-4;-1,0,-7"
+			turn_type="Right"/>
+		<lane id="D2" type="Downtown"
+			points="3,0,-7;2.5,0,-4;0,0,0;-4,0,2.5;-7,0,3"
+			turn_type="Left"/>
+		<lane id="S1" type="Sidewalk"
+			points="-7,0,-4;-4.75,0,-4.75;-4,0,-7"/>
+		<lane id="S2" type="Sidewalk"
+			points="-7,0,6;-3.5,0,5.5;0,0,4;4,0,0;5.5,0,-3.5;6,0,-7"/>
+	</road_prefab>
+
+	<road_prefab id="Rd Crv S" path_to_placeable="Assets/__Library/Roads/Downtown/Rd Crv S.prefab">
+		<lane id="D1" type="Downtown"
+			points="-7,0,-1;-4,0,-2;-2,0,-4;-1,0,-7"
+			turn_type="Right"/>
+		<lane id="D2" type="Downtown"
+			points="3,0,-7;2.5,0,-4;0,0,0;-4,0,2.5;-7,0,3"
+			turn_type="Left"/>
+		<lane id="S1" type="Sidewalk"
+			points="-7,0,-4;-4.75,0,-4.75;-4,0,-7"/>
+		<lane id="S2" type="Sidewalk"
+			points="-7,0,6;-3.5,0,5.5;0,0,4;4,0,0;5.5,0,-3.5;6,0,-7"/>
+	</road_prefab>
+
+	<road_prefab id="Rd End" path_to_placeable="Assets/__Library/Roads/Downtown/Rd End.prefab">
+		<lane id="D1" type="Downtown"
+			points="2.23,0,-4;2.23,0,0"
+			is_dead_end="true"/>
+		<lane id="D2" type="Downtown"
+			points="-2.23,0,0;-2.23,0,-4"
+			is_dead_end="true"/>
+		<lane id="S" type="Sidewalk"
+			points="5.08,0,-4;5.08,0,3;-5.08,0,3;-5.08,0,-4"/>
+	</road_prefab>
+
+	<road_prefab id="Rd Parking" path_to_placeable="Assets/__Library/Roads/Downtown/Rd Parking.prefab">
+		<lane id="D1" type="Downtown"
+			points="5,0,-12;5,0,12"
+			turn_type="None"/>
+		<lane id="D1P1" type="Downtown"
+			points="5,0,-12;5,0,-3.5;2,0,1;-1,0,2;-3,0,2;-5,0,2"
+			is_dead_end="true" turn_type="None"/>
+		<lane id="D1P2" type="Downtown"
+			points="5,0,-12;5,0,-11;2,0,-7;-1,0,-6;-3,0,-6;-5,0,-6"
+			is_dead_end="true" turn_type="None"/>
+		<lane id="D2" type="Downtown"
+			points="1,0,12;1,0,-12"
+			turn_type="None"/>
+		<lane id="D2P1" type="Downtown"
+			points="1,0,12;1,0,10;0,0,7.5;-1,0,6.5;-3,0,6;-5,0,6"
+			is_dead_end="true" turn_type="None"/>
+		<lane id="D2P2" type="Downtown"
+			points="1,0,12;1,0,3;0,0,-0.5;-1,0,-1.5;-3,0,-2;-5,0,-2"
+			is_dead_end="true" turn_type="None"/>
+		<lane id="S1" type="Sidewalk"
+			points="8,0,-12;8,0,12"
+			turn_type="None"/>
+		<lane id="S2" type="Sidewalk"
+			points="-2,0,-12;-2,0,-10;-8,0,-10;-8,0,10;-2,0,10;-2,0,12"
+			turn_type="None"/>
+	</road_prefab>
+
+	<road_prefab id="Rd Roundabout" path_to_placeable="Assets/__Library/Roads/Downtown/Rd Roundabout.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-14;2,0,-13;2.5,0,-9;5,0,-5;6.5,0,0;5,0,5;2.5,0,9;2,0,14"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,14;-2,0,13;-2.5,0,9;-5,0,5;-6.5,0,0;-5,0,-5;-2.5,0,-9;-2,0,-14"/>
+		<lane id="D3" type="Downtown"
+			points="-14,0,2;-13,0,2;-9,0,2.5;-5,0,5;0,0,6.5;5,0,5;9,0,2.5;14,0,2"/>
+		<lane id="D4" type="Downtown"
+			points="14,0,-2;13,0,-2;9,0,-2.5;5,0,-5;0,0,-6.5;-5,0,-5;-9,0,-2.5;-14,0,-2"/>
+		<lane id="D1R" type="Downtown"
+			points="2,0,-14;2.5,0,-9;5,0,-5;9,0,-2.5;14,0,-2"
+			turn_type="Right"/>
+		<lane id="D2R" type="Downtown"
+			points="-2,0,-14;-2.5,0,-9;-5,0,-5;-9,0,-2.5;-14,0,-2"
+			turn_type="Right"/>
+		<lane id="D3R" type="Downtown"
+			points="2,0,14;2.5,0,9;5,0,5;9,0,2.5;14,0,2"
+			turn_type="Right"/>
+		<lane id="D4R" type="Downtown"
+			points="-2,0,14;-2.5,0,9;-5,0,5;-9,0,2.5;-14,0,2"
+			turn_type="Right"/>
+		<lane id="D1L" type="Downtown"
+			points="2,0,-14;2.5,0,-9;5,0,-5;6.5,0,0;5,0,5;0,0,6.5;-5,0,5;-9,0,2.5;-14,0,2"
+			turn_type="Left"/>
+		<lane id="D2L" type="Downtown"
+			points="-2,0,14;-2.5,0,9;-5,0,5;-6.5,0,0;-5,0,-5;0,0,-6.5;5,0,-5;9,0,-2.5;14,0,-2"
+			turn_type="Left"/>
+		<lane id="D3L" type="Downtown"
+			points="2,0,14;2.5,0,9;5,0,5;6.5,0,0;5,0,-5;0,0,-6.5;-5,0,-5;-9,0,-2.5;-14,0,-2"
+			turn_type="Left"/>
+		<lane id="D4L" type="Downtown"
+			points="-2,0,-14;-2.5,0,-9;-5,0,-5;-6.5,0,0;-5,0,5;0,0,6.5;5,0,5;9,0,2.5;14,0,2"
+			turn_type="Left"/>
+		<lane id="S1" type="Sidewalk"
+			points="14,0,5;9,0,6.5;6.5,0,9;5,0,14"/>
+		<lane id="S2" type="Sidewalk"
+			points="-14,0,5;-9,0,6.5;-6.5,0,9;-5,0,14"/>
+		<lane id="S3" type="Sidewalk"
+			points="14,0,-5;9,0,-6.5;6.5,0,-9;5,0,-14"/>
+		<lane id="S4" type="Sidewalk"
+			points="-14,0,-5;-9,0,-6.5;-6.5,0,-9;-5,0,-14"/>
+	</road_prefab>
+
+	<road_prefab id="Rd Split A" path_to_placeable="Assets/__Library/Roads/Downtown/Rd Split A.prefab">
+		<lane id="D1" type="Downtown"
+			points="5,0,13;5,0,-13"/>
+		<lane id="D2" type="Downtown"
+			points="9,0,13;9,0,-13"/>
+		<lane id="D3" type="Downtown"
+			points="5,0,13;5,0,7;0,0,0;-8,0,-4;-13,0,-5"/>
+		<lane id="D4" type="Downtown"
+			points="9,0,13;9,0,7;5,0,-0.5;-2,0,-6;-8,0,-8.5;-13,0,-9"/>
+		<lane id="S1" type="Sidewalk"
+			points="12,0,13;12,0,-13"/>
+		<lane id="S2" type="Sidewalk"
+			points="2,0,13;1,0,7;-3,0,2;-9,0,-1;-13,0,-2"/>
+		<lane id="S3" type="Sidewalk"
+			points="2,0,-13;2,0,-7;-6.5,0,-11;-13,0,-12"/>
+		<lane id="C1" type="Sidewalk"
+			points="2,0,-13;2,0,13"/>
+		<lane id="C2" type="Sidewalk"
+			points="2,0,13;2,0,-7;-6.5,0,-11;-13,0,-12"/>
+	</road_prefab>
+
+	<road_prefab id="Rd Split B" path_to_placeable="Assets/__Library/Roads/Downtown/Rd Split B.prefab">
+		<lane id="D1" type="Downtown"
+			points="-9,0,13;-9,0,-13"/>
+		<lane id="D2" type="Downtown"
+			points="-5,0,-13;-5,0,13"/>
+		<lane id="D3" type="Downtown"
+			points="13,0,-5;8,0,-4;0,0,0;-5,0,7;-5,0,13"/>
+		<lane id="D4" type="Downtown"
+			points="-9,0,13;-9,0,7;-5,0,-0.5;2,0,-6;8,0,-8.5;13,0,-9"/>
+		<lane id="S1" type="Sidewalk"
+			points="-12,0,13;-12,0,-13"/>
+		<lane id="S2" type="Sidewalk"
+			points="-2,0,13;-1,0,7;3,0,2;8,0,-1;13,0,-2"/>
+		<lane id="S3" type="Sidewalk"
+			points="-2,0,-13;-2,0,-7;6.5,0,-11;13,0,-12"/>
+		<lane id="C1" type="Sidewalk"
+			points="-2,0,-13;-2,0,13"/>
+		<lane id="C2" type="Sidewalk"
+			points="-2,0,13;-2,0,-7;6.5,0,-11;13,0,-12"/>
+	</road_prefab>
+
+	<road_prefab id="Rd T" path_to_placeable="Assets/__Library/Roads/Downtown/Rd T.prefab">
+		<lane id="D1" type="Downtown"
+			points="3,0,-8;3,0,8"/>
+		<lane id="D2" type="Downtown"
+			points="-1,0,8;-1,0,-8"/>
+		<lane id="D3R" type="Downtown"
+			points="-7,0,-2;-2.75,0,-3.75;-1,0,-8"
+			turn_type="Right"/>
+		<lane id="D4R" type="Downtown"
+			points="-1,0,8;-2.75,0,3.75;-7,0,2"
+			turn_type="Right"/>
+		<lane id="D3L" type="Downtown"
+			points="-7,0,-2;-1,0,-1;2,0,2;3,0,8"
+			turn_type="Left"/>
+		<lane id="D4L" type="Downtown"
+			points="3,0,-8;2,0,-2;-1,0,1;-7,0,2"
+			turn_type="Left"/>
+		<lane id="S1" type="Sidewalk"
+			points="6,0,-8;6,0,8"/>
+		<lane id="S2" type="Sidewalk"
+			points="-4,0,-8;-5,0,-6;-7,0,-5"/>
+		<lane id="S3" type="Sidewalk"
+			points="-4,0,8;-5,0,6;-7,0,5"/>
+	</road_prefab>
+
+	<road_prefab id="RDbl 4Way" path_to_placeable="Assets/__Library/Roads/Downtown/RDbl 4Way.prefab">
+		<lane id="D1NS" type="Downtown"
+			points="-11.87,0,2.01;11.87,0,2.01"/>
+		<lane id="D2NS" type="Downtown"
+			points="-11.87,0,-2.01;11.87,0,-2.01"/>
+		<lane id="D3NS" type="Downtown"
+			points="-11.87,0,6.08;11.87,0,6.08"/>
+		<lane id="D4NS" type="Downtown"
+			points="-11.87,0,-6.08;11.87,0,-6.08"/>
+		<lane id="D1EW" type="Downtown"
+			points="2.01,0,-11.87;2.04,0,11.97"/>
+		<lane id="D2EW" type="Downtown"
+			points="-2.04,0,-11.87;-2.04,0,11.87"/>
+		<lane id="D3EW" type="Downtown"
+			points="-6.09,0,11.87;-6.09,0,-11.87"/>
+		<lane id="D4EW" type="Downtown"
+			points="6.09,0,11.87;6.09,0,-11.87"/>
+		<lane id="S1" type="Sidewalk"
+			points="8.95,0,-11.84;9.86,0,-9.78;12.02,0,-9.02"/>
+		<lane id="S2" type="Sidewalk"
+			points="-8.95,0,-11.84;-9.86,0,-9.78;-12.02,0,-9.02"/>
+		<lane id="S3" type="Sidewalk"
+			points="-8.95,0,11.84;-9.86,0,9.78;-12.02,0,9.02"/>
+		<lane id="S4" type="Sidewalk"
+			points="8.95,0,11.84;12.02,0,9.02;9.86,0,9.78"/>
+	</road_prefab>
+
+	<road_prefab id="RDbl Curve" path_to_placeable="Assets/__Library/Roads/Downtown/RDbl Curve.prefab">
+		<lane id="D1" type="Downtown"
+			points="-23,0,19;-8.22,0,16.43;5.17,0,7.9;13.27,0,-2;18.17,0,-13.6;18.87,0,-23"/>
+		<lane id="D2" type="Downtown"
+			points="-23,0,15;-10,0,13;2,0,6;10,0,-4.5;14.25,0,-15.04;15,0,-23"/>
+		<lane id="D3" type="Downtown"
+			points="-23,0,11;-11.5,0,9;-1,0,3;7,0,-7;10,0,-16;11,0,-23"/>
+		<lane id="D4" type="Downtown"
+			points="-23,0,7;-14,0,6;-3,0,0;4,0,-10;7,0,-17;7,0,-23"/>
+		<lane id="S1" type="Sidewalk"
+			points="-23,0,4;-14,0,3;-6,0,-1.5;1,0,-10;4,0,-17;4,0,-23"/>
+		<lane id="S2" type="Sidewalk"
+			points="-23,0,22;-12.28,0,20.69;-1.26,0,16.69;7.36,0,10.34;13.35,0,3.73;20,0,-9.33;22,0,-18.24;22,0,-23"/>
+	</road_prefab>
+
+	<road_prefab id="RDbl to Rd" path_to_placeable="Assets/__Library/Roads/Downtown/RDbl to Rd.prefab">
+		<lane id="D1" type="Downtown"
+			points="2,0,-12;2,0,12"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,12;-2,0,-12"/>
+		<lane id="D3End" type="Downtown"
+			points="6,0,-12;6,0,-6;2,0,2;2,0,12"/>
+		<lane id="D4End" type="Downtown"
+			points="-2,0,12;-2,0,2;-6,0,-6;-6,0,-12"/>
+		<lane id="S1" type="Sidewalk"
+			points="9,0,-12;9,0,-3.5;5,0,3.5;5,0,12"/>
+		<lane id="S2" type="Sidewalk"
+			points="-5,0,12;-5,0,3.5;-9,0,-3.5;-9,0,-12"/>
+	</road_prefab>
+
+	<road_prefab id="RDbl W" path_to_placeable="Assets/__Library/Roads/Downtown/RDbl W.prefab">
+		<lane id="D1" type="Downtown"
+			points="-6,0,12;-6,0,-12"/>
+		<lane id="D2" type="Downtown"
+			points="-2,0,12;-2,0,-12"/>
+		<lane id="D3" type="Downtown"
+			points="6,0,12;6,0,-12"/>
+		<lane id="D4" type="Downtown"
+			points="2,0,12;2,0,-12"/>
+		<lane id="S1" type="Sidewalk"
+			points="-9,0,12;-9,0,-3;-9,0,-12"/>
+		<lane id="S2" type="Sidewalk"
+			points="9,0,12;9,0,-3;9,0,-12"/>
+		<lane id="C" type="Crosswalk"
+			points="-9,0,-3;9,0,-3"/>
+	</road_prefab>
+
+	<road_prefab id="RDbl" path_to_placeable="Assets/__Library/Roads/Downtown/RDbl.prefab">
+		<lane id="D1" type="Downtown"
+			points="-6.07,0,11.96;-6.07,0,-11.96"/>
+		<lane id="D2" type="Downtown"
+			points="-2.07,0,11.96;-2.07,0,-11.96"/>
+		<lane id="D3" type="Downtown"
+			points="6.07,0,11.96;6.07,0,-11.96"/>
+		<lane id="D4" type="Downtown"
+			points="2.07,0,11.96;2.07,0,-11.96"/>
+		<lane id="S1" type="Sidewalk"
+			points="-9.04,0,11.94;-9.04,0,-11.94"/>
+		<lane id="S2" type="Sidewalk"
+			points="9.04,0,11.94;9.04,0,-11.94"/>
+	</road_prefab>
+
+	<road_prefab id="RMid  4Way" path_to_placeable="Assets/__Library/Roads/Downtown/RMid  4Way.prefab">
+		<lane id="D1NS" type="Downtown"
+			points="-11.87,0,4.23;11.87,0,4.23"/>
+		<lane id="D2NS" type="Downtown"
+			points="-11.87,0,-4.23;11.87,0,-4.23"/>
+		<lane id="D1EW" type="Downtown"
+			points="-4.23,0,-11.87;-4.23,0,11.97"/>
+		<lane id="D2EW" type="Downtown"
+			points="4.23,0,-11.87;4.23,0,11.87"/>
+		<lane id="TN" type="TurnLane"
+			points="11.87,0,0;-1.25,0,-4;-4.23,0,-11.87"/>
+		<lane id="TS" type="TurnLane"
+			points="-11.87,0,0;1.25,0,4;4.23,0,11.87"/>
+		<lane id="TE" type="TurnLane"
+			points="0,0,11.87;4,0,1.25;11.87,0,-4.23"/>
+		<lane id="TW" type="TurnLane"
+			points="0,0,-11.87;-4,0,-1.25;-11.87,0,4.23"/>
+		<lane id="S1" type="Sidewalk"
+			points="7.06,0,-11.84;8.34,0,-8.66;12.02,0,-7.06"/>
+		<lane id="S2" type="Sidewalk"
+			points="-7.06,0,-11.84;-8.34,0,-8.66;-12.02,0,-7.06"/>
+		<lane id="S3" type="Sidewalk"
+			points="-7.06,0,11.84;-8.34,0,8.66;-12.02,0,7.06"/>
+		<lane id="S4" type="Sidewalk"
+			points="7.06,0,11.84;8.34,0,8.66;12.02,0,7.06"/>
+	</road_prefab>
+
+	<road_prefab id="RMid A" path_to_placeable="Assets/__Library/Roads/Downtown/RMid A.prefab">
+		<lane id="D1" type="Downtown"
+			points="-4.12,0,11.96;-4.12,0,-11.96"/>
+		<lane id="D2" type="Downtown"
+			points="4.12,0,11.96;4.12,0,-11.96"/>
+		<lane id="T" type="TurnLane"
+			points="0,0,11.96;0,0,-11.96"/>
+		<lane id="S1" type="Sidewalk"
+			points="-7.01,0,-11.94;-7.01,0,11.94"/>
+		<lane id="S2" type="Sidewalk"
+			points="7.01,0,11.94;7.01,0,-11.94"/>
+	</road_prefab>
+
+	<road_prefab id="RMid to Rd A" path_to_placeable="Assets/__Library/Roads/Downtown/RMid to Rd A.prefab">
+		<lane id="D1" type="Downtown"
+			points="4,0,12;4,0,-12"/>
+		<lane id="D2" type="Downtown"
+			points="0,0,12;0,0,-12"/>
+		<lane id="T" type="TurnLane"
+			points="0,0,12;0,0,0.98;-4,0,-5.84;-4,0,-12"/>
+		<lane id="S1" type="Sidewalk"
+			points="7,0,12;7,0,-12"/>
+		<lane id="S2" type="Sidewalk"
+			points="-3,0,12;-3,0,3.35;-7,0,-3.65;-7,0,-12"/>
+	</road_prefab>
+
+	<road_prefab id="RMid to Rd B" path_to_placeable="Assets/__Library/Roads/Downtown/RMid to Rd B.prefab">
+		<lane id="D1" type="Downtown"
+			points="-4,0,12;-4,0,-12"/>
+		<lane id="D2" type="Downtown"
+			points="0,0,12;0,0,-12"/>
+		<lane id="T" type="TurnLane"
+			points="0,0,12;0,0,0.98;4,0,-5.84;4,0,-12"/>
+		<lane id="S1" type="Sidewalk"
+			points="-7,0,12;-7,0,-12"/>
+		<lane id="S2" type="Sidewalk"
+			points="3,0,12;3,0,3.35;7,0,-3.65;7,0,-12"/>
+	</road_prefab>
+
+</root>

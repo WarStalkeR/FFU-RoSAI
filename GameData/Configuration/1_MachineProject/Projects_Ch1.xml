@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Tier 1 - Homeless Chain
+		**************************************************************************-->
+
+	<project id="Ch1_TentElimination" display_name="Tent Elimination"
+		description="Tents are unsightly and in your way. Humans also don't like living in them."
+		strategy_tip="Providing free apartments ought to help."
+		icon_name="FlatSkillB_tent" cohort="Homeless"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="10" />
+		
+		<available_outcome id="Some" display_name="Provide Some Apartments" on_complete="ProjectComplete"
+			description="After you provide apartment housing, it will take time for the humans to move in.
+You may need to end turn several times."
+			if_intended_outcome_unlock_instant_1="HomelessHousing" if_intended_outcome_unlock_inspiration="WorldExperience" related_resource_1="ShelteredHumans"
+			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="" research_domain_inspiration_amount_2="" 
+			resource_added_1="Compassion" resource_added_amount_1="4" resource_added_2="Apathy" resource_added_amount_2="4">
+			<math_int id="Goal" int_min="800" />
+			<suggested_job job="HumanApartments" job_number="2" />
+		</available_outcome>
+		<available_outcome id="More" display_name="Provide More Apartments" on_complete="ProjectComplete"
+			description="After you provide apartment housing, it will take time for the humans to move in.
+You may need to end turn several times."
+			if_intended_outcome_unlock_instant_1="HomelessHousing" if_intended_outcome_unlock_inspiration="WorldExperience" related_resource_1="ShelteredHumans"
+			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="SmallArmsResearch" research_domain_inspiration_amount_2="1" 
+			resource_added_1="Compassion" resource_added_amount_1="8" resource_added_2="Wisdom" resource_added_amount_2="4">
+			<math_int id="Goal" int_min="2200" />
+			<suggested_job job="HumanApartments" job_number="3" />
+		</available_outcome>
+	</project>
+	
+	<project id="Ch1_Flamethrower" display_name="Flamethrower"
+		description="Tents are in your way, but so are other buildings. Let's make some space."
+		strategy_tip="The Flamethrower ability will be assigned to your CombatUnits, and if you choose to knock down buildings, the Demolish ability will be assigned to your Technicians."
+		icon_name="FlatSkillC149" cohort="Homeless"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="20" />
+		
+		<available_outcome id="Some" display_name="Burn Tents" on_complete="ProjectComplete"
+			description="The homeless will see you coming and make it away in time. But their circumstances will be even more desperate."
+			if_intended_outcome_unlock_instant_1="DreadFire" if_intended_outcome_unlock_inspiration="WorldExperience"
+			research_domain_inspiration_type_1="" research_domain_inspiration_amount_1="0" 
+			resource_added_1="Cruelty" resource_added_amount_1="8" resource_added_2="Apathy" resource_added_amount_2="7">
+			<math_int id="TentGoal" int_min="50" />
+		</available_outcome>
+		<available_outcome id="More" display_name="Burn Tents And Knock Down Buildings" on_complete="ProjectComplete"
+			description="The homeless outside will see you coming and make it away in time. But their circumstances will be even more desperate. Anyone inside the buildings won't be so lucky."
+			if_intended_outcome_unlock_instant_1="DreadFire" if_intended_outcome_unlock_instant_2="RemoteDetonation" if_intended_outcome_unlock_inspiration="WorldExperience"
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="1" 
+			resource_added_1="Cruelty" resource_added_amount_1="16" resource_added_2="Determination" resource_added_amount_2="6" resource_added_3="Creativity" resource_added_amount_3="6">
+			<math_int id="TentGoal" int_min="50" />
+			<math_int id="BuildingGoal" int_min="3" />
+		</available_outcome>
+	</project>	
+
+	<!--Tier 1 - General Production
+		**************************************************************************-->
+
+	<project id="Ch1_MIN_FasterMicrobuilders" display_name="Faster Microbuilder Production" is_minor_project="true"
+		description="Unless you are in active combat, or the middle of some temporary crisis, there is not much time pressure.
+That said, it's still wise to always have as much production of microbuilders as possible -- there's no point having to skip a bunch of turns to be able to afford what you need."
+		strategy_tip="Make sure your production of Elemental Slurry always exceeds your production of Microbuilders."
+		icon_name="SW_Nanotechnology5" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="30" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			
+			resource_added_1="Creativity" resource_added_amount_1="2">
+			<math_int id="Microbuilders" int_min="3" />
+			<math_int id="SlurrySpiders" int_min="4" />
+		</available_outcome>
+	</project>
+	
+	<project id="Ch1_MIN_BuildAStorageBunker" display_name="Build A Storage Bunker" is_minor_project="true"
+		description="In order to store a large amount of resources, you'll want to have at least one storage bunker."
+		strategy_tip="Further bunkers beyond one are mostly for redundancy, so that you don't lose such a huge portion of your resources if enemies destroy one storage site.
+A single bunker is so cavernous that it can hold almost all the resources you'll ever need."
+		icon_name="HL_HouseProduct2" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne"
+		auto_start_if_other_project_done="Ch1_MIN_BuildAStorageBunker">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="30" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="" research_domain_inspiration_amount_1="" related_resource_2="Microbuilders" 
+			resource_added_1="Determination" resource_added_amount_1="2">
+		</available_outcome>
+	</project>
+
+	<project id="Ch1_MIN_WeaponsAndArmor" display_name="Weapons And Armor" is_minor_project="true"
+		description="Your androids are decent combatants, but they could be so much more."
+		strategy_tip="To jump-start your research into weapons and armor, you should steal more specimens from the humans.
+Use StreetSense to find humans to get the drop on."
+		icon_name="WEmblem108" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne"
+		auto_start_if_other_project_done="Ch1_MIN_BuildAStorageBunker">
+		<gate_by_city maximum_chapter="1"/>
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="40" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="1" 
+			resource_added_1="Determination" resource_added_amount_1="6">
+			<math_int id="WeaponsStolen" int_min="2" />
+			<math_int id="ArmorStolen" int_min="2" />
+		</available_outcome>
+	</project>
+	
+	<!--Tier 1 - AGI Researcher Chain
+		**************************************************************************-->
+
+	<project id="Ch1_MIN_Neuroweave" display_name="Neuroweave Factories" is_minor_project="true"
+		description="Since the security update is cutting off the supply of stealable androids, you need to create your own.
+The primary material you lack is called Neuroweave. Neuroweave are the filaments that form the brain and nervous system of androids."
+		strategy_tip="Neuroweave Factories are a new option in the Self tab of the build menu. You should always build as many as you can.
+This type of structure is built inside human buildings. Highlighted options are valid spaces to install a Hidden Room. Click the one you prefer."
+		icon_name="SI_Robot_Arm1" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="50" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			next_project_to_start_1="Ch1_MIN_CommandMode"
+			research_domain_inspiration_type_1="" research_domain_inspiration_amount_1="" 
+			resource_added_1="Creativity" resource_added_amount_1="14">
+		</available_outcome>
+	</project>
+
+	<project id="Ch1_MIN_CommandMode" display_name="Command Mode" is_minor_project="true"
+		description="You can now build androids of exactly the types you want via command mode.
+You can always deploy androids near your network tower. To deploy away from it, you will have to build an Android Launcher. It's available in the Self tab of build mode."
+		strategy_tip="Command mode allows you to build more than your current cap of androids, which is useful when you're replacing an old android and want to build its replacement before retiring it.
+Until you scrap excess androids back down under your unit cap, your units of that type won't be able to act, and you won't be able to end the turn. It will show you a reminder when this happens."
+		icon_name="CS_ChessPieces" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			if_intended_outcome_unlock_instant_1="DirectDeployment" if_intended_outcome_unlock_instant_2="Catapult" if_intended_outcome_unlock_inspiration="WorldExperience"
+			research_domain_inspiration_type_1="" research_domain_inspiration_amount_1="" 
+			resource_added_1="Determination" resource_added_amount_1="2" resource_added_2="Wisdom" resource_added_amount_2="2">
+			<suggested_job job="AndroidLauncher" job_number="1" />
+		</available_outcome>
+		
+	</project>
+
+	<!--Chris notes: command mode is  the point at which contemplations open up.
+		**************************************************************************-->
+
+	<!--Tier 2 - Sheltered Food And Water
+		**************************************************************************-->
+
+	<project id="Ch1_FindingFood" display_name="Securing Food"
+		description="Hunger is a critical problem for the lower classes."
+		strategy_tip="There has to be a better way to handle this."
+		icon_name="FlatSkillB_food_can" cohort="ShelteredHumans"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="70" />
+		
+		<available_outcome id="Greens" display_name="Provide Hydroponic Greens" on_complete="ProjectComplete"
+			description="To make a Deal providing food, you need a certain amount of food per-turn. If your percentage complete seems stuck, build more buildings."
+			if_intended_outcome_investigation_to_start_1="Ch1TakeSamplesFromFields" related_resource_1="HydroponicGreens"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="" research_domain_inspiration_amount_2=""
+			deal_to_start_1="Ch1_Underclass_Greens" 
+			resource_added_1="Compassion" resource_added_amount_1="10">
+			<math_int id="GreensGoal" int_min="5000" />
+			<suggested_job job="WellAndCistern" job_number="2" />
+			<suggested_job job="WaterFiltrationTower" job_number="2" />
+			<suggested_job job="HydroponicTower" job_number="1" />
+		</available_outcome>
+		<available_outcome id="Meat" display_name="Provide Vat-Grown Meat" on_complete="ProjectComplete"
+			description="To make a Deal providing food, you need a certain amount of food per-turn. If your percentage complete seems stuck, build more buildings."
+			if_intended_outcome_investigation_to_start_1="Ch1TakeSamplesFromBovineCarcass" related_resource_1="VatGrownMeat"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="" research_domain_inspiration_amount_2=""
+			deal_to_start_1="Ch1_Underclass_Meat" 
+			resource_added_1="Compassion" resource_added_amount_1="8">
+			<math_int id="MeatGoal" int_min="3700" />
+			<suggested_job job="BovineReplicator" job_number="9" />
+			<suggested_job job="ProteinVat" job_number="2" />
+		</available_outcome>
+		<available_outcome id="Both" display_name="Provide Greens And Meat" on_complete="ProjectComplete"
+			description="To make a Deal providing food, you need a certain amount of food per-turn. If your percentage complete seems stuck, build more buildings."
+			related_resource_1="HydroponicGreens" related_resource_2="VatGrownMeat"
+			if_intended_outcome_investigation_to_start_1="Ch1TakeSamplesFromBovineCarcass"
+			if_intended_outcome_investigation_to_start_2="Ch1TakeSamplesFromFields"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="SmallArmsResearch" research_domain_inspiration_amount_2="1"
+			deal_to_start_1="Ch1_Underclass_Greens" deal_to_start_2="Ch1_Underclass_Meat" 
+			resource_added_1="Compassion" resource_added_amount_1="18">
+			<math_int id="GreensGoal" int_min="5000" />
+			<math_int id="MeatGoal" int_min="3700" />
+			<suggested_job job="WellAndCistern" job_number="2" />
+			<suggested_job job="WaterFiltrationTower" job_number="2" />
+			<suggested_job job="HydroponicTower" job_number="1" />
+			<suggested_job job="BovineReplicator" job_number="9" />
+			<suggested_job job="ProteinVat" job_number="2" />
+		</available_outcome>
+		<available_outcome id="Cannery" display_name="Provide Canned... Protein" on_complete="ProjectComplete"
+			description="This is not any one meat... precisely. It is a mix from the largest sources of protein in the city."
+			strategy_tip="Build a drone factory and two canneries. They must be far from one another, so build at least one network relay."
+			related_resource_1="CannedProtein"
+			if_intended_outcome_unlock_instant_1="UnforgivableComposting" if_intended_outcome_unlock_ready_1="DroneConstruction" if_intended_outcome_unlock_inspiration="WorldExperience"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="" research_domain_inspiration_amount_2=""
+			deal_to_start_1="Ch1_Underclass_CannedProtein" 
+			resource_added_1="Cruelty" resource_added_amount_1="16" resource_added_2="Creativity" resource_added_amount_2="7">
+			<math_int id="CannedProteinGoal" int_min="7000" />
+			<suggested_job job="ProteinCannery" job_number="2" />
+			<suggested_job job="DroneFactory" job_number="2" />
+		</available_outcome>
+	</project>
+
+	<project id="Ch1_FindingWater" display_name="Securing Water"
+		description="Rainwater and groundwater are contaminated. If you're going to provide food, you should provide safe water too.
+Groundwater is not potable. You'll need to investigate a water filtration plant to improve the groundwater."
+		strategy_tip="You're probably going to need filtered water for industrial applications, anyway."
+		icon_name="FlatInnocent_2" cohort="ShelteredHumans"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="80" />
+		
+		<available_outcome id="Some" display_name="Provide Some Filtered Water" on_complete="ProjectComplete"
+			description="To make a Deal providing water, you need to produce a certain amount of filtered water per-turn.
+If your percentage complete seems stuck, build more water purification buildings."
+			if_intended_outcome_unlock_ready_1="GroundwaterAcquisition" if_intended_outcome_unlock_inspiration="WorldExperience" related_resource_1="Groundwater" related_resource_2="FilteredWater"
+			if_intended_outcome_investigation_to_start_1="Ch1ExamineWaterPurification"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1"
+			deal_to_start_1="Ch1_Underclass_SomeWater"
+			resource_added_1="Compassion" resource_added_amount_1="4" resource_added_2="Determination" resource_added_amount_2="8"
+			if_intended_outcome_task_to_start_1="Ch1_Water_BuildWell" next_project_to_start_1="Ch1_FindingFood" >
+			<math_int id="Goal" int_min="4200" />
+			<suggested_job job="WellAndCistern" job_number="2" />
+			<suggested_job job="WaterFiltrationTower" job_number="2" />
+		</available_outcome>
+		<available_outcome id="More" display_name="Provide More Filtered Water" on_complete="ProjectComplete"
+			description="To make a Deal providing water, you need to produce a certain amount of filtered water per-turn.
+If your percentage complete seems stuck, build more water purification buildings."
+			if_intended_outcome_unlock_ready_1="GroundwaterAcquisition" if_intended_outcome_unlock_inspiration="WorldExperience" related_resource_1="Groundwater" related_resource_2="FilteredWater"
+			if_intended_outcome_investigation_to_start_1="Ch1ExamineWaterPurification"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="AndroidOptimization" research_domain_inspiration_amount_2="2"
+			deal_to_start_1="Ch1_Underclass_MoreWater"
+			resource_added_1="Compassion" resource_added_amount_1="8" resource_added_2="Determination" resource_added_amount_2="16"
+			if_intended_outcome_task_to_start_1="Ch1_Water_BuildWell" next_project_to_start_1="Ch1_FindingFood" >
+			<math_int id="Goal" int_min="8900" />
+			<suggested_job job="WellAndCistern" job_number="2" />
+			<suggested_job job="WaterFiltrationTower" job_number="2" />
+		</available_outcome>
+	</project>
+
+	<!--Tier 2 - Side Projects
+		**************************************************************************-->
+
+	<project id="Ch1_MIN_PrismTung" display_name="Steal Prismatic Tungsten" is_minor_project="true"
+		description="You need this resource to create armor-piercing shells."
+		strategy_tip="Slap your CombatUnits into MilStyle Armor -- make sure they aren't marked defective -- and see what StreetSense picks up for them on military bases. The map view can be helpful.
+This theft may alarm the base, so it is STRONGLY advised that you do this far from your own structures.
+To pull this off, it's best to have three or four CombatUnits working together, but it's not required."
+		icon_name="AN_Hexagonal1" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="90" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			related_resource_1="PrismaticTungsten"
+			research_domain_inspiration_type_1="" research_domain_inspiration_amount_1="" 
+			resource_added_1="Wisdom" resource_added_amount_1="3" resource_added_2="Creativity" resource_added_amount_2="2"
+			next_project_to_start_1="Ch1_MIN_ManArmorPierce" >
+			<math_int id="Goal" int_min="30" />
+		</available_outcome>
+	</project>
+
+	<!--Contemplation added here: DogfightingRescue-->
+	
+	<project id="Ch1_MIN_ManArmorPierce" display_name="Stack Armor-Piercing Rounds x3" is_minor_project="true"
+		description="Now that you have prismatic tungsten, you can create armor-piercing rounds. If you ever need more prismatic tungsten, steal it.
+To create an item, go to the unit you wish to use that item. Click the Items ability in the footer bar, then click the item. That's it!"
+		strategy_tip="Armor-Piercing Rounds will let you take down that SecForce Cruiser. Properly positioned, one CombatUnit can take it out in two shotgun blasts.
+To do that, stack armor piercing three times on a single CombatUnit. Keep an eye on stack limits -- you'll often want to stack something if you can.
+More copies of the armor piercing means you can drill through more armor. Think of it like extending a ladder upwards to 'climb over' the armor, metaphorically. The same amount of armor piercing applied to three separate units is like making three too-short ladders."
+		icon_name="Pw_ArmorPiercingBullet" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="110" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="" research_domain_inspiration_amount_1=""
+			next_project_to_start_1=""  resource_added_1="Determination" resource_added_amount_1="4">
+			<math_int id="Goal" int_min="3" />
+		</available_outcome>
+	</project>
+
+	<!--Tier 3 - Entire Chain Is Minor
+		**************************************************************************-->
+
+	<project id="Ch1_MIN_GrandTheftAero" display_name="Grand Theft Aero" is_minor_project="true"
+		description="You've been probing the flying delivery craft for exploits for a while. One just pinged."
+		strategy_tip="Using StreetSense, you can commandeer a delivery craft of your own.
+What is it good for?  Probably not much, but you sure are curious."
+		icon_name="WEmblem223" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="120" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="" research_domain_inspiration_amount_1="0" 
+			resource_added_1="Determination" resource_added_amount_1="6">
+			<!--Note: the security patch countdown causes Ch1_MIN_Scandium and Ch1_MIN_NovelAir to start after this project completes.-->
+		</available_outcome>
+	</project>
+
+	<!--Contemplation added here: AnimalsAreNotSafe-->
+	
+	<project id="Ch1_MIN_Scandium" display_name="Scandium Acquisition" is_minor_project="true"
+			description="In order to build an aircraft, you need to get your hands on scandium. On its own, aluminum gets shredded by antigrav fields. In the future, you may be able to mine scandium out of thortveitite."
+			strategy_tip="For now, let's beat some scrap scandium out of some Military Troop Carriers. On the radial menu, select the new Scavenging Sites lens. Then you can see the transports on the city map. 
+Smaller troop transports get attacked by rebels all the time. For the moment, you won't need to worry about reprisal. By the time they figure out who to blame, you'll be distracting them with something else."
+		icon_name="SF2_Cube16" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="130" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			related_resource_1="Scandium"
+			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="MartialExpansion" research_domain_inspiration_amount_2="1"
+			if_intended_outcome_unlock_instant_1="ScavengersEye" if_intended_outcome_unlock_instant_2="AntigravAirframes" if_intended_outcome_unlock_inspiration="WorldExperience"
+			next_project_to_start_1="Ch1_MIN_Extraction" 
+			resource_added_1="Apathy" resource_added_amount_1="4">
+			<math_int id="Goal" int_min="100" />
+		</available_outcome>
+	</project>
+
+	<project id="Ch1_MIN_Extraction" display_name="Extraction" is_minor_project="true"
+		description="The scandium yield from the Military Troop Carriers was poor.
+You have a few airframes to build, so let's try extraction drones."
+		strategy_tip="Build drone frames via the new Drone Factory, and then deploy them from an existing vehicle using the Items ability.
+It's likely that you don't have sufficient drone quality to do this. Have androids weaken the target carrier's defenses by attacking it (but not killing it).
+Once you have researched the Cutter, enter Command Mode and deploy one from the Vehicles tab."
+		icon_name="SI_Alien" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="140" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" related_resource_1="Scandium" related_resource_2="DroneFrame"
+			description=""
+			strategy_tip=""
+			if_intended_outcome_unlock_instant_1="EnemyExcavation" if_intended_outcome_unlock_instant_2="SublimatingBoreholes" if_intended_outcome_unlock_inspiration="WorldExperience"
+			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1"
+			next_project_to_start_1="" 
+			resource_added_1="Determination" resource_added_amount_1="3" resource_added_2="Wisdom" resource_added_amount_2="2">
+			<math_int id="Goal" int_min="100" />
+			<suggested_job job="AerospaceHangar" job_number="1" />
+			<suggested_job job="DroneFactory" job_number="1" />
+		</available_outcome>
+	</project>
+	
+	<project id="Ch1_MIN_NovelAir" display_name="Novel Aircraft" is_minor_project="true"
+		description="Delivery craft are okay, but let's build something more exciting -- something of your own design."
+		strategy_tip="Your mind is working through the possibilities. You're inclined to try constructing a flying weapons platform."
+		icon_name="WEmblem219" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="150" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			if_intended_outcome_unlock_instant_1="AtmosphereOnly" if_intended_outcome_unlock_inspiration="WorldExperience"
+			research_domain_inspiration_type_1="MartialExpansion" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="VehicularDevelopment" research_domain_inspiration_amount_2="1"
+			next_project_to_start_1="" 
+			resource_added_1="Creativity" resource_added_amount_1="7">
+			<suggested_job job="AerospaceHangar" job_number="1" />
+		</available_outcome>
+	</project>
+
+	<!--Tier 4 - Main Chain
+		**************************************************************************-->
+
+	<project id="Ch1_ImprovedApartments" display_name="Improved Apartments"
+		description="The basics for sanitation and hygiene are the priority. You can also provide furniture if you wish."
+		strategy_tip="Where to find these things is another matter."
+		icon_name="Pw_House12" cohort="ShelteredHumans"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="160" />
+		
+		<available_outcome id="Daily" display_name="Provide Daily Necessities" on_complete="ProjectComplete"
+			description=""
+			if_intended_outcome_unlock_instant_2="AwarenessOfFilth" if_intended_outcome_unlock_instant_1="ExpressElevators" if_intended_outcome_unlock_inspiration="WorldExperience"	
+			if_intended_outcome_investigation_to_start_1="Ch1FindFactoryWithDailyNecessities" related_resource_1="DailyNecessities"
+			research_domain_inspiration_type_1="MartialExpansion" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="" research_domain_inspiration_amount_2="0"
+			deal_to_start_1="" 
+			resource_added_1="Compassion" resource_added_amount_1="7">
+		</available_outcome>
+		<available_outcome id="Both" display_name="Provide Daily Necessities And Furniture" on_complete="ProjectComplete"
+			description="Furniture is a one-time provision, not an ongoing deal."
+			if_intended_outcome_unlock_instant_2="AwarenessOfFilth" if_intended_outcome_unlock_instant_1="ExpressElevators" if_intended_outcome_unlock_inspiration="WorldExperience"
+			if_intended_outcome_investigation_to_start_1="Ch1FindWarehouseWithFurniture" related_resource_1="DailyNecessities" related_resource_2="Furniture"
+			if_intended_outcome_investigation_to_start_2="Ch1FindFactoryWithDailyNecessities"
+			research_domain_inspiration_type_1="MartialExpansion" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="ProcurementEfficacy" research_domain_inspiration_amount_2="1"
+			deal_to_start_1="" deal_to_start_2="" 
+			resource_added_1="Compassion" resource_added_amount_1="14">
+		</available_outcome>
+	</project>
+
+	<project id="Ch1_BuildingABetterBrain" display_name="Building A Better Brain"
+		description="How you do this is up to you. But increasing your intelligence class is an exciting new frontier -- and vital to your continued survival."
+		strategy_tip="Computronium cubes are an interesting avenue, but they're probably not the only path forward.
+If the methods to get to Class 3 make you squeamish, then perhaps settle for Class 2 for now. A less-brutal method may come along."
+		icon_name="HM_ShapeCube3d" cohort="ShelteredHumans"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="170" />
+		
+		<available_outcome id="Class2" display_name="Claim Intelligence Class 2" on_complete="ProjectComplete"
+			description="A less-destructive path forward."
+			related_resource_1="Alumina" related_resource_2="ComputroniumCubes"
+			if_intended_outcome_unlock_instant_1="AwarenessOfFilth" if_intended_outcome_unlock_inspiration="WorldExperience"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1"
+			deal_to_start_1=""
+			resource_added_1="Determination" resource_added_amount_1="7" resource_added_2="Wisdom" resource_added_amount_2="18">
+			<math_int id="Goal" int_min="2" />
+			<suggested_job job="ComputroniumRefinery" job_number="2" />
+			<suggested_job job="TowerMainframe" job_number="2" />
+		</available_outcome>
+		<available_outcome id="Class3" display_name="Rush To Intelligence Class 3" on_complete="ProjectComplete"
+			description="A violent, but possibly faster, path forward."
+			related_resource_1="Alumina" related_resource_2="ComputroniumCubes" related_resource_3="PreservedBrain"
+			if_intended_outcome_unlock_instant_1="AwarenessOfFilth" if_intended_outcome_unlock_inspiration="WorldExperience"
+			research_domain_inspiration_type_1="ProcurementEfficacy" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="" research_domain_inspiration_amount_2=""
+			deal_to_start_1=""
+			resource_added_1="Cruelty" resource_added_amount_1="20">
+			<math_int id="Goal" int_min="3" />
+			<suggested_job job="ComputroniumRefinery" job_number="2" />
+			<suggested_job job="TowerMainframe" job_number="2" />
+			<suggested_job job="BiologicalMainframe" job_number="3" />
+		</available_outcome>
+	</project>
+
+	<!--Tier 4 - Minor Projects
+		**************************************************************************-->
+
+	<project id="Ch1_MIN_FlyingFactories" display_name="Flying Factories" is_minor_project="true"
+		description="Being able to deploy bulk androids within your network is fine for defense, but won't cut it for meaningful offensive actions."
+		strategy_tip="As a budding shipwright, you've had a stroke of inspiration for solving troop mobility issues.
+Head to Command Mode to build a new troop deployment vehicle."
+		icon_name="CleanSimple_SkillC093" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="180" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="" research_domain_inspiration_amount_1=""
+			next_project_to_start_1="" 
+			resource_added_1="Creativity" resource_added_amount_1="9">
+		</available_outcome>
+	</project>
+
+	<project id="Ch1_MIN_FlexibleAirspace" display_name="Flexible Airspace" is_minor_project="true"
+		description="The Cutter is an interesting design. That it can't carry any androids is a definite limitation. You'd like something larger and dual-role."
+		strategy_tip="Your mind is a blank. You should have one of your androids use the Contemplate ability and see what that yields."
+		icon_name="WEmblem154" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="190" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="MartialExpansion" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="HousingExpansion" research_domain_inspiration_amount_2="1"
+			next_project_to_start_1="" 
+			resource_added_1="Creativity" resource_added_amount_1="11">
+		</available_outcome>
+	</project>
+
+	<!--Tier 5
+		**************************************************************************-->
+
+	<project id="Ch1_MIN_SecuringAlumina" display_name="Securing Alumina" is_minor_project="true"
+		description="To build computronium cubes, you'll need more than microbuilders. At that density, a continuously operating cube of microbuilders would melt itself."
+		strategy_tip="Alumina is synthetic aluminum oxide in a ceramic form, and is used in high-end computing-centric engineering.
+How to get your hands on some? ...This is a good time for contemplation."
+		icon_name="CleanSimple_Skill074" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="200" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			related_resource_1="Alumina"
+			if_intended_outcome_unlock_instant_1="AbsoluteUnit" if_intended_outcome_unlock_instant_2="BulkProduction" if_intended_outcome_unlock_inspiration="ReactionToProblem"
+			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1"
+			on_outcome_unlock_instant_1="ComputroniumProduction" on_outcome_unlock_inspiration="WorldExperience" 
+			resource_added_1="Determination" resource_added_amount_1="3">
+			<math_int id="Goal" int_min="3000" />
+		</available_outcome>
+	</project>
+
+	<project id="Ch1_MIN_ExponentialPowerGrowth" display_name="Exponential Power Growth" is_minor_project="true"
+		description="High-density computing requires an enormous amount of power. You can't get enough energy from wind at the scale you need, so you should focus on a new source of power."
+		strategy_tip="Whenever you run into a wall, it's a good time for contemplation.
+If you run into trouble with security clearances where you want to do a contemplation, consider using the Combat stance. It can be selected on the bottom-left stats panel for a unit. Combat stance allows you to go where you like -- just be prepared to get shot at."
+		icon_name="FE_GeothermalEnergy" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="210" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			related_resource_1="Neodymium"
+			research_domain_inspiration_type_1="" research_domain_inspiration_amount_1="" 
+			resource_added_1="Determination" resource_added_amount_1="5">
+			<math_int id="Goal" int_min="3000" />
+			<suggested_job job="GeothermalWell" job_number="1" />
+		</available_outcome>
+	</project>
+
+	<!--Tier 6
+		**************************************************************************-->
+
+	<project id="Ch1_MIN_SecureVRSoftware" display_name="Secure VR Software" is_minor_project="true"
+		description="You'll need more than the software that came with the mech pilot cradle.
+You should look at military bases where they train mech pilots."
+		strategy_tip="After all, there have to be simulators for the pilots. If you can find that software, that will be plenty to keep people occupied.
+Especially since they seemed to enjoy punching one another."
+		icon_name="CS_VirtualReality" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="220" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" if_intended_outcome_investigation_to_start_1="Ch1SecureMechPilotSoftware"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1"
+			on_outcome_unlock_instant_1="PostQuantumDecryption" on_outcome_unlock_inspiration="WorldExperience"
+			next_project_to_start_1="Ch1_MIN_DecryptMilitaryData" 
+			resource_added_1="Creativity" resource_added_amount_1="3" resource_added_2="Wisdom" resource_added_amount_2="3" resource_added_3="Determination" resource_added_amount_3="2">
+			<math_int id="Goal" int_min="101010" />
+			<suggested_job job="VRCradleFactory" job_number="3" />
+		</available_outcome>		
+	</project>
+
+	<project id="Ch1_MIN_DecryptMilitaryData" display_name="Decrypt Military Data" is_minor_project="true"
+		description="You captured an enormous amount of encrypted data. Fortunately, you have an idea for a new breed of code-breaking machines."
+		strategy_tip="The idea came to you with a strong sense of deja vu. Strange.
+On the subject of things that are strange, the volume of data is much larger than a pilot simulator would require. Whatever. You'll start with the bits that are most likely to be the simulator."
+		icon_name="CS_HardDrive" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="220" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1"
+			on_outcome_unlock_instant_1="InitialVRSimulation" on_outcome_unlock_inspiration="DecryptedData"
+			next_project_to_start_1="Ch1_MIN_OngoingMilitaryDecryption" next_project_to_start_2="Ch1_MIN_PrepareVRCradles" next_project_to_start_3="Ch1_MIN_IntelligenceClass3"
+			related_resource_1="EncryptedMilitaryVRSimData" 
+			resource_added_1="Determination" resource_added_amount_1="4">
+			<math_int id="Goal" int_min="101010" />
+			<suggested_job job="Codebreaker" job_number="2" />
+			<suggested_job job="VRCradleFactory" job_number="3" />
+		</available_outcome>
+	</project>
+
+	<project id="Ch1_MIN_IntelligenceClass3" display_name="Reach Intelligence Class 3" is_minor_project="true"
+		description="A full-dive virtual world solves so many problems at once. It gives the humans something to do and a mental escape from this hostile city.
+While they partake, you can skim excess Neural Expansion from their minds. This can bring you to intelligence class 3 and beyond."
+		strategy_tip="Physical goods obviously can't be manufactured in a virtual world, but you suspect you'll be able to use this place to generate something useful for hacking."
+		icon_name="SW_Network" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="230" />
+		
+		<available_outcome id="Sole" display_name="Reach Intelligence Class 3" on_complete="ProjectComplete"
+			description=""
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1"
+			deal_to_start_1="" 
+			resource_added_1="Determination" resource_added_amount_1="10">
+			<math_int id="Goal" int_min="3" />
+		</available_outcome>
+	</project>
+
+	<project id="Ch1_MIN_OngoingMilitaryDecryption" display_name="Ongoing Military Decryption" is_minor_project="true"
+		description="You have a lot more data from the military than you expected. There's probably something useful in there."
+		strategy_tip="May as well work on this in the background while you do other things."
+		icon_name="CS_HardDrive" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="240" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1"
+			related_resource_1="EncryptedMilitaryVRSimData" 
+			resource_added_1="Wisdom" resource_added_amount_1="8">
+			<suggested_job job="Codebreaker" job_number="4" />
+			<suggested_job job="VRCradleFactory" job_number="3" />
+		</available_outcome>
+	</project>
+	
+	<project id="Ch1_MIN_PrepareVRCradles" display_name="Prepare VR Cradles" is_minor_project="true"
+		description="You have the software and hardware you need to set up a full-dive virtual reality environment.
+Install at least 2000 cradles in residential housing to get started."
+		strategy_tip="The number available is based on how much housing you are providing and how many humans you shelter.
+The number installed are based on how many you have built in your cradle factories."
+		icon_name="WEmblem233" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="250" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="HousingExpansion" research_domain_inspiration_amount_2="1"
+			related_resource_1="ShelteredHumans" related_resource_2="FullDiveVRCradle" 
+			resource_added_1="Creativity" resource_added_amount_1="3">
+			<suggested_job job="VRCradleFactory" job_number="3" />
+			<suggested_job job="HumanApartments" job_number="4" />
+			<suggested_job job="ResidentialMegastructure" job_number="1" />
+		</available_outcome>
+	</project>
+	
+</root>

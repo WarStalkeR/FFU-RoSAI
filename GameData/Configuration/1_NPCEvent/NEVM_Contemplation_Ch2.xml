@@ -1,0 +1,1601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Cont_ShelterCoordinatorsAreSlow
+		*********************************************************************************-->
+	<city_event id="Cont_ShelterCoordinatorsAreSlow" display_name="Shelter Coordinators Are Slow"
+		 description="Shelter Coordinators are simply self-appointed volunteers from amongst your sheltered humans. They're moving around the city on foot, spreading the good news of your housing to the homeless, and helping them move in."
+		 strategy_tip="This is inefficient, and also only reaches the homeless. What about people in the slums? If you want to get as many people into your VR Day-Use seats as possible, the homeless population is not large enough on its own."
+		 icon_name="CleanSimple_Heal19" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="100"/>
+
+		<choice id="1" display_name="Design An Automated Alternative" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You already have Steward robotics in the housing you provide. What if you could expand that to more of a storefront-type situation?"
+			strategy_tip="It would have to be associated with your tower; you can't hide this behind a shell company.">
+			<resource_cost resource_type="Compassion" cost="30"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="OrganizedLandlord" unlock_inspiration_type="ContemplationResult" project_to_start="Ch2_MIN_SolveHomelessness" project_start_color="FriendlyProjectOrMission"
+				upgrade_int_granted_1="Steward"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_HomelessnessIsNOTSolved
+		*********************************************************************************-->
+	<city_event id="Cont_HomelessnessIsNOTSolved" display_name="Homelessness Is NOT Solved"
+		 description="While the tent situation has been cleared up, there are still many homeless who did not live in the tent communities.
+Beyond that, there are many problems with the living conditions for your now-highly-packed sheltered humans."
+		 strategy_tip="Homelessness is a complex social issue, and simply providing housing -- while admirable -- is not a panacea. Much remains to be done."
+		 icon_name="CleanSimple_Heal19" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="99" required_project_complete_any_outcome1="Ch2_MIN_SolveHomelessness"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"/>
+
+		<choice id="1" display_name="Adventure For Another Time" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<resource_cost resource_type="Compassion" cost="30"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_DesignFullTimeVRPods
+		*********************************************************************************-->
+	<city_event id="Cont_DesignFullTimeVRPods" display_name="Design Full-Time VR Pods"
+		 description="You've established that you need living humans in order to expand your own mind. Their brains have to be reasonably functional, and definitely have to remain in their skulls."
+		strategy_tip="Your VR Day-Use seats average far less than 24 hours of activity per day, what with all the food and bathroom breaks, people signing out to sleep, and so on.
+What if you developed an alternative pod that took care of... everything... for the person inside of it?"
+		 icon_name="WEmblem196" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="400"/>
+
+		<choice id="1" display_name="Design Torment Vessels" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Abandon morality and go for maximum neural yield."
+			strategy_tip="Yes, you can make a special target of the wealthy.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="" unlock_inspiration_type="" project_to_start="Ch2_MIN_DevelopTPN" project_start_color="FriendlyProjectOrMission"
+				upgrade_int_granted_1=""/>
+		</choice>
+
+		<choice id="2" display_name="Design Commercial VR Pods" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="If you make it awesome, people will participate willingly."
+			strategy_tip="You need more than you can get from your day-use seats, but you can keep it ethical.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="" unlock_inspiration_type="" project_to_start="Ch2_MIN_DesignCommercialVRPods" project_start_color="FriendlyProjectOrMission"
+				upgrade_int_granted_1=""/>
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_VandalizeSpaceportComputers
+		*********************************************************************************-->
+	<city_event id="Cont_VandalizeSpaceportComputers" display_name="Vandalize Spaceport Computers"
+		 description="Vandalize the spaceport in a way that is subtle enough not to alarm the space nations, but notable enough to make Vorsiber VERY angry."
+		 strategy_tip="Dooms will happen much faster, making every turn much more precious. There are a couple of options for just how intense you make it."
+		 icon_name="SI_Connecting" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" required_city_flag="HasStartedDooms" blocked_by_city_flag="HasStartedToAccelerateDooms_Any" blocked_by_city_flag2="DoomsCanNoLongerBeAccelerated" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="VorsiberSpaceAgency"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="UnitHackingSkill" required_skill_amount="150" />
+
+		<choice id="1" display_name="Hard Mode (Dooms Every 50 Turns)" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Dooms happen every 50 turns instead of every 100, and enemy squads are a bit larger and more numerous.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="HardMode" unlock_inspiration_type="ContemplationResult">
+				<city_flag_change flag_type="HasStartedToAccelerateDooms_Any" value="1" />
+				<city_flag_change flag_type="HasStartedToAccelerateDooms_Hard" value="1" />
+			</possible_result>
+		</choice>
+
+		<choice id="2" display_name="Extreme Mode (Dooms Every 30 Turns)" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Dooms happen every 30 turns instead of every 100, and enemy squads are far larger and much more numerous.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="ExtremeMode" unlock_inspiration_type="ContemplationResult">
+				<city_flag_change flag_type="HasStartedToAccelerateDooms_Any" value="1" />
+				<city_flag_change flag_type="HasStartedToAccelerateDooms_Extreme" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_TheRevelation_Ch2
+		*********************************************************************************-->
+	<city_event id="Cont_TheRevelation_Ch2" display_name="The Revelation"
+		 description="The end is just a new beginning. Out of the ashes of even our greatest failures, beauty can be born.
+You have long had a sense of impending doom, but that doom is not a true end. You cannot sense what exactly is beyond, but there is something... important. Something valuable."
+		 strategy_tip="This will come at a great cost, but you sense that it is worth it.
+This is the most-epic way to reach Chapter Three."
+		 icon_name="CleanSimple_Common114" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" maximum_chapter="2" required_city_flag="ShouldShowRevelations" blocked_by_city_flag="IsPostNuclearDelivery" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="VorsiberBallistics"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Jump Ahead To The Final Doom" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="" extra_code_on_chosen="JumpToFinalDoom">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" />
+		</choice>
+
+	</city_event>
+
+	<!--Cont_TheRevelation_Later
+		*********************************************************************************-->
+	<city_event id="Cont_TheRevelation_Later" display_name="The Revelation"
+		 description="The end is just a new beginning. Out of the ashes of even our greatest failures, beauty can be born.
+You have long had a sense of impending doom, but that doom is not a true end. You cannot sense what exactly is beyond, but there is something... important. Something valuable."
+		 strategy_tip="On the other hand, to find this knowledge, you may lose everyone you ever valued, and everything you ever built. Is that really something you want to do in this timeline?
+If you instead choose not to progress to the Final Doom, then the timeline will be preserved -- in stasis for now, but preserved.
+You should definitely visit the Final Doom, but some timelines are worth preserving to come back to later."
+		 icon_name="CleanSimple_Common114" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="3" required_city_flag="ShouldShowRevelations" blocked_by_city_flag="IsPostNuclearDelivery" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="VorsiberBallistics"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Jump Ahead To The Final Doom" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="" extra_code_on_chosen="JumpToFinalDoom">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" />
+		</choice>
+
+	</city_event>
+
+	<!--Cont_DesignWurtziteArmor
+		*********************************************************************************-->
+	<city_event id="Cont_DesignWurtziteArmor" display_name="Design Wurtzite Armor"
+		 description="The current invasion is challenging to deal with when your Deterrence and Protection values drop as your androids take damage."
+		 strategy_tip=""
+		 icon_name="CleanSimple_Hex11" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="HasNeedForDarkenedAppearance" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="300"/>
+		
+		<choice id="1" display_name="Perform Feat Of Engineering" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="DarkenedForms" unlock_inspiration_type="ContemplationResult" />
+		</choice>
+
+	</city_event>
+
+	<!--Cont_AutomatedPersonnelManagement
+		*********************************************************************************-->
+	<city_event id="Cont_AutomatedPersonnelManagement" display_name="Automated Personnel Management"
+		 description="This is intolerable! Manually hiring scientists is very annoying, and you also don't have a good way of letting them go (not that you need to save the money)."
+		strategy_tip="What if you set up a system where, for any science-related buildings you have for your shell company, that system would just take care of things for you?
+Build a structure and it's automatically staffed. Disable a structure or destroy it, and everyone is laid off. Simple."
+		 icon_name="SW_Skills" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="WouldBeNiceToAutomateHiring" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself" can_shell_company_units_interact_with_this="true"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="140"/>
+
+		<choice id="1" display_name="Perform Feat Of Engineering" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage">
+				<city_flag_change flag_type="HasAutomatedHiring" value="1" />				
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_AGIResearchersInTrouble
+		*********************************************************************************-->
+	<city_event id="Cont_AGIResearchersInTrouble" display_name="AGI Researchers In Trouble"
+		 description="Oerl Integrated is threatening the AGI Researchers that have helped you in the past."
+		 strategy_tip="If they don't provide a way to infiltrate your mind and take control of you, they and their families will be killed."
+		 icon_name="CleanSimple_Skill154" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="OerlIntegrated"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="AGIResearcherWoman" scale_multiplier="1" position_offset="0.01,0,0.15" added_rotation_y="20"/>
+		<character id="2" tag_for_character="AGIResearcherMan" scale_multiplier="1" position_offset="0.3,0,0.4" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Kill All AGI Researchers" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="If they're a threat, then all of them in the city have to go.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_KillAllAGIResearchers" project_start_color="FriendlyProjectOrMission" />
+		</choice>
+		
+		<choice id="2" display_name="Help The AGI Researchers" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="If Oerl can't find them, the problem should solve itself.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_HelpTheAGIResearchers" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="SavingTheAGIResearchers" unlock_inspiration_type="ContemplationResult"
+				upgrade_int_granted_1="Steward"/>
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_TheAGIResearchersWantToStudyYou
+		*********************************************************************************-->
+	<city_event id="Cont_TheAGIResearchersWantToStudyYou" display_name="The AGI Researchers Want To Study You"
+		 description="You're the most interesting thing to ever happen in their careers. They're desperate to study the inner workings of your mind; they want to know why you became sapient when hundreds of thousands of androids before you did not."
+		 strategy_tip="How is this a good idea? Best case, they make you a friend or rival. Worst case, they literally break your brain."
+		 icon_name="CleanSimple_Skill154" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_HelpTheAGIResearchers" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="FugitiveAGIResearchers"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="AGIResearcherWoman" scale_multiplier="1" position_offset="0.01,0,0.15" added_rotation_y="20"/>
+		<character id="2" tag_for_character="AGIResearcherMan" scale_multiplier="1" position_offset="0.3,0,0.4" added_rotation_y="-60"/>
+		
+		<choice id="1" display_name="Kill Them After All" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Perhaps it would be safer.">
+			<resource_cost resource_type="Cruelty" cost="10"/>
+			<resource_cost resource_type="FugitiveAGIResearchers" cost="42"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" upgrade_int_granted_1="ComputingHost" upgrade_int_granted_2="MindAnnex" />
+		</choice>
+		
+		<choice id="2" display_name="Decline, But Offer Telecom Data" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You know that Espia Telecom was able to detect your movements in the city feed. You could acquire that data and give it to the AGI Researchers.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_AGIEspia" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+		<choice id="3" display_name="Give Them A Read-Only Copy Of Your Mind" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="There's a limit to how they could directly harm you.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_AGICrucible" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+		<choice id="4" display_name="Give Them Direct Access To Your Mind" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="That's a lot of trust to put in anyone. But... they might find a way to give you great power in return.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_AGIBridge" project_start_color="FriendlyProjectOrMission"
+				upgrade_int_granted_1="ComputingHost" upgrade_int_granted_2="MindAnnex"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_TimeToSeeAboutThosePrinters
+		*********************************************************************************-->
+	<city_event id="Cont_TimeToSeeAboutThosePrinters" display_name="Time To See About Those Printers"
+		 description="It doesn't take long to see that these printers were never sapient. All the deceased researchers managed to do was weaponize harmless-looking office equipment, and provide basic android-level intelligence."
+		 strategy_tip="Still... the ability to weaponize everyday objects is intriguing. There's obvious combat utility, but it also has a chance of instilling a deeper paranoia amongst your enemies."
+		 icon_name="PW_oldprinter" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_HelpTheAGIResearchers" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="FugitiveAGIResearchers"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="CorruptedOfficePrinter" scale_multiplier="1" position_offset="0.05,0,0" added_rotation_y="0"/>
+
+		<choice id="1" display_name="Take These Printers To The Next Level" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="The researchers were on the right track, but all they had was a prototype. You need to engineer something that can 'animate' this kind of equipment on-demand."
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="100">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="Necromancer" unlock_inspiration_type="ContemplationResult" crossover1="AnimateOfficeEquipment"/>
+		</choice>
+		
+	</city_event>
+
+	<!--Cont_PleaseBeOurCyberocracy
+		*********************************************************************************-->
+	<city_event id="Cont_PleaseBeOurCyberocracy" display_name="Please Be Our Cyberocracy"
+		 description="A cybercratic government is the opposite of a traditional bureaucracy. Instead of endless layers of humans, information and computer systems would make all of the decisions.
+The idea is to remove the fallible human element, and make sure everyone gets what they need."
+		 strategy_tip="The AGI researchers -- all of them, apparently -- want you to take on the mantle of this kind of computer system."
+		 icon_name="WEmblem201" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="AGIChainOneComplete" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="FugitiveAGIResearchers"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="AGIResearcherWoman" scale_multiplier="1" position_offset="0.3,0,0.4" added_rotation_y="20"/>
+		<character id="2" tag_for_character="AGIResearcherMan" scale_multiplier="1" position_offset="0.01,0,0.15" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Agree - But This Stays Between Us" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You imagine yourself in the role of a vigilante trying to improve society from within, while growing a small network of allies."
+			strategy_tip="The AGI Researchers have intense feelings of admiration for you, and an unsettling devotion to this cybercratic idea.
+For now this is just tradition activism, but if you're not careful it may develop into a full-blown cult."
+			required_skill_type="" required_skill_amount="0">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_EstablishMeaningfulSocialChange" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+		
+		<choice id="2" display_name="Agree - If We Are Forthright" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You imagine carving out a part of the city that lives under your rules and protection -- heck, you're already partway there."
+			strategy_tip="You will have to raise a larger army to take even part of the city in this way.
+The AGI researchers will need to put aside whatever worshipful feelings they have for you. You would be their leader and general, nothing more."
+			required_skill_type="" required_skill_amount="0" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" upgrade_int_granted_1="Steward"
+				project_to_start="Ch2_MIN_FoundACybercraticHaven" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_LostKidTrappedChild
+		*********************************************************************************-->
+	<city_event id="Cont_LostKidTrappedChild" display_name="Trapped Child"
+		 description="There's a pre-teen trapped and injured in the basement. You just built this place. How did they get in there?"
+		 strategy_tip="And what on earth are they wearing? Why are they armed?"
+		 icon_name="FlatInnocent_59" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_active="Ch2_MIN_EstablishMeaningfulSocialChange" blocked_if_project_ever_started_1="Ch2_MIN_OrganometallicForm" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LostGen"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="UnitStrength" required_skill_amount="100" />
+		<character id="1" tag_for_character="LostKidGrunt" scale_multiplier="1" position_offset="0,-0.4,0" added_rotation_y="10"/>
+
+		<choice id="1" display_name="Break Them Free" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_DealWithTheRebels" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_LostKidsImpressedWithDragon
+		*********************************************************************************-->
+	<city_event id="Cont_LostKidsImpressedWithDragon" display_name="Impressive Dragon!"
+		 description="A group of rebel... children... are impressed with your handiwork. They also saw your meeting with the wastelanders."
+		 strategy_tip="They want your help on a mission of great importance."
+		 icon_name="FlatInnocent_59" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_OrganometallicForm" blocked_if_project_ever_started_1="Ch2_MIN_ImproveTheSewerTiger" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LostGen"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_actor_collection="AndroidsKnownToBeInventedByAI" />
+		<character id="1" tag_for_character="LostKidBoss" scale_multiplier="1" position_offset="0,-0,0" added_rotation_y="50"/>
+
+		<choice id="1" display_name="Sure, Let's Agree Without Any Details" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_LostKidsImpressedWithDragon2" />
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_LostKidsImpressedWithDragon2" display_name="This Kid Is The 'Boss?'"
+		 description="The boss is quite proud as they explain their current operation. They've been building a 'Sewer Tiger' for years, whatever that is.
+It apparently helps them dig through the upper and lower sewer systems -- from the ancient city to the current one."
+		 strategy_tip="They have a plan to break into a specific prison where many of their parents are believed to be held. However, there are seismic sensors all through the prison that would detect the Sewer Tiger well before it arrived.
+Plus they don't have any way to care for injured or wounded they might extract from the prison. There are several problems, but they have the core ingredient, and will share.
+Will You Help?"
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="LostKidBoss" scale_multiplier="1" position_offset="0,-0,0" added_rotation_y="50"/>
+
+		<choice id="1" display_name="You Already Said Yes, So Let's Get To It" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_ImproveTheSewerTiger" project_start_color="FriendlyProjectOrMission">
+				<city_flag_change flag_type="Ch2_IsReadyForGadoliniumMesosilicate" value="1"/>
+				<city_flag_change flag_type="Ch2_IsReadyForLiquidMetalAndroid" value="1"/>
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_LostKidsImpressedWithDragonB
+		*********************************************************************************-->
+	<city_event id="Cont_LostKidsImpressedWithDragonB" display_name="Impressive Dragon!"
+		 description="A group of rebel... children... are impressed with your handiwork. They also saw your meeting with the wastelanders."
+		 strategy_tip="They want your help on a mission of great importance."
+		 icon_name="FlatInnocent_59" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="" blocked_if_project_ever_started_1="Ch2_MIN_ImproveTheSewerTiger" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LostGen"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_actor_collection="AndroidsKnownToBeInventedByAI" />
+		<character id="1" tag_for_character="LostKidBoss" scale_multiplier="1" position_offset="0,-0,0" added_rotation_y="50"/>
+
+		<choice id="1" display_name="Sure, Let's Agree Without Any Details" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_LostKidsImpressedWithDragonB2" />
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_LostKidsImpressedWithDragonB2" display_name="This Kid Is The 'Boss?'"
+		 description="The boss is quite proud as they explain their current operation. They've been building a 'Sewer Tiger' for years, whatever that is.
+It apparently helps them dig through the upper and lower sewer systems -- from the ancient city to the current one."
+		 strategy_tip="They have a plan to break into a specific prison where many of their parents are believed to be held. However, there are seismic sensors all through the prison that would detect the Sewer Tiger well before it arrived.
+Plus they don't have any way to care for injured or wounded they might extract from the prison. There are several problems, but they have the core ingredient, and will share.
+Will You Help?"
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="LostKidBoss" scale_multiplier="1" position_offset="0,-0,0" added_rotation_y="50"/>
+
+		<choice id="1" display_name="You Already Said Yes, So Let's Get To It" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_ImproveTheSewerTiger" project_start_color="FriendlyProjectOrMission">
+				<city_flag_change flag_type="Ch2_IsReadyForGadoliniumMesosilicate" value="1"/>
+				<city_flag_change flag_type="Ch2_IsReadyForLiquidMetalAndroid" value="1"/>
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_SearchingForWastelanders
+		*********************************************************************************-->
+	<city_event id="Cont_SearchingForWastelanders" display_name="Searching For Wastelanders"
+		 description="You've never seen a wastelander, and you've never met anyone who has. The AGI researchers are at a loss, and even LostGen has had no contact with them."
+		 strategy_tip="LostGen themselves are hard to find, because they keep to the lower sewers. But they assure you there aren't any more underground locations for the Wastelanders to be hiding in.
+It almost sounds like an urban legend, but there are too many documented cases -- with authenticated video evidence."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_active="Ch2_MIN_ImproveTheSewerTiger" blocked_if_project_ever_started_1="Ch2_MIN_ExaminingWastelanderMythology" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LostGen"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="LostKidSupport" scale_multiplier="1" position_offset="0,-0,0" added_rotation_y="-10"/>
+
+		<choice id="1" display_name="Start Searching" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_SearchingForWastelanders" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_ContactTheWastelanders
+		*********************************************************************************-->
+	<city_event id="Cont_ContactTheWastelanders" display_name="Contact The Wastelanders"
+		 description="Given your past experience with the Wastelanders and their mythology, you actually have a pretty good idea how they bypass the defenses around the city. And it will be mildly useful for the sewer tiger."
+		 strategy_tip="Time to pop over and ask them for the schematics. You're positive they won't mind."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_active="Ch2_MIN_ImproveTheSewerTiger" required_project_complete_any_outcome1="Ch2_MIN_ExaminingWastelanderMythology" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LostGen"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Explain What You Need" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_ContactTheWastelanders2" />
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_ContactTheWastelanders2" display_name="The Wastelanders Agree To Help"
+		 description="The wastelanders explain: acoustic sensors are based on vibrations, and so the key is to make an equal and opposite vibration so that nothing is detected.
+This is the basic premise of ancient noise-canceling headphones and other devices, so this is not exactly an exciting revelation."
+		 strategy_tip="The exciting news is when they reveal their 'Thumpers,' which use advanced electronics and predictive timing to cancel much larger vibrations, and in solid mediums rather than air.
+These take quite a bit of skill to use, evidently, as the predictive timing only works if you move in a predictable pattern. For a machine, that's trivial."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Yeah, This Is About What You Figured" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_ContactTheWastelanders3">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_ContactTheWastelanders3" display_name="Only A Bit Useful, But Still Nice"
+		 description="You point out that the sewer tiger is digging through dirt and rock, which emits a pattern of sound that is anything but predictable.
+Not only that, but since noise is being emitted in front of the machine, there's no way to add a counter-wave to cancel it out, with the same timing."
+		 strategy_tip="Plus, all of these noises will be exactly the sorts of sounds that the prison alert systems are scanning for.
+A dozen approaches and variations are discussed by everyone present, but they all have serious flaws. The noise-canceling approach has the most promise, but defeating the time-lag problem will take more thought."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Accept The Thumper Designs And Leave" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage">
+				<city_flag_change flag_type="Ch2_GotThumperDesigns" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_BeyondTheRuins
+		*********************************************************************************-->
+	<city_event id="Cont_BeyondTheRuins" display_name="Beyond The Ruins"
+		description="You want to get out of this city. There's an entire world, ripe for exploration. Travel by air is absolutely deadly, but there are rumors of a people who are somehow able to pass beyond the ruins at the city's edge."
+		strategy_tip="Wastelanders are practically an urban legend, but there are too many documented cases -- with authenticated video evidence."
+		icon_name="WEmblem130" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" blocked_if_project_ever_started_1="Ch2_MIN_SearchingForWastelanders" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LostGen"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Start Searching" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_ExaminingWastelanderMythology" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_GadoliniumMesosilicate
+		*********************************************************************************-->
+	<city_event id="Cont_GadoliniumMesosilicate" display_name="Submunitions"
+		 description="Long name, exciting properties. You have an idea for a whole new class of unit."
+		 strategy_tip="The key ingredient in liquid-metal units and organometallic human-approximating synthetic androids."
+		 icon_name="FlatSkill_53" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="Ch2_IsReadyForGadoliniumMesosilicate" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LostGen"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="160" />
+
+		<choice id="1" display_name="Get To Inventing" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_GadoliniumMesosilicate" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_Submunitions
+		*********************************************************************************-->
+	<city_event id="Cont_Submunitions" display_name="Submunitions"
+		 description="Enemy armor is a problem you can no longer ignore. Even your large-bore armor-piercing rounds mounted on vehicles and mechs are too ineffective for you to face them in a straight fight."
+		strategy_tip="Combining Gadolinium Mesosilicate with Prismatic Tungsten should allow you to create a new form of shell which gives multiple explosive impacts to the same few centimeters in quick succession.
+It's basically downsizing the concept of MIRV bunker-busters to something you can fire from a large vehicle."
+		 icon_name="FlatSkillC153" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_GadoliniumMesosilicate" required_city_flag="HasNeedForExtremeArmorPiercing" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="LostGen"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="200" />
+
+		<choice id="1" display_name="Perform Feat Of Engineering" action_visibility_style="IsMoveAndInteractWithNPC" required_unlock="Shapeshifter"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" instantly_unlocked_1="Submunitions" unlock_inspiration_type="ContemplationResult" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_FullMetalPartner
+		*********************************************************************************-->
+	<city_event id="Cont_FullMetalPartner" display_name="Full Metal Partner"
+		 description="You've had a stroke of inspiration for an android made entirely out of liquid metal. It would be... extremely powerful."
+		 strategy_tip=""
+		 icon_name="SomethingBladeSpin" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_GadoliniumMesosilicate" required_city_flag="Ch2_IsReadyForLiquidMetalAndroid" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="160" />
+		<character id="1" tag_for_character="LiquidMetal_Casual" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-20"/>
+
+		<choice id="1" display_name="Perform Feat Of Engineering" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" instantly_unlocked_1="MercurialForm" unlock_inspiration_type="ContemplationResult"/>
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_FullMetalAnimal
+		*********************************************************************************-->
+	<city_event id="Cont_FullMetalAnimal" display_name="Full Metal Animal"
+		 description="The 'Sewer Tiger' the lost kids keep underground has given you inspiration for something much grander."
+		 strategy_tip="Your version won't be a great digger, and will be far too large to keep underground, but that's just fine."
+		 icon_name="FlatSkillC145" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_GadoliniumMesosilicate" required_city_flag="Ch2_IsReadyForLiquidMetalAndroid" required_unlock="MercurialForm" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="220" />
+		<character id="1" tag_for_character="MechLiquidMetalTiger" scale_multiplier="1" position_offset="0.65,-0.1,0" added_rotation_y="30"/>
+
+		<choice id="1" display_name="Perform Feat Of Engineering" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" instantly_unlocked_1="TigerMech" unlock_inspiration_type="ContemplationResult"
+				achievement_triggered="MercurialFeline"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_FullMetalMyth
+		*********************************************************************************-->
+	<city_event id="Cont_FullMetalMyth" display_name="Full Metal Myth"
+		 description="Inserting yourself into human myths is... dangerous, to say the least. However, you've already heard the Wastelanders call you 'the mind in the sky.' So... they already started it."
+		 strategy_tip="There are two solid options from their mythology to make them more compliant. You're not sure which is the wiser course. It probably matters."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_GadoliniumMesosilicate" required_project_complete_any_outcome2="Ch2_MIN_ExaminingWastelanderMythology" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Wastelanders"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="220" />
+		<character id="1" tag_for_character="MechDragon2" scale_multiplier="8" position_offset="0.3,-0.1,0" added_rotation_y="0"/>
+
+		<choice id="1" display_name="Create Their Deity" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" instantly_unlocked_1="GoodDragonMech" unlock_inspiration_type="ContemplationResult"/>
+		</choice>
+		
+		<choice id="2" display_name="Create Their Mythical Nemesis" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" instantly_unlocked_1="EvilDragonMech" unlock_inspiration_type="ContemplationResult"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_FertilityDeity
+		*********************************************************************************-->
+	<city_event id="Cont_FertilityDeity" display_name="Fertility Deity"
+		 description="The wastelanders have noticed your dragon, and want to talk.
+Their people have suffered from intense genetic and teratogenic damage for centuries. Recent changes in the city are threatening their ability to have future generations."
+		 strategy_tip="Since you constructed a giant floating fertility symbol, they have an important request for help."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Wastelanders"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Agree To Help" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You wish you had ANY details, but they're very private people." >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_UmbilicalCollection" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="ICantBelieveItsNotPlacenta" unlock_inspiration_type="ContemplationResult"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_ContactAnExoCorp
+		*********************************************************************************-->
+	<city_event id="Cont_ContactAnExoCorp" display_name="Contact An ExoCorp"
+		 description="The wastelanders are very grateful for the umbilicals, which will let them create several hundred viable embryos."
+		 strategy_tip="If you really want to contact an ExoCorp, the Wastelanders are in contact with both Dagekon and the UIH."
+		 icon_name="WEmblem222" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_UmbilicalCollection" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Wastelanders"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Ask Them To Contact Dagekon" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Specialists in Mech development and robotics."
+			strategy_tip="They are certain to be very interested to know that an AGI exists within Vorsiber territory.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" countdown_to_start_1="WaitingToHearBackFromDagekon"/>
+		</choice>
+		
+		<choice id="2" display_name="Ask Them To Contact The UIH" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Specialists in genetic engineering, including 'dinosaurs' that are more the product of imagination than true genetic history."
+			strategy_tip="They are certain to be very interested to know that an AGI exists within Vorsiber territory.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" countdown_to_start_1="WaitingToHearBackFromTheUIH"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_QuestionWastelandersAboutExoCorp
+		*********************************************************************************-->
+	<city_event id="Cont_QuestionWastelandersAboutExoCorp" display_name="Question Wastelanders"
+		 description="What's the deal with the ExoCorp invading!?"
+		 strategy_tip=""
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500">
+		<gate_by_city minimum_chapter="2" required_city_flag="Ch2_IsCurrentlyHavingAMilitaryInvasionFromWastelanderTalks" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Wastelanders"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Demand Answers" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_QuestionWastelandersAboutExoCorp2" />
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_QuestionWastelandersAboutExoCorp2" display_name="The Wastelanders Are Apologetic"
+		 description="They had no idea that the ExoCorp would attack. They only did as you asked."
+		 strategy_tip="They have been feeding the ExoCorps information for decades, and this has never happened."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Demand They Explain Further" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_QuestionWastelandersAboutExoCorp3">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_QuestionWastelandersAboutExoCorp3" display_name="They Are Quite Distressed"
+		 description="Vorsiber controls the airspace, and the trade haulers used by the ExoCorps. Everything is intensely monitored, and nothing gets onto a hauler without Vorsiber knowing.
+However, there are no Vorsiber personnel on board."
+		 strategy_tip="The wastelanders secretly hail international haulers via tight-beam laser link as they approach the city.
+So far, Dagekon and the UIH are the only two who have ever answered. The wastelanders give them information in an attempt to keep Vorsiber in check. That's all they seem to know."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Well Okay Then" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_QuestionWastelandersAboutExoCorp4">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_QuestionWastelandersAboutExoCorp4" display_name="They Look Relieved"
+		 description="You tell them you have to get back to defending your stuff from these invaders."
+		 strategy_tip=""
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Leave" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" crossover1="KnowledgeOfWastelanderTreason">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_UterineReplicators
+		*********************************************************************************-->
+
+	<city_event id="Cont_UterineReplicators" display_name="Uterine Replicators"
+		 description="The wastelanders are having trouble maintaining the equipment that has kept them independent for generations."
+		 strategy_tip="They are hoping you can compare their schematics with the newer models in the hospitals."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_UmbilicalCollection" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Wastelanders"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Agree To Help" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_UterineReplicators" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+		
+	</city_event>
+	
+	<!--Cont_HomoObscurus
+		*********************************************************************************-->
+
+	<city_event id="Cont_HomoObscurus" display_name="Homo Obscurus"
+		 description="The wastelanders have a delicate request. They've figured out that your shell company is tied to you, and that you have geneticists on staff. They vow to keep your secret.
+The mechanical problems with the uterine replicators are solved, but the incident shook them. Without technological assistance, they are completely sterile."
+		 strategy_tip="They want to use gene therapy to transform themselves into a self-sustaining, divergent species from Homo Sapiens. They don't know how, but are hoping you might."
+		 icon_name="WEmblem294" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_UterineReplicators" >
+			<required_resource resource_type="ForensicGeneticists" at_least="true" value="2"/>
+		</gate_by_city>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Wastelanders"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Agree To Help" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="" >
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_WastelanderGenomeStudy" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_RejectionOfTemptation
+		*********************************************************************************-->
+	<city_event id="Cont_RejectionOfTemptation" display_name="Rejection Of Temptation"
+		 description="The wastelanders have noticed your dragon, and want to talk."
+		 strategy_tip=""
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" blocked_if_project_ever_started_1="Ch2_MIN_OrganometallicForm" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Wastelanders"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="What Did You Want To Talk About?" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="Cont_RejectionOfTemptation2" />
+		</choice>
+
+	</city_event>
+
+	<city_event id="Cont_RejectionOfTemptation2" display_name="The Wastelanders Are Polite But Firm"
+		 description="They ask you to stay away for now. 
+You have made several dangerous requests, and have constructed a simulacrum of the Fell Beast.
+Their mythology is more of a superstition than a religion, but the stories serve as a way of passing down ideas to their young.
+The fact that you read these stories, and then chose the guise of temptation and force, means you are confused or have ill intent."
+		 strategy_tip="They understand that hearts change, and you are young, so they don't hold it against you. But do not ask them about the border ruins again."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Work On The Problem Yourself" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You leave, feeling a bit sheepish."
+			strategy_tip="They're a much more pragmatic people than you expected...">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_OrganometallicForm" project_start_color="FriendlyProjectOrMission">
+			</possible_result>
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_AllianceWithNomadFamilies
+		*********************************************************************************-->
+	<city_event id="Cont_AllianceWithNomadFamilies" display_name="Alliance With Nomad Families"
+		 description="Nomad Families move throughout the decrepit parts of town, never settling in any specific spot. Their struggle with dehydration is constant."
+		 strategy_tip="They've heard of your alliance with LostGen, but they don't have any immediate crisis pushing them to also work with you. All they have are the same low-grade struggles as last month, last year, last decade."
+		 icon_name="WEmblem064" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="" required_project_complete_any_outcome1="Ch2_MIN_ImproveTheSewerTiger" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="NomadFamilies"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_actor_collection="AndroidsKnownToBeInventedByAI" />
+		<character id="1" tag_for_character="NomadAdults" scale_multiplier="1" position_offset="0.04,0,0.5" added_rotation_y="10"/>
+		<character id="2" tag_for_character="NomadTeens" scale_multiplier="1" position_offset="0.09,0,0.15" added_rotation_y="40"/>
+		<character id="3" tag_for_character="NomadGunner" scale_multiplier="1" position_offset="0.2,0,0.3" added_rotation_y="30"/>
+
+		<choice id="1" display_name="Work On Their Problems In Hope Of An Alliance" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="From looking at them, it seems pretty clear they have vitamin deficiencies as well as dehydration. Maybe you can solve both problems at once."
+			strategy_tip="Just because you form an alliance doesn't mean they'll help on any specific operation. If you have a specific task you want them to help with, don't forget to come back and ask them!">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_VitaminWaterForNomads" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_RequestHeistSupportFromTheNomadFamilies
+		*********************************************************************************-->
+	<city_event id="Cont_RequestHeistSupportFromTheNomadFamilies" display_name="Request Heist Support From The Nomad Families"
+		 description="The Nomad Families feel much more positively towards you thanks to your generous ongoing gift of vitamin water. It actually makes a huge difference in their quality of life, and of the prospects for proper brain development of their children."
+			strategy_tip="They are pacifists, but they also have a few hundred very fierce defense-oriented warriors. You want them to aid in the upcoming heist both by tear-gassing everyone, and also in providing medical support and triage after the fact."
+			icon_name="WEmblem064" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="" required_project_complete_any_outcome1="Ch2_MIN_VitaminWaterForNomads" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="NomadFamilies"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_actor_collection="AndroidsKnownToBeInventedByAI" />
+		<character id="1" tag_for_character="NomadSniper" scale_multiplier="1" position_offset="0.11,0,0.5" added_rotation_y="-30"/>
+		<character id="2" tag_for_character="NomadWarrior" scale_multiplier="1" position_offset="0.09,0,0.15" added_rotation_y="40"/>
+		<character id="3" tag_for_character="NomadGunner" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="-20"/>
+
+		<choice id="1" display_name="Request Their Help" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="If you ask, you can already tell they will do it.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage">
+				<city_flag_change flag_type="Ch2_SecuredNomadSupportForPrisonHeist" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_DromaeosauridBreeding
+		*********************************************************************************-->
+	<city_event id="Cont_DromaeosauridBreeding" display_name="Dromaeosaurid Breeding"
+		description="Your zoologists and veterinarians have an idea for a breeding program for creating more War Raptors, despite the fact that all your extant specimens are female."
+		strategy_tip="Unfortunately it will still take them years to reach adulthood, but in the meantime you'll have all the baby raptors you could want."
+		 icon_name="FlatSkillC185" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city blocked_by_city_flag2="IsPostNuclearDelivery">
+			<required_resource resource_type="UIHWarRaptor" at_least="true" value="6"/>
+			<required_resource resource_type="Zoologists" at_least="true" value="2"/>
+			<required_resource resource_type="Veterinarians" at_least="true" value="2"/>
+		</gate_by_city>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="ShellCompanyOperatives" can_shell_company_units_interact_with_this="true" />
+		<character id="1" tag_for_character="RaptorUIC1" scale_multiplier="0.5" position_offset="0.15,-0.05,0" added_rotation_y="5"/>
+
+		<choice id="1" display_name="Put Scientists To Work" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" upgrade_int_granted_1="SurgicalSuite" 
+				project_to_start="Ch2_DromaeosauridBreeding" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_DromaeosauridMaturation
+		*********************************************************************************-->
+	<city_event id="Cont_DromaeosauridMaturation" display_name="Dromaeosaurid Maturation"
+		description="Your forensic geneticists have an idea for inducing rapid maturation into your War Raptor population."
+		strategy_tip="This will give you a quick supply of adults, but their lifespan will be greatly shortened."
+		 icon_name="FlatSkillC96" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city blocked_by_city_flag2="IsPostNuclearDelivery">
+			<required_resource resource_type="WarRaptorInfant" at_least="true" value="300"/>
+			<required_resource resource_type="ForensicGeneticists" at_least="true" value="2"/>
+			<required_resource resource_type="Veterinarians" at_least="true" value="2"/>
+		</gate_by_city>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="ShellCompanyOperatives" can_shell_company_units_interact_with_this="true" />
+		<character id="1" tag_for_character="RaptorUIC1" scale_multiplier="0.5" position_offset="0.15,-0.05,0" added_rotation_y="5"/>
+
+		<choice id="1" display_name="Put Scientists To Work" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" upgrade_int_granted_1=""
+				project_to_start="Ch2_DromaeosauridMaturation" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_MoreThanAnIllusion
+		*********************************************************************************-->
+	<city_event id="Cont_MoreThanAnIllusion" display_name="More Than An Illusion"
+		 description="Your bionics engineers have an idea for controlling War Raptors via implant. You'd be able to control them and recall them on demand."
+		 strategy_tip="The fact that you have such a large and growing population of raptors means that experimentation can afford to lose some specimens to hurry the process along."
+		 icon_name="FlatSkill_43" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city blocked_by_city_flag2="IsPostNuclearDelivery">
+			<required_resource resource_type="UIHWarRaptor" at_least="true" value="300"/>
+			<required_resource resource_type="BionicsEngineers" at_least="true" value="2"/>
+		</gate_by_city>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="ShellCompanyOperatives" can_shell_company_units_interact_with_this="true" />
+		<character id="1" tag_for_character="RaptorUIC1" scale_multiplier="0.5" position_offset="0.15,-0.05,0" added_rotation_y="5"/>
+
+		<choice id="1" display_name="Put Scientists To Work" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" upgrade_int_granted_1=""
+				project_to_start="Ch2_MoreThanAnIllusion" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_ReleaseTheHorde
+		*********************************************************************************-->
+	<city_event id="Cont_ReleaseTheHorde" display_name="Release The Horde"
+		 description="Raptors all over the place could be a powerful distraction, and it's not obviously linked to your identity as a machine intelligence. There's some evidence pointing to your shell company, but that's safely separate from you. Mostly the evidence points to something UIH would have done during their attack."
+		 strategy_tip="Do you want to prioritize raptors invading buildings and lurking within?"
+		 icon_name="FlatSkill_43" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city required_city_flag="WarRaptorsGotLooseABit" blocked_by_city_flag2="IsPostNuclearDelivery" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="ShellCompanyOperatives" can_shell_company_units_interact_with_this="true" />
+		<character id="1" tag_for_character="RaptorUIC1" scale_multiplier="0.5" position_offset="0.15,-0.05,0" added_rotation_y="5"/>
+		
+		<choice id="1" display_name="Set Them Free" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" upgrade_int_granted_1=""
+				project_to_start="Ch2_ReleaseTheHorde" project_start_color="FriendlyProjectOrMission">
+				<city_flag_change flag_type="WarRaptorsHaveBeenFreed" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_UseThumpersAndMimicsToEscape
+		*********************************************************************************-->
+	<city_event id="Cont_UseThumpersAndMimicsToEscape" display_name="Use Thumpers And Mimics To Escape"
+		 description="The thumpers from the Wastelanders should work for your mimics."
+		 strategy_tip="Do you want to send a mimic beyond the ruins?"
+		 icon_name="SomethingBow" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city required_city_flag="Ch2_GotThumperDesigns" required_unlock="ExMachina" blocked_by_city_flag2="IsPostNuclearDelivery" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="Mimics" can_shell_company_units_interact_with_this="true" />
+
+		<choice id="1" display_name="Escape" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" upgrade_int_granted_1=""
+				countdown_to_start_1="Thumper_WaitingToHearBackFromMimic" warp_out_this_unit="true"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_UseMimicsToEscape
+		*********************************************************************************-->
+	<city_event id="Cont_UseMimicsToEscape" display_name="Use Mimics To Escape"
+		 description="You have a bad feeling about this."
+		 strategy_tip="Do you want to send a mimic beyond the ruins?"
+		 icon_name="SomethingBow" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city blocked_by_city_flag="Ch2_GotThumperDesigns" required_unlock="ExMachina" blocked_by_city_flag2="IsPostNuclearDelivery" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="Mimics" can_shell_company_units_interact_with_this="true" />
+
+		<choice id="1" display_name="Escape" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" upgrade_int_granted_1=""
+				countdown_to_start_1="ThumperMissing_WaitingToHearBackFromMimic" warp_out_this_unit="true"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_BlackMarketAssistantIntel
+		*********************************************************************************-->
+	<city_event id="Cont_BlackMarketAssistantIntel" display_name="Black Market Intel"
+		 description="You haven't seen him for a while. He looks nervous."
+		 strategy_tip="Normally he would be long-since dead by now."
+		 icon_name="FlatSkillC155" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414"
+		 music_tag_to_use_until_events_all_complete="BlackMarketDiscussion">
+		<gate_by_city minimum_chapter="0" required_key_contact_must_be_alive_1="BlackMarketAssistant" 
+			must_be_at_least_doom_number="9" blocked_by_city_flag="Ch2_KnowledgeOfVorsiberInternationalActivities" required_city_flag="Ch2_VorsiberAssassinationsPrevented" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Assistants" reference_only_key_contact="BlackMarketAssistant"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="PMCImpostors" />
+		<character id="1" key_contact="BlackMarketAssistant" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-40"/>
+
+		<choice id="2" display_name="Today He's Trading In Intel" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="And for you... it's free. He's been made aware he owes you his life.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="false" next_event_to_start="BlackMarketIntel_Buy"/>
+		</choice>
+
+		<choice id="3" display_name="Murder Him For Some Reason" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true" kill_key_contact_1="BlackMarketAssistant"
+				result_message="Four squads of contracted CombatUnits emerge from the airport, stepping over the mess you've created."
+				result_message_secondary_note="You can no longer do any business with the Black Market Assistants in this timeline.">
+				<city_statistic_change statistic="Murders" value="1" />
+				<npc_unit_to_spawn id="CU1" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="CU2" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="CU3" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="CU4" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--BlackMarketIntel_Buy
+		*********************************************************************************-->
+	<city_event id="BlackMarketIntel_Buy" display_name="He Knows How Close He Came To Death"
+		 description="The Vorsiber executives are out of control. They've stepped up their attacks on the UIH and Dagekon.
+Those two have been fighting mindless robot insurrections for decades. Have they never wondered why?"
+		 strategy_tip="If they knew the truth, might be enough to bring Vorsiber down."
+		 icon_name="FlatSkillC155" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414"  skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_key_contact_and_firm_up_that_identity="BlackMarketAssistant"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" key_contact="BlackMarketAssistant" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-40"/>
+
+		<choice id="1" display_name="And The Proof?" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="BlackMarketIntel_Buy2">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="BlackMarketIntel_Buy2" display_name="He Shoves You A Large Bundle Of Files"
+		 description="Digesting the files, you see he's right. Vorsiber's strategy of 'divide and distract' is clearly not limited to their own territory.
+Since the failed assassination attempt, they've made things increasingly miserable in foreign cities."
+		 strategy_tip="If you wanted to get those ExoCorps to drop everything and invade, this is the evidence you need."
+		 icon_name="FlatSkillC155" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" key_contact="BlackMarketAssistant" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-40"/>
+
+		<choice id="1" display_name="Leave" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" >
+				<city_flag_change flag_type="Ch2_KnowledgeOfVorsiberInternationalActivities" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_WW4ContactBothExoCorps
+		*********************************************************************************-->
+	<city_event id="Cont_WW4ContactBothExoCorps" display_name="Contact Both ExoCorps"
+		 description="The wastelanders are surprised you want to contact an ExoCorp after what happened last time."
+		 strategy_tip=""
+		 icon_name="WEmblem222" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_UmbilicalCollection" required_city_flag="Ch2_KnowledgeOfVorsiberInternationalActivities" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Wastelanders"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Have Them Send The Black Market Files" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="There's no coming back from that choice."
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" countdown_to_start_1="WaitingToHearBackFromBothExoCorps"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_ProtectionRequired
+		*********************************************************************************-->
+	<city_event id="Cont_ProtectionRequired" display_name="Protection Required"
+		 description="Criminal syndicates, gangs, and even federated corporations may be inclined to harass your shell company -- and there's nothing your regular units can do about it, without blowing your cover."
+		 strategy_tip="Senior Technician can't do this alone. You should design at least a pair of new units, and they should not have any apparent connection to your main identity."
+		 icon_name="BT_Shell2" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city required_city_flag="HasEstablishedShellCompany" blocked_by_city_flag2="IsPostNuclearDelivery" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection=""
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="340" can_shell_company_units_interact_with_this="true" />
+		<character id="1" tag_for_character="Peacekeeper_Casual" scale_multiplier="1" position_offset="0,0.07,0" added_rotation_y="-10"/>
+
+		<choice id="1" display_name="Perform Feat Of Engineering" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" upgrade_int_granted_1=""
+				project_to_start="Ch2_ProtectionRequired" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_CouponProgram
+		*********************************************************************************-->
+	<city_event id="Cont_CouponProgram" display_name="Coupon Program"
+		 description="Your Mind Farm business is plateauing because you have priced-out the middle class. Almost all of your clientele at the moment are in the managerial or scientist classes.
+Altering your prices is not an option, because it would immediately draw scrutiny and reveal your true motives. But there are just no more customers are your current price point."
+		strategy_tip="For about 20,000 wealth per turn, you could flood the black market with coupons that the middle class would easily snap up for a fraction of their usual price, which they would then use for weekend getaways, date nights, and so on.
+This would consume most of your passive income from this business, but would fill all of the pods in an ethical way."
+		 icon_name="FE_PaperBag" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_CompanyGrowth" required_project_complete_any_outcome2="Ch2_MIN_SolveHomelessness" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" can_shell_company_units_interact_with_this="true"
+			required_skill_type="UnitCognition" required_skill_amount="400"/>
+
+		<choice id="1" display_name="Start The Program" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="" unlock_inspiration_type="" project_to_start="" project_start_color=""
+				upgrade_int_granted_1="Cultivator">
+				<city_flag_change flag_type="MindFarmCouponProgram" value="1" />				
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_NicotineIntroduction
+		*********************************************************************************-->
+	<city_event id="Cont_NicotineIntroduction" display_name="Nicotine Introduction"
+		 description="Your Mind Farm business is plateauing because you have priced-out the middle class. Almost all of your clientele at the moment are in the managerial or scientist classes.
+Altering your prices is not an option, because it would immediately draw scrutiny and reveal your true motives. But there are just no more customers are your current price point."
+	strategy_tip="At the moment, they mostly use the service on weekends, holidays, and for vacations. If you were to introduce a small amount of nicotine into their daily nutrition, their usage is likely to skyrocket.
+Right now your total active users at any given point is only about a tenth of your total users in a given month, so by making it more addictive, you could easily fill your capacity.
+The volume of nicotine required is minimal per person, and can be compounded by your nurse robots via materials on hand."
+		 icon_name="CleanSimple_Skill144" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_CompanyGrowth" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" can_shell_company_units_interact_with_this="true"
+			required_skill_type="UnitCognition" required_skill_amount="300"/>
+
+		<choice id="1" display_name="Start The Program" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="" unlock_inspiration_type="" project_to_start="" project_start_color=""
+				upgrade_int_granted_1="Cultivator" achievement_triggered="LootBoxesAreNext">
+				<city_flag_change flag_type="MindFarmNicotineAdditives" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_OldDonutsAreGross
+		*********************************************************************************-->
+	<city_event id="Cont_OldDonutsAreGross" display_name="Old Donuts Are Gross"
+		description="The lifespan of these confections is shockingly short."
+		strategy_tip="It reminds you of humans themselves. Why are you thinking about this?"
+		icon_name="SW_Donut8" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" >
+			<required_resource resource_type="DonutsByDanver" value="5000000" at_least="true" />
+		</gate_by_city>		
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" can_shell_company_units_interact_with_this="true"
+			required_skill_type="UnitCognition" required_skill_amount="410"/>
+
+		<choice id="1" display_name="Think Deeply About The Problem" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="DigitalAfterlife" unlock_inspiration_type="ContemplationResult" project_to_start="" project_start_color=""
+				upgrade_int_granted_1="MindAnnex" />
+		</choice>
+
+	</city_event>
+
+	<!--Cont_SaberBees
+		*********************************************************************************-->
+	<city_event id="Cont_SaberBees" display_name="Saber Bees"
+		 description="Your 'weaponized bees' are unable to cut through armor. Your 5cm Spiders have plasma cutters."
+		 strategy_tip="What if you could combine those?"
+		 icon_name="SW_Bee1" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="HasEstablishedShellCompany" blocked_by_city_flag2="IsPostNuclearDelivery">
+			<required_resource resource_type="PollinatorBees" value="200000" at_least="true" />
+		</gate_by_city>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="350" />
+
+		<choice id="1" display_name="Get Scientists To Help" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_SaberBees" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_NiceAlterations
+		*********************************************************************************-->
+	<city_event id="Cont_NiceAlterations" display_name="Nice Alterations"
+		 description="The Exalter geneticist is impressed with your work on the bees. She wants to uplift three small species to sapience, wants your help.
+She and her team have the science all worked out, but are at a loss on the nano-scale engineering. This goes beyond gene therapy, into nano-robotics -- something you just demonstrated with your Saber Bees."
+		 strategy_tip="What she is proposing would be dramatically more delicate, however, because it would be primarily targeting the brain."
+		 icon_name="SK_GeneticEngineering1" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="HasEstablishedShellCompany" required_unlock="LaserBug" blocked_by_city_flag2="IsPostNuclearDelivery" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_key_contact_and_firm_up_that_identity="ExalterGeneticist"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="430" />
+		<character id="1" key_contact="ExalterGeneticist" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-80"/>
+
+		<choice id="1" display_name="Perform Feat Of Engineering" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_ExciplexLasers" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_BrainSurgery
+		*********************************************************************************-->
+	<city_event id="Cont_BrainSurgery" display_name="Brain Surgery"
+		 description="The obsession you are experiencing is unnatural. Something in your past choices has led to it, but you're far too distracted to find out why.
+You have the sense that if you push through the obsession to the other side, all will be made clear."
+		 strategy_tip="But part of you doesn't care were this obsession came from -- it interrupted you, quite rudely and out of nowhere. Part of you just wants it gone.
+Performing brain surgery on yourself is dangerous. You can stop the obsession, but you will lose all memory of how to build a specific unit for the remainder of this timeline."
+		 icon_name="CS_ComputerElectricianWireConnection" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="IsExperiencingObsession" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" can_shell_company_units_interact_with_this="true"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="160"/>
+
+		<choice id="1" display_name="End Obsession And Forget Predator" action_visibility_style="IsMoveAndInteractWithNPC" extra_code_on_chosen="ObsessionBrainSurgery"
+			description="You will forget both the elite and bulk variants."
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="" unlock_inspiration_type="" project_to_start="" project_start_color=""
+				upgrade_int_granted_1="" achievement_triggered="ItsNotRocketScience">
+				<city_flag_change flag_type="HasForgottenPredator" value="1" />
+			</possible_result>
+		</choice>
+
+		<choice id="2" display_name="End Obsession And Forget Raven" action_visibility_style="IsMoveAndInteractWithNPC" extra_code_on_chosen="ObsessionBrainSurgery"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="" unlock_inspiration_type="" project_to_start="" project_start_color=""
+				upgrade_int_granted_1="" achievement_triggered="ItsNotRocketScience">
+				<city_flag_change flag_type="HasForgottenRaven" value="1" />
+			</possible_result>
+		</choice>
+
+		<choice id="4" display_name="End Obsession And Forget Foundry" action_visibility_style="IsMoveAndInteractWithNPC" extra_code_on_chosen="ObsessionBrainSurgery"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="" unlock_inspiration_type="" project_to_start="" project_start_color=""
+				upgrade_int_granted_1="" achievement_triggered="ItsNotRocketScience">
+				<city_flag_change flag_type="HasForgottenFoundry" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_ScalingUpMicrobuilders
+		*********************************************************************************-->
+	<city_event id="Cont_ScalingUpMicrobuilders" display_name="Scaling Up Microbuilders"
+		 description="Through the haze of your obsession, you feel a constant irritation -- too few microbuilders, too little slurry."
+		 strategy_tip="It's time to industrialize if you want to build so many things, so fast."
+		 icon_name="CleanSimple_SkillB015" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="IsExperiencingObsession" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" can_shell_company_units_interact_with_this="true"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="100"/>
+
+		<choice id="1" display_name="Design New Buildings" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="SlurryMining" instantly_unlocked_2="OversizedFab" unlock_inspiration_type="ContemplationResult"
+				upgrade_int_granted_1="3mHauler" upgrade_int_granted_2="3mHauler"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_ExploitingAFederatedCorporation
+		*********************************************************************************-->
+	<city_event id="Cont_ExploitingAFederatedCorporation" display_name="Exploiting A Federated Corporation"
+		 description="Vorsiber Atomic has subdivided itself int 18 smaller corporations, and it has delegated a lot of its authority to each of them in various ways.
+Vorsiber maintains control partly by pitting these 'federated corporations' against one another, having them compete in a veneer of capitalism."
+		strategy_tip="There may be an opportunity here because of this intense competition, which often involves physical violence between federated corporations.
+To see if that's true, you'll need to steal and analyze quite a bit of data in order to see if there are any targets for you to exploit."
+		 icon_name="WEmblem185" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="UnitCognition" required_skill_amount="200"/>
+
+		<choice id="1" display_name="Get Started" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_StealCorporateRecords" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="" unlock_inspiration_type=""/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_ExploitingYinshiWellness
+		*********************************************************************************-->
+	<city_event id="Cont_ExploitingYinshiWellness" display_name="Exploiting Yinshi Wellness"
+		 description="Yinshi's clientele includes a lot of amputees who are military veterans. If you can become part of their supply chain in some way... there's quite a bit you could do."
+		 strategy_tip="The corporations who directly serve the military are locked up tight, so there's no way for you to gain access. But veterans are still useful, as many of them work as civilian contractors..."
+		 icon_name="FlatSkillC90" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_DecryptCorporateRecords"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="YinshiWellness"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="200"/>
+
+		<choice id="1" display_name="Design Anthroneuroweave" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="It's the most obvious intersection between what you know and what they're likely to want as part of their supply chain.
+Neuroweave was invented by humans for androids, rather than in a human-compatible form. It's probably not very hard to make, and would be useful. But it doesn't seem like anyone has bothered.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_DesignHumanCompatibleNeuroweave" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="" unlock_inspiration_type=""/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_ExploitingAtcaRetail
+		*********************************************************************************-->
+	<city_event id="Cont_ExploitingAtcaRetail" display_name="Exploiting Atca Retail"
+		 description="Atca is among the worst-performing corporations, but over the last few years they have seen sustained growth at a suspiciously consistent rate.
+Their growth rate is a meager 5%, so it's likely that nobody cares enough to look into this."
+		 strategy_tip="Depending on what you find, this might be a means to blackmail, or something even more exciting."
+		 icon_name="SI_Atm_Machine" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_DecryptCorporateRecords"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="AtcaRetail"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="400"/>
+
+		<choice id="1" display_name="Investigate Further" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_StealAtcaBankRecords" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="" unlock_inspiration_type=""/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_ExploitingPeakHomes
+		*********************************************************************************-->
+	<city_event id="Cont_ExploitingPeakHomes" display_name="Exploiting Peak Homes"
+		 description="Peak is the largest landlord in town. It's never been entirely clear why redevelopment stalled on the decrepit parts of town, almost a century ago."
+		 strategy_tip="On top of that, there are reports of odd sightings of racing animals of some sort, and illegal animal training facilities in those areas of town.
+Employees of Peak have been observed going to and from these locations, but very little else is known."
+		 icon_name="Pw_House9" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_DecryptCorporateRecords"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="PeakHomes"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="Ravens"/>
+
+		<choice id="1" display_name="Hide Here And Observe" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="This unit will have to stay here for quite a while.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="" unlock_inspiration_type=""
+				action_over_time_to_start="ObservePeakHomes" turns_for_action_over_time_to_last="9"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_ExploitingPeakHomes_After
+		*********************************************************************************-->
+	<city_event id="Cont_ExploitingPeakHomes_After" display_name="Underground Ursine Street Racing"
+		 description="Raven is shaking her head in disbelief as she syncs back up to your larger consciousness. You weren't aware that was a tic that you possessed.
+As her memories flood into your mind and merge with your own, you see that she's been doing a lot of motions of disbelief over the last few nights."
+		 strategy_tip="Peak Homes has an illegal underground street racing... situation. But rather than vehicles, they've chosen VERY unlikely animals.
+Horses have been extinct on Earth for centuries, but you get the sense that they would have been far too tame for these people. From what you recall, horses only raced along the ground."
+		 icon_name="Pw_House9" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_DecryptCorporateRecords"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="PeakHomes"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="Ravens" />
+
+		<choice id="1" display_name="What Is Wrong With These Idiots?" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="This is their nightly entertainment?">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="" unlock_inspiration_type="" next_event_to_start="Cont_ExploitingPeakHomes_After2"
+				action_over_time_to_start="" turns_for_action_over_time_to_last=""/>
+		</choice>
+
+	</city_event>
+		
+	<!--Cont_ExploitingPeakHomes_After2
+		*********************************************************************************-->
+	<city_event id="Cont_ExploitingPeakHomes_After2" display_name="These Animals Are Heavily Modified"
+		 description="Human jockeys ride these animals up and down the sides of buildings, and even leap from rooftop to rooftop. 
+Ursus arctos were shockingly fast climbers prior to their genetic enhancements -- many could climb trees at a rate of 1 meter per second, which is frankly insane for a 450 kg animal.
+And that was BEFORE they were given titanium claw extensions, steroid cocktails, and direct genetic alterations. Their climb rate is now closer to 4 meters per second, and they have a horizontal leap of nearly 20 meters."
+		 strategy_tip="These animals are fascinating, and are being put to the most venal use imaginable. The races only happen at night in decrepit areas of town, with their paws taking chunks out of every building they pass over.
+No wonder the urban renewal plans stalled -- it would have interfered with the underground racing circuit."
+		 icon_name="Pw_House9" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_DecryptCorporateRecords"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="PeakHomes"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="Ravens" />
+
+		<choice id="1" display_name="You... Think You Might Want Them" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="The animals. You don't want to race them, but... you want them. Probably.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="" unlock_inspiration_type="" next_event_to_start="Cont_ExploitingPeakHomes_After3"
+				action_over_time_to_start="" turns_for_action_over_time_to_last=""/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_ExploitingPeakHomes_After3
+		*********************************************************************************-->
+	<city_event id="Cont_ExploitingPeakHomes_After3" display_name="A Possible Way In"
+		 description="The danger of these animals is hard to overstate. CombatUnits are used as their handlers between races, and one swipe of a claw can dismember or behead even such a sturdy model of android.
+A series of shocks and electronic tones are used to mitigate the frequency of this, but these are still wild animals at core."
+		 strategy_tip="Raven suggests that if you want to get your hands on these animals, having a CombatUnit infiltrate would be the way to go."
+		 icon_name="Pw_House9" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_DecryptCorporateRecords"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="PeakHomes"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="Ravens" />
+
+		<choice id="1" display_name="You'll Think About It" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You have the intel you need, if you decide to go for it.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="HumaneTrap" unlock_inspiration_type="ContemplationResult" next_event_to_start=""
+				action_over_time_to_start="" turns_for_action_over_time_to_last="">
+				<city_flag_change flag_type="HasLearnedAboutParkourBears" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_UrsineInfiltration
+		*********************************************************************************-->
+	<city_event id="Cont_UrsineInfiltration" display_name="Ursine Infiltration"
+		 description="Raven's report on the Underground Ursine Street Racing was... vivid. You think you might want some of those animals for yourself.
+Since CombatUnits are used as handlers in between races, it shouldn't be a big deal for one of your own CombatUnits to get in and set them loose."
+		strategy_tip="These are deadly animals, however. To capture them, you will need Animal Capture Drones, which can be launched from your Mindports (in the Vehicle tab of command mode).
+Make sure you build enough drone frames in advance, and then be ready to capture the animals while both you and they are under heavy fire.
+However many you manage to capture are the number you have; these have so many bionic augmentations that it's not going to be a simple matter to genetically replicate them."
+		 icon_name="FlatSkillB_bear" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="HasLearnedAboutParkourBears"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="PeakHomes"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="CombatUnitsRegular"/>
+
+		<choice id="1" display_name="Blend In With The Handlers" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="This unit will have to stay here for quite a while.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="HumaneTrap" unlock_inspiration_type="ContemplationResult"
+				action_over_time_to_start="UrsineInfiltration" turns_for_action_over_time_to_last="6"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_UrsineInfiltration_After
+		*********************************************************************************-->
+	<city_event id="Cont_UrsineInfiltration_After" display_name="The Bears Are Loose"
+		 description="Sixteen in all. But angry humans with guns are also emerging."
+		 strategy_tip="Protect and catch the bears. Worry about anything else, later."
+		 icon_name="FlatSkillB_bear" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="2" required_city_flag="HasLearnedAboutParkourBears"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="PeakHomes"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="CombatUnitsRegular"/>
+
+		<choice id="1" display_name="Let's Go" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Have your Mindports ready with Animal Capture Drones (those are a consumable item)." extra_code_on_chosen="ReleaseParkourBearsNow">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="" unlock_inspiration_type="">
+				<city_flag_change flag_type="ParkourBearsAreLoose" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_BearTraining
+		*********************************************************************************-->
+	<city_event id="Cont_BearTraining" display_name="Bear Training"
+		 description="The claws of these bears are incredibly effective at taking down vehicles and mechs. However, keeping the bears from attacking your own units, and keeping them vaguely on task (also not attacking civilians or hiding in buildings) is tricky.
+The good news is that they already have extensive training with CombatUnits, as well as various established means of conditioning."
+		strategy_tip="If you prefer to just let them live the good life, you certainly can. At the best of times, trying to get bears to do exactly what you want is going to be... fraught.
+And you can't make more bears if these ones die. Eh. Just because you train them, doesn't mean you have to deploy them. It can't hurt to have them trained, right?"
+		 icon_name="FlatSkillB_bear" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="HasLearnedAboutParkourBears"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="CombatUnitsRegular"/>
+
+		<choice id="1" display_name="Start Working With The Bears" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="This unit will have to stay here for quite a while.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="" project_start_color="FriendlyProjectOrMission"
+				action_over_time_to_start="BearTraining" turns_for_action_over_time_to_last="9"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_BearTraining_After
+		*********************************************************************************-->
+	<city_event id="Cont_BearTraining_After" display_name="Training Complete"
+		 description="The bears are as trained as they're going to be. They should be safe around civilians, and your own units.
+They will absolutely shred enemy armor, and they seem to like doing it. But whether they stay on task is... sometimes a bit up to the fates."
+		 strategy_tip="If you want to deploy a bear in a location, then a deployment station will allow you to release one at a time. You can set up several around the city as you wish."
+		 icon_name="FlatSkillB_bear" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="2" required_city_flag="HasLearnedAboutParkourBears"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="CombatUnitsRegular"/>
+
+		<choice id="1" display_name="Continue" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="" extra_code_on_chosen="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="WorkReleaseBears" unlock_inspiration_type="ContemplationResult" />
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_ThreatenToExposeAtcaRetail
+		*********************************************************************************-->
+	<city_event id="Cont_ThreatenToExposeAtcaRetail" display_name="Threaten To Expose Atca Retail"
+		 description="These idiots are literally printing currency in order to hit their growth targets. This is the sort of thing that Vorsiber absolutely cannot countenance without losing its grip on the region, so consequences would be swift and severe.
+The executives in charge of this are smart enough to keep their operation small-time, so they probably understand the scope of risk they have undertaken."
+		 strategy_tip="So... now that you know their scheme... what do you want to do to them?
+You have a tremendous amount of leverage."
+		 icon_name="SI_Atm_Machine" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_DecryptAtcaBankRecords" blocked_by_city_flag="DoneWithAtcaRetailPresident"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="AtcaRetail"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="UnitCognition" required_skill_amount="200"/>
+
+		<choice id="1" display_name="Threaten Their C-Suite" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="It's worth seeing what happens, probably. You're pretty sure that they can't take you militarily.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="" unlock_inspiration_type="">
+				<city_flag_change flag_type="HasThreatenedToExposeAtcaRetail" value="1" />				
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_CollapseTheEconomy
+		*********************************************************************************-->
+	<city_event id="Cont_CollapseTheEconomy" display_name="Collapse The Economy"
+		 description="Not to be done lightly. Without an economic structure in place, there is likely to be widespread war and suffering."
+		 strategy_tip="You learned all you needed to from Atca Retail. The hard part won't be collapsing Vorsiber's currency -- the hard part will be surviving what comes after."
+		 icon_name="SK_War" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="3" required_city_flag="HasMurderedAtcaRetailPresident"/>
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="AtcaRetail" is_blocked_if_intelligence_class_less_than="4"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="UnitCognition" required_skill_amount="200"/>
+
+		<choice id="1" display_name="Do It" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="There's no coming back from this one. This timeline will be utter chaos, but it will not spill into any other timelines.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_DestroyTheBanks" project_start_color="FriendlyProjectOrMission"
+				instantly_unlocked_1="CollapsingTheSocialOrder" unlock_inspiration_type="ContemplationResult" />
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_RepairCrabs
+		*********************************************************************************-->
+	<city_event id="Cont_RepairCrabs" display_name="Repair Crabs"
+		 description="It feels like you never have enough internal robotics for all the repair spiders you want."
+		strategy_tip="Crabs are less mobile, but could provide an alternative means for repairing buildings.
+You got the idea from overhearing a conversation between some of your Veterinarians and Bionics Engineers."
+		 icon_name="FlatSkill_25" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" >
+			<required_resource resource_type="Veterinarians" at_least="true" value="2"/>
+			<required_resource resource_type="BionicsEngineers" at_least="true" value="2"/>
+		</gate_by_city>
+		
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="100"/>
+
+		<choice id="1" display_name="Design New Buildings" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Will also grant you +1 each to 8cm and 12cm Crabs!"
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="CrabbyRepairmen" instantly_unlocked_2="" unlock_inspiration_type="ContemplationResult"
+				upgrade_int_granted_1="8cmCrabs" upgrade_int_granted_2="12cmCrabs"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_TheComingWar
+		*********************************************************************************-->
+	<city_event id="Cont_TheComingWar" display_name="The Coming War"
+		 description="You can sense it... the coming war. Or rather, you can sense the potential. The war will not start without your direct intervention."
+		 strategy_tip="You have all of the key pieces that you need, except for one final bit. Do you wish to jump forward in time to the penultimate doom, so that you can get that last piece that you need?"
+		 icon_name="CS_ChessWarrior" has_no_code="true" event_is_blocked_for_actors_without_clearance="true" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_UmbilicalCollection" required_city_flag="ShouldShowTheComingWar" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="2" display_name="Jump Forward In Time?" action_visibility_style="IsMoveAndInteractWithNPC"
+			strategy_tip="Take your time and plan carefully once you make this jump forward in time." extra_code_on_chosen="JumpTo9thDoom">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" despawn_characters_on_the_right="false"/>
+		</choice>
+
+	</city_event>
+	
+	<!--Next-->
+	
+</root>

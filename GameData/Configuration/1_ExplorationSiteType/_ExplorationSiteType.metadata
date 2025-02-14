@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="exploration_site">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	<attribute key="icon_scale" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="true" tooltip="Scale multiplier of the icon."/>
+
+	<attribute key="color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the icon of this project?"/>
+	<attribute key="color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, for the glowing version."/>
+	<attribute key="color_hovered_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, when being hovered."/>
+	
+	<attribute key="debug_log_exploration_site_details" type="bool" default="false" is_required="false"
+		tooltip="If true, then a variety of debug info will be logged every time exploration sites are recalculated." />
+
+	<attribute key="can_happen_even_during_obsession" type="bool" default="false" is_required="false"
+		tooltip="If true, then even during an obsession, this contemplation can appear." />
+	
+	<attribute key="required_intelligence_class" type="int-textbox" min="1" max="17" default="1" content_width_px="50"
+		is_required="false" tooltip="The required intelligence class for this to show up."/>
+	<attribute key="required_chapter_number" type="int-textbox" min="0" max="5" default="0" content_width_px="50"
+		is_required="false" tooltip="The required chapter the game must be in for this to show up."/>
+	<attribute key="can_appear_even_after_final_doom" type="bool" default="false"
+		tooltip="If this is true, then this can appear even after the final doom. Normally false."/>
+	<attribute key="only_appears_after_final_doom" type="bool" default="false"
+		tooltip="If this is true, then this ONLY appears after the final doom."/>
+	
+	<attribute key="required_unlock_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this unlock is fully invented." />
+	<attribute key="required_unlock_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this unlock is fully invented." />
+	<attribute key="required_unlock_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this unlock is fully invented." />
+	<attribute key="blocked_by_unlock_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this unlock has already been invented OR readied." />
+	<attribute key="blocked_by_unlock_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this unlock has already been invented OR readied." />
+	<attribute key="blocked_by_unlock_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this unlock has already been invented OR readied." />
+
+	<attribute key="required_city_flag_1" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this city flag is true." />
+	<attribute key="required_city_flag_2" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this city flag is true." />
+	<attribute key="required_city_flag_3" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this city flag is true." />
+	<attribute key="blocked_by_city_flag_1" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this city flag is already true." />
+	<attribute key="blocked_by_city_flag_2" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this city flag is already true." />
+	<attribute key="blocked_by_city_flag_3" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this city flag is already true." />
+	
+	<attribute key="required_meta_flag_1" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this meta flag is true." />
+
+	<attribute key="spawns_at_building_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="false"
+		tooltip="If specified, then this will show up at buildings of that tag." />
+
+	<attribute key="spawn_poi_tag_target_limiter" type="node-dropdown" node_source="POITag" content_width_px="200" is_required="false"
+		tooltip="If specified, then any buildings must also be in a poi of this type. Only works when using spawns_at_building_tag." />
+	<attribute key="spawn_district_tag_target_limiter" type="node-dropdown" node_source="DistrictTag" content_width_px="200" is_required="false"
+		tooltip="If specified, then any buildings must also be in a district of this type. Only works when using spawns_at_building_tag." />
+	<attribute key="spawn_preferred_poi_cohort_owner_tag" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+		tooltip="If specified, then it will choose a POI owned by a cohort with this tag if at all possible. If not, then it will just ignore the POI owner." />
+
+	<attribute key="collections" type="node-list" node_source="ExplorationSiteCollection" content_width_px="300" is_required="true" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What contemplation collections is this entry part of?" />
+
+	<attribute key="target_skill_to_hit" type="int-textbox" min="1" max="500000" content_width_px="150" is_required="true"
+		tooltip="Over some number of turns, this is how many points from the required skill will be accumulated."/>
+	
+	<!--Interaction conditions-->
+	
+	<attribute key="can_shell_company_units_interact_with_this" type="bool" default="false" is_required="false"
+		tooltip="If true, then shell company units can do this. Otherwise they cannot." />
+
+	<attribute key="required_skill_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="true"
+		tooltip="The unit choosing this event option must have a flat amount of this skill to even try it." />
+	<attribute key="required_skill_amount" type="int-textbox" min="0" max="5000" content_width_px="150" is_required="true"
+		tooltip="This is the direct literal amount of this skill that they must have."/>
+
+	<attribute key="required_actor_collection" type="node-dropdown" is_required="false" node_source="ActorCollection" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then this event cannot be started from the map if the player unit is not in this collection." />
+	
+	<attribute key="required_perk_1" type="node-dropdown" node_source="ActorPerk" content_width_px="200" is_required="false"
+		tooltip="The unit choosing this interaction option must have this perk." />
+	<attribute key="required_perk_2" type="node-dropdown" node_source="ActorPerk" content_width_px="200" is_required="false"
+		tooltip="The unit choosing this interaction option must have this perk." />
+	<attribute key="required_badge_1" type="node-dropdown" node_source="ActorBadge" content_width_px="200" is_required="false"
+		tooltip="The unit choosing this interaction option must have this badge." />
+	<attribute key="required_badge_2" type="node-dropdown" node_source="ActorBadge" content_width_px="200" is_required="false"
+		tooltip="The unit choosing this interaction option must have this badge." />
+
+	<!--Gains-->
+	
+	<attribute key="instantly_unlock_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="This unlock will be instantly granted when this is completed." />
+	<attribute key="instantly_unlock_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="This unlock will be instantly granted when this is completed." />
+	<attribute key="instantly_unlock_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="This unlock will be instantly granted when this is completed." />
+
+	<attribute key="research_domain_inspiration_type" type="node-dropdown" node_source="ResearchDomain" content_width_px="200" is_required="false"
+		tooltip="This research domain gets 1 point of inspiration." />
+
+</root>

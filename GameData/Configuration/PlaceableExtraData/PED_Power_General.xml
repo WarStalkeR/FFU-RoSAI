@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<placeable id="CoolingTowerA" path="Assets/__Library/Power/General/Cooling Tower A.prefab"  display_name="Nuclear Power Plant A" resistance_to_destruction_from_collisions="200" >
+	</placeable>
+
+	<placeable id="CoolingTowerB" path="Assets/__Library/Power/General/Cooling Tower B.prefab"  display_name="Nuclear Power Plant B" resistance_to_destruction_from_collisions="200" >
+	</placeable>
+
+	<placeable id="SolarPanels" path="Assets/__Library/Power/General/Solar Panels.prefab"  display_name="Solar Panels A" >
+		<seeding_group group="SolarPanels" weight="100" />
+		<seeding_group group="GeneralFallback" weight="1" />
+	</placeable>
+
+	<placeable id="WindTurbine" path="Assets/__Library/Power/General/Wind Turbine.prefab"  display_name="Wind Turbine" >
+		<seeding_group group="WindTurbines" weight="100" />
+		<seeding_group group="GeneralFallback" weight="1" />
+	</placeable>
+	
+	<placeable id="WindTurbineB" path="Assets/__Library/Power/General/Wind Turbine B.prefab"  display_name="Wind Turbine B" >
+		<seeding_group group="WindTurbines" weight="5" />
+		<seeding_group group="GeneralFallback" weight="1" />
+	</placeable>
+
+	<placeable id="SolarPanelsB" path="Assets/__Library/Power/General/Solar Panels B.prefab"  display_name="Solar Panels B" >
+		<seeding_group group="SolarPanels" weight="100" />
+		<seeding_group group="GeneralFallback" weight="1" />
+	</placeable>
+	
+</root>

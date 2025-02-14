@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="seeding_logic_type">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="mini_tiles_to_seed_in_regions" type="node-list" node_source="LevelType" content_width_px="300"
+			tooltip="If mini tiles are to be seeded instead of procedurally-assigned buildings, then what mini tile sources should we pull from?" />
+
+	<attribute key="percent_chance_of_general_mini_tile_type_appearing_out_of_100_thousand" type="int-textbox" min="0" max="100000" default="0" content_width_px="150"
+		tooltip="When filling regions based on this logic type, what percent chance is there of seeidng one of the 'general' mini tile types here?"/>
+
+	<attribute key="is_valid_player_starting_location" type="bool" default="false" is_required="false"
+		tooltip="Is this a part of the city where the starting tile for the player can be seeded?  They can just fly their vehicle away if they don't like it, so no biggie anymore." />
+
+	<attribute key="is_fine_to_not_have_no_nsew_versions" type="bool" default="false" is_required="false"
+		tooltip="If true, it won't complain about missing a 'no nsew' variant when seeding." />
+	
+	<attribute key="extra_buildings_1_to_try_to_seed_per_region" type="int-textbox" min="0" max="100000" default="0" content_width_px="150"
+		tooltip="When trying to seed a region, do extra buildings get scattered in at all?"/>
+	<attribute key="extra_buildings_2_to_try_to_seed_per_region" type="int-textbox" min="0" max="100000" default="0" content_width_px="150"
+		tooltip="When trying to seed a region, do extra buildings get scattered in at all?"/>
+
+	<attribute key="fallback_seeding_logic_type" type="node-dropdown" node_source="PlaceableSeedingLogicType" content_width_px="200" is_required="false"
+		tooltip="If this logic fails to seed anything, then what should it try to seed instead?" />
+	
+	<sub_node id="no_nsew_indicator_mega_group">
+		<attribute key="mega_group" type="node-dropdown" node_source="PlaceableSeedingMegaGroup" content_width_px="300" is_required="true"
+			tooltip="What seeding mega-group do we want to include in our seeding logic for regions with no NSEW indicators?" />
+
+		<attribute key="weight" type="int-textbox" min="0" max="9000" default="100" content_width_px="150"
+			tooltip="When this seeding mega-group to our logic type, how much weight should we put for it compared to the average of 100?  
+			
+100 means absolutely normal, 1 would be 1% of normal, 25 is 25% of normal, 0 is literally not-at-all, and 200 would be 200% of normal."/>
+	</sub_node>
+
+	<sub_node id="regular_mega_group">
+		<attribute key="mega_group" type="node-dropdown" node_source="PlaceableSeedingMegaGroup" content_width_px="300" is_required="true"
+			tooltip="What seeding mega-group do we want to include in our seeding logic for regions with regular NSEW indicators?" />
+
+		<attribute key="weight" type="int-textbox" min="0" max="9000" default="100" content_width_px="150"
+			tooltip="When this seeding mega-group to our logic typep, how much weight should we put for it compared to the average of 100?  
+			
+100 means absolutely normal, 1 would be 1% of normal, 25 is 25% of normal, 0 is literally not-at-all, and 200 would be 200% of normal."/>
+	</sub_node>
+
+	<sub_node id="extra_buildings_1_mega_group">
+		<attribute key="mega_group" type="node-dropdown" node_source="PlaceableSeedingMegaGroup" content_width_px="300" is_required="true"
+			tooltip="What seeding mega-group do we want to include in our seeding logic for regions with regular NSEW indicators?" />
+
+		<attribute key="weight" type="int-textbox" min="0" max="9000" default="100" content_width_px="150"
+			tooltip="When this seeding mega-group to our logic type, how much weight should we put for it compared to the average of 100?  
+			
+100 means absolutely normal, 1 would be 1% of normal, 25 is 25% of normal, 0 is literally not-at-all, and 200 would be 200% of normal."/>
+	</sub_node>
+
+	<sub_node id="extra_buildings_2_mega_group">
+		<attribute key="mega_group" type="node-dropdown" node_source="PlaceableSeedingMegaGroup" content_width_px="300" is_required="true"
+			tooltip="What seeding mega-group do we want to include in our seeding logic for regions with regular NSEW indicators?" />
+
+		<attribute key="weight" type="int-textbox" min="0" max="9000" default="100" content_width_px="150"
+			tooltip="When this seeding mega-group to our logic type, how much weight should we put for it compared to the average of 100?  
+			
+100 means absolutely normal, 1 would be 1% of normal, 25 is 25% of normal, 0 is literally not-at-all, and 200 would be 200% of normal."/>
+	</sub_node>
+	
+</root>

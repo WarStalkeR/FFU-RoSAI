@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+		
+	<!--Chapter Zero Target Items
+	******************************************************************************************-->
+	<math_value id="Chapter0_AndroidsPlayerMustHave" int_min="4" internal_notes="" />
+	<math_value id="Chapter0_FailedToFindSomeplaceSafe_FailsRequired" int_min="4" internal_notes="" />
+	
+	<!--Chapter One Target Items
+	******************************************************************************************-->
+	<math_value id="Chapter1_SlurrySpidersPlayerMustHave" int_min="3" internal_notes="" />
+	<math_value id="Chapter1_MicrobuilderMiniFabsPlayerMustHave" int_min="2" internal_notes="" />
+
+	<!--Balance
+	******************************************************************************************-->
+	<math_value id="MaxTurnsBeforeActionConsideredTooSlow" int_min="15" internal_notes="This keeps players from getting into certain actions-over-time that are just way too long." />
+
+	<math_value id="OutcastLevelAtWhichGuardsFireOutOfPOIs" int_min="5" internal_notes="At this level of outcast, a unit will be targeted by guards from POIs if the guard's outcast targeting meets the criteria for that unit." />
+
+	<math_value id="OutcastLevelAtWhichMachineActorsStopCaringAboutPOIClearance" int_min="5" internal_notes="At this level of outcast, machine actor will no longer be blocked from moving into POIs of danger, since they would be shot even being near the POI." />
+
+	<math_value id="ExtraElectricityDuringRank2PlusCities" int_min="0" internal_notes="How much extra free electricity is given to players in chapter two in order to avoid them having to manually build so many wind power generators." />
+
+	<!--Research
+	******************************************************************************************-->
+	
+	<math_value id="MolecularGeneticsResearch" lang_key_optional="MolecularGeneticsResearch" int_min="80" int_max="160" internal_notes="8 per lab" />
+	<math_value id="ForensicGeneticsWork" lang_key_optional="ForensicGeneticsWork" int_min="106" int_max="214" internal_notes="6 per lab" />
+	<math_value id="ZoologicalResearch" lang_key_optional="ZoologicalResearch" int_min="106" int_max="214" internal_notes="6 per lab" />
+	<math_value id="MedicalResearch" lang_key_optional="MedicalResearch" int_min="160" int_max="320" internal_notes="4 per lab" />
+	<math_value id="MedicalCare" lang_key_optional="MedicalCare" int_min="80" int_max="160" internal_notes="4 per lab" />
+	<math_value id="VeterinaryResearch" lang_key_optional="VeterinaryResearch" int_min="160" int_max="320" internal_notes="4 per lab" />
+	<math_value id="VeterinaryCare" lang_key_optional="VeterinaryCare" int_min="80" int_max="160" internal_notes="4 per lab" />
+	<math_value id="BotanyResearch" lang_key_optional="BotanyResearch" int_min="106" int_max="214" internal_notes="6 per lab" />
+	<math_value id="BionicsEngineeringWork" lang_key_optional="BionicsEngineeringWork" int_min="40" int_max="80" internal_notes="16 per lab" />
+	<math_value id="EpidemiologyResearch" lang_key_optional="EpidemiologyResearch" int_min="40" int_max="80" internal_notes="16 per lab" />
+	<math_value id="NeurologyResearch" lang_key_optional="NeurologyResearch" int_min="160" int_max="320" internal_notes="4 per lab" />
+	<math_value id="NeurologicalCare" lang_key_optional="NeurologicalCare" int_min="80" int_max="160" internal_notes="4 per lab" />
+	<math_value id="AGIResearch" lang_key_optional="AGIResearch" int_min="20" int_max="40" internal_notes="42 max per city, it's hard to say on this one." />
+	
+	<!--
+	<math_value id="MinimumMentalEnergyForOverdrive" int_min="7"
+		internal_notes="Overdrive costs all of the mental energy you have remaining on a turn, as long as the current amount of energy is at least X. This is the value of X." />-->
+
+	<!--Structure Balance
+	******************************************************************************************-->
+	<math_value id="BaseStunForIncompleteStructures" int_min="2"
+		internal_notes="How many turns structures that are incomplete are stunned for when their subnet is damaged. Applies if structure is incomplete or the job is still installing, but NOT if the basement is being dug." />
+
+	<math_value id="FurnishingsGatheredPerCrowd" int_min="224" int_max="352"
+		internal_notes="How quickly sheltered humans gather furniture." />
+
+	<math_value id="MaxCleaningMultiplierFromFurnishings" int_min="12"
+		internal_notes="A multiplier to the normal (very slow) cleaning of filth if the maximum of furniture is in this building. Below the max, it uses a portion of this." />
+
+	<!--Cyberocracy Balance
+	******************************************************************************************-->
+	<math_value id="CyberocracyHubMinLowerClassesPresent" int_min="20000" />
+	<math_value id="CyberocracyHubMaxUpperClassesPresent" int_min="8000" />
+	
+	<!--Repairs/Healing Balance
+	******************************************************************************************-->
+	<math_value id="HealingMultiplierForStructures" int_min="36"
+		internal_notes="Given a baseline amount of repairs that something would do to units, what is the multiplier to apply when doing that same action for a structure?" />
+
+	<!--Extraction Balance
+	******************************************************************************************-->
+	<math_value id="ExtractionIntensityMaxAnchor" int_min="500"
+		internal_notes="Above this number, extraction just gives the full amount. Below this number, it gives a proportionate percentage (fuzzed) amount." />
+
+	<!--LAKE Balance
+	******************************************************************************************-->
+	<math_value id="BaseNeuralProcessingFromLAKE" int_min="1728000"
+		internal_notes="How much you get from a basic bridge with LAKE. 11520 x 150 cognition each, " />
+	
+	<!--Health Display
+	******************************************************************************************-->
+	<math_value id="Normal_HealthPerPipLow" int_min="10" int_max="150"
+		internal_notes="This is how many health go into each piece." />
+	<math_value id="Normal_HealthPerPipMid" int_min="60" int_max="700"
+		internal_notes="This is how many health go into each piece." />
+	<math_value id="Normal_HealthPerPipHigh" int_min="90"
+		internal_notes="This is how many health go into each piece." />
+
+	<math_value id="Hard_HealthPerPipLow" int_min="20" int_max="250"
+		internal_notes="This is how many health go into each piece." />
+	<math_value id="Hard_HealthPerPipMid" int_min="90" int_max="1500"
+		internal_notes="This is how many health go into each piece." />
+	<math_value id="Hard_HealthPerPipHigh" int_min="300"
+		internal_notes="This is how many health go into each piece." />
+
+	<math_value id="Extreme_HealthPerPipLow" int_min="40" int_max="500"
+		internal_notes="This is how many health go into each piece." />
+	<math_value id="Extreme_HealthPerPipMid" int_min="175" int_max="3000"
+		internal_notes="This is how many health go into each piece." />
+	<math_value id="Extreme_HealthPerPipHigh" int_min="600"
+		internal_notes="This is how many health go into each piece." />
+
+	<!--Danger From Security Clearance
+	******************************************************************************************-->
+	<math_value id="ExtraDangerFromSecurityClearancePlus1" int_min="600"
+		internal_notes="If the security clearance is one level above what we have, how much extra machine danger?" />
+	<math_value id="ExtraDangerFromSecurityClearancePlus2" int_min="1800"
+		internal_notes="If the security clearance is two levels above what we have, how much extra machine danger?" />
+	<math_value id="ExtraDangerFromSecurityClearancePlus3" int_min="6000"
+		internal_notes="If the security clearance is three levels above what we have, how much extra machine danger?" />
+	<math_value id="ExtraDangerFromSecurityClearancePlus4" int_min="7000"
+		internal_notes="If the security clearance is four levels above what we have, how much extra machine danger?" />
+	<math_value id="ExtraDangerFromSecurityClearancePlus5" int_min="9000"
+		internal_notes="If the security clearance is five levels above what we have, how much extra machine danger?" />
+	<math_value id="ExtraDangerFromSecurityClearancePlus6OrMore" int_min="18000"
+		internal_notes="If the security clearance is six or more levels above what we have (this should not be possible), how much extra machine danger?" />
+
+	<!--EndOfTime Map
+	******************************************************************************************-->
+	<math_value id="EndOfTimeMapFirstRockAngle" int_min="90" 
+		internal_notes="The y angle of the first rock."/>
+	<math_value id="EndOfTimeMapRockBatchOneSpawnRadius" int_min="200"
+		internal_notes="The overall radius of the original rock field." />
+	<math_value id="EndOfTimeMapMaxFails" int_min="100"
+		internal_notes="How many failures are allowed in seeding a single item before it gives up on that item." />
+	<math_value id="EndOfTimeMapRockBatchOneSize" int_min="18" int_max="22"
+		internal_notes="How many rocks are seeded in the first batch of rocks after the initial rock in the End of Time map." />
+	<math_value id="EndOfTimeMapZigguratSpawnRadius" int_min="400"
+		internal_notes="The overall radius of the ziggurats, after the first rock field." />
+	<math_value id="EndOfTimeMapZigguratCount" int_min="3" int_max="3"
+		internal_notes="How many ziggurats are seeded in the End of Time map." />
+	<math_value id="EndOfTimeMapZigguratRequiredDistanceFromExisting" int_min="60"
+		internal_notes="How far each ziggurat has to be from other ziggurats." />
+	<math_value id="EndOfTimeMapRockBatchTwoSpawnRadiusRange" int_min="180" int_max="500"
+		internal_notes="The rocks in this batch will seed between the minimum and maximum radius from the center." />
+	<math_value id="EndOfTimeMapRockBatchTwoSize" int_min="66" int_max="74"
+		internal_notes="How many rocks are seeded in the second batch of rocks after the ziggurats and everything else are in place." />
+	<math_value id="EndOfTimeMapPortalSpawnRadiusRange" int_min="150" int_max="300"
+		internal_notes="The portal in this batch will seed between the minimum and maximum radius from the center." />
+	<math_value id="EndOfTimeMapInitialPortalHeight" int_min="20" int_max="24"
+		internal_notes="The y position of the initial spawned portal."/>
+
+	<math_value id="EndOfTimeRisingRocksMaxToHave" int_min="60"
+		internal_notes="The maximum number of rising rocks to have at any one time."/>
+	<math_value id="EndOfTimeRisingRocksSpawnRadiusRange" int_min="150" int_max="500"
+		internal_notes="The ongoing rising rocks will seed between the minimum and maximum radius from the camera." />
+	<math_value id="EndOfTimeRisingRocksInitialHeight" int_min="-20" int_max="-24"
+		internal_notes="The y position of the initial spawned position for rising rocks."/>
+	<math_value id="EndOfTimeRisingRocksRiseSpeedRange" int_min="200" int_max="460"
+		internal_notes="The speed at which the rising rocks rise."/>
+	<math_value id="EndOfTimeRisingRocksHangtimeMilliseconds" int_min="2600" int_max="8000"
+		internal_notes="How many milliseconds they hang in the air before disappearing."/>
+	<math_value id="EndOfTimeRisingRocksTargetHeight" int_min="106" int_max="224"
+		internal_notes="The y position that rising rocks will move toward."/>
+	<math_value id="EndOfTimeRisingRocksWaterFallSpeedRange" int_min="350" int_max="560"
+		internal_notes="The speed that water falls off the rising rocks."/>
+	<math_value id="EndOfTimeRisingRocksWaterMinDrawHeight" int_min="-10"
+		internal_notes="The height that the water draws above."/>
+	
+	<!--Visual Bits
+	******************************************************************************************-->
+	<math_value id="LockedAbilityBackgroundIndex" int_min="13"
+		internal_notes="If an ability is locked, what background image to use?" />
+	
+	<!--Tooltip Widths
+	******************************************************************************************-->
+	<math_value id="TooltipWide" int_min="550" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipMid" int_min="490" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipNarrow" int_min="410" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipAbilityBarTooltip" int_min="470" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipAbilityBarNote" int_min="320" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipLowerSecondarySideCorner" int_min="550" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipNoteTextPrimarySideCorner" int_min="220" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipDireWarning" int_min="440" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipChecklist" int_min="260" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipControlsInstructions" int_min="400" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipUnitCard" int_min="240" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipStructureCard" int_min="260" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipCategoryNarrow" int_min="240" internal_notes="How wide will the tooltips of this scaling type be?" />
+	<math_value id="TooltipDaemonCard" int_min="200" internal_notes="How wide will the tooltips of this scaling type be?" />
+
+	<!--Various Action Balance Levers
+	******************************************************************************************-->
+	
+	<!--Other
+	******************************************************************************************-->
+	
+</root>

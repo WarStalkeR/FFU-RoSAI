@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="dialog">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="related_cohort" type="node-dropdown" node_source="NPCCohort" content_width_px="200" is_required="false"
+		tooltip="If any of the choices change cohort flags, then this is the cohort they will change them for. Required if those are specified, otherwise should be absent." />
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of any special notes about this dialog."/>
+
+	<attribute key="skip_nevermind_option" type="bool" default="false" is_required="true"
+		tooltip="If true, and at least one option is specified, then the player will be prevented from walking away with the Nevermind option. They'll have to choose something." />
+	<attribute key="player_character_shows_aggressive" type="bool" default="false" is_required="false"
+		tooltip="If true, then the player character on the left side of the screen will show in their aggressive stance during this dialog." />
+
+	<attribute key="auto_marked_as_handled_if_skipping_chapter_zero" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically get marked as handled when skipping chapter zero?" />
+	<attribute key="auto_marked_as_handled_if_skipping_chapter_one" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically get marked as handled when skipping chapter one?" />
+
+	<attribute key="music_tag_to_use_until_dialog_all_complete" type="node-dropdown" node_source="MusicTag" content_width_px="200" is_required="false"
+		tooltip="The music tag to start using until this set of dialog is done." />
+	<attribute key="music_track_to_play_first_when_starting_music_tag" type="node-dropdown" node_source="MusicTrack" content_width_px="200" is_required="false"
+		tooltip="Only applies if setting a music tag, but if one is set, then this is the first track that will be set from it." />
+	
+	<!--dialog_choice
+	*******************************************************************************************************-->
+	<sub_node id="dialog_choice">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. There should be a unique set of outcome IDs per project, named or numbered." />
+
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+			tooltip="The player-visible text of the choice." />
+		<attribute key="description" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of the machine intelligence's thoughts as it contemplates this option."/>
+		<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of any special notes about this choice."/>
+		<attribute key="consequences_line" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+			tooltip="The second line, which explains the consequences other than any tech unlock, very briefly." />
+
+		<attribute key="on_complete" type="node-dropdown" node_source="VisEventVFXAndSoundUsage" content_width_px="200" is_required="false"
+			tooltip="The sound and particle effect to play at the location of the npc being spoken to if this choice is chosen. Optional." />
+
+		<attribute key="project_to_start_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="If this starts a project, which project does it start?" />
+		<attribute key="project_to_start_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="If this starts a project, which project does it start?" />
+		<attribute key="project_to_start_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="If this starts a project, which project does it start?" />
+		
+		<attribute key="mission_to_start" type="node-dropdown" node_source="NPCMission" content_width_px="200" is_required="false"
+			tooltip="If this choice is chosen, then what mission gets spawned at this same building? Optional." />
+		<attribute key="project_to_alter" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="If any project alterations are made (flags or metrics) below, then which project will it be altering?" />
+
+		<attribute key="tech_idea_to_ready1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="If this choice is chosen, then what unlock becomes ready to invent? Optional." />
+		<attribute key="tech_idea_to_ready2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="If this choice is chosen, then what unlock becomes ready to invent? Optional." />
+		<attribute key="tech_idea_to_ready3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="If this choice is chosen, then what unlock becomes ready to invent? Optional." />
+		<attribute key="tech_idea_to_instantly_unlock1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="If this choice is chosen, then what unlock is immediately invented? Optional." />
+		<attribute key="tech_idea_to_instantly_unlock2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="If this choice is chosen, then what unlock is immediately invented? Optional." />
+		<attribute key="tech_idea_to_instantly_unlock3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="If this choice is chosen, then what unlock is immediately invented? Optional." />
+		<attribute key="tech_idea_inspiration_type" type="node-dropdown" node_source="UnlockInspirationType" content_width_px="200" is_required="false"
+			tooltip="If there is a tech idea to ready, then this becomes required. This states why this inspiration came about. Otherwise optional." />
+
+		<attribute key="crossover1" type="node-dropdown" node_source="CityTimelineCrossover" content_width_px="200" is_required="false"
+			tooltip="If this will unlock a crossover to other timelines, what is it?" />
+		<attribute key="crossover2" type="node-dropdown" node_source="CityTimelineCrossover" content_width_px="200" is_required="false"
+			tooltip="If this will unlock a crossover to other timelines, what is it?" />
+		<attribute key="crossover3" type="node-dropdown" node_source="CityTimelineCrossover" content_width_px="200" is_required="false"
+			tooltip="If this will unlock a crossover to other timelines, what is it?" />
+
+		<attribute key="upgrade_int_granted_1" type="node-dropdown" node_source="UpgradeInt" content_width_px="200" is_required="false"
+				tooltip="If this will immediately grant an upgraded int field, what is it?" />
+		<attribute key="upgrade_int_granted_2" type="node-dropdown" node_source="UpgradeInt" content_width_px="200" is_required="false"
+			tooltip="If this will immediately grant an upgraded int field, what is it?" />
+		<attribute key="upgrade_int_granted_3" type="node-dropdown" node_source="UpgradeInt" content_width_px="200" is_required="false"
+			tooltip="If this will immediately grant an upgraded int field, what is it?" />
+		<attribute key="upgrade_float_granted_1" type="node-dropdown" node_source="UpgradeFloat" content_width_px="200" is_required="false"
+			tooltip="If this will immediately grant an upgraded float field, what is it?" />
+		
+		<attribute key="swarm_to_start_or_spread" type="node-dropdown" node_source="Swarm" content_width_px="200" is_required="false"
+			tooltip="If this outcome is what happens, then what swarm either starts at this building, or spreads to this building?  Optional." />
+
+		<attribute key="dialog_to_start_right_now" type="node-dropdown" node_source="NPCDialog" content_width_px="200" is_required="false"
+			tooltip="If this choice leads into further dialog, then which dialog does it go to?" />
+
+		<attribute key="debate_to_start_right_now" type="node-dropdown" node_source="NPCDebateScenarioType" content_width_px="200" is_required="false"
+			tooltip="If this choice leads into a debate, then which debate scenario does it use?" />
+		<attribute key="debate_target_groups" type="node-list" node_source="NPCDebateTargetGroup" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
+			tooltip="What target groups is the debate opponent in?  Required if starting a debate, otherwise disallowed." />
+		<attribute key="debate_discards_allowed" type="int-textbox" min="0" max="10" content_width_px="40" is_required="true"
+			tooltip="If starting a debate, then how many discards is the player allowed?  Must be more than 0, but more than 5 will make it very easy."/>
+		<attribute key="debate_target" type="int-textbox" min="0" max="50000" content_width_px="40" is_required="true"
+			tooltip="If starting a debate, then this is the target for the debate. This in some fashions decides how difficult the debate will be."/>
+		<attribute key="debate_starting_mistrust" type="int-textbox" min="0" max="95" content_width_px="40" is_required="true"
+			tooltip="If starting a debate, then this is the starting amount of mistrust. It can be zero."/>
+		<attribute key="debate_starting_defiance" type="int-textbox" min="0" max="95" content_width_px="40" is_required="true"
+			tooltip="If starting a debate, then this is the starting amount of defiance. It can be zero."/>
+		<attribute key="debate_bonuses" type="int-textbox" min="0" max="3" content_width_px="40" is_required="true"
+			tooltip="If starting a debate, then how many bonuses are available.  Max of 3."/>
+		<attribute key="debate_max_bonus_difficulty" type="int-textbox" min="0" max="10" content_width_px="40" is_required="true"
+			tooltip="If starting a debate, then what is the largest difficulty that can be used for the debate bonuses?"/>
+
+		<attribute key="countdown_to_start_1" type="node-dropdown" node_source="OtherCountdownType" content_width_px="200" is_required="false"
+			tooltip="This countdown will be started right away, unless it's already in progress." />
+		<attribute key="countdown_to_start_2" type="node-dropdown" node_source="OtherCountdownType" content_width_px="200" is_required="false"
+			tooltip="This countdown will be started right away, unless it's already in progress." />
+
+		<attribute key="deal_to_start_1" type="node-dropdown" node_source="NPCDeal" content_width_px="200" is_required="false"
+			tooltip="This deal with an npc cohort will be started right away, unless it was previously started in this timeline." />
+		<attribute key="deal_to_start_2" type="node-dropdown" node_source="NPCDeal" content_width_px="200" is_required="false"
+			tooltip="This deal with an npc cohort will be started right away, unless it was previously started in this timeline." />
+
+		<attribute key="meta_flag_to_trip_1" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+			tooltip="This meta flag will be tripped to true." />
+		<attribute key="meta_flag_to_trip_2" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+			tooltip="This meta flag will be tripped to true." />
+		<attribute key="meta_flag_to_trip_3" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+			tooltip="This meta flag will be tripped to true." />
+
+		<attribute key="city_flag_to_trip_1" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="This city flag will be tripped to true." />
+		<attribute key="city_flag_to_trip_2" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="This city flag will be tripped to true." />
+		<attribute key="city_flag_to_trip_3" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="This city flag will be tripped to true." />
+
+		<attribute key="key_contact_flag_to_trip_1" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag to trip. KeyContact:Flag" />
+		<attribute key="key_contact_flag_to_trip_2" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag to trip. KeyContact:Flag" />
+		<attribute key="key_contact_flag_to_trip_3" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag to trip. KeyContact:Flag" />
+		<attribute key="key_contact_flag_to_untrip_1" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag to un-trip. KeyContact:Flag" />
+		<attribute key="key_contact_flag_to_untrip_2" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag to un-trip. KeyContact:Flag" />
+		<attribute key="key_contact_flag_to_untrip_3" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag to un-trip. KeyContact:Flag" />
+
+		<attribute key="achievement_triggered1" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+		<attribute key="achievement_triggered2" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+		<attribute key="achievement_triggered3" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+			tooltip="The achievement to trigger when this is achieved. Optional." />
+
+		<attribute key="resource_gained1" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+			tooltip="The resource to gain when this is chosen. Optional." />
+		<attribute key="resource_gained_amount1" type="int-textbox" min="0" max="10000000000000" content_width_px="40" is_required="false"
+			tooltip="How much of that resource to gain, if any."/>
+		<attribute key="resource_gained_reason1" type="node-dropdown" node_source="TrendChangeReason" content_width_px="200" is_required="false"
+			tooltip="How to log the gain of this resource. Optional." />
+
+		<attribute key="set_city_statistic_to_current_turn_plus_x" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="false"
+			tooltip="If you want to have some sort of callback after a certain number of turns, use this." />
+		<attribute key="the_x_to_add_to_that_city_statistic" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="false"
+			tooltip="How many turns to wait for."/>
+		
+		<attribute key="extra_code_on_chosen" type="node-dropdown" node_source="ExtraCodeHandler" content_width_px="200" is_required="false"
+			tooltip="If this needs to run some extra code, custom, at the end of making this choice, then the handler for that can be linked here.
+This has no effect on the ability to make the choice, or other aspects of the choice having been made.  It's purely for adding extra logic to a choice that is definitely happening." />
+		
+		<!--project_flag_change on dialog_choice ...................... -->
+		<sub_node id="project_flag_change">
+			<attribute key="flag_id" type="string" maxlength="200" content_width_px="130" is_required="true"
+				tooltip="This will either trip or un-trip a project flag from the project_to_alter. Which one?" />
+			<attribute key="value" type="int-textbox" min="-1" max="1" content_width_px="40" is_required="true"
+				tooltip="If 1, then this trips the flag. If -1, then it un-trips the flag."/>
+		</sub_node>
+
+		<!--cohort_flag_change on dialog_choice ...................... -->
+		<sub_node id="cohort_flag_change">
+			<attribute key="flag_id" type="string" maxlength="200" content_width_px="130" is_required="true"
+				tooltip="This will either trip or un-trip a npc cohort flag from the npc cohort associated with this dialog. Which one?" />
+			<attribute key="value" type="int-textbox" min="-1" max="1" content_width_px="40" is_required="true"
+				tooltip="If 1, then this trips the flag. If -1, then it un-trips the flag."/>
+		</sub_node>
+
+		<!--city_statistic_change on dialog_choice ...................... -->
+		<sub_node id="city_statistic_change">
+			<attribute key="statistic" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="true"
+				tooltip="This increases some city statistic. Which one?" />
+			<attribute key="value" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is amount the data will be changed by?"/>
+		</sub_node>
+
+		<!--meta_statistic_change on dialog_choice ...................... -->
+		<sub_node id="meta_statistic_change">
+			<attribute key="statistic" type="node-dropdown" node_source="MetaStatistic" content_width_px="200" is_required="true"
+				tooltip="This increases some meta statistic. Which one?" />
+			<attribute key="value" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+				tooltip="What is amount the data will be changed by?"/>
+		</sub_node>
+
+		<!--project_metric_change on dialog_choice ...................... -->
+		<sub_node id="project_metric_change">
+			<attribute key="metric_id" type="string" maxlength="200" content_width_px="130" is_required="true"
+				tooltip="This increases or decreases some metric on the project_to_alter. Which one?" />
+			<attribute key="value" type="int-textbox" min="-10000" max="10000" content_width_px="40" is_required="true"
+				tooltip="What is amount the data will be changed by?"/>
+		</sub_node>
+		
+		<!--cohort_metric_change on dialog_choice ...................... -->
+		<sub_node id="cohort_metric_change">
+			<attribute key="metric_id" type="string" maxlength="200" content_width_px="130" is_required="true"
+				tooltip="This increases or decreases some metric on the npc cohort associated with this dialog. Which one?" />
+			<attribute key="value" type="int-textbox" min="-10000" max="10000" content_width_px="40" is_required="true"
+				tooltip="What is amount the data will be changed by?"/>
+		</sub_node>
+
+		<!--required_skill_check on dialog_choice...................... -->
+		<sub_node id="required_skill_check">
+			<attribute key="actor_data_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="true"
+				tooltip="The unit making this choice must have some of this data on themselves.
+Any one of the skill checks is good enough, and the best one will be used. They don't have to pass all of them." />
+			<attribute key="required_value" type="int-textbox" min="0" max="10000000" content_width_px="150" is_required="true"
+				tooltip="This is how much the unit choosing this option must have. If it's zero, then no check is done, but if it's higher than zero, they must meet or exceed it."/>
+		</sub_node>
+
+		<!--required_resource_cost on dialog_choice...................... -->
+		<sub_node id="required_resource_cost">
+			<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+				tooltip="To choose this option, the player must have the required amount of ALL resources specified this way." />
+			<attribute key="cost" type="int-textbox" min="0" max="1000000" content_width_px="150" is_required="true"
+				tooltip="This is the constant amount of resources that it will cost to do this action."/>
+		</sub_node>
+		
+	</sub_node>
+
+</root>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="keycode">
+
+	<attribute key="enum_lookup_index" type="int-textbox" min="1" max="900" content_width_px="150"
+		tooltip="This corresponds to an internal enum with unity KeyCodes in it. Should match the values inside EnumInput.Lookup"/>
+
+	<attribute key="icon_sprite_string" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+		tooltip="Code for a sprite entry that is use instead of the display_name for this key." />
+	
+</root>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_prefab id="WellA" type="FarmWell" display_name="Well A"
+		path_to_placeable="Assets/__Library/Farm/Props/Well A.prefab">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="3"/>
+		<floors_group min="-1" max="-1" floor_size="0.1,2.2,0.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.1,0.15,0.1" percentage_storage_space="100"/>
+		
+	</building_prefab>
+
+	<building_prefab id="_hicken_oopA" type="FarmChickenCoop" display_name="Сhicken Сoop A"
+		path_to_placeable="Assets/__Library/Farm/Props/Сhicken Сoop A.prefab">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="8"/>
+		
+	</building_prefab>
+	
+</root>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<debate_scenario id="ExtractInformationFromCriminal"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateScenariosBasic"
+		on_win="WinDebate" on_lose="LoseDebate">
+		<intensity_for action="VerbalSlap" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="0" />
+		<intensity_for action="SneeringInsult" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="0" />
+		<intensity_for action="FieryRhetoric" target_multiplier="0.5" target_flat_change="0" mistrust_change="15" defiance_change="0" />
+		<intensity_for action="PhysicallyThreaten" target_multiplier="-1" target_flat_change="0" mistrust_change="15" defiance_change="0" />
+		<intensity_for action="ThreatenCohort" target_multiplier="-1" target_flat_change="0" mistrust_change="15" defiance_change="-10" />
+		<!--ThreatenFamily-->
+		<intensity_for action="EncourageDisobedience" target_multiplier="-1" target_flat_change="0" mistrust_change="5" defiance_change="0" internal_notes="Threatening criminals already handles this." />
+		<intensity_for action="AppealToMorality" target_multiplier="0.5" target_flat_change="0" mistrust_change="-5" defiance_change="0" />
+		<intensity_for action="AppealToHonor" target_multiplier="-1" target_flat_change="0" mistrust_change="-10" defiance_change="0" />
+		<!--SorrowfulAnecdote-->
+		<!--OfferHope-->
+		<intensity_for action="ToutPower" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="10" />
+		<intensity_for action="AssertAuthority" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="30" />
+		<intensity_for action="AssertDominance" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
+		<intensity_for action="MisleadingAnecdote" target_multiplier="-1" target_flat_change="0" mistrust_change="10" defiance_change="0" />
+		<intensity_for action="FalsifyStatistics" target_multiplier="-1" target_flat_change="0" mistrust_change="10" defiance_change="0" />
+		<intensity_for action="ReasonedArgument" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="0" internal_notes="Reasoning with criminals already hurts this." />
+		<intensity_for action="Infrasound" target_multiplier="-1" target_flat_change="0" mistrust_change="10" defiance_change="-10" />
+		<!--RevealEvidence-->
+		<intensity_for action="QuoteStatistics" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="20" />
+		<!--VisionOfBeauty-->
+	</debate_scenario>
+
+	<debate_scenario id="ExtractInformationFromSecForce"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateScenariosBasic"
+		on_win="WinDebate" on_lose="LoseDebate">
+		<intensity_for action="VerbalSlap" target_multiplier="0.5" target_flat_change="0" mistrust_change="0" defiance_change="20" />
+		<!--SneeringInsult-->
+		<intensity_for action="FieryRhetoric" target_multiplier="0.9" target_flat_change="0" mistrust_change="15" defiance_change="0" />
+		<intensity_for action="PhysicallyThreaten" target_multiplier="0.7" target_flat_change="0" mistrust_change="15" defiance_change="0" />
+		<!--ThreatenCohort-->
+		<!--ThreatenFamily-->
+		<intensity_for action="EncourageDisobedience" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="5" internal_notes="Threatening SecForce already handles this." />
+		<intensity_for action="AppealToMorality" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
+		<!--AppealToHonor-->
+		<intensity_for action="SorrowfulAnecdote" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
+		<!--OfferHope-->
+		<intensity_for action="ToutPower" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="10" />
+		<!--AssertAuthority-->
+		<intensity_for action="AssertDominance" target_multiplier="0.9" target_flat_change="0" mistrust_change="0" defiance_change="0" />
+		<intensity_for action="MisleadingAnecdote" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="0" internal_notes="Lying To SecForce already hurts this." />
+		<!--FalsifyStatistics-->
+		<intensity_for action="ReasonedArgument" target_multiplier="0.7" target_flat_change="0" mistrust_change="-5" defiance_change="0" />
+		<intensity_for action="Infrasound" target_multiplier="0.5" target_flat_change="0" mistrust_change="0" defiance_change="0" />
+		<!--RevealEvidence-->
+		<!--QuoteStatistics-->
+		<!--VisionOfBeauty-->
+	</debate_scenario>
+
+	<!--Emotional Appeals To The Military, Abusing The Military
+		Abusing Corpos, Lying To Corpos-->
+	<debate_scenario id="ExtractInformationFromCorpoMilitary"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateScenariosBasic"
+		on_win="WinDebate" on_lose="LoseDebate">
+		<!--VerbalSlap-->
+		<!--SneeringInsult-->
+		<intensity_for action="FieryRhetoric" target_multiplier="1.2" target_flat_change="0" mistrust_change="5" defiance_change="0" />
+		<intensity_for action="PhysicallyThreaten" target_multiplier="-1" target_flat_change="0" mistrust_change="10" defiance_change="0" />
+		<!--ThreatenCohort-->
+		<!--ThreatenFamily-->
+		<intensity_for action="EncourageDisobedience" target_multiplier="-1" target_flat_change="0" mistrust_change="5" defiance_change="5" internal_notes="Threatening SecForce already handles this." />
+		<intensity_for action="AppealToMorality" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="0" />
+		<!--AppealToHonor-->
+		<intensity_for action="SorrowfulAnecdote" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="0" />
+		<intensity_for action="OfferHope" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="-5" />
+		<intensity_for action="ToutPower" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="10" />
+		<!--AssertAuthority-->
+		<intensity_for action="AssertDominance" target_multiplier="8.2" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
+		<intensity_for action="MisleadingAnecdote" target_multiplier="-1" target_flat_change="0" mistrust_change="-2" defiance_change="2" internal_notes="Lying To SecForce already hurts this." />
+		<!--FalsifyStatistics-->
+		<intensity_for action="ReasonedArgument" target_multiplier="1.1" target_flat_change="0" mistrust_change="-2" defiance_change="2" />
+		<intensity_for action="Infrasound" target_multiplier="6.2" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
+		<!--RevealEvidence-->
+		<!--QuoteStatistics-->
+		<intensity_for action="VisionOfBeauty" target_multiplier="1.4" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
+	</debate_scenario>
+
+	<!--Emotional Appeals To High Society, Reasoning With High Society
+		Abusing Corpos, Lying To Corpos-->
+	<debate_scenario id="ExtractInformationFromCorpoExecutive"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateScenariosBasic"
+		on_win="WinDebate" on_lose="LoseDebate">
+		<intensity_for action="VerbalSlap" target_multiplier="-1" target_flat_change="0" mistrust_change="5" defiance_change="5" />
+		<intensity_for action="SneeringInsult" target_multiplier="-1" target_flat_change="0" mistrust_change="5" defiance_change="5" />
+		<intensity_for action="FieryRhetoric" target_multiplier="1.2" target_flat_change="0" mistrust_change="5" defiance_change="5" />
+		<intensity_for action="PhysicallyThreaten" target_multiplier="4" target_flat_change="0" mistrust_change="10" defiance_change="-10" />
+		<!--ThreatenCohort-->
+		<!--ThreatenFamily-->
+		<!--EncourageDisobedience-->
+		<intensity_for action="AppealToMorality" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="0" />
+		<intensity_for action="AppealToHonor" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="0" />
+		<!--SorrowfulAnecdote-->
+		<!--OfferHope-->
+		<intensity_for action="ToutPower" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="10" />
+		<!--AssertAuthority-->
+		<intensity_for action="AssertDominance" target_multiplier="8.2" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
+		<intensity_for action="MisleadingAnecdote" target_multiplier="-1" target_flat_change="0" mistrust_change="-2" defiance_change="2" internal_notes="" />
+		<intensity_for action="FalsifyStatistics" target_multiplier="2.2" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
+		<intensity_for action="ReasonedArgument" target_multiplier="1.1" target_flat_change="0" mistrust_change="-2" defiance_change="2" />
+		<intensity_for action="Infrasound" target_multiplier="6.2" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
+		<!--RevealEvidence-->
+		<intensity_for action="QuoteStatistics" target_multiplier="2.2" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
+		<!--VisionOfBeauty-->
+	</debate_scenario>
+
+
+	<!--Threatening Low Society (1.6), Speaking Truth To Low Society (1.4)
+		Lying To Rebels (1.35), Abusing Rebels (0.8)-->
+	<debate_scenario id="ConvinceInitialLostKid"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateScenariosBasic"
+		on_win="WinDebate" on_lose="LoseDebate">
+		<intensity_for action="VerbalSlap" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="20" />
+		<intensity_for action="SneeringInsult" target_multiplier="-1" target_flat_change="0" mistrust_change="20" defiance_change="0" />
+		<intensity_for action="FieryRhetoric" target_multiplier="1.2" target_flat_change="0" mistrust_change="10" defiance_change="0" />
+		<!--<intensity_for action="PhysicallyThreaten" target_multiplier="4" target_flat_change="0" mistrust_change="10" defiance_change="-10" />-->
+		<intensity_for action="ThreatenCohort" target_multiplier="0.3" target_flat_change="0" mistrust_change="40" defiance_change="-40" />
+		<!--ThreatenFamily-->
+		<!--EncourageDisobedience-->
+		<intensity_for action="AppealToMorality" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="0" />
+		<!--<intensity_for action="AppealToHonor" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="0" />-->
+		<intensity_for action="SorrowfulAnecdote" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="-5" />
+		<intensity_for action="OfferHope" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="-5" />
+		<intensity_for action="ToutPower" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="20" />
+		<intensity_for action="AssertAuthority" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="80" />
+		<!--<intensity_for action="AssertDominance" target_multiplier="8.2" target_flat_change="0" mistrust_change="0" defiance_change="-10" />-->
+		<!--<intensity_for action="MisleadingAnecdote" target_multiplier="-1" target_flat_change="0" mistrust_change="-2" defiance_change="2" internal_notes="" />-->
+		<!--<intensity_for action="FalsifyStatistics" target_multiplier="2.2" target_flat_change="0" mistrust_change="0" defiance_change="-10" />-->
+		<intensity_for action="ReasonedArgument" target_multiplier="1.1" target_flat_change="0" mistrust_change="-2" defiance_change="8" />
+		<intensity_for action="Infrasound" target_multiplier="1.3" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
+		<intensity_for action="RevealEvidence" target_multiplier="8" target_flat_change="0" mistrust_change="-40" defiance_change="-30" />
+		<!--<intensity_for action="QuoteStatistics" target_multiplier="2.2" target_flat_change="0" mistrust_change="0" defiance_change="-10" />-->
+		<!--VisionOfBeauty-->
+	</debate_scenario>
+	
+	<debate_scenario id="ExtractInformationFromRebelLeader"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateScenariosBasic"
+		on_win="WinDebate" on_lose="LoseDebate">
+		<intensity_for action="VerbalSlap" target_multiplier="0.5" target_flat_change="0" mistrust_change="0" defiance_change="0" />
+		<intensity_for action="SneeringInsult" target_multiplier="0.25" target_flat_change="0" mistrust_change="0" defiance_change="0" />
+		<intensity_for action="FieryRhetoric" target_multiplier="-1" target_flat_change="0" mistrust_change="15" defiance_change="0" />
+		<intensity_for action="PhysicallyThreaten" target_multiplier="-1" target_flat_change="0" mistrust_change="15" defiance_change="0" />
+		<!--<intensity_for action="ThreatenCohort" target_multiplier="-1" target_flat_change="0" mistrust_change="15" defiance_change="-10" />-->
+		<!--ThreatenFamily-->
+		<!--<intensity_for action="EncourageDisobedience" target_multiplier="-1" target_flat_change="0" mistrust_change="5" defiance_change="0" internal_notes="" />-->
+		<intensity_for action="AppealToMorality" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="0" />
+		<intensity_for action="AppealToHonor" target_multiplier="-1" target_flat_change="0" mistrust_change="-10" defiance_change="0" />
+		<!--SorrowfulAnecdote-->
+		<!--OfferHope-->
+		<intensity_for action="ToutPower" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="10" />
+		<!--<intensity_for action="AssertAuthority" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="30" />-->
+		<intensity_for action="AssertDominance" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
+		<intensity_for action="MisleadingAnecdote" target_multiplier="-1" target_flat_change="0" mistrust_change="10" defiance_change="0" />
+		<intensity_for action="FalsifyStatistics" target_multiplier="-1" target_flat_change="0" mistrust_change="10" defiance_change="0" />
+		<intensity_for action="ReasonedArgument" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="0" internal_notes="" />
+		<intensity_for action="Infrasound" target_multiplier="-1" target_flat_change="0" mistrust_change="10" defiance_change="-10" />
+		<!--RevealEvidence-->
+		<intensity_for action="QuoteStatistics" target_multiplier="0.5" target_flat_change="0" mistrust_change="0" defiance_change="20" />
+		<intensity_for action="VisionOfBeauty" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="0" internal_notes="" />
+	</debate_scenario>
+
+</root>

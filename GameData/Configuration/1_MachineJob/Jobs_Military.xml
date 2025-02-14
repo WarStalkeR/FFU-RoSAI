@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<job id="AndroidLauncher" display_name="Android Launcher" marker_color="BrightCyan" ui_color="#fefefe"
+		is_locked_before_unlock="Catapult"
+		description="Command Mode allows you to deploy androids within range of these launchers."
+		strategy_tip_optional="The androids are rapidly manufactured here, and able to be deployed anywhere within the movement range of that android."
+		icon_name="HM_ShapeCylinder" turns_to_install="4" required_structure_type="MachineAndroidTower" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsNonCode"
+		job_classes="Factory" internal_robotics_type_needed="AndroidDropShuttle" internal_robots_count_needed="1" scrap_if_above_internal_robotics_cap="true"
+		tags="SourceOfAndroids" shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingFactory">
+		<initial_actor_rating data_type="RequiredElectricity" value="5050" />
+		<resource_cost resource_type="Microbuilders" cost="4000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="NeuroweaveFactory" display_name="Neuroweave Factory" marker_color="BrightGold2" ui_color="#fefefe"
+		is_locked_before_unlock="SingularProduction"
+		description="Produces and stores the connective wiring required by all units."
+		strategy_tip_optional=""
+		icon_name="SI_Robot_Arm1" turns_to_install="3" required_structure_type="HiddenRoom" job_work_order_priority="900"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		resource_cap_to_increase_1="Neuroweave" resource_cap_increased_flat1="2500" is_suggested_to_always_build_at_least="4" can_appear_even_after_final_doom="true" scrap_if_above_internal_robotics_cap="true"
+		tags="SourceOfAndroids" job_classes="Factory" internal_robotics_type_needed="Neuroweaver" internal_robots_count_needed="2" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingMilitary">
+		<initial_actor_rating data_type="RequiredElectricity" value="1010" />
+		<math_int id="ElementalSlurry" int_min="1000" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="Neuroweave" int_min="250" income_or_expense_resource="Neuroweave" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="600" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="RoboticMotivatorFactory" display_name="Robotic Motivator Factory" marker_color="BrightCyan" ui_color="#fefefe"
+		is_locked_before_unlock="BulkProduction"
+		description="Builds and stores components that can be used to run Bulk androids. Bulk androids act on their own, separate from your consciousness."
+		strategy_tip_optional=""
+		icon_name="WEmblem195" turns_to_install="4" required_structure_type="SeizedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Factory" internal_robotics_type_needed="Neuroweaver" internal_robots_count_needed="1" scrap_if_above_internal_robotics_cap="true"
+		resource_cap_to_increase_1="RoboticMotivator" resource_cap_increased_flat1="45" is_suggested_to_always_build_at_least="2" can_appear_even_after_final_doom="true"
+		tags="SourceOfAndroids" related_resource_1="ElementalSlurry" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingFactory">
+		<initial_actor_rating data_type="RequiredElectricity" value="4090" />
+		<math_int id="ElementalSlurry" int_min="9000" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="Microbuilders" int_min="99" income_or_expense_resource="Microbuilders" math_type="InputCost" />
+		<math_int id="RoboticMotivator" int_min="9" income_or_expense_resource="RoboticMotivator" math_type="OutputResult" />		
+		<resource_cost resource_type="Microbuilders" cost="4000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="RemoteUnitController" display_name="Remote Unit Controller" marker_color="DeepPurple" ui_color="#fefefe"
+		is_locked_before_unlock="ExpandingArmy"
+		description="Increases the number of bulk squads and captured units you can have."
+		strategy_tip_optional="A massive supercomputer is required to run these, leading to substantial electrical costs."
+		icon_name="SI_Machine_Learning10" turns_to_install="3" required_structure_type="HiddenRoom" job_work_order_priority="60000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" is_suggested_to_always_build_at_least="2"
+		job_classes="Computing" internal_robotics_type_needed="ComputingClient" internal_robots_count_needed="1" can_appear_even_after_final_doom="true"
+		tags="SourceOfAndroids" related_resource_1="BulkAndroidFrameKit" shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingMilitary">
+		<initial_actor_rating data_type="RequiredElectricity" value="2080" />
+		<math_int id="ComputeTime" int_min="20900" income_or_expense_resource="ComputeTime" math_type="InputCost" />
+		<math_int id="AddedBulkUnitCapacity" int_min="2" income_or_expense_resource="InvisibleUnusedResource" math_type="OutputResult" provides_upgrade_int="BulkUnitCapacity" icon_color="#8DDBFF" />
+		<math_int id="AddedCapturedUnitCapacity" int_min="1" income_or_expense_resource="InvisibleUnusedResource" math_type="OutputResult" provides_upgrade_int="CapturedUnitCapacity" icon_color="#8DDBFF" />
+		<resource_cost resource_type="Microbuilders" cost="4000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+	
+	<job id="AerospaceHangar" display_name="Aerospace Hangar" marker_color="BrightGold2" ui_color="#fefefe"
+		is_locked_before_unlock="AtmosphereOnly"
+		description="Produces and stores a lattice required by all flying vehicles and mechs. Flying vehicles can only be built near these hangars."
+		strategy_tip_optional=""
+		icon_name="HL_HouseHangar" turns_to_install="5" required_structure_type="MassivePlotA" job_work_order_priority="900" actor_data_set="SimpleJobs"
+		on_installation_start="InstallationStart_LargeStructure" on_installation_complete="InstallationComplete_LargeStructure"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		resource_cap_to_increase_1="MorphologicLattice" resource_cap_increased_flat1="9000" is_suggested_to_always_build_at_least="2"
+		job_classes="Factory" internal_robotics_type_needed="AvionicsCore" internal_robots_count_needed="9" shuts_off_at_percentage_electricity="50" tags="AerospaceHangar" portrait_icon_name="BuildingFactory">
+		<initial_actor_rating data_type="RequiredElectricity" value="6060" />
+		<math_int id="ElementalSlurry" int_min="4000" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="MorphologicLattice" int_min="1000" income_or_expense_resource="MorphologicLattice" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="2200" />
+		<resource_cost resource_type="ElementalSlurry" cost="24000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="DroneFactory" display_name="Drone Factory" marker_color="BrightCyan" ui_color="#fefefe"
+		is_locked_before_unlock="DroneConstruction"
+		description=""
+		strategy_tip_optional=""
+		icon_name="WEmblem261" turns_to_install="2" required_structure_type="SeizedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Factory" internal_robotics_type_needed="AvionicsCore" internal_robots_count_needed="3" is_suggested_to_always_build_at_least="2" scrap_if_above_internal_robotics_cap="true"
+		resource_cap_to_increase_1="DroneFrame" resource_cap_increased_flat1="8" can_appear_even_after_final_doom="true"
+		related_resource_1="ElementalSlurry" tags="" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingFactory">
+		<initial_actor_rating data_type="RequiredElectricity" value="902" />
+		<math_int id="ElementalSlurry" int_min="1000" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="Microbuilders" int_min="300" income_or_expense_resource="Microbuilders" math_type="InputCost" />
+		<math_int id="DroneFrame" int_min="1" income_or_expense_resource="DroneFrame" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="3000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="AndroidExtender" display_name="Android Extender" marker_color="BrightGold2" ui_color="#fefefe"
+		description="Additional android cap."
+		strategy_tip_optional=""
+		icon_name="HM_ShapeCylinder" turns_to_install="4" required_structure_type="HiddenRoom" job_work_order_priority="70000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Computing" internal_robotics_type_needed="MindAnnex" internal_robots_count_needed="1"
+		related_resource_1="" tags="" shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingComputing" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="4080" />
+		<math_int id="ComputeTime" int_min="53777" income_or_expense_resource="ComputeTime" math_type="InputCost" />
+		<math_int id="MaxAndroidCapacity" int_min="1" income_or_expense_resource="InvisibleUnusedResource" math_type="OutputResult" provides_upgrade_int="MaxAndroidCapacity" icon_color="#8DDBFF" />
+		<resource_cost resource_type="Microbuilders" cost="4000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="VehicleExtender" display_name="Vehicle Extender" marker_color="BrightGold2" ui_color="#fefefe"
+		description="Additional vehicle cap."
+		strategy_tip_optional=""
+		icon_name="HM_ShapeKite" turns_to_install="4" required_structure_type="HiddenRoom" job_work_order_priority="70000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Computing" internal_robotics_type_needed="MindAnnex" internal_robots_count_needed="1"
+		related_resource_1="" tags="" shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingComputing" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="4080" />
+		<math_int id="ComputeTime" int_min="53777" income_or_expense_resource="ComputeTime" math_type="InputCost" />
+		<math_int id="MaxVehicleCapacity" int_min="1" income_or_expense_resource="InvisibleUnusedResource" math_type="OutputResult" provides_upgrade_int="MaxVehicleCapacity" icon_color="#8DDBFF" />
+		<resource_cost resource_type="Microbuilders" cost="4000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+	<job id="MechExtender" display_name="Mech Extender" marker_color="BrightGold2" ui_color="#fefefe"
+		description="Additional mech cap."
+		strategy_tip_optional=""
+		icon_name="WEmblem199" turns_to_install="4" required_structure_type="HiddenRoom" job_work_order_priority="70000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Computing" internal_robotics_type_needed="MindAnnex" internal_robots_count_needed="1"
+		related_resource_1="" tags="" shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingComputing" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="RequiredElectricity" value="4080" />
+		<math_int id="ComputeTime" int_min="53777" income_or_expense_resource="ComputeTime" math_type="InputCost" />
+		<math_int id="MaxMechCapacity" int_min="1" income_or_expense_resource="InvisibleUnusedResource" math_type="OutputResult" provides_upgrade_int="MaxMechCapacity" icon_color="#8DDBFF" />
+		<resource_cost resource_type="Microbuilders" cost="4000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Self" sort_index="100" />
+	</job>
+
+
+</root>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<hacking_action id="Run" display_name="Run Program" short_name="Run"
+		description=""
+		strategy_tip=""
+		icon_name="Pw_Ornament15"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingActionsBasic"
+		on_use="BoardVehicle" >
+		<sub_described_item id="Move" display_name="Move"
+			description="Move horizontally or vertically to a new cell. You will absorb half of the destination cell's value. The other half will be placed in the cell you leave."
+			strategy_tip="You cannot pass blocked cells or cells that are a higher number than you." />
+		<sub_described_item id="Split" display_name="Split"
+			description="If the result of a move would be more than 99, a split will occur instead."
+			strategy_tip="A split makes two consciousness shards from one. This is very important." />
+		<sub_described_item id="Corrupt" display_name="Corrupt"
+			description="Click a shard to destroy it, and anything adjacent to it."
+			strategy_tip="This is the primary way to destroy daemons and blocked cells. At least one shard must survive in order for others to execute a corruption." />
+	</hacking_action>
+
+	<hacking_action id="Jump" display_name="Jump" short_name="Jump"
+		description="Move horizontally or vertically to a new cell, taking on its value. The target cell cannot be blocked or a higher number than you. One of its adjacent unblocked cells must be a higher number than the target."
+		strategy_tip="Cannot pass occupied cells, but there are no other restrictions.
+Be VERY careful moving to low numbers. It is possible to trap a shard."
+		icon_name="SW_Rain"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingActionsBasic"
+		on_use="BoardVehicle" >
+		<sub_described_item id="Corrupt" display_name="Corrupt"
+			description="Click a shard to destroy it, and anything adjacent to it."
+			strategy_tip="This is the primary means of destroying daemons and blocked cells. At least one shard must survive in order for others to execute a corruption." />		
+	</hacking_action>
+
+	<hacking_action id="Firewall" display_name="Firewall" short_name="Firewall"
+		description="Click a shard that is in a line with one or more additional shards to burn lines between them."
+		strategy_tip="This does not consume the shards, but instead costs one Mental Energy."
+		icon_name="SomethingFireblow"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingActionsBasic"
+		on_use="BoardVehicle" >
+	</hacking_action>
+
+	<hacking_action id="InfiltrationSysOpMove" display_name="Move" short_name="Move"
+		description="Move horizontally or vertically to a new cell. The target cell cannot be blocked, and must be within 5 cells."
+		strategy_tip="Cannot pass occupied cells."
+		icon_name="Pw_Ornament22"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingActionsBasic"
+		on_use="BoardVehicle" is_available_in_infiltration_sysop="true" is_available_in_regular_hacking="false">
+		<sub_described_item id="Corrupt" display_name="Corrupt"
+			description="Click your shard to destroy anything directly adjacent to it, including walls."
+			strategy_tip="Your shard is not destroyed in this process." />
+	</hacking_action>
+	
+	<!--
+	<hacking_action id="GlobalID" display_name="Global ID" short_name="Global ID"
+		description=""
+		strategy_tip=""
+		icon_name="HM_ShapeGeometric"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingActionsBasic"
+		on_use="BoardVehicle" requires_unlock="Todo" />
+
+	<hacking_action id="Explode" display_name="Explode" short_name="Explode"
+		description=""
+		strategy_tip=""
+		icon_name="SF2_Geometricshape_148"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingActionsBasic"
+		on_use="BoardVehicle" requires_unlock="Todo" />
+	
+	<hacking_action id="HorizontalEnergyWave" display_name="Horizontal Energy Wave" short_name="H. Wave"
+		description=""
+		strategy_tip=""
+		icon_name="SF2_Geometricshape_arrows9"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingActionsBasic"
+		on_use="BoardVehicle" requires_unlock="Todo" />
+	
+	<hacking_action id="CrossSlash" display_name="Cross-Slash" short_name="Cross-Slash"
+		description=""
+		strategy_tip=""
+		icon_name="HM_ShapeCross"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingActionsBasic"
+		on_use="BoardVehicle" requires_unlock="Todo" />
+
+	<hacking_action id="Sleep" display_name="Sleep" short_name="Sleep"
+		description=""
+		strategy_tip=""
+		icon_name="FlatSkill_21"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingActionsBasic"
+		on_use="BoardVehicle" requires_unlock="Todo" />
+
+	<hacking_action id="Pull" display_name="Pull" short_name="Pull"
+		description=""
+		strategy_tip=""
+		icon_name="SF2_Geometricshape_arrows"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.HackingActionsBasic"
+		on_use="BoardVehicle" requires_unlock="Todo" />
+-->
+</root>

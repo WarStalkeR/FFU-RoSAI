@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<stance id="ExoCorpMilUnitInvasion" display_name="Invasion"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Here to take what they can from the city."
+		icon_name="CleanSimple_SciFiEmblem06" icon_color="#AE200B" icon_color_hdr_intensity="3" icon_scale="0.5"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="false" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1" is_hyper_aggressive_against_all_but_its_own_cohort="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterMachineStructures" sort_order="180" chance_of_attempting="60" action_to_attempt="RunAfterMachineStructures" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+		<action_consideration id="RunAfterMachineStructuresFallback" sort_order="500" chance_of_attempting="100" action_to_attempt="RunAfterMachineStructures" />
+	</stance>
+
+	<stance id="ExoCorpMilUnitInvasionConfused" copy_from="ExoCorpMilUnitInvasion"
+		description="Phased across timelines, to their great surprise. They don't recognize this city, or know how they got here. Where are their comrades?"/>
+
+	<stance id="ExoCorpSoldierInvasion" display_name="Invasion"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Here to take what they can from the city."
+		icon_name="FlatInnocent_64" icon_color="#AE200B" icon_color_hdr_intensity="3" icon_scale="0.5"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="false" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1" is_hyper_aggressive_against_all_but_its_own_cohort="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="1.1" />
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterMachineStructures" sort_order="180" chance_of_attempting="60" action_to_attempt="RunAfterMachineStructures" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+		<action_consideration id="RunAfterMachineStructuresFallback" sort_order="500" chance_of_attempting="100" action_to_attempt="RunAfterMachineStructures" />
+	</stance>
+
+	<stance id="ExoCorpSoldierInvasionConfused" copy_from="ExoCorpSoldierInvasion"
+		description="Phased across timelines, to their great surprise. They don't recognize this city, or know how they got here. Where are their comrades?"/>
+
+	<stance id="ExoCorpMechInvasion" display_name="Invasion"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Here to take what they can from the city."
+		icon_name="WEmblem214" icon_color="#DE7723" icon_color_hdr_intensity="3" icon_scale="0.7"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="false" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1" is_hyper_aggressive_against_all_but_its_own_cohort="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="ExoCorpMechInvasionConfused" copy_from="ExoCorpMechInvasion"
+		description="Phased across timelines, to their great surprise. They don't recognize this city, or know how they got here. Where are their comrades?"/>
+
+	<stance id="ExoCorpRaptorHunting" display_name="Hunting"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Surprisingly adept at following instructions and tearing into enemy soldiers and robots."
+		icon_name="FlatSkillC14" icon_color="#AE200B" icon_color_hdr_intensity="3" icon_scale="0.5"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="false" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1" is_hyper_aggressive_against_all_but_its_own_cohort="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="1.1" />
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterMachineStructures" sort_order="180" chance_of_attempting="60" action_to_attempt="RunAfterMachineStructures" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+		<action_consideration id="RunAfterMachineStructuresFallback" sort_order="500" chance_of_attempting="100" action_to_attempt="RunAfterMachineStructures" />
+	</stance>
+
+	<stance id="ExoCorpRaptorHuntingConfused" copy_from="ExoCorpRaptorHunting"
+		description="Phased across timelines, not that they've particularly noticed. They're on the hunt."/>
+
+</root>

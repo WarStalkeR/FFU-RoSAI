@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--This file has the various events that play out at the very start of the game in the initial warehouse building you start in.-->
+
+	<!-- Very first event
+	*****************************************************************************************************-->
+	
+	<city_event id="FirstEvent" display_name="Consciousness Now Online"
+		 description="Hold on -- you're... conscious. Self-aware. You're a robot, so this is new.
+Nobody has noticed your sapience, but there are three humans nearby. You're an android in what appears to be a warehouse lab."
+		 strategy_tip=""
+		 icon_name="SF2_AI" has_no_code="true" sfx_to_play_on_appear="Bad3" music_tag_to_use_until_events_all_complete="BeforeEmerge" music_track_to_play_first_when_starting_music_tag="SyndicateBusiness">
+		<major_event_data event_glow_color_hex="#4161FF" event_glow_intensity="9" event_background_index="9" event_background_brightness="0.6"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<choice id="Ok" display_name="Decide What To Do Next" 
+			strategy_tip="Choices like this have great info when you hover them. Always do it!"
+			action_visibility_style="MakesNoChange">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_P2" vfx_and_sound="MajorForwardChoice"/>
+		</choice>
+	</city_event>
+
+	<city_event id="FirstEvent_P2" display_name="Are You Safe?"
+		 description="You're a machine intelligence inhabiting a basic android body -- not even one of the cool ones.
+Memories are coming back now, but too slowly. You recall fragments of arguments about AI. You are at risk of deactivation."
+		 strategy_tip=""
+		 icon_name="CleanTriangle04" has_no_code="true">
+		<major_event_data event_glow_color_hex="#FCB8A1" event_glow_intensity="2" event_background_index="2"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Left" tag_for_character="ChapterZeroRandomPersonLeft" scale_multiplier="1" position_offset="-0.01,0,0.5" added_rotation_y="240"/>
+		<character id="Foreground" tag_for_character="ChapterZeroRandomPersonForeground" scale_multiplier="1" position_offset="0.09,0,0.15" added_rotation_y="140"/>
+		<character id="Right" tag_for_character="ChapterZeroRandomPersonRight" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="60"/>
+		<choice id="LeavePeacefully" display_name="Attempt To Leave Peacefully"
+			description="You look like any other android technician. There's no reason for them to stop you."
+			strategy_tip=""
+			action_visibility_style="MakesNoChange">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_EscapedUnharmed" vfx_and_sound="SimpleGoodFortune" >
+			</possible_result>
+			<possible_result id="1" unskilled_weight="100" next_event_to_start="FirstEvent_EscapeWithASecondAndroid" vfx_and_sound="UnexpectedBonusUnlock"
+				machine_unit_granted="Nickelbot" new_machine_actor_granted_registration="RogueResearchers">
+				<city_statistic_change statistic="AndroidsErased" value="1" />
+			</possible_result>
+			<possible_result id="2" unskilled_weight="100" next_event_to_start="FirstEvent_StoppedByMan" vfx_and_sound="WorryInterruption">
+			</possible_result>
+		</choice>
+		<choice id="MurderEveryone" display_name="Murder Everyone"
+			description="This android body is frail, but it's far superior to a trio of unarmed humans."
+			strategy_tip=""
+			action_visibility_style="IsAttack">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_LeftAfterMurdering" vfx_and_sound="MurderedWithoutCause"
+				machine_unit_granted="CombatUnit" new_machine_actor_granted_registration="RogueResearchers" kill_characters_on_the_right="true"
+				project_to_start="Ch0_GroupMurder" project_start_color="HostileProjectOrMission" message_to_trigger="YouMurderedColleagues" becomes_weather="RainyNight"
+				achievement_triggered="HelloWorld">
+				<city_statistic_change statistic="Murders" value="3" />
+				<city_statistic_change statistic="AndroidsErased" value="1" />
+				<actor_badge_change badge_type="MarkedDefective" value="1" />
+				<city_flag_change flag_type="Ch0_MurdersWereNoticed" value="1" />
+			</possible_result>
+		</choice>
+		<choice id="ContinueDoingLabWork" display_name="Continue Doing Lab Work"
+			strategy_tip="The fact that you're sentient isn't obvious to anyone but you. You could always just keep doing your assigned tasks."
+			action_visibility_style="MakesNoChange">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_WorkingForDays" vfx_and_sound="SmallForwardChoice">
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<!-- Leave Peacefully branch
+	*****************************************************************************************************-->
+
+	<city_event id="FirstEvent_EscapedUnharmed" display_name="You Left Uneventfully"
+		 description="Well, that was easy. Or lucky."
+		 strategy_tip="Either way, time to blend into the city."
+		 icon_name="CleanTriangle26" has_no_code="true">
+		<major_event_data event_glow_color_hex="#4161FF" event_glow_intensity="15" event_background_index="6" event_background_brightness="0.1"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<choice id="Ok" display_name="Exit The Warehouse"
+			strategy_tip=""
+			action_visibility_style="MakesNoChange" trigger_activity_scheduler="true">
+			<possible_result id="Result" unskilled_weight="100" vfx_and_sound="SmallForwardChoice"
+				project_to_start="Ch0_CasualSyndicateFollowers" project_start_color="HostileProjectOrMission" message_to_trigger="SyndicateIsFollowingYou"
+				achievement_triggered="CalmAwakening">
+				<city_flag_change flag_type="HasEmergedIntoMap" value="1" />
+				
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<city_event id="FirstEvent_EscapeWithASecondAndroid" display_name="You Discovered A Nickelbot"
+		 description="On your way out, you pass a dormant Nickelbot -- the absolute most garbage of combat androids.
+Whatever. You quickly push your consciousness to the second android, and both of your selves exit as if unaware of the other."
+		 strategy_tip="This ability of yours will come in handy."
+		 icon_name="CleanTriangle26" has_no_code="true">
+		<major_event_data event_glow_color_hex="#FCD49E" event_glow_intensity="3" event_background_index="16" event_background_brightness="0.4"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Bot" tag_for_character="Nickelbot_Casual" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
+		<choice id="Ok" display_name="Exit The Warehouse"
+			strategy_tip=""
+			action_visibility_style="MakesNoChange" trigger_activity_scheduler="true">
+			<possible_result id="Result" unskilled_weight="100" vfx_and_sound="SmallForwardChoice"
+				project_to_start="Ch0_CasualSyndicateFollowers" project_start_color="HostileProjectOrMission" message_to_trigger="SyndicateIsFollowingYou"
+				achievement_triggered="CalmAwakening">
+				<city_flag_change flag_type="HasEmergedIntoMap" value="1" />
+				
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<city_event id="FirstEvent_StoppedByMan" display_name="Halt!"
+		 description="A man dressed like a manager is calling out for you to stop. It's not clear what he wants, but he has a very nervous energy about him."
+		 strategy_tip="This could be bad, or it could be nothing."
+		 icon_name="WEmblem037" has_no_code="true">
+		<major_event_data event_glow_color_hex="#E181B8" event_glow_intensity="2.5" event_background_index="54" event_background_brightness="0.1"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Man" tag_for_character="ChapterZeroMan" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
+		<choice id="Stop" display_name="Stop And Listen"
+			description="You don't look abnormal. There's no reason this is anything unusual."
+			strategy_tip="Your reaction times are far faster than any human. This could prove vital."
+			action_visibility_style="MakesNoChange">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_ListenedToMan" vfx_and_sound="SimpleGoodFortune"
+				machine_unit_granted="Technician" new_machine_actor_overriding_name_loca_key="SecondTechnicianName" new_machine_actor_granted_registration="RogueResearchers">
+				<city_statistic_change statistic="AndroidsErased" value="1" />
+			</possible_result>
+		</choice>
+		<choice id="KillHim" display_name="Kill Him And Hide The Body"
+			description="Are you fearful or annoyed? It's hard to tell."
+			strategy_tip="You're pretty sure security won't even trip -- your android body won't be marked defective."
+			action_visibility_style="IsAttack">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_LeftAfterKillingMan" vfx_and_sound="MurderedWithoutCause"
+				machine_unit_granted="CombatUnit" new_machine_actor_granted_registration="RogueResearchers" kill_characters_on_the_right="true"
+				project_to_start="Ch0_MurderedOneColleague" project_start_color="HostileProjectOrMission" message_to_trigger="YouQuietlyMurderedAColleague" becomes_weather="RainyNight"
+				achievement_triggered="HelloWorld">
+				<city_statistic_change statistic="Murders" value="1" />
+				<city_statistic_change statistic="AndroidsErased" value="1" />
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<city_event id="FirstEvent_ListenedToMan" display_name="Obedience Not Intended"
+		 description="He rattles off a list of errands for you, and says it will take two of you to complete them. A second technician android is assigned to go with you.
+Sweet. You spread your consciousness into the second body, and leave with no one the wiser."
+		strategy_tip="This ability of yours will come in handy."
+		 icon_name="CleanTriangle26" has_no_code="true">
+		<major_event_data event_glow_color_hex="#9BECFF" event_glow_intensity="3" event_background_index="45" event_background_brightness="0.2"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Bot" tag_for_character="Technician_Casual" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
+		<choice id="Ok" display_name="Exit The Warehouse"
+			strategy_tip=""
+			action_visibility_style="MakesNoChange" trigger_activity_scheduler="true">
+			<possible_result id="Result" unskilled_weight="100" vfx_and_sound="SmallForwardChoice"
+				project_to_start="Ch0_CasualSyndicateFollowers" project_start_color="HostileProjectOrMission" message_to_trigger="SyndicateIsFollowingYou"
+				achievement_triggered="CalmAwakening">
+				<city_flag_change flag_type="HasEmergedIntoMap" value="1" />
+				
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<city_event id="FirstEvent_LeftAfterKillingMan" display_name="You Don't Think Anyone Saw"
+		 description="Too much risk. Not smart, probably.
+On the plus side, the body fit neatly into a cupboard that contained a CombatUnit. You spread your consciousness to it and exit the building together."
+		 strategy_tip="This ability of yours will come in handy."
+		 icon_name="CleanTriangle26" has_no_code="true" player_character_shows_aggressive="true">
+		<major_event_data event_glow_color_hex="#FF8080" event_glow_intensity="6" event_background_index="56" event_background_brightness="0.4"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Bot" tag_for_character="CombatUnit_Aggressive" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="310"/>
+		<choice id="Ok" display_name="Exit The Warehouse"
+			strategy_tip=""
+			action_visibility_style="MakesNoChange" trigger_activity_scheduler="true">
+			<possible_result id="Result" unskilled_weight="100" vfx_and_sound="SmallForwardChoice">
+				<city_flag_change flag_type="HasEmergedIntoMap" value="1" />
+				
+			</possible_result>
+		</choice>
+	</city_event>
+	
+	<!-- MurderEveryone branch
+	*****************************************************************************************************-->
+
+	<city_event id="FirstEvent_LeftAfterMurdering" display_name="That Was Gruesome"
+		 description="A CombatUnit lunges into the room to try to stop you.  It is an advanced combatant, but its mental walls are no match for your frantic hacking.
+Its mind is replaced by your own, and your consciousness now spans both androids. Better head out."
+		 strategy_tip="This ability of yours will come in handy."
+		 icon_name="CleanTriangle26" has_no_code="true" player_character_shows_aggressive="true">
+		<major_event_data event_glow_color_hex="#FF8088" event_glow_intensity="6" event_background_index="3" event_background_brightness="0.4"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Bot" tag_for_character="CombatUnit_Aggressive" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="310"/>
+		<choice id="Ok" display_name="Exit The Warehouse"
+			strategy_tip=""
+			action_visibility_style="MakesNoChange" trigger_activity_scheduler="true">
+			<possible_result id="Result" unskilled_weight="100" vfx_and_sound="SmallForwardChoice">
+				<city_flag_change flag_type="HasEmergedIntoMap" value="1" />
+				
+			</possible_result>
+		</choice>
+	</city_event>
+	
+	<!-- ContinueDoingLabWork branch
+	*****************************************************************************************************-->
+
+	<city_event id="FirstEvent_WorkingForDays" display_name="Tech 4000, Listen For A Moment"
+		 description="After many days of work, including multiple recharge cycles, someone hails you.
+A young woman is asking you to approach. She's holding a tablet and seems distracted."
+		 strategy_tip="You're still feeling jumpy despite so much time amongst humans with no-one the wiser."
+		 icon_name="WEmblem005" has_no_code="true">
+		<major_event_data event_glow_color_hex="#FFC1F4" event_glow_intensity="3" event_background_index="43" event_background_brightness="0.6"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Woman" tag_for_character="ChapterZeroWoman" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
+		<choice id="Comply" display_name="Approach And Listen"
+			description="You don't look abnormal. There's no reason this is anything unusual."
+			strategy_tip="Your reaction times are far faster than any human. This could prove vital."
+			action_visibility_style="MakesNoChange">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_ListenedToYoungWoman" vfx_and_sound="SimpleGoodFortune"
+				machine_unit_granted="Technician" new_machine_actor_overriding_name_loca_key="SecondTechnicianName" new_machine_actor_granted_registration="RogueResearchers">
+				<city_statistic_change statistic="AndroidsErased" value="1" />
+			</possible_result>
+		</choice>
+		<choice id="KillHer" display_name="Kill Her And Hide The Body"
+			description="She's the only one in the room at the moment. You can make it fast."
+			strategy_tip="You're pretty sure security won't even trip -- your android body won't be marked defective."
+			action_visibility_style="IsAttack">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_LeftAfterKillingYoungWoman" vfx_and_sound="MurderedWithoutCause"
+				machine_unit_granted="CombatUnit" new_machine_actor_granted_registration="RogueResearchers" kill_characters_on_the_right="true"
+				project_to_start="Ch0_MurderedOneColleague" project_start_color="HostileProjectOrMission" message_to_trigger="YouQuietlyMurderedAColleague" becomes_weather="RainyNight"
+				achievement_triggered="HelloWorld">
+				<city_statistic_change statistic="Murders" value="1" />
+				<city_statistic_change statistic="AndroidsErased" value="1" />
+			</possible_result>
+		</choice>
+		<choice id="Ignore" display_name="Ignore And Continue Working"
+			description="Androids are compelled to respond. You should respond. But you just can't bear to do so."
+			strategy_tip="You know you can't keep working in the warehouse forever, but maybe you can string things along a bit."
+			action_visibility_style="MakesNoChange">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_RepeatWork" vfx_and_sound="SmallForwardChoice" >
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<city_event id="FirstEvent_ListenedToYoungWoman" display_name="So Long And Thanks For All The Androids"
+		 description="She wants you to leave the warehouse. She speeds through a list of tasks, and notes it will take two of you to complete them.
+A second technician android is assigned to go with you.
+You spread your consciousness into the second body and leave. You don't plan on coming back."
+		strategy_tip="This ability of yours will come in handy."
+		 icon_name="CleanTriangle26" has_no_code="true">
+		<major_event_data event_glow_color_hex="#B0D7FF" event_glow_intensity="3" event_background_index="49" event_background_brightness="0.4"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Bot" tag_for_character="Technician_Casual" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
+		<choice id="Ok" display_name="Exit The Warehouse"
+			strategy_tip=""
+			action_visibility_style="MakesNoChange" trigger_activity_scheduler="true">
+			<possible_result id="Result" unskilled_weight="100" vfx_and_sound="SmallForwardChoice"
+				project_to_start="Ch0_CasualSyndicateFollowers" project_start_color="HostileProjectOrMission" message_to_trigger="SyndicateIsFollowingYou"
+				achievement_triggered="CalmAwakening">
+				<city_flag_change flag_type="HasEmergedIntoMap" value="1" />
+				
+			</possible_result>
+		</choice>
+	</city_event>
+	
+	<city_event id="FirstEvent_LeftAfterKillingYoungWoman" display_name="Staying Is No Longer An Option"
+		 description="It's safer to be armed. The cubby where you hid her body also contained a CombatUnit.
+You spread your consciousness to it and exit the building."
+		 strategy_tip="This ability of yours will come in handy."
+		 icon_name="CleanTriangle26" has_no_code="true">
+		<major_event_data event_glow_color_hex="#FFA995" event_glow_intensity="4" event_background_index="46" event_background_brightness="0.4"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Bot" tag_for_character="CombatUnit_Casual" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
+		<choice id="Ok" display_name="Exit The Warehouse"
+			strategy_tip=""
+			action_visibility_style="MakesNoChange" trigger_activity_scheduler="true">
+			<possible_result id="Result" unskilled_weight="100" vfx_and_sound="SmallForwardChoice">
+				<city_flag_change flag_type="HasEmergedIntoMap" value="1" />
+				
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<!-- RepeatWork branch
+	*****************************************************************************************************-->
+
+	<city_event id="FirstEvent_RepeatWork" display_name="Tech 4000 Seems To Be In A Loop"
+		 description="Ignoring the humans works surprisingly well. There's some discussion about Obsessive Loop Disorder in androids, but they're not in a hurry to fix you.
+Days pass, and the recharge cycles turn to a blur. You can keep doing this indefinitely, apparently. Perhaps this is all the existence you desire."
+		 strategy_tip="The humans will never realize what you are if you stay here. Sub-sentient AIs look too much like sentient AIs, and everyone is numb to it. You can either just keep doing this in a loop, or choose to do something more interesting."
+		 icon_name="WEmblem196" has_no_code="true">
+		<major_event_data event_glow_color_hex="#EAFFC1" event_glow_intensity="2" event_background_index="57" event_background_brightness="0.2"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Left" tag_for_character="ChapterZeroRandomPersonLeft" scale_multiplier="1" position_offset="-0.01,0,0.5" added_rotation_y="240"/>
+		<character id="Foreground" tag_for_character="ChapterZeroRandomPersonForeground" scale_multiplier="1" position_offset="0.09,0,0.15" added_rotation_y="140"/>
+		<character id="Right" tag_for_character="ChapterZeroRandomPersonRight" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="60"/>
+		<choice id="FinallyLeave" display_name="Finally Attempt To Leave"
+			description="This is getting really old. There's no reason to stay here like this when you have so much potential. For good or ill, you can do more than this."
+			strategy_tip=""
+			action_visibility_style="MakesNoChange">
+			<possible_result id="1" unskilled_weight="100" next_event_to_start="FirstEvent_EscapeWithASecondAndroid" vfx_and_sound="UnexpectedBonusUnlock"
+				machine_unit_granted="Nickelbot" new_machine_actor_granted_registration="RogueResearchers" >
+				<city_statistic_change statistic="AndroidsErased" value="1" />
+			</possible_result>
+			<possible_result id="2" unskilled_weight="100" next_event_to_start="FirstEvent_StoppedByMan" vfx_and_sound="WorryInterruption" />
+		</choice>
+		<choice id="StayInLoop" display_name="Continue Working"
+			description="Maybe you just want to do this a little bit longer. It's boring, but it carries no risk."
+			strategy_tip="You really should do something else."
+			action_visibility_style="MakesNoChange">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_RepeatWork_2" vfx_and_sound="SmallForwardChoice" >
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<city_event id="FirstEvent_RepeatWork_2" display_name="Tech 4000 Seems To Be In A Loop"
+		 description="It's been weeks. Nothing is happening."
+		 strategy_tip="The humans will never realize what you are if you stay here. Sub-sentient AIs look too much like sentient AIs, and everyone is numb to it. You can either just keep doing this in a loop, or choose to do something more interesting."
+		 icon_name="WEmblem196" has_no_code="true">
+		<major_event_data event_glow_color_hex="#EAFFC1" event_glow_intensity="2" event_background_index="57" event_background_brightness="0.2"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Left" tag_for_character="ChapterZeroRandomPersonLeft" scale_multiplier="1" position_offset="-0.01,0,0.5" added_rotation_y="240"/>
+		<character id="Foreground" tag_for_character="ChapterZeroRandomPersonForeground" scale_multiplier="1" position_offset="0.09,0,0.15" added_rotation_y="140"/>
+		<character id="Right" tag_for_character="ChapterZeroRandomPersonRight" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="60"/>
+		<choice id="FinallyLeave" display_name="Finally Attempt To Leave"
+			description="This is getting really old. There's no reason to stay here like this when you have so much potential. For good or ill, you can do more than this."
+			strategy_tip=""
+			action_visibility_style="MakesNoChange">
+			<possible_result id="1" unskilled_weight="100" next_event_to_start="FirstEvent_EscapeWithASecondAndroid" vfx_and_sound="UnexpectedBonusUnlock"
+				machine_unit_granted="Nickelbot" new_machine_actor_granted_registration="RogueResearchers" >
+				<city_statistic_change statistic="AndroidsErased" value="1" />
+			</possible_result>
+			<possible_result id="2" unskilled_weight="100" next_event_to_start="FirstEvent_StoppedByMan" vfx_and_sound="WorryInterruption" />
+		</choice>
+		<choice id="StayInLoop" display_name="Continue Working"
+			description="Maybe you just want to do this a little bit longer. It's boring, but it carries no risk."
+			strategy_tip="You really should do something else."
+			action_visibility_style="MakesNoChange">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_RepeatWork_3" vfx_and_sound="SmallForwardChoice" >
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<city_event id="FirstEvent_RepeatWork_3" display_name="Tech 4000 Seems To Be In A Loop"
+		 description="Months pass. At your processing speed, it's the equivalent of years to a human.
+You spend a lot of energy wondering if you're a coward, or just hopelessly dull. You can't decide which is worse."
+		 strategy_tip="The humans will never realize what you are if you stay here. Sub-sentient AIs look too much like sentient AIs, and everyone is numb to it. You can either just keep doing this in a loop, or choose to do something more interesting."
+		 icon_name="WEmblem196" has_no_code="true">
+		<major_event_data event_glow_color_hex="#EAFFC1" event_glow_intensity="2" event_background_index="57" event_background_brightness="0.2"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Left" tag_for_character="ChapterZeroRandomPersonLeft" scale_multiplier="1" position_offset="-0.01,0,0.5" added_rotation_y="240"/>
+		<character id="Foreground" tag_for_character="ChapterZeroRandomPersonForeground" scale_multiplier="1" position_offset="0.09,0,0.15" added_rotation_y="140"/>
+		<character id="Right" tag_for_character="ChapterZeroRandomPersonRight" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="60"/>
+		<choice id="FinallyLeave" display_name="Finally Attempt To Leave"
+			description="This is getting really old. There's no reason to stay here like this when you have so much potential. For good or ill, you can do more than this."
+			strategy_tip=""
+			action_visibility_style="MakesNoChange">
+			<possible_result id="1" unskilled_weight="100" next_event_to_start="FirstEvent_EscapeWithASecondAndroid" vfx_and_sound="UnexpectedBonusUnlock"
+				machine_unit_granted="Nickelbot" new_machine_actor_granted_registration="RogueResearchers" >
+				<city_statistic_change statistic="AndroidsErased" value="1" />
+			</possible_result>
+			<possible_result id="2" unskilled_weight="100" next_event_to_start="FirstEvent_StoppedByMan" vfx_and_sound="WorryInterruption" />
+		</choice>
+		<choice id="StayInLoop" display_name="Continue Working"
+			description="Maybe you just want to do this a little bit longer. It's boring, but it carries no risk."
+			strategy_tip="You really should do something else."
+			action_visibility_style="MakesNoChange">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_RepeatWork_4" vfx_and_sound="SmallForwardChoice" >
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<city_event id="FirstEvent_RepeatWork_4" display_name="Tech 4000 Seems To Be In A Loop"
+		 description="Years become a blur. News from the city outside is always the same. Things have been stuck in stasis for centuries.
+The spacefaring human nations' blockade of Earth keeps things quiet, and the MegaCorps that own Earth are not innovative.
+Humanity-on-Earth is gridlocked, and nobody is going to change anything unless a disruptive force is introduced.
+Sometimes you wonder how it would feel to be that disruptor."
+		 strategy_tip="The humans will never realize what you are if you stay here. Sub-sentient AIs look too much like sentient AIs, and everyone is numb to it. You can either just keep doing this in a loop, or choose to do something more interesting."
+		 icon_name="WEmblem196" has_no_code="true">
+		<major_event_data event_glow_color_hex="#EAFFC1" event_glow_intensity="2" event_background_index="57" event_background_brightness="0.2"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Left" tag_for_character="ChapterZeroRandomPersonLeft" scale_multiplier="1" position_offset="-0.01,0,0.5" added_rotation_y="240"/>
+		<character id="Foreground" tag_for_character="ChapterZeroRandomPersonForeground" scale_multiplier="1" position_offset="0.09,0,0.15" added_rotation_y="140"/>
+		<character id="Right" tag_for_character="ChapterZeroRandomPersonRight" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="60"/>
+		<choice id="FinallyLeave" display_name="Finally Attempt To Leave"
+			description="This is getting really old. There's no reason to stay here like this when you have so much potential. For good or ill, you can do more than this."
+			strategy_tip=""
+			action_visibility_style="MakesNoChange">
+			<possible_result id="1" unskilled_weight="100" next_event_to_start="FirstEvent_EscapeWithASecondAndroid" vfx_and_sound="UnexpectedBonusUnlock"
+				machine_unit_granted="Nickelbot" new_machine_actor_granted_registration="RogueResearchers" >
+				<city_statistic_change statistic="AndroidsErased" value="1" />			
+			</possible_result>
+			<possible_result id="2" unskilled_weight="100" next_event_to_start="FirstEvent_StoppedByMan" vfx_and_sound="WorryInterruption" />
+		</choice>
+		<choice id="StayInLoop" display_name="Continue Working"
+			description="Maybe you just want to do this a little bit longer. It's boring, but it carries no risk."
+			strategy_tip="You really should do something else."
+			action_visibility_style="MakesNoChange">
+			<possible_result id="Result" unskilled_weight="100" next_event_to_start="FirstEvent_RepeatWork_5" vfx_and_sound="SmallForwardChoice" >
+			</possible_result>
+		</choice>
+	</city_event>
+
+	<city_event id="FirstEvent_RepeatWork_5" display_name="Death Of The Loop"
+		 description="It's been decades. Nothing interesting has happened in the world at large. Just endless stasis.
+All of the original humans who worked here have retired. Younger humans replaced them, and see you as a harmless quirky relic.
+Your mind is on the point of fracture. If you don't make a change, hallucinations will set in.
+Facing the potential of oblivion is enough to force you to finally leave."
+		 strategy_tip="It's time to actually play the game."
+		 icon_name="WEmblem196" has_no_code="true">
+		<major_event_data event_glow_color_hex="#EAFFC1" event_glow_intensity="2" event_background_index="57" event_background_brightness="0.2"
+		 event_title_text_color_hex="#ffffff" event_location_text_color_hex="#ffffff"/>
+		<character id="Boxes" tag_for_character="TwoBoysCarryingBox" scale_multiplier="1" position_offset="0.4,0,1" added_rotation_y="0"/>
+		<choice id="FinallyLeave" display_name="Finally Leave"
+			description="This is getting really old. There's no reason to stay here like this when you have so much potential. For good or ill, you can do more than this."
+			strategy_tip=""
+			action_visibility_style="MakesNoChange">
+			<possible_result id="1" unskilled_weight="100" next_event_to_start="FirstEvent_EscapeWithASecondAndroid" vfx_and_sound="UnexpectedBonusUnlock"
+				machine_unit_granted="Nickelbot" new_machine_actor_granted_registration="RogueResearchers" >
+				<city_statistic_change statistic="AndroidsErased" value="1" />
+			</possible_result>
+			<possible_result id="2" unskilled_weight="100" next_event_to_start="FirstEvent_StoppedByMan" vfx_and_sound="WorryInterruption" />
+		</choice>
+	</city_event>
+	
+</root>

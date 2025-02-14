@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="machine_job_complaint">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="icon_usage" type="node-dropdown" node_source="VisIconUsage" content_width_px="130" is_required="true"
+		tooltip="What icon to use" />
+
+	<attribute key="is_shown_as_percentage" type="bool" default="false" is_required="true"
+		tooltip="If true, then complaint numbers of this sort will show as a number." />
+	<attribute key="is_number_skipped" type="bool" default="false" is_required="true"
+		tooltip="If true, then complaints of this sort will not show a number at all." />
+
+	<attribute key="is_skipped_from_hovering_icon_above_structure" type="bool" default="false" is_required="true"
+		tooltip="If true, then complaints of this sort will not show an icon above the structure. They'll just be in the tooltip for it." />
+
+</root>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Battle Consumables
+		*********************************************************-->
+
+	<consumable_item id="AnimateOfficeEquipment" display_name="Animate Office Equipment"
+		 description="Specialized drones breach a small office building and merge with the office printers, which then become weapons of great distraction."
+		 strategy_tip="These are part of your captured units cap."
+		 icon_name="PW_oldprinter" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="51000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="DroneFrame" required="6" />
+		<consumable_cost resource_type="Apathy" required="2" />
+		<direct_use_consumable_data targets_building_tag="HasOfficePrinters" can_only_be_used_by_actors="SouldroidsAndTechnicians" on_direct_use="EngineDrillLaunched" is_considered_an_attack_if_thrown="true" />
+	</consumable_item>
+
+	<consumable_item id="FreshIdentity" display_name="Fresh Identity"
+		 description="Generate a new ID so that enemies will not recognize this unit is the one they are angry with."
+		 strategy_tip="If this unit has been marked defective or has angered cohorts, all of that will be wiped away."
+		 icon_name="SomethingSprout" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="Microbuilders" required="3000" />
+		<consumable_cost resource_type="LiquidGallium" required="100" />
+		<direct_use_consumable_data clears_all_aggro="true" can_only_be_used_by_actors="StandardUnits" on_direct_use="ConsumableWarPowerup" />
+	</consumable_item>
+
+	<consumable_item id="SkystreakArmorPiercingMissiles" display_name="Skystreak Armor-Piercing Missiles"
+		 description="The more of this you apply to a single unit, the better it will be at breaking through enemy armor plating."
+		 strategy_tip="You will almost always want to apply a maximum stack of this status effect to a single unit."
+		 icon_name="FlatSkillC153" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="PrismaticTungsten" required="8" />
+		<consumable_cost resource_type="GadoliniumMesosilicate" required="1000" />
+		<consumable_cost resource_type="ElementalSlurry" required="6000" />
+		<direct_use_consumable_data status_to_apply="TemporaryArmorPiercingMissiles" status_intensity_general_source="SkystreakArmorPiercingEffectiveness"
+			turns_to_last="4" stack_limit="2" can_only_be_used_by_actors="LargeCombatMechsAndVehicles" on_direct_use="ConsumableWarPowerup" />
+	</consumable_item>
+
+	<consumable_item id="AnimalCaptureDrone" display_name="Animal Capture Drone"
+		 description=""
+		 strategy_tip=""
+		 icon_name="WEmblem249" icon_color="#ffffff"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="DroneFrame" required="1" />
+		<direct_use_consumable_data status_to_apply="CapturedInTrap" status_intensity_user_source="UnitStrength" targets_actors="AnimalsThatCanBeCaptured"
+			turns_to_last="1" stack_limit="1" can_only_be_used_by_actors="Mindport" on_direct_use="BeesThrown" is_considered_an_attack_if_thrown="true" />
+	</consumable_item>
+	
+	<consumable_item id="HighClassCaptureDrone" display_name="High-Class Capture Drone"
+		 description="Straight to your torment vessels."
+		 strategy_tip="Only targets the wealthy classes."
+		 icon_name="WEmblem204" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="DroneFrame" required="3" />
+		<direct_use_consumable_data targets_building_tag="WealthyDroneTarget" can_only_be_used_by_actors="Mindport" on_direct_use="EngineDrillLaunched" is_considered_an_attack_if_thrown="true" />
+	</consumable_item>
+
+	<consumable_item id="WorkingClassCaptureDrone" display_name="Working-Class Capture Drone"
+		 description="Straight to your torment vessels."
+		 strategy_tip="Only targets the lower and middle classes."
+		 icon_name="WEmblem103" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="DroneFrame" required="3" />
+		<direct_use_consumable_data targets_building_tag="LowerClassDroneTarget" can_only_be_used_by_actors="Mindport" on_direct_use="EngineDrillLaunched" is_considered_an_attack_if_thrown="true" />
+	</consumable_item>
+
+	<consumable_item id="SlumRescueDrone" display_name="Slum Rescue Drone"
+		 description="Destroy a slum building, relocating the inhabitants to your housing."
+		 strategy_tip=""
+		 icon_name="Pw_Ornament25" icon_color="#ffffff"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="DroneFrame" required="3" />
+		<direct_use_consumable_data targets_building_tag="SlumDroneTarget" can_only_be_used_by_actors="Mindport" on_direct_use="EngineDrillLaunched" is_considered_an_attack_if_thrown="true" />
+	</consumable_item>
+
+	<consumable_item id="SaberBees" display_name="Saber Bees"
+		 description=""
+		 strategy_tip="Bees with bionic plasma cutters."
+		 icon_name="SW_Bee" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+			<consumable_cost resource_type="Microbuilders" required="400" />
+		<consumable_cost resource_type="PollinatorBees" required="22000" />
+		<consumable_cost resource_type="Neodymium" required="60" />
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<direct_use_consumable_data status_to_apply="CoveredInSaberBees" status_intensity_user_source="ActorAgility" targets_actors="HumansOnFoot"
+			turns_to_last="4" stack_limit="3" can_only_be_used_by_actors="AllAndroids" on_direct_use="BeesThrown" is_considered_an_attack_if_thrown="true" />
+	</consumable_item>
+
+	<consumable_item id="TormentCaptureDrone" display_name="Torment Capture Drone"
+		 description=""
+		 strategy_tip=""
+		 icon_name="SomethingTwins" icon_color="#ffffff"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="DroneFrame" required="1" />
+		<consumable_cost resource_type="Neuroweave" required="5000" />
+		<direct_use_consumable_data status_to_apply="HeadedForTormentVessel" status_intensity_user_source="UnitStrength" targets_actors="HumansThatCanBeSentToTormentVessel"
+			turns_to_last="1" stack_limit="1" can_only_be_used_by_actors="Mindport" on_direct_use="BeesThrown" is_considered_an_attack_if_thrown="true" />
+	</consumable_item>
+	
+	<!--Esoteric Consumables
+		*********************************************************-->
+
+	
+</root>

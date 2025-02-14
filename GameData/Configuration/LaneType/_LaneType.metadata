@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="lane_type">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="lane_width" type="float-textbox" min="0" max="200" precision="3" content_width_px="150" is_required="true"
+		tooltip="How wide are these lanes intended to be for purposes of visually drawing them and also for proximity-linkage?"/>
+	
+	<attribute key="is_drivable" type="bool" default="true" is_required="true"
+			tooltip="Can cars go here?" />
+	<attribute key="is_walkable" type="bool" default="false" is_required="true"
+			tooltip="Can people go here?" />
+	<attribute key="is_tracks" type="bool" default="false" is_required="true"
+			tooltip="Can trains go here?" />
+	
+</root>

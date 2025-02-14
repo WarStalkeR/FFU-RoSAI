@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Visible To Players-->
+	<building_tag id="Abandoned" display_name="Abandoned"/>
+	<building_tag id="Agriculture" display_name="Agriculture"/>
+	<building_tag id="Airport" display_name="Airport"/>
+	<building_tag id="Apartments" display_name="Apartments"/>
+	<building_tag id="Automotive" display_name="Automotive"/>
+	<building_tag id="Bank" display_name="Bank"/>
+	<building_tag id="ChemicalPlant" display_name="Chemical Plant"/>
+	<building_tag id="CivilService" display_name="Civil Service"/>
+	<building_tag id="Communications" display_name="Communications"/>
+	<building_tag id="Construction" display_name="Construction"/>
+	<building_tag id="Cryonics" display_name="Cryonics"/>
+	<building_tag id="CultistTemple" display_name="Cultist Temple"/>
+	<building_tag id="DataCenter" display_name="Data Center"/>
+	<building_tag id="Entertainment" display_name="Entertainment"/>
+	<building_tag id="Education" display_name="Education"/>
+	<building_tag id="Energy" display_name="Energy"/>
+	<building_tag id="Financial" display_name="Financial"/>
+	<building_tag id="Fire" display_name="Fire"/>
+	<building_tag id="Farm" display_name="Farm"/>
+	<building_tag id="FarmAnimals" display_name="Farm Animals"/>
+	<building_tag id="HistoricTemple" display_name="Historic Temple"/>
+	<building_tag id="LowTechFactory" display_name="Low-Tech Factory"/>
+	<building_tag id="HighTechFactory" display_name="High-Tech Factory"/>	
+	<building_tag id="Factory" display_name="Factory"/>
+	<building_tag id="MechPartsFactory" display_name="Mech Parts Factory"/>
+	<building_tag id="Fields" display_name="Fields"/>
+	<building_tag id="Food" display_name="Food"/>
+	<building_tag id="Gambling" display_name="Gambling"/>
+	<building_tag id="HomelessTent" display_name="Homeless Tent"/>
+	<building_tag id="Housing" display_name="Housing"/>
+	<building_tag id="Industrial" display_name="Industrial"/>
+	<building_tag id="Liquids" display_name="Liquids"/>
+	<building_tag id="ScienceIndustrial" display_name="Science-Industrial" />
+	<building_tag id="Medical" display_name="Medical"/>
+	<building_tag id="Military" display_name="Military"/>
+	<building_tag id="Mining" display_name="Mining"/>
+	<building_tag id="MiningFacility" display_name="Mining Facility"/>
+	<building_tag id="NuclearSilo" display_name="Nuclear Silo"/>
+	<building_tag id="Nanotech" display_name="Nanotech"/>
+	<building_tag id="Offices" display_name="Offices"/>
+	<building_tag id="Prison" display_name="Prison"/>
+	<building_tag id="SecForceStation" display_name="SecForce Station"/>
+	<building_tag id="PowerPlant" display_name="Power Plant"/>
+	<building_tag id="Religious" display_name="Religious"/>
+	<building_tag id="Restaurant" display_name="Restaurant"/>
+	<building_tag id="Rocket" display_name="Rocket"/>
+	<building_tag id="School" display_name="School"/>
+	<building_tag id="ScienceLab" display_name="Science Lab"/>
+	<building_tag id="Scientific" display_name="Scientific"/>
+	<building_tag id="ScientificResearch" display_name="Scientific Research"/>
+	<building_tag id="Security" display_name="Security"/>
+	<building_tag id="SewageTreatment" display_name="Sewage Treatment"/>
+	<building_tag id="Shopping" display_name="Shopping"/>
+	<building_tag id="ResidentialSkyscraper" display_name="Residential Skyscraper"/>
+	<building_tag id="MixedUseSkyscraper" display_name="Mixed-Use Skyscraper"/>
+	<building_tag id="CommercialTower" display_name="Commercial Tower"/>
+	<building_tag id="ResidentialTower" display_name="Residential Tower"/>
+	<building_tag id="MixedUseTower" display_name="Mixed-Use Tower"/>
+	<building_tag id="Slums" display_name="Slums"/>
+	<building_tag id="Space" display_name="Space"/>
+	<building_tag id="Spaceport" display_name="Spaceport"/>
+	<building_tag id="Sports" display_name="Sports"/>
+	<building_tag id="Suburban" display_name="Suburban"/>
+	<building_tag id="Underground" display_name="Underground"/>
+	<building_tag id="Warehouse" display_name="Warehouse"/>
+	<building_tag id="Water" display_name="Water"/>
+	<building_tag id="Weapons" display_name="Weapons"/>
+	<building_tag id="MachineTower" display_name="Machine Tower"/>
+		
+	<!--Hidden From Players, Used By Projects Or Similar-->
+	<building_tag id="MachineRelay" is_hidden="true"/>
+	<building_tag id="MachineCabinet" is_hidden="true"/>
+	<building_tag id="MachineChurch" is_hidden="true"/>
+	<building_tag id="MachineMediumPlot" is_hidden="true"/>
+	<building_tag id="MachineLargePlot" is_hidden="true"/>
+	<building_tag id="MachineMassivePlot" is_hidden="true"/>
+	<building_tag id="MachineBunker" is_hidden="true"/>
+	<building_tag id="MachineDigsite" is_hidden="true"/>
+	<building_tag id="MachineFalseTree" is_hidden="true"/>
+	<building_tag id="MachineLab" is_hidden="true"/>
+	<building_tag id="MachineAndroidTower" is_hidden="true"/>
+	<building_tag id="MachineVisibleBuilding" is_hidden="true"/>
+	
+	<building_tag id="AirportPrime" is_hidden="true"/>
+	<building_tag id="Casino" is_hidden="true"/>
+
+	<building_tag id="WarehouseCorporate" is_hidden="true"/>
+	<building_tag id="ApartmentsLowMidClass" is_hidden="true"/>
+	<building_tag id="Brownstone" is_hidden="true"/>
+	<building_tag id="SlumTower" is_hidden="true"/>
+	<building_tag id="Abandoned_NomadUse" is_hidden="true"/>
+	<building_tag id="Abandoned_SyndicateUse" is_hidden="true"/>
+	<building_tag id="Abandoned_CultUse" is_hidden="true"/>
+	<building_tag id="Abandoned_HiddenCommercePossible" is_hidden="true"/>
+	<building_tag id="PossibleRebelMeetingSpot" is_hidden="true"/>
+	<building_tag id="CityFeedAccess" is_hidden="true"/>
+	<building_tag id="FarmMainBuildings" is_hidden="true"/>
+	<building_tag id="GeothermalPower" is_hidden="true"/>
+	<building_tag id="WindPowerTurbine" is_hidden="true"/>
+	<building_tag id="SolarPanels" is_hidden="true"/>
+	<building_tag id="AirportControlTower" is_hidden="true"/>
+	<building_tag id="LicensingAgency" is_hidden="true"/>
+	<building_tag id="NuclearPowerPlant" is_hidden="true"/>
+	<building_tag id="SpaceportLaunchArm" is_hidden="true"/>
+	<building_tag id="SpaceportLaunchPad" is_hidden="true"/>
+	<building_tag id="SpaceportRocketHangar" is_hidden="true"/>
+	<building_tag id="SpaceportControlTower" is_hidden="true"/>
+	<building_tag id="SpaceportTerminal" is_hidden="true"/>	
+	<building_tag id="WealthSymbol" is_hidden="true"/>
+	<building_tag id="DanverDonuts" is_hidden="true"/>
+	<building_tag id="HudsonDonuts" is_hidden="true"/>
+	<building_tag id="FusionPowerPlant" is_hidden="true"/>
+	<building_tag id="ChemicalWeapons" is_hidden="true"/>
+	<building_tag id="MilitaryStorage" is_hidden="true"/>
+	<building_tag id="MilitaryBarracks" is_hidden="true"/>	
+	<building_tag id="GeneticsLab" is_hidden="true"/>
+	<building_tag id="SupplyChainTarget" is_hidden="true"/>
+	<building_tag id="CompetitiveEntertainment" is_hidden="true"/>
+	<building_tag id="Hospital" is_hidden="true"/>
+	<building_tag id="Clinic" is_hidden="true"/>
+	<building_tag id="MedicalOrSchoolOrGovernment" is_hidden="true"/>
+	<building_tag id="HighTechFactoryGeneral" is_hidden="true"/>
+	<building_tag id="SyndicateBuilding" is_hidden="true"/>
+	<building_tag id="SyndicateHighStatusBuilding" is_hidden="true"/>
+	<building_tag id="SyndicateStorage" is_hidden="true"/>
+	<building_tag id="SyndicateMoneyLaundering" is_hidden="true"/>
+	<building_tag id="SyndicateHangout" is_hidden="true"/>
+	<building_tag id="GangHangout" is_hidden="true"/>
+	<building_tag id="SyndicateOutpost" is_hidden="true"/>
+	<building_tag id="SyndicateHiddenPresence" is_hidden="true"/>
+	<building_tag id="SyndicateHousing" is_hidden="true"/>
+	<building_tag id="AirportHangar" is_hidden="true"/>
+	<building_tag id="AirportHangarNonSyndicate" is_hidden="true"/>
+	<building_tag id="WeaponsFactory" is_hidden="true"/>
+	<building_tag id="HousingNotSmall" is_hidden="true"/>
+	<building_tag id="Cafe" is_hidden="true"/>
+	<building_tag id="ShoppingSmallCrimeTarget" is_hidden="true"/>
+	<building_tag id="BasicCommon" is_hidden="true"/>
+	<building_tag id="NoncomHaunt" is_hidden="true"/>
+	<building_tag id="AndroidHaunt" is_hidden="true"/>
+	<building_tag id="HasManyPeople" is_hidden="true"/>	
+	<building_tag id="MiddleClassCommon" is_hidden="true"/>
+	<building_tag id="SmallBusinessSyndicateTarget" is_hidden="true"/>
+	<building_tag id="SyndicateDeliveryTarget" is_hidden="true"/>
+	<building_tag id="AlmostAny" is_hidden="true"/>
+	<building_tag id="AlmostAnyButNotSuperRestricted" is_hidden="true"/>
+	<building_tag id="AIResearchLab" is_hidden="true"/>
+	<building_tag id="Any" is_hidden="true"/>
+	<building_tag id="WealthyHome" is_hidden="true"/>
+	<building_tag id="WealthyWorkplace" is_hidden="true"/>
+	<building_tag id="DowntownWealthyHome" is_hidden="true"/>
+	<building_tag id="IndependentBlackMarketMeetSite" is_hidden="true"/>
+	<building_tag id="Courthouse" is_hidden="true"/>
+	<building_tag id="PMCFightBuilding" is_hidden="true"/>
+	<building_tag id="AnimalHidingValid" is_hidden="true"/>
+	<building_tag id="AnimalLargeHidingValid" is_hidden="true"/>
+	
+	<building_tag id="MiddleClassApartments" is_hidden="true"/>
+	<building_tag id="MiddleClassBrownstone" is_hidden="true"/>
+	<building_tag id="MiddleClassOffice" is_hidden="true"/>
+	<building_tag id="FarmPrimaryBuilding" is_hidden="true"/>
+	<building_tag id="CouldHaveSecretLab" is_hidden="true"/>
+	<building_tag id="WaterPurification" is_hidden="true"/>
+	<building_tag id="CouldHaveMechPilotSoftware" is_hidden="true"/>
+	<building_tag id="CouldHaveSmallBusiness" is_hidden="true"/>
+	<building_tag id="FarmBarn" is_hidden="true"/>
+	<building_tag id="FarmFieldGreens" is_hidden="true"/>
+	<building_tag id="CottonSource" is_hidden="true"/>
+	<building_tag id="DailyNecessitiesFactory" is_hidden="true"/>
+	<building_tag id="DailyNecessitiesFactoryFallback" is_hidden="true"/>
+	<building_tag id="WarehouseWithFurniturePossible" is_hidden="true"/>
+	<building_tag id="TerritoryControlFlag" is_hidden="true"/>
+	<building_tag id="AnySkyscraper" is_hidden="true"/>
+	<building_tag id="ExecutiveSkyscraper" is_hidden="true"/>
+	<building_tag id="SkyscraperEstate" is_hidden="true"/>
+	<building_tag id="AnyTower" is_hidden="true"/>
+
+	<building_tag id="WealthyDroneTarget" is_hidden="true"/>
+	<building_tag id="LowerClassDroneTarget" is_hidden="true"/>
+	<building_tag id="SlumDroneTarget" is_hidden="true"/>
+
+	<building_tag id="CanHaveSecretCompartment" is_hidden="true"/>
+	<building_tag id="CanHaveHiddenRoom" is_hidden="true"/>
+	<building_tag id="CanHaveStorefront" is_hidden="true"/>
+	<building_tag id="CanHaveHealthcareStorefront" is_hidden="true"/>
+	<building_tag id="CanHaveSeizedFloors" is_hidden="true"/>
+	<building_tag id="CanHaveSeizedAndSealedFloors" is_hidden="true"/>
+	<building_tag id="CanHaveSeizedLevelsOfMine" is_hidden="true"/>
+	<building_tag id="CanHaveHollowedOutMidsizeBuilding" is_hidden="true"/>
+	<building_tag id="CanHaveHollowedOutLargeBuilding" is_hidden="true"/>
+	
+	<building_tag id="MultipurposeMineshaft" is_hidden="true"/>
+	<building_tag id="MineralAndMolecularSeparationFacility" is_hidden="true"/>
+	<building_tag id="FlamethrowerTarget" is_hidden="true"/>
+	<building_tag id="DemolishTarget" is_hidden="true"/>
+	<building_tag id="HasOfficePrinters" is_hidden="true"/>
+
+	<building_tag id="AbandonedConstruction" is_hidden="true"/>
+	<building_tag id="AbandonedHousing" is_hidden="true"/>
+	<building_tag id="AbandonedDiner" is_hidden="true"/>
+	<building_tag id="AbandonedOffice" is_hidden="true"/>
+
+	<building_tag id="InfestedWarehouse" is_hidden="true"/>
+	<building_tag id="InfestedHangar" is_hidden="true"/>
+	<building_tag id="InfestedJetway" is_hidden="true"/>
+	<building_tag id="ConvenienceStore" is_hidden="true"/>
+	<building_tag id="QuestionableCinema" is_hidden="true"/>
+	<building_tag id="Supermarket" is_hidden="true"/>
+	<building_tag id="ConstructionSepticTank" is_hidden="true"/>
+
+</root>

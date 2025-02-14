@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Central Important Stats (Priority Group 100, to max 699)
+	******************************************************************************************-->
+	
+	<upgrade_int id="MaxAndroidCapacity" display_name="Max Android Capacity"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="HM_ShapeCylinder"
+		int_original="48" int_increment="12" int_cap="360"
+		description="Androids require a certain amount of capacity, and this is the total you can allocate across all of them."
+		show_on_upgrades_screen_as_part_of_priority_group="110" show_on_upgrades_screen_even_when_have_not_yet_had_any_upgrades="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Critical" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="MaxMechCapacity" display_name="Max Mech Capacity"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem199"
+		int_original="36" int_increment="12" int_cap="240"
+		description="Mechs require a certain amount of capacity, and this is the total you can allocate across all of them."
+		show_on_upgrades_screen_as_part_of_priority_group="121" show_on_upgrades_screen_even_when_have_not_yet_had_any_upgrades="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Critical" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="MaxVehicleCapacity" display_name="Max Vehicle Capacity"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="HM_ShapeKite"
+		int_original="24" int_increment="12" int_cap="144"
+		description="Vehicles require a certain amount of capacity, and this is the total you can allocate across all of them."
+		show_on_upgrades_screen_as_part_of_priority_group="130" show_on_upgrades_screen_even_when_have_not_yet_had_any_upgrades="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Critical" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="BulkUnitCapacity" display_name="Bulk Unit Capacity"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FlatSkillA27"
+		int_original="24" int_increment="9" int_cap="2751"
+		description="Bulk Androids require a certain amount of capacity, and this is the total you can allocate across all of them."
+		show_on_upgrades_screen_as_part_of_priority_group="143" show_on_upgrades_screen_even_when_have_not_yet_had_any_upgrades="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Critical" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="CapturedUnitCapacity" display_name="Captured Unit Capacity"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SomethingWindswept"
+		int_original="144" int_increment="54" int_cap="16344"
+		description="Capturing and then operating enemy units requires a certain amount of capacity, and this is the total you can allocate across all of them."
+		show_on_upgrades_screen_as_part_of_priority_group="144" show_on_upgrades_screen_even_when_have_not_yet_had_any_upgrades="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Critical" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="IntelligenceClass" display_name="Intelligence Class"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SW_Network"
+		int_original="1" int_increment="1" int_cap="17"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="156" show_on_upgrades_screen_even_when_have_not_yet_had_any_upgrades="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Critical" sort_index="100" />
+	</upgrade_int>
+
+	<upgrade_int id="MentalEnergyPerTurn" display_name="Mental Energy Per Turn"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_Skill002"
+		int_original="9" int_increment="1" int_cap="60"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="158" show_on_upgrades_screen_even_when_have_not_yet_had_any_upgrades="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Critical" sort_index="100" />
+	</upgrade_int>
+	
+	<!--Other
+	******************************************************************************************-->
+	
+</root>

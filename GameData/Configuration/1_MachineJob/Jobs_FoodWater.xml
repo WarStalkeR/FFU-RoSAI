@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<job id="WellAndCistern" display_name="Well And Cistern" marker_color="DeepBlue" ui_color="#fefefe"
+		is_locked_before_unlock="GroundwaterAcquisition"
+		description="Pulls groundwater from the water table -- but it's too contaminated to directly use."
+		strategy_tip_optional=""
+		icon_name="SR_Reservoir1" turns_to_install="5" required_structure_type="BunkerVented" job_work_order_priority="100"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" is_suggested_to_always_build_at_least="1"
+		job_classes="Hydrology,Gathering" internal_robotics_type_needed="Cultivator" internal_robots_count_needed="3" tags="Procurement" scrap_if_above_internal_robotics_cap="true"
+		resource_cap_to_increase_1="Groundwater" resource_cap_increased_per_unit_of_volume1="45.7" shuts_off_at_percentage_electricity="10" portrait_icon_name="BuildingWater">
+		<math_int id="Groundwater" int_min="34000" income_or_expense_resource="Groundwater" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="120" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="CompactWaterFilter" display_name="Compact Water Filter" marker_color="DeepBlue" ui_color="#fefefe"
+		description="A compact version of the water filtration tower."
+		strategy_tip_optional=""
+		icon_name="FlatInnocent_48" turns_to_install="1" required_structure_type="MachineCabinet" job_work_order_priority="9000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Hydrology,Refinery" internal_robotics_type_needed="Cultivator" internal_robots_count_needed="1" tags="Refinery" turns_stunned_when_subnet_attacked="0" scrap_if_above_internal_robotics_cap="true"
+		related_resource_1="FilteredWater" related_resource_2="Groundwater" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingWater">
+		<initial_actor_rating data_type="RequiredElectricity" value="254" />
+		<math_int id="Groundwater" int_min="1800" income_or_expense_resource="Groundwater" math_type="InputCost" />
+		<math_int id="FilteredWater" int_min="1000" income_or_expense_resource="FilteredWater" math_type="OutputResult" />
+		<math_int id="HeavyMetals" int_min="200" income_or_expense_resource="HeavyMetals" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="1400" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="WaterFiltrationTower" display_name="Water Filtration Tower" marker_color="DeepBlue" ui_color="#fefefe"
+		description="Turns contaminated groundwater into water that is safe to drink."
+		strategy_tip_optional="This large structure is more efficient because it recirculates wastewater."
+		icon_name="FE_Water1" turns_to_install="4" required_structure_type="LargePlotA" job_work_order_priority="9000"
+		on_installation_start="InstallationStart_LargeStructure" on_installation_complete="InstallationComplete_LargeStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" is_suggested_to_always_build_at_least="2"
+		job_classes="Hydrology,Refinery" internal_robotics_type_needed="Cultivator" internal_robots_count_needed="9" tags="Refinery" turns_stunned_when_subnet_attacked="3" scrap_if_above_internal_robotics_cap="true"
+		related_resource_1="FilteredWater" related_resource_2="Groundwater" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingWater">
+		<initial_actor_rating data_type="RequiredElectricity" value="2473" />
+		<math_int id="Groundwater" int_min="11200" income_or_expense_resource="Groundwater" math_type="InputCost" />
+		<math_int id="FilteredWater" int_min="10000" income_or_expense_resource="FilteredWater" math_type="OutputResult" />
+		<math_int id="HeavyMetals" int_min="1800" income_or_expense_resource="HeavyMetals" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="1400" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="BovineReplicator" display_name="Bovine Replicator" marker_color="HappyPink" ui_color="#fefefe"
+		description="A small chamber for growing bovine tissue."
+		strategy_tip_optional="Uses biomulch for cellular food."
+		icon_name="MA_Cow" turns_to_install="2" required_structure_type="MachineCabinet" job_work_order_priority="8000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Nutrition,Refinery" internal_robotics_type_needed="Cultivator" internal_robots_count_needed="2" tags="Refinery" turns_stunned_when_subnet_attacked="0" scrap_if_above_internal_robotics_cap="true"
+		related_resource_1="BovineTissue" related_resource_2="Biomulch" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingFactoryB">
+		<initial_actor_rating data_type="RequiredElectricity" value="204" />
+		<math_int id="Biomulch" int_min="264" income_or_expense_resource="Biomulch" math_type="InputCost" />
+		<math_int id="BovineTissueIn" int_min="1400" income_or_expense_resource="BovineTissue" math_type="InputCost" />
+		<math_int id="BovineTissueOut" int_min="8400" income_or_expense_resource="BovineTissue" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="300" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="ProteinVat" display_name="Protein Vat" marker_color="DeepPink" ui_color="#fefefe"		
+		description="A container for growing bovine tissues into slabs of meat fit for human consumption."
+		strategy_tip_optional="Be careful not to use up your entire stock of bovine tissue. You'll have to visit a farm and extract fresh tissue samples."
+		icon_name="MA_Meat1" turns_to_install="3" required_structure_type="MachineCabinet" job_work_order_priority="9000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Nutrition,Factory" internal_robotics_type_needed="Cultivator" internal_robots_count_needed="9" turns_stunned_when_subnet_attacked="0" shuts_off_at_percentage_electricity="40" scrap_if_above_internal_robotics_cap="true"
+		related_resource_1="BovineTissue" related_resource_2="VatGrownMeat" portrait_icon_name="BuildingFactoryB">
+		<initial_actor_rating data_type="RequiredElectricity" value="204" />
+		<math_int id="BovineTissue" int_min="7960" income_or_expense_resource="BovineTissue" math_type="InputCost" expense_resource_cannot_reduce_below="5000" />
+		<math_int id="VatGrownMeat" int_min="2200" income_or_expense_resource="VatGrownMeat" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="400" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="HydroponicTower" display_name="Hydroponic Tower" marker_color="VeggieGreen" ui_color="#fefefe"		
+		description=""
+		strategy_tip_optional=""
+		icon_name="FE_Lettuce1" turns_to_install="3" required_structure_type="LargePlotA" job_work_order_priority="4000"
+		on_installation_start="InstallationStart_LargeStructure" on_installation_complete="InstallationComplete_LargeStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Nutrition,Factory" internal_robotics_type_needed="Cultivator" internal_robots_count_needed="9" turns_stunned_when_subnet_attacked="0"
+		related_resource_1="VegetableSeeds" related_resource_2="Biomulch" related_resource_3="FilteredWater" scrap_if_above_internal_robotics_cap="true"
+		shuts_off_at_percentage_electricity="40" portrait_icon_name="BuildingFood">
+		<initial_actor_rating data_type="RequiredElectricity" value="1614" />
+		<math_int id="VegetableSeedsIn" int_min="2640" income_or_expense_resource="VegetableSeeds" math_type="InputCost" />
+		<math_int id="Biomulch" int_min="704" income_or_expense_resource="Biomulch" math_type="InputCost" />
+		<math_int id="FilteredWater" int_min="1760" income_or_expense_resource="FilteredWater" math_type="InputCost" />
+		<math_int id="HydroponicGreens" int_min="8800" income_or_expense_resource="HydroponicGreens" math_type="OutputResult" />
+		<math_int id="VegetableSeedsOut" int_min="4400" income_or_expense_resource="VegetableSeeds" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="1200" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="ProteinCannery" display_name="Protein Cannery" marker_color="BioOrange" ui_color="#fefefe"
+		is_locked_before_unlock="UnforgivableComposting"
+		description="Produces canned protein scavenged from protein sources in range."
+		strategy_tip_optional="Humanoid drones blend in and scavenge protein from humans and animals nearby. There is a waiting list for living space, so this environmental resource is rarely depleted. To avoid discovery, protein is not harvested from the same place more than once per year."
+		icon_name="FlatInnocent_51" turns_to_install="3" required_structure_type="MidsizeHollowedOutBuilding" job_work_order_priority="4000" distance_restriction="HumanHarvester"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsBasic" portrait_icon_name="BuildingFood" scrap_if_above_internal_robotics_cap="true"
+		job_classes="Gathering" internal_robotics_type_needed="HookDrone" internal_robots_count_needed="5" tags="Procurement" turns_stunned_when_subnet_attacked="3" icon_scale_multiplier="0.4" shuts_off_at_percentage_electricity="10">
+		<initial_actor_rating data_type="RequiredElectricity" value="1662" />		
+		<math_int id="CannedProtein" int_min="4133" income_or_expense_resource="CannedProtein" math_type="OutputResult" />
+		<math_float id="KillsPerCanned" float_min="0.02" math_type="SomethingElse" />
+		<resource_cost resource_type="DroneFrame" cost="6" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+</root>

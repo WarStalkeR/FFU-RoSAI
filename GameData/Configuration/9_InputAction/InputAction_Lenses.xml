@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Main
+		***************************************************************************-->
+
+	<input_action id="OpenLensFilters"
+		category="Common" display_name="Open Lens Filters"
+		description="Lenses can be further customized, with elements turned on or off."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="3" modifier_1="LeftControl" key="Q" />
+		<keybind id="4" key="" />
+	</input_action>
+	
+	<input_action id="Lens_Versatile"
+		category="LensShortcuts" display_name="Versatile"
+		description="Quickly switch to this lens."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="2" modifier_1="LeftControl" key="V" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="Lens_StreetSense"
+		category="LensShortcuts" display_name="StreetSense"
+		description="Quickly switch to this lens."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="2" modifier_1="LeftControl" key="Z" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="Lens_Investigations"
+		category="LensShortcuts" display_name="Investigations"
+		description="Quickly switch to this lens."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="2" modifier_1="LeftControl" key="X" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="Lens_Contemplations"
+		category="LensShortcuts" display_name="Contemplations"
+		description="Quickly switch to this lens."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="2" modifier_1="LeftControl" key="C" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="Lens_CityConflicts"
+		category="LensShortcuts" display_name="Background Conflicts"
+		description="Quickly switch to this lens."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="2" modifier_1="LeftControl" key="R" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="Lens_Navigation"
+		category="LensShortcuts" display_name="Navigation"
+		description="Quickly switch to this lens."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="2" modifier_1="LeftControl" key="N" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="Lens_Forces"
+		category="LensShortcuts" display_name="Forces"
+		description="Quickly switch to this lens."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="2" modifier_1="LeftControl" key="F" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="Lens_MachineStructures"
+		category="LensShortcuts" display_name="Machine Structures"
+		description="Quickly switch to this lens."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="3" modifier_1="LeftControl" key="B" />
+		<keybind id="4" key="" />
+	</input_action>
+
+	<input_action id="Lens_ScavengingSites"
+		category="LensShortcuts" display_name="Scavenging Sites"
+		description="Quickly switch to this lens."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="3" modifier_1="LeftControl" key="G" />
+		<keybind id="4" key="" />
+	</input_action>
+
+	<input_action id="Lens_ExplorationSites"
+		category="LensShortcuts" display_name="Exploration Sites"
+		description="Quickly switch to this lens."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		<keybind id="1" modifier_1="LeftControl" key="E" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+</root>

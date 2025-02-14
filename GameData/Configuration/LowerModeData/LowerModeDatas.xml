@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<lower_mode_data id="ZodiacNeuronScene"
+		input_mode="ZodiacNeurons"
+		hide_hide_radial_menu="true" hide_right_header_except_maps="true"
+		min_x="-400" max_x="400" min_z="-400" max_z="400" min_zoom="2" max_zoom="90" anchor_y="5"
+		ground_line_draw_level="0.1" min_y_for_photo_mode="2"
+		overriding_weather="Alt_ZodiacNeurons" closes_like_a_window="true" overriding_music_type="Zodiac"
+		lower_mode_content_bundle_name="hotm_content" lower_mode_content_filename="Assets/__Library/_TheZodiac/ZodiacNeuronScene.prefab"/>
+
+	<lower_mode_data id="ZodiacPodScene"
+		input_mode="ZodiacPods"
+		hide_technology_section_of_left_menu="true" hide_hide_radial_menu="true" hide_right_header_except_maps="true" hide_task_stack="true"
+		min_x="-400" max_x="400" min_z="-400" max_z="400" min_zoom="2" max_zoom="90" anchor_y="5"
+		ground_line_draw_level="0.1"
+		min_y_for_photo_mode="-18" max_y_for_photo_mode="6.51"
+		min_x_for_photo_mode="38.54" max_x_for_photo_mode="100.97"
+		min_z_for_photo_mode="-19.2" max_z_for_photo_mode="11.08"
+		overriding_weather="Alt_ZodiacPods" closes_like_a_window="true" overriding_music_type="PodChamber"
+		lower_mode_content_bundle_name="hotm_content" lower_mode_content_filename="Assets/__Library/_TheZodiac/ZodiacPods.prefab"/>
+
+	<lower_mode_data id="ZodiacHexRewardScene"
+		input_mode="ZodiacHexes"
+		hide_hide_radial_menu="true" hide_right_header_except_maps="true"
+		min_x="-400" max_x="400" min_z="-400" max_z="400" min_zoom="2" max_zoom="90" anchor_y="5"
+		ground_line_draw_level="0.1" min_y_for_photo_mode="2"
+		overriding_weather="Alt_ZodiacHexes" closes_like_a_window="true" overriding_music_type="Zodiac"
+		lower_mode_content_bundle_name="hotm_content" lower_mode_content_filename="Assets/__Library/_TheZodiac/HexRewardScene.prefab"/>
+
+	<lower_mode_data id="HackingScene"
+		input_mode="Hacking"
+		hide_left_header="true" hide_hide_radial_menu="true" hide_right_header_full="false" hide_task_stack="true"
+		min_x="-400" max_x="400" min_z="-400" max_z="400" min_zoom="2" max_zoom="90" anchor_y="5"
+		ground_line_draw_level="0.1" 
+		min_y_for_photo_mode="0.7" max_y_for_photo_mode="80"
+		min_x_for_photo_mode="-200" max_x_for_photo_mode="200"
+		min_z_for_photo_mode="-200" max_z_for_photo_mode="200"
+		overriding_weather="Alt_Hacking" does_not_close_from_hotkeys="true" particle_tests_do_ui_style="true" overriding_music_type="Hacking"
+		lower_mode_content_bundle_name="hotm_content" lower_mode_content_filename="Assets/__Library/_TheZodiac/HackingScene.prefab"/>
+
+	<!--Todo finishing this up when timelines can actually be completed.  use Assets/Ambience/Winds/Wind_On_Trees_Loop.ogg as ambience-->
+	<lower_mode_data id="TimelineComplete"
+		input_mode="Hacking"
+		hide_technology_section_of_left_menu="true" hide_hide_radial_menu="true" hide_right_header_except_maps="true" hide_task_stack="true"
+		min_x="-400" max_x="400" min_z="-400" max_z="400" min_zoom="2" max_zoom="90" anchor_y="5"
+		ground_line_draw_level="0.1"
+		min_y_for_photo_mode="-18" max_y_for_photo_mode="6.51"
+		min_x_for_photo_mode="38.54" max_x_for_photo_mode="100.97"
+		min_z_for_photo_mode="-19.2" max_z_for_photo_mode="11.08"
+		overriding_weather="Alt_ZodiacPods" closes_like_a_window="true" overriding_music_type="TimelineComplete"
+		lower_mode_content_bundle_name="hotm_content" lower_mode_content_filename="Assets/__Library/_TheZodiac/ZodiacPods.prefab"/>
+
+</root>

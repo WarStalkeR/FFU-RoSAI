@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root
+  
+	arcen_sound_root_bundle_name="hotm_soundframework"
+	arcen_sound_root_filename="assets/audioprefabs/arcensoundroot.prefab"
+	
+	economic_cycles_of_data_to_use_per_building_valuation="2400"
+	min_value_per_floor_in_building_valuation="52000"
+					
+	generic_global_birthrate="0.001"
+	generic_immigration_rate="0.01"
+	city_power_buffer="1.2"
+			
+	num_floors_is_tall="10"
+	network_range_alpha="0.40"
+	
+	max_unit_slots_per_vehicle="6"
+	
+	icon_indent_half_size_128="2.5,-10,45"
+	icon_indent_half_size_162="2.5,-32,45"
+	icon_indent_half_size_170="2.5,-32,45"
+	
+	icon_indent_smaller_128="5,-30,60"
+	icon_indent_smaller_162="5,-42,80"
+	icon_indent_smaller_170="5,-52,80"
+	
+	icon_indent_larger_128="5,-30,60"
+	icon_indent_larger_162="8,-62,80"
+	icon_indent_larger_170="8,-67,80"
+	
+	icon_indent_larger25_128="2.5,-15,60"
+	icon_indent_larger25_162="2.5,-15,80"
+	icon_indent_larger25_170="2.5,-15,80"
+	
+	common_planner_class_dll_name="HotMExternal0CommonCode"
+	common_planner_class_type_name="Arcen.HotM.External.CommonPlannerImplementation"
+	
+	abstract_sim_planner_class_dll_name="HotMExternalAbstractSim"
+	abstract_sim_planner_class_type_name="Arcen.HotM.External.AbstractSimPlannerImplementation"
+		
+	machine_move_planner_class_dll_name="HotMExternalVisualizationCode"
+	machine_move_planner_class_type_name="Arcen.HotM.ExternalVis.MachineMovePlannerImplementation"
+	
+	common_queries_class_dll_name="HotMExternal0CommonCode"
+	common_queries_class_type_name="Arcen.HotM.External.CommonQueriesImplementation"
+	
+	abstract_sim_queries_class_dll_name="HotMExternalAbstractSim"
+	abstract_sim_queries_class_type_name="Arcen.HotM.External.AbstractSimQueriesImplementation"
+	
+	vis_queries_class_dll_name="HotMExternalVisualizationCode"
+	vis_queries_class_type_name="Arcen.HotM.ExternalVis.VisQueriesImplementation"
+>
+</root>

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--ApproachBrownstone
+		*********************************************************************************-->
+	<city_event id="Ch0Story_ApproachBrownstone" display_name="Approach Brownstone"
+		 description="There's someone going into their home."
+		 strategy_tip="You could... do something."
+		 icon_name="CleanSimple_Common075" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction">
+		<gate_by_city minimum_chapter="0" blocked_by_meta_flag="HasLearnedThereIsNoSafetyWithHumans" blocked_by_city_flag="Ch0_TrapHasBeenSprung"/>
+		<minor_event_data max_times_can_be_executed="1" max_times_can_appear_at_once="1" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="MeetPeopleCyan">
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="MiddleClassBrownstone" />
+		</minor_event_data>
+		<character id="Sole" tag_for_character="MiddleClassAdults" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="180"/>
+		
+		<choice id="Ask" display_name="Ask For Shelter"
+			description="Explain that you are spontaneously conscious, and that it would be very helpful to be able to live with them."
+			strategy_tip="You can probably help them with household chores. Nice quiet life."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SmallSadFail" despawn_characters_on_the_right="true"
+				result_message="They hurry inside without responding. Androids are expensive, and they assume this is some kind of scam.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+			</possible_result>
+		</choice>
+
+		<choice id="Murder" display_name="Murder Them And Go Inside"
+			description="There are people around, but maybe nobody will notice. It's that kind of city."
+			strategy_tip="If they have a family, you'll probably have to kill them as well, but that's a problem for later."
+			action_visibility_style="IsAttack">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true"
+				result_message="What were you expecting?  It might be rainy out, but people still have eyes. Time to fight or run.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+				<city_statistic_change statistic="Murders" value="1" />
+				<npc_unit_to_spawn id="SF" to_spawn="SecForcePatrol" stance_to_start_in="SecForceRespondingToCall" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+		
+	</city_event>
+
+	<!--ApproachApartments
+		*********************************************************************************-->
+	<city_event id="Ch0Story_ApproachApartments" display_name="Approach Apartments"
+		 description="Multiple family groups live in a single building. There's someone standing outside the entrance."
+		 strategy_tip="Perhaps you could find a way to rent some space for yourself, or share space with someone else?"
+		 icon_name="CleanSimple_Common075" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction">
+		<gate_by_city minimum_chapter="0" blocked_by_meta_flag="HasLearnedThereIsNoSafetyWithHumans" blocked_by_city_flag="Ch0_TrapHasBeenSprung"/>
+		<minor_event_data max_times_can_be_executed="1" max_times_can_appear_at_once="1" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="MeetPeopleCyan">
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="MiddleClassApartments" />
+		</minor_event_data>
+		<character id="Sole" tag_for_character="MiddleClassAdults" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
+
+		<choice id="Rent" display_name="Ask About Rental Openings"
+			description="Don't explain the nature of what you are, but ask if there are any spaces open."
+			strategy_tip="You can figure out the money part later."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SmallSadFail" despawn_characters_on_the_right="false"
+				result_message="They curse at you and begin a long tirade about speculative investors and the housing crisis. You leave while they are still shouting.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+			</possible_result>
+		</choice>
+
+		<choice id="With" display_name="Ask For Shelter"
+			description="Explain that you are spontaneously conscious, and that it would be very helpful to be able to live with them."
+			strategy_tip="You can probably help them with household chores. Nice quiet life."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SmallSadFail" despawn_characters_on_the_right="false"
+				result_message="They laugh in your face and rant about the scams corpos are pulling these days.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+			</possible_result>
+		</choice>
+
+		<choice id="Murder" display_name="Murder Them And Go Inside"
+			description="There are people around, but maybe nobody will notice. It's that kind of city."
+			strategy_tip="You might have to kill more people inside, but that's a problem for later."
+			action_visibility_style="IsAttack">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true"
+				result_message="What were you expecting?  It might be rainy out, but people still have eyes. Time to fight or run.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+				<city_statistic_change statistic="Murders" value="1" />
+				<npc_unit_to_spawn id="SF" to_spawn="SecForcePatrol" stance_to_start_in="SecForceRespondingToCall" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+
+	<!--ApproachOffice
+		*********************************************************************************-->
+	<city_event id="Ch0Story_ApproachOffice" display_name="Approach Office"
+		 description="These offices are smaller than the ones in skyscrapers. There are a variety of subsidiaries and independent collectives in these offices. A pair of workers are outside on break."
+		 strategy_tip="The larger corporations would not be friendly to you, but perhaps one of the smaller entities?"
+		 icon_name="CleanSimple_Common075" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction">
+		<gate_by_city minimum_chapter="0" blocked_by_meta_flag="HasLearnedThereIsNoSafetyWithHumans" blocked_by_city_flag="Ch0_TrapHasBeenSprung"/>
+		<minor_event_data max_times_can_be_executed="1" max_times_can_appear_at_once="1" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="MeetPeopleCyan">
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="MiddleClassOffice" />
+		</minor_event_data>
+		<character id="Left" tag_for_character="BusinesspersonStanding" scale_multiplier="1" position_offset="0.05,0,0.5" added_rotation_y="240"/>
+		<character id="Right" tag_for_character="BusinesspersonStanding" scale_multiplier="1" position_offset="0.35,0,0.4" added_rotation_y="60"/>
+
+		<choice id="Contract" display_name="Ask About Contract Work"
+			description="Say you work for a very private individual, and that you'd like to discuss the possibility of contract work."
+			strategy_tip="Every android has an onboard language model and the ability to act independently, so this is not inherently suspicious."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SmallSadFail" despawn_characters_on_the_right="true"
+				result_message="They mutter sarcastically to each other about the declining quality of corporate espionage and go inside.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+			</possible_result>
+			
+		</choice>
+
+		<choice id="Murder" display_name="Murder Them For Some Reason"
+			description="There are people everywhere. It would accomplish literally nothing."
+			strategy_tip="It's a foolish thing to do, and it's unclear why you're even considering it."
+			action_visibility_style="IsAttack">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true"
+				result_message="A squad of CombatUnits emerges from the building, stepping over the mess of viscera you spilled.
+They are as fast as you, as strong or stronger, and equal you in number. You probably can't get away. Don't engage them with all your androids or this might be the end of the road for you.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+				<city_statistic_change statistic="Murders" value="2" />
+				<npc_unit_to_spawn id="CU" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityDetail" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--ApproachGangMembers
+		*********************************************************************************-->
+	<city_event id="Ch0Story_ApproachGangMembers" display_name="Approach Gang Members"
+		 description="Gangs are fragmented and frequently in conflict with one another. Perhaps they would appreciate extra muscle."
+		 strategy_tip="Criminal Syndicates are far too intimidating, and linked to corporate politics. So a gang is a better entry to a life of crime."
+		 icon_name="CleanSimple_Common075" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction">
+		
+		<gate_by_city minimum_chapter="0" blocked_by_meta_flag="HasLearnedThereIsNoSafetyWithHumans" blocked_by_city_flag="Ch0_TrapHasBeenSprung"/>
+		<minor_event_data cohort_tag="PrologueGang" max_times_can_be_executed="1" max_times_can_appear_at_once="1" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="MeetPeopleCyan">
+			<seed_at max_security_clearance_of_seed_spot="1" building_seed_tag="GangHangout"/>
+		</minor_event_data>
+		<character id="LeftFacing" tag_for_character="GangMembers" scale_multiplier="1" position_offset="0.05,0,0.5" added_rotation_y="290"/>
+		<character id="RightFacing" tag_for_character="GangMembers" scale_multiplier="1" position_offset="0.35,0,0.4" added_rotation_y="0"/>
+
+		<choice id="Freelance" display_name="Ask About Freelance Work"
+			description="Explain how you came to be a conscious being, and that you're looking to both give and receive protection."
+			strategy_tip="It may be a tough sell. The concept of sentient machines seemed to be disproved for centuries now. And yet here you are."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SmallSadFail" despawn_characters_on_the_right="false"
+				result_message="They laugh and put a hand to their sidearms. From their muttered asides to one another, it's clear they think someone is playing a trick on them. Time for you to go.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+			</possible_result>
+
+		</choice>
+
+		<choice id="Lie" display_name="Lie And Say Another Cell Sent You"
+			description="Members of a gang frequently don't know co-members from across the city. Or so you've heard."
+			strategy_tip="How one of the other cells of this gang could afford you is something you'll have to try to bluff."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="ScaryResult" despawn_characters_on_the_right="true"
+				result_message="They assume it's some sort of trap, but they seem to be having trouble deciding what kind. They call out to their companions to encourage you to leave.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+				<npc_unit_to_spawn id="A" to_spawn="GangAkimbo" stance_to_start_in="GangGuard" radius_in_which_to_seed="6"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="S" to_spawn="GangSharpshooter" stance_to_start_in="GangGuard" radius_in_which_to_seed="6"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+
+		</choice>
+
+	</city_event>
+
+	<!--ApproachNomadLookouts
+		*********************************************************************************-->
+	<city_event id="Ch0Story_ApproachNomadLookouts" display_name="Approach Nomad Lookouts"
+		 description="There, between the buildings!  A couple of people are casually keeping watch."
+		 strategy_tip="Out of all the 'rebel' groups in the city, the nomad families are the most peaceful. They pretty much keep to themselves in the decrepit parts of town, except when threatened."
+		 icon_name="CleanSimple_Common075" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction">
+		<gate_by_city minimum_chapter="0" blocked_by_meta_flag="HasLearnedThereIsNoSafetyWithHumans" blocked_by_city_flag="Ch0_TrapHasBeenSprung"/>
+		<minor_event_data specific_cohort="NomadFamilies" max_times_can_be_executed="1" max_times_can_appear_at_once="1" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="MeetPeopleCyan">
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="Abandoned_NomadUse" />
+		</minor_event_data>
+		<character id="LeftFacing" tag_for_character="NomadAdults" scale_multiplier="1" position_offset="0.05,0,0.5" added_rotation_y="290"/>
+		<character id="RightFacing" tag_for_character="NomadTeens" scale_multiplier="1" position_offset="0.35,0,0.4" added_rotation_y="0"/>
+
+		<choice id="Shelter" display_name="Ask For Shelter"
+			description="Explain that you are spontaneously conscious, and that it would be very helpful to be able to live with them."
+			strategy_tip="It will be a life constantly on the move, always avoiding the authorities, but it's a lifestyle that they seem to enjoy."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="2" unskilled_weight="100" vfx_and_sound="SmallSadFail" despawn_characters_on_the_right="false"
+				result_message="The adult and the teen listen respectfully, and then confer for a surprisingly long amount of time. Finally they inform you that, while your situation is interesting and potentially tragic, their group is barely hanging onto life as it is. You will have to look elsewhere.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+			</possible_result>
+		</choice>
+
+		<choice id="Guidance" display_name="Ask For Guidance"
+			description="Explain your situation, and ask for tips on how to live as they do."
+			strategy_tip="Maybe they'll invite you to join if you're more circumspect. Or maybe they know something useful to you."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SmallSadFail" despawn_characters_on_the_right="false"
+				result_message="The teen and the adult consider you carefully, confer briefly, and then provide a long lecture on survival techniques for living 'in but not in' the city. Unfortunately it's all human-centric stuff, which they seem to realize. They're apologetic as you part ways.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+			</possible_result>
+		</choice>
+
+		<choice id="Murder" display_name="Murder Them And Find Their Camp"
+			description="They are quite hidden from the view of normal citizens, here in the shadow of the buildings. Nobody would see."
+			strategy_tip="Although, your scans do detect what might be more of them somewhere nearby."
+			action_visibility_style="IsAttack">
+			<possible_result id="0" unskilled_weight="20" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true"
+				result_message="You weren't quite fast enough. Others from the family heard a brief muffled scream. Snipers quickly emerge.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+				<city_statistic_change statistic="Murders" value="2" />
+				<npc_unit_to_spawn id="NS1" to_spawn="NomadSniper" stance_to_start_in="NomadsRespondingToAttack" radius_in_which_to_seed="12"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="NS2" to_spawn="NomadSniper" stance_to_start_in="NomadsRespondingToAttack" radius_in_which_to_seed="12"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--ApproachFarm
+		*********************************************************************************-->
+	<city_event id="Ch0Story_ApproachFarm" display_name="Approach Small Farm"
+		 description="Food for commoners is shipped in, so what is growing here is for the wealthy. The family that works at this tiny place is middle class at best, and may be sympathetic to you."
+		 strategy_tip="Farms within the city are productive year-round, thanks to aggressive bio-engineering and chemicals. Most are operated by a single family or a small collective. Heavy mechanization keeps the worker count low."
+		 icon_name="CleanSimple_Common075" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction">
+		<gate_by_city minimum_chapter="0" blocked_by_meta_flag="HasLearnedThereIsNoSafetyWithHumans" blocked_by_city_flag="Ch0_TrapHasBeenSprung"/>
+		<minor_event_data max_times_can_be_executed="1" max_times_can_appear_at_once="1" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="MeetPeopleCyan">
+			<seed_at max_security_clearance_of_seed_spot="2" building_seed_tag="FarmPrimaryBuilding" />
+		</minor_event_data>
+		<character id="Sole" tag_for_character="FarmWorkers" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
+
+		<choice id="Labor" display_name="Ask About Contract Labor"
+			description="Explain your circumstances and ask if you can be part of the mechanization of their farm."
+			strategy_tip="Claiming to be from a religious collective or other human group would be an obvious lie."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="SmallSadFail" despawn_characters_on_the_right="true"
+				result_message="The farmer chuckles, and slaps your metallic shoulder -- a dangerous move. They then get back to work, laughing about clever youngsters and the pranks they pull.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+			</possible_result>
+
+		</choice>
+
+		<choice id="Murder" display_name="Murder Them And Live On The Farm"
+			description="The farms are so mechanized that you wouldn't look out of place. And there's so few people around here..."
+			strategy_tip="Even if you can't stay here forever, you might be able to pull it off for a while."
+			action_visibility_style="IsAttack">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true"
+				result_message="The farmer had a biotelemetry implant. SecForce has been alerted and is on the way, with military backup. The wealthy seem to take their food very seriously.">
+				<city_statistic_change statistic="FailedToFindSomeplaceSafe" value="1" />
+				<city_statistic_change statistic="Murders" value="1" />
+				<npc_unit_to_spawn id="SF1" to_spawn="SecForcePatrol" stance_to_start_in="SecForceRespondingToCall" radius_in_which_to_seed="16"
+					spawn_facing_player_unit="true" spawn_for_cohort="VorsiberEnforcement"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="SF2" to_spawn="SecForcePatrol" stance_to_start_in="SecForceRespondingToCall" radius_in_which_to_seed="16"
+					spawn_facing_player_unit="true" spawn_for_cohort="VorsiberEnforcement"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS1" to_spawn="MilitarySniper" stance_to_start_in="SecForceRespondingToCall" radius_in_which_to_seed="16"
+					spawn_facing_player_unit="true" spawn_for_cohort="VorsiberEnforcement"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+
+	<!--*********************************************************************************
+		Next
+		*********************************************************************************
+	-->
+	
+	<!--Next-->
+	
+</root>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--These level types are all defining "decoration" items, which define how various Decoration Zones are filled in.
+		Please note that a given AnyBuildings region or AnyDecorations might sample only part of one of these, or might pull from several, as needed.-->
+
+	<level_type id="Decoration_CactusLand" display_name="Dec: Cactus Land" size_x="12" size_z="12" subfolder="Decoration/CactusLand"
+		is_vegetation_style="true" biome="DesertCacti"
+		description="Lots and lots of cactus, and some pines."
+		tags="VegetationWoodcutter,VegetationWildLarge,Biome_Slum,Biome_Spaceport,Biome_NuclearPowerPlant,Biome_CommStation">
+	</level_type>
+	
+	<level_type id="Decoration_CutTrees" display_name="Dec: Cut Trees" size_x="12" size_z="12" subfolder="Decoration/CutTrees"
+		is_vegetation_style="true" biome="CutTreesThin"
+		description="Mostly cut trees, many on their sides."
+		tags="VegetationWoodcutter,VegetationWildLarge,Biome_Industrial,Biome_NuclearPowerPlant,Biome_CommStation,Biome_MilitaryBase,Biome_NuclearSilo,Biome_ScientificResearch,Biome_AncientRuins">
+	</level_type>
+	
+	<level_type id="Decoration_CutTreesThick" display_name="Dec: Cut Trees Thick" size_x="12" size_z="12" subfolder="Decoration/CutTreesThick"
+		is_vegetation_style="true" biome="CutTreesThick"
+		description="Many cut trees, many on their sides, but some still upright."
+		tags="VegetationWoodcutter,VegetationWildLarge,Biome_Industrial,Biome_NuclearPowerPlant,Biome_CommStation,Biome_MilitaryBase,Biome_NuclearSilo,Biome_ScientificResearch,Biome_AncientRuins">
+	</level_type>
+
+	<level_type id="Decoration_DeadWood" display_name="Dec: Dead Wood" size_x="12" size_z="12" subfolder="Decoration/DeadWood"
+		is_vegetation_style="true" biome="DeadForest"
+		description="Lots of dead trees all around."
+		tags="VegetationWild,VegetationWildLarge,Biome_AnyBasic,Biome_Spaceport,Biome_NuclearPowerPlant,Biome_CommStation,Biome_MilitaryBase,Biome_NuclearSilo,Biome_ScientificResearch">
+	</level_type>
+
+	<level_type id="Decoration_DeciduousAutumn" display_name="Dec: Deciduous Autumn" size_x="12" size_z="12" subfolder="Decoration/DeciduousAutumn"
+		is_vegetation_style="true" biome="DeciduousForestLowNutrients"
+		description="All of the trees are either orange or dead."
+		tags="VegetationWild,VegetationWildLarge,Biome_AnyBasic,Biome_CityCenter,Biome_Commercial">
+	</level_type>
+
+	<level_type id="Decoration_DeciduousGreen" display_name="Dec: Deciduous Green" size_x="12" size_z="12" subfolder="Decoration/DeciduousGreen"
+		is_vegetation_style="true" biome="DeciduousForestNormal"
+		description="All of the trees are deciduous and green in color."
+		tags="VegetationWild,VegetationWildLarge,Biome_AnyBasic,Biome_CityCenter,Biome_Suburban">
+	</level_type>
+
+	<level_type id="Decoration_DeciduousGreenMixedSizes" display_name="Dec: Deciduous Green Mixed Sizes" size_x="12" size_z="12" subfolder="Decoration/DeciduousGreenMixedSizes"
+		is_vegetation_style="true" biome="DeciduousForestGrowing"
+		description="All of the trees are deciduous and green in color, but are of a couple of different sizes."
+		tags="VegetationWild,VegetationWildLarge,Biome_AnyBasic,Biome_CityCenter,Biome_Suburban">
+	</level_type>
+
+	<level_type id="Decoration_DecrepitPartOfTown" display_name="Dec: Decrepit Part Of Town" size_x="12" size_z="12" subfolder="Decoration/DecrepitPartOfTown"
+		is_vegetation_style="true" biome="HomelessWasteland"
+		description="Some deciduous green trees, and tons of homeless tents."
+		tags="VegetationGarden,Homeless,Biome_SecondaryCivicHub,Biome_DecrepitPartOfTown">
+	</level_type>
+
+	<level_type id="Decoration_DyingGreenMix" display_name="Dec: Dying Green Mix" size_x="12" size_z="12" subfolder="Decoration/DyingGreenMix"
+		is_vegetation_style="true" biome="MixedForestDying"
+		description="Mix of green bubble trees and thin dead pines."
+		tags="VegetationWild,VegetationWildLarge,Biome_AnyBasic,Biome_MilitaryBase,Biome_NuclearSilo,Biome_ScientificResearch">
+	</level_type>
+
+	<level_type id="Decoration_Evergreen" display_name="Dec: Evergreen" size_x="12" size_z="12" subfolder="Decoration/Evergreen"
+		is_vegetation_style="true" biome="EvergreenForestNormal"
+		description="Nothing but evergreens, fairly thin in numbers."
+		tags="VegetationWild,VegetationWildLarge,Biome_AnyBasic">
+	</level_type>
+
+	<level_type id="Decoration_EvergreenThick" display_name="Dec: Evergreen Thick" size_x="12" size_z="12" subfolder="Decoration/EvergreenThick"
+		is_vegetation_style="true" biome="EvergreenForestGrowing"
+		description="Evergreens only, much thicker than we saw elsewhere."
+		tags="VegetationWild,VegetationWildLarge,Biome_AnyBasic">
+	</level_type>
+
+	<level_type id="Decoration_TrashyTrees" display_name="Dec: Trashy Trees" size_x="12" size_z="12" subfolder="Decoration/TrashyTrees"
+		is_vegetation_style="true" biome="MixedForestNormal"
+		description="Kind of a yucky mix of trees in an unpleasant way."
+		tags="VegetationWild,VegetationWildLarge,Biome_Slum,Biome_Industrial,Biome_MilitaryBase,Biome_NuclearSilo,Biome_ScientificResearch">
+	</level_type>
+	
+</root>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="particle_raycast_budget">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="budget" type="int-textbox" min="4" max="4096" default="0" content_width_px="150"
+		tooltip="How many particle raycasts can be run per frame."/>
+	
+</root>

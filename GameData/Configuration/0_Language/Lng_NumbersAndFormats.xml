@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<lang id="Megabytes_Abbrev" text="MB" />
+
+	<lang id="NumBase_WholeBasic" text="0" skip_all_localization_on_node="true" />
+	<lang id="NumBase_ThousandsWhole" text="#,##0" skip_all_localization_on_node="true" />
+	<lang id="NumBase_ThousandsDecimal" text="#,##0.##" skip_all_localization_on_node="true" />
+	<lang id="NumBase_SmallFixedDecimal_1" text="0.0" skip_all_localization_on_node="true" />
+	<lang id="NumBase_SmallFixedDecimal_2" text="0.00" skip_all_localization_on_node="true" />
+	<lang id="NumBase_SmallFixedDecimal_3" text="0.000" skip_all_localization_on_node="true" />
+	<lang id="NumBase_SmallFixedDecimal_4" text="0.0000" skip_all_localization_on_node="true" />
+	<lang id="NumBase_ThousandsDecimalOptional1" text="#,##0.#" skip_all_localization_on_node="true" />
+	<lang id="NumBase_ThousandsDecimalOptional4" text="#,##0.####" skip_all_localization_on_node="true" />
+	
+	<lang id="Number_TimeSeconds" text="{0}s" />
+	<lang id="Number_TimeMinutesAndSeconds" text="{1}m {0}s" />
+	<lang id="Number_TimeHoursMinutesAndSeconds" text="{2}h {1}m {0}s" />
+
+	<lang id="Date_PrimaryFormat" text="{0} {1}, {2}" translation_notes="{0} is the Month as an abbreviated word, as noted below. {1} is the Day as the number 1-31. Again if you need 01 rather than 1 for this, please let me know. {2} is the Year in the format 2025 or similar."/>
+	<lang id="Date_With12HourTime" text="{0} {1}, {2} {3}:{4} {5}" translation_notes="Same notes as Date_PrimaryFormat. {3} is then the hour, in 1-12 for the hour. If this needs to be 01 rather than 1, please let me know. {4} is the minutes, 00-59, always both numbers. {5} is either Date_AM or Date_PM."/>
+	<lang id="Date_With24HourTime" text="{0} {1}, {2} {3}:{4}" translation_notes="Same notes as Date_PrimaryFormat. {3} is then the hour, in 0-23 for the hour. If this needs to be 01 rather than 1, please let me know. {4} is the minutes, 00-59, always both numbers."/>
+	<lang id="Date_AM" text="AM" translation_notes="Only used for 12 hour time."/>
+	<lang id="Date_PM" text="PM" translation_notes="Only used for 12 hour time."/>
+	<lang id="Date_JanuaryShort" text="Jan"/>
+	<lang id="Date_FebruaryShort" text="Feb"/>
+	<lang id="Date_MarchShort" text="Mar"/>
+	<lang id="Date_AprilShort" text="Apr"/>
+	<lang id="Date_MayShort" text="May"/>
+	<lang id="Date_JuneShort" text="Jun"/>
+	<lang id="Date_JulyShort" text="Jul"/>
+	<lang id="Date_AugustShort" text="Aug"/>
+	<lang id="Date_SeptemberShort" text="Sep"/>
+	<lang id="Date_OctoberShort" text="Oct"/>
+	<lang id="Date_NovemberShort" text="Nov"/>
+	<lang id="Date_DecemberShort" text="Dec"/>
+
+	<lang id="Number_ThousandsDecimal_Abbrev" text="{0}.&lt;size=70%&gt;{1}&lt;/size&gt; K" /> <!--&lt;color=&quot;#f2ff82&quot;&gt;K&lt;/color&gt;-->
+	<lang id="Number_MillionsDecimal_Abbrev" text="{0}.&lt;size=70%&gt;{1}&lt;/size&gt; M" /> <!--&lt;color=&quot;#ff7e5b&quot;&gt;M&lt;/color&gt;-->
+	<lang id="Number_BillionsDecimal_Abbrev" text="{0}.&lt;size=70%&gt;{1}&lt;/size&gt; B" /> <!--&lt;color=&quot;#2bbcff&quot;&gt;B&lt;/color&gt;-->
+	<lang id="Number_TrillionsDecimal_Abbrev" text="{0}.&lt;size=70%&gt;{1}&lt;/size&gt; T" /> <!--&lt;color=&quot;#18ffb6&quot;&gt;T&lt;/color&gt;-->
+	<lang id="Number_QuadrillionsDecimal_Abbrev" text="{0}.&lt;size=70%&gt;{1}&lt;/size&gt; Qa" /> <!--&lt;color=&quot;#ff186a&quot;&gt;Qa&lt;/color&gt;-->
+	<lang id="Number_QuintillionsDecimal_Abbrev" text="{0}.&lt;size=70%&gt;{1}&lt;/size&gt; Qi" /> <!--&lt;color=&quot;#ff37ce&quot;&gt;Qi&lt;/color&gt;-->
+		
+	<lang id="Number_ThousandsWhole_Abbrev" text="{0} K" /> <!--&lt;color=&quot;#f2ff82&quot;&gt;K&lt;/color&gt;-->
+	<lang id="Number_MillionsWhole_Abbrev" text="{0} M" /> <!--&lt;color=&quot;#ff7e5b&quot;&gt;M&lt;/color&gt;-->
+	<lang id="Number_BillionsWhole_Abbrev" text="{0} B" /> <!--&lt;color=&quot;#2bbcff&quot;&gt;B&lt;/color&gt;-->
+	<lang id="Number_TrillionsWhole_Abbrev" text="{0} T" /> <!--&lt;color=&quot;#18ffb6&quot;&gt;T&lt;/color&gt;-->
+	<lang id="Number_QuadrillionsWhole_Abbrev" text="{0} Qa" /> <!--&lt;color=&quot;#ff186a&quot;&gt;Qa&lt;/color&gt;-->
+	<lang id="Number_QuintillionsWhole_Abbrev" text="{0} Qi" /> <!--&lt;color=&quot;#ff37ce&quot;&gt;Qi&lt;/color&gt;-->
+
+	<lang id="Number_IntPercent" text="{0}%" />
+
+	<lang id="ListSeparator" text=", " />
+	<lang id="AfterLineItemHeader" text=": " />
+	<lang id="HyphenSeparator" text=" - " />
+	
+	<lang id="Timespan_Days_Hours" text="{0} Days, {1} Hours" />
+	<lang id="Timespan_Days" text="{0} Days" />
+	<lang id="Timespan_Hours" text="{0} Hours"  />
+
+	<lang id="Filesize_BytesSuffix" text="Bytes" />
+	<lang id="Filesize_KiloBytesSuffix" text="KB" />
+	<lang id="Filesize_MegaBytesSuffix" text="MB" />
+	
+	<lang id="PerSecond" text="{0}/s" />
+	<lang id="EveryFewSeconds" text="1 per {0}s" />
+
+	<lang id="Parenthetical" text="({0})" />
+	<lang id="ParentheticalOutOF" text="({0}/{1})" />
+	<lang id="ParentheticalPositiveNumber" text="(+{0})" />
+	<lang id="OutOF" text="{0}/{1}" />
+	<lang id="OutOF_SecondPart" text="/{0}" />
+	<lang id="OutOF_SecondPartLargeSpacing" text=" / {0}" />
+	<lang id="OutOF_FirstPart" text="{0}/" />
+	<lang id="ScreenResolution" text="{0}x{1}" />
+	<lang id="None" text="None" />
+	<lang id="NoHotkeyAssigned" text="Not Assigned" translation_notes="Should be relatively short, 16 characters or less. 'None' would work in many cases, or even just blankness or a dash. This is used to indicate that a hotkey/keybind could be assigned to a function, but has not been." />
+	<lang id="Empty" text="Empty" />
+	<lang id="UnknownMarker" text="???" />
+	<lang id="NumberUp" text="{0} -> {1}" />
+	<lang id="NumberUpWithMax" text="{0} -> {1} ({2} Max)" />
+
+	<lang id="ExpansionPrefix" text="Exp" />
+	<lang id="ExpansionFull" text="DLC Expansion" />
+	<lang id="ModPrefix" text="Mod" />
+	<lang id="ModPostfixAttribution" text="by {0}" />
+
+	<lang id="Multiplier" text="{0}x" />
+
+	<lang id="RightClick_Normal" text="Right-click" />
+	<lang id="RightClick_SteamDeck" text="Left-trigger" />
+
+	<lang id="LeftClick_Normal" text="Left-click" />
+	<lang id="LeftClick_SteamDeck" text="Right-trigger" />
+	
+</root>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<input_action id="RotateStructureLeft"
+		category="BuildMode" display_name="Rotate Structure Left"
+		description="When in structure build mode, rotates the structure counterclockwise."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="BuildMode">
+		<keybind id="1" key="Z" />
+		<keybind id="2" key="Mouse4" />
+	</input_action>
+
+	<input_action id="RotateStructureRight"
+		category="BuildMode" display_name="Rotate Structure Right"
+		description="When in structure build mode, rotates the structure clockwise."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="BuildMode">
+		<keybind id="1" key="C" />
+		<keybind id="2" key="Mouse5" />
+	</input_action>
+	
+</root>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="rename">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="old_path" type="string" maxlength="600" content_width_px="400" is_required="true"
+		tooltip="This specifies the old path that is no longer valid."/>
+
+	<attribute key="new_path" type="string" maxlength="600" content_width_px="400" is_required="true"
+		tooltip="This specifies the new path that should be used instead."/>
+</root>

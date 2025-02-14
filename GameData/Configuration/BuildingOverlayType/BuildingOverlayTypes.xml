@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_overlay id="Normal" display_name="Normal" is_visualization_enabled="false" is_default="true"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildingOverlayTypes_Basic"
+		color_gradient_positive="GradBlue"/>
+		
+	<building_overlay id="Districts" display_name="Districts" is_visualization_enabled="false" are_district_color_overlays_enabled="true"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildingOverlayTypes_Basic"
+		color_gradient_positive="GradBlue"/>
+	
+	<building_overlay id="MatchingBuildingStatus" display_name="Matching Building Status" is_visualization_enabled="true"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildingOverlayTypes_Basic"
+		color_gradient_positive="GradRed2"/>
+
+	<building_overlay id="DistanceFromMachines" display_name="Distance From Machines" is_visualization_enabled="true"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildingOverlayTypes_Basic"
+		color_gradient_positive="EasyToRead"/>
+
+	<building_overlay id="ResidentPercentage" display_name="Resident Percentage" is_visualization_enabled="true"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildingOverlayTypes_Basic"
+		color_gradient_positive="GradGold"/>
+
+	<building_overlay id="WorkerPercentage" display_name="Worker Percentage" is_visualization_enabled="true"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildingOverlayTypes_Basic"
+		color_gradient_positive="GradBlue"/>
+	
+	<building_overlay id="MatchingBuildingType" display_name="Matching Building Type" is_visualization_enabled="true"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildingOverlayTypes_Basic"
+		color_gradient_positive="GradRed2"/>
+	
+	<building_overlay id="MatchingBuildingTag" display_name="Matching Building Tag" is_visualization_enabled="true"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildingOverlayTypes_Basic"
+		color_gradient_positive="GradRed2"/>
+	
+	<building_overlay id="BuildingsInPOIs" display_name="Buildings In POIs" is_visualization_enabled="false" uses_building_highlights="true"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BuildingOverlayTypes_Basic"
+		color_gradient_positive="GradRed" />
+	
+</root>

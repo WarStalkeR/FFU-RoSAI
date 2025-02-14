@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--General note!
+		These things that are for the "primary sidebar" but not actually shown as sidebar items are still used by the system menu.-->
+	
+	<!--SaveLoad-->
+
+	<ui_sidebar_item id="SaveGame" display_name="Save Game"
+		description="Save the current state of your city."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="SaveLoad"
+		icon_name="CleanSimple_Device72" icon_color="#ffffff"  hotkey_to_display_as_toggle="SaveGame" is_hidden_when_ui_is_hidden="true" />
+	
+	<ui_sidebar_item id="LoadGame" display_name="Load Game"
+		description="Load a prior state from the current city, or load an entirely different city."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="SaveLoad"
+		icon_name="SF2_Folder" icon_color="#ffffff"  hotkey_to_display_as_toggle="LoadGame" is_hidden_when_ui_is_hidden="true" />
+
+	<!--Settings-->
+	
+	<ui_sidebar_item id="Settings" display_name="Settings"
+		description="Adjust various game settings, except for the keybinds for the game."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Settings"
+		icon_name="CleanSimple_SkillC030" icon_color="#ffffff"  hotkey_to_display_as_toggle="OpenSettings" is_hidden_when_ui_is_hidden="true" />
+
+	<ui_sidebar_item id="Controls" display_name="Controls"
+		description="Change the mouse/keyboard input bindings."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Settings"
+		icon_name="CleanSimple_Controls151" icon_color="#ffffff"  hotkey_to_display_as_toggle="OpenControls" is_hidden_when_ui_is_hidden="true" />
+
+	<!--Exit-->
+	
+	<ui_sidebar_item id="Quit" display_name="Quit Game"
+		description="Quit back to the main menu."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Exit"
+		icon_name="CleanSimple_Arrow115" icon_color="#ffffff"  hotkey_to_display_as_toggle="QuitToMainMenu" />
+
+	<ui_sidebar_item id="Exit" display_name="Exit to Desktop"
+		description="Exit game to desktop."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Exit"
+		icon_name="CleanSimple_Device01" icon_color="#ffffff"  hotkey_to_display_as_toggle="ExitToOS" />
+		
+	<!--Deep Cheat-->
+
+	<ui_sidebar_item id="BuildingOverlays" display_name="Building Overlays"
+		description="Allows you to see an alternative view of the world with buildings highlighted in specific ways depending on the filter criteria you set up."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="DeepCheat"
+		icon_name="FlatSkillB_binoculars" icon_color="#ffffff" hotkey_to_display_as_toggle="OpenBuildingOverlays" is_hidden_when_ui_is_hidden="true" />
+
+	<ui_sidebar_item id="BuildingDirectory" display_name="Building Directory"
+		description="Complete directory of all the buildings in the city, including the ability to click through and see way-too-detailed info about each one."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="DeepCheat"
+		icon_name="CleanSimple_Architecture04" icon_color="#ffffff"  is_hidden_when_ui_is_hidden="true" />
+
+	<ui_sidebar_item id="PopulationStats" display_name="Population Stats"
+		description="Statistics and information about different dimensions of the population of the city. Socioeconomic, professions, group affiliations, etc."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="DeepCheat"
+		icon_name="CleanSimple_Architecture08" icon_color="#ffffff" is_hidden_when_ui_is_hidden="true"  />
+	
+	<ui_sidebar_item id="UpgradesAndUnlocks" display_name="Upgrades And Unlocks"
+		description="Allows you to view and edit upgrades and unlocks when in cheat mode. This is a cheat-mode thing."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="DeepCheat"
+		icon_name="FlatSkillB_door_lock" icon_color="#ffffff"  is_hidden_when_ui_is_hidden="true" />
+
+	<ui_sidebar_item id="CityFlags" display_name="City Flags" skip_all_localization_on_node="true"
+		description="Looking to see the current state of the city flags?  This gives all the details."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="DebugDeepCheat"
+		icon_name="CleanSimple_Media48" icon_color="#ffffff"  is_hidden_when_ui_is_hidden="true" />
+
+	<ui_sidebar_item id="MetaFlags" display_name="Meta Flags" skip_all_localization_on_node="true"
+		description="Looking to see the current state of the metagame flags?  This gives all the details."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="DebugDeepCheat"
+		icon_name="CleanSimple_Media66" icon_color="#ffffff"  is_hidden_when_ui_is_hidden="true" />
+	
+	<!--Extended-->
+
+	
+	<ui_sidebar_item id="Discord" display_name="Discord"
+		description="Join the Discord server."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Extended"
+		icon_name="Discord" icon_color="#ffffff"  is_hidden_when_ui_is_hidden="true" />
+
+	<ui_sidebar_item id="MantisBugtracker" display_name="Mantis Bug-tracker"
+		description="The place to submit bug reports or suggestions."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Extended"
+		icon_name="HO_ErrorBugFixing" icon_color="#ffffff"  is_hidden_when_ui_is_hidden="true" />
+	
+	<ui_sidebar_item id="SavesAndLogs" display_name="Saves And Logs"
+		description="Open your local OS folder that includes your savegames and log files."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Extended"
+		icon_name="SF2_Folder" icon_color="#ffffff"  is_hidden_when_ui_is_hidden="true" />
+	
+	<!--
+	<ui_sidebar_item id="Cheats" display_name="Cheats"
+		description="Looking to cheat, for strategic gain or just for testing?  Here you go."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Extended"
+		icon_name="CleanSimple_SciFi047" icon_color="#ffffff"  hotkey_to_display_as_toggle="OpenCheats" is_hidden_when_ui_is_hidden="true" />
+	
+	<ui_sidebar_item id="Performance" display_name="Performance"
+		description="View performance information."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Extended"
+		icon_name="CleanSimple_SciFi032" icon_color="#ffffff"  hotkey_to_display_as_toggle="ShowPerformanceStats"  is_hidden_when_ui_is_hidden="true"/>
+		-->
+
+	<!--Cosmetic-->
+
+	<!--
+	<ui_sidebar_item id="PhotoMode" display_name="Photo Mode"
+		description="Photo mode allows for free camera exploration of the city, and taking screenshots with depth of field.
+Note that there is a large Settings section that allows you to change everything from the F-stop to the aperture size, focal length, etc."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Cosmetic"
+		icon_name="CleanSimple_Media70" icon_color="#ffffff" hotkey_to_display_as_toggle="PhotoModeToggle" />
+
+	<ui_sidebar_item id="VisualSpeed" display_name="Visual Speed"
+		description="Allows you to adjust the visual playback speed of the game for cosmetic reasons."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Cosmetic"
+		icon_name="CleanSimple_Media61" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="UIVisibility" display_name="UI Visibility"
+		description="Show or hide the ui. The sidebar will alway remain available in this mode (just hit escape to hide it)."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Cosmetic"
+		icon_name="CleanTriangle34" icon_color="#ffffff" hotkey_to_display_as_toggle="ToggleUI" />
+
+	<ui_sidebar_item id="WorldIcons" display_name="World Icons"
+		description="Show or hide the icons out and about in the world."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_DeepCheatItems" tags="Cosmetic"
+		icon_name="SF2_Geometricshape_147" icon_color="#ffffff" hotkey_to_display_as_toggle="ToggleWorldIcons" />
+-->
+</root>

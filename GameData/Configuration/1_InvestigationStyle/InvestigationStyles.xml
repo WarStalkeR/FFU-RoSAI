@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<investigation_style id="FindANanoSeed" display_name="Find NanoSeed"
+		description="Scattered throughout the city are secret basement labs like the one where you were born. One of them will have a NanoSeed in it."
+		strategy_tip="NanoSeeds occasionally passed through your old lab, but the labs are moved frequently. You'll have to locate another one."
+		method_details="Your androids will download last week's camera footage and watch Technician androids and Scientist-class humans for suspicious activity."
+		is_every_possibility_a_valid_choice="false"
+		/>
+
+	<investigation_style id="ExamineWaterPurification" display_name="Examine Water Purification"
+		description="There are water purification plants throughout the city. It's not a technology you are familiar with, so you will study what the humans are doing."
+		strategy_tip="Right now you are stuck with contaminated groundwater. Its not safe for human consumption and has limited use."
+		is_every_possibility_a_valid_choice="true" number_of_turns_required_to_investigate_a_location="4" 
+		show_all_results_as_beacon_style="true"
+		/>
+
+	<investigation_style id="TakeSamplesFromBovineCarcass" display_name="Take Samples From Bovine Carcass"
+		description="To grow bovine meat, you need to gather cells from specific parts of the cow. This will take time. You can't afford to make mistakes or you risk more cow deaths, so be thorough."
+		strategy_tip="There are cows in barns throughout the city -- for the benefit of the uppermost classes, of course."
+		is_every_possibility_a_valid_choice="true" number_of_turns_required_to_investigate_a_location="3" 
+		show_all_results_as_beacon_style="true"
+		/>
+
+	<investigation_style id="TakeSamplesFromFields" display_name="Take Samples From Fields"
+		description="To do this right, you must take samples from at least two kinds of crop. It's relatively quick to take each sample, but you're likely to face increasing opposition with each sample you take."
+		strategy_tip="There are farms all throughout the city. Some of the smaller ones are run by religious organizations, while the larger ones are corporate."
+		is_every_possibility_a_valid_choice="true" number_of_turns_required_to_investigate_a_location="2" number_of_separate_buildings_required_as_choices="2" each_building_must_be_separate_variant="true"
+		show_all_results_as_beacon_style="true"
+		/>
+
+	<investigation_style id="FactoryProducingDailyNecessities" display_name="Factory Producing Daily Necessities"
+		description=""
+		strategy_tip=""
+		show_all_results_as_beacon_style="true" is_territory_control_style="true"		
+		/>
+
+	<investigation_style id="WarehouseWithFurniture" display_name="Warehouse With Furniture"
+		description=""
+		strategy_tip=""
+		show_all_results_as_beacon_style="true" is_territory_control_style="true"
+		/>
+
+	<investigation_style id="SecureMechPilotSoftware" display_name="Secure Mech Pilot Software"
+		description="Mech pilots must use training simulator software. You want it."
+		strategy_tip="Best to investigate places where those pilots congregate."
+		method_details="Your androids with sufficient clearance can slip inside and make downloads from moderately-secure areas."
+		is_every_possibility_a_valid_choice="false" show_rings_around_every_cell="true"
+		/>
+
+</root>

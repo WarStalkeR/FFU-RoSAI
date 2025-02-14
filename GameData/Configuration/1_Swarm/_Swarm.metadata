@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="swarm">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+
+	<attribute key="color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the icon of this project?"/>
+	<attribute key="color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, for the glowing version."/>
+	<attribute key="color_hovered_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, when being hovered."/>
+
+	<attribute key="icon_scale" type="float-textbox" min="0.1" max="4" default="1" content_width_px="50"
+		is_required="true" tooltip="The scale of the icon relative to other swarms."/>
+
+	<attribute key="message_on_first_appears" type="node-dropdown" node_source="OtherKeyMessage" content_width_px="200" is_required="false"
+		tooltip="When this goes from none of this swarm to some of this swarm for the first time in a timeline, show this message." />
+	
+	<attribute key="city_flag_to_trip_on_first_appears" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="When this goes from none of this swarm to some of this swarm for the first time in a timeline, trip this city flag." />
+
+</root>

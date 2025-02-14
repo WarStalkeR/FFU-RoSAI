@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="security_clearance">
+
+	<attribute key="level" type="int-textbox" min="0" max="30" default="0" content_width_px="300" is_required="true"
+		tooltip="What is the level of this security clearance?  There should only be one of each kind of level in the game. Higher is always better."/>
+	
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of what is going on with this act."/>
+	
+	<attribute key="applied_outcast_badge_if_actor_comes_here" type="node-dropdown" is_required="false" node_source="ActorBadge" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which badge should be applied to actors who come into here if they don't have the appropriate clearance, and should it mark them as an outcast?" />
+	
+</root>

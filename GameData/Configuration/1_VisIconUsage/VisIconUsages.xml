@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--These are icons used somewhere in the game. By specifying them this way, two things happen.
+		First, we can find them easily when doing a search of all the xml, which helps prevent double usage.
+		Secondly, modders can swap out icons without having to touch code, which is a nice little extra benefit.-->
+
+
+	<!--Misc ui -->
+	
+	<vis_icon_usage id="CheckerSquare"
+		 internal_notes="Used as a basic square on things like graph interfaces, where we need to show a key."
+		 icon_name="CleanSimple_Common116" >
+	</vis_icon_usage>
+
+	<!--Top bar-->
+
+	<vis_icon_usage id="Header_Menu"
+		 icon_name="SF2_Gear23" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_Map"
+		 icon_name="SF2_Map" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_EndOfTime"
+		 icon_name="HO_StreetLight" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_VirtualWorld"
+		 icon_name="WEmblem196" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_History"
+		 icon_name="FlatSkillB_notebook" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_RecentEvents"
+		 icon_name="SK_Hourglass" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_Hardware"
+		 icon_name="SW_AbstractShape2" default_color="#c6a2c6" default_color_hdr_intensity="0"><!--WEmblem226-->
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_VictoryPath"
+		 icon_name="CleanSimple_Common114" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_Handbook"
+		 internal_notes="The top bar, the small icon of the machine handbook."
+		 icon_name="FlatSkillB_book2" default_color="#FFB18D" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_Inventory"
+		 internal_notes="The top bar, the small icon of the inventory."
+		 icon_name="HL_HouseShelves6" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_Forces"
+		 internal_notes="The top bar, the small icon of the forces sidebar."
+		 icon_name="WEmblem030" default_color="#BE5C45" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_StructuresWithComplaints"
+		 internal_notes="The top bar, the small icon of the structures with complaints sidebar."
+		 icon_name="HO_ErrorProcess" default_color="#828282" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_Networks"
+		 internal_notes="The top bar, the small icon of the networks sidebar."
+		 icon_name="CleanSimple_SciFi038" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_CultActions"
+		 internal_notes="The top bar, the small icon of the networks sidebar."
+		 icon_name="SW_Passion" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+	
+	<vis_icon_usage id="Header_BuildMode"
+		 internal_notes="The radial area, the small icon of the build mode toggle."
+		 icon_name="CleanSimple_SciFi037" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_CommandMode"
+		 internal_notes="The radial area, the small icon of the command mode toggle."
+		 icon_name="CS_ChessPieces" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_Dooms"
+		 internal_notes=""
+		 icon_name="WEmblem144" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_CheatMode"
+		internal_notes="Indicator that the game is currently in cheat mode."
+		icon_name="CleanTriangle10" default_color="#B5FC63" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Header_Goal"
+		internal_notes="Indicator of what your current goal is."
+		icon_name="CleanSimple_Game17" default_color="#c6a2c6" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="NoTech"
+		 internal_notes="There is no tech selected at the moment."
+		 icon_name="WEmblem081" default_color="#ff4e2b" default_color_hdr_intensity="2" default_scale="0.6"/>
+
+	<vis_icon_usage id="Upgrade"
+		 internal_notes="An immediate upgrade."
+		 icon_name="CleanSimple_Arrow050" default_color="#ff4e2b" default_color_hdr_intensity="2" default_scale="0.6"/>
+	
+	<vis_icon_usage id="AttackOfOpportunity"
+		 internal_notes="Enemies attacking you as you move out of their range."
+		 icon_name="CleanSimple_SkillC063" default_color="#A768DE" default_color_hdr_intensity="2" default_scale="0.6"/>
+
+	<vis_icon_usage id="BuildingStun"
+		 internal_notes="When a building is stunned and cannot do work right now."
+		 icon_name="HO_ErrorRiskManagement" default_color="#D94612" default_color_hdr_intensity="1.7" default_scale="0.25"/>
+
+	<vis_icon_usage id="JobShortageOfInternalRobotics" default_scale="0.5"
+		icon_name="HO_ErrorLocationPin" internal_notes="There is not enough storage for the byproducts of the thing that would be created."
+		default_color="#BE4533" default_color_hdr_intensity="2.1"/>
+
+	<vis_icon_usage id="ResourceExcess"
+		 internal_notes="When a player has too much of a resource to store."
+		 icon_name="HO_ErrorBlock" default_color="#41F499" default_color_hdr_intensity="1.7" default_scale="0.5"/>
+
+	<vis_icon_usage id="JobExplosionRadius"
+		 internal_notes="The danger range of a job that stores dangerous things."
+		 icon_name="SW_Explosion1" default_color="#F1612E" default_color_hdr_intensity="1.7" default_scale="0.5"
+		 fill_color="#C1A627" fill_color_hdr_intensity="1.7"/>
+
+	<vis_icon_usage id="JobExplosionChanceOnDamaged"
+		 internal_notes="The extra danger of a job exploding from even minor damage."
+		 icon_name="CleanSimple_Arrow005" default_color="#F1612E" default_color_hdr_intensity="1.7" default_scale="0.5"/>
+
+	<vis_icon_usage id="JobShutsOffAtPercentageElectricity"
+		 internal_notes="The extra danger of a job exploding from even minor damage."
+		 icon_name="SF2_Poweron_off" default_color="#CB7B5F" default_color_hdr_intensity="1.7" default_scale="0.5"/>
+
+	<vis_icon_usage id="WillSelectTarget"
+		 internal_notes=""
+		 icon_name="SF2_Geometricshape_149" default_color="#C57AE1" default_color_hdr_intensity="2.7" default_scale="0.2"/>
+
+	<vis_icon_usage id="DistanceRestriction"
+		 internal_notes="The extra danger of a job exploding from even minor damage."
+		 icon_name="CleanSimple_Arrow069" default_color="#F1612E" default_color_hdr_intensity="1.7" default_scale="0.5"/>
+	
+	<!--Radial window-->
+	
+	<vis_icon_usage id="Next_NextTurn"
+		 icon_name="CleanSimple_SkillB003" >
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Next_TurnChanging"
+		 icon_name="SF2_Timer" >
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Next_NoMoreUnits"
+		 icon_name="CleanSimple_Arrow027" >
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Next_NextMachineUnit"
+		 icon_name="CleanTriangle39" >
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Next_NextHostileNPCUnit"
+		 icon_name="SomethingRank2" >
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Next_NextAlliedNPCUnit"
+		 icon_name="SomethingDiamond2" >
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Next_OverCap"
+		 icon_name="HO_ErrorLocationPin" >
+	</vis_icon_usage>
+
+	<vis_icon_usage id="KillOrIncapacitate" icon_name="CleanSimple_Skill003" >
+	</vis_icon_usage>
+
+
+	<!--Mouse cursors -->
+
+	<vis_icon_usage id="MouseInspect"
+		 internal_notes="We're hovering over a building and went into inspect mode, which means we'd be inspecting when clicking."
+		 icon_name="CleanSimple_Ranger02" default_color="#8A2BCB" default_color_hdr_intensity="3" default_scale="0.6"/>
+
+	<vis_icon_usage id="MouseSelect"
+		 internal_notes="We're hovering over something and went into inspect mode, and it's a unit or structure, so we'll select it on clicking."
+		 icon_name="CleanSimple_Target04" default_color="#4F9036" default_color_hdr_intensity="3" default_scale="0.6"/>
+
+	<vis_icon_usage id="Mouse_OtherTargeting"
+		 internal_notes="We're hovering over something that we want to target with some other type of targeting."
+		 icon_name="SF2_Target" default_color="#A162E7" default_color_hdr_intensity="3" default_scale="0.7"/>
+	
+	<vis_icon_usage id="MouseDelete"
+		 internal_notes="We're in delete mode."
+		 icon_name="CleanSimple_Tool14" default_color="#ff4e2b" default_color_hdr_intensity="2" default_scale="0.6"/>
+	
+	<vis_icon_usage id="Mouse_OutOfRange"
+		 internal_notes="We're hovering over something out of range in dispatch mode, show a no-signal symbol."
+		 icon_name="CleanSimple_Device14" default_color="#ff4e2b" default_color_hdr_intensity="2" default_scale="0.3"/>
+
+	<vis_icon_usage id="Mouse_Invalid"
+		 internal_notes="We're in hovering over something that is invalid."
+		 icon_name="CleanSimple_Misc59" default_color="#ff3a2b" default_color_hdr_intensity="2" default_scale="0.3"/>
+
+	<vis_icon_usage id="Mouse_MoreInfoNeeded"
+		 internal_notes="We're in a mode where we need to supply more info."
+		 icon_name="CleanSimple_Misc23" default_color="#ff3a2b" default_color_hdr_intensity="1" default_scale="0.6"/>
+
+	<vis_icon_usage id="Mouse_RestrictedArea"
+		 internal_notes="We're in hovering over something that is a restricted area."
+		 icon_name="CleanSimple_Media48" default_color="#ff3a2b" default_color_hdr_intensity="2" default_scale="0.3"/>
+
+	<vis_icon_usage id="Mouse_CannotAfford"
+		 internal_notes="We're unable to afford the thing in question."
+		 icon_name="HM_ShapeAbstract" default_color="#A3150A" default_color_hdr_intensity="4" default_scale="0.7"/>
+
+	<vis_icon_usage id="Mouse_OutOfMentalEnergy"
+		 internal_notes="We don't have the mental energy to do the thing in question."
+		 icon_name="CleanSimple_Skill002" default_color="#A3150A" default_color_hdr_intensity="4" default_scale="0.7"/>
+
+	<vis_icon_usage id="Mouse_BlockedByLockdown"
+		 internal_notes="We're hovering over something that is blocked by a lockdown."
+		 icon_name="Pw_BlockadeCrimeScene1" default_color="#ff4e2b" default_color_hdr_intensity="2" default_scale="0.3"/>
+	
+	<vis_icon_usage id="SidebarExpand"
+		 internal_notes="Used on the unit stats sidebar to make the sidebar larger."
+		 icon_name="CleanSimple_Arrow011" default_color="#E696FC" default_color_hdr_intensity="0" default_scale="0.4"/>
+	
+	<vis_icon_usage id="SidebarContract"
+		 internal_notes="Used on the unit stats sidebar to make the sidebar smaller."
+		 icon_name="CleanSimple_Arrow010" default_color="#DF6AFF" default_color_hdr_intensity="0" default_scale="0.4"/>
+
+	<vis_icon_usage id="MouseDispatchTarget_None"
+		 internal_notes="We're in dispatch mode, not hovering over anything in particular."
+		 icon_name="CleanSimple_Power17" default_color="#ff5951" default_color_hdr_intensity="1" default_scale="0.6"/>
+
+	<vis_icon_usage id="MouseDispatchTarget_Building"
+		 internal_notes="We're in dispatch mode, hovering over a building."
+		 icon_name="CleanSimple_Accuracy07" default_color="#2bdaff" default_color_hdr_intensity="1" default_scale="0.6"/>
+
+	<vis_icon_usage id="MouseDispatchTarget_Encounter"
+		 internal_notes="We're in dispatch mode, hovering over an encounter."
+		 icon_name="CleanSimple_Accuracy15" default_color="#2bdaff" default_color_hdr_intensity="1" default_scale="0.6"/>
+
+	<vis_icon_usage id="MouseDirectHarvest_None"
+		 internal_notes="We're in rent space mode, hovering over nothing."
+		 icon_name="CleanSimple_Hex04" default_color="#ff5951" default_color_hdr_intensity="1" default_scale="0.6"/>
+
+	<vis_icon_usage id="MouseDirectHarvest_BuildingValid"
+		 internal_notes="We're in rent space mode, hovering over a building that is valid."
+		 icon_name="CleanSimple_Hex06" default_color="#2bdaff" default_color_hdr_intensity="1" default_scale="0.6"/>
+
+	<vis_icon_usage id="MouseBuildMode_None"
+		 internal_notes="We're in build mode, hovering over nothing."
+		 icon_name="CleanSimple_Ranger15" default_color="#ff5951" default_color_hdr_intensity="1" default_scale="0.6"/>
+
+	<vis_icon_usage id="MouseBuildMode_BuildingValid"
+		 internal_notes="We're in build mode, hovering over a building that is valid."
+		 icon_name="CleanSimple_Shield05" default_color="#2bdaff" default_color_hdr_intensity="1" default_scale="0.6"/>
+
+	<vis_icon_usage id="MouseMoveMode_Valid"
+		 internal_notes="We're in move mode, and we can move here."
+		 icon_name="CleanSimple_Target06" default_color="#3CFFF3" default_color_hdr_intensity="1.2" default_scale="0.3">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="MouseMoveMode_Valid_ButNoTarget"
+		 internal_notes="We're in move mode, and we can move here."
+		 icon_name="CleanSimple_Target06" default_color="#2D239B" default_color_hdr_intensity="0.9" default_scale="0.3">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="MouseMoveMode_MoveToPoint"
+		 internal_notes="We're in move mode, and not going to a building."
+		 icon_name="CleanSimple_Arrow069" default_color="#3CFFF3" default_color_hdr_intensity="1.2" default_scale="0.3">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="MouseMoveMode_RangedAndroidAttack"
+		 internal_notes="We're in move mode, and we can move here, but it's not at a building."
+		 icon_name="SK_Rifle" default_color="#FC7826" default_color_hdr_intensity="1.2" default_scale="0.3">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="MouseMoveMode_RangedVehicleAttack"
+		 internal_notes="We're in move mode, and we can move here, but it's not at a building."
+		 icon_name="CleanSimple_SciFi098" default_color="#FC7826" default_color_hdr_intensity="1.2" default_scale="0.3">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="MouseMoveMode_RangedConsumableAttack"
+		 internal_notes="We're in move mode, and we can move here, but it's not at a building."
+		 icon_name="CleanSimple_SciFiEmblem28" default_color="#FC7826" default_color_hdr_intensity="1.2" default_scale="0.3">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="MouseMoveMode_MeleeAttack"
+		 internal_notes="We're in move mode, and we can move here, but it's not at a building."
+		 icon_name="SI_Sword" default_color="#FC7826" default_color_hdr_intensity="1.2" default_scale="0.3">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="MouseMoveMode_ProvideHelp"
+		 internal_notes="We're in move mode, and we can move here, but it's not at a building."
+		 icon_name="SK_UpArrow" default_color="#98FC26" default_color_hdr_intensity="1.2" default_scale="0.3">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="LensFilterActive" icon_name="CheckboxFilledA" default_color="#98FC26" default_color_hdr_intensity="1.2" default_scale="0.3"/>
+	<vis_icon_usage id="LensFilterDisabled" icon_name="CheckboxEmpty" default_color="#98FC26" default_color_hdr_intensity="1.2" default_scale="0.3"/>
+	<!-- CleanSimple_Common023 CleanSimple_Arrow040 CleanSimple_Common079-->
+
+	<vis_icon_usage id="DealDown" icon_name="CleanSimple_Arrow051" default_color="#8A97FF" frame_color="#767990" default_color_hdr_intensity="1.2" default_scale="0.3" /><!--CleanSimple_Arrow113-->
+	<vis_icon_usage id="DealUp" icon_name="CleanSimple_Arrow050" default_color="#8A97FF" frame_color="#767990" default_color_hdr_intensity="1.2" default_scale="0.3"/><!--CleanSimple_Arrow112-->
+	
+	<vis_icon_usage id="MouseMoveMode_RunningRange"
+		 internal_notes="We're in move mode, and we can move here, but we will be running because it's beyond our scan range."
+		 icon_name="CleanSimple_SkillB035" default_color="#3CFFF3" default_color_hdr_intensity="1.2" default_scale="0.3"/>
+
+	<vis_icon_usage id="MouseMoveMode_BoardVehicle"
+		 internal_notes="We're in move mode, and we are moving to get into a vehicle."
+		 icon_name="CleanSimple_SciFi041" default_color="#881100" default_color_hdr_intensity="3.8" default_scale="0.6"/>
+
+	<vis_icon_usage id="MouseMoveMode_UnloadVehicle"
+		 internal_notes="We're in move mode, and we are moving to get out of a vehicle."
+		 icon_name="CleanSimple_SciFi085" default_color="#881100" default_color_hdr_intensity="3.8" default_scale="0.6"/>
+
+	<vis_icon_usage id="MachineUnreadyIcon"
+		icon_name="HM_ShapeTriangleDown" default_color="#1C2BAE" default_color_hdr_intensity="2.9" default_scale="0.6" default_added_y="0.4"/>
+
+	<vis_icon_usage id="MachineStandbyIcon"
+		icon_name="CleanSimple_Common061" default_color="#BE9BE7" default_color_hdr_intensity="2.9" default_scale="0.6" default_added_y="0.4"/>
+	
+	<vis_icon_usage id="MachineStandbySelectedIcon"
+		icon_name="CleanSimple_Common061" default_color="#FF9B49" default_color_hdr_intensity="1.8" default_scale="0.6" default_added_y="0.4"/>
+
+	<vis_icon_usage id="MachineReadyIcon"
+		icon_name="HM_ShapeRhombus" default_color="#FF9B49" default_color_hdr_intensity="1.8" default_scale="0.8" default_added_y="0.6"/>
+	
+	<vis_icon_usage id="MachineSelectedReadyIcon"
+		icon_name="SelectedUnit" default_color="#FF9B49" default_color_hdr_intensity="1.2" default_scale="0.6" default_added_y="0.6"/>
+
+	<vis_icon_usage id="MachineSelectedUnreadyIcon"
+		icon_name="SelectedUnit" default_color="#4968FF" default_color_hdr_intensity="1.2" default_scale="0.6" default_added_y="0.4"/>
+
+	<vis_icon_usage id="DamageAmount"
+		internal_notes="How much damage was done to a target."
+		icon_name="CleanSimple_Activity051" default_color="#F14343" default_color_hdr_intensity="2.5">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="Pinned" icon_name="Pinned" default_color="#DEDEDE" default_color_hdr_intensity="2.5">
+	</vis_icon_usage>
+	
+	<vis_icon_usage id="NonlethalColor"
+		internal_notes="Nonlethal attacks on targets."
+		icon_name="CleanSimple_Activity051" default_color="#F1DE43" default_color_hdr_intensity="2">
+	</vis_icon_usage>
+	
+	<vis_icon_usage id="StructureScannedAmount"
+		internal_notes="How much a structure was scanned."
+		icon_name="SF2_Hide" default_color="#5D43F1" default_color_hdr_intensity="2.5">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="StructureRevealedColor"
+		internal_notes="Only the color is used. It's saying a structure was revealed."
+		icon_name="SF2_Hide" default_color="#B643F1" default_color_hdr_intensity="2.5">
+	</vis_icon_usage>
+	
+	<vis_icon_usage id="SearchingColor"
+		internal_notes="Only the color is used. It's saying a structure was revealed."
+		icon_name="SF2_Hide" default_color="#F14386" default_color_hdr_intensity="2.5">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="ReinforcementsCalled"
+		internal_notes="Only the color is used."
+		icon_name="CleanSimple_Activity051" default_color="#F14386" default_color_hdr_intensity="2.5">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="HumansRunningAway"
+		internal_notes="Only the color is used."
+		icon_name="CleanSimple_Activity051" default_color="#4361F1" default_color_hdr_intensity="2.5">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="RobotConverted"
+		internal_notes="Only the color is used."
+		icon_name="CleanSimple_Activity051" default_color="#F17B43" default_color_hdr_intensity="2.5">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="KidnappedCount"
+		internal_notes="Only the color is used."
+		icon_name="CleanSimple_Activity051" default_color="#F14343" default_color_hdr_intensity="2.5">
+	</vis_icon_usage>
+	
+	<vis_icon_usage id="RandomizedResult"
+		internal_notes="Used to show when there will be an unskilled randomized outcome that is happening."
+		icon_name="CleanSimple_Game18" default_color="#648FAB" default_color_hdr_intensity="1.25">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="SkillCheckPercentChance"
+		internal_notes="Used to show when there will be a skill check with the stated percentage chance of happening."
+		icon_name="SI_Continuous" default_color="#E9AEFF" default_color_hdr_intensity="0">
+	</vis_icon_usage>
+	
+	<vis_icon_usage id="KillCount"
+		internal_notes="How many individuals were killed as part of damage dealt to an NPC unit."
+		icon_name="FlatSkull_15" default_color="#FF6DA5" default_color_hdr_intensity="2.0"><!--tried FlatSkillC133 and it did not look good-->
+	</vis_icon_usage>
+
+	<vis_icon_usage id="MurderCount"
+		internal_notes="How many individuals were killed as part of damage dealt to an NPC unit."
+		icon_name="AN_Knife1" default_color="#FF6DA5" default_color_hdr_intensity="2.0">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="HealingAmount"
+		internal_notes="How much overall healing was done?"
+		icon_name="SomethingHealth" default_color="#B1FF6D" default_color_hdr_intensity="1.5">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="ConstructionAmount"
+		internal_notes="How much overall construction was done?"
+		icon_name="SI_Construction" default_color="#6DD0FF" default_color_hdr_intensity="1.5">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="AssistTargetCount"
+		internal_notes="How many targets overall were assisted?"
+		icon_name="PW_reliefsatisfiedemotion" default_color="#6DE3FF" default_color_hdr_intensity="1.2">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="RepairTarget"
+		internal_notes="Basically a repair action."
+		icon_name="SomethingHealth" default_color="#83FF6D" default_color_hdr_intensity="1.25">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="ScavengeResource_Alumina"
+		icon_name="SomethingHealth" default_color="#98390D" default_color_hdr_intensity="2.5" default_scale="0.6"
+		hover_default_color="#C68630" hover_default_color_hdr_intensity="2.5" />
+
+	<vis_icon_usage id="ScavengeResource_PurpleMurnong"
+		icon_name="SomethingHealth" default_color="#7F489B" default_color_hdr_intensity="2.5" default_scale="0.6"
+		hover_default_color="#843DA8" hover_default_color_hdr_intensity="2.5" />	
+	
+	<vis_icon_usage id="ScavengeResource_Neodymium"
+		icon_name="SomethingHealth" default_color="#A33CA5" default_color_hdr_intensity="1.6" default_scale="0.4"
+		hover_default_color="#C330C6" hover_default_color_hdr_intensity="2.5" />
+
+	<vis_icon_usage id="ScavengeResource_Scandium"
+		icon_name="SomethingHealth" default_color="#AAAB85" default_color_hdr_intensity="1.5" default_scale="0.7"
+		hover_default_color="#C68630" hover_default_color_hdr_intensity="2.5" />
+
+	<vis_icon_usage id="ScavengeResource_MonsterPelts"
+		icon_name="SomethingHealth" default_color="#AAAB85" default_color_hdr_intensity="1.5" default_scale="0.7"
+		hover_default_color="#C68630" hover_default_color_hdr_intensity="2.5" />
+	
+	<vis_icon_usage id="ScavengeResource_Furniture"
+		icon_name="SomethingHealth" default_color="#799D50" default_color_hdr_intensity="1.5" default_scale="0.4"
+		hover_default_color="#93C630" hover_default_color_hdr_intensity="2.5" />	
+	
+	<vis_icon_usage id="AbilityLocked"
+		internal_notes="Icon for an ability being locked."
+		icon_name="FlatSkillA17" default_color="#83FF6D" default_color_hdr_intensity="1.25">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="IncomingDamageStyle"
+		internal_notes="The icon is not used, but the colors and such are."
+		icon_name="FlatSkillA17" default_color="#A81A05" default_color_hdr_intensity="1.4" default_scale="0.08" default_added_y="0.5">
+	</vis_icon_usage>
+
+	<vis_icon_usage id="FirePrediction"
+		internal_notes="The icon is not used, but the colors and such are."
+		icon_name="CleanSimple_Misc28" default_color="#A83905" default_color_hdr_intensity="2.4" default_scale="0.3" default_added_y="0.5">
+	</vis_icon_usage>
+	
+	<vis_icon_usage id="PlayerUnit_Portrait"
+		 internal_notes="This is for showing units on the city map in portrait style."
+		 icon_name="CleanSimple_Common116" default_color="#A4E2F1" default_color_hdr_intensity="1.5" default_scale="1" frame_mask_row_col="2,0"
+		 frame_color="#040313" frame_color_hdr_intensity="0" fill_color="#040313" fill_color_hdr_intensity="0" use_backing_color="true"
+		 hover_default_color="#FF9D9D" hover_default_color_hdr_intensity="0.7" hover_fill_color="#040313" hover_fill_color_hdr_intensity="0.5"/>
+
+	<vis_icon_usage id="PlayerUnitReady_Icon"
+		 internal_notes="This is for showing units on the city map in icon style."
+		 icon_name="CleanSimple_Common116" default_color="#4FBFDC" default_color_hdr_intensity="1.5" default_scale="1.2" frame_mask_row_col="2,0"
+		 frame_color="#040313" frame_color_hdr_intensity="0" fill_color="#040313" fill_color_hdr_intensity="0" use_backing_color="true"
+		 hover_default_color="#FF9D9D" hover_default_color_hdr_intensity="0.7" hover_fill_color="#040313" hover_fill_color_hdr_intensity="0.5"/>
+
+	<vis_icon_usage id="PlayerUnitStandby_Icon"
+		 internal_notes="This is for showing units on the city map in icon style."
+		 icon_name="CleanSimple_Common116" default_color="#3ED693" default_color_hdr_intensity="2.6" default_scale="1.2" frame_mask_row_col="2,0"
+		 frame_color="#040313" frame_color_hdr_intensity="0" fill_color="#040313" fill_color_hdr_intensity="0" use_backing_color="true"
+		 hover_default_color="#FF9D9D" hover_default_color_hdr_intensity="0.7" hover_fill_color="#040313" hover_fill_color_hdr_intensity="0.5"/>
+	
+	<!--
+	<vis_icon_usage id="PlayerDownedUnit"
+		 internal_notes="This is for showing downed units on the city map."
+		 icon_name="CleanSimple_Common116" default_color="#ECECEC" default_color_hdr_intensity="0.5" default_scale="0.9" frame_mask_row_col="7,0"
+		 frame_color="#C3260F" frame_color_hdr_intensity="3.5" hover_frame_color_hdr_intensity="5.1" 
+		 use_backing_color="false" hover_default_color="#ECECEC" hover_default_color_hdr_intensity="0.5"/>
+	-->
+	
+	<vis_icon_usage id="Act0UnitCapture"
+		icon_name="CleanSimple_Common116" internal_notes=""
+		default_color="#ffffff" default_color_hdr_intensity="1.5" default_scale="0.7" hover_default_color="#ffffff" hover_default_color_hdr_intensity="2.5"
+		frame_color="#009DFF" frame_color_hdr_intensity="2" frame_mask_row_col="5,1" use_backing_color="false"/>
+
+	<vis_icon_usage id="Act0UnitCaptureBlocked"
+		icon_name="CleanSimple_Common116" internal_notes=""
+		default_color="#ffffff" default_color_hdr_intensity="1.5" default_scale="0.5" hover_default_color="#ffffff" hover_default_color_hdr_intensity="2.5"
+		frame_color="#F11A1A" frame_color_hdr_intensity="2.2" frame_mask_row_col="5,3" use_backing_color="false"/>
+
+	<vis_icon_usage id="AndroidChamberReady"
+		icon_name="CleanSimple_Common116" internal_notes=""
+		default_color="#FCFCFC" default_color_hdr_intensity="0.8" default_scale="0.6" hover_default_color="#7A7A7A" hover_default_color_hdr_intensity="0.1"
+		frame_color="#D9320C" frame_color_hdr_intensity="2" frame_mask_row_col="5,1" use_backing_color="false"/>
+
+	<vis_icon_usage id="AndroidChamberReadyButAtCap"
+		icon_name="CleanSimple_Common116" internal_notes=""
+		default_color="#7A7A7A" default_color_hdr_intensity="0.5" default_scale="0.5" hover_default_color="#3B3B3B" hover_default_color_hdr_intensity="0.1"
+		frame_color="#0037B8" frame_color_hdr_intensity="2" frame_mask_row_col="5,1" use_backing_color="false"/>
+
+	<vis_icon_usage id="AerospaceHangarReady"
+		icon_name="CleanSimple_Common116" internal_notes=""
+		default_color="#ECECEC" default_color_hdr_intensity="0.2" default_scale="0.8" hover_default_color="#7A7A7A" hover_default_color_hdr_intensity="0.1"
+		frame_color="#D9320C" frame_color_hdr_intensity="2" frame_mask_row_col="5,1" use_backing_color="false"/>
+
+	<vis_icon_usage id="AerospaceHangarReadyButAtCap"
+		icon_name="CleanSimple_Common116" internal_notes=""
+		default_color="#7A7A7A" default_color_hdr_intensity="0.5" default_scale="0.6" hover_default_color="#3B3B3B" hover_default_color_hdr_intensity="0.1"
+		frame_color="#0037B8" frame_color_hdr_intensity="2" frame_mask_row_col="5,1" use_backing_color="false"/>
+
+	<vis_icon_usage id="Act0VehicleCapture"
+		icon_name="CleanSimple_Common116" internal_notes=""
+		default_color="#ffffff" default_color_hdr_intensity="1.5" default_scale="0.7" hover_default_color="#ffffff" hover_default_color_hdr_intensity="2.5"
+		frame_color="#5A2457" frame_color_hdr_intensity="3" frame_mask_row_col="5,1" use_backing_color="false"/>
+
+	<vis_icon_usage id="PrimaryNetwork"
+		icon_name="SF2_Wifi_active" internal_notes="The icon for the primary network."
+		default_color="#c6a2c6" default_color_hdr_intensity="0"/>
+
+	<vis_icon_usage id="EndOfTime"
+		icon_name="WEmblem221" internal_notes="The icon for the End Of Time."
+		default_color="#c6a2c6" default_color_hdr_intensity="0"/>
+
+	<vis_icon_usage id="Timeline"
+		icon_name="CleanSimple_Hex06" internal_notes="The icon for timelines."
+		default_color="#c6a2c6" default_color_hdr_intensity="0"/>
+
+	<vis_icon_usage id="NetworkBeacon"
+		icon_name="SF2_Wifi_active" internal_notes="The that hovers in the world map."
+		default_color="#C3A619" default_color_hdr_intensity="1.8" default_scale="1"/>
+
+	<vis_icon_usage id="OutOfNetworkRange" default_scale="0.3"
+		icon_name="SF2_Wifi_deactivated" internal_notes="The icon when something is cut off from all the networks."
+		default_color="#CE351F" default_color_hdr_intensity="2"/>
+
+	<vis_icon_usage id="ElectricalShortage" default_scale="0.3"
+		icon_name="CleanSimple_Misc57" internal_notes="A structure does not have enough power."
+		default_color="#DCB433" default_color_hdr_intensity="1.5"/>
+
+	<vis_icon_usage id="ElectricalOutage" default_scale="0.4"
+		icon_name="CleanSimple_Misc57" internal_notes="A structure does not have enough power."
+		default_color="#D1240B" default_color_hdr_intensity="2.4"/>
+
+	<vis_icon_usage id="SlurryShortage" default_scale="0.3"
+		icon_name="SW_AbstractShape5" internal_notes="The structure does not have enough slurry to do what it needs."
+		default_color="#CE351F" default_color_hdr_intensity="2"/>
+
+	<vis_icon_usage id="BovineTissueShortage" default_scale="0.3"
+		icon_name="MA_Cow" internal_notes="The structure does not have enough bovine tissue to do what it needs."
+		default_color="#CE351F" default_color_hdr_intensity="2"/>
+
+	<vis_icon_usage id="VegetableSeedShortage" default_scale="0.3"
+		icon_name="FE_FlaxSeed" internal_notes="The structure does not have enough vegetable seeds to do what it needs."
+		default_color="#CE351F" default_color_hdr_intensity="2"/>
+
+	<vis_icon_usage id="BiomulchShortage" default_scale="0.3"
+		icon_name="CleanSimple_SkillB055" internal_notes="The structure does not have enough biomulch to do what it needs."
+		default_color="#CE351F" default_color_hdr_intensity="2"/>
+	
+	<vis_icon_usage id="NetworkingInterference" default_scale="0.3"
+		icon_name="SomethingWindswept" internal_notes="The structure has too much network interference."
+		default_color="#CE351F" default_color_hdr_intensity="2"/>
+
+	<vis_icon_usage id="InsufficientStorage" default_scale="0.3"
+		icon_name="HO_ErrorWaterTank2" internal_notes="There is not enough storage for the thing that would be created."
+		default_color="#CE351F" default_color_hdr_intensity="2"/>
+
+	<vis_icon_usage id="InsufficientByproductStorage" default_scale="0.3"
+		icon_name="HO_ErrorWarning" internal_notes="There is not enough storage for the byproducts of the thing that would be created."
+		default_color="#CE351F" default_color_hdr_intensity="2"/>
+
+	<vis_icon_usage id="FilthPilingUp" default_scale="0.3"
+		icon_name="MA_GarbageBag" internal_notes="There is not enough storage for the byproducts of the thing that would be created."
+		default_color="#881504" default_color_hdr_intensity="3.6"/>
+	
+	<vis_icon_usage id="NoSpecialtySet" default_scale="0.3"
+		icon_name="CleanSimple_Common044" internal_notes="A specialty for this structure has not yet been set."
+		default_color="#881504" default_color_hdr_intensity="2"/>
+
+	<vis_icon_usage id="BrokenStructure" default_scale="0.3"
+		icon_name="CleanSimple_Skull15" internal_notes="A structure is broken, and not yet set to rebuild."
+		default_color="#CE351F" default_color_hdr_intensity="2"/>
+
+	<vis_icon_usage id="DamageSimpleVersion" default_scale="0.9"
+		icon_name="HM_ShapeMinusBigSymbol" internal_notes="The simple version of the damage indicators"
+		default_color="#8EBB5C" default_color_hdr_intensity="1.5"/>
+
+	<vis_icon_usage id="DialogHealthBarUnderlay" default_scale="0.9"
+		icon_name="SF2_Speaker" internal_notes="The simple version of the damage indicators"
+		default_color="#BBAB5C" default_color_hdr_intensity="1.5"/>
+
+	<vis_icon_usage id="DialogActionIcon"
+		icon_name="SF2_Speaker" internal_notes="The simple version of the damage indicators"
+		default_color="#98FC26" default_color_hdr_intensity="1.2" default_scale="0.3"/>
+
+	<vis_icon_usage id="DialogCanForceIcon" default_scale="0.9"
+		icon_name="SF2_Speaker" internal_notes="The simple version of the damage indicators"
+		default_color="#DCD0DC" default_color_hdr_intensity="0"/>
+
+	<vis_icon_usage id="IntendedProjectGoal"
+		icon_name="HM_ShapeStarSparkle" internal_notes="The icon for which outcome of a project the player intends to complete."
+		default_color="#D78AFF" default_color_hdr_intensity="0" default_scale="0.3"/>
+
+	<vis_icon_usage id="ActualProjectGoal"
+		icon_name="SomethingStars" internal_notes="The icon for which outcome of a project the player actually completed."
+		default_color="#FFBA5C" default_color_hdr_intensity="0" default_scale="0.3"/>
+
+	<vis_icon_usage id="ChooseProjectTarget"
+		icon_name="CleanSimple_Arrow049" internal_notes="The icon for when a project needs to choose a target."
+		default_color="#EC3F3F" default_color_hdr_intensity="0" default_scale="0.3"/>
+
+	<vis_icon_usage id="HackingTargetValue"
+		icon_name="FlatSkillA41" internal_notes=""
+		default_color="#EC3F3F" default_color_hdr_intensity="0" default_scale="0.3"/>
+	
+	<vis_icon_usage id="HackingRemainderValue"					
+		icon_name="SF2_Arrows1_filled1" internal_notes=""
+		default_color="#EC3F3F" default_color_hdr_intensity="0" default_scale="0.3"/>
+
+	<vis_icon_usage id="HackingSplit"
+		icon_name="AN_Hexagon" internal_notes=""
+		default_color="#EC3F3F" default_color_hdr_intensity="0" default_scale="0.3"/>
+
+	<vis_icon_usage id="HackingCorrupt"
+		icon_name="CS_ComputerElectricianThreat" internal_notes=""
+		default_color="#EC3F3F" default_color_hdr_intensity="0" default_scale="0.3"/>
+
+	<vis_icon_usage id="HackingMain"
+		icon_name="SomethingWindswept" internal_notes=""
+		default_color="#A0F169" default_color_hdr_intensity="0" default_scale="0.3"/>
+	
+	<vis_icon_usage id="SelectedUnderBar"
+		icon_name="LargeBoxBrackets" internal_notes=""
+		default_color="#F1951A" default_color_hdr_intensity="2.9" default_scale="1.5" default_added_y="0"/>
+
+	<vis_icon_usage id="DebateTarget"
+		icon_name="SomethingMinus" internal_notes=""
+		default_color="#CDAFFA" default_color_hdr_intensity="2.9" default_scale="1.5" default_added_y="0"/>
+	<vis_icon_usage id="DebateMistrust"
+		icon_name="CleanSimple_Skill079" internal_notes=""
+		default_color="#CDAFFA" default_color_hdr_intensity="2.9" default_scale="1.5" default_added_y="0"/>
+	<vis_icon_usage id="DebateDefiance"
+		icon_name="CleanSimple_SkillC029" internal_notes=""
+		default_color="#CDAFFA" default_color_hdr_intensity="2.9" default_scale="1.5" default_added_y="0"/>
+	<vis_icon_usage id="DebateDiscard"
+		icon_name="CleanSimple_Tool13" internal_notes=""
+		default_color="#CDAFFA" default_color_hdr_intensity="2.9" default_scale="1.5" default_added_y="0"/>
+	
+</root>

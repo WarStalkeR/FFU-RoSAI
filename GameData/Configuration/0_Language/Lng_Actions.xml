@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<lang id="Move_OutOfRange" text="Out Of Range" />
+	<lang id="Move_OutOfRange_StrategyTip" text="This unit can only sprint so far." />
+
+	<lang id="ValidTargetOutOfRange" text="Valid Target, But Out Of Range" />
+	<lang id="ValidTargetOutOfActionPoints" text="Valid Target, But Your Unit Is Out Of AP" />
+	<lang id="ValidTargetOutOfMentalEnergy" text="Valid Target, But You Are Out Of Mental Energy" />
+	<lang id="ValidTarget" text="Valid Target" />
+
+	<lang id="Move_NoRoomToMoveForward" text="No Room To Move Forward" />
+	<lang id="Move_NoRoomToMoveForward_StrategyTip" text="Your unit needs to move near the target, but there is no space for that." />
+
+	<lang id="WrongKindOfUnitToTalk" text="Wrong Kind Of Unit" />
+	<lang id="WrongKindOfUnitToTalk_Shell_StrategyTip" text="Your shell company units cannot talk to this target." />	
+	<lang id="WrongKindOfUnitToTalk_PMC_StrategyTip" text="Your PMC Impostors cannot talk to this target." />
+	<lang id="WrongKindOfUnitToTalk_MustBePMC_StrategyTip" text="Only a PMC Impostor can talk to this target." />
+	<lang id="WrongKindOfUnitToTalk_MustBeShell_StrategyTip" text="Only a unit from your shell company can talk to this target." />
+	<lang id="WrongKindOfUnitToTalk_Other_StrategyTip" text="It's not clear what kind of unit can talk to this target." />
+	
+	<lang id="Move_ClickToBurnThisAndSurroundings" text="{0} To Burn This And Surroundings" />
+	<lang id="Move_ClickToDemolish" text="{0} To Demolish" />
+	<lang id="Move_ClickToStartExtracting" text="{0} To Start Extracting" />
+	<lang id="Move_ClickToStartExtracting_Details" text="Your unit will be exposed and helpless for three turns." />
+	<lang id="Move_ClickToStartExtracting_Quiet_Details" text="Your unit will be silent and hidden for six turns." />
+	<lang id="Move_DangerType" text="Danger Type" />
+	<lang id="Move_ClickToDeployMicroNuke" text="{0} To Deploy Micro-Nuke" />
+	<lang id="Move_ClickToLaunchDroneSwarm" text="{0} To Launch Drone Swarm" />
+	<lang id="Move_ClickToAnimateOfficePrinters" text="{0} To Animate Office Printers" />
+
+	<lang id="Move_AnotherUnitIsInYourWay" text="Another Unit Is In Your Way" />
+	<lang id="Move_AnotherUnitIsInYourWay_Other_StrategyTip" text="They might move on their own, maybe." />
+	<lang id="Move_AnotherUnitIsInYourWay_Yours_StrategyTip" text="You should get it out of the way." />
+
+	<lang id="Move_ActionDetails" text="Action Details" translation_notes="Header on its own line for a description of what action will be taken when the player moves where they are indicating." />
+	
+	<lang id="VehicleAssist_OutOfRange" text="Out Of Range" />
+	<lang id="VehicleAssist_OutOfRange_StrategyTip" text="This unit's drones can only reach so far." />
+
+	<lang id="ConsumableTargeting_OutOfRange" text="Out Of Range" />
+	<lang id="ConsumableTargeting_OutOfRange_StrategyTip" text="This item can only be used on targets within this unit's attack range." />
+
+	<lang id="ConsumableTargeting_ValidTarget" text="Valid Target" />
+	<lang id="ConsumableTargeting_InvalidTarget" text="Invalid Target" />
+	<lang id="MoraleDamageWillInflict" text="Morale Damage Will Inflict" />
+	<lang id="MoraleDamageWillInflict_Flamethrower_Details" text="The amount of morale damage that will be inflicted on the target now and again each turn. It's the combination of your unit's power and intimidation. It bypasses both bravery and stubbornness." />
+
+	<lang id="ForceConversation_Invalid" text="This target cannot be forced into any conversations at the moment." />
+	<lang id="HackUnit_Invalid" text="This target cannot be hacked." />
+	<lang id="ProbeCommsOfUnit_Invalid" text="This target cannot have its comms probed." />
+	<lang id="Flamethrower_Invalid" text="This target cannot be set on fire." />
+	<lang id="ForceConversation_Header" text="Force Conversation?" />
+	
+	<lang id="Move_BlockedByLockdown" text="Lockdown In Effect" />
+	<lang id="Move_BlockedByLockdown_OutOnly" text="Your units cannot leave this lockdown area unless they are cloaked." />
+	<lang id="Move_BlockedByLockdown_InOnly" text="Your units cannot enter this lockdown area unless they are cloaked." />
+	<lang id="Move_BlockedByLockdown_Both" text="Your units cannot enter or exit this lockdown area unless they are cloaked." />
+
+	<lang id="Move_UnitAlreadyInVehicle" text="Selected unit is already in this vehicle." />
+	<lang id="Move_VehicleHasNoSpaceForUnit" text="Vehicle has no space for this kind of passenger." />
+	<lang id="Move_VehicleHasNoSpaceForUnit_StrategyTip" text="This vehicle can carry this type of unit, but all matching slots are full." />
+	<lang id="Move_VehicleHasNoSpaceForUnit_NoneOfType_StrategyTip" text="This vehicle has no slots for this kind of passenger." />
+	
+	<lang id="Attack_OutOfRange_StrategyTip" text="This unit cannot attack that far away. Either move closer, or consider a weapon upgrade." />
+
+	<lang id="RotateStructure" text="{0} and {1} to rotate." />
+
+	<lang id="YouCannotSellFewerThan" text="You cannot sell fewer than {0} units at a time." translation_notes="{0} is an integer number, and the units is units of some resource -- a metal, a food, a liquid, who knows." />
+
+	<lang id="Move_BlockedByAnotherUnit" text="Blocked By Another Unit" />
+	<lang id="Move_BlockedByAnotherUnit_StrategyTip" text="Only one unit can occupy a building at a time." />
+
+	<lang id="Move_OutOfActionPoints" text="Out Of AP" />
+	<lang id="Move_OutOfActionPoints_StrategyTip" text="If you have enough Mental Energy remaining, you can convert some of it into Action Points by using the Battle Recharge ability." />
+
+	<lang id="Move_InsufficientSecurityClearance" text="Insufficient Security Clearance" />
+	<lang id="Move_InsufficientSecurityClearance_StrategyTip" text="This unit cannot safely move to that spot.
+It may be able to move close to that spot.
+Alternatively, you can change the unit into Combat stance. Then it can move wherever you like -- it might get shot, though." />
+
+	<lang id="Move_TotalMentalEnergyCost" text="Total Mental Energy Cost" />
+	
+	<lang id="Move_Sprinting" text="Sprinting" />
+	<lang id="Move_Sprinting_Details" text="This android is moving very fast, requiring extra Mental Energy but not extra Action Points (AP)." />
+	<lang id="Move_SprintingBulkAndroid_Details" text="This squad is moving very fast, requiring extra Mental Energy." />
+	<lang id="Move_SprintingCapturedMech_Details" text="This mech is moving very fast, requiring extra Mental Energy." />
+
+	<lang id="Move_ThereAreOtherThingsYouNeedToWorkOnFirst" text="There are other things you need to do first." />
+
+	<lang id="Move_BoardVehicle" text="Board Vehicle" />
+	<lang id="Move_BoardVehicle_StrategyTip" text="Units can be carried long distances in vehicles." />
+
+	<lang id="Attack_Ranged" text="Ranged Attack" />
+	<lang id="Attack_Ranged_StrategyTip" text="Attack the target from where you are standing." />
+	<lang id="Attack_Melee" text="Melee Attack" />
+	<lang id="Attack_Melee_StrategyTip" text="Move closer and attack the target." />
+	<lang id="PredictedDamageNotes" text="You may randomly get a small bit of bonus damage when you fire." />
+	<lang id="XDamageToTarget" text="{0} Damage" />
+	<lang id="XMoraleDamageToTarget" text="{0} Morale Damage" />
+	<lang id="InsufficientActionPoints" text="Insufficient Action Points" />
+	<lang id="InsufficientMentalEnergy" text="Insufficient Mental Energy" />
+	<lang id="Attack_Noncombatant" text="Noncombatant" />
+	<lang id="Attack_Noncombatant_Details" text="To attack noncombatants, use the Slayer ability or other specialized attack style." />
+
+	<lang id="StructuralEngineering_Target" text="Structural Engineering" />
+	<lang id="StructuralEngineering_Target_StrategyTip" text="Use 1 Action Point and 1 Mental Energy to speed up construction of this structure." />
+
+	<lang id="ActionPointsRequired" text="Action Points Required" />
+	<lang id="HealthThatWillBeRestored" text="Health That Will Be Restored" />
+	<lang id="HealthPerTurn" text="Health Per Turn" />
+	<lang id="ConstructionPerTurn" text="Construction Per Turn" />
+	<lang id="TotalTurnsRequired" text="Total Turns Required" />
+
+	<lang id="ConstructionTurns" text="Construction Turns" />
+	
+	<lang id="CannotAssist_Target" text="Cannot Assist Target" />
+	<lang id="CannotAssist_Target_StrategyTip" text="The selected unit is unable to assist this target." />
+	<lang id="CannotAssist_Target_NeedAtLeastXEngineering" text="This unit would need {0} Engineering Skill to boost this structure. It only has {1}." />
+
+	<lang id="CannotSpeakWithTarget" text="Cannot Speak With Target" />
+	<lang id="CannotSpeakWithTarget_StrategyTip" text="The selected unit is unable to speak with this target. Requires Mental Energy." />
+
+	<lang id="RescuePrefix" text="Rescue" />
+	<lang id="CannotRescueTarget" text="Cannot Rescue Target" />
+	<lang id="CannotRescueTarget_DoNotKnowHow_StrategyTip" text="You don't know how to rescue this kind of target yet. Are there any Contemplations that might be relevant?" />
+	<lang id="CannotRescueTarget_MentalEnergy_StrategyTip" text="The selected unit is unable to rescue this target. Requires Mental Energy." />
+
+	<lang id="BlockedFromAttacking_Header" text="Blocked From Attacking" />
+	<lang id="NotInTheMoodToAttackHomeless" text="You're not in the mood to attack the homeless.
+It would start a whole thing with the Citizen Advocates. You don't want that kind of trouble right now." />
+	<lang id="MoreInterestedInWhatTheyHaveToSay" text="You're not in the mood to attack them.
+You're more interested in what they have to say." />
+	<lang id="MoreInterestedInFaceToFace" text="If you're going to kill them, you want to do that face to face.
+You want to hear them speak first, anyway." />
+	<lang id="NotInTheMoodToAttackSheltered" text="You're not in the mood to attack the humans you shelter." />
+	<lang id="WouldRevealYourShellCompany_Tied" text="Your shell company unit cannot attack this target without drawing suspicion to your whole operation." />
+	<lang id="WouldRevealYourShellCompany_Distant" text="That target is only after your shell company; your regular units intervening would give away your tower's connection to your shell company." />
+	
+	<lang id="AttackPowerBase" text="Base Attack Power" />
+	<lang id="FearAttackPowerBase" text="Base Fear Attack Power" />
+	<lang id="ArgumentAttackPowerBase" text="Base Argument Attack Power" />
+	<lang id="TargetInFullStealth" text="Target In Full Stealth" />
+	<lang id="TargetInCover" text="Target In Cover" />
+	<lang id="TargetObscured" text="Target Obscured" />
+	<lang id="TargetIsFearless" text="Target Is Fearless" />
+	<lang id="TargetIsStubborn" text="Target Is Stubborn" />
+	<lang id="AboveTargetWithExtraWeaknessToAttacksFromAbove" text="Above Target With Extra Weakness To Attacks From Above" />
+	<lang id="BehindTargetWithExtraWeaknessToAttacksFromRear" text="Behind Target With Extra Weakness To Attacks From Rear" />
+	<lang id="TargetArmorNegated" text="Target Armor Negated" />
+	<lang id="EffectiveArmor" text="Effective Armor" />
+	<lang id="DamageReductionFromArmor" text="Damage Reduction From Armor" />
+	<lang id="AndroidLeapingFromBeyondAttackRange" text="Android Leaping From Beyond Attack Range" />
+	<lang id="AndroidConvertedPhysicalPowerViaIntimidation" text="Converted {0} Physical Power Via {1} Intimidation" />
+	<lang id="FromCognition" text="From {0} Cognition" />
+	<lang id="FromStrength" text="From {0} Strength" />
+	<lang id="AttackPowerFinal" text="Final Result" />
+	<lang id="FearAttackPowerFinal" text="Final Fear Result" />
+	<lang id="ArgumentAttackPowerFinal" text="Final Argument Result" />
+	<lang id="FinalMoraleDamage" text="Final Morale Damage" />
+	<lang id="CurrentTargetHP" text="Current Target Health" />
+	<lang id="CurrentTargetMorale" text="Current Target Morale" />
+	<lang id="BonusAgainstStructures" text="{0}x Bonus Against Structures" />
+	<lang id="BonusAgainstThisHacker" text="{0}x Bonus Against This Hacker" />
+	<lang id="AmbushBonus" text="{0}x Ambush Bonus" />
+	<lang id="NonlethalTakedown" text="Nonlethal Take-down" />
+	<lang id="EscapedPopup" text="Escaped!" translation_notes="This is the text that pops up above a target that has been escaped death." />
+	<lang id="IncapacitatedPopup" text="Incapacitated!" translation_notes="This is the text that pops up above a target that has been non-lethally taken-down." />
+	<lang id="ShockApplied" text="Shock Applied" translation_notes="This is how much a human target is being hit by a taser if they are not outright taken down." />
+	<lang id="TargetWeaponsDisrupted" text="Target Weapons Disrupted" translation_notes="This is how much a target is having their weapons disrupted by a player attacking them." />
+	<lang id="TargetHackerWeakened" text="Target Hacker Weakened" translation_notes="This is how much a target hacker is being weakened by a player attacking them." />
+	<lang id="FledViolencePopup" text="Fled Violence" translation_notes="This is used when non-fighter units run away at the first sign of violence." />
+	<lang id="SearchingforInfiltratorPopup" text="Searching ({0})" translation_notes="For East-Asian fonts where you can write out 'searching for infiltrator' with just a few characters, that is likely to be more clear.  For even English, I have to abbreviate more.  This is an enemy searching for your stealth unit, and the {0} is how much damage they do to your stealth unit." />
+	<lang id="AlarmEndangersInfiltratorPopup" text="Alarm! ({0})" translation_notes="This is an enemy that has just been attacked by a non-stealth unit of yours, while the enemy was normally searching for your stealth unit, and they are quickly raising an alarm which damages your stealth unit more. The {0} is how much damage they do to your stealth unit." />
+	<lang id="CrackingYourDefenses" text="Cracking Your Defenses ({0})" translation_notes="This is specifically a case where an enemy hacker is trying to break in through your network/cyber-security defenses. {0} is how much damage they did to the target." />
+	<lang id="StoleMilitarySecrets" text="Stole Military Secrets!" translation_notes="Enemies have stolen military secrets from YOU!" />
+	<lang id="PopupHitWeakness" text="Weak!" />
+	<lang id="PopupHitWasReducedByArmor" text="Reduced!" />
+	<lang id="PopupRevealed" text="Revealed!" />
+	<lang id="PopupConvertedXTents" text="Converted {0} Tents!" />
+	
+	<lang id="CaughtInAreaOfEffect" text="Caught In Area Of Effect" />
+
+	<lang id="Tip_ExploitsToWatchFor" text="Always check the stats of enemies you are seeing for the first time; any light blue-green entries are exploitable." />
+	<lang id="Tip_DangersToWatchFor" text="Always check the stats of enemies you are seeing for the first time; any reddish entries are important." />
+	
+	<lang id="Stance" text="Stance" />
+	<lang id="Action" text="Action" />
+	<lang id="Vehicle_Stance" text="Vehicle Stance" />
+	<lang id="Registration" text="Registration" />
+	<lang id="SecurityClearance" text="Security Clearance" />
+	<lang id="SecurityClearance_Brief" text="Clearance" />
+	<lang id="PassengerSeats" text="Passenger Seats" />
+	<lang id="Passengers" text="Passengers" />
+	<lang id="AngeredCohorts" text="Angered Cohorts" />
+	<lang id="StatusEffects" text="Status Effects" />
+	<lang id="PlusXMore" text="+ {0} More" translation_notes="This is show at the end of a list that has too many things.  So 'A, B, C, D, +5 More' or similar."/>
+	<lang id="Status" text="Status" />
+	<lang id="Status_Normal" text="Normal" />
+	<lang id="AlreadyThisStance" text="Already This Stance" />
+	<lang id="ClickToApplyStance_SuperBrief" text="{0} to apply." />
+	<lang id="ClickToDeployUnit_SuperBrief" text="{0} to deploy." />
+	<lang id="ClickToInteractWithEvent_Brief" text="{0} to interact with this event." />
+
+	<lang id="ControlClickToGoToEquipmentScreen" text="{0}+click to go to equipment screen." translation_notes="{0} will be a custom thing for the player, but is often the Ctrl key." />
+	<lang id="ControlClickToFilterToInternalRobotics" text="{0}+click to filter to {1}." translation_notes="{0} will be a custom thing for the player, but is often the Ctrl key. {1} will be the name of a kind of internal robotics." />
+	<lang id="ControlClickToGoToInputOutputScreen" text="{0}+click to go to input/output screen for this resource." translation_notes="{0} will be a custom thing for the player, but is often the Ctrl key." />
+
+	<lang id="Unit_Stance" text="Unit Stance" />
+	<lang id="Unit_Stance_StrategyTip_P1" text="Stance determines how this unit will act. However, the main way to adjust options is through abilities." />
+	<lang id="Any_Stance_StrategyTip" text="Click to change the stance." />
+	<lang id="BulkAndroid_Stance_StrategyTip_P1" text="Bulk androids act on their own based on their stance. They can be repositioned manually, but everything else is automatic." />
+
+	<lang id="StructureJob_StrategyTip_P1" text="Jobs define a machine structure's function." />
+	<lang id="Any_StructureJob_StrategyTip" text="Click to change the job." />
+
+	<lang id="Unit_WillBecomeOutcast" text="Will Be Marked Defective" />
+	<lang id="Unit_WillBecomeOutcast_StrategyTip" text="This unit will be marked defective and become a target for Military and SecForce guards." />
+
+	<lang id="EnemiesTargetingYou" text="Enemies Targeting You" />
+	<lang id="EnemiesTargetingThisUnit" text="Enemies Targeting This Unit" />
+	
+	<lang id="EnemySquadsParenthetical" text="(Squads: {0})" />
+	<lang id="Death_Brief" text="DEATH" />
+	<lang id="MightDie_Brief" text="MIGHT DIE" />
+	<lang id="Damage" text="Damage" />
+	<lang id="Damage_Abbrev" text="Dmg" />
+
+	<lang id="PredictedAttackOfOpportunityLong" text="Predicted Attack Of Opportunity To Your Unit" />
+	<lang id="PredictedAttackOfOpportunityShort" text="Attack Of Opportunity" />
+	
+	<lang id="IncomingDamageLong" text="Damage This Unit Will Take Next Turn" />
+	<lang id="IncomingDamageShort" text="Next Turn" translation_notes="Trying to keep this as brief as possible is really helpful for readability.  The other information about this being incoming damage is in other parts, so just conveying that this is for the next turn is enough." />
+	<lang id="DoubleDamage" text="Double Damage!" />
+	<lang id="FromBehindBonusHit" text="{0}x From-Behind Bonus!" />
+	<lang id="FromBehindBonusMissed" text="{0}x From-Behind Bonus Not Applied..." />
+	<lang id="FromAboveBonusHit" text="{0}x From-Above Bonus!" />
+	<lang id="FromAboveBonusMissed" text="{0}x From-Above Bonus Not Applied..." />
+	<lang id="PercentOfDamageBlockedByArmorPlating" text="{0}% Damage Blocked By Armor Plating!" />
+	<lang id="PercentOfDamageBlockedByArmorPlating_Brief" text="{0}% Blocked By Armor" />
+
+	<lang id="PredictedDamageLong" text="&lt;b&gt;{0}&lt;/b&gt; Of Remaining Target Health" />
+	<lang id="PredictedDamageShort" text="Dmg" />
+	<lang id="PredictedMoraleDamageShort" text="Morale" />
+	<lang id="PredictedMoraleDamageLong" text="&lt;b&gt;{0}&lt;/b&gt; Of Remaining Target Morale" />
+	<lang id="PredictedMoraleDamage" text="Morale Damage" />
+
+	<lang id="APWouldRemainLong" text="AP Would Remain" />
+	<lang id="APWouldRemainShort" text="AP After" />
+	
+	<lang id="YourUnitDeath_MidLength" text="Your Unit Will Die!" />
+	<lang id="YourUnitmightDie_MidLength" text="Your Unit Might Die!" />
+	<lang id="YourUnitDeath_Longer_DoThis" text="Your unit is likely to die next turn if this is your final action." />
+	<lang id="YourUnitDeath_Longer_StayHere" text="Your unit is likely to die next turn if it stays here." />
+	<lang id="YourUnitDeath_Longer_AttackOfOpportunity" text="The enemies sighting your unit will kill it if you attempt to move out of their range." />
+	<lang id="YourUnitMightDie_Longer_AttackOfOpportunity" text="The enemies sighting your unit might kill your unit if you attempt to move out of their range." />
+	<lang id="YourUnitWillTakeDamage_Longer_AttackOfOpportunity" text="The enemies sighting your unit will damage it if you attempt to move out of their range." />
+	<lang id="ThisUnitDeath_MidLength" text="This Unit Will Die!" />
+	<lang id="ThisUnitDeath_Longer" text="This unit will die next turn if nothing changes." />
+
+	<lang id="RestrictedArea" text="Restricted Area L{0} ({1})" />
+	<lang id="RestrictedArea_Long" text="Enemies may attack your units here if they are not stealthed or blending in." />
+	<lang id="RestrictedArea_Brief" text="L{0} Clearance" />
+
+	<lang id="DealLevel_Brief" text="Lvl. {0}" />
+	<lang id="DealLevelChange" text="Level {0} -> Level {1}" />
+	<lang id="DealLevel_AlreadyAtMin" text="Already At Lowest Deal Level" />
+	<lang id="DealLevel_AlreadyAtMax" text="Already At Highest Deal Level" />
+	<lang id="DealLevel_CurrentLevel" text="Current Level" />
+	<lang id="PredictedNetParenthetical_Positive" text="(Predicted Net: +{0})" translation_notes="{0} will be some positive number or zero.  This is the amount of resources you're predicted to have net per turn with whatever is being proposed." />
+	<lang id="PredictedNetParenthetical_Negative" text="(Predicted Net: {0})" translation_notes="{0} will be some negative number.  This is the amount of resources you're predicted to have net per turn with whatever is being proposed." />
+	<lang id="InStorage" text="In Storage" translation_notes="Will be used like 'In Storage: 452' or similar. This refers to how much of a resource already exists in storage." />
+	<lang id="AvailableStorage" text="Available Storage" translation_notes="Will be used like 'Available Storage: 5000' or similar. This refers to how much room the player has to store more of a resource of this kind." />
+	
+	<lang id="ActionCannotBeDoneByAVehicle" text="This action cannot be done by a vehicle." />
+	<lang id="ActionCannotBeDoneByAMech" text="This action cannot be done by a mech." />
+	<lang id="ActionCannotBeDoneByABulkAndroid" text="This action cannot be done by a bulk android." />
+	<lang id="ActionCannotBeDoneByThisKindOfUnit" text="This action cannot be done by this kind of unit." />
+	<lang id="SelectAUnitToDoThisAction" text="You must first select one of your units." />
+
+	<lang id="RestrictedAreaPass" text="Restricted Area L{0} ({1}) - PASS" />
+	<lang id="RestrictedAreaPass_Long" text="Enemies would attack your units here, but this one has a high enough clearance to pass unnoticed." />
+	<lang id="RestrictedAreaPass_Brief" text="L{0} Clearance - PASS" />
+	
+	<lang id="Unit_Repairs" text="Repairs" />
+	<lang id="Unit_Repairs_StrategyTip" text="Engineering skill allows units to self-repair faster." />
+
+	<lang id="RecruitAndroid_StrategyTip" text="If all your androids die, your consciousness will collapse. Having spares is not a bad plan." />
+	<lang id="RecruitAndroid_Blocked" text="You already have &lt;b&gt;{0}&lt;/b&gt; androids, which collectively use &lt;b&gt;{1}&lt;/b&gt; out of your &lt;b&gt;{2}&lt;/b&gt; android capacity.
+This is the maximum your mind can support right now.
+Adding this further android would increase your usage by &lt;b&gt;{3}&lt;/b&gt;, which is too much." />
+
+	<lang id="ConsciousnessCollapseWarning" text="At Risk Of Consciousness Collapse!" />
+	<lang id="ConsciousnessCollapseWarning_Tooltip" text="You only have a single android online. If it dies, your consciousness will collapse regardless of how many vehicles or mechs you have.
+Exercise extra caution. If your consciousness collapses, you'll fail this timeline." />
+
+	<lang id="MentalStrainWarning_Androids" text="Warning! {0} Above Android Capacity" />
+	<lang id="MentalStrainWarning_Androids_Tooltip1" text="At present, you only have {1} android capacity. You will have to scrap excess. Until the excess is corrected, none of your androids can act." />
+	
+	<lang id="MentalStrainWarning_Tooltip2" text="{0} here to open a list of units to quickly scrap them." />
+
+	<lang id="MentalStrainWarning_Mechs" text="Warning! {0} Above Mech Capacity" />
+	<lang id="MentalStrainWarning_Mechs_Tooltip1" text="You only have {1} mech capacity right now. You will have to scrap any excess. Until this excess is corrected, none of your mechs can act." />
+
+	<lang id="MentalStrainWarning_Vehicles" text="Warning! {0} Above Vehicle Capacity" />
+	<lang id="MentalStrainWarning_Vehicles_Tooltip1" text="You only have {1} vehicle capacity right now. You will have to scrap any excess. Until this excess is corrected, none of your vehicles can act." />
+
+	<lang id="MentalStrainWarning_BulkUnits" text="Warning! {0} Bulk Unit Capacity Overage" />
+	<lang id="MentalStrainWarning_BulkUnits_Tooltip1" text="Based on your current computing resources, you only have {1} of bulk squad capacity. You are currently using {0}. You will have to scrap any excess. Until this excess is corrected, none of your bulk units can act." />
+
+	<lang id="MentalStrainWarning_CapturedUnits" text="Warning! {0} Captured Unit Capacity Overage" />
+	<lang id="MentalStrainWarning_CapturedUnits_Tooltip1" text="Based on your current computing resources, you only have {1} of captured unit capacity. You are currently using {0}. You will have to scrap any excess. Until this excess is corrected, none of your captured units can act." />
+
+	<lang id="TimelineFailed" text="Timeline Failed" />
+	<lang id="TimelineFailed_Tooltip" text="In this timeline, your consciousness collapsed and did not recover. You will have to move to a different timeline." />
+
+	<lang id="BasicControls_ToggleHeader" text="Display Hotkey Tips" />
+	<lang id="BasicControls_ToggleSubHeader" text="(in menu)" />
+
+	<lang id="ClickForNextSubnet" text="{0} to cycle through your subnets." />
+	<lang id="ClickForNextMachineActor" text="{0} to cycle through your units." />
+	<lang id="ClickForNextActiveNPCCombatant" text="{0} to cycle through NPC combatants." translation_notes="These are non-guard NPC combatants, but that is wordy and confuses the issue.  Technically npc combat-capable troops who are just guarding are not really combatants right now, in one sense." />
+
+	<lang id="ClickForNextStructureWithAnyIssue" text="{0} to cycle through structures with any issue." />
+	<lang id="ClickToDestroyUnit" text="{0} to destroy {1}." />
+	<lang id="ClickToFocusOn" text="{0} to focus on {1}." />
+	<lang id="ClickToSelect" text="{0} to select {1}." />
+	<lang id="ClickEitherToClear" text="{0} or {1} to clear message." />
+
+	<lang id="BasicControls_Camera" text="Camera Controls" />
+	<lang id="BasicControls_BasicGame" text="Basic Game Controls" />
+
+	<lang id="BasicControls_Panning_Header" text="Pan" />
+	<lang id="BasicControls_Panning" text="&lt;b&gt;{0}&lt;/b&gt;, &lt;b&gt;{1}&lt;/b&gt;, &lt;b&gt;{2}&lt;/b&gt;, and &lt;b&gt;{3}&lt;/b&gt; to pan the camera." />
+	<lang id="BasicControls_Panning_Tooltip" text="When you have a specific unit or building selected, panning may be locked.
+&lt;b&gt;{0}&lt;/b&gt; empty space to deselect your current selection." />
+	<lang id="BasicControls_Panning_SteamDeck" text="&lt;b&gt;Left Stick&lt;/b&gt; to pan the camera." />
+	
+	<lang id="BasicControls_RotateAndTilt_HeaderTwoLine" text="Rotate/
+Tilt" />
+	<lang id="BasicControls_RotateAndTilt_HeaderOneLine" text="Rotate/Tilt" />
+	<lang id="BasicControls_RotateAndTilt_Normal" text="&lt;b&gt;Hold LMB&lt;/b&gt; and &lt;b&gt;move the mouse&lt;/b&gt; to rotate/tilt the camera." />
+	<lang id="BasicControls_RotateAndTilt_Normal_Tooltip_P2" text="Alternatively, you can use &lt;b&gt;{0}&lt;/b&gt; to rotate the camera, and &lt;b&gt;{1}&lt;/b&gt; to tilt the camera." />
+	<lang id="BasicControls_RotateAndTilt_SteamDeck" text="&lt;b&gt;Right Stick&lt;/b&gt; to rotate and tilt the camera." />
+	<lang id="BasicControls_RotateAndTilt_Tooltip_General" text="Rotating the camera is important!  Units and other small objects may be obscured behind buildings." />
+
+	<lang id="BasicControls_Zooming_Header" text="Zoom" />
+	<lang id="BasicControls_Zooming_SteamDeck" text="&lt;b&gt;{0}&lt;/b&gt; to zoom." />
+	<lang id="BasicControls_Zooming_General" text="&lt;b&gt;Mousewheel&lt;/b&gt; or &lt;b&gt;{0}&lt;/b&gt; to zoom." />
+	<lang id="BasicControls_Zooming_Tooltip" text="Also important, although most of your time will likely be spent at middle zoom." />
+
+	<lang id="BasicControls_SelectAndTakeActions_HeaderTwoLine" text="Select
+Units" />
+	<lang id="BasicControls_SelectAndTakeActions_HeaderOneLine" text="Select Units" />
+	<lang id="BasicControls_SelectAndTakeActions" text="&lt;b&gt;{0}&lt;/b&gt; to select units." />
+	<lang id="BasicControls_SelectAndTakeActions_Tooltip" text="You can select enemy units to then hover their stats in the bottom-left of the screen." />
+
+	<lang id="BasicControls_DeselectOrCancel_HeaderTwoLine" text="Give Orders/
+Cancel Menus" />
+	<lang id="BasicControls_DeselectOrCancel_HeaderOneLine" text="Give Orders / Cancel Menus" />
+	<lang id="BasicControls_DeselectOrCancel" text="&lt;b&gt;{0}&lt;/b&gt; to give orders to units or cancel menus." />
+	<lang id="BasicControls_DeselectOrCancel_Tooltip" text="This is what you use to build structures, place units, move units, tell a unit to take an action, and anything else a unit might do.
+If a menu is open that prevents giving orders to units or build orders, then this instead closes the menu." />
+
+	<lang id="BasicControls_NextActor_HeaderTwoLine" text="Next
+Notification, 
+Unit, Or Turn" />
+	<lang id="BasicControls_NextActor_HeaderOneLine" text="Next Notification, Unit, Or Turn" />
+	<lang id="BasicControls_NextActor" text="&lt;b&gt;Press {0}&lt;/b&gt; to open the next notification, go to your next unit, or start the next turn." />
+	<lang id="BasicControls_NextActor_Tooltip_P1" text="Any of your units that are unable to act further this turn will be skipped." />
+	<lang id="BasicControls_NextActor_Tooltip_P2" text="To quickly find and select those units, you can use the Forces sidebar (hotkey &lt;b&gt;{0}&lt;/b&gt;)." />
+	<lang id="BasicControls_NextActor_Tooltip_P3" text="If all of your units are out of Action Points (AP), or you are out of Mental Energy, then pressing this will advance to the next turn." />
+
+
+	<lang id="BasicControls_FullTooltips_HeaderTwoLine" text="See Detailed 
+Tooltips" />
+	<lang id="BasicControls_FullTooltips_HeaderOneLine" text="See Detailed Tooltips" />
+	<lang id="BasicControls_FullTooltips" text="Hold &lt;b&gt;{0}&lt;/b&gt; to see detailed tooltips." />
+	<lang id="BasicControls_FullTooltips_Tooltip" text="Any tooltip that can be expanded will say so in small print at the bottom.  Try it with this one!" />
+	<lang id="BasicControls_FullTooltips_Tooltip_MoreHeader" text="Stat Details" />
+	<lang id="BasicControls_FullTooltips_Tooltip_MoreBody" text="Want even more information about a stat? Click the unit, and then hover over that stat in the bottom left corner." />
+
+	<lang id="BasicControls_NotYetUnlocked" text="(Not Yet Unlocked)" />
+	<lang id="BasicControls_ThisIsImportant" text="*This is important." translation_notes="This is using the asterisk kind of like a footnote below a different header, to make sure the player notices this." />
+	
+	<lang id="BasicControls_OthersInTooltip" text="Other hotkeys are shown in tooltips" />
+	<lang id="BasicControls_OthersInTooltip_HoverHere" text="Hover here for some handy ones" />
+	<lang id="BasicControls_OthersInTooltip_Tooltip_P1" text="Most major interfaces have a shortcut noted on the tooltip for their button." />
+	<lang id="BasicControls_OthersInTooltip_Tooltip_P2" text="Some Useful Ones" />
+	<lang id="BasicControls_OthersInTooltip_Tooltip_LoadoutWindow" text="&lt;b&gt;{0}&lt;/b&gt; to customize the loadout of the selected unit's type." />
+	<lang id="BasicControls_OthersInTooltip_Tooltip_HoldForInspectMode" text="Hold &lt;b&gt;{0}&lt;/b&gt; to enable Inspect Mode for examining buildings." />
+	<lang id="BasicControls_OthersInTooltip_Tooltip_ShowDetailedTooltips" text="Hold &lt;b&gt;{0}&lt;/b&gt; to show a longer version of many tooltips." />
+	<lang id="BasicControls_OthersInTooltip_Tooltip_ToggleMapMode" text="&lt;b&gt;{0}&lt;/b&gt; to toggle the city map." />
+	<lang id="BasicControls_OthersInTooltip_Tooltip_BuildMode" text="&lt;b&gt;{0}&lt;/b&gt; to toggle build mode." />
+	<lang id="BasicControls_OthersInTooltip_Tooltip_ToggleResearch" text="&lt;b&gt;{0}&lt;/b&gt; to toggle the research window." />
+	<lang id="BasicControls_OthersInTooltip_Tooltip_Inventory" text="&lt;b&gt;{0}&lt;/b&gt; to toggle your inventory." />
+	<lang id="BasicControls_OthersInTooltip_Tooltip_RecentEvents" text="&lt;b&gt;{0}&lt;/b&gt; to toggle a view of recent activity." />
+
+	<!--inspect mode
+		other hotkeys in tooltips-->
+	
+	<lang id="Gamepad_LeftStick" text="Left Stick" />
+	<lang id="Gamepad_RightStick" text="Right Stick" />
+
+	<lang id="UnitBusyWithActionOverTime" text="Unit is busy with an action-over-time." />
+
+	<lang id="UnitWillDisperseInTurns" text="Unit Will Disperse In Turns" />
+	
+	<lang id="AlreadyActed" text="Already Acted This Turn" />
+	<lang id="BusyWithActionOverTime" text="Busy With Action Over Time" />
+	<lang id="CannotActRightNow" text="Cannot Act Right Now" />
+
+	<lang id="MustViewKeyMessage_EndTurn" text="You must open the message above this menu before you can end this turn." />
+	
+	<lang id="AllNPCUnitsNeedToFinishActingFirst" text="All NPC units need to finish acting first." />
+	<lang id="PressXToSelectTheNextNPC" text="Press {0} to select the next NPC unit, so that it, and any others that come into view, will act.
+Don't be shy about pressing {0}, as it will not end your turn unfairly." />
+
+	<lang id="TooManyMechsOnline" text="You are {0} over your mech capacity. Scrap the excess before any of the others will be able to act." />
+	<lang id="TooManyAndroidsOnline" text="You are {0} over your android capacity. Scrap the excess before any of the others will be able to act." />
+	<lang id="TooManyVehicles" text="You are {0} over your vehicle capacity. Scrap the excess before any of the others will be able to act." />
+	
+	<lang id="UnitIsOutOfActionPoints" text="Unit is out of action points (AP) for this turn." />
+	<lang id="UnitDoesNotHaveEnoughActionPoints" text="Costs {0} action points (AP), but this unit has {1} remaining for this turn." />
+	<lang id="YouAreOutOfMentalEnergy" text="Costs {0} mental energy, but you have {1} remaining this turn." />
+	<lang id="CanOnlyUseThisAbilityAtABuilding" text="This ability can only be used at a building (your unit would be standing above it)." />
+	<lang id="CannotUseThisAbilityWhileStoredInVehicle" text="This ability cannot be used while riding in a vehicle. Deploy the unit first." />
+	<lang id="UnitAlreadyTakingCover" text="This unit is already taking cover." />
+	<lang id="UnitAlreadyHasShieldsUp" text="This unit already has its shields up." />
+	<lang id="VehicleHasNoPassengers" text="This vehicle has no passengers." />
+	<lang id="ActionPointCost" text="Action Point Cost" />
+	<lang id="MentalEnergyCost" text="Mental Energy Cost" />
+	<lang id="YouAreOutOfMentalEnergyForThisTurn" text="You Are Out Of Mental Energy For This Turn" />
+	<lang id="NeedMoreOfAResource" text="Need {0} {1} (Have {2})" />
+	<lang id="ParentheticalAvailable" text="(Available: {0})" />
+	<lang id="ParentheticalProvidedByNearbyUnits" text="({0} Provided By Nearby Units)" />
+	<lang id="AllRemaining" text="All Remaining" />
+	<lang id="RequiredInfrastructure" text="Required Infrastructure" translation_notes="Header for a subsection of construction that is things like how much electricity or deterrence it needs in that area." />
+	<lang id="ProvidedInfrastructure" text="Provided Infrastructure" translation_notes="Header for a subsection of construction that is things like how much electricity it provides." />
+	<lang id="LowerAndMiddleClass" text="Lower And Middle Class" translation_notes="This is a label for how many workers and residents of the lower and middle class are here." />
+	<lang id="UpperClass" text="Upper Class" translation_notes="This is a label for how many workers and residents of the upper class are here." />
+	<lang id="AttackBrief" text="Attack" />
+	<lang id="AttackMoraleBrief" text="Morale Attack" />
+	<lang id="AttackTarget" text="{0} Attacked {1}" />
+	<lang id="AttackTargetMorale" text="{0} Attacked Morale Of {1} " />
+	<lang id="AttackGroupVsGroup" text="{0} Vs {1}" />
+	<lang id="DamageDone" text="Damage Done" />
+	<lang id="MoraleDamageDone" text="Morale Damage" />
+	<lang id="AttackUnitVsUnit" text="{0} -> {1}" />
+	<lang id="NPCObjective" text="NPC Objective" />
+	<lang id="NPCObjectiveComplete" text="NPC Objective Complete" />
+	<lang id="TargetedAbility_Prefix" text="Targeted Ability" />
+	<lang id="TargetedAbility_Details" text="Activating this ability will allow you to choose a target. {0} to choose the target." />
+	<lang id="TargetedAbility_MovementPrefix" text="Movement" />
+	<lang id="TargetedAbility_MovementDefaultDetails" text="Activating this ability will allow you to choose a location to move to. {0} to choose the location." />
+	<lang id="ModeChange_Prefix" text="Mode Change" />
+	<lang id="ModeChange_Details" text="Activating this ability puts you into a different mode. Keys and buttons work normally in that mode, but you'll see different options." />
+		
+	<lang id="NothingAvailableToConstruct" text="You haven't invented anything suitable for this vehicle to construct yet!" />
+
+	<lang id="UnitReadiness" text="Unit Readiness" />
+	<lang id="UnitReadiness_Normal" text="Normal" />
+	<lang id="UnitReadiness_StandbyTemporary" text="Standby Until Next Turn" />
+	<lang id="UnitReadiness_StandbyIndefinite" text="Indefinite Standby" />
+	<lang id="Standby_Expalanation1" text="When a unit is in standby, it will not be in the normal selection rotation from pressing {0}, but it will still be selectable by pressing {1}." />
+	<lang id="Standby_Expalanation2" text="Standby is for focusing on smaller groups. There is no difference in unit functionality.
+Putting all of your units into standby has no effect on the {0} key. This prevents muscle memory from betraying you.
+To skip straight to the next turn, press the {1} key." />
+	<lang id="Standby_Expalanation3" text="{0} to toggle standby for one turn. {1} to toggle indefinite standby." />
+	
+	<lang id="NoDamagedUnitsToRepair" text="There are no damaged units or structures in range." />
+	<lang id="NoUnitsWithinRangeAbleToBeForcedIntoConversation" text="There are no units in range that you can force into conversation." />
+	<lang id="RepairStrengthFromEngineeringSkill" text="Repair Strength From Engineering Skill" />
+	<lang id="DamageNegationFromNetControlSkill" text="Damage Negation From Net Control Skill" />
+	<lang id="AttackPowerAddedFromNetControlSkill" text="Attack Power Added From Net Control Skill" />
+	<lang id="RepairResults" text="Results" />
+	<lang id="WillApplyTo" text="Will Apply To" />
+	<lang id="TargetsAvailable" text="Targets Available" />
+	<lang id="UnitAlreadyHasMaxAP" text="This unit already has max AP." />
+	<lang id="MustHaveAtLeastTwoEnergyToUseThis" text="You must have at least two Energy to use this." />
+	<lang id="UnitsWillHit" text="Units Will Hit" translation_notes="How many units will be hit by an ability. Not in a nice way." />
+	<lang id="BuildingsWillBurnDown" text="Buildings Will Burn Down" translation_notes="How many buildings will be burned down by an ability." />
+	<lang id="NoTargetsInRange" text="No targets in range." />
+	<lang id="NoAlliesInRange" text="No allies in range." />
+
+	<lang id="HackOptions_Header" text="Hacking Options" />
+	
+	<lang id="QuickHack_Header" text="Quick Hack" />
+	<lang id="QuickHack_Tooltip" text="Carry out a hack automatically. Useful when you want to keep in the flow of combat." />
+	<lang id="QuickHack_CostMultiplier" text="Cost Multiplier" />
+	<lang id="QuickHack_CostMultiplier_Explanation" text="Cost increased because hack resistance is {0}x more than your hacker's skill." translation_notes="{0} is a floating-point number." />
+
+	<lang id="FullHack_Header" text="Full Hack" />
+	<lang id="FullHack_Tooltip" text="Invade the enemy computer system yourself. Cheaper when enemy hack resistance is higher than your hacker's innate skill. Also yields bonus upgrades." />
+	
+	<lang id="Kills" text="Kills" />
+
+	<lang id="AbilityLocked_Details" text="It seems like an important ability goes here, but you're not in the mood to think about it just now." />
+	
+	<lang id="AbilityUnavailable" text="Ability Unavailable" />
+
+	<lang id="Gained" text="Gained" />
+
+	<lang id="Feat_Subheader" text="Feat" translation_notes="This goes on its own line as a header, identifying the subject of the tooltip as being a 'Feat.'  Please see the related handbook entry." />
+	<lang id="Perk_Subheader" text="Perk" translation_notes="This goes on its own line as a header, identifying the subject of the tooltip as being a 'Perk.'  Please see the related handbook entry." />
+	<lang id="Badge_Subheader" text="Badge" translation_notes="This goes on its own line as a header, identifying the subject of the tooltip as being a 'Badge.'  Please see the related handbook entry." />
+	<lang id="TemporaryStatusEffect_Subheader" text="Temporary Status Effect" translation_notes="This goes on its own line as a header, identifying the subject of the tooltip as being a 'Temporary Status Effect.'  Please see the related handbook entry." />
+
+	<lang id="Concept" text="Concept" />
+	<lang id="Concept_MajorMechanic" text="Major Mechanic" />
+	<lang id="Concept_MinorMechanic" text="Minor Mechanic" />
+	<lang id="Unit_Class" text="Unit Class" />
+	<lang id="Unit_Stats" text="Unit Stats" />
+	<lang id="Vehicle_Class" text="Vehicle Class" />
+	<lang id="Equipment_Stats" text="Equipment Stats" />
+	<lang id="PerksGranted" text="Perks Granted" />
+	<lang id="FeatsGranted" text="Feats Granted" />
+	<lang id="CostPerAttack" text="Cost Per Attack" />
+	<lang id="Job_Class" text="Job Class" />
+	<lang id="Job_Classes" text="Job Classes" />
+	<lang id="Job_PlacementRestrictions" text="Placement Restrictions" />
+	<lang id="Job_Counterstrike" text="Counterstrike Launched On Build" />
+	<lang id="Job_Counterstrike_Details" text="Whenever one of these jobs finishes installing, it will cause a burst of rage from an enemy faction. They will strike you... somewhere." />
+	<lang id="Job_OneWaveLaunchedOnBuild" text="One Wave Will Launch On Build" />
+	<lang id="Job_OneWaveLaunchedOnBuild_Details" text="Whenever one of these jobs finishes installing, a single wave of enemies will attack that location, even if you have enough deterrence to keep them away after that." />
+	<lang id="Job_StatusEffectsBlockedOnNearbyPOIs" text="Blocked On Nearby POIs" />
+	<lang id="Job_StatusEffectsCausedOnNearbyPOIs" text="Caused On Nearby POIs" />
+	<lang id="Job_RequiredStaffToProvidePassiveEffects" text="Required Staff To Provide Passive Effects" />
+	<lang id="Stance_Stats" text="Stance Stats" />
+	<lang id="Action_Stats" text="Action Stats" />
+	<lang id="PerTurnResults" text="Per-Turn Results" />
+	<lang id="StatIncrease" text="Stat Increase" />
+	<lang id="InternalRoboticsFor" text="Internal Robotics For" />
+	<lang id="EquipmentSlots" text="Equipment Slots" />
+	<lang id="FactoriesProducingThese" text="Factories Producing These" />
+	<lang id="NumberReadyToDeploy" text="Number Ready To Deploy" />
+	<lang id="CostToDeploy" text="Cost To Deploy" />
+	<lang id="DeployUnit" text="Deploy Unit" translation_notes="This goes on a part of the interface where it needs one or two short words. It can simply be Deploy if that word is long in your language. It should be a target for LQA testing. It's something players will see a lot." />
+
+	<lang id="CannotCallTimelinesHereYet_Header" text="Cannot Call Timelines Here... Yet" />
+	<lang id="CannotCallTimelinesHereYet_ZigguratBody" text="You cannot build on Ziggurats until you have reached either Chapter 4, or Intelligence Class 7." />
+	<lang id="CannotCallTimelinesHereYet_LimitedToFirstRock" text="You cannot build off of the starting rock until you have created at least four timelines." />
+	
+	<lang id="EncryptedData" text="Encrypted Data" translation_notes="Noun. Any encrypted data, it's non-specific." />
+	
+	<lang id="ConstructionDifficulty" text="Construction Difficulty" />
+	<lang id="InstallationDifficulty" text="Installation Difficulty" />
+	<lang id="ResourceCapIncrease" text="{0} Cap" />
+	<lang id="RequiredResourceCap" text="{0}/{1} Cap For {2}" />
+	<lang id="RequiredResourceAmount" text="&lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt; Of {2}" />
+	<lang id="RequiredResourcePerTurn" text="&lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt; Of {2} &lt;color=#ABC2FF&gt;Per Turn&lt;/color&gt;" />
+	<lang id="RequiredResourceCapAmount" text="&lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt; Of {2} Cap" />
+	<lang id="RequiredJobAmount" text="&lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt; of Job '{2}'" />
+	<lang id="RequiredPrefixedAmount" text="{2}: &lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt;" />
+	<lang id="RemainingPrefixedAmount" text="{1}: &lt;color=#ABC2FF&gt;{0} Remaining&lt;/color&gt;" />
+	<lang id="RequiredActionsTaken" text="&lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt; Actions Taken" />
+	<lang id="RequiredTurnsElapsed" text="&lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt; Turns" />
+	<lang id="RequiredTurnsToPrepareForEnemyArrival" text="&lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt; Turns To Prepare For Enemy Arrival" />
+	<lang id="RequiredTurnsToBlockEnemyMission" text="Block Enemy Mission For &lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt; Turns" />
+	<lang id="RequiredTurnsToRescueAllies" text="Rescue Allies Within &lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt; Turns" />
+	<lang id="RecruitedAdditionalAlliesOptional" text="Recruited Additional Allies: &lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt; (Optional)" />
+	<lang id="RequiredChargesSetAmount" text="Charges Set At &lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt; Of {2}" translation_notes="Charges as in explosive charges. {2} is the type of building where they are being set." />
+	<lang id="RequiredBurnDownAmount" text="Burn Down &lt;color=#ABC2FF&gt;{0}/{1}&lt;/color&gt; Of {2}" translation_notes="Burning down buildings. {2} is the type of building being burned down." />
+	<lang id="CompleteInvestigation" text="Complete Investigation &lt;color=#ABC2FF&gt;{0}&lt;/color&gt;" translation_notes="{0} is the name of the investigation to complete. This is in the imperative form." />
+	<lang id="ExistingResource" text="Existing" />
+	<lang id="CurrentHousingProvided" text="Current Housing Provided" />
+	<lang id="RaiseYourselfToIntelligenceClass" text="Raise Yourself To Intelligence Class" />
+	<lang id="Prefix_Acquire" text="Acquire" />
+	<lang id="Prefix_Build" text="Build" />
+	<lang id="Prefix_UseItem" text="Use Item" />
+	<lang id="Prefix_BuildAndDefend" text="Build And Defend" />
+	<lang id="Prefix_BuildAndContemplate" text="Build And Contemplate" />
+	<lang id="PerformASuccessfulExtractionOnAnEnemy" text="Perform A Successful Extraction On An Enemy" />
+
+	<lang id="ClickToPause" text="{0} to pause." translation_notes="Will say either left-click or right-click or similar." />
+	<lang id="ClickToUnPause" text="{0} to un-pause." translation_notes="Will say either left-click or right-click or similar." />
+	
+	<lang id="ClickToDelete" text="{0} to delete." translation_notes="Will say either left-click or right-click or similar." />
+	<lang id="ClickToBuild" text="{0} to build." translation_notes="Will say either left-click or right-click or similar." />
+	<lang id="HoldToSeeDetails" text="Hold {0} to see details." translation_notes="Keep as brief as possible, ideally.  This will be a keybind like Ctrl that shows here." />
+
+	<lang id="CannotDeleteNetworkSource" text="Cannot delete the source of your network." translation_notes="This is referring either to the network tower, or the emergency network source." />
+	<lang id="CannotScrapBuilding" text="Cannot scrap {0}." translation_notes="{0} is the name of some building." />
+	<lang id="CannotScrapUnitThatIsDoingAnActionOvertime" text="Cannot scrap unit engaged in an action-over-time." translation_notes="" />
+	
+	<lang id="Embededded_Buildings_Header" text="Embedding Structures In Human Buildings" />
+	<lang id="Embeded_ByMouseCursor_1" text="{0} One Of The Highlighted Buildings" translation_notes="Will say either left-click or right-click or similar." />
+	<lang id="Embeded_ByMouseCursor_2" text="The selected structure will be built inside your choice.
+You may need to zoom out and scroll around -- or use the map!" />
+	<lang id="ResearchCost" text="Research Cost" />
+	<lang id="CurrentInspirationPoints" text="Current Inspiration Points" />
+	<lang id="CanBeDoneRepeatedly" text="Can Be Done Repeatedly" />
+	<lang id="RemainingTimesCanBeDone" text="Remaining Times Can Be Done" />
+	<lang id="RemainingTimesCanBeDone_Explanation" text="The above is the absolute maximum number of more times this action can be done. If the project ends before you hit that cap, all actions related to the project become unavailable." />
+	<lang id="CurrentInspirationPoints_Details" text="Complete projects to gain more inspiration points for research domains." />
+	<lang id="Equipment_ToUse_Header" text="To Use" />
+	<lang id="Ability_Usage_Header" text="Usage" />
+	<lang id="TurnsToEquip" text="Cooldown Turns After Equip" />
+	<lang id="TurnsToEquip_Explanation" text="Equipment is instantly applied.  This is how long this equipment slot for this unit type will be blocked from any further changes after this equipment is assigned to a slot." />
+	<lang id="TurnsToConstruct" text="Turns To Construct" />
+	<lang id="RequiredIntelligenceClass" text="Required Intelligence Class" />
+	<lang id="RequiredIntelligenceClass_Fail" text="Your current intelligence class is only {0}." />
+	<lang id="ResearchDomainBlocked_Details" text="The ideas in this research domain are exhausted. More will open up at a higher intelligence class." />
+	<lang id="RemainingTurnsToInvent" text="Remaining Turns To Invent" />
+	<lang id="RemainingTurnsToResearch" text="Remaining Turns To Research" />
+	<lang id="SourceOfIdea" text="Source Of Idea" />
+	<lang id="99Plus" text="99+" />
+	<lang id="Invention_Available_Subheader" text="Available Invention" />
+	<lang id="Invention_Done_Subheader" text="Completed Invention" />
+	<lang id="UpgradePrefix" text="Upgrade" />
+	<lang id="TimesUpgraded_Subheader" text="Times Upgraded" />
+	<lang id="UnmetPrerequisites" text="Unmet Prerequisites" />
+	<lang id="CanOnlyBeUsedBy" text="Can Only Be Used By" />
+	<lang id="IncludesThis" text="(Includes {0})" />
+	<lang id="DoesNotIncludeThis" text="(Does Not Include {0})" />
+	<lang id="RequiresXOfData" text="Requires {0} {1}" translation_notes="0 is the amount, 1 is the type of data. 'requires 10 intelligence', etc." />
+	<lang id="UnitHasDataValue" text="({0} Has {1})" />
+	<lang id="PeopleInsideCountParenthetical" text="({0} People Inside)" />
+	<lang id="PeopleCaptureTargetsCountParenthetical" text="({0} People To Capture)" />
+	<lang id="ChooseResearch" text="Choose Research" />
+	<lang id="CurrentlyResearching" text="Currently Researching" />
+	<lang id="Research_Header" text="Research" />
+	<lang id="PleaseChooseANewIdea_Details" text="Turn one of your ideas into an invention. Or seek new upgrades by exploring a research domain." />
+	<lang id="1TurnToComplete" text="1 Turn To Complete" />
+	<lang id="XTurnsToComplete" text="{0} Turns To Complete" />
+	<lang id="XResearchAvailable" text="{0} Available" />
+	
+	<lang id="StandardAndroid" text="Standard Android" />
+	<lang id="StandardMech" text="Mech" />
+	<lang id="StandardVehicle" text="Vehicle" />
+	<lang id="BulkAndroid" text="Bulk Android" />
+	<lang id="CapturedUnit" text="Captured Unit" />
+	<lang id="AlliedUnit" text="Allied Unit" />
+	<lang id="ThirdPartyUnit" text="Third-Party Unit" />
+
+	<lang id="Androids" text="Androids" />
+	<lang id="Mechs" text="Mechs" />
+	<lang id="Vehicles" text="Vehicles" />
+	<lang id="Networks" text="Networks" />
+	<lang id="Subnets" text="Subnets" />
+	<lang id="AllUnitTypes" text="All" />
+	<lang id="BulkAndroidSquads" text="Bulk Android Squads" />
+	<lang id="CapturedUnitSquads" text="Captured Unit Squads" />
+
+	<lang id="StatCurrent" text="Currently Used" />
+	<lang id="StatOriginal" text="Original Cap" />
+	<lang id="StatIncreasePer" text="Increase Per Upgrade" />
+
+	<lang id="StatCap" text="Current Cap" />
+	<lang id="StatOriginalCap" text="Original Cap" />
+	<lang id="StatMaximumCap" text="Maximum Possible Cap" />
+
+	<lang id="StatCurrentValue" text="Current Value" />
+	<lang id="StatOriginalValue" text="Original Value" />
+	<lang id="StatMaximumValue" text="Maximum Possible Value" />
+
+	<lang id="BuildStructure" text="Build Structure" />
+	<lang id="InstallJob" text="Install Job" />
+	<lang id="Investigating" text="Investigating" />
+	<lang id="Infiltration" text="Infiltration" />
+
+	<lang id="MiningWarning" text="You'll need to maintain deterrence in the area.
+You may have a hard time finding host mining sites. Use the Navigation lens to find and inspect large mining sites (yellow triangles)." />
+
+	<lang id="Busy_Short" text="Busy" translation_notes="A very brief way of noting to the player that the unit in question is occupied doing something already; it doesn't matter what, but the player would have to interrupt the unit to use them for something new."/>
+	<lang id="VehicleCannotCarryThisTypeOfUnit_Short" text="Vehicle Cannot Carry This Type Of Unit"/>
+	<lang id="VehicleNoRoomForUnitsOfThisType_Short" text="No More Room For Units Of This Type"/>
+	<lang id="LocationIsTooFarFromAnyAndroidLauncher_Short" text="Location Is Too Far From Any Android Launcher"/>
+	<lang id="LocationIsTooFarFromAnyMechLauncher_Short" text="Location Is Too Far From Any Aerospace Hangar Or Mech-Launching Vehicles"/>
+	<lang id="LocationIsTooFarFromAnyAerospaceHangar_Short" text="Location Is Too Far From Any Aerospace Hangar"/>
+	<lang id="YouDoNotHaveTheResourcesToBuildAnother" text="You Do Not Have The Resources To Build Another"/>
+	
+	<lang id="WillTakeYouAboveCap_H1" text="Will Take You Above Cap"/>
+	<lang id="WillTakeYouAboveCap_H2" text="Proceed Anyway?"/>
+	<lang id="WillTakeYouAboveCap_BulkAndroids_Details" text="You can place this bulk android squad, but once you do you'll experience mental overload. None of your bulk squads will function until you scrap one of the others."/>
+	<lang id="WillTakeYouAboveCap_Androids_Details" text="You can place this android, but once you do you'll experience mental overload. None of your androids will function until you scrap one of the others."/>
+	<lang id="WillTakeYouAboveCap_Mechs_Details" text="You can place this mech, but once you do you'll experience mental overload. None of your mechs will function until you scrap one of the others."/>
+	<lang id="WillTakeYouAboveCap_Vehicles_Details" text="You can place this vehicle, but once you do you'll experience mental overload. None of your vehicles will function until you scrap one of the others."/>
+
+	<lang id="ActionPoint_Full" text="Action Points" />
+	<lang id="ActionPoint_Explanation" text="A unit can take as many actions as fit into its AP budget each turn. 
+Unless otherwise specified, expending 1 AP also requires 1 Mental Energy." />
+	<lang id="ActionPoint_StrategyTip" text="You can use some AP from Unit A, and then some from Unit B, and then the rest from Unit A." />
+	<lang id="ActionPoint_Current" text="Current Unit AP" />
+	<lang id="ActionPoint_Footnote" text="If a unit is engaged in an action over time, then no further actions can be taken by a unit until its action-over-time is completed." />
+	
+</root>

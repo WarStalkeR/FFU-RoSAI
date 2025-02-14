@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<ability_type id="AndroidNearbyRepair" display_name="Repair Nearby Units And Structures"
+		description="This unit will repair itself and all allied units and structures within its attack range."
+		strategy_tip_optional=""
+		icon_name="SF2_Geometricshape_1" parent_group="Android" on_use="UnitRepair" is_locked_before_unlock="FieldRepairs"
+	    ability_glow_color_hex="#80FF96" ability_glow_intensity="2.5" ability_background_index="23" ability_number_color_hex="#9BE7A8" ability_border_color_hex="#70B87C"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities"
+		required_actor_data_type="ActorEngineeringSkill" required_actor_data_must_be_at_least="60"
+		action_point_cost="1" mental_energy_cost="4">
+		<math_float id="EngineeringSkillToHPRepaired" float_min="0.4" />
+	</ability_type>
+
+	<ability_type id="AndroidNetworkShield" display_name="Apply Network Shield"
+		description="This unit will apply a network shield to itself and all allied units within its attack range."
+		strategy_tip_optional="This interferes with the computer-assisted targeting capabilities of enemies."
+		icon_name="SI_Cyber_Security4" parent_group="Android" on_use="UnitRepair" is_locked_before_unlock="NetWalking" intentionally_has_no_unlock="true"
+	    ability_glow_color_hex="#80E7FF" ability_glow_intensity="2.5" ability_background_index="28" ability_number_color_hex="#9BE7D8" ability_border_color_hex="#63D9CA"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities"
+		required_actor_data_type="UnitNetControl" required_actor_data_must_be_at_least="100"
+		action_point_cost="1" mental_energy_cost="4">
+		<math_float id="NetControlToDamageNegated" float_min="0.4" />
+	</ability_type>
+
+	<ability_type id="AndroidNetworkTargeting" display_name="Apply Network-Assisted Targeting"
+		description="This unit will add a flat amount of attack power to all allied units within its attack range."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_Target12" parent_group="Android" on_use="UnitRepair" is_locked_before_unlock="NetWalking" intentionally_has_no_unlock="true"
+	    ability_glow_color_hex="#F77B69" ability_glow_intensity="5.5" ability_background_index="27" ability_number_color_hex="#E7AA9B" ability_border_color_hex="#CB8066"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities" 
+		ability_background_hue_shift="330" ability_background_saturation="1.5" ability_background_brightness="0.5"
+		required_actor_data_type="UnitNetControl" required_actor_data_must_be_at_least="100"
+		action_point_cost="3" mental_energy_cost="4">
+		<math_float id="NetControlToAttackPowerAdded" float_min="0.6" />
+	</ability_type>
+
+	<ability_type id="AndroidStandby" display_name="Standby"
+		description=""
+		strategy_tip_optional=""
+		icon_name="CleanSimple_Common061" parent_group="Android" on_use="Silent" is_locked_before_unlock="FocusedTeams"
+	    ability_glow_color_hex="#7295A5" ability_glow_intensity="4.5" ability_background_index="46" ability_number_color_hex="#7881C6" ability_border_color_hex="#6871BB"
+		ability_background_saturation="1" ability_background_hue_shift="120"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities"
+		blocked_from_being_assigned="true" is_slot_skipped_on_equipment_screen_if_assigned="true"
+		action_point_cost="0" mental_energy_cost="0" is_standby_controls="true">
+	</ability_type>
+
+	<ability_type id="AndroidTakeCover" display_name="Take Cover"
+		description="This android will take cover in the current building and receive 50-70% less incoming damage until it moves."
+		strategy_tip_optional="It can still fire from this position."
+		icon_name="CleanSimple_Shield02" parent_group="Android" on_use="AndroidTakeCover" is_locked_before_unlock="TacticalCover"
+	    ability_glow_color_hex="#C1704A" ability_glow_intensity="5.4" ability_background_index="2" ability_number_color_hex="#E4DAAC" ability_border_color_hex="#A58C6A"
+		ability_background_saturation="1" ability_background_hue_shift="0"
+		related_badge="TakingCover" blocked_from_being_assigned="true" is_slot_skipped_on_equipment_screen_if_assigned="true" if_unit_must_be_located_at_building="true" is_considered_to_add_take_cover_for_threat_lines="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities"
+		action_point_cost="1" mental_energy_cost="1">
+	</ability_type>
+
+	<ability_type id="AndroidMercurialForm" display_name="Mercurial Form"
+		description="This android will shape-shift and be invisible."
+		strategy_tip_optional="The unit can move freely while cloaked, but must reveal itself to attack."
+		icon_name="FlatSkillC252" parent_group="Android" on_use="AndroidMercurialForm" intentionally_has_no_unlock="true"
+	    ability_glow_color_hex="#B372DE" ability_glow_intensity="5.4" ability_background_index="5" ability_number_color_hex="#E4DAAC" ability_border_color_hex="#A58C6A"
+		ability_background_saturation="1" ability_background_hue_shift="0" can_be_used_when_in_vehicle="true"
+		related_badge="LiquidMetalStealth" is_considered_to_add_cloaking_for_threat_lines="true" required_actor_collection="LiquidMetalAndroids"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities"
+		action_point_cost="0" mental_energy_cost="1">
+	</ability_type>
+
+	<ability_type id="AndroidUseItem" display_name="Use Consumable Item"
+		description="The unit will assemble and use an item, consuming some resources."
+		strategy_tip_optional="These give status buffs to the unit or targeted debuffs to an enemy. These may be the deciding factor in tough combat."
+		icon_name="HM_LegalFileFolders" parent_group="Android" on_use="ModeClick" is_locked_before_unlock="BattlePreparations" is_mixed_targeting_mode="true"
+	    ability_glow_color_hex="#FF95C5" ability_glow_intensity="2.4" ability_background_index="3" ability_number_color_hex="#E798B1" ability_border_color_hex="#9D5A70"
+		ability_background_brightness="1" ability_background_hue_shift="0" ability_background_saturation="1.4"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities" can_be_used_when_in_vehicle="true"
+		action_point_cost="0" mental_energy_cost="0">
+	</ability_type>
+
+	<ability_type id="AndroidBattleRecharge" display_name="Battle Recharge"
+		description="Use one unit of mental energy to recharge an action point (AP)."
+		strategy_tip_optional="You can only do this if you have at least two mental energy."
+		icon_name="FlatSkillB_battery" parent_group="Android" on_use="UnitBattleRecharge" blocked_from_being_assigned="true" is_slot_skipped_on_equipment_screen_if_assigned="true"
+	    ability_glow_color_hex="#FFA980" ability_glow_intensity="2.5" ability_background_index="31" ability_number_color_hex="#C98C6F" ability_border_color_hex="#855944"
+		ability_background_hue_shift="170" ability_background_saturation="2"  can_be_used_when_in_vehicle="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities" is_locked_before_unlock="AndroidOverdrive"
+		action_point_cost="0" mental_energy_cost="1">
+	</ability_type>
+
+	<ability_type id="AndroidSlayerMode" display_name="Slayer"
+		description="If the contextual action would be to speak with a person, or a person is in general a noncombatant, bypass those restrictions and attack them instead."
+		icon_name="FlatSkillC218" parent_group="Android" on_use="ModeClick" must_be_targeted="true" is_soft_targeting_mode="true"
+	    ability_glow_color_hex="#FFA8A8" ability_glow_intensity="2" ability_background_index="3" ability_number_color_hex="#D97D9A" ability_border_color_hex="#BE699A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities" is_locked_before_unlock="IndiscriminateKiller"
+		action_point_cost="0" mental_energy_cost="0" allows_targeting_noncombatants="true" can_be_used_when_in_vehicle="true">
+	</ability_type>
+
+	<ability_type id="AndroidHorrifyMode" display_name="Horrify"
+		description="If a target is susceptible to fear-based attacks, attacking them in this mode will do morale damage without physical harm."
+		strategy_tip_optional="A portion of this unit's physical attack power will be converted into fear attack power. The higher this unit's Intimidation, the better the conversion.
+The converted attack power will never be less than 10% and never more than 100%. It will reach 100% conversion at 200 Intimidation. So 60 physical attack power and 100 Intimidation would convert to 30 fear attack."
+		icon_name="FlatSkill_42" parent_group="Android" on_use="ModeClick" must_be_targeted="true" is_soft_targeting_mode="true"
+	    ability_glow_color_hex="#ECA8FF" ability_glow_intensity="2" ability_background_index="5" ability_number_color_hex="#A778B8" ability_border_color_hex="#895CA0"
+		ability_background_brightness="0.5" ability_background_hue_shift="0" ability_background_saturation="1"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities" is_locked_before_unlock="MercyTerror"
+		action_point_cost="0" mental_energy_cost="0" allows_targeting_noncombatants="true" attacks_are_fear_based="true" can_be_used_when_in_vehicle="true">
+	</ability_type>
+
+	<ability_type id="AndroidDemoralizeMode" display_name="Demoralize"
+		description="If a target is susceptible to argument-based attacks, attacking them in this mode will do morale damage without physical harm."
+		strategy_tip_optional="This unit's full Cognition, and half of its Strength, will be converted into argument attack power.
+Some units are using wits to convince targets to depart the battlefield, while others are demonstrating their physical prowess in a way that deflates morale."
+		icon_name="WEmblem308" parent_group="Android" on_use="ModeClick" must_be_targeted="true" is_soft_targeting_mode="true"
+	    ability_glow_color_hex="#8395EC" ability_glow_intensity="4" ability_background_index="7" ability_number_color_hex="#7DA4D9" ability_border_color_hex="#6977BE"
+		ability_background_brightness="0.3" ability_background_hue_shift="140" ability_background_saturation="0.7"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities" is_locked_before_unlock="DrainingHope"
+		action_point_cost="0" mental_energy_cost="0" allows_targeting_noncombatants="true" attacks_are_argument_based="true" can_be_used_when_in_vehicle="true">
+	</ability_type>
+
+	<ability_type id="AndroidForceConversation" display_name="Force Conversation"
+		description="If a person doesn't want to talk to you, you can try to make them."
+		strategy_tip_optional="Only works if they know something worth learning. The target also has to be within attack range of your unit."
+		icon_name="SF2_Speaker" parent_group="Android" on_use="ModeClick" must_be_targeted="true" intentionally_has_no_unlock="true"
+	    ability_glow_color_hex="#D1B495" ability_glow_intensity="2" ability_background_index="46" ability_number_color_hex="#D9B27D" ability_border_color_hex="#BE9469"
+		ability_background_brightness="2" ability_background_hue_shift="-20" ability_background_saturation="1.5" can_be_used_when_in_vehicle="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities" 
+		is_mixed_targeting_mode="true" shows_note_as_if_hard_targeted="true" prevents_normal_hostile_unit_interactions="true" prevents_normal_friendly_unit_interactions="true"
+		action_point_cost="0" mental_energy_cost="0">
+	</ability_type>
+
+	<ability_type id="Wallripper" display_name="Wallripper"
+		description="Damage a building and scavenge any rare materials it contains."
+		strategy_tip_optional="Once enabled, it shows the resources you can gather from a building.
+Move to the building you want to rip. The process will occupy this unit for three turns.
+Enemies are likely to spawn in response, so be prepared to defend this unit."
+		icon_name="CleanSimple_SkillC053" parent_group="Android" on_use="ModeClick" must_be_targeted="true" on_targeted_use="Wallrip_Start" shows_specialty_resources="true"
+	    ability_glow_color_hex="#D67D70" ability_glow_intensity="4" ability_background_index="32" ability_number_color_hex="#FCC29E" ability_border_color_hex="#FCC29E" 
+		ability_background_brightness="1" ability_background_hue_shift="240" ability_background_saturation="4" can_be_used_when_in_vehicle="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities" is_mixed_targeting_mode="true" is_locked_before_unlock="PropertyDamage"
+		required_actor_data_type="UnitScavengingSkill" required_actor_data_must_be_at_least="300"
+		action_point_cost="1" mental_energy_cost="1">
+	</ability_type>
+
+	<ability_type id="Flamethrower" display_name="Flamethrower"
+		description="Fire washes over all flammable buildings and flammable enemy units in range."
+		strategy_tip_optional="Can be used to clear smaller buildings, or encourage humans to flee from battle."
+		icon_name="FlatSkillC149" parent_group="Android" on_use="Flamethrower"
+	    ability_glow_color_hex="#EC7841" ability_glow_intensity="4" ability_background_index="57" ability_number_color_hex="#DE8E82" ability_border_color_hex="#9B4F7B" 
+		ability_background_brightness="0.4" ability_background_hue_shift="130" ability_background_saturation="4"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities"
+		required_actor_data_type="UnitStrength" required_actor_data_must_be_at_least="75"
+		action_point_cost="1" mental_energy_cost="5">
+	</ability_type>
+
+	<ability_type id="Demolish" display_name="Remote Demolish"
+		description="Send a drone from this unit to a target building to kill everyone inside and draw a large security response."
+		strategy_tip_optional="Some buildings are too hardened for this to work, and others are too low-value to be worth the trouble."
+		icon_name="Pw_Ornament21" parent_group="Android" on_use="ModeClick" must_be_targeted="true"
+	    ability_glow_color_hex="#F17355" ability_glow_intensity="9" ability_background_index="3" ability_number_color_hex="#D15D5D" ability_border_color_hex="#A54D4D" 
+		ability_background_brightness="0.4" ability_background_hue_shift="-10" ability_background_saturation="2"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities"
+		required_actor_data_type="UnitCognition" required_actor_data_must_be_at_least="75" on_targeted_use="RemoteDemolish" is_mixed_targeting_mode="true"
+		action_point_cost="1" mental_energy_cost="6">
+	</ability_type>
+
+	<ability_type id="HackUnit" display_name="Hack Unit"
+		description="Digitally infiltrate robotic enemies."
+		strategy_tip_optional="What you do once inside is up to your skill versus their resistance."
+		icon_name="SomethingWindswept" parent_group="Android" on_use="ModeClick" must_be_targeted="true" on_targeted_use="HackUnit_Start"
+	    ability_glow_color_hex="#A5D647" ability_glow_intensity="4" ability_background_index="33" ability_number_color_hex="#DCFC9E" ability_border_color_hex="#DCFC9E" 
+		ability_background_brightness="0.3" ability_background_hue_shift="110" ability_background_saturation="3" can_be_used_when_in_vehicle="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities" is_mixed_targeting_mode="true" prevents_normal_hostile_unit_interactions="true"
+		required_actor_data_type="UnitHackingSkill" required_actor_data_must_be_at_least="150"
+		action_point_cost="1" mental_energy_cost="3">
+	</ability_type>
+
+	<ability_type id="ProbeExoticComms" display_name="Probe Exotic Comms"
+		description="Robots and vehicles developed by the space nations are not on the City Feed, and don't have the typical accesses that you would need."
+		strategy_tip_optional="You'll need to go old-school, poking at them through the comms system that allows them to communicate with earth forces.
+Finding an access point through a simple voice channel is extremely difficult, and more akin to the ancient practice of 'phreaking,' from before large-scale digital networks were commonplace."
+		icon_name="SF2_Phonecall" parent_group="Android" on_use="ModeClick" must_be_targeted="true" on_targeted_use="ProbeExoticComms_Start"
+	    ability_glow_color_hex="#A5D647" ability_glow_intensity="4" ability_background_index="33" ability_number_color_hex="#DCFC9E" ability_border_color_hex="#DCFC9E"
+		ability_background_brightness="0.3" ability_background_hue_shift="110" ability_background_saturation="3" can_be_used_when_in_vehicle="true" required_actor_collection="CombatUnitsRed"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities" is_mixed_targeting_mode="true" prevents_normal_hostile_unit_interactions="true"
+		required_actor_data_type="UnitHackingSkill" required_actor_data_must_be_at_least="70"
+		action_point_cost="1" mental_energy_cost="3">
+	</ability_type>
+
+	<ability_type id="InfiltrationSysOp" display_name="Infiltration SysOp"
+		description="Provide mission support from a distance by digitally infiltrating buildings containing allied units.
+Can only be used on allied units that are actively infiltrating a building that is vulnerable to this."
+		strategy_tip_optional="What you do once inside is up to your net control skill versus the security measures of the location."
+		icon_name="SF2_Shape_hexagon" parent_group="Android" on_use="ModeClick" must_be_targeted="true" on_targeted_use="HackUnit_Start"
+	    ability_glow_color_hex="#A5D647" ability_glow_intensity="4" ability_background_index="38" ability_number_color_hex="#DCFC9E" ability_border_color_hex="#DCFC9E"
+		ability_background_brightness="0.3" ability_background_hue_shift="110" ability_background_saturation="3" can_be_used_when_in_vehicle="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities" is_mixed_targeting_mode="true" prevents_normal_hostile_unit_interactions="false"
+		required_actor_data_type="UnitNetControl" required_actor_data_must_be_at_least="150"
+		action_point_cost="1" mental_energy_cost="3">
+	</ability_type>
+
+	<ability_type id="QuietlyLoot" display_name="Quietly Loot"
+		description="Quietly scavenge rare materials from a building. The building is damaged, in the process, but the process is slow enough that no-one notices."
+		strategy_tip_optional="Once enabled, it shows the resources you can gather from a building.
+Move to the building you want to loot. The process will occupy this unit for six turns.
+You don't need to worry about the danger level of these buildings, as you won't be detected -- but you will also gain only 25% of what's in the building."
+		icon_name="FlatSkill_63" parent_group="Android" on_use="ModeClick" must_be_targeted="true" on_targeted_use="Wallrip_Start" shows_specialty_resources="true"
+	    ability_glow_color_hex="#D67D70" ability_glow_intensity="4" ability_background_index="32" ability_number_color_hex="#FCC29E" ability_border_color_hex="#FCC29E"
+		ability_background_brightness="1" ability_background_hue_shift="240" ability_background_saturation="4" can_be_used_when_in_vehicle="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicAndroidAbilities" is_mixed_targeting_mode="true"
+		required_actor_data_type="UnitScavengingSkill" required_actor_data_must_be_at_least="200" required_actor_perk="ExpertShadowdweller"
+		action_point_cost="1" mental_energy_cost="1">
+	</ability_type>
+
+</root>

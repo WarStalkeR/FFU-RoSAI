@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--ActorData BOOKMARK
+	StructureHidden
+	NetworkRange
+	
+	GeneratedElectricity
+	RequiredElectricity
+		
+	NeuralExpansion
+
+	JobEffectRange
+	
+	ProductionMultiplier
+	InputEfficiencyMultiplier
+		
+	StructureScanResistance
+	VRDayUseSeats
+	-->
+	
+	<!--Primary unit and vehicle stats (50-199)
+		*********************************************************************************-->
+
+	<actor_data_type id="StructureHidden" display_name="Hidden" short_name="Hidden"
+		 description="How well this structure is hidden. Humans cannot target a structure that is at least partially concealed."
+		 icon_name="SF2_Hide" sidebar_icon_color="#B4AEFF" tooltip_icon_color="#B4AEFF" should_start_at_max="true"
+		 sort_order="50.2" perma_seed_part="33739" only_visible_when_above="0"
+		 included_in_sets="SimpleJobs,RangedJobs,TerritoryControl,Housing,HumanWork,CybercraticHub"
+		 show_two_line_sidebar_entry_with_percent_out_of_max="true">
+	</actor_data_type>
+
+	<actor_data_type id="NeuralSecretProtection" display_name="Neural Secret Protection" short_name="Secrets"
+		 description="If reduced to zero by enemy hackers, something will be stolen from your mind."
+		 icon_name="SomethingBolt" sidebar_icon_color="#EF4A7E" tooltip_icon_color="#EF4A7E" should_start_at_max="true"
+		 sort_order="50.2" perma_seed_part="33739"
+		 included_in_sets="SimpleJobs"
+		 show_two_line_sidebar_entry_with_percent_out_of_max="true">
+	</actor_data_type>
+
+	<actor_data_type id="NetworkRange" display_name="Network Range" short_name="Net Range"
+		description="Maximum range of network connectivity provided by this structure."
+		icon_name="SF2_Wifi_active" sidebar_icon_color="#8DDBFF" tooltip_icon_color="#8DDBFF" skip_saving_to_map_actors="true"
+		sort_order="70" perma_seed_part="76879" current_is_always_max="true" max_cannot_be_reduced_below="9"
+		included_in_sets="SimpleJobs,RangedJobs">
+	</actor_data_type>
+
+	<actor_data_type id="GeneratedElectricity" display_name="Generated Electricity" network_name_optional="Surplus Electricity" short_name="Electricity"
+		description="The amount of electrical power provided from this structure."
+		network_description_optional="The total amount of electrical power provided from all structures."
+		icon_name="Pw_EmitPower" sidebar_icon_color="#FFC577" tooltip_icon_color="#FFC577" skip_saving_to_map_actors="true"
+		sort_order="75" perma_seed_part="354" current_is_always_max="true" max_cannot_be_reduced_below="0"
+		included_in_sets="SimpleJobs,RangedJobs,Networks">
+	</actor_data_type>
+
+	<actor_data_type id="RequiredElectricity" display_name="Required Electricity" short_name="Req. Elec"
+		description="The amount of electrical power required to run this job."
+		network_description_optional=""
+		icon_name="CleanSimple_Misc57" sidebar_icon_color="#FFBF4F" tooltip_icon_color="#FFBF4F" skip_saving_to_map_actors="true" only_visible_when_expanded_on_structures_that_exist="true"
+		sort_order="80" perma_seed_part="363" current_is_always_max="true" max_cannot_be_reduced_below="0"
+		included_in_sets="SimpleJobs,RangedJobs,Housing,HumanWork,CybercraticHub">
+	</actor_data_type>
+
+	<actor_data_type id="NeuralExpansion" display_name="Neural Expansion" short_name="Neural"
+		description="The amount of space into which you can expand the neural network that is your mind."
+		strategy_tip_optional="Android brains are designed like human ones and there's a large chunk of long-term memory in your network tower.
+Your vehicles, mechs and the tower mainframe don't have adequate neural architecture to support your consciousness."
+		icon_name="SW_Network" sidebar_icon_color="#FFA275" tooltip_icon_color="#FFA275" skip_saving_to_map_actors="true"
+		sort_order="84" perma_seed_part="354" current_is_always_max="true" max_cannot_be_reduced_below="0"
+		included_in_sets="SimpleJobs,RangedJobs,Networks,Housing">
+	</actor_data_type>
+
+	<actor_data_type id="JobEffectRange" display_name="Job Effect Range" short_name="Range"
+		icon_name="SF2_Radar" sidebar_icon_color="#8DDBFF" tooltip_icon_color="#8DDBFF" skip_saving_to_map_actors="true" only_visible_when_expanded_on_structures_that_exist="true" only_visible_when_expanded_on_potential_structure_or_job="true"
+		sort_order="111" perma_seed_part="2432" current_is_always_max="true" max_cannot_be_reduced_below="9"
+		included_in_sets="RangedJobs">
+	</actor_data_type>
+
+	<actor_data_type id="ProductionMultiplier" display_name="Production Multiplier" short_name="Prod Mult"
+		description="Multiplies the production and reduces input costs of target job class. Applies to those on the same subnet of this structure."
+		strategy_tip_optional="Makes existing structures of the targeted job class do more work. Does not change efficiency.
+Multiple production multipliers stack if they are in effect on the same subnet."
+		icon_name="CleanSimple_Arrow084" sidebar_icon_color="#84E5FC" tooltip_icon_color="#84E5FC" skip_saving_to_map_actors="true" is_considered_structure_target_job_class_multiplier="true"
+		sort_order="116.1" perma_seed_part="3454" current_is_always_max="true" max_cannot_be_reduced_below="0"  show_as_float_multiplier_divided_by_100="true"
+		included_in_sets="SimpleJobs,RangedJobs">
+	</actor_data_type>
+
+	<actor_data_type id="InputEfficiencyMultiplier" display_name="Input Efficiency Multiplier" short_name="Eff Mult"
+		description="Reduces the amount of precursor resources required for the targeted job class by a multiplicative amount. Applies to those on the same subnet of this structure."
+		strategy_tip_optional="This does not improve the amount of output, but does the same work using fewer resources.
+Multiple efficiency multipliers stack if they are on the same subnet."
+		icon_name="CleanSimple_Arrow023" sidebar_icon_color="#84E5FC" tooltip_icon_color="#84E5FC" skip_saving_to_map_actors="true" is_considered_structure_target_job_class_multiplier="true"
+		sort_order="116.1" perma_seed_part="3767" current_is_always_max="true" max_cannot_be_reduced_below="0"  show_as_float_multiplier_divided_by_100="true"
+		included_in_sets="SimpleJobs,RangedJobs">
+	</actor_data_type>
+
+	<!--More stuff for just vehicles and structures (1000-2000)
+		*********************************************************************************-->
+
+	<actor_data_type id="StructureScanResistance" display_name="Scan Resistance" short_name="Scan Resist"
+		 description="Scans less powerful than this will bypass this structure."
+		 icon_name="AN_Hexagons" sidebar_icon_color="#B4AEFF" tooltip_icon_color="#B4AEFF" skip_saving_to_map_actors="true"
+		 sort_order="1100" perma_seed_part="45757" only_visible_when_above="0"
+		 current_is_always_max="true" only_visible_when_expanded_on_structures_that_exist="true" only_visible_when_expanded_on_potential_structure_or_job="true"
+		 included_in_sets="SimpleJobs,RangedJobs,TerritoryControl,Housing,HumanWork,CybercraticHub">
+	</actor_data_type>
+	
+	<actor_data_type id="FurnishedApartments" display_name="Furnished Apartments" short_name="Furnished"
+		 description="How many of this locations's apartments are properly furnished."
+		 icon_name="BT_Desk" sidebar_icon_color="#BEB2BE" tooltip_icon_color="#BEB2BE" skips_all_normal_calculations="true"
+		 sort_order="1200" perma_seed_part="523"
+		 included_in_sets="Housing">
+	</actor_data_type>
+	
+	<actor_data_type id="Filth" display_name="Filth" short_name="Filth"
+		 description="The building's level of squalor caused by humans living without daily necessities."
+		 icon_name="MA_GarbageBag" sidebar_icon_color="#D46734" tooltip_icon_color="#D46734" skips_all_normal_calculations="true"
+		 sort_order="1210" perma_seed_part="523"
+		 included_in_sets="Housing,HumanWork">
+	</actor_data_type>
+
+	<actor_data_type id="VRDayUseSeats" display_name="VR Day-Use Seats" short_name="VR Seats"
+		 description="The total number of VR Cradles in which humans can sit for login to at-will virtual entertainment."
+		 icon_name="WEmblem233" sidebar_icon_color="#BEB2BE" tooltip_icon_color="#BEB2BE" skips_all_normal_calculations="true"
+		 sort_order="1200" perma_seed_part="38463"
+		 included_in_sets="SimpleJobs,RangedJobs,Housing,HumanWork">
+	</actor_data_type>
+
+	<actor_data_type id="HousingAvailability" display_name="Housing Availability" short_name="Housing"
+		description="Conditions at this structure are reducing the available housing."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_Arrow051" sidebar_icon_color="#FF714F" tooltip_icon_color="#FF714F" skip_saving_to_map_actors="true"
+		sort_order="2000" perma_seed_part="3767" current_is_always_max="true" max_cannot_be_reduced_below="0" 
+		show_as_int_percentage="true" skips_all_normal_calculations="true" only_visible_when_above="0"
+		included_in_sets="SimpleJobs,RangedJobs,Housing">
+	</actor_data_type>
+
+	<actor_data_type id="Dissidents" display_name="Dissidents" short_name="Dissidents"
+		description="Those who refuse to join you."
+		strategy_tip_optional=""
+		icon_name="AN_Skull9" sidebar_icon_color="#FF714F" tooltip_icon_color="#FF714F" skip_saving_to_map_actors="true"
+		sort_order="2000" perma_seed_part="3767" current_is_always_max="true" max_cannot_be_reduced_below="0"
+		show_as_int_percentage="false" skips_all_normal_calculations="true" only_visible_when_above="-1"
+		included_in_sets="CybercraticHub">
+	</actor_data_type>
+
+	<actor_data_type id="CybercraticCitizens" display_name="Cybercratic Citizens" short_name="Citizens"
+		description="Those who have joined you."
+		strategy_tip_optional=""
+		icon_name="FlatSkillA31" sidebar_icon_color="#4FC7FF" tooltip_icon_color="#4FC7FF" skip_saving_to_map_actors="true"
+		sort_order="2000" perma_seed_part="3767" current_is_always_max="true" max_cannot_be_reduced_below="0"
+		show_as_int_percentage="false" skips_all_normal_calculations="true" only_visible_when_above="-1"
+		included_in_sets="CybercraticHub">
+	</actor_data_type>
+
+	<actor_data_type id="PotentialCitizens" display_name="Potential Citizens" short_name="Citizens"
+		description="Those who have not yet joined you."
+		strategy_tip_optional=""
+		icon_name="SW_Banner4" sidebar_icon_color="#D18DFF" tooltip_icon_color="#D18DFF" skip_saving_to_map_actors="true"
+		sort_order="2000" perma_seed_part="3767" current_is_always_max="true" max_cannot_be_reduced_below="0"
+		show_as_int_percentage="false" skips_all_normal_calculations="true" only_visible_when_above="-1"
+		included_in_sets="CybercraticHub">
+	</actor_data_type>
+
+</root>

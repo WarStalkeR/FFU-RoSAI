@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<resource id="EncryptedTitanSystemsData" display_name="Encrypted Titan Systems Data"
+		 description="Exploring the comms system of the titan, you brushed up against a digital system on the other side. This is what you were able to record."
+		 strategy_tip="It's useless in its encrypted form."
+		 icon_name="CS_HardDrive" icon_color="#A687C9"
+		 base_storage_capacity="-1" is_hidden_when_none_had="true" is_strategic_resource="true" is_plot_related_resource="true"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic" decrypts_into_resource="DecryptedTitanSystemsData">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="900" />
+	</resource>
+
+	<resource id="EncryptedTitanCommsLog" display_name="Encrypted Titan Comms Log"
+		 description="Exploring the comms system of the titan, you were able to record some of the internal crew's conversations. There are a lot of people in that thing."
+		 strategy_tip="It's useless in its encrypted form."
+		 icon_name="CS_HardDrive" icon_color="#92BCD6"
+		 base_storage_capacity="-1" is_hidden_when_none_had="true" is_strategic_resource="true" is_plot_related_resource="true"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic" decrypts_into_resource="DecryptedTitanCommsLog">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="900" />
+	</resource>
+
+	<resource id="DecryptedTitanSystemsData" display_name="Decrypted Titan Systems Data"
+		 description="Exploring the comms system of the titan, you brushed up against a digital system on the other side. This is what you were able to record."
+		 strategy_tip=""
+		 icon_name="CS_HardDrive" icon_color="#A687C9"
+		 base_storage_capacity="-1" is_hidden_when_none_had="true" is_strategic_resource="true" is_plot_related_resource="true"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="900" />
+	</resource>
+
+	<resource id="DecryptedTitanCommsLog" display_name="Decrypted Titan Comms Log"
+		 description="Exploring the comms system of the titan, you were able to record some of the internal crew's conversations. There are a lot of people in that thing."
+		 strategy_tip=""
+		 icon_name="CS_HardDrive" icon_color="#92BCD6"
+		 base_storage_capacity="-1" is_hidden_when_none_had="true" is_strategic_resource="true" is_plot_related_resource="true"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="900" />
+	</resource>
+
+	<resource id="EncryptedEspiaTelecomLogs" display_name="Encrypted Espia Telecom Logs"
+		 description="You know that Espia Telecom was able to detect your movements in the city feed. You could acquire that data and give it to the AGI Researchers."
+		 strategy_tip="It's useless in its encrypted form."
+		 icon_name="CS_HardDrive" icon_color="#A687C9"
+		 base_storage_capacity="-1" is_hidden_when_none_had="true" is_strategic_resource="true" is_plot_related_resource="true"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic" decrypts_into_resource="DecryptedEspiaTelecomLogs">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="900" />
+	</resource>
+
+	<resource id="DecryptedEspiaTelecomLogs" display_name="Decrypted Espia Telecom Logs"
+		 description="You know that Espia Telecom was able to detect your movements in the city feed. You could acquire that data and give it to the AGI Researchers."
+		 strategy_tip=""
+		 icon_name="CS_HardDrive" icon_color="#92BCD6"
+		 base_storage_capacity="-1" is_hidden_when_none_had="true" is_strategic_resource="true" is_plot_related_resource="true"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="900" />
+	</resource>
+
+	<resource id="UpliftedRaccoonSpeechData" display_name="Uplifted Raccoon Speech Data"
+		 description="Let's see if we can learn to speak with them."
+		 strategy_tip=""
+		 icon_name="BT_Raccoon" icon_color="#EF6363"
+		 base_storage_capacity="-1" is_hidden_when_none_had="true" is_strategic_resource="true" is_plot_related_resource="true"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic" decrypts_into_statistic="DecodedUpliftedRaccoonSpeechData">
+		<part_of collection="All" sort_index="100" />
+	</resource>
+
+	<resource id="EncryptedFederatedCorporationRecords" display_name="Encrypted Federated Corporation Records"
+		 description="It's only a crime if Vorsiber says so."
+		 strategy_tip="It's useless in its encrypted form."
+		 icon_name="CS_HardDrive" icon_color="#A687C9"
+		 base_storage_capacity="-1" is_hidden_when_none_had="true" is_strategic_resource="true" is_plot_related_resource="true"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic" decrypts_into_resource="DecryptedFederatedCorporationRecords">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="900" />
+	</resource>
+
+	<resource id="DecryptedFederatedCorporationRecords" display_name="Decrypted Federated Corporation Records"
+		 description="It's only a crime if Vorsiber says so."
+		 strategy_tip=""
+		 icon_name="CS_HardDrive" icon_color="#92BCD6"
+		 base_storage_capacity="-1" is_hidden_when_none_had="true" is_strategic_resource="true" is_plot_related_resource="true"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="900" />
+	</resource>
+
+	<resource id="EncryptedAtcaBankRecords" display_name="Encrypted Atca Bank Records"
+		 description="This is probably a pretty big crime even by Vorsiber standards. Have they really not noticed?"
+		 strategy_tip="It's useless in its encrypted form."
+		 icon_name="CS_HardDrive" icon_color="#A687C9"
+		 base_storage_capacity="-1" is_hidden_when_none_had="true" is_strategic_resource="true" is_plot_related_resource="true"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic" decrypts_into_resource="DecryptedAtcaBankRecords">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="900" />
+	</resource>
+
+	<resource id="DecryptedAtcaBankRecords" display_name="Decrypted Atca Bank Records"
+		 description="This is probably a pretty big crime even by Vorsiber standards. Have they really not noticed?"
+		 strategy_tip=""
+		 icon_name="CS_HardDrive" icon_color="#92BCD6"
+		 base_storage_capacity="-1" is_hidden_when_none_had="true" is_strategic_resource="true" is_plot_related_resource="true"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="900" />
+	</resource>
+
+	<!--Non-plot-related strategic resources-->
+	
+	<resource id="CultLoyalty" display_name="Cult Loyalty"
+		 description="Strategic resource used to fuel actions on the Cult Actions sidebar."
+		 strategy_tip=""
+		 how_to_acquire="Accumulates over time when you have a machine cult."
+		 icon_name="SW_Passion" icon_color="#FF6A6A"
+		 base_storage_capacity="-1" is_strategic_resource="true" is_locked_before_unlock="DigitalAfterlife" is_locked_before_city_flag="MachineCultDealWithNCOs"
+		 lang_key_for_excess="ExcessResourceBasicNote" extra_starting_amount_in_rank2_plus_city="0"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Personality" sort_index="900" />
+	</resource>
+
+</root>

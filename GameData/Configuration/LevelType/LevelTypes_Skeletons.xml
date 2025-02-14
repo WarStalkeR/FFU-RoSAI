@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--These level types are all defining chunk types, which are like the tiles that fit together on the main map.
+		Various other level types define things that fill in these chunks, or are for interiors, etc.-->
+
+	<!--Downtown grid -->
+	
+	<level_type id="SkeletonExtDowntownGridA" display_name="Skel: Dt Grid A" size_x="10" size_z="10" subfolder="SkeletonExt/Downtown/GridA" 
+		is_skeleton_style="true" is_valid_starting_tile="true" is_valid_main_menu_bg_tile="true"
+		description="One of the formats of downtown grid."
+		tags="Skele">
+		<connection core_position="10,0,0" vis_position_offset="0.6,0,0" vis_rotation="0,90,0" 
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+
+		<connection core_position="5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="0,0,-10" vis_position_offset="0,0,-0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+	</level_type>
+
+	<level_type id="SkeletonDowntownGridB" display_name="Skel: Dt Grid B" size_x="10" size_z="10" subfolder="SkeletonExt/Downtown/GridB" 
+		is_skeleton_style="true" is_valid_starting_tile="true" is_valid_main_menu_bg_tile="true"
+		description="One of the formats of downtown grid."
+		tags="Skele">
+		<connection core_position="10,0,0" vis_position_offset="0.6,0,0" vis_rotation="0,90,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+
+		<connection core_position="0,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+	</level_type>
+
+	<level_type id="SkeletonDowntownGridC" display_name="Skel: Dt Grid C" size_x="10" size_z="10" subfolder="SkeletonExt/Downtown/GridC" is_skeleton_style="true"
+		description="One of the formats of downtown grid."
+		tags="Skele">
+		<connection core_position="10,0,0" vis_position_offset="0.6,0,0" vis_rotation="0,90,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+
+		<connection core_position="0,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		
+		<connection core_position="-10,0,0" vis_position_offset="-0.6,0,0" vis_rotation="0,90,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+
+		<connection core_position="0,0,-10" vis_position_offset="0,0,-0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>		
+	</level_type>
+
+	<level_type id="SkeletonDowntownGridD" display_name="Skel: Dt Grid D" size_x="10" size_z="10" subfolder="SkeletonExt/Downtown/GridD" is_skeleton_style="true"
+		description="One of the formats of downtown grid."
+		tags="Skele">
+		<connection core_position="10,0,0" vis_position_offset="0.6,0,0" vis_rotation="0,90,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+
+		<connection core_position="0,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		
+		<connection core_position="-10,0,0" vis_position_offset="-0.6,0,0" vis_rotation="0,90,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+	</level_type>
+
+	<level_type id="SkeletonExtDowntownGridE" display_name="Skel: Dt Grid E" size_x="10" size_z="10" subfolder="SkeletonExt/Downtown/GridE" is_skeleton_style="true"
+		description="One of the formats of downtown grid."
+		tags="Skele">
+		<connection core_position="10,0,0" vis_position_offset="0.6,0,0" vis_rotation="0,90,0" 
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-10,0,0" vis_position_offset="-0.6,0,0" vis_rotation="0,90,0" 
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+	</level_type>
+
+	<level_type id="SkeletonExtDowntownGridF" display_name="Skel: Dt Grid F" size_x="10" size_z="10" subfolder="SkeletonExt/Downtown/GridF" is_skeleton_style="true"
+		description="One of the formats of downtown grid."
+		tags="Skele">
+		<connection core_position="10,0,0" vis_position_offset="0.6,0,0" vis_rotation="0,90,0" 
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-10,0,0" vis_position_offset="-0.6,0,0" vis_rotation="0,90,0" 
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="0,0,-10" vis_position_offset="0,0,-0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+	</level_type>
+
+	<level_type id="SkeletonExtDowntownGridG" display_name="Skel: Dt Grid G" size_x="10" size_z="10" subfolder="SkeletonExt/Downtown/GridG" is_skeleton_style="true"
+		description="One of the formats of downtown grid."
+		tags="Skele">
+		<connection core_position="5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="5,0,-10" vis_position_offset="0,0,-0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-5,0,-10" vis_position_offset="0,0,-0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+	</level_type>
+
+	<level_type id="SkeletonExtDowntownGridH" display_name="Skel: Dt Grid H" size_x="10" size_z="10" subfolder="SkeletonExt/Downtown/GridH" is_skeleton_style="true"
+		description="One of the formats of downtown grid."
+		tags="Skele">
+		<connection core_position="5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="10,0,5" vis_position_offset="0.6,0,0" vis_rotation="0,90,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="10,0,-5" vis_position_offset="0.6,0,0" vis_rotation="0,90,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+	</level_type>
+
+	<level_type id="SkeletonExtDowntownGridI" display_name="Skel: Dt Grid I" size_x="10" size_z="10" subfolder="SkeletonExt/Downtown/GridI" is_skeleton_style="true"
+		description="One of the formats of downtown grid."
+		tags="Skele">
+		<connection core_position="5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="5,0,-10" vis_position_offset="0,0,-0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-5,0,-10" vis_position_offset="0,0,-0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="10,0,0" vis_position_offset="0.6,0,0" vis_rotation="0,90,0" 
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-10,0,0" vis_position_offset="-0.6,0,0" vis_rotation="0,90,0" 
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>		
+	</level_type>
+
+	<level_type id="SkeletonExtDowntownGridJ" display_name="Skel: Dt Grid J" size_x="10" size_z="10" subfolder="SkeletonExt/Downtown/GridJ" is_skeleton_style="true"
+		description="One of the formats of downtown grid."
+		tags="Skele">
+		<connection core_position="5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-5,0,10" vis_position_offset="0,0,0.6" vis_rotation="0,0,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="10,0,5" vis_position_offset="0.6,0,0" vis_rotation="0,90,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="10,0,-5" vis_position_offset="0.6,0,0" vis_rotation="0,90,0"
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="0,0,-10" vis_position_offset="0,0,-0.6" vis_rotation="0,0,0" 
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+		<connection core_position="-10,0,0" vis_position_offset="-0.6,0,0" vis_rotation="0,90,0" 
+				path_to_placeable="Assets/__Library/Roads/Downtown/Rd 1A.prefab"></connection>
+	</level_type>
+	
+</root>

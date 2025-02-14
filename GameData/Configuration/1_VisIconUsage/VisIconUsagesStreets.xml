@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Frequently used color/scale/glow combos-->
+	
+	<vis_icon_usage id="Streets_PositiveChange" internal_notes="This is an icon on the main map that is glowing to show it's good for us to get it."
+		 icon_name="SF2_Warning_triangle" default_color="#FFA52B" default_color_hdr_intensity="1.5" default_scale="0.4"/>
+
+	<vis_icon_usage id="Streets_DangerChange" internal_notes="This is an icon on the main map that is glowing to show it's dangerous for us to get it."
+		 icon_name="SF2_Warning_triangle" default_color="#FF2B2B" default_color_hdr_intensity="0" default_scale="0.4"
+		 frame_color="#000000" frame_color_hdr_intensity="0" fill_color="#212121" fill_color_hdr_intensity="0" frame_mask_row_col="5,0" use_backing_color="true"/>
+
+	<vis_icon_usage id="Streets_Unused" internal_notes="If this is specified, then the icon should be skipped."
+		 icon_name="SF2_Warning_triangle" default_color="#ffffff" default_color_hdr_intensity="0" default_scale="-1"/>
+
+	<vis_icon_usage id="Streets_PotentialProjectMain" internal_notes="This is an icon on the main map that is glowing to show it's a main project we could start."
+		 icon_name="SF2_Warning_triangle" default_color="#9CFF2B" default_color_hdr_intensity="1.5" default_scale="0.5"
+		 hover_default_color="#6A9B33" hover_default_color_hdr_intensity="1"/>
+	<vis_icon_usage id="Streets_PotentialProjectSide" internal_notes="This is an icon on the main map that is glowing to show it's a side project we could start."
+		 icon_name="SF2_Warning_triangle" default_color="#2BFFAE" default_color_hdr_intensity="1.5" default_scale="0.4"
+		 hover_default_color="#2CCE90" hover_default_color_hdr_intensity="1"/>
+	<vis_icon_usage id="Streets_MinorEvent" internal_notes="This is an icon on the main map that is glowing to show it's a minor event we can interact with."
+		 icon_name="SF2_Warning_triangle" default_color="#2BC9FF" default_color_hdr_intensity="1.5" default_scale="0.4"
+		 hover_default_color="#2CAFCE" hover_default_color_hdr_intensity="3"/>
+	<vis_icon_usage id="Streets_MinorEventBlocked" internal_notes="This is an icon on the main map that is glowing to show it's a minor event we can interact with."
+		 icon_name="SF2_Warning_triangle" default_color="#002398" default_color_hdr_intensity="2.5" default_scale="0.4"
+		 hover_default_color="#0A2A9B" hover_default_color_hdr_intensity="3"/>
+	<vis_icon_usage id="Streets_HostileAction" internal_notes="This is an icon on the main map that is glowing to show it's a hostile action we can take."
+		 icon_name="SF2_Warning_triangle" default_color="#CE4B2C" default_color_hdr_intensity="2" default_scale="0.4"
+		 hover_default_color="#CE4B2C" hover_default_color_hdr_intensity="3"/>
+	<vis_icon_usage id="Streets_HelpingAction" internal_notes="This is an icon on the main map that is glowing to show it's a helping action we can take."
+		 icon_name="SF2_Warning_triangle" default_color="#2CCE90" default_color_hdr_intensity="2" default_scale="0.4"
+		 hover_default_color="#2CCE90" hover_default_color_hdr_intensity="3"/>
+	
+	<!--This section not used at the moment. -->
+	<vis_icon_usage id="Streets_BadMild1"
+		 icon_name="SF2_Warning_triangle" default_color="#CB8686" default_color_hdr_intensity="0" default_scale="0.3"
+		 frame_color="#000000" frame_color_hdr_intensity="0" fill_color="#212121" fill_color_hdr_intensity="0" frame_mask_row_col="5,0" use_backing_color="true"/>
+	<vis_icon_usage id="Streets_BadMild2"
+		 icon_name="SF2_Warning_triangle" default_color="#E96D6D" default_color_hdr_intensity="0" default_scale="0.3"
+		 frame_color="#000000" frame_color_hdr_intensity="0" fill_color="#212121" fill_color_hdr_intensity="0" frame_mask_row_col="5,0" use_backing_color="true"/>
+	<vis_icon_usage id="Streets_BadNormal1"
+		 icon_name="SF2_Warning_triangle" default_color="#FC3E3E" default_color_hdr_intensity="0" default_scale="0.3"
+		 frame_color="#000000" frame_color_hdr_intensity="0" fill_color="#212121" fill_color_hdr_intensity="0" frame_mask_row_col="5,0" use_backing_color="true"/>
+	<vis_icon_usage id="Streets_BadHigh1"
+		 icon_name="SF2_Warning_triangle" default_color="#FF1E82" default_color_hdr_intensity="0" default_scale="0.3"
+		 frame_color="#000000" frame_color_hdr_intensity="0" fill_color="#212121" fill_color_hdr_intensity="0" frame_mask_row_col="5,0" use_backing_color="true"/>
+	<vis_icon_usage id="Streets_BadExtreme1"
+		 icon_name="SF2_Warning_triangle" default_color="#FF00D4" default_color_hdr_intensity="0" default_scale="0.3"
+		 frame_color="#000000" frame_color_hdr_intensity="0" fill_color="#212121" fill_color_hdr_intensity="0" frame_mask_row_col="5,0" use_backing_color="true"/>
+
+	<vis_icon_usage id="Streets_GoodMild1"
+		 icon_name="SF2_Warning_triangle" default_color="#000000" default_color_hdr_intensity="0" default_scale="0.3"
+		 frame_color="#162D54" frame_color_hdr_intensity="0.2" fill_color="#9DC4FA" fill_color_hdr_intensity="0.2" frame_mask_row_col="0,2" use_backing_color="true"/>
+	<vis_icon_usage id="Streets_GoodMild2"
+		 icon_name="SF2_Warning_triangle" default_color="#F7C264" default_color_hdr_intensity="2.9" default_scale="0.3"
+		 frame_color="#6F3A5F" frame_color_hdr_intensity="3" fill_color="#144C3A" fill_color_hdr_intensity="0.2" frame_mask_row_col="7,2" use_backing_color="true"/>
+	<vis_icon_usage id="Streets_GoodNormal1"
+		 icon_name="SF2_Warning_triangle" default_color="#A52A98" default_color_hdr_intensity="1" default_scale="0.3"
+		 frame_color="#FF1EF5" frame_color_hdr_intensity="2" fill_color="#C2BEF1" fill_color_hdr_intensity="0.4" frame_mask_row_col="2,2" use_backing_color="true"/>
+	<vis_icon_usage id="Streets_GoodHigh1"
+		 icon_name="SF2_Warning_triangle" default_color="#1EFFE2" default_color_hdr_intensity="1" default_scale="0.3"
+		 frame_color="#1EFFE2" frame_color_hdr_intensity="0.2" fill_color="#0C0090" fill_color_hdr_intensity="0" frame_mask_row_col="3,2" use_backing_color="true"/>
+	<vis_icon_usage id="Streets_GoodExtreme1"
+		 icon_name="SF2_Warning_triangle" default_color="#FFE97D" default_color_hdr_intensity="0.4" default_scale="0.3"
+		 frame_color="#1E6FFF" frame_color_hdr_intensity="7" fill_color="#06155F" fill_color_hdr_intensity="0.5" frame_mask_row_col="4,2" use_backing_color="true"/>
+
+	<!--Happy things to gather units might see while considering their move. -->
+	<vis_icon_usage id="Streets_Gather1"
+		 icon_name="CleanTriangle26" default_color="#202020" default_color_hdr_intensity="0" default_scale="0.3"
+		 frame_color="#5EA39B" frame_color_hdr_intensity="1" fill_color="#5EA39B" fill_color_hdr_intensity="0.7" frame_mask_row_col="1,1" use_backing_color="true"
+		 hover_fill_color="#5EA39B" hover_fill_color_hdr_intensity="2"/>
+	<vis_icon_usage id="Streets_Gather2"
+		 icon_name="SomethingDiamond2" default_color="#042B72" default_color_hdr_intensity="0.2" default_scale="0.35"
+		 frame_color="#244AA3" frame_color_hdr_intensity="2" fill_color="#2258D6" fill_color_hdr_intensity="0.8" frame_mask_row_col="1,1" use_backing_color="true"
+		 hover_fill_color="#2258D6" hover_fill_color_hdr_intensity="2"/>
+	<vis_icon_usage id="Streets_Gather3"
+		 icon_name="SomethingMinus" default_color="#1B3E03" default_color_hdr_intensity="0.3" default_scale="0.4"
+		 frame_color="#3BBE6A" frame_color_hdr_intensity="1" fill_color="#4FBE3B" fill_color_hdr_intensity="0.7" frame_mask_row_col="1,1" use_backing_color="true"
+		 hover_fill_color="#3BBE6A" hover_fill_color_hdr_intensity="2"/>
+	<vis_icon_usage id="Streets_Gather4"
+		 icon_name="SF2_Chart" default_color="#752C0A" default_color_hdr_intensity="0.4" default_scale="0.4"
+		 frame_color="#DEB368" frame_color_hdr_intensity="1" fill_color="#DEB368" fill_color_hdr_intensity="0.7" frame_mask_row_col="1,1" use_backing_color="true"
+		 hover_fill_color="#DEB368" hover_fill_color_hdr_intensity="2"/>
+	<vis_icon_usage id="Streets_Gather5"
+		 icon_name="SomethingBalltron" default_color="#750052" default_color_hdr_intensity="0.7" default_scale="0.4"
+		 frame_color="#DE68C2" frame_color_hdr_intensity="1" fill_color="#DE68C2" fill_color_hdr_intensity="1" frame_mask_row_col="1,1" use_backing_color="true"
+		 hover_fill_color="#DE68C2" hover_fill_color_hdr_intensity="2"/>
+	
+	<!--Happy things to gather units might see while considering their move. -->
+	<vis_icon_usage id="Streets_NoBackGather1"
+		 icon_name="CleanTriangle26" default_color="#53BEB2" default_color_hdr_intensity="1" default_color_text="#53BEB216" default_scale="0.3" frame_mask_row_col="1,6"
+		 hover_default_color="#53BEB2" hover_default_color_hdr_intensity="3"/>
+	<vis_icon_usage id="Streets_NoBackGather2"
+		 icon_name="SomethingDiamond2" default_color="#1653E4" default_color_hdr_intensity="2" default_color_text="#1653E416" default_scale="0.35" frame_mask_row_col="1,6"
+		 hover_default_color="#1653E4" hover_default_color_hdr_intensity="4"/>
+	<vis_icon_usage id="Streets_NoBackGather3"
+		 icon_name="SomethingMinus" default_color="#3BBE6A" default_color_hdr_intensity="1.5" default_color_text="#3BBE6A16" default_scale="0.4" frame_mask_row_col="1,6"
+		 hover_default_color="#3BBE6A" hover_default_color_hdr_intensity="3.5"/>
+	<vis_icon_usage id="Streets_NoBackGather4"
+		 icon_name="SF2_Chart" default_color="#F19E0D" default_color_hdr_intensity="3" default_scale="0.4" frame_mask_row_col="1,6"
+		 hover_default_color="#F19E0D" hover_default_color_hdr_intensity="4"/>
+	<vis_icon_usage id="Streets_NoBackGather5"
+		 icon_name="SomethingBalltron" default_color="#EC2DBF" default_color_hdr_intensity="2.8" default_scale="0.4" frame_mask_row_col="1,6"
+		 hover_default_color="#EC2DBF" hover_default_color_hdr_intensity="4.8"/>
+	
+	<!--Dangerous things units might see while considering their move. -->
+	<vis_icon_usage id="Streets_Danger1"
+		 icon_name="FlatSkillC64" default_color="#010101" default_color_hdr_intensity="0.2" default_scale="0.3"
+		 frame_color="#E73434" frame_color_hdr_intensity="0" fill_color="#E73434" fill_color_hdr_intensity="0" frame_mask_row_col="5,0" use_backing_color="true"
+		 hover_fill_color="#E73434" hover_fill_color_hdr_intensity="2"/>
+	<vis_icon_usage id="Streets_Danger2"
+		 icon_name="FlatSkillA20" default_color="#010101" default_color_hdr_intensity="0.2" default_scale="0.35"
+		 frame_color="#E73434" frame_color_hdr_intensity="0" fill_color="#E73434" fill_color_hdr_intensity="0" frame_mask_row_col="5,0" use_backing_color="true"
+		 hover_fill_color="#E73434" hover_fill_color_hdr_intensity="2"/>
+	<vis_icon_usage id="Streets_Danger3"
+		 icon_name="CleanSimple_Skull13" default_color="#010101" default_color_hdr_intensity="0.2" default_scale="0.4"
+		 frame_color="#E73434" frame_color_hdr_intensity="0" fill_color="#E73434" fill_color_hdr_intensity="0" frame_mask_row_col="5,0" use_backing_color="true"
+		 hover_fill_color="#E73434" hover_fill_color_hdr_intensity="2"/>
+	<vis_icon_usage id="Streets_Danger4"
+		 icon_name="WEmblem155" default_color="#010101" default_color_hdr_intensity="0.2" default_scale="0.4"
+		 frame_color="#E73434" frame_color_hdr_intensity="0" fill_color="#E73434" fill_color_hdr_intensity="0" frame_mask_row_col="5,0" use_backing_color="true"
+		 hover_fill_color="#E73434" hover_fill_color_hdr_intensity="2"/>
+	<vis_icon_usage id="Streets_Danger5"
+		 icon_name="SomethingMoving" default_color="#010101" default_color_hdr_intensity="0.2" default_scale="0.4"
+		 frame_color="#E73434" frame_color_hdr_intensity="0" fill_color="#E73434" fill_color_hdr_intensity="0" frame_mask_row_col="5,0" use_backing_color="true"
+		 hover_fill_color="#E73434" hover_fill_color_hdr_intensity="2"/>
+
+	<!--Happy things to gather units might see while considering their move, but in the background, and a fixed scale. -->
+	<vis_icon_usage id="Streets_NoBackGatherDistantFixed1"
+		 icon_name="CleanTriangle26" default_color="#53BEB2" default_color_hdr_intensity="1" default_color_text="#53BEB216" default_scale="0.4" frame_mask_row_col="1,6"
+		 hover_default_color="#53BEB2" hover_default_color_hdr_intensity="3"/>
+	<vis_icon_usage id="Streets_NoBackGatherDistantFixed2"
+		 icon_name="SomethingDiamond2" default_color="#1653E4" default_color_hdr_intensity="2" default_color_text="#1653E416" default_scale="0.5" frame_mask_row_col="1,6"
+		 hover_default_color="#1653E4" hover_default_color_hdr_intensity="4"/>
+	<vis_icon_usage id="Streets_NoBackGatherDistantFixed3"
+		 icon_name="SomethingMinus" default_color="#3BBE6A" default_color_hdr_intensity="1.5" default_color_text="#3BBE6A16" default_scale="0.6" frame_mask_row_col="1,6"
+		 hover_default_color="#3BBE6A" hover_default_color_hdr_intensity="3.5"/>
+	<vis_icon_usage id="Streets_NoBackGatherDistantFixed4"
+		 icon_name="SF2_Chart" default_color="#F19E0D" default_color_hdr_intensity="3" default_scale="0.7" frame_mask_row_col="1,6"
+		 hover_default_color="#F19E0D" hover_default_color_hdr_intensity="4"/>
+	<vis_icon_usage id="Streets_NoBackGatherDistantFixed5"
+		 icon_name="SomethingBalltron" default_color="#EC2DBF" default_color_hdr_intensity="2.8" default_scale="0.8" frame_mask_row_col="1,6"
+		 hover_default_color="#EC2DBF" hover_default_color_hdr_intensity="4.8"/>
+
+	<!--Happy things to gather units might see while considering their move, but in the background, and a fixed scale. -->
+	<vis_icon_usage id="Streets_NoBackGatherDistantDimmerFixed1"
+		 icon_name="CleanTriangle26" default_color="#53BEB2" default_color_hdr_intensity="1" default_color_text="#53BEB216" default_scale="0.3" frame_mask_row_col="1,6"
+		 hover_default_color="#53BEB2" hover_default_color_hdr_intensity="3"/>
+	<vis_icon_usage id="Streets_NoBackGatherDistantDimmerFixed2"
+		 icon_name="SomethingDiamond2" default_color="#1653E4" default_color_hdr_intensity="1.4" default_color_text="#1653E416" default_scale="0.3" frame_mask_row_col="1,6"
+		 hover_default_color="#1653E4" hover_default_color_hdr_intensity="4"/>
+	<vis_icon_usage id="Streets_NoBackGatherDistantDimmerFixed3"
+		 icon_name="SomethingMinus" default_color="#3BBE6A" default_color_hdr_intensity="1.5" default_color_text="#3BBE6A16" default_scale="0.3" frame_mask_row_col="1,6"
+		 hover_default_color="#3BBE6A" hover_default_color_hdr_intensity="3.5"/>
+	<vis_icon_usage id="Streets_NoBackGatherDistantDimmerFixed4"
+		 icon_name="SF2_Chart" default_color="#F19E0D" default_color_hdr_intensity="1.5" default_scale="0.3" frame_mask_row_col="1,6"
+		 hover_default_color="#F19E0D" hover_default_color_hdr_intensity="4"/>
+	<vis_icon_usage id="Streets_NoBackGatherDistantDimmerFixed5"
+		 icon_name="SomethingBalltron" default_color="#EC2DBF" default_color_hdr_intensity="1.4" default_scale="0.3" frame_mask_row_col="1,6"
+		 hover_default_color="#EC2DBF" hover_default_color_hdr_intensity="4.8"/>
+
+	<!--
+	<vis_icon_usage id="Daring0" default_color="#EADAF1" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle" />
+	<vis_icon_usage id="Daring1" default_color="#D5C7DC" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring2" default_color="#E7C1F1" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring3" default_color="#D3A4F4" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring4" default_color="#DEBF89" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring5" default_color="#E4B25A" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring6" default_color="#F4B82C" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring7" default_color="#F46341" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring8" default_color="#DE3B65" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring9" default_color="#F14078" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring10" default_color="#E727A1" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring11" default_color="#FF168D" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	-->
+	
+	<vis_icon_usage id="Daring0" default_color="#C7DBDC" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring1" default_color="#A3D0EC" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring2" default_color="#ECAF44" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring3" default_color="#F46341" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring4" default_color="#FF4F26" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	<vis_icon_usage id="Daring5" default_color="#FF168D" default_color_hdr_intensity="0" default_scale="-1" icon_name="SF2_Warning_triangle"/>
+	
+</root>

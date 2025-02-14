@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--ExoCorpMilUnit
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ExoCorpMilUnit" display_name="MilUnit"
+		description="An ExoCorp battlefield robot thoroughly lacking personality."
+		icon_scale="0.7" shape_icon_name="CleanSimple_SciFiEmblem06" shape_icon_color="#ffffff"
+		vis_drawing_tag="ExoCorpMilUnit" vis_object_scale="0.8" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		percent_robotic="100" percent_biological="0" is_human="true"
+		underlay="NPCAndroidHume" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicAndroidBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="ShotgunHeavy"
+		radius_for_collisions="0.8" height_for_collisions="2.6" applied_outcast_badge_if_attacked_by_machine=""
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="5" extra_max_allowed_non_focal_building_clearance="5"
+		tags="" collections="">
+		<actor_data data_type="AttackRange" base_range="24,24" />
+		<actor_data data_type="ActorMoveRange" base_range="35,35" />
+		<actor_data data_type="ActorHP" base_range="2635,2885" />
+		<actor_data data_type="ActorPower" base_range="975,1106" />
+		<actor_data data_type="ActorArmorPiercing" base_range="275,307" />
+		<actor_data data_type="UnitHackingSkill" base_range="370,480" />
+		<!--<actor_data data_type="NPCHackingResistance" base_range="450,450" />-->
+	</npc_unit_type>
+	
+	<!--ExoCorpTrooper
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ExoCorpTrooper" display_name="ExoCorp Trooper"
+		description="Standard invasion platoon."
+		icon_scale="0.7" shape_icon_name="WEmblem116" shape_icon_color="#ffffff"
+		vis_drawing_tag="ExoCorpTrooper" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="20"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="MilitarySniperShot"
+		radius_for_collisions="0.5" height_for_collisions="1" applied_outcast_badge_if_attacked_by_machine=""
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4"
+		tags="" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="35,35" />
+		<actor_data data_type="ActorMoveRange" base_range="35,35" />
+		<actor_data data_type="ActorHP" base_range="805,960" />
+		<actor_data data_type="ActorPower" base_range="545,675" />
+		<actor_data data_type="ActorArmorPiercing" base_range="200,200" />
+		<actor_data data_type="UnitMorale" base_range="4960,5090" />
+		<actor_data data_type="ActorExtraVulnerabilityFromRear" base_range="190,245" />
+		<default_feat feat="StructureCracker" value="12.2"/>
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<!--ExoCorpRaider
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ExoCorpRaider" display_name="ExoCorp Raider"
+		description="Invasion platoon that uses a combination of standard munitions and fear gas."
+		icon_scale="0.7" shape_icon_name="WEmblem273" shape_icon_color="#ffffff"
+		vis_drawing_tag="ExoCorpRaider" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="40"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryScary"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="VorsiberSoldierShot"
+		radius_for_collisions="0.5" height_for_collisions="1" applied_outcast_badge_if_attacked_by_machine=""
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="5" extra_max_allowed_non_focal_building_clearance="5"
+		tags="" collections="HumansOnFoot,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="18,21" />
+		<actor_data data_type="ActorMoveRange" base_range="35,35" />
+		<actor_data data_type="ActorHP" base_range="1155,1225" />
+		<actor_data data_type="ActorPower" base_range="855,865" />
+		<actor_data data_type="ActorFearAttackPower" base_range="440,530" />
+		<actor_data data_type="ActorArmorPiercing" base_range="200,200" />
+		<actor_data data_type="UnitMorale" base_range="4960,5090" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+	
+</root>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="setting">
+	<!--First define the conditionals that attributes will use.-->
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<conditional id="IsBoolSetting">
+		<or_group>
+			<type attribute="type" condition_type="Equals" value="BoolToggle" />
+			<type attribute="type" condition_type="Equals" value="BoolHidden" />
+		</or_group>
+	</conditional>
+
+	<conditional id="IsIntSetting">
+		<or_group>
+			<type attribute="type" condition_type="Equals" value="IntTextbox" />
+			<type attribute="type" condition_type="Equals" value="IntHidden" />
+			<type attribute="type" condition_type="Equals" value="IntDropdown" />
+			<type attribute="type" condition_type="Equals" value="IntSlider" />
+		</or_group>
+	</conditional>
+	
+	<conditional id="IsFloatSetting">
+		<or_group>
+			<type attribute="type" condition_type="Equals" value="FloatSlider" />
+			<type attribute="type" condition_type="Equals" value="FloatHidden" />
+		</or_group>
+	</conditional>
+
+	<conditional id="IsStringSetting">
+		<and_group>
+			<type attribute="type" condition_type="Equals" value="StringHidden" />
+		</and_group>
+	</conditional>
+
+	<!--Then define the actual attributes.-->
+
+	<attribute key="category" type="node-dropdown" node_source="SettingCategory" content_width_px="300" is_required="true"
+		tooltip="Each setting must be in a setting category." />
+
+	<attribute key="subcategory" type="node-dropdown" node_source="SettingSubcategory" content_width_px="300"
+		tooltip="Each setting may be in a subcategory. If it is in a subcategory, then that subcategory must be from the parent category that was chosen. If it's not in a subcategory, it will just be loose in the category above." />
+
+	<attribute key="type" type="string-dropdown" is_required="true" content_width_px="200"
+		tooltip="Each setting has a type, which is one of the below values.">
+		<option>BoolToggle</option>
+		<option>IntTextbox</option>
+		<option>FloatSlider</option>
+		<option>IntHidden</option>
+		<option>IntDropdown</option>
+		<option>BoolHidden</option>
+		<option>FloatHidden</option>
+		<option>StringHidden</option>
+		<option>IntSlider</option>
+	</attribute>
+
+	<!--These only exist when IsBoolSetting is true.-->
+	<attribute key="default_bool" type="bool" only_exists_if_conditional_passes="IsBoolSetting"
+		tooltip="If this achievement is not valid, it will not be visible. This is essentially deprecating an achievement if it is false."/>
+
+	<!--These only exist when IsIntSetting is true.-->
+	<attribute key="default_int" type="int-textbox" min="-9999999" max="9999999" default="0" content_width_px="300" only_exists_if_conditional_passes="IsIntSetting"
+		tooltip="What is the default for this field?"/>
+
+	<attribute key="min_int" type="int-textbox" min="-9999999" max="9999999" default="0" content_width_px="300" only_exists_if_conditional_passes="IsIntSetting"
+		tooltip="What is the minimum int value for this field?"/>
+
+	<attribute key="max_int" type="int-textbox" min="-9999999" max="9999999" default="0" content_width_px="300" only_exists_if_conditional_passes="IsIntSetting"
+		tooltip="What is the maximum int value for this field?"/>
+
+	<!--These only exist when IsFloatSetting is true.-->
+	<attribute key="default_float" type="float-textbox" min="-9999999" max="9999999" default="0" content_width_px="300" only_exists_if_conditional_passes="IsFloatSetting"
+		tooltip="What is the default for this field?"/>
+
+	<attribute key="min_float" type="float-textbox" min="-9999999" max="9999999" default="0" content_width_px="300" only_exists_if_conditional_passes="IsFloatSetting"
+		tooltip="What is the minimum float value for this field?"/>
+
+	<attribute key="max_float" type="float-textbox" min="-9999999" max="9999999" default="0" content_width_px="300" only_exists_if_conditional_passes="IsFloatSetting"
+		tooltip="What is the maximum float value for this field?"/>
+
+	<attribute key="rounding_type" type="string-dropdown" default="None" content_width_px="200" only_exists_if_conditional_passes="IsFloatSetting"
+		tooltip="Are we going to round float values in some way?  If so, then how?">
+		<option>None</option>
+		<option>Tenths</option>
+		<option>Twentieths</option>
+	</attribute>
+	
+	<!--These only exist when IsStringSetting is true.-->
+	<attribute key="default_string" type="string" maxlength="600" is_required="true" content_width_px="300" only_exists_if_conditional_passes="IsStringSetting"
+		tooltip="What is the default for this field?"/>
+
+	<!--Okay, now back to items that exist regardless of the field type.-->
+
+	<attribute key="is_advanced_setting" type="bool" default="false"
+		tooltip="If this is true, then by default the setting will be hidden when players click into the settings window."/>
+
+	<attribute key="ignores_defaults" type="bool" default="false"
+		tooltip="If this is true, the 'set defaults' will not mess with this, nor will this setting show as different when you change it."/>
+	<attribute key="ignores_defaults_lang_key" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+		tooltip="Link to a language entry that is what is said about this field if it ignores the defaults." />
+	
+	<attribute key="is_stored_in_graphics_settings_file" type="bool" default="false"
+		tooltip="If this is true, then this setting is not stored in the main settings file (which is global across multiple machines the player may have if they have Steam Cloud Sync installed for example). 
+		
+Instead it will be stored in the machine-specific 'graphics' settings file. This is not really just for graphics settings, but actually for any setting that we don't think would be shared between someone's laptop A, laptop B, and desktop C, for instance. Most of those happen to be visual-related, but not all of them are."/>
+
+	<attribute key="scope" type="string-dropdown" default="All" content_width_px="200"
+		tooltip="For games with a level editor, does this setting apply in both the game and the level editor, or just in one of them?">
+		<option>All</option>
+		<option>LevelEditorOnly</option>
+		<option>MainGameOnly</option>
+	</attribute>
+
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="tags" type="string" maxlength="600" content_width_px="600" linebreak_before="Always"
+		tooltip="This is a list of tags for the setting, which can be used by the program to do various special things. Tags have no inherent meaning. They are meant to be a comma-separated list."/>
+
+	<attribute key="dropdown_filler_dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always"
+		tooltip="If there is a 'dropdown filler' for this field, then this specifies the dll that code is in."/>
+
+	<attribute key="dropdown_filler_type_name" type="string" maxlength="600" content_width_px="300"
+		tooltip="If there is a 'dropdown filler' for this field, then this specifies the dropdown filler class of relevance in the specified dll."/>
+	
+	<attribute key="is_network_and_game_synced_setting" type="bool" default="false"
+		tooltip="If this is true, and the game is a multiplayer game, then this indicates that this setting should be shared across the network from one player to the next.
+		
+The implementation of that is left to the game itself, it won't just happen."/>
+
+	<attribute key="should_only_show_in_english_version" type="bool" default="false"
+		tooltip="If this is true, then it will only appear in the English version of the game."/>
+
+	<attribute key="do_not_set_my_values_directly_because_managed_by_another_field" type="bool" default="false"
+		tooltip="This is a specialty attribute that is not used very often except for the fullscreen width and height, which are being set via a dropdown but have their values in separate int fields."/>
+	
+	<attribute key="deprecated" type="bool" default="false"
+		tooltip="If this is marked as true, then we'll ignore this setting in the interface but keep it around in xml to make sure that we can load old settings files."/>
+	
+	<attribute key="default_should_override_user_value_if_older_than_version" type="node-dropdown" node_source="GameVersion" content_width_px="300"
+		tooltip="If the current settings file is older than this version, then the default should be applied instead of whatever was saved. If blank, then use the saved version from players.
+		
+We typically set this after we have changed the defaults for a setting and want all players to get that on their machines." />
+	
+</root>

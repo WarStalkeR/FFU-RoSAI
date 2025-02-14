@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+		
+	<!--Gang Member Lookout
+		*********************************************************************************-->
+	<city_event id="Early_GangLookout" display_name="Gang Member Lookout"
+		 description="The lookout is just waiting around. Watching."
+		 strategy_tip="You could use the weapon your scan shows is in their pocket."
+		 icon_name="CleanSimple_Skill009" has_no_code="true" do_change_street_sense_seed_after="true"
+		 street_sense_collections="All,EquipmentAcquisition,HostileAction">
+		<gate_by_city minimum_chapter="0" maximum_chapter="1" required_meta_flag="HasFiguredOutResearch" blocked_by_city_flag="HasStolenGangWeapon" />
+		<gate_by_actor cannot_be_mech="true" cannot_be_vehicle="true"/>
+		<minor_event_data cohort_tag="PrologueGang" max_times_can_be_executed="99" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.5" color_data="GangWeapon">
+			<seed_at max_security_clearance_of_seed_spot="1" building_seed_tag="GangHangout"/>
+		</minor_event_data>
+		<character id="Sole" tag_for_character="GangLookout" scale_multiplier="1" position_offset="0.05,0,0" added_rotation_y="260"/>
+		
+		<choice id="Take" display_name="Take Their Weapon"
+			strategy_tip="From their perspective it will be like their fridge roughing them up."
+			action_visibility_style="IsMoveAndAttack">
+			<possible_result id="Win" unskilled_weight="100" instantly_unlocked_1="GangHandguns" unlock_inspiration_type="StolenWeapon"
+				vfx_and_sound="BasicAttemptSuccess" result_message="The weapon will come in handy."
+				use_only_a_single_rand_change_for_npc_cohort="true">
+				<city_flag_change flag_type="HasStolenGangWeapon" value="1" />
+				<skill_check skill_type="ActorAgility" dc_level="5" />
+				<skill_check skill_type="UnitStrength" dc_level="5" />
+				<city_statistic_change statistic="StolenWeapons" value="1" />
+				<npc_unit_to_spawn id="GL" to_spawn="DisarmedGangLookout" stance_to_start_in="GangLoneConfused" radius_in_which_to_seed="-1" 
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Part80" partial_success_skill_floor="80" instantly_unlocked_1="GangHandguns" unlock_inspiration_type="StolenWeapon"
+				vfx_and_sound="BasicAttemptPartialSuccess" result_message="Wrestled the weapon off them, but caught a few bullets at the same time."
+				sound_when_negative_result_accepted="EventPistolBarrage">
+				<city_flag_change flag_type="HasStolenGangWeapon" value="1" />
+				<city_statistic_change statistic="StolenWeapons" value="1" />
+				<actor_data_change_range data_type="ActorHP" min="-20" max="-5" />
+				<npc_unit_to_spawn id="GL" to_spawn="DisarmedGangLookout" stance_to_start_in="GangLoneConfused" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Fail" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptFail" result_message="We didn't get the weapon, but we did catch a few bullets."
+				sound_when_negative_result_accepted="EventPistolBarrage">
+				<actor_data_change_range data_type="ActorHP" min="-30" max="-10" />
+				<npc_unit_to_spawn id="GL" to_spawn="ArmedGangLookout" stance_to_start_in="GangLoneAngry" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+		
+		<choice id="Ask" display_name="Ask For Their Weapon"
+			strategy_tip="A very surreal day for them if you do."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="Win" unskilled_weight="100" instantly_unlocked_1="GangHandguns" unlock_inspiration_type="StolenWeapon"
+				vfx_and_sound="BasicAttemptSuccess" result_message="The weapon will come in handy."
+				use_only_a_single_rand_change_for_npc_cohort="true">
+				<skill_check skill_type="UnitIntimidation" dc_level="5" />
+				<city_flag_change flag_type="HasStolenGangWeapon" value="1" />
+				<city_statistic_change statistic="StolenWeapons" value="1" />
+				<npc_unit_to_spawn id="GL" to_spawn="DisarmedGangLookout" stance_to_start_in="GangLoneConfused" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Part80" partial_success_skill_floor="80" instantly_unlocked_1="GangHandguns" unlock_inspiration_type="StolenWeapon"
+				vfx_and_sound="BasicAttemptPartialSuccess" result_message="Wrestled the weapon off them, but caught a few bullets at the same time."
+				sound_when_negative_result_accepted="EventPistolBarrage">
+				<actor_data_change_range data_type="ActorHP" min="-20" max="-5" />
+				<city_flag_change flag_type="HasStolenGangWeapon" value="1" />
+				<city_statistic_change statistic="StolenWeapons" value="1" />
+				<npc_unit_to_spawn id="GL" to_spawn="DisarmedGangLookout" stance_to_start_in="GangLoneConfused" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Fail" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptFail" result_message="We didn't get the weapon, but we did catch a few bullets."
+				sound_when_negative_result_accepted="EventPistolBarrage">
+				<actor_data_change_range data_type="ActorHP" min="-30" max="-10" />
+				<npc_unit_to_spawn id="GL" to_spawn="ArmedGangLookout" stance_to_start_in="GangLoneAngry" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+		
+	</city_event>
+
+	<!--Hudson SecForce Idle
+		*********************************************************************************-->
+	<city_event id="Early_HudsonSecForce" display_name="SecForce Relaxing At Hudson"
+		 description="Hudson Donuts is a known front for a criminal syndicate run by members of SecForce. This is... confusing."
+		 strategy_tip="The SecForce members seem to be more at ease here than anywhere else. Some of their shotguns are not even secured."
+		 icon_name="CleanSimple_SciFi062" has_no_code="true" do_change_street_sense_seed_after="true"
+		 street_sense_collections="All,EquipmentAcquisition,HostileAction">
+		<gate_by_city minimum_chapter="1" maximum_chapter="1" required_meta_flag="HasFiguredOutResearch" blocked_by_city_flag="HasStolenSecForceWeapon" />
+		<gate_by_actor cannot_be_mech="true" cannot_be_vehicle="true"/>
+		<minor_event_data cohort_tag="HudsonDonuts" max_times_can_be_executed="99" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.6" color_data="MeetPeopleCyan">
+			<seed_at building_seed_tag="HudsonDonuts" max_security_clearance_of_seed_spot="5">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="MilitarySniperIdle" scale_multiplier="1" position_offset="-0.01,0,0.5" added_rotation_y="240"/>
+		<character id="2" tag_for_character="SecForceIdle" scale_multiplier="1" position_offset="0.09,0,0.15" added_rotation_y="140"/>
+		<character id="3" tag_for_character="SecForceIdle" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="60"/>
+
+		<choice id="Grab" display_name="Grab An Unsecured Shotgun"
+			strategy_tip="Run as fast as you can, and try not to die."
+			action_visibility_style="IsMoveAndAttack">
+			<possible_result id="Win" unskilled_weight="100" instantly_unlocked_1="SecForceSpecial" unlock_inspiration_type="StolenWeapon"
+				vfx_and_sound="BasicAttemptSuccess" result_message="The weapon will come in handy."
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true">
+				<city_flag_change flag_type="HasStolenSecForceWeapon" value="1" />
+				<city_statistic_change statistic="StolenWeapons" value="1" />
+				<skill_check skill_type="ActorAgility" dc_level="3" />
+				<skill_check skill_type="ActorMoveRange" dc_level="7" />
+			</possible_result>
+			<possible_result id="Part80" partial_success_skill_floor="80" instantly_unlocked_1="SecForceSpecial" unlock_inspiration_type="StolenWeapon"
+				vfx_and_sound="BasicAttemptPartialSuccess" result_message="Got the weapon, but a hail of gunfire followed you out the door."
+				sound_when_negative_result_accepted="EventPistolBarrage">
+				<city_flag_change flag_type="HasStolenSecForceWeapon" value="1" />
+				<city_statistic_change statistic="StolenWeapons" value="1" />
+				<actor_data_change_range data_type="ActorHP" min="-70" max="-50" />
+				<npc_unit_to_spawn id="GL" to_spawn="SecForcePatrol" stance_to_start_in="SecForceRage" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Fail" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptFail" result_message="They saw us immediately. Apparently, syndicates have tried this in the past."
+				sound_when_negative_result_accepted="EventPistolBarrage">
+				<actor_data_change_range data_type="ActorHP" min="-90" max="-70" />
+				<npc_unit_to_spawn id="GL" to_spawn="SecForcePatrol" stance_to_start_in="SecForceRage" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Ambush Captain
+		*********************************************************************************-->
+	<city_event id="Early_AmbushCaptain" display_name="Ambush Captain"
+		 description="Captains are company-grade officers and intense backup is just a push of a button away. Even if we succeed in killing them, we'll have a challenging incident on our hands."
+		 strategy_tip="Getting your hands on the armor they wear would be incredibly useful, however."
+		 icon_name="CleanTriangle22" has_no_code="true" do_change_street_sense_seed_after="true"
+		 street_sense_collections="All,EquipmentAcquisition,HostileAction">
+		<gate_by_city minimum_chapter="1" maximum_chapter="1" required_meta_flag="HasFiguredOutResearch" blocked_by_city_flag="HasStolenMilitaryArmor" />
+		<gate_by_actor cannot_be_mech="true" cannot_be_vehicle="true"/>
+		<minor_event_data cohort_tag="CorporationMilitaryPropertyOwner" max_times_can_be_executed="99" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="CaptainWeapon">
+			<seed_at building_seed_tag="NoncomHaunt" max_security_clearance_of_seed_spot="4">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="MilitaryArmedCaptain" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
+
+		<choice id="DemandTheirClothes" display_name="Demand Their Clothes"
+			strategy_tip="They are not easily intimidated."
+			action_visibility_style="IsMoveAndAttack">
+			<possible_result id="Win" unskilled_weight="100" instantly_unlocked_1="MilitaryInfiltration" unlock_inspiration_type="StolenArmor"
+				vfx_and_sound="BasicAttemptSuccess" 
+				result_message="You put enough fear into them that they complied. However, backup was alerted."
+				use_only_a_single_rand_change_for_npc_cohort="true" kill_characters_on_the_right="false">
+				<city_flag_change flag_type="HasStolenMilitaryArmor" value="1" />
+				<city_statistic_change statistic="StolenArmor" value="1" />
+				<skill_check skill_type="UnitIntimidation" dc_level="14" />
+				<npc_unit_to_spawn id="MS1" to_spawn="MilitarySniper" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="20"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="MilitarySniper" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="20"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Part80" partial_success_skill_floor="80" instantly_unlocked_1="MilitaryInfiltration" unlock_inspiration_type="StolenArmor"
+				vfx_and_sound="BasicAttemptPartialSuccess" 
+				result_message="They refused, and you accidentally killed them in the fight that ensued. You got their armor, but an intense amount of backup has been alerted."
+				sound_when_negative_result_accepted="EventPistolBarrage" kill_characters_on_the_right="true">
+				<city_flag_change flag_type="HasStolenMilitaryArmor" value="1" />
+				<city_statistic_change statistic="StolenArmor" value="1" />
+				<actor_data_change_range data_type="ActorHP" min="-70" max="-50" />
+				<city_statistic_change statistic="Murders" value="1" />
+				<npc_unit_to_spawn id="MS1" to_spawn="MilitarySniper" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="MilitarySniper" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS3" to_spawn="MilitarySniper" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="40"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS4" to_spawn="MilitarySniper" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="40"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Fail" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptFail" result_message="That was a complete failure."
+				sound_when_negative_result_accepted="EventPistolBarrage">
+				<actor_data_change_range data_type="ActorHP" min="-90" max="-70" />
+				<npc_unit_to_spawn id="GL" to_spawn="ArmedMilitaryCaptain" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+		<choice id="TaseThem" display_name="Stun Them With Your Taser"
+			strategy_tip="You can take their armor while they're unconscious."
+			action_visibility_style="IsMoveAndAttack" required_actor_collection="Technicians">
+			<possible_result id="Win" unskilled_weight="100" instantly_unlocked_1="MilitaryInfiltration" unlock_inspiration_type="StolenArmor"
+				vfx_and_sound="BasicAttemptSuccess" result_message="This armor will be incredibly useful. Everything went well -- no backup was alerted."
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true">
+				<city_flag_change flag_type="HasStolenMilitaryArmor" value="1" />
+				<city_statistic_change statistic="StolenArmor" value="1" />
+				<skill_check skill_type="UnitCognition" dc_level="2" />
+			</possible_result>
+			<possible_result id="Fail" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptFail" result_message="That was a complete failure."
+				sound_when_negative_result_accepted="EventPistolBarrage">
+				<actor_data_change_range data_type="ActorHP" min="-90" max="-70" />
+				<npc_unit_to_spawn id="GL" to_spawn="ArmedMilitaryCaptain" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+		
+		<choice id="MurderThem" display_name="Murder Them"
+			strategy_tip="You can't exactly grab armor off their body in passing."
+			action_visibility_style="IsMoveAndAttack">
+			<possible_result id="Win" unskilled_weight="100" instantly_unlocked_1="MilitaryInfiltration" unlock_inspiration_type="StolenArmor"
+				vfx_and_sound="MurderAttemptFullSuccess" result_message="This armor will be incredibly useful. Backup is just arriving now, unfortunately."
+				use_only_a_single_rand_change_for_npc_cohort="true" kill_characters_on_the_right="true">
+				<city_flag_change flag_type="HasStolenMilitaryArmor" value="1" />
+				<city_statistic_change statistic="StolenArmor" value="1" />
+				<skill_check skill_type="UnitStrength" dc_level="12" />
+				<city_statistic_change statistic="Murders" value="1" />
+				<npc_unit_to_spawn id="GL1" to_spawn="MilitarySniper" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="GL2" to_spawn="MilitarySniper" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Part80" partial_success_skill_floor="80" instantly_unlocked_1="MilitaryInfiltration" unlock_inspiration_type="StolenArmor"
+				vfx_and_sound="MurderAttemptPartialSuccess" result_message="Got the armor, but backup is hot on your heels."
+				sound_when_negative_result_accepted="EventPistolBarrage" kill_characters_on_the_right="true">
+				<city_flag_change flag_type="HasStolenMilitaryArmor" value="1" />
+				<city_statistic_change statistic="StolenArmor" value="1" />
+				<actor_data_change_range data_type="ActorHP" min="-70" max="-50" />
+				<city_statistic_change statistic="Murders" value="2" />
+				<npc_unit_to_spawn id="GL1" to_spawn="MilitarySniper" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="GL2" to_spawn="MilitarySniper" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Fail" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptFail" result_message="That was a complete failure."
+				sound_when_negative_result_accepted="EventPistolBarrage">
+				<actor_data_change_range data_type="ActorHP" min="-90" max="-70" />
+				<npc_unit_to_spawn id="GL" to_spawn="ArmedMilitaryCaptain" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Ambush Budget Security
+		*********************************************************************************-->
+	<city_event id="Early_AmbushBudgetSecurity" display_name="Ambush Budget Security"
+		 description="Budget Security are freelance agents who work for hire for the lower and middle classes. Their jackets offer no protection, but have hoods that can completely conceal a face.
+Surely that would be useful for you at some point."
+		 strategy_tip="They seem to be doing detective work at the moment. Hood back, focused on something on the ground.
+Judging by fact that their face obscurance is down, they probably work for a criminal syndicate."
+		 icon_name="ME_CheapSecurityDisguise2" has_no_code="true" do_change_street_sense_seed_after="true"
+		 street_sense_collections="All,EquipmentAcquisition,HostileAction">
+		<gate_by_city minimum_chapter="1" maximum_chapter="1" required_meta_flag="HasFiguredOutResearch" blocked_by_city_flag="HasStolenBudgetSecurityArmor" />
+		<gate_by_actor cannot_be_mech="true" cannot_be_vehicle="true"/>
+		<minor_event_data cohort_tag="CriminalSyndicateTraditional" max_times_can_be_executed="99" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="BudgetSecurityWeapon">
+			<seed_at building_seed_tag="SyndicateHangout" max_security_clearance_of_seed_spot="4">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="BudgetSecurity" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
+
+		<choice id="DemandTheirClothes" display_name="Demand Their Clothes"
+			strategy_tip="Their resistance to intimidation is relatively low."
+			action_visibility_style="IsMoveAndAttack">
+			<possible_result id="Win" unskilled_weight="100" instantly_unlocked_1="Crowdmixer" unlock_inspiration_type="StolenArmor"
+				vfx_and_sound="BasicAttemptSuccess"
+				result_message="You put enough fear into them that they complied. However, backup was alerted."
+				use_only_a_single_rand_change_for_npc_cohort="true" kill_characters_on_the_right="false">
+				<city_flag_change flag_type="HasStolenBudgetSecurityArmor" value="1" />
+				<city_statistic_change statistic="StolenArmor" value="1" />
+				<skill_check skill_type="UnitIntimidation" dc_level="6" />
+				<npc_unit_to_spawn id="MS1" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateRevenge" radius_in_which_to_seed="20"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateRevenge" radius_in_which_to_seed="20"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Part80" partial_success_skill_floor="80" instantly_unlocked_1="Crowdmixer" unlock_inspiration_type="StolenArmor"
+				vfx_and_sound="BasicAttemptPartialSuccess"
+				result_message="They refused, and you accidentally killed them in the fight that ensued. You got their armor, but an intense amount of backup has been alerted."
+				sound_when_negative_result_accepted="EventPistolBarrage" kill_characters_on_the_right="true">
+				<city_flag_change flag_type="HasStolenBudgetSecurityArmor" value="1" />
+				<city_statistic_change statistic="StolenArmor" value="1" />
+				<actor_data_change_range data_type="ActorHP" min="-70" max="-50" />
+				<city_statistic_change statistic="Murders" value="1" />
+				<npc_unit_to_spawn id="MS1" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateRevenge" radius_in_which_to_seed="10"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateRevenge" radius_in_which_to_seed="10"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS3" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateRevenge" radius_in_which_to_seed="40"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS4" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateRevenge" radius_in_which_to_seed="40"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Fail" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptFail" result_message="That was a complete failure."
+				sound_when_negative_result_accepted="EventPistolBarrage">
+				<actor_data_change_range data_type="ActorHP" min="-90" max="-70" />
+				<npc_unit_to_spawn id="GL" to_spawn="BudgetSecurity" stance_to_start_in="SyndicateLoneAngry" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+		<choice id="TaseThem" display_name="Stun Them With Your Taser"
+			strategy_tip="You can take their clothes while they're unconscious."
+			action_visibility_style="IsMoveAndAttack" required_actor_collection="Technicians">
+			<possible_result id="Win" unskilled_weight="100" instantly_unlocked_1="Crowdmixer" unlock_inspiration_type="StolenArmor"
+				vfx_and_sound="BasicAttemptSuccess" result_message="This armor will be incredibly useful. Everything went well -- no backup was alerted."
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true">
+				<city_flag_change flag_type="HasStolenBudgetSecurityArmor" value="1" />
+				<city_statistic_change statistic="StolenArmor" value="1" />
+				<skill_check skill_type="UnitCognition" dc_level="2" />
+			</possible_result>
+			<possible_result id="Fail" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptFail" result_message="That was a complete failure."
+				sound_when_negative_result_accepted="EventPistolBarrage">
+				<actor_data_change_range data_type="ActorHP" min="-90" max="-70" />
+				<npc_unit_to_spawn id="GL" to_spawn="ArmedMilitaryCaptain" stance_to_start_in="MilitaryRage" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+		<choice id="MurderThem" display_name="Murder Them"
+			strategy_tip="You can't exactly grab clothes off their body in passing."
+			action_visibility_style="IsMoveAndAttack">
+			<possible_result id="Win" unskilled_weight="100" instantly_unlocked_1="Crowdmixer" unlock_inspiration_type="StolenArmor"
+				vfx_and_sound="MurderAttemptFullSuccess" result_message="This armor will be incredibly useful. Backup is just arriving now, unfortunately."
+				use_only_a_single_rand_change_for_npc_cohort="true" kill_characters_on_the_right="true">
+				<city_flag_change flag_type="HasStolenBudgetSecurityArmor" value="1" />
+				<city_statistic_change statistic="StolenArmor" value="1" />
+				<skill_check skill_type="UnitStrength" dc_level="8" />
+				<city_statistic_change statistic="Murders" value="1" />
+				<npc_unit_to_spawn id="GL1" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateRevenge" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="GL2" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateRevenge" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Part80" partial_success_skill_floor="80" instantly_unlocked_1="Crowdmixer" unlock_inspiration_type="StolenArmor"
+				vfx_and_sound="MurderAttemptPartialSuccess" result_message="Got the armor, but backup is hot on your heels."
+				sound_when_negative_result_accepted="EventPistolBarrage" kill_characters_on_the_right="true">
+				<city_flag_change flag_type="HasStolenBudgetSecurityArmor" value="1" />
+				<city_statistic_change statistic="StolenArmor" value="1" />
+				<actor_data_change_range data_type="ActorHP" min="-70" max="-50" />
+				<city_statistic_change statistic="Murders" value="2" />
+				<npc_unit_to_spawn id="GL1" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateRevenge" radius_in_which_to_seed="10"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="GL2" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateRevenge" radius_in_which_to_seed="10"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Fail" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptFail" result_message="That was a complete failure."
+				sound_when_negative_result_accepted="EventPistolBarrage">
+				<actor_data_change_range data_type="ActorHP" min="-90" max="-70" />
+				<npc_unit_to_spawn id="GL" to_spawn="BudgetSecurity" stance_to_start_in="SyndicateLoneAngry" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" copy_visuals_from_event_character="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+	
+	<!--Next-->
+	
+</root>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<ability_type id="MoveFlyingVehicle" display_name="Reposition"
+		description="Reposition this vehicle within its movement range."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_Skill013" parent_group="Vehicle" on_use="SmallClick" intentionally_has_no_unlock="true" blocked_from_being_assigned="true" is_slot_skipped_on_equipment_screen_if_assigned="true"
+	    ability_glow_color_hex="#DC80FF" ability_glow_intensity="2" ability_background_index="21" ability_number_color_hex="#DBB3E7" ability_border_color_hex="#AF6FC1"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicVehicleAbilities" skip_draw_threat_lines_when_player_hovers="true"
+		if_vehicle_or_mech_enables_movement="true" show_message_about_hold_to_keep_doing_action="true"
+		action_point_cost="1" mental_energy_cost="1">
+	</ability_type>
+
+	<ability_type id="VehicleRepairNearby" display_name="Repair Nearby Units And Structures" ability_uses_migrate_to="AndroidNearbyRepair"
+		description="This unit will repair itself and all units and structures within its attack range."
+		strategy_tip_optional=""
+		icon_name="SF2_Geometricshape_1" parent_group="Vehicle" on_use="UnitRepair" intentionally_has_no_unlock="true"
+	    ability_glow_color_hex="#80FF96" ability_glow_intensity="2.5" ability_background_index="23" ability_number_color_hex="#9BE7A8" ability_border_color_hex="#70B87C"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicVehicleAbilities"
+		required_actor_data_type="ActorEngineeringSkill" required_actor_data_must_be_at_least="60"
+		action_point_cost="2" mental_energy_cost="4">
+		<math_float id="EngineeringSkillToHPRepaired" float_min="0.6" />
+	</ability_type>
+
+	<!--VehicleTargeting
+		icon_name="CleanSimple_Target04" parent_group="Vehicle" on_use="ThickClick" intentionally_has_no_unlock="true" blocked_from_being_assigned="true"
+	    ability_glow_color_hex="#FA835A" ability_glow_intensity="4" ability_background_index="46" ability_number_color_hex="#FF9688" ability_border_color_hex="#FF9688"
+	-->
+
+	<ability_type id="VehicleStandby" display_name="Standby" ability_uses_migrate_to="AndroidStandby"
+		description=""
+		strategy_tip_optional=""
+		icon_name="CleanSimple_Common061" parent_group="Vehicle" on_use="Silent" intentionally_has_no_unlock="true"
+		ability_glow_color_hex="#7295A5" ability_glow_intensity="4.5" ability_background_index="46" ability_number_color_hex="#7881C6" ability_border_color_hex="#6871BB"
+		ability_background_saturation="1" ability_background_hue_shift="120"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicVehicleAbilities"
+		blocked_from_being_assigned="true" is_slot_skipped_on_equipment_screen_if_assigned="true"
+		action_point_cost="0" mental_energy_cost="0" is_standby_controls="true">
+	</ability_type>
+
+	<ability_type id="VehicleShieldsUp" display_name="Shields Up"
+		description="This unit will raise an electromagnetic shield, reducing 50-70% of incoming damage until it moves."
+		strategy_tip_optional="It can fire from this position, but movement will dispel the shield. Attacks of opportunity will hit the shield before the shield goes down."
+		icon_name="CleanSimple_Shield01" parent_group="Vehicle" on_use="VehicleShieldsUp" intentionally_has_no_unlock="true"
+	    ability_glow_color_hex="#C1704A" ability_glow_intensity="5.4" ability_background_index="2" ability_number_color_hex="#E4DAAC" ability_border_color_hex="#A58C6A"
+		ability_background_saturation="1" ability_background_hue_shift="0"
+		related_badge="ShieldsUp" blocked_from_being_assigned="true" is_considered_to_add_take_cover_for_threat_lines="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicVehicleAbilities"
+		action_point_cost="1" mental_energy_cost="1">
+	</ability_type>
+
+	<ability_type id="VehicleCloak" display_name="Cloak"
+		description="This vehicle will engage active cloaking measures, making it completely invisible."
+		strategy_tip_optional="The unit can move freely while cloaked, but must reveal itself to attack."
+		icon_name="FlatInnocent_6" parent_group="Vehicle" on_use="VehicleCloak" intentionally_has_no_unlock="true"
+	    ability_glow_color_hex="#B372DE" ability_glow_intensity="5.4" ability_background_index="5" ability_number_color_hex="#E4DAAC" ability_border_color_hex="#A58C6A"
+		ability_background_saturation="1" ability_background_hue_shift="0"
+		related_badge="Cloaked" blocked_from_being_assigned="true" is_considered_to_add_cloaking_for_threat_lines="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicVehicleAbilities"
+		action_point_cost="0" mental_energy_cost="1">
+	</ability_type>
+
+	<ability_type id="VehicleBattleRecharge" display_name="Battle Recharge" ability_uses_migrate_to="AndroidBattleRecharge"
+		description="Use one unit of mental energy to recharge an action point (AP)."
+		strategy_tip_optional="You can only do this if you have at least two mental energy."
+		icon_name="FlatSkillB_battery" parent_group="Vehicle" on_use="UnitBattleRecharge" intentionally_has_no_unlock="true" blocked_from_being_assigned="true" is_slot_skipped_on_equipment_screen_if_assigned="true"
+	    ability_glow_color_hex="#FFA980" ability_glow_intensity="2.5" ability_background_index="31" ability_number_color_hex="#C98C6F" ability_border_color_hex="#855944"
+		ability_background_hue_shift="170" ability_background_saturation="2"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicVehicleAbilities"
+		action_point_cost="0" mental_energy_cost="1">
+	</ability_type>
+
+	<ability_type id="VehicleUseConsumable" display_name="Use Consumable Item" ability_uses_migrate_to="AndroidUseItem"
+		description="The unit will assemble and use an item, consuming some resources."
+		strategy_tip_optional="These give status buffs to the unit or targeted debuffs to an enemy. These may be the deciding factor in tough combat."
+		icon_name="HM_LegalFileFolders" parent_group="Vehicle" on_use="ModeClick" is_locked_before_unlock="BattlePreparations" intentionally_has_no_unlock="true" is_mixed_targeting_mode="true"
+	    ability_glow_color_hex="#FF95C5" ability_glow_intensity="2.4" ability_background_index="3" ability_number_color_hex="#E798B1" ability_border_color_hex="#9D5A70" 
+		ability_background_brightness="1" ability_background_hue_shift="0" ability_background_saturation="1.4"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicVehicleAbilities"
+		action_point_cost="0" mental_energy_cost="0">
+	</ability_type>
+
+	<ability_type id="VehicleUnload" display_name="Unload Units"
+		description="Open a panel which allows you to quickly deploy troops from this carrier."
+		strategy_tip_optional="You can get a similar effect from using the Forces sidebar, if you prefer."
+		icon_name="CleanSimple_SciFi041" parent_group="Vehicle" on_use="ModeClick" intentionally_has_no_unlock="true"
+	    ability_glow_color_hex="#9EECE7" ability_glow_intensity="2.4" ability_background_index="14" ability_number_color_hex="#98D3E7" ability_border_color_hex="#5A9D90"
+		ability_background_brightness="1" ability_background_hue_shift="180" ability_background_saturation="1.4"
+		can_be_used_even_when_over_unit_cap="true" can_be_used_even_when_doing_action_over_time="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicVehicleAbilities"
+		action_point_cost="0" mental_energy_cost="0">
+	</ability_type>
+	
+</root>

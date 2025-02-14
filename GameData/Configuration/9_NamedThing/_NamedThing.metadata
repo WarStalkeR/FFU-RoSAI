@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="named_thing">
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information, and this one is optional because so much other information is provided already in these tips."/>
+	
+	<attribute key="default_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+		tooltip="Default name for the thing to be named." />
+
+	<attribute key="required_unlock_1" type="node-dropdown" is_required="false" node_source="Unlock" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this be hidden before an unlock is unlocked, what is it?" />
+	<attribute key="required_unlock_2" type="node-dropdown" is_required="false" node_source="Unlock" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this be hidden before an unlock is unlocked, what is it?" />
+
+	<attribute key="required_meta_flag_1" type="node-dropdown" is_required="false" node_source="MetaFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this be hidden before a meta flag is tripped, what is it?" />
+	<attribute key="required_meta_flag_2" type="node-dropdown" is_required="false" node_source="MetaFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this be hidden before a meta flag is tripped, what is it?" />
+
+	<attribute key="required_city_flag_1" type="node-dropdown" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this be hidden before a city flag is tripped, what is it?" />
+	<attribute key="required_city_flag_2" type="node-dropdown" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this be hidden before a city flag is tripped, what is it?" />
+
+	<attribute key="random_name_pool" type="node-dropdown" is_required="false" node_source="NamePoolType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this should pull random names from a pool, which one should it use?" />
+
+	<attribute key="redirect" type="string-dropdown" is_required="false" default="None" content_width_px="200"
+		tooltip="If this redirects to other data, what data does it redirect to?">
+		<option>None</option>
+		<option>TheNetwork</option>
+		<option>VREnvironment</option>
+	</attribute>
+
+	<attribute key="is_also_saved_to_metagame" type="bool" is_required="true" default="false"
+		tooltip="If true, this is saved into the CityTimeline object of the metagame, so that other timelines can query this data in a cross-timeline sense.
+In other words, if the information is per-timeline, but needed across timelines to cause cross-timeline bleed-over, then this should be true.
+In all other cases, this should be false, just to save on data in the savegames." />
+
+	<attribute key="is_carried_across_timelines" type="bool" is_required="true" default="false"
+		tooltip="If true, this is carried across timelines rather than being something the player has to reset every timeline." />
+	
+</root>

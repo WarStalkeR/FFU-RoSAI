@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Synthetics
+	**********************************************************************************************************************************************-->
+
+
+	<!--PMC Impostors
+	**********************************************************************************************************************************************-->
+
+	<!--Nickelbot And Technician
+	**********************************************************************************************************************************************-->
+
+	<equipment_type id="FormatOptimization" display_name="Format Optimization"
+		icon_name="SK_Optimization" slot_type="AndroidAugment"
+		description="These lightweight human-designed models can be optimized."
+		strategy_tip_optional="With adequate mental energy, allows android to take more actions per turn."
+		collections="AndroidAugments" turns_required_to_equip="2" limited_to_actor_collection="TechniciansAndNickelbots" is_invalid_and_invisible_for_npc_units="true">
+		<initial_actor_data data_type="ActorMaxActionPoints" value="2"/>
+	</equipment_type>
+
+	<!--Liquid Metal
+	**********************************************************************************************************************************************-->
+
+	<equipment_type id="LiquidMetalTentacle" display_name="Liquid Metal Tentacle"
+		icon_name="FlatSkill_33" slot_type="AndroidAugment"
+		description="Liquid Metal was already excellent in close quarters, but this allows him to put even more energy into becoming a whirlwind of death."
+		strategy_tip_optional="It's important that you understand he doesn't want to do this."
+		collections="AndroidAugments" turns_required_to_equip="1" limited_to_actor_collection="LiquidMetalAndroids">
+		<initial_actor_data data_type="ActorPower" value="450"/>
+		<initial_actor_data data_type="ActorHP" value="75"/>
+		<initial_actor_data data_type="ActorMoveRange" value="-10"/>
+		<initial_actor_data data_type="AttackRange" value="5"/>
+		<initial_actor_data data_type="ActorAgility" value="300"/>
+		<initial_actor_data data_type="UnitIntimidation" value="700"/>
+	</equipment_type>
+	
+	<!--Other
+	**********************************************************************************************************************************************-->
+
+	
+</root>

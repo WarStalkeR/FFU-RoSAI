@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<equipment_type id="VS101Skyfall" display_name="VS-101 Skyfall"
+		icon_name="CleanSimple_SciFi098" slot_type="WeaponHardpoint"
+		description="Inspired by your creation of Skystreak Missiles, this is the smaller everyday-use version."
+		collections="" turns_required_to_equip="3" limited_to_actor_collection="CombatVehicles"
+		is_ranged_weapon="true" on_attack="SkyfallRocketUp" on_attack_priority="100">
+		<initial_actor_data data_type="ActorPower" value="40"/>
+		<initial_actor_data data_type="ActorArmorPiercing" value="30"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="80"/>
+	</equipment_type>
+
+</root>

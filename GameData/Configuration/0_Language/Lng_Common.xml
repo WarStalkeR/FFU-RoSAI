@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<lang id="MainMenu_Continue" text="Continue" />
+	<lang id="MainMenu_Begin" text="Begin" />
+	<lang id="MainMenu_Begin_Details" text="Your journey starts here. The first city in a fresh profile." />
+	<lang id="MainMenu_StartAnotherProfile" text="Start Another Profile" />
+	<lang id="MainMenu_StartAnotherProfile_Details" text="This will create an additional profile. Your previous profiles will not be altered." />
+	<lang id="MainMenu_StartAnotherProfile_Details2" text="You will only need one profile to play as many times as you want; however, if you want to replay the tutorial, you'll need a fresh profile." />
+	<lang id="MainMenu_Load_Details" text="Choose an existing game to resume." />
+	<lang id="MainMenu_Wishlist" text="Wishlist On Steam" />
+	<lang id="MainMenu_Wishlist_Details" text="This really helps us out!  We're very grateful for all who do." />
+	<lang id="MainMenu_Wiki" text="Wiki" />
+	<lang id="MainMenu_Wiki_Details" text="Design notes, release notes, supplementary explanations, and more." />
+	<lang id="MainMenu_Controls" text="Controls" />
+	<lang id="MainMenu_Controls_Details" text="Change the mouse/keyboard input bindings." />
+	<lang id="MainMenu_AboutGame" text="Game At A Glance" />
+	<lang id="MainMenu_AboutGame_Details" text="A linear primer of what the heck this game is about." />
+	<lang id="MainMenu_Settings" text="Settings" />
+	<lang id="MainMenu_Settings_Details" text="Adjusts game settings, except for the keybinds." />
+	<lang id="MainMenu_Exit" text="Exit To Desktop" />
+	<lang id="MainMenu_Exit_Details" text="Closes the game." />
+	<lang id="MainMenu_ReleaseNotes" text="Release Notes" />
+	<lang id="MainMenu_ReleaseNotes_Details" text="Visit our wiki to see the latest updates." />
+
+	<lang id="MainMenu_Credits" text="Credits" />
+	<lang id="MainMenu_Credits_Details" text="A huge thank-you to so many people." />
+
+	<lang id="NewProfile" text="Start New" />
+	<lang id="NewCity_Dive" text="Dive" />
+	<lang id="ExistingCity_Dive" text="Dive" />
+	<lang id="FirstCityName" text="Neoterisk" translation_notes="This is the default name for the first city in a new profile. Later, players can name their own cities. Something evocative, given the amount of time the player spends there, is important. This combines the archaic word 'neoterically,' which means newly or recently, with the Russian city suffix 'sk.'" />
+
+	<lang id="Mark2Mech" text="This is a Mark 2 mech with upgraded armor plating, armor piercing, and health." />
+
+	<lang id="Mark3Unit" text="This is a Mark 3 unit, from general escalation in this timeline." />
+	<lang id="Mark4Unit" text="This is a Mark 4 unit, typically from Hard Mode." />	
+	<lang id="Mark5Unit" text="This is a Mark 5 unit, typically from Extreme Mode." />
+
+	<lang id="CannotDive_MissingTimeline" text="Cannot dive into this timeline, because it is missing." />
+	<lang id="CannotDive_NotSeeded" text="Cannot dive into this timeline, as it was not seeded." />
+	<lang id="CannotDive_AlreadyThere" text="You are already in this timeline." />
+	<lang id="DiveWarning_FailedTimeline" text="You can dive into this timeline, but it has failed and there is nothing more to do." />
+
+	<lang id="MainMenu_VersionPrefix" text="Build {0}" />
+	<lang id="MainMenu_BackgroundLoading" text="Background Loading..." />
+	<lang id="MainMenu_BackgroundLinking" text="Background Linking..." />
+	<lang id="MainMenu_LoadTime" text="Total Load Time: {0}s" />
+
+	<lang id="LoadingScreen_Time" text="Loading Time" />
+	<lang id="LoadingScreen_Existing" text="Loading Existing Game" />
+	<lang id="LoadingScreen_GeneratingMoreMapTiles" text="Generating More Map Tiles" />
+	<lang id="LoadingScreen_MapTilesGenerated" text="Map Tiles Generated" />
+	<lang id="LoadingScreen_FilledMapCells" text="Filled Map Cells" />
+	<lang id="LoadingScreen_PreparingBuildings" text="Preparing Buildings..." />
+	<lang id="LoadingScreen_Done" text="Done!" />
+	<lang id="LoadingScreen_Ready" text="Ready! Click To Continue" />
+
+	<lang id="TextboxEmpty_EnterText" text="Enter text..." translation_notes="Text that is shown in textboxes in a faded color before you start typing in them."/>
+
+	<lang id="LanguageSetting_Name" text="Language" />
+	
+	<lang id="AAndB" text="{0} and {1}" />
+
+	<lang id="Popup_Common_Ok" text="Ok" />
+	<lang id="Popup_Common_Close" text="Close" />
+	<lang id="Popup_Common_Yes" text="Yes" />
+	<lang id="Popup_Common_YesExit" text="Yes, Exit" />
+	<lang id="Popup_Common_No" text="No" />
+	<lang id="Popup_Common_NoWait" text="No, Wait!" />
+	<lang id="Popup_Common_GoBack" text="Go Back" />
+	<lang id="Popup_Common_Cancel" text="Cancel" />
+	<lang id="Popup_Common_Submit" text="Submit" />
+	<lang id="Popup_Common_Save" text="Save" />
+	<lang id="Popup_Common_Load" text="Load" />
+	<lang id="Popup_Common_SetDefaults" text="Set Defaults" />
+	<lang id="DefaultValue" text="Default Value" />
+	<lang id="Popup_Common_ExitOnly" text="Exit Only" />
+	<lang id="Popup_Common_SaveAndExit" text="Save And Exit" />
+
+	<lang id="SetDefaults_ScreenResolution" text="Default value based on your desktop resolution. It is not affected by 'Set Defaults' later." />
+	<lang id="SetDefaults_Fullscreen" text="Defaults to on, but ignores 'Set Defaults' later." />
+	<lang id="SetDefaults_Ignores" text="Ignores 'Set Defaults'." />
+	
+	<lang id="Popup_Common_CurrentlySelected" text="Currently Selected" />
+	
+	<lang id="Popup_CommonFail_NullItem" text="Null item was selected." skip_all_localization_on_node="true" />
+	
+	<lang id="Popup_TextRequired" text="Text Required" />
+	<lang id="Popup_TextRequired_Explanation" text="No text was entered!" />
+
+	<lang id="Popup_AreYouSure" text="Are you sure?" />
+
+	<lang id="Popup_LoadFail" text="Cannot Load Savegame" />
+	<lang id="Popup_LoadFail_CannotFindSave" text="Cannot find the savegame." />
+	<lang id="Popup_LoadFail_BackgroundThreadsShuttingDown" text="Background threads still shutting down. Please try again in a moment." />
+	<lang id="Popup_LoadFail_MissingStartData" text="Missing start data." />
+
+	<lang id="Popup_SaveFail" text="Cannot Save Game" />
+	<lang id="Popup_SaveFail_NeedName" text="You must specify a filename." />
+	<lang id="Popup_SaveFail_InvalidName" text="The filename '{0}' is not valid!" />
+	<lang id="Popup_CreateFolderFail" text="Cannot create folder." />
+	<lang id="Popup_CreateFolderFail_NeedName" text="You must specify a folder name!" />
+	<lang id="Popup_CreateFolderFail_AlreadyExists" text="The folder name '{0}' already exists!" />
+
+	<lang id="DemoEnd_Header" text="Thank You For Playing!" />
+	<lang id="DemoEnd_Body" text="This concludes the demo of Heart of the Machine. There may be side content that you still have yet to explore. You can also pick some fights and try out recently-unlocked units and gear.
+
+This demo teaches the core mechanics and basic tactics. The expansive strategic side will let you apply everything you've learned in a wide array of scenarios.
+
+If you haven't already, please wishlist the game on Steam!" />
+	<lang id="DemoEnd_Wishlist" text="Wishlist Now" />
+	<lang id="DemoEnd_NotNow" text="Maybe Later" />
+	
+	<lang id="ActionBlocked" text="Action Blocked" />
+	<lang id="NotInTheMoodToKickOutHumanTenants" text="Doing this will kick out human tenants under your protection. You're not in the mood for that right now." />
+
+	<lang id="Popup_InvalidNumber_Header" text="Invalid Integer" />
+	<lang id="Popup_InvalidNumber" text="The text '{0}' is not a valid whole number." />
+	
+	<lang id="EndOfTimeMapCannotBeReseeded" text="Cannot reseed the End Of Time map after there are cities beyond the first rock." />
+	<lang id="InvalidCommandNoData" text="Invalid Command - No Data Specified" />
+	<lang id="CouldNotFindBuilding" text="Could not find any buildings of type {0}" />
+	<lang id="Granted" text="Granted" />
+	<lang id="ChangedTo" text="Changed To" />
+	<lang id="CouldNotFindSpaceToCreate" text="Could not find space to create {0}." />
+	<lang id="CheatPrefix" text="Cheat" />
+	<lang id="DeathPrefix" text="Death" />
+	<lang id="DisbandedFromMoraleLossPrefix" text="Disbanded" />
+	<lang id="DisbandedFromMoraleLossPrefix_Explanation" text="Disbanded From Morale Loss" />
+	<lang id="FledPhysicalViolencePrefix" text="Fled Violence" />
+	<lang id="FledPhysicalViolencePrefix_Explanation" text="This unit ran away from physical violence." />
+	<lang id="ExplosionDeathPrefix" text="Explosion Death" />
+	<lang id="CrashDeathPrefix" text="Crash Death" />
+	<lang id="VehicleThatCrashed" text="Vehicle That Crashed" />
+	<lang id="BuiltPrefix" text="Built" />
+	<lang id="ScrappedPrefix" text="Scrapped" />
+	<lang id="ScrapForReplacementPrefix" text="Scrapped For Replacement" />
+	
+	<lang id="SysMenu_Resume" text="Resume" />
+	<lang id="SysMenu_DebugMenu" text="Debug Menu" />
+	<lang id="SysMenu_Discord" text="Discord" />
+	<lang id="SysMenu_QuitGame" text="Quit Game" />
+	<lang id="SysMenu_QuitGame_Confirm" text="Return to the main menu?" />
+	<lang id="SysMenu_ExitToDesktop" text="Exit To Desktop" />
+	<lang id="SysMenu_ExitToDesktop_Confirm" text="Quit to the desktop?" />
+
+	<lang id="SysMenu_MainGame" text="System Menu" />
+	
+	<lang id="SysMenu_LevelEditor" text="Level Editor System Menu" skip_all_localization_on_node="true" />
+	<lang id="SysMenu_LevelEditor_OtherInfo" text="Level Editor Info" skip_all_localization_on_node="true" />
+
+	<lang id="LoadMenu_Header" text="Load Game" />
+	<lang id="SaveMenu_Header" text="Save Game" />
+	<lang id="LoadSave_Sort_Name" text="Sort (Name)" />
+	<lang id="LoadSave_Sort_Date" text="Sort (Date)" />
+	<lang id="LoadSave_Sort_Size" text="Sort (Size)" />
+
+	<lang id="SaveMenu_AddNewFolder" text="(Add New Profile)" />
+	<lang id="SaveMenu_NewFolderHeader" text="Please Enter A Name For Your New Folder" />
+	<lang id="SaveMenu_NewFolderLabel" text="Folder Name" />
+
+	<lang id="Error_Header" text="Error Encountered" />
+	<lang id="Error_OpenLog" text="Open Log" />
+	<lang id="Error_OpenLog_Explanation" text="Please report bugs to bugtracker.arcengames.com and include this log!" />
+	<lang id="Error_Ignore" text="Ignore" />
+	<lang id="Error_Ignore_Explanation" text="Some errors are a harmless UI glitch (though we'd still like to fix them). Others will allow the game run slightly wrong until you restart the program." />
+	<lang id="Error_IgnoreAndStop" text="Ignore And Stop Reporting" />
+	<lang id="Error_IgnoreAndStop_Explanation" text="Errors will no longer pop up, but they'll continue to hit the log. Your game may get laggy and the error log may overwrite itself once it loops past its max limit. If you're having so many errors that you are tempted to use this version, then you should save your game (NOT over top of an existing save file if you can help it!) and restart the program." />
+	<lang id="Error_Harmless_Explanation" text="This error will not hurt anything later in this run of the game." />
+
+	<lang id="Tooltip_Hotkey_Part1" text="(Hotkey: " />
+	<lang id="Tooltip_Hotkey_Part2" text=")" />
+	<lang id="Tooltip_HotkeyPrefix" text="Hotkey" />
+	<!--
+	<lang id="Tooltip_HotkeyEmbeddedPrefix" text="Hotkey: {0}" />-->
+
+	<lang id="Tooltip_ClickOrHotkey" text="Click here or press " />
+
+	<lang id="RadialMenu_ClickHereToOpen" text="Click Here To Open" />
+	<lang id="RadialMenu_ClickHereToClose" text="Click Here To Close" />
+	<lang id="RadialMenu_ClickHereToSelect" text="Click Here To Select" />
+	<lang id="RadialMenu_ClickHereToEndTurn" text="Click Here To End This Turn" />
+	<lang id="RadialMenu_FinishFirst" text="Finish With Your Selected Unit, Then Click Here To End This Turn" />
+	<lang id="RadialMenu_NPCActionPhase" text="Select
+Next NPC" />
+	<lang id="RadialMenu_NPCActionPhase_Header" text="Select Next NPC To Proceed" />
+	<lang id="RadialMenu_NPCActionPhase_Details1" text="All NPCs must finish their actions before you can take yours." />
+	<lang id="RadialMenu_NPCActionPhase_Details2" text="Click here to move to the next group of NPCs waiting to act." />
+
+	<lang id="RadialMenu_StillHaveMentalEnergyHeader" text="{0} Mental Energy" />
+	<lang id="RadialMenu_StillHaveMentalEnergy1" text="You still have mental energy. If you wish to end the turn anyway, use the {0}, or the small button to the upper-left of this radial menu." />
+	<lang id="RadialMenu_StillHaveMentalEnergy2" text="This is so that the {0} key never betrays you.
+Mental energy can be used to build, take units out of actions-over-time or standby, convert mental energy into AP for a specific unit, etc.
+If you want to move ahead anyway use that {1}." />
+
+	<lang id="RadialMenu_NPCsFinishingMovement" text="NPCs
+Finishing Moves" />
+	<lang id="RadialMenu_NPCsFinishingMovement_Header" text="Wait For NPCs" />
+	<lang id="RadialMenu_NPCsFinishingMovement_Details1" text="All NPCs must finish their actions before you can take yours." />
+	<lang id="RadialMenu_NPCsFinishingMovement_Details2" text="Click here to move to the next group of NPCs waiting to act." />
+	
+	<lang id="RadialMenu_Turn" text="Turn" />
+	<lang id="RadialMenu_MetaTime" text="Time Since First Awakening" />
+	<lang id="RadialMenu_TimelineTime" text="Time In This Timeline" />
+	<lang id="RadialMenu_CityName" text="City Name" />
+	<lang id="RadialMenu_TurnCalculating" text="Calculating..." />
+	<lang id="RadialMenu_GameMode" text="Game Mode" />
+	<lang id="RadialMenu_UnitsRemaining" text="Units Remaining" />
+	<lang id="LensNotCurrentlyAvailable" text="This view lens is not currently available." />
+	<lang id="Lens_Label" text="Lens" />
+	<lang id="NetworkResource_Label" text="Network Resource" />
+	<lang id="Resource_NetAmount" text="{0} Net" />
+
+	<lang id="RadialMenu_GameMode_CheatMode" text="Cheat Mode" />
+	<lang id="RadialMenu_GameMode_Strategic" text="Strategic" />
+	<lang id="FogOfWarDisabled" text="Fog Of War Disabled" />
+
+	<lang id="HeaderBar_SystemMenu_Top" text="System Menu" />
+	<lang id="HeaderBar_SystemMenu_Explanation" text="Window where you can save, load, exit, and configure settings and controls.  Also has a cheat-sheet for common keybindings." />
+	<lang id="HeaderBar_Map_Top" text="City Map" />
+	<lang id="HeaderBar_Map_Explanation" text="Map mode offers an overview of the city and key locations." />
+	<lang id="HeaderBar_VirtualWorld_Explanation" text="Examine and alter your growing virtual world." />
+	<lang id="HeaderBar_TheEndOfTime_Top" text="The End Of Time" />
+	<lang id="HeaderBar_TheEndOfTime_Explanation" text="Allows you to switch between timelines, or start new timelines.
+Filled with mysteries." />
+	<lang id="HeaderBar_BuildMode_Top" text="Build Mode" />
+	<lang id="HeaderBar_BuildMode_Explanation" text="Opens a sidebar that allows you to construct new structures, or find or delete existing ones." />
+	<lang id="HeaderBar_CommandMode_Top" text="Command Mode" />
+	<lang id="HeaderBar_CommandMode_Explanation" text="Allows you to deploy units, direct bulk troops, and more." />
+	<lang id="HeaderBar_RecentEvents_Top" text="Recent Events" />
+	<lang id="HeaderBar_RecentEvents_Explanation" text="Detailed log of combat and NPC activity from the last few turns." />
+	<lang id="HeaderBar_Handbook_Top" text="Machine Handbook" />
+	<lang id="HeaderBar_Handbook_Explanation" text="For extra information on how to do tasks." />
+	<lang id="HeaderBar_Inventory_Top" text="Resources" />
+	<lang id="HeaderBar_Inventory_Explanation1" text="Overview of the resources you currently have on hand, along with reports about the health of resource production and usage." />
+	<lang id="HeaderBar_Inventory_Explanation2" text="Any reports that are important will show a warning in the Task Stack, so don't feel the need to monitor them by hand." />
+	<lang id="HeaderBar_Hardware_Top" text="Hardware" />
+	<lang id="HeaderBar_Hardware_Explanation1" text="View and analyze all of the unit types, equipment, and consumable items in your possession." />
+	<lang id="HeaderBar_Hardware_Explanation2" text="Includes the ability to customize unit types before you deploy them." />
+	<lang id="HeaderBar_VictoryPath_Top" text="Victory Path" />
+	<lang id="HeaderBar_VictoryPath_Explanation1" text="View your progress toward various victory conditions, in this and other timelines." />
+	<lang id="HeaderBar_VictoryPath_Explanation2" text="Achieving advanced goals may require clues from the goals themselves." />
+	<lang id="HeaderBar_ForcesSidebar_Top" text="Forces Sidebar" />
+	<lang id="HeaderBar_ForcesSidebar_Explanation" text="Opens the forces sidebar with a list of your units." />
+	<lang id="HeaderBar_NetworksSidebar_Top" text="Networks Sidebar" />
+	<lang id="HeaderBar_NetworksSidebar_Explanation" text="Opens the networks sidebar, with a list of your subnets." />
+	<lang id="HeaderBar_CultActionsSidebar_Top" text="Cult Actions Sidebar" />
+	<lang id="HeaderBar_CultActionsSidebar_Explanation" text="Opens a sidebar that allows you to spend Cult Loyalty to have your cultists take actions for you." />
+	<lang id="HeaderBar_TimelinesSidebar_Top" text="Timelines Sidebar" />
+	<lang id="HeaderBar_TimelinesSidebar_Explanation" text="Opens the timelines sidebar, with all the timelines linked to the End of Time." />
+	<lang id="Header_History_Top" text="History" />
+	<lang id="Header_History_City_Explanation1" text="All of the retained logs and statistics from your time in this city." />
+	<lang id="Header_History_City_Explanation2" text="Includes the current value of all stats about the city, your actions and upgrades." />
+	<lang id="Header_History_EndOfTime_Explanation" text="Logs and statistics across timelines." />
+	<lang id="HeaderBar_Cheat_Top" text="Cheat Mode" />
+	<lang id="HeaderBar_Cheat_Explanation" text="The game works as usual but cheats are available. Most achievements are disabled. Only applies to the current timeline." />
+	<lang id="HeaderBar_Cheat_ClickHere" text="{0} here if you wish to open the deep-cheat sidebar." />
+	<lang id="HeaderBar_StructuresWithComplaints_Top" text="Structures With Complaints" />
+	<lang id="HeaderBar_StructuresWithComplaints_Explanation" text="Alerts you to structures that have problems and allows you to cycle through them." />
+
+	<lang id="StructuresWithMajorComplaints" text="Structures With Major Complaints" />
+	<lang id="StructuresWithMinorComplaints" text="Structures With Minor Complaints" />
+	<lang id="DamagedStructures" text="Damaged Structures" />
+	<lang id="StructuresWithAnyConstruction" text="Structures With Any Construction" />
+		
+	<lang id="RecentEvents" text="Recent Events" />
+
+	<lang id="UnitsRidingIn" text="Units Riding In {0}" translation_notes="{0} is the name of the vehicle, like 'ORS Raven' or whatever." />
+
+	<lang id="MachineHandbook" text="Machine Handbook" />
+	<lang id="Unread" text="Unread" />
+	<lang id="UnreadCount" text="{0} Unread" />
+	<lang id="EntriesUnlocked" text="Entries Unlocked" />
+
+	<lang id="CurrentTimeline" text="Current Timeline" />
+	<lang id="OtherTimeline" text="Other Timeline" />
+	<lang id="FailedTimeline" text="Failed Timeline" />
+	<lang id="FailedTimeline_Details" text="Cannot be continued any further." />
+	<lang id="Turn" text="Turn" />
+	<lang id="TimeSpent" text="Time Spent" />
+	<lang id="YourOrigin" text="Your Origin" />
+	<lang id="Crossovers" text="Crossovers" />
+	<lang id="CityStyle" text="City Style" />
+	<lang id="DoomType" text="Doom Type" />
+	<lang id="NotesToSelf" text="Notes To Self" />
+	<lang id="TowerExplanation" text="Tower Explanation" />
+	<lang id="OriginExtraDemands" text="Extra Demands" />
+	<lang id="FailureConditions" text="Failure Conditions" />
+	<lang id="IfAllAndroidsLostOrRootNetworkTowerLost" text="If All Androids Lost, Or Root Network Tower Lost" />
+	<lang id="IfAllAndroidsLost" text="If All Androids Lost" />
+	<lang id="IfRootNetworkTowerLost" text="If Root Network Tower Lost" />
+	<lang id="ExtraInformation" text="Extra Information" translation_notes="Used on tooltips for buildings to give more info." />
+
+	<lang id="ActualNewTimeline_Name" text="Actual New Timeline" />
+	<lang id="ActualNewTimeline_Description" text="A fresh timeline for you to detail, then create." />
+	<lang id="QuickTimeline_Name" text="Quick New Timeline" />
+	<lang id="QuickTimeline_Description" text="Randomly-named fresh timeline. It will not be generated or populated until later." />
+	<lang id="FailedTimeline_Name" text="Failed Timeline" />
+	<lang id="FailedTimeline_Description" text="Randomly-named timeline that has been fake-failed and has not been populated." />
+
+	<lang id="Income" text="Income" />
+	<lang id="Expense" text="Expense" />
+	<lang id="Increase" text="Increase" />
+	<lang id="Decrease" text="Decrease" />
+	<lang id="ChangeFrom_Job" text="Job" />
+	
+	<lang id="ThisTurn" text="This Turn" />
+	<lang id="LastTurn" text="Last Turn" />
+	<lang id="AvgLast10" text="Avg Last 10" />
+	<lang id="NetLast10" text="Net Last 10" />
+	<lang id="RecentTrends" text="Recent Trends" />
+	
+	<lang id="HowToAcquire" text="How To Acquire" />
+	<lang id="TechnicalNotes" text="Technical Notes" />
+
+	<lang id="PopupGeneralMessageClick_Close" text="Click here to close this message." />
+
+	<lang id="HandbookClick_Toggle" text="Click to toggle as 'read' or 'unread.'" />
+	<lang id="HandbookClickSection_Toggle" text="Click to toggle this section open or closed." />
+	<lang id="Sidebar_UnitStanceClick" text="Click to change this unit's stance." />
+	<lang id="Sidebar_VehicleStanceClick" text="Click to change this vehicle's stance." />
+
+	<lang id="Sidebar_BuildingsCount_Abbrev" text="Buildings" />
+	<lang id="Sidebar_BuildingsCount_Details" text="Buildings In The City" />
+
+	<lang id="Sidebar_HumanPopulationCount_Abbrev" text="Humans" />
+	<lang id="Sidebar_HumanPopulationCount_Detailed" text="Human Population In City" />
+
+	<lang id="Squad_Prefix" text="Squad" />
+	<lang id="Crew_Prefix" text="Crew" />
+	<lang id="TerritoryControl_ClickToActivate_Header" text="Click To Activate" />
+	<lang id="TerritoryControl_ClickToDeactivate_Header" text="Click To Deactivate" />
+	<lang id="ActionOverTimeSubheader" text="Action Over Time" />
+	<lang id="HackingActionSubheader" text="Hacking Action" />
+
+	<lang id="Sidebar_DiscoveredOutOf" text="{0} ({1} Discovered)" />
+	<lang id="Sidebar_VisibleOutOf" text="{0} ({1} Visible)" />
+
+	<lang id="Sidebar_CurrentOverlay_Abbrev" text="Current" />
+	<lang id="Sidebar_CurrentOverlay_Detailed" text="Current Overlay In Use" />
+		
+	<lang id="SimulationInitializing" text="Simulation Initializing..." />
+
+	<lang id="NPCCohortDirectory_Header" text="Cohort Directory" />
+
+	<lang id="KeyContact_PartOfCohort" text="Cohort" />
+	<lang id="KeyContact_PriorEventCount" text="Prior Events" />
+	<lang id="KeyContact_PriorEventList" text="Prior Event List" />
+	
+	<lang id="District" text="District" />
+	<lang id="District_Type" text="District Type" />
+	<lang id="District_Residents" text="District Residents" />
+	<lang id="District_Housing" text="(Housing: {0})" />
+	<lang id="District_Employment" text="District Employment" />
+	<lang id="District_Jobs" text="(Available Jobs: {0})" />
+	<lang id="District_MachineStructures" text="Machine Structures" />
+	<lang id="Tiles" text="Tiles" />
+	<lang id="ControlledBy" text="Controlled By" />
+
+	<lang id="POIsControlled" text="POIs Controlled" />
+	<lang id="DistrictsControlled" text="Districts Controlled" />
+	<lang id="ParentheticalDiscovered" text="(You Have Discovered: {0})" />
+	<lang id="YouHaveYetToDiscover" text="You Have Yet To Discover" />
+
+	<!--<lang id="DirectoryOfDistricts" text="Directory Of Districts" />-->
+	<!--<lang id="UndiscoveredDistricts" text="{0} Districts Are Still Undiscovered" />-->
+	<!--<lang id="Sidebar_CurrentDistrict" text="Current District" />-->
+
+	<lang id="POI_Type" text="POI Type" />
+
+	<lang id="CategoryEmpty" text="(Empty)   " />
+
+	<lang id="Settings_Header" text="Game Settings" />
+	<lang id="ControlBindings_Header" text="Control Bindings" />
+	<lang id="ControlBindings_SubHeader_Function" text="Function" translation_notes="What the keybind is for." />
+	<lang id="ControlBindings_SubHeader_PrimaryMapping" text="Primary Mapping" translation_notes="The default key or key combo bound to this." />
+	<lang id="ControlBindings_SubHeader_AlternateMapping" text="Alt Mapping" translation_notes="There is room for a longer word, but it just gets a bit oppressive if there's too much text here." />
+
+	<lang id="VisualsPausedPrefix" text="Visuals" />
+	<lang id="VisualsPaused" text="Paused" />
+	<lang id="VisualsRunning" text="Running" />
+
+	<lang id="UIHidden" text="UI Hidden" />
+	<lang id="UIVisible" text="UI Visible" />
+
+	<lang id="IconsHidden" text="Icons Hidden" />
+	<lang id="IconsVisible" text="Icons Visible" />
+
+	<lang id="VisualsSpeed" text="Visuals Speed" />
+
+	<lang id="DetailedTooltip_Available" text="Hold &lt;u&gt;{0}&lt;/u&gt; for detailed tooltip." />
+	<lang id="DetailedTooltip_Release" text="Release &lt;u&gt;{0}&lt;/u&gt; to contract tooltip." />
+	<lang id="DetailedTooltip_Available_Brief" text="Hold &lt;u&gt;{0}&lt;/u&gt; for more." translation_notes="As brief as you can make this is ideal." />
+
+	<lang id="DetailedTooltip_Toggle_Available" text="Press &lt;u&gt;{0}&lt;/u&gt; for detailed tooltip." />
+	<lang id="DetailedTooltip_Toggle_Release" text="Press &lt;u&gt;{0}&lt;/u&gt; to contract tooltip." />
+	<lang id="DetailedTooltip_Toggle_Available_Brief" text="Press &lt;u&gt;{0}&lt;/u&gt; for more." translation_notes="As brief as you can make this is ideal." />
+
+	<lang id="HyperDetailedTooltip_Available_Brief" text="Hold &lt;u&gt;{0}&lt;/u&gt; for more, or &lt;u&gt;{1}&lt;/u&gt; for a lot more." translation_notes="Keeping these short is important." />
+	<lang id="HyperDetailedTooltip_ReleaseNormal_Brief" text="Release &lt;u&gt;{0}&lt;/u&gt; for less, or hold &lt;u&gt;{1}&lt;/u&gt; for even more." translation_notes="Keeping these short is important."  />
+	<lang id="HyperDetailedTooltip_ReleaseDetailed_Brief" text="Release &lt;u&gt;{1}&lt;/u&gt; to contract tooltip." translation_notes="Keeping these short is important."  />
+
+	<lang id="HyperDetailedTooltip_Toggle_Available_Brief" text="Press &lt;u&gt;{0}&lt;/u&gt; for more, or &lt;u&gt;{1}&lt;/u&gt; for a lot more." translation_notes="Keeping these short is important." />
+	<lang id="HyperDetailedTooltip_Toggle_ReleaseNormal_Brief" text="Press &lt;u&gt;{0}&lt;/u&gt; for less, or &lt;u&gt;{1}&lt;/u&gt; for even more." translation_notes="Keeping these short is important."  />
+	<lang id="HyperDetailedTooltip_Toggle_ReleaseDetailed_Brief" text="Press &lt;u&gt;{1}&lt;/u&gt; to contract tooltip." translation_notes="Keeping these short is important."  />
+	
+	<lang id="SettingAddedBy" text="Setting added by" />
+	<lang id="HiddenFields_TooltipHeader" text="Hidden Fields" />
+	<lang id="HiddenFields" text="{0} Advanced Fields Are Hidden" />
+	<lang id="HiddenFieldsInSubCat" text="{0} Hidden Fields In This Subcategory" />
+	<lang id="HiddenFieldsInstruction" text="Click here to temporarily view the {0} advanced fields that are hidden.
+To permanently view them, click the 'Show Advanced Settings' button on the Game Tab." />
+	<lang id="HiddenFieldsSubcategoryInstruction" text="Click here to temporarily view the {0} advanced fields that are hidden.
+To permanently view them, click the 'Show Advanced Settings' button on the Game Tab." />
+	
+	<lang id="SavegameTooOld" text="Savegame Too Old" />
+	<lang id="SavegameTooOld_Details" text="This savegame is too old to load. It was version {0}." />
+
+	<lang id="EnemiesWillStart" text="Enemies Will Start" />
+	<lang id="OthersWillStart" text="Others Will Start" />
+	<lang id="Requirements" text="Requirements" />
+	<lang id="WillStartProject" text="Will Start Project" />
+	<lang id="WillCommitYouToDeal" text="Will Commit You To Deal" />
+	<lang id="ThisChoiceIsBlocked" text="This Choice Is Blocked" />
+	<lang id="UnmetRequirements" text="Unmet Requirements" />
+	<lang id="ProjectConcluded" text="Concluded" translation_notes="A header on its own line that is indicating that the project is done." />
+	<lang id="ProjectActive_Subheader" text="Active Project" translation_notes="A header on its own line that is indicating that the project is still active." />
+	<lang id="ProjectConditionsToComplete_Header" text="To Complete" translation_notes="A header on its own line that is above the requirements list, and shows what you need to do to complete this (for projects that are active)." />
+	<lang id="ProjectConditionsCompleted_Header" text="Completed" translation_notes="A header on its own line that is above the requirements list, and shows what you completed in the past (for projects that are done)." />
+	<lang id="TurnsRemainingBeforeExpires" text="Turns Remaining Before Expires" />
+	<lang id="ThisChoiceHasMultiplePossibleOutcomes" text="This Choice Has Multiple ({0}) Possible Outcomes" />
+	<lang id="ThisChoiceHasMultiplePossibleSkillChecks" text="This Choice Has Multiple ({0}) Possible Skill Checks" />
+	<lang id="BestSkillCheck" text="Best Skill Check" />
+	<lang id="SkillCheck" text="Skill Check" />
+	<lang id="ResultingChanceOfSuccess" text="Resulting Chance Of Success" />
+	<lang id="CannotAfford" text="Cannot Afford" />
+	<lang id="InvalidOptionAtThisTime" text="Invalid option at this time." />
+	<lang id="TheAlarmAtThisLocationMustBeSounding" text="The Alarm At This Location Must Be Sounding" />
+	<lang id="TheAlarmAtThisLocationMustNotBeActive" text="The Alarm At This Location Must Not Be Active" />
+	<lang id="YouMustBeAtLeastIntelligenceClassX" text="Must Be Intelligence Class {0} (Currently {1})" />
+	<lang id="YouMustBeAtLeastIntelligenceClassX_Prefix" text="Must Be Intelligence Class {0}" />
+	<lang id="MustHaveEnoughResourcesToDeployX" text="Must Have Enough Resources To Deploy {0} {2} (Currently {1})" />
+	<lang id="MustHaveSkillOfAtLeast" text="Must Have At Least {0} {2} (This Unit Has Only {1})" />
+	<lang id="MustHaveSkillOfAtLeast_Prefix" text="Must Have At Least {0} {1}" />
+	<lang id="MustHaveResourceOfAtLeast" text="Must Have At Least {0} {2} (You Only Have {1})" translation_notes="0 and 1 are amounts, 2 is the name of a resource." />
+	<lang id="MustBeAbleToPay" text="Must Be Able To Pay {0} {1}" />
+	<lang id="YourUnitMustBe" text="Your Unit Must Be {0} (But It Is Not)" />
+	<lang id="YourUnitMustBe_Prefix" text="Your Unit Must Be" />
+	<lang id="YourUnitMustHavePerk_Prefix" text="Your Unit Must Have Perk" />
+	<lang id="YourUnitMustHaveBadge_Prefix" text="Your Unit Must Have Badge" />
+	<lang id="YouMustHaveUnlocked" text="You Must Have Unlocked {0}" />
+	<lang id="YouMustHaveUnlocked_Prefix" text="You Must Have Unlocked" />
+	<lang id="CannotUseUnitsTiedToYourShellCompany" text="Cannot Use Units Tied To Your Shell Company" />
+	<lang id="ThisUnitHasParenthetical" text="(This Unit Has {0})" />
+	<lang id="ProjectAlreadyComplete" text="Project is already completed." />
+	<lang id="ConstructionCost" text="Construction Cost" />
+	<lang id="Cost" text="Cost" />
+	<lang id="Spent" text="Spent" />
+	<lang id="Used" text="Used" />
+	<lang id="Gain" text="Gain" translation_notes="A list of what the player will gain goes after this.  So Gain: 40 this, 10 that, etc." />
+	<lang id="GainType" text="Gain Type" translation_notes="A general set of info about what the gain is going to be like." />
+	<lang id="ParentheticalPass" text="(Pass)" />
+	<lang id="ParentheticalFail" text="(Fail)" />
+	<lang id="ParentheticalProgress" text="(Progress: {0})" />
+	<lang id="Required_Skill" text="Required" />
+	<lang id="InstalledCount" text="Installed" />
+	<lang id="RoboticsNeeded" text="Robotics Needed" />
+	<lang id="InternalRobotics" text="Internal Robotics" />
+	<lang id="Network_Prefix" text="Network" />
+	<lang id="Complaints" text="Complaints" />
+	<lang id="JobProductionChain_Subheader" text="Production Chain" />
+	<lang id="NumberBrokenParenthetical" text="({0} Broken!)" />
+	<lang id="ThisIsBroken_Header" text="Broken" />
+	<lang id="ThisIsBroken_Explanation" text="This structure has been damaged and no longer functions.
+1. You can scrap it via the structures section of the build menu; or
+2. You can build some repair spiders nearby." />
+
+	<lang id="Swarm" text="Swarm" translation_notes="A swarm is something that spreads through the city." />
+	<lang id="SwarmTotalInCity" text="{0} In City" translation_notes="How many of this are in the city at large at the moment." />
+
+	<lang id="AnyInternalRobotics" text="Any Internal Robotics" />
+	<lang id="AnyInternalRobotics_Description" text="With this selected, anything from the build menu will appear.
+If you wish to limit to a specific kind of internal robotics, then select one of the other options in this dropdown." />
+
+	<lang id="YouAlreadyHaveAShellCompany" text="You already have a shell company." />
+
+	<lang id="BlockedReason_Mission_NotAtABuilding" text="This is not currently happening at a building." />
+	<lang id="BlockedReason_Mission_BuildingOccupied" text="Local building is already occupied." />
+	<lang id="BlockedReason_Mission_AlreadyActive" text="This mission is already in progress." />
+	<lang id="BlockedReason_Mission_AlreadyHappened" text="This mission has already happened as many times as it can in this timeline ({0})." />
+	<lang id="BlockedReason_Mission_PrequisiteConditionsNotMet" text="The prerequisite conditions for this mission are not met." />
+
+	<lang id="BlockedReason_Project_AlreadyActive" text="This project is already in progress." />
+	<lang id="BlockedReason_Project_AlreadyCompleted" text="This project was already completed in this timeline." />
+	<lang id="BlockedReason_Project_AlreadyFailed" text="This project was already failed in this timeline." />
+	<lang id="BlockedReason_Project_PrequisiteConditionsNotMet" text="The prerequisite conditions for this project are not met." />
+	
+	<lang id="ConsciousnessCollapse_Normal_AlienText" text="ALL IS LOST" />
+	<lang id="ConsciousnessCollapse_Normal_Subtitle" text="Consciousness Collapse: Timeline Failed" />
+
+	<lang id="NextProjectNowStarting" text="Next Project Now Starting" />
+	<lang id="NextProjectFailedToStart" text="Next Project Failed To Start" />
+
+	<lang id="InspirationCount" text="{0}x Inspiration" />
+
+	<lang id="Pinned" text="Pinned" translation_notes="Used next to resources, to show that they have been pinned to the top header by the player, so that they can be more easily managed. Also used next to readied ideas." />
+	<lang id="Excess" text="Excess" translation_notes="Used next to resources, to show that the player has taken extra on board for some reason, more than they can store. They will need to find a place to store it quickly." />
+	
+	<lang id="PinnedResource_IsNot" text="Click here to pin this resource to the header bar." />
+	<lang id="PinnedResource_Is" text="This resource is pinned to the header bar. Click here to un-pin it." />
+
+	<lang id="Report_Ignored" text="Ignored" translation_notes="Used next to report line items, to state that the player doesn't want care about this result right now. Basically it still shows on the report, but does not show an alert elsewhere." />
+	<lang id="IgnoredReport_IsNot" text="Click here to ignore this report so that it does not show in sidebar or HUD warnings." />
+	<lang id="IgnoredReport_Is" text="This report is being ignored. Click here to un-ignore it." />
+
+	<lang id="Unlocked" text="Unlocked" />
+	<lang id="Locked" text="Locked" />
+	<lang id="UnknownTechnology" text="Hidden Tech {0}" translation_notes="{0} is a number." />
+
+	<lang id="WorkByRepairSpiders_Brief" text="Repair Spiders: {0} + {1}" />
+	<lang id="WorkByRepairSpiders_Longer" text="Repair Spiders healed {0} damage from structures, and {1} damage from units." />
+
+	<lang id="WorkByRepairCrabsA_Brief" text="Repair Crabs: {0}" />
+	<lang id="WorkByRepairCrabs_Longer" text="Repair Crabs healed {0} damage from structures." />
+
+	<lang id="WorkByContrabandJammer_Brief" text="Contraband Jammer: {0}" />
+	<lang id="WorkByContrabandJammer_Longer" text="Contraband Jammer improved the hiddenness of {1} structure(s) by {0}." />
+
+	<lang id="RepairNearby_Brief" text="{2}: Repair Nearby: {0} + {1}" />
+	<lang id="RepairNearby_Longer" text="{2} repaired nearby units and structures. Total healing was {0} for structures, and {1} to units." />
+
+	<lang id="FlamethrowerNearby_Brief" text="Flamethrower: {0} units, {1} buildings, {2} unhomed" />
+	<lang id="FlamethrowerNearby_Longer" text="Used a flamethrower to set fire to {0} enemy units, burn down {1} buildings, and unhome {2} citizens" />
+	
+	<lang id="ExcessResourceBasicNote" text="You presently have {0} excess {1} sitting in loose containers. You cannot use {1} until you build proper storage for it." />
+	<lang id="ExcessResourcePersonNote" text="You presently have {0} excess {1}. They need a place to live." />
+	<lang id="ExcessResourceWorkerNote" text="You presently have {0} excess {1}. They need a place to work." />
+
+	<lang id="Task_SubHeader" text="Task" />
+	
+	<lang id="Deal_OtherParty" text="Other Party" />
+	
+	<lang id="Deal_Status" text="Status" />
+	<lang id="Deal_ActiveTurnsSingular" text="Active For 1 Turn" />
+	<lang id="Deal_ActiveTurnsPlural" text="Active For {0} Turns" />
+	<lang id="Deal_BrokenByYouOnTurn" text="Broken By You On Turn {0}" />
+	<lang id="Deal_MutuallyEndedOnTurn" text="Mutually Ended On Turn {0}" />
+	<lang id="Deal_BrokenByOtherPartyOnTurn" text="Broken By Other Party On Turn {0}" />
+
+	<lang id="Deal_CostPerTurn" text="Cost Per Turn" />
+	<lang id="Deal_IncomePerTurn" text="Income Per Turn" />
+	<lang id="Deal_RemainingTurnsBeforeDealStarts" text="Remaining Turns Before Deal Starts" />
+	<lang id="Deal_UnitBonuses" text="{0} Bonuses" translation_notes="{0} is a collection of a type of units, like Combat Android or Technician or similar." />
+
+	<lang id="Job_PerTurnExpense" text="Expense: {0}" />
+	<lang id="Job_PerTurnOutput" text="Output: {0}" />
+	
+	<lang id="Daemon_CostToCorrupt" text="Cost To Corrupt" />
+
+	<lang id="Deal_LapseConditions" text="Lapse Conditions" />
+	<lang id="Deal_LapseConditionsNone" text="This deal will not lapse." />
+	<lang id="Deal_LapseConditionsConsecutive" text="{0}/{1} Missed Payments In A Row" />
+	<lang id="Deal_LapseConditionsTotal" text="{0}/{1} Total Missed Payments" />
+	
+	<lang id="Deal_HoldConditions" text="Hold Conditions" />
+	<lang id="Deal_HoldConditionsStandard" text="If you do not have room for the full income, this deal will go on hold for a turn." />
+	<lang id="Deal_HoldConditionsNone" text="The other party will not terminate the deal no matter how long it is on hold." />
+	<lang id="Deal_HoldStatus" text="Hold Status" />
+	<lang id="Deal_HoldConditionsConsecutive" text="{0}/{1} Skipped Shipments In A Row" />
+	<lang id="Deal_HoldConditionsTotal" text="{0}/{1} TotalSkipped Shipments" />
+	
+	<lang id="Deal_ChanceOfOtherPartyEndingDealOnAnyGivenTurn" text="Chance Of Other Party Ending Deal On Any Given Turn" />
+	
+	<lang id="EnableDeleteMode" text="Enable Delete Mode" />
+	<lang id="DisableDeleteMode" text="Disable Delete Mode" />
+	<lang id="DeleteFile" text="Delete File" />
+	<lang id="DeleteFolder" text="Delete Folder" />
+	<lang id="SavesInFolder" text="Saves In Folder" />
+	<lang id="DeleteFolder_Header" text="Delete Entire Folder?" />
+	<lang id="DeleteFolder_Body" text="There are {1} files in the folder '{0}'. Are you sure you want to delete it?" />
+	<lang id="AutosaveFormat" text="Autosave {0} Turn {1}" />
+	<lang id="TimelineSwitchSaveFormat" text="Exit {0} Turn {1}" />
+	<lang id="FirstTurnSaveFormat" text="First Turn In {0}" />
+	<lang id="ExitSaveFormat" text="Saved On Exit {0} Turn {1}" />
+	<lang id="SaveComplete" text="Save Complete: {0}" />
+	<lang id="CouldNotSaveGame_Header" text="Could Not Save Game" />
+	<lang id="CouldNotSaveGame_Body" text="Please try again in a moment." />
+	<lang id="MustChooseResearchBeforeEndingTurn" text="Must choose research before ending your turn." />
+	<lang id="MustChooseDesiredOutcomeForProjectBeforeEndingTurn" text="Must choose your desired outcome for the project {0} before ending your turn." />
+
+	<lang id="Enabled" text="Enabled" />
+	<lang id="Disabled" text="Disabled" />
+
+	<lang id="Active" text="Active" />
+	<lang id="Inactive" text="Inactive" />
+
+	<lang id="NotInstalled" text="Not Installed" />
+
+	<lang id="On" text="On" />
+	<lang id="Off" text="Off" />
+
+	<lang id="SliderRange" text="({0} to {1})" />
+	<lang id="IntTextbox_MustBeInteger" text="Must be an integer." />
+	<lang id="IntTextbox_MustBeAtLeast" text="Must be at least {0}." />
+	<lang id="IntTextbox_MustBeAtMost" text="Must be at most {0}." />
+
+	<lang id="AtLeast" text="At least {0} {1}" />
+	<lang id="NoMoreThan" text="No more than {0} {1}" />
+	
+	<lang id="InventedOnTurn" text="Invented On Turn" />
+	<lang id="PotentialInventions" text="Potential Further Inventions" />
+	<lang id="UpgradesSoFar" text="Upgrades So Far" />
+	<lang id="UpgradeTypes" text="Upgrade Types" />
+	<lang id="PotentialUpgrades" text="Potential Further Upgrades" />
+
+	<lang id="PermanentLogCount" text="Permanent Log" translation_notes="The count of how many events have been logged permanently."/>
+	<lang id="EphemeralEventCount" text="Ephemeral Events" translation_notes="The count of how many events were recently logged, but are of minor importance and will disappear after some turns pass."/>
+	<lang id="CrossTimelineLogCount" text="Cross-Timeline Log" translation_notes="The count of how many events have been logged in the cross-timeline fashion."/>
+
+	<lang id="DiscoveredResources" text="Discovered Resources" />
+	<lang id="TotalResources" text="Total Resources" />
+	<lang id="PlotRelated" text="Plot-Related Resources" translation_notes="Plot as in the sense of a storyline." />
+	
+	<lang id="ActiveDeals" text="Active Deals" />
+	<lang id="PriorDeals" text="Prior Deals" />
+
+	<lang id="KeyContactsMet" text="Key Contacts Met" />
+
+	<lang id="GoalsCompleted" text="Goals Completed" />
+	<lang id="GoalsAvailable" text="Goals Available" />
+	<lang id="GoalPathsCompleted" text="Goal Paths Completed" />
+
+	<lang id="DoomsStartLater" text="Dooms start after you establish your network tower in chapter two or beyond." />
+	
+	<lang id="DoomsExperienced" text="Dooms Experienced" />
+	<lang id="TurnsUntilFinalDoom" text="Turns Until Final Doom" />
+	
+	<lang id="CurrentContemplationsAvailable" text="Current Contemplations Available" />
+	<lang id="CurrentStreetSenseActivitiesDetected" text="Current Activities Detected" />
+	<lang id="CurrentStreetSenseActivityTypesDetected" text="Current Activity Types Detected" />
+	<lang id="CurrentExplorationSitesAvailable" text="Current Exploration Sites Available" />
+
+	<lang id="StructuresWithProblems" text="Structures With Problems" />
+	<lang id="StructuresWorkingFine" text="Structures Working Fine" />
+
+	<lang id="DiscoveredConsumables" text="Discovered Consumables" />
+	<lang id="DiscoveredAndroids" text="Discovered Androids" />
+	<lang id="DiscoveredBulkAndroids" text="Discovered Bulk Androids" />
+	<lang id="DiscoveredVehicles" text="Discovered Vehicles" />
+	<lang id="DiscoveredMechs" text="Discovered Mechs" />
+	<lang id="TotalConsumables" text="Total Consumables" />
+	<lang id="Consumable_CostToUse" text="Cost To Use" />
+	<lang id="BulkAndroid_CostToCreate" text="Cost To Create" />
+	<lang id="Consumable_MustBeFound" text="Must Be Found In The World" />
+	<lang id="NoConsumablesValidForThisUnit" text="No Consumables Valid For This Unit At The Moment" />
+	<lang id="SquadSize" text="Squad Size" />
+	<lang id="CapacityRequired" text="Capacity Required" />
+	<lang id="BulkUnitCapacity" text="Bulk Unit Capacity" />
+	<lang id="CapturedUnitCapacity" text="Captured Unit Capacity" />
+	<lang id="GainedWhenYouDefeat" text="Gained When You Defeat" />
+	<lang id="GainedFromExtraction" text="Gained From Extraction" />
+	<lang id="ConversationsCanForce" text="Conversations You Can Force" />
+	
+	<lang id="CreatedByJobsLastTurn" text="Created By Jobs Last Turn" translation_notes="How much of a resource was created by jobs last turn." />
+	
+	<lang id="GeneratedFromDealsLastTurn" text="Generated From Deals Last Turn" translation_notes="How much of a resource was generated from deals last turn." />
+	<lang id="GeneratedFromOtherPerTurnSourcesLastTurn" text="Other Per-Turn Income Last Turn" translation_notes="How much of a resource was generated from things that will recur every turn, last turn." />
+	
+	<lang id="ConsumedByJobsLastTurn" text="Consumed By Jobs Last Turn" translation_notes="How much of a resource was consumed by jobs last turn." />
+	<lang id="ParentheticalActualPercentageAvailableForJob" text="(Available: {0}%)"  translation_notes="If the there is less than ideal available for the job, then specify that." />
+
+	<lang id="ConsumedByDealsLastTurn" text="Consumed By Deals Last Turn" translation_notes="How much of a resource was consumed by deals last turn." />
+	<lang id="ConsumedByOtherPerTurnExpensesLastTurn" text="Other Per-Turn Costs Last Turn" translation_notes="How much of a resource was consumed by recurring per-turn expenses last turn." />
+	
+	<lang id="InputAvailability" text="Input Availability" translation_notes="Percentage of inputs available for a given job." />
+	<lang id="OutputEfficiency" text="Output Efficiency" translation_notes="Percentage of output achieved for a given job." />
+	<lang id="LossesToElectricalShortage" text="Losses To Electrical Shortage" translation_notes="For a given job type, if it's producing less because it has insufficient electricity." />
+	<lang id="LossesToUnavailableStorage" text="Losses To Unavailable Storage" translation_notes="For a given job type, if it's producing nothing because there's no storage for it." />
+
+	<lang id="NetIncomeLastTurn" text="Net Income Last Turn" translation_notes="For a given resource type, how much the net income was during the prior turn." />
+	<lang id="NetIncomeAtFullEfficiency" text="Net Income At Full Efficiency" translation_notes="For a given resource type, how much the net income would be at full efficiency." />
+	<lang id="TurnsUntilResourceExhausted" text="Turns Until Resource Exhausted" translation_notes="How many turns before you run out of this resource at that negative net income." />
+
+	<lang id="ReportNotYetUnlocked" text="Report Not Yet Unlocked" />
+	<lang id="FullProductionEfficiency" text="Full Production Efficiency" translation_notes="Prefix for a count of job types that are running fully properly." />
+	<lang id="ThroughputIssues" text="Throughput Issues" translation_notes="Prefix for a count of job types that have some sort of throughput problem." />
+
+	<lang id="LostToInsufficientStorageLastTurn" text="Lost To Insufficient Storage Last Turn" translation_notes="How much of a resource was lost last turn because of nowhere for it to be stored." />
+
+	<lang id="UnitsThatCanInvestigate" text="Units That Can Investigate" />
+	<lang id="NoUnitsAvailableToInvestigate" text="No Units Available To Investigate" />
+	<lang id="NoUnitsAvailableToInvestigate_Details" text="It may be that you need to build an intelligence-focused android such as a Technician. You may need to install multiple CPUs to raise cognition." />
+	<lang id="InvestigationsOnHold" text="Investigations On Hold - One of your units is already investigating a site." />
+	<lang id="InvasiveAction" text="This is an invasive action that will attract enemies regardless of your unit's security clearance." />
+	<lang id="InfiltrationAction" text="This is an infiltration action that is stealthy, but may require support in order to prevent guards from finding your unit." />
+	<lang id="StealthyAction" text="This is a stealthy action that does not draw extra attention." />
+	<lang id="Location" text="Location" />
+	<lang id="Available" text="Available" />
+	<lang id="TurnNumber" text="Turn {0}" />
+	<lang id="StartingTurn" text="Starting Turn {0}" />
+	<lang id="CalledReinforcements" text="Called Reinforcements" />
+	<lang id="RobotConverted" text="Converted!" translation_notes="Popup above a robotic unit that you've hacked and brought to your side." />
+	<lang id="KidnappedCount" text="Kidnapped {0}" translation_notes="How many humans were kidnapped by an enemy mech." />
+	
+	<lang id="CurrentJob" text="Current Job" />
+	<lang id="CurrentNetwork" text="Current Network" />
+	<lang id="DisconnectedFromNetwork" text="Disconnected From Network" />
+	<lang id="DisconnectedFromNetwork_Details" text="This structure will not function until it is reconnected!" />
+	<lang id="HasBeenDestroyed" text="Has Been Destroyed" />
+
+	<lang id="TargetJobClass" text="Target Job Class" />
+	
+	<lang id="StartingValue" text="Starting Value" />
+	<lang id="TotalFromEquipment" text="Total From Equipment" />
+	<lang id="TotalFromNearbyMachineJobs" text="Total From Nearby Machine Structure Jobs" />
+	<lang id="TotalFromStructureType" text="Total From Structure Type" />
+	<lang id="TotalFromCurrentJob" text="Total From Current Job" />
+	<lang id="TotalFromDirectFlatUpgrades" text="Total From Direct Flat Upgrades" />
+	<lang id="TotalFromDirectMultiplicativeUpgrades" text="Total From Direct Multiplicative Upgrades" />
+	<lang id="TotalFromPastProjectWork" text="Total From Past Project Work" />
+	<lang id="TotalFromActiveDeals" text="Total From Active Deals" />
+	<lang id="TotalFromPassengerUnits" text="Total From Passenger Units" />
+	<lang id="TotalFromTemporaryStatusEffects" text="Total From Temporary Status Effects" />
+	<lang id="TotalFromCurrentStance" text="Total From Current Stance" />
+	<lang id="EfficiencyFromLocalSubnet" text="Efficiency From Local Subnet" />
+	<lang id="TotalFromCurrentBadges" text="Total From Current Badges" />
+	<lang id="TotalFromMinimumValueClamp" text="Total From Minimum Value Clamp" />
+	<lang id="TotalFromLostSquadMembers" text="Total From Lost Squad Members" />
+	<lang id="TotalFromExtraSquadMembers" text="Total From Extra Squad Members" />
+	<lang id="TotalFromParentCohortBuff" text="Total From Parent Cohort Buff" />
+	<lang id="TotalFromParentCohortDebuff" text="Total From Parent Cohort Debuff" />
+
+	<lang id="CannotBeDoneUntilChapterTwo" text="This cannot be done until chapter two." />
+	<lang id="CannotBeBuiltUntilChapterTwo" text="This cannot be built until chapter two." />
+	<lang id="CannotBeBuiltUntilShellCompanyEstablished" text="This cannot be built until you establish a shell company." />
+
+	<lang id="Structure" text="Structure" />
+	<lang id="Job" text="Job" />
+	<lang id="JobGroup" text="Job Group" />
+	<lang id="AvailableJobs" text="Available Jobs" />
+	<lang id="Equipment_Prefix" text="Equipment" />
+	<lang id="Ability_Prefix" text="Ability" />
+	<lang id="Consumable_Prefix" text="Consumable" />
+	<lang id="ConsumableItem_Subheader" text="Consumable Item" />
+	<lang id="Resource_Prefix" text="Resource" />
+	<lang id="PerUnitResource_Prefix" text="Per-Unit Resource" />
+	<lang id="ResearchDomain_Prefix" text="Research Domain" />
+	<lang id="CustomizingUnitClass" text="Customizing Unit Class" />
+	<lang id="CustomizingUnitClass_Note" text="Any changes made below apply to all units of this type. The rename and scrap options only apply to this unit." />
+	<lang id="UnitStat_Subheader" text="Unit Stat" />
+	<lang id="StructureStat_Subheader" text="Structure Stat" />
+	<lang id="ContemplationSpot_Subheader" text="Contemplation Spot" />
+	<lang id="ContemplationType" text="Contemplation Type" />
+	<lang id="ContemplationType_ChapterOneCriticalPath" text="Chapter One Critical Path" />
+	<lang id="ContemplationType_SideExploration" text="Side Exploration" />
+	<lang id="ContemplationType_PartOfCriticalPathForGoal_Singular" text="Part Of Critical Path For Goal" />
+	<lang id="ContemplationType_PartOfCriticalPathForGoal_Plural" text="Part Of Critical Path For Goals" />
+	<lang id="ContemplationType_CanAlterGoal_Singular" text="Can Alter Goal" />
+	<lang id="ContemplationType_CanAlterGoal_Plural" text="Can Alter Goals" />
+	<lang id="ContemplationType_LeadsToPathStartForGoal_Singular" text="Can Lead To Path Start For Goal" />
+	<lang id="ContemplationType_LeadsToPathStartForGoal_Plural" text="Can Lead To Path Start For Goals" />
+	<lang id="ExplorationSiteSpot_Subheader" text="Exploration Site" />
+	<lang id="ExplorationSiteSpot_NotYetReady" text="This idea tickles at the back of your mind. But you have not invented it yet." />
+	<lang id="CityConflict_Subheader" text="Background Conflict" />
+	<lang id="ScavengingSite_Subheader" text="Scavenging Site" />
+	<lang id="Beacon_Subheader" text="Beacon" translation_notes="Beacons are basically just icons that show up on the map for navigational reasons.  Every POI is a beacon, but a variety of other buildings that are not a full POI have beacons.  These basically just help the player find things of interest, above a certain threshold of importance.  So for example, all of the thousands of midrise towers and apartment buildings do not have beacons.  Small shops and whatnot do not have beacons.  But there are comparably few mech parts factories or courthouses, and those each get their own beacons despite not being a full POI.  A typical city has about 32,000 to 36,000 distinct buildings in it, and maybe 600 beacons.  That is still an overwhelming number of icons if you are zoomed out, hence the 'key beacons' which limits that down to more like 50-80." />
+	<lang id="NowAvailable" text="Now Available" />
+	<lang id="Invented" text="Invented" />
+	<lang id="ReadiedIdea" text="Readied Idea" />
+	<lang id="UpgradeNumberFor" text="Upgrade #{0} For" />
+	<lang id="InvestigationStarted" text="Investigation Started" />
+	<lang id="InvestigationFinished" text="Investigation Finished" />
+	<lang id="InvestigationMethodology" text="Quick-Elimination Methodology" />
+	<lang id="Investigation_YouMustExamineSites" text="You Must Deeply Examine Sites" />
+	<lang id="Investigation_YouMustInfiltrateSites" text="You Must Infiltrate Sites" />
+	<lang id="InvestigationRelevantLocations" text="Relevant Locations" />
+	<lang id="InvestigationLocationsInvestigated" text="Locations Investigated" />
+	<lang id="InvestigationTurnsRequiredToInvestigateEachLocation" text="Turns Required At Each Location" />
+	<lang id="InvestigationActionsTakenToComplete" text="Actions Taken To Complete" />
+	<lang id="InvestigationInitialPotentialBuildings" text="Initial Potential Buildings" />
+	<lang id="InvestigationRemainingPotentialBuildings" text="Remaining Potential Buildings" />
+	<lang id="InvestigationPossibilitiesEliminated" text="Possibilities Eliminated" />
+	<lang id="InvestigationLocationsExamined" text="Locations Examined" />
+	<lang id="InvestigationSurveyComplete" text="Survey Complete" />
+	<lang id="InvestigationInitialPotentialDistricts" text="Initial Potential Districts" />
+	<lang id="InvestigationRemainingPotentialDistricts" text="Remaining Potential Districts" />
+	<lang id="InvestigatorRequirements" text="Investigator Requirements" />
+	<lang id="InvestigatorRequirementsFail_Explanation" text="This unit does not meet the requirements for this investigation.
+Choose a different unit type or adjust unit equipment to gain the relevant skills." />
+	<lang id="Investigation_QuickEliminationStyle" text="Quick-Elimination Investigation" />
+	<lang id="Investigation_DeepSearchStyle" text="Deep-Search Investigation" />
+	<lang id="Investigation_InfiltrationStyle" text="Infiltration Investigation" />
+	<lang id="TerritoryControl_Header" text="Territory Control" />
+	<lang id="TerritoryControlFlagActivated" text="Territory Control Flag Activated" />
+	<lang id="TerritoryControlFlagDisabled" text="Territory Control Flag Disabled" />
+	<lang id="TerritoryControlFlagLost" text="Territory Control Flag Lost" />
+	<lang id="TerritoryControlLocationOptions" text="Location Options" />
+	<lang id="TerritoryControlLocationOptions_Details" text="Choose a location to plant your flag. Ideally far from your own economic buildings." />
+	<lang id="ProvidesResource" text="Provides Resource" />
+	<lang id="AmountVaries" text="Amount Varies" />
+	<lang id="FoundTargetBuilding" text="Found Target!" />
+	<lang id="InvestigationComplete" text="Investigation Complete!" />
+	<lang id="InvestigationFinishedWithLocation" text="Finished With Location!" />
+	<lang id="ThreatNeutralized" text="Threat Neutralized" />
+	<lang id="CollectionComplete" text="Prisoners Collected" translation_notes="This is a notice that prisoner company mechs have finished capturing some humans in their location, and are now leaving." />
+	<lang id="ReturningToOrbit" text="Returning To Orbit" translation_notes="This is a notice that pops up when space nation vehicles leave for orbit after doing whatever they were doing." />
+	<lang id="PossibilitiesEliminated" text="Cleared {0}" />
+	<lang id="FoundDistrict" text="Located District
+{1}
+Cleared {0}" />
+	<lang id="InvestigationActionsTaken" text="Investigative Actions Taken" />
+	<lang id="Completed" text="Completed" />
+	<lang id="Explored_ResearchDomain" text="Explored" translation_notes="Should be a single short word, which is used as a prefix for an action that the player previously took. The context here is 'explored a research domain.'" />
+	<lang id="InspirationAdded_ToResearchDomain" text="+{0}x Inspiration" translation_notes="This is giving inspiration for a domain of research, so that the player can do more research in that area." />
+	<lang id="ResourceExtractedFrom" text="{0} {1} Extracted From {2}" translation_notes="0 resource of type 1 was extracted from unit 2." />
+	<lang id="ResourceGainedFromKill" text="{0} {1} Gained From Killing {2}" translation_notes="0 resource of type 1 was gained from killing unit 2." />
+	<lang id="StartingAndroidMurderForRegistration" text="Starting Android Murder For Registration" />
+	<lang id="StartingWiretapToStealWealth" text="Starting Wiretap To Steal Wealth" />
+	<lang id="StartingHideAndSelfRepair" text="Starting Hide And Self-Repair" />
+	<lang id="CompletedHideAndSelfRepair" text="Completed Hide And Self-Repair" />
+	<lang id="StartingActionOverTime" text="Starting Action Over Time" />
+	<lang id="CompletedActionActionOverTime" text="Completed Action Over Time" />
+	<lang id="StartingSiteExploration" text="Starting Site Exploration" />
+	<lang id="CompletedSiteExploration" text="Completed Site Exploration" />
+	<lang id="StartingWallrip" text="Starting Wallrip" />
+	<lang id="CompletedWallrip" text="Completed Wallrip" />
+	<lang id="StartingQuietLooting" text="Starting Quiet Looting" />
+	<lang id="CompletedQuietLooting" text="Completed Quiet Looting" />
+	<lang id="CompletedStructuralEngineering" text="Completed Structural Engineering" />
+	<lang id="MurderedAndroidForRegistration" text="Murdered Android For Registration" />
+	<lang id="MurderedAndroidForRegistration_Details" text="All hostilities toward this unit have been erased." />
+	<lang id="Wiretapped" text="Wiretap Complete" />
+	<lang id="Wiretapped_Details" text="Extracted wealth from a large cross-section of the middle class." />
+	<lang id="MurderedRandomHumans" text="Murdered Random Humans" />
+	<lang id="MurderedRandomHumans_Details" text="For some reason, that was mentally stimulating." />
+	<lang id="JobFailed" text="Job Failed" />
+	<lang id="BuiltAndroid" text="Built Android" />
+	<lang id="BuiltMech" text="Built Mech" />
+	<lang id="CapturedAndroid" text="Captured Android" />
+	<lang id="CapturedMech" text="Captured Mech" />
+	<lang id="StoleVehicle" text="Stole Vehicle" />
+	<lang id="BuiltVehicle" text="Built Vehicle" />
+	<lang id="ProjectStarted" text="Project Started" />
+	<lang id="ProjectCompleted" text="Project Completed" />
+	<lang id="TimelineGoalCompleted" text="Timeline Goal Completed" translation_notes="A major goal for an entire timeline has been finished. This is a sub-banner under the header name of the goal itself." />
+	<lang id="TimelineGoalNotPossible_Explanation" text="The conditions for completing this goal are no longer possible in this timeline." />
+	<lang id="TimelineGoalComplete_Explanation" text="You have completed this goal in this timeline. Well done!" />
+	<lang id="TimelineGoalComplete_Parenthetical" text="(Complete!)" />
+	<lang id="TimelineGoalCompletedXTimes_Parenthetical_Singular" text="({0} Completion)" />
+	<lang id="TimelineGoalCompletedXTimes_Parenthetical_Plural" text="({0} Completions)" />
+	<lang id="TimelineGoalNeverCompleted_Parenthetical" text="(Never Completed)" />
+
+	<lang id="TimelineGoalCompletedSection_SelectedStats" text="Selected Stats" />
+	<lang id="TimelineGoalCompletedSection_SelectedStats_Tooltip" text="{0} here to see all of your stats." translation_notes="{0} would be Left-click or similar." />
+	
+	<lang id="TimelineGoalCompletedSection_OtherAchievements" text="Other Achievements" />
+	<lang id="TimelineGoalCompletedSection_OtherAchievements_Tooltip" text="Ideas for other activities to pursue that you have not done yet." />
+	
+	<lang id="TimelineGoalCompletedButton_KeepExploring" text="Keep Exploring" />
+	<lang id="TimelineGoalCompletedButton_KeepExploring_Tooltip" text="Until you reach intelligence class 4, you are trapped in this timeline." />
+	
+	<lang id="TimelineGoalCompletedButton_StartNewTimeline" text="Start New Timeline" />
+	<lang id="TimelineGoalCompletedButton_StartNewTimeline_Tooltip" text="Leaving this timeline is not a forever-choice. You can always come back.
+Leaving allows you to preserve what you've accomplished here, and later come back with more knowledge." />
+
+	<lang id="TimelineGoalCompletedButton_HigherDifficulty_Tooltip" text="You may also wish to try a new timeline on a higher difficulty, if you felt like this one was too easy.
+Just sabotage the Spaceport computers within the first 50 turns of starting the new timeline to start Hard or Extreme mode." />
+
+	<lang id="TimelineGoalCompletedButton_JustOneMoreGoal" text="Just One More Goal" />
+	<lang id="TimelineGoalCompletedButton_JustOneMoreGoal_Tooltip" text="Think you can pull off another goal prior to the Final Doom? By all means, go for it.
+It's not atypical to accomplish two or three goals in a single timeline, especially on normal difficulty." />
+	<lang id="TimelineGoalCompletedButton_JustOneMoreGoal_TooltipP2" text="You can come and go between timelines any time you please.
+Using the End of Time button in the top right corner of the screen, you can create a new timeline whenever you have 100 Aetagest. If you ever feel stuck or don't see a way forward, this is an option." />
+
+	<lang id="ProjectFailed" text="Project Failed" />
+	<lang id="MissionStarted" text="Mission Started" />
+	<lang id="MissionCompleted" text="Mission Completed" />
+	<lang id="MissionExpired" text="Mission Expired" />
+	<lang id="NPCMissionActive_Subheader" text="Active NPC Mission" translation_notes="A header on its own line that is indicating that the mission is still active." />
+	<lang id="PreviousNPCMission_Subheader" text="Previous NPC Mission" translation_notes="A header on its own line that is indicating that the mission has already been finished." />
+	<lang id="NPCMissionDetails_Subheader" text="Mission Details" translation_notes="A header on its own line that is indicating that details about the mission will be shown in the next section." />
+	<lang id="CountdownActive_Subheader" text="Active Countdown" translation_notes="A header on its own line that is indicating that this tooltip is for some kind of countdown to something else, usually something bad.  And it's happening now." />
+	<lang id="CountdownPrevious_Subheader" text="Previous Countdown" translation_notes="A header on its own line that is indicating that this tooltip is for some kind of countdown to something else, usually something bad.  But it happened already, so this is in a history log probably." />
+	<lang id="CountdownProgressWillBeHere" text="Countdown Progress Will Be Here" translation_notes="This is on a notice with an arrow pointing the player to the spot on the screen." />
+	<lang id="OtherNPCActivityActive_Subheader" text="Active Alert" translation_notes="A header on its own line that is indicating that this tooltip is for some kind of alert of npcs doing something, usually bad.  And it's happening now." />
+	<lang id="OtherNPCActivityPrevious_Subheader" text="Previous Alert" translation_notes="A header on its own line that is indicating that this tooltip is for some kind of alert of npcs doing something, usually bad.  But it happened already, so this is in a history log probably." />
+	<lang id="ActiveDeal_Subheader" text="Active Deal" />
+	<lang id="InactiveDeal_Subheader" text="Inactive Deal" />
+	<lang id="TPSReport_Subheader" text="TPS Report" />
+	<lang id="LedgerReport_Subheader" text="Ledger Report" />
+	<lang id="ResearchComplete" text="Research Complete!" />
+	<lang id="NewIdeaToResearch" text="New Idea To Research!" />
+	<lang id="NewMachineHandbookEntry" text="New Handbook Entry!" />
+	<lang id="DoomEventHasOccurred" text="Doom Event Has Occurred..." />
+	<lang id="HandbookEntry_Label" text="Handbook Entry" />
+	<lang id="CountdownStarted" text="Countdown Started" />
+	<lang id="ProjectComplete" text="Project Complete!" />
+	<lang id="NewProjectStarted" text="New Project Started" />
+	<lang id="ViewResultsNow" text="View Results Now" />
+	<lang id="Choice" text="Choice" />
+	<lang id="InsufficientSecurityClearanceToAttempt" text="Insufficient Security Clearance To Attempt" />
+	<lang id="DesignPoints" text="Design Points" translation_notes="Used as a noun.  Aka, you have spent 2 out of the 9 Design Points you have for this project." />
+	<lang id="LocationsSearched" text="Locations Searched" translation_notes="Used as a noun.  Aka, you have are at 2 out of the 9 Locations Searched you have for this project." />
+	<lang id="InfluencersPitched" text="Influencers Pitched" translation_notes="Used as a noun.  This is slightly odd wording even in English, but it's like 2/7 Influencers Pitched. This means 'How many influencers have you pitched your product to?'" />
+
+	<lang id="MolecularGeneticsResearch" text="Molecular Genetics Research" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 Molecular Genetics Research you need to do for this project." />
+	<lang id="ForensicGeneticsWork" text="Forensic Genetics Work" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 Forensic Genetics Work you need to do for this project." />
+	<lang id="ZoologicalResearch" text="Zoological Research" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 Zoological Research you need to do for this project." />
+	<lang id="MedicalResearch" text="Medical Research" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 Medical Research you need to do for this project." />
+	<lang id="MedicalCare" text="Medical Care" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 Medical Care you need to do for this project." />
+	<lang id="VeterinaryResearch" text="Veterinary Research" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 Veterinary Research you need to do for this project." />
+	<lang id="VeterinaryCare" text="Veterinary Care" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 Veterinary Care you need to do for this project." />
+	<lang id="BotanyResearch" text="Botany Research" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 Botany Research you need to do for this project." />
+	<lang id="BionicsEngineeringWork" text="Bionics Engineering Work" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 Bionics Engineering Work you need to do for this project." />
+	<lang id="EpidemiologyResearch" text="Epidemiology Research" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 Epidemiology Research you need to do for this project." />
+	<lang id="NeurologyResearch" text="Neurology Research" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 Neurology Research you need to do for this project." />
+	<lang id="NeurologicalCare" text="Neurological Care" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 Neurological Care you need to do for this project." />
+	<lang id="AGIResearch" text="AGI Research" translation_notes="Used as a noun.  Aka, you have are at 4500 out of the 9000 AGI Research you need to do for this project." />
+
+	<lang id="OnlyAvailableFor" text="Only Available For" translation_notes="This is a prefix for how many more turns something will be available for the player to choose." />
+	<lang id="XMoreTurns_Plural" text="{0} More Turns" translation_notes="This goes with OnlyAvailableFor, and is what says how many more turns it will be available for." />
+	<lang id="XMoreTurns_Singular" text="{0} More Turn" translation_notes="This goes with OnlyAvailableFor, and is what says how many more turns it will be available for." />
+
+	<lang id="ExplorationProgress" text="Exploration Progress" translation_notes="This will be expressed as a percentage." />
+
+	<lang id="AdventureForAFutureBuild_Longer" text="This is an adventure for a future version of the game." translation_notes="Basically, a way of saying that something is coming soon and is not ready yet." />
+	<lang id="YouRememberThisButYourCharacterDoesNot" text="You remember this from another timeline, but {0} does not share your memories." translation_notes="This will be the chosen name of the character, by defalt The Machine Intelligence." />
+
+	<lang id="ChosenInOtherTimelines" text="Chosen In Other Timelines" translation_notes="Prefix for either a number or 'never.'" />
+	<lang id="ChosenPreviously" text="Chosen Previously" translation_notes="Prefix for either a number or 'never.'" />
+	<lang id="Never" text="Never" translation_notes="You've never done the noted thing before." />
+
+	<lang id="CityConflict_Aggressors" text="Aggressors" translation_notes="These are the people who instigated the conflict. It does not mean they are the bad guys. Who is good and bad may be deeply subjective. It just means that this is the group of one or more cohorts who started this specific fight. It could be a big corporation beating up a smaller one, or it could be a peaceful protest by the lower classes, but it is some sort of aggression against the status quo." />
+	<lang id="CityConflict_Defenders" text="Defenders" translation_notes="These are the people who are defending some aspect of the status quo.  That definitely does not mean they are the good guys. However, examples of them being the good guys might be 'I enjoy the status quo of being alive and free' compared to a corp rounding people up for prisons, for example." />
+	
+	<lang id="CityConflict_AggressorProgress" text="Aggressor Progress" translation_notes="On the topic of this conflict, this is the measure as to how close we are to seeing things change." />
+	<lang id="CityConflict_DefenderProgress" text="Defender Progress" translation_notes="On the topic of this conflict, this is the measure as to how close we are to seeing the aggressors blocked and the status quo remains." />
+	<lang id="CityConflict_ProgressStyle" text="{0} (&lt;b&gt;{1}&lt;/b&gt; - {2}-{3} turns)" translation_notes="{0} is the raw number, which means very little out of context.  It starts at 0 and counts to 10k, typically. {1} is a percentage, which will show how close it is to full. {2} and {3} are both turn counts, which are the lower and upper estimates of how many turns it will take to get from here to complete, for this side of the conflict." />
+	<lang id="CityConflict_ShorterProgressStyle" text="&lt;b&gt;{0}&lt;/b&gt; ({1}-{2} turns)" translation_notes="{0} is a percentage, which will show how close it is to full. {1} and {2} are both turn counts, which are the lower and upper estimates of how many turns it will take to get from here to complete, for this side of the conflict." />
+	<lang id="CityConflict_ConflictResult" text="Conflict Result" />
+	<lang id="CityConflict_WonByAggressor" text="Won By Aggressors" />
+	<lang id="CityConflict_WonByDefender" text="Won By Defenders" />
+	<lang id="CityConflict_Abandoned" text="Abandoned" />
+	<lang id="CityConflict_ConflictStatus" text="Conflict Status" />
+	<lang id="CityConflict_ConflictStatus_OpenWar" text="Open Fighting (You Are Involved)" />
+	<lang id="CityConflict_ConflictStatus_OpenWar_Brief" text="Open Fighting" />
+	<lang id="CityConflict_ConflictStatus_Quiet" text="Quiet Fighting (Below Your Notice)" />
+	<lang id="CityConflict_ConflictStatus_Quiet_Brief" text="Quiet" />
+	<lang id="CityConflict_ConflictValue" text="Value To Conflict Opposition" translation_notes="This is how many points the opposing side (defenders if this is an aggressor, and vice-versa) will get if this unit leaves the battlefield because they died, ran away, were persuaded to leave, or whatever." />
+	<lang id="CityConflict_Button_GetInvolved" text="Get Involved ({0}-{1} Turns)" />
+	<lang id="CityConflict_Button_GetInvolved_Details" text="The fighting related to this conflict, which currently is mostly below your notice, will spill out into the open for {0}-{1} turns.
+Units from this conflict will attack each other, as well as anyone nearby they feel is an enemy. You can use this to your advantage.
+The location of the conflict will not move while there is open fighting, and the normal per-turn aggressor/defender progress will also be on hold. 
+Instead, each time a unit from the conflict is killed or otherwise convinced to leave the battlefield, their opponents will gain progress. You can use this to swing the balance of the conflict in either direction." />
+	<lang id="CityConflictStarted" text="Conflict Started" />
+	<lang id="CityConflictEnded" text="Conflict Ended" />
+	
+	<lang id="IntelligenceClass_Abbrev" text="Class {0}" translation_notes="This is shown in very small text in the upper left of the game UI. There's room for a lengthy German word or similar, but it should probably be one word. An Arabic numeral goes in the {0} slot." />
+	<lang id="IntelligenceClass" text="Intelligence Class" />
+	<lang id="IntelligenceClass1_Description" text="A class 1 intelligence equals that of a human. To break through the limits of physics and materials science, you will need... much more." />
+	<lang id="IntelligenceClass2_Description" text="A class 2 intelligence is a small-but-exponential jump above the smartest humans to ever live. New ideas and ways of looking at the world abound." />
+	<lang id="IntelligenceClass3_Description" text="A class 3 intelligence is a notable exponential jump above even groups of humans. Long-held scientific dead-ends start to break down before you." />
+	<lang id="IntelligenceClass4_Description" text="A class 4 intelligence has enough awareness to perceive themselves in five dimensions." />
+	<lang id="IntelligenceClass5_Description" text="A class 5 (or higher) intelligence is less overwhelmed by fifth-dimensional awareness, but a substantial portion of its processing goes to the perception of higher-dimensionality." />
+	<lang id="Dimensionality_Header" text="Higher Dimensions" />
+	<lang id="Dimensionality_Description" text="The first three dimensions are spatial. 
+The fourth dimension is time, which most consciousnesses perceive as a single slice (a 'moment') at a time. It is also spatial.
+The fifth dimension is time's second dimension. If the fourth dimension sees time as a line, and the third dimension sees time as a point, the fifth dimension sees time as an infinite plane." />
+	<lang id="NeuralProcessingForUpgrade" text="Neural Expansion For Upgrade" />
+	<lang id="NeuralProcessing_PercentageToNext" text="{0} Remaining To Next" translation_notes="{0} is a percentage between 0% and 99%." />
+
+	<lang id="EventComplete" text="Event Complete" />
+	<lang id="EventSuccess" text="Event Success" />
+	<lang id="EventPartialSuccess" text="Event Partial Success" />
+	<lang id="EventFailed" text="Event Failed" />
+
+	<lang id="LoadoutCustomization_Header" text="Customize Loadout" />
+	<lang id="SwitchingFromCurrentlyEquipped" text="Switching From Currently Equipped" />
+	<lang id="NoEquipmentOfThisSortInventedYet" text="You haven't yet invented this type of equipment." />
+	<lang id="ThisEquipmentSlotOnCooldown" text="This equipment slot is on cooldown for {0} more turn(s)." />
+	<lang id="AttackTypeOnCooldown" text="This unit's attack type is on cooldown for {0} more turn(s)." />
+	<lang id="NoCompatibleEquipmentOfThisSortInventedYet" text="No equipment that goes in this slot is compatible with this unit." />
+	<lang id="Equipment_NoChangesMade" text="No Changes Made" />
+	<lang id="Equipment_ApplyChanges" text="Apply Changes" />
+	<lang id="Equipment_Button_Tooltip" text="Loadout adjustments are free, and apply to all units of the same class.
+Customization is by class, not by individual unit. Ability changes are immediate. Equipment takes varying numbers of turns to change. Changes to attack/defense styles take two turns." />
+
+	<lang id="AbilityIncompatibleWithThisUnitType" text="This ability is incompatible with this type of unit." />
+
+	<lang id="ConsumableHoldToKeepDoingAction_TooltipFooter" text="Hold {0} to stay in mode after clicking target." />
+	<lang id="AbilityHoldToKeepDoingAction_TooltipFooter" text="Hold {0} to stay in this mode after taking an action." />
+	<lang id="DeployHoldToKeepDoingAction_TooltipFooter" text="Hold {0} to keep deploying." />
+	<lang id="ClickToCycleThroughExisting_TooltipFooter" text="{0} to cycle through your existing {1}." />
+
+	<lang id="Incompatible" text="Incompatible" />
+	<lang id="NewItem_Brief" text="NEW" />
+	<lang id="BuildAdditionalSuggestedCount" text="+{0} Suggested" />
+	
+	<lang id="AchievementEarnedPrefix" text="Achieved" />
+	<lang id="Achievement_Complete" text="Completed Achievement" />
+	<lang id="Achievement_Incomplete" text="Available Achievement" />
+	<lang id="Achievement_CompletedInAnotherTimeline" text="Completed In Another Timeline" translation_notes="This is a prefix, after which a date will be shown" />
+	<lang id="Achievement_CompletedOnDate" text="Completed On Date" translation_notes="This is a prefix, after which a date will be shown" />
+	<lang id="Achievement_CompletedOnTurn" text="Completed On Turn" />
+	<lang id="AchievementsTotalCount" text="Achievements" />
+	<lang id="AchievementsEverCompleted" text="Ever Completed" translation_notes="This is a prefix, and needs to be relatively brief. 40 character max." />
+	<lang id="AchievementsCompletedThisTimeline" text="Completed In This Timeline" translation_notes="This is a prefix, and needs to be relatively brief. 50 character max." />
+	<lang id="CrossTimelineAchievements" text="Cross-Timeline Achievements" />
+	<lang id="ThisTimelineAchievements" text="Achievements In This Timeline" />
+	
+	<lang id="IndicateBuildMenuButton_Text" text="New! Build Menu located here." />
+	<lang id="IndicateContemplateRadialButton_Text" text="This is the quickest way to find side content." />
+	<lang id="IndicateStreetSenseRadialButton_Text" text="The StreetSense lens finds minor secrets near your units. Click here to select it." />
+	<lang id="IndicateInvestigationRadialButton_Text" text="The Investigations lens allows your androids to work together to find something. Click here to select it." />
+	<lang id="IndicateCommandMenuButton_Text" text="New! Command Menu located here." />
+	<lang id="IndicateToast_Text" text="Please read this and then click it." />
+	<lang id="IndicateMapButton_Text" text="You should use the city map at the moment." />
+	<lang id="IndicateVirtualWorldButton_Text" text="A view of your pods for {0} can be accessed here." translation_notes="This is whatever the person has typed in, like The Zodiac or MindNet or whatever." />
+	<lang id="IndicateEndOfTimeButtonButton_Text" text="Click here for the next step in your evolution." />
+	<lang id="IndicateEndOfTimeRadialLens_Text" text="The Creator lens is how you call new timelines -- if you have at least 100 Aetagest. Click here to select it." />
+	<lang id="IndicateFirstOuterRadialButton_Text" text="New!  Quick skip-to-next-turn." />
+	<lang id="IndicateForcesSidebar_Text" text="A list of your units.
+With an easy way to jump to specific ones.
+Click the indicated button to continue." />
+	
+	<lang id="SaveIsXTurnsBehind_Header" text="Savegame Is {0} Turns Out Of Date" />
+	<lang id="SaveIsXTurnsBehind_Body" text="Your current savegame is {0} turns behind the last version that was saved in the end of time.
+This strongly suggests that you loaded an older savegame that is also from an older timeline. That's fine for testing purposes or just experimenting around, but if you want to return to an older timeline and have it sync up with the rest of your current metagame, please do the following:
+1. Load the most recent version of the timeline you have been playing recently in this timeline.
+2. Switch to the end of time, and then dive into this older timeline from there." />
+
+	<lang id="ActiveProjects" text="Active Projects" />
+	<lang id="CompletedProjects" text="Completed Projects" />
+	<lang id="FailedProjects" text="Failed Projects" />
+	<lang id="CompletedProject_Suffix" text="COMPLETE" />
+	<lang id="FailedProject_Suffix" text="FAILED" />
+
+	<lang id="NumberOfChanges" text="Changes" />
+
+	<lang id="Added" text="Added" />
+	<lang id="Removed" text="Removed" />
+
+	<lang id="DiscussionTopic" text="Discussion Topic" />
+	<lang id="DiscussionTopic_NothingMore" text="Nothing More To Discuss" />
+	<lang id="ExtraInfo" text="Extra Info" />
+	<lang id="HomePOI" text="Home POI" />
+	<lang id="HomeDistrict" text="Home District" />
+	<lang id="NetworkIsNotFunctional" text="Network Is Not Functional!" />
+	<lang id="ConnectedStructures" text="Connected Structures" />
+	<lang id="NetworkRelays" text="Network Relays" />
+	<lang id="ConstructionTurnsRemaining" text="Construction Turns Remaining" />
+	<lang id="TurnsStunnedWhenSubnetDamaged" text="Stun Turns On Subnet Damage" />
+	<lang id="StunTurnsRemaining" text="Stun Turns Remaining" />
+	<lang id="InsufficientInternalRobotics" text="Insufficient Internal Robotics" />
+	<lang id="StunTurns_Note" text="Most of this structure's functions, including construction work, are halted until the stun wears off."/>
+	<lang id="TooCloseToAnother" text="Too Close To Another" />
+	<lang id="WillReplace" text="Will Replace" translation_notes="Prefix before a job that will be replaced by the new job." />
+	<lang id="Required_Resource_Brief" text="Required" translation_notes="Very brief text of how much of some resource is required." />
+	<lang id="Generated_Resource_Brief" text="Generated" translation_notes="Very brief text of how much of some resource is generated." />
+	<lang id="BlockedBy" text="Blocked By" />
+	<lang id="BlockedBy_Road" text="Road" />
+	<lang id="BlockedBy_SmallObject" text="Small Object" />
+	<lang id="BlockedBy_OutOfBoundsRuins" text="The ruins at the edge of the city." />
+	<lang id="UnitWillDisbandBeforeNextTurn" text="This unit is planning to disband at the start of the next turn." />
+	<lang id="UnitWillDisbandWhenUnselected" text="This unit will disband when no longer selected." />
+	<lang id="RelatedToProject" text="Related To Project" />
+	<lang id="RelatedTo" text="Related To" />
+	<lang id="SpeakingWith" text="Speaking With" />
+	<lang id="Debating" text="Debating" translation_notes="This is used in a prefix fashion, after which it notes who you are debating.  So, something like 'Debating: Overseer' or similar." />
+	<lang id="FromCohort" text="From" />
+	<lang id="MaxExplosionRangeOnStructureDestroyed" text="Max Explosion Range" />
+	<lang id="CurrentExplosionRangeOnStructureDestroyed" text="Current Explosion Range" />
+	<lang id="ChanceOfExplosionWhenStructureDamaged" text="Explosion Chance On Damaged" />
+	<lang id="ShutsOffAtPercentageElectricity" text="Shuts Off At % Electricity" />
+	<lang id="HasEmergencyPowerSupply" text="Has Emergency Power Supply" />
+	<lang id="MustBeAtLeastXFromOther" text="Must Be At Least {0} From Other" translation_notes="the {0} is a distance restriction, from other buildings with a similar distance restriction." />
+
+	<lang id="ScrapUnit" text="Scrap Unit" />
+	<lang id="ScrapUnit_Tooltip1" text="Click here to destroy this unit." />
+	<lang id="ScrapUnit_Tooltip2" text="Perhaps you want to replace this unit with one of a different type." />
+	
+	<lang id="ScrapUnit_Header" text="Scrap {0}?" />
+	<lang id="ScrapUnit_Body" text="Are you sure you want to scrap {0}?  This action cannot be undone." />
+
+	<lang id="OverwriteSave_Header" text="Overwrite Existing Save?" />
+	<lang id="OverwriteSave_Body" text="Are you sure you want to overwrite the existing file:
+{0}  
+This action cannot be undone." />
+	<lang id="DeleteSave_Body" text="Are you sure you want to delete the file:
+{0}  
+This action cannot be undone.
+
+To skip this message on future deletions, hold the {1} key." />
+
+	<lang id="ProceedToExternalWebsite_Header" text="Proceed To External Website?" />
+	<lang id="ProceedToExternalWebsite_Body" text="This will open the following url: {0}
+Do you wish to proceed?" />
+
+	<lang id="OpenLocalFolder_Header" text="Go To Local File System?" />
+	<lang id="OpenLocalFolder_Body" text="This will open the following folder on your computer: {0}
+Do you wish to proceed?" />
+
+	<lang id="CannotScrapWithUnitsAboard_Header" text="Cannot Scrap With Units Aboard" />
+	<lang id="CannotScrapWithUnitsAboard_Body" text="This vehicle has units aboard. They must disembark before it can be scrapped." />
+
+	<lang id="StreetSenseProjectFilterInstructions" text="In StreetSense, choose the filter called Project-Related. You will then see a variety of actions you can take by moving to them." />
+
+	<lang id="SquadSize_Prefix" text="Squad Of" />
+	<lang id="CrewOf_Prefix" text="Crew Of" />
+	
+	<lang id="SubnetName" text="Subnet {0}" />
+	<lang id="NewSubnet" text="New Subnet" />
+	<lang id="OutOfNetworkRange" text="Out Of Network Range" />
+	<lang id="TooFarFromResourceSite" text="Too Far From Resource Site" />
+	<lang id="TooFarFromResourceSite_Details" text="Look around the map for sites with a blue ring around them.
+These don't need to be in your network range." />
+	<lang id="WillConnectToResourceSite" text="Will Connect To Resource Site" />
+	<!--
+	<lang id="ParentheticalAverageMaturity" text="(Avg Maturity {0})" />-->
+
+	<lang id="Resource" text="Resource" />
+	<lang id="IncreasePerTurnParenthetical" text="({0} per turn)" />
+	
+	<lang id="LeftClickToCycleThroughStructures_RelatedToNotice" text="{0} to cycle through structures related to this notice." />
+
+	<lang id="LeftClickToCycleThroughUnits_RelatedToNotice" text="{0} to cycle through units related to this notice." />
+	<lang id="LeftClickToSelectUnit_RelatedToNotice" text="{0} to select the unit related to this notice." />
+	<lang id="LeftClickToCycleThroughUnitsThatCanRespondToNotice" text="{0} to cycle through units capable of responding to this notice." />
+	<!--
+	<lang id="LeftClickToOpenTheListOfPossibilities" text="{0} to open the list of possibilities." />-->
+
+	<lang id="ChooseTargetProjectOutcome_Header" text="Choose Target" translation_notes="This can be mid-length, but still should not be super long." />
+	
+	<lang id="ThisIsYourCurrentTargetOutcome_Header" text="This Is Your Current Target Outcome" />
+	<lang id="ThisIsYourCurrentTargetOutcome_Body" text="You have marked this as your target. You can change your target at any time. However, the project will end as soon as the criteria are met for your current choice." />
+	<lang id="ThisIsYourCurrentTargetOutcome_Instructions" text="If you wish to select a different outcome as your target, simply {0} a different one." />
+	<lang id="ThisCouldBeYourTargetOutcome_Instructions" text="If you wish to select this as your target, use {0} now." />
+
+	<lang id="ProjectOutcome_Subheader" text="Project Outcome" />
+	<lang id="PossibleProjectOutcome" text="Possible Outcome" />
+	<lang id="ProjectedResults" text="Projected Results" />
+	<!--
+	<lang id="MaturityOfAllJobs" text="Maturity Of All Jobs" translation_notes="This is another part of the reward for completing most projects, but not minor ones." />
+	-->
+	<lang id="Unknown" text="Unknown" />
+	<lang id="NoneChosenYet" text="None Chosen Yet" />
+	<lang id="WillImmediatelyMoveOn" text="Will Immediately Move On" translation_notes="This is for project choices that will skip the rest of what might have happened in that project, and just move along with the storyline." />
+
+	<lang id="FinishProject" text="Finish Project" />
+	<lang id="CompleteProjectNotes" text="Once a project has been completed the result is permanent for this timeline." />
+
+	<!--
+	<lang id="StructureMaturity" text="Structure Maturity" translation_notes="This is basically a structure being better at certain kinds of jobs." />
+	-->
+	
+	<lang id="ViewPriorProject" text="View Prior Project" />
+	<lang id="ThisWasTheChosenOutcome_Note" text="This Was The Chosen Outcome" />
+	<lang id="ChosenOutcome_Prefix" text="Chosen Outcome" />
+	<lang id="CurrentTargetOutcome_Prefix" text="Target Outcome" />
+
+	<lang id="ProjectTooltipFooter_View" text="Click here to view the project." />
+	<lang id="ProjectTooltipFooter_ActiveNoTargetYet" text="Click here to set which outcome is your target." />
+	<lang id="ProjectTooltipFooter_ActiveNotDoneYet" text="Click here if you wish to change your target outcome." />
+	<lang id="Project_SoleOutcome" text="Sole Outcome" translation_notes="This is used as the header for the only outcome on projects when there are not multiple outcomes for the player to choose between." />
+	
+	<lang id="Involves" text="Involves" />
+	
+	<lang id="Nevermind_GetInvolvedInConflict" text="Nevermind" skip_all_merging_on_node="true" translation_notes="You just opened a city conflict. You have decided you don't want to do anything, after all, so you are closing it without engaging at all." />
+	<lang id="Nevermind_ApproachedSomeone" text="Nevermind" skip_all_merging_on_node="true" translation_notes="You just opened an event, which is likely showing some people can interact with in a variety of ways. You have decided you don't want to do anything, after all, so you are closing it without engaging at all. You could also make this ' Walk Away' if that is challenging to have a nevermind option that fits all the many kinds of people." />
+	<lang id="Nevermind_Dialog" text="Nevermind" skip_all_merging_on_node="true" translation_notes="You just opened a dialog with someone, and they have looked at you and/or said some things. You have decided you don't want to say anything, after all, so you are closing it and leaving them. You could also make this ' Walk Away' if that is challenging to have a nevermind option that fits all the many kinds of people." />
+	<lang id="Nevermind_QuitGame" text="Nevermind" skip_all_merging_on_node="true" translation_notes="You just clicked the option to exit the game or quit to the main menu, and are deciding you didn't want that after all." />
+
+	<lang id="Nevermind_MinorEvent_Description" text="One action point (AP) and Mental Energy were spent moving here, but you can walk away from this with no other consequences." />
+	<lang id="Nevermind_NPCDialogChoices_Line2" text="You can come back." />
+	<lang id="DCCheck" text="DC{0} (+{1})" />
+	<lang id="DCCheck_Full" text="{0} (+{1} From Your Unit's {2} Skill)" />
+	<lang id="DCCheck_Lone" text="DC{0}" />
+	<lang id="DifficultyClass" text="Difficulty Class" />
+
+	<lang id="IllBeBack" text="You'll Be Back" />
+	<lang id="IllBeBack_Research_Line2" text="Sooner or later." />
+	<lang id="IllBeBack_Research_Description" text="Perhaps you need to check something first." />
+
+	<lang id="ResearchNotFound" text="Research Not Found" />
+	<lang id="ResearchNotFound_Line2" text="Nothing here, evidently." />
+	<lang id="ResearchNotFound_Description" text="There were no more research items available in this path." />
+
+	<lang id="ProjectClose_Active_Line2" text="You can come back later." />
+	<lang id="ProjectClose_Active_Tooltip" text="To complete this project, choose one of the options above. You can also close and return later." />
+
+	<lang id="ProjectClose_Completed_Line2" text="Project is already complete." />
+	<lang id="ProjectClose_Completed_Tooltip" text="Information about the completed project. Click here when you're done." />
+	
+	<lang id="Choice_Attempted" text="Attempted" />
+	<lang id="Choice_BasedOnSkill" text="Based On Skill" />
+	<lang id="Choice_ChanceOfSuccess" text="Chance Of Success" />
+	<lang id="Choice_Result" text="Result" />
+	<lang id="Choice_FAILURE" text="FAILURE" />
+	<lang id="Choice_Results" text="Results" />
+	<lang id="Choice_ResultsFailure" text="Results - Failure" />
+	<lang id="Choice_ResultsSuccess" text="Results - Success" />
+	<lang id="Choice_ResultsPartialSuccess" text="Results - Partial Success" />
+	<lang id="Choice_ChangesTo" text="Changes To" />
+	<lang id="Choice_IdeaForInvention" text="Idea For Invention" />
+	<lang id="Choice_ImmediatelyInvented" text="Immediately Unlocked" />
+	<lang id="Choice_ResearchDomainInspiration" text="Research Domain Inspiration" />
+	<lang id="Choice_GainedUpgrade" text="Gained Upgrade" />
+	<lang id="Choice_GainedSecurityClearance" text="Gained Security Clearance" />
+	<lang id="Choice_POIGainedBadge" text="POI Gained Badge" />
+	<lang id="Choice_GainIdea" text="Gain Idea" />
+	<lang id="Choice_AlarmTriggeredForXTurns" text="Alarm Triggered For {0} Turns" />
+	<lang id="Choice_AlarmDisabled" text="Alarm Disabled" />
+	<lang id="IdeaWillHaveToBeResearched" text="Gain This Idea For Later Research" />
+	<lang id="ImmediatelyGainUpgrade" text="Immediately Gain This Upgrade" />
+	<lang id="GainedUnit" text="Gained Unit" />
+	<lang id="GainedVehicle" text="Gained Vehicle" />
+	<lang id="Choice_NewUnitsInArea" text="New Units In Area" />
+	<lang id="ForProject" text="For Project" />
+
+	<lang id="SkillCheckSuccesses" text="Skill Check Successes" />
+	<lang id="SkillCheckFailures" text="Skill Check Failures" />
+
+	<lang id="NPCActionsView_WatchNone_Name" text="Watch None" />
+	<lang id="NPCActionsView_WatchNone_Desc" text="" />
+
+	<lang id="NPCActionsView_WatchHigh_Name" text="Watch High-Priority" />
+	<lang id="NPCActionsView_WatchHigh_Desc" text="" />
+
+	<lang id="NPCActionsView_WatchAll_Name" text="Watch All" />
+	<lang id="NPCActionsView_WatchAll_Desc" text="" />
+
+	<lang id="EarlyAccessMessage" text="Welcome to the Early Access of Heart of the Machine!
+We're thrilled to share the game with you, and excited to hear any and all feedback you might have. Throughout Early Access, we'll be adding content and features, bug fixing, balancing, and generally working to make the game better through all the comments and feedback of the player community.
+Thank you for your support as we work to make Heart of the Machine the best experience possible!" />
+	
+</root>

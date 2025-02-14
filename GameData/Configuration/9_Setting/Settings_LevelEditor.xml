@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<setting id="LevelEditorDebugPopupWindowForEditingSingleObject" category="LevelEditor" display_name="Debug Popup Window For Editing Single Object" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="Popup window for editing details about a selected object. This is NOT saved back to the xml, so save across." />
+
+	<setting id="LevelEditorDebugVisualizeDecorationZones" category="LevelEditor" display_name="Debug Visualization Decoration Zones" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="Visualize the decoration zones for selected objects." />
+
+	<setting id="LevelEditorDebugVisualizeRoadConnectionPoints" category="LevelEditor" display_name="Debug Visualization Road Connection Points" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="Visualize the road connection points for selected objects." />
+
+	<setting id="LevelEditorDebugVisualizeBuildingEntrances" category="LevelEditor" display_name="Debug Visualization Building Entrances" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="Visualize the building entrance points for selected objects." />
+
+	<setting id="LevelEditorLastFile" category="LevelEditor" display_name="" type="StringHidden"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="" />
+
+	<setting id="LevelEditorDebugMousePosition" category="LevelEditor" display_name="Debug Mouse Position" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="In the bottom right of the screen, show debug info for where the mouse is on-screen and in-level." />
+
+	<setting id="LevelEditorDebugBoundsOfHoveredBoxes" category="LevelEditor" display_name="Debug Bounds Of Hovered Objects" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="In the bottom right of the screen, show the bounds for any objects you hover over." />
+
+	<setting id="LevelEditorShowFloorsOfSingleBuildingUnderCursor" category="LevelEditor" display_name="Show Floors Of Single Building Under Cursor" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="For debugging purposes, show any floors as an overlay when you hover over a single building.
+			
+This will also make the bottom right of the screen show extra info about the number of floors and amount of storage space in the building." />
+
+	<setting id="LevelEditorShowOBBOfSingleObjectUnderCursor" category="LevelEditor" display_name="Show OBB Of Single Object Under Cursor" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="For debugging purposes, show the Oriented Bounding Box (OBB) when you hover over a single object." />
+	
+	
+
+	<setting id="LevelEditor_WereLevelDetailsShowing" category="Invisible" type="BoolHidden" default_bool="true"
+			 skip_all_localization_on_node="true"
+			  description="HIDDEN" />
+	
+</root>

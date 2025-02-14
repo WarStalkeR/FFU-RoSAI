@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="city_style">
+		
+	<attribute key="city_width_in_cells" type="int-textbox" min="3" max="120" default="30" content_width_px="150"
+		tooltip="How large is this city going to be in terms of width, counting by cells?"/>
+
+	<attribute key="city_height_in_cells" type="int-textbox" min="3" max="120" default="15" content_width_px="150"
+		tooltip="How large is this city going to be in terms of height, counting by cells?"/>
+
+	<attribute key="required_traditional_hole_cells" type="int-textbox" min="0" max="600" default="40" content_width_px="150"
+		tooltip="How many cells should be reserved as traditional hole tiles, if any?"/>
+
+	<attribute key="main_logic_attempt_count" type="int-textbox" min="10" max="3000" default="300" content_width_px="150"
+		tooltip="How many tries does the main body try to use to seed tiles?  More than a certain number will make it more precise but also much slower."/>
+	
+	<!--macro_style_cell-->
+	<sub_node id="macro_style_cell">
+		<attribute key="level_type" type="node-dropdown" node_source="LevelType" content_width_px="300" is_required="true"
+			tooltip="What level type do we want to use as one-or-more-cell seeding spots throughout the city?" />
+
+		<attribute key="desired_count" type="int-textbox" min="0" max="9000" default="1" content_width_px="150"
+			tooltip="How many of these should be seeded in the city?"/>
+		
+		<attribute key="district_type" type="node-dropdown" node_source="WorldRegionType" content_width_px="300" is_required="true"
+			tooltip="What district type do we want to apply here?" />
+	</sub_node>
+
+	<!--required_hole_filler_cell-->
+	<sub_node id="required_hole_filler_cell">
+		<attribute key="level_type" type="node-dropdown" node_source="LevelType" content_width_px="300" is_required="true"
+			tooltip="What level type do we want to plug hole tiles in the city?" />
+
+		<attribute key="required_minimum" type="int-textbox" min="0" max="9000" default="1" content_width_px="150"
+			tooltip="How many of these should be seeded before randomized hole-filling is allowed to take part?"/>
+
+		<attribute key="district_type" type="node-dropdown" node_source="WorldRegionType" content_width_px="300" is_required="true"
+			tooltip="What district type do we want to apply here?" />
+	</sub_node>
+
+	<!--secondary_randomized_hole_filler_cell-->
+	<sub_node id="secondary_randomized_hole_filler_cell">
+		<attribute key="level_type" type="node-dropdown" node_source="LevelType" content_width_px="300" is_required="true"
+			tooltip="What level type do we want to plug hole tiles in the city?" />
+
+		<attribute key="weight" type="int-textbox" min="0" max="9000" default="100" content_width_px="150"
+			tooltip="When the seeding logic for our city is filling holes with randomized options, how much weight should we put for it compared to the average of 100?  
+			
+100 means absolutely normal, 1 would be 1% of normal, 25 is 25% of normal, 0 is literally not-at-all, and 200 would be 200% of normal."/>
+
+		<attribute key="district_type" type="node-dropdown" node_source="WorldRegionType" content_width_px="300" is_required="true"
+			tooltip="What district type do we want to apply here?" />
+	</sub_node>
+	
+	<!--city_style_blob-->
+	<sub_node id="city_style_blob">
+		<attribute key="logic_type" type="node-dropdown" node_source="PlaceableSeedingLogicType" content_width_px="300" is_required="true"
+			tooltip="What seeding-logic-type do we want to use in a blob of cells somewhere in the city?
+			
+The blobs are seeded first, in descending order, before the general probability nodes kick in to fill in the rest." />
+
+		<attribute key="desired_size_in_cells" type="int-textbox" min="0" max="9000" default="100" content_width_px="150"
+			tooltip="When this blob is seeded, how many cells should it try to be in size?"/>
+
+		<attribute key="percent_chance_of_spawning_diggers" type="int-textbox" min="0" max="100" default="30" content_width_px="150"
+			tooltip="As this blob is seeding using a cave-digging algorithm, how frequently should it add diggers?  More diggers usually means a more even result.
+			
+A good range is probably 10 to 30."/>
+
+		<attribute key="char_for_debug_map" type="string" maxlength="1" content_width_px="20"
+			tooltip="This is never shown to end users, but when generating city maps, this is used to show what the blobs are. This should be a single unicode character (any character) that is not 0.
+		
+This allows you to check the logs in any fixed-width text editor and see how the blob was spread in the city, and if it matches what you expect.
+
+Having these be unique for each blob in a city is a good idea, but not strictly required. As noted, this is debug only." />
+
+		<attribute key="district_type" type="node-dropdown" node_source="WorldRegionType" content_width_px="300" is_required="true"
+			tooltip="What district type do we want to apply here?" />		
+	</sub_node>
+	
+	<!--general_probability-->
+	<sub_node id="general_probability">
+		<attribute key="logic_type" type="node-dropdown" node_source="PlaceableSeedingLogicType" content_width_px="300" is_required="true"
+			tooltip="What seeding-logic-type do we want to use in various parts of the city that are not otherwise specified by blobs or other functions?" />
+
+		<attribute key="weight" type="int-textbox" min="0" max="9000" default="100" content_width_px="150"
+			tooltip="When this seeding logic type to our city, how much weight should we put for it compared to the average of 100?  
+			
+100 means absolutely normal, 1 would be 1% of normal, 25 is 25% of normal, 0 is literally not-at-all, and 200 would be 200% of normal."/>
+
+		<attribute key="district_type" type="node-dropdown" node_source="WorldRegionType" content_width_px="300" is_required="true"
+			tooltip="What district type do we want to apply here?" />
+	</sub_node>
+	
+</root>

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_prefab id="BunkerBigB" type="MilitaryBunker" display_name="Bunker Big B"
+		path_to_placeable="Assets/__Library/Military/Buildings/Bunker Big B.prefab" should_be_shown_in_map_mode="true">
+		<floors_group min="-10" max="-5" floor_size="2.2,0.4,1.4"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-4" max="-1" floor_size="2.2,0.4,1.4"  percentage_living_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.2,0.5,1.4"  percentage_living_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="50"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="60"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="6"/>
+		
+		<building_marker prefab="Skylight" offset="-0.3,-0.35,-0.05" rotation_y="55"/>
+	</building_prefab>
+
+	<building_prefab id="BunkerBig" type="MilitaryBunker" display_name="Bunker Big"
+		path_to_placeable="Assets/__Library/Military/Buildings/Bunker Big.prefab" should_be_shown_in_map_mode="true">
+		<floors_group min="-15" max="-7" floor_size="0.85,0.4,1.15"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-6" max="-1" floor_size="0.85,0.4,1.15"  percentage_living_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.85,0.4,1.15"  percentage_living_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="48"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="48"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="6"/>
+		
+		<building_marker prefab="Skylight" offset="-0.0,-0,-0.0"/>
+	</building_prefab>
+
+	<building_prefab id="BunkerMedB" type="MilitaryBunker" display_name="Bunker Med B"
+		path_to_placeable="Assets/__Library/Military/Buildings/Bunker Med B.prefab">
+		<floors_group min="-10" max="-5" floor_size="1.3,0.4,1.3"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-4" max="-1" floor_size="1.3,0.4,1.3"  percentage_living_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.3,0.5,1.3"  percentage_living_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="24"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="24"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="4"/>
+		
+		<building_marker prefab="Skylight" offset="-0.0,-0.05,-0.0"/>
+	</building_prefab>
+
+	<building_prefab id="BunkerMed" type="MilitaryBunker" display_name="Bunker Med"
+		path_to_placeable="Assets/__Library/Military/Buildings/Bunker Med.prefab" should_be_shown_in_map_mode="true">
+		<floors_group min="-10" max="-5" floor_size="0.8,0.4,1.2"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-4" max="-1" floor_size="0.8,0.4,1.2"  percentage_living_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.5,1.2"  percentage_living_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="12"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="24"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="4"/>
+		
+		<building_marker prefab="Skylight" offset="-0.0,-0,-0.0"/>
+	</building_prefab>
+
+	<building_prefab id="CheckpointA" type="MilitaryGuardPost" display_name="Checkpoint A"
+		path_to_placeable="Assets/__Library/Military/Buildings/Checkpoint A.prefab" floors_offset="0,0,0.4">
+		<floors_group min="0" max="0" floor_size="0.5,0.5,0.8"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="3"/>
+	</building_prefab>
+
+	<building_prefab id="GroundVehicleBunkerA" type="MilitaryHoverVehicleBunker" display_name="Hover Vehicle Bunker A"
+		path_to_placeable="Assets/__Library/Military/Buildings/Ground Vehicle Bunker A.prefab" should_be_shown_in_map_mode="true">
+		<floors_group min="-15" max="-5" floor_size="2.3,0.4,2.6"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-4" max="-1" floor_size="2.3,0.4,2.6"  percentage_living_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.3,0.8,2.6"  percentage_living_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="24"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="6"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="3"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="376"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="48"/>
+		
+		<building_marker prefab="Skylight" offset="-0.0,-0.03,-0.0"/>
+	</building_prefab>
+
+	<building_prefab id="GroundVehicleBunkerB" type="MilitaryHoverVehicleBunker" display_name="Hover Vehicle Bunker B"
+		path_to_placeable="Assets/__Library/Military/Buildings/Ground Vehicle Bunker B.prefab">
+		<floors_group min="-15" max="-5" floor_size="2.3,0.4,2.6"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-4" max="-1" floor_size="2.3,0.4,2.6"  percentage_living_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.3,0.8,2.6"  percentage_living_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="36"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="6"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="3"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="376"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="40"/>
+		
+		<building_marker prefab="Skylight" offset="-0.0,-0.05,0.09"/>
+	</building_prefab>
+
+	<building_prefab id="GuardPost" type="MilitaryGuardPost" display_name="Guard Post"
+		path_to_placeable="Assets/__Library/Military/Buildings/Guard Post.prefab">
+		<floors_group min="0" max="0" floor_size="1.7,1.3,2"  percentage_living_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="20"/>
+		
+		<building_marker prefab="Skylight" offset="-0.0,-0.33,-0.0" scale_multiplier="2"/>
+	</building_prefab>
+
+	<building_prefab id="MilitaryAirCommand" type="MilitaryPoliticalOps" display_name="Military Air Command"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Air Command.prefab">
+		<floors_group min="-5" max="-3" floor_size="1.5,0.4,2.2"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-2" max="-1" floor_size="1.5,0.4,2.2"  percentage_living_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.5,0.45,2.2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.1,0.45,1.2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="30"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="96"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="72"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="30"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="220"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="40"/>
+		<building_marker prefab="Skylight" offset="0,-0.37,-0.2"/>
+		
+	</building_prefab>
+
+	<building_prefab id="MilitaryBarracksB" type="MilitaryBarracks" display_name="Military Barracks B"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Barracks B.prefab">
+		<floors_group min="-1" max="-1" floor_size="4.4,0.2,1"   percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="4.4,0.45,1"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="24"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="24"/>
+		
+		<building_marker prefab="RoofLine" offset="0,0,0" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="MilitaryBarracksB2" type="MilitaryBarracks" display_name="Military Barracks B2"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Barracks B2.prefab">
+		<floors_group min="-1" max="-1" floor_size="4.4,0.2,1"   percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="4.4,0.45,1"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="12"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="36"/>
+		
+		<building_marker prefab="RoofLine" offset="0,0,0" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="MilitaryBarracksC" type="MilitaryBarracks" display_name="Military Barracks C"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Barracks C.prefab">
+		<floors_group min="-1" max="-1" floor_size="2.3,0.2,0.9"   percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.3,0.45,0.9"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="24"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="24"/>
+		
+		<building_marker prefab="RoofLine" offset="0,0,0" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="MilitaryBarracks" type="MilitaryBarracks" display_name="Military Barracks"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Barracks.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.1,0.2,1.6"   percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.5,1.6"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="12"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="12"/>
+		
+		<building_marker prefab="RoofLine" offset="0,0,0"/>
+	</building_prefab>
+
+	<building_prefab id="MilitaryBarracksE" type="MilitaryBarracks" display_name="Military Barracks E"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Barracks E.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.2,1.6"   percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.45,1.6"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="36"/>
+		
+		<building_marker prefab="RoofLine" offset="0,0,0"/>
+	</building_prefab>
+
+	<building_prefab id="MilitaryPoliticalOps" type="MilitaryPoliticalOps" display_name="Military Base HQ"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Base HQ.prefab">
+		<floors_group min="-5" max="-3" floor_size="2.1,0.4,2"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-2" max="-1" floor_size="2.1,0.4,2"  percentage_living_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.1,0.5,2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="1" floor_size="1.1,0.5,1.2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="40"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="144"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="72"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="40"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="220"/>
+		<building_marker prefab="Skylight" offset="0.3,-0.18,-0.15"/>
+		
+	</building_prefab>
+
+	<building_prefab id="MilitaryChemicalWeaponsStorge" type="MilitaryChemicalWeaponsStorge" display_name="Military Chemical Weapons Storage"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Chemical Weapons Storge.prefab">
+		<floors_group min="-15" max="-2" floor_size="1,0.4,1.15"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-1" max="-1" floor_size="1,0.35,1.15"  percentage_living_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1,0.35,1.15"  percentage_living_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="24"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="4"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="128"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="48"/>
+		
+		<building_marker prefab="Skylight" offset="-0.1,-0.08,-0.15"/>
+	</building_prefab>
+
+	<building_prefab id="MilitaryGroundOps" type="MilitaryGroundOps" display_name="Military Ground Ops"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Ground Forces Command.prefab">
+		<floors_group min="-5" max="-3" floor_size="2.1,0.4,1.4"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-2" max="-1" floor_size="2.1,0.4,1.4"  percentage_living_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.1,0.5,1.4"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="1" floor_size="1.1,0.5,1.2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="96"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="48"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="20"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="220"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.07,0.15"/>
+		
+	</building_prefab>
+
+	<building_prefab id="MilitaryIntelligence" type="MilitaryIntelligence" display_name="Military Intelligence"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Intelligence.prefab">
+		<floors_group min="-5" max="-3" floor_size="1.5,0.4,1.5"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-2" max="-1" floor_size="1.5,0.4,1.5"  percentage_living_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.5,0.4,1.5"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="1" floor_size="1.1,0.35,1.2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="40"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="120"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="48"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="40"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="320"/>
+		<building_marker prefab="Skylight" offset="-0.2,-0.07,0"/>
+		
+	</building_prefab>
+
+	<building_prefab id="MilitaryWarehouseA" type="MilitaryWarehouse" display_name="Military Warehouse A"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Warehouse A.prefab">
+		<floors_group min="-15" max="-5" floor_size="2.1,0.4,3"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-4" max="-1" floor_size="2.1,0.4,3"  percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.1,1.1,3"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="40"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="220"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="40"/>
+		<building_marker prefab="RoofLine" offset="0,-0.15,0"/>
+		
+	</building_prefab>
+
+	<building_prefab id="MilitaryWarehouseB" type="MilitaryWarehouse" display_name="Military Warehouse B"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Warehouse B.prefab" floors_offset="-0.4,0,0">
+		<floors_group min="-15" max="-5" floor_size="1.4,0.4,6.6"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-4" max="-1" floor_size="1.4,0.4,6.6"  percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.4,0.8,6.6"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="60"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="380"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="60"/>
+		<building_marker prefab="RoofLine" offset="-0.435,-0.55,-1"/>
+		
+	</building_prefab>
+
+	<building_prefab id="MilitaryPsyOps" type="MilitaryPsyOps" display_name="Military Psy Ops"
+		path_to_placeable="Assets/__Library/Military/Buildings/MilitaryPsyOps Command.prefab">
+		<floors_group min="-10" max="-5" floor_size="1.1,0.4,1.3"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-4" max="-1" floor_size="1.1,0.4,1.3"  percentage_work_space="60" percentage_living_space="20" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.35,1.3"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="0.5,0.3,0.5"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="35"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="140"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="80"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="35"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="340"/>
+		<building_marker prefab="Skylight" offset="0,-0.01,-0.155" scale_multiplier="1.2"/>
+		
+	</building_prefab>
+
+	<building_prefab id="MunitionsDepot" type="MilitaryMunitionsDepot" display_name="Munitions Depot"
+		path_to_placeable="Assets/__Library/Military/Buildings/Munitions Depot.prefab">
+		<floors_group min="-15" max="-5" floor_size="2.2,0.5,2.5"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-4" max="-1" floor_size="2.2,0.4,2.5"  percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.2,0.4,2.5"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="1" floor_size="1.5,0.5,1.5"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="70"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="240"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="180"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="100"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="25"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="-0.8,-1.53,-0.46"/>
+	</building_prefab>
+
+	<building_prefab id="GuardTowerA" type="MilitaryGuardPost" display_name="Guard Tower A"
+		path_to_placeable="Assets/__Library/Military/Buildings/Guard Tower A.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.4,0.35,0.5"  percentage_work_space="30" percentage_storage_space="70" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.4,0.35,0.5"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="10"/>
+		<building_marker prefab="Skylight" offset="-0.04,-0.14,0"/>
+		
+	</building_prefab>
+
+	<building_prefab id="GuardTowerB" type="MilitaryGuardPost" display_name="Guard Tower B"
+		path_to_placeable="Assets/__Library/Military/Buildings/Guard Tower B.prefab" should_be_shown_in_map_mode="true">
+		<floors_group min="-6" max="-1" floor_size="0.5,0.5,0.5"  percentage_work_space="60" percentage_storage_space="40" is_underground="true"/>
+		<floors_group min="0" max="5" floor_size="0.5,0.5,0.5"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="6" max="6" floor_size="0.3,0.3,0.3"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="90"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-1,0"/>
+		
+	</building_prefab>
+
+	<building_prefab id="MilitaryHospitalA" type="MilitaryHospital" display_name="Military Hospital A"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Hospital A.prefab">
+		<floors_group min="-4" max="-3" floor_size="1.7,0.4,1.3"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="-2" max="-1" floor_size="1.7,0.4,1.3"  percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.7,0.35,1.3"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="30"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="128"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="60"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="50"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="8"/>
+		<building_marker prefab="Skylight" offset="0,-0.07,0"/>
+		
+	</building_prefab>
+
+	<building_prefab id="MilitaryMedicalTentA" type="MilitaryMedicalTent" display_name="Military Medical Tent A"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Medical Tent A.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.55,0.4,0.8"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.55,0.35,0.8"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="4"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="32"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="16"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="8"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<building_marker prefab="RoofLine" offset="0,0,0"/>
+	</building_prefab>
+
+	<building_prefab id="MilitaryMedicalTentB" type="MilitaryMedicalTent" display_name="Military Medical Tent B"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Medical Tent B.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.55,0.4,0.8"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.55,0.35,0.8"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="4"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="32"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="12"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="12"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<building_marker prefab="RoofLine" offset="0,0,0"/>
+	</building_prefab>
+
+	<building_prefab id="FaradayCageConferenceRooms" type="FaradayCageConferenceRooms" display_name="Faraday Cage Conference Rooms"
+		path_to_placeable="Assets/__Library/Military/Buildings/Faraday Cage Conference Rooms.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.55,0.45,1.8"  percentage_work_space="95" percentage_storage_space="5" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.55,0.85,1.8"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="6"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.0,-0.73,-0.0"/>
+	</building_prefab>
+
+	<building_prefab id="MilitaryMainframe" type="MilitaryMainframe" display_name="Military Mainframe"
+		path_to_placeable="Assets/__Library/Military/Buildings/Military Mainframe.prefab">
+		<floors_group min="-19" max="-1" floor_size="0.4,0.4,1.1"  percentage_work_space="70" percentage_storage_space="30" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="0.4,0.5,1.1"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="18"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,-0.35"/>
+	</building_prefab>
+	
+</root>

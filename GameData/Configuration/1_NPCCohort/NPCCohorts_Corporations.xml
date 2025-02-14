@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Prison Companies
+	******************************************************************-->
+
+	<cohort id="ShusoCorrections" display_name="Shuso Corrections" part_of_group="FederatedCorporation"
+		description="One of the two corporations empowered to run the region's extensive network of prisons."
+		tags="ShusoCorrections,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPrisonPropertyOwner"
+		is_inward_looking_megacorp_ally="true"/>
+
+	<cohort id="FalsomDetention" display_name="Falsom Detention" part_of_group="FederatedCorporation"
+		description="One of the two corporations empowered to run the region's extensive network of prisons."
+		tags="FalsomDetention,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPrisonPropertyOwner"
+		is_inward_looking_megacorp_ally="true"/>
+
+	<!--Telecom Companies
+	******************************************************************-->
+
+	<cohort id="ArkorNexus" display_name="Arkor Nexus" part_of_group="FederatedCorporation"
+		description="Telecom specialist."
+		tags="ArkorNexus,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPropertyOwner,CorporationTelecomPropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+	<cohort id="EspiaTelecom" display_name="Espia Telecom" part_of_group="FederatedCorporation"
+		description="Telecom specialist."
+		tags="EspiaTelecom,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPropertyOwner,CorporationTelecomPropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+	<!--Military Companies
+	******************************************************************-->
+
+	<cohort id="TarkDefenseSystems" display_name="Tark Defense Systems" part_of_group="FederatedCorporation"
+		description="Aggressive and arrogant, preferring to think of themselves as the top federated corporation under Vorsiber. Reality is a bit more complicated."
+		tags="TarkDefenseSystems,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPropertyOwner,CorporationMilitaryPropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+	<cohort id="GoleriExpeditionary" display_name="Goleri Expeditionary" part_of_group="FederatedCorporation"
+		description="One of the three federated corporations empowered to run full military installations."
+		tags="GoleriExpeditionary,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPropertyOwner,CorporationMilitaryPropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+	<cohort id="OerlIntegrated" display_name="Oerl Integrated" part_of_group="FederatedCorporation"
+		description="One of the three federated corporations empowered to run full military installations."
+		tags="OerlIntegrated,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPropertyOwner,CorporationMilitaryPropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+	<!--Nuclear Power Companies
+	******************************************************************-->
+	<cohort id="Baurcorp" display_name="Baurcorp" part_of_group="FederatedCorporation"
+		description="Very stolid, middle-of-the-pack sort of corporation. One of only two trusted with full nuclear power plants."
+		tags="Baurcorp,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPropertyOwner,CorporationNuclearPowerOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+	<cohort id="Vericorp" display_name="Vericorp" part_of_group="FederatedCorporation"
+		description="One of only two federated corporations trusted with full nuclear power plants."
+		tags="Vericorp,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPropertyOwner,CorporationNuclearPowerOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+	
+	<!--Retail Companies
+	******************************************************************-->
+	<cohort id="NathVertical" display_name="Nath Vertical" part_of_group="FederatedCorporation"
+		description="Retail specialist that is also in full control of its supply chain -- all subject to Vorsiber review, of course."
+		tags="NathVertical,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPropertyOwner,CorporationCommercialPropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+	<cohort id="AtcaRetail" display_name="Atca Retail" part_of_group="FederatedCorporation"
+		description="One of the two retail specialists in the city."
+		tags="AtcaRetail,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPropertyOwner,CorporationCommercialPropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+	<!--Mining Companies
+	******************************************************************-->
+	<cohort id="LurpekoMinerals" display_name="Lurpeko Minerals" part_of_group="FederatedCorporation"
+		description="Mining is the entire reason this city was built.  This is, oddly, the sole federated corporation empowered to directly do that work."
+		tags="LurpekoMinerals,FederatedCorporation,CorporateAggressorOfAnySort,CorporationMiningPropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+	<!--Industrial Companies
+	******************************************************************-->
+	<cohort id="NeboInvestments" display_name="Nebo Investments" part_of_group="FederatedCorporation"
+		description="Industrial and technology focus."
+		tags="NeboInvestments,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPropertyOwner,CorporationIndustrialPropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+	
+	<cohort id="GraffIndustries" display_name="Graff Industries" part_of_group="FederatedCorporation"
+		description="Pure industrial focus."
+		tags="GraffIndustries,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPropertyOwner,CorporationIndustrialPropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+	<!--Split-Focus Companies
+	******************************************************************-->
+	
+	<cohort id="DyadInstruments" display_name="Dyad Instruments" part_of_group="FederatedCorporation"
+		description="Industrial and scientific focus. Major manufacturer of medical equipment."
+		tags="DyadInstruments,FederatedCorporation,CorporateAggressorOfAnySort,CorporationIndustrialPropertyOwner,CorporationSciencePropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+	<cohort id="YinshiWellness" display_name="Yinshi Wellness" part_of_group="FederatedCorporation"
+		description="Industrial and agricultural focus. Large cosmetics division."
+		tags="YinshiWellness,FederatedCorporation,CorporateAggressorOfAnySort,CorporationIndustrialPropertyOwner,CorporationFarmPropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+	
+	<cohort id="AsiSolutions" display_name="Asi Solutions" part_of_group="FederatedCorporation"
+		description="Agricultural and scientific focus."
+		tags="AsiSolutions,FederatedCorporation,CorporateAggressorOfAnySort,CorporationFarmPropertyOwner,CorporationSciencePropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+	<!--Landlord Companies
+	******************************************************************-->
+	<cohort id="PeakHomes" display_name="Peak Homes" part_of_group="FederatedCorporation"
+		description="Commercial and residential landlord."
+		tags="PeakHomes,FederatedCorporation,CorporateAggressorOfAnySort,CorporationPropertyOwner,GenericCorporateAggressor"
+		is_inward_looking_megacorp_ally="true" />
+
+</root>

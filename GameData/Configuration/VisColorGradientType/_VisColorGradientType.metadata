@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="color_gradient">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="starts_at" type="string" maxlength="2000" is_required="true" content_width_px="500" linebreak_before="Always" linebreak_after="Always"
+		tooltip="Should be a comma-delimited list of integers, no spaces, of the thresholds at which the gradient levels kick in."/>
+
+	<attribute key="colors" type="string" maxlength="2000" is_required="true" content_width_px="500" linebreak_before="Always" linebreak_after="Always"
+		tooltip="Should be a comma-delimited list of hex codes, no spaces and no hashtags, of the colors to use at each level of the gradient."/>
+	
+</root>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<stance id="AndroidActive" display_name="Active" sort_order="120"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.MUStance_Basics"
+		description="Act casual and interact with objects and events near you."
+		strategy_tip_optional="If you are marked defective, this casual demeanor will no longer help."
+		icon_name="CleanSimple_Arrow093" is_basic_active_stance_for_androids="true"
+		on_player_chooses="StanceActive" can_be_used_by_androids="true"
+		is_forbidden_from_entering_restricted_areas_unless_cloaked="true"
+		action_on_outdoor_arrive="MoveToPosition" action_on_building_in_range_no_action_arrive="MoveToBuilding">
+	</stance>
+
+	<stance id="Combat" display_name="Combat" sort_order="150"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.MUStance_Basics"
+		description="Android is ready for action."
+		strategy_tip_optional="Allows you to see the range of action you will have after your next move. You can freely move to forbidden places -- with consequences."
+		icon_name="CleanSimple_Aim005"
+		on_player_chooses="StanceCombat" can_be_used_by_androids="true"
+		should_show_aggressive_pose="true" is_new_attack_range_projected="true"
+		action_on_outdoor_arrive="MoveToPosition" action_on_building_in_range_no_action_arrive="MoveToBuilding">
+	</stance>
+
+	<stance id="Defiant" display_name="Defiant" sort_order="150"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.MUStance_Basics"
+		description="Android is standing threateningly."
+		strategy_tip_optional="The unit provides full Deterrence even if they are not marked defective. They also no longer blend in at all."
+		icon_name="WEmblem145"
+		on_player_chooses="StanceCombat" can_be_used_by_androids="true"
+		should_show_aggressive_pose="true" is_new_attack_range_projected="true"
+		action_on_outdoor_arrive="MoveToPosition" action_on_building_in_range_no_action_arrive="MoveToBuilding">
+		<blocks perk="VehicleBlendingInAirTraffic" value="true" />
+		<blocks perk="BlendingIn" value="true" />
+		<blocks perk="ObscuredByClothing" value="true" />
+		<blocks perk="PMCAppearance" value="true" />
+		<blocks perk="PMCOfficerAppearance" value="true" />
+		<blocks perk="MilitaryOfficerCodex" value="true" />
+		<blocks perk="MilitaryAppearance" value="true" />
+		<blocks perk="Shadowdweller" value="true" />
+		<blocks perk="ExpertShadowdweller" value="true" />
+		<blocks perk="Adorable" value="true" />
+		<blocks perk="Authoritative" value="true" />
+	</stance>
+
+	<stance id="MechActiveStance" display_name="Active" sort_order="210"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.MUStance_Basics"		
+		description="This unit requires orders every turn."
+		strategy_tip_optional=""
+		icon_name="CleanTriangle52" is_basic_active_stance_for_mechs="true"
+		on_player_chooses="StanceActive" can_be_used_by_mechs="true"
+		action_on_outdoor_arrive="MechMove" action_on_building_in_range_no_action_arrive="MechMove">
+	</stance>
+
+</root>

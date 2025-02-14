@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="machine_action_mode">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="input_mode" type="node-dropdown" is_required="false" node_source="InputMode" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="What input mode does this use?" />
+
+	<attribute key="show_structure_jobs" type="bool" default="false"
+		tooltip="When this view is active, show the icons for structure jobs." />
+	<attribute key="show_npc_unit_stances" type="bool" default="false"
+		tooltip="When this view is active, show the icons for the stances of npc units." />
+	<attribute key="show_beacons" type="bool" default="false"
+		tooltip="When this view is active, show icons for the beacons at buildings in the city." />
+	<attribute key="show_health_bars" type="bool" default="false"
+		tooltip="When this view is active, show health bars for all units." />
+	<attribute key="show_health_bars_for_your_units" type="bool" default="false"
+		tooltip="When this view is active, show health bars for your units, including NPCs that belong to you." />
+	<attribute key="show_threat_lines_always" type="bool" default="false"
+		tooltip="When this view is active, show threat lines even if they would not kill the unit." />
+	<attribute key="show_swarms" type="bool" default="false"
+		tooltip="When this view is active, show the icons for swarms spreading through the city." />
+	<attribute key="show_vehicle_units_sidebar" type="bool" default="false"
+		tooltip="When this view is active, show the vehicle units-riding-in-me sidebar like usual." />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the mode logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the mode logic in the specified external dll."/>
+</root>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="expansion">
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="abbreviation" type="string" minlength="2" maxlength="4" is_required="true" is_localized="true" content_width_px="100"
+		tooltip="Abbreviation for the expansion, shown throughout the game."/>
+
+	<attribute key="color_for_display" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="200"
+		tooltip="Hex code for a color that will be used for this expansion."/>
+	
+</root>

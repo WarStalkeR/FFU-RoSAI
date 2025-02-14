@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="level_type">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="size_x" type="float-textbox" min="0" max="200" content_width_px="150"
+		tooltip="How large is this level's boundary, in the X axis?"/>
+
+	<attribute key="size_z" type="float-textbox" min="0" max="200" content_width_px="150"
+		tooltip="How large is this level's boundary, in the Z axis?"/>
+
+	<attribute key="subfolder" type="string" maxlength="400" is_required="true" content_width_px="300"
+		tooltip="Should be a relativ path, with forward slashes rather than backslashes, for the folders into which these kinds of levels are saved."/>
+	
+	<attribute key="is_used_in_game" type="bool" default="true"
+		tooltip="Is this content used in the actual game, or is it just for testing?"/>
+
+	<attribute key="is_interior_style" type="bool" default="false"
+		tooltip="Is this level interior-style?"/>
+	
+	<attribute key="is_interior_frame" type="bool" default="false"
+		tooltip="Is this level an interior-frame style one?"/>
+
+	<attribute key="is_skeleton_style" type="bool" default="false"
+		tooltip="Is this level an exterior skeleton-style one?"/>
+
+	<attribute key="is_mini_skeleton" type="bool" default="false"
+		tooltip="If this is a skeleton style, is this meant to be a mini-skeleton that fits inside others, rather than a full tile?"/>
+
+	<attribute key="is_key_macro_tile" type="bool" default="false"
+		tooltip="If this is a key macro tile, then should it be seeded as a giant point of interest in the city?"/>
+
+	<attribute key="is_for_filling_hole_tiles" type="bool" default="false"
+		tooltip="If this is for filling the bulk of some random hole tile."/>
+	
+	<attribute key="is_vegetation_style" type="bool" default="false"
+		tooltip="Is this level a skeleton-style?"/>
+
+	<attribute key="is_micro_scene" type="bool" default="false"
+		tooltip="If this is a series of micro-scenes, rather than a single level on its own."/>
+	
+	<attribute key="weight_as_general_purpose_region_filler" type="int-textbox" min="0" max="5000" content_width_px="150"
+		tooltip="When this level type is being added to a building region at random, how much weight should we put for it compared to the average of 100?  
+			
+100 means absolutely normal, 1 would be 1% of normal, 25 is 25% of normal, 0 is literally not-at-all, and 200 would be 200% of normal."/>
+
+	<attribute key="is_valid_starting_tile" type="bool" default="false"
+		tooltip="If this is a skeleton tile, can this type be used to seed the first map tile of a city?"/>
+	
+	<attribute key="is_valid_main_menu_bg_tile" type="bool" default="false"
+		tooltip="If this is a skeleton tile, can this type be used to seed the buildings that go in the background of the main menu?"/>
+
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="biome" type="node-dropdown" node_source="BiomeType" content_width_px="200" is_required="false"
+		tooltip="If this level type is used as the decoration source for a district, it should also be linked to a biome or else there will be runtime errors." />
+
+	<attribute key="poi_to_spawn" type="node-dropdown" node_source="POIType" content_width_px="200" is_required="false"
+		tooltip="If this level type is used as a mini-tile or hole-tile filler, it can optionally spawn a POI where it is located. If it does, this is the type it will use." />
+	
+	<attribute key="tags" type="node-list" node_source="LevelTag" content_width_px="300" is_required="true"
+		tooltip="What tags are associated with this level type?" />
+	
+	<!--Now the list of connection nodes under this.-->
+	
+	<sub_node id="connection">
+		
+		<attribute key="path_to_placeable" type="string" maxlength="600" content_width_px="400" is_required="true" linebreak_after="Always"
+			tooltip="This specifies the path of the A5ObjectRoot that this will be linked to."/>
+
+		<attribute key="core_position" type="vector3-textbox" is_required="true"
+			tooltip="In world space, where is this connection located?" />
+
+		<attribute key="vis_position_offset" type="vector3-textbox" is_required="true"
+			tooltip="In world space, relative to the core position, how should this be further adjusted to display correctly?" />
+
+		<attribute key="vis_rotation" type="vector3-textbox" is_required="true"
+			tooltip="In world space, what is the rotation of this connection for display purposes?" />
+
+	</sub_node>
+	
+</root>

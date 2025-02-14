@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="road_prefab">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="path_to_placeable" type="string" maxlength="600" content_width_px="400" is_required="true" linebreak_after="Always"
+		tooltip="This specifies the path of the A5ObjectRoot that this will be linked to."/>
+
+	<!--Now the list of lane nodes under this.-->
+	
+	<sub_node id="lane">
+
+		<attribute key="id" type="string" maxlength="20" content_width_px="100" is_required="true" is_id_for_layer="true"
+			tooltip="This is an internal matching identifier to let us know what kind of lane we are linking to." />
+
+		<attribute key="type" type="node-dropdown" node_source="LaneType" content_width_px="300" is_required="true"
+			tooltip="What type of lane is this specific lane prefab?" />
+
+		<attribute key="points" type="string" maxlength="2000" content_width_px="600" is_required="true"
+			tooltip="This is a raw string of points in this lane. This should not be edited here, but instead in the level editor for the game, using specialized tools." />
+
+		<attribute key="is_dead_end" type="bool" default="false" is_required="false"
+			tooltip="Set to true if the lane does not leave the road segment." />
+
+		<attribute key="turn_type" type="string-dropdown" is_required="true" default="None" content_width_px="200"
+			tooltip="Whether the lane turns instead of going straight. Used for driving side calculations. Order points as if driving on right.">
+			<option>None</option>
+			<option>Left</option>
+			<option>Right</option>
+		</attribute>
+		
+	</sub_node>
+	
+</root>

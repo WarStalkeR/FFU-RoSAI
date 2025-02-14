@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Upgrades To Equipment (Priority Group 3000, to max 4999)
+	******************************************************************************************-->
+
+	<!--******************************************Augments******************************************-->
+	
+	<upgrade_int id="ImprovedCPUs" display_name="Augment: Improved CPUs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_SciFi086"
+		int_original="0" int_increment="60" int_cap="300" shows_plus_number_upgrade_style="true"
+		description="All 'Additional CPU' equipment becomes more effective."
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="UnitCognition" required_collection="CPUs" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<!--******************************************Guns******************************************-->
+
+	<upgrade_int id="HandgunProjectileDensity" display_name="Handgun Projectile Density"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SF2_Bullet"
+		int_original="0" int_increment="9" int_cap="45" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="ActorPower" required_collection="Handguns" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="RifleProjectileDensity" display_name="Rifle Projectile Density"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FlatSkillB_bullet1"
+		int_original="0" int_increment="15" int_cap="75" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="ActorPower" required_collection="Rifles" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="ShotgunProjectileDensity" display_name="Shotgun Projectile Density"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="ME_AmmoShelll2"
+		int_original="0" int_increment="20" int_cap="100" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="ActorPower" required_collection="Shotguns" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<!--******************************************Other Projectiles******************************************-->
+
+	<upgrade_int id="GrenadeDensity" display_name="Grenade Density"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FlatSkillB_granade2"
+		int_original="0" int_increment="5" int_cap="50" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="ActorPower" required_collection="Grenades" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+	
+	<upgrade_int id="GrenadeArea" display_name="Grenade Area"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FlatSkillB_granade2"
+		int_original="0" int_increment="1" int_cap="9" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="AreaOfAttack" required_collection="Grenades" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<!--******************************************Melee******************************************-->
+
+	<upgrade_int id="ClawSharpness" display_name="Claw Sharpness"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FlatSkill_13"
+		int_original="0" int_increment="10" int_cap="100" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="ActorPower" required_collection="Claws" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+	
+	<upgrade_int id="KnuckleToughness" display_name="Knuckle Toughness"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SK_Molecule3"
+		int_original="0" int_increment="8" int_cap="80" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="ActorPower" required_collection="Knuckles" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+	
+	<upgrade_int id="SwordSharpness" display_name="Sword Sharpness"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FlatSkillC53"
+		int_original="0" int_increment="10" int_cap="100" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="ActorPower" required_collection="Swords" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="FearEffectiveness" display_name="Fear Effectiveness"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FlatSkull_12"
+		int_original="0" int_increment="20" int_cap="200" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="ActorFearAttackPower" required_collection="AndroidFearWeapons" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+	
+	<!--******************************************Android Armor******************************************-->
+
+	<upgrade_int id="ArmorMaterialsStudy" display_name="Armor Materials Study"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="HM_ShapeLayers"
+		int_original="0" int_increment="40" int_cap="200" shows_plus_number_upgrade_style="true"
+		description="Increase your understanding of advanced materials to improve the defensive prowess of armor."
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="ActorHP" required_collection="AdvancedMaterialsAndroidArmor" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+	
+	<upgrade_int id="ReinforcedMilStyleArmor" display_name="Reinforced MilStyle Armor"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanTriangle22"
+		int_original="0" int_increment="60" int_cap="120" shows_plus_number_upgrade_style="true"
+		description="Improve MilStyle Armor defensive capabilities without altering appearance."
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="ActorHP" required_collection="MilStyleArmor" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="MilStyleArmorMobility" display_name="MilStyle Armor Mobility"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanTriangle22"
+		int_original="0" int_increment="3" int_cap="6" shows_plus_number_upgrade_style="true"
+		description="Improve MilStyle Armor mobility without altering appearance."
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="ActorMoveRange" required_collection="MilStyleArmor" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="ReinforcedSecurityJacket" display_name="Reinforced Security Jacket"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="ME_CheapSecurityDisguise2"
+		int_original="0" int_increment="50" int_cap="250" shows_plus_number_upgrade_style="true"
+		description="Give Security Jackets defensive capabilities without altering appearance."
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_flat_upgrade id="1" data_to_upgrade="ActorHP" required_collection="SecurityJacket" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+</root>

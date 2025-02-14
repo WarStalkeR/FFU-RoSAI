@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="resource">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible tip for how to use this resource."/>
+
+	<attribute key="how_to_acquire" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible tip for how to get this resource."/>
+
+	<attribute key="technical_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible extra technical notes about this resource."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+
+	<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the shape icon."/>
+
+	<attribute key="base_storage_capacity" type="int-textbox" min="-1" max="1000000000" content_width_px="80" is_required="false"
+		tooltip="If zero or higher, then this resource type has a storage maximum, and this is the base amount of that. The effective storage maximum can be affected by other criteria during the game."/>
+	<attribute key="added_storage_capacity_per_storage_bunker" type="int-textbox" min="0" max="1000000000" content_width_px="80" is_required="false"
+		tooltip="If more than zero, then this is how much of the resource is added per storage bunker."/>
+	<attribute key="added_storage_capacity_per_mass_animal_housing" type="int-textbox" min="0" max="1000000000" content_width_px="80" is_required="false"
+		tooltip="If more than zero, then this is how much of the resource is added per mass animal housing."/>
+
+	<attribute key="added_most_soft_cap" type="int-textbox" min="0" max="1000000000" content_width_px="80" is_required="false"
+		tooltip="If more than zero, then the most-soft cap will have this amount added to it.  Amounts of this resource above the most-soft cap are destroyed, while amounts below it go to excess."/>
+	
+	<attribute key="amount_granted_when_skipping_chapter_zero" type="int-textbox" min="0" max="1000000000" content_width_px="80" is_required="false"
+		tooltip="If above zero, then if chapter zero is skipped, this amount will be granted to the player for this resource."/>
+	<attribute key="extra_starting_amount_in_rank2_plus_city" type="int-textbox" min="0" max="1000000000" content_width_px="80" is_required="false"
+		tooltip="If above zero, then when in a rank 2 city or higher, this amount will be granted to the player for this resource."/>
+
+	<attribute key="only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than" type="int-textbox" min="0" max="1000000000" content_width_px="80" is_required="false"
+		tooltip="If above zero, then it won't complain about lowered efficiency from storage if the total storage is at least this amount."/>
+	
+	<attribute key="is_hidden_when_none_had" type="bool" default="false"
+		tooltip="If this is true, then this resource type is invisible when the player does not have any." />
+
+	<attribute key="shows_trends_by_default" type="bool" default="false"
+		tooltip="If this is true, then this resource type will show the trends by default. Normally only true for oddities like mental energy and wealth." />
+	<attribute key="is_strategic_resource" type="bool" default="false"
+		tooltip="If this is true, then this resource type will be on the strategic resources tab rather than the regular one." />
+	<attribute key="is_lifeform" type="bool" default="false"
+		tooltip="If this is true, then this resource type will be on the lifeforms tab rather than the regular one." />
+	<attribute key="is_plot_related_resource" type="bool" default="false"
+		tooltip="If this is true, then this does not get counted in the general 'discovered strategic resources' count, as it's a plot-related thing." />
+
+	<attribute key="any_unused_expires_at_turn_start" type="bool" default="false"
+		tooltip="If this is true, then any stored amount expires right at the start of the turn changeover.  Mainly for things like computing cycles." />
+
+	<attribute key="skips_click_to_open_header_text" type="bool" default="false"
+		tooltip="If this is true, then the extra info about the click to open inventory will not be shown, to keep the tooltip less cluttered." />
+	<attribute key="is_always_skipped_on_resource_screen" type="bool" default="false"
+		tooltip="If this is true, then the inventory screen will never show this. It's probably just in the top bar or similar." />
+	<attribute key="is_shown_in_header_only_during_build_mode_or_pinned" type="bool" default="false"
+		tooltip="If this is true, then this automatically gets shown in the header bar." />
+	
+	<attribute key="is_locked_before_unlock" type="node-dropdown" is_required="false" node_source="Unlock" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players until the specified Unlock is invented." />
+	<attribute key="is_locked_before_dialog" type="node-dropdown" is_required="false" node_source="NPCDialog" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players until the specified dialog is finished." />
+	<attribute key="is_locked_before_city_flag" type="node-dropdown" is_required="false" node_source="CityFlag" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players until the specified city flag is true." />
+
+	<attribute key="scavenge_icon_usage" type="node-dropdown" is_required="false" node_source="VisIconUsage" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will set the color and scale on the scavenging view of the map, if this resource can be used that way." />
+	
+	<attribute key="complaint_if_job_short_as_expense" type="node-dropdown" is_required="false" node_source="ComplaintIfJobShortAsExpense" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this is insufficient as part of a job production chain, then what complaint should the job show?" />
+	<attribute key="complaint_if_job_has_none_as_expense" type="node-dropdown" is_required="false" node_source="ComplaintIfJobShortAsExpense" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this is at absolutely zero as part of a job production chain, then what complaint should the job show?" />
+	
+	<attribute key="decrypts_into_resource" type="node-dropdown" is_required="false" node_source="ResourceType" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This resource can be decrypted into this other resource." />
+	<attribute key="decrypts_into_statistic" type="node-dropdown" is_required="false" node_source="CityStatistic" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This resource can be decrypted into this city statistic." />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the extra code for this resource type is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the extra code for this resource type in the specified external dll."/>
+
+	<attribute key="lang_key_for_excess" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a lang_key entry that is the format for the message to show when there is an excess of this resource." />
+
+	<sub_node id="part_of">
+		<attribute key="collection" type="node-dropdown" is_required="true" node_source="ResourceTypeCollection" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What collection is this in?" />
+		<attribute key="sort_index" type="int-textbox" is_required="true" min="0" max="1000000" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="How is this sorted within that collection?  If set to zero, it is modded out of that collection." />
+	</sub_node>
+	
+</root>

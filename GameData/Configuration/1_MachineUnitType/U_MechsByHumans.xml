@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--MechMachinist
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="MechMachinist" display_name="BL-X Machinist"
+		description="Your adapted version of the original human design."
+		short_description="Repairs And Support" unit_capacity_cost="8"
+		tooltip_icon_name="Mech8_1" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="WEmblem282" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="Mech8" vis_object_aggressive="Mech8" vis_object_scale="0.5" vis_object_extra_offset="0.02" collider_scale="1"
+		extra_offset_for_camera_focus_when_selected="0.9"
+		on_death="SmallMechDeath" on_built="BasicAndroidBuilt" on_bullet_hit="BasicMechBulletHit" on_move_start="SmallMechMoveStart" 
+		on_get_out_of_vehicle_end="SmallMechLandingFromVehicle" on_movement_finished_with_no_action="SmallMechArrival"
+		on_standard_ranged_attack="MechMachinistLaser" on_standard_melee_attack="BasicMechMeleeAttack"
+		radius_for_collisions="1.0" height_for_collisions="3.2" vis_object_extra_offset_on_city_map="1.1"
+		storage_slot_type="SmallMechBay" ability_group="Mech"
+		name_prefix="Machinist" name_style="UnitBarcode" should_hide_intersecting_decorations="true"
+		sort_order="2100" command_mode_category="MechDeployment"
+		collections="AllForces,AllMechs,MechsInventedByHumans,StandardUnits,SmallMechs,SupportUnits,Portmechs,Machinists" is_considered_mech="true"
+		screen_shake_on_exiting_vehicle_duration="0.7" screen_shake_on_exiting_vehicle_intensity="0.3" screen_shake_on_exiting_vehicle_decrease_factor="1.5"
+		screen_shake_on_regular_move_duration="0.7" screen_shake_on_regular_move_intensity="0.1" screen_shake_on_regular_move_decrease_factor="2"
+		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="false" can_ever_make_ranged_attacks="true">
+		<equipment_slot_count type="MechArmor" amount="1" />
+		<equipment_slot_count type="MechAugment" amount="1" />
+		
+		<actor_data data_type="AttackRange" base_range="25,25" />
+		<actor_data data_type="ActorMoveRange" base_range="40,40" />
+		<actor_data data_type="ActorHP" base_range="650,650" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="2,2"/>
+		<actor_data data_type="ActorPower" base_range="170,170" />
+		<actor_data data_type="UnitHackingSkill" base_range="20,20" />
+		<actor_data data_type="UnitScavengingSkill" base_range="500,500" />
+		<actor_data data_type="UnitIntimidation" base_range="430,430" />
+		<actor_data data_type="ActorEngineeringSkill" base_range="160,160" />
+		<actor_data data_type="ActorArmorPlating" base_range="30,30" />
+		<actor_data data_type="ActorArmorPiercing" base_range="40,40" />
+		<ability_slot slot_index="1" ability_type="MechBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="MechStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="MoveMech" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="MechShieldsUp" can_be_replaced="false" />
+		<ability_slot slot_index="5" ability_type="MechUseConsumable" can_be_replaced="false" />
+		<ability_slot slot_index="6" ability_type="MechRepairNearby" />
+		<available_stance unit_stance="MechActiveStance" allowed="1" />
+		
+		<shot_emission_group group_number="0" debug_color="#5EBBF4"
+			min_delay_of_each_firing_port="0" max_delay_of_each_firing_port="0.01">
+			<shot_emission_point index_in_group="0" offset="0.05,1.2,0.1" />
+			<shot_emission_point index_in_group="1" offset="-0.12,1.2,0.1" />
+			<targeting_zone id="1" distance_from_center="9" angle_from_current="0" radius="8" center_offset_y="-3" height="8"/>
+		</shot_emission_group>
+		<shot_emission_group group_number="1" debug_color="#74F45E" alternative_projectile="MechMachinistRocketUp"
+			min_delay_of_each_firing_port="0" max_delay_of_each_firing_port="0.01">
+			<shot_emission_point index_in_group="0" offset="0.3,0.95,-0.5" />
+			<shot_emission_point index_in_group="1" offset="-0.3,0.95,-0.5" />
+		</shot_emission_group>
+		<unit_cost resource_type="MentalEnergy" required="3" />
+		<unit_cost resource_type="Neuroweave" required="1500" />
+		<unit_cost resource_type="MorphologicLattice" required="6000" />
+		<unit_cost resource_type="ElementalSlurry" required="14000" />
+	</machine_unit_type>
+
+	<!--MechPanther
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="MechPanther" display_name="AD-PX Panther"
+		description="Your adapted version of the original human design."
+		short_description="Basic Combatant" unit_capacity_cost="8"
+		tooltip_icon_name="Mech11_1" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="WEmblem289" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="Mech11" vis_object_aggressive="Mech11" vis_object_scale="0.65" vis_object_extra_offset="0.02" collider_scale="1"
+		extra_offset_for_camera_focus_when_selected="0.9"
+		on_death="SmallMechDeath" on_built="BasicAndroidBuilt" on_bullet_hit="BasicMechBulletHit" 
+		on_move_start="SmallMechMoveStart" on_get_out_of_vehicle_end="SmallMechLandingFromVehicle" on_movement_finished_with_no_action="SmallMechArrival"
+		on_standard_ranged_attack="MechPantherFistLaser" on_standard_melee_attack="BasicMechMeleeAttack"
+		radius_for_collisions="1.9" height_for_collisions="3.8" vis_object_extra_offset_on_city_map="1.1"
+		storage_slot_type="SmallMechBay" ability_group="Mech"
+		name_prefix="Panther" name_style="UnitBarcode" should_hide_intersecting_decorations="true"
+		sort_order="2200" command_mode_category="MechDeployment"
+		collections="AllForces,AllMechs,MechsInventedByHumans,StandardUnits,SmallMechs,Combatants,CombatMechs,CombatMechsAndVehicles,Panthers" is_considered_mech="true"
+		screen_shake_on_exiting_vehicle_duration="0.7" screen_shake_on_exiting_vehicle_intensity="0.3" screen_shake_on_exiting_vehicle_decrease_factor="1.5"
+		screen_shake_on_regular_move_duration="0.7" screen_shake_on_regular_move_intensity="0.1" screen_shake_on_regular_move_decrease_factor="2"
+		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="false" can_ever_make_ranged_attacks="true">
+		<equipment_slot_count type="MechArmor" amount="1" />
+		<equipment_slot_count type="MechAugment" amount="1" />
+		
+		<actor_data data_type="AttackRange" base_range="30,30" />
+		<actor_data data_type="ActorMoveRange" base_range="40,40" />
+		<actor_data data_type="ActorHP" base_range="900,900" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="2,2"/>
+		<actor_data data_type="ActorPower" base_range="250,250" />
+		<actor_data data_type="UnitHackingSkill" base_range="30,30" />
+		<actor_data data_type="UnitScavengingSkill" base_range="300,300" />
+		<actor_data data_type="UnitIntimidation" base_range="490,490" />
+		<actor_data data_type="ActorEngineeringSkill" base_range="70,70" />
+		<actor_data data_type="ActorArmorPlating" base_range="30,30" />
+		<actor_data data_type="ActorArmorPiercing" base_range="50,50" />
+		<ability_slot slot_index="1" ability_type="MechBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="MechStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="MoveMech" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="MechShieldsUp" can_be_replaced="false" />
+		<ability_slot slot_index="5" ability_type="MechUseConsumable" can_be_replaced="false" />
+		<ability_slot slot_index="6" ability_type="MechRepairNearby" />
+		<available_stance unit_stance="MechActiveStance" allowed="1" />
+		
+		<sub_collidable id="1" distance_from_center="0.3" angle_from_current="90" radius="0.82" center_offset_y="0" height="3.8" />
+		<sub_collidable id="2" distance_from_center="0.3" angle_from_current="270" radius="0.82" center_offset_y="0" height="3.8" />
+		<sub_collidable id="3" distance_from_center="1" angle_from_current="270" radius="0.82" center_offset_y="1" height="0.8" />
+		<sub_collidable id="4" distance_from_center="1" angle_from_current="90" radius="0.82" center_offset_y="1" height="0.8" />
+		<shot_emission_group group_number="0" debug_color="#5EBBF4"
+			min_delay_of_each_firing_port="0.04" max_delay_of_each_firing_port="0.08">
+			<shot_emission_point index_in_group="1" offset="-1.2,1.25,1.2" />
+			<shot_emission_point index_in_group="3" offset="-1.2,1.09,1.2" />
+			<shot_emission_point index_in_group="4" offset="1.2,1.2,1.05" />
+			<targeting_zone id="1" distance_from_center="5" angle_from_current="0" radius="2" center_offset_y="-3" height="5"/>
+			<targeting_zone id="2" distance_from_center="14" angle_from_current="0" radius="8" center_offset_y="-3" height="7"/>
+		</shot_emission_group>
+		<shot_emission_group group_number="1" debug_color="#38BB46" alternative_projectile="MechPantherArmLaser"
+			min_delay_of_each_firing_port="0.05" max_delay_of_each_firing_port="0.1">
+			<shot_emission_point index_in_group="0" offset="0.55,1.20,0.3" />
+			<shot_emission_point index_in_group="1" offset="-0.55,1.20,0.3" />
+			<shot_emission_point index_in_group="3" offset="0.25,0.7,0.94" />
+			<shot_emission_point index_in_group="4" offset="-0.25,0.7,0.94" />
+			<targeting_zone id="1" distance_from_center="5" angle_from_current="0" radius="1.7" center_offset_y="-3" height="5"/>
+			<targeting_zone id="2" distance_from_center="13" angle_from_current="0" radius="7" center_offset_y="-3" height="7"/>
+		</shot_emission_group>
+		<shot_emission_group group_number="3" debug_color="#B838BB" alternative_projectile="MechPantherRocketUp"
+			min_delay_of_each_firing_port="0" max_delay_of_each_firing_port="0.01">
+			<shot_emission_point index_in_group="0" offset="0.23,1.5,-0.95" />
+			<shot_emission_point index_in_group="1" offset="-0.23,1.5,-0.95" />
+		</shot_emission_group>
+		<!--todo real costs-->
+		<unit_cost resource_type="MentalEnergy" required="4" />
+		<unit_cost resource_type="Neuroweave" required="1750" />
+		<unit_cost resource_type="MorphologicLattice" required="7000" />
+		<unit_cost resource_type="ElementalSlurry" required="14000" />
+	</machine_unit_type>
+
+	<!--MechDiplomat
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="MechDiplomat" display_name="AI Diplomat"
+		description="Your adapted version of the original human design."
+		short_description="Basic Combatant" unit_capacity_cost="12"
+		tooltip_icon_name="Mech9_1" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="WEmblem295" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="Mech9" vis_object_aggressive="Mech9" vis_object_scale="0.8" vis_object_extra_offset="1.76" collider_scale="1"
+		extra_offset_for_camera_focus_when_selected="0.9"
+		on_death="SmallMechDeath" on_built="BasicAndroidBuilt" on_bullet_hit="BasicMechBulletHit" 
+		on_move_start="SmallMechMoveStart" on_get_out_of_vehicle_end="SmallMechLandingFromVehicle" on_movement_finished_with_no_action="SmallMechArrival"
+		on_standard_ranged_attack="MechDiplomatRightFist" on_standard_melee_attack="BasicMechMeleeAttack"
+		radius_for_collisions="2.1" height_for_collisions="3.7" vis_object_extra_offset_on_city_map="2.7"
+		storage_slot_type="SmallMechBay" ability_group="Mech"
+		name_prefix="Diplomat" name_style="UnitBarcode" should_hide_intersecting_decorations="true"
+		sort_order="2300" command_mode_category="MechDeployment"
+		collections="AllForces,AllMechs,MechsInventedByHumans,StandardUnits,SmallMechs,Combatants,CombatMechs,CombatMechsAndVehicles,Diplomats" is_considered_mech="true"
+		screen_shake_on_exiting_vehicle_duration="0.7" screen_shake_on_exiting_vehicle_intensity="0.3" screen_shake_on_exiting_vehicle_decrease_factor="1.5"
+		screen_shake_on_regular_move_duration="0.7" screen_shake_on_regular_move_intensity="0.1" screen_shake_on_regular_move_decrease_factor="2"
+		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="false" can_ever_make_ranged_attacks="true">
+		<equipment_slot_count type="MechArmor" amount="1" />
+		<equipment_slot_count type="MechAugment" amount="1" />
+		
+		<actor_data data_type="AttackRange" base_range="35,35" />
+		<actor_data data_type="ActorMoveRange" base_range="40,40" />
+		<actor_data data_type="ActorHP" base_range="950,950" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="2,2"/>
+		<actor_data data_type="ActorPower" base_range="430,430" />
+		<actor_data data_type="UnitScavengingSkill" base_range="300,300" />
+		<actor_data data_type="UnitIntimidation" base_range="560,560" />
+		<actor_data data_type="ActorEngineeringSkill" base_range="15,15" />
+		<actor_data data_type="ActorArmorPlating" base_range="30,30" />
+		<actor_data data_type="ActorArmorPiercing" base_range="60,60" />
+		<ability_slot slot_index="1" ability_type="MechBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="MechStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="MoveMech" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="MechShieldsUp" can_be_replaced="false" />
+		<ability_slot slot_index="5" ability_type="MechUseConsumable" can_be_replaced="false" />
+		<available_stance unit_stance="MechActiveStance" allowed="1" />
+		<default_perk perk="InnatelyAlarming" unlock="" />
+		
+		<sub_collidable id="1" distance_from_center="0.2" angle_from_current="170" radius="1.2" center_offset_y="0" height="3.7" />
+		<sub_collidable id="2" distance_from_center="1.1" angle_from_current="70" radius="1.12" center_offset_y="0.8" height="0.6" />
+		<sub_collidable id="3" distance_from_center="1.1" angle_from_current="300" radius="1.12" center_offset_y="0.8" height="0.6" />
+		<shot_emission_group group_number="0" debug_color="#5EBBF4"
+			min_delay_of_each_firing_port="0.1" max_delay_of_each_firing_port="0.15">
+			<shot_emission_point index_in_group="0" offset="1.75,0.85,1.3" />
+			<shot_emission_point index_in_group="1" offset="1.58,0.85,1.3" />
+			<shot_emission_point index_in_group="2" offset="1.58,0.67,1.3" />
+			<shot_emission_point index_in_group="3" offset="1.75,0.67,1.3" />
+			<targeting_zone id="1" distance_from_center="5" angle_from_current="20" radius="1.7" center_offset_y="-3" height="5"/>
+			<targeting_zone id="2" distance_from_center="13" angle_from_current="20" radius="7" center_offset_y="-3" height="7"/>
+		</shot_emission_group>
+		<shot_emission_group group_number="1" debug_color="#43BB38" alternative_projectile="MechDiplomatLeftFist"
+			min_delay_of_each_firing_port="0.1" max_delay_of_each_firing_port="0.15">
+			<shot_emission_point index_in_group="0" offset="-1.75,0.85,1.3" />
+			<shot_emission_point index_in_group="1" offset="-1.58,0.85,1.3" />
+			<shot_emission_point index_in_group="2" offset="-1.58,0.67,1.3" />
+			<shot_emission_point index_in_group="3" offset="-1.75,0.67,1.3" />
+			<targeting_zone id="1" distance_from_center="5" angle_from_current="-20" radius="1.7" center_offset_y="-3" height="5"/>
+			<targeting_zone id="2" distance_from_center="13" angle_from_current="-20" radius="7" center_offset_y="-3" height="7"/>
+		</shot_emission_group>
+		<shot_emission_group group_number="2" debug_color="#F1F45E" alternative_projectile="MechDiplomatRocketUp"
+			min_delay_of_each_firing_port="0.05" max_delay_of_each_firing_port="0.08">
+			<shot_emission_point index_in_group="0" offset="0.5,1.75,-0.5" />
+			<shot_emission_point index_in_group="1" offset="-0.5,1.75,-0.5" />
+			<shot_emission_point index_in_group="2" offset="0.5,1.75,-0.7" />
+			<shot_emission_point index_in_group="3" offset="-0.5,1.75,-0.7" />
+		</shot_emission_group>
+		<!--todo real costs-->
+		<unit_cost resource_type="MentalEnergy" required="4" />
+		<unit_cost resource_type="Neuroweave" required="2000" />
+		<unit_cost resource_type="MorphologicLattice" required="9000" />
+		<unit_cost resource_type="ElementalSlurry" required="14000" />
+	</machine_unit_type>
+
+	<!--MechConvicter
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="MechConvicter" display_name="AI Convicter"
+		description="Your adapted version of the original human design."
+		short_description="Advanced Combatant" unit_capacity_cost="12"
+		tooltip_icon_name="Mech10_1" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="SomethingSwordDrip" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="Mech10" vis_object_aggressive="Mech10" vis_object_scale="0.7" vis_object_extra_offset="0" collider_scale="1"
+		extra_offset_for_camera_focus_when_selected="0.9"
+		on_death="SmallMechDeath" on_built="BasicAndroidBuilt" on_bullet_hit="BasicMechBulletHit" 
+		on_move_start="SmallMechMoveStart" on_get_out_of_vehicle_end="SmallMechLandingFromVehicle" on_movement_finished_with_no_action="SmallMechArrival"
+		on_standard_ranged_attack="MechConvicterLaser" on_standard_melee_attack="BasicMechMeleeAttack"
+		radius_for_collisions="3.0" height_for_collisions="5.76" vis_object_extra_offset_on_city_map="2.7"
+		storage_slot_type="SmallMechBay" ability_group="Mech"
+		name_prefix="Convicter" name_style="UnitBarcode" should_hide_intersecting_decorations="true"
+		sort_order="2400" command_mode_category="MechDeployment"		
+		collections="AllForces,AllMechs,MechsInventedByHumans,StandardUnits,SmallMechs,Combatants,CombatMechs,CombatMechsAndVehicles,LargeCombatMechsAndVehicles,Convicters" is_considered_mech="true"
+		screen_shake_on_exiting_vehicle_duration="0.7" screen_shake_on_exiting_vehicle_intensity="0.3" screen_shake_on_exiting_vehicle_decrease_factor="1.5"
+		screen_shake_on_regular_move_duration="0.7" screen_shake_on_regular_move_intensity="0.1" screen_shake_on_regular_move_decrease_factor="2"
+		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="false" can_ever_make_ranged_attacks="true">
+		<equipment_slot_count type="MechArmor" amount="1" />
+		<equipment_slot_count type="MechAugment" amount="2" />
+		
+		<actor_data data_type="AttackRange" base_range="40,40" />
+		<actor_data data_type="ActorMoveRange" base_range="40,40" />
+		<actor_data data_type="ActorHP" base_range="1400,1400" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="2,2"/>
+		<actor_data data_type="ActorPower" base_range="710,710" />
+		<actor_data data_type="UnitScavengingSkill" base_range="300,300" />
+		<actor_data data_type="UnitIntimidation" base_range="615,615" />
+		<actor_data data_type="ActorEngineeringSkill" base_range="5,5" />
+		<actor_data data_type="ActorArmorPlating" base_range="30,30" />
+		<actor_data data_type="ActorArmorPiercing" base_range="120,120" />
+		<ability_slot slot_index="1" ability_type="MechBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="MechStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="MoveMech" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="MechShieldsUp" can_be_replaced="false" />
+		<ability_slot slot_index="5" ability_type="MechUseConsumable" can_be_replaced="false" />
+		<available_stance unit_stance="MechActiveStance" allowed="1" />
+		<default_perk perk="InnatelyAlarming" unlock="" />
+		
+		<sub_collidable id="1" distance_from_center="1.16" angle_from_current="180" radius="1.7" center_offset_y="0" height="5.6" />
+		<sub_collidable id="2" distance_from_center="1.1" angle_from_current="0" radius="1.2" center_offset_y="1.2" height="1.8" />
+		<sub_collidable id="3" distance_from_center="2.2" angle_from_current="0" radius="0.8" center_offset_y="0.4" height="0.9" />
+		<shot_emission_group group_number="0" debug_color="#5EBBF4"
+			min_delay_of_each_firing_port="0" max_delay_of_each_firing_port="0.01">
+			<shot_emission_point index_in_group="0" offset="0.2,-0.1,2.65" />
+			<shot_emission_point index_in_group="1" offset="-0.2,-0.1,2.65" />
+			<targeting_zone id="1" distance_from_center="7" angle_from_current="0" radius="1.7" center_offset_y="-3" height="3.6"/>
+			<targeting_zone id="2" distance_from_center="12" angle_from_current="0" radius="4" center_offset_y="-3" height="5.6"/>
+			<targeting_zone id="3" distance_from_center="22" angle_from_current="0" radius="7" center_offset_y="-3" height="6.6"/>
+		</shot_emission_group>
+		<shot_emission_group group_number="1" debug_color="#65BB38" alternative_projectile="MechConvicterFrontRocket"
+			min_delay_of_each_firing_port="0.02" max_delay_of_each_firing_port="0.08">
+			<shot_emission_point index_in_group="0" offset="1,1.7,0.3" />
+			<shot_emission_point index_in_group="1" offset="-1,1.7,0.3" />
+			<shot_emission_point index_in_group="2" offset="1,1.9,0.16" />
+			<shot_emission_point index_in_group="3" offset="-1,1.9,0.16" />
+			<shot_emission_point index_in_group="4" offset="1,1.55,0.45" />
+			<shot_emission_point index_in_group="5" offset="-1,1.55,0.45" />
+			<targeting_zone id="1" distance_from_center="12" angle_from_current="0" radius="12" center_offset_y="-3" height="20"/>
+		</shot_emission_group>
+		<shot_emission_group group_number="2" debug_color="#B838BB" alternative_projectile="MechConvicterRocketUp"
+			min_delay_of_each_firing_port="0.05" max_delay_of_each_firing_port="0.08">
+			<shot_emission_point index_in_group="0" offset="0.50,2.7,-2.45" />
+			<shot_emission_point index_in_group="1" offset="-0.2,2.7,-2.45" />
+			<shot_emission_point index_in_group="2" offset="-0.50,2.7,-2.45" />
+			<shot_emission_point index_in_group="3" offset="0.2,2.7,-2.45" />
+		</shot_emission_group>
+		<!--todo real costs-->
+		<unit_cost resource_type="MentalEnergy" required="5" />
+		<unit_cost resource_type="Neuroweave" required="3000" />
+		<unit_cost resource_type="MorphologicLattice" required="14000" />
+		<unit_cost resource_type="ElementalSlurry" required="14000" />
+	</machine_unit_type>
+	
+</root>

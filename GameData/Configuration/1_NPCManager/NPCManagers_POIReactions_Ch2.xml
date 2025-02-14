@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Extra Economic Transports
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="MurnongRegionalShipments" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_wasteland value="true"/>
+			<gate_by_city minimum_chapter="2" required_unlock="WhatOnceWasYellow" blocked_by_city_flag="IsPostNuclearDelivery" />
+		</periodic_data>
+		<unit id="T" to_spawn="MurnongLargeEconomicTransport" stance_to_start_in="RegionalShipping"
+			cohort_tag="CorporationPropertyOwner" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+
+	<!--ExperimentalMonsters_Attacking
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="ExperimentalMonsters_Attacking" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="3" max_turns_between_activity="6"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_poi poi_tag="FarmHarvestPickupSite" min_distance_from_machine_areas="15"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="Ch2_ReleasedExperimentalMonsters" >
+				<required_city_statistic statistic_type="ExperimentalMonstersOnTheLoose" value="1" at_least="true" />
+			</gate_by_city>
+		</periodic_data>
+		<unit id="E" to_spawn="ExperimentalMonster" stance_to_start_in="ExperimentalMonsterRage"
+			should_be_specific_cohort="ExperimentalMonsters" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="3" max_to_spawn="8" max_to_have_extant_across_spawns="24" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+
+	<!--ExperimentalMonsters_WanderingIn
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="ExperimentalMonsters_WanderingIn" debug_log_manager_details="false">
+		<periodic_data
+			cannot_start_until_turn="25" cannot_start_until_doom_number="2"
+			min_turns_between_activity="3" max_turns_between_activity="6"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_poi poi_tag="FarmHarvestPickupSite" min_distance_from_machine_areas="15"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="ExperimentalMonstersAreWanderingIn" >
+				<required_city_statistic statistic_type="ExperimentalMonstersOnTheLoose" value="0" at_least="false" />
+			</gate_by_city>
+		</periodic_data>
+		<unit id="E" to_spawn="ExperimentalMonsterVisitor" stance_to_start_in="ExperimentalMonsterConfusedRage"
+			should_be_specific_cohort="ExperimentalMonsters" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="0" max_to_spawn="3" max_to_have_extant_across_spawns="12" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<!--Reaction To Raptors
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="SuperCruisers_RaptorProblem" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="4" max_turns_between_activity="8"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_poi poi_tag="MilitaryBaseCanResupplyOthers" min_distance_from_machine_areas="15"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="WarRaptorsHaveBeenFreed" blocked_by_city_flag="IsPostNuclearDelivery" />
+		</periodic_data>
+		<unit id="C" to_spawn="SecForceSuperCruiser" stance_to_start_in="SecForceCruiserHuntingAnimals"
+			should_be_specific_cohort="VorsiberEnforcement" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="8" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+
+	<npc_manager id="VorsiberInquisitors_RaptorProblem" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="2" max_turns_between_activity="3"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_poi poi_tag="MilitaryBaseCanResupplyOthers" min_distance_from_machine_areas="15"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="WarRaptorsHaveBeenFreed" blocked_by_city_flag="IsPostNuclearDelivery" />
+		</periodic_data>
+		<unit id="C" to_spawn="VorsiberInquisitor" stance_to_start_in="SecForceUnitHuntingAnimals"
+			should_be_specific_cohort="VorsiberEnforcement" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="6" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
+	
+</root>

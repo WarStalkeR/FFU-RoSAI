@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<exploration_site id="LaborAtTheReactor" display_name="Labor At The Reactor"
+		icon_name="CS_Armor18" icon_scale="0.5" color_hex="#C63300" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		spawns_at_building_tag="NuclearPowerPlant" required_chapter_number="1"
+		required_unlock_1="MilitaryInfiltration" required_actor_collection="CombatUnits"
+		target_skill_to_hit="270" required_skill_type="UnitStrength" required_skill_amount="90"
+		instantly_unlock_1="UraniumCarapace" instantly_unlock_2="" instantly_unlock_3=""
+		research_domain_inspiration_type="SmallArmsResearch"
+		collections="All,NewEquipment" />
+
+	<exploration_site id="LaborAmongstTheMinerals" display_name="Labor Amongst The Minerals"
+		icon_name="HM_ShapeAbstractShape" icon_scale="0.5" color_hex="#C63300" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		spawns_at_building_tag="MineralAndMolecularSeparationFacility" required_chapter_number="1" required_intelligence_class="3"
+		required_unlock_1="UraniumCarapace" required_actor_collection="CombatUnits"
+		target_skill_to_hit="1620" required_skill_type="UnitStrength" required_skill_amount="90"
+		instantly_unlock_1="SimpleOrganometallicCompounds" instantly_unlock_2="" instantly_unlock_3=""
+		research_domain_inspiration_type="SmallArmsResearch"
+		collections="All,NewEquipment" />
+
+	<exploration_site id="CasualNanotechLabWork" display_name="Casual Nanotech Lab Work"
+		icon_name="CS_Armor16" icon_scale="0.5" color_hex="#C63300" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		spawns_at_building_tag="MineralAndMolecularSeparationFacility" required_chapter_number="1" required_intelligence_class="3"
+		required_actor_collection="Technicians"
+		target_skill_to_hit="280" required_skill_type="UnitHackingSkill" required_skill_amount="40"
+		instantly_unlock_1="GrapheneMicrobots" instantly_unlock_2="" instantly_unlock_3=""
+		research_domain_inspiration_type="SmallArmsResearch"
+		collections="All,NewEquipment" />
+
+	<exploration_site id="ChattingWithPMCGuards" display_name="Chatting With PMC Guards"
+		icon_name="CleanSimple_SciFi066" icon_scale="0.5" color_hex="#C63300" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		spawns_at_building_tag="AlmostAny" required_chapter_number="1" spawn_poi_tag_target_limiter="MilitaryBaseMini"
+		required_actor_collection="PMCImpostors"
+		target_skill_to_hit="1120" required_skill_type="UnitCognition" required_skill_amount="140"
+		instantly_unlock_1="RunningShot" instantly_unlock_2="" instantly_unlock_3=""
+		research_domain_inspiration_type="SmallArmsResearch"
+		collections="All,NewEquipment" />
+
+	<exploration_site id="MunitionsDepotWorker" display_name="Munitions Depot Worker"
+		icon_name="CleanSimple_SciFi066" icon_scale="0.5" color_hex="#C63300" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		spawns_at_building_tag="MilitaryStorage" required_chapter_number="1" required_intelligence_class="2"
+		required_actor_collection="PMCImpostors"
+		target_skill_to_hit="1280" required_skill_type="UnitStrength" required_skill_amount="80"
+		instantly_unlock_1="HandheldRailgun" instantly_unlock_2="" instantly_unlock_3=""
+		research_domain_inspiration_type="SmallArmsResearch"
+		collections="All,NewEquipment" />
+	
+	<exploration_site id="AirportWarehouseWorker" display_name="Airport Warehouse Worker"
+		icon_name="CleanSimple_SciFi066" icon_scale="0.5" color_hex="#C63300" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		spawns_at_building_tag="AirportHangarNonSyndicate" required_chapter_number="1" required_intelligence_class="3"
+		required_unlock_1="HandheldRailgun" required_actor_collection="Technicians"
+		target_skill_to_hit="1520" required_skill_type="UnitHackingSkill" required_skill_amount="40"
+		instantly_unlock_1="BoatShot" instantly_unlock_2="" instantly_unlock_3=""
+		research_domain_inspiration_type="SmallArmsResearch"
+		collections="All,NewEquipment" />
+
+	<exploration_site id="RummageThroughSecForceStation" display_name="Rummage Through SecForce Station"
+		icon_name="CleanSimple_SciFi066" icon_scale="0.5" color_hex="#C63300" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		spawns_at_building_tag="SecForceStation" required_chapter_number="1" required_intelligence_class="2"
+		required_actor_collection="PMCImpostors"
+		target_skill_to_hit="160" required_skill_type="UnitHackingSkill" required_skill_amount="40"
+		instantly_unlock_1="DenseTarget" instantly_unlock_2="" instantly_unlock_3=""
+		research_domain_inspiration_type="SmallArmsResearch"
+		collections="All,NewEquipment" />
+	
+	<exploration_site id="TinkerWithSolarPanels" display_name="Tinker With Solar Panels"
+		icon_name="FlatSkillA02" icon_scale="0.5" color_hex="#C63300" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		spawns_at_building_tag="SolarPanels" required_chapter_number="1" required_intelligence_class="3"
+		required_actor_collection="Technicians"
+		target_skill_to_hit="1400" required_skill_type="UnitCognition" required_skill_amount="100"
+		instantly_unlock_1="DualShock" instantly_unlock_2="" instantly_unlock_3=""
+		research_domain_inspiration_type="SmallArmsResearch"
+		collections="All,NewEquipment" />
+
+	<exploration_site id="LoungeAroundBarracks" display_name="Lounge Around Barracks"
+		icon_name="PW_revolvergun2" icon_scale="0.5" color_hex="#C63300" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		spawns_at_building_tag="MilitaryBarracks" required_chapter_number="1" spawn_poi_tag_target_limiter="MilitaryBaseNormal"
+		required_actor_collection="PMCImpostors"
+		target_skill_to_hit="1120" required_skill_type="UnitCognition" required_skill_amount="70"
+		instantly_unlock_1="LesserDamageMitigation" instantly_unlock_2="" instantly_unlock_3=""
+		research_domain_inspiration_type="SmallArmsResearch"
+		collections="All,NewEquipment" />
+
+</root>

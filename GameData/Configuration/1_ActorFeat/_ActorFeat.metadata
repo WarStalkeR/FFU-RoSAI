@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="actor_feat">
+
+	<attribute key="description" type="existing-override" is_required="false" />
+
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information, and this one is optional because so much other information is provided already in these tips."/>
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+			tooltip="This specifies the dll that the feat logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the feat logic in the specified external dll."/>
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+
+	<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the shape icon."/>
+	
+	<attribute key="tooltip_color" type="node-dropdown" is_required="true" node_source="VisColorUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="In tooltips, what color will this be drawn?  Done via VisColorUsage for the sake of consistency -- that consistency is only for the tooltip lists, NOT for the glowing icons, because the glowing icons can't be consistent due to the nature of how they're lit." />
+
+	<attribute key="is_high_importance" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this feat is a very high importance one, it should be shown with extra prominence in the ui." />
+
+	<attribute key="is_not_yet_functional" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this feat does not actually work yet." />
+
+	<attribute key="has_code_when_dealing_damage" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then some code runs when the actor who has this deals damage." />
+	<attribute key="has_code_when_taking_damage" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then some code runs when the actor who has this takes damage." />
+	<attribute key="has_code_when_considering_attack_of_opportunity" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then some code runs when the actor who has this is considering if they'll be hit for an attack of opportunity." />
+
+	<attribute key="has_code_when_killing" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then some code runs when the actor who has this kills or disables an enemy." />
+	<attribute key="has_code_when_dying" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, then some code runs when the actor who has this dies or is disabled." />
+
+</root>

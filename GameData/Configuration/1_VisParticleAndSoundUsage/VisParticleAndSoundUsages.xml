@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<vis_particle_and_sound_usage id="NextTurnReady" sound_effect="StartTurnClock" />
+
+	<vis_particle_and_sound_usage id="UnarmedHumanNormalAttack" sound_effect="PunchLight"
+		particle_effect="SlashWideGreen" particle_effect_scale="0.75" particle_effect_offset_y="0.1"/>
+	
+	<vis_particle_and_sound_usage id="WeakHumanGunfire" sound_effect="SingleShot"
+		particle_effect="ProjectileSpikeGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="ArmedMilitaryCaptainShot" sound_effect="ShotARSingle"
+		particle_effect="ProjectileSpikeGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="StraightShot_Impactor" />
+
+	<vis_particle_and_sound_usage id="RebelGunslingerShot" sound_effect="ShotShotgunB"
+		particle_effect="ProjectilePlasmaPink" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="GangAkimboShot" sound_effect="ShotSciFiLightPistol2"
+		particle_effect="ProjectilePlasmaRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="StraightShot_Pierce" />
+
+	<vis_particle_and_sound_usage id="LostKidGruntShot" sound_effect="ShotPunchyPistolD"
+		particle_effect="ProjectileSparkyRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="LostKidSupportShot" sound_effect="ShotPunchyPistolE"
+		particle_effect="ProjectileSparkyGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="LostKidBossShot" sound_effect="ShotPunchyPistolB"
+		particle_effect="ProjectilePlasmaPink" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="StraightShot_Pierce" />
+	
+	<vis_particle_and_sound_usage id="SplicedCultistShot" sound_effect="ShotRifleSingleB"
+		particle_effect="ProjectilePlasmaRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="ArcShot_Mid" />
+	<vis_particle_and_sound_usage id="GraftedCultistShot" sound_effect="ShotRifleMassive"
+		particle_effect="ProjectilePlasmaBlue" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="ArcShot_Mid" />
+	
+	<vis_particle_and_sound_usage id="SlumlordShot" sound_effect="ShotRifleSingleB"
+		particle_effect="ProjectilePlasmaRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="ArcShot_Mid" />
+
+	<vis_particle_and_sound_usage id="ReligiousWarriorShot" sound_effect="ShotRifleSingleB"
+		particle_effect="ProjectilePlasmaRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="ArcShot_Mid" />
+	<vis_particle_and_sound_usage id="ReligiousZealotShot" sound_effect="ShotRifleMassive"
+		particle_effect="ProjectilePlasmaBlue" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="ArcShot_Mid" />
+	
+	<vis_particle_and_sound_usage id="CorporalShot" sound_effect="ShotPistol"
+		particle_effect="ProjectileSparkyGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="VorsiberSoldierShot" sound_effect="ShotRifleMassive"
+		particle_effect="ProjectileSparkyGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="StraightShot_Pierce" />
+
+	<vis_particle_and_sound_usage id="VorsiberInquisitorShot" sound_effect="ShotRifleMassive"
+		particle_effect="ProjectileSparkyGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="StraightShot_Pierce" />
+
+	<vis_particle_and_sound_usage id="AblatorShot" sound_effect="ShotPunchyFatC"
+		particle_effect="ProjectilePlasmaBlue" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="30" projectile_movement_logic="ArcShot_Low" />
+	
+	<vis_particle_and_sound_usage id="GrenadierShot" sound_effect="GrenadeLauncherTubeC" 
+		on_hit="GrenadierShotLand"
+		particle_effect="ProjectileFlameRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="30" projectile_movement_logic="ArcShot_Mid" />
+	<vis_particle_and_sound_usage id="GrenadierShotLand" sound_effect="ExplosionGrenadeG" reference_area_range_for_on_hit="5"
+		particle_effect="ExplosionAreaAir1A" particle_effect_scale="2" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="GR59FragGrenadeShot" sound_effect="GrenadeLauncherTubeC"
+		on_hit="GR59FragGrenadeShotLand"
+		particle_effect="ProjectileFlameRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="30" projectile_movement_logic="ArcShot_Mid" />
+	<vis_particle_and_sound_usage id="GR59FragGrenadeShotLand" sound_effect="ExplosionGrenadeG" reference_area_range_for_on_hit="5"
+		particle_effect="ExplosionAreaAir1A" particle_effect_scale="2" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="GF60StunGrenadeShot" sound_effect="GrenadeLauncherTubeC"
+		on_hit="GF60StunGrenadeShotLand"
+		particle_effect="ProjectileFlameRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="30" projectile_movement_logic="ArcShot_Mid" />
+	<vis_particle_and_sound_usage id="GF60StunGrenadeShotLand" sound_effect="ExplosionGrenadeG" reference_area_range_for_on_hit="5"
+		particle_effect="ExplosionAreaAir1A" particle_effect_scale="2" particle_effect_offset_y="-0.0" />
+	
+	<vis_particle_and_sound_usage id="MilitarySniperShot" sound_effect="ShotSniperEcho"
+		particle_effect="ProjectileSpikeRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="140" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="GangSharpshooterShot" sound_effect="ShotRifleSingleB"
+		particle_effect="ProjectileSpikeRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Pierce" />
+
+	<vis_particle_and_sound_usage id="SecForcePatrolShot" sound_effect="ShotCano"
+		particle_effect="ProjectileSparkyGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="40" projectile_movement_logic="StraightShot_Impactor" shrink_speed_multiplier_after_impact="0.5" />
+	<vis_particle_and_sound_usage id="SecForceBackupShot" sound_effect="ShotRifleSingleB"
+		extra_bursts_of_effect_to_schedule="2" min_delay_of_extra_bursts="0.1" max_delay_of_extra_bursts="0.18" shrink_speed_multiplier_after_impact="2"
+		particle_effect="ProjectileDiamondGreen" particle_effect_scale="0.5" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="40" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="SecForceDetectivesShot" sound_effect="ShotCano"
+		particle_effect="ProjectileSpikeGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="40" projectile_movement_logic="StraightShot_Pierce" shrink_speed_multiplier_after_impact="0.2" />
+
+	<vis_particle_and_sound_usage id="SecForceIPSecurityShot" sound_effect="ShotRifleBurstB"
+		extra_bursts_of_effect_to_schedule="3" min_delay_of_extra_bursts="0.06" max_delay_of_extra_bursts="0.08" shrink_speed_multiplier_after_impact="2" skip_additional_sounds_on_extra_bursts="true"
+		particle_effect="ProjectileFXThinBlue" particle_effect_scale="0.75" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="StraightShot_Impactor" />
+
+	<vis_particle_and_sound_usage id="SyndicateGunnerShot" sound_effect="ShotCano"
+		particle_effect="ProjectileSparkyGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="40" projectile_movement_logic="StraightShot_Impactor" shrink_speed_multiplier_after_impact="0.5" />
+	
+	<vis_particle_and_sound_usage id="SyndicateSharpshooterShot" sound_effect="ShotRifleSingleB"
+		extra_bursts_of_effect_to_schedule="2" min_delay_of_extra_bursts="0.1" max_delay_of_extra_bursts="0.18" shrink_speed_multiplier_after_impact="2"
+		particle_effect="ProjectileFXThinBlue" particle_effect_scale="0.5" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="40" projectile_movement_logic="StraightShot_Impactor" />
+
+	<vis_particle_and_sound_usage id="SyndicateHeavyShot" sound_effect="ShotShotgunB"
+		particle_effect="ProjectilePlasmaPink" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="30" projectile_movement_logic="ArcShot_Low" />
+	
+	<!--SecForceCruiser-->
+	<vis_particle_and_sound_usage id="SecForceCruiserShot" sound_effect="DirtyGripImpact6" on_hit="SecForceCruiserShotHit"
+		particle_effect="ProjectileLightningOrange" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="HomingShot_Cruiser" />
+	<vis_particle_and_sound_usage id="SecForceCruiserShotHit" sound_effect="ExplosionsUnusual2"  reference_area_range_for_on_hit="14"
+		particle_effect="ExplosionStyle3Small" particle_effect_scale="2" particle_effect_offset_y="-0.0" />
+
+	<!--MilitaryTroopCarrier-->
+	<vis_particle_and_sound_usage id="MilitaryTroopCarrierShot" sound_effect="ShotSciFiAR2" on_hit="MilitaryTroopCarrierShotHit"
+		particle_effect="ProjectileSparkyRed" particle_effect_scale="1.5" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="MilitaryTroopCarrierShotHit" sound_effect="ExplosionBassB"  reference_area_range_for_on_hit="3"
+		particle_effect="ExplosionFStyleDust2" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="MilitaryTroopCarrierRocketUp" sound_effect="SteampunkImpact22,SteampunkImpact29" on_hit="MilitaryTroopCarrierRocketHit"
+		particle_effect="ProjectileSpikeGold" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="HomingShot_PantherRocket" />
+	<vis_particle_and_sound_usage id="MilitaryTroopCarrierRocketHit" sound_effect="ExplosionBassB"  reference_area_range_for_on_hit="3"
+		particle_effect="ExplosionStyleAir6" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+
+	<!--MilitaryHighAltitudeTransport-->
+	<vis_particle_and_sound_usage id="MilitaryHighAltitudeTransportShot" sound_effect="ShotSciFiAR2" on_hit="MilitaryHighAltitudeTransportShotHit"
+		particle_effect="ProjectileBulletRedB" particle_effect_scale="3" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="MilitaryHighAltitudeTransportShotHit" sound_effect="ExplosionLightDebrisB"  reference_area_range_for_on_hit="18"
+		particle_effect="ExplosionFStyleAir2" particle_effect_scale="1" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="MilitaryHighAltitudeTransportFrontRocket" sound_effect="ShotSciFiRocketLauncher" on_hit="MilitaryHighAltitudeTransportFrontRocketHit"
+		particle_effect="ProjectileDiamondGreen" particle_effect_scale="3" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="90" projectile_movement_logic="HomingShot_ConvicterFireball" />
+	<vis_particle_and_sound_usage id="MilitaryHighAltitudeTransportFrontRocketHit" sound_effect="ExplosionLightDebrisB"  reference_area_range_for_on_hit="18"
+		particle_effect="ExplosionFStyleAir2" particle_effect_scale="1" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="MilitaryHighAltitudeTransportRocketUp" sound_effect="SteampunkImpact30,SteampunkImpact31" on_hit="MilitaryHighAltitudeTransportRocketHit"
+		particle_effect="ProjectileDiamondDoubleCyan" particle_effect_scale="5" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="HomingShot_ConvicterRocket" />
+	<vis_particle_and_sound_usage id="MilitaryHighAltitudeTransportRocketHit" sound_effect="ExplosionLightDebrisB"  reference_area_range_for_on_hit="18"
+		particle_effect="ExplosionFStyleAir11" particle_effect_scale="2" particle_effect_offset_y="-0.0" />
+
+	<!--Skyfall-->
+	<vis_particle_and_sound_usage id="SkyfallRocketUp" sound_effect="SteampunkImpact22,SteampunkImpact29" on_hit="SkyfallRocketHit"
+		particle_effect="ProjectileSpikeGold" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="HomingShot_PantherRocket" />
+	<vis_particle_and_sound_usage id="SkyfallRocketHit" sound_effect="ExplosionBassB"  reference_area_range_for_on_hit="3"
+		particle_effect="ExplosionStyleAir6" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+	
+	<!--LargeEconomicTransport-->
+	<vis_particle_and_sound_usage id="LargeEconomicTransportShot" sound_effect="ShotPlasmaRifleHeavy" on_hit="LargeEconomicTransportShotHit"
+		particle_effect="ProjectileLaserBlue" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="LargeEconomicTransportShotHit" sound_effect="ExplosionMuted"  reference_area_range_for_on_hit="3"
+		particle_effect="ExplosionFStyleDust2" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="LargeEconomicTransportRocketUp" sound_effect="ShotTubeBricky" on_hit="LargeEconomicTransportRocketHit"
+		particle_effect="ProjectileSpikeBlue" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="HomingShot_MachinistRocket" />
+	<vis_particle_and_sound_usage id="LargeEconomicTransportRocketHit" sound_effect="ExplosionMuted"  reference_area_range_for_on_hit="3"
+		particle_effect="ExplosionFStyleDust2" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+	
+	<!--Foundry-->
+	<vis_particle_and_sound_usage id="FoundryShot" sound_effect="ShotRetroParticleBurst,DirtyGripImpact14" on_hit="FoundryShotHit"
+		particle_effect="ProjectileLightningGreen" particle_effect_scale="0.5" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="HomingShot_Cruiser" />
+	<vis_particle_and_sound_usage id="FoundryShotHit" sound_effect="ExplosionsUnusual2"  reference_area_range_for_on_hit="14"
+		particle_effect="ExplosionStyle3Small" particle_effect_scale="2" particle_effect_offset_y="-0.0" />
+
+	<!--MechMachinist-->
+	<vis_particle_and_sound_usage id="MechMachinistLaser" sound_effect="ShotPlasmaRifleHeavy" on_hit="MechMachinistLaserHit"
+		particle_effect="ProjectileLaserGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="MechMachinistLaserHit" sound_effect="ExplosionMuted"  reference_area_range_for_on_hit="3"
+		particle_effect="ExplosionFStyleDust2" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="MechMachinistRocketUp" sound_effect="SteampunkImpact61,SteampunkImpact63" on_hit="MechMachinistRocketHit"
+		particle_effect="ProjectileSpikeGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="HomingShot_MachinistRocket" />
+	<vis_particle_and_sound_usage id="MechMachinistRocketHit" sound_effect="ExplosionMuted"  reference_area_range_for_on_hit="3"
+		particle_effect="ExplosionFStyleDust2" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+
+	<!--MechPanther-->
+	<vis_particle_and_sound_usage id="MechPantherFistLaser" sound_effect="ShotSciFiAR2" on_hit="MechPantherFistLaserHit"
+		particle_effect="ProjectileBulletPurpleB" particle_effect_scale="0.5" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="MechPantherFistLaserHit" sound_effect="ExplosionBassB"  reference_area_range_for_on_hit="3"
+		particle_effect="ExplosionFStyleDust2" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="MechPantherArmLaser" sound_effect="ShotSciFiAR2" on_hit="MechPantherArmLaserHit"
+		particle_effect="ProjectileBulletRedC" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="MechPantherArmLaserHit" sound_effect="ExplosionBassB"  reference_area_range_for_on_hit="3"
+		particle_effect="ExplosionFStyleDust2" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="MechPantherShoulderLaser" sound_effect="ShotSciFiRocketLauncher" on_hit="MechPantherShoulderLaserHit"
+		particle_effect="ProjectileFXFireball" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="40" projectile_movement_logic="HomingShot_PantherFireball" />
+	<vis_particle_and_sound_usage id="MechPantherShoulderLaserHit" sound_effect="ExplosionBassB"  reference_area_range_for_on_hit="3"
+		particle_effect="ExplosionStyleAir5" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="MechPantherRocketUp" sound_effect="GrenadeLauncherTubeF" on_hit="MechPantherRocketHit"
+		particle_effect="ProjectileSpikeRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="HomingShot_PantherRocket" />
+	<vis_particle_and_sound_usage id="MechPantherRocketHit" sound_effect="ExplosionBassB"  reference_area_range_for_on_hit="3"
+		particle_effect="ExplosionStyleAir6" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+	
+	<!--MechDiplomat-->
+	<vis_particle_and_sound_usage id="MechDiplomatRightFist" sound_effect="ShotSciFiARSingle15" on_hit="MechDiplomatRightFistHit"
+		particle_effect="ProjectileDiamondBlue" particle_effect_scale="0.5" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="MechDiplomatRightFistHit" sound_effect="ExplosionMutedB"  reference_area_range_for_on_hit="10"
+		particle_effect="ExplosionAreaAir3A" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="MechDiplomatLeftFist" sound_effect="ShotSciFiARSingle14" on_hit="MechDiplomatLeftFistHit"
+		particle_effect="ProjectileDiamondGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="MechDiplomatLeftFistHit" sound_effect="ExplosionMutedB"  reference_area_range_for_on_hit="10"
+		particle_effect="ExplosionAreaAir3A" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="MechDiplomatRocketUp" sound_effect="ShotSciFiPlasmaSingle2" on_hit="MechDiplomatRocketHit"
+		particle_effect="ProjectileFXThinGreen" particle_effect_scale="1.5" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="HomingShot_DiplomatRocket" />
+	<vis_particle_and_sound_usage id="MechDiplomatRocketHit" sound_effect="ExplosionMutedB"  reference_area_range_for_on_hit="10"
+		particle_effect="ExplosionAreaAir3A" particle_effect_scale="0.25" particle_effect_offset_y="-0.0" />
+		
+	<!--MechConvicter-->
+	<vis_particle_and_sound_usage id="MechConvicterLaser" sound_effect="ShotSciFiAR2" on_hit="MechConvicterLaserHit"
+		particle_effect="ProjectileBulletRedC" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="MechConvicterLaserHit" sound_effect="ExplosionLightDebrisB"  reference_area_range_for_on_hit="18"
+		particle_effect="ExplosionFStyleAir2" particle_effect_scale="1" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="MechConvicterFrontRocket" sound_effect="ShotSciFiRocketLauncher" on_hit="MechConvicterFrontRocketHit"
+		particle_effect="ProjectileFXIce" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="HomingShot_ConvicterFireball" />
+	<vis_particle_and_sound_usage id="MechConvicterFrontRocketHit" sound_effect="ExplosionLightDebrisB"  reference_area_range_for_on_hit="18"
+		particle_effect="ExplosionFStyleAir2" particle_effect_scale="1" particle_effect_offset_y="-0.0" />
+
+	<vis_particle_and_sound_usage id="MechConvicterRocketUp" sound_effect="GrenadeLauncherTubeF" on_hit="MechConvicterRocketHit"
+		particle_effect="ProjectileSniperGold" particle_effect_scale="2" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="HomingShot_ConvicterRocket" />
+	<vis_particle_and_sound_usage id="MechConvicterRocketHit" sound_effect="ExplosionLightDebrisB"  reference_area_range_for_on_hit="18"
+		particle_effect="ExplosionFStyleAir11" particle_effect_scale="2" particle_effect_offset_y="-0.0" />
+
+	<!--ExtractionDrone-->
+	<vis_particle_and_sound_usage id="ExtractionDroneLaunched" sound_effect="DarkWhoosh5" on_hit="ExtractionDroneHit"
+		particle_effect="ProjectileFXThinPurpleElectric" particle_effect_scale="2" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="ExtractionDroneHit" sound_effect="DirtyCinemaImpact28"  reference_area_range_for_on_hit="14"
+		particle_effect="ExplosiveHitBlueSplash1" particle_effect_scale="1.5" particle_effect_offset_y="0.3" />
+
+	<!--EngineDrill-->
+	<vis_particle_and_sound_usage id="EngineDrillLaunched" sound_effect="DarkWhoosh5" on_hit="EngineDrillHit"
+		particle_effect="ProjectileFXThinPurpleElectric" particle_effect_scale="2" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="EngineDrillHit" sound_effect="DirtyCinemaImpact22"  reference_area_range_for_on_hit="14"
+		particle_effect="ExplosiveHitMagmaSplash1" particle_effect_scale="1.5" particle_effect_offset_y="0.3" />
+
+	<!--SpidersThrown-->
+	<vis_particle_and_sound_usage id="SpidersThrown" sound_effect="DarkWhoosh11" on_hit="SpidersThrownHit"
+		particle_effect="ProjectileFlameRed" particle_effect_scale="0.5" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="SpidersThrownHit" sound_effect="DirtyCinemaImpact10"  reference_area_range_for_on_hit="14"
+		particle_effect="EnergyBurstSpikesPink" particle_effect_scale="0.5" particle_effect_offset_y="0.3" />
+
+	<!--BeesThrown-->
+	<vis_particle_and_sound_usage id="BeesThrown" sound_effect="DarkWhoosh11" on_hit="BeesThrownHit"
+		particle_effect="ProjectileFlameGold" particle_effect_scale="0.5" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="BeesThrownHit" sound_effect="DirtyCinemaImpact10"  reference_area_range_for_on_hit="14"
+		particle_effect="EnergyBurstSpikesGold" particle_effect_scale="0.5" particle_effect_offset_y="0.3" />
+
+	<!--MicrobuilderCloudThrown-->
+	<vis_particle_and_sound_usage id="MicrobuilderCloudThrown" sound_effect="PunchImpactFire2" on_hit="MicrobuilderCloudThrownHit"
+		particle_effect="ProjectileSwirlNature" particle_effect_scale="0.5" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="MicrobuilderCloudThrownHit" sound_effect="DirtyGripImpact2"  reference_area_range_for_on_hit="14"
+		particle_effect="DustStorm" particle_effect_scale="0.5" particle_effect_offset_y="0.3" />
+	
+	<!--RemoteDemolish-->
+	<vis_particle_and_sound_usage id="RemoteDemolish" sound_effect="ShotBigGunSingle" on_hit="RemoteDemolishHit"
+		particle_effect="ProjectileBulletRedB" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="50" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="RemoteDemolishHit" sound_effect="ExplosionDynamite" reference_area_range_for_on_hit="14"
+		particle_effect="ExplosionStyleCircMed" particle_effect_scale="1.5" particle_effect_offset_y="0.01" />
+	
+	<!--Next-->
+	
+	<vis_particle_and_sound_usage id="SecForceCruiserMoveStart" sound_effect="QuickDopplerWhoosh3" />
+	<vis_particle_and_sound_usage id="SecForceCruiserMoveEnd" sound_effect="FireHit" />
+
+	<vis_particle_and_sound_usage id="BasicHumanVehicleDeath" sound_effect="ExplosionWithFire"
+		particle_effect="ExplosionStyleCircAirLarge" particle_effect_scale="0.4" particle_effect_offset_y="0.1" />
+	<vis_particle_and_sound_usage id="BasicMachineVehicleDeath" sound_effect="ExplosionWithFire"
+		particle_effect="ExplosionStyleCircAirLarge" particle_effect_scale="0.4" particle_effect_offset_y="0.1" />
+	<vis_particle_and_sound_usage id="BasicMachineVehicleBuilt" sound_effect="DirtyCinemaImpact15,DirtyCinemaImpact16"
+		particle_effect="EnergyBurstStormBlue" particle_effect_scale="1" particle_effect_offset_y="0.1" />
+	
+	<vis_particle_and_sound_usage id="BasicAndroidRangedAttack" sound_effect="ShotLaserRifle"
+		particle_effect="ProjectilePlasmaGold" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="BasicAndroidMeleeAttack" sound_effect="SciFiSlice"
+		particle_effect="SlashWideBlue" particle_effect_scale="1" particle_effect_offset_y="0.1" />
+
+	<vis_particle_and_sound_usage id="ShotgunBasic" sound_effect="ShotShotgunC"
+		particle_effect="ProjectileSwirlWhite" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="ShotgunHeavy" sound_effect="ShotShotgunF"
+		particle_effect="ProjectileSwirlPurple" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Pierce" />
+
+	<vis_particle_and_sound_usage id="CorruptedOfficePrinterShot" sound_effect="ShotPistol"
+		particle_effect="ProjectileSpikeGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Impactor" />
+
+	<vis_particle_and_sound_usage id="PistolTiny" sound_effect="ShotColtPistol"
+		particle_effect="ProjectileSpikeGold" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="PistolSmall" sound_effect="ShotPistol"
+		particle_effect="ProjectileSpikeGreen" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="PistolLaser" sound_effect="ShotLaserPistol"
+		particle_effect="ProjectileLaserBlue" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="LaserRevolver" sound_effect="ShotLaserRevolver"
+		particle_effect="ProjectileLaserGold" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="MachinePistol" sound_effect="ShotSciFiLightPistolBurst"
+		particle_effect="ProjectileSpikePurple" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="PistolSilenced" sound_effect="ShotSilencedPistolC"
+		particle_effect="ProjectileSpikeRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Impactor" />
+	
+	<vis_particle_and_sound_usage id="BasicMechRangedAttack" sound_effect="ShotLaserRifleHeavy"
+		particle_effect="ProjectilePlasmaRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Pierce" />
+	<vis_particle_and_sound_usage id="BasicMechMeleeAttack" sound_effect="EpicSlice"
+		particle_effect="SlashWideGold" particle_effect_scale="1" particle_effect_offset_y="0.1" />
+
+	<vis_particle_and_sound_usage id="AchillesRifle" sound_effect="ShotRifleSingleB"
+		extra_bursts_of_effect_to_schedule="2" min_delay_of_extra_bursts="0.12" max_delay_of_extra_bursts="0.16" shrink_speed_multiplier_after_impact="2" skip_additional_sounds_on_extra_bursts="false"
+		particle_effect="ProjectileBulletPink" particle_effect_scale="0.35" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="StraightShot_Pierce" />
+
+	<vis_particle_and_sound_usage id="BlackRifle" sound_effect="ShotPunchyCleanB"
+		extra_bursts_of_effect_to_schedule="2" min_delay_of_extra_bursts="0.1" max_delay_of_extra_bursts="0.14" shrink_speed_multiplier_after_impact="2" skip_additional_sounds_on_extra_bursts="false"
+		particle_effect="ProjectileLaserBlue" particle_effect_scale="0.35" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="StraightShot_Pierce" />
+
+	<vis_particle_and_sound_usage id="GallantRifle" sound_effect="ShotARSingle"
+		extra_bursts_of_effect_to_schedule="2" min_delay_of_extra_bursts="0.12" max_delay_of_extra_bursts="0.16" shrink_speed_multiplier_after_impact="2" skip_additional_sounds_on_extra_bursts="false"
+		particle_effect="ProjectileBulletRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="StraightShot_Pierce" />
+
+	<vis_particle_and_sound_usage id="TacticalRifle" sound_effect="ShotModernMachineGunSingle"
+		extra_bursts_of_effect_to_schedule="0" shrink_speed_multiplier_after_impact="2" skip_additional_sounds_on_extra_bursts="false"
+		particle_effect="ProjectileSniperGold" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="70" projectile_movement_logic="StraightShot_Pierce" />
+
+	<vis_particle_and_sound_usage id="BulkHarvesterDroneAppears" sound_effect="ImpactChirpyCrossbow" particle_effect="BlueCyanStar" particle_effect_scale="0.5" />
+
+	<vis_particle_and_sound_usage id="BulkHarvesterDroneShot" sound_effect="ShotSciFiARSingle"
+		particle_effect="ProjectileSpikePurple" particle_effect_scale="0.5" particle_effect_offset_y="0"
+		particle_effect_travel_speed="80" projectile_movement_logic="StraightShot_Impactor" />
+
+	<vis_particle_and_sound_usage id="NPCAppear_NewUnit_Military" sound_effect="DarkWhoosh8,MotionImpact8" />
+	<vis_particle_and_sound_usage id="NPCAppear_NewUnit_MilitaryMid" sound_effect="EmotionTechHit6,NeonHit13" />
+	<vis_particle_and_sound_usage id="NPCAppear_NewUnit_MilitaryScary" sound_effect="DarkTechHit18,DarkTechHit26,DarkTechHit28" />
+	<vis_particle_and_sound_usage id="NPCAppear_NewUnit_Mech" sound_effect="DarkTechHit10,DarkTechHit13,DarkTechHit14" />
+	<vis_particle_and_sound_usage id="NPCAppear_NewUnit_Lawyer" sound_effect="UIWhoosh5" />
+	<vis_particle_and_sound_usage id="NPCAppear_NewUnit_Hazmat" sound_effect="NeonHit1" />
+	<vis_particle_and_sound_usage id="NPCAppear_NewUnit_NonCombatant" sound_effect="NeonHit4" />
+	<vis_particle_and_sound_usage id="NPCAppear_NowVisible" sound_effect="DarkWhoosh9" />
+	
+	<vis_particle_and_sound_usage id="DeliveryCraftDeliver" sound_effect="PeriodicSciFiFlyby,PeriodicSciFiFlybyB" /><!--PeriodicDroneDeliveryB-->
+	<vis_particle_and_sound_usage id="BirdsChirping" sound_effect="PeriodicBirds,PeriodicBirdsB,PeriodicBirdsC" />
+	<vis_particle_and_sound_usage id="HighFlybys" sound_effect="PeriodicJetFlyby,PeriodicJetFlybyB,PeriodicJetFlybyC" />
+	<vis_particle_and_sound_usage id="LowTraffic" sound_effect="PeriodicEngines,PeriodicEngineWarps,PeriodicVehiclesPassing,PeriodicVehiclesPassingB,PeriodicVehiclesPassingC,PeriodicVehiclesPassingD" />
+	<vis_particle_and_sound_usage id="GangsFiring" sound_effect="PeriodicBassDrop,PeriodicQuietThump" />
+
+	<vis_particle_and_sound_usage id="EndOfTimeWater" sound_effect="PeriodicUnderwaterMovement,PeriodicSmallWaterExplosion" />
+	<vis_particle_and_sound_usage id="EndOfTimeAir" sound_effect="PeriodicEndOfTimeThumps,PeriodicEndOfTimeImpacts" />
+	<vis_particle_and_sound_usage id="EndOfTimeCrack" sound_effect="PeriodicEndOfTimeIce" />
+
+	<vis_particle_and_sound_usage id="HackingA" sound_effect="PeriodicSubDirt,PeriodicSubIce,PeriodicSubCrunch,PeriodicSubVocalScrape" />
+	<vis_particle_and_sound_usage id="HackingB" sound_effect="PeriodicSubBoom,PeriodicTelemetry,PeriodicAlienVoices" /><!--PeriodicWhispers-->
+
+	<vis_particle_and_sound_usage id="MachineTowerEruptionStart" sound_effect="ComplexTechHit14,DarkTechHit1,DarkTechHit19,DarkTechHit7" />
+	<vis_particle_and_sound_usage id="MachineTowerEruptionEnd" sound_effect="ComplexTechHit20,ComplexTechHit26,ComplexTechHit27" />
+
+	<vis_particle_and_sound_usage id="FullNuke" particle_effect="ExplosionNukeB" particle_effect_scale="0.8" particle_effect_offset_y="0.2"
+		sound_effect="DarkTechExplosions" sound_effect2="MegaHorn21" delay_of_sound_effect2="3.4" />
+	<vis_particle_and_sound_usage id="NukeSound2"
+		sound_effect="ScarySinisterImpact10" sound_effect2="DarkTechHit10" delay_of_sound_effect2="2" />
+	<vis_particle_and_sound_usage id="NukeSound3"
+		sound_effect="MegaHorn17" sound_effect2="ScarySinisterImpact147" delay_of_sound_effect2=".9" /><!--ScarySinisterImpact11-->
+	<vis_particle_and_sound_usage id="NukeSound4"
+		sound_effect="ExplosionsFallingRubble" sound_effect2="MegaHorn26" delay_of_sound_effect2="2.2" />
+
+	<vis_particle_and_sound_usage id="MicroNuke" particle_effect="ExplosionStyleNukeLarge" particle_effect_scale="1" particle_effect_offset_y="0"
+		sound_effect="DarkTechExplosions" sound_effect2="MegaHorn4" delay_of_sound_effect2="0.1" />
+
+	<vis_particle_and_sound_usage id="VehicleExplosionA" particle_effect="ExplosionStyle4AirLarge" particle_effect_scale="2" particle_effect_offset_y="0"
+		sound_effect="DarkTechExplosions" sound_effect2="BraamScary2" delay_of_sound_effect2="0.1" />
+	<vis_particle_and_sound_usage id="VehicleExplosionB" particle_effect="ExplosionStyleSmokeAirLarge" particle_effect_scale="1.2" particle_effect_offset_y="0"
+		sound_effect="DarkTechExplosions" sound_effect2="BraamScary9" delay_of_sound_effect2="0.1" />
+	<vis_particle_and_sound_usage id="TempleExplosion" particle_effect="ExplosionFStyle17" particle_effect_scale="2" particle_effect_offset_y="0"
+		sound_effect="DarkTechExplosions" sound_effect2="BraamScary6,BraamScary4,BraamScary5,BraamScary8" delay_of_sound_effect2="0.1" />
+
+	<vis_particle_and_sound_usage id="RerollSound"
+		sound_effect="ButtonMechanicalMid" />
+	
+	<vis_particle_and_sound_usage id="RobberyComplete" sound_effect="AlertQuietHumTone"
+		particle_effect="BurstBlackAndWhite" particle_effect_scale="0.5" particle_effect_offset_y="0.1" />
+	<vis_particle_and_sound_usage id="InvestigationComplete" sound_effect="TechBassDrop4"
+		particle_effect="BurstBlueUpwardsSignal" particle_effect_scale="0.5" particle_effect_offset_y="0.1" />
+	<vis_particle_and_sound_usage id="ExtortionComplete" sound_effect="DarkTechHit1"
+		particle_effect="BurstFiery" particle_effect_scale="0.5" particle_effect_offset_y="0.1" />
+	<vis_particle_and_sound_usage id="DeliveryComplete" sound_effect="GhostWhoosh3"
+		particle_effect="BuffGoldBlueRiser" particle_effect_scale="0.8" particle_effect_offset_y="-0.1" />
+	<vis_particle_and_sound_usage id="ReportComplete" sound_effect="MetalClankPickupB"
+		particle_effect="BurstGoldTime" particle_effect_scale="0.4" particle_effect_offset_y="0.5" />
+	<vis_particle_and_sound_usage id="WentInside" sound_effect="MetalClankPickupE"
+		particle_effect="BurstGoldTime" particle_effect_scale="0.4" particle_effect_offset_y="0.5" />
+
+	<vis_particle_and_sound_usage id="TentsConverted" sound_effect="CinematicWhoosh"
+		particle_effect="BurstGreenSwirlRiser" particle_effect_scale="1" particle_effect_offset_y="0" />
+	
+	<vis_particle_and_sound_usage id="BasicVehicleRangedAttack" sound_effect="ShotLaserRifleHeavy"
+		particle_effect="ProjectilePlasmaRed" particle_effect_scale="1" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="90" projectile_movement_logic="StraightShot_Impactor" />
+
+	<vis_particle_and_sound_usage id="DeliveryCraftRangedAttack" sound_effect="ShotSciFiARSingle10"
+		particle_effect="ProjectilePlasmaPink" particle_effect_scale="0.4" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="60" projectile_movement_logic="StraightShot_Impactor" />
+
+	<vis_particle_and_sound_usage id="IrisRangedAttack" sound_effect="ShotElectricalZap"
+		particle_effect="ProjectileLightningBoltThick" particle_effect_scale="0.3" particle_effect_offset_y="0.1"
+		particle_effect_travel_speed="40" projectile_movement_logic="HomingShot_Iris" />
+
+	<vis_particle_and_sound_usage id="CutterRangedAttack" sound_effect="ShotLaserRifleHeavy" on_hit="CutterRangedAttackHit"
+		particle_effect="ProjectileDiamondGreen" particle_effect_scale="1" particle_effect_offset_y="0"
+		particle_effect_travel_speed="70" projectile_movement_logic="StraightShot_Impactor" />
+	<vis_particle_and_sound_usage id="CutterRangedAttackHit" sound_effect="DirtyThickImpact3,DirtyThickImpact4,DirtyThickImpact5" reference_area_range_for_on_hit="14"
+		particle_effect="ExplosionFStyleAir19" particle_effect_scale="0.5" particle_effect_offset_y="0.01" />
+	
+	<vis_particle_and_sound_usage id="BastionRangedAttack" sound_effect="ShotLaserRifleHeavy"
+		particle_effect="ProjectilePlasmaRed" particle_effect_scale="1" particle_effect_offset_y="0"
+		particle_effect_travel_speed="70" projectile_movement_logic="ArcShot_Low" />
+	
+	<vis_particle_and_sound_usage id="UnusedHunted" sound_effect="ScaryClock"/>
+	<vis_particle_and_sound_usage id="UnusedHide" sound_effect="PowerUp3"
+		particle_effect="Heal" particle_effect_scale="0.3" /><!--ShieldUp-->
+	
+	<vis_particle_and_sound_usage id="QuietRaid" sound_effect="MechLanding"
+		particle_effect="EMPBurst" particle_effect_scale="0.3" particle_effect_offset_y="-0.7" />
+	<vis_particle_and_sound_usage id="Observe" sound_effect="DarkTechHit28"
+		particle_effect="EMPBurst" particle_effect_scale="0.3" particle_effect_offset_y="-0.7" />
+	<vis_particle_and_sound_usage id="MoveToPosition" sound_effect="Run1"/>
+	<vis_particle_and_sound_usage id="MoveToBuilding" sound_effect="Run1"/>
+
+	<vis_particle_and_sound_usage id="Reconstructions" sound_effect="FireSizzle"
+		particle_effect="BuffGreen" particle_effect_scale="0.3" particle_effect_offset_y="0" />
+
+	<vis_particle_and_sound_usage id="Repairs" sound_effect="GearRepair"
+		particle_effect="BuffGreen" particle_effect_scale="0.3" particle_effect_offset_y="0" />
+
+	<vis_particle_and_sound_usage id="Dialog" sound_effect="AlertMusicEmotion13"
+		particle_effect="Dust1" particle_effect_scale="0.15" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="DialogContinue" sound_effect="UIAlienAlert4"
+		particle_effect="Dust1" particle_effect_scale="0.15" particle_effect_offset_y="0" />
+	
+	<vis_particle_and_sound_usage id="BoardVehicle" sound_effect="MechClunk14"/>
+
+	<vis_particle_and_sound_usage id="BulkUnitStanceChange" sound_effect="MetalEquip"
+		particle_effect="BurstGreenSwirlRiser" particle_effect_scale="1" particle_effect_offset_y="-1"/>
+
+	<vis_particle_and_sound_usage id="RecallUnit" sound_effect="AlertDarkNewsB"
+		particle_effect="BurstPurpleBokeh" particle_effect_scale="0.5" particle_effect_offset_y="0.2"/>
+
+	<vis_particle_and_sound_usage id="MechMove" sound_effect="AndroidTransform1"/>
+
+	<vis_particle_and_sound_usage id="BulletHitStructure" sound_effect="BulletHitsGlass"/>
+
+	<vis_particle_and_sound_usage id="Ch0_Homicide_Bad" sound_effect="ScarySinisterDirtyImpact3" particle_effect_locked_to_y="0"
+		particle_effect="GroundTarSplash" particle_effect_scale="14" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="Ch0_Homicide_Good" sound_effect="AlertMusicEmotion19" particle_effect_locked_to_y="0"
+		particle_effect="ChargeOrange" particle_effect_scale="30" particle_effect_offset_y="0"/>
+	<!--BurstGoldTime ChargeOrange ChargeOrange2  GroundTarSplash    SplashLight SplashLightWind  SplashPortalDown-->
+	<!--BurstGreenSwirlRiser DustStorm DustJump3 EnergyStrike6PunchOrange Flash1Gold Flash2Green Flash3Sparkles Flash4Purple Flash5White FlashYellow SplashEnergyRed-->
+
+	<vis_particle_and_sound_usage id="BuildStart_ControlFlag" sound_effect="DemolishRobotImpact"
+		particle_effect="DustStorm" particle_effect_scale="1" particle_effect_offset_y="0"/>
+	
+	<vis_particle_and_sound_usage id="BuildStart_SmallStructure" sound_effect="Flutter10"
+		particle_effect="EnergyBurstLightingGold" particle_effect_scale="0.3" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="BuildComplete_SmallStructure" sound_effect="RetroHappyUp"
+		particle_effect="EnergyBurstSparklesGreen" particle_effect_scale="0.3" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="BuildStart_MediumStructure" sound_effect="NeonHit11"
+		particle_effect="EnergyBurstLightingGold" particle_effect_scale="0.55" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="BuildComplete_MediumStructure" sound_effect="RetroHappyUp"
+		particle_effect="EnergyBurstSparklesGreen" particle_effect_scale="0.55" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="BuildStart_LargeStructure" sound_effect="ImpactHorn8"
+		particle_effect="EnergyBurstLightingGold" particle_effect_scale="0.7" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="BuildComplete_LargeStructure" sound_effect="RetroHappyUp"
+		particle_effect="EnergyBurstSparklesGreen" particle_effect_scale="0.7" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="InstallationStart_SmallStructure" sound_effect="AlertMusicEmotion9"
+		particle_effect="EnergyBurstStormBlue" particle_effect_scale="0.3" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="InstallationComplete_SmallStructure" sound_effect="AlertMusicEmotion20"
+		particle_effect="MarbleBurst3Gold" particle_effect_scale="0.3" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="InstallationStart_MediumStructure" sound_effect="AlertMusicEmotion9"
+		particle_effect="EnergyBurstStormBlue" particle_effect_scale="0.55" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="InstallationComplete_MediumStructure" sound_effect="AlertMusicEmotion20"
+		particle_effect="MarbleBurst3Gold" particle_effect_scale="0.55" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="DangerousStorageExplosion_Small" sound_effect="ExplosionIncoming" sound_effect2="ExplosionGrenadeG" delay_of_sound_effect2="0.01"
+		particle_effect="ExplosionAreaGround2A" particle_effect_scale="3" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="DangerousStorageExplosion_Large" sound_effect="ExplosionIncoming" sound_effect2="ExplosionDynamite" delay_of_sound_effect2="0.01"
+		particle_effect="ExplosionAreaGround2A" particle_effect_scale="6" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="InstallationStart_LargeStructure" sound_effect="AlertMusicEmotion9"
+		particle_effect="EnergyBurstStormBlue" particle_effect_scale="0.7" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="InstallationComplete_LargeStructure" sound_effect="AlertMusicEmotion20"
+		particle_effect="MarbleBurst3Gold" particle_effect_scale="0.7" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="MachineLargePlotExplosion" sound_effect="ExplosionsFallingRubble"
+		particle_effect="ExplosionStyleCircMed" particle_effect_scale="1" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MachineChurchExplosion" sound_effect="ExplosionsFallingRubble"
+		particle_effect="ExplosionStyleCircMed" particle_effect_scale="1" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MachineBunkerExplosion" sound_effect="ExplosionsFallingRubble"
+		particle_effect="ExplosionStyle7Med" particle_effect_scale="1" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MachineMediumPlotExplosion" sound_effect="ExplosionsFallingRubble"
+		particle_effect="ExplosionStyle7Med" particle_effect_scale="1" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MachineRelayExplosion" sound_effect="ExplosionsFallingRubble"
+		particle_effect="ExplosionStyle4Small" particle_effect_scale="1" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MachineCabinetExplosion" sound_effect="ExplosionsFallingRubble"
+		particle_effect="ExplosionStyle4Small" particle_effect_scale="1" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MachineDigsiteExplosion" sound_effect="ExplosionsFallingRubble"
+		particle_effect="ExplosionStyle4Small" particle_effect_scale="0.4" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MachineSmallEmbeddedExplosion" sound_effect="ExplosionsFallingRubble"
+		particle_effect="ExplosionStyle5Small" particle_effect_scale="1" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MachineMediumEmbeddedExplosion" sound_effect="ExplosionsFallingRubble"
+		particle_effect="ExplosionStyle5Med" particle_effect_scale="1" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MachineLargeEmbeddedExplosion" sound_effect="ExplosionsFallingRubble"
+		particle_effect="ExplosionStyleVert2Med" particle_effect_scale="0.6" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MachineNetworkTowerExplosion" sound_effect="ExplosionsFallingRubble"
+		particle_effect="ExplosionStyleVertLarge" particle_effect_scale="1" particle_effect_offset_y="0" />
+	
+	<vis_particle_and_sound_usage id="BasicHumanBulletHit" sound_effect="BulletHitsBody"/>
+	<vis_particle_and_sound_usage id="BasicAndroidBulletHit" sound_effect="BulletHitsBrick"/>
+	<vis_particle_and_sound_usage id="BasicMechBulletHit" sound_effect="BulletHitsGlass"/>
+	<vis_particle_and_sound_usage id="BasicVehicleBulletHit" sound_effect="BulletHitsGlass"/>
+
+	<vis_particle_and_sound_usage id="GeneralScaryCountdownPerTurn" sound_effect="ScarySinisterImpact153,ScarySinisterImpact148,ScarySinisterImpact135"/>
+	<vis_particle_and_sound_usage id="GeneralScaryCountdownComplete" sound_effect="ScarySinisterImpact99"/><!--ScarySinisterImpact156 ScarySinisterImpact139-->
+
+	<vis_particle_and_sound_usage id="MinorScaryCountdownPerTurn" sound_effect="UIAlienGlitchAlert3,UIAlienGlitchAlert8,UIAlienGlitchAlert22,UIAlienGlitchAlert24"/>
+	<vis_particle_and_sound_usage id="MinorScaryCountdownComplete" sound_effect="ScaryClock" sound_effect2="UIAlienGlitchAlert9" delay_of_sound_effect2="0"/>
+
+	<vis_particle_and_sound_usage id="BasicHumanDeath" sound_effect="BodyFallLand"
+		particle_effect="ExplosionStyle2Small" particle_effect_scale="0.9" particle_effect_offset_y="0.1" />
+	<vis_particle_and_sound_usage id="BasicHumanMoveStart" sound_effect="BodyFallSand" />
+	<vis_particle_and_sound_usage id="BasicHumanMoveEnd" sound_effect="PunchGoal" />
+
+	<vis_particle_and_sound_usage id="HumanAndroidDeath" sound_effect="MidsizeExplosion"
+		particle_effect="ExplosionStyleVert2AirSmall" particle_effect_scale="0.7" particle_effect_offset_y="0" />
+
+	<vis_particle_and_sound_usage id="BasicAndroidBuilt" sound_effect="DigitalImpact,DirtyCinemaImpact11,DirtyCinemaImpact12"
+		particle_effect="EnergyBurstStormBlue" particle_effect_scale="1" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="BasicAndroidDeath" sound_effect="DarkTechExplosions"
+		particle_effect="ExplosionStyleVert2AirSmall" particle_effect_scale="0.7" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="BasicAndroidMoveStart" sound_effect="Start_JumpDown" />
+	<vis_particle_and_sound_usage id="BasicAndroidLandingFromVehicle" sound_effect="ShotTubeGrassy" />
+
+	<vis_particle_and_sound_usage id="SmallMechDeath" sound_effect="DarkTechExplosions"
+		particle_effect="ExplosionStyleVert2Large" particle_effect_scale="0.4" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="SmallMechMoveStart" sound_effect="AndroidTransform1" />
+	<vis_particle_and_sound_usage id="SmallMechLandingFromVehicle" sound_effect="ImpactHorn8" />
+	<vis_particle_and_sound_usage id="SmallMechArrival" sound_effect="MechClunk12" />
+	
+	<vis_particle_and_sound_usage id="MechMantleDeath" sound_effect="ExplosionWithFire" sound_effect2="MegaHorn13" delay_of_sound_effect2="0.2"
+		particle_effect="ExplosionStyle4Giant" particle_effect_scale="1" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MechMantleMoveStart" sound_effect="Flutter10" />
+	<vis_particle_and_sound_usage id="MechMantleLandingFromVehicle" sound_effect="ImpactHorn8" />
+	<vis_particle_and_sound_usage id="MechMantleArrival" sound_effect="WhooshHit" />
+
+	<vis_particle_and_sound_usage id="MechGauntletDeath" sound_effect="ExplosionWithFire" sound_effect2="MegaHorn13" delay_of_sound_effect2="0.2"
+		particle_effect="ExplosionStyle4Giant" particle_effect_scale="1.5" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MechGauntletMoveStart" sound_effect="Flutter10" />
+	<vis_particle_and_sound_usage id="MechGauntletLandingFromVehicle" sound_effect="ImpactHorn8" />
+	<vis_particle_and_sound_usage id="MechGauntletArrival" sound_effect="WhooshHit" />
+
+	<vis_particle_and_sound_usage id="MechStalkerDeath" sound_effect="ExplosionWithFire" sound_effect2="MegaHorn20" delay_of_sound_effect2="0.2"
+		particle_effect="ExplosionStyle4Giant" particle_effect_scale="3" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MechStalkerMoveStart" sound_effect="Flutter4" />
+	<vis_particle_and_sound_usage id="MechStalkerLandingFromVehicle" sound_effect="ImpactHorn8" />
+	<vis_particle_and_sound_usage id="MechStalkerArrival" sound_effect="WhooshHit" />
+
+	<vis_particle_and_sound_usage id="MechTitanDeath" sound_effect="ExplosionWithFire" sound_effect2="MegaHorn20" delay_of_sound_effect2="0.2"
+		particle_effect="ExplosionStyle1Large" particle_effect_scale="5" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="MechTitanMoveStart" sound_effect="Flutter5" />
+	<vis_particle_and_sound_usage id="MechTitanLandingFromVehicle" sound_effect="ImpactHorn8" />
+	<vis_particle_and_sound_usage id="MechTitanArrival" sound_effect="WhooshHit" />
+
+	<vis_particle_and_sound_usage id="MechTitanArrivalEnd" sound_effect="WhooshHit" sound_effect2="TripodChaserHorn" delay_of_sound_effect2="1" />
+	<vis_particle_and_sound_usage id="MechTitanArrivalStart" sound_effect="TripodChaserHorn" />
+	
+	<vis_particle_and_sound_usage id="RecruitAndroid" sound_effect="MechLanding"
+		particle_effect="EMPBurst" particle_effect_scale="0.3" particle_effect_offset_y="-0.7" />
+	<vis_particle_and_sound_usage id="StealVehicle" sound_effect="MechLanding"
+		particle_effect="EMPBurst" particle_effect_scale="0.3" particle_effect_offset_y="-0.7" />
+
+	<vis_particle_and_sound_usage id="StartProject" sound_effect="MechanicalWaterPop"
+		particle_effect="DustJump1" particle_effect_scale="0.6" particle_effect_offset_y="-1.2" />
+	<vis_particle_and_sound_usage id="StartProject_ActuallyStart" sound_effect="ClankyPop"
+		particle_effect="DustJump1" particle_effect_scale="0.6" particle_effect_offset_y="-1.2" />
+	<vis_particle_and_sound_usage id="MinorEvent" sound_effect="BreakItem2"
+		particle_effect="DustJump1" particle_effect_scale="0.6" particle_effect_offset_y="-1.2" />
+	
+	<vis_particle_and_sound_usage id="StartMissionMild" sound_effect="BreakItem2"
+		particle_effect="BurstCracklesOrange" particle_effect_scale="0.3" particle_effect_offset_y="0" />
+	
+	<vis_particle_and_sound_usage id="BasicBuildingExplode" sound_effect="ExplosionsFallingRubble"
+		particle_effect="ExplosionStyle5Large" particle_effect_scale="0.6" particle_effect_offset_y="-0.2" />
+
+	<vis_particle_and_sound_usage id="BasicBuildingRockfall" sound_effect="ImpactRocky" sound_effect2="SmashRocky" delay_of_sound_effect2="0.4"
+		particle_effect="ExplosionFStyleDust24" particle_effect_scale="0.6" particle_effect_offset_y="-0.2" />
+
+	<vis_particle_and_sound_usage id="SlumBuildingReplaced" sound_effect="SmashRocky"
+		particle_effect="ExplosionFStyleDust3" particle_effect_scale="1.3" particle_effect_offset_y="-0.2" />
+	
+	<vis_particle_and_sound_usage id="SmallClick" sound_effect="SuctionPop"/>	
+	<vis_particle_and_sound_usage id="ThickClick" sound_effect="ButtonChonky"/>
+	<vis_particle_and_sound_usage id="ModeClick" sound_effect="ButtonMechanicalFastB"/>
+	<vis_particle_and_sound_usage id="StandbyTemporary" sound_effect="MechanicalRack1"/>
+	<vis_particle_and_sound_usage id="StandbyIndefinite" sound_effect="MechanicalRack5"/>
+	<vis_particle_and_sound_usage id="StandbyOff" sound_effect="ShotSciFiGrenadeActivate"/>
+	<vis_particle_and_sound_usage id="QuickGatherOld" sound_effect="RetroMenuPopup5,RetroMenuPopup6"/>
+	<vis_particle_and_sound_usage id="ArcaneSomething" sound_effect="ArcanePopup1,ArcanePopup2,ArcanePopup3"/>
+	<vis_particle_and_sound_usage id="RetroMenuSomething" sound_effect="RetroMenuPopup10,RetroMenuPopup15"/>
+
+	<vis_particle_and_sound_usage id="Flamethrower" sound_effect="FireballThrowB" sound_effect2="FireHit" delay_of_sound_effect2="0.3"
+		particle_effect="FlamethrowerPointyPink" particle_effect_scale="1.7" particle_effect_offset_y="0.0"/>
+	
+	<vis_particle_and_sound_usage id="AndroidTakeCover" sound_effect="MetalClankPickupD"
+		particle_effect="MarbleBurst1Purple" particle_effect_scale="1" particle_effect_offset_y="0.3"/><!--ScarySinisterImpact153-->
+	<vis_particle_and_sound_usage id="MechShieldsUp" sound_effect="ShieldUp"
+		particle_effect="Flash4Purple" particle_effect_scale="1"/>
+	<vis_particle_and_sound_usage id="VehicleShieldsUp" sound_effect="ShieldUp"
+		particle_effect="Flash4Purple" particle_effect_scale="1"/>
+
+	<vis_particle_and_sound_usage id="AndroidMercurialForm" sound_effect="MetalClankPickupD"
+		particle_effect="MarbleBurst1Purple" particle_effect_scale="1" particle_effect_offset_y="0.3"/><!--todo sound and visuals-->
+	<vis_particle_and_sound_usage id="VehicleCloak" sound_effect="ShieldUp"
+		particle_effect="Flash4Purple" particle_effect_scale="1"/><!--todo sound and visuals-->
+	<vis_particle_and_sound_usage id="MechMercurialForm" sound_effect="MetalClankPickupD"
+		particle_effect="MarbleBurst1Purple" particle_effect_scale="1" particle_effect_offset_y="0.3"/><!--todo sound and visuals-->
+	
+	<vis_particle_and_sound_usage id="ColdBlood" sound_effect="Bad7"
+		particle_effect="SlashWidePurple" particle_effect_scale="1" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="UnitRepair" sound_effect="Repair1"
+		particle_effect="EnergyBurstSpikesGreen" particle_effect_scale="2" particle_effect_offset_y="0"/><!--MechClunk18-->
+	<vis_particle_and_sound_usage id="UnitObserve" sound_effect="MechClunk16"
+		particle_effect="EnergyBurstSpikesBlue" particle_effect_scale="0.5" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="UnitBattleRecharge" sound_effect="ShotSciFiLoading13"
+		particle_effect="BuffUp" particle_effect_scale="1" particle_effect_offset_y="0"/>
+	
+	<vis_particle_and_sound_usage id="MurderAndroidForRegistration_Start" sound_effect="ScarySinisterImpact115"
+		particle_effect="SlashWidePurple" particle_effect_scale="1" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="MurderAndroidForRegistration_Complete" sound_effect="PianoHappyToneA"
+		particle_effect="BurstTinyThinGreen" particle_effect_scale="2" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="Wiretap_Start" sound_effect="ScarySinisterImpact158"
+		particle_effect="BurstFiery" particle_effect_scale="0.6" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="Wiretap_Complete" sound_effect="UIDeepAlert15"
+		particle_effect="TeleportOrange" particle_effect_scale="0.4" particle_effect_offset_y="0"/>
+	
+	<vis_particle_and_sound_usage id="ExploreSite_Complete" sound_effect="UIDeepAlert2"
+		particle_effect="TeleportGreen" particle_effect_scale="0.4" particle_effect_offset_y="0"/>
+	
+	<vis_particle_and_sound_usage id="HideAndSelfRepair_Start" sound_effect="GearRepair"
+		particle_effect="SplashGreen" particle_effect_scale="0.25" particle_effect_offset_y="0.25"/>
+	<vis_particle_and_sound_usage id="HideAndSelfRepair_Complete" sound_effect="PianoHappyToneB"
+		particle_effect="BuffGreenHealing" particle_effect_scale="0.5" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="StructuralEngineering_Complete" sound_effect="PianoHappyToneB"
+		particle_effect="BuffGreenHealing" particle_effect_scale="0.5" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="Wallrip_Start" sound_effect="ScarySinisterDirtyImpact15"
+		particle_effect="BurstPointDust" particle_effect_scale="1" particle_effect_offset_y="0.25"/>
+	<vis_particle_and_sound_usage id="Wallrip_Complete" sound_effect="AlertElectronicReady"
+		particle_effect="BurstRedWavy" particle_effect_scale="1" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="HackUnit_Start" sound_effect="ScarySinisterDirtyImpact2"
+		particle_effect="BurstPointDust" particle_effect_scale="1" particle_effect_offset_y="0.25"/>
+	<vis_particle_and_sound_usage id="ProbeExoticComms_Start" sound_effect="ScarySinisterDirtyImpact2"
+		particle_effect="BurstPointDust" particle_effect_scale="1" particle_effect_offset_y="0.25"/>
+
+	<vis_particle_and_sound_usage id="NPCHackerSearchForIntruder" sound_effect="Synth1,Synth10,Synth11,Synth13,Synth19"
+		particle_effect="BuffCircleWater" particle_effect_scale="1" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="NPCHackerBigAlarmAgainstIntruder" sound_effect="Synth1,Synth10,Synth11,Synth13,Synth19" 
+		sound_effect2="BraamScary6,BraamScary4,BraamScary5,BraamScary8" delay_of_sound_effect2="0.3"
+		particle_effect="BurstFiery" particle_effect_scale="1" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="NPCHackerStealNeuralSecrets" sound_effect="Synth1,Synth10,Synth11,Synth13,Synth19"
+		particle_effect="BuffCircleWater" particle_effect_scale="1" particle_effect_offset_y="0"/>
+	
+	<vis_particle_and_sound_usage id="Silent"/>
+
+	<vis_particle_and_sound_usage id="StanceActive" sound_effect="DarkWhoosh2"/>
+	<vis_particle_and_sound_usage id="StanceCombat" sound_effect="DarkWhoosh1"/>
+	
+	<vis_particle_and_sound_usage id="TechUnlock" sound_effect="PowerUp10"/>
+	<vis_particle_and_sound_usage id="ErrorSound" sound_effect="AlertBlocked"/><!--ButtonError-->
+	<vis_particle_and_sound_usage id="BlockedSound" sound_effect="UIAlienGlitchAlert11,UIAlienGlitchAlert15,UIAlienGlitchAlert18"/>
+	<vis_particle_and_sound_usage id="MassAutomateSound" sound_effect="AlertMusicSimple17"/>
+	<vis_particle_and_sound_usage id="MassActivateSound" sound_effect="AlertMusicSimple16"/>
+
+	<vis_particle_and_sound_usage id="CancelActionOverTimeSound" sound_effect="AlertFuturistic4"
+		particle_effect="BurstPointPurple" particle_effect_scale="1" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="CancelBuildStructureSound" sound_effect="DirtyGripImpact6"
+		particle_effect="ExplosionFStyleDust18" particle_effect_scale="0.45" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="ConsumableCreatedSound" sound_effect="ButtonMechanicalRise,MechanicalRack1,SteampunkImpact1"/>
+	<vis_particle_and_sound_usage id="ConsumableDisassembledSound" sound_effect="SteampunkImpact13,SteampunkImpact14,SteampunkImpact15,SteampunkImpact19"/>
+
+	<vis_particle_and_sound_usage id="BulkAndroidCreatedSound" sound_effect="ButtonWobblyMetal,ButtonSwiftMetal"/>
+	<vis_particle_and_sound_usage id="BulkAndroidDisassembledSound" sound_effect="ButtonRetroFuture10,ButtonRetroFuture11,ButtonRetroFuture3,ButtonRetroFuture7"/><!--ButtonRetroFuture4,ButtonRetroFuture6-->
+
+	<vis_particle_and_sound_usage id="ConsumableWarPowerup" sound_effect="MechanicalRack4,MechanicalRack5" particle_effect_scale="0.5" particle_effect="BuffCircleFire"
+			sound_effect2="EmotionTechHit10" delay_of_sound_effect2="0.001"/>
+
+	<vis_particle_and_sound_usage id="BigScaryMinibossAppear" sound_effect="MegaHorn4,MegaHorn5"
+		is_considered_a_big_scary_sound="true" required_gap_between_playing_this_sound="14" required_gap_between_playing_this_sound_and_another_big_scary_sound="6"/>
+	
+	<vis_particle_and_sound_usage id="InstallJobStart" sound_effect="ShotSciFiSMGLoad2"
+		particle_effect="BuffGoldSparkle" particle_effect_scale="0.5" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="InstallJobComplete" sound_effect="MechClunk15"
+		particle_effect="EnergyBurstStormBlue" particle_effect_scale="0.5" particle_effect_offset_y="0"/>
+	
+	<!--todo: some scary piano-like hits: ScarySinisterImpact2,ScarySinisterImpact67-->
+	
+	<vis_particle_and_sound_usage id="InvestigateAtBuilding" sound_effect="StutterHit6,StutterHit13"
+		particle_effect="BuffCircleGreen" particle_effect_scale="0.7" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="InvestigateFoundDistrict" sound_effect="RobotSound1,RobotSound2"
+		particle_effect="BuffCircleGreen" particle_effect_scale="0.7" particle_effect_offset_y="0" />
+	<vis_particle_and_sound_usage id="InvestigateFoundBuilding" sound_effect="RobotSound4"
+		particle_effect="BuffCircleGreen" particle_effect_scale="0.7" particle_effect_offset_y="0" />
+
+	<vis_particle_and_sound_usage id="ConsciousnessCollapse_PreChapter2" sound_effect="Bad2" />
+	<vis_particle_and_sound_usage id="ConsciousnessCollapse_Normal" sound_effect="Bad2" />
+
+	<vis_particle_and_sound_usage id="BulkAndroidDeployed" sound_effect="UIAlienGlitchAlert15,UIAlienGlitchAlert17,UIAlienGlitchAlert18" sound_effect2="BulletHitsDirt" delay_of_sound_effect2="0.001"
+		particle_effect="CritPurple" particle_effect_scale="1" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="PlaceAndroidIntoWorld" sound_effect="UIAlienGlitchAlert15,UIAlienGlitchAlert17,UIAlienGlitchAlert18" sound_effect2="BulletHitsDirt" delay_of_sound_effect2="0.001"
+		particle_effect="CritOrange" particle_effect_scale="1" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="PlaceMechIntoWorld" sound_effect="UIAlienGlitchAlert15,UIAlienGlitchAlert17,UIAlienGlitchAlert18" sound_effect2="DemolishHeavyImpact" delay_of_sound_effect2="0.001"
+		particle_effect="Dust2" particle_effect_scale="1" particle_effect_offset_y="0"/>
+
+	<vis_particle_and_sound_usage id="PlaceVehicleIntoWorld" sound_effect="UIAlienGlitchAlert15,UIAlienGlitchAlert17,UIAlienGlitchAlert18" sound_effect2="DirtyCinemaImpact19" delay_of_sound_effect2="0.001"
+		particle_effect="DustStorm" particle_effect_scale="2" particle_effect_offset_y="0"/>
+	
+	<vis_particle_and_sound_usage id="BuildUnitStart" sound_effect="ShotSciFiLoading12" />
+	<vis_particle_and_sound_usage id="BuildUnitComplete" sound_effect="MechClunk15"
+		particle_effect="EnergyBurstStormBlue" particle_effect_scale="0.5" particle_effect_offset_y="0"/> <!--todo new sound effect later maybe-->
+
+	<vis_particle_and_sound_usage id="BuildVehicleStart" sound_effect="ShotSciFiLoading15" />
+	<vis_particle_and_sound_usage id="BuildVehicleComplete" sound_effect="MechClunk15"
+		particle_effect="EnergyBurstStormBlue" particle_effect_scale="0.5" particle_effect_offset_y="0"/> <!--todo new sound effect later maybe-->
+
+	<vis_particle_and_sound_usage id="InvestigateLocationStart" sound_effect="PowerUp11" />
+	<vis_particle_and_sound_usage id="InvestigateLocationComplete" sound_effect="PowerUp13"
+		particle_effect="EnergyBurstSparklesGreen" particle_effect_scale="3" particle_effect_offset_y="0"/>
+	<vis_particle_and_sound_usage id="Silence"/>
+
+	<vis_particle_and_sound_usage id="MoraleDamage" sound_effect="Glitch1,Glitch2,Glitch3,Glitch4,Glitch5,Glitch6,Glitch7,Glitch8" />
+	
+	<vis_particle_and_sound_usage id="InventIdeaComplete" sound_effect="AlertDarkTelemetryB" /><!--WAS ScarySinisterDirtyImpact1; UIAlienGlitchAlert14,UIAlienGlitchAlert17,UIAlienGlitchAlert18-->
+	<vis_particle_and_sound_usage id="GenerateIdeaComplete" sound_effect="AlertDarkTelemetry" /><!--WAS ScarySinisterDirtyImpact4; UIAlienGlitchAlert13-->
+	<vis_particle_and_sound_usage id="ExploreResearchDomain" sound_effect="DigitalClicks" />
+	<vis_particle_and_sound_usage id="Unused-WasOpenInspiringMessage" sound_effect="UIAlienAlert15" /><!--BirdAlert2-->
+	<vis_particle_and_sound_usage id="OpenRoutineMessage" sound_effect="SmallAlert" />
+
+	<vis_particle_and_sound_usage id="EventPistolBarrage" sound_effect="PistolBursts,ShotSciFiHeavyPistolBurst3,ShotSciFiLightPistolBurst" />
+
+	<vis_particle_and_sound_usage id="EventAlarmMedium" sound_effect="ScarySinisterDirtyImpact9" sound_effect2="Scary6" />
+	<vis_particle_and_sound_usage id="EventAlarmWorst" sound_effect="ScarySinisterDirtyImpact17" sound_effect2="Scary6" />
+
+	<vis_particle_and_sound_usage id="EventAABarrage" sound_effect="ShotMGBurstB,ShotMGBurstC,ShotRifleBurstH,ShotSciFiARBurst4,ShotSciFiARBurst6" />
+
+	<!--CritByPlayer-->
+	<vis_particle_and_sound_usage id="CritByPlayer_Green" particle_effect="CriticalIceGreen" particle_effect_scale="0.2" 
+		sound_effect="DirtyWhooshImpact46" />
+	<vis_particle_and_sound_usage id="CritByPlayer_Cyan" particle_effect="CriticalIceCyan" particle_effect_scale="0.2"
+		sound_effect="DirtyWhooshImpact46" />
+	<vis_particle_and_sound_usage id="CritByPlayer_Blue" particle_effect="CriticalIceBlue" particle_effect_scale="0.2"
+		sound_effect="DirtyWhooshImpact46" />
+	<vis_particle_and_sound_usage id="CritByPlayer_Orange" particle_effect="CriticalIceOrange" particle_effect_scale="0.2"
+		sound_effect="DirtyWhooshImpact46" />
+	<vis_particle_and_sound_usage id="CritByPlayer_Red" particle_effect="CriticalIceRed" particle_effect_scale="0.2"
+		sound_effect="DirtyWhooshImpact46" />
+	<vis_particle_and_sound_usage id="CritByPlayer_Yellow" particle_effect="CriticalIceYellow" particle_effect_scale="0.2"
+		sound_effect="DirtyWhooshImpact46" />
+	<vis_particle_and_sound_usage id="CritByPlayer_Purple" particle_effect="CriticalIcePurple" particle_effect_scale="0.2"
+		sound_effect="DirtyWhooshImpact46" />
+	<!--DarkTechHit4,DarkTechHit30,DarkTechHit33-->
+	<!--DirtyGripImpact3-->
+
+	<!--CritAgainstPlayer-->
+	<vis_particle_and_sound_usage id="CritAgainstPlayer_Green" particle_effect="CriticalIceGreen" particle_effect_scale="0.2"
+		sound_effect="DirtyCinemaImpact1,DirtyCinemaImpact2,DirtyCinemaImpact4,DirtyCinemaImpact5" />
+	<vis_particle_and_sound_usage id="CritAgainstPlayer_Cyan" particle_effect="CriticalIceCyan" particle_effect_scale="0.2"
+		sound_effect="DirtyCinemaImpact1,DirtyCinemaImpact2,DirtyCinemaImpact4,DirtyCinemaImpact5" />
+	<vis_particle_and_sound_usage id="CritAgainstPlayer_Blue" particle_effect="CriticalIceBlue" particle_effect_scale="0.2"
+		sound_effect="DirtyCinemaImpact1,DirtyCinemaImpact2,DirtyCinemaImpact4,DirtyCinemaImpact5" />
+	<vis_particle_and_sound_usage id="CritAgainstPlayer_Orange" particle_effect="CriticalIceOrange" particle_effect_scale="0.2"
+		sound_effect="DirtyCinemaImpact1,DirtyCinemaImpact2,DirtyCinemaImpact4,DirtyCinemaImpact5" />
+	<vis_particle_and_sound_usage id="CritAgainstPlayer_Red" particle_effect="CriticalIceRed" particle_effect_scale="0.2"
+		sound_effect="DirtyCinemaImpact1,DirtyCinemaImpact2,DirtyCinemaImpact4,DirtyCinemaImpact5" />
+	<vis_particle_and_sound_usage id="CritAgainstPlayer_Yellow" particle_effect="CriticalIceYellow" particle_effect_scale="0.2"
+		sound_effect="DirtyCinemaImpact1,DirtyCinemaImpact2,DirtyCinemaImpact4,DirtyCinemaImpact5" />
+	<vis_particle_and_sound_usage id="CritAgainstPlayer_Purple" particle_effect="CriticalIcePurple" particle_effect_scale="0.2"
+		sound_effect="DirtyCinemaImpact1,DirtyCinemaImpact2,DirtyCinemaImpact4,DirtyCinemaImpact5" />
+	<!--SonicTechHit5,SonicTechHit7-->
+
+	<!--CritThirdParty-->
+	<vis_particle_and_sound_usage id="CritThirdParty_Green" particle_effect="CriticalIceGreen" particle_effect_scale="0.2"
+		sound_effect="ScarySinisterDirtyImpact7" />
+	<vis_particle_and_sound_usage id="CritThirdParty_Cyan" particle_effect="CriticalIceCyan" particle_effect_scale="0.2"
+		sound_effect="ScarySinisterDirtyImpact7" />
+	<vis_particle_and_sound_usage id="CritThirdParty_Blue" particle_effect="CriticalIceBlue" particle_effect_scale="0.2"
+		sound_effect="ScarySinisterDirtyImpact7" />
+	<vis_particle_and_sound_usage id="CritThirdParty_Orange" particle_effect="CriticalIceOrange" particle_effect_scale="0.2"
+		sound_effect="ScarySinisterDirtyImpact7" />
+	<vis_particle_and_sound_usage id="CritThirdParty_Red" particle_effect="CriticalIceRed" particle_effect_scale="0.2"
+		sound_effect="ScarySinisterDirtyImpact7" />
+	<vis_particle_and_sound_usage id="CritThirdParty_Yellow" particle_effect="CriticalIceYellow" particle_effect_scale="0.2"
+		sound_effect="ScarySinisterDirtyImpact7" />
+	<vis_particle_and_sound_usage id="CritThirdParty_Purple" particle_effect="CriticalIcePurple" particle_effect_scale="0.2"
+		sound_effect="ScarySinisterDirtyImpact7" />
+	<!--ScarySinisterImpact161,ScarySinisterImpact164,ScarySinisterImpact168-->
+	
+	<vis_particle_and_sound_usage id="FlamethrowerBurst" sound_effect="FireballHit"
+		particle_effect="ExplosionStyleAir2Floor" particle_effect_scale="4" added_rotation="0,0,180" />
+
+	<vis_particle_and_sound_usage id="Arson" sound_effect="FireballHit"
+		particle_effect="ExplosionStyleAir2Floor" particle_effect_scale="0.2" added_rotation="0,0,180" />
+
+	<vis_particle_and_sound_usage id="Hacking_Run_Start" sound_effect="CaveEchoHitAlt"
+		particle_effect="CriticalIceGreen" particle_effect_scale="0.03" added_rotation="0,0,0" />
+	<vis_particle_and_sound_usage id="Hacking_Run_End" sound_effect="CardScrapePickup"
+		particle_effect="ExplosiveHitGreenTechnical" particle_effect_scale="0.14" added_rotation="90,0,180" /><!--GrenadePinPull,GrenadePinPullB-->
+
+	<vis_particle_and_sound_usage id="Hacking_DaemonMove_Start" sound_effect="BodyFallSand"
+		particle_effect="BurstPurpleBokeh" particle_effect_scale="0.1" added_rotation="0,0,0" />
+	<vis_particle_and_sound_usage id="Hacking_DaemonMove_End" sound_effect="BreakItem"
+		particle_effect="CriticalIceOrange" particle_effect_scale="0.03" added_rotation="90,0,180" /><!--BreakWoodPlank-->
+	
+	<vis_particle_and_sound_usage id="Hacking_Split" sound_effect="AlienMovement"
+		particle_effect="ExplosiveHitBlueSplash1" particle_effect_scale="0.1" added_rotation="90,0,0" /><!--ItemDarkTransition-->
+	<vis_particle_and_sound_usage id="Hacking_Corrupt" sound_effect="FireballThrowB"
+		particle_effect="ExplosiveHitFireDark1" particle_effect_scale="0.14" added_rotation="0,0,0" /><!--EmotiveMixedImpact8-->
+	<vis_particle_and_sound_usage id="Hacking_Corrupt_ShardDeath" sound_effect="EmotiveMixedImpact17"
+		particle_effect="ExplosionFStyle36" particle_effect_scale="0.09" added_rotation="0,0,180" />
+	
+	<vis_particle_and_sound_usage id="Hacking_Corrupt_TriswarmSplit" sound_effect="RetroPowerupPower4"
+		particle_effect="ExplosionFStyle36" particle_effect_scale="0.09" added_rotation="0,0,180" />
+	<vis_particle_and_sound_usage id="Hacking_Corrupt_RingNodeHealthLost" sound_effect="EmotiveMixedImpact16"
+		particle_effect="ExplosionFStyle36" particle_effect_scale="0.09" added_rotation="0,0,180" />
+	
+	<vis_particle_and_sound_usage id="Hacking_LeafNodeOpen" sound_effect="EmotiveMixedImpact16" sound_effect2="MusicalPhrase13" delay_of_sound_effect2="0.1"
+		particle_effect="ExplosionFStyle36" particle_effect_scale="0.09" added_rotation="0,0,180" />
+	<vis_particle_and_sound_usage id="Hacking_MechConverted" sound_effect="EmotiveMixedImpact16" sound_effect2="MusicalPhrase20,MusicalPhrase3,MusicalPhrase5,MusicalPhrase9" delay_of_sound_effect2="1"
+		particle_effect="ExplosionFStyle36" particle_effect_scale="0.09" added_rotation="0,0,180" />
+	<vis_particle_and_sound_usage id="Hacking_Fail" sound_effect="MusicalStinger10,MusicalStinger11" />
+
+	<!--Ones considered but not used:
+		ScarySinisterImpact150 AlertWarning SwordSliceB SwordSliceF DarkAlert13 DarkAction9 EmotionTechStatic4 ScarySinisterDirtyImpact9 AlertMusicEmotion11 
+		Cinematic1 EmotiveMixedImpact7 AlertUpbeatTone
+		Can look back at "biohazard" and "braam" stuff if needed.-->
+	<vis_particle_and_sound_usage id="Debate_VerbalSlap" sound_effect="DoorsMechanicalSciFi5"
+		particle_effect="BurstCracklesOrange" particle_effect_scale="0.12" added_rotation="90,0,90" />
+	<vis_particle_and_sound_usage id="Debate_SneeringInsult" sound_effect="ImpactEnergyPulse"
+		particle_effect="SlashGrinderOrangeHalf" particle_effect_scale="0.16" added_rotation="90,0,0" />
+	<vis_particle_and_sound_usage id="Debate_FieryRhetoric" sound_effect="DeathBell"
+		particle_effect="SplashFire" particle_effect_scale="0.12" added_rotation="90,0,0" />
+	<vis_particle_and_sound_usage id="Debate_PhysicallyThreaten" sound_effect="FutureReload"
+		particle_effect="SplashFear" particle_effect_scale="0.12" added_rotation="0,0,0" />
+	<vis_particle_and_sound_usage id="Debate_ThreatenCohort" sound_effect="CinematicTransition7"
+		particle_effect="SplashShadow" particle_effect_scale="0.12" added_rotation="0,0,0" />
+	<vis_particle_and_sound_usage id="Debate_ThreatenFamily" sound_effect="CinematicTransition5"
+		particle_effect="SplashShadow" particle_effect_scale="0.12" added_rotation="0,0,0" />
+	<vis_particle_and_sound_usage id="Debate_EncourageDisobedience" sound_effect="EmotiveMixedImpact5"
+		particle_effect="ExplosiveDXGoldLightning" particle_effect_scale="0.08" added_rotation="0,0,0" />
+	<vis_particle_and_sound_usage id="Debate_AppealToMorality" sound_effect="AlertMusicEmotion26"
+		particle_effect="CriticalIceYellow" particle_effect_scale="0.06" added_rotation="0,0,0" />
+	<vis_particle_and_sound_usage id="Debate_AppealToHonor" sound_effect="EmotionalConfirmAlert4"
+		particle_effect="CriticalIceYellow" particle_effect_scale="0.06" added_rotation="0,0,0" />
+	<vis_particle_and_sound_usage id="Debate_SorrowfulAnecdote" sound_effect="AlertDarkNews"
+		particle_effect="BurstGoldElectric" particle_effect_scale="0.12" added_rotation="0,0,0" />
+	<vis_particle_and_sound_usage id="Debate_OfferHope" sound_effect="ImpactHorn7"
+		particle_effect="LootRise" particle_effect_scale="0.15" added_rotation="0,0,0" />
+	<vis_particle_and_sound_usage id="Debate_ToutPower" sound_effect="ScarySinisterImpact147"
+		particle_effect="ReaperAppears" particle_effect_scale="0.09" added_rotation="0,0,0" />
+	<vis_particle_and_sound_usage id="Debate_AssertAuthority" sound_effect="ScarySinisterImpact150"
+		particle_effect="SplashEnergyRed" particle_effect_scale="0.09" added_rotation="90,0,0" />
+	<vis_particle_and_sound_usage id="Debate_AssertDominance" sound_effect="DarkTechHit20"
+		particle_effect="MeteorCrash" particle_effect_scale="0.06" added_rotation="90,0,270" />
+	<vis_particle_and_sound_usage id="Debate_MisleadingAnecdote" sound_effect="AlertMusicEmotion6"
+		particle_effect="SplashPurpleGlobe" particle_effect_scale="0.08" added_rotation="0,0,0" />
+	<vis_particle_and_sound_usage id="Debate_FalsifyStatistics" sound_effect="LaserSmack"
+		particle_effect="SplashPurpleGlobeFloor" particle_effect_scale="0.08" added_rotation="90,0,0" />
+	<vis_particle_and_sound_usage id="Debate_ReasonedArgument" sound_effect="AlertWarning"
+		particle_effect="SlashGrinderPurpleLong" particle_effect_scale="0.12" added_rotation="90,0,0" />
+	<vis_particle_and_sound_usage id="Debate_Infrasound" sound_effect="DarkAlert20" sound_effect2="DistortedHit10" delay_of_sound_effect2="0.1"
+		particle_effect="SwirlOrange3" particle_effect_scale="0.06" added_rotation="90,0,0" />
+	<vis_particle_and_sound_usage id="Debate_RevealEvidence" sound_effect="ImpactGlassy"
+		particle_effect="TeleportRed" particle_effect_scale="0.12" added_rotation="45,0,0" />
+	<vis_particle_and_sound_usage id="Debate_QuoteStatistics" sound_effect="ImpactChirpyCrossbow"
+		particle_effect="SlashGrinderPurpleHalf" particle_effect_scale="0.12" added_rotation="90,0,0" />
+	<vis_particle_and_sound_usage id="Debate_VisionOfBeauty" sound_effect="EmotionalPositiveTelemetry"
+		particle_effect="BurstRainbowBokeh" particle_effect_scale="0.18" added_rotation="180,0,0" />
+	
+	<vis_particle_and_sound_usage id="Debate_Discard" sound_effect="ExplosionLightDebris"
+		particle_effect="ExplosiveHitFireCircle1" particle_effect_scale="0.12" added_rotation="90,0,0" />
+
+	<vis_particle_and_sound_usage id="TaserAtTarget" sound_effect="ShotElectrical" sound_effect2="" delay_of_sound_effect2="1"
+		particle_effect="MuzzleFlashBlueSplash" particle_effect_scale="0.3" added_rotation="270,0,00" />
+
+	<vis_particle_and_sound_usage id="StartGame" sound_effect="CinematicTransition6,CinematicTransition8,CinematicTransition13" />
+
+</root>

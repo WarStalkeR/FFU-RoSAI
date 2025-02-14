@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--WealthyCitizenMan
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="WealthyCitizenMan" display_name="Wealthy Citizen"
+		description="Citizen from either the Administrator or Scientist social class. It can be hard to tell them apart in public."
+		icon_scale="0.7" shape_icon_name="SF2_Money" shape_icon_color="#ffffff"
+		vis_drawing_tag="WealthyManForMap" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="WealthyCitizenBasic,WealthyCitizenMan" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="40,60" />
+		<actor_data data_type="UnitMorale" base_range="120,128" />
+	</npc_unit_type>
+
+	<!--WealthyCitizenWoman
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="WealthyCitizenWoman" display_name="Wealthy Citizen"
+		description="Citizen from either the Administrator or Scientist social class. It can be hard to tell them apart in public."
+		icon_scale="0.7" shape_icon_name="SF2_Money" shape_icon_color="#ffffff"
+		vis_drawing_tag="WealthyWomanForMap" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="WealthyCitizenBasic,WealthyCitizenWoman" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="40,60" />
+		<actor_data data_type="UnitMorale" base_range="120,128" />
+	</npc_unit_type>
+
+	<!--HomelessCitizen
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="HomelessCitizen" display_name="Homeless Citizen"
+		description="Kicked out of their living space. They live on the streets in a tent encampment. They are periodically rounded up and re-homed in prison facilities."
+		icon_scale="0.7" shape_icon_name="FlatSkillB_tent" shape_icon_color="#ffffff"
+		vis_drawing_tag="HomelessCitizenForMap" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="HomelessCitizenBasic" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="12,14" />
+		<actor_data data_type="ActorHP" base_range="30,30" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="UnitMorale" base_range="50,58" />
+	</npc_unit_type>
+
+	<!--ShelteredCitizen_VeryEarly
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ShelteredCitizen_VeryEarly" display_name="Sheltered Citizen"
+		description="Human living in housing that you provided."
+		icon_scale="0.7" shape_icon_name="HO_House5" shape_icon_color="#ffffff"
+		vis_drawing_tag="ShelteredCitizen_VeryEarly" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="12,14" />
+		<actor_data data_type="ActorHP" base_range="30,30" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="UnitMorale" base_range="62,70" />
+	</npc_unit_type>
+
+	<!--ShelteredCitizen_Better
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ShelteredCitizen_Better" display_name="Sheltered Citizen"
+		description="Human living in housing that you provided. They're existence is improving, but they still lack basic necessities."
+		icon_scale="0.7" shape_icon_name="HO_House5" shape_icon_color="#ffffff"
+		vis_drawing_tag="ShelteredCitizen_Better" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="12,14" />
+		<actor_data data_type="ActorHP" base_range="30,30" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="UnitMorale" base_range="74,84" />
+	</npc_unit_type>
+
+	<!--ShelteredCitizenCrowd_Better
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ShelteredCitizenCrowd_Better" display_name="Crowd Of Sheltered Citizens"
+		description="A crowd of humans living in housing that you provided."
+		icon_scale="0.7" shape_icon_name="HO_House5" shape_icon_color="#ffffff"
+		vis_drawing_tag="ShelteredCitizen_Better" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="64"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="12,14" />
+		<actor_data data_type="ActorHP" base_range="256,384" />
+		<actor_data data_type="ActorPower" base_range="10,10" />
+		<actor_data data_type="UnitMorale" base_range="240,340" />
+	</npc_unit_type>
+
+	<!--ShelteredCitizen_Stable
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ShelteredCitizen_Stable" display_name="Sheltered Citizen"
+		description="A citizen who lives in housing you provide. All of their basic needs are met."
+		icon_scale="0.7" shape_icon_name="HO_House5" shape_icon_color="#ffffff"
+		vis_drawing_tag="ShelteredCitizen_Stable" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="12,14" />
+		<actor_data data_type="ActorHP" base_range="30,30" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="UnitMorale" base_range="117,127" />
+	</npc_unit_type>
+
+	<!--ShelterCoordinator
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ShelterCoordinator" display_name="Shelter Coordinator"
+		description="A kindhearted human who helps homeless citizens move into your apartment housing."
+		icon_scale="0.7" shape_icon_name="HO_HouseSkyscraper25" shape_icon_color="#ffffff"
+		vis_drawing_tag="ShelterCoordinator" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="22,28" />
+		<actor_data data_type="ActorHP" base_range="30,30" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="UnitMorale" base_range="70,88" />
+	</npc_unit_type>
+
+	<!--LargeEconomicTransport
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="LargeEconomicTransport" display_name="Large Economic Transport"
+		description="Modular transports with cavernous interiors that can be partitioned to contain liquids, gases, and crated goods."
+		extra_lore_info_optional="Antigrav technology is such that maintaining a consistent altitude, and then sending up and down drones, is far more effective energy-wise.
+The thrusters on the back are for propulsion only, not altitude maintenance."
+		icon_scale="0.7" shape_icon_name="CS_OilBarrel" shape_icon_color="#ffffff"
+		vis_drawing_tag="LargeEconomicTransport" vis_object_scale="1.2" vis_object_extra_offset="-0.05" collider_scale="1" entire_object_always_this_height_above_ground="13.2" simple_object_color="#0B0B0A"
+		extra_offset_for_camera_focus_when_selected="0" basic_squad_size="14"
+		percent_robotic="50" percent_biological="50" is_vehicle="true" stats_do_not_go_down_when_squadmates_lost="true"
+		is_notable_enough_to_show_as_silhouette_when_stance_suggests="true"
+		on_death="BasicHumanVehicleDeath" on_bullet_hit="BasicVehicleBulletHit" on_move_start="SecForceCruiserMoveStart" on_movement_finished_with_no_action="SecForceCruiserMoveEnd"
+		on_normal_attack="LargeEconomicTransportShot" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryScary"
+		radius_for_collisions="5.4" height_for_collisions="4.85" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="0" is_immune_to_third_party_cyber_attacks="true"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="3"
+		tags="LargeEconomicTransport" collections="EnemyVehicles">
+		<actor_data data_type="AttackRange" base_range="10,14" />
+		<actor_data data_type="ActorMoveRange" base_range="67,82" />
+		<actor_data data_type="ActorHP" base_range="300,400" />
+		<actor_data data_type="ActorPower" base_range="70,80" />
+		<!--<actor_data data_type="NPCHackingResistance" base_range="320,320" />-->
+		<actor_data data_type="ActorArmorPlating" base_range="50,60" />
+		<actor_data data_type="ActorExtraVulnerabilityFromAbove" base_range="330,425" />
+		<actor_data data_type="NPCVehicleDroneResistance" base_range="60,80" />
+		<shot_emission_group group_number="0" debug_color="#5EBBF4"
+			min_delay_of_each_firing_port="0" max_delay_of_each_firing_port="0.01">
+			<shot_emission_point index_in_group="0" offset="0.7,1.2,5.5" />
+			<shot_emission_point index_in_group="1" offset="-0.7,1.2,5.5" />
+			<targeting_zone id="1" distance_from_center="15" angle_from_current="0" radius="8" center_offset_y="-3" height="8"/>
+			<targeting_zone id="2" distance_from_center="40" angle_from_current="0" radius="23" center_offset_y="-30" height="60"/>
+		</shot_emission_group>
+		<shot_emission_group group_number="1" debug_color="#74F45E" alternative_projectile="LargeEconomicTransportRocketUp"
+			min_delay_of_each_firing_port="0" max_delay_of_each_firing_port="0.01">
+			<shot_emission_point index_in_group="0" offset="2.1,0.25,0.5" />
+			<shot_emission_point index_in_group="1" offset="-2.1,0.25,0.5" />
+		</shot_emission_group>
+	</npc_unit_type>
+
+	<!--InternationalEconomicTransport
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="InternationalEconomicTransport" display_name="International Economic Transport"
+		description="Rented from Vorsiber and under strict scrutiny, these transports have extra defenses in order to prevent an international incident."
+		icon_scale="0.7" shape_icon_name="CS_OilBarrel" shape_icon_color="#ffffff"
+		vis_drawing_tag="LargeEconomicTransport" vis_object_scale="1.2" vis_object_extra_offset="-0.05" collider_scale="1" entire_object_always_this_height_above_ground="26.2" simple_object_color="#0B0B0A"
+		extra_offset_for_camera_focus_when_selected="0" basic_squad_size="14"
+		percent_robotic="50" percent_biological="50" is_vehicle="true" stats_do_not_go_down_when_squadmates_lost="true"
+		is_notable_enough_to_show_as_silhouette_when_stance_suggests="true"
+		on_death="BasicHumanVehicleDeath" on_bullet_hit="BasicVehicleBulletHit" on_move_start="SecForceCruiserMoveStart" on_movement_finished_with_no_action="SecForceCruiserMoveEnd"
+		on_normal_attack="LargeEconomicTransportShot" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryScary"
+		radius_for_collisions="5.4" height_for_collisions="4.85" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="0" is_immune_to_third_party_cyber_attacks="true"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="3"
+		tags="LargeEconomicTransport" collections="EnemyVehicles">
+		<actor_data data_type="AttackRange" base_range="20,24" />
+		<actor_data data_type="ActorMoveRange" base_range="67,82" />
+		<actor_data data_type="ActorHP" base_range="900,1200" />
+		<actor_data data_type="ActorPower" base_range="170,180" />
+		<!--<actor_data data_type="NPCHackingResistance" base_range="810,810" />-->
+		<actor_data data_type="ActorArmorPlating" base_range="700,850" />
+		<actor_data data_type="ActorExtraVulnerabilityFromAbove" base_range="330,425" />
+		<actor_data data_type="NPCVehicleDroneResistance" base_range="200,260" />
+		<shot_emission_group group_number="0" debug_color="#5EBBF4"
+			min_delay_of_each_firing_port="0" max_delay_of_each_firing_port="0.01">
+			<shot_emission_point index_in_group="0" offset="0.7,1.2,5.5" />
+			<shot_emission_point index_in_group="1" offset="-0.7,1.2,5.5" />
+			<targeting_zone id="1" distance_from_center="15" angle_from_current="0" radius="8" center_offset_y="-3" height="8"/>
+			<targeting_zone id="2" distance_from_center="40" angle_from_current="0" radius="23" center_offset_y="-30" height="60"/>
+		</shot_emission_group>
+		<shot_emission_group group_number="1" debug_color="#74F45E" alternative_projectile="LargeEconomicTransportRocketUp"
+			min_delay_of_each_firing_port="0" max_delay_of_each_firing_port="0.01">
+			<shot_emission_point index_in_group="0" offset="2.1,0.25,0.5" />
+			<shot_emission_point index_in_group="1" offset="-2.1,0.25,0.5" />
+		</shot_emission_group>
+	</npc_unit_type>
+
+	<!--CorpoVPMan
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="CorpoVPMan" display_name="Corpo Vice President"
+		description="Most federated corporations employ a few thousand VPs in this city alone. They are the lowest echelon of upper management, frequently sacrificed to spare the C-Suite."
+		icon_scale="0.7" shape_icon_name="HO_HouseSkyscraper22" shape_icon_color="#ffffff"
+		vis_drawing_tag="CorpoVPMan" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="7,10" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="6,6" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="340,360" />
+		<actor_data data_type="UnitMorale" base_range="360,388" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<npc_unit_type id="CorpoSVPMan" copy_from="CorpoVPMan" display_name="Corpo Senior Vice President"
+		description="Most federated corporations employ a few hundred SVPs in this city alone. Vorsiber has similar numbers.">
+	</npc_unit_type>
+
+	<npc_unit_type id="CorpoPresidentMan" copy_from="CorpoVPMan" display_name="Corpo President"
+		description="The lowest-ranking face of the C-Suite in most federated corporations. Incredibly rare to see one of these in the wild. There's only one per company, and they report directly to the CEO.">
+	</npc_unit_type>
+
+	<!--CorpoVPWoman
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="CorpoVPWoman" display_name="Corpo Vice President"
+		description="Most federated corporations employ a few thousand VPs in this city alone. They are the lowest echelon of upper management, frequently sacrificed to spare the C-Suite."
+		icon_scale="0.7" shape_icon_name="HO_HouseSkyscraper22" shape_icon_color="#ffffff"
+		vis_drawing_tag="CorpoVPWoman" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="7,10" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="6,6" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="340,360" />
+		<actor_data data_type="UnitMorale" base_range="360,388" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<npc_unit_type id="CorpoSVPWoman" copy_from="CorpoVPWoman" display_name="Corpo Senior Vice President"
+		description="Most federated corporations employ a few hundred SVPs in this city alone. Vorsiber has similar numbers.">
+	</npc_unit_type>
+
+</root>

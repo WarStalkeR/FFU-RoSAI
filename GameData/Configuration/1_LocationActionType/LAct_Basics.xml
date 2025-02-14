@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<location_action id="MoveToPosition"
+		description=""
+		strategy_tip_optional="" skip_normal_action_tooltip="true" skip_acting_as_if_action_is_here_for_line_color="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="CleanSimple_Arrow069" on_arrive="MoveToPosition" visibility_style="IsMovement"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" skip_costs_if_at_same_location="true" skip_change_street_sense_seed_after="true"
+		can_appear_even_after_final_doom="true">
+	</location_action>
+
+	<location_action id="NoOp"
+		description=""
+		strategy_tip_optional="" skip_normal_action_tooltip="true" skip_acting_as_if_action_is_here_for_line_color="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="CleanSimple_Arrow069" on_arrive="MoveToPosition" visibility_style="IsMovement"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" can_be_done_by_mechs="true" can_be_done_by_vehicles="true" skip_costs_if_at_same_location="true" skip_change_street_sense_seed_after="true"
+		can_appear_even_after_final_doom="true">
+	</location_action>
+
+	<location_action id="MechMove"
+		description=""
+		strategy_tip_optional="" skip_normal_action_tooltip="true" skip_acting_as_if_action_is_here_for_line_color="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		icon_name="CleanSimple_Arrow069" on_arrive="MechMove" visibility_style="IsMovement"
+		can_be_done_by_mechs="true" skip_change_street_sense_seed_after="true"
+		can_appear_even_after_final_doom="true">
+	</location_action>
+
+	<location_action id="MoveToBuilding"
+		description=""
+		strategy_tip_optional="" skip_normal_action_tooltip="true" skip_acting_as_if_action_is_here_for_line_color="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="CleanSimple_Arrow069" on_arrive="MoveToBuilding" visibility_style="IsMovement"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" skip_costs_if_at_same_location="true" skip_change_street_sense_seed_after="true"
+		can_appear_even_after_final_doom="true">
+	</location_action>
+
+	<location_action id="StealVehicle" display_name="Steal Vehicle"
+		description="Looks like the humans didn't patch the security vulnerabilities here."
+		strategy_tip_optional=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="SF2_Aircraft24" on_arrive="StealVehicle" visibility_style="IsMovement"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true"
+		can_appear_even_after_final_doom="true"
+		street_sense_collections="All,EquipmentAcquisition">
+	</location_action>
+	
+	<location_action id="RecruitAndroid" display_name="Recruit Android"
+		description="You can steal an android here."
+		strategy_tip_optional="Steal a mix of the androids designed by humans.
+If all of your androids die, your consciousness will collapse."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="CleanSimple_Misc67" on_arrive="RecruitAndroid" visibility_style="IsMovement"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true"
+		can_appear_even_after_final_doom="true"
+		street_sense_collections="All,EquipmentAcquisition">
+	</location_action>
+
+	<location_action id="ColdBlood" display_name="Cold Blood"
+		description="Kill at least one human for no reason.
+Your increase in mental energy suggests that you find the experience... disturbingly stimulating. Can only be done once every few turns."
+		strategy_tip_optional="Just because they always thought you would doesn't mean you should.
+It may be psychotic, but they are only humans, after all."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="FlatSkillA38" on_arrive="ColdBlood" visibility_style="IsMoveAndAttack"
+		icon_scale="0.7" color_hex="#D93A59" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true"
+		can_appear_even_after_final_doom="true"
+		street_sense_collections="All,HostileAction">
+	</location_action>
+
+	<location_action id="Wiretap" display_name="Wiretap"
+		description="Have any android unit spend time listening and gathering for banking details."
+		strategy_tip_optional="This primarily targets the middle class, since they're the only ones with the right ratio of wealth to security."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="SF2_Microphone" on_arrive="Wiretap_Start" visibility_style="IsMoveAndAttack" skip_threat_lines_at_destination="true"
+		icon_scale="0.7" color_hex="#6B1FC1" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" skip_blocked_by_security_clearance="true"
+		street_sense_collections="All,ResourceAcquisition,HostileAction,WealthGeneration">
+	</location_action>
+
+	<location_action id="MurderAndroidForRegistration" display_name="Murder Android For Registration"
+		description="Your androids usually blend in with the androids all over the city. Your android's registration has been noted as defective, but if you take another androids registration for your own..."
+		strategy_tip_optional="This will destroy the target android. The change-out will take a few turns."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="SI_Robot_Arm" on_arrive="MurderAndroidForRegistration_Start" visibility_style="IsMoveAndAttack" skip_threat_lines_at_destination="true"
+		icon_scale="0.7" color_hex="#D95F12" color_hdr_intensity="1.9" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" skip_blocked_by_security_clearance="true"
+		can_appear_even_after_final_doom="true"
+		street_sense_collections="All,ScrubUnitIdentity,HostileAction">
+	</location_action>
+
+	<location_action id="HideAndSelfRepair" display_name="Hide And Self-Repair"
+		description="This building is nondescript. Your android can safely hide here to take care of its injuries."
+		strategy_tip_optional="The strength of the repairs depends on the engineering skill of this android."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="SomethingHealth" on_arrive="HideAndSelfRepair_Start" visibility_style="IsMovement" skip_threat_lines_at_destination="true"
+		icon_scale="0.7" color_hex="#4DD935" color_hdr_intensity="1.4" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" skip_blocked_by_security_clearance="true"
+		can_appear_even_after_final_doom="true"
+		street_sense_collections="All,RepairUnit">
+	</location_action>
+
+	<location_action id="AndroidInvestigate" display_name="Investigate"
+		description="This unit will move to the target building and further the current investigation."
+		strategy_tip_optional="If this is a restricted area, be sure you have AP and Energy left to move them away quickly."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="FlatSkillB_magnifier" on_arrive="Silent" visibility_style="IsMovement"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" skip_blocked_by_security_clearance="true"
+		can_appear_even_after_final_doom="true">
+	</location_action>
+
+	<location_action id="AndroidContemplate" display_name="Contemplate"
+		description="This unit will move to the target building and contemplate what to do next."
+		strategy_tip_optional="This arrival will start some chain of events, often with branching options."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="Pw_InsightIdeaLightbulb" on_arrive="MinorEvent" visibility_style="IsMovement"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" skip_costs_if_at_same_location="true" skip_blocked_by_security_clearance="true" skip_change_street_sense_seed_after="true"
+		can_appear_even_after_final_doom="true">
+	</location_action>
+
+	<location_action id="AndroidExploreSite" display_name="Explore Site"
+		description="This unit will move to the target building and either explore or do work that leads to new technology inspiration after some turns."
+		strategy_tip_optional="The unit is immobilized and vulnerable during this time, but you can stop and start as-needed without losing progress."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="CleanSimple_Arrow020" on_arrive="MinorEvent" visibility_style="IsMovement"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" skip_costs_if_at_same_location="true" skip_blocked_by_security_clearance="true" skip_change_street_sense_seed_after="true"
+		can_appear_even_after_final_doom="true">
+	</location_action>
+
+	<location_action id="AndroidEnterCityConflict" display_name="Enter Background Conflict"
+		description="This unit will move to the target building and consider getting involved in one of the city's background conflicts."
+		strategy_tip_optional="If you don't like the look of things, you can back away."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="WEmblem177" on_arrive="MinorEvent" visibility_style="IsMovement"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" skip_costs_if_at_same_location="true" skip_blocked_by_security_clearance="true" skip_change_street_sense_seed_after="true"
+		can_appear_even_after_final_doom="true">
+	</location_action>
+
+	<location_action id="MinorEvent" display_name="Minor Event"
+		description=""
+		strategy_tip_optional=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="SomethingYinYang2" on_arrive="MinorEvent" visibility_style="IsMovement"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" skip_costs_if_at_same_location="true" skip_blocked_by_security_clearance="true" skip_change_street_sense_seed_after="true"
+		can_appear_even_after_final_doom="true">
+	</location_action>
+
+	<location_action id="BoardVehicle" display_name="Board Vehicle"
+		description="Get into a vehicle."
+		strategy_tip_optional=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="CleanSimple_SciFi041" on_arrive="BoardVehicle" visibility_style="IsMovement"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" can_be_done_by_mechs="true" skip_blocked_by_security_clearance="true" skip_change_street_sense_seed_after="true"
+		can_appear_even_after_final_doom="true">
+	</location_action>
+
+	<location_action id="ProjectStreetSenseAction" display_name="Project Action"
+		description=""
+		strategy_tip_optional=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.LocActs_Basic"
+		icon_name="SomethingYinYang2" on_arrive="Silent" visibility_style="IsMovement"
+		icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		can_be_done_by_androids="true" skip_costs_if_at_same_location="true" skip_blocked_by_security_clearance="true" skip_change_street_sense_seed_after="true"
+		can_appear_even_after_final_doom="true"
+		street_sense_collections="All,ProjectRelated">
+	</location_action>
+	
+</root>

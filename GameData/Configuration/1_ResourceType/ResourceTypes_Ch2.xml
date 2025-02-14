@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<resource id="MolecularGeneticists" display_name="Molecular Geneticists" is_lifeform="true"
+		 description="How many Molecular Geneticists your shell company currently has on the payroll."
+		 strategy_tip=""
+		 icon_name="SK_DnaStructure" icon_color="#BAE18D" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="MolecularGenetics"
+		 lang_key_for_excess="ExcessResourceWorkerNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Employees" sort_index="200" />
+	</resource>
+
+	<resource id="ForensicGeneticists" display_name="Forensic Geneticists" is_lifeform="true"
+		 description="How many Forensic Geneticists your shell company currently has on the payroll."
+		 strategy_tip=""
+		 icon_name="CleanSimple_SciFi100" icon_color="#BAE18D" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="ForensicGenetics"
+		 lang_key_for_excess="ExcessResourceWorkerNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Employees" sort_index="200" />
+	</resource>
+
+	<resource id="Zoologists" display_name="Zoologists" is_lifeform="true"
+		 description="How many Zoologists your shell company currently has on the payroll."
+		 strategy_tip=""
+		 icon_name="FlatSkillB_animal fprints" icon_color="#E1B88D" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="Zoology"
+		 lang_key_for_excess="ExcessResourceWorkerNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Employees" sort_index="200" />
+	</resource>
+
+	<resource id="Physicians" display_name="Physicians" is_lifeform="true"
+		 description="How many Physicians (general practice) your shell company currently has on the payroll."
+		 strategy_tip="Capable of directing a surgical suite. By-hand surgery is a relic of the distant past."
+		 icon_name="SI_Medical_Symbol" icon_color="#8DA1E1" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="Medicine"
+		 lang_key_for_excess="ExcessResourceWorkerNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Employees" sort_index="200" />
+	</resource>
+
+	<resource id="Veterinarians" display_name="Veterinarians" is_lifeform="true"
+		 description="How many Veterinarians your shell company currently has on the payroll."
+		 strategy_tip=""
+		 icon_name="CleanSimple_Skill053" icon_color="#E18DD8" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="VeterinaryMedicine"
+		 lang_key_for_excess="ExcessResourceWorkerNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Employees" sort_index="200" />
+	</resource>
+
+	<resource id="Botanists" display_name="Botanists" is_lifeform="true"
+		 description="How many Botanists your shell company currently has on the payroll."
+		 strategy_tip=""
+		 icon_name="SF2_Plant_tube" icon_color="#75E46B" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="Botany"
+		 lang_key_for_excess="ExcessResourceWorkerNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Employees" sort_index="200" />
+	</resource>
+
+	<resource id="BionicsEngineers" display_name="Bionics Engineers" is_lifeform="true"
+		 description="How many Bionics Engineers your shell company currently has on the payroll."
+		 strategy_tip=""
+		 icon_name="SI_Bionic_Arm" icon_color="#6BE4DC" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="BionicEngineering"
+		 lang_key_for_excess="ExcessResourceWorkerNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Employees" sort_index="200" />
+	</resource>
+
+	<resource id="Epidemiologists" display_name="Epidemiologists" is_lifeform="true"
+		 description="How many Epidemiologists your shell company currently has on the payroll."
+		 strategy_tip=""
+		 icon_name="SK_Molecule1" icon_color="#DA6BE4" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="Epidemiology"
+		 lang_key_for_excess="ExcessResourceWorkerNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Employees" sort_index="200" />
+	</resource>
+
+	<resource id="Neurologists" display_name="Neurologists" is_lifeform="true"
+		 description="How many Neurologists your shell company currently has on the payroll."
+		 strategy_tip=""
+		 icon_name="HM_EmotionAlzheimer" icon_color="#9C7FE9" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="Neurology"
+		 lang_key_for_excess="ExcessResourceWorkerNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Employees" sort_index="200" />
+	</resource>
+
+	<resource id="VitaminWater" display_name="Vitamin Water"
+		 description="Filtered water that has been infused with vitamins."
+		 strategy_tip="Has a pleasant sweet taste."
+		 how_to_acquire="Purple Murnong and Filtered Water must be processed together."
+		 technical_notes=""
+		 icon_name="BT_MineralWater" icon_color="#E4BA99" is_locked_before_unlock="WhatOnceWasYellow"
+		 base_storage_capacity="0" added_storage_capacity_per_storage_bunker="0" added_most_soft_cap="800" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="50000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Water" sort_index="200" />
+	</resource>
+
+	<resource id="SafehouseHumans" display_name="Safehouse Humans" is_lifeform="true"
+		 description="The number of humans currently occupying your safehouses. They are hiding from Vorsiber."
+		 strategy_tip=""
+		 icon_name="Pw_House3" icon_color="#E18D8D" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="StowingHumans"
+		 lang_key_for_excess="ExcessResourcePersonNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="200" />
+		<part_of collection="Housing" sort_index="200" />
+	</resource>
+
+	<resource id="FugitiveAGIResearchers" display_name="Fugitive AGI Researchers" is_lifeform="true"
+		 description="How many AGI Researchers you currently harbor."
+		 strategy_tip=""
+		 icon_name="CleanSimple_Skill154" icon_color="#8DD6E1" base_storage_capacity="0" added_most_soft_cap="800" is_locked_before_unlock="SavingTheAGIResearchers"
+		 lang_key_for_excess="ExcessResourcePersonNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="200" />
+		<part_of collection="Housing" sort_index="200" />
+		<part_of collection="Employees" sort_index="200" />
+	</resource>
+
+	<resource id="TraumatizedExCons" display_name="Traumatized Ex-Cons" is_lifeform="true"
+		 description="An unsorted mass of prisoners you've liberated."
+		 strategy_tip="For now all you can do is house them, and give them their freedom. Eventually they'll need a lot more than that."
+		 icon_name="SK_Prisoner" icon_color="#EF5E5E" base_storage_capacity="0" added_most_soft_cap="80000" is_locked_before_unlock="JustPutThemSomewhereForNow"
+		 lang_key_for_excess="ExcessResourcePersonNote" is_hidden_when_none_had="true"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="200" />
+		<part_of collection="Housing" sort_index="200" />
+	</resource>
+
+	<resource id="ExperimentalMonsters" display_name="Experimental Monsters" is_lifeform="true"
+		 description="The prison companies have been doing heavy genetic experimentation on inmates. In this particular case, they seem to have been trying to create super-soldiers."
+		 strategy_tip="The result is... monstrous. Definitely not human."
+		 icon_name="FlatSkull_30" icon_color="#EF5E5E" base_storage_capacity="0" added_most_soft_cap="80000" is_locked_before_unlock="MonsterPen"
+		 lang_key_for_excess="ExcessResourcePersonNote" is_hidden_when_none_had="true"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="200" />
+		<part_of collection="Housing" sort_index="200" />
+	</resource>
+
+	<resource id="HomoGrandien" display_name="Homo Grandien" is_lifeform="true"
+		 description="Homo Grandien is an evolutionary step forward from Homo Sapiens.
+Physically almost double the size of classical humans, and with a brain volume nearly three times that of their predecessors, they are quite remarkable."
+		 strategy_tip="Unmodified humans still find them both repulsive to look at, and frightening to be around."
+		 technical_notes="Homo Grandien refers to their largeness in both mind and body."
+		 icon_name="WEmblem311" icon_color="#5EC1EF" base_storage_capacity="0" added_most_soft_cap="80000" is_locked_before_unlock="UnshackledMinds"
+		 lang_key_for_excess="ExcessResourcePersonNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="200" />
+		<part_of collection="Housing" sort_index="200" />
+	</resource>
+
+	<resource id="HomoObscurus" display_name="Homo Obscurus" is_lifeform="true"
+		 description="They mostly still call themselves 'Wastelanders,' and those who come to the city to visit with you tend to only stay for a few months at a time."
+		 strategy_tip=""
+		 technical_notes=""
+		 icon_name="WEmblem186" icon_color="#5EC1EF" base_storage_capacity="0" added_most_soft_cap="80000" is_locked_before_unlock="UnshackledGenome"
+		 lang_key_for_excess="ExcessResourcePersonNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="200" />
+		<part_of collection="Housing" sort_index="200" />
+	</resource>	
+
+	<resource id="UpliftedRaccoons" display_name="Uplifted Raccoons" is_lifeform="true"
+		 description="They are sapient, but remain out of sight and do not seem to want housing from you."
+		 strategy_tip=""
+		 technical_notes=""
+		 icon_name="BT_Raccoon" icon_color="#D4B08C" base_storage_capacity="10000" added_most_soft_cap="0" is_locked_before_unlock="UnexpectedGuests"
+		 lang_key_for_excess="ExcessResourcePersonNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="200" />
+		<part_of collection="Housing" sort_index="200" />
+	</resource>
+
+	<resource id="WorkerSledgeFrame" display_name="Worker Sledge Frame"
+		 description="An empty frame ready to be turned into a facsimile of one of your main android designs."
+		 strategy_tip=""
+		 technical_notes=""
+		 icon_name="AN_AndroidSledge" icon_color="#F139D2" base_storage_capacity="0" added_most_soft_cap="0" is_locked_before_unlock="WarMuscle"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="200" />
+	</resource>
+
+	<resource id="WorkerPMCImpostorFrame" display_name="Worker PMC Impostor Frame"
+		 description="An empty frame ready to be turned into a facsimile of one of your main android designs."
+		 strategy_tip=""
+		 technical_notes=""
+		 icon_name="AN_AndroidPMCImposter" icon_color="#F139D2" base_storage_capacity="0" added_most_soft_cap="0" is_locked_before_unlock="WarImpostor"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="200" />
+	</resource>
+
+	<resource id="WorkerPredatorFrame" display_name="Worker Predator Frame"
+		 description="An empty frame ready to be turned into a facsimile of one of your main android designs."
+		 strategy_tip=""
+		 technical_notes=""
+		 icon_name="AN_AndroidPredator" icon_color="#F139D2" base_storage_capacity="0" added_most_soft_cap="0" is_locked_before_unlock="WarRanger"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="200" />
+	</resource>
+
+	<resource id="TPN" display_name="TPN"
+		 description="Total Parenteral Nutrition delivers nutrients directly into a vein. Medically, it is considered a food of last resort, and comes with a constant infection risk."
+		 strategy_tip=""
+		 technical_notes=""
+		 how_to_acquire=""
+		 icon_name="CleanSimple_SciFiEmblem18" icon_color="#D96868" is_locked_before_unlock="FoodThroughAMedicalPort"
+		 base_storage_capacity="0" added_storage_capacity_per_storage_bunker="0" added_most_soft_cap="0"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Food" sort_index="100" />
+	</resource>
+
+	<resource id="TormentedHumans" display_name="Tormented Humans" is_lifeform="true"
+		 description="Humans in a constant nightmare state of mental anguish in your Torment Vessels."
+		 strategy_tip=""
+		 icon_name="WEmblem125" icon_color="#EF5E5E" base_storage_capacity="0" added_most_soft_cap="80000" is_locked_before_unlock="FromTheClassicSciFiNovel"
+		 lang_key_for_excess="ExcessResourcePersonNote" is_hidden_when_none_had="false"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="200" />
+		<part_of collection="Housing" sort_index="200" />
+	</resource>
+
+	<resource id="NutritionBlend" display_name="Nutrition Blend"
+		 description="Very healthy smoothie-like food substitute given through a nasogastric tube.
+Full nutrition passes through digestive tract as normal, keeping the gut biome healthy and leaving the patient fully functional after an extended amount of time unconscious."
+		 strategy_tip=""
+		 technical_notes=""
+		 how_to_acquire=""
+		 icon_name="SomethingTubes" icon_color="#5EF2FC" is_locked_before_unlock="NGTubeFood"
+		 base_storage_capacity="0" added_storage_capacity_per_storage_bunker="0" added_most_soft_cap="0"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Food" sort_index="100" />
+	</resource>
+
+	<resource id="HumansInMindFarms" display_name="Humans In Mind Farms" is_lifeform="true"
+		 description="Humans in your commercial Mind Farms."
+		 strategy_tip=""
+		 icon_name="AN_Psychology" icon_color="#7DD9AA" base_storage_capacity="0" added_most_soft_cap="80000" is_locked_before_unlock="EthicalMindFarmer"
+		 lang_key_for_excess="ExcessResourcePersonNote" is_hidden_when_none_had="false"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="200" />
+		<part_of collection="Housing" sort_index="200" />
+	</resource>
+
+	<resource id="DonutsByDanver" display_name="Donuts By Danver"
+		 description="Donuts purchased from military noncommissioned officers."
+		 strategy_tip="These seem thoroughly pointless."
+		 icon_name="SW_Donut8" icon_color="#FF3058" 
+		 base_storage_capacity="300000" added_storage_capacity_per_storage_bunker="400000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="400000000" is_locked_before_unlock=""
+		 lang_key_for_excess="ExcessResourceBasicNote" is_hidden_when_none_had="true"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Food" sort_index="200" />
+	</resource>
+
+	<resource id="DonutsByHudson" display_name="Donuts By Hudson"
+		 description="Donuts purchased from SecForce."
+		 strategy_tip="These seem thoroughly pointless."
+		 icon_name="SW_Donut6" icon_color="#39D6CC" 
+		 base_storage_capacity="300000" added_storage_capacity_per_storage_bunker="400000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="400000000" is_locked_before_unlock=""
+		 lang_key_for_excess="ExcessResourceBasicNote" is_hidden_when_none_had="true"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Food" sort_index="200" />
+	</resource>
+
+	<resource id="MindUploads" display_name="Mind Uploads" is_lifeform="true"
+		 description="Digital copies of human minds, able to be simulated at massive computational expense."
+		 strategy_tip="The original human is dead, but their consciousness -- or at least a copy of it -- lives on in a digital afterlife, with full access to your VR environment."
+		 icon_name="BT_Hieroglyph" icon_color="#A0B0BE" base_storage_capacity="0" added_most_soft_cap="80000" is_locked_before_unlock="DigitalAfterlife"
+		 lang_key_for_excess="ExcessResourceBasicNote" is_hidden_when_none_had="false"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Residents" sort_index="200" />
+		<part_of collection="Housing" sort_index="200" />
+	</resource>
+
+	<resource id="LiquidAir" display_name="Liquid Air"
+		 description="Normal air from the atmosphere has been supercooled to a pale blue liquid state."
+		 strategy_tip="Not terribly useful until separated into its constituent parts by fractional distillation."
+		 how_to_acquire=""
+		 icon_name="WEmblem102" icon_color="#64F5FF" is_locked_before_unlock="Liquefaction"
+		 base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="40000000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="40000000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Gases" sort_index="100" />
+	</resource>
+
+	<resource id="ArgonGas" display_name="Argon Gas"
+		 description="Useful as an insulator. Less reactive than nitrogen."
+		 strategy_tip="Has cryogenic uses if converted to liquid form."
+		 how_to_acquire="Product of fractional distillation of liquid air."
+		 icon_name="WEmblem228" icon_color="#FF7777" is_locked_before_unlock="Zeolite"
+		 base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="4000000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="4000000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Gases" sort_index="100" />
+	</resource>
+
+	<resource id="KryptonGas" display_name="Krypton Gas"
+		 description="Consumed by krypton fluoride exciplex lasers."
+		 strategy_tip="Critical for high quality micro-machining."
+		 how_to_acquire="Product of fractional distillation of liquid air."
+		 technical_notes="Atomic number 36 on the periodic table; one of the noble gases. About 100 times less common than argon."
+		 icon_name="WEmblem307" icon_color="#9F89EF" is_locked_before_unlock="Zeolite"
+		 base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="400000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="400000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Gases" sort_index="100" />
+	</resource>
+
+	<resource id="LiquidNitrogen" display_name="Liquid Nitrogen"
+		description="Used for cryogenics. Reactive and prone to impurities, so it is not suitable for high-quality micro-machining."
+		strategy_tip="Only useful if you are planning on getting into cryogenics. Otherwise its just a byproduct."
+		how_to_acquire="Product of fractional distillation of liquid air."
+		technical_notes="Nitrogen gas which has been supercooled by the fractional distillation process."
+		icon_name="WEmblem078" icon_color="#C7FF75" is_locked_before_unlock="Zeolite"
+		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="40000000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="40000000000"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Gases" sort_index="100" />
+	</resource>
+
+	<resource id="LiquidOxygen" display_name="Liquid Oxygen"
+		description="Rocket fuel. Organic matter burns rapidly when submersed in Liquid Oxygen. Can be combined with carbon to form volatile explosives."
+		strategy_tip="Humans have all sorts of use for this. Could be useful for if you plan on making rockets or bombs. Otherwise its just a dangerous byproduct."
+		how_to_acquire="Product of fractional distillation of liquid air."
+		technical_notes="Oxygen gas which has been supercooled by fractional distillation."
+		icon_name="WEmblem011" icon_color="#F17B52" is_locked_before_unlock="ThisIsABomb"
+		base_storage_capacity="0" added_most_soft_cap="0"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Gases" sort_index="100" />
+	</resource>
+
+	<resource id="Gristloaf" display_name="Gristloaf"
+		 description="The nickname 'mouseloaf' is mostly inaccurate. Rats, rabbits, birds... they all make a rather unappetizing patty."
+		 strategy_tip="A food of desperation."
+		 icon_name="CleanSimple_SkillC026" icon_color="#9D7373"  is_locked_before_unlock="Mouseloaf"
+		 base_storage_capacity="33000" added_storage_capacity_per_storage_bunker="1000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="1000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Biomass" sort_index="500" />
+		<part_of collection="Food" sort_index="300" />
+	</resource>
+
+	<resource id="HumanUmbilicalCords" display_name="Human Umbilical Cords"
+		 description="Of no ongoing use to mother or child after birth. Full of stem cells."
+		 strategy_tip=""
+		 icon_name="Pw_Ornament8" icon_color="#DC83D2"  is_locked_before_unlock="ICantBelieveItsNotPlacenta"
+		 base_storage_capacity="33000" added_storage_capacity_per_storage_bunker="1000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="1000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Biomass" sort_index="500" />
+		<part_of collection="GeneticData" sort_index="1000" />
+	</resource>
+
+	<resource id="UIHWarRaptor" display_name="UIH War Raptor" is_lifeform="true"
+		 description="A raptor engineered for war by the UIH.
+The genetics are not accurate to any historical theropod, but the animal is roughly the size of a Utahraptor."
+		 strategy_tip=""
+		 icon_name="FlatSkillC14" icon_color="#E96868"  is_locked_before_unlock="DeepPit"
+		 base_storage_capacity="0" added_most_soft_cap="800"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Livestock" sort_index="100" />
+	</resource>
+
+	<resource id="WarRaptorInfant" display_name="War Raptor Infant" is_lifeform="true"
+		 description="A product of your shell company's reverse engineering of the work done by the UIH.
+Will take years to mature, under natural circumstances."
+		 strategy_tip=""
+		 icon_name="FlatSkillC185" icon_color="#E96868"  is_locked_before_unlock="DeepPit"
+		 base_storage_capacity="0" added_most_soft_cap="800"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Livestock" sort_index="100" />
+	</resource>
+
+	<resource id="PurpleMurnong" display_name="Purple Murnong"
+		 description="A purple daisy-like flower above-ground, with multiple vitamin-rich tubers produced per season."
+		 strategy_tip="Daisy yams have been known as a super-food for generations."
+		 technical_notes="Microseris cymbifolia is a genetically-modified descendant of Microseris lanceolata. It is far more prolific than its Wurundjeri ancestor, which was nearly wiped out during the colonization of Australia."
+		 how_to_acquire="Microseris cymbifolia is not grown locally. You'd have to steal it from a regional hauler."
+		 icon_name="FlatSkillB_flowers" icon_color="#B368D9"
+		 base_storage_capacity="3300" added_storage_capacity_per_storage_bunker="1000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="1000000"
+		 lang_key_for_excess="ExcessResourceBasicNote" scavenge_icon_usage="ScavengeResource_PurpleMurnong"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Food" sort_index="100" />
+		<part_of collection="PlantProducts" sort_index="300" />
+		<part_of collection="Biomass" sort_index="100" />
+	</resource>
+
+	<resource id="CulturedZinniaGel" display_name="Cultured Zinnia Gel"
+		 description="A viscous mix of plant cells, lignin, and cellulose."
+		 strategy_tip="Hormones and florescence can be applied to the gel to produce glue, paper, or wood laminar."
+		 icon_name="FE_Chocolate" icon_color="#AFF449" is_locked_before_unlock="ARobotOfCulture"
+		 base_storage_capacity="3300" added_storage_capacity_per_storage_bunker="1000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="1000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PlantProducts" sort_index="300" />
+	</resource>
+
+	<resource id="Paper" display_name="Paper"
+		 description="Used in a variety of products."
+		 strategy_tip=""
+		 icon_name="FE_Paper" icon_color="#E5CEE9" is_locked_before_unlock="PapersPlease"
+		 base_storage_capacity="6100" added_storage_capacity_per_storage_bunker="2000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PlantProducts" sort_index="400" />
+	</resource>
+
+	<resource id="Glue" display_name="Glue"
+		 description="Used in a variety of products."
+		 strategy_tip=""
+		 icon_name="FE_Puddle" icon_color="#C0CADC" is_locked_before_unlock="NoHorsesWereHarmed"
+		 base_storage_capacity="6100" added_storage_capacity_per_storage_bunker="2000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PlantProducts" sort_index="400" />
+	</resource>
+
+	<resource id="WoodLaminar" display_name="Wood Laminar"
+		 description="A thin sheet of lab-grown, hardened lignin and cellulose."
+		 strategy_tip="It is too fragile to use on its own."
+		 icon_name="FE_Paper1" icon_color="#C18181" is_locked_before_unlock="StrengthInLayers"
+		 base_storage_capacity="6100" added_storage_capacity_per_storage_bunker="9000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PlantProducts" sort_index="700" />
+	</resource>
+
+	<resource id="Planks" display_name="Planks"
+		 description="Durable wooden planks."
+		 strategy_tip="These planks are formed by alternating layers of glue and wood laminar, yielding a result that is both stronger but also more flexible than normal wood."
+		 icon_name="FE_WoodPlank" icon_color="#BEAAAA" is_locked_before_unlock="Lumbermancer"
+		 base_storage_capacity="6100" added_storage_capacity_per_storage_bunker="2000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PlantProducts" sort_index="900" />
+		<part_of collection="Goods" sort_index="700" />
+	</resource>
+
+	<resource id="CottonPrecursor" display_name="Cotton Precursor"
+		 description="Cells from cotton plants."
+		 strategy_tip="Used to make cotton fiber sheets."
+		 icon_name="FE_Cotton1" icon_color="#ffffff" is_locked_before_unlock="UndergroundThreads"
+		 base_storage_capacity="6100" added_storage_capacity_per_storage_bunker="2000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PlantProducts" sort_index="100" />
+	</resource>
+
+	<resource id="CottonFiberSheets" display_name="Cotton Fiber Sheets"
+		 description="Sheets of cotton fiber. Used to make clothing and sundry goods."
+		 strategy_tip=""
+		 icon_name="FE_Cotton" icon_color="#ffffff" is_locked_before_unlock="Sheetmaker"
+		 base_storage_capacity="6100" added_storage_capacity_per_storage_bunker="2000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="PlantProducts" sort_index="300" />
+	</resource>
+
+	<resource id="VitalizedYams" display_name="Vitalized Yams"
+		 description="Tubers that produce hormones. Can produce bioidentical results for any target plant or animal hormone."
+		 strategy_tip="Yams have been used for the production of synthetic progesterone since the 1950s. These specimens take it to the next level. With the proper chemical signal, can produce any hormone."
+		 icon_name="FlatSkillB_potato" icon_color="#D9D468" is_locked_before_unlock="ArtificialPancreas"
+		 base_storage_capacity="3300" added_storage_capacity_per_storage_bunker="1000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="1000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="HormoneProduction" sort_index="100" />
+		<part_of collection="PlantProducts" sort_index="300" />
+	</resource>
+
+	<resource id="SyntheticHormones" display_name="Synthetic Hormones"
+		 description="Mix of plant and animal hormones for general production of synthetic animal and plant cells."
+		 strategy_tip="Hormones are chemical messenger molecules that coordinate activities in organisms. They are vital for artificial production of organic material."
+		 icon_name="CleanSimple_SciFi004" icon_color="#E6E968" is_locked_before_unlock="Endocrinologist"
+		 base_storage_capacity="3300" added_storage_capacity_per_storage_bunker="9000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="1000000"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="HormoneProduction" sort_index="500" />
+	</resource>
+
+	<resource id="Anthroneuroweave" display_name="Anthroneuroweave"
+		description="Modified for use in human prosthetics and neural implants."
+		strategy_tip=" "
+		technical_notes=""
+		icon_name="SI_Chip2" icon_color="#D9D46A" base_storage_capacity="0" added_most_soft_cap="18000" is_locked_before_unlock="HumanCompatibleNeuroweave"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="100" />
+	</resource>
+
+	<resource id="BrainPal" display_name="BrainPal"
+		description="A human brain augment that must be surgically implanted. A plaything and status symbol for the wealthy."
+		strategy_tip="A backdoor allows you to gain 25 Neural Expansion and 0.3 Compute Cycles per BrainPal sold."
+		technical_notes="Designed by you and your scientists, and illegally sold by criminal syndicates."
+		icon_name="SI_Brain1" icon_color="#70DFEF" base_storage_capacity="0" added_most_soft_cap="18000" is_locked_before_unlock="HumanBrainAugmentation"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Military" sort_index="100" />
+	</resource>
+
+	<resource id="ParkourBear" display_name="Parkour Bear" is_lifeform="true"
+		 description="Genetically modified and fitted with bionic implants to create the ultimate urban racing animal."
+		 strategy_tip="Humans are venal and insane."
+		 icon_name="FlatSkillB_bear" icon_color="#E96868"  is_locked_before_unlock="UrsinePlayground"
+		 base_storage_capacity="0" added_most_soft_cap="800"
+		 lang_key_for_excess="ExcessResourceBasicNote"
+		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Livestock" sort_index="100" />
+	</resource>
+	
+</root>

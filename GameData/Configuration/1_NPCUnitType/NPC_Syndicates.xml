@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--BudgetSecurity
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="BudgetSecurity" display_name="Budget Security"
+		description=""
+		icon_scale="0.7" shape_icon_name="ME_CheapSecurityDisguise2" shape_icon_color="#ffffff"
+		vis_drawing_tag="BudgetSecurity" vis_object_scale="0.3" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatantWeakLone" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		 
+		tags="BudgetSecurity" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="12,16" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="1,2" />
+		<actor_data data_type="UnitHackingSkill" base_range="1,2" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="60,80" />
+		<actor_data data_type="UnitMorale" base_range="110,116" />
+		<actor_data data_type="ContrabandScanner" base_range="100,150" />
+	</npc_unit_type>
+
+	<!--SyndicateOverseer
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SyndicateOverseerAny" display_name="Syndicate Overseer"
+		description="Middle management for criminal syndicates."
+		icon_scale="0.7" shape_icon_name="HM_ShapePill2" shape_icon_color="#ffffff"
+		vis_drawing_tag="SyndicateOverseer" vis_object_scale="0.3" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatantWeakLone" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		 
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="16,18" />
+		<actor_data data_type="ActorMoveRange" base_range="24,28" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="18,24" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="90,120" />
+		<actor_data data_type="UnitHackingSkill" base_range="10,20" />
+		<actor_data data_type="UnitMorale" base_range="240,262" />
+		<actor_data data_type="ContrabandScanner" base_range="300,350" />
+	</npc_unit_type>
+
+	<npc_unit_type id="SyndicateOverseerMale" copy_from="SyndicateOverseerAny" vis_drawing_tag="SyndicateOverseerMale" />
+	<npc_unit_type id="SyndicateOverseerFemale" copy_from="SyndicateOverseerAny" vis_drawing_tag="SyndicateOverseerFemale" />
+
+	<!--SyndicateGunner
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SyndicateGunner" display_name="Syndicate Gunner"
+		description="Syndicate combatants in fancy clothes."
+		icon_scale="0.7" shape_icon_name="FlatSkillB_gun" shape_icon_color="#ffffff"
+		vis_drawing_tag="SyndicatePistolAny" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="12"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="SyndicateGunnerShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="8,9" />
+		<actor_data data_type="ActorMoveRange" base_range="20,28" />
+		<actor_data data_type="ActorHP" base_range="115,175" />
+		<actor_data data_type="ActorPower" base_range="65,85" />
+		<actor_data data_type="ActorFearAttackPower" base_range="80,95" />
+		<actor_data data_type="UnitMorale" base_range="520,590" />
+	</npc_unit_type>
+	
+	<npc_unit_type id="SyndicateGunnerAntiShell" copy_from="SyndicateGunner">
+		<actor_data data_type="AttackRange" base_range="14,16" />
+		<actor_data data_type="ActorPower" base_range="165,185" />
+		<default_feat feat="StructureCracker" value="2.2"/>
+	</npc_unit_type>
+
+	<!--SyndicateSharpshooter
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SyndicateSharpshooter" display_name="Syndicate Sharpshooter"
+		description="Rifle-wielding syndicate combatants."
+		icon_scale="0.7" shape_icon_name="CS_GunAssaultRifle" shape_icon_color="#ffffff"
+		vis_drawing_tag="SyndicateRifleAny" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="32"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="SyndicateSharpshooterShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="11,13" />
+		<actor_data data_type="ActorMoveRange" base_range="16,25" />
+		<actor_data data_type="ActorHP" base_range="195,225" />
+		<actor_data data_type="ActorPower" base_range="95,125" />
+		<actor_data data_type="ActorFearAttackPower" base_range="120,145" />
+		<actor_data data_type="UnitMorale" base_range="560,690" />
+	</npc_unit_type>
+
+	<npc_unit_type id="SyndicateSharpshooterAntiShell" copy_from="SyndicateSharpshooter">
+		<actor_data data_type="AttackRange" base_range="20,21" />
+		<actor_data data_type="ActorPower" base_range="240,260" />
+		<default_feat feat="StructureCracker" value="4.2"/>
+	</npc_unit_type>
+
+	<!--SyndicateHeavy
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SyndicateHeavy" display_name="Syndicate Heavy"
+		description="Experienced shotgun-toting syndicate combatants."
+		icon_scale="0.7" shape_icon_name="AN_GunShotgun" shape_icon_color="#ffffff"
+		vis_drawing_tag="SyndicateShotgun" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="24"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="SyndicateHeavyShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="7,7" />
+		<actor_data data_type="ActorMoveRange" base_range="16,25" />
+		<actor_data data_type="ActorHP" base_range="325,375" />
+		<actor_data data_type="ActorPower" base_range="395,425" />
+		<actor_data data_type="ActorFearAttackPower" base_range="150,195" />
+		<actor_data data_type="UnitMorale" base_range="660,790" />
+	</npc_unit_type>
+
+	<npc_unit_type id="SyndicateHeavyAntiShell" copy_from="SyndicateHeavy">
+		<actor_data data_type="AttackRange" base_range="10,16" />
+		<default_feat feat="StructureCracker" value="8.2"/>
+	</npc_unit_type>
+
+	<!--SyndicateEnforcer (full color prestige unit)
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SyndicateEnforcer" display_name="Syndicate Enforcer"
+		description="Squad of high-level armored soldiers for a criminal syndicate."
+		icon_scale="0.7" shape_icon_name="FlatSkillA02" shape_icon_color="#ffffff"
+		vis_drawing_tag="SyndicateEnforcer" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="8"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="GangAkimboShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="SyndicateEnforcer,SyndicateMidleveReinforcements" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="11,12" />
+		<actor_data data_type="ActorMoveRange" base_range="20,26" />
+		<actor_data data_type="ActorHP" base_range="800,845" />
+		<actor_data data_type="ActorPower" base_range="422,478" />
+		<actor_data data_type="ActorFearAttackPower" base_range="220,245" />
+		<actor_data data_type="UnitMorale" base_range="900,930" />
+		<default_perk perk="Fearless" unlock="" />
+	</npc_unit_type>
+
+	<!--SyndicateSpindletrooperCourier
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SyndicateSpindletrooperCourier" display_name="Syndicate Spindletrooper Courier"
+		description="Android providing lethal defense while carrying sensitive goods or business between criminal syndicate drops."
+		icon_scale="0.7" shape_icon_name="SI_Machine_Gun18" shape_icon_color="#ffffff"
+		vis_drawing_tag="Spindletrooper" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		percent_robotic="100" percent_biological="0" is_human="false"
+		underlay="NPCAndroidHume" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="HumanAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="GangSharpshooterShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"		 
+		tags="SyndicateSpindletrooperCourier">
+		<actor_data data_type="AttackRange" base_range="13,14" />
+		<actor_data data_type="ActorMoveRange" base_range="31,32" />
+		<actor_data data_type="ActorHP" base_range="95,145" />
+		<actor_data data_type="ActorPower" base_range="92,148" />
+		<actor_data data_type="ActorFearAttackPower" base_range="110,125" />
+		<!--<actor_data data_type="NPCHackingResistance" base_range="170,170" />-->
+		<actor_data data_type="ContrabandScanner" base_range="1200,1450" />
+	</npc_unit_type>
+		
+	<!--todo Spindletrooper of other sorts-->
+	<!--todo SyndicateArmor-->
+	<!--todo SyndicateCombatGolem-->
+	
+
+
+</root>

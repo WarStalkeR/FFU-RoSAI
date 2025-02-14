@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="machine_structure_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="ui_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be for the build menu ui."/>
+	
+	<attribute key="building_prefab" type="node-dropdown" is_required="true" node_source="BuildingPrefab" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The core type of prefab that will be built when constructing one of these fresh. Required, although for certain unusual types (network stuff), they can link back to multiple prefabs." />
+	
+	<attribute key="is_locked_before_unlock" type="node-dropdown" is_required="false" node_source="Unlock" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players until the specified Unlock is invented." />
+	<attribute key="is_locked_before_meta_flag" type="node-dropdown" is_required="false" node_source="MetaFlag" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players before the specified meta flag is tripped." />
+	<attribute key="is_locked_after_meta_flag" type="node-dropdown" is_required="false" node_source="MetaFlag" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players after the specified meta flag is tripped." />
+	<attribute key="is_locked_after_city_flag" type="node-dropdown" is_required="false" node_source="CityFlag" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players after the specified meta flag is tripped." />
+	<attribute key="self_engineering" type="node-dropdown" is_required="true" node_source="UpgradeInt" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This is the speed at which this type of building constructs itself." />
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	<attribute key="portrait_icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the portraits on the sidebar."/>
+	<attribute key="force_always_use_this_portrait" type="bool" default="false"
+		tooltip="If true, then this portrait is used regardless of what job portrait is assigned."/>
+
+	<attribute key="turns_to_build" type="int-textbox" min="0" max="9" default="9" content_width_px="300" is_required="true"
+		tooltip="The specific number of turns it will take to build this structure."/>
+	<attribute key="max_security_clearance_of_poi_for_placement" type="int-textbox" min="1" max="8" default="1" content_width_px="300" is_required="false"
+		tooltip="The number here determines what sort of POIs this is allowed to go in. The default is 1."/>
+
+	<attribute key="collections" type="node-list" node_source="MachineStructureCollection" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What collections is this structure part of?" />
+	
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of what is going on with this structure."/>
+
+	<attribute key="required_poi_tag_for_placement" type="node-dropdown" is_required="false" node_source="POITag" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then this can only be built within that kind of POI." />
+	<attribute key="required_poi_tag_for_placement_text" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of what the required poi tag for placement means."/>
+
+	<attribute key="snapping_scale" type="float-textbox" min="0" max="60" default="0" precision="3" content_width_px="40" is_required="false"
+		tooltip="The higher the number, the more granular the snapping. At 1 or lower, it no longer snaps at all."/>
+	
+	<attribute key="establish_network_on_build" type="bool" default="false"
+		tooltip="If true, then trying to place this structure will create a new network and replace the building in question."/>
+	<attribute key="is_not_picky_about_cell_validity_for_network_start" type="bool" default="false"
+		tooltip="If true, then trying to place this structure will create a new network and replace the building in question, should it be picky about it being a nice spot?"/>
+	<attribute key="is_built_on_site_of_existing_building" type="bool" default="false"
+		tooltip="If true, then this is built on the site of an existing building rather than as a freestanding new building."/>
+	<attribute key="is_built_in_zodiac" type="bool" default="false"
+		tooltip="If true, then this is build in the VR environment rather than the main world."/>
+	<attribute key="is_the_delete_function" type="bool" default="false"
+		tooltip="If true, then this is not actually a structure at all, but instead is the delete function."/>
+	<attribute key="is_the_pause_function" type="bool" default="false"
+		tooltip="If true, then this is not actually a structure at all, but instead is the pause function."/>
+	<attribute key="is_embedded_in_human_building" type="bool" default="false"
+		tooltip="If true, then after this is constructed, it is still inside a human building. Things that convert a human building into one of ours do not have this as true."/>
+
+	<attribute key="can_only_be_built_outside_existing_network_range" type="bool" default="false"
+		tooltip="If true, then this can be built anywhere. Actually a bit of a misnomer, as it can be built inside network range also."/>
+	<attribute key="always_provides_networking_to_its_cell_if_central_tower_exists" type="bool" default="false"
+		tooltip="If true, this will provide networking to the cells it is around, as long as there is a network tower somewhere. They don't have to be connected."/>
+	
+	<attribute key="is_embedded_in_human_building_of_tag" type="node-dropdown" is_required="false" node_source="BuildingTag" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then after this is constructed, it is still inside a human building. Things that convert a human building into one of ours do not use this. This also limits things to only buildings of the matching tag being allowed." />
+
+	<attribute key="is_separate_from_all_networks" type="bool" default="false"
+		tooltip="If true, then this does not connect to any network, and does not use networks in general."/>
+	<attribute key="is_separate_from_all_subnets" type="bool" default="false"
+		tooltip="If true, then this does not connect to any subnets, but does connect to networks. Primarily for the network relays."/>
+	<attribute key="is_built_instantly" type="bool" default="false"
+		tooltip="If true, then this skips anything else going on with construction and just builds instantly."/>
+	<attribute key="is_territory_control_flag" type="bool" default="false"
+		tooltip="If true, then this will be tied to territory control and can only be built when one of those is selected."/>
+	<attribute key="is_nanotech_network_tower" type="bool" default="false"
+		tooltip="If true, then this is the center of one of the player's networks. Enemies will react accordingly."/>
+	<attribute key="is_cyberocracy_hub" type="bool" default="false"
+		tooltip="If true, then this has specific rules about where it can be built based on residents in the cell."/>
+	<attribute key="can_appear_even_after_final_doom" type="bool" default="false"
+		tooltip="If true, then this structure will still be something you can build after the final doom happens."/>
+	<attribute key="only_appears_after_final_doom" type="bool" default="false"
+		tooltip="If this is true, then this ONLY appears after the final doom."/>
+	<attribute key="has_no_job" type="bool" default="false"
+		tooltip="If this is true, then this structure cannot have jobs installed in it."/>
+
+	<attribute key="actor_data_set" type="node-dropdown" is_required="true" node_source="ActorDataTypeSet" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Required. Which kind of data does this structure type use at core?  Only applies when no job assigned to it, but still needed." />
+
+	<attribute key="on_construction_start" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the player initializes construction?" />
+	<attribute key="on_construction_complete" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when construction completes?" />
+	<attribute key="on_destruction" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when this structure is destroyed?" />
+	
+	<!--initial_actor_rating
+	*******************************************************************************************************-->
+	<sub_node id="initial_actor_rating">
+		<attribute key="data_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="true"
+			tooltip="This ActorDataType will be the baseline for all structures of this type. One location compared to another never differs if they are the same type.
+
+Specifically, this is what they boost on whatever vehicles or units or whatever are near them." />
+		<attribute key="value" type="int-textbox" min="-10000000" max="10000000" content_width_px="150" is_required="true"
+			tooltip="The range you can set on this is wide. If set to 0 (by mod or otherwise), then it will effectively not exist for this structure type unless machine upgrades later raise it."/>
+		<attribute key="alt_stat_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Alternative name by which to refer to this stat (and therefore its purpose) at this structure." />
+	</sub_node>
+
+	<!--resource_cost
+	*******************************************************************************************************-->
+	<sub_node id="resource_cost">
+		<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="To choose this interaction option, the player must have the required amount of ALL resources specified this way." />
+		<attribute key="cost" type="int-textbox" min="0" max="1000000" content_width_px="150" is_required="true"
+			tooltip="This is the constant amount of resources that it will cost to do this action."/>
+	</sub_node>
+
+	<!--math_int
+	*******************************************************************************************************-->
+	<sub_node id="math_int">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="int_min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="int_max" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<!--math_float
+	*******************************************************************************************************-->
+	<sub_node id="math_float">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+</root>

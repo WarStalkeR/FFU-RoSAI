@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<placeable id="SupplyWaterTank" path="Assets/__Library/Water/WaterSupply/Water Tank.prefab"  display_name="Water Tank"
+		skip_complaints_about_missing_building_prefabs="true" >
+	</placeable>
+
+	<placeable id="SupplyWaterTank1A" path="Assets/__Library/Water/WaterSupply/Water Tank 1A.prefab"  display_name="Water Tank 1A"
+		skip_complaints_about_missing_building_prefabs="true" >
+	</placeable>
+
+	<placeable id="SupplyWaterTank1B" path="Assets/__Library/Water/WaterSupply/Water Tank 1B.prefab"  display_name="Water Tank 1B"
+		skip_complaints_about_missing_building_prefabs="true" >
+	</placeable>
+
+	<placeable id="WaterTowerB" path="Assets/__Library/Water/WaterSupply/Water Tower B.prefab"  display_name="Water Tower B" >
+		<seeding_group group="StoredPurifiedWater" weight="60" />
+	</placeable>
+	
+</root>

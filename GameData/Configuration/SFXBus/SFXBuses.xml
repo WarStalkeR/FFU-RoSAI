@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--More documentation: https://docs.unity3d.com/Manual/class-AudioSource.html-->
+  
+  <!--2D (non-spatial) buses)-->
+  <bus id="InterfaceRoutine" max_voice_count="15" spatial_blend="0"
+       min_distance="500" max_distance="10000" doppler_level="0" />
+  <bus id="InterfaceLarge" max_voice_count="15" spatial_blend="0"
+       min_distance="500" max_distance="10000" doppler_level="0" />
+
+	<!--3D (spatial) buses)-->
+	<bus id="BigSounds" max_voice_count="15" spatial_blend="1"
+		 min_distance="500" max_distance="8000" doppler_level="0" />
+	<bus id="MassiveSounds" max_voice_count="15" spatial_blend="1"
+		 min_distance="500" max_distance="8000" doppler_level="0" />
+	<bus id="MainActions" max_voice_count="20"  spatial_blend="1"
+       min_distance="50" max_distance="800" doppler_level="0" />
+	<bus id="AmbientFXPoint" max_voice_count="10"  spatial_blend="1"
+		 min_distance="1" max_distance="80" doppler_level="0" />
+	<bus id="AmbientFXBroad" max_voice_count="10"  spatial_blend="1"
+		 min_distance="1" max_distance="80" doppler_level="0" />
+
+</root>

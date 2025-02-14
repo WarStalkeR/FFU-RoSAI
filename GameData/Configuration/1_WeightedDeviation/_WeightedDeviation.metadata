@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="weight_deviation">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<sub_node id="entry">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it, typically only while editing. It's not used or visible during program execution." />
+
+		<attribute key="weight" type="int-textbox" min="0" max="9000" default="100" content_width_px="150" is_required="true"
+			tooltip="When the draw logic looks for this entry, how much weight should we put for it compared to the average of 100?  
+			
+100 means absolutely normal, 1 would be 1% of normal, 25 is 25% of normal, 0 is literally not-at-all, and 200 would be 200% of normal."/>
+		
+		<attribute key="multiplier" type="float-textbox" is_required="true" min="-10000" max="10000" default="1" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="This is the meat of things. We're defining some sort of deviation from a baseline value, and so 1 is no change at all, while 0.5 is cutting it in half.
+
+The odds of a given increase or decrease are cumulatively set by the weights of all the multiplier entries in this deviation definition." />
+	</sub_node>
+	
+</root>

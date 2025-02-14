@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="projectile_movement_logic">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the implementation projectile movement logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the projectile movement logic in the specified external dll."/>
+
+	<attribute key="float_1" type="float-textbox" is_required="false" min="-100000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="No inherent function. It may be used by the movement logic in some way specific to that logic." />
+	<attribute key="float_2" type="float-textbox" is_required="false" min="-100000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="No inherent function. It may be used by the movement logic in some way specific to that logic." />
+	<attribute key="float_3" type="float-textbox" is_required="false" min="-100000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="No inherent function. It may be used by the movement logic in some way specific to that logic." />
+	<attribute key="float_4" type="float-textbox" is_required="false" min="-100000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="No inherent function. It may be used by the movement logic in some way specific to that logic." />
+	<attribute key="float_5" type="float-textbox" is_required="false" min="-100000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="No inherent function. It may be used by the movement logic in some way specific to that logic." />
+	<attribute key="float_6" type="float-textbox" is_required="false" min="-100000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="No inherent function. It may be used by the movement logic in some way specific to that logic." />
+
+	<attribute key="int_1" type="int-textbox" is_required="false" min="-100000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="No inherent function. It may be used by the movement logic in some way specific to that logic." />
+	<attribute key="int_2" type="int-textbox" is_required="false" min="-100000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="No inherent function. It may be used by the movement logic in some way specific to that logic." />
+	<attribute key="int_3" type="int-textbox" is_required="false" min="-100000" max="100000" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="No inherent function. It may be used by the movement logic in some way specific to that logic." />
+
+	<attribute key="vector_1" type="vector3-textbox" is_required="true"
+		tooltip="No inherent function. It may be used by the movement logic in some way specific to that logic." />
+	<attribute key="vector_2" type="vector3-textbox" is_required="true"
+		tooltip="No inherent function. It may be used by the movement logic in some way specific to that logic." />
+	<attribute key="vector_3" type="vector3-textbox" is_required="true"
+		tooltip="No inherent function. It may be used by the movement logic in some way specific to that logic." />
+
+</root>

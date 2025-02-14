@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="equipment_slot_type">
+
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	
+	<attribute key="equipment_prefix" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true"
+		tooltip="For unlocking equipment, show this in front of it." />
+	<attribute key="equipment_prefix_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be used"/>
+	
+	<attribute key="actor_data_set" type="node-dropdown" is_required="true" node_source="ActorDataTypeSet" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Required. Which kind of data does this equipment use?  It should match the type of actors it is used on, or there will be problems later.
+That said, for stuff that is used on npc actors and regular androids or mechs or whatever, that can cross over." />
+
+</root>

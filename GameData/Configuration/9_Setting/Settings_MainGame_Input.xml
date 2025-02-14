@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<setting id="UseToggleInsteadOfHoldForDetailedTooltips" category="Input" display_name="Use Toggle Instead Of Hold For Detailed Tooltips" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly"
+		description="Normally you hold Shift or a similar key to expand tooltips.  This setting allows you to tap the relevant key to toggle tooltip expansion instead." />
+
+	<setting id="CloseCommandModeAfterSingleDeployment" category="Input" display_name="Close Command Mode After Single Deployment" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly"
+		description="Normally command mode stays open after you deploy a unit. If you prefer it to close after deployment, use this option. With this option enabled, you can hold Shift to place multiple units at a time." />
+
+	<setting id="IgnoreSteamDeckControls" category="Input" display_name="Ignore Steam Deck Controls" type="BoolToggle" default_bool="false"
+		description="Only applies if you are on a Steam Deck. Enable this if you are in Docked mode and want to use traditional mouse and keyboard controls." />
+	
+	<!-- Input: MouseEdgeScrolling -->
+
+	<setting id="EnableMouseEdgePanning" category="Input" subcategory="MouseEdgeScrolling" is_stored_in_graphics_settings_file="true" display_name="Enable Mouse Edge Panning" type="BoolToggle" default_bool="false"
+		description="" />
+
+	<setting id="MouseEdgeScrollSpeed" category="Input" subcategory="MouseEdgeScrolling" is_stored_in_graphics_settings_file="true" display_name="Mouse Edge Scroll Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<!-- Input: MouseZoomAndWheel -->
+	
+	<setting id="InvertMouseWheelUIScrolling" category="Input" subcategory="MouseZoomAndWheel" is_stored_in_graphics_settings_file="true" display_name="Invert Mousewheel UI Scrolling" type="BoolToggle" default_bool="false"
+		description="" />
+
+	<setting id="InvertMouseZoom" category="Input" subcategory="MouseZoomAndWheel" is_stored_in_graphics_settings_file="true" display_name="Invert Mousewheel Zoom" type="BoolToggle" default_bool="false"
+			description="" />
+
+	<setting id="ZoomInMovesTowardCursor" category="Input" subcategory="MouseZoomAndWheel" display_name="Zoom-In Moves Toward Cursor" type="BoolToggle" is_stored_in_graphics_settings_file="true" default_bool="true"
+		scope="MainGameOnly" description="" />
+	
+	<setting id="MousewheelCameraZoomSpeed" category="Input" subcategory="MouseZoomAndWheel" is_stored_in_graphics_settings_file="true" display_name="Mousewheel Zoom Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<setting id="MousewheelUIScrollSpeed" category="Input" subcategory="MouseZoomAndWheel" is_stored_in_graphics_settings_file="true" display_name="Mousewheel UI Scroll Speed" type="IntSlider" default_int="50" min_int="1" max_int="200"
+		description=""
+		default_should_override_user_value_if_older_than_version="0_474_Biomulch"/>
+
+	<!-- Input: MouseRotateAndPan -->
+	
+	<setting id="InvertMouseRotationX" category="Input" subcategory="MouseRotateAndPan" display_name="Invert Mouse Rotation (X Axis)" is_stored_in_graphics_settings_file="true" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" description="" />
+
+	<setting id="InvertMouseInclineY" category="Input" subcategory="MouseRotateAndPan" display_name="Invert Mouse Incline (Y Axis)" is_stored_in_graphics_settings_file="true" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" description="" />
+
+	<setting id="MouseGrabPanSpeed" category="Input" subcategory="MouseRotateAndPan" is_stored_in_graphics_settings_file="true" display_name="Mouse Grab Pan Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+	
+	<setting id="InvertMouseGrabPanX" category="Input" subcategory="MouseRotateAndPan" display_name="Invert Grab Pan (X Axis)" is_stored_in_graphics_settings_file="true" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" description="" />
+
+	<setting id="InvertMouseGrabPanY" category="Input" subcategory="MouseRotateAndPan" display_name="Invert Grab Pan (Y Axis)" is_stored_in_graphics_settings_file="true" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" description="" />
+
+	<!-- Input: MouseButtonSwaps -->
+
+	<setting id="UseLeftClickForVehicleAndMechMovement" category="Input" subcategory="MouseButtonSwaps" display_name="Use Left-Click For Vehicle And Mech Movement" type="BoolToggle" default_bool="false"
+		description="" />
+
+	<setting id="UseLeftClickForBuildingConstruction" category="Input" subcategory="MouseButtonSwaps" display_name="Use Left-Click For Building Construction" type="BoolToggle" default_bool="false"
+		description="" />
+
+	<setting id="UseLeftClickForUnitDeployment" category="Input" subcategory="MouseButtonSwaps" display_name="Use Left-Click For Unit Deployment" type="BoolToggle" default_bool="false"
+		description="" />
+
+	<!-- Input: Keyboard -->
+
+	<setting id="KeyboardCameraZoomSpeed" category="Input" subcategory="Keyboard" is_stored_in_graphics_settings_file="true" display_name="Keyboard Camera Zoom Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<setting id="KeyboardCameraRotateSpeed" category="Input" subcategory="Keyboard" is_stored_in_graphics_settings_file="true" display_name="Keyboard Camera Rotation Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<setting id="KeyboardCameraInclineSpeed" category="Input" subcategory="Keyboard" is_stored_in_graphics_settings_file="true" display_name="Keyboard Camera Incline Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<!-- Input: Gamepad -->
+	
+	<setting id="Enable_GamepadInput" category="Input" subcategory="Gamepad" display_name="Enable Gamepad Input" is_stored_in_graphics_settings_file="true" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" description="Defaults to off, thus preventing attached devices from giving unwanted input to the game. Ignored on the Steam Deck." />
+
+	<setting id="GamepadMoveSpeed" category="Input" subcategory="Gamepad" is_stored_in_graphics_settings_file="true" display_name="Gamepad Move Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<setting id="GamepadRotateSpeed" category="Input" subcategory="Gamepad" is_stored_in_graphics_settings_file="true" display_name="Gamepad Rotation Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<setting id="GamepadInclineSpeed" category="Input" subcategory="Gamepad" is_stored_in_graphics_settings_file="true" display_name="Gamepad Incline Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<setting id="GamepadZoomSpeed" category="Input" subcategory="Gamepad" is_stored_in_graphics_settings_file="true" display_name="Gamepad Zoom Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<setting id="InvertGamepadRotation" category="Input" subcategory="Gamepad" display_name="Invert Gamepad Rotation (X Axis)" is_stored_in_graphics_settings_file="true" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" description="" />
+
+	<setting id="InvertGamepadIncline" category="Input" subcategory="Gamepad" display_name="Invert Gamepad Incline (Y Axis)" is_stored_in_graphics_settings_file="true" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" description="" />
+
+	<setting id="InvertGamepadZoom" category="Input" subcategory="Gamepad" display_name="Invert Gamepad Zoom" is_stored_in_graphics_settings_file="true" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" description="" />
+	
+	<!--PhotoMode: PhotoModeInput -->
+	<setting id="PhotoMode_Enable_GamepadInput" category="PhotoMode" subcategory="PhotoModeInput" display_name="Enable Gamepad Input" is_stored_in_graphics_settings_file="true" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" description="Defaults to off, preventing attached devices from giving unwanted input to the game. Ignored on the Steam Deck." />
+	
+	<setting id="PhotoMode_KeyboardSpeed" category="PhotoMode" subcategory="PhotoModeInput" is_stored_in_graphics_settings_file="true" display_name="Keyboard Pan Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<setting id="PhotoMode_GamepadMoveSpeed" category="PhotoMode" subcategory="PhotoModeInput" is_stored_in_graphics_settings_file="true" display_name="Gamepad Move Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<setting id="PhotoMode_GamepadLookSpeed" category="PhotoMode" subcategory="PhotoModeInput" is_stored_in_graphics_settings_file="true" display_name="Gamepad Look Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<setting id="PhotoMode_GamepadHeightSpeed" category="PhotoMode" subcategory="PhotoModeInput" is_stored_in_graphics_settings_file="true" display_name="Gamepad Height Speed" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="Speed at which the gamepad shoulder buttons move the camera up and down." />
+	
+	<setting id="PhotoMode_MouseLookSensitivity" category="PhotoMode" subcategory="PhotoModeInput" is_stored_in_graphics_settings_file="true" display_name="Mouse Look Sensitivity" type="IntSlider" default_int="100" min_int="1" max_int="2000"
+		description="" />
+
+	<setting id="PhotoMode_InvertGamepadXRotation" category="PhotoMode" subcategory="PhotoModeInput" display_name="Invert Gamepad Look X Axis" is_stored_in_graphics_settings_file="true" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" description="" />
+
+	<setting id="PhotoMode_InvertGamepadYRotation" category="PhotoMode" subcategory="PhotoModeInput" display_name="Invert Gamepad Look Y Axis" is_stored_in_graphics_settings_file="true" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" description="" />
+
+	<setting id="PhotoMode_InvertGamepadHeight" category="PhotoMode" subcategory="PhotoModeInput" display_name="Invert Gamepad Height" is_stored_in_graphics_settings_file="true" type="BoolToggle" default_bool="false"
+		scope="MainGameOnly" description="Switch which shoulder button of the gamepad moves up, and which moves down." />
+	
+</root>

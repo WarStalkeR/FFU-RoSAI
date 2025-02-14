@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="deal">
+
+	<attribute key="related_cohort" type="node-dropdown" node_source="NPCCohort" content_width_px="200" is_required="true"
+		tooltip="Who is this deal with?  Always required." />
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of any special notes about this deal."/>
+
+	<attribute key="lapses_if_costs_cannot_be_paid" type="bool" is_required="false" default="true"
+		tooltip="If true, this deal goes into a lapsed status if you cannot pay the costs on a given turn. Otherwise it does not lapse." />
+	<attribute key="on_hold_if_no_room_for_income" type="bool" is_required="false" default="false"
+		tooltip="If true, this deal goes on hold, with no penalty to anyone, if you have no room for the income. 
+If false, it proceeds as normal with you making payments for less than you get if you had more room." />
+
+	<attribute key="initial_turns_before_deal_payments_start" type="int-textbox" min="0" max="99" default="2" content_width_px="40" is_required="false"
+		tooltip="Is there a grace period of turns before payments are required to start?  If so, how many turns?  Default is 2."/>
+
+	<attribute key="turns_of_lapse_in_a_row_before_broken_by_you" type="int-textbox" min="0" max="99" default="5" content_width_px="40" is_required="false"
+		tooltip="After how many turns of lapse in a row is the deal considered broken by you?  Default is 5. Zero means it is ignored."/>
+	<attribute key="turns_of_cumulative_lapse_before_broken_by_you" type="int-textbox" min="0" max="99" default="8" content_width_px="40" is_required="false"
+		tooltip="After how many turns of cumulative lapse is the deal considered broken by you?  Default is 8. Zero means it is ignored."/>
+
+	<attribute key="turns_on_hold_in_a_row_before_broken_by_other_party" type="int-textbox" min="0" max="99" default="10" content_width_px="40" is_required="false"
+		tooltip="After how many turns of being on hold in a row will the other party break the deal?  Default is 10. Zero means it is ignored."/>
+	<attribute key="turns_on_hold_cumulatively_before_broken_by_other_party" type="int-textbox" min="0" max="99" default="20" content_width_px="40" is_required="false"
+		tooltip="After how many turns of being on hold, cumulatively for this deal, will the other party break the deal?  Default is 20. Zero means it is ignored."/>
+
+	<attribute key="turns_of_payment_after_which_deal_is_satisfied" type="int-textbox" min="0" max="99" default="0" content_width_px="40" is_required="false"
+		tooltip="After how many turns of successful transactions will this deal end?  Default is 0. Zero means it never ends."/>
+	<attribute key="random_chance_out_of_1000_of_other_party_breaking_deal" type="int-textbox" min="0" max="1000" default="0" content_width_px="40" is_required="false"
+		tooltip="Is there a random chance, out of 1000, for the other party to break the deal?  Default is 0. Zero means no chance of that."/>
+
+	<attribute key="max_number_of_levels" type="int-textbox" min="1" max="60" content_width_px="40" is_required="true"
+		tooltip="What is the maximum number of increases that can be made to this deal?"/>
+
+	<attribute key="data_type_benefit_1" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+		tooltip="What type of data of yours gets a boost?" />
+	<attribute key="data_type_benefit_1_base_amount" type="int-textbox" min="0" max="10000" default="0" content_width_px="40" is_required="false"
+		tooltip="How much boost at the base level?"/>
+	<attribute key="data_type_benefit_1_added_amount_per_level" type="int-textbox" min="0" max="10000" default="0" content_width_px="40" is_required="false"
+		tooltip="How much added boost per additional level?"/>
+
+	<attribute key="data_type_benefit_2" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+		tooltip="What type of data of yours gets a boost?" />
+	<attribute key="data_type_benefit_2_base_amount" type="int-textbox" min="0" max="10000" default="0" content_width_px="40" is_required="false"
+		tooltip="How much boost at the base level?"/>
+	<attribute key="data_type_benefit_2_added_amount_per_level" type="int-textbox" min="0" max="10000" default="0" content_width_px="40" is_required="false"
+		tooltip="How much added boost per additional level?"/>
+
+	<attribute key="city_statistic_per_largest_cost" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="false"
+		tooltip="What type of data of yours gets a boost?" />
+	
+	<attribute key="benefits_collection" type="node-dropdown" node_source="ActorCollection" content_width_px="200" is_required="false"
+		tooltip="What actor collection gets the data type benefits?" />
+	
+	<!--cost_per_turn ...................... -->
+	<sub_node id="cost_per_turn">
+		<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="You are required to pay some amount of resource per turn. Which one?" />
+		<attribute key="base_amount" type="int-textbox" min="0" max="1000000" content_width_px="40" is_required="true"
+			tooltip="How much do you owe per turn?  Set to 0 to mod it out."/>
+		<attribute key="added_per_level" type="int-textbox" min="0" max="1000000" content_width_px="40" is_required="true"
+			tooltip="How much extra do you owe per turn if increasing the deal level?  Set to 0 to mod it out."/>
+	</sub_node>
+
+	<!--income_per_turn ...................... -->
+	<sub_node id="income_per_turn">
+		<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="You are given some resource per turn. Which one?" />
+		<attribute key="base_amount" type="int-textbox" min="0" max="1000000" content_width_px="40" is_required="true"
+			tooltip="How much are you given per turn?  Set to 0 to mod it out."/>
+		<attribute key="added_per_level" type="int-textbox" min="0" max="1000000" content_width_px="40" is_required="true"
+			tooltip="How much extra are you given per turn if increasing the deal level?  Set to 0 to mod it out."/>
+	</sub_node>
+
+</root>

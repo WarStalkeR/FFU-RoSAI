@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="unlock_reward_group">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="next_reward_group" type="node-dropdown" node_source="UnlockRewardGroup" content_width_px="200" is_required="false"
+		tooltip="If this reward group is all out of rewards, but it is triggered, should we check another group next?
+Will only go a maximum of 80 links deep, so if circular references are specified it's not the end of the world." />
+	<attribute key="required_intelligence_class" type="int-textbox" min="1" max="99" content_width_px="40" is_required="true"
+		tooltip="What intelligence class is required in order for this to be researched through a research domain?"/>
+
+	<attribute key="options_to_show" type="int-textbox" min="2" max="7" default="3" content_width_px="50" is_required="false"
+		tooltip="How many options to show for this group, in general?"/>
+	<attribute key="minimum_options_to_be_upgrades" type="int-textbox" min="0" max="7" default="1" content_width_px="50" is_required="false"
+		tooltip="How many of the options will always be upgrades, regardless of how many available unlocks are in here?"/>
+
+	<attribute key="upgrades_from" type="node-dropdown" node_source="UpgradeRewardGroup" content_width_px="200" is_required="false"
+		tooltip="If this includes any upgrades, then which upgrade reward group does this pull upgrades from?" />
+
+	<attribute key="must_do_all_unlocks_before_next_group" type="bool" default="false"
+		tooltip="If true, then you must do all of the upgrades in a reward group before it moves on to the next one. Normally it moves on once all the unlocks are done, but ignores upgrades."/>
+
+	<sub_node id="available_unlock">
+		<attribute key="unlock" type="node-dropdown" is_required="true" node_source="Unlock" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If present, then this is one of the ideas that can be readied as a reward from this group." />
+		<attribute key="value" type="bool" default="true"
+			tooltip="Normally true. But if set to false, then this can be modded out to no longer be a reward from this group."/>
+	</sub_node>
+	
+</root>

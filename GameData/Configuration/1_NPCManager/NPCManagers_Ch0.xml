@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Ch0_GroupMurder
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch0_GroupMurder_Tail" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="1" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="6"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_project_active="Ch0_GroupMurder" blocked_by_city_flag="ShotACh0Tail"/>
+		</periodic_data>
+		<unit id="Overseer" to_spawn="SyndicateOverseerFemale" stance_to_start_in="SyndicateTailingPlayerSuspect"
+			should_be_specific_cohort="GoldenPyramid" city_flag_on_damaged_by_player="ShotACh0Tail" will_not_attack_player_if_city_flag_false="ShotACh0Tail"
+			min_to_spawn="1" max_to_spawn="1" lang_key_for_extra_info="Mngr_Ch0_SyndicateTail"
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1" max_to_ever_spawn_in_total="1"
+			spawn_radius_max="3" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" 
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"
+			dialog_if_forced_1="Ch0_MurdSynOver_First" dialog_if_forced_2="Ch0_MurdSynOver_Second" />
+		<unit id="Gunner" to_spawn="SyndicateGunner" stance_to_start_in="SyndicateGunnerCautiouslyFollowingPlayer"
+			should_be_specific_cohort="GoldenPyramid" city_flag_on_damaged_by_player="ShotACh0Tail" will_not_attack_player_if_city_flag_false="ShotACh0Tail"
+			min_to_spawn="3" max_to_spawn="3" lang_key_for_extra_info="Mngr_Ch0_SyndicateGunnerMurdFollow"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.3" max_to_ever_spawn_in_total="3"
+			spawn_radius_max="3" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" 
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>		
+	</npc_manager>
+
+	<npc_manager id="Ch0_GroupMurder_Tail_Reinforcements" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="1" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="6"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_project_active="Ch0_GroupMurder" required_city_flag="ShotACh0Tail"/>
+		</periodic_data>
+		<unit id="Gunner" to_spawn="SyndicateGunner" stance_to_start_in="SyndicateGunnerNeutralizingRobotUprising"
+			should_be_specific_cohort="GoldenPyramid"
+			min_to_spawn="2" max_to_spawn="3" lang_key_for_extra_info="Mngr_General_YouWereHostile"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="7"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" 
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<npc_manager id="Ch0_GroupMurder_Ambush" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="1" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="6"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_project_active="Ch0_GroupMurder" required_city_flag="Ch0_TrapHasBeenSprung"/>
+		</periodic_data>
+		<unit id="Sharpshooter" to_spawn="GangSharpshooter" stance_to_start_in="GangAmbushingSyndicate"
+			should_be_specific_cohort="Wolverines"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="Mngr_Ch0_GangAmbushYou"
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="58"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" 
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Gunner" to_spawn="SyndicateGunner" stance_to_start_in="SyndicateGunnerRespondingToGangAmbush"
+			should_be_specific_cohort="GoldenPyramid"
+			min_to_spawn="2" max_to_spawn="3" lang_key_for_extra_info="Mngr_Ch0_SyndicateProtect" city_flag_on_damaged_by_player="ShotACh0Tail" will_not_attack_player_if_city_flag_false="ShotACh0Tail"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="36"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" 
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<!--Ch0_CasualSyndicateFollowers
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch0_CasualSyn_Tail" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="1" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="6"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_project_active="Ch0_CasualSyndicateFollowers" blocked_by_city_flag="ShotACh0Tail"/>
+		</periodic_data>
+		<unit id="Overseer" to_spawn="SyndicateOverseerMale" stance_to_start_in="SyndicateTailingPlayerSuspect"
+			should_be_specific_cohort="GoldenPyramid" city_flag_on_damaged_by_player="ShotACh0Tail" will_not_attack_player_if_city_flag_false="ShotACh0Tail"
+			min_to_spawn="1" max_to_spawn="1" lang_key_for_extra_info="Mngr_Ch0_SyndicateTail"
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1" max_to_ever_spawn_in_total="1"
+			spawn_radius_max="3" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" 
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"
+			dialog_if_forced_1="Ch0_CasSynOver_First" dialog_if_forced_2="Ch0_CasSynOver_Second" />
+		<unit id="Gunner" to_spawn="SyndicateGunner" stance_to_start_in="SyndicateGunnerCautiouslyFollowingPlayer"
+			should_be_specific_cohort="GoldenPyramid" city_flag_on_damaged_by_player="ShotACh0Tail" will_not_attack_player_if_city_flag_false="ShotACh0Tail"
+			min_to_spawn="1" max_to_spawn="1" lang_key_for_extra_info="Mngr_Ch0_SyndicateGunnerCasFollow"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="0.6" max_to_ever_spawn_in_total="1"
+			spawn_radius_max="3" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" 
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<npc_manager id="Ch0_CasualSyn_Tail_Reinforcements" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="1" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="6"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_project_active="Ch0_CasualSyndicateFollowers" required_city_flag="ShotACh0Tail"/>
+		</periodic_data>
+		<unit id="Gunner" to_spawn="SyndicateGunner" stance_to_start_in="SyndicateGunnerNeutralizingRobotUprising"
+			should_be_specific_cohort="GoldenPyramid"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info="Mngr_General_YouWereHostile"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="4"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" 
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<npc_manager id="Ch0_CasualSyn_Ambush" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="1" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="6"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_project_active="Ch0_CasualSyndicateFollowers" required_city_flag="Ch0_TrapHasBeenSprung"/>
+		</periodic_data>
+		<unit id="Sharpshooter" to_spawn="GangSharpshooter" stance_to_start_in="GangAmbushingSyndicate"
+			should_be_specific_cohort="Wolverines"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="Mngr_Ch0_GangAmbushYou"
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="58"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Gunner" to_spawn="SyndicateGunner" stance_to_start_in="SyndicateGunnerRespondingToGangAmbush"
+			should_be_specific_cohort="GoldenPyramid"
+			min_to_spawn="2" max_to_spawn="3" lang_key_for_extra_info="Mngr_Ch0_SyndicateProtect" city_flag_on_damaged_by_player="ShotACh0Tail" will_not_attack_player_if_city_flag_false="ShotACh0Tail"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="36"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<!--Ch0_MurderedOneColleague
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch0_MurdOne_Tail" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="1" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="6"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_project_active="Ch0_MurderedOneColleague" blocked_by_city_flag="ShotACh0Tail"/>
+		</periodic_data>
+		<unit id="StrongDetectives" to_spawn="SecForceDetectives" stance_to_start_in="SecForceTailingPlayerSuspect"
+			should_be_specific_cohort="NanotechInvestigators" city_flag_on_damaged_by_player="ShotACh0Tail" will_not_attack_player_if_city_flag_false="ShotACh0Tail"
+			min_to_spawn="1" max_to_spawn="1" lang_key_for_extra_info="Mngr_Ch0_SecForceTail"
+			min_squad_size_multiplier="1.2" max_squad_size_multiplier="1.2" max_to_ever_spawn_in_total="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"  dialog_if_forced_1="Ch0_Detectives_First"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="WeakDetectives" to_spawn="SecForceDetectives" stance_to_start_in="SecForceTailingPlayerSuspect"
+			should_be_specific_cohort="NanotechInvestigators" city_flag_on_damaged_by_player="ShotACh0Tail" will_not_attack_player_if_city_flag_false="ShotACh0Tail"
+			min_to_spawn="1" max_to_spawn="1" lang_key_for_extra_info="Mngr_Ch0_SecForceTail"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="0.7" max_to_ever_spawn_in_total="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"  dialog_if_forced_1="Ch0_Detectives_First"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<npc_manager id="Ch0_MurdOne_Tail_Reinforcements" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="1" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="6"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_project_active="Ch0_MurderedOneColleague" required_city_flag="ShotACh0Tail"/>
+		</periodic_data>
+		<unit id="Backup" to_spawn="SecForceBackup" stance_to_start_in="SecForceSecuringArea"
+			should_be_specific_cohort="VorsiberCivicAuthority"
+			min_to_spawn="2" max_to_spawn="3" lang_key_for_extra_info="Mngr_General_YouWereHostile"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="6"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1" 
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<npc_manager id="Ch0_MurdOne_Ambush" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="1" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="6"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_project_active="Ch0_MurderedOneColleague" required_city_flag="Ch0_TrapHasBeenSprung"/>
+		</periodic_data>
+		<unit id="Strikeforce" to_spawn="RebelStrikeforce" stance_to_start_in="RebelsAmbushingSecForceAndYou"
+			should_be_specific_cohort="NOAI"
+			min_to_spawn="1" max_to_spawn="3" lang_key_for_extra_info="Mngr_Ch0_RebelsAmbushYou"
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="29"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Gunslinger" to_spawn="RebelGunslinger" stance_to_start_in="RebelsAmbushingSecForceAndYou"
+			should_be_specific_cohort="NOAI"
+			min_to_spawn="1" max_to_spawn="3" lang_key_for_extra_info="Mngr_Ch0_RebelsAmbushYou"
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="29"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Backup" to_spawn="SecForceBackup" stance_to_start_in="SecForceRespondingToRebelAmbush"
+			should_be_specific_cohort="VorsiberCivicAuthority"
+			min_to_spawn="2" max_to_spawn="3" lang_key_for_extra_info="Mngr_Ch0_SecForceProtect" city_flag_on_damaged_by_player="ShotACh0Tail" will_not_attack_player_if_city_flag_false="ShotACh0Tail"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="36"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+	
+	<!--Ch1Or2_TransitionAmbush - this is what happens if you start the game in chapter one or two.  It's in this file as it is based on the above.
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Ch1Or2_TransitionAmbush" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="2" max_turns_between_activity="2"
+			max_security_clearance_of_seed_spot="1" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="6"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_project_active="Ch1Or2_StartingTimelineLater"/>
+		</periodic_data>
+		<unit id="Strikeforce" to_spawn="RebelStrikeforce" stance_to_start_in="RebelsAmbushingSecForceAndYou"
+			should_be_specific_cohort="NOAI"
+			min_to_spawn="6" max_to_spawn="18" lang_key_for_extra_info="Mngr_Ch0_RebelsAmbushYou"
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="29"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Gunslinger" to_spawn="RebelGunslinger" stance_to_start_in="RebelsAmbushingSecForceAndYou"
+			should_be_specific_cohort="NOAI"
+			min_to_spawn="6" max_to_spawn="18" lang_key_for_extra_info="Mngr_Ch0_RebelsAmbushYou"
+			min_squad_size_multiplier="0.35" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="29"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="Backup" to_spawn="SecForceBackup" stance_to_start_in="SecForceRespondingToRebelAmbush"
+			should_be_specific_cohort="VorsiberCivicAuthority"
+			min_to_spawn="12" max_to_spawn="21" lang_key_for_extra_info="Mngr_Ch0_SecForceProtect" city_flag_on_damaged_by_player="ShotACh0Tail" will_not_attack_player_if_city_flag_false="ShotACh0Tail"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="36"
+			spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+	
+	<!--Ch0_HomicideInvestigation
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<!--
+	<npc_manager id="Ch0_Homicide_Dispatch" debug_log_manager_details="false">
+		<periodic_data 
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="8"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_mission_active="Ch0_HomicideInvestigation"/>
+		</periodic_data>
+		<unit id="StrongDetectives" to_spawn="SecForceDetectives" stance_to_start_in="Ch0SecForceInvestigatingCrime"
+			should_be_specific_cohort="NanotechInvestigators" meta_flag_on_damaged_by_player="ShotACh0Investigator"
+			min_to_spawn="0" max_to_spawn="2" lang_key_for_extra_info="Mngr_Ch0_Detective"
+			min_squad_size_multiplier="0.72" max_squad_size_multiplier="1.2"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" mission_flag_on_damaged="DetectivesAttacked"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+		<unit id="WeakDetectives" to_spawn="SecForceDetectives" stance_to_start_in="Ch0SecForceInvestigatingCrime"
+			should_be_specific_cohort="NanotechInvestigators" meta_flag_on_damaged_by_player="ShotACh0Investigator"
+			min_to_spawn="1" max_to_spawn="3" lang_key_for_extra_info="Mngr_Ch0_Detective"
+			min_squad_size_multiplier="0.25" max_squad_size_multiplier="0.4"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" mission_flag_on_damaged="DetectivesAttacked"
+			should_hard_despawn_on_project_or_mission_complete="true" should_soft_despawn_on_manager_interval_ends="false"/>
+	</npc_manager>
+
+	<npc_manager id="Ch0_Homicide_Backup" debug_log_manager_details="false">
+		<periodic_data 
+			min_turns_between_activity="2" max_turns_between_activity="2"
+			max_security_clearance_of_seed_spot="2" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15" >
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="8"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_mission_active="Ch0_HomicideInvestigation" required_mission_flag="DetectivesAttacked"/>
+		</periodic_data>
+		<unit id="U" to_spawn="SecForceBackup" stance_to_start_in="SecForceSecuringArea"
+			should_be_specific_cohort="NanotechInvestigators"
+			min_to_spawn="2" max_to_spawn="3" lang_key_for_extra_info="Mngr_Ch0_Backup"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="0.8"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" mission_flag_on_damaged="DetectivesAttacked"
+			should_soft_despawn_on_project_or_mission_complete="true"/>
+	</npc_manager>
+
+	<npc_manager id="Ch0_Homicide_ExtraBackup" debug_log_manager_details="false">
+		<periodic_data 
+			min_turns_between_activity="2" max_turns_between_activity="2"
+			max_security_clearance_of_seed_spot="2" target_building_tag="BasicCommon"
+			threat_radius="100" home_radius="15">
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="8"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_mission_active="Ch0_HomicideInvestigation" required_mission_flag="DetectivesAttacked" required_mission_flag2="RebelsTippedOff"/>
+		</periodic_data>
+		<unit id="U" to_spawn="SecForceBackup" stance_to_start_in="SecForceSecuringArea"
+			should_be_specific_cohort="NanotechInvestigators"
+			min_to_spawn="2" max_to_spawn="3" lang_key_for_extra_info="Mngr_Ch0_Backup"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.4"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" mission_flag_on_damaged="DetectivesAttacked"
+			should_soft_despawn_on_project_or_mission_complete="true"/>
+	</npc_manager>
+	
+	<npc_manager id="Ch0_Homicide_RebelObserv" debug_log_manager_details="false">
+		<periodic_data 
+			min_turns_between_activity="4" max_turns_between_activity="12"
+			max_security_clearance_of_seed_spot="2" target_building_tag="Any"
+			threat_radius="50" home_radius="15">
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="4"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="12"/>
+			<gate_by_city minimum_chapter="0" required_mission_active="Ch0_HomicideInvestigation" blocked_by_mission_flag="RebelsTippedOff"/>
+		</periodic_data>
+		<unit id="U" to_spawn="RebelObserver" stance_to_start_in="RebelWatchdog"
+			should_be_specific_cohort="TheBleedingEye"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="1"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="0.9"
+			spawn_radius_min="4" lang_key_for_extra_info="Mngr_Ch0_RebObs"
+			spawn_radius_max="9" spawn_radius_relaxed_max="26" max_security_clearance_of_seed_spot="0" mission_flag_on_damaged="RebelsTippedOff"
+			should_hard_despawn_on_project_or_mission_complete="true" should_hard_despawn_on_manager_blocked="true"
+			dialog_to_show="Ch0_Homicide_RebelObserver" meta_flag_on_damaged_by_player="ShotACh0Rebel"/>
+	</npc_manager>
+
+	<npc_manager id="Ch0_Homicide_RebelReaction" debug_log_manager_details="false">
+		<periodic_data 
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_building_tag="BasicCommon"
+			threat_radius="50" home_radius="15">
+			<seed_at_mission absolute_minimum_distance_must_seed_from_focus="1"
+				preferred_1_min_distance_of_from_current_focus="1" preferred_1_max_distance_of_from_current_focus="8"
+				preferred_2_min_distance_of_from_current_focus="1" preferred_2_max_distance_of_from_current_focus="20"/>
+			<gate_by_city minimum_chapter="0" required_mission_active="Ch0_HomicideInvestigation" required_mission_flag="RebelsTippedOff"/>
+		</periodic_data>
+		<unit id="U" to_spawn="RebelStrikeforce" stance_to_start_in="RebelAntiCorpOp"
+			should_be_specific_cohort="Antico"
+			min_to_spawn="4" max_to_spawn="4" lang_key_for_extra_info="Mngr_Ch0_Antico"
+			min_squad_size_multiplier="0.52" max_squad_size_multiplier="1.1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="1"
+			should_soft_despawn_on_project_or_mission_complete="true"/>
+	</npc_manager>
+	-->
+
+	<!--Next
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+	
+	
+</root>

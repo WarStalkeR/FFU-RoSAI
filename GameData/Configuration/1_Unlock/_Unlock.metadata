@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="unlock">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This and the description are only valid when none of the other kinds of linkages are present."/>
+
+	<attribute key="alt_icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+		tooltip="Which icon to use, but only if none of the other linkages are present."/>
+
+	<attribute key="turns_to_unlock" type="int-textbox" min="1" max="9" content_width_px="40" is_required="true"
+		tooltip="How many turns it will take the player to unlock this. Must be at least 1 turn, but not more than 9. And rarely that many."/>
+	<attribute key="required_intelligence_class" type="int-textbox" min="1" max="99" content_width_px="40" is_required="true"
+		tooltip="What intelligence class is required in order for this to be unlocked?"/>
+
+	<attribute key="unit_type" type="node-dropdown" node_source="MachineUnitType" content_width_px="200" is_required="false"
+		tooltip="If this unlocks a unit, what is it?" />
+	<attribute key="vehicle_type" type="node-dropdown" node_source="MachineVehicleType" content_width_px="200" is_required="false"
+		tooltip="If this unlocks a vehicle, what is it?" />
+
+	<attribute key="structure_type" type="node-dropdown" node_source="MachineStructureType" content_width_px="200" is_required="false"
+		tooltip="If this unlocks a machine structure, what is it?" />	
+	<attribute key="structure_job" type="node-dropdown" node_source="ImprovementType" content_width_px="200" is_required="false"
+		tooltip="If this unlocks a machine structure job, what is it?" />
+	
+	<attribute key="equipment_type" type="node-dropdown" node_source="UnitEquipmentType" content_width_px="200" is_required="false"
+		tooltip="If this unlocks a piece of equipment, what is it?" />
+	<attribute key="ability_type" type="node-dropdown" node_source="AbilityType" content_width_px="200" is_required="false"
+		tooltip="If this unlocks an ability, what is it?" />
+	<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+		tooltip="If this unlocks a resource, what is it?" />
+	<attribute key="consumable_item" type="node-dropdown" node_source="ResourceConsumable" content_width_px="200" is_required="false"
+		tooltip="If this unlocks a consumable item, what is it?" />
+
+	<attribute key="immediately_unlocked_by_meta_flag" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+		tooltip="If will automatically be unlocked as soon as a given meta flag is tripped. (Within a quarter second of that, anyway)." />
+	<attribute key="immediately_unlocked_by_city_flag" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If will automatically be unlocked as soon as a given city flag is tripped. (Within a quarter second of that, anyway)." />
+	<attribute key="immediately_unlocked_by_dialog_complete" type="node-dropdown" node_source="NPCDialog" content_width_px="200" is_required="false"
+		tooltip="If will automatically be unlocked as soon as a given dialog is finished. (Within a quarter second of that, anyway)." />
+	<attribute key="immediately_unlocked_by_countdown_complete" type="node-dropdown" node_source="OtherCountdownType" content_width_px="200" is_required="false"
+		tooltip="If will automatically be unlocked as soon as a given countdown is finished. (Within a quarter second of that, anyway)." />
+	<attribute key="immediate_unlock_inspiration_type" type="node-dropdown" node_source="UnlockInspirationType" content_width_px="200" is_required="false"
+		tooltip="If this is automatically unlocked by something above, then this inspiration type is required." />
+	<attribute key="show_on_screen_log_message_if_immediately_unlocked" type="bool" is_required="false" default="true"
+		tooltip="Does this show an on-screen log message if it's immediately unlocked by one of the above triggers?  Defaults to true." />
+	<attribute key="show_toast_if_immediately_unlocked" type="bool" is_required="false" default="true"
+		tooltip="Does this show a toast popup if it's immediately unlocked by one of the above triggers?  Defaults to true." />
+	<attribute key="do_projects_if_immediately_unlocked" type="bool" is_required="false" default="true"
+		tooltip="Does this do any projects stated below if it's immediately unlocked by one of the above triggers?  Defaults to true." />
+	
+	<attribute key="auto_unlocks_if_skipping_chapter_zero" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically unlock for players when skipping chapter zero?" />
+	<attribute key="auto_unlocks_if_skipping_chapter_one" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically unlock for players when skipping chapter one?" />
+	<attribute key="auto_unlocks_if_intelligence_class_is_at_least" type="int-textbox" min="0" max="20" content_width_px="40" is_required="false"
+		tooltip="If above zero, then this will automatically be unlocked when the intelligence class is at or above this amount."/>
+
+	<attribute key="project_to_start_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project, after being researched the regular way (not auto-unlocked), which project does it start?" />
+	<attribute key="project_to_start_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project, after being researched the regular way (not auto-unlocked), which project does it start?" />
+	<attribute key="project_to_start_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project, after being researched the regular way (not auto-unlocked), which project does it start?" />
+
+	<attribute key="ready_other_unlock_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="When this unlock is completed, does it automatically ready another unlock?" />
+	<attribute key="ready_other_unlock_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="When this unlock is completed, does it automatically ready another unlock?" />
+	<attribute key="ready_other_unlock_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="When this unlock is completed, does it automatically ready another unlock?" />
+
+	<attribute key="immediate_other_unlock_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="When this unlock is completed, does it immediately invent another unlock?" />
+	<attribute key="immediate_other_unlock_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="When this unlock is completed, does it immediately invent another unlock?" />
+	<attribute key="immediate_other_unlock_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="When this unlock is completed, does it immediately invent another unlock?" />
+	
+	<attribute key="other_unlock_inspiration_type" type="node-dropdown" node_source="UnlockInspirationType" content_width_px="200" is_required="false"
+		tooltip="If this unlock immediately invents or readies some other unlocks, what is the inspiration source for them?" />
+
+	<attribute key="handbook_entry_on_direct_invent_1" type="node-dropdown" node_source="MachineHandbookEntry" content_width_px="200" is_required="false"
+		tooltip="If this provides a handbook entry when it is directly invented, then which one does it show?" />
+	<attribute key="handbook_entry_on_direct_invent_2" type="node-dropdown" node_source="MachineHandbookEntry" content_width_px="200" is_required="false"
+		tooltip="If this provides a handbook entry when it is directly invented, then which one does it show?" />
+	<attribute key="handbook_entry_on_direct_invent_3" type="node-dropdown" node_source="MachineHandbookEntry" content_width_px="200" is_required="false"
+		tooltip="If this provides a handbook entry when it is directly invented, then which one does it show?" />
+	
+	<attribute key="concept_type" type="string-dropdown" is_required="false" default="x100" content_width_px="200"
+		tooltip="If this is a concept, then which type is it?">
+		<option>Concept</option>
+		<option>MajorMechanic</option>
+		<option>MinorMechanic</option>
+	</attribute>
+
+	<sub_node id="part_of">
+		<attribute key="collection" type="node-dropdown" is_required="true" node_source="UnlockCollection" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What collection is this in?" />
+		<attribute key="sort_index" type="int-textbox" is_required="true" min="0" max="1000000" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="How is this sorted within that collection?  If set to zero, it is modded out of that collection." />
+	</sub_node>
+	
+	<sub_node id="prerequisite">
+		<attribute key="unlock" type="node-dropdown" is_required="true" node_source="Unlock" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If present, then all of the machine unlocks specified must be unlocked before this can be considered for unlock." />
+		<attribute key="required" type="bool" default="true"
+			tooltip="Normally true. But if set to false, then this can be modded out to no longer be a prerequisite."/>
+	</sub_node>
+
+	<sub_node id="city_flag_change">
+		<attribute key="flag_type" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="true"
+			tooltip="This will either trip or un-trip a city flag. Which one?" />
+		<attribute key="value" type="int-textbox" min="-1" max="1" content_width_px="40" is_required="true"
+			tooltip="If 1, then this trips the flag. If -1, then it un-trips the flag."/>
+	</sub_node>
+
+	<sub_node id="meta_flag_change">
+		<attribute key="flag_type" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="true"
+			tooltip="This will either trip or un-trip a meta flag. Which one?" />
+		<attribute key="value" type="int-textbox" min="-1" max="1" content_width_px="40" is_required="true"
+			tooltip="If 1, then this trips the flag. If -1, then it un-trips the flag."/>
+	</sub_node>
+
+	<sub_node id="other_key_message">
+		<attribute key="message_to_ready" type="node-dropdown" node_source="OtherKeyMessage" content_width_px="200" is_required="true"
+			tooltip="This will ready an other-style key message. Which one?" />
+		<attribute key="value" type="int-textbox" min="0" max="2" content_width_px="40" is_required="true"
+			tooltip="If 1, then this becomes ready for viewing when the unlock is researched. If 2, then it becomes ready for viewing when the unlock is readied. If 0, it does nothing."/>
+	</sub_node>
+	
+</root>

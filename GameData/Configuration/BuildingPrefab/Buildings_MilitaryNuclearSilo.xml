@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!-- such an extremely vital, overstaffed, and secure facility, it would make little sense to be able to
+	take over entire floors without anyone realizing (there are regular sweeps, patrols, inspections, etc) -->
+	
+	<building_prefab id="NuclearLaunchSilo" type="NuclearLaunchSilo" display_name="Nuclear Launch Silo"
+		path_to_placeable="Assets/__Library/Military/NuclearSilo/NuclearLaunchSilo.prefab" should_be_shown_in_map_mode="true">
+		<floors_group min="-20" max="-2" floor_size="8.55,0.85,8.55" percentage_work_space="95" percentage_storage_space="5" is_underground="true"/>
+		<floors_group min="-1" max="-1" floor_size="8.55,3.85,8.55" percentage_work_space="70" percentage_storage_space="30" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="8.55,0.85,8.55"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="20"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="12"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="60"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="200"/>
+		<building_marker prefab="AntennaThreeLight" offset="0,-1.25,1.75" scale_multiplier="2"/>
+		
+	</building_prefab>
+
+	<building_prefab id="NuclearLaunchControlRoom" type="NuclearLaunchControlRoom" display_name="Nuclear Launch Control Room"
+		path_to_placeable="Assets/__Library/Military/NuclearSilo/NuclearLaunchControlRoom.prefab">
+		<floors_group min="-10" max="-1" floor_size="1.7,0.55,1.7" percentage_work_space="70" percentage_storage_space="30" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.7,0.55,1.7"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="30"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="16"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="14"/>
+		<building_marker prefab="RoofLine" offset="0,-0.05,0"/>
+		
+	</building_prefab>
+
+	<building_prefab id="NuclearLaunchGenerator" type="NuclearSiloGenerator" display_name="Nuclear Silo Generator"
+		path_to_placeable="Assets/__Library/Military/NuclearSilo/NuclearLaunchGenerator.prefab">
+		<floors_group min="-5" max="-1" floor_size="1.6,0.4,1.6" percentage_work_space="70" percentage_storage_space="30" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.6,1.1,1.6"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="3"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="12"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0"/>
+	</building_prefab>
+
+	<building_prefab id="NuclearLaunchSafety" type="NuclearLaunchSafety" display_name="Nuclear Launch Safety"
+		path_to_placeable="Assets/__Library/Military/NuclearSilo/NuclearLaunchSafety.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.1,0.5,1.1" percentage_work_space="70" percentage_storage_space="30" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.85,1.1"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="10"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="5"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.75,0.11"/>
+		
+	</building_prefab>
+
+	<building_prefab id="NuclearLaunchSupport" type="NuclearSiloSupport" display_name="Nuclear Launch Support"
+		path_to_placeable="Assets/__Library/Military/NuclearSilo/NuclearLaunchSupport.prefab" floors_offset="0,0,-0.2">
+		<floors_group min="-1" max="-1" floor_size="1.2,0.45,1.2" percentage_work_space="70" percentage_storage_space="30" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.2,0.45,1.2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="12"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="8"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="10"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="6"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,-0.2"/>
+		
+	</building_prefab>
+
+	<building_prefab id="NuclearLaunchSupportTubeA" type="NuclearSiloSupport" display_name="Nuclear Launch Support Tube A"
+		path_to_placeable="Assets/__Library/Military/NuclearSilo/NuclearLaunchSupportTubeA.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.45,0.45,0.45" percentage_work_space="70" percentage_storage_space="30" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.45,0.85,0.45"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="3"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="2"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="3"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="2"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="4"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.73,0"/>
+	</building_prefab>
+
+	<building_prefab id="NuclearLaunchSupportTubeB" type="NuclearSiloSupport" display_name="Nuclear Launch Support Tube B"
+		path_to_placeable="Assets/__Library/Military/NuclearSilo/NuclearLaunchSupportTubeB.prefab">
+		<floors_group min="-2" max="-1" floor_size="0.25,0.35,0.25" percentage_work_space="70" percentage_storage_space="30" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.25,0.65,0.25"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="2"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="2"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="2"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="2"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.73,0"/>
+	</building_prefab>
+
+	<building_prefab id="NuclearLaunchSupportTubeC" type="NuclearSiloSupport" display_name="Nuclear Launch Support Tube C"
+		path_to_placeable="Assets/__Library/Military/NuclearSilo/NuclearLaunchSupportTubeC.prefab">
+		<floors_group min="-5" max="-1" floor_size="0.2,0.35,0.2" percentage_work_space="70" percentage_storage_space="30" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.2,0.35,0.2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="2"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="5"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.73,0"/>
+	</building_prefab>
+	
+</root>

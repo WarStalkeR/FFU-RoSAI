@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<security_clearance id="Sight" display_name="Sight" sort_order="1" level="1"
+		 description="The lowest clearance. Typically for security contractors and PMCs working in small installations."
+		 strategy_tip_optional="Access to biometric and other tracking information about normal citizens."
+		 />
+
+	<security_clearance id="Oversight" display_name="Oversight" sort_order="2" level="2"
+		 description="Granted to official military and SecForce personnel."
+		 strategy_tip_optional="Access to most military installations, but not restricted areas."
+		applied_outcast_badge_if_actor_comes_here="MarkedDefective"
+		 />
+
+	<security_clearance id="Secret" display_name="Secret" sort_order="3" level="3"
+		 description="Access to all areas of conventional warfare and research."
+		 strategy_tip_optional="Some restrictions may apply for those registered to competing Corporations. It's confusing on purpose."
+		 applied_outcast_badge_if_actor_comes_here="MarkedDefective"
+		 />
+
+	<security_clearance id="TopSecret" display_name="Top Secret" sort_order="4" level="4"
+		 description="Access to most chemical, genetic, nuclear, and fusion secrets."
+		 strategy_tip_optional="Some restrictions may apply for those registered to competing Corporations. It's confusing on purpose."
+		 applied_outcast_badge_if_actor_comes_here="MarkedDefective"
+		 />
+
+	<security_clearance id="Interior" display_name="Interior" sort_order="5" level="5"
+		 description="The highest clearance level within The Megacorp. Access to nanotech, cryogenics, AI, WMD, and mech research sites."
+		 strategy_tip_optional="Specific information or areas may be siloed at the discretion of supervisors with Interior clearance."
+		 applied_outcast_badge_if_actor_comes_here="MarkedDefective"
+		 />
+
+</root>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="ambient_track">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	
+	<attribute key="bundle_name" type="string" maxlength="200" content_width_px="200" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the asset bundle that the music inside file is in."/>
+
+	<attribute key="filename" type="string" maxlength="600" content_width_px="400" is_required="true"
+		tooltip="This specifies the path of the music track inside the specified asset bundle."/>
+
+	<attribute key="relative_volume" type="float-textbox" min="0" max="1" default="1" precision="3" content_width_px="40" is_required="true"
+		tooltip="Setting the volume lower than its normal full amount if needed."/>
+	
+</root>

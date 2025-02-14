@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Lone Syndicate Member Behaviors
+		***********************************************************-->
+	<stance id="SyndicateLoneConfused" display_name="Confused"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Thinking about what to do next."
+		icon_name="HM_EmotionQuestion2" icon_color="#50E4B5" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		switch_to_stance_when_damaged="SyndicateLoneAngry"
+		disband_chance="10" reinforcement_chance="50" reinforcement_tag="SyndicateMidleveReinforcements" switch_to_stance_when_reinforcing="SyndicateProtectingOperation"
+		disband_when_calling_reinforcements="true"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true" is_contained_to_district="false"
+		will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true" will_hold_fire_against_regular_machine_structures="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>		
+		<action_consideration id="GoHome" sort_order="250" chance_of_attempting="100" action_to_attempt="ReturnToHomeDistrictIfNotInIt"/>
+	</stance>
+
+	<stance id="SyndicateLoneAngry" display_name="Angry"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Unhappy, but worried about going anywhere right now."
+		icon_name="CleanSimple_SkillC096" icon_color="#F77F35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		disband_chance="3" reinforcement_chance="70" reinforcement_tag="SyndicateMidleveReinforcements" switch_to_stance_when_reinforcing="SyndicateProtectingOperation"
+		disband_when_calling_reinforcements="true"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true" is_contained_to_district="false"
+		will_hold_fire_against_cohort_guard="true" will_hold_fire_against_regular_machine_structures="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>		
+		<action_consideration id="GoHome" sort_order="250" chance_of_attempting="100" action_to_attempt="ReturnToHomeDistrictIfNotInIt"/>
+	</stance>
+
+	<!--Syndicate Behaviors
+		***********************************************************-->
+	<stance id="SyndicateExtort" display_name="Extorting Locals"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="The daily crime grind."
+		icon_name="FlatSkillC85" icon_color="#E46350" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="Extort1" sort_order="100" chance_of_attempting="70" objective_to_attempt_to_start="ExtortSmallBusiness"
+			target_building_tag="SmallBusinessSyndicateTarget" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="50"
+			preferred_min_distance_of_objective_from_current_location="2" preferred_max_distance_of_objective_from_current_location="40"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"
+			only_start_if_accumulator_less_than="NDAC1" accumulator_comparison_number="100"/>
+		<action_consideration id="Extort2" sort_order="130" chance_of_attempting="70" objective_to_attempt_to_start="ExtortMiddleClassCitizens"
+			target_building_tag="MiddleClassCommon" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="50"
+			preferred_min_distance_of_objective_from_current_location="2" preferred_max_distance_of_objective_from_current_location="40"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"
+			only_start_if_accumulator_less_than="NDAC1" accumulator_comparison_number="100"/>
+		<action_consideration id="ReportIn" sort_order="150" chance_of_attempting="100" objective_to_attempt_to_start="ReportIn"
+			target_building_tag="AlmostAny" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="50"
+			preferred_min_distance_of_objective_from_current_location="1" preferred_max_distance_of_objective_from_current_location="12"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"
+			only_start_if_accumulator_greater_than_or_equal_to="NDAC1" accumulator_comparison_number="100"/>
+	</stance>
+
+	<stance id="SyndicateProtectingOperation" display_name="Protecting Operation"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Focused on helping their comrades fulfill a mission."
+		icon_name="WEmblem035" icon_color="#E4509C" icon_color_hdr_intensity="2.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="10"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>		
+		<action_consideration id="RunAfterThreats" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterThreatsNearMission" />
+		<action_consideration id="BackToMission" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+
+	<stance id="SyndicateDelivery" display_name="Sensitive Deliveries"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Intel and goods that are too hot to transmit via the City Feed or delivery craft."
+		icon_name="FlatSkillB_shell" icon_color="#E49250" icon_color_hdr_intensity="2.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true" will_hold_fire_against_regular_machine_structures="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<action_consideration id="Delivery" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="SyndicateDelivery"
+			target_building_tag="SyndicateDeliveryTarget" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="20" absolute_max_distance_objective_must_be_from_current_location="140"
+			preferred_min_distance_of_objective_from_current_location="60" preferred_max_distance_of_objective_from_current_location="120"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"
+			only_start_if_accumulator_less_than="NDAC1" accumulator_comparison_number="100"/>
+		<action_consideration id="ReportIn" sort_order="110" chance_of_attempting="100" objective_to_attempt_to_start="ReportIn"
+			target_building_tag="AlmostAny" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="50"
+			preferred_min_distance_of_objective_from_current_location="1" preferred_max_distance_of_objective_from_current_location="12"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"
+			only_start_if_accumulator_greater_than_or_equal_to="NDAC1" accumulator_comparison_number="100"/>
+	</stance>
+
+	<stance id="SyndicateRevenge" display_name="Revenge"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="The syndicate feels insulted. They're taking it out on the local area."
+		icon_name="SomethingScaryFire" icon_color="#F77F35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" is_considered_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="0"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+	</stance>
+
+	<stance id="SyndicateTailingPlayerSuspect" display_name="Tailing Suspect"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Won't attack unless fired-upon."
+		icon_name="SK_Binoculars" icon_color="#EC2D5E" icon_color_hdr_intensity="2.4" icon_scale="0.6"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="10"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" will_hold_fire_against_regular_machines_except_those_aggroed="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="RunAfterAggroedAny" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAnyAggroedUnits" />
+		<!--
+		<action_consideration id="Noncombatant" sort_order="200" chance_of_attempting="100" action_to_attempt="FollowEvenHiddenPlayerUnits" />-->
+	</stance>
+
+	<stance id="SyndicateGunnerCautiouslyFollowingPlayer" display_name="Cautiously Following"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Won't attack unless fired-upon."
+		icon_name="FlatSkillA02" icon_color="#2DECBB" icon_color_hdr_intensity="2.4" icon_scale="0.7"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="10"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" will_hold_fire_against_regular_machines_except_those_aggroed="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="RunAfterAggroedAny" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAnyAggroedUnits" />
+	</stance>
+
+	<stance id="SyndicateGunnerNeutralizingRobotUprising" display_name="Neutralizing Threat"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Sometimes a rival group programs androids to start killing people. The syndicate probably assumes this is one of those times."
+		icon_name="FlatSkillA02" icon_color="#EC452D" icon_color_hdr_intensity="2.4" icon_scale="0.7"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" will_hold_fire_against_regular_machines_except_those_aggroed="false"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="SyndicateGunnerRespondingToGangAmbush" display_name="Responding To Ambush"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Gangs rarely attack criminal syndicates. When it happens, retribution quickly escalates. Unfortunately, this escalation looks like it is going to follow you around."
+		icon_name="FlatSkillA02" icon_color="#EC2D2D" icon_color_hdr_intensity="2.4" icon_scale="0.7"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" will_hold_fire_against_regular_machines_except_those_aggroed="false"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="SyndicateAttackingShellCompanyStructure" display_name="Harassing Shell Company"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Your shell company has something they want to extort."
+		will_attack_shell_company_machines_even_if_not_aggroed="true" will_attack_shell_company_structures="true" will_hold_fire_against_regular_machine_structures="true"
+		icon_name="SW_Strategy" icon_color="#AE200B" icon_color_hdr_intensity="3" icon_scale="0.5"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true" is_on_orders_from_the_local_megacorp="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="1.5" />
+		<action_consideration id="RunAfterMachineStructures" sort_order="150" chance_of_attempting="60" action_to_attempt="RunAfterMachineStructures" />
+		<action_consideration id="RunAfterOutcasts" sort_order="170" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="180" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterMachineStructuresFallback" sort_order="500" chance_of_attempting="100" action_to_attempt="RunAfterMachineStructures" />
+	</stance>
+
+	<stance id="SyndicateAttackingShellCompanyStructureStory" copy_from="SyndicateAttackingShellCompanyStructure" icon_name="AN_GunSniperRifle"
+		description="Your current project is too enticing, regardless of how much Protection you have in place." />
+
+	<stance id="SyndicateOverseer_SeekingMeetingWithShell" display_name="Seeking Meeting With Shell Company"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="This group wishes to meet with someone from your shell company. Time to get out a PMC Impostor."
+		icon_name="WEmblem164" icon_color="#EC5623" icon_color_hdr_intensity="2.8" icon_scale="0.6"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="1" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+	
+</root>

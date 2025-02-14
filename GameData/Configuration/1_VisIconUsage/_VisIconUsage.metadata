@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="vis_icon_usage">
+
+	<!--These are icons used somewhere in the game. By specifying them this way, two things happen.
+		First, we can find them easily when doing a search of all the xml, which helps prevent double usage.
+		Secondly, modders can swap out icons without having to touch code, which is a nice little extra benefit.-->
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+
+	<attribute key="default_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be used if the code chooses to."/>
+
+	<attribute key="default_color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, if we want to have that."/>
+
+	<attribute key="default_scale" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="Multiplier for the scale to be used if the code chooses to."/>
+
+	<attribute key="default_color_text" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be used for text if the code chooses to. Defaults to the main color if not specified."/>
+	
+	<attribute key="frame_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the frame around the icon if it's drawn in a frame fashion."/>
+
+	<attribute key="frame_color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the frame color glow, if we want to have that."/>
+
+	<attribute key="hover_frame_color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="-1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the frame color glow when hovered. If set below 0, will use the regular hdr for the frame instead."/>
+
+	<attribute key="fill_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the fill color behind the icon if it's drawn in a frame style with border fill on."/>
+
+	<attribute key="fill_color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the fill color glow, if we want to have that."/>
+
+	<attribute key="hover_default_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the default color of the icon if it is stated to be hovered."/>
+
+	<attribute key="hover_default_color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the hover default color glow, if we want to have that."/>
+	
+	<attribute key="hover_fill_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the fill color behind the icon if it's drawn in a frame style with border fill on and is stated to be hovered."/>
+
+	<attribute key="hover_fill_color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the hover fill color glow, if we want to have that."/>
+	
+	<attribute key="frame_mask_row_col" type="point-textbox" content_width_px="60"
+		is_required="false" tooltip="If you wish to draw this in the frame style, then specify the two first values and leave the second two blank.
+See the image at ArtIcons/IconFramesKey.jpg for the index.
+The column goes first, then the row. So there is a blank full icon that is shown with value 1,6,0,0, for example."/>
+
+	<attribute key="use_backing_color" type="bool" default="false"
+		tooltip="If true, then the area inside the frame will be filled with the fill_color. Otherwise, the fill color will not be used, and this area will be transparent." />
+
+	<attribute key="default_added_y" type="float-textbox" min="-10" max="10" default="0" content_width_px="50"
+		is_required="false" tooltip="Optional thing that icons can specify that the calling code can listen to or ignore."/>
+	
+</root>

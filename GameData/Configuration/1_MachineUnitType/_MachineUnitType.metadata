@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="machine_unit_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="short_description" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+		tooltip="Required short explanation of what this unit is for." />
+	
+	<attribute key="shape_icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+
+	<attribute key="shape_icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the shape icon."/>
+
+	<attribute key="tooltip_icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use in tooltips, where we can see something larger."/>
+		
+	<attribute key="icon_scale" type="float-textbox" is_required="true" min="1" max="4" default="1" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="Unit type scale, will show icon larger than normal and units larger than 1 cannot enter buildings." />
+	
+	<attribute key="intentionally_has_no_unlock" type="bool" default="false"
+		tooltip="If this is not going to be unlocked by a Unlock, this should be set to true. If it is unlocked, it should be false." />
+
+	<attribute key="is_blocked_from_being_built" type="bool" default="false"
+		tooltip="If this is not something we want to have be constructed via the normal mechanisms, then set to true. These must be found via other means." />
+	
+	<attribute key="is_considered_android" type="bool" default="false"
+		tooltip="If true, then this unit is considered an android for various practical purposes." />
+	<attribute key="is_considered_mech" type="bool" default="false"
+		tooltip="If true, then this unit is considered a mech for various practical purposes." />
+	<attribute key="is_tied_to_shell_company" type="bool" default="false"
+		tooltip="If true, then this is related to your shell company rather than you." />
+	<attribute key="is_pmc_impostor" type="bool" default="false"
+		tooltip="If true, then this is a PMC Impostor." />
+
+	<attribute key="is_never_gray_on_upgrade_lists" type="bool" default="false"
+		tooltip="If true, then this unit is won't be grayed out on upgrade lists even if constructing them directly is not yet unlocked.
+Relevant for units you can capture." />
+
+	<attribute key="counts_as_an_android_launcher" type="bool" default="false"
+		tooltip="If true, this unit acts like an android launcher in addition to its other functions." />
+	<attribute key="counts_as_a_mech_launcher" type="bool" default="false"
+		tooltip="If true, this unit acts like a mech launcher in addition to its other functions." />
+
+	<attribute key="can_appear_even_after_final_doom" type="bool" default="false"
+		tooltip="If this is true, then this can appear even after the final doom. Normally false."/>
+	<attribute key="only_appears_after_final_doom" type="bool" default="false"
+		tooltip="If this is true, then this ONLY appears after the final doom."/>
+
+	<attribute key="ap_cost_per_attack" type="int-textbox" min="1" max="40" default="1" content_width_px="300" is_required="false"
+		tooltip="How much AP a single attack takes."/>
+	
+	<attribute key="frame_style" type="node-dropdown" is_required="true" node_source="VisMapFrameStyle" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which frame style to use when this icon is hovering out in the world." />
+
+	<attribute key="unit_capacity_cost" type="int-textbox" min="1" max="40" default="12" content_width_px="300" is_required="true"
+		tooltip="How much capacity this type of unit requires."/>
+
+	<attribute key="is_blocked_after_city_flag" type="node-dropdown" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then this effectively disappears after the city flag is true." />
+	
+	<attribute key="vis_object_casual" type="node-dropdown" node_source="VisLODDrawingObject" content_width_px="200" is_required="true"
+		tooltip="The stance of the unit when it is being relatively casual." />
+	<attribute key="vis_object_aggressive" type="node-dropdown" node_source="VisLODDrawingObject" content_width_px="200" is_required="true"
+		tooltip="The stance of the unit when it is being comparably aggressive." />	
+	<attribute key="vis_object_scale" type="float-textbox" min="0.01" max="10" precision="2" default="1" content_width_px="80" is_required="true"
+		tooltip="This draws a vis object, then what scale should we be drawing that object at?"/>
+	<attribute key="vis_object_extra_offset" type="float-textbox" min="-30" max="30" precision="3" default="0" content_width_px="80" is_required="false"
+		tooltip="This draws a vis object, then should that object be offset up or down relative to the icon?"/>	
+	<attribute key="vis_object_extra_offset_on_city_map" type="float-textbox" min="0" max="30" precision="3" default="2" content_width_px="80" is_required="false"
+		tooltip="If this should be raised up extra on the city map, then by how much?  Default is 2 for units."/>
+	<attribute key="extra_offset_for_camera_focus_when_selected" type="float-textbox" min="-30" max="30" precision="3" default="0" content_width_px="80" is_required="true"
+		tooltip="When zooming in on the vis object because the unit is selected, how high above the base point do we zoom?"/>
+	<attribute key="underlay_extra_offset" type="float-textbox" min="-30" max="30" precision="3" default="0" content_width_px="80" is_required="false"
+		tooltip="How much higher or lower the underlays draw relative to the visual bottom of this unit, if this unit draws underlays."/>
+	<attribute key="collider_scale" type="float-textbox" min="1" max="10" precision="2" default="1" content_width_px="80" is_required="true"
+		tooltip="How much larger the colliders for hovering over this object will be by default."/>
+	
+	<attribute key="radius_for_collisions" type="float-textbox" min="0.5" max="10" precision="3" default="0" content_width_px="80" is_required="true"
+		tooltip="How large is this unit in the xz axis for purposes of running into buildings, vehicles, other units, etc?"/>
+	<attribute key="height_for_collisions" type="float-textbox" min="0.5" max="10" precision="3" default="0" content_width_px="80" is_required="true"
+		tooltip="How large is this unit in the y axis for purposes of running into buildings, vehicles, other units, etc?"/>
+	<attribute key="y_offset_for_collision_base" type="float-textbox" min="-10" max="10" precision="3" default="0" content_width_px="80" is_required="true"
+		tooltip="If there an offset for where the collision center starts from?"/>
+	<attribute key="should_hide_intersecting_decorations" type="bool" default="false"
+		tooltip="If true, then smaller decorations that intersect with this on the xz plane (ignoring y position) will be hidden. Should be used for the smaller mechs and that's about it." />
+
+	<attribute key="destroy_intersecting_buildings_strength" type="int-textbox" min="0" max="100" default="0" content_width_px="80" is_required="false"
+		tooltip="If above 0, then buildings that this touches will not block it, but instead will blow up when it touches them. Only buildings with a resistance equal to or lower than this strength will be destroyed."/>
+	<attribute key="should_destroy_intersecting_buildings_during_movement" type="bool" default="false"
+		tooltip="If true, then this destroys buildings it touches as it moves." />
+
+	<attribute key="mech_style_movement_speed" type="float-textbox" min="0.01" max="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If set to anything other than 1, then this will make the mech move slower or faster than usual for mechs."/>
+	<attribute key="mech_style_movement_dip" type="float-textbox" min="0.01" max="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If set to anything other than 1, then this will make the mech dip less or more than others."/>
+
+	<attribute key="can_make_ranged_attacks_by_default" type="bool" default="true" is_required="true"
+		tooltip="If true, then this unit is able to make ranged attacks even without a ranged weapon equipped." />
+	<attribute key="can_ever_make_melee_attacks" type="bool" default="true" is_required="true"
+		tooltip="If false, then this unit is barred from even making melee attacks, regardless of equipment. Also barred from equipping melee weapons." />
+	<attribute key="can_ever_make_ranged_attacks" type="bool" default="true" is_required="true"
+		tooltip="If false, then this unit is barred from even making ranged attacks, regardless of equipment. Also barred from equipping ranged weapons." />
+
+	<attribute key="bypass_final_doom_block" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="For units that are blocked after the final doom, unlocking this for them will reintroduce them." />
+
+	<attribute key="block_unit_and_delete_existing" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If true, then this unit is completely removed from your roster, and any existing copies of it are also cleared." />
+	
+	<attribute key="underlay" type="node-dropdown" node_source="UnitUnderlayType" content_width_px="200" is_required="false"
+		tooltip="The underlay type for the unit, normally." />
+	<attribute key="underlay_in_cover" type="node-dropdown" node_source="UnitUnderlayType" content_width_px="200" is_required="false"
+		tooltip="The underlay type for the unit when it is in cover." />
+	<attribute key="underlay_when_cloaked" type="node-dropdown" node_source="UnitUnderlayType" content_width_px="200" is_required="false"
+		tooltip="The underlay type for the unit when it is cloaked, if that's different from normal." />
+
+	<attribute key="command_mode_category" type="node-dropdown" is_required="true" node_source="MachineCommandModeCategory" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which category this belongs in on the command mode menu for deployment." />
+	
+	<attribute key="is_given_initially_to_players" type="bool"
+		tooltip="When true, the player gets one of these right from the start of the game."/>
+
+	<attribute key="is_given_initially_to_players_if_skipping_chapter_zero" type="bool"
+		tooltip="When true, the player gets one of these right from the start of the game IF chapter zero is skipped."/>
+
+	<attribute key="on_built" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the unit is built from a factory." />
+	<attribute key="on_death" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the unit dies." />
+	<attribute key="on_bullet_hit" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the unit gets hit by a bullet." />
+	<attribute key="on_standard_ranged_attack" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the unit makes a normal ranged attack without having any other upgrades." />
+	<attribute key="on_standard_melee_attack" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the unit makes a normal melee attack without having any other upgrades." />
+	<attribute key="on_move_start" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which sound effect and possibly particle effect to use when the unit starts moving." />
+	<attribute key="on_get_out_of_vehicle_end" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which sound effect and possibly particle effect to use when the unit has just landed on the ground after getting out of a vehicle." />
+	<attribute key="on_movement_finished_with_no_action" type="node-dropdown" is_required="false" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which sound effect and possibly particle effect to use when the unit has just moved, but had no action?  This pretty much only applies to mechs." />
+
+	<attribute key="screen_shake_on_exiting_vehicle_duration" type="float-textbox" min="-1" max="2" precision="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If the screen should shake when this unit exits a vehicle, how long should the shake be?  1 is pretty long."/>
+	<attribute key="screen_shake_on_exiting_vehicle_intensity" type="float-textbox" min="-1" max="2" precision="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If the screen should shake when this unit exits a vehicle, how intensely should it shake around?  0.7 is a fairly heavy shake."/>
+	<attribute key="screen_shake_on_exiting_vehicle_decrease_factor" type="float-textbox" min="-1" max="4" precision="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If the screen should shake when this unit exits a vehicle, how nicely should it taper off? 1 is a good number, and higher tapers off faster. Less than 1 is maybe not a good idea."/>
+
+	<attribute key="screen_shake_on_regular_move_duration" type="float-textbox" min="-1" max="2" precision="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If the screen should shake when this unit makes a regular move, how long should the shake be?  1 is pretty long."/>
+	<attribute key="screen_shake_on_regular_move_intensity" type="float-textbox" min="-1" max="2" precision="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If the screen should shake when this unit makes a regular move, how intensely should it shake around?  0.7 is a fairly heavy shake."/>
+	<attribute key="screen_shake_on_regular_move_decrease_factor" type="float-textbox" min="-1" max="4" precision="2" default="1" content_width_px="80" is_required="false"
+		tooltip="If the screen should shake when this unit makes a regular move, how nicely should it taper off? 1 is a good number, and higher tapers off faster. Less than 1 is maybe not a good idea."/>
+	
+	<attribute key="storage_slot_type" type="node-dropdown" is_required="true" node_source="MachineUnitStorageSlotType" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="Each unit has a certain type of slot it must be stored in if it's to be carried in vehicles." />
+
+	<attribute key="name_style" type="node-dropdown" is_required="true" node_source="VisNameLogic" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which naming logic will be used for naming this unit?" />	
+	<attribute key="name_prefix" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+		tooltip="Required short prefix that becomes part of the barcode of the unit." />
+	<attribute key="name_when_first_unit" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+		tooltip="The full name when this unit is granted to the player at game start." />
+
+	<attribute key="t_i_c_s" type="node-dropdown" is_required="true" node_source="VisColorUsage" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The type of background color for the plated tooltip images." />
+	
+	<attribute key="ability_group" type="node-dropdown" is_required="true" node_source="MachineActorAbilityGroup" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This unit can only use abilities out of the specified group of actor abilities." />
+
+	<attribute key="collections" type="node-list" node_source="ActorCollection" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
+			tooltip="What collections is this unit part of?" />
+
+	<sub_node id="equipment_slot_count">
+		<attribute key="type" type="node-dropdown" is_required="true" node_source="MachineEquipmentSlotType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What kind of equipment slots does this vehicle have?" />
+		<attribute key="amount" type="int-textbox" is_required="true" min="0" max="1000000" default="100" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="How many of these kind of equipment slots does it have?  Zero is allowed in order to get rid of this slot type entirely." />
+		<attribute key="name_when_blank" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Name to show, optionally, when this is blank." />
+	</sub_node>
+
+	<sub_node id="actor_data">
+		<attribute key="data_type" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="Types of data that are stored about this unit." />
+		<attribute key="base_range" type="range-int" min="1,1" max="100000,100000" content_width_px="200"
+			is_required="true" tooltip="What's the base range of stats that this unit has for this field?"/>
+	</sub_node>
+
+	<sub_node id="ability_slot">
+		<attribute key="slot_index" type="int-textbox" is_required="true" min="1" max="4" default="1" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="Which ability slot are we talking about, between 1 and 4?" />
+		<attribute key="ability_type" type="node-dropdown" is_required="true" node_source="AbilityType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What ability does this unit have in this slot by default?" />
+		<attribute key="can_be_replaced" type="bool" default="true"
+			tooltip="This is normally true. If it's set to false, then this unit can never have an alternative ability in this slot. Not typically used for androids, but mechs might need it."/>
+	</sub_node>
+
+	<sub_node id="available_stance">
+		<attribute key="unit_stance" type="node-dropdown" node_source="MachineUnitStance" content_width_px="200" is_required="true"
+			tooltip="This makes a stance available to the unit. Which one?" />
+		<attribute key="allowed" type="int-textbox" min="0" max="1" content_width_px="40" is_required="true"
+			tooltip="Normally this should be 1. However, the ability to set 0 is here so that modders can turn a stance off if desired."/>
+	</sub_node>
+
+	<sub_node id="sub_collidable">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="distance_from_center" type="float-textbox" min="0" max="100" content_width_px="50" is_required="true"
+			tooltip="How far away from the center is this point?"/>
+		<attribute key="angle_from_current" type="float-textbox" min="0" max="360" content_width_px="50" is_required="true"
+			tooltip="At what angle, in degrees, is this off of the current forward angle?"/>
+		<attribute key="radius" type="float-textbox" min="0" max="100" content_width_px="50" is_required="true"
+			tooltip="How large is the sub-collidable at the end?"/>
+		<attribute key="center_offset_y" type="float-textbox" min="-100" max="100" content_width_px="50" is_required="true"
+			tooltip="How much up or down is this offset from the center point?"/>
+		<attribute key="height" type="float-textbox" min="0" max="100" content_width_px="50" is_required="true"
+			tooltip="How tall is this from its own center-point?"/>
+	</sub_node>
+
+	<sub_node id="unit_cost">
+		<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="What resources are required to finish construction of this unit?" />
+		<attribute key="required" type="int-textbox" min="0" max="10000000" content_width_px="150" is_required="true"
+			tooltip="How much of this resource does it cost to create one unit of this type?  Set to zero to mod it out."/>
+		<attribute key="should_mirror_to_bulk" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+			tooltip="If true, then this cost should be the same on bulks." />
+		<attribute key="should_multiply_by_squad_size_to_bulk" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+			tooltip="If true, then this cost should be the same on bulks, but multiplied by the bulk unit scale." />
+
+	</sub_node>
+
+	<sub_node id="particle_loop">
+		<attribute key="reason" type="node-dropdown" is_required="true" node_source="ActorParticleLoopReason" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What circumstances should call for the use of this kind of particle loop?" />
+		<attribute key="loop" type="node-dropdown" is_required="true" node_source="VisParticleLoop" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="And then which particle loop type should be used?" />
+		<attribute key="position_offset" type="vector3-textbox" is_required="true"
+			tooltip="In the local orientation of the parent object, where is this loop located?" />
+		<attribute key="scale" type="vector3-textbox" is_required="true"
+			tooltip="In the local orientation of the parent object, how is the loop scaled?" />
+	</sub_node>
+
+	<!--shot_emission_group-->
+	<sub_node id="shot_emission_group">
+		<attribute key="group_number" type="int-textbox" is_required="true" min="0" max="10" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="Some weapons emission group for the unit. Can just be set to 0 for all of the emitters on a unit if it only has one." />
+		<attribute key="debug_color" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+			tooltip="What color is used for the debug boxes for this group?"/>
+		<attribute key="alternative_projectile" type="node-dropdown" node_source="VisParticleAndSoundUsage" content_width_px="200" is_required="false"
+			tooltip="If shots from this emission group use an alternative projectile visual, style, and movement logic." />
+		<attribute key="min_delay_of_each_firing_port" type="float-textbox" is_required="false" min="0.05" max="0.9" default="0.1" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="At least how long, in seconds, should the gap between each firing port be?" />
+		<attribute key="max_delay_of_each_firing_port" type="float-textbox" is_required="false" min="0.1" max="0.9" default="0.3" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="At most how long, in seconds, should the gap between each firing port be?" />
+
+		<!--shot_emission_point-->
+		<sub_node id="shot_emission_point">
+			<attribute key="index_in_group" type="int-textbox" is_required="true" min="0" max="40" default="0" content_width_px="150" linebreak_after="PreferNot"
+				tooltip="For each emitter within a weapons group, there should be a unique index. The numeric order of these can sometimes effect the firing order, but other times not." />
+			<attribute key="offset" type="vector3-textbox" is_required="true"
+				tooltip="In the local orientation of the parent object, where is this emitter located?" />
+		</sub_node>
+
+		<!--targeting_zone-->
+		<sub_node id="targeting_zone">
+			<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+				tooltip="For finding this when we need to refer to it." />
+			<attribute key="distance_from_center" type="float-textbox" min="0" max="100" content_width_px="50" is_required="true"
+				tooltip="How far away from the center is this point?"/>
+			<attribute key="angle_from_current" type="float-textbox" min="0" max="360" content_width_px="50" is_required="true"
+				tooltip="At what angle, in degrees, is this off of the current forward angle?"/>
+			<attribute key="radius" type="float-textbox" min="0" max="100" content_width_px="50" is_required="true"
+				tooltip="How large is the targeting at the end?"/>
+			<attribute key="center_offset_y" type="float-textbox" min="-100" max="100" content_width_px="50" is_required="true"
+				tooltip="How much up or down is this offset from the center point?"/>
+			<attribute key="height" type="float-textbox" min="0" max="100" content_width_px="50" is_required="true"
+				tooltip="How tall is this from its own center-point?"/>
+		</sub_node>
+	</sub_node>
+
+	<sub_node id="default_perk">
+		<attribute key="perk" type="node-dropdown" is_required="true" node_source="ActorPerk" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What perks does this machine unit normally have?" />
+		<attribute key="unlock" type="node-dropdown" is_required="true" node_source="Unlock" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If an unlock is specified, then this perk only applies when that unlock is present. If not, then the perk is always there." />
+	</sub_node>
+
+	<sub_node id="default_feat">
+		<attribute key="feat" type="node-dropdown" is_required="true" node_source="ActorFeat" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What feats does this npc unit normally have?" />
+		<attribute key="value" type="float-textbox" min="-1" max="10000" precision="3" default="-1" content_width_px="80" is_required="true"
+			tooltip="If above zero, then this feat does something. At zero or below, it's considered gone. Defaults to -1."/>
+	</sub_node>
+	
+</root>

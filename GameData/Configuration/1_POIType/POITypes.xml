@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<poi_type id="InternationalAirport" display_name="International Airport"
+		description="Most airport travelers are immigrating citizens or rotating military forces. However, there are some executives that move through Vorsiber Atomic territory. International travel is rare."
+		strategy_tip="ExoCorps goods are coveted, so there is a thriving black market at this airport."
+		name_pool="InternationalAirport" use_name_pool="true" copy_owner_from_district="true" blocks_normal_traffic="true" blocks_network_connections="true"
+		blocks_events_unless_they_target_this_poi_tag="true" required_clearance="Secret"
+		poi_seed_guard_1="Mk1MechsByHumans" poi_check_guard_1="AnyMarkMechsByHumans" range_of_initial_poi_guards_1="2,5"
+		poi_seed_guard_2="MilitaryPOIGuards" poi_check_guard_2="MilitaryPOIGuards" range_of_initial_poi_guards_2="2,7"
+		poi_seed_guard_3="SecForcePOIGuards" poi_check_guard_3="SecForcePOIGuards" range_of_initial_poi_guards_3="2,7"
+		gets_major_military_reinforcements_from_off_map="true"
+		tags="AnyPOI,AnyAreaPOI,Uncommon,Large,Airport,InternationalAirport,MajorMilitaryReinforce,CanDisableAlarms"
+		icon_name="CleanSimple_Skill017" color_hex="#5CADC9" color_hdr_intensity="1.8" color_hovered_hdr_intensity="3.6"
+		icon_scale="0.8" is_considered_key_poi="true" acts_like_beacon="true"
+		region_color_hex="#144A92" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="RegionalAirport" display_name="Regional Airport"
+		description="This city is the crown jewel of the Vorsiber Atomic territory, so there is consistent traffic through the airport."
+		strategy_tip="The security is lighter here. This makes for a healthy less-direct black market."
+		name_pool="RegionalAirport" use_name_pool="true" copy_owner_from_district="true" blocks_normal_traffic="true" blocks_network_connections="true"
+		blocks_events_unless_they_target_this_poi_tag="true" required_clearance="Oversight"
+		poi_seed_guard_1="Mk1MechsByHumans" poi_check_guard_1="AnyMarkMechsByHumans" range_of_initial_poi_guards_1="1,3"
+		poi_seed_guard_2="MilitaryPOIGuards" poi_check_guard_2="MilitaryPOIGuards" range_of_initial_poi_guards_2="2,4"
+		poi_seed_guard_3="SecForcePOIGuards" poi_check_guard_3="SecForcePOIGuards" range_of_initial_poi_guards_3="2,3"
+		gets_major_military_reinforcements_from_off_map="true"
+		tags="AnyPOI,AnyAreaPOI,LowSecurityAreaPOI,Uncommon,Large,Airport,RegionalAirport,MajorMilitaryReinforce,CanDisableAlarms"
+		icon_name="SF2_Airplane_2" color_hex="#5CADC9" color_hdr_intensity="1.8" color_hovered_hdr_intensity="3.6"
+		icon_scale="0.6" is_considered_key_poi="true" acts_like_beacon="true"
+		region_color_hex="#144A92" region_alpha="0.25">
+	</poi_type>
+	
+	<poi_type id="CommStation" display_name="Comm Station"
+		description="Lots of communications equipment for talking across the planet, and to near and deep space."
+		strategy_tip="This is one of the few places where, in theory, you could talk to someone from the Space Nations without going through an envoy."
+		copy_name_from_district="true" copy_owner_from_district="true"
+		blocks_events_unless_they_target_this_poi_tag="true" required_clearance="Oversight"
+		poi_seed_guard_1="Mk1MechsByHumans" poi_check_guard_1="AnyMarkMechsByHumans" range_of_initial_poi_guards_1="1,3"
+		poi_seed_guard_2="MilitaryPOIGuards" poi_check_guard_2="MilitaryPOIGuards" range_of_initial_poi_guards_2="2,6"
+		poi_seed_guard_3="SecForcePOIGuards" poi_check_guard_3="SecForcePOIGuards" range_of_initial_poi_guards_3="4,4"
+		gets_major_military_reinforcements_from_off_map="true"
+		tags="AnyPOI,AnyAreaPOI,Uncommon,Large,CommStation,MajorMilitaryReinforce,CanDisableAlarms"
+		icon_name="SF2_Radar" color_hex="#5CADC9" color_hdr_intensity="2.5" color_hovered_hdr_intensity="3.6"
+		icon_scale="0.4" acts_like_beacon="true" is_considered_key_poi="true" ignored_when_in_all_beacon_mode="true" blocks_network_connections="true"
+		region_color_hex="#144A92" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="Cryopolis" display_name="Cryopolis"
+		description="Cryogenic freezing and resuscitation was successfully performed on small mammals in the 1940s. Nondestructive freezing is now possible for humans, but resuscitation is still under research."
+		strategy_tip="Vorsiber Atomic believes that the Four Pillars approach to research (AI, nanotech, cryonics, and genetics) will be their ticket to gaining the Space Nations' acceptance."
+		name_pool="Cryopolis" use_name_pool="true" poi_owner_chosen_from="MegaCorpCryonics"
+		blocks_events_unless_they_target_this_poi_tag="true" required_clearance="Secret"
+		poi_seed_guard_1="Mk1MechsByHumans" poi_check_guard_1="AnyMarkMechsByHumans" range_of_initial_poi_guards_1="2,6"
+		poi_seed_guard_2="MegaCorpPOIGuards" poi_check_guard_2="MegaCorpPOIGuards" range_of_initial_poi_guards_2="2,6"
+		poi_seed_guard_3="MilitaryPOIGuards" poi_check_guard_3="MilitaryPOIGuards" range_of_initial_poi_guards_3="2,4"
+		gets_major_military_reinforcements_from_off_map="true"
+		tags="AnyPOI,AnyAreaPOI,Cryo,Large,Cryopolis,MajorMilitaryReinforce,CanDisableAlarms"
+		icon_name="CleanSimple_Misc34" color_hex="#6AFFF5" color_hdr_intensity="1.5" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.7" acts_like_beacon="true" is_considered_key_poi="true" ignored_when_in_all_beacon_mode="true" blocks_network_connections="true"
+		region_color_hex="#144A92" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="ScientificRadioTelescope" display_name="Scientific Radio Telescope"
+		description="Radio telescopes are sensitive and extremely expensive. With the lights, pollution and radiation, it's baffling that scientists get reliable data from a radio telescope here."
+		strategy_tip="It's hard to believe that scientists here get any usable data, but no-one can prove anything. This is the wealthiest city of the wealthiest MegaCorp on Earth. Vorsiber won't let anyone forget that."
+		copy_name_from_district="true" copy_owner_from_district="true" blocks_normal_traffic="true" blocks_network_connections="true"
+		blocks_events_unless_they_target_this_poi_tag="true" required_clearance="Oversight"
+		poi_seed_guard_1="Mk1MechsByHumans" poi_check_guard_1="AnyMarkMechsByHumans" range_of_initial_poi_guards_1="1,3"
+		poi_seed_guard_2="MilitaryPOIGuards" poi_check_guard_2="MilitaryPOIGuards" range_of_initial_poi_guards_2="2,6"
+		poi_seed_guard_3="SecForcePOIGuards" poi_check_guard_3="SecForcePOIGuards" range_of_initial_poi_guards_3="1,4"
+		gets_major_military_reinforcements_from_off_map="true"
+		tags="AnyPOI,AnyAreaPOI,Uncommon,Large,ScientificRadioTelescope,MajorMilitaryReinforce,CanDisableAlarms"
+		icon_name="CleanSimple_SciFiEmblem33" color_hex="#DEC442" color_hdr_intensity="1.8" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.6" acts_like_beacon="true" is_considered_key_poi="true"
+		region_color_hex="#144A92" region_alpha="0.18">
+	</poi_type>
+
+	<poi_type id="Farm" display_name="Farm"
+		description="Provides fresh food for wealthy citizens."
+		strategy_tip="Food for the lower and middle classes is imported."
+		name_pool="Farm" use_name_pool="true" poi_owner_chosen_from="CorporationFarmPropertyOwner"
+		poi_seed_guard_1="SecForcePOIGuards" poi_check_guard_1="SecForcePOIGuards" range_of_initial_poi_guards_1="1,3" required_clearance="Sight"
+		is_smaller_reinforced_from_military_bases="true"
+		tags="AnyPOI,AnyAreaPOI,LowSecurityAreaPOI,Farm,FarmNormal,MinorReinforce,FarmHarvestPickupSite"
+		icon_name="CleanSimple_SkillC040" color_hex="#A4F76C" color_hdr_intensity="1.2" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.5" acts_like_beacon="true" is_considered_key_poi="true"
+		region_color_hex="#318A31" region_alpha="0.06" region_offset_y="-0.3">
+	</poi_type>
+
+	<poi_type id="FarmMini" display_name="Micro Farm"
+		description="Endeavors to provide local produce for the middle and lower classes."
+		strategy_tip="Very limited yields, but a much-needed supplement to canned and packaged goods."
+		lang_key_for_numbered_name="FarmTract_NameFormat" min_name_number="201" max_name_number="655" use_numbered_name_style="true" poi_owner_chosen_from="ReligionPropertyOwner"
+		tags="AnyPOI,AnyAreaPOI,LowSecurityAreaPOI,Farm,FarmMini,PMCFightLocation"
+		icon_name="FlatSkillB_carrots" color_hex="#A4F76C" color_hdr_intensity="1.2" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.4" acts_like_beacon="true"
+		region_color_hex="#318A31" region_alpha="0.06" region_offset_y="-0.3">
+	</poi_type>
+
+	<poi_type id="MiningOil" display_name="Large Oil Mining Site"
+		description="Petroleum, not used for power for decades, is still prized for making petrochemicals. Earth is one of the only planets with petroleum-like substances."
+		strategy_tip="You are in Siberia, which is now quite temperate thanks to centuries of global warming. Climate change unlocked the last of Earth's natural underground resources."
+		lang_key_for_numbered_name="OilSite_NameFormat" min_name_number="11" max_name_number="99" use_numbered_name_style="true" poi_owner_chosen_from="CorporationMiningPropertyOwner" 
+		required_clearance="Sight"
+		poi_seed_guard_1="SecForcePOIGuards" poi_check_guard_1="SecForcePOIGuards" range_of_initial_poi_guards_1="2,5"
+		is_smaller_reinforced_from_military_bases="true"
+		tags="AnyPOI,AnyAreaPOI,LowSecurityAreaPOI,Mining,MiningOilNormal,MiningOilAny,MinorReinforce,MiningPickupSite,PMCFightLocation"
+		icon_name="SK_PowerPlant" color_hex="#ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.6" acts_like_beacon="true" is_considered_key_poi="true"
+		region_color_hex="#573D3D" region_alpha="0.12">
+	</poi_type>
+
+	<poi_type id="MiningOilMini" display_name="Small Oil Mining Site"
+		description="Petroleum, not used for power for decades, is still prized for making petrochemicals. Earth is one of the only planets with petroleum-like substances."
+		strategy_tip="You are in Siberia, which is now quite temperate thanks to centuries of global warming. Climate change unlocked the last of Earth's natural underground resources."
+		lang_key_for_numbered_name="OilWell_NameFormat" min_name_number="501" max_name_number="855" use_numbered_name_style="true" poi_owner_chosen_from="ReligionPropertyOwner"
+		blocks_events_unless_they_target_this_poi_tag="true"
+		tags="AnyPOI,AnyAreaPOI,LowSecurityAreaPOI,Mining,MiningOilMini,MiningOilAny,PMCFightLocation"
+		icon_name="SK_PowerPlant" color_hex="#ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.4"
+		region_color_hex="#573D3D" region_alpha="0.12">
+	</poi_type>
+
+	<poi_type id="MiningAndScience" display_name="Mining Compound"
+		description="Large mining enclosure with attached scientific facilities."
+		strategy_tip="For safety and privacy, mineshafts have been repurposed as research labs."
+		lang_key_for_numbered_name="MiningSite_NameFormat" min_name_number="5" max_name_number="855" use_numbered_name_style="true" poi_owner_chosen_from="CorporationMiningPropertyOwner" 
+		blocks_events_unless_they_target_this_poi_tag="true" required_clearance="Secret"
+		poi_seed_guard_1="MilitaryPOIGuards" poi_check_guard_1="MilitaryPOIGuards" range_of_initial_poi_guards_1="2,5"
+		poi_seed_guard_2="SecForcePOIGuards" poi_check_guard_2="SecForcePOIGuards" range_of_initial_poi_guards_2="2,5"
+		is_smaller_reinforced_from_military_bases="true"
+		tags="AnyPOI,AnyAreaPOI,LowSecurityAreaPOI,Mining,MiningAndScience,MinorReinforce,MiningPickupSite,PMCFightLocation"
+		icon_name="CleanSimple_Skill061" color_hex="#ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.8" acts_like_beacon="true" is_considered_key_poi="true"
+		region_color_hex="#573D3D" region_alpha="0.12">
+	</poi_type>
+
+	<poi_type id="MilitaryBaseLarge" display_name="Large Military Complex"
+		description="One of a few massive military installations in the city. It is a district unto itself."
+		strategy_tip="In a war, it would take a lot more than androids to bring these down. Thirty to fifty thousand personnel are present at any time and hundreds of thousands of reserves are within flight distance."
+		copy_name_from_district="true" copy_owner_from_district="true" blocks_normal_traffic="true" blocks_network_connections="true"
+		blocks_events_unless_they_target_this_poi_tag="true" required_clearance="Oversight"
+		poi_seed_guard_1="Mk1MechsByHumans" poi_check_guard_1="AnyMarkMechsByHumans" range_of_initial_poi_guards_1="3,8"
+		poi_seed_guard_2="MilitaryPOIGuards" poi_check_guard_2="MilitaryPOIGuards" range_of_initial_poi_guards_2="4,9"
+		gets_major_military_reinforcements_from_off_map="true"
+		tags="AnyPOI,AnyAreaPOI,Military,Large,MilitaryBaseLarge,MilitaryBaseNormalOrLarge,MilitaryBaseCanResupplyOthers,MajorMilitaryReinforce,CanDisableAlarms"
+		icon_name="SF2_Exclamationmark" color_hex="#CE2A2A" color_hdr_intensity="2.5" color_hovered_hdr_intensity="3.6"
+		icon_scale="0.6" acts_like_beacon="true" is_considered_key_poi="true"
+		region_color_hex="#C30F0F" region_alpha="0.18" region_offset_y="-0.3">
+	</poi_type>
+
+	<poi_type id="MilitaryBaseNormal" display_name="Military Base"
+		description="There are a surprising number of standard military installations for a city. This is how Vorsiber Atomic maintains a show of strength to ward off invasion from ExoCorps."
+		strategy_tip="These bases have five to ten thousand personnel on duty at any time. They are also able to call on reinforcements."
+		name_pool="MilitaryBase" use_name_pool="true" poi_owner_chosen_from="CorporationMilitaryPropertyOwner" 
+		blocks_normal_traffic="true" blocks_events_unless_they_target_this_poi_tag="true" required_clearance="Oversight" blocks_network_connections="true"
+		poi_seed_guard_1="Mk1MechsByHumans" poi_check_guard_1="AnyMarkMechsByHumans" range_of_initial_poi_guards_1="2,5"
+		poi_seed_guard_2="MilitaryPOIGuards" poi_check_guard_2="MilitaryPOIGuards" range_of_initial_poi_guards_2="3,7"
+		gets_major_military_reinforcements_from_off_map="true"
+		tags="AnyPOI,Military,Large,MilitaryBaseNormal,MilitaryBaseNormalOrLarge,MilitaryBaseCanResupplyOthers,MajorMilitaryReinforce,CanDisableAlarms"
+		icon_name="SF2_Exclamationmark" color_hex="#CE2A2A" color_hdr_intensity="2.5" color_hovered_hdr_intensity="3.6"
+		icon_scale="0.4" acts_like_beacon="true" is_considered_key_poi="true"
+		region_color_hex="#923A3A" region_alpha="0.18" region_offset_y="-0.3">
+	</poi_type>
+
+	<poi_type id="MilitaryBaseMini" display_name="Military Outpost"
+		description="This small military installation provides extra muscle and enforcement for its district."
+		strategy_tip="These are operated by Private Military Contractors (PMCs). They do not have access to an endless reserve of personnel like the larger bases."
+		lang_key_for_numbered_name="MilitaryGuardPost_NameFormat" min_name_number="11" max_name_number="455" use_numbered_name_style="true"
+		copy_name_from_district="false" blocks_normal_traffic="true" poi_owner_chosen_from="PrivateMilitaryContractor"
+		required_clearance="Sight"
+		poi_seed_guard_1="MilitaryPOIGuards" poi_check_guard_1="MilitaryPOIGuards" range_of_initial_poi_guards_1="2,5"
+		is_smaller_reinforced_from_military_bases="true"
+		tags="AnyPOI,Military,MilitaryBaseMini,MinorReinforce,PMCFightLocation"
+		icon_name="SF2_Exclamationmark" color_hex="#C95C5C" color_hdr_intensity="2.5" color_hovered_hdr_intensity="3.6"
+		icon_scale="0.3" acts_like_beacon="true"
+		region_color_hex="#923A3A" region_alpha="0.18" region_offset_y="-0.3">
+	</poi_type>
+
+	<poi_type id="NuclearSilo" display_name="Nuclear Launch Silo Complex"
+		description="In the past, nuclear launch silos were a deterrent. Now, the air and water are so contaminated that a few more detonations don't matter."
+		strategy_tip="This city is built on the ruins of an larger ancient city. It was bombed during World War III. Geiger counters still trip if citizens venture into the ruins surrounding the city or dig in the wrong spot."
+		copy_name_from_district="true" copy_owner_from_district="true" blocks_normal_traffic="true" blocks_network_connections="true"
+		blocks_events_unless_they_target_this_poi_tag="true" required_clearance="Interior"
+		poi_seed_guard_1="Mk1MechsByHumans" poi_check_guard_1="AnyMarkMechsByHumans" range_of_initial_poi_guards_1="4,8"
+		poi_seed_guard_2="MegaCorpPOIGuards" poi_check_guard_2="MegaCorpPOIGuards" range_of_initial_poi_guards_2="5,9"
+		gets_major_military_reinforcements_from_off_map="true"
+		tags="AnyPOI,AnyAreaPOI,Uncommon,Large,NuclearSilo,MajorMilitaryReinforce"
+		icon_name="CleanSimple_SkillC082" color_hex="#FF7230" color_hdr_intensity="1.4" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.6" acts_like_beacon="true" is_considered_key_poi="true" ignored_when_in_all_beacon_mode="true"
+		region_color_hex="#921010" region_alpha="0.18">
+	</poi_type>
+
+	<poi_type id="PowerNuclearLarge" display_name="Power - Nuclear (Large)"
+		description="Nuclear power was never as dangerous as humans made it out to be. Especially compared to the chronic illnesses caused by fossil fuels. But it does produce a lot of waste."
+		strategy_tip="The power grid is decentralized and filled with redundancies. It will be hard to disrupt power beyond individual facilities."
+		copy_name_from_district="true" copy_owner_from_district="true" blocks_normal_traffic="true" blocks_network_connections="true"
+		blocks_events_unless_they_target_this_poi_tag="true" required_clearance="TopSecret"
+		poi_seed_guard_1="Mk1MechsByHumans" poi_check_guard_1="AnyMarkMechsByHumans" range_of_initial_poi_guards_1="2,4"
+		poi_seed_guard_2="MilitaryPOIGuards" poi_check_guard_2="MilitaryPOIGuards" range_of_initial_poi_guards_2="3,7"
+		gets_major_military_reinforcements_from_off_map="true"
+		tags="AnyPOI,AnyAreaPOI,Power,Large,PowerNuclearLarge,PowerNuclearAny,MajorMilitaryReinforce"
+		icon_name="CleanSimple_Device31" color_hex="#ffb830" color_hdr_intensity="1.2" color_hovered_hdr_intensity="1.9"
+		icon_scale="0.6" acts_like_beacon="true" is_considered_key_poi="true" ignored_when_in_all_beacon_mode="true"
+		region_color_hex="#144A92" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="PowerNuclearSmall" display_name="Power - Nuclear (Small)"
+		description="Nuclear power was never as dangerous as humans made it out to be. Especially compared to the chronic illnesses caused by fossil fuels. But it does produce a lot of waste."
+		strategy_tip="The power grid is decentralized and filled with redundancies. It will be hard to disrupt power beyond individual facilities."
+		lang_key_for_numbered_name="SmallNuclearReactor_NameFormat" min_name_number="1" max_name_number="19" use_numbered_name_style="true"
+		copy_name_from_district="false" blocks_normal_traffic="true" poi_owner_chosen_from="CorporationNuclearPowerOwner"
+		blocks_events_unless_they_target_this_poi_tag="true" required_clearance="TopSecret"
+		poi_seed_guard_2="MilitaryPOIGuards" poi_check_guard_2="MilitaryPOIGuards" range_of_initial_poi_guards_2="3,7"
+		is_smaller_reinforced_from_military_bases="true"
+		tags="AnyPOI,AnyAreaPOI,Power,PowerNuclearSmall,PowerNuclearAny,MinorReinforce"
+		icon_name="CleanSimple_Device31" color_hex="#ffb830" color_hdr_intensity="1.2" color_hovered_hdr_intensity="1.9"
+		icon_scale="0.3"
+		region_color_hex="#144A92" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="PowerWind" display_name="Power - Wind"
+		description="Small wind farm. Provides power to its district." poi_owner_chosen_from="ReligionPropertyOwner"
+		strategy_tip="The power grid is decentralized and filled with redundancies. It will be hard to disrupt power beyond individual facilities."
+		lang_key_for_numbered_name="WindFarm_NameFormat" min_name_number="11" max_name_number="255" use_numbered_name_style="true"
+		tags="AnyPOI,AnyAreaPOI,LowSecurityAreaPOI,Power,PowerWind,PMCFightLocation"
+		icon_name="SW_Windmill" color_hex="#5CC9C9" color_hdr_intensity="1.6" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.26"
+		region_color_hex="#144A92" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="PowerSolar" display_name="Power - Solar"
+		description="Small solar farm. Provides power to nearby inhabitants." poi_owner_chosen_from="ReligionPropertyOwner"
+		strategy_tip="The power grid is decentralized and filled with redundancies. It will be hard to disrupt power beyond individual facilities."
+		lang_key_for_numbered_name="SolarFarm_NameFormat" min_name_number="11" max_name_number="255" use_numbered_name_style="true"
+		tags="AnyPOI,AnyAreaPOI,LowSecurityAreaPOI,Power,PowerSolar,PMCFightLocation"
+		icon_name="Pw_SolarPanel2" color_hex="#CBA93A" color_hdr_intensity="1.4" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.18"
+		region_color_hex="#144A92" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="Spaceport" display_name="Spaceport"
+		description="The city's massive spaceport is the only way to transport people and goods to and from space."
+		strategy_tip="This is one of the most heavily-surveilled installations on the planet, so tread carefully."
+		copy_name_from_district="true" copy_owner_from_district="true"
+		blocks_events_unless_they_target_this_poi_tag="true" required_clearance="Interior"
+		poi_seed_guard_1="Mk1MechsByHumans" poi_check_guard_1="AnyMarkMechsByHumans" range_of_initial_poi_guards_1="6,10"
+		poi_seed_guard_2="MegaCorpPOIGuards" poi_check_guard_2="MegaCorpPOIGuards" range_of_initial_poi_guards_2="10,20"
+		gets_major_military_reinforcements_from_off_map="true" blocks_network_connections="true"
+		tags="AnyPOI,AnyAreaPOI,Uncommon,Large,Spaceport,MajorMilitaryReinforce"
+		icon_name="WEmblem229" color_hex="#5C9FC9" color_hdr_intensity="2.2" color_hovered_hdr_intensity="3.6"
+		icon_scale="0.8" acts_like_beacon="true" is_considered_key_poi="true"
+		region_color_hex="#144A92" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="CultistTemple" display_name="Cultist Temple"
+		description="Cults often adapt mainstream religious ideas for their own purpose."
+		strategy_tip="Not all cults are metaphysical. Some target political ideals, niche goals, behaviors -- or exploitation of the vulnerable."
+		poi_owner_chosen_from="CultPropertyOwner"
+		name_pool="CultistTemple" use_name_pool="true" tags="AnyPOI,AnySingleBuildingPOI,Cult,CultistTemple"
+		blocks_events_unless_they_target_this_poi_tag="true"
+		icon_name="FlatSkillC123" color_hex="#B75EF4" color_hdr_intensity="1.6" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.5" acts_like_beacon="true"
+		region_color_hex="#aaaaaa" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="ExecutiveSkyscraper" display_name="Executive Skyscraper"
+		description=""
+		strategy_tip=""
+		poi_owner_chosen_from="FederatedCorporation"
+		name_pool="AnySkyscraper" use_name_pool="true" add_random_digits_at_start_of_name_from_pool_if_too_few="2" tags="AnyPOI,AnySingleBuildingPOI,Skyscraper,ExecutiveSkyscraper,PMCFightLocation"
+		blocks_events_unless_they_target_this_poi_tag="true"
+		icon_name="HO_HouseSkyscraper22" color_hex="#F48744" color_hdr_intensity="1.6" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.2" acts_like_beacon="true" required_clearance="Oversight"
+		region_color_hex="#aaaaaa" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="SkyscraperEstate" display_name="Skyscraper Estate"
+		description=""
+		strategy_tip=""
+		poi_owner_chosen_from="FederatedCorporation"
+		name_pool="AnySkyscraper" use_name_pool="true" add_random_digits_at_start_of_name_from_pool_if_too_few="2" tags="AnyPOI,AnySingleBuildingPOI,Skyscraper,SkyscraperEstate,PMCFightLocation"
+		blocks_events_unless_they_target_this_poi_tag="true"
+		icon_name="HO_HouseSkyscraper28" color_hex="#2FE9A2" color_hdr_intensity="1.6" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.2" acts_like_beacon="true" required_clearance="Sight"
+		region_color_hex="#aaaaaa" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="HistoricTemple" display_name="Historic Temple"
+		description="Religions are banned in Vorsiber territory, but if they masquerade as entertainment or history, they are tolerated."
+		strategy_tip="Historic temples are intended for celebrating human history. But practitioners of faith use them to gather. Vorsiber seems to turn a blind eye."
+		poi_owner_chosen_from="ReligionPropertyOwner"
+		name_pool="HistoricTemple" use_name_pool="true" tags="AnyPOI,AnySingleBuildingPOI,Religion,HistoricTemple" 
+		blocks_events_unless_they_target_this_poi_tag="true"
+		icon_name="CleanSimple_SkillC038" color_hex="#A9E9D9" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.4" acts_like_beacon="true"
+		region_color_hex="#aaaaaa" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="UndergroundDetainmentCenter" display_name="Underground Detainment Center"
+		description="These massive underground complexes are the sites of society's most abhorrent humanitarian crimes. Housed in terrible conditions, prisoners are used for slave labor and research."
+		strategy_tip="Vorsiber's laws are unclear and selectively enforced. The justice system targets the jobless and the homeless. The lower classes are controlled through a life of constant uncertainty."
+		poi_owner_chosen_from="CorporationPrisonPropertyOwner"
+		lang_key_for_numbered_name="UndergroundDetainmentCenter_NameFormat" min_name_number="101" max_name_number="955" use_numbered_name_style="true" tags="AnyPOI,AnySingleBuildingPOI,Detainment,Prison" required_clearance="Oversight"
+		blocks_events_unless_they_target_this_poi_tag="true"
+		icon_name="CleanSimple_Media48" color_hex="#DC63FC" color_hdr_intensity="1.2" color_hovered_hdr_intensity="1.9"
+		icon_scale="0.3" acts_like_beacon="true"
+		region_color_hex="#aaaaaa" region_alpha="0.25">
+	</poi_type>
+
+	<poi_type id="SecForceStation" display_name="SecForce Station"
+		description="SecForce patrols, deployed all over the city, coordinate out of these stations. These stations are a visible projection of authority as much as anything else."
+		strategy_tip=""
+		poi_owner_chosen_from="SecForceStationOwner"
+		lang_key_for_numbered_name="SecForceStation_NameFormat" min_name_number="101" max_name_number="955" use_numbered_name_style="true" tags="AnyPOI,AnySingleBuildingPOI,SecForceStation" required_clearance="Oversight"
+		blocks_events_unless_they_target_this_poi_tag="true"
+		icon_name="SW_PoliceBadge" color_hex="#30A3FF" color_hdr_intensity="0.9" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.5" acts_like_beacon="true"
+		region_color_hex="#aaaaaa" region_alpha="0.25">
+	</poi_type>
+
+</root>

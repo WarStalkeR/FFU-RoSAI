@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="meta_resource">
+
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible tip for how to use this resource."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+
+	<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the shape icon."/>
+
+	<attribute key="is_hidden_from_top_bar_when_none_had" type="bool" default="false"
+		tooltip="If this is true, then this resource type is invisible on the top bar when the player does not have any." />
+	<attribute key="is_hidden_from_inventory_screen_when_none_had" type="bool" default="false"
+		tooltip="If this is true, then this resource type is invisible on the inventory screen when the player does not have any." />
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the extra code for this resource type is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the extra code for this resource type in the specified external dll."/>
+	
+</root>

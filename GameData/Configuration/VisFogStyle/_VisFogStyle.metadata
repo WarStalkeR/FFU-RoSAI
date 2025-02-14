@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="vis_fog_style">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<!--intensity_build-->
+	
+	<attribute key="use_intensity_build" type="bool" default="true"
+		tooltip="If this should use the map-style intensity build." />
+	
+	<attribute key="intensity_build_height_start" type="float-textbox" min="0" max="100000" default="0" content_width_px="70" is_required="true"
+		tooltip="At what height does the intensity of fog start?"/>
+	
+	<attribute key="intensity_build_height_end" type="float-textbox" min="0" max="100000" default="0" content_width_px="70" is_required="true"
+		tooltip="At what height does the intensity of fog end?"/>
+	
+	<attribute key="intensity_build_min_intensity" type="float-textbox" min="0" max="100000" default="0" content_width_px="70" is_required="true"
+		tooltip="What is the least-thick the fog is once it starts?"/>
+	
+	<attribute key="intensity_build_max_intensity" type="float-textbox" min="0" max="100000" default="0" content_width_px="70" is_required="true"
+		tooltip="What is the most-thick the fog is once it starts?"/>
+
+	<!--intensity_taper-->
+
+	<attribute key="use_intensity_taper" type="bool" default="true"
+		tooltip="If this should use the streets-style intensity taper." />
+
+	<attribute key="intensity_taper_height_start" type="float-textbox" min="-10" max="1000" default="20" content_width_px="70" is_required="false"
+		tooltip="The height at which the fog starts to taper."/>
+	
+	<attribute key="intensity_taper_distance_start_per1" type="float-textbox" min="0" max="10" default="1" content_width_px="70" is_required="false"
+		tooltip="The speed at which the start tapers."/>
+
+	<attribute key="intensity_taper_distance_end_per1" type="float-textbox" min="0" max="10" default="0.8" content_width_px="70" is_required="false"
+		tooltip="The speed at which the end tapers."/>
+	
+	<!--general-->
+
+	<attribute key="base_intensity" type="float-textbox" min="0" max="1" default="1" content_width_px="70" is_required="false"
+		tooltip="The base intensity if nothing is changed."/>
+	
+	<attribute key="distance_start" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="false"
+		tooltip="The distance at which the fog starts."/>
+	
+	<attribute key="distance_end" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="false"
+		tooltip="The distance at which the fog ends."/>
+
+	<attribute key="fog_layers_mode" type="float-textbox" min="0" max="1" default="0" content_width_px="70" is_required="false"
+		tooltip="0 = Multiply Distance And Height, 1 = Additive Distance And Height"/>
+
+	<attribute key="color_start" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be for the fog start color."/>
+	<attribute key="color_start_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the start color glow, or to dim it if need be."/>
+	
+	<attribute key="color_end" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be for the fog end color."/>
+	<attribute key="color_end_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the end color glow, or to dim it if need be."/>
+
+	<attribute key="fog_color_duo" type="float-textbox" min="0" max="1" default="1" content_width_px="70" is_required="false"
+		tooltip="The ratio here affects the way the two colors blend from start to end."/>
+
+	<attribute key="distance_falloff" type="float-textbox" min="1" max="8" default="2" content_width_px="70" is_required="false"
+		tooltip="How quickly the fog falls off over distance from the camera."/>
+
+	<attribute key="height_start" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="false"
+		tooltip="The height at which the fog starts."/>
+
+	<attribute key="height_end" type="float-textbox" min="-10000" max="10000" default="0" content_width_px="70" is_required="false"
+		tooltip="The height at which the fog ends."/>
+
+	<attribute key="height_falloff" type="float-textbox" min="1" max="8" default="2" content_width_px="70" is_required="false"
+		tooltip="How quickly the fog falls off over height above the ground."/>
+
+	<!--Skybox -->
+	
+	<attribute key="skybox_fog_intensity" type="float-textbox" min="0" max="1" default="1" content_width_px="70" is_required="false"
+		tooltip="The intensity against the skybox."/>
+
+	<attribute key="skybox_fog_height" type="float-textbox" min="0" max="1" default="1" content_width_px="70" is_required="false"
+		tooltip="The height against the skybox."/>
+
+	<attribute key="skybox_fog_falloff" type="float-textbox" min="1" max="8" default="1" content_width_px="70" is_required="false"
+		tooltip="How quickly the fog falls off in the skybox."/>
+
+	<attribute key="skybox_fog_offset" type="float-textbox" min="-1" max="1" default="0" content_width_px="70" is_required="false"
+		tooltip="The vertical offset against the skybox."/>
+
+	<attribute key="skybox_fog_bottom" type="float-textbox" min="-1" max="1" default="0" content_width_px="70" is_required="false"
+		tooltip="The bottom against the skybox."/>
+
+	<attribute key="skybox_fog_fill" type="float-textbox" min="0" max="1" default="1" content_width_px="70" is_required="false"
+		tooltip="The percentage of the skybox the fog fills."/>
+
+	<!--Directional -->
+
+	<attribute key="color_directional" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be for the fog directional color."/>
+	<attribute key="color_directional_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the directional color glow, or to dim it if need be."/>
+
+	<attribute key="directional_intensity" type="float-textbox" min="0" max="1" default="1" content_width_px="70" is_required="false"
+		tooltip="The intensity of the color from the directional light."/>
+
+	<attribute key="directional_falloff" type="float-textbox" min="1" max="8" default="2" content_width_px="70" is_required="false"
+		tooltip="How quickly the directional lighting component falls off across the fog."/>
+
+</root>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="note_instruction">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the handler code for this note is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handler code for this note in the specified external dll."/>
+
+	<attribute key="header_type" type="int-textbox" min="0" max="99" is_required="false" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="If present, then this is some kind of header.  The number indicates which kind."/>
+
+	<sub_node id="part_of">
+		<attribute key="collection" type="node-dropdown" is_required="true" node_source="UnlockCollection" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What collection is this in?" />
+		<attribute key="is_included" type="int-textbox" is_required="true" min="0" max="1000000" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="If more than 0, it's included.  If 0, it's modded out." />
+	</sub_node>
+	
+</root>

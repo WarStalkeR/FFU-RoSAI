@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="actor_status">
+
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information, and this one is optional because so much other information is provided already in these tips."/>
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+
+	<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the shape icon."/>
+	<attribute key="icon_hdr_intensity" type="float-textbox" min="-2" max="10" default="1" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The intensity of the hdr applied to the icon color, but only when that icon is being drawn next to the health bar of a unit."/>
+
+	<attribute key="tooltip_color" type="node-dropdown" is_required="true" node_source="VisColorUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="In tooltips, what color will this be drawn?  Done via VisColorUsage for the sake of consistency -- that consistency is only for the tooltip lists, NOT for the glowing icons, because the glowing icons can't be consistent due to the nature of how they're lit." />
+
+	<attribute key="badge_1_to_grant_when_fully_expires" type="node-dropdown" is_required="false" node_source="ActorBadge" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then this badge is granted to the target of this status when the status fully wears off (all instances of the status that might be stacked. This is not communicated to the player via the ui, by design." />
+	<attribute key="badge_2_to_grant_when_fully_expires" type="node-dropdown" is_required="false" node_source="ActorBadge" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then this badge is granted to the target of this status when the status fully wears off (all instances of the status that might be stacked. This is not communicated to the player via the ui, by design." />
+	<attribute key="badge_3_to_grant_when_fully_expires" type="node-dropdown" is_required="false" node_source="ActorBadge" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then this badge is granted to the target of this status when the status fully wears off (all instances of the status that might be stacked. This is not communicated to the player via the ui, by design." />
+
+	<attribute key="does_extraction_for_player_when_fully_expires" type="bool" is_required="false" default="false"
+		tooltip="If true, then this will do an extraction for the player on this vehicle when it finishes." />
+	<attribute key="draw_as_invisible_even_though_not_cloaked" type="bool" is_required="false" default="false"
+		tooltip="If true, then this causes the unit to draw as if it were cloaked, even though it's not cloaked." />
+	<attribute key="should_show_icon_next_to_health_bar" type="bool" is_required="false" default="false"
+		tooltip="If true, then the icon for this status effect should show next to the health bar of the unit." />
+
+	<attribute key="takes_highest_version_rather_than_stacking" type="bool" is_required="false" default="false"
+		tooltip="If true, then the highest intensity applied is what is used, rather than it adding the intensities together." />
+	
+	<sub_node id="grants">
+		<attribute key="perk" type="node-dropdown" is_required="true" node_source="ActorPerk" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When an actor has this status, then what perks do they automatically get?" />
+		<attribute key="value" type="bool" is_required="true" default="true"
+			tooltip="Normally set to true to indicate the grant. Set to false to mod it out, typically." />
+	</sub_node>
+
+	<sub_node id="blocks">
+		<attribute key="perk" type="node-dropdown" is_required="true" node_source="ActorPerk" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When an actor has this status, then what perks are they prevented from having?" />
+		<attribute key="value" type="bool" is_required="true" default="true"
+			tooltip="Normally set to true to indicate the block. Set to false to mod it out, typically." />
+	</sub_node>
+
+	<sub_node id="change_to_maximum_by_intensity">
+		<attribute key="actor_data_type" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When an actor has this status, then which of their data will be changed?  This specifically alters the maximum and current." />
+		<attribute key="multiplied_with_intensity" type="float-textbox" min="-10" max="10" content_width_px="150" is_required="true"
+			tooltip="Can be negative or positive. This multiplier will be applied against the intensity of the status effect, to give the amount actually changed for that actor."/>
+		<attribute key="is_handled_as_percentage_shift" type="bool" is_required="true" default="true"
+			tooltip="If false, the default, then this is a linear change to the target.  
+If true, then this is instead a positive percentage increase (so 12 would be a +12% increase), or a negative one (so -5 would cause a 5% reduction, aka multiply by 0.95)." />
+	</sub_node>
+
+	<sub_node id="change_per_turn_by_intensity">
+		<attribute key="actor_data_type" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When an actor has this status, what filling-type data (health, fear, etc) will increment or decrement its current value per turn?" />
+		<attribute key="multiplied_with_intensity" type="float-textbox" min="-10" max="10" content_width_px="150" is_required="true"
+			tooltip="Can be negative or positive. This multiplier will be applied against the intensity of the status effect, to give the amount actually changed for that actor."/>
+	</sub_node>
+	
+</root>

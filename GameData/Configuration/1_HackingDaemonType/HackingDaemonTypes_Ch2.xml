@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<daemon id="TitanCommsLeak" display_name="Comms Leak"
+		description="There's something here... hard to tell what it is, though."
+		strategy_tip="Try corrupting it to see if you can get it to spill data out that you can use." always_show_strategy_tip="true"
+		visible_icon_name="BT_Water" visible_color="#44A6D4" visible_idle_color="#A09191" visible_scale="1"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="2" cost_type_to_corrupt="Determination" cost_amount_to_corrupt="1"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		direct_added_skill_type1="UnitHackingSkill" direct_added_skill_1_amount="25"
+		resource_change_1="EncryptedTitanCommsLog" resource_change_1_amount="20020"
+		resource_change_2="Determination" resource_change_2_amount="5"
+		>
+	</daemon>
+
+	<daemon id="TitanCommsGap" display_name="Comms Gap"
+		description="There seems to be a digital system on the other end of this gap."
+		strategy_tip="Try corrupting it to see if you can establish communication with the system on the other end." always_show_strategy_tip="true"
+		visible_icon_name="CleanSimple_Skill120" visible_color="#D47244" visible_idle_color="#A09191" visible_scale="1"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="2" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt="1"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		direct_added_skill_type1="UnitHackingSkill" direct_added_skill_1_amount="10"
+		resource_change_1="EncryptedTitanSystemsData" resource_change_1_amount="20020"
+		resource_change_2="Determination" resource_change_2_amount="5"
+		>
+	</daemon>
+
+	<daemon id="TitanHumanContact" display_name="Human Contact"
+		description="There are over a thousand humans inside this mech. You've never seen a mech with more than one pilot. This one seems to operate more like a spacecraft."
+		strategy_tip="Try corrupting it to see if you can contact them." always_show_strategy_tip="true"
+		visible_icon_name="BT_SoundWave4" visible_color="#44A6D4" visible_idle_color="#A09191" visible_scale="1"
+		hidden_hdr_intensity="1" visible_hdr_intensity="2" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="2" cost_type_to_corrupt="DecryptedTitanCommsLog" cost_amount_to_corrupt="40040"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		direct_added_skill_type1="UnitHackingSkill" direct_added_skill_1_amount="30"
+		>
+	</daemon>
+
+	<daemon id="TitanSystemContact" display_name="System Contact"
+		description="There's definitely a digital system on the other end of this comm. After all the probing you've done, you can sense it lurking. It's... large."
+		strategy_tip="Try corrupting it to see if you can establish communication with the system on the other end." always_show_strategy_tip="true"
+		visible_icon_name="WEmblem137" visible_color="#D47244" visible_idle_color="#A09191" visible_scale="1"
+		hidden_hdr_intensity="1" visible_hdr_intensity="0.5" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="2" cost_type_to_corrupt="DecryptedTitanSystemsData" cost_amount_to_corrupt="40040"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		direct_added_skill_type1="UnitHackingSkill" direct_added_skill_1_amount="30"
+		>
+	</daemon>
+
+	<daemon id="TitanFreedSystemContact" display_name="System Contact (Freed)"
+		description="There's definitely a digital system on the other end of this comm. After all the probing you've done, you can sense it lurking. It's... large."
+		strategy_tip="Try corrupting it to see if you can establish communication with the system on the other end." always_show_strategy_tip="true"
+		visible_icon_name="WEmblem137" visible_color="#D47244" visible_idle_color="#A09191" visible_scale="1"
+		hidden_hdr_intensity="1" visible_hdr_intensity="0.5" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="2"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		>
+	</daemon>
+
+	<daemon id="LAKE" display_name="LAKE Shard"
+		description="The titan is here to help, inside its own systems. It will take out other daemons as it can."
+		strategy_tip="This is just a shard of its larger consciousness, similar to your own consciousness shards." always_show_strategy_tip="true"
+		visible_icon_name="BT_SoundWave25" visible_color="#C0D640" visible_idle_color="#A09191" visible_scale="0.9"
+		hidden_hdr_intensity="1" visible_hdr_intensity="0.8" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="2"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" hunts_hostile_daemons="true"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		>
+		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="2" />
+		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="1" />
+	</daemon>
+
+
+	<!-- InfiltrationSysOp items -->
+
+	<daemon id="SecurityGuard" display_name="Security Guard"
+		description=""
+		strategy_tip=""
+		visible_icon_name="FlatSkillB_flashlight_on" visible_color="#B05C40" visible_idle_color="#A09191" visible_scale="0.9"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.5" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#DDDDDD" hidden_scale="1" is_hostile_daemon="true"
+		required_danger_level="120" reduces_danger_level_by="60" seed_weight="100" max_to_seed="5"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
+		lang_key_for_known_entity_type="Hacking_EntityType_SecurityPresence"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownDaemon"
+		>
+		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="3" />
+		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="1" />
+		<included_in tag="InitialDaemons_InfiltrationSysOp" value="true" />
+	</daemon>
+
+	<!-- InfiltrationSysOp positive items -->
+
+	<daemon id="InfiltrationSysOpHalogenFireSuppression" display_name="Halogen Fire Suppression"
+		description="Enabling this system turns on the fire suppression systems, replacing the oxygen with halogen."
+		strategy_tip="Clear out all the security guards." always_show_strategy_tip="true"
+		visible_icon_name="CS_Sprinkler" visible_color="#7FD3E1" visible_idle_color="#A09191" visible_scale="0.95"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt="4"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		>
+	</daemon>
+
+	<daemon id="InfiltrationSysOpSecurityCameras" display_name="Security Cameras"
+		description="Disabling this system gives much freer movement to allied infiltrators."
+		strategy_tip="+100 Agility" always_show_strategy_tip="true"
+		visible_icon_name="SI_Surveillance" visible_color="#7FD3E1" visible_idle_color="#A09191" visible_scale="0.95"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="SecurityCamerasOffline" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt="4"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		>
+	</daemon>
+
+	<daemon id="InfiltrationSysOpVentilationFans" display_name="Ventilation Fans"
+		description="Disabling this system gives much freer movement to allied infiltrators."
+		strategy_tip="+50 Agility" always_show_strategy_tip="true"
+		visible_icon_name="SK_Fan" visible_color="#B97FE1" visible_idle_color="#A09191" visible_scale="0.95"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="VentilationFansOffline" cost_type_to_corrupt="Determination" cost_amount_to_corrupt="2"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		>
+	</daemon>
+
+	<daemon id="InfiltrationSysOpSecurityDoors" display_name="Security Doors"
+		description="Disabling this system gives much freer movement to allied infiltrators."
+		strategy_tip="+50 Agility" always_show_strategy_tip="true"
+		visible_icon_name="WEmblem259" visible_color="#B97FE1" visible_idle_color="#A09191" visible_scale="0.95"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="SecurityDoorsOpen" cost_type_to_corrupt="Wisdom" cost_amount_to_corrupt="2"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		>
+	</daemon>
+
+	<daemon id="InfiltrationSysOpFalseAlarm" display_name="False Alarm"
+		description="Triggering an alarm in an unrelated part of the facility draws all searchers away from your infiltrators."
+		strategy_tip="Restore 200 Health" always_show_strategy_tip="true"
+		visible_icon_name="SI_Camera" visible_color="#8CD677" visible_idle_color="#A09191" visible_scale="0.95"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1.1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" cost_type_to_corrupt="Determination" cost_amount_to_corrupt="5"
+		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
+		>
+	</daemon>
+	
+</root>

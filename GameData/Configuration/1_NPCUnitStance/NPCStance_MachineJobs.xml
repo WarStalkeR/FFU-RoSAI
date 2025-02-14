@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--**************************************************************HumanApartments**************************************************************-->
+	<stance id="ShelterCoordinator" display_name="Looking For Tents"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="They're looking for tent-dwellers to entice to your apartment housing."
+		icon_name="CleanSimple_Heal19" icon_color="#3FBE7D" icon_color_hdr_intensity="1.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="ConvertVeryCloseTents" sort_order="90" chance_of_attempting="100" objective_to_attempt_to_start="TentConversion"
+			target_building_tag="HomelessTent" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="30"
+			preferred_min_distance_of_objective_from_current_location="2" preferred_max_distance_of_objective_from_current_location="35"
+			max_failure_wait_turns_for_blocked_objective="8"/>
+		<action_consideration id="ConvertAnyTents" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="TentConversion"
+			target_building_tag="HomelessTent" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="900"
+			preferred_min_distance_of_objective_from_current_location="2" preferred_max_distance_of_objective_from_current_location="95"
+			max_failure_wait_turns_for_blocked_objective="8"/>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="1" action_to_attempt="Wander"/>
+	</stance>
+	
+	<!--ShelteredHumansFurnishApartments
+		***********************************************************-->
+	<stance id="FurnishApartments" display_name="Furnishing Apartments"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="The group is selecting furniture to furnish several apartments."
+		icon_name="BT_Desk" icon_color="#50E48F" icon_color_hdr_intensity="1.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true" this_unit_is_never_ever_watched_by_the_player="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="Furnish" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="FurnishApartments"
+		   skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="50"
+			preferred_min_distance_of_objective_from_current_location="2" preferred_max_distance_of_objective_from_current_location="40"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"
+			only_start_if_accumulator_less_than="NDAC1" accumulator_comparison_number="50"/>
+		<action_consideration id="LeaveAndFurnish" sort_order="150" chance_of_attempting="100" objective_to_attempt_to_start="LeaveAreaAndFurnish"
+			target_building_tag="AlmostAny" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="15" absolute_max_distance_objective_must_be_from_current_location="70"
+			preferred_min_distance_of_objective_from_current_location="20" preferred_max_distance_of_objective_from_current_location="30"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="false"
+			only_start_if_accumulator_greater_than_or_equal_to="NDAC1" accumulator_comparison_number="50"/>
+	</stance>
+
+	<!--**************************************************************CatHouse**************************************************************-->
+	<stance id="PetCatWander" display_name="Wandering"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Your cat chases vermin, relaxes, and generally lives its best life."
+		icon_name="BT_Cat" icon_color="#BC59BE" icon_color_hdr_intensity="1.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="30" action_to_attempt="Wander"/>
+	</stance>
+
+	<!--**************************************************************Wandering Animals**************************************************************-->
+	<stance id="FeralCatWander" display_name="Wandering"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Feral cats chase vermin, hide from larger animals, and squabble over scraps. Life is short."
+		icon_name="CleanSimple_Animal002" icon_color="#BEB359" icon_color_hdr_intensity="1.2" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="60" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="FeralDogWander" display_name="Wandering"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Feral dogs chase cats, rats, pigeons, and urban deer. They live in packs, and occasionally catch an elderly human. Life is brutish, fearful, and short."
+		icon_name="BT_Dog" icon_color="#BEB359" icon_color_hdr_intensity="1.2" icon_scale="0.6"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="90" action_to_attempt="Wander"/>
+	</stance>
+	
+</root>

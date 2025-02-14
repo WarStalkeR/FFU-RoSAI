@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Slumlord (full color prestige unit)
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="Slumlord" display_name="Slumlord"
+		description="Heavily-augmented enforcer of corporate judgment in the slums."
+		icon_scale="0.7" shape_icon_name="ME_Helmet" shape_icon_color="#ffffff"
+		vis_drawing_tag="Slumlord" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="8"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="SlumlordShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="17,19" />
+		<actor_data data_type="ActorMoveRange" base_range="30,36" />
+		<actor_data data_type="ActorHP" base_range="800,945" />
+		<actor_data data_type="ActorPower" base_range="312,358" />
+		<actor_data data_type="ActorFearAttackPower" base_range="790,895" />
+		<actor_data data_type="UnitMorale" base_range="950,980" />
+		<actor_data data_type="ActorExtraVulnerabilityFromAbove" base_range="180,210" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+	
+</root>

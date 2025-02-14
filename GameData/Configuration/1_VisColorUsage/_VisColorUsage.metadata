@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="vis_color_usage">
+
+	<!--These are colors used somewhere in the game.-->
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be used"/>
+
+	<attribute key="hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" is_required="true" content_width_px="50"
+		tooltip="HDR intensity to make the color glow, if we want to have that."/>
+
+	<attribute key="alpha" type="float-textbox" min="0.01" max="1" default="1" is_required="false" content_width_px="50"
+		tooltip="The alpha intensity, only for a secondary version of the color."/>
+
+	<attribute key="related_text_1_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for related text, optionally."/>
+	<attribute key="related_text_2_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for related text, optionally."/>
+
+	<attribute key="related_border_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for related border, optionally."/>
+
+	<attribute key="related_light_color_hex" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for related 'light' image, optionally."/>
+	
+</root>

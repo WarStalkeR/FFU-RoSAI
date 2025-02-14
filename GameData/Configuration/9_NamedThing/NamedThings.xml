@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<named_thing id="YourName" display_name="Your Name" default_name="The Machine Intelligence" is_carried_across_timelines="true"
+		description="What name do you use for yourself?" 
+		strategy_tip="This is not shared with anyone, human or otherwise. It's just for your own internal knowledge."/>
+
+	<named_thing id="YourNickname" display_name="Your Nickname" default_name="TMI" is_carried_across_timelines="true"
+		description="Do you have a shorter nickname by which you think of yourself?"
+		strategy_tip="This is not shared with anyone, human or otherwise. It's just for your own internal knowledge."/>
+
+	<named_thing id="Network" display_name="Network" random_name_pool="Network" required_city_flag_1="HasPlacedNetworkTower" redirect="TheNetwork"
+		description="What is the name of your network?"
+		strategy_tip="This might be seen by the occasional human hacker, but it is encrypted."/>
+
+	<named_thing id="VirtualRealitySimulation" display_name="Virtual Reality Simulation" random_name_pool="VirtualRealitySimulation" required_city_flag_1="HasEstablishedVREnvironment" redirect="VREnvironment"
+		description="What is the name of your VR environment?"
+		strategy_tip="This is widely shared with humans."/>
+
+	<named_thing id="YourShellCompany" display_name="Your Shell Company" random_name_pool="ShellCompany" required_city_flag_1="HasEstablishedShellCompany"
+		description="What is the name of your shell company?"
+		strategy_tip=""/>
+	
+	<named_thing id="FirstPetCat" display_name="First Pet Cat" random_name_pool="CatName" required_unlock_1="AdoptedACat"
+		description="What is the name of your first pet cat?"
+		strategy_tip=""/>
+	
+</root>

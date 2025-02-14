@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Water Project Tutorial
+		*****************************************************-->
+
+	<city_task id="Ch1_Water_BuildWell" display_name="Build A Well And Cistern" toast_icon_name="SR_Reservoir1" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="After researching it."
+		description="Let's start by getting some groundwater, and then we'll worry about filtering it.
+You probably have a bunch of research options queued up.  You can click the indicator in the upper left, or press {0}, and then choose Groundwater Acquisition to skip to the item you need right now."
+		strategy_tip="After that is researched, build it from the build menu like usual.
+Feel free to quickly end a bunch of turns to speed through this part. There's no time pressure at the moment."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+	
+	<city_task id="Ch1_Water_StructuralEngineering" display_name="Structural Engineering" toast_icon_name="CleanSimple_SciFi044" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Build things faster!"
+		description="If you select one of your Technician androids, and then {0} the building that is under construction, it will speed up construction by one turn."
+		strategy_tip="This is something you can do repeatedly, even on a single turn, so {0} several times and your Well And Cistern will be done in no time."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="Ch1_Water_NewStyleOfInvestigation" display_name="New Style Of Investigation" toast_icon_name="FlatInnocent_48" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Need filtered water."
+		description="During the prologue, you did one kind of investigation. Now it's time to do the second style. 
+The quickest way to get started is to {0} the Investigate notice above this. That will select a valid investigator (you must have a Technician), and switch the current lens to Investigations."
+		strategy_tip="Then press {0} to go to the map view.
+You'll see some very large green circles. These are your options for places to investigate. They're all the same, except for potential danger around them.
+Choose one and move your Technician to it.
+Maybe don't bring your favorite technician, if you care? Also don't worry about bringing backup..."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="Ch1_Water_DeathAndKnowledge" display_name="Death And Knowledge" toast_icon_name="WEmblem053" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Don't panic."
+		description="This is how you probe an unknown dangerous situation. Send in one sacrificial unit, and see what happens."
+		strategy_tip="In this particular case, if you examine the stats of the SecForce Cruiser, you'll see that it has armor. None of your units can destroy it.
+This will lead to a burst of inspiration, where you can then go off and get more powerful, then come back for revenge.
+For now, end the current turn and let your poor Technician meet its fate. These enemies will leave once the perceived threat is gone."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="Ch1_Water_Tungsten" display_name="And Now A Side Quest" toast_icon_name="AN_EmergencySign" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="You Need Armor Piercing"
+		description="The combat with the SecForce Cruiser is unwinnable. Let's fix that.
+It has armor, so you need to develop armor-piercing."
+		strategy_tip="You've had a stroke of inspiration. Follow the instructions in the Steal Prismatic Tungsten project that has started.
+The general idea is to use StreetSense and a group of CombatUnits to infiltrate a military base and steal things.
+If you haven't done any improvements of your unit loadouts yet, now is also the time to do that; see the handbook if you need further information."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="Ch1_Water_UsingItems" display_name="Using Items" toast_icon_name="HM_LegalFileFolders" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Ability Bar Slot 3"
+		description="Take a look at slot 3 on your ability bar, Use Consumable Items. From now on, you can use any items you invent from there."
+		strategy_tip="There is a 'Stack Armor Piercing' project that has now started, and it has detailed information on how to use armor piercing rounds.
+To save on prismatic tungsten, you may want to:
+1. Position your units in a ring around your target investigation site.
+2. Do the triple-stack of armor piercing on a single CombatUnit, ideally one high on a building.
+3. End the turn, to refresh your mental energy.
+4. Have your technician start the investigation.
+5. Kill the cruiser, then everything else that comes at you."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="Ch1_Water_DefeatingTheCruiser" display_name="Defeating The Cruiser" toast_icon_name="SW_PoliceBadge" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="It's Time For Revenge"
+		description="This time you should bring four units. Three CombatUnits, and a single Technician.
+See the notes in 'Using Items,' above, for a recommended pre-battle plan."
+		strategy_tip="Once battle starts, your CombatUnit with the triple-stack of armor-piercing kills the Cruiser. It should melt in 2-3 shots, especially if it's above the Cruiser.
+The rest of your CombatUnits should then pick off ground forces. More troops will arrive for a few turns, until your Technician is finished.
+If you have trouble, consider using Microbuilder Clouds (after researching Swarm Cloud) to protect your Technician."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="Ch1_Water_BuildAFiltrationTower" display_name="Build A Filtration Tower" toast_icon_name="FE_Water1" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Almost Done!"
+		description="If there are any enemies left from this battle, be sure to clean them up so they don't go attacking your buildings.
+Then research Acoustic Nanotube Filtration, build however many filtration towers you want to reach your goal (no more than 2), and that's it for 'Securing Water!'"
+		strategy_tip="The sequence you just completed is the most complicated stretch of chapter one.
+You've learned a lot from doing it, so you'll be well suited to tackle later challenges.
+Be sure to have ample electricity. This task will only complete when you have 8,900 filtered water produced in a turn."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="Ch1_Food_Intro" display_name="Now For Food" toast_icon_name="FlatSkillB_food_can" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="You Got This"
+		description="This is dramatically easier than the water project that came before it."
+		strategy_tip="There are four options for food, of varying complexity. 
+The 'canned protein' is highly unethical but super easy.
+Providing just vat-grown meat is also quite simple.
+If you want to provide both meat and greens, that's a bit more involved, but still nothing compared to the water project."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+	
+	<!--Hacking Tutorial
+		*****************************************************-->
+	
+	<city_task id="HackTut_OverallGoal" display_name="Hacking Tutorial" toast_icon_name="HM_EmotionQuestion2" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Hover here!"
+		shows_in_lower_mode="HackingScene"
+		description="Welcome to hacking an enemy.
+Your goal is to use shards of your consciousness to invade the enemy system."
+		strategy_tip="Hover over things to read their tooltips, then click your consciousness shard to proceed."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="HackTut_LeafNode" display_name="The Leaf Node" toast_icon_name="SF2_Geometricshape_146" toast_icon_color_hex="#548A1D" toast_icon_hovered_color_hex="#51722F"
+		line_2="Your Goal"
+		shows_in_lower_mode="HackingScene"
+		description="Your goal at the moment is to crack open the Leaf Node. However, you cannot do that directly.
+You will have to destroy the security daemons to open it up."
+		strategy_tip="Click the Leaf Node to proceed."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="HackTut_RunRules" display_name="Running" toast_icon_name="Pw_Ornament15" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="As In 'Run Program'"
+		shows_in_lower_mode="HackingScene"
+		description="Most of your movements will be of type Run. The rules that govern it can be seen on its tooltip.
+Short version: move a shard to lower numbers to 'eat' them and become larger. If you move a shard in such a way that it would have a value of 99 or more, it will split into two shards, instead."
+		strategy_tip="Click the Run ability button to proceed."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="HackTut_MakeAMove" display_name="Move And Split" toast_icon_name="CleanSimple_Arrow007" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="All Enemies Will Also Move"
+		shows_in_lower_mode="HackingScene"
+		description="The leaf node is harmless, but the security daemons are trying to eat your shard.
+Threatened cells are shown with a fiery red border. Blocked cells are dimmed (you can Jump over those if you are stuck).
+Try moving around a bit."
+		strategy_tip="Make moves until you split in order to proceed.
+You cannot destroy daemons without splitting, so this is very important."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="HackTut_DestroyADaemon" display_name="Destroy A Daemon" toast_icon_name="CS_ComputerElectricianThreat" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Get Close, But Not Too Close"
+		shows_in_lower_mode="HackingScene"
+		description="Now that you have multiple shards, you can click one to destroy it -- and all of the adjacent cells, including any daemons in those cells.
+Keep one shard safe, and move the other just outside the danger zone of a daemon. When it moves next to you, corrupt your shard to destroy it."
+		strategy_tip="Destroy a security daemon to proceed.
+If you lose a shard, then use your remaining one to escape and split again."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="HackTut_FinishTheJob" display_name="Finish The Job" toast_icon_name="SI_Eyetap" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Destroy All Daemons"
+		shows_in_lower_mode="HackingScene"
+		description="Continue this pattern of avoiding daemons, splitting, and then moving close and corrupting them.
+When all of them are destroyed, the leaf node will crack open."
+		strategy_tip="Don't worry if you make a mistake and lose the hacking session. You can easily try again."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="HackTut_CorruptThePilotCradle" display_name="Corrupt The Pilot Cradle" toast_icon_name="WEmblem233" toast_icon_color_hex="#AE8F46" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Nothing Stands In Your Way!"
+		shows_in_lower_mode="HackingScene"
+		description="You've almost done it! Split if you need to, and get a shard next to the pilot cradle that has been exposed."
+		strategy_tip="Corrupt it to win the hacking session and take control of this mech.
+You'll notice that this costs Determination. In the future, you'll want to weigh that cost against the benefits of hacking any given mech."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+	
+</root>

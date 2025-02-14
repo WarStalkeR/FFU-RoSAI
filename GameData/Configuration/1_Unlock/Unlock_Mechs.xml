@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Human-Based-->
+	<unlock id="MachinistMech" display_name="Reverse-Engineered Machinist Mech" unit_type="MechMachinist"
+		turns_to_unlock="3" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="PantherMech" display_name="Reverse-Engineered Panther Mech" unit_type="MechPanther"
+		turns_to_unlock="3" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="DiplomatMech" display_name="Reverse-Engineered Diplomat Mech" unit_type="MechDiplomat"
+		turns_to_unlock="3" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+	</unlock>
+
+	<unlock id="ConvicterMech" display_name="Reverse-Engineered Convicter Mech" unit_type="MechConvicter"
+		turns_to_unlock="4" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+	</unlock>
+
+	<!--Small-->
+	<unlock id="FirstMech" display_name="First Mech Design" unit_type="MechHellfire"
+		turns_to_unlock="7" required_intelligence_class="3" auto_unlocks_if_intelligence_class_is_at_least="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="MechAgility" display_name="Mech Agility" unit_type="MechTailstock"
+		turns_to_unlock="7" required_intelligence_class="4" auto_unlocks_if_intelligence_class_is_at_least="4">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+		<prerequisite unlock="FirstMech" required="true" />
+	</unlock>
+
+	<unlock id="TigerMech" display_name="Tiger Mech" unit_type="LiquidMetalTiger"
+		turns_to_unlock="7" required_intelligence_class="4">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+	</unlock>
+
+	<!--Large-->
+	<unlock id="MechArmor" display_name="Mech Armor" unit_type="MechMantle"
+		turns_to_unlock="8" required_intelligence_class="7">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+		<prerequisite unlock="MechAgility" required="true" />
+	</unlock>
+	
+	<unlock id="MechWeapons" display_name="Mech Weapon Systems" unit_type="MechGauntlet"
+		turns_to_unlock="9" required_intelligence_class="9">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+		<prerequisite unlock="MechArmor" required="true" />
+	</unlock>
+	
+	<unlock id="MechUltimate" display_name="Ultimate Mech Design" unit_type="MechStalker"
+		turns_to_unlock="9" required_intelligence_class="13">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+		<prerequisite unlock="MechWeapons" required="true" />
+	</unlock>
+
+	<unlock id="GoodDragonMech" display_name="Good Dragon Mech" unit_type="LiquidMetalGreatWyrm"
+		turns_to_unlock="7" required_intelligence_class="4">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+	</unlock>
+
+	<unlock id="EvilDragonMech" display_name="Evil Dragon Mech" unit_type="LiquidMetalFellBeast"
+		turns_to_unlock="7" required_intelligence_class="4">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+	</unlock>
+	
+	<unlock id="ShellCompanyMech" display_name="Shell Company Mech" unit_type="Telemech"
+		turns_to_unlock="7" required_intelligence_class="4">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="UnitType" sort_index="100" />
+		<part_of collection="MechType" sort_index="100" />
+	</unlock>
+
+</root>

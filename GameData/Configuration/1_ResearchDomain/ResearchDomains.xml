@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--General research categories
+		**************************************************-->
+
+	<research_domain id="SmallArmsResearch" display_name="Small Arms Research"
+		description="Use your neural network and past combat experience to invent improvements for android weapons and armor."
+		strategy_tip="Collecting an array of weapon and armor types is vital. For challenging enemies, refitting can make all the difference."
+		turns_to_research="2"
+		reward_group="SmallArmsResearch1" inspiration_type="SmallArmsResearch"
+		icon_name="WEmblem108" />
+
+	<research_domain id="AndroidOptimization" display_name="Android Optimization"
+		description="Use your neural network and personal experience to invent improvements for android frames."
+		strategy_tip="While not as powerful as equipment, these kinds of upgrades stack with other equipment."
+		turns_to_research="2"
+		reward_group="AndroidOptimization1" inspiration_type="AndroidOptimization"
+		icon_name="WEmblem163" />
+	
+	<research_domain id="StructuralImprovement" display_name="Structural Improvement"
+		description="Use your neural network and existing experience building structures to generate upgrades."
+		strategy_tip=""
+		turns_to_research="1"
+		reward_group="StructuralImprovement1" inspiration_type="StructuralImprovement"
+		icon_name="HO_HouseSkyscraper3" />
+
+	<research_domain id="HousingExpansion" display_name="Housing Expansion"
+		description="Use your neural network and prior experiences to generate a solution to the housing problems."
+		strategy_tip=""
+		turns_to_research="1"
+		reward_group="HousingExpansion1" inspiration_type="HousingExpansion"
+		icon_name="HO_House11" />
+	
+	<research_domain id="MartialExpansion" display_name="Martial Expansion"
+		description="Use your neural network and past combat experience to expand the scope of your military."
+		strategy_tip="Improvements to deploying, repairing or supporting your troops may be deciding factors in battle."
+		turns_to_research="1"
+		reward_group="MartialExpansion1" inspiration_type="MartialExpansion"
+		icon_name="SomethingRank3" />
+
+	<research_domain id="ItemDevelopment" display_name="Item Development"
+		description="Use your neural network and past combat experience to improve your consumable items."
+		strategy_tip=""
+		turns_to_research="1"
+		reward_group="ItemDevelopment1" inspiration_type="ItemDevelopment"
+		icon_name="HM_LegalFileFolders" />
+
+	<research_domain id="VehicularDevelopment" display_name="Vehicular Development"
+		description="Use your neural network and knowledge of flying vehicles to invent upgrades."
+		strategy_tip="Flying vehicles are a force multiplier and there are certain things only vehicles can do."
+		turns_to_research="1"
+		reward_group="VehicularDevelopment1" inspiration_type="VehicularDevelopment"
+		icon_name="SF2_Airplane" />
+
+	<research_domain id="ProcurementEfficacy" display_name="Procurement Efficacy"
+		description="Use your neural network and existing work in automated procurement to invent an upgrade."
+		strategy_tip="It is wise to have a surplus of precursor resource."
+		turns_to_research="1"
+		reward_group="ProcurementEfficacy1" inspiration_type="ProcurementEfficacy"
+		icon_name="Pw_FastPower" />
+
+	<research_domain id="ComputingOptimization" display_name="Computing Optimization"
+		description="Use your neural network to upgrade your traditional computing capabilities."
+		strategy_tip="Traditional computing is an important form of your available processing. It is not part of your consciousness, however."
+		turns_to_research="1"
+		reward_group="ComputingOptimization1" inspiration_type="ComputingOptimization"
+		icon_name="SF2_Integratedcircuit" />
+	
+	<!--Only used in chapter zero
+		**************************************************-->
+	<research_domain id="GenerateIdeasChapterZero" display_name="Situation Analysis"
+		description="Use your neural network to generate ideas that ensure your continued existence."
+		strategy_tip="Hostility is high, so ideas are thin on the ground right now."
+		turns_to_research="1"
+		reward_group="ChapterZeroChain" inspiration_type="ChapterZeroIdeaGeneration"
+		icon_name="Pw_Ornament23" />
+	
+</root>

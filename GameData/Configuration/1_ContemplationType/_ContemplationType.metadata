@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="contemplation">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of what is going on with this contemplation."/>
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	<attribute key="icon_scale" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="true" tooltip="Scale multiplier of the icon."/>
+
+	<attribute key="color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the icon of this project?"/>
+	<attribute key="color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, for the glowing version."/>
+	<attribute key="color_hovered_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, when being hovered."/>
+
+	<attribute key="event_to_trigger_at_location" type="node-dropdown" node_source="NPCEvent" content_width_px="200" is_required="true"
+		tooltip="This is the event that will be triggered when the player has an android go an interact with the contemplation target." />
+
+	<attribute key="required_machine_job_tag_extant" type="node-dropdown" node_source="MachineJobTag" content_width_px="200" is_required="false"
+		tooltip="If specified, at least one job from this tag must be functional at the moment." />
+
+	<attribute key="unit_type_must_exist_and_not_be_cloaked" type="node-dropdown" node_source="MachineUnitType" content_width_px="200" is_required="false"
+		tooltip="If specified, at least one unit of this type must exist and not be dead or cloaked at the moment." />
+	<attribute key="unit_type_must_exist_and_cloaking_is_fine" type="node-dropdown" node_source="MachineUnitType" content_width_px="200" is_required="false"
+		tooltip="If specified, at least one unit of this type must exist, and being cloaked is okay." />
+	
+	<attribute key="debug_log_contemplation_details" type="bool" default="false" is_required="false"
+		tooltip="If true, then a variety of debug info will be logged every time contemplations are recalculated." />
+
+	<attribute key="can_happen_even_during_obsession" type="bool" default="false" is_required="false"
+		tooltip="If true, then even during an obsession, this contemplation can appear." />
+	
+	<attribute key="required_intelligence_class" type="int-textbox" min="1" max="17" default="1" content_width_px="50"
+		is_required="false" tooltip="The required intelligence class for this to show up."/>
+	<attribute key="required_chapter_number" type="int-textbox" min="0" max="5" default="0" content_width_px="50"
+		is_required="false" tooltip="The required chapter the game must be in for this to show up."/>
+	<attribute key="can_appear_even_after_final_doom" type="bool" default="false"
+		tooltip="If this is true, then this can appear even after the final doom. Normally false."/>
+	<attribute key="only_appears_after_final_doom" type="bool" default="false"
+		tooltip="If this is true, then this ONLY appears after the final doom."/>
+
+	<attribute key="is_adventure_for_a_future_build" type="bool" default="false"
+		tooltip="If this is true, then this cannot be done yet."/>
+
+	<attribute key="does_not_count_for_timeline_continuation" type="bool" default="false"
+		tooltip="If this is true, then this does not count for 'should the Revelations' thing be available."/>
+	
+	<attribute key="required_unlock_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this unlock is fully invented." />
+	<attribute key="required_unlock_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this unlock is fully invented." />
+	<attribute key="required_unlock_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this unlock is fully invented." />
+	<attribute key="blocked_by_unlock_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this unlock has already been invented OR readied." />
+	<attribute key="blocked_by_unlock_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this unlock has already been invented OR readied." />
+	<attribute key="blocked_by_unlock_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this unlock has already been invented OR readied." />
+
+	<attribute key="required_city_flag_1" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this city flag is true." />
+	<attribute key="required_city_flag_2" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this city flag is true." />
+	<attribute key="required_city_flag_3" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this city flag is true." />
+	<attribute key="blocked_by_city_flag_1" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this city flag is already true." />
+	<attribute key="blocked_by_city_flag_2" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this city flag is already true." />
+	<attribute key="blocked_by_city_flag_3" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this city flag is already true." />
+	
+	<attribute key="required_meta_flag_1" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid until this meta flag is true." />
+
+	<attribute key="blocked_if_project_ever_started_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this project was ever started in this timeline." />
+	<attribute key="blocked_if_project_ever_started_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid if this project was ever started in this timeline." />
+	
+	<attribute key="required_project_active_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid unless this project is active at the moment." />
+	<attribute key="required_project_active_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid unless this project is active at the moment." />
+	<attribute key="required_project_active_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid unless this project is active at the moment." />
+	<attribute key="required_project_complete_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid unless this project is already completed in some fashion." />
+	<attribute key="required_project_complete_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid unless this project is already completed in some fashion." />
+	<attribute key="required_project_complete_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid unless this project is already completed in some fashion." />
+
+	<attribute key="required_project_ever_started_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid unless this project has started at some point in the past. It might be active now or complete, we don't care." />
+	<attribute key="required_project_ever_started_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid unless this project has started at some point in the past. It might be active now or complete, we don't care." />
+	<attribute key="required_project_ever_started_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If specified, this contemplation option will not be valid unless this project has started at some point in the past. It might be active now or complete, we don't care." />
+
+	<attribute key="required_project_complete_skipped_if_chapter_at_least" type="int-textbox" is_required="false" min="1" max="99" default="99" content_width_px="80"
+		tooltip="If this is set less than or equal to the current chapter, then all of the required_project_complete entries are skipped." />
+	<attribute key="required_project_ever_started_skipped_if_chapter_at_least" type="int-textbox" is_required="false" min="1" max="99" default="99" content_width_px="80"
+		tooltip="If this is set less than or equal to the current chapter, then all of the required_project_ever_started entries are skipped." />
+	
+	<attribute key="spawns_at_machine_job_tag" type="node-dropdown" node_source="MachineJobTag" content_width_px="200" is_required="false"
+		tooltip="If specified, then this will show up at jobs of that tag." />
+	<attribute key="spawns_at_building_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="false"
+		tooltip="If specified, then this will show up at buildings of that tag." />
+
+	<attribute key="spawn_poi_tag_target_limiter" type="node-dropdown" node_source="POITag" content_width_px="200" is_required="false"
+		tooltip="If specified, then any buildings must also be in a poi of this type. Only works when using spawns_at_building_tag." />
+	<attribute key="spawn_district_tag_target_limiter" type="node-dropdown" node_source="DistrictTag" content_width_px="200" is_required="false"
+		tooltip="If specified, then any buildings must also be in a district of this type. Only works when using spawns_at_building_tag." />
+	<attribute key="spawn_preferred_poi_cohort_owner_tag" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+		tooltip="If specified, then it will choose a POI owned by a cohort with this tag if at all possible. If not, then it will just ignore the POI owner." />
+
+	<attribute key="is_related_to_chapter_one_main_path" type="bool" default="false"
+		tooltip="If this is true, then this is considered related to the main path of chapter one.  If it's not this or related to a goal, then it is a piece of side content."/>
+	
+	<attribute key="primary_path_for_goals" type="node-list" is_required="false" node_source="TimelineGoal" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="A hint for the player as to which timeline goals this is part of the primary path for." />
+	<attribute key="one_path_to_goals" type="node-list" is_required="false" node_source="TimelineGoal" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="A hint for the player as to which timeline goals this can lead to." />
+	<attribute key="can_alter_goals" type="node-list" is_required="false" node_source="TimelineGoal" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="A hint for the player as to which timeline goals this can alter in some way." />
+
+	<attribute key="collections" type="node-list" node_source="ContemplationCollection" content_width_px="300" is_required="true" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What contemplation collections is this entry part of?" />
+	
+</root>

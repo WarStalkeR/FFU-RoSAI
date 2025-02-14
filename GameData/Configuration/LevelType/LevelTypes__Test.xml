@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--These level types are all defining chunk types, which are like the tiles that fit together on the main map.
+		Various other level types define things that fill in these chunks, or are for interiors, etc.-->
+
+	<level_type id="ExampleEnvironment" display_name="Example Environment" size_x="3000" size_z="3000" is_used_in_game="false" subfolder="NonGame/Example" is_default="true"
+		description="The most permissive (largest) level type. This is just for testing and experimenting; nothing here is actually directly used in the game."
+		tags="Outdoor">
+	</level_type>
+	
+	<level_type id="TestEnvironment" display_name="Test Environment" size_x="3000" size_z="3000" is_used_in_game="false" subfolder="NonGame/Test"
+		description="Large environments for testing specific things we may need to on an ongoing basis."
+		tags="Outdoor,Indoor">
+	</level_type>
+	
+</root>

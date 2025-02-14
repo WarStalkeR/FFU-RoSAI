@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <setting id="EnableSim" category="LevelEditorSim" display_name="Enable Sim" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="Whether to run any sim code. If you aren't Badger, you probably should just leave this off for the time being" />
+
+  <setting id="ShowAdjacentPlaceablesOnClick" category="LevelEditorSim" display_name="Show Adjacent Placeables" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="When you click on a placeable, highlight the lanes on adjacent placeables. If you click multiple rows, they will all try to show the lanes. To stop them from showing, click on a non-road." />
+
+  <setting id="RotateThroughShowingDrivingRoads" category="LevelEditorSim" display_name="Show Driving Roads" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="The game will show all the driving roads, in an alternating fashion" />
+
+  <setting id="RotateThroughShowingWalkingRoads" category="LevelEditorSim" display_name="Show Walking Roads" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="The game will show all the walking roads, in an alternating fashion" />
+
+  <setting id="RotateThroughShowingTrainRoads" category="LevelEditorSim" display_name="Show Train Roads" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="The game will show all the train roads, in an alternating fashion" />
+
+  <setting id="MobileSimEntityRandomWalk" category="LevelEditorSim" display_name="MobileSimEntity Random Walk" type="BoolToggle" default_bool="false"
+			skip_all_localization_on_node="true"
+			  scope="LevelEditorOnly" description="Create a SimMobileEntity and move it randomly around the map" />
+
+
+</root>

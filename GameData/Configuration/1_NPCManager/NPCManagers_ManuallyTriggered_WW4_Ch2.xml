@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--**************************************************************Dagekon WW4**************************************************************-->
+
+	<npc_manager id="Man_DagekonWW4A" cohort_tag_a="Dagekon" cohort_tag_b="FederatedCorporation" debug_log_manager_details="false">
+
+		<unit id="R" to_spawn="ExoCorpRaider" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="T" to_spawn="ExoCorpTrooper" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="M" to_spawn="MechDiplomat" stance_to_start_in="ExoCorpMechInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="16" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="SecForceDefendingArea"
+			cohort_should_be_cohort_b="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="3.2" max_squad_size_multiplier="7" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_DagekonWW4B" cohort_tag_a="Dagekon" cohort_tag_b="FederatedCorporation" debug_log_manager_details="false">
+
+		<unit id="T" to_spawn="ExoCorpTrooper" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="R" to_spawn="ExoCorpRaider" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="M" to_spawn="MechDiplomat" stance_to_start_in="ExoCorpMechInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="16" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitarySecuringArea_NoChase"
+			cohort_should_be_cohort_b="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_DagekonWW4C" cohort_tag_a="Dagekon" cohort_tag_b="VorsiberEnforcement" debug_log_manager_details="false">
+
+		<unit id="P" to_spawn="ExoCorpMilUnit" stance_to_start_in="ExoCorpMilUnitInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="T" to_spawn="ExoCorpTrooper" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="M" to_spawn="MechDiplomat" stance_to_start_in="ExoCorpMechInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="16" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="VorsiberSoldier" stance_to_start_in="MilitarySecuringArea_NoChase"
+			cohort_should_be_cohort_b="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1.2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<!--**************************************************************TheUIH WW4**************************************************************-->
+
+	<npc_manager id="Man_UIHWW4A" cohort_tag_a="UniversalIslanderHoldings" cohort_tag_b="FederatedCorporation" debug_log_manager_details="false">
+
+		<unit id="R" to_spawn="ExoCorpRaider" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="T" to_spawn="UIHRaptor" stance_to_start_in="ExoCorpRaptorHunting"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="M" to_spawn="MechPanther" stance_to_start_in="ExoCorpMechInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="16" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="SecForceDefendingArea"
+			cohort_should_be_cohort_b="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="3.2" max_squad_size_multiplier="7" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_UIHWW4B" cohort_tag_a="UniversalIslanderHoldings" cohort_tag_b="FederatedCorporation" debug_log_manager_details="false">
+
+		<unit id="T" to_spawn="ExoCorpTrooper" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="R" to_spawn="UIHRaptor" stance_to_start_in="ExoCorpRaptorHunting"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="5" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="M" to_spawn="MechPanther" stance_to_start_in="ExoCorpMechInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="16" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitarySecuringArea_NoChase"
+			cohort_should_be_cohort_b="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_UIHWW4C" cohort_tag_a="UniversalIslanderHoldings" cohort_tag_b="VorsiberEnforcement" debug_log_manager_details="false">
+
+		<unit id="P" to_spawn="UIHRaptor" stance_to_start_in="ExoCorpRaptorHunting"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="5" max_to_spawn="9" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="T" to_spawn="ExoCorpTrooper" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="M" to_spawn="MechPanther" stance_to_start_in="ExoCorpMechInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2" units_warp_out_after_turns="16" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="VorsiberSoldier" stance_to_start_in="MilitarySecuringArea_NoChase"
+			cohort_should_be_cohort_b="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1.2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+	
+	<!--**************************************************************Next**************************************************************-->
+
+</root>

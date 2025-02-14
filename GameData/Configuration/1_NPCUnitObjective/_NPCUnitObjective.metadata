@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="npc_objective">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the objective logic is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the objective logic in the specified external dll."/>
+
+	<attribute key="description" type="existing-override" is_required="false" />
+
+	<attribute key="popup_text_on_complete" type="string" maxlength="200" content_width_px="200" is_required="true" is_localized="true" can_localization_merge="true"
+		tooltip="What text should pop up out of the unit when it's done with this objective?"/>
+	<attribute key="popup_text_scale" type="float-textbox" min="0.01" max="10" default="0.8" content_width_px="50"
+		is_required="true" tooltip="The default is 0.8, but you can adjust it up or down if need be."/>
+	<attribute key="popup_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be for the emission of the popup text."/>
+	<attribute key="popup_color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="true" tooltip="HDR intensity to make the color glow, if we want to have that."/>
+	
+	<attribute key="on_complete" type="node-dropdown" is_required="false" node_source="VisParticleAndSoundUsage" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Optional. If specified, then a sfx and possibly vfx will play on completion, and the camera will pan over to look at this unit." />
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be for the emission of the icon when this objective is on a unit."/>
+	<attribute key="icon_color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="true" tooltip="HDR intensity to make the color glow, if we want to have that."/>
+	<attribute key="icon_scale" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="true" tooltip="The default is 1, but you can adjust it up or down if need be."/>
+
+	<attribute key="required_distance_xz_from_building_objective" type="float-textbox" min="2" max="10" default="2" content_width_px="50"
+		is_required="false" tooltip="The default is 2, but for some larger units in certain circumstances, the range may need to be larger than that.
+This is how close the unit has to be to its building objective to be able to do its work."/>
+
+	<attribute key="causes_unit_to_always_be_visible_as_if_out_of_fog_of_war" type="bool" default="false"
+		tooltip="If true, units in this objective will always be visible to players as if they were not in the fog of war." />
+	
+	<attribute key="disband_next_turn_after_performing_objective" type="bool" default="false"
+		tooltip="If true, the unit will disband at the start of the next turn after finishing this objective." />
+	<attribute key="disband_as_soon_as_not_selected_after_performing_objective" type="bool" default="false"
+		tooltip="If true, the unit will disband as soon as it is not selected after finishing this objective." />
+	<attribute key="disband_instantly_after_performing_objective" type="bool" default="false"
+		tooltip="If true, the unit will disband instantly after finishing this objective." />
+
+	<attribute key="extra_code_to_run_on_objective_complete" type="node-dropdown" is_required="false" node_source="ExtraCodeHandler" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then some extra code will be run on objective completion. Optional." />
+	
+	<attribute key="swarm_to_apply_to_building" type="node-dropdown" is_required="false" node_source="Swarm" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then the following swarm will be applied to the building on completion. Optional." />
+	<attribute key="apply_squad_count_to_swarm_spread" type="bool" default="false"
+		tooltip="If true, then the current squad size will be added to the swarm spread being set, if there is one. If false, it will just add 1." />
+
+	<attribute key="min_percentage_to_kill_at_building_on_swarm_release" type="int-textbox" is_required="false" min="0" max="100" default="0" content_width_px="80"
+		tooltip="If the swarm hits a building, does it kill some percentage of the people there?  If so, what is the lower bound of that?" />
+	<attribute key="max_percentage_to_kill_at_building_on_swarm_release" type="int-textbox" is_required="false" min="0" max="100" default="0" content_width_px="80"
+		tooltip="If the swarm hits a building, does it kill some percentage of the people there?  If so, what is the upper bound of that?" />
+	<attribute key="statistic_to_use_for_swarm_kills" type="node-dropdown" is_required="false" node_source="CityStatistic" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then if the swarm kills people, it logs that to this statistic." />
+	
+	<attribute key="points_required_to_complete_objective" type="int-textbox" is_required="false" min="0" max="100000" default="1" content_width_px="80"
+		tooltip="If this is greater than zero, then the unit performing this objective will need to generate some number of points from their stats in order to complete this objective." />
+	<attribute key="min_points_per_turn_from_actors" type="int-textbox" is_required="false" min="1" max="100000" default="1" content_width_px="80"
+		tooltip="This is a floor of how many points per turn are generated.
+If a building is really tough or an npc is really terrible, make sure that there are still a certain number of points per turn or they will be doing it forever!" />
+
+	<attribute key="do_reinforcement_for_targeted_poi_when_completed" type="bool" default="false"
+		tooltip="If true, and the targeted building is in a POI, that POI will get a reinforcement event on the completion of this objective." />
+	<attribute key="log_completion_to_event_log" type="bool" default="false"
+		tooltip="If true, then log the completion of this objective to the event log. Normally false, as a lot of background stuff we don't care about." />
+	<attribute key="mission_progress_when_completed" type="int-textbox" min="-1000" max="10000" default="0" content_width_px="50" is_required="false"
+		tooltip="If set to a non-zero, and the unit is related to an mission, then how much progress is changed on the mission when this objective is completed?"/>
+	
+	<attribute key="objective_style" type="string-dropdown" is_required="true" default="None" content_width_px="200"
+		tooltip="The general style of this objective.">
+		<option>None</option>
+		<option>RelentlesslyAttackUnit</option>
+		<option>CustomActionAgainstUnit</option>
+		<option>CustomActionAgainstBuilding</option>
+		<option>CustomActionAgainstMachineStructure</option>
+		<option>CustomActionAgainstSwarm</option>
+		<option>PointsCollectionAgainstUnit</option>
+		<option>PointsCollectionAgainstBuilding</option>
+		<option>PointsCollectionAgainstMachineStructure</option>
+		<option>PointsCollectionAgainstSwarm</option>
+		<option>CustomActionInPlace</option>
+		<option>PointsCollectionInPlace</option>
+	</attribute>
+
+	<attribute key="switch_to_stance_when_objective_complete" type="node-dropdown" is_required="false" node_source="NPCUnitStance" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then the unit will switch to another stance after the objective has been completed. Optional." />
+
+	<sub_node id="acting_actor_data_change">
+		<attribute key="data_type" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What kind of data is being changed on the acting actor of the objective, after the objective is complete?" />
+		<attribute key="value" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="How much will the specified data type be changed by?  Set to 0 to do nothing." />
+	</sub_node>
+
+	<sub_node id="acting_actor_accumulator_change">
+		<attribute key="accumulator_type" type="node-dropdown" is_required="true" node_source="NPCUnitAccumulator" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What kind of accumulator is being changed on the acting actor of the objective, after the objective is complete?" />
+		<attribute key="min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="How much will the specified accumulator change by, at the smallest?  If the smallest is larger than the max, then the smallest is used." />
+		<attribute key="max" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="How much will the specified accumulator change by, at the largest?" />
+	</sub_node>
+
+	<sub_node id="target_actor_data_change">
+		<attribute key="data_type" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What kind of data is being changed on the target actor of the objective, after the objective is complete?  Invalid when there is no target actor!" />
+		<attribute key="value" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="How much will the specified data type be changed by?  Set to 0 to do nothing." />
+	</sub_node>
+
+	<sub_node id="point_change_per_turn_per_actor_data">
+		<attribute key="data_type" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="Which type of actor data from the acting npc changes the point generation amount?" />
+		<attribute key="added_per" type="float-textbox" is_required="true" min="-1000" max="1000" default="0" content_width_px="80"
+			tooltip="The points generation will be increased by this amount if positive, or lowered by if negative. Typically positive numbers are required here." />
+	</sub_node>
+
+	<sub_node id="point_change_per_turn_per_location_data">
+		<attribute key="data_type" type="node-dropdown" is_required="true" node_source="LocationDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="Which type of location data from the building location changes the point generation amount?" />
+		<attribute key="added_per" type="float-textbox" is_required="true" min="-1000" max="1000" default="0" content_width_px="80"
+			tooltip="The points generation will be increased by this amount if positive, or lowered by if negative. Usually use negative to make something harder for an npc." />
+	</sub_node>
+
+	<sub_node id="math_int">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="int_min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="int_max" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<sub_node id="math_float">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+	
+</root>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="vis_drawing_object_tag">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="complain_if_does_not_have_at_least_this_many_entries" type="int-textbox" min="0" max="100" default="0" content_width_px="300" is_required="false"
+		tooltip="Self-checking code in the game will complain if there are not at least this many drawing objects or lod drawing objects in this tag."/>
+	
+</root>

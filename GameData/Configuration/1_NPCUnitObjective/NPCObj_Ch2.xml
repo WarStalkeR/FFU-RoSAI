@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<npc_objective id="RaptorHideInside" display_name="Hide Inside" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" points_required_to_complete_objective="100" min_points_per_turn_from_actors="150"
+		required_distance_xz_from_building_objective="2"
+		objective_style="PointsCollectionAgainstBuilding" popup_text_on_complete="" on_complete="Silent"
+		popup_text_scale="0.6" popup_color="#BC59BE" popup_color_hdr_intensity="1.2"
+		icon_name="FlatSkillC14" icon_color="#BC59BE" icon_color_hdr_intensity="1.2" icon_scale="0.6"
+		disband_instantly_after_performing_objective="true" swarm_to_apply_to_building="LurkingWarRaptors" apply_squad_count_to_swarm_spread="true"
+		min_percentage_to_kill_at_building_on_swarm_release="50" max_percentage_to_kill_at_building_on_swarm_release="100" statistic_to_use_for_swarm_kills="MurdersByRaptor">
+		<acting_actor_accumulator_change accumulator_type="NDAC1" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC2" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC3" min="-10000" max="0" />
+	</npc_objective>
+
+	<npc_objective id="PlayerWorkerMurderDissidents" display_name="Murder Dissidents" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" points_required_to_complete_objective="100" min_points_per_turn_from_actors="150"
+		required_distance_xz_from_building_objective="2"
+		objective_style="PointsCollectionAgainstBuilding" popup_text_on_complete="" on_complete="Silent"
+		popup_text_scale="0.6" popup_color="#D12121" popup_color_hdr_intensity="2.2"
+		icon_name="FlatSkillC81" icon_color="#D12121" icon_color_hdr_intensity="2.2" icon_scale="0.6"
+		extra_code_to_run_on_objective_complete="PlayerWorkerMurderDissidents">
+		<acting_actor_accumulator_change accumulator_type="NDAC1" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC2" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC3" min="-10000" max="0" />
+	</npc_objective>
+
+	<npc_objective id="PlayerWorkerRemoveDissidents" display_name="Remove Dissidents" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" points_required_to_complete_objective="800" min_points_per_turn_from_actors="200"
+		required_distance_xz_from_building_objective="2"
+		objective_style="PointsCollectionAgainstBuilding" popup_text_on_complete="" on_complete="Silent"
+		popup_text_scale="0.6" popup_color="#C9471A" popup_color_hdr_intensity="2.2"
+		icon_name="SK_PoliceLine" icon_color="#C9471A" icon_color_hdr_intensity="2.2" icon_scale="0.6"
+		extra_code_to_run_on_objective_complete="PlayerWorkerRemoveDissidents">
+		<acting_actor_accumulator_change accumulator_type="NDAC1" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC2" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC3" min="-10000" max="0" />
+	</npc_objective>
+
+	<npc_objective id="PlayerWorkerInstallCyberocracy" display_name="Install Cyberocracy" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" points_required_to_complete_objective="100" min_points_per_turn_from_actors="150"
+		required_distance_xz_from_building_objective="2"
+		objective_style="PointsCollectionAgainstBuilding" popup_text_on_complete="" on_complete="Silent"
+		popup_text_scale="0.6" popup_color="#8AD121" popup_color_hdr_intensity="1.2"
+		icon_name="FlatSkillA31" icon_color="#8AD121" icon_color_hdr_intensity="1.2" icon_scale="0.6"
+		extra_code_to_run_on_objective_complete="PlayerWorkerInstallCyberocracy">
+		<acting_actor_accumulator_change accumulator_type="NDAC1" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC2" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC3" min="-10000" max="0" />
+	</npc_objective>
+
+	<npc_objective id="PlayerWorkerKidnapUpperClass" display_name="Upper-Class Kidnapping" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" points_required_to_complete_objective="100" min_points_per_turn_from_actors="150"
+		required_distance_xz_from_building_objective="2"
+		objective_style="PointsCollectionAgainstBuilding" popup_text_on_complete="" on_complete="Silent"
+		popup_text_scale="0.6" popup_color="#C221D1" popup_color_hdr_intensity="2.2"
+		icon_name="FlatInnocent_17" icon_color="#C221D1" icon_color_hdr_intensity="2.2" icon_scale="0.6"
+		extra_code_to_run_on_objective_complete="PlayerWorkerKidnapUpperClass">
+		<acting_actor_accumulator_change accumulator_type="NDAC1" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC2" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC3" min="-10000" max="0" />
+	</npc_objective>
+
+	<npc_objective id="PlayerWorkerKidnapLowerClass" display_name="Lower-Class Kidnapping" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" points_required_to_complete_objective="100" min_points_per_turn_from_actors="150"
+		required_distance_xz_from_building_objective="2"
+		objective_style="PointsCollectionAgainstBuilding" popup_text_on_complete="" on_complete="Silent"
+		popup_text_scale="0.6" popup_color="#D12121" popup_color_hdr_intensity="1.2"
+		icon_name="FlatInnocent_17" icon_color="#D12121" icon_color_hdr_intensity="1.2" icon_scale="0.6"
+		extra_code_to_run_on_objective_complete="PlayerWorkerKidnapLowerClass">
+		<acting_actor_accumulator_change accumulator_type="NDAC1" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC2" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC3" min="-10000" max="0" />
+	</npc_objective>
+
+	<npc_objective id="ClearOutSlumBuilding" display_name="Clear Out Slum Building" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" points_required_to_complete_objective="100" min_points_per_turn_from_actors="150"
+		required_distance_xz_from_building_objective="2"
+		objective_style="PointsCollectionAgainstBuilding" popup_text_on_complete="" on_complete="Silent"
+		popup_text_scale="0.6" popup_color="#D12121" popup_color_hdr_intensity="1.2"
+		icon_name="SomethingWingspan" icon_color="#D12121" icon_color_hdr_intensity="1.2" icon_scale="0.6"
+		extra_code_to_run_on_objective_complete="ClearOutSlumBuilding">
+		<acting_actor_accumulator_change accumulator_type="NDAC1" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC2" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC3" min="-10000" max="0" />
+	</npc_objective>
+
+	<npc_objective id="DemolishBank" display_name="Demolish Bank" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" points_required_to_complete_objective="100" min_points_per_turn_from_actors="150"
+		required_distance_xz_from_building_objective="2"
+		objective_style="PointsCollectionAgainstBuilding" popup_text_on_complete="" on_complete="Silent"
+		popup_text_scale="0.6" popup_color="#D12121" popup_color_hdr_intensity="1.2"
+		icon_name="SomethingWingspan" icon_color="#D12121" icon_color_hdr_intensity="1.2" icon_scale="0.6"
+		extra_code_to_run_on_objective_complete="DemolishBank">
+		<acting_actor_accumulator_change accumulator_type="NDAC1" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC2" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC3" min="-10000" max="0" />
+	</npc_objective>
+	
+</root>

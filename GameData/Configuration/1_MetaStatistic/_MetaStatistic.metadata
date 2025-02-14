@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="meta_statistic">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="should_be_invisible_to_players" type="bool" default="false"
+		tooltip="If this is true, then this statistic will never be shown to players, and thus should have no name or description."/>
+
+	<attribute key="lang_key_for_prefix" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is the format for the prefix of this statistic, optionally." />
+	<attribute key="lang_key_for_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is the format for the name of this statistic." />
+	<attribute key="lang_key_for_description" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is the format for the description of this statistic." />
+	<attribute key="lang_key_for_insert_0" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that has the name of the first kind of object we want to refer to in this description and name. Optional." />
+	<attribute key="lang_key_for_insert_1" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that has the name of the second kind of object we want to refer to in this description and name. Optional." />
+	<attribute key="lang_key_for_insert_2" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that has the name of the third kind of object we want to refer to in this description and name. Optional." />
+	
+</root>

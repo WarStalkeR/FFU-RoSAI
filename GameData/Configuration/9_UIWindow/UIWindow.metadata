@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="window">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="The code for the window controller is in what dll?"/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="The fully qualified name for the type of the window controller in the specified dll."/>
+
+	<attribute key="x_align" type="string-dropdown" default="MinimumOfScreen" content_width_px="200"
+		tooltip="MinimumOfScreen means that this is left-aligned, MaximumOfScreen means right-aligned, otherwise it is centered.">
+		<option>MinimumOfScreen</option>
+		<option>MiddleOfScreen</option>
+		<option>MaximumOfScreen</option>
+	</attribute>
+
+	<attribute key="y_align" type="string-dropdown" default="MinimumOfScreen" content_width_px="200"
+		tooltip="MinimumOfScreen means that this is top-aligned, MaximumOfScreen means bottom-aligned, otherwise it is centered.">
+		<option>MinimumOfScreen</option>
+		<option>MiddleOfScreen</option>
+		<option>MaximumOfScreen</option>
+	</attribute>
+
+	<attribute key="x_align_flips_based_on_left_primacy" type="bool" default="false"
+		tooltip="If the game has been configured to draw certain things on the left rather than the right, is this one of those things that flips sides?"/>
+
+	<attribute key="x" type="float-textbox" min="-999999" max="999999" default="0" content_width_px="300" 
+		tooltip="The number of faux-pixels offset from the default x position that is described in x_align."/>
+
+	<attribute key="y" type="float-textbox" min="-999999" max="999999" default="0" content_width_px="300"
+		tooltip="The number of faux-pixels offset from the default y position that is described in y_align."/>
+
+	<attribute key="width" type="float-textbox" min="-999999" max="999999" default="0" content_width_px="300"
+		tooltip="The number of faux-pixels in width that this canvas is said to take up. This may safely be less than or greater than the width of its contents without direct ill effects."/>
+
+	<attribute key="height" type="float-textbox" min="-999999" max="999999" default="0" content_width_px="300"
+		tooltip="The number of faux-pixels in height that this canvas is said to take up. This may safely be less than or greater than the height of its contents without direct ill effects."/>
+	
+	<attribute key="canvas_sort_order" type="int-textbox" min="0" max="9000" content_width_px="150" is_required="true"
+		tooltip="This is super critical!  This is the primary way that windows are visually sorted from front to back. Things with a lower number are more towards the back ('lower' than their peers in a z index sense)."/>
+	
+	<attribute key="canvas_z_offset" type="float-textbox" min="-10" max="10" default="0" content_width_px="300"
+		tooltip="Generally this should remain zero. Making it higher than 0 will make it closer to the camera than usual ('higher' in priority, drawn later, etc).
+		
+In some tooltips and modal popups, this is used as 0.01, but mainly other places this is not needed."/>
+
+	<attribute key="courtesy_of" type="string" maxlength="200" content_width_px="400"
+		tooltip="Unused but we desire to have it in the xml, when someone mods in a window in particular."/>
+
+	<attribute key="tabs" type="string" maxlength="600" content_width_px="600" linebreak_before="Always"
+		tooltip="This is a list of tabs for the window, which can be used by the program to do... things. This may not actually be active in the codebase now. They are meant to be a comma-separated list."/>	
+
+	<!--Element nodes are a sub-node of the windows nodes, and they have their own attributes. This is all defined below.
+		*************************************************************************************************************** -->
+
+	<sub_node id="element">
+
+		<conditional id="ElementHasAController">
+			<and_group>
+				<type attribute="is_intentionally_without_controller" condition_type="NotEqual" value="true" />
+			</and_group>
+		</conditional>
+
+		<attribute key="prefab_lookup_name" type="node-dropdown" node_source="UIPrefab" content_width_px="300" is_required="true"
+			tooltip="Each element is assigning an existing ui prefab into this ui window. So which ui prefab are you assigning in?" />
+
+		<attribute key="is_intentionally_without_controller" type="bool" default="false"
+			tooltip="If this does not have a code controller attached, is that on purpose?  If you want it to not error, then this needs to be true."/>
+
+		<attribute key="type_name" type="string" maxlength="300" content_width_px="300" is_required="true" only_exists_if_conditional_passes="ElementHasAController"
+			tooltip="If this element is not intentionally without a controller, then a type name must be specified here to link this element to a controller class that is within the larger window controller class (as a subclass)."/>
+
+		<attribute key="x" type="float-textbox" min="-999999" max="999999" default="0" content_width_px="300"
+			tooltip="The position in faux pixels from the left of the canvas."/>
+
+		<attribute key="y" type="float-textbox" min="-999999" max="999999" default="0" content_width_px="300"
+			tooltip="The position in faux pixels from the top of the canvas."/>
+
+		<attribute key="width" type="float-textbox" min="-999999" max="999999" is_required="true" content_width_px="300"
+			tooltip="The number of faux-pixels in width that this element will be."/>
+
+		<attribute key="height" type="float-textbox" min="-999999" max="999999" is_required="true" content_width_px="300"
+			tooltip="The number of faux-pixels in height that this element will be."/>
+
+		<attribute key="text_alignment" type="string-dropdown" default="Left" content_width_px="200"
+			tooltip="What is the text alignment of text within this element?  There are... a lot of options.">
+			<option>TopLeft</option>
+			<option>Top</option>
+			<option>TopRight</option>
+			<option>TopJustified</option>
+			<option>TopFlush</option>
+			<option>TopGeoAligned</option>
+			<option>Left</option>
+			<option>Center</option>
+			<option>Right</option>
+			<option>Justified</option>
+			<option>Flush</option>
+			<option>CenterGeoAligned</option>
+			<option>BottomLeft</option>
+			<option>Bottom</option>
+			<option>BottomRight</option>
+			<option>BottomJustified</option>
+			<option>BottomFlush</option>
+			<option>BottomGeoAligned</option>
+			<option>BaselineLeft</option>
+			<option>Baseline</option>
+			<option>BaselineRight</option>
+			<option>BaselineJustified</option>
+			<option>BaselineFlush</option>
+			<option>BaselineGeoAligned</option>
+			<option>MidlineLeft</option>
+			<option>Midline</option>
+			<option>MidlineRight</option>
+			<option>MidlineJustified</option>
+			<option>MidlineFlush</option>
+			<option>MidlineGeoAligned</option>
+			<option>CaplineLeft</option>
+			<option>Capline</option>
+			<option>CaplineRight</option>
+			<option>CaplineJustified</option>
+			<option>CaplineFlush</option>
+			<option>CaplineGeoAligned</option>
+			<option>Converted</option>
+		</attribute>
+
+		<attribute key="font_size" type="float-textbox" min="3" max="80" default="15" content_width_px="50"
+			tooltip="The general font size (in points) that this element should use."/>
+		
+		<attribute key="sub_item_width" type="float-textbox" min="-999999" max="999999" content_width_px="80"
+			tooltip="The number of faux-pixels in width that sub-items of this element will be. In AI War 2, this corresponds to button_width."/>
+
+		<attribute key="sub_item_height" type="float-textbox" min="-999999" max="999999" content_width_px="80"
+			tooltip="The number of faux-pixels in height that sub-items of this element will be. In AI War 2, this corresponds to button_height."/>
+
+		<attribute key="click_sound" type="node-dropdown" node_source="SFXItem" content_width_px="300" default="ButtonNormal"
+			tooltip="If a normal click happens on this element, what sound does it make?" />
+
+		<attribute key="click_denied_sound" type="node-dropdown" node_source="SFXItem" content_width_px="300" default="ButtonDenied"
+			tooltip="If a denied click happens on this element, what sound does it make?" />
+
+		<attribute key="tab" type="string" maxlength="300" content_width_px="300"
+			tooltip="In the event that tabs are defined as part of this window (maybe not a great idea), which tab does this control belong to?"/>
+		
+		<attribute key="courtesy_of" type="string" maxlength="200" content_width_px="400"
+			tooltip="Unused but we desire to have it in the xml, for elements in a window, not just the window itself."/>
+		
+	</sub_node>
+	
+</root>

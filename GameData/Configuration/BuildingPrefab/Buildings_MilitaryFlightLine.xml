@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_prefab id="FlightLineHardstandA" type="MilitaryAirBuilding" display_name="Flight Line Hardstand A"
+		path_to_placeable="Assets/__Library/Military/Flight Line/Flight Line Hardstand A.prefab">
+	</building_prefab>
+
+	<building_prefab id="FlightTowerA" type="MilitaryFlightTower" display_name="Flight Tower A"
+		path_to_placeable="Assets/__Library/Military/Flight Line/Flight Tower A.prefab">
+		<floors_group min="-2" max="-1" floor_size="0.7,0.35,0.7"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.35,0.7"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="2" max="3" floor_size="0.5,0.35,0.5"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="4" max="4" floor_size="0.6,0.5,0.6"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="4"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="6"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="6"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="4"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="6"/>
+		<building_marker prefab="Skylight" offset="0.07,0,0"/>
+	</building_prefab>
+
+	<building_prefab id="HangarC" type="MilitaryAirHangar" display_name="Hangar C"
+		path_to_placeable="Assets/__Library/Military/Flight Line/Hangar C.prefab">
+		<floors_group min="0" max="0" floor_size="1.9,0.8,1.9"  percentage_work_space="5" percentage_storage_space="95"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="4"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="2"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="12"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="5"/>
+		<building_marker prefab="RoofLine" offset="0,0,0"/>
+	</building_prefab>
+
+	<building_prefab id="TarmacDemarcationBoxA" type="MilitaryAirBuilding" display_name="Tarmac Demarcation Box A"
+		path_to_placeable="Assets/__Library/Military/Flight Line/Tarmac Demarcation Box A.prefab">
+	</building_prefab>
+	
+</root>

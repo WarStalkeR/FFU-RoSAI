@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<stance id="HolyMissionAgainstYou" display_name="Holy Mission"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="What you are doing is an abomination, and you must be stopped."
+		icon_name="HM_ShapeCross" icon_color="#0C5FA3" icon_color_hdr_intensity="2.2" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true" will_hold_fire_against_regular_machine_structures="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="false"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterThreats" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterThreatsNearMission" />
+		<action_consideration id="RunAfterOutcasts" sort_order="300" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+		<action_consideration id="RunAfterMachineStructuresFallback" sort_order="500" chance_of_attempting="100" action_to_attempt="RunAfterMachineStructures" />
+	</stance>
+	
+</root>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="countdown_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="false" />
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+
+	<attribute key="turns_to_last" type="int-textbox" min="1" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="How many turns this countdown will last."/>
+	
+	<attribute key="per_turn_sound_optional" type="node-dropdown" node_source="VisParticleAndSoundUsage" content_width_px="130" is_required="false"
+		tooltip="What sound effect to play when the turn changes but it's not the last turn. Optional." />
+	<attribute key="countdown_complete_sound_optional" type="node-dropdown" node_source="VisParticleAndSoundUsage" content_width_px="130" is_required="false"
+		tooltip="What sound effect to play when the turn changes and it IS the end of the countdown. Optional." />
+
+	<attribute key="alert_color_style" type="string-dropdown" is_required="true" default="Normal" content_width_px="200"
+		tooltip="How the visibility of the unit making the choice is affected by making this choice.">
+		<option>Low</option>
+		<option>Normal</option>
+		<option>MidWarning</option>
+		<option>HighWarning</option>
+		<option>Crisis</option>
+	</attribute>
+
+	<attribute key="auto_marked_as_complete_if_skipping_chapter_zero" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically get marked as complete when skipping chapter zero?" />
+	<attribute key="auto_marked_as_complete_if_skipping_chapter_one" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically get marked as complete when skipping chapter one?" />
+
+	<attribute key="auto_marked_as_complete_if_city_flag_1_tripped" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+		tooltip="ID of a flag in the city. If this flag is true, then automatically mark this countdown as complete right away." />
+	<attribute key="auto_marked_as_complete_if_city_flag_2_tripped" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+		tooltip="ID of a flag in the city. If this flag is true, then automatically mark this countdown as complete right away." />
+
+	<!--Below this point are the things that happen once the countdown is completed.
+	***************************************************************-->
+
+	<attribute key="project_to_start_on_start_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project when it starts, which project does it start?" />
+	<attribute key="project_to_start_on_start_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project when it starts, which project does it start?" />
+	<attribute key="project_to_start_on_start_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project when it starts, which project does it start?" />
+
+	<attribute key="project_to_start_on_complete_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project on completion, which project does it start?" />
+	<attribute key="project_to_start_on_complete_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project on completion, which project does it start?" />
+	<attribute key="project_to_start_on_complete_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project on completion, which project does it start?" />
+	
+	<attribute key="mission_to_start" type="node-dropdown" node_source="NPCMission" content_width_px="200" is_required="false"
+		tooltip="If this choice is chosen, then what mission gets spawned at this same building? Optional." />
+
+	<attribute key="tech_idea_to_ready1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this choice is chosen, then what unlock becomes ready to invent? Optional." />
+	<attribute key="tech_idea_to_ready2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this choice is chosen, then what unlock becomes ready to invent? Optional." />
+	<attribute key="tech_idea_to_ready3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this choice is chosen, then what unlock becomes ready to invent? Optional." />
+	<attribute key="tech_idea_inspiration_type" type="node-dropdown" node_source="UnlockInspirationType" content_width_px="200" is_required="false"
+		tooltip="If there is a tech idea to ready, then this becomes required. This states why this inspiration came about. Otherwise optional." />
+
+	<attribute key="swarm_to_start_or_spread" type="node-dropdown" node_source="Swarm" content_width_px="200" is_required="false"
+		tooltip="If this outcome is what happens, then what swarm either starts at this building, or spreads to this building?  Optional." />
+
+	<attribute key="countdown_to_start" type="node-dropdown" node_source="OtherCountdownType" content_width_px="200" is_required="false"
+		tooltip="This countdown will be started right away, unless it's already in progress." />
+
+	<attribute key="meta_flag_to_trip_1" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+		tooltip="This meta flag will be tripped to true." />
+	<attribute key="meta_flag_to_trip_2" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+		tooltip="This meta flag will be tripped to true." />
+	<attribute key="meta_flag_to_trip_3" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="false"
+		tooltip="This meta flag will be tripped to true." />
+
+	<attribute key="city_flag_to_trip_1" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="This city flag will be tripped to true." />
+	<attribute key="city_flag_to_trip_2" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="This city flag will be tripped to true." />
+	<attribute key="city_flag_to_trip_3" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+		tooltip="This city flag will be tripped to true." />
+
+	<attribute key="key_contact_flag_to_trip_1" type="string" maxlength="300" content_width_px="130" is_required="false"
+		tooltip="ID of a key contact, then a colon, then id of the flag to trip. KeyContact:Flag" />
+	<attribute key="key_contact_flag_to_trip_2" type="string" maxlength="300" content_width_px="130" is_required="false"
+		tooltip="ID of a key contact, then a colon, then id of the flag to trip. KeyContact:Flag" />
+	<attribute key="key_contact_flag_to_trip_3" type="string" maxlength="300" content_width_px="130" is_required="false"
+		tooltip="ID of a key contact, then a colon, then id of the flag to trip. KeyContact:Flag" />
+	<attribute key="key_contact_flag_to_untrip_1" type="string" maxlength="300" content_width_px="130" is_required="false"
+		tooltip="ID of a key contact, then a colon, then id of the flag to un-trip. KeyContact:Flag" />
+	<attribute key="key_contact_flag_to_untrip_2" type="string" maxlength="300" content_width_px="130" is_required="false"
+		tooltip="ID of a key contact, then a colon, then id of the flag to un-trip. KeyContact:Flag" />
+	<attribute key="key_contact_flag_to_untrip_3" type="string" maxlength="300" content_width_px="130" is_required="false"
+		tooltip="ID of a key contact, then a colon, then id of the flag to un-trip. KeyContact:Flag" />
+
+	<attribute key="extra_code_on_countdown_complete" type="node-dropdown" node_source="ExtraCodeHandler" content_width_px="200" is_required="false"
+		tooltip="If this needs to run any custom code, then specify it here." />
+	
+</root>

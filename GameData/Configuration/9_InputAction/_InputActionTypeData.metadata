@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="input_action">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+
+	<conditional id="IsCheckTypeNonCustom">
+		<and_group>
+			<type attribute="check_type" condition_type="NotEqual" value="Custom" />
+		</and_group>
+	</conditional>
+
+	<attribute key="category" type="node-dropdown" node_source="InputActionCategory" content_width_px="300"
+		tooltip="The left-side category for the keybind." />
+	
+	<attribute key="scope" type="string-dropdown" default="All" content_width_px="200"
+		tooltip="For games with a level editor, does this keybind apply in both the game and the level editor, or just in one of them?">
+		<option>All</option>
+		<option>LevelEditorOnly</option>
+		<option>MainGameOnly</option>
+	</attribute>
+
+	<attribute key="allowed_in_modes" type="node-list" node_source="InputMode" is_required="true" content_width_px="300"
+		tooltip="What modes is this active during?" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="check_type" type="string-dropdown" is_required="true" default="ButtonWasPressed" content_width_px="200"
+		tooltip="When is the this keybind considered pressed?">
+		<option>ButtonRelease</option>
+		<option>ButtonPressStarting</option>
+		<option>ButtonWasPressed</option>
+		<option>ButtonDoubleRelease</option>
+		<option>ButtonReleaseAndDoubleRelease</option>
+		<option>Custom</option>
+	</attribute>
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true" only_exists_if_conditional_passes="IsCheckTypeNonCustom"
+		tooltip="Only for Custom check_type. When that is Custom, then this is required. This specifies the dll of the custom check."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true" only_exists_if_conditional_passes="IsCheckTypeNonCustom"
+		tooltip="Only for Custom check_type. When that is Custom, then this is required. This specifies the type of the custom check in the specified dll."/>
+
+	<attribute key="gets_sent_to_focused_textboxes" type="bool"
+		tooltip="If the player is typing in a textbox, does this still trigger?  This should very rarely be true."/>
+
+	<sub_node id="keybind">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+
+		<attribute key="key" type="node-dropdown" node_source="InputCode" is_required="true" content_width_px="300"
+			tooltip="What is the primary key that must be pressed?" />
+
+		<attribute key="modifier_1" type="node-dropdown" node_source="InputCode" content_width_px="300"
+			tooltip="What is the first modifier key that must be pressed?" />
+
+		<attribute key="modifier_2" type="node-dropdown" node_source="InputCode" content_width_px="300"
+			tooltip="What is the second modifier key that must be pressed?  (Not used in the game at the moment)." />
+
+		<attribute key="modifier_3" type="node-dropdown" node_source="InputCode" content_width_px="300"
+			tooltip="What is the third modifier key that must be pressed?  (Not used in the game at the moment)." />
+
+		<attribute key="is_steam_deck_default" type="bool"
+			tooltip="If true, then this is the keybind that will show as primary when on the steam deck."/>
+
+		<attribute key="default_should_override_saved_if_older_than_version" type="node-dropdown" node_source="GameVersion" content_width_px="300"
+			tooltip="If the current settings file is older than this version, then the default should be applied instead of whatever was saved. If blank, then use the saved version from players.
+		
+We typically set this after we have changed the defaults for a keybind and want all players to get that on their machines." />		
+	</sub_node>
+	
+</root>

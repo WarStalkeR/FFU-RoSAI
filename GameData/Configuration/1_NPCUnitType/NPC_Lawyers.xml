@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--PMCLawyer
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="PMCLawyer" display_name="PMC Lawyer"
+		description="A legal representative for one of the Private Military Contractors (PMCs). Their presence often precedes paramilitary actions."
+		icon_scale="0.7" shape_icon_name="SW_Law" shape_icon_color="#ffffff"
+		vis_drawing_tag="CyberLawyers" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Lawyer"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="PMCLawyer,AnyLawyer" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="440,530" />
+		<actor_data data_type="UnitMorale" base_range="810,980" />
+		<actor_data data_type="ContrabandScanner" base_range="100,150" />
+		<default_perk perk="Fearless" unlock="" />
+	</npc_unit_type>
+
+	<!--CorporateLawyer
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="CorporateLawyer" display_name="Corporate Lawyer"
+		description="Legal scholar on the payroll of one of the federated corporations. Often deployed against others of their kind."
+		icon_scale="0.7" shape_icon_name="SW_Law" shape_icon_color="#ffffff"
+		vis_drawing_tag="CyberLawyers" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Lawyer"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="PMCLawyer,AnyLawyer" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="510,670" />
+		<actor_data data_type="UnitMorale" base_range="910,1080" />
+		<actor_data data_type="ContrabandScanner" base_range="100,150" />
+		<default_perk perk="Fearless" unlock="" />
+	</npc_unit_type>
+	
+	<!--LawyerForReligion
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="LawyerForReligion" display_name="Lawyer For Religion"
+		description="A legal advocate working for one of the world religions."
+		icon_scale="0.7" shape_icon_name="SW_Law" shape_icon_color="#ffffff"
+		vis_drawing_tag="CyberLawyers" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Lawyer"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="PMCLawyer,AnyLawyer" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="440,530" />
+		<actor_data data_type="UnitMorale" base_range="810,980" />
+		<actor_data data_type="ContrabandScanner" base_range="100,150" />
+		<default_perk perk="Fearless" unlock="" />
+	</npc_unit_type>
+	
+</root>

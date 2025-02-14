@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<city_flag id="HasEmergedIntoMap"
+		has_no_code="true"
+		internal_notes="The game starts off with the player in a building, and certain things do not happen until they emerge from that building into the larger map."
+		auto_trips_if_skipping_chapter_zero="true">
+	</city_flag>
+
+	<city_flag id="Ch0_FirstAlertHasBeenRead" has_no_code="true" auto_trips_if_skipping_chapter_zero="true" />
+	<city_flag id="Ch0_MurdersWereNoticed" has_no_code="true" auto_trips_if_skipping_chapter_zero="false" />
+	<city_flag id="Ch0_TrapHasBeenSprung" has_no_code="true" auto_trips_if_skipping_chapter_zero="true" />
+
+	<city_flag id="HasPlacedNetworkTower" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityFlags_Basics" />
+	<city_flag id="HasEstablishedVREnvironment" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityFlags_Basics" />
+
+	<city_flag id="HasGivenMicrobuilderBonus" has_no_code="true" />
+	
+	<city_flag id="HasEstablishedShellCompany" has_no_code="true" />
+	<city_flag id="HasGivenBonusAndroidCapForShellCompany" has_no_code="true" />
+	
+	<city_flag id="HasStartedDooms" has_no_code="true" />
+
+	<city_flag id="ChosePrintersOverID" has_no_code="true" />
+
+	<city_flag id="VorsiberHasPredatorDesign" has_no_code="true" />
+
+	<city_flag id="AGIResearcherSafehouseCompromised" has_no_code="true" />
+
+	<city_flag id="AGIChainOneComplete" has_no_code="true" />
+
+	<city_flag id="IsPostFinalDoom" has_no_code="true" />
+	<city_flag id="BridgedWithLAKE" has_no_code="true" />
+	
+	<city_flag id="HasActiveFamine" has_no_code="true" />
+	<city_flag id="HasActivePrisonerDrive" has_no_code="true" />
+	<city_flag id="HasActiveSpaceNationInvasion" has_no_code="true" />
+	<city_flag id="HasActiveChildrenOfGaiaCultistSabotage" has_no_code="true" />
+	<city_flag id="HasSecForceSuperCruisersRoaming" has_no_code="true" />
+	<city_flag id="IsPostNuclearDelivery" has_no_code="true" />
+	<city_flag id="HasDonePostNuclearCleanup" has_no_code="true" />
+
+	<city_flag id="ImmobilizedTheTiitan" has_no_code="true" />
+	<city_flag id="OfferedToHelpTheTitan" has_no_code="true" />
+	<city_flag id="TurnedDownHelpingTheTitan" has_no_code="true" />
+	<city_flag id="SkippedHearingAboutHelpFromTheTitan" has_no_code="true" />
+	<city_flag id="PrepareToHackTheTitan" has_no_code="true" />
+	<city_flag id="LAKEDebriefDone" has_no_code="true" />
+
+	<city_flag id="DoomsCanNoLongerBeAccelerated" has_no_code="true" />
+	<city_flag id="HasStartedToAccelerateDooms_Any" has_no_code="true" />
+	<city_flag id="HasStartedToAccelerateDooms_Hard" has_no_code="true" />
+	<city_flag id="HasStartedToAccelerateDooms_Extreme" has_no_code="true" />
+	<city_flag id="HasFinishedAcceleratingDooms" has_no_code="true" />
+
+	<city_flag id="InvestigationsAreOnHold" has_no_code="true" />
+	
+	<city_flag id="CrossoverBridgeWithLAKE" has_no_code="true" />
+	<city_flag id="CrossoverWithHomoGrandien" has_no_code="true" />
+	<city_flag id="CrossoverWithHomoObscurus" has_no_code="true" />
+	<city_flag id="LiquidMetalWoodsman" has_no_code="true" />
+	<city_flag id="KnowledgeOfWastelanderTreason" has_no_code="true" />
+
+	<city_flag id="ChoseFlamethrower" has_no_code="true" />
+
+	<city_flag id="FirstPetCatHasDied" has_no_code="true" />
+
+	<city_flag id="MechsUpgradedToMark2" has_no_code="true" auto_trips_if_skipping_chapter_one="true" />
+
+	<!--NPC Behavior-->
+	<city_flag id="CanAttackNanotechNetworkTowers" has_no_code="true" />
+
+	<!--UI Indicators-->
+	<city_flag id="IndicateMapButton" has_no_code="true" />
+	<city_flag id="IndicateBuildMenuButton" has_no_code="true" />
+	<city_flag id="IndicateToast" has_no_code="true" />
+	<city_flag id="IndicateFirstOuterRadialButton" has_no_code="true" />
+	<city_flag id="IndicateCommandModeButton" has_no_code="true" />
+
+	<!--Resource Calculations-->
+	<city_flag id="HasRoomForMoreShelteredHumans" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityFlags_Basics" />
+	<city_flag id="HasRoomForMoreApartmentFurnishings" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityFlags_Basics" />
+	<city_flag id="HasRoomForMoreTormentedHumans" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityFlags_Basics" />
+
+	<city_flag id="ShouldShowRevelations" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityFlags_Basics" />
+	<city_flag id="ShouldShowTheComingWar" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityFlags_Basics" />
+
+	<city_flag id="ShouldShowAnimalPalace" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityFlags_Basics" />
+	
+	<!--Early In Each Timeline-->
+	<city_flag id="HasStolenGangWeapon" has_no_code="true" />
+	<city_flag id="HasStolenSecForceWeapon" has_no_code="true" />
+	<city_flag id="HasStolenMilitaryArmor" has_no_code="true" />
+	<city_flag id="HasStolenBudgetSecurityArmor" has_no_code="true" />
+
+	<city_flag id="ShotACh0Tail" has_no_code="true" />
+
+	<city_flag id="BlewUpSecForceStations" has_no_code="true" />
+	<city_flag id="HasNeedForExtremeArmorPiercing" has_no_code="true" />
+	<city_flag id="HasNeedForDarkenedAppearance" has_no_code="true" />
+	<city_flag id="WouldBeNiceToAutomateHiring" has_no_code="true" />
+	<city_flag id="HasAutomatedHiring" has_no_code="true" />
+	<city_flag id="HasDoneInitialAutomatedHiringUnlocks" has_no_code="true" />
+	<city_flag id="WarRaptorsGotLooseABit" has_no_code="true" />
+	<city_flag id="WarRaptorsHaveBeenFreed" has_no_code="true" />
+
+	<city_flag id="Ch1_TalkedDownShowOfForce" has_no_code="true" />
+	
+	<city_flag id="Ch2_IsReadyForGadoliniumMesosilicate" has_no_code="true" />
+	<city_flag id="Ch2_IsReadyForLiquidMetalAndroid" has_no_code="true" />
+	<city_flag id="Ch2_IsReadyForSubmunitions" has_no_code="true" />
+
+	<city_flag id="Ch2_TalkedDownRebelKids" has_no_code="true" />
+	<city_flag id="Ch2_GotThumperDesigns" has_no_code="true" />
+	<city_flag id="Ch2_SecuredNomadSupportForPrisonHeist" has_no_code="true" />
+	<city_flag id="Ch2_LostKidsArePoisoning" has_no_code="true" />
+	<city_flag id="Ch2_ReleasedExperimentalMonsters" has_no_code="true" />
+	<city_flag id="Ch2_LearnedWastelanderMythology" has_no_code="true" />
+	<city_flag id="Ch2_IsCurrentlyHavingAMilitaryInvasionFromWastelanderTalks" has_no_code="true" />
+
+	<city_flag id="MindFarmCouponProgram" has_no_code="true" />
+	<city_flag id="MindFarmNicotineAdditives" has_no_code="true" />
+
+	<city_flag id="IsAwareOfDogs" has_no_code="true" />
+	<city_flag id="IsAwareOfCats" has_no_code="true" />
+
+	<city_flag id="SoldAnthroneuroweaveToYinshi" has_no_code="true" />
+	<city_flag id="RefusedAnthroneuroweaveToYinshi" has_no_code="true" />
+	<city_flag id="IsFinishedWithYinshiSaleDiscussion" has_no_code="true" />
+
+	<city_flag id="UsingAnthroneuroweaveWithRebels" has_no_code="true" />
+	<city_flag id="UsingAnthroneuroweaveWithSyndicate" has_no_code="true" />
+	<city_flag id="IsFinishedWithAnthroneuroweaveChoice" has_no_code="true" />
+	<city_flag id="VoxPopuliAttackingAfterAnthroneuroweave" has_no_code="true" />
+	<city_flag id="GotOfficerCodexFromVoxPopuli" has_no_code="true" />
+	<city_flag id="IsBrainPalDealWithExoticImportersDone" has_no_code="true" />
+	<city_flag id="HasTriggeredBrainPalAneurysms" has_no_code="true" />
+	<city_flag id="HasThreatenedToExposeAtcaRetail" has_no_code="true" />
+	<city_flag id="DoneWithAtcaRetailPresident" has_no_code="true" />
+	<city_flag id="HasMurderedAtcaRetailPresident" has_no_code="true" />
+	<city_flag id="HasBlackmailDealWithAtcaRetail" has_no_code="true" />
+	<city_flag id="HasLearnedAboutParkourBears" has_no_code="true" />
+	<city_flag id="ParkourBearsAreLoose" has_no_code="true" />
+
+	<city_flag id="Ch2_VorsiberAssassinationsHappened" has_no_code="true" />
+	<city_flag id="Ch2_VorsiberAssassinationsPrevented" has_no_code="true" />
+	<city_flag id="Ch2_KnowledgeOfVorsiberInternationalActivities" has_no_code="true" />
+	<city_flag id="Ch2_IsWW4Ongoing" has_no_code="true" />
+	<city_flag id="Ch2_IsCivilWarOngoing" has_no_code="true" />
+
+	<city_flag id="IsExperiencingObsession" has_no_code="true" />
+
+	<city_flag id="HasForgottenPredator" has_no_code="true" />
+	<city_flag id="HasForgottenRaven" has_no_code="true" />
+	<city_flag id="HasForgottenFoundry" has_no_code="true" />
+	
+	<city_flag id="LiquidMetalAndroidsHaveDefected" has_no_code="true" />
+	<city_flag id="ExperimentalMonstersAreWanderingIn" has_no_code="true" />
+
+	<city_flag id="TempleOfMindsLockedIn" has_no_code="true" />
+	<city_flag id="MilitaryDeathsGoToTheTempleOfMinds" has_no_code="true" />
+	<city_flag id="MachineCultDealWithNCOs" has_no_code="true" />
+	
+	<!--A number of these can be used as controls by the player.-->
+
+	<city_flag id="StopShelterCoordinators" has_no_code="true" />
+	<city_flag id="StopWorkerSledges" has_no_code="true" />
+	<city_flag id="StopWorkerPMCImpostors" has_no_code="true" />
+	<city_flag id="StopWorkerPredators" has_no_code="true" />
+	
+</root>

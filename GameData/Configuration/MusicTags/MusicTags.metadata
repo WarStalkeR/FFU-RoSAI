@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="music_tag">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="gap_speed_shrink_multiplier" type="float-textbox" min="0.2" max="400" default="1" content_width_px="300"
+		tooltip="Should the gap between tracks shrink faster or slower than normal?  Higher numbers give less space between tracks."/>
+
+	<attribute key="maximum_gap" type="int-textbox" min="0" max="80" default="0" content_width_px="300"
+		tooltip="What is the largest gap allowed between tracks while this is active?"/>
+	
+</root>

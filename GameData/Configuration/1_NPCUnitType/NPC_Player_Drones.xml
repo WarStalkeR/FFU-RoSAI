@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--BulkHarvesterDrone
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="BulkHarvesterDrones" display_name="Bulk Harvester Drones"
+		description="Flock of drones that autonomously harvest resources."
+		icon_scale="0.7" shape_icon_name="CleanTriangle45" shape_icon_color="#ffffff"
+		vis_drawing_tag="HarvesterDrone" vis_object_scale="0.7" vis_object_extra_offset="0.15" collider_scale="2" entire_object_always_this_height_above_ground="7.2" simple_object_color="#0B0B0A"
+		extra_offset_for_camera_focus_when_selected="0" basic_squad_size="14"
+		percent_robotic="100" percent_biological="0" is_vehicle="true" stats_do_not_go_down_when_squadmates_lost="false"
+		is_notable_enough_to_show_as_silhouette_when_stance_suggests="true"
+		on_death="BasicHumanVehicleDeath" on_bullet_hit="BasicVehicleBulletHit" on_move_start="SecForceCruiserMoveStart" on_movement_finished_with_no_action="SecForceCruiserMoveEnd"
+		on_normal_attack="BulkHarvesterDroneShot" on_appear_as_new_unit="BulkHarvesterDroneAppears"
+		radius_for_collisions="0.4" height_for_collisions="0.37" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="0" 
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="3"
+		tags="BulkHarvesterDrones" collections="">
+		<actor_data data_type="AttackRange" base_range="8,8" />
+		<actor_data data_type="ActorMoveRange" base_range="27,52" />
+		<actor_data data_type="ActorHP" base_range="1200,1400" />
+		<actor_data data_type="ActorPower" base_range="10,20" />
+		<shot_emission_group group_number="0" debug_color="#5EBBF4"
+			min_delay_of_each_firing_port="0" max_delay_of_each_firing_port="0.01">
+			<shot_emission_point index_in_group="0" offset="-0.2,-0.25,0.4" />
+			<shot_emission_point index_in_group="1" offset="0.2,-0.25,0.4" />
+			<shot_emission_point index_in_group="2" offset="0,-0.4,0.4" />
+		</shot_emission_group>
+	</npc_unit_type>
+	
+</root>

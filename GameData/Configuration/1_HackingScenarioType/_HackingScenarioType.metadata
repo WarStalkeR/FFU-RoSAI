@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="hacking_scenario">
+
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the scenario logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the scenario logic in the specified external dll."/>
+
+	<attribute key="on_death" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which sound effect to use when it dies?" />
+
+	<attribute key="requires_meta_flag" type="node-dropdown" is_required="false" node_source="MetaFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, this scenario will be replaced by an alternative if this meta flag is NOT true." />
+	<attribute key="requires_city_flag" type="node-dropdown" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, this scenario will be replaced by an alternative if this city flag is true." />
+
+	<attribute key="replacement_scenario_if_meta_flag_not_met" type="node-dropdown" is_required="false" node_source="HackingScenarioType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The other scenario to load if the meta flag is not tripped." />
+	<attribute key="replacement_scenario_if_blocked_by_city_flag" type="node-dropdown" is_required="false" node_source="HackingScenarioType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="The other scenario to load if the city flag is tripped." />
+
+	<sub_node id="assigned">
+		<attribute key="tag_use" type="node-dropdown" node_source="HackingDaemonTagUse" content_width_px="200" is_required="true"
+			tooltip="This is a specific tag-use that this scenario includes." />
+		<attribute key="tag" type="node-dropdown" node_source="HackingDaemonTag" content_width_px="200" is_required="true"
+			tooltip="This assigns a specific tag to a specific tag-use for this kind of scenario." />
+	</sub_node>
+
+	<sub_node id="quick_hack_option">
+		<attribute key="daemon" type="node-dropdown" node_source="HackingDaemonType" content_width_px="200" is_required="true"
+			tooltip="This is a specific daemon that can be quick-hacked." />
+		<attribute key="value" type="bool" default="false" is_required="false"
+			tooltip="Set to false to mod it out." />
+	</sub_node>
+	
+	<sub_node id="math_int">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="int_min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="int_max" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<sub_node id="math_float">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+	
+</root>

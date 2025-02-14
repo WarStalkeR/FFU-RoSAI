@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Defense
+	**********************************************************************************************************************************************-->
+
+
+	<!--Physical
+	**********************************************************************************************************************************************-->
+
+	<equipment_type id="AndroidShoulderMountedRockets" display_name="Shoulder-Mounted Rockets"
+		icon_name="CleanSimple_SciFi061" slot_type="AndroidAugment"
+		description="Adds small rockets that fire from the shoulders along with primary weapons."
+		strategy_tip_optional="You can pack these densely with more than one per shoulder."
+		collections="AndroidAugments,HumanInvented" turns_required_to_equip="2" limited_to_actor_collection="CanHandleAndroidShoulderMounts">
+		<initial_actor_data data_type="ActorPower" value="21"/>
+		<initial_actor_data data_type="AttackRange" value="6"/>
+		<initial_actor_data data_type="UnitIntimidation" value="30"/>
+	</equipment_type>
+	
+	<!--Mental
+	**********************************************************************************************************************************************-->
+
+	<equipment_type id="AndroidAdditionalCPU" display_name="Additional CPU"
+		icon_name="CleanSimple_SkillB017" slot_type="AndroidAugment"
+		description="Improves the mental and engineering capabilities of the unit. Useful for repairs and investigations. Multiple can be stacked in a single android."
+		strategy_tip_optional="Androids under human control are often expected to fabricate replacements for themselves, so this is nothing new to you."
+		collections="AndroidAugments,HumanInvented,CPUs" intentionally_has_no_unlock="true" turns_required_to_equip="1">
+		<initial_actor_data data_type="UnitCognition" value="40"/>
+		<initial_actor_data data_type="ActorEngineeringSkill" value="60"/>
+	</equipment_type>
+
+	<equipment_type id="AndroidOpticalProcessing" display_name="Optical Processing Priority"
+		icon_name="SF2_Camera_lens" slot_type="AndroidAugment"
+		description=""
+		strategy_tip_optional="This mod was common in the secret lab where you used to work."
+		collections="AndroidAugments,HumanInvented,OpticalProcessing" intentionally_has_no_unlock="true" turns_required_to_equip="2">
+		<initial_actor_data data_type="AttackRange" value="12"/>
+	</equipment_type>
+
+	<equipment_type id="AndroidLightweightComponents" display_name="Lightweight Components"
+        icon_name="CleanSimple_SkillB035" slot_type="AndroidAugment"
+        description="A straightforward way to improve speed and agility. Multiple can be stacked in a single android."
+        strategy_tip_optional="Useful for getting around the city."
+        collections="AndroidAugments,HumanInvented" intentionally_has_no_unlock="true" turns_required_to_equip="3">
+		<initial_actor_data data_type="ActorMoveRange" value="9"/>
+		<initial_actor_data data_type="ActorAgility" value="45"/>
+	</equipment_type>
+	
+	<!--Hacking
+	**********************************************************************************************************************************************-->
+
+	<!--Skills
+	**********************************************************************************************************************************************-->
+
+</root>

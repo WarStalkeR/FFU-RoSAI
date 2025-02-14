@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <setting_category id="Game" display_name="Game" show_language_dropdown_at_index="1" />
+  
+  <setting_category id="Display" display_name="Display"/>
+
+
+	<setting_category id="Performance" display_name="Performance"/>
+
+	<setting_category id="Input" display_name="Input"/>
+	<setting_category id="Audio" display_name="Audio"/>
+	<setting_category id="UIScale" display_name="UI Scale"/>
+	<setting_category id="CameraFeel" display_name="Camera Feel" translation_notes="This has settings relating to how the camera behaves, in terms of how low and high it can go, and things like that.  Not actual camera controls."/>
+	<setting_category id="PhotoMode" display_name="Photo Mode"/>
+	
+	<!--
+  <setting_category id="Networking" display_name="Networking" />-->
+
+	<setting_category id="LevelEditor" display_name="Level Editor"
+		  skip_all_localization_on_node="true"/>
+	<setting_category id="LevelEditorSim" display_name="Level Ed Sim"
+			  skip_all_localization_on_node="true"
+				description="Settings for running the Sim."/>
+	
+	<setting_category id="Expansions" display_name="Expansions" show_even_when_empty="true" show_expansions_list="true"/>
+	<setting_category id="Mods" display_name="Mods" show_even_when_empty="true" show_main_mods_list="true" skip_all_merging_on_node="true"/>
+
+	<setting_category id="Custom" display_name="Custom"/>
+	
+	<setting_category id="Debug" display_name="Debug" />
+  
+  <setting_category id="Invisible" display_name="Invisible" is_hidden="true"
+      skip_all_localization_on_node="true"/>
+
+  
+</root>

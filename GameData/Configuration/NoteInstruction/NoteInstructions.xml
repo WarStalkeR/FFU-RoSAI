@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<note_instruction id="StartingTurn" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" header_type="2" >
+	</note_instruction>
+	
+	<note_instruction id="StartedChapter" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" header_type="1" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ChapterChange" is_included="100" />
+	</note_instruction>
+
+	<note_instruction id="ResourceCheat" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Cheat" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MetaResourceCheat" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Cheat" is_included="100" />
+	</note_instruction>
+	<note_instruction id="GainedResource" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ResourceGain" is_included="100" />
+	</note_instruction>
+	<note_instruction id="InspirationCheat" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Cheat" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MetaChapterCheat" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Cheat" is_included="100" />
+	</note_instruction>
+	<note_instruction id="CheatByName" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics">
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Cheat" is_included="100" />
+	</note_instruction>
+	
+	<note_instruction id="CheatMachineUnit" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Cheat" is_included="100" />
+	</note_instruction>
+	<note_instruction id="CheatMachineVehicle" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics">
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Cheat" is_included="100" />
+	</note_instruction>
+	<note_instruction id="CheatNPCUnit" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Cheat" is_included="100" />
+	</note_instruction>
+	<note_instruction id="BuiltMachineUnit" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitGained" is_included="100" />
+	</note_instruction>
+	<note_instruction id="BuiltMachineVehicle" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics">
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitGained" is_included="100" />
+	</note_instruction>
+	<note_instruction id="ClaimMachineUnit" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitGained" is_included="100" />
+	</note_instruction>
+	<note_instruction id="StoleMachineVehicle" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitGained" is_included="100" />
+	</note_instruction>
+	<note_instruction id="CheatRebelWar" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Cheat" is_included="100" />
+	</note_instruction>
+
+	<note_instruction id="MachineUnitDied" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitLost" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineUnitDiedInCrash" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitLost" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineUnitReplaced" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitScrapped" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineUnitScrapped" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitScrapped" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineUnitDiedInExplosion" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitLost" is_included="100" />
+	</note_instruction>
+	
+	<note_instruction id="MachineVehicleDied" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" /><part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitLost" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineVehicleReplaced" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitScrapped" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineVehicleScrapped" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitScrapped" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineVehicleDiedInExplosion" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitLost" is_included="100" />
+	</note_instruction>
+	
+	<note_instruction id="NPCUnitDied" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="NPCUnitLost" is_included="100" />
+	</note_instruction>
+	<note_instruction id="NPCUnitDiedInExplosion" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="NPCUnitLost" is_included="100" />
+	</note_instruction>
+	<note_instruction id="NPCUnitDisbandedFromMoraleLoss" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="NPCUnitLost" is_included="100" />
+	</note_instruction>
+	<note_instruction id="NPCUnitFledPhysicalViolence" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="NPCUnitLost" is_included="100" />
+	</note_instruction>
+	
+	<note_instruction id="MachineStructureDied" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="StructureLost" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineStructureScrapped" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="StructureScrapped" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineStructureDiedInExplosion" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="StructureLost" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineStructureBuilt" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="StructureBuilt" is_included="100" />
+	</note_instruction>
+
+	<note_instruction id="JobFailed" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="JobFailed" is_included="100" />
+	</note_instruction>
+
+	<note_instruction id="ResearchDomainInspirationAdded" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="InspirationGain" is_included="100" />
+	</note_instruction>
+	<note_instruction id="ImmediateInvention" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Research" is_included="100" />
+		<part_of collection="ResearchCompleted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="InventedIdea" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Research" is_included="100" />
+		<part_of collection="ResearchCompleted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="ReadiedIdea" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Research" is_included="100" />
+		<part_of collection="ResearchReadied" is_included="100" />
+	</note_instruction>
+	<note_instruction id="UpgradedInt" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Upgrade" is_included="100" />
+	</note_instruction>
+	<note_instruction id="UpgradedFloat" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Upgrade" is_included="100" />
+	</note_instruction>
+	<note_instruction id="ResearchDomainExplored" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Research" is_included="100" />
+		<part_of collection="ResearchCompleted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="OtherKeyMessageOpened" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="KeyMessage" is_included="100" />
+		<part_of collection="Narrative" is_included="100" />
+	</note_instruction>
+	<note_instruction id="HandbookEntryAdded" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="MachineHandbook" is_included="100" />
+		<part_of collection="Narrative" is_included="100" />
+	</note_instruction>
+	<note_instruction id="DoomEvent" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="MachineHandbook" is_included="100" />
+		<part_of collection="DoomEvent" is_included="100" />
+	</note_instruction>
+	<note_instruction id="CityTaskCompleted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="MinorTask" is_included="100" />
+		<part_of collection="Narrative" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MurderAndroidForRegistrationStarted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeStarted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MurderedAndroidForRegistration" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeFinished" is_included="100" />
+	</note_instruction>
+	<note_instruction id="WiretapStarted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeStarted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="Wiretapped" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeFinished" is_included="100" />
+	</note_instruction>
+	<note_instruction id="HideAndSelfRepairStarted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeStarted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="HideAndSelfRepairComplete" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeFinished" is_included="100" />
+	</note_instruction>
+	<note_instruction id="GeneralActionOverTimeStarted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeStarted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="GeneralActionOverTimeComplete" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeFinished" is_included="100" />
+	</note_instruction>
+	<note_instruction id="ExploreSiteStarted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeStarted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="ExploreSiteCompleted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeStarted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="WallripStarted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeStarted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="WallripComplete" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeFinished" is_included="100" />
+	</note_instruction>
+	<note_instruction id="QuietLootingStarted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeStarted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="QuietLootingComplete" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeFinished" is_included="100" />
+	</note_instruction>
+	<note_instruction id="KeyContactFlagTripped" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="KeyContact" is_included="100" />
+		<part_of collection="Narrative" is_included="100" />
+	</note_instruction>
+	<note_instruction id="StructuralEngineeringComplete" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="ActionOverTime" is_included="100" />
+		<part_of collection="ActionOverTimeFinished" is_included="100" />
+	</note_instruction>
+	<note_instruction id="ColdBlood" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitAction" is_included="100" />
+		<part_of collection="UnitHostileAction" is_included="100" />
+	</note_instruction>
+	<note_instruction id="WorkByRepairSpiders" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="JobWork" is_included="100" />
+	</note_instruction>
+	<note_instruction id="WorkByRepairCrabs" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="JobWork" is_included="100" />
+	</note_instruction>
+	<note_instruction id="WorkByContrabandJammer" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="JobWork" is_included="100" />
+	</note_instruction>
+	<note_instruction id="UnitFlamethrowerNearby" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitAction" is_included="100" />
+		<part_of collection="UnitHostileAction" is_included="100" />
+	</note_instruction>
+	<note_instruction id="UnitRepairNearby" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitAction" is_included="100" />
+		<part_of collection="UnitFriendlyAction" is_included="100" />
+	</note_instruction>
+	<note_instruction id="VehicleRepairNearby" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitAction" is_included="100" />
+		<part_of collection="UnitFriendlyAction" is_included="100" />
+	</note_instruction>
+	<note_instruction id="TerritoryControlFlagActivated" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="TerritoryControlFlag" is_included="100" />
+		<part_of collection="TerritoryControlFlagActivated" is_included="100" />
+	</note_instruction>
+	<note_instruction id="TerritoryControlFlagDisabled" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="TerritoryControlFlag" is_included="100" />
+		<part_of collection="TerritoryControlFlagDisabled" is_included="100" />
+	</note_instruction>
+	<note_instruction id="TerritoryControlFlagLost" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="TerritoryControlFlag" is_included="100" />
+		<part_of collection="TerritoryControlFlagLost" is_included="100" />
+	</note_instruction>
+	<note_instruction id="InvestigationStarted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Investigation" is_included="100" />
+		<part_of collection="InvestigationStarted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="InvestigationFinished" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Investigation" is_included="100" />
+		<part_of collection="InvestigationFinished" is_included="100" />
+	</note_instruction>
+	<note_instruction id="CityConflictStarted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="CityConflict" is_included="100" />
+		<part_of collection="CityConflictStarted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="CityConflictEnded" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="CityConflict" is_included="100" />
+		<part_of collection="CityConflictEnded" is_included="100" />
+	</note_instruction>
+	<note_instruction id="ExtractedResource" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitAction" is_included="100" />
+		<part_of collection="UnitHostileAction" is_included="100" />
+		<part_of collection="ResourceGain" is_included="100" />
+	</note_instruction>
+	<note_instruction id="GainedResourceFromKill" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="UnitAction" is_included="100" />
+		<part_of collection="UnitHostileAction" is_included="100" />
+		<part_of collection="ResourceGain" is_included="100" />
+	</note_instruction>
+	
+	<note_instruction id="NPCUnitAttackNPCUnit" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="CombatAttack" is_included="100" />
+	</note_instruction>
+	<note_instruction id="NPCUnitAttackMachineUnit" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="CombatAttack" is_included="100" />
+	</note_instruction>
+	<note_instruction id="NPCUnitAttackMachineVehicle" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="CombatAttack" is_included="100" />
+	</note_instruction>
+	<note_instruction id="NPCUnitAttackMachineStructure" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="CombatAttack" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineUnitAttackNPCUnit" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="CombatAttack" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineVehicleAttackNPCUnit" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="CombatAttack" is_included="100" />
+	</note_instruction>
+	<note_instruction id="NPCUnitAttackMoraleOfNPCUnit" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="CombatAttack" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineUnitAttackMoraleOfNPCUnit" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="CombatAttack" is_included="100" />
+	</note_instruction>
+	<note_instruction id="MachineVehicleAttackMoraleOfNPCUnit" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="CombatAttack" is_included="100" />
+	</note_instruction>
+
+	<note_instruction id="NPCObjectiveComplete" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="NPCActivity" is_included="100" />
+	</note_instruction>
+
+	<note_instruction id="ProjectStarted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Project" is_included="100" />
+		<part_of collection="ProjectStarted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="ProjectSuccess" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Project" is_included="100" />
+		<part_of collection="ProjectSuccess" is_included="100" />
+	</note_instruction>
+	<note_instruction id="ProjectFailure" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Project" is_included="100" />
+		<part_of collection="ProjectFailure" is_included="100" />
+	</note_instruction>
+	
+	<note_instruction id="NPCMissionStarted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="NPCMission" is_included="100" />
+		<part_of collection="NPCMissionStarted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="NPCMissionCompleted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics">
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="NPCMission" is_included="100" />
+		<part_of collection="NPCMissionCompleted" is_included="100" />
+	</note_instruction>
+	<note_instruction id="NPCMissionExpired" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="NPCMission" is_included="100" />
+		<part_of collection="NPCMissionExpired" is_included="100" />
+	</note_instruction>
+	
+	<note_instruction id="NPCDialogChoice" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="DialogChoice" is_included="100" />
+		<part_of collection="Narrative" is_included="100" />
+	</note_instruction>
+	<note_instruction id="NPCDialogChoiceDebateWon" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="DialogChoice" is_included="100" />
+		<part_of collection="DebateWin" is_included="100" />
+		<part_of collection="Narrative" is_included="100" />
+	</note_instruction>
+	<note_instruction id="EventComplete" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="EventChoice" is_included="100" />
+		<part_of collection="Narrative" is_included="100" />
+	</note_instruction>
+	<note_instruction id="CountdownStarted" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Countdown" is_included="100" />
+		<part_of collection="Narrative" is_included="100" />
+	</note_instruction>
+	<note_instruction id="CountdownEnded" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Countdown" is_included="100" />
+		<part_of collection="Narrative" is_included="100" />
+	</note_instruction>
+	<note_instruction id="AchievementEarned" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Notes_SimpleBasics" >
+		<part_of collection="Permanent" is_included="100" />
+		<part_of collection="Ephemeral" is_included="100" />
+		<part_of collection="All" is_included="100" />
+		<part_of collection="Achievement" is_included="100" />
+	</note_instruction>
+	
+</root>

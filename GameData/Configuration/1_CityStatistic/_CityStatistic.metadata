@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="city_statistic">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="should_be_invisible_to_players" type="bool" default="false"
+		tooltip="If this is true, then this statistic will never be shown to players, and thus should have no name or description. Automatically also says yes to should_be_skipped_on_lists."/>
+	<attribute key="should_be_skipped_on_lists" type="bool" default="false"
+		tooltip="If this is true, then this statistic will be shown to players as part of projects, but never on the central lists."/>
+	<attribute key="should_be_in_citywide_category" type="bool" default="false"
+		tooltip="If this is true, then this shows in the city statistics section rather than the action statistics section."/>
+
+	<attribute key="has_no_meta_counterpart" type="bool" default="false"
+		tooltip="If this is true, then this won't try to log to the meta statistic with the same ID."/>
+
+	<attribute key="is_group_a_interesting_if_above_zero" type="bool" default="false"
+		tooltip="If this is true, then this is interesting in general if it's above zero, and part of group A."/>
+	<attribute key="is_group_b_interesting_if_above_zero" type="bool" default="false"
+		tooltip="If this is true, then this is interesting in general if it's above zero, and part of group B."/>
+	<attribute key="is_group_c_interesting_if_above_zero" type="bool" default="false"
+		tooltip="If this is true, then this is interesting in general if it's above zero, and part of group C."/>
+	<attribute key="is_group_d_interesting_if_above_zero" type="bool" default="false"
+		tooltip="If this is true, then this is interesting in general if it's above zero, and part of group D."/>
+	<attribute key="is_group_e_interesting_if_above_zero" type="bool" default="false"
+		tooltip="If this is true, then this is interesting in general if it's above zero, and part of group E."/>
+	<attribute key="is_group_f_interesting_if_above_zero" type="bool" default="false"
+		tooltip="If this is true, then this is interesting in general if it's above zero, and part of group F."/>
+	<attribute key="is_group_g_interesting_if_above_zero" type="bool" default="false"
+		tooltip="If this is true, then this is interesting in general if it's above zero, and part of group G."/>
+
+	<attribute key="lang_key_for_prefix" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is the format for the prefix of this statistic, optionally." />
+	<attribute key="lang_key_for_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is the format for the name of this statistic." />
+	<attribute key="lang_key_for_description" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is the format for the description of this statistic." />
+	<attribute key="lang_key_for_insert_0" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that has the name of the first kind of object we want to refer to in this description and name. Optional." />
+	<attribute key="lang_key_for_insert_1" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that has the name of the second kind of object we want to refer to in this description and name. Optional." />
+	<attribute key="lang_key_for_insert_2" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that has the name of the third kind of object we want to refer to in this description and name. Optional." />
+	
+</root>

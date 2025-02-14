@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<note_collection id="Permanent" display_name="Permanent" sort_order="90" exclude_ephemeral="true" />
+	<note_collection id="Ephemeral" display_name="Ephemeral" sort_order="95" exclude_permanent="true" />
+	<note_collection id="All" display_name="All" sort_order="100" is_default="true" />
+	<note_collection id="KeyMessage" display_name="Key Message" sort_order="200" exclude_header_lines="true" />
+	<note_collection id="EventChoice" display_name="Event Choice" sort_order="300" exclude_header_lines="true" />
+	<note_collection id="DialogChoice" display_name="Dialog Choice" sort_order="400" exclude_header_lines="true" />
+	<note_collection id="Narrative" display_name="Narrative" sort_order="900" exclude_header_lines="true" />
+	
+	<note_collection id="ChapterChange" display_name="Chapter Change" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="Cheat" display_name="Cheat" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="ResourceGain" display_name="Resource Gain" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="UnitGained" display_name="Unit Gained" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="UnitLost" display_name="Unit Lost" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="UnitScrapped" display_name="Unit Scrapped" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="NPCUnitLost" display_name="NPC Unit Lost" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="StructureBuilt" display_name="Structure Built" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="StructureLost" display_name="Structure Lost" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="StructureScrapped" display_name="Structure Scrapped" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="JobFailed" display_name="Job Failed" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="InspirationGain" display_name="Inspiration Gain" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="Research" display_name="Research" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="ResearchCompleted" display_name="Research Completed" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="ResearchReadied" display_name="Research Readied" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="Upgrade" display_name="Upgrade" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="KeyContact" display_name="Key Contact" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="MachineHandbook" display_name="Machine Handbook" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="MinorTask" display_name="Minor Task" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="DebateWin" display_name="Debate Win" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="DoomEvent" display_name="Doom Event" sort_order="3000" exclude_header_lines="true" />
+	
+	<note_collection id="ActionOverTime" display_name="Action Over Time" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="ActionOverTimeStarted" display_name="Action Over Time Started" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="ActionOverTimeFinished" display_name="Action Over Time Finished" sort_order="3000" exclude_header_lines="true" />
+
+	<note_collection id="UnitAction" display_name="Unit Action" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="UnitHostileAction" display_name="Unit Hostile Action" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="UnitFriendlyAction" display_name="Unit Friendly Action" sort_order="3000" exclude_header_lines="true" />
+
+	<note_collection id="JobWork" display_name="Job Work" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="NPCActivity" display_name="NPC Activity" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="Countdown" display_name="Countdown" sort_order="3000" exclude_header_lines="true" />
+
+	<note_collection id="Investigation" display_name="Investigation" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="InvestigationStarted" display_name="Investigation Started" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="InvestigationFinished" display_name="Investigation Finished" sort_order="3000" exclude_header_lines="true" />
+
+	<note_collection id="CityConflict" display_name="Background Conflict" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="CityConflictStarted" display_name="Background Conflict Started" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="CityConflictEnded" display_name="Background Conflict Ended" sort_order="3000" exclude_header_lines="true" />
+
+	<note_collection id="TerritoryControlFlag" display_name="Territory Control Flag" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="TerritoryControlFlagActivated" display_name="Territory Control Flag Activated" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="TerritoryControlFlagDisabled" display_name="Territory Control Flag Disabled" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="TerritoryControlFlagLost" display_name="Territory Control Flag Lost" sort_order="3000" exclude_header_lines="true" />
+
+	<note_collection id="Project" display_name="Project" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="ProjectStarted" display_name="Project Started" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="ProjectSuccess" display_name="Project Success" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="ProjectFailure" display_name="Project Failure" sort_order="3000" exclude_header_lines="true" />
+
+	<note_collection id="NPCMission" display_name="NPC Mission" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="NPCMissionStarted" display_name="NPC Mission Started" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="NPCMissionCompleted" display_name="NPC Mission Completed" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="NPCMissionExpired" display_name="NPC Mission Expired" sort_order="3000" exclude_header_lines="true" />
+
+	<note_collection id="CombatAttack" display_name="Combat Attack" sort_order="3000" exclude_header_lines="true" />
+	<note_collection id="Achievement" display_name="Achievement" sort_order="3000" exclude_header_lines="true" />
+
+</root>

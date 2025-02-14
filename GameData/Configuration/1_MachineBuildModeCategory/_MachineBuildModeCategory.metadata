@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="build_mode_category">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="short_name" type="string" maxlength="20" content_width_px="200" is_required="true" is_localized="true"
+		tooltip="This is the name that is used on the button, which is very short. An abbreviation is fine, players can hover to see the full thing."/>
+
+	<attribute key="description" type="existing-override" is_required="true" />
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the cheat is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the category in the specified external dll."/>
+
+	<attribute key="is_available_in_main_game" type="bool" is_required="true" default="true"
+		tooltip="Should this cheat be available when looking at the main streets or map view of the game?  Generally yes." />
+	<attribute key="is_available_in_the_zodiac" type="bool" is_required="true" default="true"
+		tooltip="Should this cheat be available when looking at The Zodiac view?  Generally no." />
+
+	<attribute key="is_suggested" type="bool" is_required="false" default="false"
+		tooltip="Is this the suggested category?" />
+	<attribute key="is_all" type="bool" is_required="false" default="false"
+		tooltip="Is this the 'all' category?" />
+	<attribute key="is_icon_skipped" type="bool" is_required="false" default="false"
+		tooltip="Is this category going to skip icons?" />
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	
+</root>

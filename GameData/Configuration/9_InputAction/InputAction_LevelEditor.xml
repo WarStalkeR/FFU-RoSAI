@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Movement
+		***************************************************************************-->
+
+	<input_action id="LevelEditor_Look around"
+		skip_all_localization_on_node="true"
+		category="CameraMovement" display_name="Look around"
+		description="Hold this button down then move the mouse to look around with a first person view."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal" >
+		<keybind id="1" key="RightMouse" />
+	</input_action>
+
+	<input_action id="LevelEditor_Move forward"
+		skip_all_localization_on_node="true"
+		category="CameraMovement" display_name="Move forward"
+		description="Basic movement of your camera."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="RightMouse" />
+	</input_action>
+
+	<input_action id="LevelEditor_Move back"
+		skip_all_localization_on_node="true"
+		category="CameraMovement" display_name="Move back"
+		description="Basic movement of your camera."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="RightMouse" key="S" />
+	</input_action>
+
+	<input_action id="LevelEditor_Strafe left"
+		skip_all_localization_on_node="true"
+		category="CameraMovement" display_name="Strafe left"
+		description="Basic movement of your camera."
+		check_type="Custom"  scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="RightMouse" key="A" />
+	</input_action>
+
+	<input_action id="LevelEditor_Strafe right"
+		skip_all_localization_on_node="true"
+		category="CameraMovement" display_name="Strafe right"
+		description="Basic movement of your camera."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="RightMouse" key="D" />
+	</input_action>
+
+	<input_action id="LevelEditor_Move up"
+		skip_all_localization_on_node="true"
+		category="CameraMovement" display_name="Move up"
+		description="Basic movement of your camera."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="RightMouse" key="E" />
+	</input_action>
+
+	<input_action id="LevelEditor_Move down"
+		skip_all_localization_on_node="true"
+		category="CameraMovement" display_name="Move down"
+		description="Basic movement of your camera."
+		check_type="Custom"
+		 scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="RightMouse" key="Q" />
+	</input_action>
+
+	<input_action id="LevelEditor_Alternate move speed"
+		skip_all_localization_on_node="true"
+		category="CameraMovement" display_name="Move Faster"
+		description="Move the level editor camera faster."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftShift" />
+	</input_action>
+
+	<input_action id="LevelEditor_Focus camera on selection"
+		skip_all_localization_on_node="true"
+		category="CameraMovement" display_name="Focus camera on selection"
+		description="Move the camera to frame your selected objects."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="F" />
+	</input_action>
+
+	<input_action id="LevelEditor_Pan"
+		skip_all_localization_on_node="true"
+		category="CameraMovement" display_name="Pan"
+		description="Hold this button down, then move the mouse to pan the camera around."
+		check_type="Custom"  scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="MiddleMouse" />
+	</input_action>
+
+	<input_action id="LevelEditor_Orbit"
+		skip_all_localization_on_node="true"
+		category="CameraMovement" display_name="Orbit"
+		description="Hold this button combo down, then move the mouse to orbit the camera around your current selection."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="LeftAlt" key="RightMouse" />
+	</input_action>
+
+	<!--Note!  Because this is used in the level editor itself, we can't use the normal alt-mapping functions.-->
+	<input_action id="LevelEditor_Orbit Alt"
+		skip_all_localization_on_node="true"
+		category="CameraMovement" display_name="Orbit (Alt)"
+		description="Hold this button combo down, then move the mouse to orbit the camera around your current selection."
+		check_type="Custom"
+		scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="Mouse4" />
+	</input_action>
+
+	<!--Editing Modes
+		***************************************************************************-->
+
+	<input_action id="LevelEditor_Activate move gizmo"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_EditingModes" display_name="Activate move gizmo"
+		description="In this mode, you can move objects around."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="W" />
+	</input_action>
+
+	<input_action id="LevelEditor_Activate rotation gizmo"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_EditingModes" display_name="Activate rotation gizmo"
+			description="In this mode, you can rotate objects."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="E" />
+	</input_action>
+
+	<input_action id="LevelEditor_Activate scale gizmo"
+			skip_all_localization_on_node="true"
+			  category="LevelEditor_EditingModes" display_name="Activate scale gizmo"
+			description="In this mode, you can scale objects up and down on one or more axes. Grab the endpoints of the gizmo to scale in one dimension, or grab the center to scale in all three at once."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="R" />
+	</input_action>
+
+	<input_action id="LevelEditor_Activate box scale gizmo"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_EditingModes" display_name="Activate box-scale gizmo"
+			description="Box-scaling is an alternative way of scaling objects. Grab from a specific edge and drag to expand the object in that direction."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="T"/>
+	</input_action>
+
+	<input_action id="LevelEditor_Activate universal gizmo"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_EditingModes" display_name="Activate universal gizmo"
+			description="~*~"
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="U" />
+	</input_action>
+
+	<input_action id="LevelEditor_Activate extrude gizmo"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_EditingModes" display_name="Activate extrude gizmo"
+			description="The extrude gizmo allows you to drag out entire lines of objects. Suppose you have one concrete block. Drag it in one direction using this tool to make a concrete pier. Now select all those blocks at once, and drag in a second direction and you have a concrete platform."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="Q" />
+	</input_action>
+
+	<!--Object Manipulation
+		***************************************************************************-->
+
+	<input_action id="LevelEditor_Rotate around X"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_ObjectManipulation" display_name="Rotate around X"
+			description="Quickly rotate the currently selected objects around the world X axis."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="X" />
+	</input_action>
+
+	<input_action id="LevelEditor_Rotate around Y"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_ObjectManipulation" display_name="Rotate around Y"
+			description="Quickly rotate the currently selected objects around the world Y axis."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="Y" />
+	</input_action>
+
+	<input_action id="LevelEditor_Rotate around Z"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_ObjectManipulation" display_name="Rotate around Z"
+			description="Quickly rotate the currently selected objects around the world Z axis."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="Z" />
+	</input_action>
+
+	<input_action id="LevelEditor_Set rotation to identity"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_ObjectManipulation" display_name="Set rotation to identity"
+		description="Quickly reset the rotation of the selected objects to their defaults."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="I" />
+	</input_action>
+
+	<!--Gizmo-Specific
+		***************************************************************************-->
+
+	<input_action id="LevelEditor_Toggle transform space (global/local)"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_GizmoSpecific" display_name="Toggle transform space (global/local)"
+		description="For the current editor gizmo style, either edit in global space (the whole scene) or local space (relative to the selected objects)."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="L" />
+	</input_action>
+
+	<input_action id="LevelEditor_Begin grid snap"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_GizmoSpecific" display_name="Snap Object Y To Grid"
+			description="Hold this down and move the mouse around to choose a Y snap pivot. (In other words, choose if the bottom, or center, or top of the object is what should go to the grid.)
+
+Hold this AND the left mouse button down to snap the Y position of the object to the level of the grid as you move the mouse around. (In other words, actually drop the bottom, middle, or top of the object to the grid, and move it around on the grid plane.)"
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="B" />
+	</input_action>
+	
+	<input_action id="LevelEditor_Enable snapping"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_GizmoSpecific" display_name="Enable snapping (Move/Rotate/Box-Scale/Universal)"
+		description="Applies in most of the gizmos. They snap between positions, rotations, scales, or similar."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftControl" />
+	</input_action>
+
+	<input_action id="LevelEditor_Enable 2D mode"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_GizmoSpecific" display_name="Enable 2D mode (Move/Universal)"
+		description="Alternative movement mode that is two-dimensional relative to the camera."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftShift" />
+	</input_action>
+
+	<input_action id="LevelEditor_Enable vertex snapping"
+		skip_all_localization_on_node="true"
+			  category="LevelEditor_GizmoSpecific" display_name="Enable vertex snapping (Move/Universal)"
+		description="Snaps the vertices of one object to another instead of using grid snapping or absolute bounding-box snapping."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="V" />
+	</input_action>
+
+	<input_action id="LevelEditor_Enable overlap test"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_GizmoSpecific" display_name="Disable overlap test (Extrude)"
+		description="Only used in the extrude tool -- normally overlap-testing is on. Holding shift will cause it to extrude without overlap-testing (in other words, copies of objects will appear exactly on top of one another).
+		Be careful with this."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftShift" />
+	</input_action>
+
+	<input_action id="LevelEditor_Change multi-axis mode"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_GizmoSpecific" display_name="Change multi-axis mode (Scale)"
+		description="Only used in the scale tool. When holding this down, it provides extra handles which allow for two-axis scaling. 
+		
+The normal gizmo normally only allows for single-axis (endpoints) or three-axis (center point) scaling."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftShift" />
+	</input_action>
+
+	<input_action id="LevelEditor_Enable center pivot"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_GizmoSpecific" display_name="Mirror Scaling Around Center (Box-Scale)"
+		description="Only used in the box-scale tool. Causes the object to be scaled in a mirrored faction around the center of the box."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftShift" />
+	</input_action>
+
+	<!--Selection Grab
+		***************************************************************************-->
+
+	<input_action id="LevelEditor_Grab Toggle on/off"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_Grab" display_name="Grab Toggle on/off"
+			description="Begin or end selection-grab session. Left click also ends the session."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="C" />
+	</input_action>
+
+	<input_action id="LevelEditor_Enable rotation"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_Grab" display_name="Enable rotation"
+			description="During grab session: hold this and move the mouse to rotate objects around surface normal."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftShift"  />
+	</input_action>
+
+	<input_action id="LevelEditor_Enable rotation around anchor"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_Grab" display_name="Enable rotation around anchor"
+			description="During grab session: hold this and move the mouse horizontally to orbit objects around anchor point."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="LeftControl" key="LeftShift"  />
+	</input_action>
+
+	<input_action id="LevelEditor_Enable scaling"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_Grab" display_name="Enable scaling"
+			description="During grab session: hold this and move the mouse horizontally to scale objects."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftControl" />
+	</input_action>
+
+	<input_action id="LevelEditor_Enable offset from surface"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_Grab" display_name="Enable offset from surface"
+			description="During grab session: hold this and move the mouse horizontally to offset objects from the surface."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="Q" />
+	</input_action>
+
+	<input_action id="LevelEditor_Enable anchor adjust"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_Grab" display_name="Enable anchor adjust"
+			description="During grab session: hold this and move the mouse to adjust anchor point."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftAlt" />
+	</input_action>
+
+	<input_action id="LevelEditor_Enable offset from anchor"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_Grab" display_name="Enable offset from anchor"
+			description="During grab session: hold this and move the mouse horizontally to offset objects from the anchor point."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="Space" />
+	</input_action>
+
+	<input_action id="LevelEditor_Next alignment axis"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_Grab" display_name="Next alignment axis"
+			description="During grab session: next surface alignment axis (i.e. can be used to cycle through all available surface alignment axes)."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="B" />
+	</input_action>
+
+	<!--Selection O-to-O Snap
+		***************************************************************************-->
+
+	<input_action id="LevelEditor_Snap Toggle on/off"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_OtoOSnap" display_name="Object-to-Object Snap Toggle on/off"
+			description="Begin or end snap session. Left click also ends the session. During the session move the mouse to snap the selected objects to nearby objects."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="S" />
+	</input_action>
+
+	<input_action id="LevelEditor_Enable flexi-snap"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_OtoOSnap" display_name="Enable flexi-snap"
+			description="During snap session: hold down to allow flexi-snap, whatever that is. ~*~"
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftControl" />
+	</input_action>
+
+	<input_action id="LevelEditor_Enable more control"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_OtoOSnap" display_name="Enable more control"
+			description="During snap session: hold down to allow more control, which lets you make slight corrections to what it calculates for you."
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftShift" />
+	</input_action>
+
+	<input_action id="LevelEditor_Toggle sit below surface"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_OtoOSnap" display_name="Toggle sit below surface"
+			description="During snap session: press to do... something? ~*~"
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="N" />
+	</input_action>
+
+	<!--Scene Grid
+		***************************************************************************-->
+
+	<input_action id="LevelEditor_ToggleGrid"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_SceneGrid" display_name="Toggle Level Editor Grid On Or Off"
+			description="Normally the main view shows the grid, but the perspective view does not. This allows you to toggle on or off the grid in either mode."
+			dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+			scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="F4" />
+	</input_action>
+
+	<input_action id="LevelEditor_Grid up"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_SceneGrid" display_name="Grid up"
+			description="Move the visual grid up in the Y axis (useful for then snapping items to it at a new height)"
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="RightBracket" />
+	</input_action>
+
+	<input_action id="LevelEditor_Grid down"
+			skip_all_localization_on_node="true"
+			category="LevelEditor_SceneGrid" display_name="Grid down"
+			description="Move the visual grid down in the Y axis (useful for then snapping items to it at a new height)"
+			check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftBracket" />
+	</input_action>
+
+	<input_action id="LevelEditor_Snap to cursor pick point"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_SceneGrid" display_name="Snap to cursor pick point"
+		description="Left click while holding: snaps the grid Y position to the intersection between the mouse cursor and an object in the scene.
+		
+Double-click while holding: same as above, but this time the position will snap to either the top or bottom of the object, depending which one is closer to the cursor pick point. Useful when you need to quickly place the grid on top or below objects. Works with arbitrary object and grid rotations."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftAlt" />
+	</input_action>
+
+	<!--Object Manipulation
+		***************************************************************************-->
+
+	<input_action id="LevelEditor_Duplicate selected"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_ObjectManipulation" display_name="Duplicate selected"
+		description="Duplicating an object or set of objects makes a copy in the exact location. This is incredibly useful!  Immediately after you can drag the contents to wherever you want."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="LeftControl" key="D" />
+	</input_action>
+
+	<input_action id="LevelEditor_Delete selected"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_ObjectManipulation" display_name="Delete selected"
+		description="Deleting an object removes it from the scene."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="Delete" />
+	</input_action>
+
+	<input_action id="LevelEditor_RandomYRotation"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_ObjectManipulation" display_name="Randomize Y Rotation Of Selected"
+		description="Pressing this will randomize the Y rotation of all selected objects."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+		scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="Alpha1" />
+	</input_action>
+
+	<input_action id="LevelEditor_JitterXZPosition"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_ObjectManipulation" display_name="Jitter XZ Position"
+		description="Pressing this will slightly offset the X and/or Z position of all selected objects in random ways."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+		scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="Alpha2" />
+	</input_action>
+
+	<input_action id="LevelEditor_JitterXZPosition_Larger"
+		skip_all_localization_on_node="true"
+		category="Common" display_name="Jitter XZ Position Modifier: Increase Jitter Scale"
+		description="If holding this while using the 'Jitter XZ Position' function, this will make the jitter much larger in size. This can be used to scatter items.
+		
+Tip: select an object like a tree or piece of grass, press duplicate four to six times (each time doubles the count you have, so duplicate x6 gives you 64 objects from 1 original), and then use this modifier function with XZ jitter to scatter these all over the level (and potentially out of the level, but you can drag-select those and position them back in)."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftShift" />
+	</input_action>
+	
+	<!--Layers
+		***************************************************************************-->
+
+	<input_action id="LevelEditor_HideMetaLayers"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_Layers" display_name="Hide or Show Meta Layers"
+		description="Hiding meta layers keeps them out of your way and from you accidentally clicking or selecting them."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+		scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="M" />
+	</input_action>
+
+	<input_action id="LevelEditor_HideDecorationMetaLayers"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_Layers" display_name="Hide or Show Decoration Meta Layers"
+		description="Hiding the decoration meta layers keeps them out of your way, but lets you still see level borders as well as building meta layers."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+		scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="N" />
+	</input_action>
+
+	<input_action id="LevelEditor_HidePathingRegionsAndPoints"
+		skip_all_localization_on_node="true"
+		category="LevelEditor_Layers" display_name="Hide or Show Pathing Regions And Points"
+		description="Hiding pathing regions and points keeps them out of your way and from you accidentally clicking them."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+		scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="P" />
+	</input_action>
+	
+	<!--Critical
+		***************************************************************************-->
+
+	<input_action id="Undo"
+      skip_all_localization_on_node="true"
+	category="Common" display_name="Undo"
+	  description="This button combo undoes the last action. A history of the most recent 300 actions is kept."
+	  check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="LeftControl" key="Z" />
+	</input_action>
+	
+	<input_action id="Redo"
+      skip_all_localization_on_node="true"
+	  category="Common" display_name="Redo"
+	  description="This button combo redoes the last action undone action. A history of the most recent 300 actions is kept."
+	  check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="LeftControl" key="Y" />
+	</input_action>
+
+	<input_action id="LevelEditor_SelectAll"
+      skip_all_localization_on_node="true"
+	  category="Common" display_name="Select All"
+	  description="Select all of the objects in the current level, if no objects are currently selected. 
+	  
+If you have existing objects selected, then it will limit the selection expansion to just being those objects that are in the same categories as anything you have selected."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+	  scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="LeftControl" key="A" />
+	</input_action>
+
+	<input_action id="LevelEditor_SelectAll_JustMyTypeGroup"
+		skip_all_localization_on_node="true"
+		category="Common" display_name="Select All Modifier: Just My Type Group"
+		description="If holding this while using the 'select all' function with existing objects selected, then it will limit the selection to just objects that are very similar to what you already have selected."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftShift" />
+	</input_action>
+
+	<input_action id="LevelEditor_SelectAll_JustMyExactType"
+		skip_all_localization_on_node="true"
+		category="Common" display_name="Select All Modifier: Just My Exact Type"
+		description="If holding this while using the 'select all' function with existing objects selected, then it will limit the selection to just objects that are the exact same type as any you currently have selected."
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftAlt" />
+	</input_action>
+	
+	<input_action id="LevelEditor_Multi deselect"
+		skip_all_localization_on_node="true"
+		category="Common" display_name="Multi deselect"
+		description="Hold this down and drag a rectangle on the screen to deselect anything inside the rectangle. (Normally when you drag a rectangle, that replaces your selection.)"
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftControl" />
+	</input_action>
+
+	<input_action id="LevelEditor_Append to selection"
+		skip_all_localization_on_node="true"
+		category="Common" display_name="Append to selection"
+		description="Hold this down and left-click an object to add it to your current selection. If the object is already part of your selection, it will be deselected.
+		
+OR, hold this down and drag a rectangle on the screen to select anything inside the rectangle. (Normally when you drag a rectangle, that replaces your selection.)"
+		check_type="Custom" scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="LeftShift" />
+	</input_action>
+
+	<input_action id="LevelEditor_SwitchPaletteAndSceneObjectList"
+			skip_all_localization_on_node="true"
+			category="Common" display_name="Switch Between Palette And Scene Object List"
+			description="When you start out in the level editor, it is showing a palette of objects you can add. By pressing tab, you can toggle over to a list of objects in the scene, instead."
+			dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+			scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="Tab" />
+	</input_action>
+
+	<input_action id="LevelEditor_Save"
+      skip_all_localization_on_node="true"
+	  category="Common" display_name="Save"
+	  description="This button saves your file, overwriting the existing one if you want to."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+	  scope="LevelEditorOnly" allowed_in_modes="Normal" >
+		<keybind id="1" modifier_1="LeftControl" key="S" />
+	</input_action>
+
+
+	<input_action id="LevelEditor_SaveAs"
+      skip_all_localization_on_node="true"
+	  category="Common" display_name="Save As"
+	  description="This button saves your file to a location that you specify."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+	   scope="LevelEditorOnly" allowed_in_modes="Normal" >
+		<keybind id="1" modifier_1="LeftControl" modifier_2="LeftShift" key="S" />
+	</input_action>
+
+
+	<input_action id="LevelEditor_Copy"
+      skip_all_localization_on_node="true"
+	  category="Common" display_name="Copy"
+	  description="Copy all of the selected objects, potentially for pasting into another level within the level editor."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+	  scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="LeftControl" key="C" />
+	</input_action>
+
+	<input_action id="LevelEditor_Paste"
+      skip_all_localization_on_node="true"
+	  category="Common" display_name="Paste"
+	  description="Paste some previously-copied objects, even into another level in the level editor."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+	  scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" modifier_1="LeftControl" key="V" />
+	</input_action>
+
+	<input_action id="LevelEditor_ConnectPathingPoints"
+		skip_all_localization_on_node="true"
+		category="Common" display_name="Connect Pathing Points"
+		description="Pressing this will connect any pathing points together that you have selected, if they are not already connected."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+		scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="Alpha4" />
+	</input_action>
+
+	<input_action id="LevelEditor_DisconnectPathingPoints"
+		skip_all_localization_on_node="true"
+		category="Common" display_name="Disconnect Pathing Points"
+		description="Pressing this will disconnect any pathing points together that you have selected, if they currently connected."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
+		scope="LevelEditorOnly" allowed_in_modes="Normal">
+		<keybind id="1" key="Alpha5" />
+	</input_action>
+	
+</root>

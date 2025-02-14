@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+
+	<!--Upgrades To Equipment (Priority Group 3000, to max 4999)
+	******************************************************************************************-->
+
+	<!--******************************************Augments******************************************-->
+
+	<!--******************************************Guns******************************************-->
+
+	<upgrade_float id="HandgunMuzzleVelocity" display_name="Handgun Muzzle Velocity"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SF2_Bullet"
+		float_original="1" float_increment="0.3" float_cap="4" show_data_as_percentage="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_multiplicative_upgrade id="1" data_to_upgrade="ActorPower" required_collection="Handguns" />
+	</upgrade_float>
+
+	<upgrade_float id="RifleMuzzleVelocity" display_name="Rifle Muzzle Velocity"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FlatSkillB_bullet1"
+		float_original="1" float_increment="0.25" float_cap="3.5" show_data_as_percentage="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_multiplicative_upgrade id="1" data_to_upgrade="ActorPower" required_collection="Rifles" />
+	</upgrade_float>
+
+	<upgrade_float id="ShotgunMuzzleVelocity" display_name="Shotgun Muzzle Velocity"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="ME_AmmoShelll2"
+		float_original="1" float_increment="0.2" float_cap="3" show_data_as_percentage="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_multiplicative_upgrade id="1" data_to_upgrade="ActorPower" required_collection="Shotguns" />
+	</upgrade_float>
+	
+	<!--******************************************Other Projectiles******************************************-->
+
+	<!--******************************************Melee******************************************-->
+
+	<upgrade_float id="MeleeSkill" display_name="Melee Skill"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_Skill134"
+		float_original="1" float_increment="0.2" float_cap="3" show_data_as_percentage="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_multiplicative_upgrade id="1" data_to_upgrade="ActorPower" required_collection="MeleeWeapons" />
+	</upgrade_float>
+
+	<upgrade_float id="ElectroVelocity" display_name="Electro Velocity"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SW_Sword"
+		float_original="1" float_increment="0.2" float_cap="3" show_data_as_percentage="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_multiplicative_upgrade id="1" data_to_upgrade="ActorPower" required_collection="AndroidElectroWeapons" />
+	</upgrade_float>
+
+	<upgrade_float id="DisruptionVelocity" display_name="Disruption Velocity"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="SW_Sword1"
+		float_original="1" float_increment="0.2" float_cap="3" show_data_as_percentage="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_multiplicative_upgrade id="1" data_to_upgrade="ActorPower" required_collection="AndroidDisruptionWeapons" />
+	</upgrade_float>
+	
+	<!--******************************************Android Armor******************************************-->
+	
+
+</root>

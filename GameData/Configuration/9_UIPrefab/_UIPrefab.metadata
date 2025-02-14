@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="prefab">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="prefab_bundle" type="string" maxlength="200" content_width_px="200" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the asset bundle that the ui prefab file is in."/>
+
+	<attribute key="prefab_filename" type="string" maxlength="600" content_width_px="400" is_required="true"
+		tooltip="This specifies the path of the ui prefab inside the specified asset bundle."/>
+
+	<attribute key="has_child_prefab" type="bool" default="false"
+		tooltip="Does this prefab have a child prefab?  Almost none do. Mainly for image lists and some other things we don't use much anymore." />
+
+	<attribute key="child_prefab_bundle" type="string" maxlength="200" content_width_px="200" linebreak_before="Always"
+		tooltip="This specifies the asset bundle that the child ui prefab file is in, if there is one."/>
+
+	<attribute key="child_prefab_filename" type="string" maxlength="600" content_width_px="400"
+		tooltip="This specifies the path of the child ui prefab inside the specified asset bundle, if there is one."/>
+	
+	
+</root>

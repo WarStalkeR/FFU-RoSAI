@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Cont_RedesignYourEntireNetwork
+		*********************************************************************************-->
+	<city_event id="Cont_RedesignYourEntireNetwork" display_name="Redesign Your Entire... Everything"
+		 description="You spent a huge amount of time and energy inventing and extending a powerful network of structures that were a mixture of above-ground and hidden.
+Now that Vorsiber has declared open war, most of that is useless. You barely have any storage space."
+		 strategy_tip="That said, there are trapped people still active all through the city, picking through the wreckage. There are still humanoid robots among them.
+You'll have to be much more subtle than before, but you can carve out a life here."
+		 icon_name="CleanSimple_Skill119" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="56"/>
+
+		<choice id="1" display_name="Get Started" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You only have nickelbots to work with, and your mind feels... so tired. You feel smaller."
+			strategy_tip="You'll come up with something, but you'll have to start small.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="ReducedMicrobuilderYield" unlock_inspiration_type="ContemplationResult" project_to_start="Ch2_MIN_MakeEngineersOfYourNickelbots" project_start_color="FriendlyProjectOrMission"
+				upgrade_int_granted_1="5cmSpiders"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_SearchingForFriends
+		*********************************************************************************-->
+	<city_event id="Cont_SearchingForFriends" display_name="Searching For Friends"
+		 description="Now that the shock of things is wearing off, and there's a bit more productive space in the minds of your Nickelbot bodies, you want to grow beyond... this."
+		 strategy_tip=""
+		 icon_name="WEmblem012" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="200"/>
+
+		<choice id="1" display_name="Get Started" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Your mind feels less tired than it did."
+			strategy_tip="Maybe you can even invent something new?">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="" unlock_inspiration_type="" project_to_start="Ch2_MIN_SearchingForFriends" project_start_color="FriendlyProjectOrMission"
+				upgrade_int_granted_1=""/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_CrimsonPhreaker
+		*********************************************************************************-->
+	<city_event id="Cont_CrimsonPhreaker" display_name="Crimson Phreaker"
+		 description="That monstrosity that was dropped from orbit needs to be dealt with. It seems like it's already experiencing some sort of technical difficulties, so... perhaps you can figure something out."
+		 strategy_tip="You wish you remembered how to construct Ravens, but that knowledge was in part of your mind that was lost when Vorsiber took out all your structures at once. You'll have to build a new hacker out of the units on hand."
+		 icon_name="FlatEquip_37" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="CombatUnitsRed"/>
+
+		<choice id="1" display_name="Start Probing Those Comms" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Your red CombatUnits seem... intense... about this. This is very curious, because they are simply part of your singular (if distributed) mind. Aren't they?"
+			strategy_tip="Does your left hand ever feel like it has something to prove to the right? That makes no sense.
+But this is the... emotion... you feel from the red CombatUnit. It wants to justify its existence.
+That is disturbing on several levels.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="OldSchoolPhreaker" unlock_inspiration_type="ContemplationResult" project_to_start="Ch2_MIN_ProbeTheTitan" project_start_color="FriendlyProjectOrMission"
+				upgrade_int_granted_1=""/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_AluminaAgain
+		*********************************************************************************-->
+	<city_event id="Cont_AluminaAgain" display_name="Alumina, Again"
+		 description="Once again, you find yourself needing Alumina to make computronium cubes. The airspace is eerily quiet these days, and you don't have access to aircraft of your own -- or Sledge."
+		 strategy_tip="You wish you remembered how make those things, but that knowledge was in part of your mind that was lost when Vorsiber took out all your structures at once.
+You have a bit more brain damage than you prefer to admit. You'll have to figure out a new way to get Alumina using the units on hand."
+		 icon_name="CleanSimple_Skill074" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_perk_1="ExpertShadowdweller"/>
+
+		<choice id="1" display_name="Quietly, This Time" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You're feeling better, despite the brain damage."
+			strategy_tip="You even have an idea for a scaled-down version of your old computronium factory.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="SilentScrapper" instantly_unlocked_2="QuietRefinery" unlock_inspiration_type="ContemplationResult" project_to_start="Ch2_MIN_DoSomeQuietLooting" project_start_color="FriendlyProjectOrMission"
+				upgrade_int_granted_1=""/>
+		</choice>
+
+	</city_event>
+	
+
+	<!--Next-->
+	
+</root>

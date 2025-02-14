@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--FirstPetCat
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="FirstPetCat" display_name="Your Cat"
+		description="It followed your Nickelbot home, and is now friendly with all of your androids."
+		icon_scale="0.7" shape_icon_name="BT_Cat" shape_icon_color="#ffffff" is_named_thing="FirstPetCat"
+		vis_drawing_tag="CatTux" vis_object_scale="0.1" vis_object_extra_offset="0" collider_scale="9"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="false" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="Flammable">
+		<actor_data data_type="AttackRange" base_range="1,2" />
+		<actor_data data_type="ActorMoveRange" base_range="22,28" />
+		<actor_data data_type="ActorHP" base_range="20,20" />
+		<actor_data data_type="ActorPower" base_range="3,3" />
+	</npc_unit_type>
+
+	<!--FeralCat
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="FeralCat" display_name="Feral Cat"
+		description="Now that you're aware of them, you've started noticing them everywhere."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Animal002" shape_icon_color="#ffffff"
+		vis_drawing_tag="CatAny" vis_object_scale="0.1" vis_object_extra_offset="0" collider_scale="9"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="false" deaths_count_as_murders="false"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack" rescued_becomes="PetCat" rescued_statistic1="RescuedCats" unlock_required_for_rescue="CatRescue"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="Flammable">
+		<actor_data data_type="AttackRange" base_range="1,2" />
+		<actor_data data_type="ActorMoveRange" base_range="12,18" />
+		<actor_data data_type="ActorHP" base_range="16,16" />
+		<actor_data data_type="ActorPower" base_range="3,3" />
+	</npc_unit_type>
+
+	<!--FeralBulldogPack
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="FeralBulldogPack" display_name="Feral Bulldog Pack"
+		description="Now that you're aware of them, you've started noticing them everywhere."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Animal001" shape_icon_color="#ffffff"
+		vis_drawing_tag="Bulldog1" vis_object_scale="0.1" vis_object_extra_offset="0" collider_scale="9"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="8"
+		percent_robotic="0" percent_biological="100" is_human="false" deaths_count_as_murders="false"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack" rescued_becomes="PetBulldog" rescued_statistic1="RescuedBulldogs" rescued_statistic2="RescuedDogs" unlock_required_for_rescue="DogRescue"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="Flammable">
+		<actor_data data_type="AttackRange" base_range="1,2" />
+		<actor_data data_type="ActorMoveRange" base_range="8,14" />
+		<actor_data data_type="ActorHP" base_range="120,147" />
+		<actor_data data_type="ActorPower" base_range="20,27" />
+	</npc_unit_type>
+
+	<!--FeralDachshundPack
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="FeralDachshundPack" display_name="Feral Dachshund Pack"
+		description="Now that you're aware of them, you've started noticing them everywhere."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Animal001" shape_icon_color="#ffffff"
+		vis_drawing_tag="Dachshund1" vis_object_scale="0.1" vis_object_extra_offset="0" collider_scale="9"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="8"
+		percent_robotic="0" percent_biological="100" is_human="false" deaths_count_as_murders="false"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack" rescued_becomes="PetDachshund" rescued_statistic1="RescuedDachshunds" rescued_statistic2="RescuedDogs" unlock_required_for_rescue="DogRescue"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="Flammable">
+		<actor_data data_type="AttackRange" base_range="1,2" />
+		<actor_data data_type="ActorMoveRange" base_range="8,14" />
+		<actor_data data_type="ActorHP" base_range="120,147" />
+		<actor_data data_type="ActorPower" base_range="20,27" />
+	</npc_unit_type>
+
+	<!--FeralDalmatianPack
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="FeralDalmatianPack" display_name="Feral Dalmatian Pack"
+		description="Now that you're aware of them, you've started noticing them everywhere."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Animal001" shape_icon_color="#ffffff"
+		vis_drawing_tag="Dalmation1" vis_object_scale="0.1" vis_object_extra_offset="0" collider_scale="9"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="8"
+		percent_robotic="0" percent_biological="100" is_human="false" deaths_count_as_murders="false"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack" rescued_becomes="PetDalmatian" rescued_statistic1="RescuedDalmatians" rescued_statistic2="RescuedDogs" unlock_required_for_rescue="DogRescue"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="Flammable">
+		<actor_data data_type="AttackRange" base_range="1,2" />
+		<actor_data data_type="ActorMoveRange" base_range="8,14" />
+		<actor_data data_type="ActorHP" base_range="120,147" />
+		<actor_data data_type="ActorPower" base_range="20,27" />
+	</npc_unit_type>
+
+	<!--FeralDobermanPack
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="FeralDobermanPack" display_name="Feral Doberman Pack"
+		description="Now that you're aware of them, you've started noticing them everywhere."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Animal001" shape_icon_color="#ffffff"
+		vis_drawing_tag="Doberman1" vis_object_scale="0.1" vis_object_extra_offset="0" collider_scale="9"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="8"
+		percent_robotic="0" percent_biological="100" is_human="false" deaths_count_as_murders="false"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack" rescued_becomes="PetDoberman" rescued_statistic1="RescuedDobermans" rescued_statistic2="RescuedDogs" unlock_required_for_rescue="DogRescue"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="Flammable">
+		<actor_data data_type="AttackRange" base_range="1,2" />
+		<actor_data data_type="ActorMoveRange" base_range="8,14" />
+		<actor_data data_type="ActorHP" base_range="120,147" />
+		<actor_data data_type="ActorPower" base_range="20,27" />
+	</npc_unit_type>
+
+	<!--FeralGreyhoundPack
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="FeralGreyhoundPack" display_name="Feral Greyhound Pack"
+		description="Now that you're aware of them, you've started noticing them everywhere."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Animal001" shape_icon_color="#ffffff"
+		vis_drawing_tag="Greyhound1" vis_object_scale="0.1" vis_object_extra_offset="0" collider_scale="9"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="8"
+		percent_robotic="0" percent_biological="100" is_human="false" deaths_count_as_murders="false"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack" rescued_becomes="PetGreyhound" rescued_statistic1="RescuedGreyhounds" rescued_statistic2="RescuedDogs" unlock_required_for_rescue="DogRescue"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="Flammable">
+		<actor_data data_type="AttackRange" base_range="1,2" />
+		<actor_data data_type="ActorMoveRange" base_range="8,14" />
+		<actor_data data_type="ActorHP" base_range="120,147" />
+		<actor_data data_type="ActorPower" base_range="20,27" />
+	</npc_unit_type>
+	
+	<!--FeralHuskyPack
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="FeralHuskyPack" display_name="Feral Husky Pack"
+		description="Now that you're aware of them, you've started noticing them everywhere."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Animal001" shape_icon_color="#ffffff"
+		vis_drawing_tag="Husky1" vis_object_scale="0.1" vis_object_extra_offset="0" collider_scale="9"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="8"
+		percent_robotic="0" percent_biological="100" is_human="false" deaths_count_as_murders="false"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack" rescued_becomes="PetHusky" rescued_statistic1="RescuedHuskys" rescued_statistic2="RescuedDogs" unlock_required_for_rescue="DogRescue"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="Flammable">
+		<actor_data data_type="AttackRange" base_range="1,2" />
+		<actor_data data_type="ActorMoveRange" base_range="8,14" />
+		<actor_data data_type="ActorHP" base_range="120,147" />
+		<actor_data data_type="ActorPower" base_range="20,27" />
+	</npc_unit_type>
+
+	<!--FeralRottweilerPack
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="FeralRottweilerPack" display_name="Feral Rottweiler Pack"
+		description="Now that you're aware of them, you've started noticing them everywhere."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Animal001" shape_icon_color="#ffffff"
+		vis_drawing_tag="Rottweiler1" vis_object_scale="0.1" vis_object_extra_offset="0" collider_scale="9"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="8"
+		percent_robotic="0" percent_biological="100" is_human="false" deaths_count_as_murders="false"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack" rescued_becomes="PetRottweiler" rescued_statistic1="RescuedRottweilers" rescued_statistic2="RescuedDogs" unlock_required_for_rescue="DogRescue"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="Flammable">
+		<actor_data data_type="AttackRange" base_range="1,2" />
+		<actor_data data_type="ActorMoveRange" base_range="8,14" />
+		<actor_data data_type="ActorHP" base_range="120,147" />
+		<actor_data data_type="ActorPower" base_range="20,27" />
+	</npc_unit_type>
+
+	<!--FeralTatraSheepdogPack
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="FeralTatraSheepdogPack" display_name="Feral Tatra Sheepdog Pack"
+		description="Now that you're aware of them, you've started noticing them everywhere."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Animal001" shape_icon_color="#ffffff"
+		vis_drawing_tag="TatraSheepDog1" vis_object_scale="0.1" vis_object_extra_offset="0" collider_scale="9"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="8"
+		percent_robotic="0" percent_biological="100" is_human="false" deaths_count_as_murders="false"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack" rescued_becomes="PetTatraSheepdog" rescued_statistic1="RescuedTatraSheepdogs" rescued_statistic2="RescuedDogs" unlock_required_for_rescue="DogRescue"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="Flammable">
+		<actor_data data_type="AttackRange" base_range="1,2" />
+		<actor_data data_type="ActorMoveRange" base_range="8,14" />
+		<actor_data data_type="ActorHP" base_range="120,147" />
+		<actor_data data_type="ActorPower" base_range="20,27" />
+	</npc_unit_type>
+
+</root>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<aggregation_type id="All" display_name="All" description="" is_default="true"/>
+
+	<aggregation_type id="District" display_name="Districts"
+			description="Districts are large areas of the map that usually include multiple map cells."/>
+	
+	<aggregation_type id="POIAll" display_name="POIs - All"
+			description="Points Of Interest are either individual map tiles of major importance, or are smaller regions inside a single tile's cell."/>
+
+	<aggregation_type id="POIUncommon" display_name="POIs - Uncommon"
+			description="There are not many of these in most cities."/>
+
+	<aggregation_type id="POILarge" display_name="POIs - Large"
+			description="These take up an entire cell, or multiple cells, and are also strategically significant."/>
+	
+	<aggregation_type id="POICryo" display_name="POIs - Cryo"
+			description="Cryo freezing and prep."/>
+
+	<aggregation_type id="POIDetainment" display_name="POIs - Detainment"
+			description="The holes in which we place people."/>
+	
+	<aggregation_type id="POIFarm" display_name="POIs - Farm"
+			description="Farms throughout the city."/>
+
+	<aggregation_type id="POIMining" display_name="POIs - Mining"
+			description="Mining sites throughout the city."/>
+	
+	<aggregation_type id="POIMilitary" display_name="POIs - Military"
+			description="Military bases and outposts throughout the city."/>
+
+	<aggregation_type id="POIReligion" display_name="POIs - Religion"
+			description="Locations where religions are able to lament their loss of freedoms."/>
+
+	<aggregation_type id="POICult" display_name="POIs - Cults"
+			description="Fringe locations where cults are able to 'openly' gather."/>
+
+	<aggregation_type id="POIPower" display_name="POIs - Power"
+			description="Power plants and generators throughout the city."/>
+
+	<aggregation_type id="POISkyscraper" display_name="POIs - Skyscrapers"
+			description="Skyscrapers of note."/>
+	
+</root>

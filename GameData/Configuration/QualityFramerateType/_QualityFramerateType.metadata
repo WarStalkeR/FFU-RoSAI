@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="framerate_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="vsync_count" type="int-textbox" min="0" max="2" default="0" content_width_px="150"
+		tooltip="Zero is no vsync, 1 is regular vsync, 2 is half-vsync. (Aka, sync every 2 frames)."/>
+
+	<attribute key="target_framerate" type="int-textbox" min="0" max="900" content_width_px="150"
+		tooltip="When vsync is set to 0, you can tell the program to try to hit a certain target framerate instead. Zero means unlimited."/>
+	
+</root>

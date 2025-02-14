@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Always the same, part of data tables-->
+	<attribute key="id" type="string" maxlength="200" content_width_px="200" is_required="true" is_central_identifier="true" linebreak_after="PreferNot" is_id_for_layer="true"
+		tooltip="Never shown to actual players. This is the central lookup id of the row in its data table, and must be unique within its table. 
+		
+Once set, if it's in savegames it should generally not be changed. If you DO need to change it, then you can adjust data about it in LookupSwaps." />
+
+	<attribute key="display_name" type="string" maxlength="200" is_user_facing_name="true" is_required="true" is_localized="true" content_width_px="200" linebreak_before="PreferNot" linebreak_after="Always"
+		tooltip="The main human-readable (and localized) name for the row, as it will be shown in-game."/>
+		
+	<attribute key="is_partial_record" type="bool" is_partial_identifier="true" causes_all_fields_to_be_optional_except_central_identifier="true"
+		tooltip="By specifying a row with just a name and then this set to true, you can add on extra information, or extra child nodes, to it." />
+	<attribute key="copy_from" type="node-dropdown" node_source="self" is_data_copy_identifier="true" content_width_px="300"
+		tooltip="By specifying another row name within this same table, you can copy everything that it is, plus add on more things." />
+	
+	<attribute key="ready" type="int-bool" default="1" linebreak_after="PreferNot"
+		tooltip="Rows flagged as not being ready will be skipped during game parsing. These are in-work rows not yet to be used." />
+
+	<attribute key="description" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of whatever this is."/>
+
+	<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="false" is_internal_notes="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the non-localized set of notes for internal use."/>
+
+	<attribute key="translation_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="false" is_translation_notes="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the non-localized set of notes for translators to see."/>
+	
+	<attribute key="expansion_or_mod_status_overridden" type="int-bool" default="0" linebreak_after="PreferNot"
+		tooltip="This has something to do with copy_from field status copying from its base row. Doesn't seem to be used, keeping it just in case." />
+	
+	<attribute key="required_expansion_list" type="node-list" node_source="Expansion" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If any expansions are chosen as required, then this row will not appear unless those expansion(s) are present."/>
+	<attribute key="required_mod_list" type="folder-list" folder_source="../../XMLMods" content_width_px="300"  linebreak_after="PreferNot"
+		tooltip="If any mods are chosen as required, then this row will not appear unless those mod(s) are present."/>
+	
+	<attribute key="is_default" type="bool" linebreak_before="Always" linebreak_after="Always"
+		tooltip="In the game, is this row considered the default to be selected when no selection is otherwise made?"/>
+	
+	<attribute key="is_hidden" type="bool" linebreak_before="Always" linebreak_after="Always"
+		tooltip="In the game, is this row invisible when other nodes would be selectable?
+		
+This node is still present and can be used for various purposes if so, but essentially it keeps players from seeing it on interfaces."/>
+	
+	<attribute key="sort_order" type="float-textbox" min="-10000" max="100000" precision="3" content_width_px="150" linebreak_after="Always"
+		tooltip="If you would like to have the table be sorted, then you can specify the sort order. Lower numbers (going down into negatives) are first."/>
+
+	<attribute key="skip_all_localization_on_node" type="bool" linebreak_before="Always" linebreak_after="Always"
+		tooltip="When the xml editor is considering this node for localization, should it be skipped entirely?
+		
+This should be true for things that are debug-only, hidden from users anyway, or are level-editor-only."/>
+
+	<attribute key="skip_all_merging_on_node" type="bool" linebreak_before="Always" linebreak_after="Always"
+		tooltip="When the xml editor is considering this node for localization, should the entire node be blocked from any merging?"/>
+	
+	<!-- Used in the XML editor only -->
+
+	<conditional id="IsTightlyPacked" is_file_setting="true">
+		<and_group>
+			<type attribute="node_formatting" condition_type="Equals" value="tight" />
+		</and_group>
+	</conditional>
+
+	<attribute key="is_header" type="bool" only_exists_if_conditional_passes="IsTightlyPacked" is_required="true" linebreak_after="Always"
+		tooltip="In the editor, if this node is used in a dropdown, color it so that it is more visible."/>
+	
+	<!-- This is basically a small metadata for the root metadata attributes -->
+	<conditional id="IsNotRootOnly" is_file_setting="true">
+		<and_group>
+			<type attribute="is_for_single_root" condition_type="Equals" value="false" />
+		</and_group>
+	</conditional>
+
+	<attribute key="is_for_single_root" type="bool" is_file_setting="true" default="false"/>
+	<attribute key="node_name" type="string" is_file_setting="true" only_exists_if_conditional_passes="IsNotRootOnly" is_required="true"/>
+	<attribute key="node_formatting" type="string-dropdown" is_file_setting="true" default="Normal" only_exists_if_conditional_passes="IsNotRootOnly">
+		<option>Tight</option>
+		<option>Normal</option>
+	</attribute>
+
+</root>

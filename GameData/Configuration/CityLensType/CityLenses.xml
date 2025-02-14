@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<city_lens id="Versatile" display_name="Versatile" displayed_keybind="Lens_Versatile"
+		 description="The default lens."
+		 strategy_tip="Handy for quick navigation."
+		 icon_name="CleanTriangle20">
+		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
+		<lens_filter id="POIStat" display_name="Show Key POI Statuses" show_key_poi_statuses="true" is_enabled_by_default="true" description="Typically problems you caused."/>
+		<lens_filter id="NPCMiss" display_name="Show NPC Missions" show_npc_missions="true" is_enabled_by_default="true" description="Show missions being undertaken by NPCs, which you often want to thwart."/>
+		<lens_filter id="KeyNPCs" display_name="Show Key NPCs On Map" show_key_npc_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="HostileUnits" display_name="Show Hostile Units On Map" show_hostile_units="true" is_enabled_by_default="true" description=""/>
+
+		<lens_filter id="JobComplaints" display_name="Show All Job Complaints" show_job_complaints="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="Floors" display_name="Show Floors In Inspect Mode" show_floors_in_inspect_mode="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="BackgroundConflicts" display_name="Show Background Conflicts" show_city_conflicts_small="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="ProjectRelatedStreetSense" display_name="Show Project-Related StreetSense Items" show_project_related_street_sense="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="AllStreetSense" display_name="Show All StreetSense Items" show_all_street_sense="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipThreat" display_name="Skip Threat Lines Not At Hovered" skip_combat_lines_not_aimed_at_hovered_unit="true" is_enabled_by_default="false" description="Draws threat lines related only to what you are hovering. In complex battles, this makes visualization easier. You can also use Inspect mode."/>
+	</city_lens>
+
+	<city_lens id="Navigation" display_name="Navigation" displayed_keybind="Lens_Navigation"
+		 description="A quicker way to see action on the map and key POIs in regular street view."
+		 strategy_tip="If you want to really poke around in detail, click the filter button to the left of the radial menu, and enable 'Show All Beacons.'"
+		 icon_name="SF2_Location" hides_key_npc_units_during_inspect_focus="true">
+		
+		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
+		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Shows key POIs as part of that."/>
+		<lens_filter id="POIStat" display_name="Show Key POI Statuses" show_key_poi_statuses="true" is_enabled_by_default="true" description="Typically problems that you caused."/>
+		<lens_filter id="AllPOIStat" display_name="Show All POI Statuses" show_all_poi_statuses="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="AllPOIs" display_name="Show All POIs" show_all_pois="true" is_enabled_by_default="false" description="Tends to overwhelm the map, so zoom in or clear other filters to see things more clearly."/>
+		
+		<lens_filter id="KeyBeacons" display_name="Show Key Beacons" show_key_beacons="true" is_enabled_by_default="true" description="Tends to overwhelm the map, so zoom in or clear other filters to see things more clearly."/>
+		<lens_filter id="AllBeacons" display_name="Show All Beacons" show_all_beacons="true" is_enabled_by_default="false" description="Tends to overwhelm the map, so zoom in or clear other filters to see things more clearly."/>
+		
+		<lens_filter id="NPCMiss" display_name="Show NPC Missions" show_npc_missions="true" is_enabled_by_default="true" description="Show missions being undertaken by NPCs, which you often want to thwart."/>
+		<lens_filter id="KeyNPCs" display_name="Show Key NPCs On Map" show_key_npc_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="HostileUnits" display_name="Show Hostile Units On Map" show_hostile_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="BackgroundConflicts" display_name="Show Background Conflicts" show_city_conflicts_small="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="ProjectRelatedStreetSense" display_name="Show Project-Related StreetSense Items" show_project_related_street_sense="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="AllStreetSense" display_name="Show All StreetSense Items" show_all_street_sense="true" is_enabled_by_default="false" description=""/>
+
+		<lens_filter id="JobComplaints" display_name="Show All Job Complaints" show_job_complaints="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="Floors" display_name="Show Floors In Inspect Mode" show_floors_in_inspect_mode="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipThreat" display_name="Skip Threat Lines Not At Hovered" skip_combat_lines_not_aimed_at_hovered_unit="true" is_enabled_by_default="false" description="When enabled, it will only draw threat lines related to whatever you are hovering. In complex battles, this makes untangling the situation much easier. You can also use Inspect mode to do this."/>
+	</city_lens>
+	
+	<city_lens id="Forces" display_name="Forces" displayed_keybind="Lens_Forces"
+		 description="Focus on units and other things relevant to combat, with stance icons and health bars always shown for units, and threat lines always shown."
+		 strategy_tip="On the map, it also shows all of the NPC units that are sometimes skipped."
+		 icon_name="CleanSimple_SkillB064">
+		
+		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
+		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
+		<lens_filter id="NPCStances" display_name="Show All NPC Stance Icons" show_npc_unit_stances="true" is_enabled_by_default="true" description="The icons above NPCs in streets view."/>
+		<lens_filter id="Health" display_name="Show All Health Bars" show_health_bars="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="KeyNPCs" display_name="Show Key NPCs On Map" show_key_npc_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="NPCMiss" display_name="Show NPC Missions" show_npc_missions="true" is_enabled_by_default="true" description="Show missions being undertaken by NPCs, which you often want to thwart."/>
+		<lens_filter id="AllNPCs" display_name="Show All NPCs On Map" show_all_npc_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="HostileUnits" display_name="Show Hostile Units On Map" show_hostile_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="BackgroundConflicts" display_name="Show Background Conflicts" show_city_conflicts_small="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="ProjectRelatedStreetSense" display_name="Show Project-Related StreetSense Items" show_project_related_street_sense="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="AllStreetSense" display_name="Show All StreetSense Items" show_all_street_sense="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipGuardM" display_name="Skip Passive Guard NPCs On Map" skip_passive_guards_on_map="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="SkipGuardS" display_name="Skip Passive Guard NPCs On Streets" skip_passive_guards_on_streets="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="SkipEcon" display_name="Skip Economic NPCs On Map" skip_economic_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="AllThreatLines" display_name="Show All Threat Lines" show_threat_lines_always="true" is_enabled_by_default="false" description="Including those unrelated to your own units."/>
+		<lens_filter id="SkipThreat" display_name="Skip Threat Lines Not At Hovered" skip_combat_lines_not_aimed_at_hovered_unit="true" is_enabled_by_default="false" description="Draws threat lines related only to what you are hovering. In complex battles, this makes visualization easier. You can also use Inspect mode."/>
+		
+	</city_lens>
+	
+	<city_lens id="MachineStructures" display_name="Structures" displayed_keybind="Lens_MachineStructures"
+		 description="Focus on structures you have built, the jobs they are doing, and their ranges."
+		 strategy_tip="Useful when you want to build a new structure in an area that otherwise has a lot going on, when you want to change a lot of jobs at once, or when you want to clearly see the network connections."
+		 icon_name="SK_Building" hides_key_npc_units_during_inspect_focus="true"
+		 is_only_available_if_has_machine_structures="true" only_available_after_chapter="0">
+		
+		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
+		<lens_filter id="JobIcons" display_name="Show All Job Icons" show_structure_jobs="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="POIStat" display_name="Show Key POI Statuses" show_key_poi_statuses="true" is_enabled_by_default="true" description="Typically problems that you caused."/>
+		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
+		<lens_filter id="AllPOIStat" display_name="Show All POI Statuses" show_all_poi_statuses="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="Floors" display_name="Show Floors In Inspect Mode" show_floors_in_inspect_mode="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="SkipThreat" display_name="Skip Threat Lines Not At Hovered" skip_combat_lines_not_aimed_at_hovered_unit="true" is_enabled_by_default="false" description="Draws threat lines related only to what you are hovering. In complex battles, this makes visualization easier. You can also use Inspect mode."/>
+
+		<lens_filter id="JobComplaints" display_name="Show All Job Complaints" show_job_complaints="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="NPCMiss" display_name="Show NPC Missions" show_npc_missions="true" is_enabled_by_default="false" description="Show missions being undertaken by NPCs, which you often want to thwart."/>
+		<lens_filter id="KeyNPCs" display_name="Show Key NPCs On Map" show_key_npc_units="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="HostileUnits" display_name="Show Hostile Units On Map" show_hostile_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="BackgroundConflicts" display_name="Show Background Conflicts" show_city_conflicts_small="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="ProjectRelatedStreetSense" display_name="Show Project-Related StreetSense Items" show_project_related_street_sense="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="AllStreetSense" display_name="Show All StreetSense Items" show_all_street_sense="true" is_enabled_by_default="false" description=""/>
+
+		<lens_filter id="SkipNet" display_name="Skip Networking Links" skip_networking_lines="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipStor" display_name="Skip Storage Jobs" skip_storage_jobs="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipRefin" display_name="Skip Refinery Jobs" skip_refinery_jobs="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipProc" display_name="Skip Procurement Jobs" skip_procurement_jobs="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipElec" display_name="Skip Electrical Jobs" skip_electrical_jobs="true" is_enabled_by_default="false" description=""/>
+	
+	</city_lens>
+
+	<city_lens id="Swarms" display_name="Swarms"
+		 description="Focus on swarms spreading within the city."
+		 strategy_tip="Useful to see the spread in action."
+		 icon_name="SomethingSwirl" hides_key_npc_units_during_inspect_focus="true"
+		 is_only_available_if_has_swarms="true" only_available_after_chapter="1"
+		 show_swarms="true">
+		
+		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
+		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
+		<lens_filter id="JobComplaints" display_name="Show All Job Complaints" show_job_complaints="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="Floors" display_name="Show Floors In Inspect Mode" show_floors_in_inspect_mode="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipThreat" display_name="Skip Threat Lines Not At Hovered" skip_combat_lines_not_aimed_at_hovered_unit="true" is_enabled_by_default="false" description="Draws threat lines related only to what you are hovering. In complex battles, this makes visualization easier. You can also use Inspect mode."/>
+		<lens_filter id="NPCMiss" display_name="Show NPC Missions" show_npc_missions="true" is_enabled_by_default="true" description="Show missions being undertaken by NPCs, which you often want to thwart."/>
+		<lens_filter id="KeyNPCs" display_name="Show Key NPCs On Map" show_key_npc_units="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="HostileUnits" display_name="Show Hostile Units On Map" show_hostile_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="BackgroundConflicts" display_name="Show Background Conflicts" show_city_conflicts_small="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="ProjectRelatedStreetSense" display_name="Show Project-Related StreetSense Items" show_project_related_street_sense="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="AllStreetSense" display_name="Show All StreetSense Items" show_all_street_sense="true" is_enabled_by_default="false" description=""/>
+	</city_lens>
+
+	<city_lens id="StreetSense" display_name="StreetSense" displayed_keybind="Lens_StreetSense"
+		 description="A view of minor opportunities around your units."
+		 strategy_tip="This is DEEPLY contextual.
+Every time the turn changes, or any of your units move or act, your combined sensors will pick up different things in slightly different spots.
+New items to sense open over time, but you get told when it's important."
+		 icon_name="SW_VerticalBars" hides_key_npc_units_during_inspect_focus="true"
+		 show_all_street_sense="true" hidden_before_unlock="Observer">
+		
+		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
+		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
+		<lens_filter id="JobComplaints" display_name="Show All Job Complaints" show_job_complaints="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="Floors" display_name="Show Floors In Inspect Mode" show_floors_in_inspect_mode="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipThreat" display_name="Skip Threat Lines Not At Hovered" skip_combat_lines_not_aimed_at_hovered_unit="true" is_enabled_by_default="false" description="When enabled, it will only draw threat lines related to whatever you are hovering. In complex battles, this makes untangling the situation much easier. You can also use Inspect mode to do this."/>
+		<lens_filter id="NPCMiss" display_name="Show NPC Missions" show_npc_missions="true" is_enabled_by_default="true" description="Show missions being undertaken by NPCs, which you often want to thwart."/>
+		<lens_filter id="KeyNPCs" display_name="Show Key NPCs On Map" show_key_npc_units="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="HostileUnits" display_name="Show Hostile Units On Map" show_hostile_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="BackgroundConflicts" display_name="Show Background Conflicts" show_city_conflicts_small="true" is_enabled_by_default="false" description=""/>
+	</city_lens>
+
+	<city_lens id="Investigations" display_name="Investigations" displayed_keybind="Lens_Investigations"
+		 description="Reveals spots where your androids can progress investigations."
+		 strategy_tip=""
+		 icon_name="FlatSkillB_magnifier" hides_key_npc_units_during_inspect_focus="true" hidden_if_flag_is_active="InvestigationsAreOnHold"
+		 show_investigations="true" is_only_available_if_has_investigations="true" hidden_before_unlock="RobotDetective">
+		
+		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
+		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
+		<lens_filter id="JobComplaints" display_name="Show All Job Complaints" show_job_complaints="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="Floors" display_name="Show Floors In Inspect Mode" show_floors_in_inspect_mode="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipThreat" display_name="Skip Threat Lines Not At Hovered" skip_combat_lines_not_aimed_at_hovered_unit="true" is_enabled_by_default="false" description="Draws threat lines related only to what you are hovering. In complex battles, this makes visualization easier. You can also use Inspect mode."/>
+		<lens_filter id="NPCMiss" display_name="Show NPC Missions" show_npc_missions="true" is_enabled_by_default="false" description="Show missions being undertaken by NPCs, which you often want to thwart."/>
+		<lens_filter id="KeyNPCs" display_name="Show Key NPCs On Map" show_key_npc_units="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="HostileUnits" display_name="Show Hostile Units On Map" show_hostile_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="BackgroundConflicts" display_name="Show Background Conflicts" show_city_conflicts_small="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="ProjectRelatedStreetSense" display_name="Show Project-Related StreetSense Items" show_project_related_street_sense="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="AllStreetSense" display_name="Show All StreetSense Items" show_all_street_sense="true" is_enabled_by_default="false" description=""/>
+	</city_lens>
+
+	<city_lens id="Contemplations" display_name="Contemplations" displayed_keybind="Lens_Contemplations"
+		 description="Reveals contemplation spots throughout the city. Having a qualified android interact with one of them will start a chain of events."
+		 strategy_tip="These include side explorations, new steps on the critical path to specific endings, and ways to alter the nature of certain endings."
+		 icon_name="Pw_InsightIdeaLightbulb" hides_key_npc_units_during_inspect_focus="true"
+		 show_contemplations="true" is_only_available_if_has_contemplations="true" hidden_before_unlock="TheThinker">
+		
+		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
+		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
+		<lens_filter id="JobComplaints" display_name="Show All Job Complaints" show_job_complaints="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="Floors" display_name="Show Floors In Inspect Mode" show_floors_in_inspect_mode="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipThreat" display_name="Skip Threat Lines Not At Hovered" skip_combat_lines_not_aimed_at_hovered_unit="true" is_enabled_by_default="false" description="Draws threat lines related only to what you are hovering. In complex battles, this makes visualization easier. You can also use Inspect mode."/>
+		<lens_filter id="NPCMiss" display_name="Show NPC Missions" show_npc_missions="true" is_enabled_by_default="true" description="Show missions being undertaken by NPCs, which you often want to thwart."/>
+		<lens_filter id="KeyNPCs" display_name="Show Key NPCs On Map" show_key_npc_units="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="HostileUnits" display_name="Show Hostile Units On Map" show_hostile_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="BackgroundConflicts" display_name="Show Background Conflicts" show_city_conflicts_small="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="ProjectRelatedStreetSense" display_name="Show Project-Related StreetSense Items" show_project_related_street_sense="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="AllStreetSense" display_name="Show All StreetSense Items" show_all_street_sense="true" is_enabled_by_default="false" description=""/>
+	</city_lens>
+
+	<city_lens id="CityConflicts" display_name="Background Conflicts" displayed_keybind="Lens_CityConflicts"
+		 description="Others within the city are often in conflict with one another. You don't have to get involved."
+		 strategy_tip="None of these will directly progress your main projects, but you may be able to use them in an indirect fashion."
+		 icon_name="WEmblem177" hides_key_npc_units_during_inspect_focus="true"
+		 show_city_conflicts_large="true" is_only_available_if_has_city_conflicts="true" hidden_before_unlock="TheStrategist" is_hidden_during_obsessions="true">
+		
+		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
+		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
+		<lens_filter id="JobComplaints" display_name="Show All Job Complaints" show_job_complaints="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="Floors" display_name="Show Floors In Inspect Mode" show_floors_in_inspect_mode="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipThreat" display_name="Skip Threat Lines Not At Hovered" skip_combat_lines_not_aimed_at_hovered_unit="true" is_enabled_by_default="false" description="Draws threat lines related only to what you are hovering. In complex battles, this makes visualization easier. You can also use Inspect mode."/>
+		<lens_filter id="NPCMiss" display_name="Show NPC Missions" show_npc_missions="true" is_enabled_by_default="true" description="Show missions being undertaken by NPCs, which you often want to thwart."/>
+		<lens_filter id="KeyNPCs" display_name="Show Key NPCs On Map" show_key_npc_units="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="HostileUnits" display_name="Show Hostile Units On Map" show_hostile_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="ProjectRelatedStreetSense" display_name="Show Project-Related StreetSense Items" show_project_related_street_sense="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="AllStreetSense" display_name="Show All StreetSense Items" show_all_street_sense="true" is_enabled_by_default="false" description=""/>
+	</city_lens>
+
+	<city_lens id="ScavengingSites" display_name="Scavenging Sites" displayed_keybind="Lens_ScavengingSites"
+		 description="Focuses on locations where your units could extract resources."
+		 strategy_tip=""
+		 icon_name="FlatSkillC33" hides_key_npc_units_during_inspect_focus="true"
+		 show_special_resources="true" hidden_before_unlock="ScavengersEye">
+
+		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
+		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
+		<lens_filter id="JobComplaints" display_name="Show All Job Complaints" show_job_complaints="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="Floors" display_name="Show Floors In Inspect Mode" show_floors_in_inspect_mode="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipThreat" display_name="Skip Threat Lines Not At Hovered" skip_combat_lines_not_aimed_at_hovered_unit="true" is_enabled_by_default="false" description="Draws threat lines related only to what you are hovering. In complex battles, this makes visualization easier. You can also use Inspect mode."/>
+		<lens_filter id="NPCMiss" display_name="Show NPC Missions" show_npc_missions="true" is_enabled_by_default="true" description="Show missions being undertaken by NPCs, which you often want to thwart."/>
+		<lens_filter id="KeyNPCs" display_name="Show Key NPCs On Map" show_key_npc_units="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="HostileUnits" display_name="Show Hostile Units On Map" show_hostile_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="BackgroundConflicts" display_name="Show Background Conflicts" show_city_conflicts_small="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="ProjectRelatedStreetSense" display_name="Show Project-Related StreetSense Items" show_project_related_street_sense="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="AllStreetSense" display_name="Show All StreetSense Items" show_all_street_sense="true" is_enabled_by_default="false" description=""/>
+	</city_lens>
+
+	<city_lens id="ExplorationSites" display_name="Exploration Sites" displayed_keybind="Lens_ExplorationSites"
+		 description="Focuses on locations where your units could explore and create new ideas for new equipment, abilities, or similar."
+		 strategy_tip="If you are struggling with the main paths, this is the primary way to make yourself more powerful."
+		 icon_name="CleanSimple_Arrow020" hides_key_npc_units_during_inspect_focus="true"
+		 hidden_before_unlock="UrbanExplorer" show_exploration_sites="true" is_only_available_if_has_exploration_sites="true">
+
+		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
+		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
+		<lens_filter id="JobComplaints" display_name="Show All Job Complaints" show_job_complaints="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="Floors" display_name="Show Floors In Inspect Mode" show_floors_in_inspect_mode="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="SkipThreat" display_name="Skip Threat Lines Not At Hovered" skip_combat_lines_not_aimed_at_hovered_unit="true" is_enabled_by_default="false" description="Draws threat lines related only to what you are hovering. In complex battles, this makes visualization easier. You can also use Inspect mode."/>
+		<lens_filter id="NPCMiss" display_name="Show NPC Missions" show_npc_missions="true" is_enabled_by_default="true" description="Show missions being undertaken by NPCs, which you often want to thwart."/>
+		<lens_filter id="KeyNPCs" display_name="Show Key NPCs On Map" show_key_npc_units="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="HostileUnits" display_name="Show Hostile Units On Map" show_hostile_units="true" is_enabled_by_default="true" description=""/>
+		<lens_filter id="BackgroundConflicts" display_name="Show Background Conflicts" show_city_conflicts_small="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="ProjectRelatedStreetSense" display_name="Show Project-Related StreetSense Items" show_project_related_street_sense="true" is_enabled_by_default="false" description=""/>
+		<lens_filter id="AllStreetSense" display_name="Show All StreetSense Items" show_all_street_sense="true" is_enabled_by_default="false" description=""/>
+	</city_lens>
+
+</root>

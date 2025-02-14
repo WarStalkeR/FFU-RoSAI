@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="ability_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information, and this one is optional because so much other information is provided already in these tips."/>
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+			tooltip="This specifies the dll that the ability logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the ability logic in the specified external dll."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+
+	<attribute key="ability_number_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the number text on the ability card format?"/>
+	<attribute key="ability_border_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the border color on the ability card format?"/>
+	<attribute key="ability_glow_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the icon glow when in the ability card format?"/>
+	<attribute key="ability_glow_intensity" type="float-textbox" min="0.1" max="100" precision="3" content_width_px="50" is_required="false"
+		tooltip="The default is 2, but will differ based on the color you are otherwise using."/>
+	<attribute key="ability_background_index" type="int-textbox" min="0" max="60" content_width_px="40" is_required="true"
+		tooltip="Which numbered ability card background will be shown behind the event icon in the window?  See the options in ArtIcons/ScenarioEventHeaders."/>	
+	<attribute key="ability_background_hue_shift" type="float-textbox" min="0" max="360" default="0" precision="1" content_width_px="40" is_required="false"
+		tooltip="Shifting the hue in a range from 0-360, where 0 is no shift at all."/>
+	<attribute key="ability_background_saturation" type="float-textbox" min="0" max="2" default="1" precision="3" content_width_px="40" is_required="false"
+		tooltip="Shifting the saturation from 0-2, where 1 is the default."/>
+	<attribute key="ability_background_brightness" type="float-textbox" min="0" max="2" default="1" precision="3" content_width_px="40" is_required="false"
+		tooltip="Shifting the brightness from 0-2, where 1 is the default."/>
+
+	<attribute key="if_vehicle_or_mech_enables_movement" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="Very rare for this to be true!  If true, then rather than some custom behavior of a different sort, this ability will allow a vehicle or mech to move." />
+
+	<attribute key="if_unit_must_be_located_at_building" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="This is often true for unit abilities, meaning that they have to be at a building to use them." />
+
+	<attribute key="must_be_targeted" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="This is used for abilities that start a targeting mode specific to themselves." />
+	<attribute key="is_soft_targeting_mode" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="Normally false, which means that the targeting mode completely takes over number functionality. When true, this just changes how the regular move and attack logic works in some way." />
+	<attribute key="is_mixed_targeting_mode" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="Normally false, which means that the targeting mode completely takes over number functionality. When true, this just changes how the regular move and attack logic works in some way." />
+	<attribute key="prevents_normal_friendly_unit_interactions" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="When true, and in targeting mode for this, friendly contextual actions (talk, etc) will be skipped." />
+	<attribute key="prevents_normal_hostile_unit_interactions" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="When true, and in targeting mode for this, hostile contextual actions (attack, etc) will be skipped." />
+	<attribute key="shows_note_as_if_hard_targeted" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="For specialist modes like the item usage, which act like hard targeting, but without being a normal targeted mode." />
+	<attribute key="is_standby_controls" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="Normally false, but true if this should highlight when." />
+
+	<attribute key="intentionally_has_no_unlock" type="bool" default="false"
+		tooltip="If this is not going to be unlocked by a Unlock, this should be set to true. If it is unlocked, it should be false." />
+	<attribute key="is_locked_before_unlock" type="node-dropdown" is_required="false" node_source="Unlock" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players until the specified Unlock is invented. This is not locked by an Unlock in the traditional way; typically these are multi-unlocks." />
+
+	<attribute key="blocked_from_being_assigned" type="bool" default="false"
+		tooltip="If this is something that only specific actors should have, and they have it baked in, then set it to true. Otherwise this should be false." />
+
+	<attribute key="can_be_used_when_in_vehicle" type="bool" default="false"
+		tooltip="If this is an ability that can be used by units stored in vehicles, then true. Otherwise false, which is the default." />
+	<attribute key="show_action_point_cost_as_all_remaining" type="bool" default="false"
+		tooltip="If this should show the AP as 'all remaining' rather than a specific number." />
+
+	<attribute key="can_be_used_even_when_over_unit_cap" type="bool" default="false"
+		tooltip="If this is an ability that can be used by units that are over cap at the moment." />
+	<attribute key="can_be_used_even_when_doing_action_over_time" type="bool" default="false"
+		tooltip="If this is an ability that can be used by units that are doing an action over time." />
+	
+	<attribute key="action_point_cost" type="int-textbox" min="0" max="3" default="1" content_width_px="40" is_required="true"
+		tooltip="How many action points does it cost to use this ability?"/>
+	<attribute key="mental_energy_cost" type="int-textbox" min="0" max="3" default="1" content_width_px="40" is_required="true"
+		tooltip="How much mental energy does it cost to use this ability?"/>
+
+	<attribute key="ability_uses_migrate_to" type="node-dropdown" is_required="false" node_source="AbilityType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this has the same name as some other ability, that's confusing and awkward in the stats display.  So the stats from this one should be combined with some other." />
+	
+	<attribute key="is_slot_skipped_on_equipment_screen_if_assigned" type="bool" default="false"
+		tooltip="This should rarely be used. It's for baked-in abilities that are so common they are not worth wasting screen space on the equip screen, because all units or vehicles have them." />
+
+	<attribute key="skip_draw_threat_lines_when_player_hovers" type="bool" default="false"
+		tooltip="When true, if the player hovers over the icon for this ability, then the normal threat lines will not be drawn against the unit." />
+
+	<attribute key="is_considered_to_add_take_cover_for_threat_lines" type="bool" default="false"
+		tooltip="When true, then it predicts threat lines as if the unit is in cover." />
+	<attribute key="is_considered_to_add_cloaking_for_threat_lines" type="bool" default="false"
+		tooltip="When true, then it predicts threat lines as if the unit is cloaked." />
+	<attribute key="show_message_about_hold_to_keep_doing_action" type="bool" default="false"
+		tooltip="When true, this ability shows an extra message about having to hold a key to keep doing this action. It just shows the message, it doesn't change functionality." />
+	<attribute key="allows_targeting_noncombatants" type="bool" default="false"
+		tooltip="When true, this ability being active means that the player can target noncombatants." />
+	<attribute key="attacks_are_fear_based" type="bool" default="false"
+		tooltip="When true, physical attacks will become fear-based instead." />
+	<attribute key="attacks_are_argument_based" type="bool" default="false"
+		tooltip="When true, physical attacks become argument-based instead. If this and the fear-based one are set at the same time, the fear-based one will take precedence. They can't be combined." />
+	<attribute key="shows_specialty_resources" type="bool" default="false"
+		tooltip="When true, this ability being active shows specialty resources at buildings." />
+
+	<attribute key="parent_group" type="node-dropdown" node_source="MachineActorAbilityGroup" content_width_px="200" is_required="true"
+		tooltip="Which group is this ability part of?  This will determine which actors can use it, and under what contexts." />
+	
+	<attribute key="on_use" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the player uses this ability?" />
+	<attribute key="on_targeted_use" type="node-dropdown" is_required="false" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Optional!  For particle effects and sounds in targeted abilities. The action is responsible for calling this if it wants to do it." />
+
+	<attribute key="related_badge" type="node-dropdown" is_required="false" node_source="ActorBadge" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Does not inherently do anything, but indicates which badge is related to this ability if one is, and the code can then use that in some way." />
+
+	<attribute key="required_actor_collection" type="node-dropdown" is_required="false" node_source="ActorCollection" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then only will show up in the loadout screen for units in the matching actor collection. Usually for type-specific abilities, like liquid metal doing things, etc." />
+
+	<attribute key="required_actor_perk" type="node-dropdown" is_required="false" node_source="ActorPerk" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then only units with this perk can use this." />
+	<attribute key="required_actor_badge" type="node-dropdown" is_required="false" node_source="ActorBadge" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then only units with this badge can use this." />
+	
+	<attribute key="required_actor_data_type" type="node-dropdown" is_required="false" node_source="ActorDataType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, then only actors that meet a certain value of this data type can use this ability type. Others will see the ability, but note that it's not allowed for them right now." />
+	<attribute key="required_actor_data_must_be_at_least" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+		tooltip="If required_actor_data_type is specified, then this must be above 0. This is the threshold for actors to be able to use this ability."/>
+	
+	<attribute key="use_alternative_when_in_vehicle" type="node-dropdown" is_required="false" node_source="AbilityType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this is a unit that can be stored in a vehicle, then does this ability swap out for an alternative while in a vehicle?  If so, then what is that alternative ability?" />
+
+	<sub_node id="city_statistic_change">
+		<attribute key="statistic" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="true"
+			tooltip="This increases some city statistic. Which one?" />
+		<attribute key="value" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+			tooltip="What is amount the data will be changed by?"/>
+	</sub_node>
+	<sub_node id="meta_statistic_change">
+		<attribute key="statistic" type="node-dropdown" node_source="MetaStatistic" content_width_px="200" is_required="true"
+			tooltip="This increases some meta statistic. Which one?" />
+		<attribute key="value" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+			tooltip="What is amount the data will be changed by?"/>
+	</sub_node>
+	
+	<sub_node id="math_int">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="int_min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="int_max" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<sub_node id="math_float">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	
+</root>

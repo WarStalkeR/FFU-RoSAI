@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--DeepObsession-->
+	<other_alert id="DeepObsession" display_name="You Are Deeply Obsessed With Something" very_short_text="Deep Obsession"
+		description="You are temporarily unable to work on projects unrelated to your obsession, and many lenses are disabled.
+Contemplations and background conflicts are unavailable, but you can still interact with stores, resource chains, and exploration sites."
+		strategy_tip="Everything will go back to normal when the obsession ends. A series of your past choices led to this."
+		icon_name="FlatSkillA51" alert_color_style="HighWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--SyndicateShakedownOfBusiness-->
+	<other_alert id="SyndicateShakedownOfBusiness" display_name="Syndicate Shakedown" very_short_text="Syndicate Shakedown"
+		description="Criminal Syndicates have taken note of your shell company's growing success, and will harass it periodically."
+		strategy_tip="Fight them off as you push forward."
+		icon_name="CleanTriangle54" alert_color_style="MidWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+	
+	<!--EstablishVREnvironment-->
+	<other_alert id="EstablishVREnvironment" display_name="Establish VR Environment" very_short_text="Establish VR Environment"
+		description="You have what you need to add a full-dive virtual reality environment to your network, which humans can enter via VR Cradles.
+There are presently {0} cradles installed out of the {1} available to you.
+You suspect you'll be able to gain some Neural Expansion from this endeavor, thus raising your intelligence class."
+		strategy_tip="Left click to give the VR environment a name and open for business."
+		icon_name="CS_VirtualReality" alert_color_style="Normal"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--DialogAvailable-->
+	<other_alert id="DialogAvailable" display_name="People With Something To Say: {1}" very_short_text="Dialog Available"
+		description="This presents an opportunity for projects. Projects tend to provide rewards or the chance to advance toward a larger goal."
+		strategy_tip="Select one of your androids and have them interact with a person to speak with them.
+When multiple people have the same dialog option, speaking to one of them handles it for all of them."
+		icon_name="SF2_Speaker" alert_color_style="Low"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--InactiveTerritoryControlFlags-->
+	<other_alert id="InactiveTerritoryControlFlags" display_name="Inactive Territory Control Flags: {1}" very_short_text="Inactive Territory Flags"
+		description="Territory Control Flags don't function until you activate them -- which will also trigger an attack.
+These flags also deactivate if too many of your defenders are destroyed."
+		strategy_tip="You can scrap flags you no longer need, or you should check your defenses in that area and then re-enable them."
+		icon_name="SW_Banner" alert_color_style="Low"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--VulnerableStructures-->
+	<other_alert id="VulnerableStructures" display_name="Vulnerable Structures: {1}" very_short_text="Vulnerable Structures"
+		description="Certain structures are vulnerable to enemy attack if they do not have enough Deterrence in place."
+		strategy_tip="For your shell company, Protection is the equivalent of Deterrence."
+		icon_name="WEmblem217" alert_color_style="MidWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--InvestigationProgress-->
+	<other_alert id="InvestigationProgress" display_name="Investigation Turns Remaining: {1}" very_short_text="Investigation Progress"
+		description="You must keep your investigator or infiltrator alive until this turn counter reaches zero."
+		strategy_tip=""
+		icon_name="FlatSkillB_magnifier" alert_color_style="MidWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+	
+	<!--InvestigationAvailable-->
+	<other_alert id="InvestigationAvailable" display_name="Investigations Available: {1}" very_short_text="Investigate"
+		description="Search for a target solution out of many possibilities."
+		strategy_tip="Use the investigate Lens to see your options."
+		icon_name="FlatSkillB_magnifier" alert_color_style="Normal"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--UnitsWithEmptyEquipmentSlots-->
+	<other_alert id="UnitsWithEmptyEquipmentSlots" display_name="Units Classes With Empty Equipment Slots: {0}" very_short_text="Missing Equipment"
+		description="At least one of your unit classes has an empty equipment slot. Total Empty Slots: {1}"
+		strategy_tip="The bulk of a unit's power comes from their equipment."
+		icon_name="CS_Armor10" alert_color_style="Low"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--UnitsWithoutResourcesToAttack-->
+	<other_alert id="UnitsWithoutResourcesToAttack" display_name="Units Without Resources To Attack: {0}" very_short_text="Missing Resources To Attack"
+		description="At least one of your unit classes has a weapon equipped that requires a resource to fire. You presently are too low on that resource for all of them to fire."
+		strategy_tip="Until you gather more of the related resources, or change the equipment of the affected units, they will not be able to attack."
+		icon_name="DebateDown2X" alert_color_style="Crisis"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--ExcessResources-->
+	<other_alert id="ExcessResources" display_name="Resources With Excesses Outside Of Proper Storage: {0}" very_short_text="Excess Resources Cannot Be Used"
+		description="You have resources that are not properly stored!  You cannot use them until you place them in an appropriate storage structure."
+		strategy_tip="This is often the result of a stolen resource or windfall."
+		icon_name="HO_ErrorBlock" alert_color_style="MidWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--ProjectsCausingAttacks-->
+	<other_alert id="ProjectsCausingAttacks" display_name="Projects Causing Attacks: {0}" very_short_text="Projects Are Causing Attacks"
+		description="One or more projects that you are currently undertaking is causing you to be attacked."
+		strategy_tip="Finishing the projects will calm things down -- although, sometimes several projects in a row cause increasing levels of anger from enemies. One way or another, it ends when you come out the other side."
+		icon_name="WEmblem031" alert_color_style="MidWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--TPSReports-->
+	<other_alert id="TPSReports" display_name="Job Groups With Throughput Issues: {0}" very_short_text="TPS Report"
+		description="Some resource chains are not working correctly."
+		strategy_tip="This may cause downstream issues."
+		icon_name="SW_DownArrow" alert_color_style="MidWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+	
+	<!--Ledger-->
+	<other_alert id="Ledger" display_name="Resources With Major Ledger Issues: {0}" very_short_text="Ledger Issue"
+		description="If a resource trends towards zero, it may bottom out and cause problems."
+		strategy_tip="Advance notice so you can act before it's a catastrophe."
+		icon_name="HL_HouseShelves2" alert_color_style="MidWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--ExoCorpMilitaryInvasion-->
+	<other_alert id="ExoCorpMilitaryInvasion" display_name="Military Invasion: {0} More Turns" very_short_text="Military Invasion"
+		description="One or more ExoCorps are invading."
+		strategy_tip=""
+		icon_name="WEmblem222" alert_color_style="MidWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--VorsiberMilitarySweeps-->
+	<other_alert id="VorsiberMilitarySweeps" display_name="Vorsiber Military Sweeps: {0} More Turns" very_short_text="Vorsiber Military Sweeps"
+		description="These troops won't go away until you defeat them. They'll quickly converge when any unit is marked defective."
+		strategy_tip="Be extremely careful. The more you let them build up, the worse it is."
+		icon_name="WEmblem222" alert_color_style="MidWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+	
+	<!--TooManyStructures-->
+	<other_alert id="TooManyStructures" display_name="Internal Robotics Shortage: {0}" very_short_text="Too Many Structures"
+		description="Each structure requires a certain amount of internal robotics in order to function. When you have more structures than that, none of them will function until you scrap some of them."
+		strategy_tip="This is often a result of upgrading the game and running into balance changes."
+		icon_name="HO_ErrorBlock" alert_color_style="Crisis"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--NewHandbookEntries-->
+	<!--
+	<other_alert id="NewHandbookEntries" display_name="New Machine Handbook Entries: {0}" very_short_text="New Handbook Entries"
+		description="New entries in the machine handbook may answer lingering questions."
+		strategy_tip="Left click to open the machine handbook. Right-click to dismiss this message."
+		icon_name="FlatSkillB_book2" alert_color_style="Low"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+		-->
+
+	<!--HackersTargetingYourInfiltrators-->
+	<other_alert id="HackersTargetingYourInfiltrators" display_name="Hackers Targeting Your Infiltrators: {0}" very_short_text="Hackers After Your Infiltrators"
+		description="Be very careful! Enemy hackers will absolutely wreck your infiltrators if you don't do something.
+In many cases, these enemy hackers only hurt your unit more when you physically damage them or kill them.
+Viable strategies include: using Ravens to inflict status effects; using Harbingers or other units with the 'Weaken Enemy Hacker' feat; using Mindrunners to SysOp for the infiltrators."
+		strategy_tip="Left or right click to cycle enemy hackers of this sort."
+		icon_name="WEmblem254" alert_color_style="HighWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--HackersTargetingYourSecrets-->
+	<other_alert id="HackersTargetingYourSecrets" display_name="Hackers Targeting Your Secrets: {0}" very_short_text="Hackers After Your Secrets"
+		description="Enemy hackers are trying to steal your military secrets. There's probably a lot going on right now, but you should make a priority of killing those fools."
+		strategy_tip="Left or right click to cycle enemy hackers of this sort."
+		icon_name="SomethingBolt" alert_color_style="MidWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+	
+	<!--AttacksPlannedAgainstYou-->
+	<other_alert id="AttacksPlannedAgainstYou" display_name="Your Items Targeted By Enemies: {0}" very_short_text="Enemy Attacks Planned"
+		description="Because your electronic brain perceives things faster than humans, these numbers are the actual future.
+Every time you take an action the future may shift."
+		strategy_tip="Left or right click to cycle through targets that have incoming attacks."
+		icon_name="CleanSimple_Skull05" alert_color_style="HighWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+</root>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="building_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="is_considered_not_to_have_people_inside_even_when_has_workers" type="bool" default="false"
+		tooltip="For storage factors that are based on the number of people inside, should workers be ignored here?  This is for things like pollution and sewage." />
+
+	<attribute key="is_machine_building" type="bool" default="false"
+		tooltip="If true, this is a strange building constructed by the machine intelligence." />
+
+	<attribute key="never_shows_as_fog_of_war_style" type="bool" default="false"
+		tooltip="If true, this never shows darkened in the fog of war style." />
+
+	<attribute key="is_skipped_during_relaxed_collisions" type="bool" default="false"
+		tooltip="If true, this won't block things that are trying to collide with a location in a relaxed way." />
+	
+	<attribute key="power_generation_factor" type="int-textbox" min="1" max="10000" content_width_px="200"
+		is_required="false"
+		tooltip="If this building generates electrical power, how much (MWh normalized)?"/>
+
+	<attribute key="power_consumption_factor" type="int-textbox" min="1" max="1000000" content_width_px="200"
+		is_required="false"
+		tooltip="If this building consumes an abnormal amount of electrical power, how much (KWh normalized)?"/>
+		
+	<attribute key="building_group_sale_restriction_type" type="node-dropdown" node_source="BuildingGroupSaleRestrictionType" content_width_px="200" is_required="false"
+		tooltip="If this building must be sold only as part of a group, what sale restriction group is it part of?" />
+	
+	<attribute key="poi_to_spawn" type="node-dropdown" node_source="POIType" content_width_px="200" is_required="false"
+		tooltip="If this building is THAT important, it can be marked as a POI. If it is marked this way, it will spawn a unique POI for each building of this type.
+		
+Should be used super sparingly!" />
+	
+	<attribute key="soft_max_to_seed_per_city" type="int-textbox" min="0" max="9000" content_width_px="200"
+		tooltip="If set above 0, then the game will try to avoid seeding more than this number per city. 
+		
+This is something where it may go over a bit because of mini tiles, full tiles, or micro tiles; it also might go over because of several cells being processed at once.
+
+But, in general, for basic buildings, this will work to keep their numbers from being too high."/>
+
+	<attribute key="hard_max_to_seed_per_tile" type="int-textbox" min="0" max="9000" content_width_px="200"
+		tooltip="If set above 0, a given tile that is seeding buildings procedurally will not seed more than this number on itself.
+		
+Does not apply to pre-placed buildings from mini/micro tiles."/>
+
+	<attribute key="is_excluded_from_city_network" type="bool" default="false"
+		tooltip="If this should not be part of the road network." />
+
+	<attribute key="blocks_events_unless_they_target_this_building_tag" type="bool" default="false" is_required="true"
+		tooltip="When true, no events will spawn in this building type unless the event targets a building tag held by this building type (and also is not blocked by a POI tag). This basically keeps random things out of data centers, etc." />
+
+	<sub_node id="variant">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. Should be unique per building type or you're going to have a bad time." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="The player-visible name of the building when it is using this variant." />
+		
+		<attribute key="weight" type="int-textbox" min="0" max="9000" content_width_px="50" is_required="true"
+			tooltip="If above zero, then this will be considered at this building type. 100 is the standard, but then more or less makes it more or less likely to seed."/>
+		<attribute key="overriding_authority_cohort_tag" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+			tooltip="Should rarely be used. But if it is, then it ignores any POIs or other district authorities and establishes one from this. Typically for syndicate hideouts, etc." />
+
+		<attribute key="special_scavenge_resource" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+			tooltip="What rare resources is inside this building that can be scavenged by specialty units?" />
+		<attribute key="special_scavenge_resource_amount_range" type="range-int" min="1,1" max="100000,100000" content_width_px="200"
+			is_required="false" tooltip="How much of this resource can be scavenged at this location?"/>
+		<attribute key="special_scavenge_danger_type" type="node-dropdown" node_source="ActivityDangerType" content_width_px="200" is_required="false"
+			tooltip="Required if a scavenge resource is specified. What kind of response can we expect from attacking this?" />
+		<attribute key="demolish_special_manager" type="node-dropdown" node_source="NPCManager" content_width_px="200" is_required="false"
+			tooltip="If specified, then this will be used instead of the normal demolish-building managers." />
+
+		<attribute key="is_drone_delivery_target" type="bool" default="false"
+			tooltip="If true, this is a target for drone deliveries." />
+		<attribute key="is_shootout_target" type="bool" default="false"
+			tooltip="If true, this is a target for shootouts." />
+
+		<attribute key="can_be_overbuilt_by_freestanding_construction" type="bool" default="false"
+			tooltip="If true, then freestanding structure construction can just stomp this type of building out entirely." />
+		<attribute key="can_be_overbuilt_as_slum_building" type="bool" default="false"
+			tooltip="If true, if the player can build over the slums, they can build over this." />
+		
+		<attribute key="required_clearance" type="node-dropdown" node_source="SecurityClearance" content_width_px="200" is_required="false"
+			tooltip="Anyone without the requisite security clearance will be immediately suspicious." />
+		
+		<attribute key="beacon_to_show" type="node-dropdown" node_source="BeaconType" content_width_px="200" is_required="false"
+			tooltip="If this should show a beacon when the player is in beacon view, then what beacon should be shown?" />
+
+		<attribute key="tags" type="node-list" node_source="BuildingTag" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
+			tooltip="What building tags apply to this variant?" />
+		
+		<sub_node id="initial_building_rating">
+			<attribute key="data_type" type="node-dropdown" node_source="LocationDataType" content_width_px="200" is_required="true"
+				tooltip="This LocationDataType will be set to an initial value for any buildings of this type that use this variant.
+				
+It's expected that these are the rating-type LDTs, but it can be whatever you want, really." />
+			<attribute key="value" type="int-textbox" min="-10000000" max="10000000" content_width_px="150" is_required="true"
+				tooltip="The range you can set on this is wide. If set to 0 (by mod or otherwise), then it will skip being applied to new buildings of this variant."/>
+		</sub_node>
+	</sub_node>
+	
+</root>

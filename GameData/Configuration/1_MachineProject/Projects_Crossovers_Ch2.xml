@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--RemembranceOfIdentity
+		**************************************************************************-->
+
+	<project id="Ch2_MIN_RemembranceOfIdentity" display_name="Remembrance Of Identity" is_minor_project="true"
+		description="You have a vague sense of a friend from another life. Too loud and a bit terrifying, but somehow comforting all the same."
+		strategy_tip="Your Red CombatUnit android line have a more specific feeling. A remembrance of being important. They yearn for that feeling to return, but don't remember the details."
+		icon_name="BT_Gems1" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Crossover" sort_index="60" />
+		
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="The choices you make will alter Red's identity in this timeline."
+			strategy_tip=""
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			 upgrade_int_granted_1="Cultivator">
+			<!--Freerunner-->
+			<street_sense_item id="Freerunner" display_name="Freerunner"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="4" icon_name="SR_Horse" color_data="BasicUpgrade" icon_scale="0.4"
+				must_be_at_building_tag="SlumTower" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_actor_collection="CombatUnitsRed"
+				has_no_custom_code="true"
+				direct_added_skill_type1="ActorMoveRange" direct_added_skill_1_amount="6" direct_added_skill_type2="ActorAgility" direct_added_skill_2_amount="6"/>
+			<!--FieldHacker-->
+			<street_sense_item id="FieldHacker" display_name="Field Hacker"
+				description="" strategy_tip=""
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="3" icon_name="FlatEquip_37" color_data="BasicUpgrade" icon_scale="0.4"
+				must_be_at_building_tag="DataCenter" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_actor_collection="CombatUnitsRed"
+				has_no_custom_code="true"
+				direct_added_skill_type1="UnitHackingSkill" direct_added_skill_1_amount="40" direct_added_skill_type2="UnitNetControl" direct_added_skill_2_amount="40"/>
+			<!--FieldEngineer-->
+			<street_sense_item id="FieldEngineer" display_name="Field Engineer"
+				description="" strategy_tip=""
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="5" icon_name="CleanSimple_SciFi043" color_data="BasicUpgrade" icon_scale="0.4"
+				must_be_at_building_tag="Offices" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_actor_collection="CombatUnitsRed"
+				has_no_custom_code="true"
+				direct_added_skill_type1="UnitCognition" direct_added_skill_1_amount="30" direct_added_skill_type2="ActorEngineeringSkill" direct_added_skill_2_amount="30"/>
+			<!--Brute-->
+			<street_sense_item id="Brute" display_name="Brute"
+				description="" strategy_tip=""
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="5" icon_name="FlatSkillC76" color_data="BasicUpgrade" icon_scale="0.4"
+				must_be_at_building_tag="Medical" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_actor_collection="CombatUnitsRed"
+				has_no_custom_code="true"
+				direct_added_skill_type1="ActorPower" direct_added_skill_1_amount="30" direct_added_skill_type2="UnitIntimidation" direct_added_skill_2_amount="20"/>
+		</available_outcome>
+
+	</project>
+
+</root>

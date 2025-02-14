@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Parking Garage is also a Road Prefab.-->
+	<building_prefab id="Parking Garage" display_name="Parking Garage"
+		path_to_placeable="Assets/__Library/Roads/Downtown/Parking Garage.prefab"
+		type="DowntownParking">
+		<floors_group is_underground="true" min="0" max="0" floor_size="2.2,0.6,4.6" percentage_living_space="0" percentage_work_space="5" percentage_storage_space="95"/>
+		<floors_group is_underground="true" min="1" max="4" floor_size="2.2,0.5,4.6" percentage_living_space="0" percentage_work_space="5" percentage_storage_space="95"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="3"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="8"/>
+		
+		
+	</building_prefab>
+
+	<building_prefab id="ApartmentsA" type="DowntownApartments" display_name="Apartments A"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments A.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.1,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.45,1.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.1,0.45,1.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="20"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="60"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsB" type="DowntownApartments" display_name="Apartments B"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments B.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.1,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.45,1.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="4" floor_size="1.1,0.45,1.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="30"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="70"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsC" type="DowntownApartments" display_name="Apartments C"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments C.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.1,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.45,1.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.1,0.45,1.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="20"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="60"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,-0.2"/>		
+	</building_prefab>
+
+	<building_prefab id="ApartmentsD" type="DowntownApartments" display_name="Apartments D"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments D.prefab" floors_offset="0,0,0.1">
+		<floors_group min="-3" max="-1" floor_size="1,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1,0.7,1.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1,0.4,1.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="3" max="3" floor_size="0.5,0.4,0.5" percentage_work_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="30"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="80"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,-0.2"/>		
+	</building_prefab>
+
+	<building_prefab id="ApartmentsE" type="DowntownApartments" display_name="Apartments E"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments E.prefab" floors_offset="0,0,0.1">
+		<floors_group min="-3" max="-1" floor_size="1.1,0.4,2.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.7,2.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1.1,0.4,2.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="30"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="80"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,0.6"/>	
+	</building_prefab>
+
+	<building_prefab id="ApartmentsF" type="DowntownApartments" display_name="Apartments F"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments F.prefab" floors_offset="0,0,0.1">
+		<floors_group min="-3" max="-1" floor_size="1.1,0.4,2.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.7,2.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="1" floor_size="1.1,0.4,2.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="2" max="2" floor_size="1.1,0.4,0.7" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="35"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="65"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0"/>		
+	</building_prefab>
+
+	<building_prefab id="ApartmentsG" type="DowntownApartments" display_name="Apartments G"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments G.prefab" floors_offset="0.1,0,0">
+		<floors_group min="-3" max="-1" floor_size="1,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1,0.7,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1,0.4,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="20"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="45"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>		
+	</building_prefab>
+
+	<building_prefab id="ApartmentsH" type="DowntownApartments" display_name="Apartments H"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments H.prefab">
+		<floors_group min="-3" max="-1" floor_size="1,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1,0.7,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1,0.4,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="20"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="45"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,0.2"/>
+
+	</building_prefab>
+
+	<building_prefab id="ApartmentsI" type="DowntownApartments" display_name="Apartments I"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments I.prefab">
+		<floors_group min="-3" max="-1" floor_size="1,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1,0.7,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1,0.4,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="15"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="50"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>
+
+	</building_prefab>
+
+	<building_prefab id="ApartmentsJ" type="DowntownApartments" display_name="Apartments J"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments J.prefab">
+		<floors_group min="-3" max="-1" floor_size="1,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1,0.7,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1,0.4,0.8" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="20"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="45"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,0.2"/>
+
+	</building_prefab>
+
+	<building_prefab id="ApartmentsK" type="DowntownApartments" display_name="Apartments K"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments K.prefab" floors_offset="0.1,0,0">
+		<floors_group min="-3" max="-1" floor_size="1,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1,0.7,1.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1,0.4,1.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="3" max="3" floor_size="0.5,0.4,0.5" percentage_work_space="95" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="30"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="50"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,-0.3"/>
+
+	</building_prefab>
+
+	<building_prefab id="ApartmentsL" type="DowntownApartments" display_name="Apartments L"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments L.prefab" floors_offset="-0.1,0,0">
+		<floors_group min="-3" max="-1" floor_size="1.1,0.4,2.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.7,2.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="1" floor_size="1.1,0.4,2.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="2" max="2" floor_size="0.9,0.4,0.7" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="25"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="75"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0"/>
+		
+	</building_prefab>
+
+	<building_prefab id="ApartmentsM" type="DowntownApartments" display_name="Apartments M"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments M.prefab" floors_offset="-0.1,0,0">
+		<floors_group min="-3" max="-1" floor_size="1.1,0.4,2.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.7,2.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1.1,0.4,2.1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="30"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="80"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,-0.6"/>
+		
+	</building_prefab>
+
+	<building_prefab id="ApartmentsN" type="DowntownApartments" display_name="Apartments N"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments N.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.2,0.4,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.2,0.65,1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.2,0.4,1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="4" max="4" floor_size="1.2,0.6,1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="40"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="80"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsO" type="DowntownApartments" display_name="Apartments O"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments O.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.4,0.4,1.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.4,0.6,1.4" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.4,0.5,1.4" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="4" max="4" floor_size="1.4,0.55,1.4" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="150"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="50"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsP" type="DowntownApartments" display_name="Apartments P"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments P.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.3,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.3,0.5,1.3" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="4" floor_size="1.3,0.5,1.3" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="100"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="30"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsQ" type="DowntownApartments" display_name="Apartments Q"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments Q.prefab">
+		<floors_group min="-3" max="-1" floor_size="2.2,0.4,1.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.2,0.6,1.5" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="2.2,0.5,1.5" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="4" max="5" floor_size="1.5,0.5,1.5" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="40"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="80"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,-0.2"/>
+		
+	</building_prefab>
+
+	<building_prefab id="ApartmentsR" type="DowntownApartments" display_name="Apartments R"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments R.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.2,0.4,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.2,0.65,1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.2,0.4,1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="4" max="4" floor_size="1.2,0.6,1" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="40"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="80"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,-0.2"/>
+		
+	</building_prefab>
+
+	<building_prefab id="ApartmentsS" type="DowntownApartments" display_name="Apartments S"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments S.prefab">
+		<floors_group min="-3" max="-1" floor_size="2.2,0.4,1.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.2,0.6,1.5" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="2.2,0.55,1.5" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="4" max="5" floor_size="1.5,0.5,1.5" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="40"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="80"/>
+		<building_marker prefab="AntennaThreeLight" offset="0,-0.5,0"  />		
+	</building_prefab>
+
+	<building_prefab id="ApartmentsT" type="DowntownApartments" display_name="Apartments T"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments T.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.5,0.4,1.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.5,0.6,1.4" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="4" floor_size="1.5,0.5,1.4" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="5" max="5" floor_size="0.8,0.6,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="30"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="70"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsU" type="DowntownApartments" display_name="Apartments U"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments U.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.5,0.4,1.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.5,0.6,1.4" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1.5,0.5,1.4" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="3" max="3" floor_size="1.5,0.8,1.4" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="30"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="70"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,-0.2"/>		
+	</building_prefab>
+
+	<building_prefab id="ApartmentsW" type="DowntownApartments" display_name="Apartments W"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments W.prefab">
+		<floors_group min="-5" max="-1" floor_size="1.5,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.5,0.3,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="7" floor_size="1.5,0.25,0.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="160"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="80"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>		
+	</building_prefab>
+
+	<building_prefab id="BrownstoneA" type="DowntownBrownstone" display_name="Brownstone A"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Brownstone A.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.2,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.2,0.75,1.1" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1.2,0.45,1.1" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="20"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="BrownstoneB" type="DowntownBrownstone" display_name="Brownstone B"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Brownstone B.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.1,0.4,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.75,1.2" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1.1,0.45,1.2" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="16"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="BrownstoneC" type="DowntownBrownstone" display_name="Brownstone C"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Brownstone C.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.1,0.4,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.75,1.2" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1.1,0.45,1.2" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="21"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="BrownstoneD" type="DowntownBrownstone" display_name="Brownstone D"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Brownstone D.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.1,0.4,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.75,1.2" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1.1,0.45,1.2" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="19"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-1.1,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="BrownstoneE" type="DowntownBrownstone" display_name="Brownstone E"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Brownstone E.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.1,0.4,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.75,1.2" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1.1,0.45,1.2" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="17"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="BrownstoneF" type="DowntownBrownstone" display_name="Brownstone F"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Brownstone F.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.1,0.4,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.75,1.2" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1.1,0.45,1.2" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="15"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="BrownstoneH" type="DowntownBrownstone" display_name="Brownstone H"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Brownstone H.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.1,0.4,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.75,1.2" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1.1,0.45,1.2" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="14"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.9,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="DtOfficeA" type="DowntownOffice" display_name="Dt Office A"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office A.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.3,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.3,0.65,1.3" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.3,0.55,1.3" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="280"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="16"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="48"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="16"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.6,0"/>
+	</building_prefab>
+
+	<building_prefab id="DtOfficeB" type="DowntownOffice" display_name="Dt Office B"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office B.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.3,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.3,0.65,0.9" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="4" floor_size="1.3,0.45,0.9" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="320"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="48"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="10"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0.2"/>
+		
+	</building_prefab>
+
+	<building_prefab id="DtOfficeC" type="DowntownOffice" display_name="Dt Office C"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office C.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.3,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.3,0.6,0.9" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="4" floor_size="1.3,0.4,0.9" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="360"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="14"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="40"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="12"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0"/>
+	</building_prefab>
+
+	<building_prefab id="DtOfficeD" type="DowntownOffice" display_name="Dt Office D"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office D.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.3,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.3,0.6,0.9" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="4" floor_size="1.3,0.45,0.9" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="320"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="20"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="80"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="10"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>		
+	</building_prefab>
+
+	<building_prefab id="DtOfficeE" type="DowntownOffice" display_name="Dt Office E"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office E.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.4,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.4,0.6,1.3" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.4,0.5,1.3" percentage_work_space="95"  percentage_storage_space="5"/>
+		<floors_group min="4" max="4" floor_size="1.4,0.55,1.3" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="560"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="30"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="72"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="8"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="DtOfficeF" type="DowntownOffice" display_name="Dt Office F"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office F.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.3,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.3,0.6,0.9" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="4" floor_size="1.3,0.45,0.9" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="320"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="10"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="40"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="8"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="DtOfficeG" type="DowntownOffice" display_name="Dt Office G"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office G.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.5,0.4,1.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.5,0.7,1.5" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="5" floor_size="1.5,0.5,1.5" percentage_work_space="95"  percentage_storage_space="5"/>
+		<floors_group min="6" max="6" floor_size="0.8,0.5,0.5" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="1200"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="80"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="140"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="30"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="DtOfficeH" type="DowntownOffice" display_name="Dt Office H"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office H.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.1,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.7,1.1" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="6" floor_size="1.1,0.5,1.1" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="800"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="50"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="88"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="24"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>		
+	</building_prefab>
+
+	<building_prefab id="DtOfficeI" type="DowntownOffice" display_name="Dt Office I"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office I.prefab">
+		<floors_group min="-6" max="-1" floor_size="2.3,0.4,2.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.3,0.7,2.3" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="5" floor_size="2.3,0.5,2.3" percentage_work_space="95"  percentage_storage_space="5"/>
+		<floors_group min="6" max="7" floor_size="1.7,0.5,2.3" percentage_work_space="95"  percentage_storage_space="5"/>
+		<floors_group min="8" max="9" floor_size="0.8,0.5,2.3" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="1900"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="120"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="120"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="60"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="DtOfficeJ" type="DowntownOffice" display_name="Dt Office J"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office J.prefab" floors_offset="0.1,0,0">
+		<floors_group min="-7" max="-1" floor_size="1.3,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.3,0.45,1.3" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="9" floor_size="1.3,0.42,1.3" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="1360"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="90"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="140"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="30"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="DtOfficeK" type="DowntownOffice" display_name="Dt Office K"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office K.prefab">
+		<floors_group min="-5" max="-1" floor_size="1.1,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.45,1.1" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="7" floor_size="1.1,0.35,1.1" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="520"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="30"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="64"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="20"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="DtOfficeL" type="DowntownOffice" display_name="Dt Office L"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office L.prefab">
+		<floors_group min="-5" max="-1" floor_size="1.1,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.45,1.1" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="7" floor_size="1.1,0.35,1.1" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="480"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="28"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="72"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="24"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="DtOfficeM1" type="DowntownOffice" display_name="Dt Office M1"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office M1.prefab">
+		<floors_group min="-5" max="-1" floor_size="1.1,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.45,1.1" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="6" floor_size="1.1,0.35,1.1" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="430"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="12"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="60"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="12"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="DtOfficeM2" type="DowntownOffice" display_name="Dt Office M2"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Dt Office M2.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.6,0.4,1.6" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.6,0.45,1.6" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="6" floor_size="1.6,0.35,1.6" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="480"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="14"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="40"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="6"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="HotelA" type="Hotel" display_name="Hotel A"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Hotel A.prefab" floors_offset="0,0,-0.1">
+		<floors_group min="-2" max="-1" floor_size="2,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2,0.45,1.1" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="2,0.45,1.1" percentage_work_space="95"  percentage_storage_space="5"/>
+		<floors_group min="3" max="3" floor_size="0.6,0.45,0.6" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="100"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="10"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="24"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="4"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="80"/>
+		
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="HotelB" type="Hotel" display_name="Hotel B"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Hotel B.prefab">
+		<floors_group min="-4" max="-1" floor_size="0.9,0.4,2.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.9,0.55,2.4" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="7" floor_size="0.9,0.45,2.4" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="300"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="36"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="8"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="180"/>
+		
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="HotelC" type="Hotel" display_name="Hotel C"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Hotel C.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.6,0.4,2.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.6,0.55,2.4" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="5" floor_size="1.6,0.45,2.4" percentage_work_space="95"  percentage_storage_space="5"/>
+		<floors_group min="6" max="7" floor_size="1.1,0.55,2.4" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="300"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="168"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="36"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="8"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="200"/>
+		
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="HotelD" type="Hotel" display_name="Hotel D"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Hotel D.prefab" floors_offset="0,0,-0.15">
+		<floors_group min="-2" max="-1" floor_size="3,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="3,0.5,1.1" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="3,0.5,1.1" percentage_work_space="95"  percentage_storage_space="5"/>
+		<floors_group min="4" max="4" floor_size="1.2,0.5,0.6" percentage_work_space="95"  percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="104"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="24"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="5"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="140"/>
+		
+		
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="LuxuryApartmentsA" type="LuxuryApartments" display_name="Luxury Apartments A"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Luxury Apartments A.prefab">
+		<floors_group min="-2" max="-1" floor_size="1.4,0.4,2.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.4,0.75,2.1" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.4,0.4,2.1" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="4" max="4" floor_size="1.4,0.5,2.1" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="20"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="40"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="6"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="20"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="4"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="LuxuryApartmentsB" type="LuxuryApartments" display_name="Luxury Apartments B"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Luxury Apartments B.prefab">
+		<floors_group min="-3" max="-1" floor_size="2.4,0.4,2.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.4,0.75,2.5" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="1" max="5" floor_size="2.4,0.4,2.5" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="6" max="6" floor_size="2.4,0.7,2.5" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="120"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="90"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="8"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="32"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="10"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="LuxuryApartmentsC" type="LuxuryApartments" display_name="Luxury Apartments C"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Luxury Apartments C.prefab">
+		<floors_group min="-3" max="-1" floor_size="2.7,0.4,2.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.7,0.75,2.7" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="1" max="5" floor_size="2.7,0.4,2.7" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="100"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="70"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="6"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="40"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="12"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="LuxuryApartmentsD" type="LuxuryApartments" display_name="Luxury Apartments D"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Luxury Apartments D.prefab">
+		<floors_group min="-4" max="-1" floor_size="2.7,0.4,2.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.7,0.75,2.7" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="1" max="4" floor_size="2.7,0.4,2.7" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="5" max="8" floor_size="2.1,0.55,2.1" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="100"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="180"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="6"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="48"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="20"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="LuxuryApartmentsE" type="LuxuryApartments" display_name="Luxury Apartments E"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Luxury Apartments E.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.3,0.4,1.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.3,0.5,1.8" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<floors_group min="1" max="5" floor_size="1.3,0.45,1.8" percentage_work_space="10" percentage_living_space="85" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="20"/>
+		<max_residents_by_economic_class economic_class="Scientists" max_residents="25"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="4"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="20"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="4"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="PrivateResidenceA" type="DowntownPrivateResidence" display_name="Private Residence A"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Private Residence A.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.25,0.4,1.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.25,0.5,1.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.25,0.5,1.9" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Managerial" max_residents="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="4"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="40"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="6"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.7,0.2"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsAA1" type="DowntownApartments" display_name="Apartments AA1"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments AA1.prefab" floors_offset="0,0,-0.05">
+		<floors_group min="-4" max="-1" floor_size="1.0,0.36,0.95" percentage_storage_space="50" percentage_living_space="50" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.0,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.0,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="40"/>
+		<building_marker prefab="RoofLine" offset="0,-0.23,0"  rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsAA2" type="DowntownApartments" display_name="Apartments AA2"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments AA2.prefab" floors_offset="0,0,-0.05">
+		<floors_group min="-4" max="-1" floor_size="1.0,0.36,0.95" percentage_storage_space="50" percentage_living_space="50" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.0,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.0,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="50"/>
+		<building_marker prefab="RoofLine" offset="0,-0.23,0"  rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsAB1" type="DowntownApartments" display_name="Apartments AB1"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments AB1.prefab" floors_offset="0,0,-0.05">
+		<floors_group min="-4" max="-1" floor_size="1.0,0.36,0.95" percentage_storage_space="50" percentage_living_space="50" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.0,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.0,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="40"/>
+		<building_marker prefab="RoofLine" offset="0,0,0"  rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsAB2" type="DowntownApartments" display_name="Apartments AB2"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments AB2.prefab" floors_offset="0,0,-0.05">
+		<floors_group min="-4" max="-1" floor_size="1.0,0.36,0.95" percentage_storage_space="50" percentage_living_space="50" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.0,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="3" floor_size="1.0,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="30"/>
+		<building_marker prefab="RoofLine" offset="0,0,0"  rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsAC1" type="DowntownApartments" display_name="Apartments AC1"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments AC1.prefab">
+		<floors_group min="-6" max="-1" floor_size="2.5,0.4,1.7" percentage_storage_space="50" percentage_living_space="50" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.5,0.42,1.7" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="4" floor_size="2.5,0.36,1.7" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="50"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="150"/>
+		<building_marker prefab="RoofLine" offset="0,0,-0.4"  rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsAC2" type="DowntownApartments" display_name="Apartments AC2"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments AC2.prefab">
+		<floors_group min="-6" max="-1" floor_size="2.5,0.4,1.7" percentage_storage_space="50" percentage_living_space="50" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.5,0.42,1.7" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="4" floor_size="2.5,0.36,1.7" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="60"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="140"/>
+		<building_marker prefab="RoofLine" offset="0,0,-0.4"  rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsAD1" type="DowntownApartments" display_name="Apartments AD1"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments AD1.prefab" floors_offset="0,0,-0.1">
+		<floors_group min="-6" max="-1" floor_size="1.5,0.36,0.95" percentage_storage_space="50" percentage_living_space="50" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.5,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="5" floor_size="1.5,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="100"/>
+		<building_marker prefab="RoofLine" offset="0,0,0"  rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsAD2" type="DowntownApartments" display_name="Apartments AD2"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments AD2.prefab">
+		<floors_group min="-6" max="-1" floor_size="1.5,0.36,0.95" percentage_storage_space="50" percentage_living_space="50" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.5,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="5" floor_size="1.5,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="100"/>
+		<building_marker prefab="RoofLine" offset="0,0,0"  rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="ApartmentsZ" type="DowntownApartments" display_name="Apartments Z"
+		path_to_placeable="Assets/__Library/Buildings/Downtown/Apartments Z.prefab" floors_offset="0,0,-0.05">
+		<floors_group min="-4" max="-1" floor_size="1.0,0.36,0.95" percentage_storage_space="50" percentage_living_space="50" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.0,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<floors_group min="1" max="4" floor_size="1.0,0.36,0.95" percentage_work_space="5" percentage_living_space="90" percentage_storage_space="5"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="50"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.8,-0.2"/>
+	</building_prefab>
+	
+</root>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_prefab id="CoolingTowerA" display_name="Nuclear Power Plant A"
+		path_to_placeable="Assets/__Library/Power/General/Cooling Tower A.prefab"
+		type="NuclearPowerPlant">
+		<floors_group is_underground="false" min="0" max="0" floor_size="4.2,5.7,4.6" percentage_living_space="0" percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="8"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="8"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="4"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="16"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="-1.29,-4.1,-1.29"  />
+	</building_prefab>
+
+	<building_prefab id="CoolingTowerB" display_name="Nuclear Power Plant B"
+		path_to_placeable="Assets/__Library/Power/General/Cooling Tower B.prefab"
+		type="NuclearPowerPlant">
+		<floors_group is_underground="false" min="0" max="0" floor_size="4.2,6.2,4.6" percentage_living_space="0" percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="10"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="8"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="5"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="18"/>
+		
+		<building_marker prefab="AntennaOneLight" offset="1.35,-4.15,-1.35"  />
+	</building_prefab>
+
+	<building_prefab id="WindTurbine" display_name="Wind Turbine"
+		path_to_placeable="Assets/__Library/Power/General/Wind Turbine.prefab"
+		type="WindPowerTurbine">
+		
+	</building_prefab>
+
+	<building_prefab id="WindTurbineB" display_name="Wind Turbine B"
+		path_to_placeable="Assets/__Library/Power/General/Wind Turbine B.prefab"
+		type="WindPowerTurbine">
+		
+	</building_prefab>
+
+	<building_prefab id="SolarPanels" display_name="Solar Panels A"
+		path_to_placeable="Assets/__Library/Power/General/Solar Panels.prefab"
+		type="SolarPanels">
+		
+	</building_prefab>
+
+	<building_prefab id="SolarPanelsB" display_name="Solar Panels B"
+		path_to_placeable="Assets/__Library/Power/General/Solar Panels B.prefab"
+		type="SolarPanels">
+		
+	</building_prefab>
+
+</root>

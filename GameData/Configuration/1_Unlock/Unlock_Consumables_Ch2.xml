@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Items that are NOT auto-unlocked.-->
+	
+	<unlock id="Necromancer" display_name="Necromancer" consumable_item="AnimateOfficeEquipment"
+		turns_to_unlock="2" required_intelligence_class="2">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+	<unlock id="CrimeSceneCleaner" display_name="Crime Scene Cleaner" consumable_item="FreshIdentity"
+		turns_to_unlock="2" required_intelligence_class="2">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+	<unlock id="Submunitions" display_name="Submunitions" consumable_item="SkystreakArmorPiercingMissiles"
+		immediate_other_unlock_1="Starfall" other_unlock_inspiration_type="FollowUpIdea"
+		turns_to_unlock="2" required_intelligence_class="2">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+	<unlock id="HumaneTrap" display_name="Humane Trap" consumable_item="AnimalCaptureDrone"
+		turns_to_unlock="2" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+	<unlock id="WealthTrap" display_name="Wealth Trap" consumable_item="HighClassCaptureDrone"
+		turns_to_unlock="2" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+	<unlock id="PovertyTrap" display_name="Poverty Trap" consumable_item="WorkingClassCaptureDrone"
+		turns_to_unlock="2" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+	<unlock id="ComeWithMeImKnockingThisPlaceDown" display_name="Come With Me, I'm Knocking This Place Down" consumable_item="SlumRescueDrone"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+	<unlock id="LaserBug" display_name="Laser Bug" consumable_item="SaberBees"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+	<unlock id="TossEmInWithTheOthers" display_name="Toss 'Em In With The Others" consumable_item="TormentCaptureDrone"
+		turns_to_unlock="2" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ConsumableItem" sort_index="100" />
+	</unlock>
+
+</root>

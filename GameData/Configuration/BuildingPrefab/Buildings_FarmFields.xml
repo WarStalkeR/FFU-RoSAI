@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--
+		Notes:
+			-Tomatoes treated as being kind of average on water consumption.
+			-Beans treated as being very good quality on water consumption.
+			-Grapes treated as needing more water.
+			-Pepper being treated as needing a bit less water.
+			-Sunflowers being treated as plant-and-forget, no need for watering.
+			-Larger fields, visually, require more workers and give larger yields 
+				(and have higher costs, equivalent to their yield's water efficiency)
+			-Thicker plants treated as giving a higher yield in general.
+	-->
+
+	<building_prefab id="PlantsTomato" type="FarmTomatoes" display_name="Plants Tomato"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Tomato.prefab" multiplier_y_for_highlights="12">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="12"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsBeansThick" type="FarmBeans" display_name="Plants Beans Thick"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Beans Thick.prefab" multiplier_y_for_highlights="7">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="25"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsBeansThin" type="FarmBeans" display_name="Plants Beans Thin"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Beans Thin.prefab" multiplier_y_for_highlights="9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="5"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsCabbage" type="FarmCabbage" display_name="Plants Cabbage"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Cabbage.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="15"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsCorn" type="FarmCorn" display_name="Plants Corn"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Corn.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="26"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsCornB" type="FarmCorn" display_name="Plants Corn B"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Corn B.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="12"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsGrapesA" type="FarmGrapes" display_name="Plants Grapes A"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Grapes A.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="12"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsGrapesB" type="FarmGrapes" display_name="Plants Grapes B"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Grapes B.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="12"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsGreenSproutsMidsize" type="FarmSprouts" display_name="Plants Green Sprouts Midsize"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Green Sprouts Midsize.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="43"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsGreenSproutsSmall" type="FarmSprouts" display_name="Plants Green Sprouts Small"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Green Sprouts Small.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="37"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsLettuce" type="FarmLettuce" display_name="Plants Lettuce"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Lettuce.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="22"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsPepperA" type="FarmPeppers" display_name="Plants Pepper A"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Pepper A.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="32"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsPepperB" type="FarmPeppers" display_name="Plants Pepper B"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Pepper B.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="42"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsPumpkin" type="FarmPumpkins" display_name="Plants Pumpkin"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Pumpkin.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="32"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsSquash" type="FarmSquash" display_name="Plants Squash"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Squash.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="48"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsSunflowers" type="FarmSunflowers" display_name="Plants Sunflowers"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Sunflowers.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="34"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsSunflowersB" type="FarmSunflowers" display_name="Plants Sunflowers B"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Sunflowers B.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="21"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsWheatB" type="FarmWheat" display_name="Plants Wheat B"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Wheat B.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="52"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsWheatManyRows" type="FarmWheat" display_name="Plants Wheat Many Rows"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Wheat Many Rows.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="49"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsWheatSingleRow" type="FarmWheat" display_name="Plants Wheat Single Row"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Wheat Single Row.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="8"/>
+		
+	</building_prefab>
+
+	<building_prefab id="PlantsWheatWideManyRows" type="FarmWheat" display_name="Plants Wheat Wide Many Rows"
+		path_to_placeable="Assets/__Library/Farm/Fields/Plants Wheat Wide Many Rows.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="115"/>
+		
+	</building_prefab>
+	
+	<building_prefab id="PlantsCottonHuge" type="FarmCotton" display_name="Plants Farm Cotton Huge"
+	path_to_placeable="Assets/__Library/Farm/Fields/Plants Yellow Sprouts Huge.prefab" multiplier_y_for_highlights="4.9">
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="135"/>
+		
+	</building_prefab>
+	
+</root>

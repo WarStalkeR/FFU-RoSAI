@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!-- ***
+		 ^*^ -->
+	<debate_reward id="TUpLimited"
+		pattern_string="***
+^*^"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions="The red squares cannot be {0}."
+		icon_name="DebateTUpLimited"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" triples_score="true" least_used_category_skill_will_improve="true" difficulty_level="6" />
+
+	<!-- ***
+		  *  -->
+	<debate_reward id="TUp"
+		pattern_string="***
+ * "
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions=""
+		icon_name="DebateTUp"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" doubles_score="true" least_used_category_skill_will_improve="true" difficulty_level="2" />
+
+	<!-- ^*^
+		 *** -->
+	<debate_reward id="TDownLimited"
+		pattern_string="^*^
+***"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions="The red squares cannot be {0}."
+		icon_name="DebateTDownLimited"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" triples_score="true" least_used_category_skill_will_improve="true" difficulty_level="6" />
+
+	<!--  * 
+		 *** -->
+	<debate_reward id="TDown"
+		pattern_string=" * 
+***"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions=""
+		icon_name="DebateTDown"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" doubles_score="true" least_used_category_skill_will_improve="true" difficulty_level="2" />
+
+	<!-- ***
+		 *^* -->
+	<debate_reward id="Row3x3Limited"
+		pattern_string="***
+*^*"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions="The red squares cannot be {0}."
+		icon_name="DebateRow3x3Limited"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" doubles_score="true" most_used_category_skill_will_improve="true" difficulty_level="5" />
+	
+	<!-- ^^^
+		 *** -->
+	<debate_reward id="Row3x3LimitedB"
+		pattern_string="^^^
+***"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions="The red squares cannot be {0}."
+		icon_name="DebateRow3x3LimitedB"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" doubles_score="true" most_used_category_skill_will_improve="true" difficulty_level="4" />
+
+	<!-- ***
+		 ^^^ -->
+	<debate_reward id="Row3x3LimitedA"
+		pattern_string="***
+^^^"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions="The red squares cannot be {0}."
+		icon_name="DebateRow3x3LimitedA"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" doubles_score="true" most_used_category_skill_will_improve="true" difficulty_level="4" />
+
+	<!-- ***
+		 *** -->
+	<debate_reward id="Row3x3"
+		pattern_string="***
+***"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions="The red squares cannot be {0}."
+		icon_name="DebateRow3x3"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" doubles_score="true" most_used_category_skill_will_improve="true" difficulty_level="6" />
+
+	<!-- *** -->
+	<debate_reward id="Row3"
+		pattern_string="***"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions=""
+		icon_name="DebateRow3"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" doubles_score="true" least_used_category_skill_will_improve="true" difficulty_level="1" />
+
+	<!-- *^
+		 ^* -->
+	<debate_reward id="Column2x2LimitedB"
+		pattern_string="*^
+^*"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions="The red squares cannot be {0}."
+		icon_name="DebateColumn2x2LimitedB"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" triples_score="true" most_used_category_skill_will_improve="true" difficulty_level="3" />
+
+	<!-- ^*
+		 *^ -->
+	<debate_reward id="Column2x2LimitedA"
+		pattern_string="^*
+*^"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions="The red squares cannot be {0}."
+		icon_name="DebateColumn2x2LimitedA"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" triples_score="true" most_used_category_skill_will_improve="true" difficulty_level="3" />
+
+	<!-- **
+		 ** -->
+	<debate_reward id="Column2x2"
+		pattern_string="**
+**"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions=""
+		icon_name="DebateColumn2x2"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" doubles_score="true" least_used_category_skill_will_improve="true" difficulty_level="2" />
+
+	<!-- *
+		 * -->
+	<debate_reward id="Column2"
+		pattern_string="*
+*"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions=""
+		icon_name="DebateColumn2"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" triples_score="true" most_used_category_skill_will_improve="true" difficulty_level="1" />
+
+	<!-- *^*
+		 *^* -->
+	<debate_reward id="Column2LimitedB"
+		pattern_string="*^*
+*^*"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions="The red squares cannot be {0}."
+		icon_name="DebateColumn2LimitedB"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" doubles_score="true" most_used_category_skill_will_improve="true" difficulty_level="6" />
+
+	<!-- ^*^
+		 ^*^ -->
+	<debate_reward id="Column2LimitedA"
+		pattern_string="^*^
+^*^"
+		description="Arrange any actions from the {0} category in the pattern shown."
+		restrictions="The red squares cannot be {0}."
+		icon_name="DebateColumn2LimitedA"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateRewardsBasic"
+		on_complete="GetDebateReward" triples_score="true" least_used_category_skill_will_improve="true" difficulty_level="4" />
+
+</root>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!-- Display: FullscreenMode -->
+	<setting id="UseFullscreen" category="Display" subcategory="FullscreenMode" is_stored_in_graphics_settings_file="true" display_name="Display In Fullscreen Mode" type="BoolToggle" default_bool="false" ignores_defaults="true" ignores_defaults_lang_key="SetDefaults_Fullscreen"
+			 description="" />
+	
+	<setting id="FullscreenResolution" category="Display" subcategory="FullscreenMode" is_stored_in_graphics_settings_file="true" display_name="Fullscreen Resolution" type="IntDropdown" dropdown_filler_dll_name="HotMExternalVisualizationCode" dropdown_filler_type_name="Arcen.HotM.ExternalVis.FullscreenResolutionDropdownFiller"
+		default_int="0" ignores_defaults="true" ignores_defaults_lang_key="SetDefaults_ScreenResolution"
+			 description="" />
+
+	<setting id="ClampMouseToGameInFullscreenMode" category="Display" subcategory="FullscreenMode" is_stored_in_graphics_settings_file="true" display_name="Lock Mouse To Game Window In Fullscreen Mode" type="BoolToggle" default_bool="true"
+			description="" />
+
+	<!-- Display: WindowedMode -->
+	<setting id="WindowWidth" category="Display" subcategory="WindowedMode" is_stored_in_graphics_settings_file="true" display_name="Window Width" type="IntTextbox" default_int="1000" min_int="600" max_int="9000" ignores_defaults="true" ignores_defaults_lang_key="SetDefaults_ScreenResolution"
+			 description="Only applies in windowed mode." />
+	<setting id="WindowHeight" category="Display" subcategory="WindowedMode" is_stored_in_graphics_settings_file="true" display_name="Window Height" type="IntTextbox" default_int="600" min_int="400" max_int="7000" ignores_defaults="true" ignores_defaults_lang_key="SetDefaults_ScreenResolution"
+			 description="Only applies in windowed mode." />
+
+	<setting id="ClampMouseToGameInWindowedMode" category="Display" subcategory="WindowedMode" is_stored_in_graphics_settings_file="true" display_name="Lock Mouse To Game Window In Windowed Mode" type="BoolToggle" default_bool="false"
+			description="" />
+
+	<!-- Display: Invisible bits-->
+	<setting id="FullscreenWidth" category="Display" is_stored_in_graphics_settings_file="true" display_name="Fullscreen Width" do_not_set_my_values_directly_because_managed_by_another_field="true" type="IntHidden" default_int="1024" min_int="800" max_int="10240"
+			 skip_all_localization_on_node="true" ignores_defaults="true" ignores_defaults_lang_key="SetDefaults_ScreenResolution"
+			  description="" />
+	<setting id="FullscreenHeight" category="Display" is_stored_in_graphics_settings_file="true" display_name="Fullscreen Height" do_not_set_my_values_directly_because_managed_by_another_field="true" type="IntHidden" default_int="768" min_int="600" max_int="7680"
+			 skip_all_localization_on_node="true" ignores_defaults="true" ignores_defaults_lang_key="SetDefaults_ScreenResolution"
+			  description="" />
+	<setting id="HaveDefaultResolutionsBeenSet" category="Display" is_stored_in_graphics_settings_file="true" display_name="HaveDefaultResolutionsBeenSet"
+			 skip_all_localization_on_node="true" ignores_defaults="true" ignores_defaults_lang_key="SetDefaults_ScreenResolution"
+			  type="BoolHidden" default_bool="false" />
+	
+	<!-- Display: FullscreenEffects-->
+
+	<setting id="Post_CityExposure" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="Streets Camera Exposure" type="FloatSlider" default_float="0.9" min_float="0.4" max_float="1.6" rounding_type="Twentieths"
+		description="" />
+
+	<setting id="Post_CityContrast" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="Streets Camera Contrast" type="FloatSlider" default_float="1.05" min_float="0.9" max_float="1.5" rounding_type="Twentieths"
+		description="" />
+		
+	<setting id="Post_CityBloomThreshold" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="Streets Camera Bloom Threshold" type="FloatSlider" default_float="0.65" min_float="0.1" max_float="1.6" rounding_type="Twentieths"
+		description="Lower values catch more of the screen in the bloom effect." />
+
+	<setting id="Post_CityBloomIntensity" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="Streets Camera Bloom Intensity" type="FloatSlider" default_float="0.9" min_float="0.1" max_float="1.9" rounding_type="Twentieths"
+		description="" />
+	
+	<setting id="Post_MapExposure" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="Map Camera Exposure" type="FloatSlider" default_float="0.9" min_float="0.4" max_float="1.6" rounding_type="Twentieths"
+		description="" default_should_override_user_value_if_older_than_version="0_450_RevisedCities" />
+
+	<setting id="Post_MapContrast" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="Map Camera Contrast" type="FloatSlider" default_float="1.05" min_float="0.9" max_float="1.5" rounding_type="Twentieths"
+		description="" default_should_override_user_value_if_older_than_version="0_450_RevisedCities" />
+
+	<setting id="Post_MapBloomThreshold" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="Map Camera Bloom Threshold" type="FloatSlider" default_float="0.65" min_float="0.1" max_float="1.6" rounding_type="Twentieths"
+		description="Lower values catch more of the screen in the bloom effect." default_should_override_user_value_if_older_than_version="0_450_RevisedCities" />
+
+	<setting id="Post_MapBloomIntensity" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="Map Camera Bloom Intensity" type="FloatSlider" default_float="0.9" min_float="0.1" max_float="1.9" rounding_type="Twentieths"
+		description="" />
+
+	<setting id="Post_Sharpness" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="Sharpness" type="FloatSlider" default_float="0.6" min_float="0.0" max_float="5" rounding_type="Tenths"
+		description=""/>
+
+	<setting id="Post_Dithering" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="Dithering" type="FloatSlider" default_float="0.0" min_float="0.0" max_float="0.2"
+		description="" />
+
+	<setting id="Post_UIGlowThreshold" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="UI Glow Threshold" type="FloatSlider" default_float="1" min_float="0.1" max_float="1.6" rounding_type="Twentieths"
+		description="Lower values catch more of the screen in the bloom effect." />
+
+	<setting id="Post_UIGlowIntensity" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="UI Bloom Intensity" type="FloatSlider" default_float="1.4" min_float="0.1" max_float="1.9" rounding_type="Twentieths"
+		description="" />
+
+	<!-- Display: AntiAliasing-->
+
+</root>

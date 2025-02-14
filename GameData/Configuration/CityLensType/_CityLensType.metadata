@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="city_lens">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="false" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	
+	<attribute key="is_only_available_if_has_machine_structures" type="bool" default="false"
+		tooltip="If this lens is only available when the player has at least one structure." />
+	<attribute key="only_available_after_chapter" type="int-textbox" min="-1" max="10" default="0" content_width_px="50" is_required="true"
+		tooltip="If this is zero or higher, then this lens will only be available after the numbered chapter in question."/>
+	<attribute key="is_only_available_if_has_swarms" type="bool" default="false"
+		tooltip="If this lens is only available when the city has at least one ongoing swarm." />
+	<attribute key="is_only_available_if_has_investigations" type="bool" default="false"
+		tooltip="If this lens is only available when the city has at least one investigation available." />
+	<attribute key="is_only_available_if_has_contemplations" type="bool" default="false"
+		tooltip="If this lens is only available when the city has at least one contemplation available." />
+	<attribute key="is_only_available_if_has_city_conflicts" type="bool" default="false"
+		tooltip="If this lens is only available when the city has at least one conflict available." />
+	<attribute key="is_only_available_if_has_exploration_sites" type="bool" default="false"
+		tooltip="If this lens is only available when the city has at least one exploration site available." />
+
+	<attribute key="is_hidden_during_obsessions" type="bool" default="false"
+		tooltip="If this lens is forcibly hidden during obsessions." />
+
+	<attribute key="hides_key_npc_units_during_inspect_focus" type="bool" default="false"
+		tooltip="If true, AND this lens focuses rather than broadening, then all of the 'key' NPCs will be hidden when inspect mode is used. Very important during large war scenarios, etc." />
+
+	<attribute key="hidden_before_unlock" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this lens is hidden until the specified unlock is invented." />
+	<attribute key="hidden_if_flag_is_active" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If specified, this lens is disabled while this flag is active." />
+	
+	<attribute key="show_investigations" type="bool" default="false"
+		tooltip="When this lens is active, show the icons for available investigations around the city." />
+	<attribute key="show_contemplations" type="bool" default="false"
+		tooltip="When this lens is active, show the icons for available contemplations around the city." />
+	<attribute key="show_city_conflicts_large" type="bool" default="false"
+		tooltip="When this lens is active, show the icons for available background conflicts around the city -- in a huge fashion." />
+	<attribute key="show_swarms" type="bool" default="false"
+		tooltip="When this lens is active, show the icons for swarms spreading through the city." />
+	<attribute key="show_all_street_sense" type="bool" default="false"
+		tooltip="When this lens is active, show the icons for StreetSense around the city." />
+	<attribute key="show_project_related_street_sense" type="bool" default="false"
+		tooltip="When this lens is active, show the icons for StreetSense, but only those related to projects." />
+	<attribute key="show_special_resources" type="bool" default="false"
+		tooltip="When this lens is active, show resources that can be extracted from buildings." />
+	<attribute key="show_exploration_sites" type="bool" default="false"
+		tooltip="When this lens is active, show buildings that have exploration sites." />
+
+	<attribute key="displayed_keybind" type="node-dropdown" is_required="false" node_source="InputActionTypeData" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which keybind will trigger this, if any?  This is just for display purposes." />
+
+	<!--lens_filter
+	*******************************************************************************************************-->
+	<sub_node id="lens_filter">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. There should be a unique set of lens_filter IDs per lens, named or numbered." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="is_enabled_by_default" type="bool" default="false" is_required="true"
+			tooltip="If this filter is on by default." />
+		<attribute key="description" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of how to use this information."/>
+		<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="false" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of how to use this information."/>
+
+		<attribute key="show_npc_missions" type="bool" default="false"
+			tooltip="When this lens is active, show the icons for ongoing npc missions." />
+		<attribute key="show_structure_jobs" type="bool" default="false"
+			tooltip="When this lens is active, show the icons for structure jobs." />
+		<attribute key="show_job_complaints" type="bool" default="false"
+			tooltip="When this lens is active, show the icons for job complaints." />
+		<attribute key="show_npc_unit_stances" type="bool" default="false"
+			tooltip="When this lens is active, show the icons for the stances of npc units." />
+		<attribute key="show_all_poi_statuses" type="bool" default="false"
+			tooltip="When this lens is active, show icons for all poi statuses that exist." />
+		<attribute key="show_key_poi_statuses" type="bool" default="false"
+			tooltip="When this lens is active, show icons for key poi statuses that exist." />
+		<attribute key="show_health_bars" type="bool" default="false"
+			tooltip="When this lens is active, show health bars for all units." />
+		<attribute key="show_threat_lines_always" type="bool" default="false"
+			tooltip="When this lens is active, show threat lines even if they would not kill the unit." />
+
+		<attribute key="skip_networking_lines" type="bool" default="false"
+			tooltip="" />
+		<attribute key="skip_storage_jobs" type="bool" default="false"
+			tooltip="" />
+		<attribute key="skip_refinery_jobs" type="bool" default="false"
+			tooltip="" />
+		<attribute key="skip_procurement_jobs" type="bool" default="false"
+			tooltip="" />
+		<attribute key="skip_electrical_jobs" type="bool" default="false"
+			tooltip="" />
+
+		<attribute key="show_swarms" type="bool" default="false"
+			tooltip="When this lens is active, show the icons for swarms spreading through the city." />
+		<attribute key="show_all_street_sense" type="bool" default="false"
+			tooltip="When this lens is active, show the icons for StreetSense around the city." />
+		<attribute key="show_project_related_street_sense" type="bool" default="false"
+			tooltip="When this lens is active, show the icons for StreetSense, but only those related to projects." />
+		<attribute key="show_investigations" type="bool" default="false"
+			tooltip="When this lens is active, show the icons for available investigations around the city." />
+		<attribute key="show_contemplations" type="bool" default="false"
+			tooltip="When this lens is active, show the icons for available contemplations around the city." />
+		<attribute key="show_city_conflicts_large" type="bool" default="false"
+			tooltip="When this lens is active, show the icons for available background conflicts around the city -- in a huge fashion." />
+		<attribute key="show_city_conflicts_small" type="bool" default="false"
+			tooltip="When this lens is active, show the icons for available background conflicts around the city -- but not so huge." />
+		<attribute key="show_special_resources" type="bool" default="false"
+			tooltip="When this lens is active, show resources that can be extracted from buildings." />
+		<attribute key="show_exploration_sites" type="bool" default="false"
+			tooltip="When this lens is active, show buildings that have exploration sites." />
+		<attribute key="show_floors_in_inspect_mode" type="bool" default="false"
+			tooltip="When this lens is active, and in inspect mode, then show the floors of buildings you hover." />
+
+		<attribute key="show_all_pois" type="bool" default="false"
+			tooltip="When this lens is active, show all of the pois, even those that do not act like beacons." />
+		<attribute key="show_poi_shapes" type="bool" default="false"
+			tooltip="When this lens is active, show the shapes of any poi regions that are being drawn." />
+
+		<attribute key="show_all_npc_units" type="bool" default="false"
+			tooltip="When this lens is active, show all visible npc units on the map." />
+		<attribute key="show_key_npc_units" type="bool" default="false"
+			tooltip="When this lens is active, show key visible npc units on the map." />
+		<attribute key="show_hostile_units" type="bool" default="false"
+			tooltip="When this lens is active, show hostile visible units on the map." />
+		<attribute key="skip_passive_guards_on_map" type="bool" default="false"
+			tooltip="" />
+		<attribute key="skip_passive_guards_on_streets" type="bool" default="false"
+			tooltip="" />
+		<attribute key="skip_economic_units" type="bool" default="false"
+			tooltip="" />
+		<attribute key="skip_combat_lines_not_aimed_at_hovered_unit" type="bool" default="false"
+			tooltip="" />
+		
+		<attribute key="show_all_beacons" type="bool" default="false"
+			tooltip="When this lens is active, show icons for all of the buildings in the city." />
+		<attribute key="show_key_beacons" type="bool" default="false"
+			tooltip="When this lens is active, show key beacons." />
+
+		<attribute key="inspect_mode_focuses_more_on_this" type="bool" default="false"
+			tooltip="If true, then using inspect mode in this lens causes background clutter to be stripped away rather than more being added." />
+
+	</sub_node>
+	
+</root>

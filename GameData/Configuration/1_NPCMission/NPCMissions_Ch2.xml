@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Ch2_OerlAfterAGIResearchers
+	*************************************************************************-->
+	<mission id="Ch2_OerlAfterAGIResearchers" display_name="Search For AGI Researchers"
+		is_hostile_to_player="true"
+		progress_points_needed_to_complete="2100" turns_before_expiration="6" progress_label_text="Search Progress"
+		description="Oerl Integrated is determined to recapture the AGI Researchers you have been hiding. This was expected, but the fact that Vorsiber is backing them and providing a security lockdown for the area is completely unexpected."
+		strategy_tip="This kind of lockdown prevents your units from leaving the lockdown area, but allows free movement of anyone into the area.
+The typical logic is to prevent criminals from escaping, but not to block co-conspirators from revealing themselves."
+		icon_name="CleanSimple_Rank04" color_hex="#AB30FF" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		cohort="OerlIntegrated" can_start_without_trigger="false" max_times_can_be_started="1" lockdown_while_active="Ch2VorsiberSecurityLockdown"
+		city_flag_1_on_expires="" city_flag_1_on_complete=""
+		on_active_complete="Ch0_Homicide_Bad" on_expired_complete="Ch0_Homicide_Good" expiration_reward_group="EarlyMissionRewards" expiration_reward_inspiration_type="ThwartedMission">
+		<flag id="DetectivesAttacked" />
+		<flag id="RebelsTippedOff" />
+		<flag id="SVPAttacked" />
+	</mission>
+	
+</root>

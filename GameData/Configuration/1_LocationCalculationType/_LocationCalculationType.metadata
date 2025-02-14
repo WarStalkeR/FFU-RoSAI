@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="location_calculation">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the calculation logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the calculation logic in the specified external dll."/>
+
+	<attribute key="min_chapter_number" type="int-textbox" min="0" max="999" default="0" content_width_px="40" is_required="false"
+		tooltip="If set, then this calculation will be skipped if the game is not to whatever chapter number is specified."/>
+	<attribute key="max_chapter_number" type="int-textbox" min="0" max="999" default="999" content_width_px="40" is_required="false"
+		tooltip="If set, then this calculation will be skipped if the game has moved past whatever chapter number is specified."/>
+
+	<attribute key="security_min" type="int-textbox" min="0" max="5" default="0" content_width_px="40" is_required="false"
+		tooltip="If above zero, then any buildings below that security clearance level will be excluded."/>
+	<attribute key="security_max" type="int-textbox" min="0" max="5" default="5" content_width_px="40" is_required="false"
+		tooltip="If below 5, then any buildings above that security clearance level will be excluded."/>
+	
+	<attribute key="action_on_building_arrive" type="node-dropdown" node_source="LocationActionType" content_width_px="200" is_required="true"
+		tooltip="The action that units will take when they arrive fresh at a building." />
+
+	<attribute key="related_building_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="false"
+		tooltip="Does not inherently do anything, but allows for code to reference the intended related tag." />
+
+	<attribute key="can_happen_even_during_obsession" type="bool" default="false" is_required="false"
+		tooltip="If true, then even during an obsession, this calculation can be done." />
+
+</root>

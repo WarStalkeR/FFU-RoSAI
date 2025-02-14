@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--District Guards
+		***********************************************************-->
+	<stance id="DistrictHumanGuard" display_name="District Guard"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Permanent guard duty at this district."
+		icon_name="CleanSimple_Power05" icon_color="#31DBE7" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="true"
+		is_considered_cohort_guard="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" is_considered_basic_guard="true"
+		will_attack_outcast_machines_at_or_above_level="10" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" should_use_purple_outline="true" is_considered_passive_guard="true"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="0.0001" />
+		<action_consideration id="RunAfterShootable" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell"/>
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomeDistrictIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="DistrictVehicleGuard" display_name="District Guard"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Permanent guard duty at this district."
+		icon_name="CleanTriangle08" icon_color="#31DBE7" icon_color_hdr_intensity="1.5" icon_scale="0.6"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="true"
+		is_considered_cohort_guard="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" is_considered_basic_guard="true"
+		will_attack_outcast_machines_at_or_above_level="10" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" should_use_purple_outline="true" is_considered_passive_guard="true"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="0.0001" />
+		<action_consideration id="RunAfterShootable" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell"/>
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomeDistrictIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="DistrictMechGuard" display_name="District Guard"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Permanent guard duty at this district."
+		icon_name="CleanSimple_Power02" icon_color="#31DBE7" icon_color_hdr_intensity="1.5" icon_scale="0.6"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="true"
+		is_considered_cohort_guard="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" is_considered_basic_guard="true"
+		will_attack_outcast_machines_at_or_above_level="10" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" should_use_purple_outline="true" is_considered_passive_guard="true"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="0.0001" />		
+		<action_consideration id="RunAfterShootable" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell"/>
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomeDistrictIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<!--POI Guards
+		***********************************************************-->
+	<stance id="POIHumanGuard" display_name="POI Guard"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Permanent guard duty at this POI."
+		icon_name="CleanSimple_Power05" icon_color="#31DBE7" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_poi="true"
+		when_damaged_increase_alarm_of_poi_for_at_least_x_turns="4,7"
+		switch_to_stance_when_home_poi_alarmed_against_player="POIHumanGuardAlarmed" switch_to_stance_when_home_poi_alarmed_against_third_party="POIHumanGuardAlarmed_TP"
+		is_considered_cohort_guard="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" is_considered_basic_guard="true"
+		will_attack_outcast_machines_at_or_above_level="10" will_hold_fire_against_regular_machine_structures="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" should_use_purple_outline="true" is_considered_passive_guard="true"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="0.0001" />		
+		<action_consideration id="RunAfterShootable" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell"/>
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomePOIIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="POIVehicleGuard" display_name="POI Guard"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Permanent guard duty at this POI."
+		icon_name="CleanTriangle08" icon_color="#31DBE7" icon_color_hdr_intensity="1.5" icon_scale="0.6"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_poi="true"
+		when_damaged_increase_alarm_of_poi_for_at_least_x_turns="4,7"
+		switch_to_stance_when_home_poi_alarmed_against_player="POIVehicleGuardAlarmed" switch_to_stance_when_home_poi_alarmed_against_third_party="POIVehicleGuardAlarmed_TP"
+		is_considered_cohort_guard="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" is_considered_basic_guard="true"
+		will_attack_outcast_machines_at_or_above_level="10" will_hold_fire_against_regular_machine_structures="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" should_use_purple_outline="true" is_considered_passive_guard="true"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="0.0001" />		
+		<action_consideration id="RunAfterShootable" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell"/>
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomePOIIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="POIMechGuard" display_name="POI Guard"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Permanent guard duty at this POI."
+		icon_name="CleanSimple_Power02" icon_color="#31DBE7" icon_color_hdr_intensity="1.5" icon_scale="0.6"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_poi="true"
+		when_damaged_increase_alarm_of_poi_for_at_least_x_turns="4,7"
+		switch_to_stance_when_home_poi_alarmed_against_player="POIMechGuardAlarmed" switch_to_stance_when_home_poi_alarmed_against_third_party="POIMechGuardAlarmed_TP"
+		is_considered_cohort_guard="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" is_considered_basic_guard="true"
+		will_attack_outcast_machines_at_or_above_level="10" will_hold_fire_against_regular_machine_structures="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" should_use_purple_outline="true" is_considered_passive_guard="true"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="0.0001" />		
+		<action_consideration id="RunAfterShootable" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell"/>
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomePOIIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<!--Alarmed POI Guards - Against Player
+		***********************************************************-->
+
+	<stance id="POIHumanGuardAlarmed" display_name="Alarmed POI Guard"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Will aggressively pursue enemies within their range. Alarm ends after 5 turns, or you can bribe a guard via StreetSense to cancel the alarm."
+		icon_name="CleanSimple_Power05" icon_color="#E7256F" icon_color_hdr_intensity="1.5" icon_scale="0.6"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_poi="true"
+		when_damaged_increase_alarm_of_poi_for_at_least_x_turns="4,7"
+		switch_to_stance_when_home_poi_not_alarmed_against_any="POIHumanGuard" switch_to_stance_when_home_poi_not_alarmed_against_player="POIHumanGuardAlarmed_TP"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true"
+		will_attack_outcast_machines_at_or_above_level="1" will_hold_fire_against_regular_machine_structures="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="1.25" />	
+		<action_consideration id="RunAfterShootable" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell"/>
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomePOIIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="POIVehicleGuardAlarmed" display_name="Alarmed POI Guard"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Will aggressively pursue enemies within their range. Alarm ends after 5 turns, or you can bribe a guard via StreetSense to cancel the alarm."
+		icon_name="CleanTriangle08" icon_color="#E7256F" icon_color_hdr_intensity="1.5" icon_scale="0.8"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_poi="true"
+		when_damaged_increase_alarm_of_poi_for_at_least_x_turns="4,7"
+		switch_to_stance_when_home_poi_not_alarmed_against_any="POIVehicleGuard" switch_to_stance_when_home_poi_not_alarmed_against_player="POIVehicleGuardAlarmed_TP"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true"
+		will_attack_outcast_machines_at_or_above_level="1" will_hold_fire_against_regular_machine_structures="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="1.25" />
+		<action_consideration id="RunAfterShootable" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell"/>
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomePOIIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="POIMechGuardAlarmed" display_name="Alarmed POI Guard"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Will aggressively pursue enemies within their range. Alarm ends after 5 turns, or you can bribe a guard via StreetSense to cancel the alarm."
+		icon_name="CleanSimple_Power02" icon_color="#E7256F" icon_color_hdr_intensity="1.5" icon_scale="0.8"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_poi="true"
+		when_damaged_increase_alarm_of_poi_for_at_least_x_turns="4,7"
+		switch_to_stance_when_home_poi_not_alarmed_against_any="POIMechGuard" switch_to_stance_when_home_poi_not_alarmed_against_player="POIMechGuardAlarmed_TP"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true"
+		will_attack_outcast_machines_at_or_above_level="1" will_hold_fire_against_regular_machine_structures="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="1.25" />
+		<action_consideration id="RunAfterShootable" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell"/>
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomePOIIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<!--Alarmed POI Guards - Against Third Parties
+		***********************************************************-->
+
+	<stance id="POIHumanGuardAlarmed_TP" display_name="Alarmed POI Guard"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Will aggressively pursue enemies within their range. Alarm ends after 5 turns, or you can bribe a guard via StreetSense to cancel the alarm."
+		icon_name="CleanSimple_Power05" icon_color="#4E25E7" icon_color_hdr_intensity="1.5" icon_scale="0.6"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_poi="true"
+		when_damaged_increase_alarm_of_poi_for_at_least_x_turns="4,7"
+		switch_to_stance_when_home_poi_not_alarmed_against_any="POIHumanGuard" switch_to_stance_when_home_poi_alarmed_against_player="POIHumanGuardAlarmed" 
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true"
+		will_attack_outcast_machines_at_or_above_level="10" will_hold_fire_against_regular_machine_structures="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="1.25" />
+		<action_consideration id="RunAfterNonPlayerShootable" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestNonPlayerActorThatICanAutoShoot_WithinRangeOfCell"/>
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomePOIIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="POIVehicleGuardAlarmed_TP" display_name="Alarmed POI Guard"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Will aggressively pursue enemies within their range. Alarm ends after 5 turns, or you can bribe a guard via StreetSense to cancel the alarm."
+		icon_name="CleanTriangle08" icon_color="#4E25E7" icon_color_hdr_intensity="1.5" icon_scale="0.8"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_poi="true"
+		when_damaged_increase_alarm_of_poi_for_at_least_x_turns="4,7"
+		switch_to_stance_when_home_poi_not_alarmed_against_any="POIVehicleGuard" switch_to_stance_when_home_poi_alarmed_against_player="POIVehicleGuardAlarmed" 
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true"
+		will_attack_outcast_machines_at_or_above_level="10" will_hold_fire_against_regular_machine_structures="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="1.25" />
+		<action_consideration id="RunAfterNonPlayerShootable" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestNonPlayerActorThatICanAutoShoot_WithinRangeOfCell"/>
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomePOIIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="POIMechGuardAlarmed_TP" display_name="Alarmed POI Guard"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Will aggressively pursue enemies within their range. Alarm ends after 5 turns, or you can bribe a guard via StreetSense to cancel the alarm."
+		icon_name="CleanSimple_Power02" icon_color="#4E25E7" icon_color_hdr_intensity="1.5" icon_scale="0.8"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_poi="true"
+		when_damaged_increase_alarm_of_poi_for_at_least_x_turns="4,7"
+		switch_to_stance_when_home_poi_not_alarmed_against_any="POIMechGuard" switch_to_stance_when_home_poi_alarmed_against_player="POIMechGuardAlarmed" 
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true"
+		will_attack_outcast_machines_at_or_above_level="10" will_hold_fire_against_regular_machine_structures="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_of_very_low_log_importance="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="1.25" />
+		<action_consideration id="RunAfterNonPlayerShootable" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestNonPlayerActorThatICanAutoShoot_WithinRangeOfCell"/>
+		<action_consideration id="GoHome" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToHomePOIIfNotInIt"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+	
+</root>

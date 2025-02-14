@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--FieldResearcher
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="FieldResearcher" display_name="Field Researcher"
+		description="A corporate scientist who has been sent out to perform observations or measurements."
+		icon_scale="0.7" shape_icon_name="SF2_Beaker2" shape_icon_color="#ffffff"
+		vis_drawing_tag="FieldResearcher" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"		 
+		tags="FieldResearcher" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="80,90" />
+		<actor_data data_type="UnitMorale" base_range="120,128" />
+	</npc_unit_type>
+
+	<!--AGIResearcher
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="AGIResearcherMan" display_name="AGI Researcher"
+		description="A corporate scientist has spent their life working on the problem of Artificial Generalized Intelligence."
+		icon_scale="0.7" shape_icon_name="SI_Chip2" shape_icon_color="#ffffff"
+		vis_drawing_tag="AGIResearcherMan" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"		 
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="80,90" />
+		<actor_data data_type="UnitMorale" base_range="120,128" />
+	</npc_unit_type>
+
+	<npc_unit_type id="AGIResearcherWoman" display_name="AGI Researcher"
+		description="A corporate scientist has spent their life working on the problem of Artificial Generalized Intelligence."
+		icon_scale="0.7" shape_icon_name="SI_Chip2" shape_icon_color="#ffffff"
+		vis_drawing_tag="AGIResearcherWoman" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"		 
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="80,90" />
+		<actor_data data_type="UnitMorale" base_range="120,128" />
+	</npc_unit_type>
+
+	<!--Hazmat
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="Hazmat" display_name="Hazmat"
+		description="Elite warrior-scientists who have been trained in hazardous waste cleanup after disasters involving nanotech, chemical weapons, or nuclear weapons."
+		icon_scale="0.7" shape_icon_name="SF2_Biohazard" shape_icon_color="#ffffff"
+		vis_drawing_tag="Hazmat" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="25"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Hazmat"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="RebelGunslingerShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1" 
+		tags="Hazmat" collections="HumansOnFoot,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="12,15" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="480,600" />
+		<actor_data data_type="ActorPower" base_range="142,178" />
+		<actor_data data_type="UnitHackingSkill" base_range="75,90" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="180,290" />
+		<actor_data data_type="ActorFearAttackPower" base_range="60,90" />
+		<actor_data data_type="UnitMorale" base_range="1360,1490" />
+		<default_perk perk="Fearless" unlock="" />
+	</npc_unit_type>
+	
+</root>

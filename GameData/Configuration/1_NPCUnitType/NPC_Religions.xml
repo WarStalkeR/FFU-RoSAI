@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--ReligiousWarrior (full color prestige unit)
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ReligiousWarrior" display_name="Religious Warrior"
+		description="Warrior for one of the banned religions. Highly dangerous."
+		icon_scale="0.7" shape_icon_name="FlatEquip_19" shape_icon_color="#ffffff"
+		vis_drawing_tag="ReligiousWarrior" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="8"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="ReligiousWarriorShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="21,22" />
+		<actor_data data_type="ActorMoveRange" base_range="40,46" />
+		<actor_data data_type="ActorHP" base_range="900,1045" />
+		<actor_data data_type="ActorPower" base_range="322,378" />
+		<actor_data data_type="ActorFearAttackPower" base_range="420,545" />
+		<actor_data data_type="UnitMorale" base_range="900,930" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<!--ReligiousZealot (full color prestige unit)
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ReligiousZealot" display_name="Religious Zealot"
+		description="Warrior for one of the banned religions. Highly dangerous."
+		icon_scale="0.7" shape_icon_name="SomethingCrossSpin" shape_icon_color="#ffffff"
+		vis_drawing_tag="ReligiousZealot" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="8"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="ReligiousZealotShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="17,19" />
+		<actor_data data_type="ActorMoveRange" base_range="30,36" />
+		<actor_data data_type="ActorHP" base_range="1000,1145" />
+		<actor_data data_type="ActorPower" base_range="412,458" />
+		<actor_data data_type="ActorFearAttackPower" base_range="490,595" />
+		<actor_data data_type="UnitMorale" base_range="950,980" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+
+</root>

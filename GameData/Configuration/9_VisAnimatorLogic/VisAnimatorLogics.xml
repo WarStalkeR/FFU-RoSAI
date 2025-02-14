@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--SineMove
+	
+		float_1:	Sin speed
+		float_2:	Distance along the forward vector from the center of the cluster
+		vector_1:	Midpoint offset position.-->
+	<animator_logic id="SinMV_A" float_1="6" vector_1="0,-0.003,0" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.AnimatorLogic_SineMove"/>
+	<animator_logic id="SinMV_B" float_1="6" float_2="0.04" vector_1="0,0.02,0" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.AnimatorLogic_SineMove"/>
+	<animator_logic id="SinMV_C" float_1="7" float_2="0.08" vector_1="0,-0.02,0" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.AnimatorLogic_SineMove"/>
+
+	<!--SineScale
+	
+		float_1:	Sin speed
+		vector_1:	Scale multiplier for the most extreme end of the sine wave.-->
+	<animator_logic id="SinSc_A" float_1="9" vector_1="0.98,1.05,0.98" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.AnimatorLogic_SineScale"/>
+	<animator_logic id="SinSc_B" float_1="6" vector_1="1.4,1.05,1.4" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.AnimatorLogic_SineScale"/>
+	<animator_logic id="SinSc_C" float_1="12" vector_1="1.5,1.4,1.5" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.AnimatorLogic_SineScale"/>
+	<animator_logic id="SinSc_D" float_1="3" vector_1="0.96,1,1.04" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.AnimatorLogic_SineScale"/>
+	<animator_logic id="SinSc_E" float_1="7" vector_1="1.8,1.8,1.8" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.AnimatorLogic_SineScale"/>
+	<animator_logic id="SinSc_F" float_1="10" vector_1="1.2,1.2,1.2" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.AnimatorLogic_SineScale"/>
+
+</root>

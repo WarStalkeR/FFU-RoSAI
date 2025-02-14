@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Mindrunner
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="Mindrunner" display_name="Mindrunner"
+		description="Can breach virtual spaces beyond what humans believed possible."
+		short_description="Net Control" unit_capacity_cost="8"
+		tooltip_icon_name="Mindrunner0" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="AN_AndroidMindrunner" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="Mindrunner1" vis_object_aggressive="Mindrunner2" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" 
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle"
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_prefix="Mindrunner" name_style="UnitBarcode"
+		sort_order="7200" command_mode_category="AndroidDeployment"
+		can_make_ranged_attacks_by_default="false" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByAI,AndroidsKnownToBeInventedByAI,ShadowUnits,SupportUnits,Souldroids,SouldroidsAndTechnicians,Mindrunners,CanFitThinHumanClothes,CanHandleAndroidLightFirearms,VisuallyIntimidatingAndroid,CanHandleAndroidTechPistols" is_considered_android="true">
+		<equipment_slot_count type="AndroidSecondary" amount="1" name_when_blank="Fists" />
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidAugment" amount="2" />
+		
+		<actor_data data_type="AttackRange" base_range="14,14" />
+		<actor_data data_type="ActorMoveRange" base_range="36,36" />
+		<actor_data data_type="ActorHP" base_range="140,140" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="6,6"/>
+		<actor_data data_type="ActorPower" base_range="13,13" />
+		<actor_data data_type="UnitCognition" base_range="120,120" />
+		<actor_data data_type="UnitNetControl" base_range="310,310" />
+		<actor_data data_type="UnitHackingSkill" base_range="155,155" />
+		<actor_data data_type="ActorFearAttackPower" base_range="60,60" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="110,110" />
+		<actor_data data_type="UnitIntimidation" base_range="75,75" />
+		<actor_data data_type="UnitScavengingSkill" base_range="110,110" />
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="InfiltrationSysOp" />
+		<ability_slot slot_index="6" ability_type="AndroidNetworkShield" />
+		<ability_slot slot_index="7" ability_type="AndroidNetworkTargeting" />
+		<ability_slot slot_index="8" ability_type="HackUnit" />
+		<ability_slot slot_index="9" ability_type="AndroidDemoralizeMode" />
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />		
+		<default_perk perk="ExpertShadowdweller" unlock="" />
+		<unit_cost resource_type="MentalEnergy" required="3" />
+		<unit_cost resource_type="Neuroweave" required="4000" />
+		<unit_cost resource_type="ElementalSlurry" required="1400" />
+	</machine_unit_type>
+
+	<!--Raven
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="Raven" display_name="Raven"
+		description="Your strongest hacker. Security systems, enemy vehicles, and enemy mechs are all endangered when faced with a Raven."
+		short_description="Hacker" unit_capacity_cost="8"
+		tooltip_icon_name="Raven0" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="CS_Crow" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="Raven1" vis_object_aggressive="Raven2" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" 
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle"
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android" is_blocked_after_city_flag="HasForgottenRaven"
+		name_prefix="Raven" name_style="UnitBarcode"
+		sort_order="7100" command_mode_category="AndroidDeployment"
+		can_make_ranged_attacks_by_default="false" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByAI,AndroidsKnownToBeInventedByAI,ShadowUnits,SupportUnits,Souldroids,SouldroidsAndTechnicians,Ravens,CanFitThinHumanClothes,CanHandleAndroidLightFirearms,VisuallyIntimidatingAndroid,CanHandleAndroidTechPistols" is_considered_android="true">
+		<equipment_slot_count type="AndroidSecondary" amount="1" name_when_blank="Fists" />
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidAugment" amount="2" />
+		
+		<actor_data data_type="AttackRange" base_range="18,18" />
+		<actor_data data_type="ActorMoveRange" base_range="36,36" />
+		<actor_data data_type="ActorHP" base_range="140,140" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="6,6"/>
+		<actor_data data_type="ActorPower" base_range="13,13" />
+		<actor_data data_type="UnitCognition" base_range="120,120" />
+		<actor_data data_type="UnitNetControl" base_range="140,140" />
+		<actor_data data_type="UnitHackingSkill" base_range="292,292" />
+		<actor_data data_type="ActorFearAttackPower" base_range="60,60" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="110,110" />
+		<actor_data data_type="UnitIntimidation" base_range="75,75" />
+		<actor_data data_type="ActorEngineeringSkill" base_range="90,90" />
+		<actor_data data_type="UnitScavengingSkill" base_range="140,140" />
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="HackUnit" />
+		<ability_slot slot_index="6" ability_type="AndroidNearbyRepair" />
+		<ability_slot slot_index="7" ability_type="AndroidDemoralizeMode" />
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />		
+		<default_perk perk="Shadowdweller" unlock="" />
+		<unit_cost resource_type="MentalEnergy" required="3" />
+		<unit_cost resource_type="Neuroweave" required="4000" />
+		<unit_cost resource_type="Neodymium" required="300" />
+		<unit_cost resource_type="Scandium" required="400" />
+	</machine_unit_type>
+
+
+	<!--Harbinger
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="Harbinger" display_name="Harbinger"
+		description="Your most terrifying android. Specializes in psyops and coercion, with a side of light hacking and combat."
+		short_description="Psyops And Fear" unit_capacity_cost="8"
+		tooltip_icon_name="Doomsayer3" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="AN_AndroidHarbinger" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="Doomsayer1" vis_object_aggressive="Doomsayer2" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" bypass_final_doom_block="ReinforcedTerror"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" 
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle"
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_prefix="Harbinger" name_style="UnitBarcode"
+		sort_order="7300" command_mode_category="AndroidDeployment"		
+		can_make_ranged_attacks_by_default="false" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByAI,AndroidsKnownToBeInventedByAI,ShadowUnits,SupportUnits,Souldroids,SouldroidsAndTechnicians,Harbingers,CanHandleAndroidRifles,CanHandleAndroidStaves,CanHandleAndroidShoulderMounts,VisuallyIntimidatingAndroid" is_considered_android="true">
+		<equipment_slot_count type="AndroidPrimary" amount="1" name_when_blank="Staff" />
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidAugment" amount="2" />
+		
+		<actor_data data_type="AttackRange" base_range="10,10" />
+		<actor_data data_type="ActorMoveRange" base_range="36,36" />
+		<actor_data data_type="ActorHP" base_range="150,150" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="3,3"/>
+		<actor_data data_type="ActorPower" base_range="55,55" />
+		<actor_data data_type="UnitCognition" base_range="150,150" />
+		<actor_data data_type="UnitHackingSkill" base_range="155,155" />
+		<actor_data data_type="UnitNetControl" base_range="110,110" />
+		<actor_data data_type="ActorFearAttackPower" base_range="330,330" />
+		<actor_data data_type="UnitIntimidation" base_range="75,75" />
+		<actor_data data_type="UnitScavengingSkill" base_range="80,80" />
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="HackUnit" />
+		<ability_slot slot_index="6" ability_type="AndroidHorrifyMode" />
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />		
+		<default_perk perk="ExpertShadowdweller" unlock="" />
+		<unit_cost resource_type="MentalEnergy" required="3" />
+		<unit_cost resource_type="Neuroweave" required="3000" />
+		<unit_cost resource_type="Neodymium" required="3000" />
+	</machine_unit_type>
+	
+</root>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="math_value">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+		tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+
+	<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+		tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+	
+	<attribute key="lang_key_optional" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is the name for this if it needs to have a name." />
+	
+</root>

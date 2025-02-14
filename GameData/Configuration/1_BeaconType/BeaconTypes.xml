@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<beacon_type id="Heliport" display_name="Heliport"
+		description="Serves ultra-wealthy citizens with homes outside the city."
+		strategy_tip=""
+		icon_name="SK_MilitaryHelicopter" color_hex="#5CADC9" color_hdr_intensity="2.5" color_hovered_hdr_intensity="3.6"
+		icon_scale="0.5">
+	</beacon_type>
+
+	<beacon_type id="DanverDonuts" display_name="Danver Donuts"
+		description="Danver Donuts is the commercial investment for military noncommissioned officers. Military noncoms are forbidden to live in the city where they work -- so they won't sympathizing with the locals."
+		strategy_tip="Two competing donut venues, created by Vorsiber Executives, seem to keep the military and SecForce at odds."
+		icon_name="SW_Donut8" color_hex="#FF3058" color_hdr_intensity="1.3" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="HudsonDonuts" display_name="Hudson Donuts"
+		description="Hudson Donuts is run by SecForce, the police of the city. Under the thumb of the MegaCorp, SecForce live in comfortably in city housing. They terrify the citizenry."
+		strategy_tip="The donut venues are the distraction Vorsiber executives have concocted in order to keep the military and SecForce constantly at one another's throats."
+		icon_name="SW_Donut6" color_hex="#39D6CC" color_hdr_intensity="1.3" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="Mall" display_name="Mall"
+		description="Social, shopping, and entertainment for lower and middle class youth."
+		strategy_tip="Citizens can have feed orders delivered by drone. Adults mainly go to the malls for the black market."
+		icon_name="SI_Cherry" color_hex="#E13E72" color_hdr_intensity="1.9" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="Nanotech" display_name="Nanotech"
+		description="Nanotech is both useful and dangerous. While nanotech is officially forbidden by human authorities, nanotech research continues behind closed doors. The occasional horrific accidents remain, mostly, contained."
+		strategy_tip="Vorsiber Atomic believes that the Four Pillars approach to research (AI, nanotech, cryonics, and genetics) will be their ticket to gaining the Space Nations' acceptance."
+		icon_name="SW_Nanocrystal" color_hex="#6C3CC9" color_hdr_intensity="2.5" color_hovered_hdr_intensity="3.6"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="GeneticsResearch" display_name="Genetics Research"
+		description="Centuries of human and non-human gene therapy research continue. Gene therapy remains error-prone, but the process is improving."
+		strategy_tip="Vorsiber Atomic believes that the Four Pillars approach to research (AI, nanotech, cryonics, and genetics) will be their ticket to gaining the Space Nations' acceptance."
+		icon_name="CleanSimple_SkillB019" color_hex="#72D93C" color_hdr_intensity="1.5" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.35">
+	</beacon_type>
+
+	<beacon_type id="AIResearch" display_name="AI Research"
+		description="The humans use massive neural architectures in their androids. It's not cost-effective, but we've seen upgrades over the decades."
+		strategy_tip="Vorsiber Atomic believes that the Four Pillars approach to research (AI, nanotech, cryonics, and genetics) will be their ticket to gaining the Space Nations' acceptance."
+		icon_name="SI_Machine_Learning" color_hex="#FF62EE" color_hdr_intensity="2.2" color_hovered_hdr_intensity="3.6"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="SpaceportHangar" display_name="Spaceport Hangar"
+		description="Space Nation envoys routinely inspect the hangars. Some have their own private hangars."
+		strategy_tip="Only a few cities around the world have spaceports. The Space Nations bomb any that can't provide trade -- or tithe."
+		icon_name="CleanSimple_SciFi054" color_hex="#FFB8B3" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.8">
+	</beacon_type>
+
+	<beacon_type id="SpaceportTerminal" display_name="Spaceport Terminal"
+		description="These terminals are hubs for meeting with visiting envoys from the Space Nations.
+The Space Nations of humanity forbid offworld travel to even the highest administrators."
+		strategy_tip="The Earth-bound humans work hard to impress the Space Nations, so the envoys enjoy the ability to roam freely. The space blockade has been in place for centuries, and no-one knows why. If there is anything that unifies Earth's humans, it is the desire to get off this planet."
+		icon_name="CleanSimple_SciFi056" color_hex="#B9F8FC" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.8">
+	</beacon_type>
+
+	<beacon_type id="MechPartsFactory" display_name="Mech Parts Factory"
+		description="Mechs were originally designed to be prestige pieces, and were highly breakable. But over the centuries, they have become surprisingly effective in military operations."
+		strategy_tip="The ability to keep mechs standing is the result of secret materials science research. The mech components are assembled outside of the city, so there's no hope of disruption at that stage."
+		icon_name="WEmblem110" color_hex="#FF3D30" color_hdr_intensity="1.8" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.6">
+	</beacon_type>
+
+	<beacon_type id="CropResearchFacility" display_name="Crop Research Facility"
+		description="Humans have been altering crops for as long as there has been agriculture. Current methods are just faster -- and riskier."
+		strategy_tip="As the planet's climate deteriorated and the oceans rose, bio-engineered crops became non-optional for the humans who stayed in this solar system."
+		icon_name="CleanSimple_Nature02" color_hex="#A4F76C" color_hdr_intensity="1.2" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="NuclearLaunchSilo" display_name="Nuclear Launch Silo"
+		description="In the past, nuclear launch silos were a deterrent. Now, the air and water are so contaminated that a few more detonations don't matter."
+		strategy_tip="This city is built on the ruins of an larger ancient city. It was bombed during World War III. Geiger counters still trip if citizens venture into the ruins surrounding the city or dig in the wrong spot."
+		icon_name="CleanSimple_SkillC082" color_hex="#FF7230" color_hdr_intensity="1.4" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.6">
+	</beacon_type>
+
+	<beacon_type id="NuclearPowerPlant" display_name="Nuclear Power Plant"
+		description="Nuclear power was never as dangerous as humans made it out to be. Especially compared to the chronic illnesses caused by fossil fuels. But it does produce a lot of waste."
+		strategy_tip="The energy needs of this city are enormous. Power generation is scattered everywhere, and there are many redundancies in the grid."
+		icon_name="CleanSimple_Device31" color_hex="#ffb830" color_hdr_intensity="1.2" color_hovered_hdr_intensity="1.9"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="FusionPowerPlant" display_name="Fusion Power Plant"
+		description="Artificial fusion has been around for a few hundred years. Making a reaction that gives more energy than it costs remains just out of reach."
+		strategy_tip="How Vorsiber Atomic has managed this is unknown."
+		icon_name="CleanSimple_SciFi026" color_hex="#BADC3A" color_hdr_intensity="1.4" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.5">
+	</beacon_type>
+	
+	<beacon_type id="CorporateBank" display_name="Corporate Bank"
+		description="For most citizens, these are the only banks they are allowed to use."
+		strategy_tip="As with most services within the city, the MegaCorp has federated banking authority to its fourteen major subsidiaries. They each operate differently."
+		icon_name="CleanSimple_SkillC004" color_hex="#30FF53" color_hdr_intensity="1.2" color_hovered_hdr_intensity="2.2"
+		icon_scale="0.3">
+	</beacon_type>
+	<beacon_type id="MegaCorpBank" display_name="MegaCorp Bank"
+		description="A central bank operated by Vorsiber Atomic. Only the highest administrators and corporations keep their money here."
+		strategy_tip="In some ways, this acts a like a mint or a stock exchange."
+		icon_name="CleanSimple_SkillC004" color_hex="#30FF53" color_hdr_intensity="1.2" color_hovered_hdr_intensity="2.2"
+		icon_scale="0.3">
+	</beacon_type>
+	
+	<beacon_type id="Casino" display_name="Casino"
+		description="Casinos are operated by the corporations, providing entertainment for the ultra wealthy -- and a trap for the lower and middle classes."
+		strategy_tip="This is one of the few places where very high-status individuals gather alongside the general public. The insides of the buildings are segregated."
+		icon_name="CleanSimple_SkillC069" color_hex="#ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.5">
+	</beacon_type>
+
+	<beacon_type id="FireStation" display_name="Fire Station"
+		description="If arson or an accident occurs, they'll take care of it eventually."
+		strategy_tip="Chemical foams and suppressant powders are employed."
+		icon_name="FE_FirePrevention" color_hex="#D62E59" color_hdr_intensity="1.2" color_hovered_hdr_intensity="1.9"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="Hospital" display_name="Hospital"
+		description="Medical care for the extremely-ill, catastrophic injuries, births, and anything requiring complex surgery."
+		strategy_tip="The ultra-wealthy are flown out of the city to better facilities unless its an absolute emergency."
+		icon_name="SI_Medical_Symbol" color_hex="#FFB477" color_hdr_intensity="1.2" color_hovered_hdr_intensity="1.9"
+		icon_scale="0.9">
+	</beacon_type>
+
+	<beacon_type id="MedicalClinic" display_name="Medical Clinic"
+		description="Routine outpatient care, minor surgeries, vaccinations, and cosmetic procedures."
+		strategy_tip="The middle classes get routine care from these clinics. The lower classes have almost no healthcare."
+		icon_name="SF2_Syringe" color_hex="#FFB477" color_hdr_intensity="1.2" color_hovered_hdr_intensity="1.9"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="LicensingAgency" display_name="Licensing Agency"
+		description="Most activities are allowed within the city -- if you pay for a permit. Criminals are defined as those taking restricted actions without a permit. Only corporations and the wealthy can afford permits."
+		strategy_tip="A high volume of permits are processed through these offices, sometimes anonymously using an android intermediary."
+		icon_name="FlatSkillB_papers2" color_hex="#DC5290" color_hdr_intensity="2.3" color_hovered_hdr_intensity="3.6"
+		icon_scale="0.4" is_considered_key_beacon="true">
+	</beacon_type>
+
+	<beacon_type id="School" display_name="School"
+		description="There are few schools in the city, and no universities. These are used by the middle class."
+		strategy_tip="The wealthy are schooled in residential skyscrapers, while the lower classes must learn whatever they can from the city feed."
+		icon_name="SW_Quill" color_hex="#DCCE60" color_hdr_intensity="1.4" color_hovered_hdr_intensity="2.2"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="DataCenter" display_name="DataCenter"
+		description="The amount of data in this city is staggering. This one provides general capacity."
+		strategy_tip="In digital space, citizens are required to stay in the city feed. But several DarkNets exist for the anonymous trade of non-sanctioned information and goods (including international). Some of those cross through here."
+		icon_name="CleanSimple_Activity026" color_hex="#578FF1" color_hdr_intensity="1.4" color_hovered_hdr_intensity="1.9"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="BackboneNexusDataCenter" display_name="Backbone Nexus Data Center"
+		description="This data center is one of several central clearinghouses that passes data through the city and regional feeds."
+		strategy_tip="The city feed is a great source of data for spying on citizens. The population's actions are analyzed to predict crime, rebel sympathy, and so on. It's mostly been used to purge dissidents."
+		icon_name="CleanSimple_Activity026" color_hex="#578FF1" color_hdr_intensity="1.4" color_hovered_hdr_intensity="1.9"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="Courthouse" display_name="Courthouse"
+		description="Just like the pre-corporation days, courthouses are the seat of the judiciary."
+		strategy_tip="The interpretation and application of a law is at the discretion of a district judge appointed by a federated corporation. Interpretation of the law can vary wildly between districts."
+		icon_name="CleanSimple_SkillC037" color_hex="#C8A4FC" color_hdr_intensity="0.9" color_hovered_hdr_intensity="1.9"
+		icon_scale="0.6">
+	</beacon_type>
+
+	<beacon_type id="AdvancedWasteProcessingPlant" display_name="Advanced Waste Processing Plant"
+		description="Both sewage and garbage are processed in high volume here."
+		strategy_tip="What they do with the output is unclear, but probably not good."
+		icon_name="CleanSimple_SciFi040" color_hex="#D69820" color_hdr_intensity="1.2" color_hovered_hdr_intensity="1.9"
+		icon_scale="0.5">
+	</beacon_type>
+
+	<beacon_type id="WaterPurificationPlant" display_name="Water Purification Plant"
+		description="Survival of crops, citizens, and local fauna are all dependent on clean water sources. Smaller wells use scrubbers to produce Potable water. Larger facilities, like this one, produce Pure water. Pure water has scientific and industrial applications. It is also served to the upper classes."
+		strategy_tip="Thanks to World War III, the planet's groundwater is heavily contaminated."
+		icon_name="SomethingSplash2" color_hex="#30A3FF" color_hdr_intensity="1.5" color_hovered_hdr_intensity="2.6"
+		icon_scale="0.4">
+	</beacon_type>
+
+	<beacon_type id="MineralAndMolecularSeparationFacility" display_name="Mineral And Molecular Separation Facility"
+		description="Buried under the ice for most of human history, this region is rich in rare earth minerals."
+		strategy_tip="You are in Siberia, which is now quite temperate thanks to centuries of global warming. Climate change unlocked the last of Earth's natural underground resources."
+		icon_name="CleanSimple_Skill061" color_hex="#ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.6">
+	</beacon_type>
+	
+	<beacon_type id="MultipurposeMineshaft" display_name="Multipurpose Mineshaft"
+		description="A single shaft splits and branches due to directional drilling. A wide variety of minerals and gases are extracted. Oil rigs also use directional drilling to minimize their footprint."
+		strategy_tip="You are in Siberia, which is now quite temperate thanks to centuries of global warming. Climate change unlocked the last of Earth's natural underground resources."
+		icon_name="CleanSimple_Skill061" color_hex="#ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		icon_scale="0.6">
+	</beacon_type>
+
+</root>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="investigation_type">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="style" type="node-dropdown" node_source="InvestigationStyle" content_width_px="200" is_required="true"
+		tooltip="This is where the name, description, and methodology details all come from." />
+
+	<attribute key="project_to_start_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project, which project does it start?" />
+	<attribute key="project_to_start_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project, which project does it start?" />
+	<attribute key="project_to_start_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project, which project does it start?" />
+	<attribute key="mission_to_start" type="node-dropdown" node_source="NPCMission" content_width_px="200" is_required="false"
+		tooltip="If this starts an npc mission, which one does it start?" />
+
+	<attribute key="unlock_to_ready_on_success_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this readies an unlock on success, what does it ready?" />
+	<attribute key="unlock_to_ready_on_success_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this readies an unlock on success, what does it ready?" />
+	<attribute key="unlock_to_ready_on_success_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this readies an unlock on success, what does it ready?" />
+	<attribute key="unlock_to_immediately_grant_on_success_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this immediately invents an unlock on success, what does it invent?" />
+	<attribute key="unlock_to_immediately_grant_on_success_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this immediately invents an unlock on success, what does it invent?" />
+	<attribute key="unlock_to_immediately_grant_on_success_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this immediately invents an unlock on success, what does it invent?" />
+	<attribute key="unlock_on_success_inspiration_type" type="node-dropdown" node_source="UnlockInspirationType" content_width_px="200" is_required="false"
+		tooltip="If this readies or invents an unlock on success, then this inspiration type is required. Otherwise not." />
+
+	<attribute key="unlock_to_ready_on_fail_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this readies an unlock on failure, what does it ready?" />
+	<attribute key="unlock_to_ready_on_fail_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this readies an unlock on failure, what does it ready?" />
+	<attribute key="unlock_to_ready_on_fail_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this readies an unlock on failure, what does it ready?" />
+	<attribute key="unlock_to_immediately_grant_on_fail_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this immediately invents an unlock on fail, what does it invent?" />
+	<attribute key="unlock_to_immediately_grant_on_fail_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this immediately invents an unlock on fail, what does it invent?" />
+	<attribute key="unlock_to_immediately_grant_on_fail_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this immediately invents an unlock on fail, what does it invent?" />
+	<attribute key="unlock_to_ready_on_fail_inspiration_type" type="node-dropdown" node_source="UnlockInspirationType" content_width_px="200" is_required="false"
+		tooltip="If this readies an unlock on failure, then this inspiration type is required. Otherwise not." />
+
+	<attribute key="handbook_entry_on_success_1" type="node-dropdown" node_source="MachineHandbookEntry" content_width_px="200" is_required="false"
+		tooltip="If this provides a handbook entry on success (if that's not already dropped), then which one does it show?" />
+	<attribute key="handbook_entry_on_success_2" type="node-dropdown" node_source="MachineHandbookEntry" content_width_px="200" is_required="false"
+		tooltip="If this provides a handbook entry on success (if that's not already dropped), then which one does it show?" />
+	<attribute key="handbook_entry_on_success_3" type="node-dropdown" node_source="MachineHandbookEntry" content_width_px="200" is_required="false"
+		tooltip="If this provides a handbook entry on success (if that's not already dropped), then which one does it show?" />
+
+	<attribute key="handbook_entry_on_fail_1" type="node-dropdown" node_source="MachineHandbookEntry" content_width_px="200" is_required="false"
+		tooltip="If this provides a handbook entry on failure (if that's not already dropped), then which one does it show?" />
+	<attribute key="handbook_entry_on_fail_2" type="node-dropdown" node_source="MachineHandbookEntry" content_width_px="200" is_required="false"
+		tooltip="If this provides a handbook entry on failure (if that's not already dropped), then which one does it show?" />
+	<attribute key="handbook_entry_on_fail_3" type="node-dropdown" node_source="MachineHandbookEntry" content_width_px="200" is_required="false"
+		tooltip="If this provides a handbook entry on failure (if that's not already dropped), then which one does it show?" />
+
+	<attribute key="apply_badge_on_investigate_at_location" type="node-dropdown" node_source="ActorBadge" content_width_px="200" is_required="false"
+		tooltip="If specified, then any time a unit investigates a building in this investigation type, it will apply this badge if they don't already have it." />
+	
+	<attribute key="parent_project" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this needs to keep track of itself related to a project that probably started it, what project would that be?" />
+	<attribute key="should_be_hidden_if_parent_project_selected_outcome_does_not_start_this" type="bool" default="false" is_required="false"
+		tooltip="If true, then if the related project has a preferred outcome that does not start this investigation, this investigation will act like it does not exist." />
+	<attribute key="should_end_if_parent_project_ends" type="bool" default="false" is_required="false"
+		tooltip="If true, then if the related project is not active, this investigation will immediately end." />
+
+	<attribute key="skill_check_1" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+		tooltip="If doing this investigation requires the investigator to have a certain skill level, what is the skill being checked?" />
+	<attribute key="skill_check_2" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+		tooltip="If doing this investigation requires the investigator to have a certain skill level, what is the skill being checked?" />
+	<attribute key="skill_check_3" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+		tooltip="If doing this investigation requires the investigator to have a certain skill level, what is the skill being checked?" />
+
+	<attribute key="skill_check_1_amount" type="int-textbox" min="0" max="10000" content_width_px="40" is_required="false"
+		tooltip="If there is a skill check happening, what is the level of skill required?  The investigator's number must be this or higher."/>
+	<attribute key="skill_check_2_amount" type="int-textbox" min="0" max="10000" content_width_px="40" is_required="false"
+		tooltip="If there is a skill check happening, what is the level of skill required?  The investigator's number must be this or higher."/>
+	<attribute key="skill_check_3_amount" type="int-textbox" min="0" max="10000" content_width_px="40" is_required="false"
+		tooltip="If there is a skill check happening, what is the level of skill required?  The investigator's number must be this or higher."/>
+
+	<attribute key="required_actor_collection" type="node-dropdown" node_source="ActorCollection" content_width_px="200" is_required="false"
+		tooltip="If doing this investigation requires the investigator to be part of a certain collection, what collection is that?" />
+	
+	<attribute key="blocked_if_project_active_group_a_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this project is active, then the investigation cannot currently proceed at any building." />
+	<attribute key="blocked_if_project_active_group_a_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this project is active, then the investigation cannot currently proceed at any building." />
+	<attribute key="blocked_if_project_active_group_a_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this project is active, then the investigation cannot currently proceed at any building." />
+	<attribute key="blocked_by_project_group_a_lang_key" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+		tooltip="Link to a language entry that is the text if it's blocked." />
+
+	<attribute key="blocked_if_project_active_group_b_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this project is active, then the investigation cannot currently proceed at any building." />
+	<attribute key="blocked_if_project_active_group_b_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this project is active, then the investigation cannot currently proceed at any building." />
+	<attribute key="blocked_if_project_active_group_b_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this project is active, then the investigation cannot currently proceed at any building." />
+	<attribute key="blocked_by_project_group_b_lang_key" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+		tooltip="Link to a language entry that is the text if it's blocked." />
+	
+	<attribute key="is_blocked_from_being_canceled" type="bool" default="false" is_required="true"
+		tooltip="If true, then a unit cannot cancel an action-over-time investigation of this type." />
+
+	<attribute key="territory_control_type" type="node-dropdown" node_source="TerritoryControlType" content_width_px="200" is_required="false"
+		tooltip="If this is a territory control situation, then what type is this related to?" />
+
+	<attribute key="automatically_start_if_city_rank_is_at_least" type="int-textbox" min="0" max="10000" content_width_px="40" is_required="false"
+		tooltip="If set higher than 1, then this investigation will automatically start on new cities that are at least that rank. Cities started in chapter 2, or in a new timeline, are rank 2."/>
+
+	<attribute key="message_on_enemies_spawn" type="node-dropdown" node_source="OtherKeyMessage" content_width_px="200" is_required="false"
+		tooltip="When enemies spawn against this investigation type, what message pops up, if any?" />
+
+	<attribute key="block_any_buildings_on_tile_pois_of_higher_clearance_than" type="int-textbox" min="0" max="5" default="5" content_width_px="40" is_required="false"
+		tooltip="If above zero, then the lower the number, the more is blocked out of possible buildings."/>
+
+	<attribute key="cull_initial_building_set_to_between_min" type="int-textbox" min="0" max="10000" content_width_px="40" is_required="false"
+		tooltip="If above zero, then when the investigation tags give back more than this number of possible results, the possibilities are limited to a range where this is the minimum number of buildings."/>
+	<attribute key="cull_initial_building_set_to_between_max" type="int-textbox" min="0" max="10000" content_width_px="40" is_required="false"
+		tooltip="If above the minimum value, and that is above zero, then when the investigation tags give back more than this number of possible results, the possibilities are limited to a range where this is the minimum number of buildings."/>
+
+	<attribute key="cull_initial_building_set_to_district_count_between_min" type="int-textbox" min="0" max="10000" content_width_px="40" is_required="false"
+		tooltip="If above zero, then when the investigation tags give back more districts than this, it will cull to this number of districts at the most."/>
+	<attribute key="cull_initial_building_set_to_district_count_between_max" type="int-textbox" min="0" max="10000" content_width_px="40" is_required="false"
+		tooltip="If above the minimum value, and that is above zero, then this is the randomized max number of districts it can give you."/>
+
+	<attribute key="hack_building_scenario" type="node-dropdown" node_source="HackingScenarioType" content_width_px="200" is_required="false"
+		tooltip="If this will allow Infiltration SysOp to be used, what scenario will it use?" />
+	<attribute key="hacking_building_scenario_difficulty" type="int-textbox" min="0" max="10000" content_width_px="40" is_required="false"
+		tooltip="If this will allow Infiltration SysOp to be used, you can customize the difficulty here.  Anything less than 100 will default to 100."/>
+
+	<attribute key="extra_code_on_investigation_complete" type="node-dropdown" node_source="ExtraCodeHandler" content_width_px="200" is_required="false"
+		tooltip="If this needs to run any custom code, then specify it here." />
+	
+	<!--resource_change_range
+	*******************************************************************************************************-->
+	<sub_node id="resource_change_range">
+		<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="This changes some resource for the player. What data will it change?" />
+		<attribute key="min" type="int-textbox" min="-10000000" max="10000000" content_width_px="40" is_required="true"
+			tooltip="What is the lowest amount of the random range the data will be changed by?"/>
+		<attribute key="max" type="int-textbox" min="-10000000" max="10000000" content_width_px="40" is_required="true"
+			tooltip="What is the highest amount of the random range the data will be changed by?"/>
+	</sub_node>
+	
+	<!--seed_at
+	*******************************************************************************************************-->
+	<sub_node id="seed_at">
+		<attribute key="building_seed_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="true"
+			tooltip="When specified, then this item will be seeded as visible at the following kind of building tag. Required for initial goal projects." />
+		<attribute key="building_seed_fallback_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="false"
+			tooltip="Optional. If the primary building seed tag fails, then this should provide another source of possibilities." />
+		<attribute key="poi_seed_tag" type="node-dropdown" node_source="POITag" content_width_px="200" is_required="false"
+			tooltip="When specified, then this item will be seeded as visible at the following kind of poi tag. Optional. If specified, then combines with the building seed tag." />
+		<attribute key="min_security_clearance_of_seed_spot" type="int-textbox" min="-1" max="5" default="-1" content_width_px="50" is_required="false"
+			tooltip="On a scale from 0 to 5, what is the lowest allowed security clearance for seed spots for this item?  Set to -1 to ignore."/>
+		<attribute key="max_security_clearance_of_seed_spot" type="int-textbox" min="-1" max="5" default="-1" content_width_px="50" is_required="false"
+			tooltip="On a scale from 0 to 5, what is the highest allowed security clearance for seed spots for this item?  Set to -1 to ignore."/>
+		<attribute key="min_rough_distance_from_machines" type="float-textbox" min="-1" max="900" default="-1" content_width_px="50" is_required="false"
+			tooltip="How far, roughly, should this be from machine subnets and towers?  Will fail if not yet any of those. Set to -1 to ignore."/>
+		<attribute key="max_rough_distance_from_machines" type="float-textbox" min="-1" max="900" default="-1" content_width_px="50" is_required="false"
+			tooltip="How far, roughly, should this be from machine subnets and towers?  Will fail if not yet any of those. Set to -1 to ignore."/>
+		<sub_node id="required_building_data">
+			<attribute key="data_type" type="node-dropdown" node_source="LocationDataType" content_width_px="200" is_required="true"
+				tooltip="To match, a building must have certain qualities relating to this data type." />
+			<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
+				tooltip="The value that will be compared against. Set to -1 to mod this out."/>
+			<attribute key="at_least" type="bool" default="false" is_required="true"
+				tooltip="If true, the building data must be at least this high to pass. If false, it must be at most this high." />
+		</sub_node>
+	</sub_node>
+
+</root>

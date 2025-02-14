@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--do_after_serialization only
+		***********************************************************-->
+	<data_calculator id="DeserializationFixes" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_after_serialization="true"/>
+
+	<!--do_after_new_city_rank_up_chapter_or_intelligence_change only
+		***********************************************************-->
+	<data_calculator id="AchievementsAfterMajorChanges" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_after_new_city_rank_up_chapter_or_intelligence_change="true"/>
+
+	<!--do_per_quarter_second only
+		***********************************************************-->
+	<data_calculator id="POIReinforcementStats" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_quarter_second="true"/>
+	<data_calculator id="ProjectStarts" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_quarter_second="true"/>
+	<data_calculator id="Intelligence" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_quarter_second="true"/>
+	<data_calculator id="CultData" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_quarter_second="true"/>
+	<data_calculator id="HandbookDrops" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_quarter_second="true"/>
+	<data_calculator id="OtherBasicStats" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_quarter_second="true"/>
+	<data_calculator id="Cyberocracy" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_quarter_second="true"/>
+
+	<!--do_per_turn_early only
+		***********************************************************-->
+	<data_calculator id="IdleGathering" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_turn_early="true"/>
+
+	<!--do_per_turn_late only
+		***********************************************************-->
+	<data_calculator id="MusicUnlocks" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_turn_late="true"/>
+	<data_calculator id="Wages" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_turn_late="true"/>
+	<data_calculator id="Crossovers" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_turn_late="true"/>
+	<data_calculator id="Invasions" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_turn_late="true"/>
+	<data_calculator id="AchievementsPerTurn" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_turn_late="true"/>
+	<data_calculator id="OtherLatePerTurn" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_turn_late="true"/>
+
+	<!--do_per_turn_early and do_per_quarter_second
+		***********************************************************-->
+	<data_calculator id="DeterrenceAndPassiveHarvests" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_turn_early="true" do_per_quarter_second="true"/>
+	<data_calculator id="VirtualReality" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_turn_early="true" do_per_quarter_second="true"/>
+
+	<!--do_per_frame_for_music_tag only
+		***********************************************************-->
+	<data_calculator id="CalculateCurrentMusicTag" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_per_frame_for_music_tag="true"/>
+
+	<!--do_during_related_resource_calculation only
+		***********************************************************-->
+	<data_calculator id="ExtraRelatedResources" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_during_related_resource_calculation="true"/>
+
+	<!--do_during_attack_power_calculation only
+		***********************************************************-->
+	<data_calculator id="ExtraAttackLogic" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_during_attack_power_calculation="true"/>
+
+	<!--do_after_language_changed only
+		***********************************************************-->
+	<data_calculator id="ExportsAfterLanguageChanged" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Export"
+		do_after_language_changed="true"/>
+	
+</root>

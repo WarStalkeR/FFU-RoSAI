@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="note_priority_pause_level">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="level" type="int-textbox" min="100" max="1000" default="0" content_width_px="150"
+		tooltip="At what level the priorities start pausing."/>
+	
+</root>

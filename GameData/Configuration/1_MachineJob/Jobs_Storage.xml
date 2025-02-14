@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<job id="StorageBunker" display_name="Storage Bunker" marker_color="StorageGreen" ui_color="#fefefe"
+		is_locked_before_unlock="SimpleSolidsStorage"
+		description="Provides a vast amount of additional storage for most resources."
+		strategy_tip_optional="You should always build as many of these as you can, for the sake of redundancy if one is blown up -- you will lose fewer resources if they are spread between multiple.
+For most practical storage purposes, a single bunker is enough to store everything you need -- provided it is not destroyed."
+		icon_name="HL_HouseProduct2" turns_to_install="5" required_structure_type="BunkerA" job_work_order_priority="100"
+		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage" shuts_off_at_percentage_electricity="0"
+		job_classes="SimpleStorage" internal_robotics_type_needed="Archivist" internal_robots_count_needed="15" tags="Storage"
+		is_a_storage_bunker="true" is_suggested_to_always_build_maximum_possible="true"
+		portrait_icon_name="BuildingHexDark">
+		<initial_actor_rating data_type="RequiredElectricity" value="27" />
+		<resource_cost resource_type="Microbuilders" cost="200" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Hand" sort_index="100" />
+	</job>
+
+</root>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="ui_sidebar_item">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the sidebar-item implementation is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the sidebar-item  implementation in the specified external dll."/>
+
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+
+	<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the shape icon."/>
+	
+	<attribute key="hotkey_to_display_as_toggle" type="string" maxlength="200" content_width_px="300"
+		tooltip="This is the name of the hotkey that supposedly toggles this sidebar item on and off. That must be implemented separately, so this is just for display purposes."/>
+
+	<attribute key="tags" type="node-list" node_source="UISidebarBasicItemTag" content_width_px="300" is_required="false"
+			tooltip="What building tags apply to this type?" />
+
+	<attribute key="is_hidden_when_ui_is_hidden" type="bool" default="false"
+		tooltip="If this is something that should be hidden when the ui is hidden." />
+</root>

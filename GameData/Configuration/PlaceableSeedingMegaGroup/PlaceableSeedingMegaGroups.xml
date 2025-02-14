@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<mega_group id="MostlyTallBuildings" >
+		<included_group group="ResidentialTallBuildings" weight="250"/>
+		<included_group group="MixedUseTallBuildings" weight="250"/>
+		<included_group group="DowntownOffices" weight="20"/>
+		<included_group group="Warehouses" weight="20"/>
+		<included_mega_group mega_group="MostlySmallStores" weight="2"/>
+		<included_mega_group mega_group="Services" weight="5"/>
+	</mega_group>
+
+	<mega_group id="MostlyResidentialTallBuildings" >
+		<included_group group="ResidentialTallBuildings" weight="400"/>
+		<included_group group="DowntownOffices" weight="10"/>
+		<included_mega_group mega_group="MostlySmallStores" weight="5"/>
+		<included_mega_group mega_group="Services" weight="5"/>
+	</mega_group>
+
+	<mega_group id="DowntownTallBuildingsAndSimilarWithNoSides" >
+		<included_group group="ResidentialTallBuildings" weight="200"/>
+		<included_group group="MixedUseTallBuildings" weight="100"/>
+	</mega_group>
+
+	<mega_group id="ResidentialTallBuildingsWithNoSides" >
+		<included_group group="ResidentialTallBuildings" weight="100"/>
+	</mega_group>
+
+	<mega_group id="MixedUseTallBuildingsWithNoSides" >
+		<included_group group="MixedUseTallBuildings" weight="100"/>
+	</mega_group>
+
+	<mega_group id="MostlyMixedUseTallBuildings" >
+		<included_group group="MixedUseTallBuildings" weight="400"/>
+		<included_group group="ResidentialTallBuildings" weight="100"/>
+		<included_mega_group mega_group="MostlySmallStores" weight="10"/>
+		<included_mega_group mega_group="AbandonedConstruction" weight="5"/>
+		<included_mega_group mega_group="Services" weight="5"/>
+	</mega_group>
+
+	<mega_group id="Services" >
+		<included_group group="Courthouses" weight="5"/>
+		<included_group group="FireStations" weight="8"/>
+		<included_group group="Hospitals" weight="20"/>
+		<included_group group="MedicalClinics" weight="50"/>
+		<included_group group="LicensingAgencies" weight="22"/>
+		<included_group group="SecForceStations" weight="50"/>
+		<included_group group="DetainmentCenter" weight="50"/>
+		<included_group group="HistoricTemples" weight="35"/>
+		<included_group group="Schools" weight="50"/>
+		<included_group group="WaterPurification" weight="15"/>
+		<!--<included_group group="AdvancedWasteProcessingPlant" weight="130"/>-->
+		<included_group group="StoredPurifiedWater" weight="45"/>
+		<included_group group="CultistTemples" weight="15"/>
+		<included_group group="DataCenter" weight="4"/>
+	</mega_group>
+
+	<mega_group id="MostlySmallStores" >
+		<included_group group="JunkFood" weight="100"/>
+		<included_group group="Banks" weight="5"/>
+		<included_group group="Cafes" weight="100"/>
+		<included_group group="Carwashes" weight="3"/>
+		<included_group group="CornerStores" weight="100"/>
+		<included_group group="DepartmentStores" weight="3"/>
+		<included_group group="SmallMarkets" weight="100"/>
+		<included_group group="SmallGoods" weight="100"/>
+		<included_group group="Malls" weight="1"/>
+		<included_group group="ToolStores" weight="3"/>
+		<included_group group="CheapStores" weight="8"/>
+	</mega_group>
+
+	<mega_group id="DowntownMidriseResidentialFrontFacing" >
+		<included_group group="DowntownApartments" weight="200"/>
+		<included_group group="DowntownBrownstones" weight="100"/>
+		<included_group group="DowntownOffices" weight="100"/>
+		<included_group group="ResidentialTallBuildings" weight="50"/>
+		<included_mega_group mega_group="Services" weight="10"/>
+		<included_mega_group mega_group="MostlySmallStores" weight="5"/>
+	</mega_group>
+	
+	<mega_group id="AbandonedConstruction" >
+		<included_group group="AbandonedConstruction" weight="100"/>
+		<included_group group="Motels" weight="20"/>
+		<included_group group="Bars" weight="2"/>
+		<included_group group="CheapStores" weight="1"/>
+		<included_group group="HomelessGroundTents" weight="5"/>
+		<included_mega_group mega_group="Services" weight="1"/>
+		<included_group group="StoredPurifiedWater" weight="1"/>
+		<included_group group="CultistTemples" weight="2"/>
+		<included_group group="Schools" weight="2"/>
+		<included_group group="LicensingAgencies" weight="1"/>
+	</mega_group>
+
+	<mega_group id="BrokenAndAbandoned" >
+		<included_group group="AbandonedConstruction" weight="40"/>
+		<included_group group="BrokenBuildings" weight="20"/>
+		<included_group group="Warehouses" weight="20"/>
+		<included_group group="Garages" weight="3"/>
+		<included_group group="SlumShack" weight="10"/>
+		<included_group group="LowTechFactory" weight="5"/>
+		<included_group group="Motels" weight="20"/>
+		<included_group group="Bars" weight="6"/>
+		<included_group group="CheapStores" weight="4"/>
+		<included_mega_group mega_group="Services" weight="1"/>
+		<included_group group="StoredPurifiedWater" weight="1"/>
+		<included_group group="CultistTemples" weight="2"/>
+		<included_group group="Schools" weight="2"/>
+		<included_group group="LicensingAgencies" weight="1"/>
+	</mega_group>
+
+	<mega_group id="IndustrialNoSides" >
+		<included_group group="LowTechFactory" weight="50"/>
+		<included_group group="HighTechFactory" weight="50"/>
+		<included_group group="IndustrialChimneys" weight="30"/>
+		<included_group group="ChemicalPlant" weight="25"/>
+		<included_group group="NanoResearchCenter" weight="10"/>
+		<included_group group="StoredPurifiedWater" weight="2"/>
+		<included_group group="CultistTemples" weight="1"/>
+	</mega_group>
+
+	<mega_group id="IndustrialAndWarehouseSides" >
+		<included_group group="LowTechFactory" weight="100"/>
+		<included_group group="HighTechFactory" weight="100"/>
+		<included_group group="Warehouses" weight="200"/>
+		<included_group group="IndustrialChimneys" weight="60"/>
+		<included_group group="ScienceLab" weight="50"/>
+		<included_group group="ChemicalPlant" weight="25"/>
+		<included_mega_group mega_group="Services" weight="20"/>
+		<included_group group="NanoResearchCenter" weight="10"/>
+		<included_group group="CropResearch" weight="2"/>
+		<included_group group="LicensingAgencies" weight="1"/>
+	</mega_group>
+
+	<mega_group id="CommerceNoSides" >
+		<included_group group="Warehouses" weight="60"/>
+		<included_group group="DowntownLuxuryApartments" weight="100"/>
+		<included_group group="DowntownPrivateResidences" weight="100"/>
+		<included_group group="StoredPurifiedWater" weight="5"/>
+		<included_group group="Banks" weight="2"/>
+		<included_group group="Supermarkets" weight="2"/>
+		<included_group group="ArtMuseums" weight="2"/>
+		<included_group group="Libraries" weight="2"/>
+		<included_group group="Malls" weight="2"/>
+		<included_group group="Casinos" weight="2"/>
+		<included_group group="Cinemas" weight="2"/>
+		<included_group group="Theaters" weight="2"/>
+		<included_group group="Stadiums" weight="1"/>
+		<included_group group="CultistTemples" weight="1"/>
+	</mega_group>
+
+	<mega_group id="CommerceSides" >
+		<included_mega_group mega_group="Services" weight="5"/>
+
+		<included_group group="DowntownLuxuryApartments" weight="30"/>
+		<included_group group="DowntownPrivateResidences" weight="30"/>
+		<included_group group="DowntownHotels" weight="10"/>
+		
+		<included_group group="JunkFood" weight="5"/>
+		<included_group group="Cafes" weight="5"/>
+		<included_group group="CornerStores" weight="5"/>
+		<included_group group="SmallMarkets" weight="5"/>
+		<included_group group="SmallGoods" weight="5"/>
+		<included_group group="ToolStores" weight="3"/>
+		<included_group group="DepartmentStores" weight="2"/>
+		<included_group group="Banks" weight="2"/>
+		<included_group group="Carwashes" weight="2"/>
+		<included_group group="Supermarkets" weight="2"/>
+		<included_group group="SportsCourts" weight="2"/>
+		<included_group group="ArtMuseums" weight="1"/>
+		<included_group group="Libraries" weight="1"/>
+		<included_group group="Malls" weight="1"/>
+		<included_group group="Casinos" weight="1"/>
+		<included_group group="Cinemas" weight="1"/>
+		<included_group group="Theaters" weight="1"/>
+		<included_group group="Stadiums" weight="1"/>
+	</mega_group>
+
+	<mega_group id="SuburbsNoSides" >
+		<included_group group="SuburbanHouseStarter" weight="200"/>
+		<included_group group="SuburbanHouseUpperMiddle" weight="100"/>
+		<included_group group="WindTurbines" weight="20"/>
+	</mega_group>
+
+	<mega_group id="SuburbsSides" >
+		<included_group group="SuburbanHouseMiddleClass" weight="400"/>
+		<included_group group="SuburbanHouseStarter" weight="400"/>
+		<included_group group="SuburbanHouseUpperMiddle" weight="140"/>W
+		<included_mega_group mega_group="Services" weight="5"/>
+		<included_group group="JunkFood" weight="1"/>
+		<included_group group="Bars" weight="2"/>
+		<included_group group="CheapStores" weight="4"/>
+	</mega_group>
+
+	<mega_group id="SlumNoSides" >
+		<included_group group="SlumShack" weight="400"/>
+		<included_group group="SlumTower" weight="100"/>
+		<included_group group="SlumTrailer" weight="40"/>
+		<included_group group="GeothermalPowerPlant" weight="2"/>
+		<included_group group="BatteryBackup" weight="10"/>
+		<included_group group="SlumShed" weight="8"/>
+		<included_group group="SlumMiniBar" weight="2"/>
+		<included_group group="Bars" weight="3"/>
+		<included_group group="AdvancedWasteProcessingPlant" weight="6"/>
+		<included_group group="StoredPurifiedWater" weight="4"/>
+	</mega_group>
+	
+	<mega_group id="SlumSides" >
+		<included_group group="SlumShack" weight="4"/>
+		<included_group group="SlumSmallHome" weight="200"/>
+		<included_group group="SlumTower" weight="100"/>
+		<included_group group="Motels" weight="16"/>
+		<included_group group="Bars" weight="6"/>
+		<included_group group="SlumMiniBar" weight="2"/>
+		<included_group group="JunkFood" weight="3"/>
+		<included_mega_group mega_group="Services" weight="2"/>
+		<included_group group="AdvancedWasteProcessingPlant" weight="1"/>
+		<included_group group="CheapStores" weight="4"/>
+	</mega_group>
+
+	<mega_group id="SlumExtras1" >
+		<included_group group="SlumSmallHome" weight="200"/>
+		<included_group group="SlumTower" weight="200"/>
+	</mega_group>
+
+	<mega_group id="SlumExtras2" >
+		<included_group group="HomelessGroundTents" weight="100"/>
+		<included_group group="SlumShack" weight="100"/>
+	</mega_group>
+
+	<mega_group id="GeneralFallback" >
+		<included_group group="GeneralFallback" weight="100"/>
+	</mega_group>
+
+	<mega_group id="SuburbsFallback" >
+		<included_group group="SuburbsFallback" weight="100"/>
+	</mega_group>
+	
+
+</root>

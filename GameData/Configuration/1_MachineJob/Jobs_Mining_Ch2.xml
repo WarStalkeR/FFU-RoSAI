@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<job id="SolGelHydrolysisReactor" display_name="Sol-Gel Hydrolysis Reactor" marker_color="DeepCyan" ui_color="#fefefe"
+		is_locked_before_unlock="Shapeshifter"
+		description="The reactor controls the condensation of silicon alkoxide in order to manipulate the shape, size, and microstructure of mesoporous silica nanoparticles."
+		strategy_tip_optional="It also handles the extraction of Gadolinium from Bastnäsite, yielding a final product of Gadolinium Mesosilicate."
+		icon_name="FlatSkill_53" turns_to_install="3" required_structure_type="SeizedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Factory" internal_robotics_type_needed="Assembler" internal_robots_count_needed="10" tags=""
+		related_resource_1="GadoliniumMesosilicate" related_resource_2="Bastnasite" shuts_off_at_percentage_electricity="90" portrait_icon_name="BuildingHexDark">
+		<initial_actor_rating data_type="RequiredElectricity" value="3771" />
+		<math_int id="Bastnasite" int_min="300" income_or_expense_resource="Bastnasite" math_type="InputCost" />
+		<math_int id="GadoliniumMesosilicate" int_min="200" income_or_expense_resource="GadoliniumMesosilicate" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="2000" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+</root>

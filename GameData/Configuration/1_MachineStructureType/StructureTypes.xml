@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Standalone Structures-->
+
+	<machine_structure_type id="MassivePlotA" display_name="Massive Structure"
+		description=""
+		strategy_tip_optional=""
+		icon_name="HO_HouseSkyscraper" building_prefab="MachineMassivePlotA" snapping_scale="6"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_LargeStructure" on_construction_complete="BuildComplete_LargeStructure" on_destruction="MachineLargePlotExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="6">
+		<initial_actor_rating data_type="ActorHP" value="18000" />
+		<resource_cost resource_type="Microbuilders" cost="6200" />
+	</machine_structure_type>
+
+	<machine_structure_type id="MassivePlotB" display_name="Massive Structure"
+		description=""
+		strategy_tip_optional=""
+		icon_name="HO_HouseSkyscraper16" building_prefab="MachineMassivePlotB" snapping_scale="6"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_LargeStructure" on_construction_complete="BuildComplete_LargeStructure" on_destruction="MachineLargePlotExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="6">
+		<initial_actor_rating data_type="ActorHP" value="18000" />
+		<resource_cost resource_type="Microbuilders" cost="6200" />
+	</machine_structure_type>
+	
+	<machine_structure_type id="LargePlotA" display_name="Large Structure"
+		description=""
+		strategy_tip_optional=""
+		icon_name="HO_HouseSkyscraper18" building_prefab="MachineLargePlotA" snapping_scale="6"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_LargeStructure" on_construction_complete="BuildComplete_LargeStructure" on_destruction="MachineLargePlotExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"	
+		collections="" turns_to_build="4">
+		<initial_actor_rating data_type="ActorHP" value="8000" />
+		<resource_cost resource_type="Microbuilders" cost="3500" />
+	</machine_structure_type>
+	
+	<machine_structure_type id="LargePlotB" display_name="Large Structure"
+		description=""
+		strategy_tip_optional=""
+		icon_name="HO_HouseSkyscraper11" building_prefab="MachineLargePlotB" snapping_scale="6"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_LargeStructure" on_construction_complete="BuildComplete_LargeStructure" on_destruction="MachineLargePlotExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"		
+		collections="" turns_to_build="4">
+		<initial_actor_rating data_type="ActorHP" value="8000" />
+		<resource_cost resource_type="Microbuilders" cost="3500" />
+	</machine_structure_type>
+
+	<machine_structure_type id="MachineChurch" display_name="Machine Church"
+		description="A large building. It evokes the structure of various religions."
+		strategy_tip_optional="Humans have emotional reactions to religious symbolism."
+		icon_name="HO_House28" building_prefab="MachineChurch" snapping_scale="6"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_LargeStructure" on_construction_complete="BuildComplete_LargeStructure" on_destruction="MachineChurchExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe"	 portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="4">
+		<initial_actor_rating data_type="ActorHP" value="7000" />
+		<resource_cost resource_type="Microbuilders" cost="2700" />
+	</machine_structure_type>
+
+	<machine_structure_type id="BunkerA" display_name="Bunker"
+		description=""
+		strategy_tip_optional=""
+		icon_name="HL_House24bunker" building_prefab="MachineBunkerA" snapping_scale="6"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_MediumStructure" on_construction_complete="BuildComplete_MediumStructure" on_destruction="MachineBunkerExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe"	 portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="3">
+		<initial_actor_rating data_type="ActorHP" value="15000" />
+		<resource_cost resource_type="Microbuilders" cost="2000" />
+	</machine_structure_type>
+
+	<machine_structure_type id="BunkerB" display_name="Bunker"
+		description=""
+		strategy_tip_optional=""
+		icon_name="HL_House13bunker" building_prefab="MachineBunkerB" snapping_scale="6"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_MediumStructure" on_construction_complete="BuildComplete_MediumStructure" on_destruction="MachineBunkerExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="3">
+		<initial_actor_rating data_type="ActorHP" value="12000" />
+		<resource_cost resource_type="Microbuilders" cost="1800" />
+	</machine_structure_type>
+
+	<machine_structure_type id="BunkerVented" display_name="Vented Bunker"
+		description=""
+		strategy_tip_optional=""
+		icon_name="HL_House13bunker" building_prefab="MachineBunkerVented" snapping_scale="6"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_MediumStructure" on_construction_complete="BuildComplete_MediumStructure" on_destruction="MachineBunkerExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="3">
+		<initial_actor_rating data_type="ActorHP" value="12000" />
+		<resource_cost resource_type="Microbuilders" cost="1800" />
+	</machine_structure_type>
+
+	<machine_structure_type id="MediumPlotA" display_name="Medium Structure"
+		description=""
+		strategy_tip_optional=""
+		icon_name="HL_HouseBuilding3" building_prefab="MachineMediumPlotA" snapping_scale="5"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_MediumStructure" on_construction_complete="BuildComplete_MediumStructure" on_destruction="MachineMediumPlotExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="2">
+		<initial_actor_rating data_type="ActorHP" value="3500" />
+		<resource_cost resource_type="Microbuilders" cost="500" />
+	</machine_structure_type>
+	
+	<machine_structure_type id="MediumPlotB" display_name="Medium Structure"
+		description=""
+		strategy_tip_optional=""
+		icon_name="HL_HouseIndustry" building_prefab="MachineMediumPlotB" snapping_scale="5"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_MediumStructure" on_construction_complete="BuildComplete_MediumStructure" on_destruction="MachineMediumPlotExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="2">
+		<initial_actor_rating data_type="ActorHP" value="3000" />
+		<resource_cost resource_type="Microbuilders" cost="400" />
+	</machine_structure_type>
+	
+	<machine_structure_type id="Relay" display_name="Relay"
+		description="Extends the connectivity and power distribution of a network."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_SkillB053" building_prefab="MachineRelay" snapping_scale="5"
+		is_locked_before_unlock="FreestandingConstruction" is_separate_from_all_subnets="true"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineRelayExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetwork" force_always_use_this_portrait="true"
+		collections="" turns_to_build="2" can_appear_even_after_final_doom="false">
+		<initial_actor_rating data_type="ActorHP" value="2000" />
+		<initial_actor_rating data_type="StructureHidden" value="6500" />
+		<initial_actor_rating data_type="StructureScanResistance" value="400" />
+		<initial_actor_rating data_type="NetworkRange" value="45" />
+		<resource_cost resource_type="Microbuilders" cost="80" />
+	</machine_structure_type>
+
+	<machine_structure_type id="LongDistanceRelay" display_name="Long Distance Relay"
+		description="Extends the connectivity and power distribution of a network across gaps in the city."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_SkillB053" building_prefab="MachineRelay" snapping_scale="5"
+		is_locked_before_unlock="FreestandingConstruction" can_only_be_built_outside_existing_network_range="true" always_provides_networking_to_its_cell_if_central_tower_exists="true"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineRelayExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetwork" force_always_use_this_portrait="true"
+		collections="" turns_to_build="2" can_appear_even_after_final_doom="false">
+		<initial_actor_rating data_type="ActorHP" value="2000" />
+		<initial_actor_rating data_type="StructureHidden" value="6500" />
+		<initial_actor_rating data_type="StructureScanResistance" value="400" />
+		<initial_actor_rating data_type="NetworkRange" value="30" />
+		<initial_actor_rating data_type="ScanRange" value="30" />
+		<resource_cost resource_type="Microbuilders" cost="80" />
+	</machine_structure_type>
+
+	<machine_structure_type id="MachineAndroidTower" display_name="Machine Android Tower"
+		description=""
+		strategy_tip_optional=""
+		icon_name="CleanSimple_Tool57" building_prefab="MachineAndroidTower" snapping_scale="5"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineRelayExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="3">
+		<initial_actor_rating data_type="ActorHP" value="5000" />
+		<resource_cost resource_type="Microbuilders" cost="400" />
+	</machine_structure_type>
+	
+	<machine_structure_type id="MachineCabinet" display_name="Machine Cabinet"
+		description="A tiny, unobtrusive structure that looks like an electrical cabinet."
+		strategy_tip_optional=""
+		icon_name="HL_HouseTransformer" building_prefab="MachineCabinet" snapping_scale="8"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineCabinetExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="0">
+		<initial_actor_rating data_type="ActorHP" value="3000" />
+		<resource_cost resource_type="ElementalSlurry" cost="150" />
+	</machine_structure_type>
+
+	<machine_structure_type id="MachineLab" display_name="Machine Lab"
+		description=""
+		strategy_tip_optional=""
+		icon_name="SF2_Antenna" building_prefab="MachineLab" snapping_scale="8"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineCabinetExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="3">
+		<initial_actor_rating data_type="ActorHP" value="3000" />
+		<resource_cost resource_type="Microbuilders" cost="100" />
+	</machine_structure_type>
+
+	<machine_structure_type id="MachineDigsite" display_name="Machine Digsite"
+		description="A reinforced hole in the ground."
+		strategy_tip_optional="The plant and the light are for your perception only; there is no indication on the surface that anything is here, for humans.
+An excellent place to hide small things."
+		icon_name="SomethingBush" building_prefab="MachineDigsite" snapping_scale="20"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineDigsiteExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="0" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="1000" />
+		<initial_actor_rating data_type="StructureHidden" value="18000" />
+		<initial_actor_rating data_type="StructureScanResistance" value="400" />
+		<resource_cost resource_type="ElementalSlurry" cost="40" />
+	</machine_structure_type>
+
+	<machine_structure_type id="MachineMiningDigsite" display_name="Machine Mining Digsite"
+		description="A reinforced hole in the ground."
+		strategy_tip_optional="The plant and the light are for your perception only; there is no indication on the surface that anything is here, for humans.
+An excellent place to hide small things."
+		icon_name="SomethingBush" building_prefab="MachineDigsite" snapping_scale="20" max_security_clearance_of_poi_for_placement="3" 
+		required_poi_tag_for_placement="Mining" required_poi_tag_for_placement_text="Must be built in a human mining POI."
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineDigsiteExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="0" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="1000" />
+		<initial_actor_rating data_type="StructureHidden" value="9000" />
+		<initial_actor_rating data_type="StructureScanResistance" value="800" />
+		<resource_cost resource_type="ElementalSlurry" cost="40" />
+	</machine_structure_type>
+
+	<machine_structure_type id="FalseBamboo" display_name="False Bamboo"
+		description="A hole in the ground under a fake tree."
+		strategy_tip_optional="Able to do things that require small machinery in the open air."
+		icon_name="SomethingBush" building_prefab="MachineFalseBamboo" snapping_scale="20"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineDigsiteExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="0" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="300" />
+		<initial_actor_rating data_type="StructureHidden" value="8000" />
+		<initial_actor_rating data_type="StructureScanResistance" value="300" />
+		<resource_cost resource_type="Microbuilders" cost="20" />
+	</machine_structure_type>
+
+	<machine_structure_type id="FalsePine" display_name="False Pine"
+		description="A hole in the ground under a fake tree."
+		strategy_tip_optional="Able to do things that require small machinery in the open air."
+		icon_name="SomethingBush" building_prefab="MachineFalsePine" snapping_scale="20"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineDigsiteExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="0" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="300" />
+		<initial_actor_rating data_type="StructureHidden" value="8000" />
+		<initial_actor_rating data_type="StructureScanResistance" value="300" />
+		<resource_cost resource_type="Microbuilders" cost="20" />
+	</machine_structure_type>
+
+	<machine_structure_type id="FalseMaple" display_name="False Maple"
+		description="A hole in the ground under a fake tree."
+		strategy_tip_optional="Able to do things that require small machinery in the open air."
+		icon_name="SomethingBush" building_prefab="MachineFalseMaple" snapping_scale="20"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineDigsiteExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="0" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="300" />
+		<initial_actor_rating data_type="StructureHidden" value="8000" />
+		<initial_actor_rating data_type="StructureScanResistance" value="300" />
+		<resource_cost resource_type="Microbuilders" cost="20" />
+	</machine_structure_type>
+
+	<!--Territory Control Flag-->
+	<machine_structure_type id="TerritoryControlFlag" display_name="Territory Control"
+		description=""
+		strategy_tip_optional=""
+		icon_name="SW_Banner" building_prefab="TerritoryControlFlag"
+		is_locked_before_unlock=""
+		on_construction_start="BuildStart_ControlFlag" on_construction_complete="Silent" on_destruction="Silent" actor_data_set="TerritoryControl"
+		ui_color="#fefefe" portrait_icon_name="BuildingsMining"
+		collections="" turns_to_build="0" max_security_clearance_of_poi_for_placement="5"
+		is_separate_from_all_networks="true" is_built_instantly="true" is_territory_control_flag="true" has_no_job="true">
+		<initial_actor_rating data_type="ActorHP" value="100" />
+		<initial_actor_rating data_type="StructureHidden" value="99000" />
+		<initial_actor_rating data_type="StructureScanResistance" value="80000" />
+		<resource_cost resource_type="Microbuilders" cost="10" />
+	</machine_structure_type>
+	
+	<!--Refits To Human Buildings-->
+	
+	<machine_structure_type id="SecretCompartments" display_name="Secret Compartments"
+		description="Unobtrusive hidden compartments within the walls or under the floors."
+		strategy_tip_optional=""
+		icon_name="HL_HiddenWood" building_prefab="MachineTowerC" is_built_on_site_of_existing_building="true"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineSmallEmbeddedExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB" is_embedded_in_human_building_of_tag="CanHaveSecretCompartment"		
+		collections="" turns_to_build="0" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="100" />
+		<initial_actor_rating data_type="StructureHidden" value="37000" />
+		<initial_actor_rating data_type="StructureScanResistance" value="200" />
+		<resource_cost resource_type="Microbuilders" cost="50" />
+	</machine_structure_type>
+
+	<machine_structure_type id="SecretCompartmentsLongDistanceRelay" display_name="Secret Compartments"
+		description="Unobtrusive hidden compartments within the walls or under the floors."
+		strategy_tip_optional="Extends the connectivity and power distribution of a network across gaps in the city."
+		icon_name="HL_HiddenWood" building_prefab="MachineTowerC" is_built_on_site_of_existing_building="true"
+		is_locked_before_unlock="FreestandingConstruction"
+		can_only_be_built_outside_existing_network_range="true" always_provides_networking_to_its_cell_if_central_tower_exists="true"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineSmallEmbeddedExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetwork" force_always_use_this_portrait="true" is_embedded_in_human_building_of_tag="CanHaveSecretCompartment"
+		collections="" turns_to_build="0" only_appears_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="100" />
+		<initial_actor_rating data_type="StructureHidden" value="37000" />
+		<initial_actor_rating data_type="StructureScanResistance" value="200" />
+		<initial_actor_rating data_type="NetworkRange" value="20" />
+		<initial_actor_rating data_type="ScanRange" value="20" />
+		<resource_cost resource_type="Microbuilders" cost="50" />
+	</machine_structure_type>
+	
+	<machine_structure_type id="HiddenRoom" display_name="Hidden Room"
+		description="A hidden room in a human building, usually in inconspicuous storage or basement areas."
+		strategy_tip_optional=""
+		icon_name="HL_HiddenRoom" building_prefab="MachineTowerC" is_built_on_site_of_existing_building="true"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineSmallEmbeddedExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB" is_embedded_in_human_building_of_tag="CanHaveHiddenRoom"
+		collections="" turns_to_build="1" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="400" />
+		<initial_actor_rating data_type="StructureHidden" value="24000" />
+		<initial_actor_rating data_type="StructureScanResistance" value="400" />
+		<resource_cost resource_type="Microbuilders" cost="180" />
+	</machine_structure_type>
+
+	<machine_structure_type id="HealthcareStorefront" display_name="Healthcare Storefront"
+		description="Often accessible only via internal hallways of larger commercial spaces, this is nonetheless available to foot traffic. Inside is a thoroughly-disinfected space suitable for healthcare."
+		strategy_tip_optional=""
+		icon_name="HL_HouseShelves5" building_prefab="MachineTowerC" is_built_on_site_of_existing_building="true"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_MediumStructure" on_construction_complete="BuildComplete_MediumStructure" on_destruction="MachineMediumEmbeddedExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB" is_embedded_in_human_building_of_tag="CanHaveHealthcareStorefront"		
+		collections="" turns_to_build="2">
+		<initial_actor_rating data_type="ActorHP" value="2800" />
+		<resource_cost resource_type="Microbuilders" cost="220" />
+	</machine_structure_type>
+	
+	<machine_structure_type id="Storefront" display_name="Storefront"
+		description="Street-level front-facing space that is intended to be seen by passerby."
+		strategy_tip_optional=""
+		icon_name="HL_HouseShelves5" building_prefab="MachineTowerC" is_built_on_site_of_existing_building="true"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_MediumStructure" on_construction_complete="BuildComplete_MediumStructure" on_destruction="MachineMediumEmbeddedExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB" is_embedded_in_human_building_of_tag="CanHaveStorefront"
+		collections="" turns_to_build="2">
+		<initial_actor_rating data_type="ActorHP" value="2800" />
+		<resource_cost resource_type="Microbuilders" cost="220" />
+	</machine_structure_type>
+
+	<machine_structure_type id="SeizedFloors" display_name="Seized Floors"
+		description="Floors in a building that have been cordoned off and converted for your use."
+		strategy_tip_optional=""
+		icon_name="HL_HiddenTile" building_prefab="MachineTowerC" is_built_on_site_of_existing_building="true"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_MediumStructure" on_construction_complete="BuildComplete_MediumStructure" on_destruction="MachineMediumEmbeddedExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB" is_embedded_in_human_building_of_tag="CanHaveSeizedFloors"
+		collections="" turns_to_build="3" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="2800" />
+		<initial_actor_rating data_type="StructureHidden" value="9000" />
+		<initial_actor_rating data_type="StructureScanResistance" value="400" />
+		<resource_cost resource_type="Microbuilders" cost="470" />
+	</machine_structure_type>
+
+	<machine_structure_type id="SeizedFloorsForCyberocracy" display_name="Seized Floors For Cyberocracy"
+		description="Floors in a building that have been cordoned off and converted for your use."
+		strategy_tip_optional=""
+		icon_name="HL_HiddenTile" building_prefab="MachineTowerC" is_built_on_site_of_existing_building="true"
+		is_locked_before_unlock="FreestandingConstruction" is_cyberocracy_hub="true"
+		on_construction_start="BuildStart_MediumStructure" on_construction_complete="BuildComplete_MediumStructure" on_destruction="MachineMediumEmbeddedExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB" is_embedded_in_human_building_of_tag="CanHaveSeizedFloors"
+		collections="" turns_to_build="3" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="9100" />
+		<initial_actor_rating data_type="StructureHidden" value="80000" />
+		<initial_actor_rating data_type="StructureScanResistance" value="4000" />
+		<resource_cost resource_type="Microbuilders" cost="17000" />
+	</machine_structure_type>
+
+	<machine_structure_type id="SeizedAndSealedFloors" display_name="Seized And Sealed Floors"
+		description="Floors in a building that have been turned into a cleanroom environment suitable for doing a variety of kinds of science."
+		strategy_tip_optional=""
+		icon_name="HL_HiddenTile" building_prefab="MachineTowerC" is_built_on_site_of_existing_building="true"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_MediumStructure" on_construction_complete="BuildComplete_MediumStructure" on_destruction="MachineMediumEmbeddedExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB" is_embedded_in_human_building_of_tag="CanHaveSeizedAndSealedFloors"
+		collections="" turns_to_build="3" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="2800" />
+		<resource_cost resource_type="Microbuilders" cost="3000" />
+	</machine_structure_type>
+
+	<machine_structure_type id="SeizedLevelsOfMine" display_name="Seized Levels Of Mine"
+		description="Levels in a mining facility that have been cordoned off and converted for your use."
+		strategy_tip_optional=""
+		icon_name="HL_HiddenTile" building_prefab="MachineTowerC" is_built_on_site_of_existing_building="true"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_MediumStructure" on_construction_complete="BuildComplete_MediumStructure" on_destruction="MachineMediumEmbeddedExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB" is_embedded_in_human_building_of_tag="CanHaveSeizedLevelsOfMine" max_security_clearance_of_poi_for_placement="3"
+		collections="" turns_to_build="4">
+		<initial_actor_rating data_type="ActorHP" value="9600" />
+		<resource_cost resource_type="Microbuilders" cost="210" />
+	</machine_structure_type>
+	
+	<machine_structure_type id="MidsizeHollowedOutBuilding" display_name="Hollowed-Out Building"
+		description="The entire building is replaced on the inside, while maintaining its former facade."
+		strategy_tip_optional=""
+		icon_name="HL_HiddenConstruction" building_prefab="MachineTowerC" is_built_on_site_of_existing_building="true"
+		on_construction_start="BuildStart_LargeStructure" on_construction_complete="BuildComplete_MediumStructure" on_destruction="MachineMediumEmbeddedExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB" is_embedded_in_human_building_of_tag="CanHaveHollowedOutMidsizeBuilding"		
+		collections="" turns_to_build="5" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="4000" />
+		<initial_actor_rating data_type="StructureHidden" value="5800" />
+		<initial_actor_rating data_type="StructureScanResistance" value="900" />
+		<resource_cost resource_type="Microbuilders" cost="1900" />
+	</machine_structure_type>
+	
+	<machine_structure_type id="LargeHollowedOutBuilding" display_name="Hollowed-Out Building"
+		description="The entire building is replaced on the inside, while maintaining its former facade."
+		strategy_tip_optional=""
+		icon_name="HL_HiddenConstruction" building_prefab="MachineTowerC" is_built_on_site_of_existing_building="true"
+		on_construction_start="BuildStart_LargeStructure" on_construction_complete="BuildComplete_LargeStructure" on_destruction="MachineLargeEmbeddedExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB" is_embedded_in_human_building_of_tag="CanHaveHollowedOutLargeBuilding"
+		collections="" turns_to_build="6" can_appear_even_after_final_doom="true">
+		<initial_actor_rating data_type="ActorHP" value="7000" />
+		<initial_actor_rating data_type="StructureHidden" value="5800" />
+		<initial_actor_rating data_type="StructureScanResistance" value="900" />
+		<resource_cost resource_type="Microbuilders" cost="4100" />
+	</machine_structure_type>
+
+	<machine_structure_type id="EmergencyNetworkSource" display_name="Emergency Network Source"
+		description="The root of your network within the city."
+		strategy_tip_optional="This is a very poor replacement for a full tower, but it will have to do."
+		icon_name="SF2_Wifisignal" building_prefab="MachineTowerC" is_built_on_site_of_existing_building="true"
+		is_locked_before_unlock="EmergencyShelter" establish_network_on_build="true" is_not_picky_about_cell_validity_for_network_start="true"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineSmallEmbeddedExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkTower" force_always_use_this_portrait="true" is_embedded_in_human_building_of_tag="CanHaveSecretCompartment"
+		collections="" turns_to_build="0" can_appear_even_after_final_doom="true" has_no_job="true">
+		<initial_actor_rating data_type="ActorHP" value="1200" />
+		<initial_actor_rating data_type="StructureHidden" value="37000" />
+		<initial_actor_rating data_type="StructureScanResistance" value="900" />
+		<initial_actor_rating data_type="GeneratedElectricity" value="404" />
+		<initial_actor_rating data_type="ScanRange" value="25" />
+		<initial_actor_rating data_type="NetworkRange" value="25" />
+		<resource_cost resource_type="ElementalSlurry" cost="300" />
+	</machine_structure_type>
+	
+	<!--Network Tower-->
+	<machine_structure_type id="NetworkTower" display_name="Network Tower"
+		description="The root of your network within the city."
+		strategy_tip_optional="If it is destroyed, the entire network goes down."
+		icon_name="CleanSimple_SciFi038" building_prefab="MachineTowerB" establish_network_on_build="true" is_built_on_site_of_existing_building="true"
+		is_locked_before_unlock="FreestandingConstruction" is_locked_after_city_flag="HasPlacedNetworkTower" is_embedded_in_human_building_of_tag="Any"
+		on_construction_start="BuildStart_LargeStructure" on_construction_complete="BuildComplete_LargeStructure" on_destruction="MachineNetworkTowerExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkTower" force_always_use_this_portrait="true"
+		collections="" turns_to_build="1" is_nanotech_network_tower="true" has_no_job="true">
+		<initial_actor_rating data_type="NetworkRange" value="40" />
+		<initial_actor_rating data_type="ActorHP" value="13400" />
+		<initial_actor_rating data_type="GeneratedElectricity" value="1888" />
+		<initial_actor_rating data_type="ScanRange" value="40" />
+		<resource_cost resource_type="NanoSeed" cost="1" />
+	</machine_structure_type>
+	
+	<!--Initial Prologue structure-->
+	<machine_structure_type id="ImposingTower" display_name="Imposing Tower"
+		description="The humans aren't taking you seriously, but they also won't leave you alone."
+		strategy_tip_optional="You need to do something... big. Impressive enough to keep them from harassing you constantly, but not so scary that they decide to destroy you.
+You've studied what's known about the psychology of the executives that run this place, and you've come up with a plan.
+The humans would use Microbuilders, but you don't have the capacity to program those yet. Nanotech is also instantaneous. It's the way to go."
+		icon_name="CleanSimple_Skill139" building_prefab="MachineTowerB" establish_network_on_build="true" is_built_on_site_of_existing_building="true"
+		is_locked_before_unlock="AHomeOfYourOwn" is_locked_after_city_flag="HasPlacedNetworkTower" is_locked_after_meta_flag="HasBuiltImposingTowerBefore" is_embedded_in_human_building_of_tag="Any"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineNetworkTowerExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkTower" force_always_use_this_portrait="true"
+		collections="" turns_to_build="1" has_no_job="true">
+		<initial_actor_rating data_type="ActorHP" value="2200" />
+		<initial_actor_rating data_type="NetworkRange" value="40" />
+		<initial_actor_rating data_type="ScanRange" value="40" />
+		<resource_cost resource_type="NanoSeed" cost="1" />
+	</machine_structure_type>
+
+	<!--Not a real structure, but instead is the delete function-->
+	<machine_structure_type id="DeleteStructure" display_name="Delete Structure"
+		description="Delete existing structures."
+		strategy_tip_optional="Be careful. In this mode, anything you click is destroyed. It is safer to select the structure and press the Delete key."
+		icon_name="CS_Eraser2" building_prefab="MachineTowerB" is_the_delete_function="true"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineNetworkTowerExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"	
+		collections="" turns_to_build="0" can_appear_even_after_final_doom="true" has_no_job="true">
+	</machine_structure_type>
+	
+	<!--Not a real structure, but instead is the pause function-->
+	<machine_structure_type id="PauseStructure" display_name="Pause Structure"
+		description="Pause or un-pause existing structures."
+		strategy_tip_optional="Paused structures use no electricity, consume no resources, and produce nothing."
+		icon_name="CleanSimple_Common070" building_prefab="MachineTowerB" is_the_pause_function="true"
+		is_locked_before_unlock="FreestandingConstruction"
+		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineNetworkTowerExplosion" actor_data_set="SimpleJobs"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkB"
+		collections="" turns_to_build="0" can_appear_even_after_final_doom="true" has_no_job="true">
+	</machine_structure_type>
+	
+</root>

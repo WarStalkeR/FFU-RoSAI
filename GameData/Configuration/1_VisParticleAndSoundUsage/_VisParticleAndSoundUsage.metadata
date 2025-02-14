@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="vis_particle_and_sound_usage">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="particle_effect" type="node-list" is_required="false" node_source="VisParticleEffect" default="Explosions" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Optional. Which particle effect to use at whatever point in time is indicated here. We may not use one, it might just be a sound effect.
+Or a modder might have changed it to be neither a particle nor a sound effect, so nothing happens here. All is fine!" />
+
+	<attribute key="particle_effect_scale" type="float-textbox" is_required="false" min="0.01" max="40" default="1" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="Uniform scale applied to the particle effect." />
+	<attribute key="added_rotation" type="vector3-textbox" is_required="false"
+		tooltip="If there should be some implicit rotation added to this particle, specify it here." />
+
+	<attribute key="particle_effect_offset_y" type="float-textbox" is_required="false" min="-40" max="40" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="Whatever triggers this has a position. This allows the particle effect to be moved up or down relative to the trigger." />
+	<attribute key="particle_effect_locked_to_y" type="float-textbox" is_required="false" min="-40" max="40" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="Whatever triggers this has a position. This allows the particle effect to completely ignore the y position of the trigger, and always be at a certain height." />
+
+	<attribute key="reference_area_range_for_on_hit" type="float-textbox" is_required="false" min="-1" max="40" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="Only used for particles with an on-hit. And required for this. This specifies what the original area-of-attack range they were designed for.
+If the actual area of attack is something different, then the effect will be scaled up or down to match." />
+	
+	<attribute key="particle_effect_travel_speed" type="float-textbox" is_required="false" min="1" max="40" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="If this particle effect moves from a place to another place, how fast it will move." />
+
+	<attribute key="projectile_movement_logic" type="node-dropdown" node_source="VisProjectileMovementLogic" content_width_px="200" is_required="false"
+		tooltip="If this particle effect moves from a place to another place, then this is required, as it specifies how the movement is done." />
+	<attribute key="on_hit" type="node-dropdown" node_source="VisParticleAndSoundUsage" content_width_px="200" is_required="false"
+		tooltip="If this particle effect moves from a place to another place, and there should be another particle effect and/or sound when it hits, then this is that sound and particle." />
+
+	<attribute key="extra_bursts_of_effect_to_schedule" type="int-textbox" is_required="false" min="0" max="50" default="0" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="If this is going to have the particle effect happen more than once per trigger, then how many times will it happen?" />
+	<attribute key="skip_additional_sounds_on_extra_bursts" type="bool" default="false"
+		tooltip="If true, then it won't play more sounds for further visual bursts. Probably that's already baked into the sound effect." />		
+	<attribute key="min_delay_of_extra_bursts" type="float-textbox" is_required="false" min="0.05" max="0.9" default="0.1" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="At least how long, in seconds, should the gap between each fired burst be if there is going to be a burst?" />
+	<attribute key="max_delay_of_extra_bursts" type="float-textbox" is_required="false" min="0.1" max="0.9" default="0.3" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="At most how long, in seconds, should the gap between each fired burst be if there is going to be a burst?" />
+
+	<attribute key="is_considered_a_big_scary_sound" type="bool" default="false"
+		tooltip="If true, this won't play too close to other big scary sounds." />
+	<attribute key="required_gap_between_playing_this_sound" type="float-textbox" is_required="false" min="-1" max="10" default="-1" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="How long, in seconds, must elapse before this sound will be played again after having been played?  Does not affect particles, only the sound portion." />
+	<attribute key="required_gap_between_playing_this_sound_and_another_big_scary_sound" type="float-textbox" is_required="false" min="-1" max="10" default="-1" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="How long, in seconds, must elapse before any 'big scary sound' will be played after this sound has played?" />
+
+	<attribute key="shrink_speed_multiplier_after_impact" type="float-textbox" is_required="false" min="-1" max="100" default="-1" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="If above 0, then the shrinkage of this projectile after it impacts the target will be multiplied by this. Less than 1 means slower shrinkage, more than 1 means faster." />
+	
+	<attribute key="sound_effect" type="node-list" node_source="SFXItem" content_width_px="200" is_required="false"
+		tooltip="Optional. Which sound effect to play when whatever this trigger is happens. We may not use one, it might just be a particle effect.
+Or a modder might have changed it to be neither a particle nor a sound effect, so nothing happens here. All is fine!" />
+
+	<attribute key="sound_effect2" type="node-list" node_source="SFXItem" content_width_px="200" is_required="false"
+		tooltip="Optional. This is a second sound effect that would be played over top of the first one, after a bit of a delay." />
+
+	<attribute key="delay_of_sound_effect2" type="float-textbox" is_required="false" min="0" max="3" default="0.4" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="How long, in seconds, should the second sound effect be delayed after the first?" />
+
+	<attribute key="trigger_music" type="node-dropdown" node_source="MusicType" content_width_px="200" is_required="false"
+		tooltip="If this starts a single random music track playing from the specified music type, then here we go." />
+
+	<attribute key="volume_multiplier" type="float-textbox" min="0" max="10" default="1" content_width_px="60"
+		tooltip="Multiplied volume of the sound effects (but not music). Going above 1 only has any meaning if the sound effect itself has normally lowered its volume. It cannot be made louder than the original source."/>
+	
+</root>

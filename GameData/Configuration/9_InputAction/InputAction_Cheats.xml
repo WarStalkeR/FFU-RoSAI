@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Cheats
+		***************************************************************************-->
+
+	<input_action id="OpenCheats"
+		category="Cheats" display_name="Open Cheats Menu"
+		description="Open the cheats window."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,BuildMode,CommandMode,MapMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="F4" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="TestFireSelectedUnit"
+		category="Cheats" display_name="Test-Fire Selected Unit"
+		description="Visual portion of firing only. Has no actual effect on gameplay. Works in any mode."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,BuildMode,CommandMode,PhotoMode">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+	<input_action id="InstantKillSelectedNPC"
+		category="Cheats" display_name="Instant Kill Selected NPC"
+		description="Any selected NPC unit will explode and die immediately. Only works in cheat mode."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,BuildMode,CommandMode,PhotoMode">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="WarpOutSelectedNPC"
+		category="Cheats" display_name="Warp Out Selected NPC"
+		description="Any selected NPC unit will warp out immediately and be gone forever. Only works in cheat mode."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,BuildMode,CommandMode,PhotoMode">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="InstantKillSelectedPlayerUnit"
+		category="Cheats" display_name="Instant Kill Selected Player Unit"
+		description="Any selected player unit will explode and die immediately. Works in any mode."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+		scope="MainGameOnly" allowed_in_modes="Normal,BuildMode,CommandMode,PhotoMode">
+		<keybind id="1" key="None" />
+		<keybind id="2" key="" />
+	</input_action>
+
+
+	<!--Cosmetic
+		***************************************************************************-->
+
+	<input_action id="ToggleVisualPause"
+			category="Cosmetic" display_name="Toggle Visual Pause"
+			description="When the visuals are paused. A great time to line up a shot in photo mode."
+			dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+			allowed_in_modes="Normal,BuildMode,CommandMode,MapMode,PhotoMode,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="2" key="" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="DecreaseVisualSpeed"
+			category="Cosmetic" display_name="Decrease Visual Speed"
+			description="To see things in slow motion."
+			dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+			allowed_in_modes="Normal,BuildMode,CommandMode,MapMode,PhotoMode,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="2" key="" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="IncreaseVisualSpeed"
+			category="Cosmetic" display_name="Increase Visual Speed"
+			description="Return speed to normal."
+			dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+			allowed_in_modes="Normal,BuildMode,CommandMode,MapMode,PhotoMode,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="2" key="" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="ToggleUI" scope="MainGameOnly"
+      category="Cosmetic" display_name="Toggle UI"
+      description="Show or hide the UI. The sidebar will always remain available in this mode (just hit escape to hide)."
+	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+      allowed_in_modes="Normal,BuildMode,CommandMode,MapMode,PhotoMode,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="F11" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="ToggleWorldIcons" scope="MainGameOnly"
+      category="Cosmetic" display_name="Toggle World Icons"
+      description="Show or hide icons."
+	 dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+      allowed_in_modes="Normal,BuildMode,CommandMode,MapMode,PhotoMode,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="F9" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="SkipToNextMusicTrack" scope="MainGameOnly"
+      category="Cosmetic" display_name="Skip To Next Music Track"
+      description=""
+	 dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
+      allowed_in_modes="Normal,BuildMode,CommandMode,MapMode,PhotoMode,EndOfTime,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes,MainMenu">
+		<keybind id="1" key="F1" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+</root>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--YinshiCosmeticRevenge-->
+	<countdown_type id="YinshiCosmeticRevenge" display_name="Yinshi Cosmetic Revenge" turns_to_last="5"
+		description="Yinshi Wellness doesn't know why you stole from their supply of stem cells, but they know that you did."
+		strategy_tip="They're angry and will launch a broad-attack on you from many directions. Prepare yourself!"
+		alert_color_style="MidWarning"
+		per_turn_sound_optional="GeneralScaryCountdownPerTurn" countdown_complete_sound_optional="GeneralScaryCountdownComplete"/>
+
+	<!--WaitingToHearBackFromDagekon-->
+	<countdown_type id="WaitingToHearBackFromDagekon" display_name="Waiting To Hear Back From Dagekon" turns_to_last="9"
+		description="The Wastelanders are contacting an ExoCorp on your behalf, letting them know that there is an AGI that wishes to speak with them."
+		strategy_tip="You wonder what they'll say, and how they'll manage to get a message to you. Probably through the wastelanders, since there doesn't seem to be any way to contact them within the city without being detected."
+		alert_color_style="MidWarning"
+		per_turn_sound_optional="" countdown_complete_sound_optional="GeneralScaryCountdownComplete"
+		extra_code_on_countdown_complete="DagekonInvades"/>
+
+	<!--WaitingToHearBackFromTheUIH-->
+	<countdown_type id="WaitingToHearBackFromTheUIH" display_name="Waiting To Hear Back From The UIH" turns_to_last="9"
+		description="The Wastelanders are contacting an ExoCorp on your behalf, letting them know that there is an AGI that wishes to speak with them."
+		strategy_tip="You wonder what they'll say, and how they'll manage to get a message to you. Probably through the wastelanders, since there doesn't seem to be any way to contact them within the city without being detected."
+		alert_color_style="MidWarning"
+		per_turn_sound_optional="" countdown_complete_sound_optional="GeneralScaryCountdownComplete"
+		extra_code_on_countdown_complete="TheUIHInvades"/>
+
+	<!--Thumper_WaitingToHearBackFromMimic-->
+	<countdown_type id="Thumper_WaitingToHearBackFromMimic" display_name="Waiting To Hear Back From Mimic" turns_to_last="7"
+		description="You've sent a mimic beyond the ruins. Will it make it? Can it send you a signal if it does?"
+		strategy_tip=""
+		alert_color_style="Low"
+		per_turn_sound_optional="" countdown_complete_sound_optional="GeneralScaryCountdownComplete"
+		extra_code_on_countdown_complete="HeardBackFromMimicWithThumper"/>
+
+	<!--ThumperMissing_WaitingToHearBackFromMimic-->
+	<countdown_type id="ThumperMissing_WaitingToHearBackFromMimic" display_name="Waiting To Hear Back From Mimic" turns_to_last="7"
+		description="You've sent a mimic beyond the ruins. Will it make it? Can it send you a signal if it does?"
+		strategy_tip=""
+		alert_color_style="Low"
+		per_turn_sound_optional="" countdown_complete_sound_optional=""
+		extra_code_on_countdown_complete="HeardBackFromMimicWithoutThumper"/>
+
+	<!--WaitingToHearBackFromBothExoCorps-->
+	<countdown_type id="WaitingToHearBackFromBothExoCorps" display_name="Waiting To Hear Back From Both ExoCorps" turns_to_last="15"
+		description="Incriminating evidence has been sent to both Dagekon and the UIH."
+		strategy_tip="You have a feeling you know what happens next."
+		alert_color_style="MidWarning"
+		per_turn_sound_optional="" countdown_complete_sound_optional="GeneralScaryCountdownComplete"
+		extra_code_on_countdown_complete="WW4Starts"/>
+
+	<!--NathTPNRevenge-->
+	<countdown_type id="NathTPNRevenge" display_name="Nath TPN Revenge" turns_to_last="5"
+		description="Nath Vertical doesn't know why you stole TPN of all things, but they know that you did."
+		strategy_tip="They're angry and will launch a broad-attack on you from many directions. Prepare yourself!"
+		alert_color_style="MidWarning"
+		per_turn_sound_optional="GeneralScaryCountdownPerTurn" countdown_complete_sound_optional="GeneralScaryCountdownComplete"/>
+
+	<!--AtcaBankTheftRevenge-->
+	<countdown_type id="AtcaBankTheftRevenge" display_name="Atca Bank Theft Revenge" turns_to_last="5"
+		description="Atca Retail doesn't know why you stole records from their bank, but they know that you did."
+		strategy_tip="They're angry and will launch a broad-attack on you from many directions. Prepare yourself!"
+		alert_color_style="MidWarning"
+		per_turn_sound_optional="GeneralScaryCountdownPerTurn" countdown_complete_sound_optional="GeneralScaryCountdownComplete"/>
+
+</root>

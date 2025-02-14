@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="underlay">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="ground_cluster" type="node-dropdown" node_source="VisAnimatedCluster" content_width_px="200" is_required="true"
+		tooltip="The normal animated cluster being drawn when on the ground." />
+
+	<attribute key="building_cluster" type="node-dropdown" node_source="VisAnimatedCluster" content_width_px="200" is_required="true"
+		tooltip="The normal animated cluster being drawn when at a building." />
+	
+	<!--
+	<attribute key="added_particle_loop_when_hovered" type="node-dropdown" node_source="VisParticleLoop" content_width_px="200" is_required="true"
+		tooltip="If this unit is hovered, then what additional particle loop to draw." />
+
+	<attribute key="hover_particle_loop_offset" type="vector3-textbox" is_required="true"
+		tooltip="For the hover particle, where it's positioned relative to the baseline." />
+	<attribute key="hover_particle_loop_scale" type="vector3-textbox" is_required="true"
+		tooltip="For the hover particle, what its relative scale is." />
+	-->
+</root>

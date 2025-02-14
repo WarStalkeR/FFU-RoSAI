@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="debate_reward">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+	<attribute key="restrictions" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+
+	<attribute key="pattern_string" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false"
+		tooltip="The pattern to use for detecting the reward. * is a match, ^ is a not-match, and space is ignore.  Anything else is invalid.  Newlines specify when moving to a new line."/>
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the action logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the action logic in the specified external dll."/>
+
+	<attribute key="on_complete" type="node-dropdown" is_required="true" node_source="VisEventVFXAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the player gets this reward?" />
+
+	<attribute key="difficulty_level" type="int-textbox" is_required="true" min="0" max="10" default="0" content_width_px="80"
+		tooltip="On a scale of 1 to 10, how hard is this?" />
+
+	<attribute key="doubles_score" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, the score of the related boxes is doubled when this condition is met." />
+	<attribute key="triples_score" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, the score of the related boxes is tripled when this condition is met." />
+
+	<attribute key="most_used_category_skill_will_improve" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, an unlock related to your most-used action of the related category will improve." />
+	<attribute key="least_used_category_skill_will_improve" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If true, an unlock related to your least-used action of the related category will improve." />
+
+</root>

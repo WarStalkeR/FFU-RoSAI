@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="meta_flag">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="has_no_code" type="bool" is_required="true" default="false"
+		tooltip="If true, it won't load anything from the dll or type name specified, and won't spend time executing code per second." />
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the implementation control code for this flag is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the control code for this flag in the specified external dll."/>
+	
+	<attribute key="auto_trips_if_skipping_chapter_zero" type="bool" is_required="true" default="true"
+		tooltip="Does this automatically trip to true when skipping chapter zero?" />
+	<attribute key="auto_trips_if_skipping_chapter_one" type="bool" is_required="true" default="true"
+		tooltip="Does this automatically trip to true when skipping chapter one?" />
+	
+</root>

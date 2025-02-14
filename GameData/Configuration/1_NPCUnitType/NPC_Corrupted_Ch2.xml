@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--CorruptedOfficePrinter
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="CorruptedOfficePrinter" display_name="Corrupted Office Printer" captured_unit_capacity_required="9"
+		description="A more-literal laser printer."
+		icon_scale="0.7" shape_icon_name="PW_oldprinter" shape_icon_color="#ffffff"
+		vis_drawing_tag="CorruptedOfficePrinter" vis_object_scale="0.4" vis_object_extra_offset="0.05" underlay_extra_offset="-0.05" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		percent_robotic="100" percent_biological="0" is_human="false"
+		underlay="NPCCombatantWeakLone" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicAndroidBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="CorruptedOfficePrinterShot" squadmates_are_not_lost_from_damage="true"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4" 
+		tags="">
+		<actor_data data_type="AttackRange" base_range="34,34" />
+		<actor_data data_type="ActorMoveRange" base_range="35,35" />
+		<actor_data data_type="ActorHP" base_range="540,630"/>
+		<actor_data data_type="ActorPower" base_range="270,315" />
+		<actor_data data_type="UnitHackingSkill" base_range="70,80" />
+		<!--<actor_data data_type="NPCHackingResistance" base_range="150,150" />-->
+	</npc_unit_type>
+
+	<!--ExperimentalMonster
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="ExperimentalMonster" display_name="Experimental Monster"
+		description="The prison companies have been doing heavy genetic experimentation on inmates. In this particular case, they seem to have been trying to create super-soldiers."
+		icon_scale="0.7" shape_icon_name="WEmblem311" shape_icon_color="#ffffff"
+		vis_drawing_tag="ExperimentalMonster" vis_object_scale="0.8" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="AblatorShot"
+		deaths_reduce_statistic="ExperimentalMonstersOnTheLoose" 
+		kills_by_player_increase_statistic1="ExperimentalMonstersKilledByPlayer" kills_by_others_increase_statistic="ExperimentalMonstersKilledByOthers"
+		resource_1_recovered_on_death="MonsterPelts" resource_1_range_recovered_on_death="3,5"
+		radius_for_collisions="0.5" height_for_collisions="1.4" applied_outcast_badge_if_attacked_by_machine=""
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4"
+		tags="" collections="HumansOnFoot,Flammable,HumansWithExposedSkin">
+		<actor_data data_type="AttackRange" base_range="5,7" />
+		<actor_data data_type="ActorMoveRange" base_range="10,14" />
+		<actor_data data_type="ActorHP" base_range="935,1285" />
+		<actor_data data_type="ActorPower" base_range="575,707" />
+		<actor_data data_type="ActorArmorPiercing" base_range="575,707" />
+		<actor_data data_type="UnitMorale" base_range="1660,1790" />
+		<default_perk perk="Fearless" unlock="" />
+	</npc_unit_type>
+	
+	<npc_unit_type id="ExperimentalMonsterVisitor" copy_from="ExperimentalMonster"
+		deaths_reduce_statistic="">
+	</npc_unit_type>
+
+	<!--HomoGrandien
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="HomoGrandien" display_name="Homo Grandien"
+		description="Homo Grandien is an evolutionary step forward from Homo Sapiens.
+Physically almost double the size of classical humans, and with a brain volume nearly three times that of their predecessors, they are quite remarkable."
+		icon_scale="0.7" shape_icon_name="WEmblem311" shape_icon_color="#ffffff"
+		vis_drawing_tag="ExperimentalMonster" vis_object_scale="0.8" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="AblatorShot"
+		radius_for_collisions="0.5" height_for_collisions="1.4" applied_outcast_badge_if_attacked_by_machine=""
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4"
+		tags="" collections="HumansOnFoot,Flammable,HumansWithExposedSkin">
+		<actor_data data_type="AttackRange" base_range="5,7" />
+		<actor_data data_type="ActorMoveRange" base_range="10,14" />
+		<actor_data data_type="ActorHP" base_range="935,1285" />
+		<actor_data data_type="ActorPower" base_range="575,707" />
+		<actor_data data_type="ActorArmorPiercing" base_range="575,707" />
+		<actor_data data_type="UnitMorale" base_range="960,1190" />
+	</npc_unit_type>
+	
+</root>

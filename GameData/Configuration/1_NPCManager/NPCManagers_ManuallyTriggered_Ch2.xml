@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--**************************************************************Man_SlumRescueWeakReaction**************************************************************-->
+
+	<npc_manager id="Man_SlumRescueWeakReaction" cohort_tag_a="FederatedCorporation" debug_log_manager_details="false">
+
+		<unit id="C" to_spawn="Slumlord" stance_to_start_in="SlumlordAnger_NoChase"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+
+	<!--**************************************************************Man_TormentNexusCaptureVorsiberReaction**************************************************************-->
+
+	<npc_manager id="Man_TormentNexusCaptureVorsiberReaction" cohort_tag_a="VorsiberEnforcement" debug_log_manager_details="false">
+
+		<unit id="C" to_spawn="HumeOwnedNickelbotThatCanBecomePredator" stance_to_start_in="VorsiberResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_Trig_Decrowner"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="V" to_spawn="VorsiberSoldier" stance_to_start_in="VorsiberResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_Trig_Decrowner"
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+
+	<!--**************************************************************Man_KillAGIEasy**************************************************************-->
+
+	<npc_manager id="Man_KillAGIEasy" cohort_tag_a="OerlIntegrated" debug_log_manager_details="false">
+
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="SecurityResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_Trig_AGIResearchers"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="N" to_spawn="HumeOwnedNickelbotThatCanBecomePredator" stance_to_start_in="AndroidSecurityResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_Trig_AGIResearchers"
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<!--**************************************************************Man_KillAGIHarder**************************************************************-->
+
+	<npc_manager id="Man_KillAGIHarder" cohort_tag_a="OerlIntegrated" debug_log_manager_details="false">
+
+		<unit id="C" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="6" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_Trig_AGIResearchers"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="N" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_Trig_AGIResearchers"
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<!--**************************************************************Man_HarassCultists**************************************************************-->
+
+	<npc_manager id="Man_HarassOccultCultists" cohort_tag_a="OccultCults" debug_log_manager_details="false">
+
+		<unit id="G" to_spawn="GraftedCultist" stance_to_start_in="CultRevenge"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="S" to_spawn="SplicedCultist" stance_to_start_in="CultRevenge"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<!--**************************************************************Man_HarassSyndicates**************************************************************-->
+
+	<npc_manager id="Man_HarassSyndicates" cohort_tag_a="CriminalSyndicateTraditional" debug_log_manager_details="false">
+
+		<unit id="B" to_spawn="SyndicateGunner" stance_to_start_in="SyndicateRevenge"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="E" to_spawn="SyndicateEnforcer" stance_to_start_in="SyndicateRevenge"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="H" to_spawn="SyndicateHeavy" stance_to_start_in="SyndicateRevenge"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+
+	<!--**************************************************************PrisonHeistManagers**************************************************************-->
+
+	<npc_manager id="Man_PrisonHeist5" cohort_tag_a="GenericCorporateAggressor" debug_log_manager_details="false">
+
+		<unit id="H" to_spawn="SecForceHacker" stance_to_start_in="SecForceHackerIntrusionSupport"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="3" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+		<unit id="C" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidPrisonResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="4" max_to_spawn="8" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_min="4" spawn_radius_max="18" spawn_radius_relaxed_max="50"/>
+		<unit id="N" to_spawn="HumeOwnedNickelbotThatCanBecomePredator" stance_to_start_in="AndroidPrisonResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="6" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_min="4" spawn_radius_max="18" spawn_radius_relaxed_max="50"/>
+		<unit id="V" to_spawn="VorsiberSoldier" stance_to_start_in="PrisonResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="5" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_min="6" spawn_radius_max="24" spawn_radius_relaxed_max="50"/>
+		<unit id="S" to_spawn="FractiveSniper" stance_to_start_in="PrisonResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_min="9" spawn_radius_max="30" spawn_radius_relaxed_max="50"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_PrisonHeist6" cohort_tag_a="GenericCorporateAggressor" debug_log_manager_details="false">
+
+		<unit id="H" to_spawn="SecForceHacker" stance_to_start_in="SecForceHackerIntrusionSupport"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="3" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+
+	</npc_manager>
+
+	<!--**************************************************************Man_BurnHudson**************************************************************-->
+
+	<npc_manager id="Man_BurnHudson" cohort_tag_a="HudsonDonuts" debug_log_manager_details="false">
+
+		<unit id="P" to_spawn="SecForcePatrol" stance_to_start_in="SecForceRage"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="SecForceRage"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+
+	<!--**************************************************************DagekonInvades**************************************************************-->
+
+	<npc_manager id="Man_DagekonInvadesA" cohort_tag_a="Dagekon" cohort_tag_b="FederatedCorporation" debug_log_manager_details="false">
+
+		<unit id="R" to_spawn="ExoCorpRaider" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="T" to_spawn="ExoCorpTrooper" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="SecForceDefendingArea"
+			cohort_should_be_cohort_b="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="3.2" max_squad_size_multiplier="7"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_DagekonInvadesB" cohort_tag_a="Dagekon" cohort_tag_b="FederatedCorporation" debug_log_manager_details="false">
+
+		<unit id="T" to_spawn="ExoCorpTrooper" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="R" to_spawn="ExoCorpRaider" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitarySecuringArea_NoChase"
+			cohort_should_be_cohort_b="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_DagekonInvadesC" cohort_tag_a="Dagekon" cohort_tag_b="VorsiberEnforcement" debug_log_manager_details="false">
+
+		<unit id="P" to_spawn="ExoCorpMilUnit" stance_to_start_in="ExoCorpMilUnitInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="T" to_spawn="ExoCorpTrooper" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="VorsiberSoldier" stance_to_start_in="MilitarySecuringArea_NoChase"
+			cohort_should_be_cohort_b="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1.2" max_squad_size_multiplier="3"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<!--**************************************************************TheUIHInvades**************************************************************-->
+
+	<npc_manager id="Man_UIHInvadesA" cohort_tag_a="UniversalIslanderHoldings" cohort_tag_b="FederatedCorporation" debug_log_manager_details="false">
+
+		<unit id="R" to_spawn="ExoCorpRaider" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="T" to_spawn="UIHRaptor" stance_to_start_in="ExoCorpRaptorHunting"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="SecForceDefendingArea"
+			cohort_should_be_cohort_b="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="3.2" max_squad_size_multiplier="7"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_UIHInvadesB" cohort_tag_a="UniversalIslanderHoldings" cohort_tag_b="FederatedCorporation" debug_log_manager_details="false">
+
+		<unit id="T" to_spawn="ExoCorpTrooper" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="R" to_spawn="UIHRaptor" stance_to_start_in="ExoCorpRaptorHunting"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitarySecuringArea_NoChase"
+			cohort_should_be_cohort_b="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_UIHInvadesC" cohort_tag_a="UniversalIslanderHoldings" cohort_tag_b="VorsiberEnforcement" debug_log_manager_details="false">
+
+		<unit id="P" to_spawn="UIHRaptor" stance_to_start_in="ExoCorpRaptorHunting"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="4" max_to_spawn="7" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="T" to_spawn="ExoCorpTrooper" stance_to_start_in="ExoCorpSoldierInvasion"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="VorsiberSoldier" stance_to_start_in="MilitarySecuringArea_NoChase"
+			cohort_should_be_cohort_b="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1.2" max_squad_size_multiplier="3"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+
+	<!--**************************************************************MimicEscapeVorsiberSweeps**************************************************************-->
+
+	<npc_manager id="Man_MimicEscapeVorsiberSweepsA" cohort_tag_a="VorsiberEnforcement" debug_log_manager_details="false">
+
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="MilitarySweep"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="4" max_to_spawn="6" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_MimicEscapeVorsiberSweepsB" cohort_tag_a="VorsiberEnforcement" debug_log_manager_details="false">
+
+		<unit id="B" to_spawn="VorsiberInquisitor" stance_to_start_in="MilitarySweep"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_MimicEscapeVorsiberSweepsC" cohort_tag_a="VorsiberEnforcement" debug_log_manager_details="false">
+
+		<unit id="B" to_spawn="VorsiberSoldier" stance_to_start_in="MilitarySweep"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1.2" max_squad_size_multiplier="1.6"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<!--**************************************************************Man_BankDemolishedReaction**************************************************************-->
+
+	<npc_manager id="Man_BankDemolishedReaction" cohort_tag_a="VorsiberEnforcement" debug_log_manager_details="false">
+
+		<unit id="C" to_spawn="VorsiberInquisitor" stance_to_start_in="VorsiberResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_Trig_Decrowner"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		<unit id="V" to_spawn="VorsiberSoldier" stance_to_start_in="VorsiberResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="4" max_to_spawn="8" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_Trig_Decrowner"
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+	
+	<!--**************************************************************Next**************************************************************-->
+
+</root>

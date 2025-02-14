@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Technician
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="Technician" display_name="Technician"
+		description="A common humanoid robotic assistant used in labs and repair shops around the city."
+		short_description="Repairs And Nonlethal" unit_capacity_cost="4"
+		internal_notes="." is_given_initially_to_players="true"
+		tooltip_icon_name="Technician1" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="CleanSimple_SciFi044" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="Technician1" vis_object_aggressive="Technician2" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" 
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle"
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_when_first_unit="Tech 4000" name_prefix="Tech" name_style="UnitBarcode"
+		sort_order="1100" command_mode_category="AndroidDeployment"
+		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true" is_never_gray_on_upgrade_lists="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByHumans,StandardUnits,SupportUnits,Portdroids,Technicians,TechniciansAndNickelbots,SouldroidsAndTechnicians,CanFitThinHumanClothes,CanFitHumanClothes,CanHandleAndroidShoulderMounts,CanHandleAndroidTechPistols" is_considered_android="true">
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidSecondary" amount="1" name_when_blank="Basic Pistol" />
+		<equipment_slot_count type="AndroidAugment" amount="2" />
+		<default_feat feat="Taser" value="15"/>
+		<default_feat feat="Ambush" value="2"/>
+		
+		<actor_data data_type="AttackRange" base_range="10,10" />
+		<actor_data data_type="ActorMoveRange" base_range="54,54" />
+		<actor_data data_type="ActorHP" base_range="60,60"/>
+		<actor_data data_type="ActorMaxActionPoints" base_range="3,3"/>
+		<actor_data data_type="ActorPower" base_range="30,30" />
+		<actor_data data_type="UnitScavengingSkill" base_range="100,100" />
+		<actor_data data_type="UnitHackingSkill" base_range="40,40" />
+		<actor_data data_type="ActorEngineeringSkill" base_range="205,205" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="35,35" />
+		<actor_data data_type="UnitCognition" base_range="45,45" />
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="AndroidNearbyRepair" />
+		<ability_slot slot_index="6" ability_type="AndroidForceConversation" />
+		<ability_slot slot_index="7" ability_type="AndroidDemoralizeMode" />
+		<ability_slot slot_index="8" ability_type="AndroidSlayerMode" />
+		
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />		
+		
+		<default_perk perk="BlendingIn" unlock="" />
+		<default_perk perk="MilitaryOfficerCodex" unlock="OfficerCodex" />
+		<unit_cost resource_type="MentalEnergy" required="1" />
+		<unit_cost resource_type="Neuroweave" required="1500" />
+		<unit_cost resource_type="ElementalSlurry" required="300" />
+	</machine_unit_type>
+
+	<!--SeniorTechnician
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="SeniorTechnician" display_name="Senior Technician"
+		description="An upgraded technician commonly used by small companies who can't afford 'real' security."
+		short_description="Shell Company Primary" unit_capacity_cost="4"
+		internal_notes="."
+		tooltip_icon_name="SeniorTechnician2" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="SI_Machine_Learning18" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="SeniorTechnician1" vis_object_aggressive="SeniorTechnician2" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit"
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle"
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_prefix="Senior Tech" name_style="UnitBarcode"
+		sort_order="1150" command_mode_category="ShellCompanyDeployment"
+		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true" is_tied_to_shell_company="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByHumans,StandardUnits,ShellCompanyOperatives,SupportUnits,Portdroids,Technicians,TechniciansAndNickelbots,SouldroidsAndTechnicians,CanFitThinHumanClothes,CanFitHumanClothes,CanHandleAndroidTechPistols" is_considered_android="true">
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidSecondary" amount="1" name_when_blank="Basic Pistol" />
+		<equipment_slot_count type="AndroidAugment" amount="2" />
+		<default_feat feat="Taser" value="15"/>
+		<default_feat feat="Ambush" value="2"/>
+
+		<actor_data data_type="AttackRange" base_range="14,14" />
+		<actor_data data_type="ActorMoveRange" base_range="60,60" />
+		<actor_data data_type="ActorHP" base_range="130,130"/>
+		<actor_data data_type="ActorMaxActionPoints" base_range="5,5"/>
+		<actor_data data_type="ActorPower" base_range="90,90" />
+		<actor_data data_type="UnitScavengingSkill" base_range="10,10" />
+		<actor_data data_type="UnitHackingSkill" base_range="10,10" />
+		<actor_data data_type="ActorEngineeringSkill" base_range="70,70" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="55,55" />
+		<actor_data data_type="UnitCognition" base_range="65,65" />
+		<actor_data data_type="ActorFearAttackPower" base_range="30,30" />
+		<actor_data data_type="UnitIntimidation" base_range="60,60" />
+		<!--
+		<actor_data data_type="UnitSupervision" base_range="120,120" />-->
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="AndroidNearbyRepair" />
+		<ability_slot slot_index="6" ability_type="AndroidForceConversation" />
+		<ability_slot slot_index="7" ability_type="AndroidDemoralizeMode" />
+		<ability_slot slot_index="8" ability_type="AndroidSlayerMode" />
+
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />
+		
+		<default_perk perk="BlendingIn" unlock="" />
+		<default_perk perk="ShellCompanyOperative" unlock="" />
+		<default_perk perk="MilitaryOfficerCodex" unlock="OfficerCodex" />
+		<unit_cost resource_type="MentalEnergy" required="1" />
+		<unit_cost resource_type="Neuroweave" required="2000" />
+		<unit_cost resource_type="ElementalSlurry" required="600" />
+	</machine_unit_type>
+
+	<!--CombatUnit
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="CombatUnit" display_name="CombatUnit"
+		description="An expensive humanoid robotic warrior used by many corporations. It exudes ennui."
+		short_description="Versatile Combatant" unit_capacity_cost="12"
+		internal_notes="."
+		tooltip_icon_name="CombatUnit1" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="CU_CombatUnitShield" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="CombatUnit1" vis_object_aggressive="CombatUnit2" vis_object_scale="0.4" vis_object_extra_offset="0.05" underlay_extra_offset="-0.05" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4"
+		is_given_initially_to_players_if_skipping_chapter_zero="true"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" 
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle" 
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_prefix="Unit" name_style="UnitBarcode"
+		sort_order="1200" command_mode_category="AndroidDeployment"	
+		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true" is_never_gray_on_upgrade_lists="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByHumans,StandardUnits,Combatants,CombatAndroids,CombatUnits,CombatUnitsRegular,Oxdroids,OxdroidsOrSupportVehicles,CanFitThinHumanClothes,CanFitHumanClothes,CanFitHeavyHumanClothes,CanHandleAndroidHeavyWeapons,CanHandleAndroidRifles,CanHandleAndroidLightFirearms,CanHandleAndroidShoulderMounts,VisuallyIntimidatingAndroid" is_considered_android="true">
+		<equipment_slot_count type="AndroidPrimary" amount="1" name_when_blank="Basic Shotgun" />
+		<equipment_slot_count type="AndroidSecondary" amount="1" />
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidAugment" amount="1" />
+		
+		<actor_data data_type="AttackRange" base_range="14,14" />
+		<actor_data data_type="ActorMoveRange" base_range="35,35" />
+		<actor_data data_type="ActorHP" base_range="180,180" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="3,3"/>
+		<actor_data data_type="ActorPower" base_range="101,101" />
+		<actor_data data_type="UnitStrength" base_range="90,90" />
+		<actor_data data_type="UnitCognition" base_range="15,15" />
+		<actor_data data_type="UnitScavengingSkill" base_range="140,140" />
+		<actor_data data_type="UnitHackingSkill" base_range="70,70" />
+		<actor_data data_type="ActorFearAttackPower" base_range="50,50" />
+		<actor_data data_type="UnitIntimidation" base_range="80,80" />
+		<!--
+		<actor_data data_type="UnitSupervision" base_range="80,80" />-->
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="AndroidForceConversation" />
+		<ability_slot slot_index="6" ability_type="AndroidHorrifyMode" />
+		<ability_slot slot_index="7" ability_type="AndroidSlayerMode" />
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />
+		
+		<default_perk perk="BlendingIn" unlock="" />
+		<default_perk perk="MilitaryOfficerCodex" unlock="OfficerCodex" />
+		<!--
+		<default_feat feat="RobotCommander" value="1.5"/>-->
+		<unit_cost resource_type="MentalEnergy" required="2" />
+		<unit_cost resource_type="Neuroweave" required="1500" should_mirror_to_bulk="true" />
+		<unit_cost resource_type="ElementalSlurry" required="600" should_multiply_by_squad_size_to_bulk="true" />
+	</machine_unit_type>
+
+	<!--RedCombatUnit
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="CombatUnitRed" display_name="CombatUnit Red"
+		description="Your version of the standard corporation CombatUnit. It is red and does not blend in unless wearing armor."
+		short_description="Versatile Combatant" unit_capacity_cost="12"
+		internal_notes="."
+		tooltip_icon_name="CombatUnitRed4" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="CU_CombatUnitShieldB" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="RedCombatUnit1" vis_object_aggressive="RedCombatUnit2" vis_object_scale="0.4" vis_object_extra_offset="0.05" underlay_extra_offset="-0.05" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" bypass_final_doom_block="RememberingRed"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit"
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle"
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_prefix="Red" name_style="UnitBarcode"
+		sort_order="1300" command_mode_category="AndroidDeployment"
+		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true"
+		collections="AllForces,AllAndroids,StandardUnits,Combatants,CombatAndroids,CombatUnits,CombatUnitsRed,Oxdroids,OxdroidsOrSupportVehicles,CanFitThinHumanClothes,CanFitHumanClothes,CanFitHeavyHumanClothes,CanHandleAndroidHeavyWeapons,CanHandleAndroidRifles,CanHandleAndroidLightFirearms,CanHandleAndroidShoulderMounts,VisuallyIntimidatingAndroid" is_considered_android="true">
+		<equipment_slot_count type="AndroidPrimary" amount="1" name_when_blank="Basic Shotgun" />
+		<equipment_slot_count type="AndroidSecondary" amount="1" />
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidAugment" amount="1" />
+		
+		<actor_data data_type="AttackRange" base_range="14,14" />
+		<actor_data data_type="ActorMoveRange" base_range="35,35" />
+		<actor_data data_type="ActorHP" base_range="180,180" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="3,3"/>
+		<actor_data data_type="ActorPower" base_range="101,101" />
+		<actor_data data_type="UnitStrength" base_range="90,90" />
+		<actor_data data_type="UnitCognition" base_range="15,15" />
+		<actor_data data_type="UnitScavengingSkill" base_range="140,140" />
+		<actor_data data_type="UnitHackingSkill" base_range="70,70" />
+		<actor_data data_type="ActorFearAttackPower" base_range="50,50" />
+		<actor_data data_type="UnitIntimidation" base_range="80,80" />
+		<!--
+		<actor_data data_type="UnitSupervision" base_range="80,80" />-->
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="AndroidForceConversation" />
+		<ability_slot slot_index="6" ability_type="AndroidHorrifyMode" />
+		<ability_slot slot_index="7" ability_type="AndroidSlayerMode" />
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />
+
+		<!--
+		<default_feat feat="RobotCommander" value="1.5"/>-->
+		<unit_cost resource_type="MentalEnergy" required="2" />
+		<unit_cost resource_type="Neuroweave" required="1500" />
+		<unit_cost resource_type="ElementalSlurry" required="600" />
+	</machine_unit_type>
+
+
+	<!--Nickelbot
+	**********************************************************************************************************************************************-->
+	<machine_unit_type id="Nickelbot" display_name="Nickelbot"
+		description="Mass-produced robots used as snipers, battlefield chaff, or cheap security guards."
+		short_description="Battlefield Chaff Or Sniper" unit_capacity_cost="6"
+		internal_notes="."
+		tooltip_icon_name="Nickelbot1" frame_style="AndroidUnit" icon_scale="0.7" shape_icon_name="AN_AndroidNickelbot" shape_icon_color="#ffffff" t_i_c_s="PlayerUnitTooltipIconColorStyle"
+		vis_object_casual="Nickelbot1" vis_object_aggressive="Nickelbot2" vis_object_scale="0.4" vis_object_extra_offset="0.025" underlay_extra_offset="-0.025" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4"
+		is_given_initially_to_players_if_skipping_chapter_zero="true"
+		underlay="MachineAndroid" underlay_in_cover="MachineAndroidInCover"
+		on_built="BasicAndroidBuilt" on_death="BasicAndroidDeath" on_bullet_hit="BasicAndroidBulletHit" 
+		on_move_start="BasicAndroidMoveStart" on_get_out_of_vehicle_end="BasicAndroidLandingFromVehicle" 
+		on_standard_ranged_attack="BasicAndroidRangedAttack" on_standard_melee_attack="BasicAndroidMeleeAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		storage_slot_type="AndroidPod" ability_group="Android"
+		name_prefix="NIKL" name_style="UnitBarcode"
+		sort_order="1400" command_mode_category="AndroidDeployment" can_appear_even_after_final_doom="true"
+		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true" is_never_gray_on_upgrade_lists="true"
+		collections="AllForces,AllAndroids,AndroidsInventedByHumans,StandardUnits,Combatants,CombatAndroids,CanFitThinHumanClothes,Nickelbots,TechniciansAndNickelbots,Dynadroids,CanHandleAndroidRifles,CanHandleAndroidLightFirearms,CanHandleAndroidThrowables,CanHandleAndroidShoulderMounts" is_considered_android="true">
+		<equipment_slot_count type="AndroidPrimary" amount="1" name_when_blank="Basic Rifle" />
+		<equipment_slot_count type="AndroidArmor" amount="1" />
+		<equipment_slot_count type="AndroidAugment" amount="1" />
+		
+		<actor_data data_type="AttackRange" base_range="18,18" />
+		<actor_data data_type="ActorMoveRange" base_range="60,60" />
+		<actor_data data_type="ActorHP" base_range="110,110" />
+		<actor_data data_type="ActorMaxActionPoints" base_range="3,3"/>
+		<actor_data data_type="ActorPower" base_range="64,64" />
+		<actor_data data_type="ActorAgility" base_range="42,42" />
+		<actor_data data_type="UnitStrength" base_range="13,13" />
+		<actor_data data_type="ActorEngineeringSkill" base_range="16,16" />
+		<actor_data data_type="UnitScavengingSkill" base_range="70,70" />
+		<actor_data data_type="UnitHackingSkill" base_range="6,6" />
+		<actor_data data_type="UnitCognition" base_range="4,4" />
+		<!--
+		<actor_data data_type="UnitSupervision" base_range="40,40" />-->
+		<ability_slot slot_index="1" ability_type="AndroidBattleRecharge" can_be_replaced="false" />
+		<ability_slot slot_index="2" ability_type="AndroidStandby" can_be_replaced="false" />
+		<ability_slot slot_index="3" ability_type="AndroidUseItem" can_be_replaced="false" />
+		<ability_slot slot_index="4" ability_type="AndroidTakeCover" />
+		<ability_slot slot_index="5" ability_type="AndroidForceConversation" />
+		<ability_slot slot_index="6" ability_type="AndroidSlayerMode" />
+		<available_stance unit_stance="AndroidActive" allowed="1" />
+		<available_stance unit_stance="Combat" allowed="1" />
+		<available_stance unit_stance="Defiant" allowed="1" />
+		
+		<default_perk perk="BlendingIn" unlock="" />
+		<default_perk perk="MilitaryOfficerCodex" unlock="OfficerCodex" />
+		<unit_cost resource_type="Neuroweave" required="500" should_mirror_to_bulk="true"  />
+		<unit_cost resource_type="ElementalSlurry" required="200" should_multiply_by_squad_size_to_bulk="true"/>
+	</machine_unit_type>
+	
+</root>

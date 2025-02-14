@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="city_task">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+
+	<attribute key="line_2" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+
+	<attribute key="toast_icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the toast popup."/>
+
+	<attribute key="toast_icon_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the toast icon?"/>
+	<attribute key="toast_icon_hovered_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the toast icon when it is hovered?"/>
+	
+	<attribute key="display_name_steam_deck" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+
+	<attribute key="description_steam_deck" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+
+	<attribute key="strategy_tip_steam_deck" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the implementation control code for this flag is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the control code for this flag in the specified external dll."/>
+	
+	<attribute key="auto_completes_if_skipping_chapter_zero" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically mark itself as completed when skipping chapter zero?" />
+	<attribute key="auto_completes_if_skipping_chapter_one" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically mark itself as completed when skipping chapter one?" />
+
+	<attribute key="blocks_normal_android_actions_while_active" type="bool" is_required="true" default="false"
+		tooltip="While this is active, does it block normal android actions, including movement?" />
+
+	<attribute key="city_task_to_start_on_complete_1" type="node-dropdown" node_source="CityTask" content_width_px="200" is_required="false"
+		tooltip="This will start a new task if it has not already been started, optionally." />
+	<attribute key="city_task_to_start_on_complete_2" type="node-dropdown" node_source="CityTask" content_width_px="200" is_required="false"
+		tooltip="This will start a new task if it has not already been started, optionally." />
+
+	<attribute key="shows_in_lower_mode" type="node-dropdown" node_source="LowerModeData" content_width_px="200" is_required="false"
+		tooltip="If specified, then this task will show in the lower-mode in question, but in no other spots." />
+	
+</root>

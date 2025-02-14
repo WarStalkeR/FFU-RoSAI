@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--BOOKMARK - Corpo Fights
+	******************************************************************************************************************** -->
+	
+	<!--ShusoExtraction
+		********************************************************************************-->
+	<city_conflict id="ShusoExtraction" display_name="Shuso Extraction" debug_log_conflict_details="false"
+		description="Shuso Corrections feels the fees it pays to Lurpeko Minerals for mining shares are exorbitant."
+		strategy_tip="The fact that both are subsidiaries of Vorsiber doesn't matter to either of them. Both sides value their own little kingdoms."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="ShusoCorrections" defenders="LurpekoMinerals" 
+		points_for_victory="14400" aggressor_random_starting_points="800,1100" defender_random_starting_points="800,1100"
+		aggressor_points_per_turn="75,150" defender_points_per_turn="80,140" 
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="CanHaveSeizedLevelsOfMine" turns_between_movement="9,12" turns_of_open_fighting_per_activation="5,8"
+		icon_name="SK_Gemstone" icon_scale="0.5" color_hex="#AB9E2D" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">		
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Fees Reduced" description="Shuso got their way. Lurpeko is very unhappy." />
+		<defender_victory_outcome id="D1" next_conflict_1="ShusoMiningGrudge"
+			display_name="Fees Maintained" description="Lurpeko prevailed. The status quo is maintained." />
+		<defender_victory_outcome id="D2" next_conflict_1="ShusoMiningGrudge"
+			display_name="Fees Increased" description="Lurpeko prevailed, and even managed to further increase the fees. Shuso is livid." />
+
+		<unit id="A_I" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="ShusoCorrections"
+			min_to_spawn="3" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_G" to_spawn="Grenadier" stance_to_start_in="CorpAggressorB" should_be_specific_cohort="ShusoCorrections"
+			min_to_spawn="0" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="110"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="LurpekoMinerals"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S" to_spawn="MilitarySniper" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="LurpekoMinerals"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+	
+	<!--ShusoMiningGrudge
+		********************************************************************************-->
+	<city_conflict id="ShusoMiningGrudge" display_name="Shuso Mining Grudge" debug_log_conflict_details="false"
+		description="Bitter from their inability to force Lurpeko Minerals to reduce fees on mining shares, Shuso Corrections has enlisted Falsom Detention to try to force the issue."
+		strategy_tip="These two prison companies spend most of their time squabbling in their sector, so having them work together is rather unusual."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="ShusoCorrections,FalsomDetention" defenders="LurpekoMinerals"
+		points_for_victory="20200" aggressor_random_starting_points="800,1100" defender_random_starting_points="1800,2100"
+		aggressor_points_per_turn="120,180" defender_points_per_turn="80,140" tags="OngoingCorporatePool" prerequisite_city_conflict_defender_win_1="ShusoExtraction"
+		spawns_at_building_tag="CanHaveSeizedLevelsOfMine" turns_between_movement="9,12" turns_of_open_fighting_per_activation="5,8"
+		icon_name="SK_Gemstone" icon_scale="0.5" color_hex="#AB552D" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Fees Reduced" description="Both prison companies had their fees reduced. Lurpeko is very unhappy." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Fees Maintained" description="Lurpeko prevailed, despite the odds. The status quo is maintained." />
+
+		<unit id="A_I1" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="ShusoCorrections"
+			min_to_spawn="3" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_G" to_spawn="Grenadier" stance_to_start_in="CorpAggressorB" should_be_specific_cohort="ShusoCorrections"
+			min_to_spawn="0" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="80"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_I2" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="FalsomDetention"
+			min_to_spawn="3" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_S2" to_spawn="MilitarySniper" stance_to_start_in="CorpAggressorB" should_be_specific_cohort="FalsomDetention"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="80"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="LurpekoMinerals"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S" to_spawn="MilitarySniper" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="LurpekoMinerals"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<!--LurpekoMiningGrudge
+		********************************************************************************-->
+	<city_conflict id="LurpekoMiningGrudge" display_name="Lurpeko Mining Grudge" debug_log_conflict_details="false"
+		description="Lurpeko Minerals, furious at being bested by a lowly prison company, has hired a PMC to help them renegotiate their fees."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="LurpekoMinerals,OptumStrike" defenders="ShusoCorrections"
+		points_for_victory="20200" aggressor_random_starting_points="800,1100" defender_random_starting_points="1800,2100"
+		aggressor_points_per_turn="120,180" defender_points_per_turn="80,140" tags="OngoingCorporatePool" prerequisite_city_conflict_aggressor_win_1="ShusoExtraction"
+		spawns_at_building_tag="CanHaveSeizedLevelsOfMine" turns_between_movement="9,12" turns_of_open_fighting_per_activation="5,8"
+		icon_name="SK_Gemstone" icon_scale="0.5" color_hex="#AB552D" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Fees Returned To Normal" description="" />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Higher Fees Maintained" description="" />
+
+		<unit id="A_I1" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="LurpekoMinerals"
+			min_to_spawn="3" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_G" to_spawn="Grenadier" stance_to_start_in="CorpAggressorB" should_be_specific_cohort="LurpekoMinerals"
+			min_to_spawn="0" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="80"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_I2" to_spawn="PMCTrooper" stance_to_start_in="CorpAggressorC" should_be_specific_cohort="OptumStrike"
+			min_to_spawn="3" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_S2" to_spawn="PMCWetworkSquad" stance_to_start_in="CorpAggressorD" should_be_specific_cohort="OptumStrike"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="80"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="ShusoCorrections"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S" to_spawn="MilitarySniper" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="ShusoCorrections"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<!--EspiaRepeaters
+		********************************************************************************-->
+	<city_conflict id="EspiaRepeaters" display_name="Espia Repeaters" debug_log_conflict_details="false"
+		description="Espia Telecom wants direct control of some of the City Feed repeater towers on property belonging to Tark, Goleri, and Atca."
+		strategy_tip="The normal agreement is for a lease from the telecom company. Why does Espia care about this all of a sudden?"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="EspiaTelecom" defenders="TarkDefenseSystems,GoleriExpeditionary,AtcaRetail"
+		points_for_victory="38400" aggressor_random_starting_points="2000,3100" defender_random_starting_points="800,1100"
+		aggressor_points_per_turn="75,150" defender_points_per_turn="90,190"
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="AnyTower" turns_between_movement="9,12" turns_of_open_fighting_per_activation="9,15"
+		icon_name="CleanSimple_Device21" icon_scale="0.5" color_hex="#2DABA3" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Control Expanded" description="Espia has acquired more control of the city feed." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Control Maintained" description="Espia was thwarted." />
+
+		<unit id="A_I" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="EspiaTelecom"
+			min_to_spawn="3" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_G" to_spawn="MilitarySniper" stance_to_start_in="CorpAggressorD" should_be_specific_cohort="EspiaTelecom"
+			min_to_spawn="0" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="110"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I1" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="TarkDefenseSystems"
+			min_to_spawn="3" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I2" to_spawn="Infantry" stance_to_start_in="CorpDefenderB" should_be_specific_cohort="GoleriExpeditionary"
+			min_to_spawn="3" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I3" to_spawn="Infantry" stance_to_start_in="CorpDefenderC" should_be_specific_cohort="AtcaRetail"
+			min_to_spawn="1" max_to_spawn="3" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<!--TarkPrisoners
+		********************************************************************************-->
+	<city_conflict id="TarkPrisoners" display_name="Tark Prisoners" debug_log_conflict_details="false"
+		description="Prison labor is instrumental for the manufacture of certain kinds of small munitions. Tark is offended that the prison companies have fallen below quota."
+		strategy_tip="Exactly what they hope to accomplish here is unclear. It probably makes sense to someone in an executive suite."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="TarkDefenseSystems" defenders="ShusoCorrections,FalsomDetention"
+		points_for_victory="16400" aggressor_random_starting_points="400,1100" defender_random_starting_points="400,1100"
+		aggressor_points_per_turn="75,150" defender_points_per_turn="80,140"
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="Prison" turns_between_movement="9,12" turns_of_open_fighting_per_activation="5,8"
+		icon_name="ME_AmmoBullets5" icon_scale="0.5" color_hex="#902DAB" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Tark Proved A Point" description="At least, they think they did. Prisoner output is unchanged..." />
+		<defender_victory_outcome id="D1" next_conflict_1="TarkStrikesBack"
+			display_name="Prisoner Honor Upheld" description="The prison companies are very proud that they've defended the productivity merits of those they have incarcerated." />
+
+		<unit id="A_I" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="TarkDefenseSystems"
+			min_to_spawn="3" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_S" to_spawn="MilitarySniper" stance_to_start_in="CorpAggressorD" should_be_specific_cohort="TarkDefenseSystems"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="ShusoCorrections"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_G1" to_spawn="Grenadier" stance_to_start_in="CorpDefenderB" should_be_specific_cohort="ShusoCorrections"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="110"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_G2" to_spawn="Grenadier" stance_to_start_in="CorpDefenderC" should_be_specific_cohort="FalsomDetention"
+			min_to_spawn="2" max_to_spawn="4" lang_key_for_extra_info="" points_to_opposing_side_on_death="110"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<!--TarkStrikesBack
+		********************************************************************************-->
+	<city_conflict id="TarkStrikesBack" display_name="Tark Strikes Back" debug_log_conflict_details="false"
+		description="Offended that not only is prison labor output still the same, but that they lost the last conflict on the subject Tark is investing far more heavily into another round of fighting."
+		strategy_tip="A sensible corporation would enlist the help of a PMC or another federated corporation, but Tark is just shipping more of their own soldiers into the city."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="TarkDefenseSystems" defenders="ShusoCorrections,FalsomDetention" prerequisite_city_conflict_defender_win_1="TarkPrisoners"
+		points_for_victory="66400" aggressor_random_starting_points="400,1100" defender_random_starting_points="400,1100"
+		aggressor_points_per_turn="125,250" defender_points_per_turn="80,140"
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="Prison" turns_between_movement="9,12" turns_of_open_fighting_per_activation="5,8"
+		icon_name="ME_AmmoBullets5" icon_scale="0.5" color_hex="#902DAB" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Tark Proved A Point" description="At least, they think they did. Prisoner output is unchanged..." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Prisoner Honor Upheld" description="The prison companies are very proud that they've defended the productivity merits of those they have incarcerated." />
+
+		<unit id="A_I" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="TarkDefenseSystems"
+			min_to_spawn="6" max_to_spawn="10" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_S" to_spawn="MilitarySniper" stance_to_start_in="CorpAggressorD" should_be_specific_cohort="TarkDefenseSystems"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="ShusoCorrections"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_G1" to_spawn="Grenadier" stance_to_start_in="CorpDefenderB" should_be_specific_cohort="ShusoCorrections"
+			min_to_spawn="2" max_to_spawn="3" lang_key_for_extra_info="" points_to_opposing_side_on_death="110"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_G2" to_spawn="Grenadier" stance_to_start_in="CorpDefenderC" should_be_specific_cohort="FalsomDetention"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="110"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+	
+	<!--GoleriAcquisitions
+		********************************************************************************-->
+	<city_conflict id="GoleriAcquisitions" display_name="Goleri Acquisitions" debug_log_conflict_details="false"
+		description="Goleri Expeditionary wants a share of two rival corporations' districts. Everything is ultimately owned by the Megacorp, but corporation control is a matter of pride."
+		strategy_tip="District lines haven't been redrawn in over 200 years, but that doesn't stop corporations from trying."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="GoleriExpeditionary" defenders="YinshiWellness,NeboInvestments"
+		points_for_victory="34400" aggressor_random_starting_points="100,600" defender_random_starting_points="800,1100"
+		aggressor_points_per_turn="95,180" defender_points_per_turn="80,140"
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="Housing" turns_between_movement="9,12" turns_of_open_fighting_per_activation="4,7"
+		icon_name="FlatSkillB_map_shredded" icon_scale="0.5" color_hex="#78AB2D" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Districts Maintained" description="Vorsiber stepped in and blocked Goleri, despite Goleri prevailing. No wonder the district lines never change." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Districts Maintained" description="The two weaker corporations managed to fend off Goleri." />
+
+		<unit id="A_I" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="GoleriExpeditionary"
+			min_to_spawn="6" max_to_spawn="10" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="YinshiWellness"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S1" to_spawn="MilitarySniper" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="YinshiWellness"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S2" to_spawn="MilitarySniper" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="NeboInvestments"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<!--AsiMilitancy
+		********************************************************************************-->
+	<city_conflict id="AsiMilitancy" display_name="Asi Militancy" debug_log_conflict_details="false"
+		description="Asi Solutions has tried leveraging control of the executive food supply to gain access to military holdings. It has been unsuccessful. The next resort is violence."
+		strategy_tip="It seems they are tired of being thought of as a soft target."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="AsiSolutions" defenders="TarkDefenseSystems,GoleriExpeditionary,OerlIntegrated"
+		points_for_victory="94400" aggressor_random_starting_points="100,600" defender_random_starting_points="800,1100"
+		aggressor_points_per_turn="45,80" defender_points_per_turn="190,240"
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="FarmMainBuildings" turns_between_movement="9,12" turns_of_open_fighting_per_activation="4,7"
+		icon_name="CS_FarmWheat" icon_scale="0.5" color_hex="#78AB2D" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Nothing Was Gained" description="Against all odds, Asi Solutions prevailed. Vorsiber was unmoved, so they get nothing." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Status Quo Maintained" description="The trio of military corporations are pleased to have put this upstart in its place." />
+
+		<unit id="A_I" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="AsiSolutions"
+			min_to_spawn="4" max_to_spawn="8" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I1" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="TarkDefenseSystems"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I2" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="GoleriExpeditionary"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S1" to_spawn="MilitarySniper" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="GoleriExpeditionary"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S2" to_spawn="MilitarySniper" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="OerlIntegrated"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<!--OerlRevenge
+		********************************************************************************-->
+	<city_conflict id="OerlRevenge" display_name="Oerl Revenge" debug_log_conflict_details="false"
+		description="Oerl Integrated is running a broad campaign of revenge attacks on the agricultural corporations as payback for a prior betrayal."
+		strategy_tip="The nature of the betrayal is apparently a closely-guarded secret."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="OerlIntegrated" defenders="YinshiWellness,AsiSolutions"
+		points_for_victory="44400" aggressor_random_starting_points="100,600" defender_random_starting_points="800,1100"
+		aggressor_points_per_turn="80,230" defender_points_per_turn="90,180"
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="FarmAnimals" turns_between_movement="9,12" turns_of_open_fighting_per_activation="4,7"
+		icon_name="BT_Cow" icon_scale="0.5" color_hex="#AB2D5D" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Oerl Made Their Point" description="Onlookers remain baffled as to what happened." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Oerl Disappointed" description="They refuse to drop the issue, whatever it is." />
+
+		<unit id="A_I" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="OerlIntegrated"
+			min_to_spawn="4" max_to_spawn="8" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_G" to_spawn="Grenadier" stance_to_start_in="CorpAggressorB" should_be_specific_cohort="OerlIntegrated"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="110"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I1" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="YinshiWellness"
+			min_to_spawn="2" max_to_spawn="4" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I2" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="AsiSolutions"
+			min_to_spawn="2" max_to_spawn="4" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S1" to_spawn="MilitarySniper" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="YinshiWellness"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S2" to_spawn="MilitarySniper" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="AsiSolutions"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<!--OerlAgain
+		********************************************************************************-->
+	<city_conflict id="OerlAgain" display_name="Oerl Again" debug_log_conflict_details="false"
+		description="Oerl is back after their prior defeat, this time enlisting the aid of two PMCs to help fight."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="OerlIntegrated,IndustrialDefenseForce,AnarchoSecurities" defenders="YinshiWellness,AsiSolutions"
+		points_for_victory="144400" aggressor_random_starting_points="100,600" defender_random_starting_points="800,1100"
+		aggressor_points_per_turn="130,330" defender_points_per_turn="90,180" prerequisite_city_conflict_defender_win_1="OerlRevenge"
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="FarmAnimals" turns_between_movement="9,12" turns_of_open_fighting_per_activation="4,7"
+		icon_name="BT_Cow" icon_scale="0.5" color_hex="#AB2D96" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Oerl Made Their Point" description="Onlookers remain baffled as to what happened." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Oerl Disappointed" description="They're dropping the issue... for now." />
+
+		<unit id="A_I" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="OerlIntegrated"
+			min_to_spawn="4" max_to_spawn="8" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_G" to_spawn="Grenadier" stance_to_start_in="CorpAggressorB" should_be_specific_cohort="OerlIntegrated"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="110"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_I2" to_spawn="PMCTrooper" stance_to_start_in="CorpAggressorC" should_be_specific_cohort="IndustrialDefenseForce"
+			min_to_spawn="2" max_to_spawn="4" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_S2" to_spawn="PMCWetworkSquad" stance_to_start_in="CorpAggressorD" should_be_specific_cohort="IndustrialDefenseForce"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="80"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_I3" to_spawn="PMCTrooper" stance_to_start_in="CorpAggressorC" should_be_specific_cohort="AnarchoSecurities"
+			min_to_spawn="1" max_to_spawn="3" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_S3" to_spawn="PMCWetworkSquad" stance_to_start_in="CorpAggressorD" should_be_specific_cohort="AnarchoSecurities"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="80"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I1" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="YinshiWellness"
+			min_to_spawn="2" max_to_spawn="4" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I2" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="AsiSolutions"
+			min_to_spawn="2" max_to_spawn="4" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S1" to_spawn="MilitarySniper" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="YinshiWellness"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S2" to_spawn="MilitarySniper" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="AsiSolutions"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<!--PuttingDownOerl
+		********************************************************************************-->
+	<city_conflict id="PuttingDownOerl" display_name="Putting Down Oerl" debug_log_conflict_details="false"
+		description="The agricultural corporations, furious at the beating they previously took from Oerl, have hired two PMCs to fight on their behalf."
+		strategy_tip="It's somewhat unusual, and seen as a bit cowardly, for corporations engaged in open conflicts to not send in their own troops alongside the PMCs they've hired. They must be having a bad quarter."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="YinshiWellness,AsiSolutions,IndustrialDefenseForce,AnarchoSecurities" defenders="OerlIntegrated"
+		points_for_victory="144400" aggressor_random_starting_points="100,600" defender_random_starting_points="800,1100"
+		aggressor_points_per_turn="130,330" defender_points_per_turn="90,180" prerequisite_city_conflict_aggressor_win_1="OerlRevenge"
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="FarmAnimals" turns_between_movement="9,12" turns_of_open_fighting_per_activation="4,7"
+		icon_name="BT_Cow" icon_scale="0.5" color_hex="#AB2D96" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Oerl Made Their Point" description="Onlookers remain baffled as to what happened." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Oerl Disappointed" description="They're dropping the issue... for now." />
+
+		<unit id="A_I2" to_spawn="PMCTrooper" stance_to_start_in="CorpAggressorC" should_be_specific_cohort="IndustrialDefenseForce"
+			min_to_spawn="2" max_to_spawn="4" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_S2" to_spawn="PMCWetworkSquad" stance_to_start_in="CorpAggressorD" should_be_specific_cohort="IndustrialDefenseForce"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="80"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_I3" to_spawn="PMCTrooper" stance_to_start_in="CorpAggressorC" should_be_specific_cohort="AnarchoSecurities"
+			min_to_spawn="1" max_to_spawn="3" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_S3" to_spawn="PMCWetworkSquad" stance_to_start_in="CorpAggressorD" should_be_specific_cohort="AnarchoSecurities"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="80"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I1" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="OerlIntegrated"
+			min_to_spawn="2" max_to_spawn="4" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S1" to_spawn="MilitarySniper" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="OerlIntegrated"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="200"
+			min_squad_size_multiplier="0.8" max_squad_size_multiplier="1.5" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<!--AtcaSupplyChain
+		********************************************************************************-->
+	<city_conflict id="AtcaSupplyChain" display_name="Atca Supply Chain" debug_log_conflict_details="false"
+		description="Atca is livid that they are unable to compete with Nath Vertical on pricing in several sectors. They're attacking their main supplier to try to lower prices."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="AtcaRetail,CyberianGuard" defenders="NeboInvestments"
+		points_for_victory="124400" aggressor_random_starting_points="100,600" defender_random_starting_points="800,1100"
+		aggressor_points_per_turn="100,220" defender_points_per_turn="90,190"
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="Industrial" turns_between_movement="9,12" turns_of_open_fighting_per_activation="5,9"
+		icon_name="HL_HouseIndustry2" icon_scale="0.5" color_hex="#2D6BAB" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Prices Lowered" description="Onlookers are shocked that actually worked." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Prices Maintained" description="Atca was unable to prevail even with PMC assistance." />
+
+		<unit id="A_I" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="AtcaRetail"
+			min_to_spawn="4" max_to_spawn="8" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_I3" to_spawn="PMCTrooper" stance_to_start_in="CorpAggressorC" should_be_specific_cohort="CyberianGuard"
+			min_to_spawn="1" max_to_spawn="3" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_S3" to_spawn="PMCWetworkSquad" stance_to_start_in="CorpAggressorD" should_be_specific_cohort="CyberianGuard"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="80"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I1" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="NeboInvestments"
+			min_to_spawn="2" max_to_spawn="4" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<!--LurpekoSurveyors
+		********************************************************************************-->
+	<city_conflict id="LurpekoSurveyors" display_name="Lurpeko Surveyors" debug_log_conflict_details="false"
+		description="Lurpeko Minerals wants to open more mines. They're attacking four other federated corporations in an effort to get surveyors' rights in districts they control."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="LurpekoMinerals" defenders="GraffIndustries,DyadInstruments,PeakHomes,Baurcorp"
+		points_for_victory="68400" aggressor_random_starting_points="100,500" defender_random_starting_points="800,1100"
+		aggressor_points_per_turn="75,150" defender_points_per_turn="90,190"
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="AnyTower" turns_between_movement="9,12" turns_of_open_fighting_per_activation="9,15"
+		icon_name="PW_pickaxemine" icon_scale="0.5" color_hex="#2DABA3" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Survey Denied" description="Vorsiber denied the permit, despite Lurpeko prevailing in combat. They tightly control the rate of mineral depletion in this region." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Issue Blocked" description="Lurpeko was thwarted." />
+
+		<unit id="A_I" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="LurpekoMinerals"
+			min_to_spawn="3" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_G" to_spawn="MilitarySniper" stance_to_start_in="CorpAggressorD" should_be_specific_cohort="LurpekoMinerals"
+			min_to_spawn="0" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="110"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="10" spawn_radius_max="16" spawn_radius_relaxed_max="34" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I1" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="GraffIndustries"
+			min_to_spawn="3" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I2" to_spawn="Infantry" stance_to_start_in="CorpDefenderB" should_be_specific_cohort="DyadInstruments"
+			min_to_spawn="3" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I3" to_spawn="Infantry" stance_to_start_in="CorpDefenderC" should_be_specific_cohort="PeakHomes"
+			min_to_spawn="3" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I4" to_spawn="Infantry" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="Baurcorp"
+			min_to_spawn="1" max_to_spawn="3" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<!--GraffQualityControl
+		********************************************************************************-->
+	<city_conflict id="GraffQualityControl" display_name="Graff Quality Control" debug_log_conflict_details="false"
+		description="Graff believes that Dyad has been selling them faulty tools in order pull ahead of them in industrial sectors where they directly compete."
+		strategy_tip="Both sides have pulled in PMCs to help."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="GraffIndustries,LexTalionis" defenders="DyadInstruments,Blackloop"
+		points_for_victory="84400" aggressor_random_starting_points="100,600" defender_random_starting_points="800,1100"
+		aggressor_points_per_turn="100,220" defender_points_per_turn="90,230"
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="Industrial" turns_between_movement="9,12" turns_of_open_fighting_per_activation="5,8"
+		icon_name="CleanSimple_SciFi068" icon_scale="0.5" color_hex="#78AB2D" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Graff Vindicated" description="It was pretty blatant. Vorsiber has ordered Dyad to provide proper quality tools." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Graff Blocked" description="Graff was unable to prevail against Dyad, and it would be too expensive for them to try again right now." />
+
+		<unit id="A_I" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="GraffIndustries"
+			min_to_spawn="4" max_to_spawn="8" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_I3" to_spawn="PMCTrooper" stance_to_start_in="CorpAggressorC" should_be_specific_cohort="LexTalionis"
+			min_to_spawn="1" max_to_spawn="3" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="A_S3" to_spawn="PMCWetworkSquad" stance_to_start_in="CorpAggressorD" should_be_specific_cohort="LexTalionis"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="80"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I1" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="DyadInstruments"
+			min_to_spawn="2" max_to_spawn="4" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I3" to_spawn="PMCTrooper" stance_to_start_in="CorpDefenderC" should_be_specific_cohort="Blackloop"
+			min_to_spawn="1" max_to_spawn="3" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S3" to_spawn="PMCWetworkSquad" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="Blackloop"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="80"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<!--BaurcorpMediaCoverage
+		********************************************************************************-->
+	<city_conflict id="BaurcorpMediaCoverage" display_name="Baurcorp Media Coverage" debug_log_conflict_details="false"
+		description="Baurcorp is furious at what it sees as slander happening on the City Feed. The offending material is hosted in Arkor data centers, and Arkor has refused to take it down."
+		strategy_tip="Arkor Nexus tends to enjoy hosting controversial commentary, so long as it doesn't involve themselves or Vorsiber."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="Baurcorp" defenders="ArkorNexus,NationalGroup"
+		points_for_victory="64400" aggressor_random_starting_points="100,600" defender_random_starting_points="800,1100"
+		aggressor_points_per_turn="100,220" defender_points_per_turn="90,230"
+		tags="OngoingCorporatePool" starts_random_conflict_in_tag_after_any_resolution="OngoingCorporatePool"
+		spawns_at_building_tag="DataCenter" turns_between_movement="9,12" turns_of_open_fighting_per_activation="5,8"
+		icon_name="SF2_Antenna" icon_scale="0.5" color_hex="#AB2D2D" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Media Removed" description="Arkor is unhappy, but has taken the offending material down." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Media Remains" description="Baurcorp is seething." />
+
+		<unit id="A_I" to_spawn="Infantry" stance_to_start_in="CorpAggressorA" should_be_specific_cohort="Baurcorp"
+			min_to_spawn="6" max_to_spawn="9" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I1" to_spawn="Infantry" stance_to_start_in="CorpDefenderA" should_be_specific_cohort="ArkorNexus"
+			min_to_spawn="2" max_to_spawn="4" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_I3" to_spawn="PMCTrooper" stance_to_start_in="CorpDefenderC" should_be_specific_cohort="NationalGroup"
+			min_to_spawn="1" max_to_spawn="2" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D_S3" to_spawn="PMCWetworkSquad" stance_to_start_in="CorpDefenderD" should_be_specific_cohort="NationalGroup"
+			min_to_spawn="0" max_to_spawn="1" lang_key_for_extra_info="" points_to_opposing_side_on_death="80"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.1" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="7" spawn_radius_max="12" spawn_radius_relaxed_max="18" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+
+	<!--
+	Consider for more:
+			Vericorp
+			NathVertical
+			PeakHomes
+	-->
+
+	<!--NathRevengeForNuke
+		********************************************************************************-->
+	<city_conflict id="NathRevengeForNuke" display_name="Nath Revenge For Nuke" debug_log_conflict_details="false"
+		description="Nath Vertical believes that Vericorp detonated a micro-nuke on some of their holdings."
+		strategy_tip="The reality is that middle-managers at Baurcorp assembled a 'ghost nuke,' which even their bosses don't know about. And you were the one who detonated it."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="NathVertical" defenders="Vericorp"
+		points_for_victory="124400" aggressor_random_starting_points="100,600" defender_random_starting_points="800,1100"
+		aggressor_points_per_turn="100,220" defender_points_per_turn="90,230"
+		tags="" auto_starts_if_key_contact_flag_true="BaurcorpMiddleManager:DetonatedNuke"
+		spawns_at_building_tag="PMCFightBuilding" turns_between_movement="3,5" turns_of_open_fighting_per_activation="4,6"
+		icon_name="FlatSkillC05" icon_scale="0.5" color_hex="#EF6363" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Nath Satisfied" description="From Nath's perspective, the offense has been paid in blood." />
+		<defender_victory_outcome id="D1" next_conflict_1=""
+			display_name="Vericorp Vindicated" description="From Vericorp's perspective, they have defended their honor." />
+
+		<unit id="Wa" to_spawn="MilitarySniper" stance_to_start_in="BlackOpsRevengeAgainstRival" should_be_specific_cohort="NathVertical"
+			max_security_clearance_of_seed_spot="2" points_to_opposing_side_on_death="125"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="20" lang_key_for_extra_info="Mngr_LongT_NathNukeRevenge"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"/>
+		<unit id="Ta" to_spawn="Infantry" stance_to_start_in="BlackOpsRevengeAgainstRival" should_be_specific_cohort="NathVertical"
+			max_security_clearance_of_seed_spot="2"  points_to_opposing_side_on_death="80"
+			min_to_spawn="5" max_to_spawn="6" max_to_have_extant_across_spawns="20" lang_key_for_extra_info="Mngr_LongT_NathNukeRevenge"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"/>
+
+		<unit id="Wb" to_spawn="MilitarySniper" stance_to_start_in="CorpDefendingAgainstRival" should_be_specific_cohort="Vericorp"
+			max_security_clearance_of_seed_spot="2"  points_to_opposing_side_on_death="125"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="20" lang_key_for_extra_info="Mngr_LongT_VericorpNukeDefense"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"/>
+		<unit id="Tb" to_spawn="Infantry" stance_to_start_in="CorpDefendingAgainstRival" should_be_specific_cohort="Vericorp"
+			max_security_clearance_of_seed_spot="2"  points_to_opposing_side_on_death="80"
+			min_to_spawn="5" max_to_spawn="6" max_to_have_extant_across_spawns="20" lang_key_for_extra_info="Mngr_LongT_VericorpNukeDefense"
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"/>
+		
+	</city_conflict>
+
+	<!--BOOKMARK - Lawyer Fights
+	******************************************************************************************************************** -->
+
+
+	<!--SolaristInformationSeeking
+		********************************************************************************-->
+	<city_conflict id="SolaristInformationSeeking" display_name="Solarist Information Seeking" debug_log_conflict_details="false"
+		description="Lawyers for a hardliner sect of the Solarism religion are entangled with legal requests to Vorsiber itself. They want to know why space launches have been shut down, and if that can be extended indefinitely."
+		strategy_tip="They've been arguing for the shutdown of the spaceport ever since it was built, centuries ago. This sect must be quite happy at the moment, but still they can't help but engage in legal challenges."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="OrthodoxHardlinerSolarists" defenders="VorsiberCivicAuthority"
+		points_for_victory="74400" aggressor_random_starting_points="800,1100" defender_random_starting_points="2800,3100"
+		aggressor_points_per_turn="75,150" defender_points_per_turn="80,140"
+		tags="OngoingLawyerPool" starts_random_conflict_in_tag_after_any_resolution="OngoingLawyerPool"
+		spawns_at_building_tag="ExecutiveSkyscraper" turns_between_movement="4,6" turns_of_open_fighting_per_activation="5,8"
+		icon_name="CleanSimple_SciFi081" icon_scale="0.5" color_hex="#2D9BAB" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Overruled" description="The Solarists won their legal challenge, but Vorsiber unilaterally overruled them anyway. That can happen. The law is whatever Vorsiber says." />
+		<defender_victory_outcome id="D1" next_conflict_1="ShusoMiningGrudge"
+			display_name="Motion Defeated" description="The Solarists were not able to fully execute their legal challenge." />
+
+		<unit id="A_I" to_spawn="LawyerForReligion" stance_to_start_in="LawyerPlaintiffA" should_be_specific_cohort="OrthodoxHardlinerSolarists"
+			min_to_spawn="3" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2" flees_along_with_all_others_that_flee_if_physically_attacked="true"/>
+		<unit id="D_I" to_spawn="CorporateLawyer" stance_to_start_in="LawyerDefenseA" should_be_specific_cohort="VorsiberCivicAuthority"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2" flees_along_with_all_others_that_flee_if_physically_attacked="true"/>
+	</city_conflict>
+
+	<!--BaurcorpTroopAllegations
+		********************************************************************************-->
+	<city_conflict id="BaurcorpTroopAllegations" display_name="Baurcorp Troop Allegations" debug_log_conflict_details="false"
+		description="Baurcorp is alleging that Tark is using civilian ground vehicles to re-distribute their troops in a bid to foster illegal excess loyalty in the infantry under their control."
+		strategy_tip="Tark vehemently denies this, as this is an incredibly serious accusation. They assert that they are simply allowing infantry to use civilian vehicles when on leave, to visit friends at other bases."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="Baurcorp" defenders="TarkDefenseSystems"
+		points_for_victory="74400" aggressor_random_starting_points="800,1100" defender_random_starting_points="2800,3100"
+		aggressor_points_per_turn="75,150" defender_points_per_turn="80,140"
+		tags="OngoingLawyerPool" starts_random_conflict_in_tag_after_any_resolution="OngoingLawyerPool"
+		spawns_at_building_tag="Courthouse" turns_between_movement="4,6" turns_of_open_fighting_per_activation="5,8"
+		icon_name="WEmblem147" icon_scale="0.5" color_hex="#AB2D2D" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="It's Treason" description="Baurcorp prevailed. Tark has been fined heavily, and extra inspectors are being added. A hundred vice presidents have been sent to prison." />
+		<defender_victory_outcome id="D1" next_conflict_1="ShusoMiningGrudge"
+			display_name="Unsuccessful Attempt" description="Vorsiber found Baurcorp's evidence to be lacking." />
+
+		<unit id="A_I" to_spawn="CorporateLawyer" stance_to_start_in="LawyerPlaintiffA" should_be_specific_cohort="Baurcorp"
+			min_to_spawn="3" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2" flees_along_with_all_others_that_flee_if_physically_attacked="true"/>
+		<unit id="D_I" to_spawn="CorporateLawyer" stance_to_start_in="LawyerDefenseA" should_be_specific_cohort="TarkDefenseSystems"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2" flees_along_with_all_others_that_flee_if_physically_attacked="true"/>
+	</city_conflict>
+
+	<!--PeakHomesAgriculturalComplaint
+		********************************************************************************-->
+	<city_conflict id="PeakHomesAgriculturalComplaint" display_name="Peak Homes Agricultural Complaint" debug_log_conflict_details="false"
+		description="Peak Homes is suing on behalf of a collective of their wealthiest clients. They claim that an unlawful fraction of the local agricultural output is being 'lost' to the black markets."
+		strategy_tip="This lost output tends to find its way to the lower classes, which their clients find frankly insulting."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="PeakHomes" defenders="YinshiWellness,AsiSolutions"
+		points_for_victory="52200" aggressor_random_starting_points="800,1100" defender_random_starting_points="300,1100"
+		aggressor_points_per_turn="65,160" defender_points_per_turn="90,130"
+		tags="OngoingLawyerPool" starts_random_conflict_in_tag_after_any_resolution="OngoingLawyerPool"
+		spawns_at_building_tag="Courthouse" turns_between_movement="4,6" turns_of_open_fighting_per_activation="5,8"
+		icon_name="CleanSimple_Nature02" icon_scale="0.5" color_hex="#50AB2D" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1=""
+			display_name="Successful Suit" description="Vorsiber has allocated extra inspectors to be sure that the agricultural corporations keep to the law. There will be less fresh produce available for the lower classes." />
+		<defender_victory_outcome id="D1" next_conflict_1="ShusoMiningGrudge"
+			display_name="Unsuccessful Attempt" description="Asi and Yinshi have successfully argued that they are within tolerances, and that their first duty is to profits." />
+
+		<unit id="A_I" to_spawn="CorporateLawyer" stance_to_start_in="LawyerPlaintiffA" should_be_specific_cohort="PeakHomes"
+			min_to_spawn="3" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2" flees_along_with_all_others_that_flee_if_physically_attacked="true"/>
+		<unit id="D_I1" to_spawn="CorporateLawyer" stance_to_start_in="LawyerDefenseA" should_be_specific_cohort="YinshiWellness"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2" flees_along_with_all_others_that_flee_if_physically_attacked="true"/>
+		<unit id="D_I2" to_spawn="CorporateLawyer" stance_to_start_in="LawyerDefenseA" should_be_specific_cohort="AsiSolutions"
+			min_to_spawn="2" max_to_spawn="6" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="6" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2" flees_along_with_all_others_that_flee_if_physically_attacked="true"/>
+	</city_conflict>
+
+	<!--BOOKMARK - Gang Fights
+	******************************************************************************************************************** -->
+
+	<!--MGang_BuzzardsVGrimecatsMinorGang_TruthScribes
+		********************************************************************************-->
+	<city_conflict id="MGang_BuzzardsVGrimecats" display_name="Buzzards Vs Grimecats" debug_log_conflict_details="false"
+		description="Gang activity is constant and low-intensity. But if you stir them up, it's likely to get much more violent."
+		strategy_tip="Most gangs don't last very long if they lose a conflict like this, so the smart ones stay out of it."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityConflicts_Basic"
+		aggressors="MinorGang_Buzzards" defenders="MinorGang_Grimecats"
+		points_for_victory="8400" aggressor_random_starting_points="100,3000" defender_random_starting_points="100,3000"
+		aggressor_points_per_turn="70,230" defender_points_per_turn="70,230"
+		tags="OngoingGangPool" starts_random_conflict_in_tag_after_any_resolution="OngoingGangPool"
+		spawns_at_building_tag="GangHangout" turns_between_movement="9,12" turns_of_open_fighting_per_activation="4,7" disband_losers="true"
+		icon_name="SI_Machine_Gun6" icon_scale="0.4" color_hex="#482DAB" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6">
+		<aggressor_victory_outcome id="A1" next_conflict_1="" display_name="" description="" />
+		<defender_victory_outcome id="D1" next_conflict_1="" display_name="" description="" />
+
+		<unit id="A" to_spawn="GangSharpshooter" stance_to_start_in="GangAggressorA" should_be_specific_cohort="MinorGang_Buzzards"
+			min_to_spawn="2" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="75"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="9" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+		<unit id="D" to_spawn="GangSharpshooter" stance_to_start_in="GangDefenderA" should_be_specific_cohort="MinorGang_Grimecats"
+			min_to_spawn="2" max_to_spawn="5" lang_key_for_extra_info="" points_to_opposing_side_on_death="125"
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1.3" max_to_have_extant_across_spawns="26"
+			spawn_radius_min="2" spawn_radius_max="9" spawn_radius_relaxed_max="14" max_security_clearance_of_seed_spot="2"/>
+	</city_conflict>
+
+	<city_conflict id="MGang_StallionsVSpades" display_name="Stallions Vs Spades" debug_log_conflict_details="false"
+		aggressors="MinorGang_Stallions" defenders="MinorGang_Spades"
+		copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Stallions" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_Spades" />
+	</city_conflict>
+
+	<city_conflict id="MGang_TruthScribesVSpades" display_name="Truth Scribes Vs Stone Angels" debug_log_conflict_details="false"
+		aggressors="MinorGang_TruthScribes" defenders="MinorGang_StoneAngels"
+		copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_TruthScribes" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_StoneAngels" />
+	</city_conflict>
+
+	<city_conflict id="MGang_RatsVSonicCollective" display_name="Rats Vs Sonic Collective" debug_log_conflict_details="false"
+		aggressors="MinorGang_Rats" defenders="MinorGang_SonicCollective"
+		copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Rats" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_SonicCollective" />
+	</city_conflict>
+
+	<city_conflict id="MGang_CoppernecksVNeonDreamers" display_name="Coppernecks Vs Sonic Collective" debug_log_conflict_details="false"
+		aggressors="MinorGang_Coppernecks" defenders="MinorGang_NeonDreamers"
+		copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Coppernecks" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_NeonDreamers" />
+	</city_conflict>
+
+	<city_conflict id="MGang_CyberEchoesVNeonDreamers" display_name="Cyber Echoes Vs Silken Ones" debug_log_conflict_details="false"
+		aggressors="MinorGang_CyberEchoes" defenders="MinorGang_SilkenOnes"
+		copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_CyberEchoes" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_SilkenOnes" />
+	</city_conflict>
+
+	<city_conflict id="MGang_BearsVRiders" display_name="Bears Vs Riders" debug_log_conflict_details="false"
+		aggressors="MinorGang_Bears" defenders="MinorGang_Riders"
+		copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Bears" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_Riders" />
+	</city_conflict>
+	
+	<!--Above this point are the standard starting gang fights -->
+
+	<city_conflict id="MGang_SiliconBardsVRazors" display_name="Silicon Bards Vs Razors" debug_log_conflict_details="false"
+		aggressors="MinorGang_SiliconBards" defenders="MinorGang_Razors"
+		points_for_victory="88400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_SiliconBards" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_Razors" />
+	</city_conflict>
+	
+	<city_conflict id="MGang_BeardsVIvoryForest" display_name="Beards Vs Ivory Forest" debug_log_conflict_details="false"
+		aggressors="MinorGang_Beards" defenders="MinorGang_IvoryForest"
+		points_for_victory="88400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Beards" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_IvoryForest" />
+	</city_conflict>
+
+	<city_conflict id="MGang_DiamondAlphaVFractalBlades" display_name="Diamond Alpha Vs Fractal Blades" debug_log_conflict_details="false"
+		aggressors="MinorGang_DiamondAlpha" defenders="MinorGang_FractalBlades"
+		points_for_victory="88400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_DiamondAlpha" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_FractalBlades" />
+	</city_conflict>
+
+	<city_conflict id="MGang_PigsVGammaMice" display_name="Pigs Vs Gamma Mice" debug_log_conflict_details="false"
+		aggressors="MinorGang_Pigs" defenders="MinorGang_GammaMice"
+		points_for_victory="88400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Pigs" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_GammaMice" />
+	</city_conflict>
+
+	<city_conflict id="MGang_AluminaParadoxVSilicaWizards" display_name="Alumina Paradox Vs Silica Wizards" debug_log_conflict_details="false"
+		aggressors="MinorGang_AluminaParadox" defenders="MinorGang_SilicaWizards"
+		points_for_victory="88400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_AluminaParadox" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_SilicaWizards" />
+	</city_conflict>
+
+	<city_conflict id="MGang_IronFlameVAlphaMiners" display_name="Iron Flame Vs Alpha Miners" debug_log_conflict_details="false"
+		aggressors="MinorGang_IronFlame" defenders="MinorGang_AlphaMiners"
+		points_for_victory="88400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_IronFlame" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_AlphaMiners" />
+	</city_conflict>
+
+	<city_conflict id="MGang_ModsVThousandDucks" display_name="Mods Vs Thousand Ducks" debug_log_conflict_details="false"
+		aggressors="MinorGang_Mods" defenders="MinorGang_ThousandDucks"
+		points_for_victory="88400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Mods" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_ThousandDucks" />
+	</city_conflict>
+
+	<city_conflict id="MGang_FeedersVHunters" display_name="Feeders Vs Hunters" debug_log_conflict_details="false"
+		aggressors="MinorGang_Feeders" defenders="MinorGang_Hunters"
+		points_for_victory="158400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Feeders" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_Hunters" />
+	</city_conflict>
+
+	<city_conflict id="MGang_ArcticPrisonersVDogwater" display_name="Arctic Prisoners Vs Dogwater" debug_log_conflict_details="false"
+		aggressors="MinorGang_ArcticPrisoners" defenders="MinorGang_Dogwater"
+		points_for_victory="158400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_ArcticPrisoners" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_Dogwater" />
+	</city_conflict>
+
+	<city_conflict id="MGang_DancersVFacelessMoon" display_name="Dancers Vs Faceless Moon" debug_log_conflict_details="false"
+		aggressors="MinorGang_Dancers" defenders="MinorGang_FacelessMoon"
+		points_for_victory="158400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Dancers" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_FacelessMoon" />
+	</city_conflict>
+
+	<city_conflict id="MGang_SlashersVJackals" display_name="Slashers Vs Jackals" debug_log_conflict_details="false"
+		aggressors="MinorGang_Slashers" defenders="MinorGang_Jackals"
+		points_for_victory="158400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Slashers" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_Jackals" />
+	</city_conflict>
+
+	<city_conflict id="MGang_LicensedLimboVGators" display_name="Licensed Limbo Vs Gators" debug_log_conflict_details="false"
+		aggressors="MinorGang_LicensedLimbo" defenders="MinorGang_Gators"
+		points_for_victory="158400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_LicensedLimbo" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_Gators" />
+	</city_conflict>
+
+	<city_conflict id="MGang_BloodDragonsVCarbideWolves" display_name="Blood Dragons Vs Carbide Wolves" debug_log_conflict_details="false"
+		aggressors="MinorGang_BloodDragons" defenders="MinorGang_CarbideWolves"
+		points_for_victory="158400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_BloodDragons" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_CarbideWolves" />
+	</city_conflict>
+
+	<city_conflict id="MGang_RageVViceroys" display_name="Rage Vs Viceroys" debug_log_conflict_details="false"
+		aggressors="MinorGang_Rage" defenders="MinorGang_Viceroys"
+		points_for_victory="158400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Rage" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_Viceroys" />
+	</city_conflict>
+
+	<city_conflict id="MGang_NovaVMoria" display_name="Nova Vs Moria" debug_log_conflict_details="false"
+		aggressors="MinorGang_Nova" defenders="MinorGang_Moria"
+		points_for_victory="52400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Nova" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_Moria" />
+	</city_conflict>
+
+	<city_conflict id="MGang_DecksVWindwards" display_name="Decks Vs Windwards" debug_log_conflict_details="false"
+		aggressors="MinorGang_Decks" defenders="MinorGang_Windwards"
+		points_for_victory="52400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Decks" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_Windwards" />
+	</city_conflict>
+
+	<city_conflict id="MGang_CeilsVTalons" display_name="Ceils Vs Talons" debug_log_conflict_details="false"
+		aggressors="MinorGang_Ceils" defenders="MinorGang_Talons"
+		points_for_victory="52400" copy_from="MGang_BuzzardsVGrimecats">
+		<unit id="A" is_partial_record="true" should_be_specific_cohort="MinorGang_Ceils" />
+		<unit id="D" is_partial_record="true" should_be_specific_cohort="MinorGang_Talons" />
+	</city_conflict>
+
+</root>

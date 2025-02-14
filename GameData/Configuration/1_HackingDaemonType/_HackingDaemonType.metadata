@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="daemon">
+
+	<attribute key="description" type="existing-override" is_required="true" />
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+	
+	<attribute key="hidden_icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use when the daemon is hidden."/>
+	<attribute key="visible_icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use when the daemon is visible."/>
+
+	<attribute key="hidden_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be used when this is hidden."/>
+	<attribute key="visible_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be used when this is visible."/>
+	<attribute key="visible_idle_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be used when this is visible, but not willing to move right now."/>
+
+	<attribute key="hidden_hdr_intensity" type="float-textbox" min="-2" max="10" default="1" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The intensity of the hdr applied to the color in this context."/>
+	<attribute key="visible_hdr_intensity" type="float-textbox" min="-2" max="10" default="1" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The intensity of the hdr applied to the color in this context."/>
+	<attribute key="visible_idle_hdr_intensity" type="float-textbox" min="-2" max="10" default="1" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The intensity of the hdr applied to the color in this context."/>
+	
+	<attribute key="hidden_scale" type="float-textbox" min="0.1" max="200" default="1" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The scale of the icon when it is hidden."/>
+	<attribute key="visible_scale" type="float-textbox" min="0.1" max="200" default="1" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The scale of the icon when it is visible."/>
+
+	<attribute key="required_danger_level" type="int-textbox" min="0" max="9000" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The total danger level of the hacking target that must be present for this to seed."/>
+	<attribute key="reduces_danger_level_by" type="int-textbox" min="0" max="9000" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="When this seeds, how much the danger level goes down."/>
+	<attribute key="max_to_seed" type="int-textbox" min="0" max="20" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The maximum number of these that can seed at once in a given daemon."/>
+	<attribute key="seed_weight" type="int-textbox" min="1" max="1000" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="How likely a daemon is to seed compared to others wherever it is used. The value of 100 is normal."/>
+	<attribute key="is_hostile_daemon" type="bool" default="false"
+		tooltip="This is used to trigger evens when 'all hostile daemons' are destroyed, and things of that nature." />
+	<attribute key="can_daemon_be_hunted_by_friendly_daemons" type="bool" default="false"
+		tooltip="This is used to let us know when friendly daemons can hunt this kind of daemon." />
+	<attribute key="hunts_hostile_daemons" type="bool" default="false"
+		tooltip="If true, then this can destroy hostile daemons." />
+	<attribute key="always_show_strategy_tip" type="bool" default="false"
+		tooltip="If true, then always show the strategy tip without any need to expand the tooltip." />
+
+	<attribute key="forces_numeric_substrate_to" type="int-textbox" is_required="false" min="0" max="99" default="0" content_width_px="80"
+		tooltip="When used, this causes the underlying number to be this value if it is higher than zero." />
+
+	<attribute key="cost_type_to_corrupt" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this costs some resource to corrupt it, what is that resource?" />
+	<attribute key="cost_amount_to_corrupt" type="int-textbox" is_required="false" min="0" max="99" default="0" content_width_px="80"
+		tooltip="If this costs some resource to corrupt it, how much is required?" />
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the daemon logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the daemon logic in the specified external dll."/>
+
+	<attribute key="on_death" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which sound effect to use when it dies?" />
+
+	<attribute key="instead_of_death_becomes" type="node-dropdown" is_required="false" node_source="HackingDaemonType" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If this becomes something else when it would normally die, what does it become?" />
+
+	<attribute key="status_to_apply_to_target_on_death" type="node-dropdown" is_required="false" node_source="ActorStatus" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, when this daemon dies, a status is applied to the hacking target." />
+	<attribute key="badge_to_apply_to_target_on_death" type="node-dropdown" is_required="false" node_source="ActorBadge" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, when this daemon dies, a badge is applied to the hacking target." />
+
+	<attribute key="requires_meta_flag" type="node-dropdown" is_required="false" node_source="MetaFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, this daemon cannot seed unless that meta flag is true." />
+	<attribute key="requires_city_flag" type="node-dropdown" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, this daemon cannot seed unless that city flag is true." />
+
+	<attribute key="lang_key_for_known_entity_type" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+		tooltip="When this is discovered, what is its entity type described as?" />
+	<attribute key="lang_key_for_hidden_entity_type" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+		tooltip="When this is hidden, what is its entity type described as?" />
+
+	<attribute key="direct_added_skill_type1" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+		tooltip="The unit choosing this interaction will gain this amount of a skill. If they have a bulk variant, the bulk variant also gets it. Recolor variants do not get it." />
+	<attribute key="direct_added_skill_1_amount" type="int-textbox" min="0" max="5000" content_width_px="150" is_required="true"
+		tooltip="This is the amount of skill added. If it's less than or equal to 0, then it will be ignored."/>
+
+	<attribute key="direct_added_skill_type2" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+		tooltip="The unit choosing this interaction will gain this amount of a skill. If they have a bulk variant, the bulk variant also gets it. Recolor variants do not get it." />
+	<attribute key="direct_added_skill_2_amount" type="int-textbox" min="0" max="5000" content_width_px="150" is_required="true"
+		tooltip="This is the amount of skill added. If it's less than or equal to 0, then it will be ignored."/>
+
+	<attribute key="direct_added_skill_type3" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+		tooltip="The unit choosing this interaction will gain this amount of a skill. If they have a bulk variant, the bulk variant also gets it. Recolor variants do not get it." />
+	<attribute key="direct_added_skill_3_amount" type="int-textbox" min="0" max="5000" content_width_px="150" is_required="true"
+		tooltip="This is the amount of skill added. If it's less than or equal to 0, then it will be ignored."/>
+
+	<attribute key="resource_change_1" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+		tooltip="The amount of resource the player either gains or has to pay. If they can gain it but not store it, this action can still be done. If they can't afford it, then they can't do it, though." />
+	<attribute key="resource_change_1_amount" type="int-textbox" min="-500000" max="500000" content_width_px="150" is_required="true"
+		tooltip="This is the amount of resource that is added or removed. As long as it's not 0, it will be evaluated."/>
+
+	<attribute key="resource_change_2" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+		tooltip="The amount of resource the player either gains or has to pay. If they can gain it but not store it, this action can still be done. If they can't afford it, then they can't do it, though." />
+	<attribute key="resource_change_2_amount" type="int-textbox" min="-500000" max="500000" content_width_px="150" is_required="true"
+		tooltip="This is the amount of resource that is added or removed. As long as it's not 0, it will be evaluated."/>
+
+	<attribute key="resource_change_3" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="false"
+		tooltip="The amount of resource the player either gains or has to pay. If they can gain it but not store it, this action can still be done. If they can't afford it, then they can't do it, though." />
+	<attribute key="resource_change_3_amount" type="int-textbox" min="-500000" max="500000" content_width_px="150" is_required="true"
+		tooltip="This is the amount of resource that is added or removed. As long as it's not 0, it will be evaluated."/>
+
+	<sub_node id="included_in">
+		<attribute key="tag" type="node-dropdown" node_source="HackingDaemonTag" content_width_px="200" is_required="true"
+			tooltip="This makes this daemon included in a tag. Which one?" />
+		<attribute key="value" type="bool" default="false"
+			tooltip="Normally this should be true. However, the ability to set false is here so that modders can turn a tag off if desired." />
+	</sub_node>
+	
+	<sub_node id="math_int">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="int_min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="int_max" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<sub_node id="math_float">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="true" can_localization_merge="true"
+			tooltip="Player-visible name for this number, if it's going to be shown to them." />
+		<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="false"
+			tooltip="Which icon to use for the small interfaces."/>
+		<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+			tooltip="Hex code for a color that will be used for the shape icon."/>
+		<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+</root>

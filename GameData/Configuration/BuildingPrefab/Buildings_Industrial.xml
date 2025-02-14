@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_prefab id="FactoryA" type="LowTechFactory" display_name="Factory A"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Factory A.prefab">
+		<floors_group min="-6" max="-1" floor_size="1.4,0.4,2.1"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.4,0.55,2.1"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="60"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2080"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="250"/>
+		<building_marker prefab="RoofLine" offset="0,-0.13,0.44" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="FactoryB" type="LowTechFactory" display_name="Factory B"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Factory B.prefab">
+		<floors_group min="-6" max="-1" floor_size="2,0.4,2.3"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="2,0.55,2.3"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="80"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1400"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="270"/>
+		<building_marker prefab="RoofLine" offset="0,-0.84,0.46" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="FactoryC" type="LowTechFactory" display_name="Factory C"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Factory C.prefab">
+		<floors_group min="-6" max="-1" floor_size="1.4,0.4,2.1"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.4,0.55,2.1"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="60"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1400"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="230"/>
+		<building_marker prefab="RoofLine" offset="0,-0.13,0.44" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="FactoryE" type="LowTechFactory" display_name="Factory E"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Factory E.prefab">
+		<floors_group min="-6" max="-1" floor_size="2.1,0.4,2"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="2.1,0.5,2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="3" max="3" floor_size="0.6,0.8,0.6"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="90"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1880"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="260"/>
+		<building_marker prefab="AntennaOneLight" offset="0.36,-1.2,-0.62"/>
+	</building_prefab>
+
+	<building_prefab id="FactoryF" type="LowTechFactory" display_name="Factory F"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Factory F.prefab">
+		<floors_group min="-6" max="-1" floor_size="2.1,0.4,2"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="2.1,0.5,2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="3" max="3" floor_size="0.6,0.8,0.6"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="120"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1240"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="220"/>
+		<building_marker prefab="AntennaOneLight" offset="0.36,-1.2,-0.62"/>
+	</building_prefab>
+
+	<building_prefab id="FactoryG" type="LowTechFactory" display_name="Factory G"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Factory G.prefab">
+		<floors_group min="-6" max="-1" floor_size="2,0.4,1.4"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.2,0.55,1.4"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="1.5,0.55,1.4"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="50"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1600"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="300"/>
+		<building_marker prefab="RoofLine" offset="-0.4,-0.88,0.0" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="FactoryH" type="LowTechFactory" display_name="Factory H"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Factory H.prefab">
+		<floors_group min="-6" max="-1" floor_size="2,0.4,1.4"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2,0.55,1.4"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="2" floor_size="2,0.3,0.6"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="120"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="30"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1920"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="200"/>
+		<building_marker prefab="RoofLine" offset="0.0,-1.62,-0.36" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="ChemicalPlantA" type="ChemicalPlant" display_name="Chemical Plant A"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Chemical Plant A.prefab">
+		<floors_group is_underground="true" min="-4" max="-1" floor_size="1.4,0.4,2.5" percentage_work_space="60" percentage_storage_space="40"/>
+		<floors_group min="0" max="0" floor_size="1.4,0.5,2.5" percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="60"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="80"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="640"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="120"/>
+		<building_marker prefab="Skylight" offset="-0.0,-0.18,-0.23"/>
+	</building_prefab>
+
+	<building_prefab id="ChemicalPlantB" type="ChemicalPlant" display_name="Chemical Plant B"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Chemical Plant B.prefab">
+		<floors_group is_underground="true" min="-4" max="-1" floor_size="2.4,0.4,1.5" percentage_work_space="60" percentage_storage_space="40"/>
+		<floors_group min="0" max="1" floor_size="2.4,0.5,1.5" percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="60"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="80"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="640"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="120"/>
+		<building_marker prefab="Skylight" offset="0.37,-0.02,0.0"/>
+	</building_prefab>
+
+	<building_prefab id="ChemicalPlantC" type="ChemicalPlant" display_name="Chemical Plant C"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Chemical Plant C.prefab">
+		<floors_group is_underground="true" min="-4" max="-1" floor_size="2.4,0.4,1.5" percentage_work_space="60" percentage_storage_space="40"/>
+		<floors_group min="0" max="1" floor_size="2.4,0.5,1.5" percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="60"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="80"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="640"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="120"/>
+		<building_marker prefab="Skylight" offset="-0.45,-0.00,0.94"/>
+	</building_prefab>
+
+	<building_prefab id="IndustrialHighTechFactoryA" type="HighTechFactory" display_name="High Tech Factory A"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/High Tech Factory A.prefab">
+		<floors_group is_underground="true" min="-4" max="-1" floor_size="1.9,0.4,1.9" percentage_work_space="60" percentage_storage_space="40"/>
+		<floors_group min="0" max="0" floor_size="1.9,0.85,1.9" percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="40"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="70"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="640"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="160"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.8,-1.53,-0.46"/>
+	</building_prefab>
+
+	<building_prefab id="IndustrialHighTechFactoryB" type="HighTechFactory" display_name="High Tech Factory B"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/High Tech Factory B.prefab">
+		<floors_group is_underground="true" min="-4" max="-1" floor_size="1.6,0.4,2.2" percentage_work_space="60" percentage_storage_space="40"/>
+		<floors_group min="0" max="0" floor_size="1.6,0.6,2.2" percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="50"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="80"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="640"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="160"/>
+		<building_marker prefab="Skylight" offset="-0.1,-0.87,-0.46"/>
+	</building_prefab>
+
+	<building_prefab id="IndustrialHighTechFactoryC" type="HighTechFactory" display_name="High Tech Factory C"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/High Tech Factory C.prefab">
+		<floors_group is_underground="true" min="-4" max="-1" floor_size="1.9,0.4,1.9" percentage_work_space="60" percentage_storage_space="40"/>
+		<floors_group min="0" max="1" floor_size="1.9,0.5,1.9" percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="50"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="100"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="30"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="640"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="200"/>
+		<building_marker prefab="Skylight" offset="-0.01,-0.32,0.72"/>
+	</building_prefab>
+
+	<building_prefab id="IndustrialHighTechFactoryD" type="HighTechFactory" display_name="High Tech Factory D"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/High Tech Factory D.prefab">
+		<floors_group is_underground="true" min="-4" max="-1" floor_size="1.7,0.4,1.7" percentage_work_space="60" percentage_storage_space="40"/>
+		<floors_group min="0" max="0" floor_size="1.7,0.5,1.7" percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="1" floor_size="1,0.5,1.0" percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="50"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="100"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="30"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="640"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="200"/>
+		<building_marker prefab="Skylight" offset="-0.18,-0.69,-0.26"/>
+	</building_prefab>
+
+	<building_prefab id="LowTechFactoryA" type="LowTechFactory" display_name="Low Tech Factory A"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Low Tech Factory A.prefab">
+		<floors_group min="-6" max="-1" floor_size="1.8,0.4,2.1"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.8,0.55,2.1"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="60"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="2080"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="250"/>
+		<building_marker prefab="Skylight" offset="-0.0,-0.63,-0.0"/>
+	</building_prefab>
+
+	<building_prefab id="LowTechFactoryB" type="LowTechFactory" display_name="Low Tech Factory B"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Low Tech Factory B.prefab">
+		<floors_group min="-6" max="-1" floor_size="2,0.4,1.3"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2,0.55,1.3"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="80"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1400"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="270"/>
+		<building_marker prefab="Skylight" offset="-0.55,-0.73,0.1"/>
+	</building_prefab>
+
+	<building_prefab id="LowTechFactoryC" type="LowTechFactory" display_name="Low Tech Factory C"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Low Tech Factory C.prefab">
+		<floors_group min="-6" max="-1" floor_size="1.9,0.4,2.1"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.9,0.35,2.1"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="60"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1400"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="230"/>
+		<building_marker prefab="Skylight" offset="-0.05,-0.17,0.23"/>
+	</building_prefab>
+
+	<building_prefab id="LowTechFactoryD" type="LowTechFactory" display_name="Low Tech Factory D"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Low Tech Factory D.prefab">
+		<floors_group min="-6" max="-1" floor_size="1.6,0.4,2"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.6,0.4,2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="90"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1880"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="260"/>
+		<building_marker prefab="Skylight" offset="0.03,-0.43,0.21"/>
+	</building_prefab>
+
+	<building_prefab id="LowTechFactoryE" type="LowTechFactory" display_name="Low Tech Factory E"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Low Tech Factory E.prefab">
+		<floors_group min="-6" max="-1" floor_size="2.1,0.4,2"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="2.1,0.4,2"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="120"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1880"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="220"/>
+		<building_marker prefab="AntennaOneLight" offset="-0.32,-0.36,-0.55" scale_multiplier="0.7"/>
+	</building_prefab>
+
+	<building_prefab id="LowTechFactoryF" type="LowTechFactory" display_name="Low Tech Factory F"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Low Tech Factory F.prefab">
+		<floors_group min="-6" max="-1" floor_size="2.2,0.4,1.8"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.2,0.55,1.8"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="1" floor_size="1.5,0.55,1.8"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="50"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="15"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1600"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="300"/>
+		<building_marker prefab="Skylight" offset="-0.01,-0.61,-0.91" />
+	</building_prefab>
+
+	<building_prefab id="NanotechResearchA" type="NanoResearchCenter" display_name="Nanotech Research A"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Nanotech Research A.prefab">
+		<floors_group min="-9" max="-1" floor_size="1.7,0.4,1.7"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.7,0.55,1.7"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="1" floor_size="1.5,0.55,1.8"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="60"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="200"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="25"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="800"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="30"/>
+		<building_marker prefab="Skylight" offset="-0.0,-0.73,-0.0"/>
+	</building_prefab>
+
+	<building_prefab id="NanotechResearchB" type="NanoResearchCenter" display_name="Nanotech Research B"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Nanotech Research B.prefab">
+		<floors_group min="-9" max="-1" floor_size="1.1,0.4,1.7"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.55,1.7"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="1" max="1" floor_size="1.1,0.45,1.8"  percentage_work_space="95" percentage_storage_space="5"/>
+		<floors_group min="2" max="4" floor_size="0.65,0.4,0.65" percentage_work_space="70" percentage_storage_space="30"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="60"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="200"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="25"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="800"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="30"/>
+		<building_marker prefab="Skylight" offset="-0.0,-0.68,0.66"/>
+	</building_prefab>
+
+	<building_prefab id="NanotechResearchC" type="NanoResearchCenter" display_name="Nanotech Research C"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Nanotech Research C.prefab">
+		<floors_group min="-9" max="-1" floor_size="1.8,0.4,2.7"  percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.8,0.85,2.7"  percentage_work_space="95" percentage_storage_space="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="60"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="200"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="25"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="800"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="30"/>
+		<building_marker prefab="Skylight" offset="0.02,-0.61,0.68"/>
+	</building_prefab>
+
+	<!-- These are decorative -->
+
+	<building_prefab id="ChimneyConeA" type="IndustrialChimney" display_name="Chimney Cone A"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Chimney Cone A.prefab">
+	</building_prefab>
+
+	<building_prefab id="ChimneyConeB" type="IndustrialChimney" display_name="Chimney Cone B"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Chimney Cone B.prefab">
+	</building_prefab>
+
+	<building_prefab id="ChimneyScaff" type="IndustrialChimney" display_name="Chimney Scaff"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Chimney Scaff.prefab">
+	</building_prefab>
+
+	<building_prefab id="ChimneySpikeA" type="IndustrialChimney" display_name="Chimney Spike A"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Chimney Spike A.prefab">
+	</building_prefab>
+
+	<building_prefab id="ChimneySpikeB" type="IndustrialChimney" display_name="Chimney Spike B"
+		path_to_placeable="Assets/__Library/Buildings/Industrial/Chimney Spike B.prefab">
+	</building_prefab>
+	
+</root>

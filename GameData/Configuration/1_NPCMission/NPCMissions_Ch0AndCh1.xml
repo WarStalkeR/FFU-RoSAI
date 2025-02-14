@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Ch0_HomicideInvestigation
+	*************************************************************************-->
+	<!--
+	<mission id="Ch0_HomicideInvestigation" display_name="Homicide Investigation"
+		is_hostile_to_player="true"
+		progress_points_needed_to_complete="2100" turns_before_expiration="4" progress_label_text="Investigation Progress"
+		description="An unusually intense investigation has been launched on a murder at an unsanctioned lab."
+		strategy_tip="It turns out that nobody cares about the victim. But what they were working on has captured the attention of SecForce."
+		icon_name="SK_CrimeScene1" color_hex="#ffb830" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		cohort="NanotechInvestigators" can_start_without_trigger="false" max_times_can_be_started="1" lockdown_while_active="Ch0HomicideLockdown"
+		city_flag_1_on_expires="" city_flag_1_on_complete=""
+		other_key_message_on_expires="Ch0WonInvestigation" other_key_message_on_complete="Ch0LostInvestigation"
+		on_active_complete="Ch0_Homicide_Bad" on_expired_complete="Ch0_Homicide_Good" expiration_reward_group="EarlyMissionRewards" expiration_reward_inspiration_type="ThwartedMission">
+		<flag id="DetectivesAttacked" />
+		<flag id="RebelsTippedOff" />
+	</mission>
+	-->
+	<!--on_start="StartMissionMild"-->
+
+	<!--Ch1_DogfightingRing
+	*************************************************************************-->
+	<mission id="Ch1_DogfightingRing" display_name="Dogfighting Ring"
+		is_hostile_to_player="false"
+		progress_points_needed_to_complete="1400" turns_before_expiration="4" progress_label_text="Rescue Progress"
+		description="The nomad families are breaking up a dogfighting ring run by gangs. They probably have it under control."
+		strategy_tip="You can help without the nomads turning on you. But the gangs won't take kindly to it."
+		icon_name="CleanSimple_Animal001" color_hex="#FF6530" color_hdr_intensity="0.5" color_hovered_hdr_intensity="1.6"
+		cohort="NomadFamilies" can_start_without_trigger="false" max_times_can_be_started="1" trigger_from_event_note="You can potentially just watch."
+		city_flag_1_on_expires="" city_flag_1_on_complete=""
+		on_active_complete="Ch0_Homicide_Good" on_expired_complete="Ch0_Homicide_Bad" active_completion_reward_group="ValuableSideMissionRewards" active_completion_reward_inspiration_type="AidedMission">
+		<flag id="NomadsAttacked" />
+	</mission>
+	
+</root>

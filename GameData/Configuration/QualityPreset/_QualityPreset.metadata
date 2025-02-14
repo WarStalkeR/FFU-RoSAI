@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="quality_preset_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="is_custom" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this is true, then nothing else should be set. This is the entry that is selected when the player chooses their own settings instead of using a preset." />
+
+	<sub_node id="string_setting">
+		<attribute key="id" type="node-dropdown" node_source="Setting" content_width_px="130" is_required="true"
+			tooltip="What setting do we wish to assign?" />
+
+		<attribute key="value" type="string" is_required="true" maxlength="200" content_width_px="200" linebreak_after="PreferNot"
+			tooltip="The string value to set." />
+	</sub_node>
+
+	<sub_node id="int_setting">
+		<attribute key="id" type="node-dropdown" node_source="Setting" content_width_px="130" is_required="true"
+			tooltip="What setting do we wish to assign?" />
+
+		<attribute key="value" type="int-textbox" min="-1000000" max="1000000" content_width_px="200" is_required="true"
+			tooltip="The int value to set."/>
+	</sub_node>
+
+	<sub_node id="float_setting">
+		<attribute key="id" type="node-dropdown" node_source="Setting" content_width_px="130" is_required="true"
+			tooltip="What setting do we wish to assign?" />
+
+		<attribute key="value" type="float-textbox" min="-1000000" max="1000000" content_width_px="200" is_required="true"
+			tooltip="The float value to set."/>
+	</sub_node>
+
+	<sub_node id="bool_setting">
+		<attribute key="id" type="node-dropdown" node_source="Setting" content_width_px="130" is_required="true"
+			tooltip="What setting do we wish to assign?" />
+
+		<attribute key="value" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+			tooltip="The boolean value to set." />
+	</sub_node>
+	
+</root>

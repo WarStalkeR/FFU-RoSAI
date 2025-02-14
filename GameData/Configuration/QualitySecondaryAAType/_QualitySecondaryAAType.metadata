@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="secondary_aa_type">
+
+	<attribute key="use_fxaa" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="Should only be true if none of the other bools are true." />
+
+	<attribute key="use_taa" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="Should only be true if none of the other bools are true." />
+
+	<attribute key="use_smaa" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="Should only be true if none of the other bools are true." />
+
+	<attribute key="smaa_level" type="int-textbox" min="0" max="2" content_width_px="150"
+		tooltip="0 = low, 1 = medium, 2 = high. Only applies when using SMAA."/>
+	
+</root>

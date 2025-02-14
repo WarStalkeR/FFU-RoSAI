@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--SecForce Behaviors
+		***********************************************************-->
+	<stance id="SecForceConfused" display_name="Confused"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Thinking about what to do next."
+		icon_name="HM_EmotionQuestion2" icon_color="#50E4B5" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"
+		switch_to_stance_when_damaged="SecForceRage"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>		
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+	</stance>
+
+	<stance id="SecForceRage" display_name="Rage"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="It's not a good time to cross their path."
+		icon_name="CleanSimple_SkillC096" icon_color="#F77F35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>		
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+	</stance>
+
+	<stance id="Ch0SecForceInvestigatingCrime" display_name="Investigating Crime"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Hearing about witnesses or evidence over the radio, then going to check them out."
+		icon_name="FlatSkillB_magnifier" icon_color="#50E4B5" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<action_consideration id="Investigate" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="Ch0InvestigateCrime"
+			target_building_tag="AlmostAnyButNotSuperRestricted" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="12"
+			preferred_min_distance_of_objective_from_current_location="2" preferred_max_distance_of_objective_from_current_location="6"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"/>
+	</stance>
+
+	<stance id="SecForceInvestigatingCrime" display_name="Investigating Crime"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Hearing about witnesses or evidence over the radio, then going to check them out."
+		icon_name="FlatSkillB_magnifier" icon_color="#50E4B5" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<action_consideration id="Investigate" sort_order="100" chance_of_attempting="80" objective_to_attempt_to_start="InvestigateCrime"
+			target_building_tag="AlmostAnyButNotSuperRestricted" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="30"
+			preferred_min_distance_of_objective_from_current_location="2" preferred_max_distance_of_objective_from_current_location="10"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"/>
+	</stance>
+	
+	<stance id="SecForceTrackingFugitives" display_name="Tracking Fugitives"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="They can't evade us forever."
+		icon_name="FlatSkillB_magnifier" icon_color="#BB50E4" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<action_consideration id="Search" sort_order="100" chance_of_attempting="80" objective_to_attempt_to_start="SearchForFugitives"
+			target_building_tag="AlmostAnyButNotSuperRestricted" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="30"
+			preferred_min_distance_of_objective_from_current_location="2" preferred_max_distance_of_objective_from_current_location="10"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"/>
+	</stance>
+
+	<stance id="SecForceTailingPlayerSuspect" display_name="Tailing Suspect"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Won't attack unless fired-upon."
+		icon_name="SW_PoliceBadge" icon_color="#2DC7EC" icon_color_hdr_intensity="1.4" icon_scale="0.6"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="10"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" will_hold_fire_against_regular_machines_except_those_aggroed="true"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<action_consideration id="RunAfterWatchedBySecForce" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterWatchedBySecForce" />
+	</stance>
+
+	<stance id="SecForceSecuringArea" display_name="Securing Area"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Focused on the safety of their coworkers."
+		icon_name="FlatInnocent_13" icon_color="#DC3A3A" icon_color_hdr_intensity="2.3" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>		
+		<action_consideration id="RunAfterThreats" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterThreatsNearMission" />
+		<action_consideration id="BackToMission" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+
+	<stance id="SecForceDefendingArea" display_name="Defending Area"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="They are not really meant to be deployed in a military capacity, but the city is under attack and so they do what they must."
+		icon_name="CleanSimple_Shield09" icon_color="#DC3A3A" icon_color_hdr_intensity="2.3" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterThreats" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterThreatsNearMission" />
+		<action_consideration id="BackToMission" sort_order="300" chance_of_attempting="100" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+
+	<stance id="SecForceCivilWar" display_name="Civil War"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="They are not really meant to be deployed in a military capacity, civil war has broken out."
+		icon_name="Pw_Ornament26" icon_color="#C43ADC" icon_color_hdr_intensity="2.3" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="false" will_hold_fire_against_non_disruptive="false"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1" is_hyper_aggressive_against_all_but_its_own_cohort="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="SecForceRespondingToCall" display_name="Responding To Call"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Someone has reported a disturbance, and they're here to check on things."
+		icon_name="CleanSimple_SkillB110" icon_color="#F77F35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>		
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+	</stance>
+
+	<stance id="SecForceRespondingToRebelAmbush" display_name="Responding To Ambush"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Rebels routinely ambush SecForce, usually to little effect. SecForce always has response teams ready to quickly respond to disturbances of this sort."
+		icon_name="FlatInnocent_13" icon_color="#DC3A3A" icon_color_hdr_intensity="2.4" icon_scale="0.7"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" will_hold_fire_against_regular_machines_except_those_aggroed="false"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="AndroidSecurityDetail" display_name="Security Detail"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These androids are here to protect their clients and drive off interlopers."
+		icon_name="SomethingWing7" icon_color="#F77F35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>		
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="AndroidSecurityResponseTeam" display_name="Security Response Team"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These androids are contracted to contain a security incident and avenge lost property."
+		icon_name="SomethingWingblade" icon_color="#F75A35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="SecurityResponseTeam" display_name="Security Response Team"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="SecForce is here to contain a security incident and avenge lost property."
+		icon_name="Pw_Ornament9" icon_color="#F74E35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="AndroidPrisonResponseTeam" display_name="Prison Response Team"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="An alarm has sounded in a prison. These androids are here to put a stop to it."
+		icon_name="DebateRight3X" icon_color="#F77F35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="0"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="PrisonResponseTeam" display_name="Prison Response Team"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="An alarm has sounded in a prison. Vorsiber themselves are here to investigate."
+		icon_name="DebateRight3X" icon_color="#F74E35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="0"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="AndroidHospitalResponseTeam" display_name="Hospital Response Team"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="An alarm has sounded in a hospital. These androids are here to put a stop to it."
+		icon_name="DebateRight3X" icon_color="#F77F35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="0"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="SecForceSecuringIP" display_name="Securing IP"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Here to prevent the leak of intellectual property."
+		icon_name="CleanSimple_SkillC031" icon_color="#EFCC24" icon_color_hdr_intensity="2" icon_scale="0.5"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="ActionOverTimeHunter" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterEnemiesWeCanShootDoingActionOverTime" sort_order="100" chance_of_attempting="100" action_to_attempt="RunAfterEnemiesWeCanShootDoingActionOverTime" />
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterMachineStructures" sort_order="180" chance_of_attempting="60" action_to_attempt="RunAfterMachineStructures" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+		<action_consideration id="RunAfterMachineStructuresFallback" sort_order="500" chance_of_attempting="100" action_to_attempt="RunAfterMachineStructures" />
+	</stance>
+
+	<stance id="SecForceSecuringIP_IgnoresStructures_EarlyTargeting" display_name="Securing IP"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Here to prevent the leak of intellectual property."
+		icon_name="CleanSimple_SkillC031" icon_color="#EFCC24" icon_color_hdr_intensity="2" icon_scale="0.5"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		will_hold_fire_against_regular_machine_structures="false" will_ignore_damage_to_machine_structures_in_damage_calculations="true"
+		targeting_logic="ActionOverTimeHunter" targeting_order="10"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterEnemiesWeCanShootDoingActionOverTime" sort_order="100" chance_of_attempting="100" action_to_attempt="RunAfterEnemiesWeCanShootDoingActionOverTime" />
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+	</stance>
+
+	<stance id="SecForceSuperCruiserEnhancedSecurityPatrol" display_name="Enhanced Security Patrol"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Extra patrols are being run to cut down on dissidents in the wake of the Vorsiber assassinations. Those deaths happened well outside the city, but perhaps all the cities in the region are getting this treatment."
+		icon_name="WEmblem109" icon_color="#AE350B" icon_color_hdr_intensity="2.5" icon_scale="0.9"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false" is_stance_always_drawn_in_streets="false" is_stance_always_drawn_in_city_map="false"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="false"
+		will_attack_outcast_machines_at_or_above_level="10" will_hold_fire_if_at_full_health="true" this_unit_acts_before_player_looks_at_them="true" this_unit_is_never_ever_watched_by_the_player="true"
+		is_beneficial_to_the_cohort_guard="true" is_on_orders_from_the_local_megacorp="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="Wander" sort_order="100" chance_of_attempting="100" action_to_attempt="Wander"/>
+	</stance>
+
+	<stance id="SecForceSuperCruiserRetaliation" display_name="Retaliation"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="This cruiser is on a mission of revenge."
+		icon_name="SomethingX" icon_color="#AB290B" icon_color_hdr_intensity="2.5" icon_scale="1.2"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="0"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+		<action_consideration id="RunAfterMachineStructuresFallback" sort_order="500" chance_of_attempting="100" action_to_attempt="RunAfterMachineStructures" />
+	</stance>
+
+	<stance id="SecForceCruiserHuntingAnimals" display_name="Hunting Animals"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="There are alarming reports coming out of the city of vicious animals running rampant."
+		icon_name="SomethingFallingDragon" icon_color="#AB290B" icon_color_hdr_intensity="2.5" icon_scale="1.2"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="0"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="SecForceUnitHuntingAnimals" display_name="Hunting Animals"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="There are alarming reports coming out of the city of vicious animals running rampant."
+		icon_name="SomethingFallingDragon" icon_color="#AB290B" icon_color_hdr_intensity="2.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="0"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="SecForceHackerIntrusionPrevention" display_name="Intrusion Prevention"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Something seems off, but no alarms have been sounded so far. This hacker is on high alert for intruders. Directly attacking them only makes it worse."
+		icon_name="WEmblem254" icon_color="#AE350B" icon_color_hdr_intensity="2" icon_scale="0.5"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true" is_considered_enemy_hacker="true" is_never_targeted_by_npcs="true"
+		will_attack_outcast_machines_at_or_above_level="1" is_considered_enemy_hacker_that_threatens_infiltrators="true"
+		targeting_logic="ActionOverTimeHunter" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5" immediately_do_action_when_damaged_by_player="BigAlarmAgainstInfiltrator"
+		>
+		<action_consideration id="DamageInfiltrators" sort_order="100" chance_of_attempting="100" action_to_attempt="DamageInfiltrators" />
+	</stance>
+
+	<stance id="SecForceHackerIntrusionSupport" display_name="Intrusion Support"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Providing support against known intruders. Highly effective. Prioritize destroying them -- direct attacks are fine."
+		icon_name="CleanSimple_SkillB109" icon_color="#AE350B" icon_color_hdr_intensity="2" icon_scale="0.5"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true" is_considered_enemy_hacker="true"
+		will_attack_outcast_machines_at_or_above_level="1" is_considered_enemy_hacker_that_threatens_infiltrators="true"
+		targeting_logic="ActionOverTimeHunter" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="DamageInfiltrators" sort_order="100" chance_of_attempting="100" action_to_attempt="DamageInfiltrators" />
+	</stance>
+
+	<stance id="SecForceHackerCounterHacker" display_name="Counter-Hacker"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Here to stop enemy hackers."
+		icon_name="WEmblem254" icon_color="#AE350B" icon_color_hdr_intensity="2" icon_scale="0.5"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true" is_considered_enemy_hacker="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="ActionOverTimeHunter" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterEnemiesWeCanShootDoingActionOverTime" sort_order="100" chance_of_attempting="100" action_to_attempt="RunAfterEnemiesWeCanShootDoingActionOverTime" />
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+	</stance>
+
+	<stance id="SecForceHackerCrackIntoNeuralWeakness" display_name="Crack Into Neural Weakness"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These hackers are here to break into an exposed weakness in your neural defenses."
+		icon_name="SomethingBolt" icon_color="#AE200B" icon_color_hdr_intensity="4" icon_scale="0.7"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true" causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true" is_considered_enemy_hacker="true"
+		will_attack_outcast_machines_at_or_above_level="1" will_hold_fire_against_regular_machine_structures="false"
+		targeting_logic="ActionOverTimeHunter" targeting_order="1000" is_considered_enemy_hacker_that_steals_secrets="true"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5" immediately_do_action_when_damaged_by_player=""
+		>
+		<action_consideration id="StealNeuralSecrets" sort_order="100" chance_of_attempting="100" action_to_attempt="StealNeuralSecrets" />
+	</stance>
+
+</root>

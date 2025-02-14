@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<building_prefab id="ArtMuseum" type="ArtMuseum" display_name="Art Museum"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Art Museum.prefab">
+		<floors_group min="-2" max="-1" floor_size="1.4,0.4,2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="4" floor_size="1.4,0.5,2" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="40"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="5"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="200"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="50"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="30"/>
+		<building_marker prefab="Skylight" offset="0,0,0"/>
+	</building_prefab>
+
+	<building_prefab id="Bank" type="Bank" display_name="Bank A"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Bank.prefab">
+		<floors_group min="-5" max="-1" floor_size="1.3,0.4,1.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="3" floor_size="1.3,0.5,1.9" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="40"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="8"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="220"/>		
+		<building_marker prefab="Vent" offset="-0.05,-0.25,0"/>
+	</building_prefab>
+
+	<building_prefab id="BankB" type="Bank" display_name="Bank B"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Bank B.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.2,0.4,1.45" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1.2,0.45,1.45" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="24"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="5"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="200"/>
+		<building_marker prefab="Skylight" offset="0,0,0" scale_multiplier="2"/>
+	</building_prefab>
+
+	<building_prefab id="BankC" type="Bank" display_name="Bank C"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Bank C.prefab">
+		<floors_group min="-5" max="-1" floor_size="1.9,0.4,1.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.9,0.75,1.9" percentage_work_space="80" percentage_storage_space="20"/>
+		<floors_group min="1" max="6" floor_size="1.9,0.4,1.9" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="400"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="20"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="400"/>
+		<building_marker prefab="Skylight" offset="0,0,0" scale_multiplier="2"/>
+	</building_prefab>
+
+	<building_prefab id="BarA1" type="Bar" display_name="Bar A1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Bar A1.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.4,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.35,1.2" percentage_work_space="80" percentage_storage_space="20"/>
+		<floors_group min="1" max="1" floor_size="0.8,0.35,0.7" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="70"/>
+		<building_marker prefab="Skylight" offset="-0.25,-0.01,0.45"/>		
+	</building_prefab>
+
+	<building_prefab id="BarA2" type="Bar" display_name="Bar A2" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Bar A2.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.4,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.35,1.2" percentage_work_space="80" percentage_storage_space="20"/>
+		<floors_group min="1" max="1" floor_size="0.8,0.35,0.7" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="86"/>
+		<building_marker prefab="Skylight" offset="-0.25,-0.01,0.45"/>		
+	</building_prefab>
+
+	<building_prefab id="BurgerJoint" type="BurgerJoint" display_name="Burger Joint" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Burger Joint.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.5,0.4,1.6" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.5,0.5,1.6" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="90"/>
+		<building_marker prefab="Skylight" offset="0.2,-0.13,0" scale_multiplier="1.6"/>
+	</building_prefab>
+
+	<building_prefab id="BurgerJointB" type="BurgerJoint" display_name="Burger Joint B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Burger Joint B.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.9,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.9,0.45,0.9" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="90"/>
+		<building_marker prefab="AntennaOneLight" offset="0,-0.6,0" scale_multiplier="0.7"/>	
+	</building_prefab>
+
+	<building_prefab id="CafeA" type="Cafe" display_name="Cafe A" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Cafe A.prefab">
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="6"/>
+		<floors_group min="-1" max="-1" floor_size="1.1,0.4,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.1,0.35,1.2" percentage_work_space="80" percentage_storage_space="20"/>
+		<floors_group min="1" max="1" floor_size="0.6,0.35,1.2" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="50"/>
+		<building_marker prefab="Skylight" offset="0.2,-0.1,0.1" rotation_y="90"/>		
+	</building_prefab>
+
+	<building_prefab id="CafeB" type="Cafe" display_name="Cafe B"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Cafe B.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.1,0.4,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.1,0.35,1" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="50"/>
+		<building_marker prefab="Skylight" offset="0.2,-0.1,-0.2"/>		
+	</building_prefab>
+
+	<building_prefab id="CafeC" type="Cafe" display_name="Cafe C" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Cafe C.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.8,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.8,0.35,0.8" percentage_work_space="80" percentage_storage_space="20"/>
+		<floors_group min="1" max="1" floor_size="0.4,0.35,0.4" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="50"/>
+		<building_marker prefab="Skylight" offset="-0.22,0,-0.22"/>
+	</building_prefab>
+
+	<building_prefab id="CafeD" type="Cafe" display_name="Cafe D" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Cafe D.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.5,0.4,0.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.5,0.35,0.7" percentage_work_space="80" percentage_storage_space="20"/>
+		<floors_group min="1" max="2" floor_size="0.5,0.25,0.7" percentage_living_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="50"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="6"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="6"/>
+		<building_marker prefab="Skylight" offset="0,0,-0.08"/>		
+	</building_prefab>
+
+	<building_prefab id="Carwash" type="Carwash" display_name="Carwash" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Carwash.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.9,0.4,1.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.9,0.5,1.7" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="4"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="211"/>		
+		<building_marker prefab="RoofLine" offset="0.63,-0.08,0"/>		
+	</building_prefab>
+
+	<building_prefab id="Casino" type="Casino" display_name="Casino"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Casino.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.8,0.4,1.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1.8,0.35,1.5" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="40"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="8"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="480"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="20"/>		
+		<building_marker prefab="AntennaThreeLight" scale_multiplier="0.5" offset="0,0,0"  />
+	</building_prefab>
+
+	<building_prefab id="Cinema" type="Cinema" display_name="Cinema" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Cinema.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.6,0.4,1.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.6,1.1,1.5" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="2"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="212"/>
+		<building_marker prefab="RoofLine" offset="0,0,0.215"/>		
+	</building_prefab>
+
+	<building_prefab id="CornerGoods" type="SmallGoods" display_name="Corner Goods" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Corner Goods.prefab">
+		<floors_group min="-2" max="-1" floor_size="1,0.4,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1,0.45,1" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="4"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="148"/>
+		<building_marker prefab="Skylight" offset="0,0,-0.08"/>
+	</building_prefab>
+
+	<building_prefab id="CornerGoodsB" type="SmallGoods" display_name="Corner Goods B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Corner Goods B.prefab">
+		<floors_group min="-2" max="-1" floor_size="1,0.4,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1,0.45,1" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="4"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="74"/>
+		<building_marker prefab="Skylight" offset="0,0,-0.08"/>
+	</building_prefab>
+
+	<building_prefab id="CornerMarket" type="SmallMarket" display_name="Corner Market" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Corner Market.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.3,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1.3,0.5,1.3" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="4"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="84"/>
+		<building_marker prefab="Skylight" offset="0,0,-0.08"/>
+	</building_prefab>
+
+	<building_prefab id="DepartmentStoreA" type="DepartmentStore" display_name="Department Store A"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Department Store A.prefab">
+		<floors_group min="-6" max="-1" floor_size="1.5,0.4,1.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="4" floor_size="1.5,0.54,1.5" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="4"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="320"/>
+		<building_marker prefab="Skylight" offset="-0.02,0,-0.02" scale_multiplier="1"/>
+	</building_prefab>
+
+	<building_prefab id="DepartmentStoreB" type="DepartmentStore" display_name="Department Store B"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Department Store B.prefab">
+		<floors_group min="-5" max="-1" floor_size="2.3,0.4,2.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="2.3,0.6,2.5" percentage_work_space="80" percentage_storage_space="20"/>
+		<floors_group min="1" max="5" floor_size="2.3,0.45,2.5" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="30"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="6"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="400"/>
+		<building_marker prefab="Skylight" offset="-0.02,-0.08,-0.02"/>
+	</building_prefab>
+
+	<building_prefab id="DonutShopA" type="HudsonDonuts" display_name="Hudson Donuts" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Donut Shop A.prefab">
+		<floors_group min="-1" max="-1" floor_size="1,0.4,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1,0.45,1" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="72"/>
+		<building_marker prefab="Skylight" offset="0.2,-0.15,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="DonutShopB" type="DanverDonuts" display_name="Danver Donuts" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Donut Shop B.prefab">
+		<floors_group min="-1" max="-1" floor_size="1,0.4,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1,0.45,1" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="72"/>
+		<building_marker prefab="Skylight" offset="0.2,-0.15,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="DoublewideMarket" type="SmallMarket" display_name="Doublewide Market" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Doublewide Market.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.65,1.3" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="192"/>
+		<building_marker prefab="RoofLine" offset="0.035,-0.05,0.125" rotation_y="90"/>>
+	</building_prefab>
+
+	<building_prefab id="DoublewideStoreA" type="SmallShop" display_name="Doublewide Store A" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Doublewide Store A.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.65,1.3" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="192"/>
+		<building_marker prefab="Skylight" offset="0.035,-0.05,0.125" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="DoublewideStoreB" type="SmallShop" display_name="Doublewide Store B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Doublewide Store B.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.65,1.3" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="156"/>
+		<building_marker prefab="Skylight" offset="0.035,-0.05,0.125" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="DoublewideStoreC" type="SmallShop" display_name="Doublewide Store C" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Doublewide Store C.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.55,1.3" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="60"/>
+		<building_marker prefab="Skylight" offset="0.035,-0.18,-0.15" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="DoublewideStoreD" type="SmallShop" display_name="Doublewide Store D" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Doublewide Store D.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.55,1.3" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="52"/>
+		<building_marker prefab="Skylight" offset="0.035,-0.18,0.125" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="DoublewideStoreE" type="SmallShop" display_name="Doublewide Store E" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Doublewide Store E.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.55,1.3" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="52"/>
+		<building_marker prefab="Skylight" offset="0.035,-0.18,0.125" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="DoublewideStoreF" type="SmallShop" display_name="Doublewide Store F" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Doublewide Store F.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.55,1.3" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="56"/>
+		<building_marker prefab="Skylight" offset="0.035,-0.18,0.125" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="GasStationShopA" type="ConvenienceStore" display_name="Gas Station Shop A" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Gas Station Shop A.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.65,0.4,0.6" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.65,0.3,0.6" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="28"/>
+		<building_marker prefab="RoofLine" offset="0,-0.01,0"/>
+	</building_prefab>
+	
+	<building_prefab id="IceCreamShop" type="IceCreamShop" display_name="Ice Cream Shop" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Ice Cream Shop.prefab">
+		<floors_group min="-1" max="-1" floor_size="1,0.4,1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1,0.45,1" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="88"/>
+		<building_marker prefab="Skylight" offset="0,-0.115,-0.1"/>		
+	</building_prefab>
+
+	<building_prefab id="Library" type="Library" display_name="Library" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Library.prefab">
+		<floors_group min="-2" max="-1" floor_size="1.7,0.4,1.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.7,0.45,1.4" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="HighSciences" max_jobs="3"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="72"/>
+		<building_marker prefab="RoofLine" offset="0,-0.001,0" rotation_y="90"/>		
+	</building_prefab>
+
+	<building_prefab id="Mall" type="Mall" display_name="Mall" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Mall.prefab">
+		<floors_group min="-2" max="-1" floor_size="2.8,0.4,1.4" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="3" floor_size="2.8,0.35,1.4" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="5"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="40"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1200"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="10"/>
+		<building_marker prefab="AntennaThreeLight" scale_multiplier="0.7" offset="0.45,-0.3,-0.525"  />		
+	</building_prefab>
+
+	<building_prefab id="MotelA1" type="Motel" display_name="Motel A1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Motel A1.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.85,0.4,1.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.85,0.3,1.7" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="20"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="8"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="56"/>
+		<building_marker prefab="RoofLine" offset="0,0,0"/>		
+	</building_prefab>
+
+	<building_prefab id="MotelA2" type="Motel" display_name="Motel A2" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Motel A2.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.85,0.4,1.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.85,0.3,1.7" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="20"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="12"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="64"/>
+		<building_marker prefab="RoofLine" offset="0,0,0"/>		
+	</building_prefab>
+
+	<building_prefab id="MotelB" type="Motel" display_name="Motel B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Motel B.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.4,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="1.4,0.35,0.8" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="30"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="30"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="8"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="56"/>
+		<building_marker prefab="RoofLine" offset="0,0,0" rotation_y="90"/>
+	</building_prefab>
+
+	<building_prefab id="MotelC" type="Motel" display_name="Motel C" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Motel C.prefab">
+		<floors_group min="-3" max="-1" floor_size="2.2,0.4,0.6" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="2.2,0.25,0.6" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="40"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="40"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="16"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="76"/>
+		<building_marker prefab="RoofLine" offset="0,-0.15,0" rotation_y="90"/>		
+	</building_prefab>
+
+	<building_prefab id="MuseumA" type="SmallMuseum" display_name="Museum A" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Museum A.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.3,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1.3,0.35,1.1" percentage_work_space="80" percentage_storage_space="20"/>
+		<floors_group min="3" max="3" floor_size="0.5,0.35,0.6" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="40"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="2"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="180"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="10"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="10"/>
+		<building_marker prefab="AntennaThreeLight" scale_multiplier="0.7" offset="0.5,-0.55,-0.4"  />		
+	</building_prefab>
+
+	<building_prefab id="MuseumB" type="SmallMuseum" display_name="Museum B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Museum B.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.3,0.4,1.1" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1.3,0.35,1.1" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="40"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="2"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="180"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="10"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="10"/>
+		<building_marker prefab="AntennaThreeLight" scale_multiplier="0.7" offset="0.5,-0.55,-0.4"  />
+	</building_prefab>
+
+	<building_prefab id="SmallStoreA1" type="SmallShop" display_name="Small Store A1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Small Store A1.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.65,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.65,0.4,0.8" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="68"/>
+		<building_marker prefab="Skylight" offset="0,-0.1,0"/>
+	</building_prefab>
+
+	<building_prefab id="SmallStoreA2" type="SmallShop" display_name="Small Store A2" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Small Store A2.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.65,0.4,0.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.65,0.4,0.8" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="78"/>
+		<building_marker prefab="Skylight" offset="0,-0.1,0"/>
+	</building_prefab>
+
+	<building_prefab id="SmallStoreB1" type="SmallShop" display_name="Small Store B1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Small Store B1.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.65,0.4,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.65,0.4,1.2" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="72"/>
+		<building_marker prefab="Skylight" offset="0,-0.13,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="SmallStoreB2" type="SmallShop" display_name="Small Store B2" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Small Store B2.prefab">
+		<floors_group min="-3" max="-1" floor_size="0.65,0.4,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="0.65,0.4,1.2" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="62"/>
+		<building_marker prefab="Skylight" offset="0,-0.13,-0.2"/>
+	</building_prefab>
+
+	<building_prefab id="StadiumTennis" type="StadiumTennis" display_name="Stadium Tennis"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Stadium Tennis.prefab">
+		<floors_group min="-1" max="-1" floor_size="9.1,0.2,7.3" percentage_storage_space="50" is_underground="true"/>
+		<floors_group min="0" max="3" floor_size="9.1,0.35,7.3" percentage_work_space="80" percentage_storage_space="10"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="40"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="1800"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="400"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="40"/>
+		<building_marker prefab="AntennaThreeLight" scale_multiplier="0.7" offset="4,-1,0"  />
+	</building_prefab>
+
+	<building_prefab id="StoreAndApartmentsA" type="StoreAndApartments" display_name="Store And Apartments A" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Store And Apartments A.prefab">
+		<floors_group min="-1" max="-1" floor_size="1.1,0.4,0.95" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1.1,0.45,0.95" percentage_work_space="45" percentage_living_space="45" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="15"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="15"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="8"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="8"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="50"/>
+		<building_marker prefab="Skylight" offset="0,-0.31,0"/>
+	</building_prefab>
+
+	<building_prefab id="StoreAndApartmentsB" type="StoreAndApartments" display_name="Store And Apartments B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Store And Apartments B.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.95,0.4,1.2" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="0.95,0.45,1.2" percentage_work_space="45" percentage_living_space="45" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="15"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="15"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="8"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="50"/>
+		<building_marker prefab="Skylight" offset="0,-0.0,0"/>		
+	</building_prefab>
+
+	<building_prefab id="StorePairA" type="SmallShop" display_name="Store Pair A" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Store Pair A.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.65,1.3" percentage_work_space="45" percentage_living_space="45" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="6"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="6"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="62"/>
+		<building_marker prefab="Skylight" offset="0,-0.15,0"/>
+	</building_prefab>
+
+	<building_prefab id="StorePairB" type="SmallShop" display_name="Store Pair B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Store Pair B.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.55,1.3" percentage_work_space="45" percentage_living_space="45" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="6"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="6"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="28"/>
+		<building_marker prefab="Skylight" offset="0,-0.15,0"/>
+	</building_prefab>
+
+	<building_prefab id="StorePairC" type="SmallShop" display_name="Store Pair C" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Store Pair C.prefab">
+		<floors_group min="-1" max="-1" floor_size="0.7,0.4,1.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="1" floor_size="0.7,0.55,1.3" percentage_work_space="45" percentage_living_space="45" percentage_storage_space="10"/>
+		<max_residents_by_economic_class economic_class="Uneducated" max_residents="6"/>
+		<max_residents_by_economic_class economic_class="MiddleClass" max_residents="6"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="60"/>
+		<building_marker prefab="Skylight" offset="0,-0.15,0"/>
+	</building_prefab>
+
+	<building_prefab id="SupermarketA" type="Supermarket" display_name="Supermarket A" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Supermarket A.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.7,0.4,1.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1.7,0.45,1.7" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="3"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="8"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="160"/>
+		<building_marker prefab="Skylight" offset="0,0,0" scale_multiplier="2"/>
+	</building_prefab>
+
+	<building_prefab id="SupermarketB" type="Supermarket" display_name="Supermarket B" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Supermarket B.prefab">
+		<floors_group min="-4" max="-1" floor_size="1.7,0.4,1.7" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="2" floor_size="1.7,0.45,1.7" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="3"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="8"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="160"/>
+		<building_marker prefab="Skylight" offset="0,0,0" scale_multiplier="2"/>
+	</building_prefab>
+
+	<building_prefab id="SupermarketC1" type="Supermarket" display_name="Supermarket C1" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Supermarket C1.prefab">
+		<floors_group min="-3" max="-1" floor_size="3.6,0.4,1.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="3.6,1.1,1.5" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="4"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="30"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="180"/>
+		<building_marker prefab="Skylight" offset="0,0,0.4" scale_multiplier="2"/>
+	</building_prefab>
+
+	<building_prefab id="SupermarketC2" type="Supermarket" display_name="Supermarket C2" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Supermarket C2.prefab">
+		<floors_group min="-3" max="-1" floor_size="3.6,0.4,1.5" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="3.6,1.1,1.5" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="4"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="8"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="220"/>
+		<building_marker prefab="Skylight" offset="0,0,0.4" scale_multiplier="2"/>
+	</building_prefab>
+
+	<building_prefab id="Theater" type="Theater" display_name="Theater" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Theater.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.4,0.4,2.3" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.4,0.8,2.3" percentage_work_space="80" percentage_storage_space="20"/>
+		<floors_group min="1" max="5" floor_size="1.4,0.35,2.3" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="3"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="384"/>
+		<max_jobs_by_profession profession="OfficeWork" max_jobs="8"/>
+		<max_jobs_by_profession profession="SkilledLabor" max_jobs="16"/>
+		<max_jobs_by_profession profession="Creative" max_jobs="160"/>
+		<building_marker prefab="Skylight" offset="0,-0.26,-0.8"/>		
+	</building_prefab>
+	
+	<building_prefab id="ToolStore" type="ToolStore" display_name="Tool Store" multiplier_y_for_highlights="1.4"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Tool Store.prefab">
+		<floors_group min="-3" max="-1" floor_size="1.45,0.4,1.8" percentage_storage_space="100" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.45,1,1.8" percentage_work_space="80" percentage_storage_space="20"/>
+		<max_jobs_by_profession profession="Administrative" max_jobs="1"/>
+		<max_jobs_by_profession profession="MenialLabor" max_jobs="160"/>
+		<building_marker prefab="Skylight" offset="0,-0.19,0"/>
+	</building_prefab>
+
+	<!--This is more decorative, so no jobs/residents/storage. -->
+	<building_prefab id="BasketballCourtA" type="BasketballCourt" display_name="Basketball Court A"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Basketball Court A.prefab">
+	</building_prefab>
+
+	<!--This is more decorative, so no jobs/residents/storage. -->
+	<building_prefab id="SoccerPitchA" type="SoccerPitch" display_name="Soccer Pitch A"
+		path_to_placeable="Assets/__Library/Buildings/Commerce/Soccer Pitch A.prefab">
+	</building_prefab>
+	
+</root>

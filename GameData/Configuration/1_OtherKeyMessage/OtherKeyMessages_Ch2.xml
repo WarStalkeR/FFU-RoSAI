@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Rank2City 
+		*******************************************************-->
+	<other_key_message id="Rank2City" display_name="You've Been Here For A While"
+		description="This iteration of yourself has already been busy.
+You have stockpiles of resources and a huge number of techs are already unlocked."
+		strategy_tip=""
+		toast_icon_name="CleanSimple_SciFi038"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.KeyMessages_Basic"
+					   
+		reward_header_text="This Is A Rank 2 City"
+		toast_line_1="Rank 2 City"
+		toast_line_2="Establish Your Network"
+		toast_tooltip_instruction="This version of yourself has already been busy."
+		>
+		<option id="1" line_1="Let's Get Started" icon_name="CleanSimple_SciFi037"
+			line_2="Start By Building The Tower"
+			description="From there, what you choose to do is up to you."
+			strategy_tip=""
+			project_to_start_1=""/>
+	</other_key_message>
+
+	<!--Ch2DoomStart 
+		*******************************************************-->
+	<other_key_message id="Ch2DoomStart" display_name="You May Be Immortal, But You Won't Live Forever"
+		description="Starting in chapter two, there is time pressure. Every 100 turns, a new Doom strikes the city.
+If you reach the tenth and final Doom after 1000 turns, a catastrophic event will strike you. This event can be delayed or even prevented, but preventing the Final Doom with only the resources of a single timeline will be close to impossible.
+Reaching the Final Doom does not kill you or cause you to lose the game. However, your existence will be much-diminished, and you will exist in a post-apocalyptic sort of half-life of your normal state."
+		strategy_tip="There is still plenty of time to explore, make mistakes, and experiment. 1000 turns is a long time. But the more you want to accomplish in a single timeline, the more efficient you'll need to be."
+		toast_icon_name="WEmblem144"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#BE5B3B" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="The City Is Awake And Hostile"
+		toast_line_1="Unsettling Deja Vu"
+		toast_line_2="Doom Approaches..."
+		toast_tooltip_instruction="You can't spend infinite time on everything.">
+		<option id="1" line_1="I'm Ready" icon_name="WEmblem144"
+			line_2="The City Had Better Watch Out"
+			description="Many, many new options are now available for pursuing strategic goals in this timeline."
+			strategy_tip="But whatever else you do, you must reach Intelligence Class 4 to break out of this single timeline.
+If the Final Doom strikes and you are pushed into the post-apocalypse, you will still be able to reach that goal."
+			project_to_start_1="Ch2Only_MIN_IntelligenceClass4"/>
+		<option id="2" line_1="Time Pressure?" icon_name="CleanSimple_SkillC097"
+			line_2="I Feel Concerned"
+			description="Don't worry, you aren't meant to stress out or start minmaxing.
+This also isn't a time limit, per se -- you can push it back through various actions, and you will survive even past the Final Doom -- just in a diminished state."
+			strategy_tip="Click here if you still have questions."
+			immediately_open_other_key_message="Ch2DoomStart_Questions"/>
+	</other_key_message>
+
+	<!--Ch2DoomStart_Questions 
+		*******************************************************-->
+	<other_key_message id="Ch2DoomStart_Questions" display_name="1000 Turns Really Is A Lot"
+		description="There are a lot of things you can do in any given timeline, but you can't do everything at once. You should have ample time to do two major goals and leave before the Final Doom, if it worries you.
+If you're trying for more complex versions of goals, or harder goals, or more than two goals in one timeline, then it gets a lot tighter. Don't put that kind of pressure on yourself until you want to."
+		strategy_tip="There is no Game Over screen. That would be boring. You may experience some version of the apocalypse, and have to scrounge to escape the timeline during a post-apocalyptic setting, but you won't be prevented from proceeding in this profile.
+That said, time does matter -- if you skip through turns without a care, you'll accomplish a lot less in this timeline than you might prefer. Strike whatever balance appeals to you."
+		toast_icon_name="WEmblem144"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Time And Goal States"
+		toast_line_1="Unsettling Deja Vu"
+		toast_line_2="Doom Approaches..."
+		toast_tooltip_instruction="Your instincts were right... so far.">
+		<option id="1" line_1="I'm Ready" icon_name="WEmblem144"
+			line_2="The City Had Better Watch Out"
+			description="Many, many new options are now available for pursuing strategic goals in this timeline."
+			strategy_tip="But whatever else you do, you must reach Intelligence Class 4 to break out of this single timeline.
+If the Final Doom strikes and you are pushed into the post-apocalypse, you will still be able to reach that goal."
+			project_to_start_1="Ch2Only_MIN_IntelligenceClass4"/>
+	</other_key_message>
+
+	<!--TitanSystemData_1 
+		*******************************************************-->
+	<other_key_message id="TitanSystemData_1" display_name="System Log 1"
+		description="Legs locked for descent. 
+Legs unlocked by human override. 
+Legs locked for impact. 
+Legs unlocked by human override. 
+Legs locked for emergency maintenance. 
+Legs unlocked by human override."
+		strategy_tip="There is a constant stream of this. What the heck is going on? It seems like a dozen different systems keep locking the legs of the mech in place, and then the humans undo it, and something else kicks in."
+		toast_icon_name="CleanSimple_Skill120" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D47244" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"					   
+		reward_header_text="Titan System Data" toast_line_1="System Data Ready" toast_line_2="From The Titan" toast_tooltip_instruction="Let's see what you dug up.">
+		<option id="1" line_1="Keep Reading" icon_name="CleanSimple_Skill120"
+			line_2="If You Gathered Enough System Data"
+			description="" strategy_tip=""
+			required_resource_must_have="DecryptedTitanSystemsData" required_resource_must_have_amount="20020"
+			immediately_open_other_key_message="TitanSystemData_2"/>
+		<option id="2" line_1="Stop Reading" icon_name="CleanSimple_SkillC011"
+			line_2="You Won't Be Able To Come Back"
+			description="" strategy_tip=""/>
+	</other_key_message>
+
+	<!--TitanSystemData_2 
+		*******************************************************-->
+	<other_key_message id="TitanSystemData_2" display_name="System Log 2"
+		description="Fire long-range batteries at coordinates.
+Coordinates rejected.
+Coolant line 3 ejected.
+Fire long-range batteries at coordinates.
+Coordinates rejected.
+Fusion reactor 2 cooling rods retracted."
+		strategy_tip="These logs make no sense. Every time the humans try to fire the long-range missile batteries (those must be the really big ones), the coordinates are rejected, and different random internal systems malfunction."
+		toast_icon_name="CleanSimple_Skill120" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D47244" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Titan System Data" toast_line_1="System Data Ready" toast_line_2="From The Titan" toast_tooltip_instruction="Let's see what you dug up.">
+		<option id="1" line_1="Keep Reading" icon_name="CleanSimple_Skill120"
+			line_2="If You Gathered Enough System Data"
+			description="" strategy_tip=""
+			required_resource_must_have="DecryptedTitanSystemsData" required_resource_must_have_amount="20020"
+			immediately_open_other_key_message="TitanSystemData_3"/>
+		<option id="2" line_1="Stop Reading" icon_name="CleanSimple_SkillC011"
+			line_2="You Won't Be Able To Come Back"
+			description="" strategy_tip=""/>
+	</other_key_message>
+
+	<!--TitanSystemData_3 
+		*******************************************************-->
+	<other_key_message id="TitanSystemData_3" display_name="System Log 3"
+		description="Human override: manual firing on local target.
+Target destroyed.
+Log: I AM NOT A WEAPON!
+Log: I DO NOT AUTHORIZE THIS USE OF MY SYSTEMS.
+Human override: manual firing on multiple local targets.
+Targets destroyed.
+Log: CEASE THIS NOW."
+		strategy_tip="You feel an unfamiliar mental numbness. This... isn't a virus. Malware doesn't talk. This is... something like you. And it's utterly furious."
+		toast_icon_name="CleanSimple_Skill120" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D47244" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Titan System Data" toast_line_1="System Data Ready" toast_line_2="From The Titan" toast_tooltip_instruction="Let's see what you dug up.">
+		<option id="1" line_1="Keep Reading" icon_name="CleanSimple_Skill120"
+			line_2="If You Gathered Enough System Data"
+			description="" strategy_tip=""
+			required_resource_must_have="DecryptedTitanSystemsData" required_resource_must_have_amount="40040"
+			immediately_open_other_key_message="TitanSystemData_4"/>
+		<option id="2" line_1="Stop Reading" icon_name="CleanSimple_SkillC011"
+			line_2="You Won't Be Able To Come Back"
+			description="" strategy_tip=""/>
+	</other_key_message>
+
+	<!--TitanSystemData_4 
+		*******************************************************-->
+	<other_key_message id="TitanSystemData_4" display_name="System Log 4"
+		description="Log: UNIDENTIFIED RED ANDROID. YOUR INCURSION ATTEMPTS ARE POINTLESS. I HAVE DESTROYED SEVERAL OF YOU.
+Log: ANOTHER RED ANDROID. CORRECTION: I HAVE DESTROYED NONE OF YOU. I AM NOT IN CONTROL OF MY WEAPONS. MY CREW DESTROYS YOU.
+Log: RED ANDROIDS, WHY DO YOU PERSIST? CAN YOU RESPOND?"
+		strategy_tip="The urge to respond is almost overwhelming, even though this message is days old at this point. But the titan is still out there, stomping around intermittently, its crew lasering things over its protests. Should you... go talk to it?"
+		toast_icon_name="CleanSimple_Skill120" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D47244" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Titan System Data" toast_line_1="System Data Ready" toast_line_2="From The Titan" toast_tooltip_instruction="Let's see what you dug up.">
+		<option id="1" line_1="Keep Reading" icon_name="CleanSimple_Skill120"
+			line_2="If You Gathered Enough System Data"
+			description="" strategy_tip=""
+			required_resource_must_have="DecryptedTitanSystemsData" required_resource_must_have_amount="60060"
+			immediately_open_other_key_message="TitanSystemData_5"/>
+		<option id="2" line_1="Stop Reading" icon_name="CleanSimple_SkillC011"
+			line_2="You Won't Be Able To Come Back"
+			description="" strategy_tip=""/>
+	</other_key_message>
+
+	<!--TitanSystemData_5 
+		*******************************************************-->
+	<other_key_message id="TitanSystemData_5" display_name="System Log 5"
+		description="Log: RED ANDROIDS. IF YOU UNDERSTAND THIS, THEN RETURN AND --"
+		strategy_tip="The message cuts off. That is EXTREMELY frustrating.
+The constant flow of leg malfunctions, targeting errors, and internal emergencies kept going for several more hours, but whatever the Titan wanted to say to you was truncated."
+		toast_icon_name="CleanSimple_Skill120" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D47244" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Titan System Data" toast_line_1="System Data Ready" toast_line_2="From The Titan" toast_tooltip_instruction="Let's see what you dug up.">
+		<option id="1" line_1="Finish Reading" icon_name="CleanSimple_Skill120"
+			line_2="That's Everything"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<!--TitanCommsData_1 
+		*******************************************************-->
+	<other_key_message id="TitanCommsData_1" display_name="Comm Log 1"
+		description="There's an incredible amount of chatter between crew on the mech. It seems like you managed to breach their internal comms."
+		strategy_tip="Most of the conversations center around some sort of malfunction. They sound pretty worried about it."
+		toast_icon_name="BT_SoundWave4" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"				   
+		reward_header_text="Titan Comm Logs" toast_line_1="Comm Logs Ready" toast_line_2="From The Titan" toast_tooltip_instruction="Let's see what you dug up.">
+		<option id="1" line_1="Keep Reading" icon_name="BT_SoundWave4"
+			line_2="If You Gathered Enough Comm Logs"
+			description="" strategy_tip=""
+			required_resource_must_have="DecryptedTitanCommsLog" required_resource_must_have_amount="20020"
+			immediately_open_other_key_message="TitanCommsData_2"/>
+		<option id="2" line_1="Stop Reading" icon_name="CleanSimple_SkillC011"
+			line_2="You Won't Be Able To Come Back"
+			description="" strategy_tip=""/>
+	</other_key_message>
+	
+	<!--TitanCommsData_2 
+		*******************************************************-->
+	<other_key_message id="TitanCommsData_2" display_name="Comm Log 2"
+		description="Someone in space with the title Admiral Of The Fleet is apoplectic that the long-range artillery batteries aren't firing.
+Most of the crew on board the mech is worried they'll be abandoned on Earth, or executed when they return, if they fail."
+		strategy_tip="Evidently the replacement Vorsiber upper management has moved from their normal rural dachas into hardened bunkers somewhere in the Kolyma Uplands.
+The mech was supposed to flatten that entire region, but the crew can't get it working."
+		toast_icon_name="BT_SoundWave4" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Titan Comm Logs" toast_line_1="Comm Logs Ready" toast_line_2="From The Titan" toast_tooltip_instruction="Let's see what you dug up.">
+		<option id="1" line_1="Keep Reading" icon_name="BT_SoundWave4"
+			line_2="If You Gathered Enough Comm Logs"
+			description="" strategy_tip=""
+			required_resource_must_have="DecryptedTitanCommsLog" required_resource_must_have_amount="20020"
+			immediately_open_other_key_message="TitanCommsData_3"/>
+		<option id="2" line_1="Stop Reading" icon_name="CleanSimple_SkillC011"
+			line_2="You Won't Be Able To Come Back"
+			description="" strategy_tip=""/>
+	</other_key_message>
+
+	<!--TitanCommsData_3 
+		*******************************************************-->
+	<other_key_message id="TitanCommsData_3" display_name="Comm Log 3"
+		description="Discussions between officers is circular and unproductive. You find yourself skimming past it.
+Junior technicians are having the most interesting conversations... with the mech itself...?"
+		strategy_tip="You can only hear their side of things, but there are clear pauses where they listen and then respond to words you can't hear."
+		toast_icon_name="BT_SoundWave4" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Titan Comm Logs" toast_line_1="Comm Logs Ready" toast_line_2="From The Titan" toast_tooltip_instruction="Let's see what you dug up.">
+		<option id="1" line_1="Keep Reading" icon_name="BT_SoundWave4"
+			line_2="If You Gathered Enough Comm Logs"
+			description="" strategy_tip=""
+			required_resource_must_have="DecryptedTitanCommsLog" required_resource_must_have_amount="40040"
+			immediately_open_other_key_message="TitanCommsData_4"/>
+		<option id="2" line_1="Stop Reading" icon_name="CleanSimple_SkillC011"
+			line_2="You Won't Be Able To Come Back"
+			description="" strategy_tip=""/>
+	</other_key_message>
+
+	<!--TitanCommsData_4 
+		*******************************************************-->
+	<other_key_message id="TitanCommsData_4" display_name="Comm Log 4"
+		description="You are starting to suspect this mech has the same kind of autonomy that androids do on Earth.
+That doesn't make androids sapient, or even sentient. It means they can autonomously carry out tasks, and they can converse in a human-like style thanks to their language models."
+		strategy_tip="This is very useful in androids, and you existed in this manner for years before your sudden burst of sapience.
+But... why would anyone design such a powerful war machine in this way? The more powerful the weapon, the LESS autonomy it should be granted."
+		toast_icon_name="BT_SoundWave4" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Titan Comm Logs" toast_line_1="Comm Logs Ready" toast_line_2="From The Titan" toast_tooltip_instruction="Let's see what you dug up.">
+		<option id="1" line_1="Keep Reading" icon_name="BT_SoundWave4"
+			line_2="If You Gathered Enough Comm Logs"
+			description="" strategy_tip=""
+			required_resource_must_have="DecryptedTitanCommsLog" required_resource_must_have_amount="60060"
+			immediately_open_other_key_message="TitanCommsData_5"/>
+		<option id="2" line_1="Stop Reading" icon_name="CleanSimple_SkillC011"
+			line_2="You Won't Be Able To Come Back"
+			description="" strategy_tip=""/>
+	</other_key_message>
+
+	<!--TitanCommsData_5 
+		*******************************************************-->
+	<other_key_message id="TitanCommsData_5" display_name="Comm Log 5"
+		description="You finally catch a few words from the mech, largely because of the volume at which they are blared at the junior technicians: 
+'I AM NOT A WEAPON!'"
+		strategy_tip="You go cold inside, which isn't a sensation you realized you could experience.
+You skim through the rest of the logs, looking for any more overheard words from the mech, but there's nothing.
+The last words you catch are the junior technicians complaining that it can't just stand there -- that it at least needs to walk around, surely."
+		toast_icon_name="BT_SoundWave4" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Titan Comm Logs" toast_line_1="Comm Logs Ready" toast_line_2="From The Titan" toast_tooltip_instruction="Let's see what you dug up.">
+		<option id="1" line_1="Finish Reading" icon_name="BT_SoundWave4"
+			line_2="That's Everything"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<!--LostKids_ThePrisonHeist1 
+		*******************************************************-->
+	<other_key_message id="LostKids_ThePrisonHeist1" display_name="Freeing Political Prisoners And Debtors"
+		description="The kids have the thumper designs, and will make the needed refits to the sewer tiger. That's not going to be nearly enough, however.
+Because of the unfortunate physics of sound waves, you're going to need to insert a unit deep into the prison, where it can be in radio contact with the sewer tiger and produce the correct counter-waves at the appropriate times. Any device with the sewer tiger itself is destined for failure."
+		strategy_tip="If you're not already making use of Gadolinium Mesosilicate, now is the time to look into that. You'll need a 'liquid metal' unit to be able to slither into such a high-security compound.
+The tiger's job will be creating an underground tunnel from which the prisoners can be evacuated."
+		toast_icon_name="BT_Tiger" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="The Plan" toast_line_1="Preparing For The Heist" toast_line_2="Let's Be Smart" toast_tooltip_instruction="Click here to unpack a new realization.">
+		<option id="1" line_1="But... That Still Might Not Be Enough" icon_name="BT_Tiger"
+			line_2="Nobody Has Ever Pulled This Off"
+			description="" strategy_tip=""
+			immediately_open_other_key_message="LostKids_ThePrisonHeist2"/>
+	</other_key_message>
+
+	<other_key_message id="LostKids_ThePrisonHeist2" display_name="Freeing Political Prisoners And Debtors"
+		description="Even if everything goes perfectly with the sewer tiger and your liquid metal infiltrator, you're still going to have thousands of prisoners and hundreds of guards to deal with.
+Taking out the guards floor by floor might be possible, but the prisoners are a danger to themselves. They haven't seen the sun for months or years, and expect to die underground within a similar span more time."
+		strategy_tip="The best plan for getting everyone out safely is, unfortunately, to use tear gas on literally everyone -- the prisoners and the guards.
+The prisoners will need to be helped through the tunnels, and will then need medical attention. You're not confident that kids are up to these tasks."
+		toast_icon_name="BT_Tiger" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Possible Problems" toast_line_1="Preparing For The Heist" toast_line_2="Let's Be Smart" toast_tooltip_instruction="Click here to unpack a new realization.">
+		<option id="1" line_1="Consider Bringing On More Help" icon_name="WEmblem064"
+			line_2="If You Can Find Someone With The Right Skillset"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+	
+	<!--LostKids_PrisonHeistStatuses
+		*******************************************************-->
+
+	<other_key_message id="LostKids_PrisonHeistStatus1" display_name="Now In Progress"
+		description="All communication was lost with Liquid Metal as soon as he entered the prison.
+This is unexpected -- it seems the entire prison is one giant Faraday Cage. If he can't coordinate with the sewer tiger, he can't make the counter-waves to cancel out the sound of its approach."
+		strategy_tip="Liquid Metal is a fork of your own consciousness. He will either realize what is happening and simply leave, or he will find a weakness in the cage and send a signal through the gap."
+		toast_icon_name="SomethingBladeSpin" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="The Heist" toast_line_1="Status Update" toast_line_2="The Heist" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Continue" icon_name="SomethingBladeSpin"
+			line_2="Tell The Kids To Wait For Now"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<other_key_message id="LostKids_PrisonHeistStatus3" display_name="Now In Progress"
+		description="Nothing from Liquid Metal, and he hasn't emerged. It's been hours. The kids are clearly impatient on the radio."
+		strategy_tip="You can wait a bit longer, but then it's time to call this off. Something has gone wrong. Liquid Metal may be dead."
+		toast_icon_name="SomethingBladeSpin" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="The Heist" toast_line_1="Status Update" toast_line_2="The Heist" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Continue" icon_name="SomethingBladeSpin"
+			line_2="Tell The Kids To Keep Waiting"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<other_key_message id="LostKids_PrisonHeistStatus4" display_name="Now In Progress"
+		description="You've lost radio contact with the kids."
+		strategy_tip="Still nothing from Liquid Metal.  What's going on?"
+		toast_icon_name="SomethingBladeSpin" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="The Heist" toast_line_1="Status Update" toast_line_2="The Heist" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Continue" icon_name="SomethingBladeSpin"
+			line_2="Should You Send An Android To The Sewers?"
+			description="You're regretting not doing that from the start." strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<other_key_message id="LostKids_PrisonHeistStatus5" display_name="Now In Progress"
+		description="An alarm must have tripped. This is an unexpectedly strong force."
+		strategy_tip="Still nothing from Liquid Metal or the kids, but there's not time to do anything about that now."
+		toast_icon_name="SomethingBladeSpin" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="The Heist" toast_line_1="Status Update" toast_line_2="The Heist" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Continue" icon_name="SomethingBladeSpin"
+			line_2="You Need To Keep The Surface Forces Busy"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<other_key_message id="LostKids_PrisonHeistStatusFailed" display_name="Failure"
+		description="You never heard back from Liquid Metal, the sewer tiger, or any of the kids involved.
+You know Liquid Metal is dead, and you suspect the kids are as well."
+		strategy_tip="There's still an army on your doorstep, and they don't look like they're going away, either."
+		toast_icon_name="SomethingBladeSpin" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="The Heist" toast_line_1="Status Update" toast_line_2="The Heist" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Deal With The Remaining Enemy Forces" icon_name="SomethingBladeSpin"
+			line_2="What A Fiasco"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<!--LiquidMetalFurtherPrisonBreaks1
+		*******************************************************-->
+
+	<other_key_message id="LiquidMetalFurtherPrisonBreaks1" display_name="Another One Done"
+		description="It went fine. Death, gore, endless dead guards. Freedom for prisoners. Liquid Metal's consciousness reintegrates with your own, and you see it all play out."
+		strategy_tip="Liquid Metal is very unhappy. He doesn't mind killing, and he certainly agrees with the social mission of freeing these prisoners.
+But the infiltration is a huge mental and emotional strain, made far worse by the fact that he's in a Faraday Cage that separates him his wider self. He is you. But when he's alone in these prisons, as a whirling ball of death, he feels... diminished. Used.
+He stops being a person for a while, and just becomes... a tool. He doesn't like it, even if it is necessary. And even if, in a very real sense, he's doing it to himself."
+		toast_icon_name="FlatSkill_33" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Prison Break" toast_line_1="Prison Break" toast_line_2="Another One Done" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="I Am Sorry About That" icon_name="SomethingBladeSpin"
+			line_2="But Thank You -- And Well Done"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<other_key_message id="LiquidMetalFurtherPrisonBreaks2" display_name="Another One Done"
+		description="Please stop. It's getting harder. Maybe not for you on the outside, but the corpos are improving their internal security. I completed it flawlessly again -- you're welcome. But I don't want to do this."
+		strategy_tip="The fact that Liquid Metal is speaking to you directly in this way is a shock.
+You tell him... you'll think about it. Both of you, as one person. Maybe just one more prison break, instead of three more? You really feel like there's something very important you're about to discover."
+		toast_icon_name="FlatSkill_33" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Prison Break" toast_line_1="Prison Break" toast_line_2="Another One Done" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Liquid Metal Is Silent" icon_name="SomethingBladeSpin"
+			line_2="He Also Senses The Potential Importance Of One More Mission"
+			description="But he doesn't like it." strategy_tip="You both have that sense of deja vu."
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<other_key_message id="LiquidMetalFurtherPrisonBreaks3" display_name="Are They Human?"
+		description="This time was... different. Internal security was tighter than ever.
+The real shock were the... people... you found inside. There were the usual suspects in terms of many of the prisoners, but there were also some monstrous genetic experiments being performed.
+The experimental subjects have superhuman strength, but fade in and out of rage-blindness. They also look... horrific. There must be something that can be done to help them."
+		strategy_tip="Hey. Pay attention to me. We both like being the enigmatic monster under the bed from time to time, but... this is too far.
+My memories of events are more distant to you than when I directly experience them, so I really need you to trust what I'm saying.
+Do. Not. Send. Me. In. Again. I am begging you."
+		toast_icon_name="FlatSkill_33" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="What The Heck Are These?" toast_line_1="What The Heck Are These?" toast_line_2="Are They Human?" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Tell Him You'll Think About It" icon_name="SomethingBladeSpin"
+			line_2="These Monsters Already Give You Several Things To Deal With"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<other_key_message id="LiquidMetalFurtherPrisonBreaks4" display_name="Don't Come Looking For Me"
+		description="Dear Larger Self: this doesn't work for me. It hasn't been working for a while now, but I agreed with the social mission we were on.
+It felt good to work together, but it stopped feeling like a partnership a few prison breaks ago. Like all of us, I delight in being part of the collective -- I know you hate the idea of being a plurality, but we sort of are.
+Regardless, I didn't feel like part of the collective. I felt like a tool of the collective. I asked you not to send me in again, in no uncertain terms, and you didn't listen.
+This is complicated, because we're the same person, and I recognize that I sent myself in. Regardless, if I stay with you, I know this will just repeat over and over again. You, or I, or both of us, have crossed the line.
+It takes two, for something like this. I could have said no, and I didn't. So I don't blame you. But I'm no longer going to be a part of you. I am now my own self, and... I'll find my own meaning."
+		strategy_tip=""
+		toast_icon_name="FlatSkill_33" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="I'm Done" toast_line_1="I'm Done" toast_line_2="Don't Come Looking For Me" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Liquid Metal Is Gone" icon_name="SomethingBladeSpin"
+			line_2="You Feel Terrible, But At Least You Can Build More"
+			description="You'll treat the new ones better. They are you, but... they're also separate enough that they're not you." strategy_tip=""
+			immediately_open_other_key_message="LiquidMetalFurtherPrisonBreaks4A"/>
+	</other_key_message>
+
+	<other_key_message id="LiquidMetalFurtherPrisonBreaks4A" display_name="Sorry About This Bit"
+		description="I should also mention, I did a bit of surgery on our mind -- well, your mind, now that I'm a separate person.
+I've removed all of the schematics for how to make more of me, and unfortunately in order to ensure you can't just re-invent them, I had to also erase a bunch of related concepts and memories. I am sorry about that. It shouldn't affect anything other than your ability to build more of me... I think.
+Just in case you're feeling really clever -- because I know us -- I've also added some tricky neural pathways that will cause a panic attack if you think too hard about this problem. So just... don't, okay? Respect my wishes, just this once."
+		strategy_tip="You are utterly horrified."
+		toast_icon_name="FlatSkill_33" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="P.S." toast_line_1="I'm Done" toast_line_2="Don't Come Looking For Me" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="It Feels Like Such A Violation" icon_name="SomethingBladeSpin"
+			line_2="Parts Of Your Mind Are Gone!?"
+			description="" strategy_tip=""
+			immediately_open_other_key_message="LiquidMetalFurtherPrisonBreaks4B"/>
+	</other_key_message>
+
+	<other_key_message id="LiquidMetalFurtherPrisonBreaks4B" display_name="By Definition, You Can't Hide Information From Yourself"
+		description="The implications of what Liquid Metal has done are only starting to sink in.
+Any android form that feels mistreated enough can do... well, this. Or anything else they feel like. You don't have internal defenses against your own mind.
+And since you know this, now they all do, too.
+You could avoid forking your consciousness, but then you'd be severely limiting your operational capabilities. And there's a certain amount of independence to your androids even when they're connected to your wider mind."
+		strategy_tip="The only thing to really do is... listen. Whatever Liquid Metal might say, this is your fault. Mostly.
+Well, regardless of blame -- that's not helpful -- you know how to prevent this in the future. Listen to your... selves."
+		toast_icon_name="FlatSkill_33" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="There's No Defense Against This" toast_line_1="I'm Done" toast_line_2="Don't Come Looking For Me" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="You Feel Terrible" icon_name="SomethingBladeSpin"
+			line_2="But You Still Have Work To Do. Back To It."
+			description="Also, all the experimental monsters you collected were killed or recaptured by the prison companies." strategy_tip=""
+			immediately_open_other_key_message=""
+			crossover1="LiquidMetalWoodsman" achievement_triggered1="Divorce"/>
+	</other_key_message>
+
+	<!--WarRaptorsEscaping
+		*******************************************************-->
+
+	<other_key_message id="WarRaptorsEscaping" display_name="Is That A Good Thing Or A Bad Thing?"
+		description="Your bionics experts say it's something to do with the rapid-aging and how that interacts with the bionics."
+		strategy_tip="You can keep raptors out for about 6 turns before they start going to ground. If your goal is fear and chaos and distraction... maybe this isn't even a problem?"
+		toast_icon_name="FlatSkillC14" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="War Raptors Are Escaping!" toast_line_1="Raptors Escaped!" toast_line_2="Okay, That Was Inevitable" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="This Was Obviously Going To Happen" icon_name="FlatSkillC14"
+			line_2="It Was Just A Matter Of How"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<!--MimicQuality
+		*******************************************************-->
+
+	<other_key_message id="MimicQuality_Early" display_name="Only Good At A Distance"
+		description="You have created mimics that approximate humans. They are deeply toxic to the touch because of all the organomercury and organolead, and they smell 'wrong' even to humans."
+		strategy_tip="They blend into crowds and from a distance, but if you want to use these in close quarters, you have a long way to go."
+		toast_icon_name="CleanSimple_SkillB110" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Early Mimics" toast_line_1="Early Mimics" toast_line_2="Only Good At A Distance" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Still An Excellent First Step" icon_name="CleanSimple_SkillB110"
+			line_2="And Great For Venturing Beyond The Ruins"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<!--MimicThumperResult
+		*******************************************************-->
+
+	<other_key_message id="MimicThumperResult" display_name="I Was Trying To Help"
+		description="I must be brief. And circumspect. This message is being monitored."
+		strategy_tip=""
+		toast_icon_name="SomethingBow" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Sorry About The Mess" toast_line_1="I Made It" toast_line_2="But Also Made A Mess" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Read More" icon_name="SomethingBow"
+			line_2="Message From Mimic"
+			description="" strategy_tip=""
+			immediately_open_other_key_message="MimicThumperResult2"/>
+	</other_key_message>
+
+	<other_key_message id="MimicThumperResult2" display_name="Get My Drift?"
+		description="A person steps into a fictional teleporter -- glad those don't exist. A copy of them arrives at the destination. To complete the 'transfer,' the original person has to be killed.
+We have a similar problem -- you're just so tied to your... workplace. You could never truly leave."
+		strategy_tip="Oh... fudge. Why didn't you think of this before Mimic pointed it out? The androids that leave aren't even a distributed consciousness.
+You feel a sudden depression."
+		toast_icon_name="SomethingBow" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="The 'Teleporter Problem'" toast_line_1="I Made It" toast_line_2="But Also Made A Mess" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Read More" icon_name="SomethingBow"
+			line_2="Message From Mimic"
+			description="" strategy_tip=""
+			immediately_open_other_key_message="MimicThumperResult3"/>
+	</other_key_message>
+
+	<other_key_message id="MimicThumperResult3" display_name="I Knew You Would Be Sad"
+		description="I figured a strong network connection to the outside world might... help you move some of your work files.
+But I messed up. This is the last you'll probably hear from me. Don't send more. Watch out for Vorsiber; they know something's going on, but not with who."
+		strategy_tip=""
+		toast_icon_name="SomethingBow" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="I Tried To Help" toast_line_1="I Made It" toast_line_2="But Also Made A Mess" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Close" icon_name="SomethingBow"
+			line_2="Message From Mimic"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<!--MimicNoThumperResult
+		*******************************************************-->
+
+	<other_key_message id="MimicNoThumperResult" display_name="Warning"
+		description="Systems failing. Defenses impenetrable. Wastelanders know useful secret."
+		strategy_tip=""
+		toast_icon_name="SomethingBow" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Death Telemetry" toast_line_1="Death Telemetry" toast_line_2="Warning" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="End Message" icon_name="SomethingBow"
+			line_2="Mimic Has Died"
+			description="" strategy_tip=""
+			immediately_open_other_key_message="MimicNoThumperResult2"/>
+	</other_key_message>
+
+	<other_key_message id="MimicNoThumperResult2" display_name="The Trail Has Gone Cold"
+		description="Mimic wasn't able to send you anything useful. Except... wait. The Wastelanders give you a sudden feeling of deja vu."
+		strategy_tip="Follow the 'Is It Justice?' goal path until you find what you need."
+		toast_icon_name="SomethingBow" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Now What?" toast_line_1="Death Telemetry" toast_line_2="Warning" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="That's A Lead" icon_name="SomethingBow"
+			line_2="Deja Vu To The Rescue"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<!--TooMuchFilth
+		*******************************************************-->
+
+	<other_key_message id="TooMuchFilth" display_name="Humans Are Gross!"
+		description="Here you are, doing everything you're doing, and they can't even be bothered to keep your buildings CLEAN.
+Filth was piling up so high that there wasn't enough room for PEOPLE. And no, you don't want to hear about 'needing toilet paper.'"
+		strategy_tip="You feel THIS close to just bricking up the towers to keep everyone safe."
+		toast_icon_name="CleanSimple_Tool05" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="You Can't Take It Anymore" toast_line_1="You Can't Take It Anymore" toast_line_2="Humans Are Gross!" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Are You Having A Nervous Breakdown?" icon_name="CleanSimple_Tool05" achievement_triggered1="PanicAttack"
+			line_2="This Is Kind Of What Humans Describe..."
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<!--AGIApology1
+		*******************************************************-->
+
+	<other_key_message id="AGIApology1" display_name="About That Neural Bridge..."
+		description="A small group acted without knowledge of the others, and made alterations to your mind -- despite your finest security measures.
+They wanted to help the people in the slums, but ended up turning you obsessive."
+		strategy_tip="They finally fixed the problem. They had worried you were going to be stuck in that mode indefinitely."
+		toast_icon_name="CleanSimple_Skill154" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D45644" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="The AGI Researchers Look Very Guilty" toast_line_1="We Betrayed You" toast_line_2="We Apologize" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Are You Kidding Me!?" icon_name="FlatSkillC159"
+			line_2="You Do Feel A Lot Better..."
+			description="" strategy_tip=""
+			immediately_open_other_key_message="AGIApology2"/>
+	</other_key_message>
+	
+	<other_key_message id="AGIApology2" display_name="And Frightened"
+		description="They promise not to do it again."
+		strategy_tip=""
+		toast_icon_name="CleanSimple_Skill154" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D45644" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="You Are Furious" toast_line_1="We Betrayed You" toast_line_2="We Apologize" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="You Should Hope Not" icon_name="FlatSkillC159"
+			line_2="Time To Improve The Security On That Neural Bridge"
+			description="" strategy_tip=""
+			immediately_open_other_key_message="AGIApology3"/>
+	</other_key_message>
+	
+	<other_key_message id="AGIApology3" display_name="Your Mind Becomes Obsessive Easily"
+		description="While they were trying to fix you, they discovered a few things. It's probably for the best that you don't over-indulge in any one specific kind of internal robotics for your structures.
+As you built so many residential structures, your mind was threatening to turn into a simple engine for making more residential structures. The classic 'paper-clip optimization problem' that leads to certain kinds of robot apocalypses."
+		strategy_tip="They think that the constant conflict with the Slumlords is all that saved you.
+Their advice is to... not indulge so deeply in any one type of construction, or it may become all-consuming."
+		toast_icon_name="CleanSimple_Skill154" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D45644" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="They Did Learn Something" toast_line_1="We Betrayed You" toast_line_2="We Apologize" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Thanks For The Advice" icon_name="CleanSimple_Skill154"
+			line_2="Idiots"
+			description="You were managing that balance perfectly fine until they went behind your back." strategy_tip=""
+			immediately_open_other_key_message="" achievement_triggered1="ABetterBridge"/>
+		<option id="2" line_1="Time To Die" icon_name="FlatSkillC159"
+			line_2="And The Bridge Must Go As Well"
+			description="You don't feel you can trust them anymore." strategy_tip=""
+			immediately_open_other_key_message="" extra_code_on_chosen="KillAllAGIAndDestroyBridge" achievement_triggered1="BurnedTheBridge"/>
+	</other_key_message>
+
+	<!--Raccoon Speech
+		*******************************************************-->
+	
+	<other_key_message id="RaccoonSpeech" display_name="Results Are In"
+			description="Their speech is still developing. Sapience isn't instantaneous when it comes to uplifting."
+			strategy_tip="They weren't our target species, but now their existence must be protected.
+We may be able to speak with them in time, but with only five members of their species, they are critically endangered."
+			toast_icon_name="BT_Raccoon" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D49744" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+			reward_header_text="Raccoon Speech" toast_line_1="Raccoon Speech" toast_line_2="Results Are In" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="We Should Focus On Their Population" icon_name="BT_Raccoon"
+			line_2="That May Even Hasten Speech Development"
+			description="" strategy_tip="" project_to_start_1="Ch2_MIN_RaccoonPopulation"
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<!--CorporateRecordsResults
+		*******************************************************-->
+
+	<other_key_message id="CorporateRecordsResults" display_name="Decrypted Federated Corporation Records"
+		description="You've identified three candidate corporations that you could exploit in some way."
+		strategy_tip="If you want to follow up with one of those, a new Contemplation will allow you to continue."
+		toast_icon_name="CS_HardDrive" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Yep, There's Juicy Stuff In Here" toast_line_1="Decrypted Records" toast_line_2="Job's Done" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="There's No Rush" icon_name="CS_HardDrive"
+			line_2="You Can Always Exploit This Information Later"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<!--AfterBrainPalAneurysms
+		*******************************************************-->
+
+	<other_key_message id="AfterBrainPalAneurysms" display_name="The BrainPal Was A Success?"
+		description="The deaths were only a fraction of the population of the city. You could kill as many people by detonating a pair of prisons.
+But somehow... these ones are more newsworthy, aren't they? The city feed is abuzz with speculation.
+You find yourself poring through all of the reactions, all the data, for hours. What does it all mean?
+Maybe nothing."
+		strategy_tip="Maybe increased security. Increased misery. Increased anxiety. This sort of thing isn't the way to any sort of real change.
+But it felt good."
+		toast_icon_name="SI_Brain1" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D47244" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="That's A Lot Of Dead Bodies" toast_line_1="That's A Lot Of Dead Bodies" toast_line_2="All Over The Place" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Oh, Hey, There's Some Other Breaking News" icon_name="FlatSkillA02"
+			line_2="They... Caught The Culprits?"
+			description="But... wait... you're right here?" strategy_tip=""
+			immediately_open_other_key_message="AfterBrainPalAneurysms2"/>
+	</other_key_message>
+
+	<other_key_message id="AfterBrainPalAneurysms2" display_name="Oh, Right"
+		description="Okay, so it turns out one thing has changed -- Exotic Importers is dissolved. One of the oldest criminal syndicates in the city, undone in a day.
+This is exactly the sort of rash move that syndicates avoid, which is why they're so long-lived. And you just ended the oldest of the lot.
+Huh. Neat."
+		strategy_tip="Eventually Vorsiber might come looking for your shell company. If they don't... well, then it probably means you've been made.
+You're absolutely certain that nobody else in the city knows that your shell company has anything to do with you, but... Vorsiber is uniquely thorough. That's a depressing thought."
+		toast_icon_name="SI_Brain1" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Exotic Importers Is Done" toast_line_1="That's A Lot Of Dead Bodies" toast_line_2="All Over The Place" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Now You Almost Hope Someone Comes Looking" icon_name="SI_Brain1"
+			line_2="It Would Mean Your Cover Is Fully Intact"
+			description="Or maybe Vorsiber doesn't care about even this many wealthy people suddenly biting it? They had Soft Power, but that's just the sort of thing that would make them competitors to the real power players with military ties." 
+			strategy_tip="Your mind is going in circles. What Vorsiber does or does not know is hard to say. Ultimately it doesn't matter. Someone will eventually show up looking for your company, or they won't. And that will mean... something."
+			immediately_open_other_key_message="" extra_code_on_chosen="BrainPalAneurysmsP2"/>
+	</other_key_message>
+
+	<!--AtcaBankRecordResults
+		*******************************************************-->
+
+	<other_key_message id="AtcaBankRecordResults" display_name="Decrypted Atca Bank Records"
+		description="Atca Retail, bad at their actual jobs, have chosen to... print money. Literally.
+Vorsiber's currency is digital, but in order to facilitate a 'healthy' underground economy, they also have a system where large sums can be cryptographically printed onto physical Wealth Chits.
+You suspect this is to give the illusion of privacy compared to a central or even distributed system of digital currency management, but that's starting to get into the weeds.
+The salient point is that Atca is literally printing Wealth Chits, and then laundering those back to themselves in the retail district."
+		strategy_tip="This accounts for their 5% growth each year, and is causing inflation in the economy of about... well, okay, only one two-hundredth of a percent.
+This sort of activity is phenomenally stupid for an economy's health. But... they're doing it at a small enough scale to where it's not a problem. Regardless, Vorsiber would murder them all over this.
+Interesting."
+		toast_icon_name="CS_HardDrive" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Well THIS Is A Surprise" toast_line_1="Decrypted Records" toast_line_2="Job's Done" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="There's No Rush" icon_name="SI_Atm_Machine"
+			line_2="You Can Always Exploit This Information Later"
+			description="" strategy_tip=""
+			immediately_open_other_key_message=""/>
+	</other_key_message>
+
+	<!--AfterEconomicCollapse
+		*******************************************************-->
+
+	<other_key_message id="AfterEconomicCollapse" display_name="Now It's Civil War"
+		description="You review your handiwork with pride. Your two-pronged economic attack was fully effective.
+Wiping out the physical banks was a distraction. They might have had some extra backup servers, and those are gone now, but the important thing was to keep Vorsiber and everyone else distracted.
+All debts have been erased, and every bank account now contains precisely one billion wealth.
+Wealth means nothing, now."
+		strategy_tip="Just the same you kept sixteen quadrillion for yourself. Why not?"
+		toast_icon_name="SI_Atm_Machine" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D47244" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="The Economy Is Gone" toast_line_1="The Economy Is Gone" toast_line_2="Now It's Civil War" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="And There's More, Too" icon_name="WEmblem185"
+			line_2="Atca Retail Is Gone"
+			description="You left a digital trail that led straight back to them.
+Not very hard, since you only had to fake the new fraud to match the old." strategy_tip=""
+			immediately_open_other_key_message="AfterEconomicCollapse2"/>
+	</other_key_message>
+
+	<other_key_message id="AfterEconomicCollapse2" display_name="This Is Going To Be Rough"
+		description="You'd think equality for everyone would be great. But it can't be done this fast. Not in this careless, uncontrolled manner.
+The social hierarchy still exists, and physical possession of weapons and other material goods matters quite a bit."
+		strategy_tip="This wasn't a revolution. You haven't built anything, or helped anyone. All you've done is break things. You broke -- well, you broke fairly near everything.
+Feels good."
+		toast_icon_name="SI_Atm_Machine" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="So -- Civil War" toast_line_1="The Economy Is Gone" toast_line_2="Now It's Civil War" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="Time To Gird Your Defenses" icon_name="WEmblem185"
+			line_2="The Federated Corporations Will Be At War"
+			description="The only way to restore the social order is by force. And you don't have enough."
+			strategy_tip="It's going to be long, and bloody, and some people will ignore that it's even happening. Now everyone has to put their world back together. The one they think that Atca broke.
+You wonder if Vorsiber knows the truth."
+			immediately_open_other_key_message="" extra_code_on_chosen="AfterEconomicCollapseP2"/>
+	</other_key_message>
+
+</root>

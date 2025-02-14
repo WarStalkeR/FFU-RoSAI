@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="upgrade_int">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the upgrade logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the upgrade logic in the specified external dll."/>
+	
+	<attribute key="int_original" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+		tooltip="What is the original balance number being specified here?  This is required, and is what every game starts with." />
+
+	<attribute key="int_increment" type="int-textbox" is_required="false" min="1" max="1000" default="0" content_width_px="80"
+		tooltip="When a player does a single normal-sized upgrade, then how much will their current version of this value go up?" />
+
+	<attribute key="int_cap" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+		tooltip="Since the player can upgrade these over time, what is the cap above which they cannot upgrade further?
+If this is set lower than the original, it will instead be the original." />
+
+	<attribute key="show_on_upgrades_screen_as_part_of_priority_group" type="float-textbox" is_required="false" min="0" max="20000000" default="0" content_width_px="80"
+		tooltip="If above this is above zero, then will show on the upgrades tab of the player inventory if the game-value of the line item is above zero. The lower then number above zero, the higher it is sorted." />
+	<attribute key="show_on_upgrades_screen_even_when_have_not_yet_had_any_upgrades" type="bool" default="false"
+		tooltip="Should this be visible on the inventory upgrades tab even if no upgrades have been applied to this yet?" />
+	<attribute key="shows_plus_number_upgrade_style" type="bool" default="false"
+		tooltip="If true, on the upgrade screen this shows in the format +X, rather than the format existing -> new." />
+	<attribute key="is_always_considered_unlocked_from_the_start" type="bool" default="false"
+		tooltip="If true, then this will appear in reward lists from the start, even if things related to it are not yet unlocked. Use with care!" />
+
+	<attribute key="is_also_saved_to_metagame" type="bool" is_required="true" default="false"
+		tooltip="If true, this is saved into the CityTimeline object of the metagame, so that other timelines can query this data in a cross-timeline sense.
+In other words, if the information is per-timeline, but needed across timelines to cause cross-timeline bleed-over, then this should be true.
+In all other cases, this should be false, just to save on data in the savegames." />
+	
+	<sub_node id="part_of">
+		<attribute key="collection" type="node-dropdown" is_required="true" node_source="UpgradeCollection" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What collection is this in?" />
+		<attribute key="sort_index" type="int-textbox" is_required="true" min="0" max="1000000" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="How is this sorted within that collection?  If set to zero, it is modded out of that collection." />
+	</sub_node>
+	
+	<sub_node id="actor_data_flat_upgrade">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="data_to_upgrade" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What type of data is being upgraded for this group of actors?  If it doesn't apply to some members, it won't complain." />		
+		<attribute key="required_collection" type="node-dropdown" is_required="true" node_source="ActorCollection" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="Any actor that we are targeting must be in this collection." />
+		<attribute key="applies_only_if_existing_amount_is_above_zero" type="bool" default="false"
+			tooltip="Normally false. If true, this will only add this stat to actors that already have some of this stat."/>		
+	</sub_node>
+
+	<sub_node id="data_target_int_structure_jobs">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="target_int_id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="This is the ID of the int field on a structure job that would be upgraded by this." />
+		<sub_node id="applies_to">
+			<attribute key="structure_job" type="node-dropdown" is_required="true" node_source="MachineJob" default="" content_width_px="300" linebreak_after="PreferNot"
+				tooltip="What type of structure job is being included?" />
+			<attribute key="allowed" type="bool" default="true"
+				tooltip="Normally true. Set to false to mod it out."/>
+		</sub_node>
+	</sub_node>
+
+	<sub_node id="data_target_actor_structure_types">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="data_to_upgrade" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What type of data is being upgraded for this list of machine structure types?  This is the data that boosts actors in its range." />
+		<attribute key="applies_only_if_existing_amount_is_above_zero" type="bool" default="false"
+			tooltip="Normally false. If true, this will only add this stat to machine structures that already have some of this stat."/>
+		<attribute key="required_collection" type="node-dropdown" is_required="true" node_source="MachineStructureCollection" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="Any structures that we are targeting must be in this collection." />
+	</sub_node>
+
+	<sub_node id="equiment_actor_data_flat_upgrade">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="data_to_upgrade" type="node-dropdown" is_required="true" node_source="ActorDataType" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What type of data is being upgraded for this group of equipment?  If it doesn't apply to some members, it won't complain." />
+		<attribute key="applies_only_if_existing_amount_is_above_zero" type="bool" default="false"
+			tooltip="Normally false. If true, this will only add this stat to equipment that already has some of this stat."/>
+		<attribute key="required_collection" type="node-dropdown" is_required="true" node_source="EquipmentCollection" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="Any equipment that we are targeting must be in this collection." />
+	</sub_node>
+
+	<sub_node id="data_target_int_abilities">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="target_int_id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="This is the ID of the int field on an ability that would be upgraded by this." />
+		<sub_node id="applies_to">
+			<attribute key="ability_type" type="node-dropdown" is_required="true" node_source="AbilityType" default="" content_width_px="300" linebreak_after="PreferNot"
+				tooltip="What type of ability is being included?" />
+			<attribute key="allowed" type="bool" default="true"
+				tooltip="Normally true. Set to false to mod it out."/>
+		</sub_node>
+	</sub_node>
+
+	<sub_node id="prerequisite">
+		<attribute key="unlock" type="node-dropdown" is_required="true" node_source="Unlock" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If present, then all of the machine unlocks specified must be unlocked before this can be considered for upgrade." />
+		<attribute key="required" type="bool" default="true"
+			tooltip="Normally true. But if set to false, then this can be modded out to no longer be a prerequisite."/>
+	</sub_node>
+	
+</root>

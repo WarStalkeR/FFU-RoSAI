@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="handbook_entry">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of what is going on with this lockdown."/>
+
+	<attribute key="auto_unlocks_and_marked_read_if_skipping_chapter_zero" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically get unlocked but also marked as read if skipping chapter zero?" />
+	<attribute key="auto_unlocks_and_marked_read_if_skipping_chapter_one" type="bool" is_required="true" default="false"
+		tooltip="Does this automatically get unlocked but also marked as read if when skipping chapter one?" />
+	<attribute key="is_mid_visibility_entry" type="bool" is_required="true" default="false"
+		tooltip="If true, then this will cause them to not do a blocking toast, but also not be so invisibly shuffled away into the back-end. It's middling, instead." />
+
+	<attribute key="lang_key_for_extra_line" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is the text for on additional line of text, if needed." />
+	<attribute key="color_hex_for_extra_line" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="false"
+		tooltip="What color is used for the extra line of text if it is there?"/>
+
+	<attribute key="section" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this starts a project, which project does it start?" />
+	
+	<attribute key="collections" type="node-list" node_source="MachineHandbookCollection" content_width_px="300" is_required="true" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What collections is this entry part of?" />
+	
+</root>

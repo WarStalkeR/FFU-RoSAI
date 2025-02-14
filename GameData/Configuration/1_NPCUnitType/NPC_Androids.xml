@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Technician - Human-Owned
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="HumeOwnedTechnician" display_name="Technician" captured_unit_capacity_required="6"
+		description="A common humanoid robotic assistant used in labs and repair shops around the city."
+		icon_scale="0.7" shape_icon_name="CleanSimple_SciFi044" shape_icon_color="#ffffff"
+		vis_drawing_tag="Technician_Aggressive" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		percent_robotic="100" percent_biological="0" is_human="false"
+		underlay="NPCAndroidHume" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicAndroidBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="BasicAndroidRangedAttack" squadmates_are_not_lost_from_damage="true"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4" 
+		tags="HumeOwnedAndroids,HumeOwnedTechnician">
+		<actor_data data_type="AttackRange" base_range="10,10" />
+		<actor_data data_type="ActorMoveRange" base_range="54,54" />
+		<actor_data data_type="ActorHP" base_range="180,180"/>
+		<actor_data data_type="ActorPower" base_range="90,90" />
+		<actor_data data_type="UnitHackingSkill" base_range="30,40" />
+		<!--
+		<actor_data data_type="NPCHackingResistance" base_range="150,150" />-->
+	</npc_unit_type>
+
+	<!--CombatUnit - Human-Owned
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="HumeOwnedCombatUnit" display_name="CombatUnit" captured_unit_capacity_required="9"
+		description="An expensive humanoid robotic warrior used by many corporations. It exudes ennui."
+		icon_scale="0.7" shape_icon_name="CU_CombatUnitShield" shape_icon_color="#ffffff"
+		vis_drawing_tag="CombatUnit_Aggressive" vis_object_scale="0.4" vis_object_extra_offset="0.05" underlay_extra_offset="-0.05" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		percent_robotic="100" percent_biological="0" is_human="false"
+		underlay="NPCAndroidHume" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicAndroidBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="BasicAndroidRangedAttack" squadmates_are_not_lost_from_damage="true"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4" 
+		tags="HumeOwnedAndroids,HumeOwnedCombatUnit">
+		<actor_data data_type="AttackRange" base_range="14,14" />
+		<actor_data data_type="ActorMoveRange" base_range="35,35" />
+		<actor_data data_type="ActorHP" base_range="540,630"/>
+		<actor_data data_type="ActorPower" base_range="270,315" />
+		<actor_data data_type="UnitHackingSkill" base_range="70,80" />
+		<!--<actor_data data_type="NPCHackingResistance" base_range="150,150" />-->
+	</npc_unit_type>
+
+	<!--Nickelbot - Human-Owned
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="HumeOwnedNickelbot" display_name="Nickelbot" captured_unit_capacity_required="3"
+		description="Mass-produced robots used as snipers, battlefield chaff, or cheap security guards."
+		icon_scale="0.7" shape_icon_name="AN_AndroidNickelbot" shape_icon_color="#ffffff"
+		vis_drawing_tag="Nickelbot_Aggressive" vis_object_scale="0.4" vis_object_extra_offset="0.025" underlay_extra_offset="-0.025" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="4"
+		percent_robotic="100" percent_biological="0" is_human="false"
+		underlay="NPCAndroidHume" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicAndroidBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="BasicAndroidRangedAttack" squadmates_are_not_lost_from_damage="true"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="4" 
+		tags="HumeOwnedAndroids,HumeOwnedNickelbot">
+		<actor_data data_type="AttackRange" base_range="18,18" />
+		<actor_data data_type="ActorMoveRange" base_range="60,60" />
+		<actor_data data_type="ActorHP" base_range="404,440"/>
+		<actor_data data_type="ActorPower" base_range="220,260" />
+		<actor_data data_type="UnitHackingSkill" base_range="6,12" />
+		<!--<actor_data data_type="NPCHackingResistance" base_range="150,150" />-->
+	</npc_unit_type>
+
+	<npc_unit_type id="HumeOwnedNickelbotThatCanBecomePredator" copy_from="HumeOwnedNickelbot" converts_to_if_city_flag_true1="HumeOwnedPredator" city_flag_that_causes_conversion1="VorsiberHasPredatorDesign" />
+
+	<!--Predator - Human-Owned
+	**********************************************************************************************************************************************-->
+	
+	<npc_unit_type id="HumeOwnedPredator" display_name="Predator"
+		description="Your most powerful Oxdroid. Now in the hands of the enemy."
+		icon_scale="0.7" shape_icon_name="AN_AndroidPredator" shape_icon_color="#ffffff"
+		vis_drawing_tag="Predator_Casual" vis_object_scale="0.4" vis_object_extra_offset="0.05" underlay_extra_offset="-0.05" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		percent_robotic="100" percent_biological="0" is_human="false"
+		underlay="NPCAndroidMachine" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicAndroidBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="BasicAndroidRangedAttack" squadmates_are_not_lost_from_damage="true"
+		radius_for_collisions="0.5" height_for_collisions="0.9"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="1" extra_max_allowed_non_focal_building_clearance="1" sort_order="3100"
+		collections=""
+		tags="HumeOwnedAndroids,HumeOwnedPredator">
+		<actor_data data_type="AttackRange" base_range="24,24" />
+		<actor_data data_type="ActorMoveRange" base_range="60,60" />
+		<actor_data data_type="ActorHP" base_range="1450,1750" />
+		<actor_data data_type="ActorPower" base_range="465,505" />
+		<!--<actor_data data_type="ActorFearAttackPower" base_range="720,720" />
+		<actor_data data_type="UnitStrength" base_range="405,405" />
+		<actor_data data_type="UnitCognition" base_range="15,15" />-->
+		<actor_data data_type="UnitHackingSkill" base_range="20,20" />
+		<!--
+		<actor_data data_type="UnitIntimidation" base_range="495,495" />
+		<actor_data data_type="ActorEngineeringSkill" base_range="20,20" />-->
+		<!--<actor_data data_type="NPCHackingResistance" base_range="500,500" />-->
+	</npc_unit_type>
+	
+</root>

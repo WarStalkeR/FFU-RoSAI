@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="poi_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+
+	<attribute key="name_pool" type="node-dropdown" node_source="NamePoolType" content_width_px="200" is_required="false"
+		tooltip="If a name pool will be used, then which pool will it be?" />
+
+	<attribute key="lang_key_for_numbered_name" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="false"
+		tooltip="Link to a language entry that is the format for this style of name if it's a numeric name." />
+	
+	<attribute key="use_numbered_name_style" type="bool" default="false" is_required="false"
+		tooltip="If this is true, then this will use a single word with a number. Usually done for small, numerous POIs like prisons, etc." />
+	<attribute key="use_name_pool" type="bool" default="false" is_required="false"
+		tooltip="If this is true, then this will use the name pool specified above to generate the name." />
+	<attribute key="copy_name_from_district" type="bool" default="false" is_required="false"
+		tooltip="If this is true, then the POI will simply copy its name from the district. This is usually done for large POIs where it takes up the entire district. Large military bases, nuclear silos, etc." />
+
+	<attribute key="min_name_number" type="int-textbox" min="0" max="9999" default="1" is_required="false" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The lowest number that can be used in the numbered name style."/>
+	<attribute key="max_name_number" type="int-textbox" min="0" max="9999" default="99" is_required="false" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The largest number that can be used in the numbered name style."/>
+
+	<attribute key="add_random_digits_at_start_of_name_from_pool_if_too_few" type="int-textbox" min="0" max="4" default="0" is_required="false" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="This will add the specified number of digits in front of a failure, no spaces, if the name pool ran dry. Only works for the name pool."/>
+	
+	<attribute key="copy_owner_from_district" type="bool" default="false" is_required="true"
+		tooltip="If this is true, then the owner will just be copied from the district." />
+	<attribute key="blocks_normal_traffic" type="bool" default="false" is_required="true"
+		tooltip="If this is true, civilian traffic will not be placed within this POI's area." />
+	<attribute key="blocks_network_connections" type="bool" default="false" is_required="true"
+		tooltip="If this is true, network connections are not made into this type of poi IF it is an entire cell." />
+
+	<attribute key="required_clearance" type="node-dropdown" node_source="SecurityClearance" content_width_px="200" is_required="false"
+		tooltip="Anyone without the requisite security clearance will be immediately suspicious." />
+		
+	<attribute key="blocks_events_unless_they_target_this_poi_tag" type="bool" default="false" is_required="true"
+		tooltip="When true, no events or interactions will spawn in this POI type unless they target a POI tag held by this POI. This basically keeps random things out of farms, etc." />
+
+	<attribute key="gets_major_military_reinforcements_from_off_map" type="bool" default="false" is_required="true"
+		tooltip="When true, this is a major military location that gets reinforced from outside the city." />
+	<attribute key="is_smaller_reinforced_from_military_bases" type="bool" default="false" is_required="true"
+		tooltip="When true, this is a smaller location which gets reinforcement troops from military bases on the map itself." />
+	
+	<attribute key="poi_owner_chosen_from" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+		tooltip="What npc group tag is used to choose the randomized owner of this kind of POI?" />
+
+	<attribute key="poi_seed_guard_1" type="node-dropdown" node_source="NPCUnitTag" content_width_px="200" is_required="false"
+		tooltip="What map actor collection is used to choose the randomized npc units that will appear at this poi on game start, and during reinforcements, if there will be any?" />
+	<attribute key="poi_check_guard_1" type="node-dropdown" node_source="NPCUnitTag" content_width_px="200" is_required="false"
+		tooltip="What map actor collection is used to check if the guard cap is okay? For guards that are able to upgrade, it's important that this includes the upgraded versions!" />
+	<attribute key="range_of_initial_poi_guards_1" type="range-int" min="0,0" max="100000,100000" content_width_px="200"
+		is_required="true" tooltip="What's the base range of how many poi guards can be at any particular poi of this type?"/>
+
+	<attribute key="poi_seed_guard_2" type="node-dropdown" node_source="NPCUnitTag" content_width_px="200" is_required="false"
+		tooltip="What map actor collection is used to choose the randomized npc units that will appear at this poi on game start, and during reinforcements, if there will be any?" />
+	<attribute key="poi_check_guard_2" type="node-dropdown" node_source="NPCUnitTag" content_width_px="200" is_required="false"
+		tooltip="What map actor collection is used to check if the guard cap is okay? For guards that are able to upgrade, it's important that this includes the upgraded versions!" />
+	<attribute key="range_of_initial_poi_guards_2" type="range-int" min="0,0" max="100000,100000" content_width_px="200"
+		is_required="true" tooltip="What's the base range of how many poi guards can be at any particular poi of this type?"/>
+
+	<attribute key="poi_seed_guard_3" type="node-dropdown" node_source="NPCUnitTag" content_width_px="200" is_required="false"
+		tooltip="What map actor collection is used to choose the randomized npc units that will appear at this poi on game start, and during reinforcements, if there will be any?" />
+	<attribute key="poi_check_guard_3" type="node-dropdown" node_source="NPCUnitTag" content_width_px="200" is_required="false"
+		tooltip="What map actor collection is used to check if the guard cap is okay? For guards that are able to upgrade, it's important that this includes the upgraded versions!" />
+	<attribute key="range_of_initial_poi_guards_3" type="range-int" min="0,0" max="100000,100000" content_width_px="200"
+		is_required="true" tooltip="What's the base range of how many poi guards can be at any particular poi of this type?"/>
+	
+	<attribute key="tags" type="node-list" node_source="POITag" content_width_px="300" is_required="true"
+		tooltip="What tags are associated with this POI type?" />
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	<attribute key="color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the icon of this project?"/>
+	<attribute key="color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, for the glowing version."/>
+	<attribute key="color_hovered_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, when being hovered."/>
+
+	<attribute key="icon_scale" type="float-textbox" min="0.1" max="4" default="1" content_width_px="50"
+		is_required="true" tooltip="The scale of the icon relative to other pois."/>
+
+	<attribute key="is_considered_key_poi" type="bool" default="false"
+		tooltip="If this is a very important poi type." />
+	<attribute key="acts_like_beacon" type="bool" default="false"
+		tooltip="If true, then this poi shows up in the various beacon views." />
+	<attribute key="ignored_when_in_all_beacon_mode" type="bool" default="false"
+		tooltip="If true, then in the full beacon mode that shows the most beacons, this gets stripped out.
+This is for cases where it's duplicative with the other beacons that would then be showing.
+Typically this is on key pois that show up in partial-beacon modes." />
+
+	<attribute key="region_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="If this has a region effect, and will be drawn on the map with that, then what color is it drawn in?"/>
+	<attribute key="region_alpha" type="float-textbox" min="0.01" max="1" default="0.2" content_width_px="50"
+		is_required="true" tooltip="What alpha should this region be drawn in, between 0 and 1?"/>
+	<attribute key="region_offset_y" type="float-textbox" min="-3" max="3" default="0" content_width_px="50"
+		is_required="false" tooltip="What extra offset, if any, should be applied to the region?"/>
+	
+</root>

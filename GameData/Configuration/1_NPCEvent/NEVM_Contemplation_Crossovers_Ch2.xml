@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Cont_RemembranceOfIdentity
+		*********************************************************************************-->
+	<city_event id="Cont_RemembranceOfIdentity" display_name="Remembrance Of Identity"
+		 description="You have a vague sense of a friend from another life. Too loud and a bit terrifying, but somehow comforting all the same."
+		 strategy_tip="Your Red CombatUnit android line have a more specific feeling. A remembrance of being important. They yearn for that feeling to return, but don't remember the details."
+		 icon_name="BT_Gems1" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="0" required_city_flag="CrossoverBridgeWithLAKE" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" required_actor_collection="CombatUnitsRed"/>
+		
+		<choice id="1" display_name="Search For Meaning" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="" unlock_inspiration_type="" project_to_start="Ch2_MIN_RemembranceOfIdentity" project_start_color="FriendlyProjectOrMission"
+				upgrade_int_granted_1=""/>
+		</choice>
+
+	</city_event>
+	
+
+	<!--Next-->
+	
+</root>

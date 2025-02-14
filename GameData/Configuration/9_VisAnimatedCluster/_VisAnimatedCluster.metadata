@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="animated_cluster">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="debug_freeze_in_initial_state" type="bool" is_required="false" default="false"
+		tooltip="When true, the animations will not happen and the objects will sit in their initial state." />
+
+	<sub_node id="animated_object">
+		<attribute key="n" type="int-textbox" is_required="true" min="0" max="10" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="Identifier for each object in the cluster. The number does not really matter." />
+		<attribute key="draw" type="node-dropdown" node_source="VisSimpleDrawingObject" content_width_px="200" is_required="true"
+			tooltip="What object will be drawn. Required." />
+		
+		<attribute key="a1" type="node-dropdown" node_source="VisAnimatorLogic" content_width_px="200" is_required="false"
+			tooltip="If multiple animators are applied to an object, they will execute in the order specified." />
+		<attribute key="a2" type="node-dropdown" node_source="VisAnimatorLogic" content_width_px="200" is_required="false"
+			tooltip="If multiple animators are applied to an object, they will execute in the order specified." />
+		<attribute key="a3" type="node-dropdown" node_source="VisAnimatorLogic" content_width_px="200" is_required="false"
+			tooltip="If multiple animators are applied to an object, they will execute in the order specified." />
+
+		<attribute key="y" type="float-textbox" is_required="true" min="-10" max="10" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="In the local space of the cluster, how much is the initial offset y of this object?" />
+		<attribute key="angle" type="float-textbox" is_required="true" min="-360" max="360" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="In the local space of the cluster, what degrees in angles if the xz center moved away for this object?" />
+		<attribute key="xz" type="float-textbox" is_required="true" min="-10" max="10" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="In the local space of the cluster, how far away from the center does this xz move at the angle specified above?" />
+
+		<attribute key="rot" type="vector3-textbox" is_required="true"
+			tooltip="In the local space of the cluster, what is this object's initial rotation?" />
+		<attribute key="scale" type="vector3-textbox" is_required="true"
+			tooltip="In the local space of the cluster, what is the starting scale of the object?" />
+		
+		<attribute key="initial_is_visible" type="bool" is_required="false" default="true"
+			tooltip="In the initial state of this cluster, is this object visible?  Objects can either be visible or invisible, but fades are not supported." />
+		<attribute key="time_offset" type="float-textbox" is_required="false" min="-1" max="10" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="For things that change over a period, setting the initial time offset differently will make them animate in different styles of sequence." />
+
+		<attribute key="debug" type="bool" is_required="false" default="false"
+			tooltip="When true, do debugging on this specific object's animator." />
+	
+	</sub_node>
+
+</root>

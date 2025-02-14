@@ -1,0 +1,230 @@
+Setting/setting/=EnableSounddisplay_name|Sound
+Setting/setting/=EnableSounddescription|If disabled, no sound effects play.
+Setting/setting/=EnableMusicdescription|If disabled, no music plays.
+Setting/setting/=EnableVoicedisplay_name|Voice
+Setting/setting/=EnableVoicedescription|If disabled, no spoken voice audio plays.
+Setting/setting/=MasterVolumedisplay_name|Master Volume
+Setting/setting/=MasterVolumedescription|Volume of all sound in general, music and sound effects and so on.  Adjusting this keeps the relative volumes of sub-channels as they are.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=MusicVolumedisplay_name|Music Volume
+Setting/setting/=MusicVolumedescription|Volume of the music, relative to all non-music sound.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=SoundVolumedisplay_name|Sound Volume
+Setting/setting/=SoundVolumedescription|Volume of all sound effects in general, relative to the music.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=WorldSoundVolumedisplay_name|World Sound Volume
+Setting/setting/=WorldSoundVolumedescription|Volume of the sounds of the noises of the world, relative to the interface and music/ambience.  Adjusting this keeps the relative volumes of sub-channels as they are.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=BigSoundsVolumedisplay_name|Big Sounds Volume
+Setting/setting/=BigSoundsVolumedescription|Large sudden sounds, which cause the music or ambience to duck a bit.  Notable explosions, death cries, sounds of ominous intent, etc.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=MassiveSoundsVolumedisplay_name|Massive Sounds Volume
+Setting/setting/=MassiveSoundsVolumedescription|Truly giant sounds, which quiet almost everything else and arrest your attention on whatever is going on here.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=MagicVolumedisplay_name|Magic Volume
+Setting/setting/=MagicVolumedescription|Volume of magic spells, primarily during combat but also outside of combat when relevant.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=PhysicalWeaponsVolumedisplay_name|Physical Weapons Volume
+Setting/setting/=PhysicalWeaponsVolumedescription|Volume of the sound of physical weapon strikes (including creature physical attacks).  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=ConstructionVolumedisplay_name|Construction Volume
+Setting/setting/=ConstructionVolumedescription|Volume of the sounds of construction, at your bases or otherwise.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=EnvironmentEffectsVolumedisplay_name|Environment Effects Volume
+Setting/setting/=EnvironmentEffectsVolumedescription|Volume of environmental sounds with a specific source (water falling, fires crackling, etc).  Does not include general ambience like wind rustling in trees.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=CharacterFoleyVolumedisplay_name|Character Foley Volume
+Setting/setting/=CharacterFoleyVolumedescription|Volume of sounds made by characters (footsteps, armor jingle, etc).  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=OtherWorldSoundsVolumedisplay_name|Other World Sounds Volume
+Setting/setting/=OtherWorldSoundsVolumedescription|Volume of other miscellaneous sounds that happen in the world and don't fit into another category.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=VoiceAndInterfaceMasterVolumedisplay_name|Voice And Interface Parent Volume
+Setting/setting/=VoiceAndInterfaceMasterVolumedescription|Volume of all non-world sound effects in general, relative to the world sound effects.  Adjusting this keeps the relative volumes of sub-channels as they are.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=InterfaceVolumedisplay_name|Interface Volume
+Setting/setting/=InterfaceVolumedescription|Volume of click sound effects and other interface feedback.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=VoiceRoutineVolumedisplay_name|Voice Volume (Routine)
+Setting/setting/=VoiceRoutineVolumedescription|Volume of normal voices of characters.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=VoiceLargeVolumedisplay_name|Voice Volume (Large)
+Setting/setting/=VoiceLargeVolumedescription|Volume of voices that are large and extra intimidating.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.
+Setting/setting/=AlertVolumedisplay_name|Alert Volume
+Setting/setting/=AlertVolumedescription|Volume of voice and nonverbal alerts of high importance.  Can range from 0 to 200.  This is relative to its starting value in the mixer, so the default is always 100.  Default is louder than average.
+Setting/setting/=Camera_lastDepthOfFieldEnableddisplay_name|Main Camera: Depth Of Field Enabled
+Setting/setting/=Camera_lastDepthOfFieldEnableddescription|If you dislike the depth of field visual effect during normal gameplay, you can turn it off.
+Setting/setting/=Camera_depthOfFieldAutofocusDistanceShiftdisplay_name|Main DOF: Autofocus Distance Offset
+Setting/setting/=Camera_depthOfFieldAutofocusDistanceShiftdescription|If you would like for the autofocus of the depth of field to skew higher or lower, then you can adjust this positive or negative.  The default of 0 means no offset.
+Setting/setting/=Camera_depthOfFieldDownsamplingdisplay_name|Main DOF: Downsampling
+Setting/setting/=Camera_depthOfFieldDownsamplingdescription|With downsampling above 1, you'll get better performance, but progressively worse image quality (mainly edges not lining up correctly).  With a downsampling of 1, no downsampling is done.
+			 
+Defaults to 2 on the main camera.
+Setting/setting/=Camera_depthOfFieldMaxSamplesdisplay_name|Main DOF: Max Samples
+Setting/setting/=Camera_depthOfFieldMaxSamplesdescription|More samples leads to a higher quality visual effect, but at the cost of performance.
+			 
+Defaults to 4 on the main camera.
+Setting/setting/=Camera_depthOfFieldImageSensorHeightdisplay_name|Main DOF: Image Sensor Height
+Setting/setting/=Camera_depthOfFieldImageSensorHeightdescription|How high is the simulated image sensor?  No impact on performance, but impacts how the camera effect behaves.  Default is 24.
+Setting/setting/=Camera_depthOfFieldFStopdisplay_name|Main DOF: F-Stop
+Setting/setting/=Camera_depthOfFieldFStopdescription|What is the f-stop of the simulated camera lens?  The f-stop of camera is fractional, so this is the denominator of that fraction.  If you choose 2.6, then that would be an f-stop of 1/2.6 for photographers.
+			 
+The smaller the number, the shallower the depth of field (the smaller the amount of the image that will be in focus, and the more dramatic the background focus), while the larger the number, the wider the focus.
+
+In the normal camera mode, we use a default of 7, which is not on the wider end, making blur far less dramatic than in photo mode.
+Setting/setting/=Camera_depthOfFieldFocalLengthRealdisplay_name|Main DOF: Focal Length
+Setting/setting/=Camera_depthOfFieldFocalLengthRealdescription|What is the focal length of the simulated camera lens?  The focal length of the lens is the distance between the lens and the image sensor when the subject is in focus, in millimeters.
+			 
+This affects the magnification of the scene, for depth of field purposes.  The default of 24mm keeps most of the image crisp in the regular mode, but also fairly flat.
+Setting/setting/=Camera_depthOfFieldForegroundDistancedisplay_name|Main DOF: Foreground Distance
+Setting/setting/=Camera_depthOfFieldForegroundDistancedescription|This has no analogue in physical cameras.  This specifies how close to the camera foreground blur should kick in.  The default of 0.25 leads to a 'small world' visual effect, since we are simulating everything at 1/10th normal scale.
+			 
+To get something that seems more like normal scale, reduce this number, potentially as low as 0.025.
+Setting/setting/=Camera_depthOfFieldBokehThresholddisplay_name|Main DOF: Bokeh Threshold
+Setting/setting/=Camera_depthOfFieldBokehThresholddescription|At what level of light do we start seeing bokeh, or visual artifacts from out of focus elements?  The default of 1 will only show it for very bright objects, mostly lights.
+Setting/setting/=Camera_depthOfFieldBokehIntensitydisplay_name|Main DOF: Bokeh Intensity
+Setting/setting/=Camera_depthOfFieldBokehIntensitydescription|How visually intense are the bokeh artifacts?  The default of 2 is likely fine unless you want really specific visual effects.
+Setting/setting/=PhotoMode_depthOfFieldAutofocusDistanceShiftdisplay_name|Photo Mode DOF: Autofocus Distance Offset
+Setting/setting/=PhotoMode_depthOfFieldDownsamplingdisplay_name|Photo Mode DOF: Downsampling
+Setting/setting/=PhotoMode_depthOfFieldDownsamplingdescription|With downsampling above 1, you'll get better performance, but progressively worse image quality (mainly edges not lining up correctly).  With a downsampling of 1, no downsampling is done.
+			 
+Defaults to 1 on the photo mode camera.
+Setting/setting/=PhotoMode_depthOfFieldMaxSamplesdisplay_name|Photo Mode DOF: Max Samples
+Setting/setting/=PhotoMode_depthOfFieldMaxSamplesdescription|More samples leads to a higher quality visual effect, but at the cost of performance.
+			 
+Defaults to 8 on the photo mode camera.
+Setting/setting/=PhotoMode_depthOfFieldImageSensorHeightdisplay_name|Photo Mode DOF: Image Sensor Height
+Setting/setting/=PhotoMode_depthOfFieldFStopdisplay_name|Photo Mode DOF: F-Stop
+Setting/setting/=PhotoMode_depthOfFieldFStopdescription|What is the f-stop of the simulated camera lens?  The f-stop of camera is fractional, so this is the denominator of that fraction.  If you choose 2.6, then that would be an f-stop of 1/2.6 for photographers.
+			 
+The smaller the number, the shallower the depth of field (the smaller the amount of the image that will be in focus, and the more dramatic the background focus), while the larger the number, the wider the focus.
+
+In the photo mode camera, we use a default of 2, which is on the narrow end of things.
+Setting/setting/=PhotoMode_depthOfFieldFocalLengthRealdisplay_name|Photo Mode DOF: Focal Length
+Setting/setting/=PhotoMode_depthOfFieldFocalLengthRealdescription|What is the focal length of the simulated camera lens?  The focal length of the lens is the distance between the lens and the image sensor when the subject is in focus, in millimeters.
+			 
+This affects the magnification of the scene, for depth of field purposes.  The default of 50mm is probably fine for most purposes.
+Setting/setting/=PhotoMode_depthOfFieldForegroundDistancedisplay_name|Photo Mode DOF: Foreground Distance
+Setting/setting/=PhotoMode_depthOfFieldBokehThresholddisplay_name|Photo Mode DOF: Bokeh Threshold
+Setting/setting/=PhotoMode_depthOfFieldBokehThresholddescription|At what level of light do we start seeing bokeh, or visual artifacts from out of focus elements?  The default of 0.8 will show it for fairly bright objects, with brighter objects having a stronger effect.
+			 
+Turn this up to 1, or above, if you want a flatter blur.
+Setting/setting/=PhotoMode_depthOfFieldBokehIntensitydisplay_name|Photo Mode DOF: Bokeh Intensity
+Setting/setting/=Debug_ExportDataTablesAsLoadedAndReloadeddisplay_name|Export Data Tables As Loaded And Reloaded (Skip GamEntity)
+Setting/setting/=Debug_ExportDataTablesAsLoadedAndReloadeddescription|After the xml files are initially loaded, or are reloaded into the in-memory data tables (from changing active mods or expansions), write a text file for each one into a DataTablesAfterInitial and DataTablesAfterReload subfolders in the PlayerData folder.  
+
+The purpose of this is mainly to use with diffing tools between this copy and the on-main-load copy and see if something went wrong during the reload.  If you are modding and made changes to some ships and want to see how those changes cascaded, this would be one way to do that.  This is also a way for us to verify correctness when we make structural changes internally.
+Setting/setting/=UseFullscreendisplay_name|Use Fullscreen
+Setting/setting/=UseFullscreendescription|Run in fullscreen mode, or windowed mode?
+Setting/setting/=QualitySettingsTypedisplay_name|Quality Level
+Setting/setting/=QualitySettingsTypedescription|Adjusts the general visual quality, including things like shadow draw distance and quality.  Has a substantial impact on visual performance, and a moderate impact on visual quality.
+Setting/setting/=FramerateTypedisplay_name|Framerate
+Setting/setting/=FramerateTypedescription|Please note that this is NOT the same as setting a refresh rate on your monitor.  Mostly.
+ <size=9>       
+If you set VSync or Half-VSync, then indeed it will limit to those and you will likely see terrible performance.  Using vsync is a really bad idea, in that it really causes issues with variable-length frames, and will make your game choppier.
+
+Assuming that you are using any other options in this list, it is telling the game to 'try to run at about that framerate.'  That won't actually mean the game runs at that framerate, but it will mean that the game tries to not run on average MORE than that framerate.  For one example, you don't need the game running at 300fps for no reason and having your GPU fan going nuts.  On the other hand, if the game gets choppy when above 60fps for you on an older machine, you might want to cap it at 60fps.  If you wish to set this to match your monitor refresh rate, that is fine, but please bear in mind that the non-vsync versions of this are very very much 'weak suggestions for maximum framerate,' and not any sort of hard limiter.
+ <size=10>     
+Looking for excellent technology to eliminate screen tearing without eliminating game performance?  The things to look into are GSync and FreeSync.
+Setting/setting/=WindowWidthdisplay_name|Window Width
+Setting/setting/=WindowWidthdescription|Width of the screen when in windowed mode ONLY.  Can be any number between 600 and 9000.  Defaults to 1000.  You probably want it larger.
+Setting/setting/=WindowHeightdisplay_name|Window Height
+Setting/setting/=WindowHeightdescription|Height of the screen when in windowed mode ONLY.  Can be any number between 400 and 7000.  Defaults to 600.  You probably want it larger.
+Setting/setting/=FullscreenResolutiondisplay_name|Fullscreen Resolution
+Setting/setting/=FullscreenResolutiondescription|The following options are available for fullscreen resolutions, based on a combination of what your monitor reports as possible and what are common resolutions.
+Setting/setting/=InvertMouseZoomdisplay_name|Invert Mousewheel Zoom
+Setting/setting/=InvertMouseZoomdescription|Normally when you spin the mouse wheel forward, you zoom in; spinning backwards zooms out.  This lets you flip that functionality.  OR, in the case that your hardware or OS is inverted for whatever reason, this lets you correct it to work like everyone else.
+
+Note: if you also want/need to invert how your mouse wheel works when scrolling UI elements, then be sure to also set the 'Invert Mousewheel UI Scrolling' option in the Input tab.
+Setting/setting/=MainCamera_DefaultPitchdisplay_name|Camera Default Pitch
+Setting/setting/=MainCamera_DefaultPitchdescription|What angle down does the camera start out by default?  Default is looking 31 degrees down.
+Setting/setting/=MainCamera_MinPitchdisplay_name|Camera Minmum Pitch
+Setting/setting/=MainCamera_MinPitchdescription|What is the shallowest (most sideways) angle the camera can look down?  Default is 10.
+			 
+If you go negative, that will let the camera look back upwards more (usually this is more of a photo mode angle).
+Setting/setting/=MainCamera_MaxPitchdisplay_name|Camera Max Pitch
+Setting/setting/=MainCamera_MaxPitchdescription|What is the steepest angle the main camera can look down?  The defauult is 70.
+			 
+If you go above 90, you'll be inverted and things get quite confusing to play.
+Setting/setting/=MainCamera_DefaultYawdisplay_name|Camera Default Yaw
+Setting/setting/=MainCamera_DefaultYawdescription|What angle does the camera start out facing by default?  Default -38 degrees.
+Setting/setting/=MainCamera_DefaultZoomdisplay_name|Camera Default Zoom
+Setting/setting/=MainCamera_DefaultZoomdescription|How high above the ground does the camera start out by default?  The default is 6.
+Setting/setting/=MainCamera_MinZoomdisplay_name|Camera Minmum Zoom
+Setting/setting/=MainCamera_MinZoomdescription|How far down to the ground can the camera normally go?  Default is 2 above the ground, still comfortably above where the people are.
+Setting/setting/=MainCamera_MaxZoomdisplay_name|Camera Max Zoom
+Setting/setting/=MainCamera_MaxZoomdescription|How far above the ground can the main camera go?  Default is 20.
+Setting/setting/=CameraRotationAndTiltSensitivity_Xdisplay_name|Camera Rotation And Tilt Sensitivity (X)
+Setting/setting/=CameraRotationAndTiltSensitivity_Xdescription|When you are holding down the buttons that let you tilt and rotate the camera, the movements of your mouse will do those actions based on the sensitivity defined here.
+Setting/setting/=CameraRotationAndTiltSensitivity_Ydisplay_name|Camera Rotation And Tilt Sensitivity (Y)
+Setting/setting/=MainCamera_SpeedSlowdisplay_name|Camera Speed (Slow)
+Setting/setting/=MainCamera_SpeedSlowdescription|When holding the 'move slowly' control, how fast does the main camera move?  Default is 1.  Note that at higher altitudes, all movements are amplified.
+Setting/setting/=MainCamera_SpeedNormaldisplay_name|Camera Speed (Normal)
+Setting/setting/=MainCamera_SpeedNormaldescription|When not holding any movement speed multiplier control, how fast does the main camera move?  Default is 2.  Note that at higher altitudes, all movements are amplified.
+Setting/setting/=MainCamera_SpeedFastdisplay_name|Camera Speed (Fast)
+Setting/setting/=MainCamera_SpeedFastdescription|When holding the 'move fast' control, how fast does the main camera move?  Default is 4.  Note that at higher altitudes, all movements are amplified.
+Setting/setting/=MainCamera_SpeedTurbodisplay_name|Camera Speed (Turbo)
+Setting/setting/=MainCamera_SpeedTurbodescription|When holding the 'move fast' and 'move slow' controls together, which activates turbo, how fast does the main camera move?  Default is 8.  Note that at higher altitudes, all movements are amplified.
+Setting/setting/=CameraMain_MouseZoomSensitivity_Slowdisplay_name|Mouse Zoom Sensitivity (Slow)
+Setting/setting/=CameraMain_MouseZoomSensitivity_Slowdescription|How fast the camera zooms in and out when you are using the mouse wheel to trigger zoom, and holding the 'slow movement' key.
+Setting/setting/=CameraMain_MouseZoomSensitivity_Normaldisplay_name|Mouse Zoom Sensitivity (Normal)
+Setting/setting/=CameraMain_MouseZoomSensitivity_Normaldescription|How fast the camera zooms in and out when you are using the mouse wheel to trigger zoom.
+Setting/setting/=CameraMain_MouseZoomSensitivity_Fastdisplay_name|Mouse Zoom Sensitivity (Fast)
+Setting/setting/=CameraMain_MouseZoomSensitivity_Fastdescription|How fast the camera zooms in and out when you are using the mouse wheel to trigger zoom, and holding the 'fast movement' key.
+Setting/setting/=CameraMain_MouseZoomSensitivity_Turbodisplay_name|Mouse Zoom Sensitivity (Turbo)
+Setting/setting/=CameraMain_MouseZoomSensitivity_Turbodescription|How fast the camera zooms in and out when you are using the mouse wheel to trigger zoom, and holding both the 'slow movement' and 'fast movement' keys.
+Setting/setting/=BattleCamera_PanningMultiliplierdisplay_name|Panning Multiliplier
+Setting/setting/=BattleCamera_PanningMultiliplierdescription|When in the battle camera, you're focused on a much smaller area than normal.  How much slower, if at all, is the camera going to move in this mode?  Default is 0.7, or 70% speed.
+Setting/setting/=BattleCamera_ZoomMultiliplierdisplay_name|Zoom Multiliplier
+Setting/setting/=BattleCamera_ZoomMultiliplierdescription|When in the battle camera, you're focused on a much smaller area than normal.  How much slower, if at all, is the camera going to move in this mode?  Default is 0.3, or 30% speed.
+Setting/setting/=SwitchSidebarToTheLeftdisplay_name|Switch Sidebar To The Left
+Setting/setting/=SwitchSidebarToTheLeftdescription|If you prefer to have the sidebar on the left side of your screen instead of the right, this will swap it for you (along with many other related UI elements).
+Setting/setting/=MainGameCarsDriveOnTheRightdisplay_name|Right handed roads
+Setting/setting/=MainGameCarsDriveOnTheRightdescription|Which side of the roads do drivers drive on? Note: changing this won't update any currently spawned vehicles.
+Setting/setting/=MainGameJumpStraightIntoGameForTestingdisplay_name|Jump Straight Into Game For Testing
+Setting/setting/=MainGameJumpStraightIntoGameForTestingdescription|No button presses required, just start a new game.
+Setting/setting/=ShowCompassBardisplay_name|Show Compass Bar
+Setting/setting/=ShowCompassBardescription|Interested in knowing what is north, south, east, and west?  Here you go.
+Setting/setting/=HeaderBarScaledisplay_name|Header Bar Scale
+Setting/setting/=HeaderBarScaledescription|How large should the header bar at the top of the screen be?  Default is 1.2.
+Setting/setting/=SidebarScaledisplay_name|Sidebar Scale
+Setting/setting/=SidebarScaledescription|How large should the sidebar be?  Default is 0.8.
+Setting/setting/=GeneralTooltipScaledisplay_name|General Tooltip Scale
+Setting/setting/=GeneralTooltipScaledescription|For the various 'standard text tooltips' in the game, such as this one, how large should the text in them be?  If your monitor is large, then the default may feel oversized.  Hit save to see how the new sizing looks.
+Setting/setting/=CentralPopupTextScaledisplay_name|Central Popup Text Scale
+Setting/setting/=CentralPopupTextScaledescription|How large should the text inside of any center-screen popups be?  This doesn't affect the size of the window itself, just the text inside it (so you have a lot less scrolling to do.  Default is 0.9.
+Setting/setting/=Debug_MainGameShowOBBOfSingleObjectUnderCursordisplay_name|Show OBB Of Single Object Under Cursor
+Setting/setting/=Debug_MainGameShowOBBOfSingleObjectUnderCursordescription|For debugging purposes, show the Oriented Bounding Box (OBB) when you hover over a single object.
+Setting/setting/=TrafficAndPedestrianDensitydisplay_name|Traffic And Pedestrian Density
+Setting/setting/=TrafficAndPedestrianDensitydescription|When traffic and pedestrians are more dense, it looks great, but can affect performance negatively.  It has no effect on gameplay.
+Setting/setting/=SkipLoadingDecorations_BuildingZonesdisplay_name|Skip Loading Decorations For Building Zones
+Setting/setting/=SkipLoadingDecorations_BuildingZonesdescription|The city will be more barren, but will load notably faster and also have less to draw in the background.
+			 
+Parametrically-applied trees and flowers and trash and such around buildings will be absent, leading to a more minimalist effect.
+Setting/setting/=SkipLoadingDecorations_DecorationZonesdisplay_name|Skip Loading Decorations For Decoration Zones
+Setting/setting/=SkipLoadingDecorations_DecorationZonesdescription|The city will be more barren, but will load faster and also have less to draw in the background.
+			 
+Parametrically-applied trees and flowers and trash and such in the areas that are specifically designated for them will be omitted, making for some odd gaps visually, but otherwise it's functional.
+Setting/setting/=SkipLoadingDecorations_HoleTilesdisplay_name|Skip Loading Decorations For Wilderness Cells
+Setting/setting/=SkipLoadingDecorations_HoleTilesdescription|The city will be more barren, but will load faster and also have less to draw in the background.
+			 
+Parametrically-applied trees and flowers and trash and such in the areas of 'wilderness' cells within the city will be blank instead, but this does not affect function in any way.
+Setting/setting/=CellDrawDist_Buildingsdisplay_name|Cell Draw Distance: Buildings
+Setting/setting/=CellDrawDist_Buildingsdescription|The game is broken up into visual cells for drawing.  How many cells away should be drawn when looking sideways, as far as buildings go?  Larger amounts will look cooler for photos, but give a lower framerate.
+		   
+The default of 5 is not a bad idea in most cases, because buildings are large but only so numerous.  This keeps the skyline the most accurate and avoids pop-in.
+Setting/setting/=CellDrawDist_Roadsdisplay_name|Cell Draw Distance: Roads
+Setting/setting/=CellDrawDist_Roadsdescription|The game is broken up into visual cells for drawing.  How many cells away should be drawn when looking sideways, as far as roads go?  Larger amounts will look cooler for photos, but give a lower framerate.
+			 
+Roads are more numerous than buildings, and in a lot of cases you can't even see roads that are too distant past all of the buildings.  The default of 4 should work well even in parts of the city that are not densely populated.
+Setting/setting/=CellDrawDist_MajorDecorationsdisplay_name|Cell Draw Distance: Major Decorations
+Setting/setting/=CellDrawDist_MajorDecorationsdescription|The game is broken up into visual cells for drawing.  How many cells away should be drawn when looking sideways, as far as major decorations go?  Larger amounts will look cooler for photos, but give a lower framerate.
+			 
+Major decorations showing out to a distance of 4 as a default should work well for parts of the city that are not densely populated.
+Setting/setting/=CellDrawDist_MinorDecorationsdisplay_name|Cell Draw Distance: Minor Decorations
+Setting/setting/=CellDrawDist_MinorDecorationsdescription|The game is broken up into visual cells for drawing.  How many cells away should be drawn when looking sideways, as far as minor decorations go?  Larger amounts will look cooler for photos, but give a lower framerate.
+			 
+Minor decorations showing out to a distance of 1 as a default should be sufficient in most cases even on very powerful games.
+Setting/setting/=ShowAdvancedSettingsdisplay_name|Show Advanced Settings
+Setting/setting/=ShowAdvancedSettingsdescription|There are a whole lot of these, friend.  If you're not already super into the game or having a specific problem, it's a good idea to steer clear of these.  The defaults are awesome 99% of the time.
+Setting/setting/=UseUnrestricteUIUpdateSpeedsdisplay_name|Use Unrestricted UI Update Speeds
+Setting/setting/=UseUnrestricteUIUpdateSpeedsdescription|Normally, most UI windows only update their contents every 50-100 milliseconds.  If your framerate is much higher than this, however, you may prefer that the UI update at whatever your actual framerate is.
+           
+This will likely reduce your framerate, potentially substantially, but it leads to the ultimate in responsiveness.
+Setting/setting/=EnablePerformanceLoggingdisplay_name|Enable Performance Logging
+Setting/setting/=EnablePerformanceLoggingdescription|Turning this on may hurt performance a bit, but not hugely so in most cases.  It lets you then see a lot of information about how the game is spending its CPU time by right-clicking the timer in the bottom left of the main game view.  Off by default, as it has no other purpose than that.
+Setting/setting/=MousewheelCameraZoomSpeed_Normaldisplay_name|Mousewheel Camera Zoom Speed (Normal)
+Setting/setting/=MousewheelCameraZoomSpeed_Normaldescription|How fast should the mouse wheel normally zoom in or out your view, assuming that you are NOT holding down the 'go faster' button?
+Setting/setting/=MousewheelCameraZoomSpeed_Fastdisplay_name|Mousewheel Camera Zoom Speed (Fast)
+Setting/setting/=MousewheelCameraZoomSpeed_Fastdescription|How fast should the mouse wheel zoom in or out your view when you are holding down the 'go faster' button?
+Setting/setting/=MousewheelUIScrollSpeeddisplay_name|Mousewheel UI Scroll Speed
+Setting/setting/=MousewheelUIScrollSpeeddescription|How fast should the scroll wheel move UI scrollbars when you spin it?  The default value is 30, which should be comfortable for most folks.  But if your OS has unusual settings, and the in-game interface feels like it scrolls to slowly, then go for a higher number.  If it's too fast, go for a lower number.
+Setting/setting/=InvertMouseWheelUIScrollingdisplay_name|Invert Mousewheel UI Scrolling
+Setting/setting/=InvertMouseWheelUIScrollingdescription|Normally when you spin the mouse wheel forward, any scrollable areas you are hovering over in the UI go up; spinning backwards goes down.  This lets you flip that functionality.  OR, in the case that your hardware or OS is inverted for whatever reason, this lets you correct it to work like everyone else.
+
+Note: if you also want/need to invert how your mouse wheel works when zooming the game view, then be sure to also set the 'Invert Mouse Zoom' option in the Cameras tab.

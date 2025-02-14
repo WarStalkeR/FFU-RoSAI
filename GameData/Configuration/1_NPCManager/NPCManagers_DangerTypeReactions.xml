@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--**************************************************************MildSecForce**************************************************************-->
+
+	<npc_manager id="DTR_MildSecForce" cohort_tag_a="GenericCorporateAggressor" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_action_over_time_danger_type="MildSecForce"
+			threat_radius="30" home_radius="15">
+			<gate_by_city />
+		</periodic_data>
+		<unit id="A" to_spawn="SecForceIPSecurity" stance_to_start_in="SecForceSecuringIP"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="4" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"/>
+		<unit id="N" to_spawn="HumeOwnedNickelbot" stance_to_start_in="AndroidSecurityResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+
+	<!--**************************************************************ModerateSecForce**************************************************************-->
+
+	<npc_manager id="DTR_ModerateSecForce" cohort_tag_a="GenericCorporateAggressor" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_action_over_time_danger_type="ModerateSecForce"
+			threat_radius="30" home_radius="15">
+			<gate_by_city />
+		</periodic_data>
+		<unit id="C" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+		<unit id="N" to_spawn="HumeOwnedNickelbotThatCanBecomePredator" stance_to_start_in="AndroidSecurityResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+
+	<!--**************************************************************HeavySecForce**************************************************************-->
+
+	<npc_manager id="DTR_HeavySecForce" cohort_tag_a="GenericCorporateAggressor" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_action_over_time_danger_type="HeavySecForce"
+			threat_radius="30" home_radius="15">
+			<gate_by_city />
+		</periodic_data>
+		<unit id="CU" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+		<unit id="N" to_spawn="HumeOwnedNickelbotThatCanBecomePredator" stance_to_start_in="AndroidSecurityResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+		<unit id="CR" to_spawn="SecForceCruiser" stance_to_start_in="SecForceSecuringIP_IgnoresStructures_EarlyTargeting"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="1" max_to_have_extant_across_spawns="-1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+
+	<!--**************************************************************VorsiberSpecialForces**************************************************************-->
+
+	<npc_manager id="DTR_VorsiberSpecialForces" cohort_tag_a="MegaCorpEnforcement" debug_log_manager_details="false">
+		<periodic_data
+			min_turns_between_activity="1" max_turns_between_activity="1"
+			max_security_clearance_of_seed_spot="2" target_action_over_time_danger_type="VorsiberSpecialForces"
+			threat_radius="30" home_radius="15">
+			<gate_by_city />
+		</periodic_data>
+		<unit id="CU" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+		<unit id="N" to_spawn="VorsiberSoldier" stance_to_start_in="AndroidSecurityResponseTeam"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+		<unit id="CR" to_spawn="SecForceCruiser" stance_to_start_in="SecForceSecuringIP_IgnoresStructures_EarlyTargeting"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="-1" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.6" max_squad_size_multiplier="1.6"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_soft_despawn_on_manager_blocked="false"
+			warps_out_when_threat_neutralized="true" lang_key_for_threat_neutralized="ThreatNeutralized"/>
+	</npc_manager>
+
+
+	<!--**************************************************************Next**************************************************************-->
+</root>

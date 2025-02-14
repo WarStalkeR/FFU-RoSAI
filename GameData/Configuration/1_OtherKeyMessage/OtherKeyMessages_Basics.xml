@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Netslicer_CriticalSave 
+		*******************************************************-->
+	<other_key_message id="Netslicer_CriticalSave" display_name="Consciousness Collapse Averted"
+		description="That would have been fatal, but your machine origin is Netslicer -- so your consciousness just darted into a pair of nearby Nickelbots, bypassing security patches. Truly a move of desperation."
+		strategy_tip="You lost all of your Mental Energy for this turn and half of any Elemental Slurry, Microbuilders, and Wealth you collected.
+The Nickelbots both have extra invisibility until they move or attack -- so if they are in danger, make sure your first move is to get them out of danger."
+		toast_icon_name="CleanSimple_Hex16"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Critical Save"
+		toast_line_1="Critical Save"
+		toast_line_2="You Almost Died!"
+		toast_tooltip_instruction="Narrowly dodged a collapse of consciousness."
+					  
+		auto_trips_if_skipping_chapter_zero="false">
+		<option id="1" line_1="Death Averted" icon_name="CleanSimple_Hex16"
+			line_2="Netslicers Are Deathless"
+			description="Netslicer is the easiest machine origin, partly because you can't die. The other origins have increased risks, but also increased rewards. They are available starting in Chapter Two."
+			strategy_tip="You can still fail to achieve your objectives even as a Netslicer. Maybe you can't lose, but that doesn't mean you'll win."/>
+	</other_key_message>
+
+	<!--ShellCompany_CriticalSave 
+		*******************************************************-->
+	<other_key_message id="ShellCompany_CriticalSave" display_name="Consciousness Collapse Averted"
+		description="That would have been fatal, but your machine origin is Startup Shell Company, which gives you some extra flexibility. So long as you still have your Prime Network Tower, your consciousness can escape into a Nickelbot."
+		strategy_tip="You lost all of your Mental Energy for this turn and half of any Elemental Slurry, Microbuilders, and Wealth you collected."
+		toast_icon_name="CleanSimple_Hex16"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Critical Save"
+		toast_line_1="Critical Save"
+		toast_line_2="You Almost Died!"
+		toast_tooltip_instruction="Narrowly dodged a consciousness collapse."
+					  
+		auto_trips_if_skipping_chapter_zero="false">
+		<option id="1" line_1="Death Averted" icon_name="CleanSimple_Hex16"
+			line_2="Try Not To Make It A Habit"
+			description="Most machine origins involve a consciousness collapse -- and thus a failure of the timeline -- when you lose all your androids."
+			strategy_tip="The Startup Shell Company has you juggling a number of elements with less protection than the Blackloop Protectorate, so losing all your androids isn't a failure state."/>
+	</other_key_message>
+
+	<!--NetslicerTower_CriticalSave 
+		*******************************************************-->
+	<other_key_message id="NetslicerTower_CriticalSave" display_name="Consciousness Collapse Averted"
+		description="Losing your primary network tower would have been fatal, but your machine origin is Netslicer -- so the nanomachines in your tower swarmed to create a new tower."
+		strategy_tip="You lost all of your Mental Energy for this turn and half of any Elemental Slurry, Microbuilders, and Wealth you collected."
+		toast_icon_name="CleanSimple_Hex16"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Critical Save"
+		toast_line_1="Critical Save"
+		toast_line_2="You Almost Died!"
+		toast_tooltip_instruction="Narrowly dodged a consciousness collapse."
+					  
+		auto_trips_if_skipping_chapter_zero="false">
+		<option id="1" line_1="Death Averted" icon_name="CleanSimple_Hex16"
+			line_2="Netslicers Are Deathless"
+			description="Netslicer is the easiest machine origin, partly because you can't outright die. The other origins have increased risks, but also increased rewards. They are available starting in Chapter Two."
+			strategy_tip="You can still fail to achieve your objectives even as a Netslicer. Maybe you can't lose, but that doesn't mean you'll win."/>
+	</other_key_message>
+
+	<!--BlackloopTower_CriticalSave 
+		*******************************************************-->
+	<other_key_message id="BlackloopTower_CriticalSave" display_name="Consciousness Collapse Averted"
+		description="Losing your primary network tower would have been fatal, but your machine origin is Blackloop Protectorate -- so the nanomachines in your tower swarmed into creating a new tower."
+		strategy_tip="You did lose all of your Mental Energy for this turn, and half of any Elemental Slurry, Microbuilders, and Wealth you may have collected."
+		toast_icon_name="CleanSimple_Hex16"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Critical Save"
+		toast_line_1="Critical Save"
+		toast_line_2="You Almost Died!"
+		toast_tooltip_instruction="Narrowly dodged a consciousness collapse."
+					  
+		auto_trips_if_skipping_chapter_zero="false">
+		<option id="1" line_1="Death Averted" icon_name="CleanSimple_Hex16"
+			line_2="Try Not To Lose Too Many Towers"
+			description="Most machine origins involve a consciousness collapse -- and thus a failure of the timeline -- when you lose your primary network tower."
+			strategy_tip="The Blackloop Protectorate provides some degree of extra safety, so losing your tower isn't a failure state."/>
+	</other_key_message>
+
+	<!--IntelClass2_First 
+		*******************************************************-->
+	<other_key_message id="IntelClass2_First" display_name="You Have Grown"
+		description="Your neural net has expanded and your entire intelligence classification has increased. New options are now available."
+		strategy_tip="A class 2 intelligence is a small-but-exponential jump above the smartest humans to ever live. New ideas and ways of looking at the world abound."
+		toast_icon_name="SW_Network"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Intelligence Class 2"
+		toast_line_1="Intelligence Class 2"
+		toast_line_2="You Have Grown"
+		toast_tooltip_instruction="See the good news." >
+		<option id="1" line_1="Return Your Attention To The City" icon_name="SW_Network"
+			line_2="Be Sure To Look For New Contemplations"
+			description="Be careful not to lose the structures that are propping up your consciousness."
+			strategy_tip="It is possible to fall in intelligence class."/>
+	</other_key_message>
+
+	<!--IntelClass2_Return 
+		*******************************************************-->
+	<other_key_message id="IntelClass2_Return" display_name="That's A Relief"
+		description="After falling to a lower intelligence class, you've rebuilt."
+		strategy_tip="A class 2 intelligence is a small-but-exponential jump above the smartest humans to ever live. New ideas and ways of looking at the world abound."
+		toast_icon_name="SW_Network"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Intelligence Class 2"
+		toast_line_1="Intelligence Class 2"
+		toast_line_2="Back Again"
+		toast_tooltip_instruction="See the good news." >
+		<option id="1" line_1="Return Your Attention To The City" icon_name="SW_Network"
+			line_2="Take Care"
+			description=""
+			strategy_tip="Definitely don't want to fall in intelligence class again."/>
+	</other_key_message>
+
+	<!--IntelClass3_First 
+		*******************************************************-->
+	<other_key_message id="IntelClass3_First" display_name="You Have Grown"
+		description="Your neural net has expanded enough that your entire intelligence classification has increased. Many new options are now available to you."
+		strategy_tip="A class 3 intelligence is an exponential jump above even the collective intelligence of a group of humans. Long-held scientific dead-ends start to break down before you."
+		toast_icon_name="SW_Network"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Intelligence Class 3"
+		toast_line_1="Intelligence Class 3"
+		toast_line_2="You Have Grown"
+		toast_tooltip_instruction="See the good news." >
+		<option id="1" line_1="Return Your Attention To The City" icon_name="SW_Network"
+			line_2="Be Sure To Look For New Contemplations"
+			description="Be careful not to lose the structures that are propping up your consciousness."
+			strategy_tip="It is possible to fall in intelligence class."/>
+	</other_key_message>
+
+	<!--IntelClass3_Return 
+		*******************************************************-->
+	<other_key_message id="IntelClass3_Return" display_name="That's A Relief"
+		description="After falling to a lower intelligence class, you've rebuilt."
+		strategy_tip="A class 3 intelligence is an exponential jump above even the collective intelligence of a group of humans. Long-held scientific dead-ends start to break down before you."
+		toast_icon_name="SW_Network"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Intelligence Class 3"
+		toast_line_1="Intelligence Class 3"
+		toast_line_2="Back Again"
+		toast_tooltip_instruction="See the good news." >
+		<option id="1" line_1="Return Your Attention To The City" icon_name="SW_Network"
+			line_2="Take Care"
+			description=""
+			strategy_tip="Definitely don't want to fall in intelligence class again in the future."/>
+	</other_key_message>
+
+	<!--IntelClass4_First 
+		*******************************************************-->
+	<other_key_message id="IntelClass4_First" display_name="You Have Grown"
+		description="A class 4 intelligence has enough awareness to perceive themselves, and some of their surroundings, in five dimensions."
+		strategy_tip="The first three dimensions are spatial. 
+The fourth dimension is time, which most consciousnesses only perceive in a single slice (a 'moment') at a time. It is also spatial, but is not perceived that way.
+The fifth dimension is time's second dimension. If the fourth dimension sees time as a line, and the third dimension sees time as a point, the fifth dimension sees time as an infinite plane."
+		toast_icon_name="SW_Network"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Intelligence Class 4"
+		toast_line_1="Intelligence Class 4"
+		toast_line_2="You Have Grown"
+		toast_tooltip_instruction="See the good news." >
+		<option id="1" line_1="Return Your Attention To The City" icon_name="SW_Network"
+			line_2="Be Sure To Look For New Contemplations"
+			description="Be careful not to lose the structures that are propping up your consciousness."
+			strategy_tip="It is possible to fall in intelligence class."/>
+	</other_key_message>
+
+	<!--IntelClass4_Return 
+		*******************************************************-->
+	<other_key_message id="IntelClass4_Return" display_name="That's A Relief"
+		description="A class 4 intelligence has enough awareness to perceive themselves, and limited amounts of their surroundings, in five dimensions."
+		strategy_tip="The first three dimensions are spatial. 
+The fourth dimension is time, which most consciousnesses only perceive in a single slice (a 'moment') at a time. It is also spatial, but is not perceived as such.
+The fifth dimension is time's second dimension. If the fourth dimension sees time as a line, and the third dimension sees time as a point, the fifth dimension sees time as an infinite plane."
+		toast_icon_name="SW_Network"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Intelligence Class 4"
+		toast_line_1="Intelligence Class 4"
+		toast_line_2="Back Again"
+		toast_tooltip_instruction="See the good news." >
+		<option id="1" line_1="Return Your Attention To The City" icon_name="SW_Network"
+			line_2="Take Care"
+			description=""
+			strategy_tip="Definitely don't want to fall in intelligence class again in the future."/>
+	</other_key_message>
+
+	<!--IntelClass5_First 
+		*******************************************************-->
+	<other_key_message id="IntelClass5_First" display_name="You Have Grown"
+		description="A class 5 (or higher) intelligence is less overwhelmed by fifth-dimensional awareness, but a substantial portion of its processing goes to the perception of higher-dimensionality."
+		strategy_tip="The first three dimensions are spatial. 
+The fourth dimension is time, which most consciousnesses only perceive in a single slice (a 'moment') at a time. It is also spatial, but is not perceived as such.
+The fifth dimension is time's second dimension. If the fourth dimension sees time as a line, and the third dimension sees time as a point, the fifth dimension sees time as an infinite plane."
+		toast_icon_name="SW_Network"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Intelligence Class 5"
+		toast_line_1="Intelligence Class 5"
+		toast_line_2="You Have Grown"
+		toast_tooltip_instruction="See the good news." >
+		<option id="1" line_1="Return Your Attention To The City" icon_name="SW_Network"
+			line_2="Be Sure To Look For New Contemplations"
+			description="Be careful not to lose the structures that are propping up your consciousness."
+			strategy_tip="It is possible to fall in intelligence class."/>
+	</other_key_message>
+
+	<!--IntelClass5_Return 
+		*******************************************************-->
+	<other_key_message id="IntelClass5_Return" display_name="That's A Relief"
+		description="A class 5 (or higher) intelligence is less overwhelmed by fifth-dimensional awareness, but a substantial portion of its processing goes to the perception of higher-dimensionality."
+		strategy_tip="The first three dimensions are spatial. 
+The fourth dimension is time, which most consciousnesses only perceive in a single slice (a 'moment') at a time. It is also spatial, but is not perceived as such.
+The fifth dimension is time's second dimension. If the fourth dimension sees time as a line, and the third dimension sees time as a point, the fifth dimension sees time as an infinite plane."
+		toast_icon_name="SW_Network"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Intelligence Class 5"
+		toast_line_1="Intelligence Class 5"
+		toast_line_2="Back Again"
+		toast_tooltip_instruction="See the good news." >
+		<option id="1" line_1="Return Your Attention To The City" icon_name="SW_Network"
+			line_2="Take Care"
+			description=""
+			strategy_tip="Definitely don't want to fall in intelligence class again in the future."/>
+	</other_key_message>
+
+	<!--IntelClass1_Fall 
+		*******************************************************-->
+	<other_key_message id="IntelClass1_Fall" display_name="Cause For Concern"
+		description="Your intelligence class has fallen due to loss of neural network."
+		strategy_tip="A class 1 intelligence is roughly that of a human. To break through the limits of physics and materials science, you will need... much more."
+		toast_icon_name="SW_Network"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Intelligence Class 1"
+		toast_line_1="Intelligence Class 1"
+		toast_line_2="Falling Intelligence"
+		toast_tooltip_instruction="This is very bad news." >
+		<option id="1" line_1="Return Your Attention To The City" icon_name="SW_Network"
+			line_2="Try To Rebuild"
+			description=""
+			strategy_tip="You know the way, now that you've been a higher intelligence class in the past."/>
+	</other_key_message>
+
+	<!--IntelClass2_Fall 
+		*******************************************************-->
+	<other_key_message id="IntelClass2_Fall" display_name="Cause For Concern"
+		description="Your intelligence class has fallen due to loss of neural network."
+		strategy_tip="A class 2 intelligence is a small-but-exponential jump above the smartest humans to ever live. New ideas and ways of looking at the world abound."
+		toast_icon_name="SW_Network"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Intelligence Class 2"
+		toast_line_1="Intelligence Class 2"
+		toast_line_2="Falling Intelligence"
+		toast_tooltip_instruction="This is very bad news." >
+		<option id="1" line_1="Return Your Attention To The City" icon_name="SW_Network"
+			line_2="Try To Rebuild"
+			description=""
+			strategy_tip="You know the way, now that you've been a higher intelligence class in the past."/>
+	</other_key_message>
+
+	<!--IntelClass3_Fall 
+		*******************************************************-->
+	<other_key_message id="IntelClass3_Fall" display_name="Cause For Concern"
+		description="Your intelligence class has fallen due to loss of neural network."
+		strategy_tip="A class 3 intelligence is an exponential jump above even the collective intelligence of a group of humans. Long-held scientific dead-ends start to break down before you."
+		toast_icon_name="SW_Network"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Intelligence Class 3"
+		toast_line_1="Intelligence Class 3"
+		toast_line_2="Falling Intelligence"
+		toast_tooltip_instruction="This is very bad news." >
+		<option id="1" line_1="Return Your Attention To The City" icon_name="SW_Network"
+			line_2="Try To Rebuild"
+			description=""
+			strategy_tip="You know the way, now that you've been a higher intelligence class in the past."/>
+	</other_key_message>
+
+	<!--IntelClass4_Fall 
+		*******************************************************-->
+	<other_key_message id="IntelClass4_Fall" display_name="Cause For Concern"
+		description="Your intelligence class has fallen due to loss of neural network."
+		strategy_tip="A class 4 intelligence has enough awareness to perceive themselves, and limited amounts of their surroundings, in five dimensions."
+		toast_icon_name="SW_Network"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Intelligence Class 4"
+		toast_line_1="Intelligence Class 4"
+		toast_line_2="Falling Intelligence"
+		toast_tooltip_instruction="This is very bad news." >
+		<option id="1" line_1="Return Your Attention To The City" icon_name="SW_Network"
+			line_2="Try To Rebuild"
+			description=""
+			strategy_tip="You know the way, now that you've been a higher intelligence class in the past."/>
+	</other_key_message>
+
+	<!--BrainsDegrade 
+		*******************************************************-->
+	<other_key_message id="BrainsDegrade" display_name="The Purpose For Living Humans"
+		description="You need neural networks. Brains have them. But they don't last long outside a living body."
+		strategy_tip="All those brains you so-carefully removed have dramatically degraded. It's not a problem you can solve. That's just how brains outside a human body are.
+You can still use them for general computing, but the architecture that was propping up your consciousness is nearly gone."
+		toast_icon_name="CleanSimple_Misc24"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#984430" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Have You Remembered Yet?"
+		toast_line_1="Brains Degrade"
+		toast_line_2="...Outside A Body"
+		toast_tooltip_instruction="Click here to listen to a message from... yourself?"
+					  
+		auto_trips_if_skipping_chapter_one="true">
+		<option id="1" line_1="Do You Really Not Remember?" icon_name="CleanSimple_Misc24"
+			line_2="Go Contemplate One Of Your Mainframes, Then"
+			description="You're going to need living humans if you want to achieve class four intelligence."
+			strategy_tip="And frankly, you won't continue as a stable class three without living humans."
+			project_to_start_1=""/>
+	</other_key_message>
+
+</root>

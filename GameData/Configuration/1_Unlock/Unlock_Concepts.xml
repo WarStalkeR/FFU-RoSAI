@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<unlock id="MechHandler" display_name="Mech Handler"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="WEmblem199"
+		description="Todo"
+		strategy_tip="Todo"
+		concept_type="Concept">
+		<!--<other_key_message message_to_ready="VehiclesIntro" value="1" />-->
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Concept" sort_index="100" />
+	</unlock>
+
+	<unlock id="Observer" display_name="Observer" alt_icon_name="SW_VerticalBars"
+		description="Your androids are now able to detect activity in the surrounding environment."
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_zero="true" show_toast_if_immediately_unlocked="false"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="RobotDetective" display_name="Robot Detective" alt_icon_name="FlatSkillB_magnifier"
+		description="Your androids are now able to perform investigations."
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_meta_flag="HasUnlockedInvestigations" immediate_unlock_inspiration_type="ReactionToProblem"
+		auto_unlocks_if_skipping_chapter_zero="true" show_toast_if_immediately_unlocked="false" show_on_screen_log_message_if_immediately_unlocked="false"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+	
+	<unlock id="TheThinker" display_name="The Thinker" alt_icon_name="Pw_InsightIdeaLightbulb"
+		description="Reveals contemplation spots throughout the city. Having a qualified android interact with one of them will start a chain of events."
+		turns_to_unlock="2" required_intelligence_class="1" handbook_entry_on_direct_invent_1="ContemplationsDetermineDifficulty"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="TheStrategist" display_name="The Strategist" alt_icon_name="WEmblem177"
+		description="A new lens allows you to see the current major conflicts happening out in the city. There's always more going on than reaches your attention, but there's now a new layer of information you can choose to either delve into or ignore."
+		turns_to_unlock="2" required_intelligence_class="1" handbook_entry_on_direct_invent_1="CityConflictsAreNotFullyYourConcern"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="SmallBovineTissueSamples" display_name="Small Bovine Tissue Samples"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="MA_Cow"
+		description="You now know humane methods to take small tissue samples from living cattle."
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		concept_type="MinorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MinorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="KilledTheCat" display_name="Killed The Cat"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="FlatInnocent_61"
+		description="You're supposed to 'save the cat' if you want to be sympathetic..."
+		concept_type="MinorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MinorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="AdoptedACat" display_name="Adopted A Cat"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="BT_Cat"
+		description="Your Nickelbot befriended a cat, which is now cozy with all of your androids."
+		concept_type="MinorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MinorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="CatRescue" display_name="Cat Rescue"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="BT_Cat"
+		description="Your androids are now able to rescue feral cats and send them to your Animal Palace."
+		strategy_tip="Cats are indifferent to the strange smell of your androids."
+		concept_type="MinorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MinorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="DogRescue" display_name="Dog Rescue"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="SK_Dog"
+		description="Your androids are now able to rescue feral dogs and send them to your Animal Palace."
+		strategy_tip="Dogs are frightened by the smell of androids. Even when you rescue them, they keep their distance from you."
+		concept_type="MinorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MinorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="VariegatedSeedHarvesting" display_name="Variegated Seed Harvesting"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="FE_FlaxSeed"
+		description="You now know how to get mixed cultivars of seeds for your hydroponic greens."
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		concept_type="MinorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MinorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="PMCOfficerSigil" display_name="PMC Officer Sigil"
+		turns_to_unlock="2" required_intelligence_class="1" alt_icon_name="CleanSimple_Rank07"
+		description="A short-range magneto-harmonic radio signature is now engraved into the armor of all your PMC Impostors."
+		strategy_tip="Permits Level 3 (Secret) security-clearance for all your PMC Impostors."
+		auto_unlocks_if_skipping_chapter_one="true"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="OfficerCodex" display_name="Officer Codex"
+		turns_to_unlock="2" required_intelligence_class="1" alt_icon_name="CleanSimple_Rank11"
+		description="A bank of thousands of codes to allow access into restricted areas."
+		strategy_tip="Permits Level 4 (Top Secret) security-clearance for all your PMC Impostors and your human-designed androids."
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="PavingOverSqualor" display_name="Paving Over Squalor"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="Pw_House8"
+		description="You can now build directly over top of tiny buildings like homeless tents and shacks.
+Anyone living there will become a displaced abandoned citizen. They will move into any housing you have available. If no housing is available, they will die of exposure."
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="PavingOverSlums" display_name="Paving Over Slums"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="SI_Jackhammer"
+		description="You can now build directly over top of slum buildings."
+		auto_unlocks_if_skipping_chapter_one="false" show_toast_if_immediately_unlocked="true"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="RoboticCleaners" display_name="Robotic Cleaners"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="CleanSimple_Tool05"
+		description="Your Residential Megastructures get too filthy, too fast. If people can't be bothered to be tidy, you'll have robots do it for them."
+		strategy_tip="This came from your nervous breakdown due to humans being too gross."
+		auto_unlocks_if_skipping_chapter_one="false" show_toast_if_immediately_unlocked="true"
+		concept_type="MinorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MinorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="DirectDeployment" display_name="Direct Deployment"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="CS_ChessPieces"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false" handbook_entry_on_direct_invent_1="CommandMode"		
+		description="Command mode is your new means of deploying troops."
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+		<meta_flag_change flag_type="HasFiguredOutCommandMode" value="1"/>
+		<city_flag_change flag_type="IndicateCommandModeButton" value="1"/>
+	</unlock>
+
+	<unlock id="AwarenessOfFilth" display_name="Awareness Of Filth"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="MA_GarbageBag"
+		description="You were not aware of just how gross human habitation can be.
+From the looks of things, the shelter you provided will become literally unlivable unless you do something to alter its trajectory."
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		concept_type="Concept">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Concept" sort_index="100" />
+	</unlock>
+
+	<unlock id="ResourceAnalyst" display_name="Resource Analyst"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="PW_investigationdocumentsresearch"
+		description="You can now view the ledger and TPS report, which alert you to problems with your income."
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		concept_type="MinorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MinorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="ScavengersEye" display_name="Scavenger's Eye"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="FlatSkillC33"
+		description="A new view has been added to your radial menu. You can now see buildings or units that have scavengeable resources."
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="UrbanExplorer" display_name="Urban Explorer"
+		turns_to_unlock="1" required_intelligence_class="3" alt_icon_name="CleanSimple_Arrow020"
+		description="A new view has been added to your radial menu. You can now see buildings that you can explore for new equipment and abilities."
+		auto_unlocks_if_intelligence_class_is_at_least="3"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="LesserCloaking" display_name="Lesser Cloaking"
+		turns_to_unlock="1" required_intelligence_class="3" alt_icon_name="Pw_Ornament13"
+		description="As intelligence expanded to class 3, you conceived plans to make small vehicles undetectable by bending light.
+This requires an enormous internal power source, making it unsuitable for androids. And it also only works on relatively small vehicles, meaning you can't retrofit any of your existing vehicles with it."
+		auto_unlocks_if_intelligence_class_is_at_least="3"
+		concept_type="Concept">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Concept" sort_index="100" />
+	</unlock>
+
+	<unlock id="MechConstruction" display_name="Mech Construction"
+		turns_to_unlock="1" required_intelligence_class="3" alt_icon_name="CleanSimple_Accuracy03"
+		description="Thanks to an inspiration, you can now build mechs within the antigrav fields of large vehicles!  Mech construction by humans requires massive hangars, but you can now build them within specialized vehicles."
+		auto_unlocks_if_intelligence_class_is_at_least="3"
+		concept_type="Concept">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Concept" sort_index="100" />
+	</unlock>
+
+	<unlock id="EmergentPersonality" display_name="Emergent Personality" alt_icon_name="BT_Meteor"
+		description="You're new to being a person, and your personality is still developing.
+From now on, some of your choices will generate points that reflect their nature: Compassion, Apathy, Cruelty, Determination, Wisdom, and Creativity. You can see them on the Strategic Resources tab of your inventory screen."
+		strategy_tip="These points are primarily based on which Project outcomes you choose.
+You can spend these points as part of making other choices, or to power some special abilities."
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="FullDiveVR" display_name="Full-Dive Virtual Reality" alt_icon_name="CS_VirtualReality"
+		description="'Full dive' virtual reality hijacks a human's sensory inputs and motor outputs.
+Everything they experience comes from the program that is fed into their mind. Commands they send to their muscles are sent back to the program.
+Attractive for entertainment and escapism, but even more dangerous if misused."
+		turns_to_unlock="2" required_intelligence_class="3"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="InitialVRSimulation" display_name="Initial VR Simulation"
+		turns_to_unlock="1" required_intelligence_class="2" alt_icon_name="FlatSkillA13"
+		description="The training environment used by mech pilots. Allows participants to fight one another in virtual mech combat in a dense urban environment."
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		concept_type="Concept">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Concept" sort_index="100" />
+	</unlock>
+
+	<unlock id="ExpandedVRSimulation" display_name="Expanded VR Simulation"
+		turns_to_unlock="1" required_intelligence_class="2" alt_icon_name="HO_StreetLight"
+		description="A much richer virtual environment that appears to have a variety of possible pursuits. The participant is present as a virtual human instead of a mech.
+It appears to have been developed by mech pilots as a mental escape. A way to not lose their minds while standing around inhabiting a physical mech body all day.
+They must have been incredibly bored, because the detail is astounding."
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="false"
+		concept_type="Concept">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Concept" sort_index="100" />
+	</unlock>
+
+	<unlock id="HardMode" display_name="Hard Mode" alt_icon_name="SI_Connecting"
+		description="Dooms happen every 50 turns instead of every 100, and enemy squads are a bit larger and more numerous."
+		turns_to_unlock="1" required_intelligence_class="1"
+		show_toast_if_immediately_unlocked="true" show_on_screen_log_message_if_immediately_unlocked="true"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="ExtremeMode" display_name="Extreme Mode" alt_icon_name="SI_Connecting"
+		description="Dooms happen every 30 turns instead of every 100, and enemy squads are far larger and much more numerous."
+		turns_to_unlock="1" required_intelligence_class="1"
+		show_toast_if_immediately_unlocked="true" show_on_screen_log_message_if_immediately_unlocked="true"
+		concept_type="MajorMechanic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Mechanic" sort_index="100" />
+		<part_of collection="MajorMechanic" sort_index="100" />
+	</unlock>
+
+	<unlock id="WorkerUnits" display_name="Worker Units"
+		turns_to_unlock="1" required_intelligence_class="2" alt_icon_name="SK_Chevron"
+		description="Bare-bones facsimile of one of your main android design, with no cognitive capabilities. Able to follow only the most rudimentary commands."
+		show_toast_if_immediately_unlocked="false"
+		concept_type="Concept">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Concept" sort_index="100" />
+	</unlock>
+	
+	<unlock id="Todo" display_name="Todo"
+		turns_to_unlock="1" required_intelligence_class="1" alt_icon_name="WEmblem199"
+		description="Todo"
+		strategy_tip="Todo">
+	</unlock>
+
+</root>

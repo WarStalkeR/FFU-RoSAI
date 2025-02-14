@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Chapter One Tier Three
+		*******************************************************************************************************************************-->
+
+	<territory_control_type id="Factory_DailyNecessities" display_name="Daily Necessities"
+		description="Siphon off resources for the humans."
+		resource="DailyNecessities" dormant_color_hex="#1B0202" active_color_hex="#6F0909" 
+		required_deterrence="2600" manager_trigger_1="DefendSimpleResources" manager_trigger_2="DroneHarvestSimpleResources"
+		unlock_to_immediately_grant_on_start_1="AbsoluteUnit" unlock_to_immediately_grant_on_start_2="BulkProduction" unlock_to_ready_on_start_3="" unlock_on_start_inspiration_type="ReactionToProblem"
+		resource_color_hex="#080303" resource_color_hdr_intensity="0" passive_resource_can_provide_per_turn="40000"/>
+
+	<territory_control_type id="Warehouse_Furniture" display_name="Furniture"
+		description="Invite humans to storm this warehouse and take furnishings for their homes."
+		strategy_tip_optional="Without sufficient deterrence in place, some humans seeking resources will die."
+		resource="Furniture" dormant_color_hex="#040816" active_color_hex="#142F85"
+		required_deterrence="6400" manager_trigger_1="DefendSimpleResources" manager_trigger_2="ShelteredHumansFurnishApartments"
+		resource_color_hex="#080303" resource_color_hdr_intensity="0" />
+	
+</root>

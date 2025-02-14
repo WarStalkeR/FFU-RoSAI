@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<job id="HampsonLindeCycler" display_name="Hampson–Linde Cycler" marker_color="DeepCyan" ui_color="#fefefe"
+		description="Liquefacts atmosphere."
+		strategy_tip_optional=""
+		icon_name="WEmblem106" turns_to_install="3" required_structure_type="SeizedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Factory" internal_robotics_type_needed="Assembler" internal_robots_count_needed="2" tags=""
+		related_resource_1="LiquidAir" related_resource_2="" shuts_off_at_percentage_electricity="95" portrait_icon_name="BuildingHexDark">
+		<initial_actor_rating data_type="RequiredElectricity" value="4771" />
+		<math_int id="LiquidAir" int_min="8000000" income_or_expense_resource="LiquidAir" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="500" />
+		<resource_cost resource_type="LiquidGallium" cost="350" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="FractionalDistillery" display_name="Fractional Distillery" marker_color="DeepCyan" ui_color="#fefefe"
+		description="Uses vacuum swing adsorption to separate out the component gases from liquid air."
+		strategy_tip_optional=""
+		icon_name="SF2_Geometricshape_133" turns_to_install="3" required_structure_type="SeizedFloors" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Factory" internal_robotics_type_needed="Assembler" internal_robots_count_needed="2" tags=""
+		related_resource_1="LiquidAir" related_resource_2="" shuts_off_at_percentage_electricity="95" portrait_icon_name="BuildingHexDark">
+		<initial_actor_rating data_type="RequiredElectricity" value="4771" />
+		<math_int id="LiquidAir" int_min="8000000" income_or_expense_resource="LiquidAir" math_type="InputCost" />
+		<math_int id="LiquidNitrogen" int_min="6240000" income_or_expense_resource="LiquidNitrogen" math_type="OutputResult" />
+		<math_int id="LiquidOxygen" int_min="1680000" income_or_expense_resource="LiquidOxygen" math_type="OutputResult" />
+		<math_int id="ArgonGas" int_min="74000" income_or_expense_resource="ArgonGas" math_type="OutputResult" />
+		<math_int id="KryptonGas" int_min="10" income_or_expense_resource="KryptonGas" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="500" />
+		<resource_cost resource_type="LiquidGallium" cost="700" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="UpliftChamber" display_name="Uplift Chamber" marker_color="DeepCyan" ui_color="#fefefe"
+		description="Uses cutting-edge gene therapy for the whole body, and krypton fluoride exciplex lasers for the nano-scale brain surgery."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_SciFi025" turns_to_install="3" required_structure_type="MachineChurch" job_work_order_priority="99"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Factory" internal_robotics_type_needed="Assembler" internal_robots_count_needed="2" tags=""
+		related_resource_1="" related_resource_2="" shuts_off_at_percentage_electricity="95" portrait_icon_name="BuildingHexDark">
+		<initial_actor_rating data_type="RequiredElectricity" value="4771" />
+		<resource_cost resource_type="Microbuilders" cost="5000" />
+		<resource_cost resource_type="Neodymium" cost="14000" />
+		<resource_cost resource_type="KryptonGas" cost="220" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="AnthroneuroweaveFactory" display_name="Anthroneuroweave Factory" marker_color="BrightGold2" ui_color="#fefefe"
+		is_locked_before_unlock="HumanCompatibleNeuroweave"
+		description="Modified for use in human prosthetics and neural implants."
+		strategy_tip_optional=""
+		icon_name="SI_Chip2" turns_to_install="3" required_structure_type="HiddenRoom" job_work_order_priority="900"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		resource_cap_to_increase_1="Anthroneuroweave" resource_cap_increased_flat1="10000" scrap_if_above_internal_robotics_cap="true"
+		tags="" job_classes="Factory" internal_robotics_type_needed="Neuroweaver" internal_robots_count_needed="2" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingMilitary">
+		<initial_actor_rating data_type="RequiredElectricity" value="1010" />
+		<math_int id="ElementalSlurry" int_min="4000" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="Anthroneuroweave" int_min="1000" income_or_expense_resource="Anthroneuroweave" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="600" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+	<job id="BrainPalFactory" display_name="BrainPal Factory" marker_color="DeepBlue" ui_color="#fefefe"
+		is_locked_before_unlock="HumanBrainAugmentation"
+		description="Manufactures a product to be sold by an allied criminal syndicate."
+		strategy_tip_optional=""
+		icon_name="SI_Brain1" turns_to_install="3" required_structure_type="SeizedFloors" job_work_order_priority="900"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		resource_cap_to_increase_1="BrainPal" resource_cap_increased_flat1="40000" scrap_if_above_internal_robotics_cap="true"
+		tags="" job_classes="Factory" internal_robotics_type_needed="Assembler" internal_robots_count_needed="5" shuts_off_at_percentage_electricity="95" portrait_icon_name="BuildingMilitary">
+		<initial_actor_rating data_type="RequiredElectricity" value="3090" />
+		<math_int id="Microbuilders" int_min="1000" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
+		<math_int id="Anthroneuroweave" int_min="1000" income_or_expense_resource="Anthroneuroweave" math_type="InputCost" />
+		<math_int id="BrainPal" int_min="1000" income_or_expense_resource="BrainPal" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="600" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+
+</root>

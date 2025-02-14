@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="city_event">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>	
+
+	<attribute key="sfx_to_play_on_appear" type="node-dropdown" node_source="SFXItem" content_width_px="200" is_required="false"
+		tooltip="The sound effect to play when this appears. Optional, because it should only be used when an event is the first in a chain." />
+	<attribute key="skip_change_street_sense_seed_after" type="bool" default="false"
+		tooltip="If this is true, then StreetSense won't be recalculated after doing thisrequired_project_active action type."/>
+	
+	<attribute key="has_no_code" type="bool" is_required="true" default="false"
+		tooltip="If true, it won't load anything from the dll or type name specified." />
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the implementation control code for this event is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the control code for this event in the specified external dll."/>
+
+	<attribute key="do_change_street_sense_seed_after" type="bool" default="false"
+		tooltip="If this is true, then StreetSense will be recalculated after doing this event."/>
+	
+	<attribute key="music_tag_to_use_until_events_all_complete" type="node-dropdown" node_source="MusicTag" content_width_px="200" is_required="false"
+		tooltip="The music tag to start using until this set of events is done." />
+	<attribute key="music_track_to_play_first_when_starting_music_tag" type="node-dropdown" node_source="MusicTrack" content_width_px="200" is_required="false"
+		tooltip="Only applies if setting a music tag, but if one is set, then this is the first track that will be set from it." />
+	
+	<attribute key="player_character_shows_aggressive" type="bool" default="false" is_required="false"
+		tooltip="If true, then the player character on the left side of the screen will show in their aggressive stance during this event." />
+
+	<attribute key="debug_is_initiated_whenever_selects_android" type="bool" default="false" is_required="false"
+		tooltip="Debug only!  If true, then this event is immediately started whenever the player freshly selects one of their androids." />
+	<attribute key="debug_is_initiated_whenever_selects_mech" type="bool" default="false" is_required="false"
+		tooltip="Debug only!  If true, then this event is immediately started whenever the player freshly selects one of their mechs." />
+	<attribute key="debug_is_initiated_whenever_selects_vehicle" type="bool" default="false" is_required="false"
+		tooltip="Debug only!  If true, then this event is immediately started whenever the player freshly selects one of their vehicles." />
+
+	<attribute key="skip_nevermind_option" type="bool" default="false" is_required="false"
+		tooltip="If true, a nevermind option will not be provided on minor events." />
+	<attribute key="skip_logging_event_result" type="bool" default="false" is_required="false"
+		tooltip="If true, the result of this event does not go in the general log." />
+	<attribute key="event_is_blocked_for_actors_without_clearance" type="bool" default="false" is_required="false"
+		tooltip="If true, this event cannot be undertaken by units that don't have clearance to be at the location of the event." />
+	<attribute key="event_is_blocked_for_actors_without_overriding_clearance" type="int-textbox" min="0" max="5" default="0" content_width_px="50" is_required="false"
+		tooltip="If this is set above 0, then the actor must meet this security clearance rather than whatever the building happens to be."/>
+
+	<attribute key="tags" type="node-list" node_source="NPCEventTag" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What tags apply to this event?  Always optional." />
+
+	<attribute key="fixed_event_number_for_characters" type="int-textbox" min="-1" max="999999" default="-1" content_width_px="50" is_required="false"
+		tooltip="If you have a series of events and you want to keep the characters the same between them, then set them all to the same number.
+If you want the characters to change each time, either set different numbers, or just leave it blank or set -1."/>
+
+	<attribute key="street_sense_collections" type="node-list" node_source="StreetSenseCollection" content_width_px="300" is_required="true" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What street-sense collections is this entry part of?" />
+
+	<!--gate_by_city
+	*******************************************************************************************************-->
+	<sub_node id="gate_by_city">
+		<attribute key="minimum_chapter" type="int-textbox" min="0" max="999" default="1" content_width_px="50" is_required="false"
+			tooltip="If this should not appear until a certain chapter. Defaults to chapter 1."/>
+		<attribute key="maximum_chapter" type="int-textbox" min="0" max="999" default="999" content_width_px="50" is_required="false"
+			tooltip="If this should not appear after a certain chapter. Defaults to act 999."/>
+
+		<attribute key="must_be_at_least_turn" type="int-textbox" min="0" max="999999" default="0" content_width_px="50" is_required="true"
+			tooltip="If above zero, then this will be blocked until a specific turn, regardless of anything else."/>
+		<attribute key="must_be_at_least_doom_number" type="int-textbox" min="0" max="999999" default="0" content_width_px="50" is_required="true"
+			tooltip="If above zero, then this will be blocked until a specific doom number, regardless of anything else."/>
+		
+		<attribute key="blocked_by_city_flag" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the city. If that flag is true, this manager will be dormant." />
+		<attribute key="blocked_by_city_flag2" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the city. If that flag is true, this manager will be dormant." />
+		<attribute key="required_city_flag" type="node-dropdown" node_source="CityFlag" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the city. This manager will be dormant until that flag is true." />
+
+		<attribute key="blocked_by_meta_flag" type="node-dropdown" node_source="MetaFlag" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the metagame. If that flag is true, this manager will be dormant." />
+		<attribute key="required_meta_flag" type="node-dropdown" node_source="MetaFlag" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the metagame. This manager will be dormant until that flag is true." />
+
+		<attribute key="blocked_by_city_task" type="node-dropdown" node_source="CityTask" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a task in the city. If that task is complete, this manager will be dormant." />
+		<attribute key="required_city_task" type="node-dropdown" node_source="CityTask" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a task in the city. This manager will be dormant until that task is complete." />
+
+		<attribute key="blocked_by_deal_active" type="node-dropdown" node_source="NPCDeal" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a deal in the city. If that deal is active, this manager will be dormant." />
+		<attribute key="required_deal_active" type="node-dropdown" node_source="NPCDeal" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a deal in the city. This manager will be dormant until that deal is active." />
+
+		<attribute key="required_job_active" type="node-dropdown" node_source="MachineJob" default="" content_width_px="130" is_required="false"
+			tooltip="ID of a machine job. This manager will be dormant until that job exists and is functional and active." />
+
+		<attribute key="blocked_by_dialog_complete" type="node-dropdown" node_source="NPCDialog" default="" content_width_px="130" is_required="false"
+			tooltip="If this dialog has already happened, this will be blocked." />
+		<attribute key="required_dialog_complete" type="node-dropdown" node_source="NPCDialog" default="" content_width_px="130" is_required="false"
+			tooltip="This will be blocked if the specified dialog has not yet happened." />
+
+		<attribute key="blocked_by_unlock" type="node-dropdown" node_source="Unlock" default="" content_width_px="130" is_required="false"
+			tooltip="If this unlock has already been fully researched, this will be blocked." />
+		<attribute key="required_unlock" type="node-dropdown" node_source="Unlock" default="" content_width_px="130" is_required="false"
+			tooltip="This will be blocked if the specified unlock has not yet been fully researched." />
+
+		<attribute key="required_beyond_turn" type="node-dropdown" node_source="CityStatistic" default="" content_width_px="130" is_required="false"
+			tooltip="If this is set, then the value must be above 0 for it to count, and the current turn must be beyond whatever this number is." />
+
+		<attribute key="blocked_by_countdown_complete" type="node-dropdown" node_source="OtherCountdownType" default="" content_width_px="130" is_required="false"
+			tooltip="If this countdown has already happened, this will be blocked." />
+		<attribute key="required_countdown_complete" type="node-dropdown" node_source="OtherCountdownType" default="" content_width_px="130" is_required="false"
+			tooltip="This will be blocked if the specified countdown has not yet happened." />
+
+		<attribute key="required_npc_manager_complete" type="node-dropdown" node_source="NPCManager" default="" content_width_px="130" is_required="false"
+			tooltip="This will not appear until this manager is fully complete." />
+		<attribute key="required_npc_manager_complete2" type="node-dropdown" node_source="NPCManager" default="" content_width_px="130" is_required="false"
+			tooltip="This will not appear until this manager is fully complete." />
+		<attribute key="required_npc_manager_complete3" type="node-dropdown" node_source="NPCManager" default="" content_width_px="130" is_required="false"
+			tooltip="This will not appear until this manager is fully complete." />
+
+		<attribute key="blocked_if_project_ever_started_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="If specified, this will not be valid if this project was ever started in this timeline." />
+		<attribute key="blocked_if_project_ever_started_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+			tooltip="If specified, this will not be valid if this project was ever started in this timeline." />
+
+		<attribute key="required_project_active" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When specified, this project must be active at the moment." />
+		<attribute key="required_project_complete_any_outcome1" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When specified, this project must be complete, but the outcome does not matter." />
+		<attribute key="required_project_complete_any_outcome2" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When specified, this project must be complete, but the outcome does not matter." />
+		<attribute key="required_project_complete_any_outcome3" type="node-dropdown" is_required="false" node_source="MachineProject" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When specified, this project must be complete, but the outcome does not matter." />
+		<attribute key="blocked_by_project_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent project (will error if no parent project and this is used). If that flag is true, this manager will be dormant." />
+		<attribute key="required_project_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent project (will error if no parent project and this is used). This manager will be dormant until that flag is true." />
+		<attribute key="required_project_flag2" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent project (will error if no parent project and this is used). This manager will be dormant until that flag is true." />
+		<attribute key="required_project_flag3" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent project (will error if no parent project and this is used). This manager will be dormant until that flag is true." />
+
+		<attribute key="related_npc_cohort" type="node-dropdown" is_required="false" node_source="NPCCohort" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="This may optionally be related to an npc cohort, even if it's also linked to the other types of parents." />
+		<attribute key="blocked_by_cohort_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used). If that flag is true, this manager will be dormant." />
+		<attribute key="required_cohort_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used). This manager will be dormant until that flag is true." />
+		<attribute key="required_cohort_flag2" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used). This manager will be dormant until that flag is true." />
+		<attribute key="required_cohort_flag3" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent npc cohort (will error if no parent npc cohort and this is used). This manager will be dormant until that flag is true." />
+		
+		<attribute key="required_mission_active" type="node-dropdown" is_required="false" node_source="NPCMission" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="When specified, this npc mission must be active at the moment." />
+		<attribute key="blocked_by_mission_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). If that mission is active, this manager will be dormant." />
+		<attribute key="blocked_by_mission_flag2" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). If that mission is active, this manager will be dormant." />
+		<attribute key="required_mission_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). This manager will be dormant until that mission is active." />
+		<attribute key="required_mission_flag2" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). This manager will be dormant until that mission is active." />
+		<attribute key="required_mission_flag3" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="ID of a flag in the parent mission (will error if no parent mission and this is used). This manager will be dormant until that mission is active." />
+
+		<attribute key="required_key_contact_flag_1" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this to pass. KeyContact:Flag" />
+		<attribute key="required_key_contact_flag_2" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this to pass. KeyContact:Flag" />
+		<attribute key="required_key_contact_flag_3" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be tripped for this to pass. KeyContact:Flag" />
+		<attribute key="blocked_by_key_contact_flag_1" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be un-tripped for this to pass. KeyContact:Flag" />
+		<attribute key="blocked_by_key_contact_flag_2" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be un-tripped for this to pass. KeyContact:Flag" />
+		<attribute key="blocked_by_key_contact_flag_3" type="string" maxlength="300" content_width_px="130" is_required="false"
+			tooltip="ID of a key contact, then a colon, then id of the flag that must be un-tripped for this to pass. KeyContact:Flag" />
+
+		<attribute key="required_key_contact_must_be_met_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact has not been met or is dead, then this will be blocked." />
+		<attribute key="required_key_contact_must_be_met_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact has not been met or is dead, then this will be blocked." />
+		<attribute key="required_key_contact_must_be_alive_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not alive, then this will be blocked." />
+		<attribute key="required_key_contact_must_be_alive_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not alive, then this will be blocked." />
+		<attribute key="required_key_contact_must_be_dead_1" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not dead, then this will be blocked." />
+		<attribute key="required_key_contact_must_be_dead_2" type="node-dropdown" node_source="KeyContact" default="" content_width_px="130" is_required="false"
+			tooltip="If this key contact is not dead, then this will be blocked." />
+
+		<sub_node id="required_city_statistic">
+			<attribute key="statistic_type" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="true"
+				tooltip="To pass, the related statistic must be some value." />
+			<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
+				tooltip="The value that will be compared against. Set to -1 to mod this out."/>
+			<attribute key="at_least" type="bool" default="false" is_required="true"
+				tooltip="If true, the statistic must be at least this high to pass. If false, it must be at most this high." />
+		</sub_node>
+		<sub_node id="required_meta_statistic">
+			<attribute key="statistic_type" type="node-dropdown" node_source="MetaStatistic" content_width_px="200" is_required="true"
+				tooltip="To pass, the related statistic must be some value." />
+			<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
+				tooltip="The value that will be compared against. Set to -1 to mod this out."/>
+			<attribute key="at_least" type="bool" default="false" is_required="true"
+				tooltip="If true, the statistic must be at least this high to pass. If false, it must be at most this high." />
+		</sub_node>
+		<sub_node id="required_resource">
+			<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+				tooltip="To pass, the related resource must be some value." />
+			<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
+				tooltip="The value that will be compared against. Set to -1 to mod this out."/>
+			<attribute key="at_least" type="bool" default="false" is_required="true"
+				tooltip="If true, the resource must be at least this high to pass. If false, it must be at most this high." />
+		</sub_node>
+	</sub_node>
+
+	<!--gate_by_actor
+	*******************************************************************************************************-->
+	<sub_node id="gate_by_actor">
+		<attribute key="cannot_be_android" type="bool" default="false" is_required="false"
+			tooltip="If true, and an android is what is selected, this will not be valid." />
+		<attribute key="cannot_be_mech" type="bool" default="false" is_required="false"
+			tooltip="If true, and a mech is what is selected, this will not be valid." />
+		<attribute key="cannot_be_vehicle" type="bool" default="false" is_required="false"
+			tooltip="If true, and a vehicle is what is selected, this will not be valid." />
+		<attribute key="actor_must_have_perks" type="node-dropdown" node_source="ActorPerk" content_width_px="200" is_required="false"
+			tooltip="When specified, then for this to show up for a given actor, that actor must have all of the perks noted here." />
+		<attribute key="actor_must_have_badges" type="node-dropdown" node_source="ActorBadge" content_width_px="200" is_required="false"
+			tooltip="When specified, then for this to show up for a given actor, that actor must have all of the badges noted here." />
+		<attribute key="actor_minimum_clearance" type="int-textbox" min="0" max="5" default="0" content_width_px="50" is_required="false"
+			tooltip="If this is above 0, then any actors that don't have at least this clearance will not be valid for this."/>
+		<attribute key="actor_maximum_clearance" type="int-textbox" min="0" max="5" default="5" content_width_px="50" is_required="false"
+			tooltip="If this is less than 5, then any actors that have more than this clearance will not be valid for this."/>
+	</sub_node>
+	
+	<!--major_event_data
+	*******************************************************************************************************-->
+	<sub_node id="major_event_data">
+		<attribute key="event_glow_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+			tooltip="What color is used for the icon glow when in the event window?"/>
+		<attribute key="event_glow_intensity" type="float-textbox" min="0.1" max="100" precision="3" content_width_px="50" is_required="false"
+			tooltip="The default is 2, but will differ based on the color you are otherwise using."/>
+		<attribute key="event_title_text_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+			tooltip="What color is used for the title header text in the event window?"/>
+		<attribute key="event_location_text_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+			tooltip="What color is used for the location header text in the event window?"/>
+		
+		<attribute key="event_background_index" type="int-textbox" min="0" max="60" content_width_px="40" is_required="true"
+			tooltip="Which numbered event background will be shown behind the event icon in the window?  See the options in ArtIcons/ScenarioEventHeaders."/>
+		<attribute key="event_background_hue_shift" type="float-textbox" min="0" max="360" default="0" precision="1" content_width_px="40" is_required="false"
+			tooltip="Shifting the hue in a range from 0-360, where 0 is no shift at all."/>
+		<attribute key="event_background_saturation" type="float-textbox" min="0" max="2" default="1" precision="3" content_width_px="40" is_required="false"
+			tooltip="Shifting the saturation from 0-2, where 1 is the default."/>
+		<attribute key="event_background_brightness" type="float-textbox" min="0" max="2" default="1" precision="3" content_width_px="40" is_required="false"
+			tooltip="Shifting the brightness from 0-2, where 1 is the default."/>
+	</sub_node>
+
+	<!--minor_event_data
+	*******************************************************************************************************-->
+	<sub_node id="minor_event_data">
+		<attribute key="specific_key_contact_and_firm_up_that_identity" type="node-dropdown" node_source="KeyContact" content_width_px="200" is_required="false"
+			tooltip="If this is related to a specific key contact, then it also relates to their cohort, and none of the other options are valid.
+If their identity has not been fully established yet (name, and marked as met), then this will cause that to happen. Don't do this too early!
+Typically it's done after the first pass of meeting them, since you can often turn down the choice to meet with them, or kill them.
+That usually should be a random same-role character rather than the key contact." />
+		<attribute key="reference_only_key_contact" type="node-dropdown" node_source="KeyContact" content_width_px="200" is_required="false"
+			tooltip="This does not count as a direct link!  All it does is make it so that events can be logged to a key contact on the process of them coming online fully." />
+		<attribute key="specific_cohort" type="node-dropdown" node_source="NPCCohort" content_width_px="200" is_required="false"
+			tooltip="This is the specific cohort which the npcs will come. Must be specified if none of the other options are." />
+		<attribute key="cohort_tag" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+			tooltip="This is the tag of npc cohorts from which a random group can be chosen to be the target of this interaction. Must be specified if none of the other options are." />
+		<attribute key="cohort_should_be_starting_building_owner" type="bool" default="false" is_required="true"
+			tooltip="If true, then the target of this interaction will belong to the npc group that owns the starting building." />
+
+		<attribute key="show_named_thing" type="node-dropdown" node_source="NamedThing" content_width_px="200" is_required="false"
+			tooltip="If specified, then this named-thing will be shown, with its label, at the bottom of the event window." />
+		
+		<attribute key="max_times_can_be_executed" type="int-textbox" min="0" max="9000" default="5" content_width_px="150" is_required="true"
+			tooltip="If set to zero, will not appear at all. If above zero, then this is how many times this interaction can be executed in this project."/>
+		<attribute key="max_times_can_appear_at_once" type="int-textbox" min="0" max="9000" default="1" content_width_px="150" is_required="true"
+			tooltip="If set to zero, will not appear at all. If above zero, then this is how many times this interaction can appear at once for a detective."/>
+		<attribute key="is_key_location_event" type="bool" default="false" is_required="false"
+			tooltip="If true, then this should not be part of the basic mix of minor events, but instead be part of the mix of key-location-minor-events, which are applied separately." />
+		<attribute key="can_shell_company_units_interact_with_this" type="bool" default="false" is_required="false"
+			tooltip="If true, then shell company units can do this. Otherwise they cannot." />
+		<attribute key="never_seeds" type="bool" default="false" is_required="false"
+			tooltip="If true, this should never be seeded at all, and instead is just something that is triggered by other means (like contemplation, etc)." />
+		<attribute key="should_always_show_expanded_action_details" type="bool" default="false" is_required="false"
+			tooltip="If true, then when this is an action on the game world, it always shows the full explanation.  Typically this is via StreetSense." />
+		<attribute key="can_appear_even_after_final_doom" type="bool" default="false" is_required="false"
+			tooltip="If true, then this can still appear after the final doom has happened." />
+		<attribute key="only_appears_after_final_doom" type="bool" default="false"
+			tooltip="If this is true, then this ONLY appears after the final doom."/>
+		<attribute key="seeds_one_per_related_poi" type="bool" default="false" is_required="false"
+			tooltip="If true, then in StreetSense it will spawn one of these per related POI (and not spawn at all if no POI is specified)." />
+		<attribute key="can_only_appear_in_pois_with_active_alarm_any" type="bool" default="false" is_required="false"
+			tooltip="If true, then in StreetSense it will only spawn one of these in POIs that DO have an alarm going off." />
+		<attribute key="can_only_appear_in_pois_with_active_alarm_player" type="bool" default="false" is_required="false"
+			tooltip="If true, then in StreetSense it will only spawn one of these in POIs that DO have an alarm going off." />
+		<attribute key="can_only_appear_in_pois_with_active_alarm_third_party" type="bool" default="false" is_required="false"
+			tooltip="If true, then in StreetSense it will only spawn one of these in POIs that DO have an alarm going off." />
+		<attribute key="can_only_appear_in_pois_without_active_alarm" type="bool" default="false" is_required="false"
+			tooltip="If true, then in StreetSense it will only spawn one of these in POIs that do NOT have an alarm going off." />
+		<attribute key="can_only_appear_in_pois_where_theft_is_not_blocked" type="bool" default="false" is_required="false"
+			tooltip="If true, then in StreetSense it will only spawn one of these in POIs that do not have theft blocked on them." />
+		<attribute key="chance_of_seeding_per_poi" type="int-textbox" min="0" max="100" default="100" content_width_px="50" is_required="true"
+			tooltip="If less than 100, then it will seed less than 1 per POI, but at least one on the map in general."/>
+		<attribute key="seeds_one_per_district" type="bool" default="false" is_required="false"
+			tooltip="If true, then in StreetSense it will spawn one of these per district." />
+		<attribute key="chance_of_seeding_per_district" type="int-textbox" min="0" max="100" default="100" content_width_px="50" is_required="true"
+			tooltip="If less than 100, then it will seed less than 1 per district, but at least one on the map in general."/>
+		<attribute key="seed_weight" type="int-textbox" min="0" max="10000" default="100" content_width_px="50" is_required="true"
+			tooltip="With a default weight of 100 for seeding, what weight should this item have relative to others of its type?"/>
+
+		<attribute key="required_actor_collection" type="node-dropdown" is_required="false" node_source="ActorCollection" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If specified, then this event cannot be started from the map if the player unit is not in this collection." />
+
+		<attribute key="required_skill_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+			tooltip="The unit choosing this event option must have a flat amount of this skill to even try it." />
+		<attribute key="required_skill_amount" type="int-textbox" min="0" max="5000" content_width_px="150" is_required="true"
+			tooltip="This is the direct literal amount of this skill that they must have."/>
+		<attribute key="is_blocked_if_intelligence_class_less_than" type="int-textbox" min="0" max="99" default="0" content_width_px="150" is_required="true"
+			tooltip="If above one, then this requires a specific intelligence class for the player to be able to choose this option."/>
+
+		<attribute key="required_perk_1" type="node-dropdown" node_source="ActorPerk" content_width_px="200" is_required="false"
+			tooltip="The unit choosing this interaction option must have this perk." />
+		<attribute key="required_perk_2" type="node-dropdown" node_source="ActorPerk" content_width_px="200" is_required="false"
+			tooltip="The unit choosing this interaction option must have this perk." />
+		<attribute key="required_badge_1" type="node-dropdown" node_source="ActorBadge" content_width_px="200" is_required="false"
+			tooltip="The unit choosing this interaction option must have this badge." />
+		<attribute key="required_badge_2" type="node-dropdown" node_source="ActorBadge" content_width_px="200" is_required="false"
+			tooltip="The unit choosing this interaction option must have this badge." />
+
+		<attribute key="icon_scale" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+			is_required="true" tooltip="Scale multiplier of the icon."/>
+
+		<attribute key="can_happen_even_during_obsession" type="bool" default="false" is_required="false"
+			tooltip="If true, then even during an obsession, this contemplation can appear." />
+		
+		<attribute key="color_data" type="node-dropdown" node_source="VisColorHoverUsage" content_width_px="200" is_required="true"
+			tooltip="The type of color that will be used." />
+
+		<!--seed_at on minor_event_data ...................... -->
+		<sub_node id="seed_at">
+			<attribute key="building_seed_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="true"
+				tooltip="When specified, then this item will be seeded as visible at the following kind of building tag. Required for initial goal projects." />
+			<attribute key="building_seed_fallback_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="false"
+				tooltip="Optional. If the primary building seed tag fails, then this should provide another source of possibilities." />
+			<attribute key="poi_seed_tag" type="node-dropdown" node_source="POITag" content_width_px="200" is_required="false"
+				tooltip="When specified, then this item will be seeded as visible at the following kind of poi tag. Optional. If specified, then combines with the building seed tag." />
+			<attribute key="min_security_clearance_of_seed_spot" type="int-textbox" min="-1" max="5" default="-1" content_width_px="50" is_required="false"
+				tooltip="On a scale from 0 to 5, what is the lowest allowed security clearance for seed spots for this item?  Set to -1 to ignore."/>
+			<attribute key="max_security_clearance_of_seed_spot" type="int-textbox" min="-1" max="5" default="-1" content_width_px="50" is_required="false"
+				tooltip="On a scale from 0 to 5, what is the highest allowed security clearance for seed spots for this item?  Set to -1 to ignore."/>
+			<attribute key="min_rough_distance_from_machines" type="float-textbox" min="-1" max="900" default="-1" content_width_px="50" is_required="false"
+				tooltip="How far, roughly, should this be from machine subnets and towers?  Will fail if not yet any of those. Set to -1 to ignore."/>
+			<attribute key="max_rough_distance_from_machines" type="float-textbox" min="-1" max="900" default="-1" content_width_px="50" is_required="false"
+				tooltip="How far, roughly, should this be from machine subnets and towers?  Will fail if not yet any of those. Set to -1 to ignore."/>
+			<sub_node id="required_building_data">
+				<attribute key="data_type" type="node-dropdown" node_source="LocationDataType" content_width_px="200" is_required="true"
+					tooltip="To match, a building must have certain qualities relating to this data type." />
+				<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
+					tooltip="The value that will be compared against. Set to -1 to mod this out."/>
+				<attribute key="at_least" type="bool" default="false" is_required="true"
+					tooltip="If true, the building data must be at least this high to pass. If false, it must be at most this high." />
+			</sub_node>
+		</sub_node>
+	</sub_node>	
+
+	<!--character
+	*******************************************************************************************************-->
+	<sub_node id="character">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. There should be a unique set of character IDs per event, named or numbered." />
+		<attribute key="tag_for_character" type="node-dropdown" node_source="VisDrawingObjectTag" content_width_px="200" is_required="false"
+			tooltip="The tag from which to assign this character, or blank if you're using a key contact instead." />
+		<attribute key="key_contact" type="node-dropdown" node_source="VisDrawingObjectTag" content_width_px="200" is_required="false"
+			tooltip="The key contact who will be drawn here, even if they haven't been met yet." />
+		<attribute key="scale_multiplier" type="float-textbox" min="-1" max="10" default="1" content_width_px="50" is_required="true"
+			tooltip="If set above zero, then what further modifier to the normal event-scale of this character should be applied?  Typically used when you have groups."/>
+		<attribute key="position_offset" type="vector3-textbox" is_required="true"
+			tooltip="In local matrix space of the event camera, what offset does this character have from the normal position on the right-hand side of the screen?" />
+		<attribute key="added_rotation_y" type="float-textbox" min="-359" max="359" default="0" content_width_px="50" is_required="true"
+			tooltip="If set to a nonzero number, it gets added to the default rotation of this character."/>
+	</sub_node>
+
+	<!--choice
+	*******************************************************************************************************-->
+	<sub_node id="choice">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. There should be a unique set of choice IDs, probably numbered, but it doesn't matter." />
+
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+			tooltip="The player-visible text of the choice." />
+		<attribute key="description" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of the machine intelligence's thoughts as it contemplates this option."/>
+		<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+			tooltip="This is the player-visible description of any special notes about this choice."/>
+
+		<attribute key="action_visibility_style" type="string-dropdown" is_required="true" default="IsInoffensive" content_width_px="200"
+			tooltip="How the visibility of the unit making the choice is affected by making this choice.">
+			<option>IsInoffensive</option>
+			<option>IsMovement</option>
+			<option>IsAttack</option>
+			<option>IsMoveAndAttack</option>
+			<option>MakesNoChange</option>
+			<option>IsInteractWithNPC</option>
+			<option>IsMoveAndInteractWithNPC</option>
+		</attribute>
+
+		<attribute key="trigger_activity_scheduler" type="bool" default="false" is_required="false"
+			tooltip="If true, then the activity scheduler will look and see if it needs to be spawning any units or similar. It will not do turn countdowns." />
+
+		<attribute key="is_blocked_if_intelligence_class_less_than" type="int-textbox" min="0" max="99" default="0" content_width_px="150" is_required="true"
+			tooltip="If above one, then this requires a specific intelligence class for the player to be able to choose this option."/>		
+		<attribute key="is_blocked_if_cell_poi_alarm_sounding" type="bool" default="false" is_required="false"
+			tooltip="If true, and this event is happening in a cell POI where the alarm is sounding, then this option cannot be chosen." />
+		<attribute key="is_blocked_if_building_poi_alarm_sounding" type="bool" default="false" is_required="false"
+			tooltip="If true, and this event is happening in a building-or-larger POI where the alarm is sounding, then this option cannot be chosen." />
+		<attribute key="is_blocked_if_cell_poi_alarm_not_sounding" type="bool" default="false" is_required="false"
+			tooltip="If true, and this event is happening in a cell POI where the alarm is NOT sounding, then this option cannot be chosen." />
+		<attribute key="is_blocked_if_building_poi_alarm_not_sounding" type="bool" default="false" is_required="false"
+			tooltip="If true, and this event is happening in a building-or-larger POI where the alarm is NOT sounding, then this option cannot be chosen." />
+		<attribute key="is_blocked_if_not_yet_chapter_two" type="bool" default="false" is_required="false"
+			tooltip="If true, and it is not yet chapter two, then this is blocked." />
+		<attribute key="is_always_won_the_first_time" type="bool" default="false" is_required="false"
+			tooltip="If true, and this is a DC skill check type of choice, then it will always give the best result the first time you try it in a timeline." />
+		<attribute key="is_adventure_for_a_future_build" type="bool" default="false" is_required="false"
+			tooltip="If true, then this will be blocked and will show the players a message about that." />
+		<attribute key="hidden_without_unlock" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="If specified, then this option will give no sign it exists until the related unlock has been invented." />
+		<attribute key="hidden_if_city_flag_tripped" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If specified, then this option is hidden if this flag is tripped." />
+
+		<attribute key="blocked_if_city_flag_tripped" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="false"
+			tooltip="If specified, then this option is blocked if this flag is tripped." />
+		<attribute key="localization_key_if_blocked_by_city_flag" type="string" maxlength="200" content_width_px="130" is_required="false"
+			tooltip="What explanatory localization key should be used if blocked_if_city_flag_tripped is in use?" />
+		
+		<attribute key="do_not_mark_contemplation_as_complete" type="bool" default="false" is_required="false"
+			tooltip="If true, and this is related to a contemplation then it will skip marking that contemplation as complete if this option is chosen." />
+		
+		<attribute key="consumable_cost_type" type="node-dropdown" node_source="ResourceConsumable" content_width_px="200" is_required="false"
+			tooltip="If specified, then this option requires the player to give up some amount of a consumable." />
+		<attribute key="consumable_cost_amount" type="int-textbox" default="1" min="1" max="5000" content_width_px="150" is_required="false"
+			tooltip="If a cost type is specified, then how much of that cost type would this cost?"/>
+
+		<attribute key="required_skill_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+			tooltip="The unit choosing this interaction option must have a flat amount of this skill to even try it." />
+		<attribute key="required_skill_amount" type="int-textbox" min="0" max="5000" content_width_px="150" is_required="true"
+			tooltip="This is the direct literal amount of this skill that they must have."/>
+
+		<attribute key="required_unlock" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+			tooltip="If specified, then this option will be blocked but visible if the unlock has not been invented yet." />
+		<attribute key="required_actor_collection" type="node-dropdown" is_required="false" node_source="ActorCollection" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="If specified, then this option will be blocked but visible if the player unit is not in this collection." />
+
+		<attribute key="required_perk_1" type="node-dropdown" node_source="ActorPerk" content_width_px="200" is_required="false"
+			tooltip="The unit choosing this interaction option must have this perk." />
+		<attribute key="required_perk_2" type="node-dropdown" node_source="ActorPerk" content_width_px="200" is_required="false"
+			tooltip="The unit choosing this interaction option must have this perk." />
+		<attribute key="required_badge_1" type="node-dropdown" node_source="ActorBadge" content_width_px="200" is_required="false"
+			tooltip="The unit choosing this interaction option must have this badge." />
+		<attribute key="required_badge_2" type="node-dropdown" node_source="ActorBadge" content_width_px="200" is_required="false"
+			tooltip="The unit choosing this interaction option must have this badge." />
+
+		<attribute key="extra_code_on_chosen" type="node-dropdown" node_source="ExtraCodeHandler" content_width_px="200" is_required="false"
+			tooltip="If this needs to run some extra code, custom, at the end of making this choice, then the handler for that can be linked here.
+This has no effect on the ability to make the choice, or other aspects of the choice having been made.  It's purely for adding extra logic to a choice that is definitely happening.
+Also! While this is defined on the choice itself, the specific outcome that happened, and all the other details, are passed to this code. So if there is branching code depending on the outcome, that's absolutely fine." />
+
+		<!--resource_cost on choice...................... -->
+		<sub_node id="resource_cost">
+			<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+				tooltip="To choose this option, the player must have the required amount of ALL resources specified this way." />
+			<attribute key="cost" type="int-textbox" min="0" max="1000000" content_width_px="150" is_required="true"
+				tooltip="This is the constant amount of resources that it will cost to do this action."/>
+		</sub_node>
+		
+		<!--possible_result on choice
+			*******************************************************************************************************-->
+		<sub_node id="possible_result">
+			<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+				tooltip="For finding this when we need to refer to it. There should be a unique set of result IDs, probably numbered, but it doesn't matter." />
+
+			<attribute key="keep_open_and_pop_up_result_message" type="bool" is_required="true" default="false"
+				tooltip="If true, then this stays open and lets the player do things repeatedly." />
+			
+			<attribute key="unskilled_weight" type="int-textbox" min="0" max="9000" default="100" content_width_px="150"
+				tooltip="When the possible unskilled results of this choice are calculated, how much weight should we put for it compared to the average of 100?  Ignored if there is a kill check here."/>
+			<attribute key="partial_success_skill_floor" type="int-textbox" min="0" max="100" default="0" content_width_px="150"
+				tooltip="When this is set, then this is for a partial success. If the player had at least an X% chance of some skill check, where X is this number, then they get this result if they failed the skill check.
+You can stack as many of these as you want, and the player gets the highest-percentage one that they match. They will only get the chance to spend overdrive, or to have an unskilled roll, if they have something lower than this.
+Anything less than 50% will yell at you, these should not be used that low!"/>
+
+			<attribute key="result_message" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+				content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+				tooltip="Optional player-visible message that is shown when this result is occurs."/>
+			<attribute key="result_message_secondary_note" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
+				content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+				tooltip="Optional player-visible message secondary note that is shown when this result is occurs, but in a dimmer color."/>
+
+			<attribute key="mission_start_color" type="node-dropdown" node_source="VisColorUsage" content_width_px="200" is_required="false"
+				tooltip="The color to use for any mission that is started.  Required when one is specified." />
+			<attribute key="project_start_color" type="node-dropdown" node_source="VisColorUsage" content_width_px="200" is_required="false"
+				tooltip="The color to use for any project that is started.  Required when one is specified." />
+			<attribute key="vfx_and_sound" type="node-dropdown" node_source="VisEventVFXAndSoundUsage" content_width_px="200" is_required="true"
+				tooltip="The sound and/or visual effects to play when this result is chosen. Required." />
+			<attribute key="achievement_triggered" type="node-dropdown" node_source="Achievement" content_width_px="200" is_required="false"
+				tooltip="The achievement to trigger when this is chosen. Optional." />
+			<attribute key="sound_when_negative_result_accepted" type="node-dropdown" node_source="VisParticleAndSoundUsage" content_width_px="200" is_required="false"
+				tooltip="The sound effect that is played when a negative result is accepted. Mainly used if the unit will be shot or similar. Optional." />
+			<attribute key="kill_characters_on_the_right" type="bool" default="false" is_required="false"
+				tooltip="If true, then the characters on the right will do the death animation rather than fading out." />
+			<attribute key="despawn_characters_on_the_right" type="bool" default="false" is_required="false"
+				tooltip="If true, then the characters on the right will fade out prior to the results being shown, if it's going to show results. Normally the characters stay until the results are done." />
+			<attribute key="clear_all_aggro_against_this_unit" type="bool" default="false" is_required="false"
+				tooltip="If true, then all aggro that this unit has acquired is wiped." />
+			<attribute key="warp_out_this_unit" type="bool" default="false" is_required="false"
+				tooltip="If true, then this unit warps out and leaves." />
+			<attribute key="do_not_block_choice_if__project_is_blocked" type="bool" default="false" is_required="false"
+				tooltip="If true, then allow the choice to proceed even if the project it wants to start is blocked." />
+			<attribute key="use_only_a_single_rand_change_for_npc_cohort" type="bool" default="false" is_required="false"
+				tooltip="If true, then a single change is selected out of the possible focus group npc data changes. Useful when something might weaken or strengthen them a bit, at random." />
+
+			<attribute key="disable_alarm_at_local_poi" type="bool" default="false" is_required="false"
+				tooltip="If true, then the alarm at the local POI is turned off." />
+
+			<attribute key="reset_the_cohort_when_exiting_this_way" type="bool" default="false" is_required="false"
+				tooltip="If true, then the cohort linked to this chain of events will be reset, rather than keeping the one that was there from the start." />
+			
+			<attribute key="alarm_the_local_poi_for_at_least_this_many_turns" type="int-textbox" min="0" max="9" content_width_px="40" is_required="true"
+				tooltip="If above zero, then the local POI of this event will have its alarm go off, if there is a POI, for at least this many turns."/>
+
+			<attribute key="next_event_to_start" type="node-dropdown" node_source="NPCEvent" content_width_px="200" is_required="false"
+				tooltip="If this will start another event at this building, aka a chain of events, then what is the next event?" />
+
+			<attribute key="turns_for_action_over_time_to_last" type="int-textbox" min="2" max="9" default="4" content_width_px="40" is_required="true"
+				tooltip="If this is going to start an action over time, how many turns should that action over time last?  Default is 4."/>
+			<attribute key="action_over_time_to_start" type="node-dropdown" node_source="ActionOverTimeType" content_width_px="200" is_required="false"
+				tooltip="If this will start an action over time for the current actor at this building, then specify that here." />
+
+			<attribute key="block_thefts_at_the_poi_for_this_many_turns" type="int-textbox" min="0" max="50" default="0" content_width_px="40" is_required="true"
+				tooltip="If this is going to block more thefts at this poi for a certain number of turns, then how many turns?"/>
+
+			<attribute key="message_to_trigger" type="node-dropdown" node_source="OtherKeyMessage" content_width_px="200" is_required="false"
+				tooltip="If this choice will trigger a key message, this is the one." />
+			
+			<attribute key="project_to_start" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+				tooltip="If this choice will start a project, that is a big deal and it will be called out in particular." />
+			<attribute key="mission_to_start" type="node-dropdown" node_source="NPCMission" content_width_px="200" is_required="false"
+				tooltip="If this choice will start an npc mission, that is a big deal and it will be called out in particular." />
+			<attribute key="becomes_weather" type="node-dropdown" node_source="WeatherStyle" content_width_px="200" is_required="false"
+				tooltip="If this choice will change the weather style, then what will it change it to?" />
+
+			<attribute key="show_named_thing" type="node-dropdown" node_source="NamedThing" content_width_px="200" is_required="false"
+				tooltip="If this choice should show a named thing, what should it show?" />
+
+			<attribute key="machine_unit_granted" type="node-dropdown" node_source="MachineUnitType" content_width_px="200" is_required="false"
+				tooltip="If this will grant a machine unit, then what is the type that it will grant?" />
+			<attribute key="machine_vehicle_granted" type="node-dropdown" node_source="MachineVehicleType" content_width_px="200" is_required="false"
+				tooltip="If this will grant a machine vehicle, then what is the type that it will grant?" />
+			<attribute key="new_machine_actor_overriding_name_loca_key" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+				tooltip="If this will grant a new machine actor, does it need a special name?  This links to a key in the Language table." />			
+			<attribute key="new_machine_actor_granted_registration" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+				tooltip="If this will grant a new machine actor, then what is the tag of registration it will have?" />
+
+			<attribute key="unlock_granted_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+				tooltip="If this will ready some invention, what is it?" />
+			<attribute key="unlock_granted_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+				tooltip="If this will ready some invention, what is it?" />
+			<attribute key="unlock_granted_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+				tooltip="If this will ready some invention, what is it?" />
+
+			<attribute key="instantly_unlocked_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+				tooltip="If this will immediately unlock some invention, what is it?" />
+			<attribute key="instantly_unlocked_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+				tooltip="If this will immediately unlock some invention, what is it?" />
+			<attribute key="instantly_unlocked_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+				tooltip="If this will immediately unlock some invention, what is it?" />
+
+			<attribute key="unlock_inspiration_type" type="node-dropdown" node_source="UnlockInspirationType" content_width_px="200" is_required="false"
+				tooltip="If there is a invention being readied, then this becomes required. This states why this inspiration came about. Otherwise optional." />
+
+			<attribute key="crossover1" type="node-dropdown" node_source="CityTimelineCrossover" content_width_px="200" is_required="false"
+				tooltip="If this will unlock a crossover to other timelines, what is it?" />
+			<attribute key="crossover2" type="node-dropdown" node_source="CityTimelineCrossover" content_width_px="200" is_required="false"
+				tooltip="If this will unlock a crossover to other timelines, what is it?" />
+			<attribute key="crossover3" type="node-dropdown" node_source="CityTimelineCrossover" content_width_px="200" is_required="false"
+				tooltip="If this will unlock a crossover to other timelines, what is it?" />
+
+			<attribute key="research_domain_inspiration_type_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="true"
+				tooltip="When the project completes this way, what domain of research is the player inspired in?  This is required of all projects." />
+			<attribute key="research_domain_inspiration_amount_1" type="int-textbox" min="1" max="99" default="1" content_width_px="40" is_required="true"
+				tooltip="How many points of inspiration will the player gain in that domain?  The default is 1. More than about 3 is probably too much."/>
+
+			<attribute key="research_domain_inspiration_type_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+				tooltip="When the project completes this way, what domain of research is the player inspired in?  This secondary one is optional." />
+			<attribute key="research_domain_inspiration_amount_2" type="int-textbox" min="1" max="99" default="1" content_width_px="40" is_required="false"
+				tooltip="How many points of inspiration will the player gain in that domain?  The default is 1. More than about 3 is probably too much."/>
+
+			<attribute key="research_domain_inspiration_type_3" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+				tooltip="When the project completes this way, what domain of research is the player inspired in?  This third one is optional." />
+			<attribute key="research_domain_inspiration_amount_3" type="int-textbox" min="1" max="99" default="1" content_width_px="40" is_required="false"
+				tooltip="How many points of inspiration will the player gain in that domain?  The default is 1. More than about 3 is probably too much."/>
+
+			<attribute key="upgrade_int_granted_1" type="node-dropdown" node_source="UpgradeInt" content_width_px="200" is_required="false"
+				tooltip="If this will immediately grant an upgraded int field, what is it?" />
+			<attribute key="upgrade_int_granted_2" type="node-dropdown" node_source="UpgradeInt" content_width_px="200" is_required="false"
+				tooltip="If this will immediately grant an upgraded int field, what is it?" />
+			<attribute key="upgrade_int_granted_3" type="node-dropdown" node_source="UpgradeInt" content_width_px="200" is_required="false"
+				tooltip="If this will immediately grant an upgraded int field, what is it?" />
+			<attribute key="upgrade_float_granted_1" type="node-dropdown" node_source="UpgradeFloat" content_width_px="200" is_required="false"
+				tooltip="If this will immediately grant an upgraded float field, what is it?" />
+
+			<attribute key="countdown_to_start_1" type="node-dropdown" node_source="OtherCountdownType" content_width_px="200" is_required="false"
+				tooltip="This countdown will be started right away, unless it's already in progress." />
+			<attribute key="countdown_to_start_2" type="node-dropdown" node_source="OtherCountdownType" content_width_px="200" is_required="false"
+				tooltip="This countdown will be started right away, unless it's already in progress." />
+
+			<attribute key="deal_to_start_1" type="node-dropdown" node_source="NPCDeal" content_width_px="200" is_required="false"
+				tooltip="If this starts a deal, which deal does it start?" />
+			<attribute key="deal_to_start_2" type="node-dropdown" node_source="NPCDeal" content_width_px="200" is_required="false"
+				tooltip="If this starts a deal, which deal does it start?" />
+			
+			<attribute key="kill_key_contact_1" type="node-dropdown" node_source="KeyContact" content_width_px="200" is_required="false"
+				tooltip="This key contact will be killed." />
+			<attribute key="kill_key_contact_2" type="node-dropdown" node_source="KeyContact" content_width_px="200" is_required="false"
+				tooltip="This key contact will be killed." />
+			
+			<attribute key="trip_key_contact_flag_1" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the related key contact (will error if no related key contact and this is used). This flag will be tripped." />
+			<attribute key="trip_key_contact_flag_2" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a flag in the related key contact (will error if no related key contact and this is used). This flag will be tripped." />
+
+			<attribute key="change_key_contact_metric_1" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a metric in the related key contact (will error if no related key contact and this is used). This metric will be changed by an amount specified in a related field." />
+			<attribute key="change_key_contact_metric_1_by_amount" type="int-textbox" min="-10000" max="10000" content_width_px="150" is_required="false"
+				tooltip="Amount that the related metric on the key contact will change by."/>
+			<attribute key="change_key_contact_metric_2" type="string" maxlength="200" content_width_px="130" is_required="false"
+				tooltip="ID of a metric in the related key contact (will error if no related key contact and this is used). This metric will be changed by an amount specified in a related field." />
+			<attribute key="change_key_contact_metric_2_by_amount" type="int-textbox" min="-10000" max="10000" content_width_px="150" is_required="false"
+				tooltip="Amount that the related metric on the key contact will change by."/>
+			
+			<attribute key="poi_badge_applied" type="node-dropdown" node_source="POIBadge" content_width_px="200" is_required="false"
+				tooltip="If this will add a badge to the local POI, if there is one, then what badge will that be?" />
+			<attribute key="clearance_added_to_actor" type="node-dropdown" node_source="SecurityClearance" content_width_px="200" is_required="false"
+				tooltip="If this will add a security clearance to the actor interacting with this (assuming higher than what the actor already has), then what is the clearance?" />
+
+			<attribute key="ensure_actor_has_at_least_this_many_action_points" type="int-textbox" min="0" max="3" default="0" content_width_px="150" is_required="false"
+				tooltip="If set above zero, then you can ensure that the actor involved in the event has at least however many action points you say."/>
+
+			<!--skill_check on possible_result of choice...................... -->
+			<sub_node id="skill_check">
+				<attribute key="skill_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="true"
+					tooltip="The unit choosing this interaction option must pass a skill check of this type to get this result.
+Any one of the skill checks is good enough, and the best one will be used. They don't have to pass all of them." />
+				<attribute key="dc_level" type="int-textbox" min="0" max="50" content_width_px="150" is_required="true"
+					tooltip="This is how difficult the skill check is. 1-10 is easy, 11-20 is moderate, 21-30 is hard, 30+ is very hard."/>
+			</sub_node>
+
+			<!--city_flag_change on possible_result of choice...................... -->
+			<sub_node id="city_flag_change">
+				<attribute key="flag_type" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="true"
+					tooltip="This will either trip or un-trip a city flag. Which one?" />
+				<attribute key="value" type="int-textbox" min="-1" max="1" content_width_px="40" is_required="true"
+					tooltip="If 1, then this trips the flag. If -1, then it un-trips the flag."/>
+			</sub_node>
+
+			<!--meta_flag_change on possible_result of choice...................... -->
+			<sub_node id="meta_flag_change">
+				<attribute key="flag_type" type="node-dropdown" node_source="MetaFlag" content_width_px="200" is_required="true"
+					tooltip="This will either trip or un-trip a city flag. Which one?" />
+				<attribute key="value" type="int-textbox" min="-1" max="1" content_width_px="40" is_required="true"
+					tooltip="If 1, then this trips the flag. If -1, then it un-trips the flag."/>
+			</sub_node>
+
+			<!--actor_data_change_range on possible_result of choice...................... -->
+			<sub_node id="actor_data_change_range">
+				<attribute key="data_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="true"
+					tooltip="This changes some data on the selected actor. What data will it change?" />
+				<attribute key="min" type="int-textbox" min="-1000" max="1000" content_width_px="40" is_required="true"
+					tooltip="What is the lowest amount of the random range the data will be changed by?"/>
+				<attribute key="max" type="int-textbox" min="-1000" max="1000" content_width_px="40" is_required="true"
+					tooltip="What is the highest amount of the random range the data will be changed by?"/>
+			</sub_node>
+
+			<!--actor_badge_change on possible_result of choice...................... -->
+			<sub_node id="actor_badge_change">
+				<attribute key="badge_type" type="node-dropdown" node_source="ActorBadge" content_width_px="200" is_required="true"
+					tooltip="This will either add or remove a badge on the selected actor. Which one?" />
+				<attribute key="value" type="int-textbox" min="-1" max="1" content_width_px="40" is_required="true"
+					tooltip="If 1, then this adds the badge. If -1, then it removes the badge."/>
+			</sub_node>
+
+			<!--resource_change_range on possible_result of choice...................... -->
+			<sub_node id="resource_change_range">
+				<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+					tooltip="This changes some resource for the player. What data will it change?" />
+				<attribute key="min" type="int-textbox" min="-10000000" max="10000000" content_width_px="40" is_required="true"
+					tooltip="What is the lowest amount of the random range the data will be changed by?"/>
+				<attribute key="max" type="int-textbox" min="-10000000" max="10000000" content_width_px="40" is_required="true"
+					tooltip="What is the highest amount of the random range the data will be changed by?"/>			
+			</sub_node>
+
+			<!--city_statistic_change on possible_result of choice ...................... -->
+			<sub_node id="city_statistic_change">
+				<attribute key="statistic" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="true"
+					tooltip="This increases some city statistic. Which one?" />
+				<attribute key="value" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+					tooltip="What is amount the data will be changed by?"/>
+			</sub_node>
+
+			<!--meta_statistic_change on possible_result of choice ...................... -->
+			<sub_node id="meta_statistic_change">
+				<attribute key="statistic" type="node-dropdown" node_source="MetaStatistic" content_width_px="200" is_required="true"
+					tooltip="This increases some meta statistic. Which one?" />
+				<attribute key="value" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+					tooltip="What is amount the data will be changed by?"/>
+			</sub_node>
+			
+			<!--npc_unit_to_spawn on possible_result of choice ...................... -->
+			<sub_node id="npc_unit_to_spawn">
+				<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+					tooltip="For finding this when we need to refer to it. There should be a unique set of npc-units-to-spawn IDs per result, named or numbered." />
+				<attribute key="to_spawn" type="node-dropdown" node_source="NPCUnitTag" content_width_px="200" is_required="true"
+					tooltip="The specific kind of npc unit to spawn." />
+				<attribute key="stance_to_start_in" type="node-dropdown" node_source="NPCUnitStance" content_width_px="200" is_required="true"
+					tooltip="The specific stance they should start in." />				
+				<attribute key="squad_size_multiplier" type="float-textbox" min="-1" max="10" default="1" content_width_px="50" is_required="false"
+					tooltip="If set above zero, then the normal squad size of this npc unit type will be multiplied by the specified value, making them stronger or weaker than usual."/>
+				<attribute key="radius_in_which_to_seed" type="float-textbox" min="-1" max="20" default="5" content_width_px="50" is_required="true"
+					tooltip="What radius is the unit allowed to spawn in around the focal point here?  If set to 0 or less, will try to seed as close as possible."/>
+				<attribute key="spawn_facing_player_unit" type="bool" default="false" is_required="false"
+					tooltip="If true, then this unit will spawn facing the active player unit. If false, the rotation will be random." />
+				<attribute key="copy_visuals_from_event_character" type="bool" default="false" is_required="false"
+					tooltip="If true, then this unit will spawn with overriding visuals which are copied from the event character on the right-hand side of the screen, if possible." />
+				<attribute key="chance_of_spawning" type="int-textbox" min="0" max="100" default="100" content_width_px="50" is_required="false"
+					tooltip="If this only sometimes seeds, then what percent of the time does it seed?"/>
+				<attribute key="spawn_near_prior_if_spawned_prior" type="bool" default="false" is_required="false"
+					tooltip="If true, and this npc unit is not the first one spawned in a batch, then it will try to spawn as near as possible to the prior npc that was spawned. It ignores the original spawn radius in those cases." />
+				<attribute key="aggro_the_cohort_of_this_unit_against_the_spawning_actor_by" type="int-textbox" min="0" max="10000" default="0" content_width_px="50" is_required="false"
+					tooltip="If above zero, and this npc unit is not from a machine-controlled group, and an actor of the player caused this to spawn, then the cohort of this new unit will be aggroed against this player actor by that amount."/>
+
+				<attribute key="spawn_for_local_authority_if_matches_this_tag_else_use_other_tag" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+					tooltip="The local authority should be used if it matches this tag." />
+				<attribute key="spawn_for_this_tag_if_local_authority_invalid" type="node-dropdown" node_source="NPCCohortTag" content_width_px="200" is_required="false"
+					tooltip="If the local authority check failed above, then this tag should be used instead. A single entry from the tag will be used for all of the units in this spawn event using the same tag." />
+
+				<attribute key="spawn_for_local_authority" type="bool" default="false" is_required="false"
+					tooltip="If true, then on an event or project or similar, local authority at the current location will be used." />
+				<attribute key="spawn_for_focus_cohort" type="bool" default="false" is_required="false"
+					tooltip="If true, then on an event or project or similar, the focus group will be used for the group of this new unit." />
+				<attribute key="spawn_for_cohort" type="node-dropdown" node_source="NPCCohort" content_width_px="200" is_required="true"
+					tooltip="If true, it will spawn for the specific npc cohort." />
+				
+				<!--initial_data_adjustment on npc_unit_to_spawn of possible_result of choice...................... -->
+				<sub_node id="initial_data_adjustment">
+					<attribute key="data_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="true"
+						tooltip="This changes some data on the newly-spawned unit. What data will it change?" />
+					<attribute key="min" type="int-textbox" min="-1000" max="1000" content_width_px="40" is_required="true"
+						tooltip="What is the lowest amount of the random range the data will be changed by?"/>
+					<attribute key="max" type="int-textbox" min="-1000" max="1000" content_width_px="40" is_required="true"
+						tooltip="What is the highest amount of the random range the data will be changed by?"/>
+				</sub_node>
+
+				<!--starting_status on npc_unit_to_spawn of possible_result of choice...................... -->
+				<sub_node id="starting_status">
+					<attribute key="status_type" type="node-dropdown" node_source="ActorStatus" content_width_px="200" is_required="true"
+						tooltip="This starts the new actor out with some initial status. What is it?" />
+					<attribute key="min_intensity" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+						tooltip="What is the lowest intensity that will be added?"/>
+					<attribute key="max_intensity" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+						tooltip="What is the highest intensity that will be added?"/>
+					<attribute key="min_turns" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+						tooltip="What is the lowest number of turns this will last for?"/>
+					<attribute key="max_turns" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+						tooltip="What is the highest number of turns this will last for?"/>
+				</sub_node>
+			</sub_node>
+		</sub_node>
+	</sub_node>
+	
+</root>

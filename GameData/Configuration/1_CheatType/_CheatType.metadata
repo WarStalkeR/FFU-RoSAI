@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="cheat">
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the cheat is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the cheat in the specified external dll."/>
+
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="is_available_in_strategic_mode" type="bool" is_required="true" default="false"
+		tooltip="Should this cheat be available in strategic mode, or only in cheat mode?" />
+	<attribute key="is_available_in_cheat_timeline" type="bool" is_required="true" default="true"
+		tooltip="Should this cheat be available in a cheat timeline?  Generally yes, except for the 'go to cheat mode' cheat." />
+	<attribute key="is_available_in_streets_and_map_views" type="bool" is_required="true" default="true"
+		tooltip="Should this cheat be available when looking at the main streets view of the game and the map view?  Generally yes." />
+	<attribute key="is_available_in_end_of_time_view" type="bool" is_required="true" default="true"
+		tooltip="Should this cheat be available when looking at the End of Time view?  Generally no." />
+	
+	<sub_node id="sub_option">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it. Should be unique per cheat type or you're going to have a bad time." />
+		<attribute key="display_name" type="string" maxlength="200" content_width_px="130" is_required="true" is_localized="true" can_localization_merge="true"
+			tooltip="The player-visible name of the cheat option." />
+
+		<attribute key="related_float_1" type="float-textbox" min="-10000" max="10000" content_width_px="50" is_required="false"
+			tooltip="No inherent meaning."/>
+		<attribute key="related_float_2" type="float-textbox" min="-10000" max="10000" content_width_px="50" is_required="false"
+			tooltip="No inherent meaning."/>
+		<attribute key="related_float_3" type="float-textbox" min="-10000" max="10000" content_width_px="50" is_required="false"
+			tooltip="No inherent meaning."/>
+		
+		<attribute key="related_int_1" type="int-textbox" min="-10000" max="10000" content_width_px="50" is_required="false"
+			tooltip="No inherent meaning."/>
+		<attribute key="related_int_2" type="int-textbox" min="-10000" max="10000" content_width_px="50" is_required="false"
+			tooltip="No inherent meaning."/>
+		<attribute key="related_int_3" type="int-textbox" min="-10000" max="10000" content_width_px="50" is_required="false"
+			tooltip="No inherent meaning."/>
+		
+		<attribute key="related_simple_drawing_object" type="node-dropdown" node_source="VisSimpleDrawingObject" content_width_px="200" is_required="false"
+			tooltip="Optional extra data." />
+	
+	</sub_node>
+	
+</root>

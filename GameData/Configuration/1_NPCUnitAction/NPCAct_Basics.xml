@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Very Basic Actions That Can Also Be Secondary Actions
+		***********************************************************-->
+	
+	<!--Very Basic Actions That Cannot Be Secondaries
+		***********************************************************-->
+
+	<npc_action id="Wander" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="ReturnToHomePOIIfNotInIt" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="ReturnToHomeDistrictIfNotInIt" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="RunAfterAnyAggroedUnits" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="RunAfterAggroedUnitsWeCanShoot" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="RunAfterOutcastThenConspicuousUnits" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="RunAfterNearestActorThatICanAutoShoot_WithinRangeOfCell" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="RunAfterNearestNonPlayerActorThatICanAutoShoot_WithinRangeOfCell" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="RunAfterNearestActorThatICanAutoShoot_Anywhere" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="RunAfterThreatsNearMission" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="ReturnToManagerStartAreaIfAwayFromIt" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="ReturnToMissionAreaIfAwayFromIt" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="RunAfterMachineStructures" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="RunAfterAnyEnemiesDoingActionOverTime" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="RunAfterEnemiesWeCanShootDoingActionOverTime" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="ReturnToCreationPosition" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="ReturnToCreationPositionAndThenDespawn" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="GetCloserToFocusIfPossible" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="FollowEvenHiddenPlayerUnits" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+	<npc_action id="RunAfterWatchedBySecForce" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Basics"/>
+
+	<!--Specialized Actions
+		***********************************************************-->
+	
+	<npc_action id="DamageInfiltrators" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Specialized" on_use_optional="NPCHackerSearchForIntruder"/>
+	<npc_action id="BigAlarmAgainstInfiltrator" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Specialized" on_use_optional="NPCHackerBigAlarmAgainstIntruder"/>
+
+	<npc_action id="StealNeuralSecrets" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCAction_Specialized" on_use_optional="NPCHackerStealNeuralSecrets"/>
+	
+</root>

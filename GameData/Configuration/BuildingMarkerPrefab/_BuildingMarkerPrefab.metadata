@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="building_marker_prefab">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="path_to_placeable" type="string" maxlength="600" content_width_px="400" is_required="true" linebreak_after="Always"
+		tooltip="This specifies the path of the A5ObjectRoot that this will be linked to."/>
+
+	<attribute key="scale_multiplier" type="float-textbox" min="-1" max="20" precision="3" content_width_px="50" is_required="false"
+		tooltip="At 1, things are normal. Less than 0 will also be normal, and will be more efficient. Between 0 and 1 makes it smaller, and above 1 makes it larger."/>
+	
+	<attribute key="color_intensity_multiplier" type="float-textbox" min="-1" max="20" precision="3" content_width_px="50" is_required="false"
+		tooltip="At 1, things are normal. Less than 0 will also be normal, and will be more efficient. Between 0 and 1 dims it, and above 1 brightens it."/>
+	
+</root>

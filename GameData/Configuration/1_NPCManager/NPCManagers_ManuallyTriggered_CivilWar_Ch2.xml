@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--**************************************************************CivilWar**************************************************************-->
+
+	<npc_manager id="Man_CivilWar_Shuso" cohort_tag_a="ShusoCorrections" debug_log_manager_details="false">
+
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="SecForceCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="3.2" max_squad_size_multiplier="7" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+		
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Falsom" cohort_tag_a="FalsomDetention" debug_log_manager_details="false">
+
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="SecForceCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="3.2" max_squad_size_multiplier="7" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Arkor" cohort_tag_a="ArkorNexus" debug_log_manager_details="false">
+		
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Espia" cohort_tag_a="EspiaTelecom" debug_log_manager_details="false">
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Tark" cohort_tag_a="TarkDefenseSystems" debug_log_manager_details="false">
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Goleri" cohort_tag_a="GoleriExpeditionary" debug_log_manager_details="false">
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Oerl" cohort_tag_a="OerlIntegrated" debug_log_manager_details="false">
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Baur" cohort_tag_a="Baurcorp" debug_log_manager_details="false">
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Veri" cohort_tag_a="Vericorp" debug_log_manager_details="false">
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Nath" cohort_tag_a="NathVertical" debug_log_manager_details="false">
+
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="SecForceCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="3.2" max_squad_size_multiplier="7" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Atca" cohort_tag_a="AtcaRetail" debug_log_manager_details="false">
+
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="SecForceCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="3.2" max_squad_size_multiplier="7" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Lurpeko" cohort_tag_a="LurpekoMinerals" debug_log_manager_details="false">
+
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="SecForceCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="3.2" max_squad_size_multiplier="7" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Nebo" cohort_tag_a="NeboInvestments" debug_log_manager_details="false">
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Graff" cohort_tag_a="GraffIndustries" debug_log_manager_details="false">
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Dyad" cohort_tag_a="DyadInstruments" debug_log_manager_details="false">
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Yinshi" cohort_tag_a="YinshiWellness" debug_log_manager_details="false">
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Asi" cohort_tag_a="AsiSolutions" debug_log_manager_details="false">
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="MilitarySniper" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Peak" cohort_tag_a="PeakHomes" debug_log_manager_details="false">
+
+		<unit id="B" to_spawn="SecForceBackup" stance_to_start_in="SecForceCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="3" max_to_spawn="4" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="3.2" max_squad_size_multiplier="7" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="I" to_spawn="Infantry" stance_to_start_in="MilitaryCivilWar"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+
+	<npc_manager id="Man_CivilWar_Vorsiber" cohort_tag_a="VorsiberEnforcement" debug_log_manager_details="false">
+
+		<unit id="I" to_spawn="VorsiberInquisitor" stance_to_start_in="VorsiberMilitaryCivilWarMO"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1.2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+		<unit id="B" to_spawn="VorsiberSoldier" stance_to_start_in="VorsiberMilitaryCivilWarMO"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="2" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="1.2" max_squad_size_multiplier="3" units_warp_out_after_turns="8" units_warp_out_after_turns_percent_chance="50"
+			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
+
+	</npc_manager>
+	
+	<!--**************************************************************Next**************************************************************-->
+
+</root>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--
+	<severity_scale id="OutdoorSecurityClearanceGapToHeat" is_rising="true"
+		internal_notes="This specifies how much heat a unit moving into a location will gain if it's a restricted poi">
+		<severity_regular cutoff="0" output="0" color="GoodThing_Low0" streets_icon_color_scale="Streets_Unused" />
+		<severity_regular cutoff="1" output="40" color="BadThing_High1" streets_icon_color_scale="Streets_BadNormal1"/>
+		<severity_regular cutoff="2" output="90" color="BadThing_High3" streets_icon_color_scale="Streets_BadHigh1"/>
+		<severity_regular cutoff="3" output="250" color="BadThing_High4" streets_icon_color_scale="Streets_BadExtreme1"/>
+		<severity_regular cutoff="4" output="370" color="BadThing_Extreme1" streets_icon_color_scale="Streets_BadExtreme1"/>
+		<severity_regular cutoff="999999" output="504" color="BadThing_Extreme1" streets_icon_color_scale="Streets_BadExtreme1"/>
+	</severity_scale>
+	-->
+	
+	<severity_scale id="UnitSidebarHealth" is_rising="true"
+		internal_notes="The output is not used. Only the colors, and this determines the color of the icon on the sidebar at different health percentages for a unit.">
+		<severity_regular cutoff="10" output="0" color="SidebarHeathScaleBelow10" />
+		<severity_regular cutoff="20" output="0" color="SidebarHeathScale10Plus" />
+		<severity_regular cutoff="30" output="0" color="SidebarHeathScale20Plus" />
+		<severity_regular cutoff="40" output="0" color="SidebarHeathScale30Plus" />
+		<severity_regular cutoff="50" output="0" color="SidebarHeathScale40Plus" />
+		<severity_regular cutoff="60" output="0" color="SidebarHeathScale50Plus" />
+		<severity_regular cutoff="70" output="0" color="SidebarHeathScale60Plus" />
+		<severity_regular cutoff="80" output="0" color="SidebarHeathScale70Plus" />
+		<severity_regular cutoff="90" output="0" color="SidebarHeathScale80Plus" />
+		<severity_regular cutoff="100" output="0" color="SidebarHeathScale90Plus" />
+		<severity_regular cutoff="999999999" output="0" color="SidebarHeathScaleFull" />
+	</severity_scale>
+
+	<severity_scale id="UnitListHealth" is_rising="true"
+		internal_notes="The output is not used. Only the colors, and this determines the color of the icon on the sidebar at different health percentages for a unit.">
+		<severity_regular cutoff="10" output="0" color="SidebarHeathScaleBelow10" />
+		<severity_regular cutoff="20" output="0" color="SidebarHeathScale10Plus" />
+		<severity_regular cutoff="30" output="0" color="SidebarHeathScale20Plus" />
+		<severity_regular cutoff="40" output="0" color="SidebarHeathScale30Plus" />
+		<severity_regular cutoff="50" output="0" color="SidebarHeathScale40Plus" />
+		<severity_regular cutoff="60" output="0" color="SidebarHeathScale50Plus" />
+		<severity_regular cutoff="70" output="0" color="SidebarHeathScale60Plus" />
+		<severity_regular cutoff="80" output="0" color="SidebarHeathScale70Plus" />
+		<severity_regular cutoff="90" output="0" color="SidebarHeathScale80Plus" />
+		<severity_regular cutoff="100" output="0" color="SidebarHeathScale90Plus" />
+		<severity_regular cutoff="999999999" output="0" color="ListHeathScaleFull" />
+	</severity_scale>
+
+	<severity_scale id="RequiredDeterrence" is_rising="true"
+		internal_notes="The output is not used. Only the colors, and this determines the color of the icon on the sidebar at different deterrence percentages for a location.">
+		<severity_regular cutoff="100" output="0" color="SadDeterrence" />
+		<severity_regular cutoff="999999999" output="0" color="HappyDeterrence" />
+	</severity_scale>
+
+	<severity_scale id="AvailableResourcePerTurn" is_rising="true"
+		internal_notes="The output is not used. Only the colors, and this determines the color of the icon on the sidebar at different deterrence percentages for a location.">
+		<severity_regular cutoff="100" output="0" color="SadGathering" />
+		<severity_regular cutoff="999999999" output="0" color="HappyGathering" />
+	</severity_scale>
+	
+
+	<severity_scale id="UnitSidebarAlternateHealthPercent" is_rising="true"
+		internal_notes="The output is not used. Only the colors, and this determines the color of the icon on the sidebar at different health percentages for a unit.">
+		<severity_regular cutoff="3" output="0" color="AlternateHealthPercentBelow3" />
+		<severity_regular cutoff="10" output="0" color="AlternateHealthPercentBelow10" />
+		<severity_regular cutoff="20" output="0" color="AlternateHealthPercent10Plus" />
+		<severity_regular cutoff="30" output="0" color="AlternateHealthPercent20Plus" />
+		<severity_regular cutoff="40" output="0" color="AlternateHealthPercent30Plus" />
+		<severity_regular cutoff="50" output="0" color="AlternateHealthPercent40Plus" />
+		<severity_regular cutoff="60" output="0" color="AlternateHealthPercent50Plus" />
+		<severity_regular cutoff="70" output="0" color="AlternateHealthPercent60Plus" />
+		<severity_regular cutoff="80" output="0" color="AlternateHealthPercent70Plus" />
+		<severity_regular cutoff="90" output="0" color="AlternateHealthPercent80Plus" />
+		<severity_regular cutoff="100" output="0" color="AlternateHealthPercent90Plus" />
+		<severity_regular cutoff="999999999" output="0" color="AlternateHealthPercentFull" />
+	</severity_scale>
+	
+	<severity_scale id="PercentChance" is_rising="true"
+		internal_notes="The output is not used. Only the colors, and this determines the color of the icon showing the percent chance.">
+		<severity_regular cutoff="8" output="0" color="PercentChanceBelow8" />
+		<severity_regular cutoff="18" output="0" color="PercentChance8Plus" />
+		<severity_regular cutoff="28" output="0" color="PercentChance18Plus" />
+		<severity_regular cutoff="38" output="0" color="PercentChance28Plus" />
+		<severity_regular cutoff="48" output="0" color="PercentChance38Plus" />
+		<severity_regular cutoff="58" output="0" color="PercentChance48Plus" />
+		<severity_regular cutoff="68" output="0" color="PercentChance58Plus" />
+		<severity_regular cutoff="78" output="0" color="PercentChance68Plus" />
+		<severity_regular cutoff="88" output="0" color="PercentChance78Plus" />
+		<severity_regular cutoff="94" output="0" color="PercentChance88Plus" />
+		<severity_regular cutoff="999999999" output="0" color="PercentChance94Plus" />
+	</severity_scale>
+
+	<severity_scale id="DCSeverityColor" is_rising="true"
+		internal_notes="The output is not used. Only the colors, and this determines the color of the icon showing the dc severity.">
+		<severity_regular cutoff="6" output="0" color="DCBelow6" />
+		<severity_regular cutoff="8" output="0" color="DCBelow8" />
+		<severity_regular cutoff="10" output="0" color="DCBelow10" />
+		<severity_regular cutoff="13" output="0" color="DCBelow13" />
+		<severity_regular cutoff="15" output="0" color="DCBelow15" />
+		<severity_regular cutoff="17" output="0" color="DCBelow17" />
+		<severity_regular cutoff="19" output="0" color="DCBelow19" />
+		<severity_regular cutoff="21" output="0" color="DCBelow21" />
+		<severity_regular cutoff="24" output="0" color="DCBelow24" />
+		<severity_regular cutoff="26" output="0" color="DCBelow26" />
+		<severity_regular cutoff="28" output="0" color="DCBelow28" />
+		<severity_regular cutoff="999999999" output="0" color="DC29Plus" />
+	</severity_scale>
+	
+</root>

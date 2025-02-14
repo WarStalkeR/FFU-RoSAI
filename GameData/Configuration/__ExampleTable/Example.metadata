@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="example">
+
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<!--Any one of the listed fields matching the condition makes the conditional true-->
+	<conditional id="ConditionalOrDisplay">
+		<or_group>
+			<type attribute="bool" condition_type="Equals" value="False" />
+		</or_group>
+	</conditional>
+	
+	<!--All one of the listed fields matching the condition makes the conditional true-->
+	<conditional id="ConditionalAndDisplay">
+		<and_group>
+			<type attribute="int_textbox" condition_type="GreaterThan" value="0" />
+		</and_group>
+	</conditional>
+	
+	<!-- condition_types options: -->
+	<!-- Equals NotEqual GreaterThan LessThan -->
+	
+	<!-- Line breaks -->
+	<!-- Types: linebreak_before linebreak_after -->
+	<!-- Options: Always PreferNot -->
+	
+	<attribute key="bool" type="bool" default="false" is_required="true" linebreak_after="PreferNot"
+		tooltip="Bool type. Uses true/false as values in XML." />
+		
+	<attribute key="bool_conditional" type="bool" default="false" is_required="true" linebreak_after="PreferNot"
+		only_exists_if_conditional_passes="ConditionalOrDisplay"
+		tooltip="Bool type that is only visible in the xml editor if the above bool field is false." />
+
+	<attribute key="int_bool" type="int-bool" default="0" is_required="true" linebreak_after="PreferNot"
+		tooltip="Int32 type. Uses 1 or 0 as values in XML." />
+
+	<attribute key="string" type="string" is_required="true" maxlength="200" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="String type." />
+	
+	<attribute key="string_multiline" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_description="true" 
+		content_width_px="600" linebreak_after="Always"
+		tooltip="String type for multiple lines." />
+
+	<attribute key="string_dropdown" type="string-dropdown" is_required="true" default="Unknown" content_width_px="200" linebreak_after="PreferNot"
+		tooltip="The list of options is populated with sub-nodes listed in the metadata file.">
+		<option>Unknown</option>
+		<option>Option 1</option>
+		<option>Option 2</option>
+		<option>Option 3</option>
+		<option>Option 4</option>
+	</attribute>
+
+	<attribute key="int_textbox" type="int-textbox" is_required="true" min="0" max="100" default="25" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="Int32 type. minimum_digits: default is 1" />
+
+	<attribute key="float_textbox" type="float-textbox" is_required="true" min="0" max="100" default="25" content_width_px="150" linebreak_after="PreferNot"
+		tooltip="Decimal type. precision: default value is 3. minimum_digits: default value is 1" />
+
+	<attribute key="node_dropdown" type="node-dropdown" is_required="true" node_source="GameVersion" default="0_100_DrawDepth" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Dropdown. default: string.Empty. Filled with the nodes read from the node_source table. node_source can be Self to pull from the current table." />
+
+	<attribute key="node_list" type="node-list" is_required="true" node_source="GameVersion" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Checked listbox. default: string.Empty. Filled with the nodes read from the node_source table. node_source can be Self to pull from the current table." />
+
+	<attribute key="folder_list" type="folder-list" is_required="true" folder_source="../../XMLMods" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="It allows multiple selection of folders. Filled with the folders read from the location indicated in folder_source. This is mainly meant for showing lists of mods." />
+
+	<attribute key="point_textbox" type="point-textbox" is_required="true" default="15,2" linebreak_after="PreferNot"
+		tooltip="Int32 type. min, max, also available. The values have to be given in pairs." />
+
+	<attribute key="range_int" type="range-int" is_required="true" default="-1,20" linebreak_after="PreferNot"
+		tooltip="Int32 type. min, max, also available. The values have to be given in pairs, ideally with the first one being lower than the second, but that's not required." />
+
+	<attribute key="vector2_textbox" type="vector2-textbox" is_required="true" default="0.9,2.6" linebreak_after="PreferNot"
+		tooltip="Float type. min, max, also available. The values have to be given in pairs." />
+	
+	<attribute key="range_float" type="range-float" is_required="true" default="0.1,10.1" linebreak_after="PreferNot"
+		tooltip="Float type. min, max, also available. The values have to be given in pairs, ideally with the first one being lower than the second, but that's not required." />
+
+	<attribute key="vector3_textbox" type="vector3-textbox" is_required="true" default="9.9,-3.6,0.8" linebreak_after="PreferNot"
+		tooltip="Float type. min, max, also available. The values have to be given in trios." />
+
+	<attribute key="vector4_textbox" type="vector4-textbox" is_required="true" default="9.1,-3.2,0.2,0.1" linebreak_after="PreferNot"
+		tooltip="Float type. min, max, also available. The values have to be given in quads." />
+		
+	<sub_node id="player_improved_value" can_only_have_one="true">
+		<attribute key="value" type="int-textbox" min="1" max="100000" content_width_px="200"
+			is_required="true" default="1"
+			tooltip="What's the base value?"/>
+		<attribute key="improvement_rate" type="int-textbox" min="-100000" max="100000" content_width_px="200"
+			is_required="false" default="1"
+			tooltip="Change per level of tech benefit, if any?"/>
+	</sub_node>
+	
+</root>

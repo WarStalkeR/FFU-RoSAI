@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="unlock_inspiration_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="reward_header_text" type="string" maxlength="200" content_width_px="200" is_localized="true" is_required="true" can_localization_merge="true"
+		tooltip="First line on the toast popups."/>
+	
+	<attribute key="toast_line_1" type="string" maxlength="200" content_width_px="200" is_localized="true" is_required="true" can_localization_merge="true"
+		tooltip="First line on the toast popups."/>
+	<attribute key="toast_line_2" type="string" maxlength="200" content_width_px="200" is_localized="true" is_required="true" can_localization_merge="true"
+		tooltip="Second line on the toast popups."/>
+	<attribute key="toast_tooltip_instruction" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible instruction for toast tooltips."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	
+</root>

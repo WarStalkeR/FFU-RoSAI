@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="debate_action_category">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="short_name" type="string" maxlength="20" content_width_px="200" is_required="true" is_localized="true"
+		tooltip="This is the name that is used on the buttons where it needs to be very small."/>
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	
+</root>

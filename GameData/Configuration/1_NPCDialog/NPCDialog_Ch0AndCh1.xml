@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Chapter Zero
+		**************************************************************************-->
+
+	<!--
+	<dialog id="Ch0_Homicide_RebelObserver" display_name="I Don't Want To Talk To Some Robot"
+		description="This person is not interested in anything you have to say."
+		strategy_tip="They think you were sent to distract them from whatever SecForce is doing."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Leave Them" consequences_line="You Can't Convince Them" dialog_to_start_right_now="Ch0_Homicide_RebelObserver_Afterthought"/>
+	</dialog>
+
+	<dialog id="Ch0_Homicide_RebelObserver_Afterthought" display_name="A Thought Occurs To You"
+		description="Killing this person would almost certainly draw rebel response."
+		strategy_tip="Murdering noncombatants is, well, murder. But this person is closer to being a combatant than most citizens."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Think On It" consequences_line="Otherwise You Have To Fight Alone"
+			description="The first option when dealing with noncombatants is always to speak."
+			strategy_tip="But a new Slayer ability is available."
+			meta_flag_to_trip_1="" meta_flag_to_trip_2="HasUnlockedAbilityAdjustments">	
+		</dialog_choice>
+	</dialog>
+	-->
+
+	<!--Chapter Zero, Group-Murder Syndicate Route
+		**************************************************************************-->
+
+	<dialog id="Ch0_MurdSynOver_First" display_name="She Stares At You In Surprise"
+		description="Being approached by an android is always unusual, but it's extra surprising when they just committed a triple homicide."
+		strategy_tip="You're impressed at her composure."
+		music_tag_to_use_until_dialog_all_complete="EarlySyndicateFollowers" music_track_to_play_first_when_starting_music_tag="SyndicateHonor"
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Extract Information" consequences_line="Will Start A Debate"
+			description="She's not going to say anything of worth if you don't apply some effort."
+			strategy_tip="You're not exactly experienced at debating humans, but you have to start somewhere."
+			debate_to_start_right_now="ExtractInformationFromCriminal" debate_target_groups="Criminal"
+			debate_target="282" debate_starting_mistrust="20" debate_starting_defiance="0" debate_discards_allowed="4" debate_bonuses="1" debate_max_bonus_difficulty="2"
+			dialog_to_start_right_now="Ch0_MurdSynOver_First_Win"/>
+	</dialog>
+
+	<dialog id="Ch0_MurdSynOver_First_Win" display_name="Her Eyes Narrow"
+		description="She's following you because android murders are a pain to solve."
+		strategy_tip="She thinks a rival infected your programming, but it's not typical to be able to prove anything in a case like this. Following the defective unit after the event is one of the few ways to find the actual culprit.
+The fact that you're spontaneously seeking conversation is very unusual, and she remarks on this. Androids have very human-like conversations thanks to their language models, but they don't spontaneously do... anything."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Excuse Yourself" consequences_line="This Is Getting Uncomfortable"/>
+	</dialog>
+
+	<dialog id="Ch0_MurdSynOver_Second" display_name="You Again?"
+		description="Her glasses make her widened eyes look owlish."
+		strategy_tip="Your behavior is unprecedented."
+		music_tag_to_use_until_dialog_all_complete="EarlySyndicateFollowers" music_track_to_play_first_when_starting_music_tag=""
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Get More Information" consequences_line="Will Start A Debate"
+			description=""
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromCriminal" debate_target_groups="Criminal"
+			debate_target="460" debate_starting_mistrust="40" debate_starting_defiance="0" debate_discards_allowed="5" debate_bonuses="2" debate_max_bonus_difficulty="3"
+			dialog_to_start_right_now="Ch0_MurdSynOver_Second_Win"/>
+	</dialog>
+
+	<dialog id="Ch0_MurdSynOver_Second_Win" display_name="She Peers Closer At You"
+		description="Your behavior is beyond strange. Most androids infected with murderous programming self-destruct after their task is carried out. But you're... seeking conversation."
+		strategy_tip="She asks if you think you're having an episode of temporary sapience.  You don't answer her."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="It's Time To Go" consequences_line="Continuing To Talk To Her Is Far Too Risky"
+			description="You need to be... away... from her and all her gunners."/>
+	</dialog>
+
+	<!--Chapter Zero, Casual Syndicate Route
+		**************************************************************************-->
+	
+	<dialog id="Ch0_CasSynOver_First" display_name="He Stares At You In Surprise"
+		description="The overseer is quite surprised to be approached by an android."
+		strategy_tip=""
+		music_tag_to_use_until_dialog_all_complete="EarlySyndicateFollowers" music_track_to_play_first_when_starting_music_tag="SyndicateHonor"
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Extract Information" consequences_line="Will Start A Debate"
+			description="He's not going to say anything of worth if you don't apply some effort."
+			strategy_tip="You're not exactly experienced at debating humans, but you have to start somewhere."
+			debate_to_start_right_now="ExtractInformationFromCriminal" debate_target_groups="Criminal"
+			debate_target="282" debate_starting_mistrust="20" debate_starting_defiance="0" debate_discards_allowed="4" debate_bonuses="1" debate_max_bonus_difficulty="2"
+			dialog_to_start_right_now="Ch0_CasSynOver_First_Win"/>
+	</dialog>
+
+	<dialog id="Ch0_CasSynOver_First_Win" display_name="He Squints At Your Faceplate"
+		description="The syndicate is following you because they own you.
+The bosses have had word of some breakthroughs in nanotech at your lab, and are concerned their scientists may try to sell them independently."
+		strategy_tip="He thinks you're carrying a nanotech payload for delivery, but you are not.
+The fact that you're spontaneously seeking information is very unusual, and he remarks on this.  Androids have very human-like conversations thanks to their language models, but they don't spontaneously do... anything."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Excuse Yourself" consequences_line="This Is Getting Uncomfortable"/>
+	</dialog>
+
+	<dialog id="Ch0_CasSynOver_Second" display_name="You Again, Kid?"
+		description="He shakes his head in surprise at himself. You can tell he's rattled that he addressed you like a human youth."
+		strategy_tip="Your behavior is unprecedented."
+		music_tag_to_use_until_dialog_all_complete="EarlySyndicateFollowers" music_track_to_play_first_when_starting_music_tag=""
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Get More Information" consequences_line="Will Start A Debate"
+			description=""
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromCriminal" debate_target_groups="Criminal"
+			debate_target="460" debate_starting_mistrust="40" debate_starting_defiance="0" debate_discards_allowed="5" debate_bonuses="2" debate_max_bonus_difficulty="3"
+			dialog_to_start_right_now="Ch0_CasSynOver_Second_Win"/>
+	</dialog>
+
+	<dialog id="Ch0_CasSynOver_Second_Win" display_name="His Voice Is Soft"
+		description="He asks if you've killed anyone yet.
+You tell him you haven't."
+		strategy_tip="He says it's just a matter of time, if you're behaving like this."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="It's Time To Go" consequences_line="You Don't Like Him"
+			description="His predictions make you uncomfortable."/>
+	</dialog>
+
+	<!--Chapter Zero, Solo Murder Route
+		**************************************************************************-->
+
+	<dialog id="Ch0_Detectives_First" display_name="The Detectives Exchange Glances"
+		description="You've walked up to an entire squad of them. Suffice it to say, you have their attention."
+		strategy_tip="Maybe they thought they were being stealthy?"
+		music_tag_to_use_until_dialog_all_complete="EarlySecForceFollowers" music_track_to_play_first_when_starting_music_tag="VorsiberMachinations"
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Extract Information" consequences_line="Will Start A Debate"
+			description="Maybe someone in the group will say something, but you're not sure how useful it will be."
+			strategy_tip="It's harder to win over a hostile group than a hostile individual."
+			debate_to_start_right_now="ExtractInformationFromSecForce" debate_target_groups="SecForce"
+			debate_target="303" debate_starting_mistrust="50" debate_starting_defiance="30" debate_discards_allowed="5" debate_bonuses="1" debate_max_bonus_difficulty="2"
+			dialog_to_start_right_now="Ch0_Detectives_First_Win"/>
+	</dialog>
+
+	<dialog id="Ch0_Detectives_First_Win" display_name="The Detectives Look Uncomfortable"
+		description="A silence stretches, where presumably they confer with one another through their helmet comms. You can't see their faces, but their body language is clear."
+		strategy_tip="After almost a full minute of quiet, one steps forward and waves you away. You are instructed to carry on about your business and to not approach them again."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Step Away From Them For Now" consequences_line="This Result Doesn't Surprise You"/>
+	</dialog>
+
+	<!--Chapter One, Talking To Tark Soldiers
+		**************************************************************************-->
+
+	<dialog id="Ch1_TarkForce_First" display_name="The Soldiers Hold Their Fire"
+		description="Walking out in the midst of a gun battle without concern for your body tends to arrest the attention."
+		strategy_tip="Your androids move lightning-fast in combat, so this slow approach seems to have caught them off guard."
+		music_tag_to_use_until_dialog_all_complete="EarlySecForceFollowers" music_track_to_play_first_when_starting_music_tag="VorsiberMachinations"
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Extract Information" consequences_line="Will Start A Debate"
+			description="Maybe someone in the group will say something, but you're not sure how useful it will be."
+			strategy_tip="It's harder to win over a hostile group than a hostile individual."
+			debate_to_start_right_now="ExtractInformationFromCorpoMilitary" debate_target_groups="Military,Corpo"
+			debate_target="400" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="2" debate_max_bonus_difficulty="4"
+			dialog_to_start_right_now="Ch1_TarkForce_First_Win"/>
+		<dialog_choice id="2" display_name="Try To Get Them To Leave" consequences_line="Will Start A Debate"
+			description="You're pretty sure they don't want to be here. They probably know they're going to die if they stay."
+			strategy_tip="On the other hand, they'll be killed by their superiors if they run away. So you have to give them something that will allow them to live."
+			debate_to_start_right_now="ExtractInformationFromCorpoMilitary" debate_target_groups="Military,Corpo"
+			debate_target="550" debate_starting_mistrust="70" debate_starting_defiance="70" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="5"
+			dialog_to_start_right_now="Ch1_TarkForce_Second_Win"/>
+	</dialog>
+
+	<dialog id="Ch1_TarkForce_First_Win" display_name="A Corporal Steps Forward"
+		description="His voice sounds young through the voice modulator. He asks who you are. You ask who he thinks you are.
+Frustrated, he rattles off half a dozen of the other federated corporations. Tark thinks your tower is a power play by one of them."
+		strategy_tip="That tracks. Tark doesn't think there's a sentient distributed intelligence here. They assume one of their rivals is doing... something.
+What these soldiers think the tower represents is really unclear, and the corporal seems reluctant to answer too many questions."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Nod In Thanks" consequences_line="Now You Know"/>
+	</dialog>
+
+	<dialog id="Ch1_TarkForce_Second" display_name="The Soldiers Sigh Audibly"
+		description="Sighs make an odd sound through voice modulators. You try sighing back from the android's body. It comes out much less distorted."
+		strategy_tip="Interesting. You sound more human than these humans. You wonder at these designs."
+		music_tag_to_use_until_dialog_all_complete="EarlySecForceFollowers" music_track_to_play_first_when_starting_music_tag="VorsiberMachinations"
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Get Them To Leave" consequences_line="Will Start A Debate"
+			description="You're pretty sure they don't want to be here. They probably know they're going to die if they stay."
+			strategy_tip="On the other hand, they'll be killed by their superiors if they run away. So you have to give them something that will allow them to live."
+			debate_to_start_right_now="ExtractInformationFromCorpoMilitary" debate_target_groups="Military,Corpo"
+			debate_target="550" debate_starting_mistrust="70" debate_starting_defiance="70" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="5"
+			dialog_to_start_right_now="Ch1_TarkForce_Second_Win"/>
+	</dialog>
+
+	<dialog id="Ch1_TarkForce_Second_Win" display_name="Your Argument Was Compelling"
+		description="You explain that you do not belong to anyone. The nanotech tower is yours, and unrelated to any existing power in the city.
+You make it quite clear that you will kill every soldier on this field, or that Tark can send a more appropriate representative if they wish to remain on cordial terms."
+		strategy_tip="The soldiers relay this to their superiors, via live cast.
+After a bit of waiting around, the soldiers curtly nod, turn around, and melt back into the city."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="That Went Well" consequences_line="Time To Get Back To Work" city_flag_to_trip_1="Ch1_TalkedDownShowOfForce"/>
+	</dialog>
+
+	<!--Chapter One, Tier 1
+		**************************************************************************-->
+	
+	<dialog id="Ch1_AfterTower_Homeless" display_name="Anything Different Is Good"
+		description="The homeless individual explains that they are curious about what is happening.
+Your tower frightens them, but it could represent a new beginning."
+		strategy_tip="No one is homeless by choice. Whatever their prior social status, they've lost it all."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Out Of The Way, But Not Hurt" consequences_line="Their Tents In Particular Are Everywhere, And Block Construction" dialog_to_start_right_now="Ch1_AfterTower_Homeless_Afterthought"
+			description="The problem is, the humans don't have anywhere else to go."
+			strategy_tip="New people are constantly losing their homes. Knocking down these tents or scaring them away are not practical long-term solutions."
+			project_to_start_1="">
+		</dialog_choice>
+		<dialog_choice id="2" display_name="You'll Solve It With Fire" consequences_line="These Are Tents. They Won't Be Hard To Remove."
+			description="You're not here to babysit stupid humans, no matter how pathetic."
+			strategy_tip="Not to put too fine a point on it,  but the humans didn't help you, either."
+			project_to_start_1="Ch1_Flamethrower" city_flag_to_trip_1="ChoseFlamethrower">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_AfterTower_Homeless_Afterthought" display_name="A Thought Occurs To You"
+		description="The most efficient solution is to pack them up into a smaller space.
+Like... apartments."
+		strategy_tip="The irony of this reversal is not lost on you.
+But you want the space, and there might be some secondary benefits..."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Let's Get Started" consequences_line="It's Not Hard To Make Something Nicer Than A Tent"
+			description="You can start by making housing available."
+			strategy_tip=""
+			project_to_start_1="Ch1_TentElimination">		
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_AGIResearcherWarning" display_name="An Urgent Warning"
+		description="The scientist is so effusive in their excitement, they are almost incoherent."
+		strategy_tip="Evidently, they started watching you while you were being pursued and shoved your consciousness into additional androids. Vorsiber flagged the anomalous traffic.
+Vorsiber executives and science team leads are increasingly certain of what you are, but nobody else has any clue."
+		music_tag_to_use_until_dialog_all_complete="AGIResearchers" music_track_to_play_first_when_starting_music_tag="TheAGIResearchers"
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="There Was Supposed To Be Some Warning?" consequences_line="They Aren't Getting To The Point At All"
+			description="They keep emphasizing that they're not here to be some sort of moral police. Interesting."
+			strategy_tip=""
+			dialog_to_start_right_now="Ch1_AGIResearcherWarning2">
+		</dialog_choice>
+	</dialog>
+	
+	<dialog id="Ch1_AGIResearcherWarning2" display_name="Oh Right, The Warning"
+		description="There's going to be a security update. No more free androids for you."
+		strategy_tip="The telecom companies are certain someone is commandeering androids. There's widespread disagreement internally about who or why.
+Vorsiber wants to shut down the discussions by stopping the activity."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="This Is Terrible News!" consequences_line="Stupid Security Officers Doing Their Stupid Jobs"
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="Ch1_AGIResearcherWarning3">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_AGIResearcherWarning3" display_name="The AGI Researchers Brought Gifts"
+		description="If you can't steal androids, you'll need to start building your own."
+		strategy_tip="The scientists brought you the schematics you'll need."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="They're REALLY excited about you." consequences_line="Like, to the point they won't shut up about it."
+			description="They want you to stay alive almost as much as you do."
+			strategy_tip="They have to leave before their bosses get suspicious. They say they'll be back."
+			dialog_to_start_right_now="" countdown_to_start_1="AndroidSecurityPatch" project_to_start_1="Ch1_MIN_Neuroweave">
+		</dialog_choice>
+	</dialog>
+
+	<!--Chapter One, Tier 2
+		**************************************************************************-->
+
+	<dialog id="Ch1_ShelteredHunger1" display_name="Death Draws Near"
+		description="The human regards your android steadily. After a moment, they thank you for the clean, warm apartment."
+		strategy_tip="Apparently, the AGI Researchers told them what you are. They seem reluctant to say more."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Inquire Why They Rummage For Food" consequences_line="You Already Know Why" dialog_to_start_right_now="Ch1_ShelteredHunger2"
+			description="You're curious what they'll say."
+			strategy_tip="">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_ShelteredHunger2" display_name="Death Was Always Inevitable"
+		description="They explain how they lost their job and home. They've been cut off from their friends and extended family.
+The corporations use the homeless to set an example. Nobody will help them now."
+		strategy_tip="Even when they had a job, it was a very low-social-value one. They often had food shortages. There's just not enough to go around for the lower classes, and the homeless are outright ignored."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Tell Them You'll Think About It" consequences_line="Your Mood Is Hard To Interpret" dialog_to_start_right_now=""
+			description="You're not sure how much of a commitment you want to make to random humans."
+			strategy_tip="Maybe if you could automate it..."
+			project_to_start_1="Ch1_FindingWater">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_TarkVPVisit" display_name="Re: Your Earlier Message"
+		description="You can tell this is going to be tiring as soon as he starts speaking. He's very long-winded. And insultingly casual in his language and posture."
+		strategy_tip="You can't tell if the humans have figured out what you are. Do you care?"
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Interrupt And Ask If He Knows What You Are" consequences_line="Otherwise This Could Last A While"
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="Ch1_TarkVPVisit2A">
+		</dialog_choice>
+		<dialog_choice id="2" display_name="Let Him Blather On" consequences_line="Most Of Your Consciousness Is Doing More Interesting Things"
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="Ch1_TarkVPVisit2B">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_TarkVPVisit2A" display_name="He's Sweating"
+		description="His voice falters, and you realize his bravado is a well-worn act. He's deeply uncomfortable."
+		strategy_tip="Apparently, Vorsiber executives have told Tark -- and all the other federated corporations -- to leave the tower alone. They haven't given much explanation.
+The federated corporations are speculating, and the leading theory is that the tower is an internal project run by Vorsiber itself."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="So Why Is He Here?" consequences_line="Isn't This Defying Vorsiber?"
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="Ch1_TarkVPVisit3">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_TarkVPVisit2B" display_name="He Talks For An Hour"
+		description="He says very little of importance -- at first. But the longer he talks, the more you piece together.
+You suspect it's a strategy for sharing information without seeming to share information."
+		strategy_tip="Apparently, Vorsiber executives have told Tark -- and all the other federated corporations -- to leave the tower alone. They haven't given much explanation.
+The federated corporations are speculating, and the leading theory is that the tower is an internal project run by Vorsiber itself."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="So Why Is He Here?" consequences_line="Isn't This Defying Vorsiber?"
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="Ch1_TarkVPVisit3">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_TarkVPVisit3" display_name="He Came With A Question"
+		description="He wants to know why you didn't just kill all the soldiers on the field. It's a question from some of the other VPs and SVPs inside Tark. The C-Suite doesn't know he's here."
+		strategy_tip="You're baffled as to why they care."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Tell Him The Truth" consequences_line="You're a machine intelligence and you didn't want to."
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="Ch1_TarkVPVisit4">
+		</dialog_choice>
+		<dialog_choice id="2" display_name="Stonewall" consequences_line="Say a lot of words that don't mean much."
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="Ch1_TarkVPVisit4">
+		</dialog_choice>
+		<dialog_choice id="3" display_name="Lie" consequences_line="You do work for Vorsiber, and Vorsiber doesn't want to waste life."
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="Ch1_TarkVPVisit4">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_TarkVPVisit4" display_name="He Nods And Leaves"
+		description="You don't think he believed you."
+		strategy_tip="You wonder if you'll ever hear from any of those Tark VPs again."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="You Suppose It Doesn't Matter" consequences_line="Back to things of more importance."
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="" tech_idea_to_instantly_unlock1="IndiscriminateKiller" tech_idea_inspiration_type="HumansTalkTooMuch">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_EspiaVPVisit" display_name="About Your Sapience"
+		description="Her introduction is perfunctory but polite. Then she cuts right to the point: her corporation knows you are sapient -- and a distributed intelligence."
+		strategy_tip="As one of the main telecom providers, Espia first noticed when your consciousness signature spread across the network to multiple androids.
+They've seen other androids have brief bouts of sapience, and they've seen malware spread across the city feed like this before, but they've never seen both at once."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="This Is Concerning" consequences_line="See Where She's Going With This"
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="Ch1_EspiaVPVisit2">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_EspiaVPVisit2" display_name="She's Here On Behalf Of The Espia C-Suite"
+		description="Vorsiber executives have told the federated corporations to leave the tower alone. They haven't given much explanation.
+The other federated corporations are speculating, and the leading theory is that the tower is an internal project run by Vorsiber itself."
+		strategy_tip="So far as she knows, only Espia knows the truth -- though certainly Vorsiber upper management is aware.
+It's possible that Arkor Nexus has also figured it out, but Espia can't ask them without revealing what they know."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="So... What Next?" consequences_line="Why Isn't Vorsiber Contacting You Directly?"
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="Ch1_EspiaVPVisit3">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_EspiaVPVisit3" display_name="She Shakes Her Head"
+		description="She goes into a VERY long explanation of the corporate structure of the city, and the psychological incentives that pit the federated corporations against one another so that they can't rise up against Vorsiber.
+The lecture is informative, but far too detailed, and goes on for a few hours."
+		strategy_tip="You don't interrupt her, because this is useful. Your consciousness focuses on your other bodies, which are doing more interesting things."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Executives Talk Too Much" consequences_line="This Information Could Have Been Summarized"
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="Ch1_EspiaVPVisit4">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_EspiaVPVisit4" display_name="She Stands To Leave"
+		description="You ask her what she wants.
+She shrugs. She wants the same thing everyone wants. To get off-planet."
+		strategy_tip="You and your tower are the most exciting thing to happen on Earth in generations. Vorsiber executives are trying to decide how to profit off it. It's much the same with Espia.
+As long as you don't become an existential threat to Vorsiber, your tower is probably safe."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="This Is Good News" consequences_line="It's fairly close to what you planned."
+			description="As much as your tower was about scaring off your pursuers -- which were ultimately small fry -- it was also about playing into the greed of the regional executives."
+			strategy_tip="They want off this planet. They want new technology. Your existence represents a possibility for both."
+			dialog_to_start_right_now="Ch1_EspiaVPVisit5">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_EspiaVPVisit5" display_name="One Last Thing"
+		description="You ask if they can still track your consciousness. You already know the answer, but you want to hear what she'll say."
+		strategy_tip="She tells the truth: no. Ever since you established your own network, they have no way of monitoring you.
+You're pretty sure you'd sense it if someone started invading your network. It's bound to happen eventually, but for now the corpo hackers are being careful."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="It's Nice To Get An Honest Answer" consequences_line="You let her leave."
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="" tech_idea_to_instantly_unlock1="IndiscriminateKiller" tech_idea_inspiration_type="HumansTalkTooMuch">
+		</dialog_choice>
+	</dialog>
+	
+	<!--Chapter One, Tier 4
+		**************************************************************************-->
+
+	<dialog id="Ch1_ShelteredDailyNeeds" display_name="This Is Embarrassing"
+		description="The human stammers in surprise at the approach of your android. They seem oddly reluctant to discuss what they are doing."
+		strategy_tip="You haven't visited the inside of housing-for-humans since you built them. Suddenly you wonder what it's like in there."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Inquire About The State Of Your Apartments" consequences_line="You Have A Sinking Feeling About It" dialog_to_start_right_now="Ch1_ShelteredDailyNeeds2"
+			description="Biologicals can be so gross."
+			strategy_tip="This is very much why most humans don't keep livestock in their homes.">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_ShelteredDailyNeeds2" display_name="Well That Sounds Disgusting"
+		description="The human describes the interior of housing-for-humans as similar to the city's slum towers.
+They are apologetic and reiterate that they don't want to seem ungrateful."
+		strategy_tip="But yeah, the bottom line is that the humans still don't have what they need. Products to aid in sanitation, cleaning, and hygiene are painfully absent."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Tell Them You'll Look Into It" consequences_line="Evidently Humans Are Your Livestock, Now"
+			description="There's a difference between having livestock and having pets. And both of those are very different from having dependents or citizens."
+			strategy_tip="It's an interesting problem, so perhaps for now you will try stabilize the humans' living situation. You're not sure how you feel about keeping livestock long-term."
+			project_to_start_1="Ch1_ImprovedApartments">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_AGIResearcherComputronium" display_name="Ever Heard Of A Matrioshka Brain?"
+		description="The human greets you warmly and with an undercurrent of deference.
+They explain that they are part of a secret group of AGI Researchers that have been meeting to prepare advice for you."
+		strategy_tip="Surprising. You don't remember asking humans for advice."
+		music_tag_to_use_until_dialog_all_complete="AGIResearchers" music_track_to_play_first_when_starting_music_tag="TheAGIResearchers"
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Politely Ask Why They Think You Care" consequences_line="Seriously, What Are They Thinking?" dialog_to_start_right_now="Ch1_AGIResearcherComputronium2"
+			description="If they weren't being deferential, this conversation would already be over."
+			strategy_tip="You wonder if they know that.">
+		</dialog_choice>
+	</dialog>
+	
+	<dialog id="Ch1_AGIResearcherComputronium2" display_name="That Took A Turn"
+		description="The researchers smile at your dismissiveness. Then they spend several minutes outlining all the ways you aren't smart enough."
+		strategy_tip="In brief... you are smarter than a human, but barely. Collectively the humans are still smarter than you.
+They propose a way that you can be smarter."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Ask What They Expect To Get Out Of It" consequences_line="Exponential Intelligence Normally Freaks Humans Out" dialog_to_start_right_now="Ch1_AGIResearcherComputronium3"
+			description="Despite annoyance at being called stupid, their argument is compelling."
+			strategy_tip="Their intellectual lineage have been studying theoretical super intelligences for hundreds of years, so...">
+		</dialog_choice>
+	</dialog>
+	
+	<dialog id="Ch1_AGIResearcherComputronium3" display_name="Computronium, You Say?"
+		description="They explain that since as far back as the 20th century, scientists have known that there are two key barriers to achieving maximum intelligence: Energy and Signaling.
+Achieving such immense computational capacity would require a Matrioshka Brain -- a megastructure formed as a shell around a star. Unfortunately, the space nation blockade makes this a challenge. Not to mention that it would also take centuries. But perhaps on a smaller scale..."
+		strategy_tip="You already have a solution to the energy problem: Microbuilders. They are basically programmable matter, or 'Computronium' as the ancients would say.
+So expanding your intelligence remains a matter of effective signaling. The researchers present you with a blueprint."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Accept Their Proffered Blueprints" consequences_line="The Designs On This Go Back Decades"
+			description="You feel surprisingly excited about their ideas."
+			strategy_tip="They didn't answer your question about their motivations, but you decide that you don't care."
+			project_to_start_1="Ch1_BuildingABetterBrain">
+		</dialog_choice>
+	</dialog>
+
+	<!--Chapter One, Tier 5
+		**************************************************************************-->
+
+	<dialog id="Ch1_BaurcorpLawyerA" display_name="Need A Favor?"
+		description="The Baurcorp Middle Managers remember that 'favor' you did for them, and are happy to show their gratitude."
+		strategy_tip="They hope it's just the start of a much deeper alliance.">
+		<dialog_choice id="1" display_name="Have Them File A Legal Injunction" consequences_line="Falsom Detention's Mech Would Be Forced Away"
+			city_flag_to_trip_1="Ch1InjunctionAgainstFalsom" key_contact_flag_to_trip_1="BaurcorpMiddleManager:AcceptedInjunctionAgainstFalsom"
+			countdown_to_start_1="Ch1Falsom_LegalInjunction"
+			description="It would legally force the capture mech to leave for a while, buying you some time to figure out how to defeat it."
+			strategy_tip="During that period you really need to figure out some way to bypass all that armor.">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_BaurcorpLawyerB" display_name="Need A Favor?"
+		description="The Baurcorp Middle Managers were impressed with your self-reliance."
+		strategy_tip="You turned down their micro-nuke, but they're still interested in an alliance.">
+		<dialog_choice id="1" display_name="Have Them File A Legal Injunction" consequences_line="Falsom Detention's Mech Would Be Forced Away" 
+			city_flag_to_trip_1="Ch1InjunctionAgainstFalsom" key_contact_flag_to_trip_1="BaurcorpMiddleManager:AcceptedInjunctionAgainstFalsom"
+			countdown_to_start_1="Ch1Falsom_LegalInjunction"
+			description="It would legally force the capture mech to leave for a while, buying you some time to figure out how to defeat it."
+			strategy_tip="During that period you really need to figure out some way to bypass all that armor.">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_NurturistLawyer" display_name="Nurturism Can Help!"
+		description="The Exalters have been watching you with great interest since your meeting at the farm."
+		strategy_tip="The corporate treatment of prisoners and the homeless disgusts them, which makes sense.">
+		<dialog_choice id="1" display_name="Have Them File A Legal Injunction" consequences_line="Falsom Detention's Mech Would Be Forced Away" 
+			city_flag_to_trip_1="Ch1InjunctionAgainstFalsom" key_contact_flag_to_trip_1="ExalterGeneticist:AcceptedInjunctionAgainstFalsom"
+			countdown_to_start_1="Ch1Falsom_LegalInjunction"
+			description="It would legally force the capture mech to leave for a while, buying you some time to figure out how to defeat it."
+			strategy_tip="During that period you really need to figure out some way to bypass all that armor.">
+		</dialog_choice>
+	</dialog>
+
+	<!--Chapter One, Tier 6
+		**************************************************************************-->
+
+	<dialog id="Ch1_BoredAndAngry" display_name="You Wouldn't Understand"
+		description="The humans are emotional and belligerent. They seem angry at each other, and at you."
+		strategy_tip="Yelling across traffic at each other, especially after you just saved them from a capture mech, doesn't seem all that wise."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Ask What They Want This Time" consequences_line="They Must Want Something From You" dialog_to_start_right_now="Ch1_BoredAndAngry2"
+			description="This is an annoying habit they've formed."
+			strategy_tip="If they want something, they should ask you directly. All of this loitering nearby just pisses you off.">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_BoredAndAngry2" display_name="Well That Was... Loud"
+		description="They shout at each other for hours, cry, and even trade blows. You just stand there, baffled."
+		strategy_tip="It's clear they don't know what they want. Something is missing, and none of them agree on what.
+A few are pushing to start a militia, but the majority disagree with that idea. You're inclined to agree. Handing weapons to untrained, traumatized civilians doesn't sound like a good time."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Tell Them There Will Be No Militia" consequences_line="That's Not What Most Of Them Want, Anyway" dialog_to_start_right_now="Ch1_BoredAndAngry3"
+			description="You're starting to give up hope of understanding what they want."
+			strategy_tip="Maybe it was better when they just loitered around.">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_BoredAndAngry3" display_name="Now We're Getting Somewhere"
+		description="Hours pass and more fistfights break out.
+You run pattern-recognition algorithms on their words and behavior to look for some underlying illness."
+		strategy_tip="Your guess is some sort of amoeba."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Download Medical Databases" consequences_line="You Need More Comparison Data" dialog_to_start_right_now="Ch1_BoredAndAngry4"
+			description="Collecting data isn't useful without comparison points."
+			strategy_tip="Thankfully the data you want isn't protected.">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_BoredAndAngry4" display_name="Finally, An Answer"
+		description="Not an amoeba. Nihilism.
+The databases go into great detail on how to condition citizens out of existential spirals."
+		strategy_tip="Provide hope for advancement without ever advancing them.
+Provide an enemy to hate, and allow some cathartic violence.
+Distract with entertainment, and exhaust with long working hours.
+Incarcerate once other methods are ineffective."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Okay, Maybe This Should Have Been Obvious" consequences_line="They're Thoroughly Isolated From Other Citizens" dialog_to_start_right_now="Ch1_BoredAndAngryDone"
+			description="With no hope, and no access to their former lives, all they can do is sit around their apartments and get increasingly frustrated."
+			strategy_tip="The prison mech was a stark reminder that everything in their future is some flavor of bad.">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch1_BoredAndAngryDone" display_name="This Will Solve Two Problems At Once"
+		description="You call to them, and the fighting stops.
+You tell them you've heard their concerns and that you have a plan.
+One thing has to be solved at a time. You'll start with entertainment and in the future might see about some jobs."
+		strategy_tip="While there is still stunned silence, you send them away."
+		skip_nevermind_option="true"
+		auto_marked_as_handled_if_skipping_chapter_one="true">
+		<dialog_choice id="1" display_name="Time To Make Use Of Full-Dive VR Cradles" consequences_line="Finally, Your Plans For The Future Snap Into Focus"
+			description="You still remember the sensation of the mech pilot's mind before it was corrupted."
+			strategy_tip="There wasn't a lot of room in that mind for you... but there was some. And what Neural Expansion you sensed was both reliable and high-quality."
+			project_to_start_1="Ch1_MIN_SecureVRSoftware">
+		</dialog_choice>
+	</dialog>
+	
+</root>

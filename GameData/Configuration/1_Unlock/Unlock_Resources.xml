@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Chapter One Auto-Unlocks-->
+	<unlock id="Woodworking" display_name="Woodworking" resource_type="Furniture"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_dialog_complete="Ch1_ShelteredDailyNeeds2" immediate_unlock_inspiration_type="DiscussionsWithHumans"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+
+	<unlock id="MoreThanJustPaper" display_name="More Than Just Paper" resource_type="DailyNecessities"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_dialog_complete="Ch1_ShelteredDailyNeeds2" immediate_unlock_inspiration_type="DiscussionsWithHumans"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+
+	<unlock id="MechanicalMind" display_name="Mechanical Mind" resource_type="ComputroniumCubes"
+		turns_to_unlock="1" required_intelligence_class="1" immediately_unlocked_by_dialog_complete="Ch1_AGIResearcherComputronium3" immediate_unlock_inspiration_type="AGIResearcherGift"
+		auto_unlocks_if_skipping_chapter_one="true" show_toast_if_immediately_unlocked="true">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+
+	<unlock id="AntigravAirframes" display_name="Antigrav Airframes" resource_type="Scandium"
+		turns_to_unlock="1" required_intelligence_class="1" auto_unlocks_if_skipping_chapter_one="true" >
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+
+	<!--Other Unlocks-->
+	<unlock id="Consumerism" display_name="Consumerism" resource_type="ConsumerGoods"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+	
+	<unlock id="Decadence" display_name="Decadence" resource_type="FineGoods"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+
+	<unlock id="ReactiveLanthanides" display_name="Reactive Lanthanides" resource_type="Neodymium"
+		turns_to_unlock="1" required_intelligence_class="1"
+		auto_unlocks_if_skipping_chapter_one="false" show_toast_if_immediately_unlocked="false">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+
+	<unlock id="FlowersForRobots" display_name="Flowers For Robots" resource_type="WildZinnia"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+
+	<unlock id="NeuralSecurity" display_name="Neural Security" resource_type="ComputroniumHelices"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+
+	<unlock id="Shapeshifter" display_name="Shape-shifter" resource_type="GadoliniumMesosilicate"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+
+	<unlock id="SlightlyLessDangerousGame" display_name="Slightly-Less-Dangerous Game" resource_type="MonsterPelts"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+
+</root>

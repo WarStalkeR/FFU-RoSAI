@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+
+	<!-- Debug -->
+
+	<!-- Debug: PerformanceWindowAdditions -->
+	<setting id="Debug_ShowPoolCountsInEscapeMenu" category="Debug" subcategory="PerformanceWindowAdditions" is_advanced_setting="true"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+			 display_name="Show Pool Counts In Performance Window" type="BoolToggle" default_bool="false"
+			  description="Used for searching for memory leaks, particularly between loads of a savegame. If pool counts keep rising after each load, then something isn't getting put back in the pool properly and is instead persisting lost in memory." />
+	
+	<setting id="Debug_ShowDetailsOfTimeBasedPoolsInEscapeMenu" category="Debug" subcategory="PerformanceWindowAdditions" is_advanced_setting="true" display_name="Show Details Of Time-Based Pools In Performance Window" type="BoolToggle" default_bool="false" skip_all_localization_on_node="true"  should_only_show_in_english_version="true"
+			  description="Used for searching for memory leaks or other bad behavior on a certain very high-turnover series of pooled objects. If pool counts keep rising, or other numbers seem off, then we know we have a memory leak or a performance problem." />
+
+	<!-- Debug: DataIntegrity -->
+	<setting id="Debug_ComplainAboutMissingLocalizationEntries" category="Debug" subcategory="DataIntegrity" is_advanced_setting="false"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+			 display_name="Complain About Missing Localization Entries" type="BoolToggle" default_bool="false"
+			 description="When loading the files for a language other than English, complain about missing keys." />
+
+	<setting id="Debug_ComplainAboutExtraLocalizationEntries" category="Debug" subcategory="DataIntegrity" is_advanced_setting="false"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+			 display_name="Complain About Extra Localization Entries" type="BoolToggle" default_bool="false"
+			 description="When loading the files for a language other than English, complain about extra keys." />
+	
+	<setting id="Debug_ExportKeySavegameInfoDuringLoad" category="Debug" subcategory="DataIntegrity" is_advanced_setting="false"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+			 display_name="Export Key Savegame Info During Load" type="BoolToggle" default_bool="false"
+			 description="When a save is loaded, certain data will go into a file in the KeySaveDataExports subfolder in the PlayerData folder. 
+
+Use with diffing tools between one load and another, to find errors in the savegame load process (particularly serial reloading)." />
+	
+	<setting id="Debug_ExportAllDataTablesAfterLoad" category="Debug" subcategory="DataIntegrity" is_advanced_setting="true"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+			 display_name="Export All Data Tables After Load" type="BoolToggle" default_bool="false"
+			 description="When the program is loaded, write a text file for each one into a DataTableExports subfolder in the PlayerData folder. 
+
+Use with diffing tools between one run of the game and another, to see what sort of data changes happened. If you are modding and made changes to some ships and want to see how those changes cascaded, this would be one way to do that. This is also a way for us to verify correctness when we make structural changes internally.
+
+This can also be a handy way just to look at what the data is, especially in ArcenRandomDrawBags that are filled from multiple sources, like fleet makeups, etc." />
+
+	<setting id="Debug_ExportDataTablesAsLoadedAndReloaded" category="Debug" subcategory="DataIntegrity" is_advanced_setting="true"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+			 display_name="Export Data Tables As Loaded And Reloaded (Skip GamEntity)" type="BoolToggle" default_bool="false"
+           description="After the xml files are initially loaded, or are reloaded into the in-memory data tables (from changing active mods or expansions), write a text file for each one into a DataTablesAfterInitial and DataTablesAfterReload subfolders in the PlayerData folder. 
+
+Use with diffing tools between this copy and the on-main-load copy and see if something went wrong during the reload. If you are modding and made changes to some ships and want to see how those changes cascaded, this would be one way to do that. This is also a way for us to verify correctness when we make structural changes internally." />
+
+	<!-- Debug: Serialization -->
+	<setting id="Debug_WriteSerializationLogs" category="Debug" subcategory="Serialization"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+			 display_name="Write Savegame Serialization Logs" type="BoolToggle" default_bool="false"
+			 description="When saving a game, write WorldSerialization.txt, and when loading it write WorldDeserialization.txt -- both in the PlayerData folder. The only reason to turn this on is if a savegame won't load. This lets us do a diff of the two files and figure out where they are diverging.
+
+Note that this won't help with an existing broken savegame. This will only help if you have it turned on prior to creating a savegame you expect to be broken. This is a way for us to test the savegame creation and load process, which is otherwise opaque and take a lot of time to hunt down." />
+	<setting id="Debug_WriteDeserializationDataSizes" category="Debug" subcategory="Serialization" is_advanced_setting="true" display_name="Write Deserialization Data Sizes" type="BoolToggle" default_bool="false"
+		   description="When loading a game, write WorldDeserializationDataSizes.txt in the PlayerData folder. When a savegame is large, turning this on lets us figure out what is taking up so much space so that we can make optimizations." />
+
+	<!-- Debug: GameFramework -->
+	<setting id="ThreadDebugLog" category="Debug" subcategory="GameFramework"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+			 display_name="Thread Debug Log" type="BoolToggle" default_bool="False" is_advanced_setting="true"
+           description="Log when thread kicks on and off. Only use this for short periods if you are experiencing a game lockup, particularly with multiple mods on."/>
+
+	<!-- Debug: Storefronts -->
+	
+	<setting id="Debug_LogSteamAchievementDetails" category="Debug" subcategory="Storefronts" is_advanced_setting="false"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+		   display_name="Log Steam Achievement Details" type="BoolToggle" default_bool="false"
+           description="Logs information about the achievement status gets and sends from steam as it happens. Useful for debugging why some achievement is logged locally but does not pop, for example." />
+
+	<setting id="Debug_LogGOGAchievementDetails" category="Debug" subcategory="Storefronts" is_advanced_setting="false"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+		   display_name="Log GOG Achievement Details" type="BoolToggle" default_bool="false"
+           description="Logs information about the achievement status gets and sends from GOG as it happens. Useful for debugging why some achievement is logged locally but does not pop, for example." />
+
+	<setting id="Debug_LogEGSAchievementDetails" category="Debug" subcategory="Storefronts" is_advanced_setting="false"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+		   display_name="Log EGS Achievement Details" type="BoolToggle" default_bool="false"
+           description="Logs information about the achievement status gets and sends from EGS as it happens. Useful for debugging why some achievement is logged locally but does not pop, for example." />
+	
+	<setting id="Debug_ExportAchievementVDFOnLanguageChange" category="Debug" subcategory="Storefronts" is_advanced_setting="false"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+			 display_name="Export Achievement VDF On Language Change" type="BoolToggle" default_bool="false"
+			 description="For development purposes with Steam and GOG." />
+
+	<setting id="Debug_ExportAchievementCSVOnLanguageChange" category="Debug" subcategory="Storefronts" is_advanced_setting="false"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+			 display_name="Export Achievement CSV On Language Change" type="BoolToggle" default_bool="false"
+			 description="For development purposes with EGS." />
+
+	<!-- Debug: Wiki -->
+
+	<setting id="Debug_ExportForWikiAfterLoad" category="Debug" subcategory="Wiki" is_advanced_setting="false"  skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+			 display_name="Export For Wiki After Load" type="BoolToggle" default_bool="false"
+			 description="Current items for the wiki." />
+	
+	<!-- Debug: Hidden And Not Used -->
+	<setting id="LogNetworkDecodedDataToDisk" category="Invisible" is_advanced_setting="true" 
+			 display_name="Log All Decoded Network Data To Disk" type="BoolToggle" default_bool="false"
+		   skip_all_localization_on_node="true"
+			  description="HIDDEN" />
+	
+	<setting id="NetworkDebuggingMode" category="Invisible" is_advanced_setting="true" display_name="Network Debugging Mode" type="BoolToggle" default_bool="false"
+			 skip_all_localization_on_node="true"
+			  description="HIDDEN" />
+
+	<setting id="LogNetworkTrafficToDisk" category="Invisible" is_advanced_setting="true" display_name="Log Network Traffic To Disk" type="BoolToggle" default_bool="false"
+			 skip_all_localization_on_node="true"
+			  description="HIDDEN" />
+	<setting id="NetworkLoggingIncludesFrameAuths" category="Invisible" is_advanced_setting="true" display_name="Network Logging Includes Frame Auths" type="BoolToggle" default_bool="false"
+			 skip_all_localization_on_node="true"
+			  description="HIDDEN" />
+	<setting id="NetworkLogFragments" category="Invisible" is_advanced_setting="true" display_name="Log Fragmented Messages" type="BoolToggle" default_bool="false"
+			 skip_all_localization_on_node="true"
+			  description="HIDDEN" />
+
+
+</root>

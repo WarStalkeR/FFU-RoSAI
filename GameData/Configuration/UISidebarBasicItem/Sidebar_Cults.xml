@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Section Headers-->
+
+	<ui_sidebar_item id="CultActionsResources" display_name="Resources"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="CultActionsHelpingHand" display_name="Helping Hand"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems"
+		icon_name="SomethingWing9" icon_color="#ffffff"  />
+
+	<!--Resource Actions-->
+
+	<ui_sidebar_item id="GatherNeodymium" display_name="Gather Neodymium"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags="CultActionsResources"
+		icon_name="CleanSimple_SkillB093" icon_color="#E96DAD"  is_hidden_when_ui_is_hidden="true" />
+
+	<ui_sidebar_item id="GatherBastnasite" display_name="Gather Bastnäsite"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags="CultActionsResources"
+		icon_name="FlatSkillB_rocks2" icon_color="#FF8B54"  is_hidden_when_ui_is_hidden="true" />
+
+	<ui_sidebar_item id="GatherPrismaticTungsten" display_name="Gather Prismatic Tungsten"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags="CultActionsResources"
+		icon_name="AN_Hexagonal1" icon_color="#43D0F1"  is_hidden_when_ui_is_hidden="true" />
+
+	<ui_sidebar_item id="GatherAlumina" display_name="Gather Alumina"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags="CultActionsResources"
+		icon_name="CleanSimple_Skill074" icon_color="#FFCE77"  is_hidden_when_ui_is_hidden="true" />
+	
+	<ui_sidebar_item id="GatherScandium" display_name="Gather Scandium"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags="CultActionsResources"
+		icon_name="SF2_Cube16" icon_color="#EBDAFA"  is_hidden_when_ui_is_hidden="true" />
+
+	<ui_sidebar_item id="GatherPollinatorBeeQueen" display_name="Gather Pollinator Bee Queen"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags="CultActionsResources"
+		icon_name="CS_Bee" icon_color="#FFD139"  is_hidden_when_ui_is_hidden="true" />
+	
+	<ui_sidebar_item id="GatherLiquidGallium" display_name="Gather Liquid Gallium"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags="CultActionsResources"
+		icon_name="CleanSimple_SciFiEmblem09" icon_color="#B3BEC6"  is_hidden_when_ui_is_hidden="true" />
+
+	<ui_sidebar_item id="GatherVegetableSeeds" display_name="Gather Vegetable Seeds"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags="CultActionsResources"
+		icon_name="FE_FlaxSeed" icon_color="#ABFF2E"  is_hidden_when_ui_is_hidden="true" />
+
+	<ui_sidebar_item id="GatherBovineTissue" display_name="Gather Bovine Tissue"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags="CultActionsResources"
+		icon_name="MA_Cow" icon_color="#FC88FF"  is_hidden_when_ui_is_hidden="true" />
+	
+	<ui_sidebar_item id="StealthWealth" display_name="Steal Wealth"
+		description=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags="CultActionsResources"
+		icon_name="CleanSimple_SkillC004" icon_color="#2EAFFF"  is_hidden_when_ui_is_hidden="true" />
+	
+	<!--Helping Hand Actions-->
+
+	<ui_sidebar_item id="SpeedUpConstruction" display_name="Speed Up Construction"
+		description="Progress construction for the selected building by one turn."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags="CultActionsHelpingHand"
+		icon_name="CleanSimple_SkillB003" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="SpeedUpAllConstruction" display_name="Speed Up All Construction"
+		description="Progress construction for all of your buildings by one turn."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags="CultActionsHelpingHand"
+		icon_name="CleanSimple_SkillB003" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="KillSelectedCultist" display_name="Kill Selected Cultist"
+		description="All members of the military below a certain pay grade are part of your cult whether they know it or not."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags=""
+		icon_name="WEmblem053" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="KillAllCultistHackers" display_name="Kill All Cultist Hackers"
+		description="All members of the military below a certain pay grade are part of your cult whether they know it or not."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags=""
+		icon_name="WEmblem053" icon_color="#ffffff"  />
+
+	<ui_sidebar_item id="KillAllCultistsTargetingYou" display_name="Kill All Cultists Targeting You"
+		description="All members of the military below a certain pay grade are part of your cult whether they know it or not."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Sidebar_CultActionsItems" tags=""
+		icon_name="WEmblem053" icon_color="#ffffff"  />
+
+</root>

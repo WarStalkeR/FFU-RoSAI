@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="music_track">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="bundle_name" type="string" maxlength="200" content_width_px="200" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the asset bundle that the music inside file is in."/>
+	<attribute key="filename" type="string" maxlength="600" content_width_px="400" is_required="true"
+		tooltip="This specifies the path of the music track inside the specified asset bundle."/>
+
+	<attribute key="type" type="node-dropdown" node_source="MusicTypes" content_width_px="300"
+		tooltip="Each music track is specified to a specific music type, which lets us know where in the game it should be played." />
+
+	<attribute key="description" type="existing-override" is_required="false" />
+
+	<attribute key="must_be_unlocked_to_play" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="When true, then this track will not play until it has been unlocked." />
+
+	<attribute key="does_not_block_lower_channels_when_used_as_override" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="When true, and this is played as some sort of override, then the primary/secondary music keeps playing as if it did not." />
+
+	<attribute key="plays_even_when_music_is_disabled_if_sound_is_enabled" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="When true, and this is played as some sort of override, this still plays even when the music is disabled, so long as sound is not disabled." />
+
+	<attribute key="volume_multiplier" type="float-textbox" min="0.2" max="2" default="1" content_width_px="70" is_required="false"
+		tooltip="This allows for making the music track louder or quieter relative to everything else musical in the game.  This adjusts the mixer itself, so extra loudness is possible."/>
+	
+	<attribute key="tags" type="node-list" node_source="MusicTag" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What tags apply to this track, if any?" />
+
+</root>

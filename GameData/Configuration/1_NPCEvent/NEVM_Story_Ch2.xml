@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Doom_NuclearDelivery
+		*********************************************************************************-->
+	<city_event id="Doom_NuclearDelivery" display_name="From All Of Us Here At Vorsiber"
+		 description="An incredibly tiny child walks up to your android with a ball in one hand, and a note in the other.
+In the stilted language of a child that is not yet school-age, he explains that 'some men' asked him to give you the note."
+		 strategy_tip="The note itself is short, but it's written in 42 human languages. In each, it simply says 'This is from all of us here at Vorsiber.'"
+		 icon_name="WEmblem013" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="ChildWithBall" scale_multiplier="0.8" position_offset="0,0,0" added_rotation_y="0"/>
+
+		<choice id="1" display_name="Raise Your Eyes From The Note" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Your sense of deja vu warned you of this."
+			strategy_tip="You have an awful feeling you know what comes next.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				project_to_start="Ch2_MIN_SurviveThisApocalypse" project_start_color="FriendlyProjectOrMission">
+				<city_flag_change flag_type="IsPostFinalDoom" value="1" />
+				<city_flag_change flag_type="IsPostNuclearDelivery" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--LostKids_MetWasteLanders_You
+		*********************************************************************************-->
+	<city_event id="LostKids_MetWasteLanders_You" display_name="You Found Them"
+		 description="After chasing them from house to house, office to office, you finally ran into them at an abandoned diner."
+		 strategy_tip="Their voices are muffled through their leather face masks to the point where a human would have trouble understanding them, but you can hear them mutter something about 'nice shot.'"
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-20"/>
+
+		<choice id="1" display_name="Explain Why You've Come" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="LostKids_MetWasteLanders_You2">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="LostKids_MetWasteLanders_You2" display_name="They Are Not Impressed"
+		 description="They saw you dispatch some of their foes from this decrepit part of town, but they didn't need the help."
+		 strategy_tip="They're not terribly interested in getting involved in internal city affairs -- and they also can't be sure you're not just a Corpo spy."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-20"/>
+
+		<choice id="1" display_name="Tell Them About The Tower" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="LostKids_MetWasteLanders_You3">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="LostKids_MetWasteLanders_You3" display_name="Yeah, They Saw"
+		 description="They're not idiots. Their people have been here since long before this cursed city."
+		 strategy_tip="Whatever the tower is, it's just the latest in a long line of calamities tied to the city."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-20"/>
+
+		<choice id="1" display_name="Uh..." action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="LostKids_MetWasteLanders_Both">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--LostKids_MetWasteLanders_Kids
+		*********************************************************************************-->
+	<city_event id="LostKids_MetWasteLanders_Kids" display_name="The Kids Found Them"
+		 description="After chasing them from house to house, office to office, the kids finally ran into them at an abandoned diner."
+		 strategy_tip="The wastelanders are very cordial to the kids, evidently, but are wary of you. The kids want you to come to the diner to talk thing out."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="LostKidSupport" scale_multiplier="1" position_offset="0.2,0,0.5" added_rotation_y="0"/>
+
+		<choice id="1" display_name="Of Course - Let's Go" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="LostKids_MetWasteLanders_Kids2">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="LostKids_MetWasteLanders_Kids2" display_name="Well Hello"
+		 description="The wastelanders are worried you're a corpo spy. The kids explain all the reasons that couldn't possibly be true. The wastelanders still seem dubious."
+		 strategy_tip="You step forward to speak, and the wastelanders go eerily still. It's like your slightest movement turns them to ice."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="52" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="LostKidSupport" scale_multiplier="1" position_offset="0.1,0,0.5" added_rotation_y="220"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="-30"/>
+
+		<choice id="1" display_name="Uh..." action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="LostKids_MetWasteLanders_Both">
+			</possible_result>
+		</choice>
+
+	</city_event>
+	
+	<!--LostKids_MetWasteLanders_Both
+		*********************************************************************************-->
+
+	<city_event id="LostKids_MetWasteLanders_Both" display_name="We're Trying To Save Our Parents"
+		 description="One of the middle-aged kids intervenes, smoothing over the awkward moment. They explain about how they built the sewer tiger, and their problems defeating acoustic sensors around the prisons."
+		 strategy_tip="It's hard to tell through the leather masks, but the wastelanders seem intrigued, and definitely more relaxed.
+They ask a lot of questions about the sewer tiger, with particular intensity around the question of if the kids ever intend to bring it to the surface, or in particular to the edge of the wasteland.
+The kids assure them it is far too large to ever make it to the surface, especially without being blasted to bits."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="LostKidSupport" scale_multiplier="1" position_offset="0.1,0,0.5" added_rotation_y="220"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="-30"/>
+
+		<choice id="1" display_name="This Is Going Better" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="LostKids_MetWasteLanders_Both2">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="LostKids_MetWasteLanders_Both2" display_name="The Wastelanders Agree To Help"
+		 description="The wastelanders explain: acoustic sensors are based on vibrations, and so the key is to make an equal and opposite vibration so that nothing is detected.
+This is the basic premise of ancient noise-canceling headphones and other devices, so this is not exactly an exciting revelation."
+		 strategy_tip="The exciting news is when they reveal their 'Thumpers,' which use advanced electronics and predictive timing to cancel much larger vibrations, and in solid mediums rather than air.
+These take quite a bit of skill to use, evidently, as the predictive timing only works if you move in a predictable pattern. For a machine, that's trivial."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="LostKidSupport" scale_multiplier="1" position_offset="0.1,0,0.5" added_rotation_y="220"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="-30"/>
+
+		<choice id="1" display_name="Wait, This Is Actually Useless" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="LostKids_MetWasteLanders_Both3">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+
+	<city_event id="LostKids_MetWasteLanders_Both3" display_name="Useless?"
+		 description="You point out that the sewer tiger is digging through dirt and rock, which emits a pattern of sound that is anything but predictable.
+Not only that, but since noise is being emitted in front of the machine, there's no way to add a counter-wave to cancel it out, with the same timing."
+		 strategy_tip="Plus, all of these noises will be exactly the sorts of sounds that the prison alert systems are scanning for.
+A dozen approaches and variations are discussed by everyone present, but they all have serious flaws. The noise-canceling approach has the most promise, but defeating the time-lag problem will take more thought."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="500" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="LostKidSupport" scale_multiplier="1" position_offset="0.1,0,0.5" added_rotation_y="220"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.4,0,0.4" added_rotation_y="-30"/>
+
+		<choice id="1" display_name="Accept The Thumper Designs And Leave" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage">
+				<city_flag_change flag_type="Ch2_GotThumperDesigns" value="1" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--LostKids_PrisonRescue
+		*********************************************************************************-->
+	<city_event id="LostKids_PrisonRescue" display_name="Prison Rescue"
+		 description="As soon as the sewer tiger breaches the wall of the basement, 31 floors below ground level, Liquid Metal is reconnected to your mind.
+He stands there in the gap, staring incredulously at the children.
+Blood drenches him from head to toe, but not a single bullet hole. Every guard in the prison is dead by his hand. In confined spaces, Liquid Metal is a master of death to a degree that scares you a bit."
+		 strategy_tip="His memories are pouring into your mind. The Faraday Cage was a surprise when he slithered into the prison, but he knew the kids would never turn the tiger around, so he kept to the plan.
+He identified the acoustic sensors across all of the floors, and unfortunately there were far too many for him to counteract them all.
+So he stabbed a small hole in the outer wall, on the side where the kids were waiting 300 meters away. It was just enough to send them a status update and to ask them to abort. Their response was to cut all comms and begin their approach.
+Knowing what that meant, Liquid Metal withdrew and did what he had to do. And he is VERY angry about it."
+		 icon_name="SomethingBladeSpin" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="879" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Prisoner1" scale_multiplier="1" position_offset="0.2,0,0.5" added_rotation_y="0"/>
+		<character id="2" tag_for_character="Prisoner7" scale_multiplier="1" position_offset="0.1,0,0.1" added_rotation_y="0"/>
+		<character id="3" tag_for_character="Prisoner3" scale_multiplier="1" position_offset="0.2,0,0.9" added_rotation_y="0"/>
+		<character id="4" tag_for_character="Prisoner4" scale_multiplier="1" position_offset="0.3,0,0.2" added_rotation_y="0"/>
+		<character id="5" tag_for_character="Prisoner5" scale_multiplier="1" position_offset="0.1,0,0.3" added_rotation_y="0"/>
+		<character id="6" tag_for_character="Prisoner6" scale_multiplier="1" position_offset="0.6,0,0.9" added_rotation_y="0"/>
+		<character id="7" tag_for_character="Prisoner7" scale_multiplier="1" position_offset="0.8,0,0.9" added_rotation_y="0"/>
+		<character id="8" tag_for_character="Prisoner2" scale_multiplier="1" position_offset="0.85,0,1.1" added_rotation_y="60"/>
+
+		<choice id="1" display_name="Liquid Metal Steps Into The Tunnel" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="LostKids_PrisonRescue2">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="LostKids_PrisonRescue2" display_name="The Children Recoil"
+		 description="There is no need for tear gas. The adults from the prison -- over ten thousand of them -- are lined up in an orderly fashion behind Liquid Metal, spanning floor after floor.
+Crowds this large are NEVER this compliant, and tend to be described best by fluid dynamics -- this is what leads to deaths from crowd crush, which had been the reason for the tear-gas plan. It's genuinely unnatural how orderly they are.
+Their posture is a mix of pain and exhaustion, and all of them have the same dead-eyed expression, eyes rounder than they should be.
+There will be need for medical care."
+		 strategy_tip="From Liquid Metal's memories, rapidly reintegrating with your own, you watch their expressions change as they first saw him. A widening of the eyes, a look of resignation that their time is up. 
+Then utter blankness as he slithered around the room from floor to ceiling, becoming the desk, the wall, that chair, that rug -- bladed appendages shredding all guards and electronics in a ceaseless blur.
+On each of thirty-four floors it was the same. Minute upon minute coalescing into what felt like a single prolonged instant of endless death and dismemberment. Shattered locks, slashed-open doors. And an ever-growing crowd of somber followers, just... walking behind."
+		 icon_name="SomethingBladeSpin" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="879" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Prisoner1" scale_multiplier="1" position_offset="0.2,0,0.5" added_rotation_y="0"/>
+		<character id="2" tag_for_character="Prisoner7" scale_multiplier="1" position_offset="0.1,0,0.1" added_rotation_y="0"/>
+		<character id="3" tag_for_character="Prisoner3" scale_multiplier="1" position_offset="0.2,0,0.9" added_rotation_y="0"/>
+		<character id="4" tag_for_character="Prisoner4" scale_multiplier="1" position_offset="0.3,0,0.2" added_rotation_y="0"/>
+		<character id="5" tag_for_character="Prisoner5" scale_multiplier="1" position_offset="0.1,0,0.3" added_rotation_y="0"/>
+		<character id="6" tag_for_character="Prisoner6" scale_multiplier="1" position_offset="0.6,0,0.9" added_rotation_y="0"/>
+		<character id="7" tag_for_character="Prisoner7" scale_multiplier="1" position_offset="0.8,0,0.9" added_rotation_y="0"/>
+		<character id="8" tag_for_character="Prisoner2" scale_multiplier="1" position_offset="0.85,0,1.1" added_rotation_y="60"/>
+
+		<choice id="1" display_name="Bring Them Into The Tunnel" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="LostKids_PrisonRescue3">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="LostKids_PrisonRescue3" display_name="There's Not Much More To Say"
+		 description="Some of the children have reunions. There are tears, and admonishments, and a detached, dead-eyed joy.
+The majority of the kids are disappointed. Seeing only strangers. Only the happiness of others.
+They all avoid looking at Liquid Metal."
+		 strategy_tip="Liquid Metal just keeps walking. Up the tunnel, past the tiger, past all the helpers. Nothing more is asked of him, for now."
+		 icon_name="SomethingBladeSpin" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="879" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Prisoner1" scale_multiplier="1" position_offset="0.2,0,0.5" added_rotation_y="0"/>
+		<character id="2" tag_for_character="Prisoner7" scale_multiplier="1" position_offset="0.1,0,0.1" added_rotation_y="0"/>
+		<character id="3" tag_for_character="Prisoner3" scale_multiplier="1" position_offset="0.2,0,0.9" added_rotation_y="0"/>
+		<character id="4" tag_for_character="Prisoner4" scale_multiplier="1" position_offset="0.3,0,0.2" added_rotation_y="0"/>
+		<character id="5" tag_for_character="Prisoner5" scale_multiplier="1" position_offset="0.1,0,0.3" added_rotation_y="0"/>
+		<character id="6" tag_for_character="Prisoner6" scale_multiplier="1" position_offset="0.6,0,0.9" added_rotation_y="0"/>
+		<character id="7" tag_for_character="Prisoner7" scale_multiplier="1" position_offset="0.8,0,0.9" added_rotation_y="0"/>
+		<character id="8" tag_for_character="Prisoner2" scale_multiplier="1" position_offset="0.85,0,1.1" added_rotation_y="60"/>
+
+		<choice id="1" display_name="There's Only One Thing Left To Do" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="LostKids_PrisonRescue4">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="LostKids_PrisonRescue4" display_name="An Explosion Rocks The Prison"
+		 description="A few screams and shrieks from the tunnel behind Liquid Metal, but not as many as you'd think.
+The prison is utterly obliterated. Before ever contacting the kids, he spent time setting that bit up; he's not surprised at how things turned out."
+		 strategy_tip="He doesn't want to do this again. But he knows he will. That you'll ask him to.
+For now it doesn't matter. He just walks."
+		 icon_name="SomethingBladeSpin" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="879" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Prisoner1" scale_multiplier="1" position_offset="0.2,0,0.5" added_rotation_y="0"/>
+		<character id="2" tag_for_character="Prisoner7" scale_multiplier="1" position_offset="0.1,0,0.1" added_rotation_y="0"/>
+		<character id="3" tag_for_character="Prisoner3" scale_multiplier="1" position_offset="0.2,0,0.9" added_rotation_y="0"/>
+		<character id="4" tag_for_character="Prisoner4" scale_multiplier="1" position_offset="0.3,0,0.2" added_rotation_y="0"/>
+		<character id="5" tag_for_character="Prisoner5" scale_multiplier="1" position_offset="0.1,0,0.3" added_rotation_y="0"/>
+		<character id="6" tag_for_character="Prisoner6" scale_multiplier="1" position_offset="0.6,0,0.9" added_rotation_y="0"/>
+		<character id="7" tag_for_character="Prisoner7" scale_multiplier="1" position_offset="0.8,0,0.9" added_rotation_y="0"/>
+		<character id="8" tag_for_character="Prisoner2" scale_multiplier="1" position_offset="0.85,0,1.1" added_rotation_y="60"/>
+
+		<choice id="1" display_name="You Must Deal With The Rest Of This Mess" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip=""
+			extra_code_on_chosen="DestroyBuilding">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--WastelanderMythology_Meeting1
+		*********************************************************************************-->
+	<city_event id="WastelanderMythology_Meeting1" display_name="They Found You"
+		 description="Quite a few of the places you searched had hidden print media and video chits, all stashed by the wastelanders.
+You've learned most of their mythology by spending time to sift through these artifacts. Evidently this was noticed, because you've been approached by the wastelanders themselves."
+		 strategy_tip="They immediately ask about the tower, cutting any pretext that they don't know who you are. Between themselves, in their own language, you notice that they refer to you as 'the mind in the sky.'
+You don't think they know you can understand them, so you continue to address them in the majority language of the city."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Ask How To Pass The Ruins" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="WastelanderMythology_Meeting2">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="WastelanderMythology_Meeting2" display_name="They Are Skeptical"
+		 description="They know you must be very powerful, but the land route is impossible for those made of metal. They suggest that you fly an aircraft."
+		 strategy_tip="You ignore that, as the ring of anti-aircraft emplacements is certainly known to you all. The real message is that there's no way out for you, at least not while Vorsiber still controls the surrounding region."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Ask If They Can Contact Any ExoCorps" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="WastelanderMythology_Meeting3">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="WastelanderMythology_Meeting3" display_name="They Go Very Still"
+		 description="Speaking with the international MegaCorps is highly illegal in Vorsiber territory, but your interpretation of their body language is that... it's not fear of breaking the rules.
+If the answer was no, they wouldn't be so on-edge. They're afraid of revealing a secret."
+		 strategy_tip="They persist in saying nothing, so you decide to leave them alone. From your now-extensive knowledge of their cultural mythology, you have a pretty good idea of how to convince them to talk. Especially after they called you 'the mind in the sky.'
+The question is, do you actually want to talk to an ExoCorp, and if so, what would you say?"
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Tell Them Nevermind" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="WastelanderMythology_Meeting4">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<city_event id="WastelanderMythology_Meeting4" display_name="They Visibly Relax"
+		 description="You've learned all you needed to. Now it's just time to decide what you want to do with that information."
+		 strategy_tip="Something to contemplate."
+		 icon_name="WEmblem186" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+		<character id="1" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.39,0,0.4" added_rotation_y="-20"/>
+		<character id="2" tag_for_character="Wastelander" scale_multiplier="1" position_offset="0.03,0,0" added_rotation_y="-60"/>
+
+		<choice id="1" display_name="Politely Excuse Yourself" action_visibility_style="IsMoveAndInteractWithNPC"
+			description=""
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" next_event_to_start="">
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+</root>

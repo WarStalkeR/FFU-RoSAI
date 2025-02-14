@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Chapter Two
+		**************************************************************************-->
+
+	<deal id="Ch2_AGI_Meals" display_name="Meals For Fugitives" related_cohort="FugitiveAGIResearchers"
+		description=""
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1"
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="1"
+		data_type_benefit_1="ActorPower" data_type_benefit_1_base_amount="5" data_type_benefit_1_added_amount_per_level="2" benefits_collection="Dynadroids">
+		<cost_per_turn resource_type="FilteredWater" base_amount="180" added_per_level="10" />
+		<cost_per_turn resource_type="HydroponicGreens" base_amount="260" added_per_level="10" />
+		<cost_per_turn resource_type="VatGrownMeat" base_amount="140" added_per_level="10" />
+	</deal>
+
+	<deal id="Ch1_NomadFamilies_VitaminWater" display_name="Vitamin Water For The Nomad Families" related_cohort="NomadFamilies"
+		description=""
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1"
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="5"
+		data_type_benefit_1="ActorEngineeringSkill" data_type_benefit_1_base_amount="10" data_type_benefit_1_added_amount_per_level="5" benefits_collection="SouldroidsAndTechnicians">
+		<cost_per_turn resource_type="VitaminWater" base_amount="8900" added_per_level="5200"/>
+	</deal>
+
+	<deal id="Ch2_Military_Donuts" display_name="Donuts By Danver" related_cohort="DanverDonuts"
+		description=""
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1"
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="5"
+		data_type_benefit_1="ActorEngineeringSkill" data_type_benefit_1_base_amount="10" data_type_benefit_1_added_amount_per_level="5" benefits_collection="SouldroidsAndTechnicians">
+		<cost_per_turn resource_type="Wealth" base_amount="39" added_per_level="31"/>
+		<income_per_turn resource_type="DonutsByDanver" base_amount="50000" added_per_level="41000"/>
+	</deal>
+
+	<deal id="Ch2_SecForce_Donuts" display_name="Donuts By Hudson" related_cohort="HudsonDonuts"
+		description=""
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1"
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="5"
+		data_type_benefit_1="ActorEngineeringSkill" data_type_benefit_1_base_amount="10" data_type_benefit_1_added_amount_per_level="5" benefits_collection="SouldroidsAndTechnicians">
+		<cost_per_turn resource_type="Wealth" base_amount="38" added_per_level="31"/>
+		<income_per_turn resource_type="DonutsByHudson" base_amount="50000" added_per_level="40000"/>
+	</deal>
+
+	<deal id="Ch2_EleusinianDailyNecessities" display_name="Cult Paper" related_cohort="EleusinianMysteries"
+		description=""
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1"
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="11"
+		data_type_benefit_1="" data_type_benefit_1_base_amount="" data_type_benefit_1_added_amount_per_level="" benefits_collection="">
+		<cost_per_turn resource_type="Wealth" base_amount="500" added_per_level="1000"/>
+		<income_per_turn resource_type="DailyNecessities" base_amount="50000" added_per_level="100000"/>
+	</deal>
+
+	<deal id="Ch2_RebelAnthroneuroweave" display_name="Anthroneuroweave For Rebels" related_cohort="VoxPopulei"
+		description=""
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1"
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="5"
+		data_type_benefit_1="UnitCognition" data_type_benefit_1_base_amount="10" data_type_benefit_1_added_amount_per_level="5" benefits_collection="SouldroidsAndTechnicians">
+		<cost_per_turn resource_type="Anthroneuroweave" base_amount="2997" added_per_level="1000"/>
+	</deal>
+
+	<deal id="Ch2_SyndicateBrainPals" display_name="BrainPals For Sale" related_cohort="ExoticImporters"
+		description="Estimated market saturation for this product is 10% of the Wealthy Consumer demographic. After that point, the syndicate will end the deal."
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1"
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="5" city_statistic_per_largest_cost="BrainPalsSold"
+		data_type_benefit_1="UnitHackingSkill" data_type_benefit_1_base_amount="50" data_type_benefit_1_added_amount_per_level="40" benefits_collection="SouldroidsAndTechnicians">
+		<cost_per_turn resource_type="BrainPal" base_amount="2997" added_per_level="1000"/>
+		<income_per_turn resource_type="Wealth" base_amount="239760" added_per_level="80000"/>
+	</deal>
+	
+	<!--Chapter Two - Post-Apocalypse
+		**************************************************************************-->
+	
+	<deal id="Ch2_SpaceNationFugitives_Meals" display_name="Meals For Fugitives" related_cohort="SpaceNationFugitives"
+		description=""
+		strategy_tip=""
+		initial_turns_before_deal_payments_start="1" 
+		turns_of_lapse_in_a_row_before_broken_by_you="50" turns_of_cumulative_lapse_before_broken_by_you="999" max_number_of_levels="1"
+		data_type_benefit_1="ActorPower" data_type_benefit_1_base_amount="5" data_type_benefit_1_added_amount_per_level="2" benefits_collection="Dynadroids">
+		<cost_per_turn resource_type="FilteredWater" base_amount="966" added_per_level="10" />
+		<cost_per_turn resource_type="Gristloaf" base_amount="966" added_per_level="100"/>
+	</deal>
+	
+</root>

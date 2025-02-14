@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<city_style id="Typical" is_default="true" display_name="Typical"
+		description="Many things vary even in the typical city, but there will be consistent numbers of large landmarks, and a reasonable balance of all the other factors."
+		city_width_in_cells="21" city_height_in_cells="21"
+		required_traditional_hole_cells="60" main_logic_attempt_count="300">
+		<macro_style_cell level_type="MiniTileExtSpaceport" desired_count="1" district_type="Spaceport"/>
+		<macro_style_cell level_type="MiniTileExtAirportA" desired_count="1" district_type="BasicDistrict"/>
+		<macro_style_cell level_type="MiniTileExtAirportB" desired_count="2" district_type="BasicDistrict" />
+		<macro_style_cell level_type="MiniTileExtMilitaryBaseLrgA" desired_count="4" district_type="MilitaryBase" />
+		<macro_style_cell level_type="MiniTileExtNuclearSiloA" desired_count="2" district_type="NuclearSilo" />
+		<macro_style_cell level_type="MiniTileExtDeepSpaceRadioTelescopeA" desired_count="1" district_type="ScientificResearch" />
+		<required_hole_filler_cell level_type="MiniTileExtOilMiningA" required_minimum="2" district_type="BasicDistrict" />
+		<required_hole_filler_cell level_type="MiniTileExtPowerNuclearA" required_minimum="2" district_type="NuclearPowerPlant" />
+		<required_hole_filler_cell level_type="MiniTileExtFarmA" required_minimum="5" district_type="BasicDistrict" />
+		<required_hole_filler_cell level_type="MiniTileExtMilitaryBaseA" required_minimum="5" district_type="BasicDistrict" />
+		<required_hole_filler_cell level_type="MiniTileExtCryopolisA" required_minimum="2" district_type="BasicDistrict" />
+		<secondary_randomized_hole_filler_cell level_type="MiniTileExtFarmA" weight="200" district_type="BasicDistrict" />
+		<secondary_randomized_hole_filler_cell level_type="MiniTileExtMiningAndScienceA" weight="200" district_type="BasicDistrict" />
+		<secondary_randomized_hole_filler_cell level_type="MiniTileExtMilitaryBaseA" weight="400" district_type="BasicDistrict" />
+		<secondary_randomized_hole_filler_cell level_type="MiniTileExtOilMiningA" weight="10" district_type="BasicDistrict" />
+		<secondary_randomized_hole_filler_cell level_type="MiniTileExtCommStationA" weight="4" district_type="CommStation" />
+		<secondary_randomized_hole_filler_cell level_type="MiniTileExtPowerNuclearA" weight="1" district_type="NuclearPowerPlant" />
+		<city_style_blob logic_type="DowntownCityCenter" char_for_debug_map="1" desired_size_in_cells="25" percent_chance_of_spawning_diggers="30" district_type="CityCenter"/>
+		<city_style_blob logic_type="DecrepitPartOfTown" char_for_debug_map="A" desired_size_in_cells="7" percent_chance_of_spawning_diggers="10" district_type="DecrepitPartOfTown"/>
+		<city_style_blob logic_type="SlumGeneral" char_for_debug_map="U" desired_size_in_cells="10" percent_chance_of_spawning_diggers="20" district_type="Slum"/>
+		<city_style_blob logic_type="SuburbsGeneral" char_for_debug_map="S" desired_size_in_cells="12" percent_chance_of_spawning_diggers="20" district_type="Suburban"/>
+		<city_style_blob logic_type="ResidentialTallBuildings" char_for_debug_map="R" desired_size_in_cells="9" percent_chance_of_spawning_diggers="20" district_type="SecondaryCivicHub"/>
+		<city_style_blob logic_type="ResidentialTallBuildings" char_for_debug_map="R" desired_size_in_cells="6" percent_chance_of_spawning_diggers="20" district_type="SecondaryCivicHub"/>
+		<city_style_blob logic_type="MixedUseTallBuildings" char_for_debug_map="2" desired_size_in_cells="8" percent_chance_of_spawning_diggers="20" district_type="SecondaryCivicHub"/>
+		<city_style_blob logic_type="IndustrialAndWarehouses" char_for_debug_map="I" desired_size_in_cells="9" percent_chance_of_spawning_diggers="20" district_type="IndustrialDistrict"/>
+		<city_style_blob logic_type="IndustrialAndWarehouses" char_for_debug_map="I" desired_size_in_cells="6" percent_chance_of_spawning_diggers="20" district_type="IndustrialDistrict"/>
+		<city_style_blob logic_type="CommerceGeneral" char_for_debug_map="C" desired_size_in_cells="6" percent_chance_of_spawning_diggers="20" district_type="CommercialDistrict"/>
+		<city_style_blob logic_type="CommerceGeneral" char_for_debug_map="C" desired_size_in_cells="5" percent_chance_of_spawning_diggers="20" district_type="CommercialDistrict"/>
+		<general_probability logic_type="DowntownMidrise" weight="100" district_type="BasicDistrict"/>
+		<general_probability logic_type="IndustrialAndWarehouses" weight="15" district_type="BasicDistrict"/>
+		<general_probability logic_type="CommerceGeneral" weight="30" district_type="BasicDistrict"/>		
+		<general_probability logic_type="DowntownCityArea" weight="10" district_type="BasicDistrict"/>
+		<general_probability logic_type="ResidentialTallBuildings" weight="10" district_type="BasicDistrict"/>
+		<general_probability logic_type="SlumGeneral" weight="4" district_type="BasicDistrict"/>
+		<general_probability logic_type="DecrepitPartOfTown" weight="2" district_type="BasicDistrict"/>
+	</city_style>
+
+	<city_style id="Industrial" display_name="Industrial"
+		description="The downtown and suburbs are typically much smaller, and there are far more industrial, slum, and decrepit sections to the city."
+		city_width_in_cells="28" city_height_in_cells="16"
+		required_traditional_hole_cells="80" main_logic_attempt_count="300">
+		<macro_style_cell level_type="MiniTileExtSpaceport" desired_count="1" district_type="Spaceport"/>
+		<macro_style_cell level_type="MiniTileExtAirportA" desired_count="1" district_type="BasicDistrict"/>
+		<macro_style_cell level_type="MiniTileExtAirportB" desired_count="2" district_type="BasicDistrict" />
+		<macro_style_cell level_type="MiniTileExtMilitaryBaseLrgA" desired_count="5" district_type="MilitaryBase" />
+		<macro_style_cell level_type="MiniTileExtNuclearSiloA" desired_count="1" district_type="NuclearSilo" />
+		<macro_style_cell level_type="MiniTileExtDeepSpaceRadioTelescopeA" desired_count="1" district_type="ScientificResearch" />
+		<required_hole_filler_cell level_type="MiniTileExtOilMiningA" required_minimum="6" district_type="BasicDistrict" />
+		<required_hole_filler_cell level_type="MiniTileExtPowerNuclearA" required_minimum="4" district_type="NuclearPowerPlant" />
+		<required_hole_filler_cell level_type="MiniTileExtFarmA" required_minimum="3" district_type="BasicDistrict" />
+		<required_hole_filler_cell level_type="MiniTileExtMilitaryBaseA" required_minimum="2" district_type="BasicDistrict" />
+		<required_hole_filler_cell level_type="MiniTileExtCryopolisA" required_minimum="1" district_type="BasicDistrict" />
+		<secondary_randomized_hole_filler_cell level_type="MiniTileExtFarmA" weight="200" district_type="BasicDistrict" />
+		<secondary_randomized_hole_filler_cell level_type="MiniTileExtMiningAndScienceA" weight="400" district_type="BasicDistrict" />
+		<secondary_randomized_hole_filler_cell level_type="MiniTileExtMilitaryBaseA" weight="400" district_type="BasicDistrict" />
+		<secondary_randomized_hole_filler_cell level_type="MiniTileExtOilMiningA" weight="200" district_type="BasicDistrict" />
+		<secondary_randomized_hole_filler_cell level_type="MiniTileExtCommStationA" weight="4" district_type="CommStation" />
+		<secondary_randomized_hole_filler_cell level_type="MiniTileExtPowerNuclearA" weight="30" district_type="NuclearPowerPlant" />
+		<city_style_blob logic_type="DowntownCityCenter" char_for_debug_map="1" desired_size_in_cells="15" percent_chance_of_spawning_diggers="20" district_type="CityCenter"/>
+		<city_style_blob logic_type="DecrepitPartOfTown" char_for_debug_map="A" desired_size_in_cells="16" percent_chance_of_spawning_diggers="10" district_type="DecrepitPartOfTown"/>
+		<city_style_blob logic_type="SlumGeneral" char_for_debug_map="U" desired_size_in_cells="22" percent_chance_of_spawning_diggers="20" district_type="Slum"/>
+		<city_style_blob logic_type="SuburbsGeneral" char_for_debug_map="S" desired_size_in_cells="6" percent_chance_of_spawning_diggers="20" district_type="Suburban"/>
+		<city_style_blob logic_type="ResidentialTallBuildings" char_for_debug_map="R" desired_size_in_cells="6" percent_chance_of_spawning_diggers="20" district_type="SecondaryCivicHub"/>
+		<city_style_blob logic_type="ResidentialTallBuildings" char_for_debug_map="R" desired_size_in_cells="3" percent_chance_of_spawning_diggers="20" district_type="SecondaryCivicHub"/>
+		<city_style_blob logic_type="MixedUseTallBuildings" char_for_debug_map="2" desired_size_in_cells="8" percent_chance_of_spawning_diggers="20" district_type="SecondaryCivicHub"/>
+		<city_style_blob logic_type="IndustrialAndWarehouses" char_for_debug_map="I" desired_size_in_cells="19" percent_chance_of_spawning_diggers="30" district_type="IndustrialDistrict"/>
+		<city_style_blob logic_type="IndustrialAndWarehouses" char_for_debug_map="I" desired_size_in_cells="12" percent_chance_of_spawning_diggers="30" district_type="IndustrialDistrict"/>
+		<city_style_blob logic_type="CommerceGeneral" char_for_debug_map="C" desired_size_in_cells="6" percent_chance_of_spawning_diggers="20" district_type="CommercialDistrict"/>
+		<city_style_blob logic_type="CommerceGeneral" char_for_debug_map="C" desired_size_in_cells="5" percent_chance_of_spawning_diggers="20" district_type="CommercialDistrict"/>
+		<general_probability logic_type="DowntownMidrise" weight="50" district_type="BasicDistrict"/>
+		<general_probability logic_type="IndustrialAndWarehouses" weight="30" district_type="BasicDistrict"/>
+		<general_probability logic_type="CommerceGeneral" weight="15" district_type="BasicDistrict"/>
+		<general_probability logic_type="DowntownCityArea" weight="5" district_type="BasicDistrict"/>
+		<general_probability logic_type="ResidentialTallBuildings" weight="5" district_type="BasicDistrict"/>
+		<general_probability logic_type="SlumGeneral" weight="8" district_type="BasicDistrict"/>
+		<general_probability logic_type="DecrepitPartOfTown" weight="4" district_type="BasicDistrict"/>
+	</city_style>
+
+</root>

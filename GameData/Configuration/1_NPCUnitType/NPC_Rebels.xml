@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--RebelStrikeforce
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="RebelStrikeforce" display_name="Rebel Strikeforce"
+		description="Group of rebel infantry making an aggressive action."
+		icon_scale="0.7" shape_icon_name="FlatSkillB_flag_black" shape_icon_color="#ffffff"
+		vis_drawing_tag="RebelStrikeforce" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="18"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="RebelGunslingerShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="RebelMidleveReinforcements,RebelStrikeforce" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="12,15" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="280,300" />
+		<actor_data data_type="ActorPower" base_range="72,78" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="UnitMorale" base_range="960,990" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<npc_unit_type id="RebelStrikeforceExtraAP" copy_from="RebelStrikeforce"
+		deaths_reduce_statistic="">
+		<actor_data data_type="ActorArmorPiercing" base_range="350,350" />
+	</npc_unit_type>
+
+	<!--RebelGunslinger
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="RebelGunslinger" display_name="Rebel Gunslinger"
+		description="Group of elite rebels with rifles and identity-concealing armor."
+		icon_scale="0.7" shape_icon_name="FlatSkillB_flag_black" shape_icon_color="#ffffff"
+		vis_drawing_tag="RebelGunslinger" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="42"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="RebelGunslingerShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="RebelMidleveReinforcements,RebelGunslinger" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="24,30" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="540,600" />
+		<actor_data data_type="ActorPower" base_range="212,238" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="UnitMorale" base_range="960,990" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<npc_unit_type id="RebelGunslingerExtraAP" copy_from="RebelGunslinger"
+		deaths_reduce_statistic="">
+		<actor_data data_type="ActorArmorPiercing" base_range="450,450" />
+	</npc_unit_type>
+
+	<!--RebelBreacher
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="RebelBreacher" display_name="Rebel Breacher"
+		description="Group of elite rebels with anti-structural rounds and identity-concealing armor."
+		icon_scale="0.7" shape_icon_name="FlatSkillB_flag_black" shape_icon_color="#ffffff"
+		vis_drawing_tag="RebelSlayer" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="42"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="RebelGunslingerShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="RebelMidleveReinforcements" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="24,30" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="540,600" />
+		<actor_data data_type="ActorPower" base_range="312,338" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="UnitMorale" base_range="960,990" />
+		<default_feat feat="StructureCracker" value="11.2"/>
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<npc_unit_type id="RebelBreacherExtraAP" copy_from="RebelBreacher"
+		deaths_reduce_statistic="">
+		<actor_data data_type="ActorArmorPiercing" base_range="700,700" />
+	</npc_unit_type>
+
+	<!--RebelLeadership
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="RebelLeadership" display_name="Rebel Leadership"
+		description="Group of rebel leaders who coordinate together. There are multiple of them for the sake of redundancy within their group."
+		icon_scale="0.7" shape_icon_name="FlatSkillB_flag_black" shape_icon_color="#ffffff"
+		vis_drawing_tag="RebelLeader" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="13"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="RebelGunslingerShot"
+		radius_for_collisions="0.5" height_for_collisions="0.9"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="24,30" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="940,1100" />
+		<actor_data data_type="ActorPower" base_range="312,338" />
+		<actor_data data_type="ActorArmorPiercing" base_range="400,400" />
+		<actor_data data_type="UnitMorale" base_range="1960,1990" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<npc_unit_type id="RebelLeadershipExtraAP" copy_from="RebelLeadership"
+		deaths_reduce_statistic="">
+		<actor_data data_type="ActorArmorPiercing" base_range="900,900" />
+	</npc_unit_type>
+
+	<!--todo RebelSlayer-->
+	<!--todo RebelGhost-->
+	<!--todo RebelSniper-->
+	<!--todo RebelMech-->
+
+	<!--RebelObserver
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="RebelObserver" display_name="Rebel Observer"
+		description="Noncombatant citizen who participates in a rebel cause by providing street-level intel."
+		icon_scale="0.7" shape_icon_name="SF2_Binoculars" shape_icon_color="#ffffff"
+		vis_drawing_tag="RebelObserver" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		deaths_count_as_murders="true"
+		tags="RebelObserver" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="UnitMorale" base_range="120,128" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<!--Wastelander
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="Wastelander" display_name="Wastelander"
+		description="Reliant on stealth and silence"
+		icon_scale="0.7" shape_icon_name="WEmblem186" shape_icon_color="#ffffff"
+		vis_drawing_tag="Wastelander" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="7"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="30,60" />
+		<actor_data data_type="ActorHP" base_range="105,360" />
+		<actor_data data_type="ActorPower" base_range="185,205" />
+		<actor_data data_type="UnitMorale" base_range="860,990" />
+		<default_perk perk="Fearless" unlock="" />
+	</npc_unit_type>
+
+	<!--NomadSniper
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="NomadSniper" display_name="Nomad Sniper"
+		description="The strongest and most-aggressive protectors of the nomad families."
+		icon_scale="0.7" shape_icon_name="AN_GunSniperRifle2" shape_icon_color="#ffffff"
+		vis_drawing_tag="NomadSniper" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="4"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		kills_by_player_increase_statistic2="SnipersKilledByYou"
+		on_normal_attack="MilitarySniperShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="NomadSniper" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="90,90" />
+		<actor_data data_type="ActorMoveRange" base_range="12,16" />
+		<actor_data data_type="ActorHP" base_range="105,160" />
+		<actor_data data_type="ActorPower" base_range="185,205" />
+		<actor_data data_type="UnitHackingSkill" base_range="35,40" />
+		<actor_data data_type="UnitMorale" base_range="660,790" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+
+	<!--todo NomadWarrior-->
+	<!--todo NomadGunner-->
+
+	<!--LostKidGrunt
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="LostKidGrunt" display_name="Grunt"
+		description="Lost kids that help with construction and combat as they need to."
+		icon_scale="0.7" shape_icon_name="FlatSkillB_flag_black" shape_icon_color="#ffffff"
+		vis_drawing_tag="LostKidGrunt" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="42"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="LostKidGruntShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		deaths_count_as_attempted_murders="true" squadmates_are_not_lost_from_damage="true"
+		tags="LostKidGrunt" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="18,22" />
+		<actor_data data_type="ActorMoveRange" base_range="30,34" />
+		<actor_data data_type="ActorHP" base_range="310,350" />
+		<actor_data data_type="ActorPower" base_range="122,138" />
+		<actor_data data_type="UnitMorale" base_range="360,390" />
+	</npc_unit_type>
+
+	<!--LostKidSupport
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="LostKidSupport" display_name="Support"
+		description="More-experienced lost kids that help support the younger ones in their work, and particularly in combat as-needed."
+		icon_scale="0.7" shape_icon_name="FlatSkillB_flag_black" shape_icon_color="#ffffff"
+		vis_drawing_tag="LostKidSupport" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="27"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="LostKidSupportShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		deaths_count_as_attempted_murders="true" squadmates_are_not_lost_from_damage="true"
+		tags="LostKidSupport" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="31,31" />
+		<actor_data data_type="ActorMoveRange" base_range="30,34" />
+		<actor_data data_type="ActorHP" base_range="370,400" />
+		<actor_data data_type="ActorPower" base_range="142,158" />
+		<actor_data data_type="UnitHackingSkill" base_range="50,60" />
+		<actor_data data_type="UnitMorale" base_range="460,490" />
+	</npc_unit_type>
+
+	<!--LostKidBoss
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="LostKidBoss" display_name="Boss"
+		description="The oldest of the lost kids. Genuinely skilled at combat, and not bad at tactics. They keep all the younger ones safe. Any kid that lives long enough is likely to attain this title."
+		icon_scale="0.7" shape_icon_name="FlatSkillB_flag_black" shape_icon_color="#ffffff"
+		vis_drawing_tag="LostKidBoss" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="18"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="RebelGunslingerShot"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		deaths_count_as_attempted_murders="true" squadmates_are_not_lost_from_damage="true"
+		tags="LostKidBoss" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="24,30" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="440,500" />
+		<actor_data data_type="ActorPower" base_range="162,188" />
+		<actor_data data_type="UnitHackingSkill" base_range="5,10" />
+		<actor_data data_type="UnitMorale" base_range="560,590" />
+	</npc_unit_type>
+	
+</root>

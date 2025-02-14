@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Highest Possible Importance (sort order 99 or lower)
+		*********************************************************************************-->
+
+	<actor_status id="TemporaryArmorPiercing" display_name="Temporary Armor-Piercing"
+		description="Armor-piercing increased."
+		strategy_tip_optional=""
+		icon_name="Pw_ArmorPiercingBullet" icon_color="#FF7A3C" tooltip_color="ActorStatus_MinorGood"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorArmorPiercing" multiplied_with_intensity="1" />
+	</actor_status>
+	
+	<actor_status id="TemporaryArmorPiercingMissiles" display_name="Temporary Armor-Piercing Missiles"
+		description="Armor-piercing increased."
+		strategy_tip_optional=""
+		icon_name="FlatSkillC153" icon_color="#FF7A3C" tooltip_color="ActorStatus_MinorGood"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorArmorPiercing" multiplied_with_intensity="1" />
+	</actor_status>
+
+	<actor_status id="ServiceDisruption" display_name="Service Disruption"
+		description="Incursion attempts and denial of service attacks are launched en masse, with a trace back to this unit."
+		strategy_tip_optional="This is distracting and concerning to most enemy units. Many of them will turn their attention to this unit.
+One or more units running interference like this helps keep other units alive."
+		icon_name="FlatSkull_23" icon_color="#72FF3C" tooltip_color="ActorStatus_MinorGood"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<blocks perk="VehicleBlendingInAirTraffic" value="true" />
+		<blocks perk="BlendingIn" value="true" />
+		<blocks perk="ObscuredByClothing" value="true" />
+		<blocks perk="PMCAppearance" value="true" />
+		<blocks perk="PMCOfficerAppearance" value="true" />
+		<blocks perk="MilitaryAppearance" value="true" />
+		<blocks perk="Shadowdweller" value="true" />
+		<blocks perk="ExpertShadowdweller" value="true" />
+		<blocks perk="Authoritative" value="true" />
+		<blocks perk="Adorable" value="true" />
+	</actor_status>
+	
+	<actor_status id="IsBeingExtracted" display_name="Is Being Extracted"
+		description="When the extraction finishes, you gain resources and the target is weakened."
+		strategy_tip_optional="The higher the intensity of this status you inflict on the target, the larger your yield."
+		icon_name="SI_Alien" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		badge_1_to_grant_when_fully_expires="AlreadyExtracted" does_extraction_for_player_when_fully_expires="true"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+	</actor_status>
+
+	<actor_status id="EnginesOffline" display_name="Engines Offline"
+		description="Movement reduced."
+		strategy_tip_optional=""
+		icon_name="SK_Engine3" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		badge_1_to_grant_when_fully_expires="HardenedEngines"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorMoveRange" multiplied_with_intensity="-1" />
+	</actor_status>
+
+	<actor_status id="MechHydraulicsDisrupted" display_name="Mech Hydraulics Disrupted"
+		description="Movement reduced."
+		strategy_tip_optional=""
+		icon_name="CS_Piston" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorMoveRange" multiplied_with_intensity="-0.3" />
+	</actor_status>
+
+	<actor_status id="WeaponsSystemsDisrupted" display_name="Weapons Systems Disrupted"
+		description="Attack reduced."
+		strategy_tip_optional=""
+		icon_name="SI_Machine_Gun11" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorPower" multiplied_with_intensity="-1" />
+	</actor_status>
+
+	<actor_status id="ArmorPlatingServicePanelsOpen" display_name="Armor Plating Service Panels Open"
+		description="Armor plating effectiveness lowered."
+		strategy_tip_optional=""
+		icon_name="AN_Kerchief" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorArmorPlating" multiplied_with_intensity="-2" />
+	</actor_status>
+	
+	<actor_status id="OnFire" display_name="On Fire"
+		description="Lowers health and morale."
+		strategy_tip_optional=""
+		icon_name="FlatSkillC149" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		badge_1_to_grant_when_fully_expires=""
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_per_turn_by_intensity actor_data_type="ActorHP" multiplied_with_intensity="-0.1" />
+		<change_per_turn_by_intensity actor_data_type="UnitMorale" multiplied_with_intensity="-1" />
+	</actor_status>
+
+	<actor_status id="EmotionalOverload" display_name="Emotional Overload"
+		description="Attack and hacking skill reduced."
+		strategy_tip_optional=""
+		icon_name="FlatSkillC162" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorPower" multiplied_with_intensity="-1" />
+		<change_to_maximum_by_intensity actor_data_type="UnitHackingSkill" multiplied_with_intensity="-1" />
+	</actor_status>
+
+	<actor_status id="Blindness" display_name="Blindness"
+		description="Attack and range reduced."
+		strategy_tip_optional=""
+		icon_name="FlatSkull_12" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorMoveRange" multiplied_with_intensity="-2" />
+		<change_to_maximum_by_intensity actor_data_type="AttackRange" multiplied_with_intensity="-0.5" />
+		<change_to_maximum_by_intensity actor_data_type="ActorPower" multiplied_with_intensity="-0.8" />
+	</actor_status>
+
+	<actor_status id="DisconnectedFromNetwork" display_name="Disconnected From Network"
+		description="Hacking skill, hacking resistance, and bravery all reduced."
+		strategy_tip_optional=""
+		icon_name="SF2_Wifi_deactivated" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="UnitHackingSkill" multiplied_with_intensity="-2" />
+		<change_to_maximum_by_intensity actor_data_type="NPCHackingResistance" multiplied_with_intensity="-2" />
+		<change_per_turn_by_intensity actor_data_type="UnitMorale" multiplied_with_intensity="-0.3" />
+	</actor_status>
+
+	<actor_status id="CoveredInSpiders" display_name="Covered In Spiders"
+		description="Lowers range and attack, minor health damage, and major morale damage."
+		strategy_tip_optional=""
+		icon_name="SW_Spider" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorMoveRange" multiplied_with_intensity="-0.6" />
+		<change_to_maximum_by_intensity actor_data_type="AttackRange" multiplied_with_intensity="-0.5" />
+		<change_to_maximum_by_intensity actor_data_type="ActorPower" multiplied_with_intensity="-0.8" />
+		<change_per_turn_by_intensity actor_data_type="ActorHP" multiplied_with_intensity="-0.1" />
+		<change_per_turn_by_intensity actor_data_type="UnitMorale" multiplied_with_intensity="-1.3" />
+	</actor_status>
+
+	<actor_status id="CoveredInBees" display_name="Covered In Bees"
+		description="Lowers range and attack, minor health damage, and major morale damage."
+		strategy_tip_optional=""
+		icon_name="SW_Bee1" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorMoveRange" multiplied_with_intensity="-0.6" />
+		<change_to_maximum_by_intensity actor_data_type="AttackRange" multiplied_with_intensity="-0.5" />
+		<change_to_maximum_by_intensity actor_data_type="ActorPower" multiplied_with_intensity="-0.8" />
+		<change_per_turn_by_intensity actor_data_type="ActorHP" multiplied_with_intensity="-0.05" />
+		<change_per_turn_by_intensity actor_data_type="UnitMorale" multiplied_with_intensity="-1.1" />
+	</actor_status>
+
+	<actor_status id="CoveredInSaberBees" display_name="Covered In Saber Bees"
+		description="Lowers range and attack, minor health damage, and major morale damage."
+		strategy_tip_optional=""
+		icon_name="SW_Bee" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorMoveRange" multiplied_with_intensity="-0.7" />
+		<change_to_maximum_by_intensity actor_data_type="AttackRange" multiplied_with_intensity="-0.6" />
+		<change_to_maximum_by_intensity actor_data_type="ActorPower" multiplied_with_intensity="-0.9" />
+		<change_per_turn_by_intensity actor_data_type="ActorHP" multiplied_with_intensity="-0.2" />
+		<change_per_turn_by_intensity actor_data_type="UnitMorale" multiplied_with_intensity="-2" />
+	</actor_status>
+
+	<actor_status id="ObscuredByMicrobuilderCloud" display_name="Obscured By Microbuilder Cloud"
+		description="Lowers incoming damage by the strength of the cloud as a percentage, up to 80%."
+		strategy_tip_optional=""
+		icon_name="SF2_Cloud" icon_color="#B956FC" tooltip_color="ActorStatus_MinorGood" draw_as_invisible_even_though_not_cloaked="true"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+	</actor_status>
+
+	<actor_status id="Shocked" display_name="Shocked"
+		description="Lowers attack power."
+		strategy_tip_optional=""
+		icon_name="FlatSkillC169" icon_color="#FFD13C" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorPower" multiplied_with_intensity="-1" />
+	</actor_status>
+
+	<actor_status id="WeaponsDisrupted" display_name="Weapons Disrupted"
+		description="Lowers attack power by a percentage of original attack power."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_Skill122" icon_color="#D66834" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorPower" multiplied_with_intensity="-1" is_handled_as_percentage_shift="true" />
+	</actor_status>
+
+	<actor_status id="HackerWeakened" display_name="Hacker Weakened"
+		description="Lowers hacker skill by a percentage of original attack power."
+		strategy_tip_optional=""
+		icon_name="Pw_BlackMarketIncognito" icon_color="#C834D6" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="UnitHackingSkill" multiplied_with_intensity="-1" is_handled_as_percentage_shift="true" />
+	</actor_status>
+
+	<actor_status id="PinnedDownBySuppressingFire" display_name="Pinned Down By Suppressing Fire"
+		description="Both attack range and movement range are reduced."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_Skill122" icon_color="#D66834" tooltip_color="ActorStatus_Bad" takes_highest_version_rather_than_stacking="true"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="AttackRange" multiplied_with_intensity="-1" is_handled_as_percentage_shift="true" />
+		<change_to_maximum_by_intensity actor_data_type="ActorMoveRange" multiplied_with_intensity="-1" is_handled_as_percentage_shift="true" />
+	</actor_status>
+
+	<actor_status id="SecurityCamerasOffline" display_name="Security Cameras Offline"
+		description="This disruption in the building the unit is infiltrating makes their job much easier."
+		strategy_tip_optional=""
+		icon_name="SI_Surveillance" icon_color="#7FD3E1" tooltip_color="ActorStatus_MinorGood"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorAgility" multiplied_with_intensity="1" />
+	</actor_status>
+
+	<actor_status id="VentilationFansOffline" display_name="Ventilation Fans Offline"
+		description="This disruption in the building the unit is infiltrating makes their job much easier."
+		strategy_tip_optional=""
+		icon_name="SK_Fan" icon_color="#B97FE1" tooltip_color="ActorStatus_MinorGood"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorAgility" multiplied_with_intensity="1" />
+	</actor_status>
+
+	<actor_status id="SecurityDoorsOpen" display_name="Security Doors Open"
+		description="This disruption in the building the unit is infiltrating makes their job much easier."
+		strategy_tip_optional=""
+		icon_name="WEmblem259" icon_color="#B97FE1" tooltip_color="ActorStatus_MinorGood"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorAgility" multiplied_with_intensity="1" />
+	</actor_status>
+
+	<actor_status id="CapturedInTrap" display_name="Captured In Trap"
+		description="This unit will be removed from the battlefield and put into your custody."
+		strategy_tip_optional=""
+		icon_name="WEmblem249" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorMoveRange" multiplied_with_intensity="-100" />
+		<change_to_maximum_by_intensity actor_data_type="AttackRange" multiplied_with_intensity="-100" />
+		<change_to_maximum_by_intensity actor_data_type="ActorPower" multiplied_with_intensity="-100" />
+	</actor_status>
+
+	<actor_status id="HeadedForTormentVessel" display_name="Headed For Torment Vessel"
+		description="This unit will be removed from the battlefield and put into your torment vessels."
+		strategy_tip_optional=""
+		icon_name="SomethingTwins" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorMoveRange" multiplied_with_intensity="-100" />
+		<change_to_maximum_by_intensity actor_data_type="AttackRange" multiplied_with_intensity="-100" />
+		<change_to_maximum_by_intensity actor_data_type="ActorPower" multiplied_with_intensity="-100" />
+	</actor_status>
+
+	<actor_status id="NetworkAssistedTargeting" display_name="Network-Assisted Targeting"
+		description="Attack power is increased by a flat amount."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_Target12" icon_color="#FF8880" tooltip_color="ActorStatus_MinorGood"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_to_maximum_by_intensity actor_data_type="ActorPower" multiplied_with_intensity="1" />
+	</actor_status>
+
+	<actor_status id="NetworkShield" display_name="Network Shield"
+		description="Reduce each incoming attack by a flat amount."
+		strategy_tip_optional=""
+		icon_name="SI_Cyber_Security4" icon_color="#4ECEEC" tooltip_color="ActorStatus_MinorGood"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.1">
+	</actor_status>
+
+	<!--Very High Importance (sort order 100+)
+		*********************************************************************************-->
+	
+	<!--High Importance (sort order 200+)
+		*********************************************************************************-->
+
+	<!--Normal Importance (sort order 300+)
+		*********************************************************************************-->
+	
+	<!--Low Importance (sort order 400+)
+		*********************************************************************************-->
+	
+</root>

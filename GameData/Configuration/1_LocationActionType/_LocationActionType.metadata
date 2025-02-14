@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="location_action">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information, and this one is optional because so much other information is provided already in these tips."/>
+	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the action logic is in."/>
+
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the action logic in the specified external dll."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+	
+	<attribute key="icon_scale" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="true" tooltip="Scale multiplier of the icon."/>
+
+	<attribute key="color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the icon of this project?"/>
+	<attribute key="color_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, for the glowing version."/>
+	<attribute key="color_hovered_hdr_intensity" type="float-textbox" min="0.01" max="10" default="1" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, when being hovered."/>
+
+	<attribute key="on_arrive" type="node-dropdown" node_source="VisParticleAndSoundUsage" content_width_px="200" is_required="true"
+		tooltip="The sound effect and possibly particle effect to play when the unit arrives at its destination and triggers this action." />
+
+	<attribute key="visibility_style" type="string-dropdown" is_required="true" default="IsInoffensive" content_width_px="200"
+		tooltip="How the visibility of the unit taking the action is affected by doing the action.">
+		<option>IsInoffensive</option>
+		<option>IsMovement</option>
+		<option>IsAttack</option>
+		<option>IsMoveAndAttack</option>
+		<option>MakesNoChange</option>
+		<option>IsInteractWithNPC</option>
+		<option>IsMoveAndInteractWithNPC</option>
+	</attribute>
+
+	<attribute key="is_done_from_a_distance" type="bool" default="false"
+		tooltip="If this is true, then this action is taken from the current location of the unit considering it; they do not have to move to it."/>
+	<attribute key="can_be_done_by_androids" type="bool" default="false"
+		tooltip="If this is true, then this action can be done by androids."/>
+	<attribute key="can_be_done_by_mechs" type="bool" default="false"
+		tooltip="If this is true, then this action can be done by mechs."/>
+	<attribute key="can_be_done_by_vehicles" type="bool" default="false"
+		tooltip="If this is true, then this action can be done by vehicles."/>
+	
+	<attribute key="skip_acting_as_if_action_is_here_for_line_color" type="bool" default="false"
+		tooltip="If this is true, then this action will show as a dimmed line."/>
+	<attribute key="skip_threat_lines_at_destination" type="bool" default="false"
+		tooltip="If this is true, then threat lines will not be drawn against the proposed location if this action will be done. This should be true for things that make the unit invisible in some way.
+Attack of opportunity threat lines WILL still be drawn."/>
+	<attribute key="can_appear_even_after_final_doom" type="bool" default="false" is_required="false"
+		tooltip="If true, then this can still appear after the final doom has happened." />
+	<attribute key="only_appears_after_final_doom" type="bool" default="false"
+		tooltip="If this is true, then this ONLY appears after the final doom."/>
+
+	<attribute key="skip_normal_action_tooltip" type="bool" default="false"
+		tooltip="If this is true, then the regular action tooltip won't be shown with the name and such for this action."/>
+
+	<attribute key="skip_costs_if_at_same_location" type="bool" default="false"
+		tooltip="If this is true, and this is to the same building as before, then skip any costs of doing it again.  Mainly for things like opening and closing events repeatedly."/>
+	<attribute key="skip_blocked_by_security_clearance" type="bool" default="false"
+		tooltip="If this is true, and the stance of the unit would prevent them from moving to where they don't have security clearance, that will be waived for this event."/>
+	<attribute key="skip_change_street_sense_seed_after" type="bool" default="false"
+		tooltip="If this is true, then StreetSense won't be recalculated after doing this action type."/>
+
+	<sub_node id="city_statistic_change">
+		<attribute key="statistic" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="true"
+			tooltip="This increases some city statistic. Which one?" />
+		<attribute key="value" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+			tooltip="What is amount the data will be changed by?"/>
+	</sub_node>
+	<sub_node id="mta_statistic_change">
+		<attribute key="statistic" type="node-dropdown" node_source="MetaStatistic" content_width_px="200" is_required="true"
+			tooltip="This increases some meta statistic. Which one?" />
+		<attribute key="value" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+			tooltip="What is amount the data will be changed by?"/>
+	</sub_node>
+
+	<attribute key="street_sense_collections" type="node-list" node_source="StreetSenseCollection" content_width_px="300" is_required="true" linebreak_before="Always" linebreak_after="Always"
+		tooltip="What street-sense collections is this entry part of?" />
+	
+	<sub_node id="math_int">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="int_min" type="int-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="int_max" type="int-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+
+	<sub_node id="math_float">
+		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
+			tooltip="For finding this when we need to refer to it." />
+		<attribute key="float_min" type="float-textbox" is_required="true" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="What is the balance number being specified here?  This is required, and if only one is specified, this will be used." />
+		<attribute key="float_max" type="float-textbox" is_required="false" min="-20000000" max="20000000" default="0" content_width_px="80"
+			tooltip="If this is a range, what is the max number? Optional. If set to -9999999 or less, or omitted, then it will copy the value from float_min." />
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
+	</sub_node>
+	
+</root>

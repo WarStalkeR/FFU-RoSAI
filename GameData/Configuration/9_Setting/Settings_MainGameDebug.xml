@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<!-- Debug -->
+
+	<setting id="Debug_SkipEarlyAccessMessage" category="Debug" display_name="Skip Early Access Message"
+		  type="BoolToggle" default_bool="false" scope="MainGameOnly" skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+		  description="To skip the message about early access that pops up on game start." />
+	
+	<setting id="Debug_AutoPartialXmlReloadOnFocus" category="Debug" display_name="Auto Partial Xml Reload On Focus"
+		  type="BoolToggle" default_bool="false" scope="MainGameOnly" skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+		  description="Useful when making xml changes that can be tested without restarting the program. Turning this on causes an automatic reload of that xml any time the program is focused." />
+
+	<!--Debug: DebugVisualization-->
+	
+	<setting id="Debug_PauseVehicles" category="Debug" subcategory="DebugVisualization" display_name="Pause Ground Vehicles"
+		  type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Stops vehicles from moving so that identifying direction issues can be more easily located, as the vehicle won't move from its starting position." />
+
+	<setting id="Debug_ShowRoadDetails" category="Debug" subcategory="DebugVisualization" display_name="Show Road Details"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Write outputs relating to the roads into their debug info, which will then show in tooltips." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowPathfinding" category="Debug" subcategory="DebugVisualization" display_name="Display Pathfinding"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Displays paths for drones, etc." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowRoadNetwork" category="Debug" subcategory="DebugVisualization" display_name="Display Road Network"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Displays the network of roads and buildings" skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowEntityRadii" category="Debug" subcategory="DebugVisualization" display_name="Display Entity Radii"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Display the collision bounds for entities." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowEntitySubCollidables" category="Debug" subcategory="DebugVisualization" display_name="Display Entity Sub-Collidables"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Display the sub-collidable bounds for certain entities that have them." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+	
+	<setting id="Debug_ShowEntityShotEmissionPoints" category="Debug" subcategory="DebugVisualization" display_name="Display Entity Shot Emission Points"
+		type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Display the points where shots can emerge from entities, if it's different from center of mass." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowOutdoorSpots" category="Debug" subcategory="DebugVisualization" display_name="Display Outdoor Spots"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Display the spots where units can be spawned not-on-buildings, and where npc units can move to." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<!-- Debug: MapRelated -->
+	
+	<setting id="Debug_LogTileCompletions" category="Debug" subcategory="MapRelated" is_advanced_setting="true" display_name="Log Tile Completions"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Log when each tile is completed, and when it completes all of its parts of population." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_MainGameMapgenLogging" category="Debug" subcategory="MapRelated" is_advanced_setting="true" display_name="Debug Mapgen Logging"
+		type="BoolToggle" default_bool="false" scope="MainGameOnly" description="This will produce a ton of logging for mapgen" skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_MainGameShowOBBOfSingleObjectUnderCursor" category="Debug" subcategory="MapRelated" is_advanced_setting="true" display_name="Show OBB Of Single Object Under Cursor"
+		type="BoolToggle" default_bool="false" scope="MainGameOnly" description="For debugging purposes, show the Oriented Bounding Box (OBB) when you hover over a single object." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<!-- Debug: DebugTooltips -->
+	<setting id="MainGameShowHoveredPlaceableTooltip" category="Debug" subcategory="DebugTooltips" is_advanced_setting="true" display_name="Show Tooltip For Hovered World Item"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="In the bottom right of the screen, information about the hovered world item." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="MainGameShowHoveredWorldCellTooltip" category="Debug" subcategory="DebugTooltips" is_advanced_setting="true" display_name="Show Tooltip For Hovered World Cell"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="In the bottom right of the screen, information about the hovered world tile cell." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="MainGameDebugMousePosition" category="Debug" subcategory="DebugTooltips" is_advanced_setting="true" display_name="Debug Mouse Position"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="In the bottom right of the screen, show debug info for where the mouse is on-screen and in-world, in the various coordinate systems." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowProjectInnards" category="Debug" subcategory="DebugTooltips" display_name="Display Project Innards"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Display some debug innards of projects in their tooltips, which are not meant for regular players." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowDebugStatistics" category="Debug" subcategory="DebugTooltips" display_name="Display Debug Statistics"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Display some debug statistics which are not normally for players to see." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowNPCGoals" category="Debug" subcategory="DebugTooltips" display_name="Display NPC Goals"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Display the lines projecting where NPCs want to go." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowPOIGuardStats" category="Debug" subcategory="DebugTooltips" display_name="Display POI Guard Stats"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Display the stats about how many guards are at each POI versus the minimum or maximum." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+	
+	<setting id="Debug_ShowNPCCreationReason" category="Debug" subcategory="DebugTooltips" display_name="Display NPC Creation Reason"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Display a line on the tooltip explaining why this NPC was added." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowNPCAggroValues" category="Debug" subcategory="DebugTooltips" display_name="Display NPC Aggro Values"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Display all of the aggro values for any npc unit hovered in a tooltip." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowTurnVariablesInPerformanceMenu" category="Debug" subcategory="DebugTooltips" display_name="Show Turn Variables In Performance Menu"
+		type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Additional info will go to the performance menu about the state of moving between turns." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+	
+	<setting id="Debug_ShowAudioSourceDetailsInPerformanceMenu" category="Debug" subcategory="DebugTooltips" display_name="Show Audio Source Details In Performance Menu"
+		type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Additional info will go to the performance menu about the every audio source currently making a sound." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowBlockedMusicDetailsInPerformanceMenu" category="Debug" subcategory="DebugTooltips" display_name="Show Blocked Music Details In Performance Menu"
+		type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Additional info will go to the performance menu about which music tracks have not yet been unlocked, and how many of those there are." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_ShowMusicTagInPerformanceMenu" category="Debug" subcategory="DebugTooltips" display_name="Show Active Music Tag In Performance Menu"
+		type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Below the current music track, it shows what the current music tag is, if there is one." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<!-- Debug: GameLogging -->
+
+	<setting id="Debug_LogNPCCohortActivityDecisions" category="Debug" subcategory="GameLogging" display_name="Log NPC Team Activity Decisions"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="The game will log information each turn about the decisions to start npc cohort activities, or why they were omitted." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_LogNPCUnitLogicToTooltip" category="Debug" subcategory="GameLogging" display_name="Log NPC Unit Logic To Tooltips"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="The game will write information on NPC unit decision-making to the actual tooltips of those units.
+So there won't be anything in the game log for this; you need to mouseover a specific npc unit to see what they were up to." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_LogExtraTurnTimingsInfo" category="Debug" subcategory="GameLogging" display_name="Log Extra Turn Timings Info"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Additional info about the per-turn timings will be logged to the performance menu." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_DoDumpEveryTurn" category="Debug" subcategory="GameLogging" display_name="Dump Every Turn"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Each turn, various information will be logged to the /PlayerData/Dumps/Turns/ folder." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_DoLogNPCTargetingToTooltip" category="Debug" subcategory="GameLogging" display_name="Log NPC Targeting Passes To Tooltips"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Each targeting pass, various information will be logged to the tooltip for each NPC.
+This does not help you see the order in which NPCs made decisions, but it lets you examine a single NPC's decision-making." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_DoDumpNPCTargetingInRangeOfCameraOnly" category="Debug" subcategory="GameLogging" display_name="Dump NPC Targeting Passes (In Range Of Camera Only)"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Each targeting pass, various information will be logged to the /PlayerData/Dumps/NPCTargeting/ folder, but only for NPCs fairly near to the camera to cut down on clutter." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_DoDumpNPCTargetingAll" category="Debug" subcategory="GameLogging" display_name="Dump NPC Targeting Passes (All)"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Each targeting pass, various information will be logged to the /PlayerData/Dumps/NPCTargeting/ folder, for ever NPC on the entire map." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_LogUpgradeRewardGroupsOnSaveAndLoad" category="Debug" subcategory="GameLogging" display_name="Log Upgrade Reward Groups On Save And Load"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Allows for correctness checking. Goes into the main log when turned on." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+	
+	<setting id="Debug_MainGameBuildingDebug" category="Debug" subcategory="GameLogging" display_name="Enable Main Game Building Debug output"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="The game will log information about what the buildings are doing" skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_MainGameLogBuildingOutputProfits" category="Debug" subcategory="GameLogging" is_advanced_setting="true" display_name="Log Building Output Profits On Game Start"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="The game will log all of the profit margins at the start." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_MainGameSimLoopDebug" category="Debug" subcategory="GameLogging" is_advanced_setting="true" display_name="Sim Loop Debug"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="The game will give debug logging related to the main Sim Loop." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+	
+	<setting id="Debug_MainGameMonitorPerformance" category="Debug" subcategory="GameLogging" is_advanced_setting="true" display_name="Performance Data To Log"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="The game will log performance data to the Debug Log" skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_CityDistrictDetailLogging" category="Debug" subcategory="GameLogging" display_name="City District Detail Logging"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="During map generation, the city district information will be logged in detail." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<setting id="Debug_LogAllMeshSizesOnLoad" category="Debug" subcategory="GameLogging" display_name="Log All Mesh Sizes On Load"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="For identifying meshes that may be larger than desirable, as targets for optimization." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
+	<!-- Debug: DebugOther -->
+	
+</root>

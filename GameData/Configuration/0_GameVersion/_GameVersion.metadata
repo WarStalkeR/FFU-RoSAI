@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="game_version">
+	
+	<attribute key="major_version" type="int-textbox" min="0" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
+		tooltip="The part of the version number before the decimal place"/>
+
+	<attribute key="minor_version" type="int-textbox" min="0" max="999" is_required="true" content_width_px="130" minimum_digits="3" linebreak_before="PreferNot" linebreak_after="Always"
+		tooltip="The part of the version number after the decimal place"/>
+
+	<attribute key="sub_version" type="int-textbox" min="0" max="999" is_required="false" content_width_px="130" linebreak_before="PreferNot" linebreak_after="Always"
+		tooltip="Optional additional version that allows for sub-differentiation more deeply than just the minor version does."/>
+
+	<attribute key="release_date_text" type="string" maxlength="100" is_localized="false" content_width_px="100" linebreak_before="Always" linebreak_after="Always"
+		tooltip="A human-readable date, NOT shown in the ui."/>
+
+	<attribute key="are_all_versions_older_than_this_invalid_for_world" type="bool" default="false"
+		tooltip="If true, then all older savegames than this version are considered broken." />
+	<attribute key="are_all_versions_older_than_this_invalid_for_profiles" type="bool" default="false"
+		tooltip="If true, then all older player profiles than this version are considered broken." />
+	<attribute key="are_all_versions_older_than_this_invalid_for_settings" type="bool" default="false"
+		tooltip="If true, then all older settings files than this version are considered broken." />
+	
+	<attribute key="savegames_from_this_version_are_broken_message" type="string-multiline" maxlength="1500" show_lines="6" is_localized="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is an explanation of why the saves from this version are broken, if they are."/>
+	
+</root>

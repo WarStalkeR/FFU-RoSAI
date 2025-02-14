@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="consumable_item">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible tip for how to use this resource."/>
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+
+	<attribute key="icon_color" type="string" minlength="6" maxlength="6" is_required="false" content_width_px="80"
+		tooltip="Hex code for a color that will be used for the shape icon."/>
+
+	<attribute key="consumable_intentionally_has_no_unlock" type="bool" default="false"
+		tooltip="If this is true, this consumable will be immediately visible without any need for unlocks. Otherwise it will error if an unlock is not set to unlock the consumable." />
+	<attribute key="must_hold_shift_to_stay_in_mode" type="bool" default="false"
+		tooltip="If this is true, then you have to hold shift to stay in the mode." />
+	<attribute key="always_show_strategic_tip" type="bool" default="false"
+		tooltip="If this is true, then the strategic tip is shown without the player needing to hold any extra keybinds." />
+	
+	<attribute key="is_locked_before_unlock" type="node-dropdown" is_required="false" node_source="Unlock" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players until the specified Unlock is invented." />
+	<attribute key="is_locked_before_dialog" type="node-dropdown" is_required="false" node_source="NPCDialog" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players until the specified dialog is finished." />
+	<attribute key="is_locked_when_none_of_resource" type="node-dropdown" is_required="false" node_source="ResourceType" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="This will not be visible to players if the player does not have at least one of this resource. Typically for special-case items." />
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the extra code for this consumable type is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the extra code for this consumable type in the specified external dll."/>
+	
+	<sub_node id="consumable_cost">
+		<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="Only valid for consumables, not for other resources." />
+		<attribute key="required" type="int-textbox" min="0" max="10000000" content_width_px="150" is_required="true"
+			tooltip="How much of this resource does it cost to create one unit of this consumable?  Set to zero to mod it out."/>
+	</sub_node>
+
+	<!--direct_use_consumable_data
+	*******************************************************************************************************-->
+	<sub_node id="direct_use_consumable_data">
+		<attribute key="status_to_apply" type="node-dropdown" node_source="ActorStatus" content_width_px="200" is_required="false"
+			tooltip="If this applies a status to the unit using it as a direct item, UpgradeInt status is applied?" />
+		<attribute key="status_intensity_general_source" type="node-dropdown" node_source="ActorStatus" content_width_px="200" is_required="false"
+			tooltip="If this applies a status to the unit using it as a direct item, what upgrade defines the intensity of the status?  This is one of two options. They can be used together." />
+		<attribute key="status_intensity_user_source" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+			tooltip="If this applies a status to the unit using it as a direct item, what actor data type of the user effects the intensity?  This is one of two options. They can be used together." />
+		
+		<attribute key="turns_to_last" type="int-textbox" min="0" max="9" content_width_px="40" is_required="false"
+			tooltip="If this is going to apply a status effect to the unit that uses the item, how many turns will that status effect last for?"/>
+
+		<attribute key="stack_limit" type="int-textbox" min="1" max="9" default="2" content_width_px="40" is_required="false"
+			tooltip="If this applies a status effect, then what is the limit of how many instances of that status can be on the unit before it can't do it anymore?"/>
+
+		<attribute key="can_only_be_used_by_actors" type="node-dropdown" node_source="ActorCollection" content_width_px="200" is_required="true"
+			tooltip="Whatever this does, we need to know which kind of units can actually use it. What is the collection they have to be in?" />
+
+		<attribute key="targets_actors" type="node-dropdown" node_source="ActorCollection" content_width_px="200" is_required="false"
+			tooltip="Only specified if this targets actors of a different sort. If it does, then this could be enemies or allies or whatever." />
+		<attribute key="target_gate_data_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+			tooltip="Optional when targeting other actors." />
+		<attribute key="user_gate_bypass_data_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+			tooltip="Required when target_gate_data_type is specified. If the target's value of that is higher than the user's value of this, the consumable cannot be used on them." />
+
+		<attribute key="targets_building_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="false"
+			tooltip="Only specified if this targets buildings. If it does, then these are the valid building targets." />
+
+		<attribute key="clears_all_aggro" type="bool" default="false"
+			tooltip="If this is true, then it does not apply any status at all, but instead clears all aggro on this unit." />
+		
+		<attribute key="use_assist_style_targeting_line" type="bool" default="false"
+			tooltip="If this is true, then when in targeting mode for this consumable, it draws the line as an assist line. Otherwise it draws it like an attack line." />
+		<attribute key="is_considered_an_attack_if_thrown" type="bool" default="true"
+			tooltip="If this is true, the default, then using this against some other actor is considered an attack." />
+		
+		<attribute key="on_direct_use" type="node-dropdown" node_source="VisParticleAndSoundUsage" content_width_px="200" is_required="true"
+			tooltip="Whatever this does, it's going to make a sound when the player clicks it, and possibly play a particle at the unit that's doing it, too." />
+	</sub_node>
+	
+</root>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--PacifistRebels
+	******************************************************************-->
+	
+	<cohort id="TheBleedingEye" display_name="The Bleeding Eye"
+		description="Pacifist rebels that surveil for misdeeds. They report to other rebels and the citizenry."
+		part_of_group="PacifistRebels"
+		is_rebel="true" 
+		tags="">
+	</cohort>
+
+	<cohort id="NomadFamilies" display_name="Nomad Families"
+		description="Nomad families have been labeled as insurgents, but the reality is that they mostly live quiet and hidden lives. They trade in goods, farm in hidden alcoves, and will protect themselves.
+They mostly live in the decrepit parts of town, and some estimates put their population as close to ten thousand strong. 
+The number of adults willing to engage in any form of combat is probably in the low hundreds, but they are known for being especially disciplined, fierce, and loyal."
+		part_of_group="PacifistRebels"
+		is_rebel="true" 
+		tags="">
+	</cohort>
+
+	<cohort id="Wastelanders" display_name="Wastelanders"
+		description="They believe the city, in the middle of an irradiated ancient warzone, is a monument to hubris and is a cancer that infects the surrounding wasteland. As long as the city does not grow, they live in peace near to it.
+They've lived in this area since long before the new city was built, and are the only people able to cross into the wasteland on foot without being shredded by the city's ground defenses."
+		part_of_group="PacifistRebels"
+		is_rebel="true" 
+		tags="WastelandOwners">
+	</cohort>
+
+	<!--MilitantRebels
+	******************************************************************-->
+	
+	<cohort id="Antico" display_name="Antico"
+		description="They oppose the city's corporatocracy, seeking to replace it with a free market."
+		part_of_group="MilitantRebels"
+		is_rebel="true" 
+		tags="DecrepitPartOfTownOwners,StandardRebels">
+	</cohort>
+
+	<cohort id="NOAI" display_name="NOAI"
+		description="They oppose the use of AI in education, biotechnology, and policing. The EMP grenade is their calling card. They won't like you if they figure out what you are."
+		part_of_group="MilitantRebels"
+		is_rebel="true" 
+		tags="DecrepitPartOfTownOwners,StandardRebels">
+	</cohort>
+
+	<cohort id="Individualists" display_name="Individualists"
+		description="They seek to rebuild society on the foundations of their idea of individual liberty."
+		part_of_group="MilitantRebels"
+		is_rebel="true" 
+		tags="DecrepitPartOfTownOwners,StandardRebels">
+	</cohort>
+
+	<cohort id="VoxPopulei" display_name="Vox Populi"
+		description="They object to Vorsiber's systematic subjugation of the citizenry. The system must go, by any means necessary."
+		part_of_group="MilitantRebels"
+		is_rebel="true" 
+		tags="StandardRebels">
+	</cohort>
+
+	<cohort id="CitizenAdvocates" display_name="Citizen Advocates"
+		description="Clad in anonymizing suits, they bring aid to those in need. While they are champions of the slum towers, they will aid any of the underclasses."
+		part_of_group="MilitantRebels"
+		is_rebel="true" 
+		tags="">
+	</cohort>
+
+	<cohort id="LostGen" display_name="LostGen"
+		description="The abandoned children of incarcerated lower-class citizens. They want freedom and revenge for themselves and their parents, and they see themselves as the 'lost generation.'
+Most citizens assume they live in the abandoned parts of town like the nomad families, but no-one ever sees their encampments..."
+		part_of_group="MilitantRebels"
+		is_rebel="true" is_only_inward_looking_player_ally_if_city_flag_is_true="Ch2_TalkedDownRebelKids"
+		tags="StandardRebels">
+	</cohort>
+
+	<!--Special Cases
+	******************************************************************-->
+
+	<cohort id="ExperimentalMonsters" display_name="Experimental Monsters"
+		description="Originally created by a federated corporation, they have super-strength and rage blindness. Not a great combination."
+		part_of_group="MilitantRebels"
+		is_rebel="true"
+		tags="">
+	</cohort>
+	
+</root>

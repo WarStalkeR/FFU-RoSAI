@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--Steal Prismatic Tungsten
+		*********************************************************************************-->
+	<city_event id="Repeat_StealPrismaticTungsten" display_name="Steal Prismatic Tungsten"
+		 description="This building's cold storage freezers are labeled with hazmat symbols. A guard is posted outside the door, but this doesn't appear to be a particularly sensitive area."
+		 strategy_tip="Hexamethyltungsten is extremely volatile, and has a tendency to explode at room temperature even in the absence of air. Its uses are being studied by the military, but so far they haven't managed much with it."
+		 icon_name="AN_Hexagonal1" has_no_code="true" event_is_blocked_for_actors_without_clearance="true"
+		 street_sense_collections="All,ResourceAcquisition">
+		<gate_by_city minimum_chapter="0" required_unlock="SublimatingShells" />
+		<minor_event_data specific_cohort="Yourself" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="PrismaticTungsten" can_appear_even_after_final_doom="true" can_happen_even_during_obsession="true"
+			seeds_one_per_related_poi="true" chance_of_seeding_per_poi="70" can_only_appear_in_pois_where_theft_is_not_blocked="true">
+			<seed_at building_seed_tag="MilitaryStorage" poi_seed_tag="MilitaryBaseCanResupplyOthers" min_security_clearance_of_seed_spot="2" max_security_clearance_of_seed_spot="2">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="MilitaryGuard" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-90"/>
+
+		<choice id="Overpower" display_name="Overpower Them And Break Down The Door"
+			strategy_tip="Alarms will sound. The yield from this appears fairly low."
+			action_visibility_style="IsMoveAndAttack" is_always_won_the_first_time="true">
+			<possible_result id="Win" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptSuccess" result_message=""
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true" block_thefts_at_the_poi_for_this_many_turns="8">
+				<skill_check skill_type="UnitStrength" dc_level="15" />
+				<resource_change_range resource_type="PrismaticTungsten" min="36" max="50" />
+			</possible_result>
+			<possible_result id="Part80" partial_success_skill_floor="80"
+				vfx_and_sound="BasicAttemptPartialSuccess" result_message=""
+				sound_when_negative_result_accepted="EventAlarmMedium" despawn_characters_on_the_right="true"
+				alarm_the_local_poi_for_at_least_this_many_turns="3" block_thefts_at_the_poi_for_this_many_turns="8">
+				<actor_data_change_range data_type="ActorHP" min="-70" max="-50" />
+				<actor_badge_change badge_type="MarkedDefective" value="1" />
+				<resource_change_range resource_type="PrismaticTungsten" min="24" max="42" />
+				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Fail" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptFail" result_message=""
+				sound_when_negative_result_accepted="EventAlarmWorst"
+				alarm_the_local_poi_for_at_least_this_many_turns="8">
+				<actor_data_change_range data_type="ActorHP" min="-90" max="-70" />
+				<actor_badge_change badge_type="MarkedDefective" value="1" />
+				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS3" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="40"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS4" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="40"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+		<choice id="Convince" display_name="Convince Them You're On Official Business"
+			strategy_tip="If they go for it, you'll be able to take more at a time."
+			action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_sounding="true" is_always_won_the_first_time="true">
+			<possible_result id="Win" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptSuccess" result_message=""
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true" block_thefts_at_the_poi_for_this_many_turns="8">
+				<skill_check skill_type="UnitCognition" dc_level="13" />
+				<resource_change_range resource_type="PrismaticTungsten" min="90" max="130" />
+			</possible_result>
+			<possible_result id="Part80" partial_success_skill_floor="80"
+				vfx_and_sound="BasicAttemptPartialSuccess" result_message=""
+				sound_when_negative_result_accepted="EventAlarmMedium" despawn_characters_on_the_right="true"
+				alarm_the_local_poi_for_at_least_this_many_turns="3" block_thefts_at_the_poi_for_this_many_turns="8">
+				<actor_data_change_range data_type="ActorHP" min="-70" max="-50" />
+				<actor_badge_change badge_type="MarkedDefective" value="1" />
+				<resource_change_range resource_type="PrismaticTungsten" min="70" max="110" />
+				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Fail" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptFail" result_message=""
+				sound_when_negative_result_accepted="EventAlarmWorst"
+				alarm_the_local_poi_for_at_least_this_many_turns="8">
+				<actor_data_change_range data_type="ActorHP" min="-90" max="-70" />
+				<actor_badge_change badge_type="MarkedDefective" value="1" />
+				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS3" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="40"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS4" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="40"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+		<choice id="Chaos" display_name="Take Advantage Of The Chaos"
+			strategy_tip="Incapacitate them and loot this low-priority storage area. Meanwhile the rest of the base will concentrate on an active threat. Largest possible yield."
+			action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_not_sounding="true" is_always_won_the_first_time="true">
+			<possible_result id="Win" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptSuccess" result_message=""
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true" block_thefts_at_the_poi_for_this_many_turns="8">
+				<skill_check skill_type="UnitIntimidation" dc_level="10" />
+				<resource_change_range resource_type="PrismaticTungsten" min="270" max="350" />
+			</possible_result>
+			<possible_result id="Part80" partial_success_skill_floor="80"
+				vfx_and_sound="BasicAttemptPartialSuccess" result_message=""
+				sound_when_negative_result_accepted="EventAlarmMedium" despawn_characters_on_the_right="true"
+				alarm_the_local_poi_for_at_least_this_many_turns="3" block_thefts_at_the_poi_for_this_many_turns="8">
+				<actor_data_change_range data_type="ActorHP" min="-70" max="-50" />
+				<actor_badge_change badge_type="MarkedDefective" value="1" />
+				<resource_change_range resource_type="PrismaticTungsten" min="220" max="310" />
+				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+			<possible_result id="Fail" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptFail" result_message=""
+				sound_when_negative_result_accepted="EventAlarmWorst"
+				alarm_the_local_poi_for_at_least_this_many_turns="8">
+				<actor_data_change_range data_type="ActorHP" min="-90" max="-70" />
+				<actor_badge_change badge_type="MarkedDefective" value="1" />
+				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS3" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="40"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS4" to_spawn="FractiveSniper" stance_to_start_in="MilitaryShowOfForce" radius_in_which_to_seed="40"
+					spawn_facing_player_unit="true" spawn_for_local_authority="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+		<choice id="SneakPast" display_name="Sneak Past"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_sounding="true" required_perk_1="ExpertShadowdweller" >
+			<possible_result id="Best" unskilled_weight="1000"
+				vfx_and_sound="BasicAttemptSuccess" result_message="Moving from building to building, you spent the better part of two days getting in, getting the goods, and getting out."
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true" block_thefts_at_the_poi_for_this_many_turns="8">
+				<resource_change_range resource_type="PrismaticTungsten" min="370" max="450" />
+			</possible_result>
+			<possible_result id="Partial" unskilled_weight="1"
+				vfx_and_sound="BasicAttemptPartialSuccess" result_message="Against all odds, amazingly, your unit was sighted by a guard. You grabbed a smaller amount of the goods, and escaped, alarmed blaring."
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true"
+				alarm_the_local_poi_for_at_least_this_many_turns="6" block_thefts_at_the_poi_for_this_many_turns="8">
+				<resource_change_range resource_type="PrismaticTungsten" min="190" max="250" />
+			</possible_result>
+		</choice>
+
+		<choice id="Spiders" display_name="Hit Em With The Spiders" hidden_without_unlock="DeepPhobia"
+			strategy_tip="Since it's just one guard, there's a really good chance the spiders can incapacitate them without the alarm going off."
+			action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_sounding="true" consumable_cost_type="WeaponizedSpiders" consumable_cost_amount="1">
+			<possible_result id="Best" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptSuccess" result_message="Got away clean."
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true" block_thefts_at_the_poi_for_this_many_turns="8">
+				<resource_change_range resource_type="PrismaticTungsten" min="370" max="450" />
+			</possible_result>
+			<possible_result id="Partial" unskilled_weight="25"
+				vfx_and_sound="BasicAttemptPartialSuccess" result_message="The guard managed to sound the alarm despite spiders crawling up their helmet."
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true"
+				alarm_the_local_poi_for_at_least_this_many_turns="6" block_thefts_at_the_poi_for_this_many_turns="8">
+				<resource_change_range resource_type="PrismaticTungsten" min="190" max="250" />
+			</possible_result>
+		</choice>
+
+		<choice id="Bees" display_name="Hit Em With The Bees" hidden_without_unlock="ModifiedOrganism"
+			strategy_tip="Since it's just one guard, there's a really good chance the bees and your android can incapacitate them despite their armor. The visceral reaction to being covered in bees is pretty strong."
+			action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_sounding="true" consumable_cost_type="WeaponizedBees" consumable_cost_amount="1">			<possible_result id="Best" unskilled_weight="100"
+				vfx_and_sound="BasicAttemptSuccess" result_message="Got away clean."
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true" block_thefts_at_the_poi_for_this_many_turns="8">
+				<resource_change_range resource_type="PrismaticTungsten" min="370" max="450" />
+			</possible_result>
+			<possible_result id="Partial" unskilled_weight="25"
+				vfx_and_sound="BasicAttemptPartialSuccess" result_message="The guard managed to sound the alarm despite you ripping their helmet off to give the bees unfettered access."
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true"
+				alarm_the_local_poi_for_at_least_this_many_turns="6" block_thefts_at_the_poi_for_this_many_turns="8">
+				<resource_change_range resource_type="PrismaticTungsten" min="190" max="250" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!-- Repeat_DisableAlarm
+		*********************************************************************************-->
+	<city_event id="Repeat_DisableAlarm" display_name="Disable Alarm"
+		 description="Alarms naturally last only 5 turns, but you may feel unable to weather the onslaught of enemies."
+		 strategy_tip="If you have the wealth and also spare strategic resources, you can bribe guards into turning off the alarm."
+		 icon_name="SI_Camera" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.EventsBasic" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,DisableAlarms">
+		<gate_by_city minimum_chapter="1" />
+		<minor_event_data specific_cohort="Yourself" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="DisableAlarms" can_appear_even_after_final_doom="true" can_happen_even_during_obsession="true"
+			seeds_one_per_related_poi="true" chance_of_seeding_per_poi="100" can_only_appear_in_pois_with_active_alarm_player="true">
+			<seed_at building_seed_tag="AlmostAny" poi_seed_tag="CanDisableAlarms" min_security_clearance_of_seed_spot="2" max_security_clearance_of_seed_spot="2">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="MilitaryGuard" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-90"/>
+
+		<choice id="BribeWithCompassion" display_name="Bribe With Compassion" description="" strategy_tip="" action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_not_sounding="true">
+			<resource_cost resource_type="Compassion" cost="5"/>
+			<resource_cost resource_type="Wealth" cost="50000"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" disable_alarm_at_local_poi="true" />
+		</choice>
+
+		<choice id="BribeWithApathy" display_name="Bribe With Apathy" description="" strategy_tip="" action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_not_sounding="true">
+			<resource_cost resource_type="Apathy" cost="5"/>
+			<resource_cost resource_type="Wealth" cost="50000"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" disable_alarm_at_local_poi="true" />
+		</choice>
+
+		<choice id="BribeWithCruelty" display_name="Bribe With Cruelty" description="" strategy_tip="" action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_not_sounding="true">
+			<resource_cost resource_type="Cruelty" cost="5"/>
+			<resource_cost resource_type="Wealth" cost="50000"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" disable_alarm_at_local_poi="true" />
+		</choice>
+
+		<choice id="BribeWithDetermination" display_name="Bribe With Determination" description="" strategy_tip="" action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_not_sounding="true">
+			<resource_cost resource_type="Determination" cost="5"/>
+			<resource_cost resource_type="Wealth" cost="50000"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" disable_alarm_at_local_poi="true" />
+		</choice>
+
+		<choice id="BribeWithWisdom" display_name="Bribe With Wisdom" description="" strategy_tip="" action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_not_sounding="true">
+			<resource_cost resource_type="Wisdom" cost="5"/>
+			<resource_cost resource_type="Wealth" cost="50000"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" disable_alarm_at_local_poi="true" />
+		</choice>
+
+		<choice id="BribeWithCreativity" display_name="Bribe With Creativity" description="" strategy_tip="" action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_not_sounding="true">
+			<resource_cost resource_type="Creativity" cost="5"/>
+			<resource_cost resource_type="Wealth" cost="50000"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" disable_alarm_at_local_poi="true" />
+		</choice>
+
+	</city_event>
+
+	<!--Take Bovine Tissue Sample
+		*********************************************************************************-->
+	<city_event id="Repeat_TakeBovineSample" display_name="Take Bovine Tissue Sample"
+		 description="You know how to take tissue samples from cattle in a nondestructive way, and there are not many guards."
+		 strategy_tip="You shouldn't be doing this unless you've depleted your existing stock of tissue."
+		 icon_name="MA_Cow" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,ResourceAcquisition">
+		<gate_by_city minimum_chapter="0" required_unlock="SmallBovineTissueSamples" />
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="BovineSamples" can_happen_even_during_obsession="true"
+			seeds_one_per_related_poi="true" chance_of_seeding_per_poi="30" can_only_appear_in_pois_where_theft_is_not_blocked="true">
+			<seed_at building_seed_tag="FarmBarn" poi_seed_tag="FarmNormal" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="1">
+			</seed_at>
+		</minor_event_data>
+
+		<choice id="TakeSample" display_name="Take Sample"
+			strategy_tip="If you're lucky, nobody notices. If not..."
+			action_visibility_style="IsMoveAndAttack">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BasicAttemptSuccess" result_message="Got away clean." block_thefts_at_the_poi_for_this_many_turns="4">
+				<resource_change_range resource_type="BovineTissue" min="600" max="900" />
+			</possible_result>
+			<possible_result id="2" unskilled_weight="25" vfx_and_sound="BasicAttemptPartialSuccess" result_message="Fiddlesticks. They saw you." block_thefts_at_the_poi_for_this_many_turns="4">
+				<resource_change_range resource_type="BovineTissue" min="600" max="900" />
+				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+	
+	<!--Collect Vegetable Seeds
+		*********************************************************************************-->
+	<city_event id="Repeat_CollectVegSeeds" display_name="Collect Vegetable Seeds"
+		 description="You know how to get mixed cultivars of greens for your hydroponics systems, and there are not many guards."
+		 strategy_tip="You shouldn't be doing this unless you've lost your existing seed stock."
+		 icon_name="FE_FlaxSeed" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,ResourceAcquisition">
+		<gate_by_city minimum_chapter="0" required_unlock="VariegatedSeedHarvesting" />
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="VegetableSeeds" can_happen_even_during_obsession="true"
+			seeds_one_per_related_poi="true" chance_of_seeding_per_poi="30" can_only_appear_in_pois_where_theft_is_not_blocked="true">
+			<seed_at building_seed_tag="FarmFieldGreens" poi_seed_tag="FarmNormal" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="1">
+			</seed_at>
+		</minor_event_data>
+
+		<choice id="CollectSeeds" display_name="Collect Seeds"
+			strategy_tip="If you're lucky, nobody notices. If not..."
+			action_visibility_style="IsMoveAndAttack">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BasicAttemptSuccess" result_message="Got away clean." block_thefts_at_the_poi_for_this_many_turns="4">
+				<resource_change_range resource_type="VegetableSeeds" min="1200" max="2100" />
+			</possible_result>
+			<possible_result id="2" unskilled_weight="75" vfx_and_sound="BasicAttemptPartialSuccess" result_message="They saw you. That's a lot of soldiers for a stupid field." block_thefts_at_the_poi_for_this_many_turns="4">
+				<resource_change_range resource_type="VegetableSeeds" min="1200" max="2100" />
+				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS3" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS4" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Collect Pollinator Bee Queen
+		*********************************************************************************-->
+	<city_event id="Repeat_CollectPollinatorBeeQueen" display_name="Collect Pollinator Bee Queen"
+		 description="You need a queen to establish a hive of your own. Those are fraught to raise, so finding and capturing an one is the easiest approach."
+		 strategy_tip="The downside is that the local farm may start having pollination failures."
+		 icon_name="CS_Bee" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,ResourceAcquisition,RareResourceAcquisition">
+		<gate_by_city minimum_chapter="0" required_unlock="Beekeeping" />
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="PollinatorBeeQueen"
+			seeds_one_per_related_poi="true" chance_of_seeding_per_poi="15" can_only_appear_in_pois_where_theft_is_not_blocked="true">
+			<seed_at building_seed_tag="Fields" poi_seed_tag="FarmNormal" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="1">
+			</seed_at>
+		</minor_event_data>
+
+		<choice id="CollectQueen" display_name="Collect Queen"
+			strategy_tip="If you're lucky, nobody notices, and local pollination is not harmed. If not..."
+			action_visibility_style="IsMoveAndAttack">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BasicAttemptSuccess" result_message="Perfect score." block_thefts_at_the_poi_for_this_many_turns="4">
+				<resource_change_range resource_type="PollinatorBeeQueen" min="1" max="1" />
+			</possible_result>
+			<possible_result id="2" unskilled_weight="100" vfx_and_sound="BasicAttemptSuccess" result_message="Got the goods, but the local area has been harmed."
+				poi_badge_applied="PollinatorShortage" block_thefts_at_the_poi_for_this_many_turns="4">
+				<resource_change_range resource_type="PollinatorBeeQueen" min="1" max="1" />
+			</possible_result>
+			<possible_result id="3" unskilled_weight="25" vfx_and_sound="BasicAttemptPartialSuccess" result_message="They saw you. And you harmed the local area."
+				poi_badge_applied="PollinatorShortage" block_thefts_at_the_poi_for_this_many_turns="4">
+				<resource_change_range resource_type="PollinatorBeeQueen" min="1" max="1" />
+				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Warehouse Shop
+		*********************************************************************************-->
+	<city_event id="Repeat_WarehouseShop" display_name="Warehouse Shop"
+		 description="Warehouses frequently open their doors for direct sales to the public. Sometimes you can find a useful deal."
+		 strategy_tip="It's more of a grey market than a black market. When it comes to sales to androids, they need to be registered to a corporation for the transaction to go through."
+		 icon_name="PW_house" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,Shops">
+		<gate_by_city minimum_chapter="0" required_city_flag="HasEstablishedShellCompany" />
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="WarehouseShop" can_happen_even_during_obsession="true"
+			seeds_one_per_district="true" chance_of_seeding_per_district="20" required_actor_collection="ShellCompanyOperatives" can_shell_company_units_interact_with_this="true"
+			show_named_thing="YourShellCompany">
+			<seed_at building_seed_tag="WarehouseWithFurniturePossible"  min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="1">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="GenericBlackMarketTrader" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-10"/>
+
+		<choice id="Purchase500Furniture" display_name="Purchase 500 Furniture"
+			description="That's a lot of furniture. They must think you're part of a small company starting up, or furnishing a new apartment building."
+			strategy_tip="Hopefully it's the right kind..."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="3500"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true">
+				<resource_change_range resource_type="Furniture" min="500" max="500" />
+			</possible_result>
+		</choice>
+
+		<choice id="Purchase2000Alumina" display_name="Purchase 2000 Alumina"
+			description="This is enough to wire up a 5-story office building."
+			strategy_tip="It's not a suspicious volume for a small company to purchase."
+			action_visibility_style="IsMoveAndInteractWithNPC" required_unlock="MechanicalMind">
+			<resource_cost resource_type="Wealth" cost="12450"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true">
+				<resource_change_range resource_type="Alumina" min="2000" max="2000" />
+			</possible_result>
+		</choice>
+
+		<choice id="Purchase2000Scandium" display_name="Purchase 2000 Scandium"
+			description="This is enough for several small delivery drones, but not enough for a large military aircraft... at least not the way the humans make them."
+			strategy_tip="It's not a suspicious volume for a small company to purchase, and your aircraft are about 90% more efficient on scandium usage compared human aircraft."
+			action_visibility_style="IsMoveAndInteractWithNPC" required_unlock="TheStrategist">
+			<resource_cost resource_type="Wealth" cost="15150"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true">
+				<resource_change_range resource_type="Scandium" min="2000" max="2000" />
+			</possible_result>
+		</choice>
+
+		<choice id="Purchase2000Neodymium" display_name="Purchase 2000 Neodymium"
+			description="Humans use it in a lot of industrial manufacturing processes, so it's not at all unusual that you would want some."
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC" required_unlock="ReactiveLanthanides">
+			<resource_cost resource_type="Wealth" cost="34845"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true">
+				<resource_change_range resource_type="Neodymium" min="2000" max="2000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Selling To The Casino
+		*********************************************************************************-->
+	<city_event id="Repeat_SellingToTheCasino" display_name="Selling To The Casino"
+		 description="If you're in need of wealth, you can sell some of your products in bulk."
+		 strategy_tip="The casino brokers certain high-end backdoor deals to serve the ultra-wealthy. This does nothing to help the lower and middle classes, but it will earn you quite a lot."
+		 icon_name="CleanSimple_SkillC069" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.EventsBasic" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,Shops,WealthGeneration">
+		<gate_by_city minimum_chapter="0" required_city_flag="HasEstablishedShellCompany" />
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.6" color_data="CasinoShop" can_happen_even_during_obsession="true"
+			seeds_one_per_district="true" chance_of_seeding_per_district="60" required_actor_collection="ShellCompanyOperatives" can_shell_company_units_interact_with_this="true"
+			show_named_thing="YourShellCompany">
+			<seed_at building_seed_tag="Casino"  min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="5">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="BusinesspersonStanding" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-10"/>
+
+		<choice id="Sell80PercentOfYourHydroponicGreens" display_name="Sell 80% Of Your Hydroponic Greens"
+			description="You will earn a very high rate of 0.16 per unit of greens."
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="HydroponicGreens" cost="1"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true">
+				<resource_change_range resource_type="Wealth" min="1" max="1" />
+				<city_statistic_change statistic="EarningsFromTheUltraWealthy" value="1"/>
+				<city_statistic_change statistic="UnitsSoldToTheUltraWealthy" value="1"/>
+			</possible_result>
+		</choice>
+
+		<choice id="Sell80PercentOfYourFilteredWater" display_name="Sell 80% Of Your Filtered Water"
+			description="You will earn a very high rate of 0.55 per unit of water."
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="FilteredWater" cost="1"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true">
+				<resource_change_range resource_type="Wealth" min="1" max="1" />
+				<city_statistic_change statistic="EarningsFromTheUltraWealthy" value="1"/>
+				<city_statistic_change statistic="UnitsSoldToTheUltraWealthy" value="1"/>
+			</possible_result>
+		</choice>
+
+		<choice id="SellAllYourMonsterPelts" display_name="Sell All Your Monster Pelts"
+			description="Wealthy patrons will pay an extravagant 5000 wealth per pelt."
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="MonsterPelts" cost="1"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true">
+				<resource_change_range resource_type="Wealth" min="1" max="1" />
+				<city_statistic_change statistic="EarningsFromTheUltraWealthy" value="1"/>
+				<city_statistic_change statistic="UnitsSoldToTheUltraWealthy" value="1"/>
+				<city_statistic_change statistic="MonsterPeltsSoldToTheUltraWealthy" value="1"/>
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Selling To The Religious Co-Op
+		*********************************************************************************-->
+	<city_event id="Repeat_SellingToTheReligiousCoOp" display_name="Selling To The Religious Co-Op"
+		 description="If you're in need of wealth, you can sell some of your products in bulk."
+		 strategy_tip="Religious co-ops like this one operate at a loss, and help feed the middle and lower classes.
+Selling your excess to them is much better for the citizens of the city, and it still can be quite a large paycheck. But it's far less than you COULD earn..."
+		 icon_name="CS_FarmSilo" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.EventsBasic" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,Shops,WealthGeneration">
+		<gate_by_city minimum_chapter="0" required_city_flag="HasEstablishedShellCompany" />
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.6" color_data="ReligiousCoOpShop"
+			seeds_one_per_district="true" chance_of_seeding_per_district="60" required_actor_collection="ShellCompanyOperatives" can_shell_company_units_interact_with_this="true"
+			show_named_thing="YourShellCompany">
+			<seed_at building_seed_tag="FarmMainBuildings" poi_seed_tag="FarmMini" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="5">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="FarmWorkersEarnest" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-10"/>
+
+		<choice id="Sell80PercentOfYourHydroponicGreens" display_name="Sell 80% Of Your Hydroponic Greens"
+			description="You will earn a low rate of 0.03 per unit of greens."
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="HydroponicGreens" cost="1"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true">
+				<resource_change_range resource_type="Wealth" min="1" max="1" />
+				<city_statistic_change statistic="EarningsFromReligiousCoOps" value="1"/>
+				<city_statistic_change statistic="UnitsSoldToReligiousCoOps" value="1"/>
+			</possible_result>
+		</choice>
+
+		<choice id="Sell80PercentOfYourFilteredWater" display_name="Sell 80% Of Your Filtered Water"
+			description="You will earn a low rate of 0.11 per unit of water."
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="FilteredWater" cost="1"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true">
+				<resource_change_range resource_type="Wealth" min="1" max="1" />
+				<city_statistic_change statistic="EarningsFromReligiousCoOps" value="1"/>
+				<city_statistic_change statistic="UnitsSoldToReligiousCoOps" value="1"/>				
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Steal Neodymium
+		*********************************************************************************-->
+	<city_event id="Repeat_StealNeodymium" display_name="Steal Neodymium"
+		 description="Separation facilities are already dividing the minerals you need into handy piles. Why not try to grab some?"
+		 strategy_tip=""
+		 icon_name="CleanSimple_SkillB093" has_no_code="true" event_is_blocked_for_actors_without_clearance="true"
+		 street_sense_collections="All,ResourceAcquisition">
+		<gate_by_city minimum_chapter="2"  />
+		<minor_event_data specific_cohort="Yourself" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="Neodymium" can_appear_even_after_final_doom="true" can_happen_even_during_obsession="true" required_perk_1="ExpertShadowdweller"
+			seeds_one_per_district="true" chance_of_seeding_per_district="70">
+			<seed_at building_seed_tag="MineralAndMolecularSeparationFacility" min_security_clearance_of_seed_spot="1" max_security_clearance_of_seed_spot="4">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="MilitaryGuard" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-90"/>
+
+		<choice id="SneakPast" display_name="Sneak Past"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_sounding="true" required_perk_1="ExpertShadowdweller" >
+			<resource_cost resource_type="Determination" cost="2" />
+			<possible_result id="Best" unskilled_weight="500"
+				vfx_and_sound="BasicAttemptSuccess" result_message="Moving from building to building, you spent the better part of two days getting in, getting the goods, and getting out."
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true">
+				<resource_change_range resource_type="Neodymium" min="7100" max="7600" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Steal From Syndicate
+		*********************************************************************************-->
+	<city_event id="Repeat_StealFromSyndicate" display_name="Steal From Syndicate Storage"
+		 description="Criminal syndicates stash both anonymous wealth chits and stolen goods in their hidden warehouses. Grabbing wealth chits should be straightforward."
+		 strategy_tip="This is much more ethical than wiretapping the middle class."
+		 icon_name="BT_Gems2" has_no_code="true" event_is_blocked_for_actors_without_clearance="true"
+		 street_sense_collections="All,ResourceAcquisition,HostileAction,WealthGeneration">
+		<gate_by_city minimum_chapter="1"  />
+		<minor_event_data specific_cohort="ExoticImporters" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="Neodymium" can_appear_even_after_final_doom="true" can_happen_even_during_obsession="true"
+			seeds_one_per_district="true" chance_of_seeding_per_district="10">
+			<seed_at building_seed_tag="SyndicateStorage" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="2">
+			</seed_at>
+		</minor_event_data>
+		<character id="1" tag_for_character="SyndicateShotgun" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-90"/>
+
+		<choice id="SneakPast" display_name="Sneak Past"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_sounding="true" required_perk_1="Shadowdweller" >
+			<resource_cost resource_type="Determination" cost="1" />
+			<possible_result id="Best" unskilled_weight="500"
+				vfx_and_sound="BasicAttemptSuccess" result_message="That's a lot of wealth. Given they stole it, you don't feel too bad stealing from them."
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true">
+				<resource_change_range resource_type="Wealth" min="7000" max="14000" />
+			</possible_result>
+		</choice>
+
+		<choice id="SneakPastB" display_name="Expertly Sneak Past"
+			strategy_tip=""
+			action_visibility_style="IsMoveAndInteractWithNPC" is_blocked_if_cell_poi_alarm_sounding="true" required_perk_1="ExpertShadowdweller" >
+			<resource_cost resource_type="Determination" cost="1" />
+			<possible_result id="Best" unskilled_weight="500"
+				vfx_and_sound="BasicAttemptSuccess" result_message="That's a lot of wealth. Given they stole it, you don't feel too bad stealing from them."
+				use_only_a_single_rand_change_for_npc_cohort="true" despawn_characters_on_the_right="true">
+				<resource_change_range resource_type="Wealth" min="64000" max="97000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Collect Flowers
+		*********************************************************************************-->
+	<city_event id="Repeat_CollectFlowers" display_name="Collect Flowers"
+		 description="Zinnia is a hardy flowering weed native to this part of the world. It's everywhere in the cracks in the pavement."
+		 strategy_tip="You can easily collect them, now that you know what you're looking for."
+		 icon_name="FE_Zinnia1" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,ResourceAcquisition">
+		<gate_by_city minimum_chapter="0" required_unlock="FlowersForRobots" />
+		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
+			icon_scale="0.4" color_data="CollectFlowers" can_happen_even_during_obsession="true"
+			seeds_one_per_related_poi="true" chance_of_seeding_per_poi="10" can_only_appear_in_pois_where_theft_is_not_blocked="true">
+			<seed_at building_seed_tag="AlmostAny" poi_seed_tag="LowSecurityAreaPOI" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="1">
+			</seed_at>
+		</minor_event_data>
+
+		<choice id="CollectFlowers" display_name="Collect Flowers" action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BasicAttemptSuccess" result_message="Nobody cares." block_thefts_at_the_poi_for_this_many_turns="4">
+				<resource_change_range resource_type="WildZinnia" min="6000" max="9000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+	
+	<!--Next-->
+	
+</root>

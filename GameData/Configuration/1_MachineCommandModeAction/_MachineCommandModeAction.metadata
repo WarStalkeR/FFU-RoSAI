@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="command_mode_action">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="short_name" type="string" maxlength="20" content_width_px="200" is_required="true" is_localized="true"
+		tooltip="This is the name that is used on the button, which is very short. An abbreviation is fine, players can hover to see the full thing."/>
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+
+	<attribute key="command_mode_category" type="node-dropdown" is_required="true" node_source="MachineCommandModeCategory" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which category this belongs in on the command mode menu." />
+
+	<attribute key="keybind" type="node-dropdown" is_required="false" node_source="InputActionTypeData" default="" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which keybind will trigger this in command mode, if any?" />
+
+	<attribute key="ui_color" type="string" minlength="6" maxlength="6" is_required="true" content_width_px="80"
+		tooltip="Hex code for a color that will be for the build command ui."/>
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the action logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the action logic in the specified external dll."/>
+
+	<attribute key="mental_energy_cost" type="int-textbox" min="0" max="3" default="1" content_width_px="40" is_required="true"
+		tooltip="How much mental energy does it cost to use this action?"/>
+	<attribute key="intercepts_all_world_mouse_handling" type="bool" default="false" 
+		tooltip="If true, then does nothing directly when clicked, but goes into a targeting mode where you then click things in the world.
+Then any mouse handling and clicking and hovering in the world will go to this during the period where this is activated.
+The tooltips in the bottom left corner will still work as normal, and any ui mouse handling will also still work normally." />
+	<attribute key="show_all_player_npc_unit_stances" type="bool" default="false"
+		tooltip="If true, then all player npc units will draw their stance icon above themselves, even if they would not normally." />
+
+	<attribute key="on_use" type="node-dropdown" is_required="true" node_source="VisParticleAndSoundUsage" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="Which particle effect and sound effect to use when the player uses this action?" />
+
+	<attribute key="is_hidden_until_unlocked" type="node-dropdown" is_required="false" node_source="Unlock" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, this option will be invisible until the unlock in question is done." />
+
+	<attribute key="requires_meta_flag" type="node-dropdown" is_required="false" node_source="MetaFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, this option will be invisible unless that meta flag is true." />
+	<attribute key="is_hidden_by_meta_flag" type="node-dropdown" is_required="false" node_source="MetaFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, this option will be invisible unless that meta flag is false." />
+
+	<attribute key="requires_city_flag" type="node-dropdown" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, this option will be invisible unless that city flag is true." />
+	<attribute key="is_hidden_by_city_flag" type="node-dropdown" is_required="false" node_source="CityFlag" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, this option will be invisible unless that city flag is false." />
+	
+</root>

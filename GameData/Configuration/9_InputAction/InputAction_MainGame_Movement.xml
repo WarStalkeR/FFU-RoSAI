@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<input_action id="MainCamera_RotateTilt" scope="MainGameOnly"
+		category="CameraMovement" display_name="Camera 'Rotate Tilt' Mode"
+		description="While holding this key or button down, mouse movements rotate and tilt the camera view."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="6" key="LeftMouse" />
+		<keybind id="8" key="R" />
+	</input_action>
+
+	<input_action id="MainCamera_GrabPan" scope="MainGameOnly"
+		category="CameraMovement" display_name="Camera 'Grab And Pan' Mode"
+		description="While holding this key or button down, mouse movements pan the camera view as if you have grabbed the ground."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="MiddleMouse" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="CameraZoomInOutMouse" scope="MainGameOnly"
+		category="CameraMovement" display_name="Camera Zoom In/Out (Mouse)"
+		description="Zoom the camera in and out with the mouse wheel."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="MouseWheel" />
+	</input_action>
+
+	<input_action id="MovementSpeedUp" scope="MainGameOnly"
+      category="CameraMovement" display_name="Move Fast"
+      description="Make all movement faster. Holding this and 'Move Slowly' at the same time activates turbo, which is the fastest."
+      check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="LeftShift" />
+		<keybind id="2" key="" />
+	</input_action>
+	
+	<input_action id="MovementSlowDown" scope="MainGameOnly"
+		category="CameraMovement" display_name="Move Slowly"
+		description="Make all movement slower. Holding this and 'Move Fast' at the same time activates turbo, which is the fastest."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes" >
+		<keybind id="1" key="LeftControl" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="MovementForward"
+		category="CameraMovement" display_name="Move Forward" scope="MainGameOnly"
+		description="Move forward."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes" >
+		<keybind id="1" key="W" />
+		<keybind id="2" key="UpArrow" />
+	</input_action>
+
+	<input_action id="MovementBackward" scope="MainGameOnly"
+		category="CameraMovement" display_name="Move Backward"
+		description="Move backward."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes" >
+		<keybind id="1" key="S" />
+		<keybind id="2" key="DownArrow" />
+	</input_action>
+
+	<input_action id="MovementLeft" scope="MainGameOnly"
+		category="CameraMovement" display_name="Move Left"
+		description="Move left."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes" >
+		<keybind id="1" key="A" />
+		<keybind id="2" key="LeftArrow" />
+	</input_action>
+
+	<input_action id="MovementRight" scope="MainGameOnly"
+		category="CameraMovement" display_name="Move Right"
+		description="Move right."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes" >
+		<keybind id="1" key="D" />
+		<keybind id="2" key="RightArrow" />
+	</input_action>
+
+	<input_action id="CameraZoomIn" scope="MainGameOnly"
+		category="CameraMovement" display_name="Camera Zoom In"
+		description="Zoom the camera in."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="PageUp" />
+		<keybind id="2" key="GamepadLeftShoulder" is_steam_deck_default="true" />
+	</input_action>
+
+	<input_action id="CameraZoomOut" scope="MainGameOnly"
+		category="CameraMovement" display_name="Camera Zoom Out"
+		description="Zoom the camera out."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="PageDown" />
+		<keybind id="2" key="GamepadRightShoulder" is_steam_deck_default="true" />
+	</input_action>
+
+	<input_action id="CameraRotateLeft" scope="MainGameOnly"
+		category="CameraMovement" display_name="Camera Rotate Left"
+		description="Rotate the camera left."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="Q" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="CameraRotateRight" scope="MainGameOnly"
+		category="CameraMovement" display_name="Camera Rotate Right"
+		description="Rotate the camera right."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="1" key="E" />
+		<keybind id="2" key="" />
+	</input_action>
+
+	<input_action id="CameraInclineDecrease" scope="MainGameOnly"
+		category="CameraMovement" display_name="Camera Incline Decrease"
+		description="Make the camera look more to the side, less steeply down."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="2" key="End" />
+		<keybind id="3" key="" />
+	</input_action>
+
+	<input_action id="CameraInclineIncrease" scope="MainGameOnly"
+		category="CameraMovement" display_name="Camera Incline Increase"
+		description="Make the camera look more steeply down."
+		check_type="Custom" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		<keybind id="2" key="Home" />
+		<keybind id="3" key="" />
+	</input_action>
+		
+</root>

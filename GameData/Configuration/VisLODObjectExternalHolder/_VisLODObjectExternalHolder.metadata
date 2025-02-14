@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="vis_lod_object_external_holder">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+	
+	<attribute key="bundle_name" type="string" maxlength="200" content_width_px="200" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the asset bundle that the VisLODDrawingObjectHolder file is in."/>
+
+	<attribute key="path" type="string" maxlength="600" content_width_px="400" is_required="true"
+		tooltip="This specifies the path of the VisLODDrawingObjectHolder inside the specified asset bundle."/>
+	
+</root>

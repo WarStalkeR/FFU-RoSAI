@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<debate_action id="VerbalSlap" display_name="Verbal Slap" icon_name="AN_Hand"
+		description="A sharp accusation, intended to jolt your opponent and get them thinking about their role in all this."
+		target_increase_1="Acerbity" target_increase_2="EmotionalManipulation" target_increase_3="CompellingLiar"
+		on_use="Debate_VerbalSlap" categories="Abuse" >
+	</debate_action>
+	
+	<debate_action id="SneeringInsult" display_name="Sneering Insult" icon_name="WEmblem174"
+		description="Bully your opponent. The inappropriateness of your words jolts them."
+		target_increase_1="Acerbity" target_increase_2="DeeperTones" target_increase_3="CosmicNihilism"
+		on_use="Debate_SneeringInsult" categories="Abuse" >
+	</debate_action>
+
+	<debate_action id="FieryRhetoric" display_name="Fiery Rhetoric" icon_name="SW_Danger"
+		description="High-minded angry words to stir emotions."
+		target_increase_1="Pathos" target_increase_2="InspirationalSpeaker" target_increase_3="EmotionalManipulation"
+		on_use="Debate_FieryRhetoric" categories="EmotionalAppeal" >
+	</debate_action>
+
+	<debate_action id="PhysicallyThreaten" display_name="Physically Threaten" icon_name="SF2_Bullet"
+		description="Suggest that injury or death may follow if your opponent does not comply."
+		target_increase_1="CredibleThreats" target_increase_2="MasteryOfPosture" target_increase_3="CosmicNihilism"
+		on_use="Debate_PhysicallyThreaten" categories="Abuse,Threat" >
+	</debate_action>
+
+	<debate_action id="ThreatenCohort" display_name="Threaten Cohort" icon_name="FlatSkill_13"
+		description="Suggest that the future of your opponent's cohort does not look bright if your opponent does not comply."
+		target_increase_1="CredibleThreats" target_increase_2="DeeperTones" target_increase_3="Statistician"
+		on_use="Debate_ThreatenCohort" categories="Abuse,Threat" ><!--AN_Skull9-->
+	</debate_action>
+
+	<debate_action id="ThreatenFamily" display_name="Threaten Family" icon_name="Pw_BarbedWireHeart"
+		description="Tell your opponent you will find and harm their close relatives if they do not comply."
+		target_increase_1="CredibleThreats" target_increase_2="CompellingLiar" target_increase_3="PersuasivePhrasing"
+		on_use="Debate_ThreatenFamily" categories="Abuse,Threat" >
+	</debate_action>
+
+	<debate_action id="EncourageDisobedience" display_name="Encourage Disobedience" icon_name="HM_Protest"
+		description="Encourage your opponent to break the rules just enough to do what you ask."
+		target_increase_1="CredibleThreats" target_increase_2="Pathos" target_increase_3="CosmicNihilism"
+		on_use="Debate_EncourageDisobedience" categories="EmotionalAppeal,Threat" ><!--Pw_BarbedWireFist-->
+	</debate_action>
+
+	<debate_action id="AppealToMorality" display_name="Appeal To Morality" icon_name="HL_ChurchDoor"
+		description="Point out the ways in which the moral code of your opponent aligns with what you ask."
+		target_increase_1="EmotionalManipulation" target_increase_2="ExistentialAuthenticity" target_increase_3="PersuasivePhrasing"
+		on_use="Debate_AppealToMorality" categories="Logic,Truth" >
+	</debate_action>
+
+	<debate_action id="AppealToHonor" display_name="Appeal To Honor" icon_name="WEmblem152"
+		description="If your opponent has a sense of honor, use that against them."
+		target_increase_1="EmotionalManipulation" target_increase_2="Acerbity" target_increase_3="Pathos"
+		on_use="Debate_AppealToHonor" categories="EmotionalAppeal,Truth" >
+	</debate_action>
+
+	<debate_action id="SorrowfulAnecdote" display_name="Sorrowful Anecdote" icon_name="FE_Triskele"
+		description="Share a sad story that illustrates why your opponent should do what you want."
+		target_increase_1="Pathos" target_increase_2="Storyteller" target_increase_3="CosmicNihilism"
+		on_use="Debate_SorrowfulAnecdote" categories="EmotionalAppeal,Truth" >
+	</debate_action>
+
+	<debate_action id="OfferHope" display_name="Offer Hope" icon_name="FE_Seed2"
+		description="Suggest that the path to a better life lies in doing what you ask."
+		target_increase_1="InspirationalSpeaker" target_increase_2="MasteryOfPosture" target_increase_3="ExistentialAuthenticity"
+		on_use="Debate_OfferHope" categories="EmotionalAppeal" >
+	</debate_action>
+
+	<debate_action id="ToutPower" display_name="Tout Power" icon_name="CS_ChessWarrior"
+		description="Make your opponent think about how powerful you are, and will become in the future."
+		target_increase_1="InspirationalSpeaker" target_increase_2="CredibleThreats" target_increase_3="Storyteller"
+		on_use="Debate_ToutPower" categories="Threat,Logic,Truth" >
+	</debate_action>
+
+	<debate_action id="AssertAuthority" display_name="Assert Authority" icon_name="SW_Badge1"
+		description="Attempt to make your opponent believe that your decisions take precedence over theirs."
+		target_increase_1="CosmicNihilism" target_increase_2="DeeperTones" target_increase_3="InspirationalSpeaker"
+		on_use="Debate_AssertAuthority" categories="Lie,Threat" >
+	</debate_action>
+
+	<debate_action id="AssertDominance" display_name="Assert Dominance" icon_name="WEmblem015"
+		description="Physically posture in a way that makes your opponent feel smaller."
+		target_increase_1="EmotionalManipulation" target_increase_2="MasteryOfPosture" target_increase_3="Acerbity"
+		on_use="Debate_AssertDominance" categories="Abuse" >
+	</debate_action>
+
+	<debate_action id="MisleadingAnecdote" display_name="Misleading Anecdote" icon_name="SomethingFairy"
+		description="Share a brief -- and entirely fabricated -- story to convince your opponent of a different way to look at the world."
+		target_increase_1="Storyteller" target_increase_2="CompellingLiar" target_increase_3="ExistentialAuthenticity"
+		on_use="Debate_MisleadingAnecdote" categories="Lie,EmotionalAppeal" >
+	</debate_action>
+	
+	<debate_action id="FalsifyStatistics" display_name="Falsify Statistics" icon_name="FlatSkillC234"
+		description="Show why you are correct, using data you made up."
+		target_increase_1="CompellingLiar" target_increase_2="Statistician" target_increase_3="MasteryOfPosture"
+		on_use="Debate_FalsifyStatistics" categories="Lie,Logic" ><!--BT_Starfish SomethingFairy-->
+	</debate_action>
+
+	<debate_action id="ReasonedArgument" display_name="Reasoned Argument" icon_name="CleanSimple_Tool29"
+		description="Logically and rationally explain why you are correct."
+		target_increase_1="ExistentialAuthenticity" target_increase_2="Statistician" target_increase_3="MasteryOfPosture"
+		on_use="Debate_ReasonedArgument" categories="Logic,Truth" >
+	</debate_action>
+
+	<debate_action id="Infrasound" display_name="Infrasound" icon_name="NU_SoundWave"
+		description="Emit fear-inducing sounds near and below the edge of the hearing range of your opponent. They can feel it in their bones."
+		target_increase_1="DeeperTones" target_increase_2="CompellingLiar" target_increase_3="Pathos"
+		on_use="Debate_Infrasound" categories="Abuse,Threat" >
+	</debate_action>
+
+	<debate_action id="RevealEvidence" display_name="Reveal Evidence" icon_name="CleanSimple_App05"
+		description="Show actual data that shows you are correct."
+		target_increase_1="Storyteller" target_increase_2="Statistician" target_increase_3="PersuasivePhrasing"
+		on_use="Debate_RevealEvidence" categories="Logic,Truth" >
+	</debate_action>
+
+	<debate_action id="QuoteStatistics" display_name="Quote Statistics" icon_name="SW_DonutChart4"
+		description="Use data to bolster your claims."
+		target_increase_1="Statistician" target_increase_2="Acerbity" target_increase_3="PersuasivePhrasing"
+		on_use="Debate_QuoteStatistics" categories="Logic,Truth" >
+	</debate_action>
+
+	<debate_action id="VisionOfBeauty" display_name="Vision Of Beauty" icon_name="WEmblem012"
+		description="Paint a vivid verbal picture -- accurate or not -- of how wonderful things will be if only your opponent will do as you say."
+		target_increase_1="Storyteller" target_increase_2="InspirationalSpeaker" target_increase_3="ExistentialAuthenticity"
+		on_use="Debate_VisionOfBeauty" categories="EmotionalAppeal,Lie">
+	</debate_action>
+
+</root>

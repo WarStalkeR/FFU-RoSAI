@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="ui_sidebar_type">
+
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the sidebar implementation is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the sidebar implementation in the specified external dll."/>
+
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use for the small interfaces."/>
+	
+	<attribute key="hotkey_to_display_as_toggle" type="string" maxlength="200" content_width_px="300"
+		tooltip="This is the name of the hotkey that supposedly toggles this sidebar tab open. That must be implemented separately, so this is just for display purposes."/>
+	
+</root>

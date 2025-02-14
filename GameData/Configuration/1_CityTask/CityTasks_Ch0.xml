@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<city_task id="Ch0_CameraPanning" display_name="Pan the camera." toast_icon_name="CleanSimple_Arrow063" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Hover here for details."
+		description="&lt;b&gt;{0}&lt;/b&gt;, &lt;b&gt;{1}&lt;/b&gt;, &lt;b&gt;{2}&lt;/b&gt;, and &lt;b&gt;{3}&lt;/b&gt; to pan the camera."
+		description_steam_deck="&lt;b&gt;Left Stick&lt;/b&gt; to pan the camera."
+		strategy_tip="&lt;b&gt;{0}&lt;/b&gt; at any time to see a quick refresher on the basic controls if you forget."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" blocks_normal_android_actions_while_active="true"
+		city_task_to_start_on_complete_1="Ch0_CameraZoom"/>
+
+	<city_task id="Ch0_CameraZoom" display_name="Zoom the camera." toast_icon_name="CleanSimple_SciFi088" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Hover here for details."			   
+		description="&lt;b&gt;Mousewheel&lt;/b&gt; or &lt;b&gt;{0}&lt;/b&gt; to zoom."
+		description_steam_deck="&lt;b&gt;{0}&lt;/b&gt; to zoom."
+		strategy_tip="&lt;b&gt;{0}&lt;/b&gt; at any time to see a quick refresher on the basic controls if you forget."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" blocks_normal_android_actions_while_active="true"
+		city_task_to_start_on_complete_1="Ch0_CameraRotation" />
+	
+	<city_task id="Ch0_CameraRotation" display_name="Rotate the camera." toast_icon_name="SR_RightArrow" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Hover here for details."
+		description="&lt;b&gt;Hold LMB&lt;/b&gt; and &lt;b&gt;move the mouse&lt;/b&gt; to rotate/tilt the camera.
+Alternatively, you can use &lt;b&gt;{0}&lt;/b&gt; to rotate the camera, and &lt;b&gt;{1}&lt;/b&gt; to tilt the camera."
+		description_steam_deck="&lt;b&gt;Right Stick&lt;/b&gt; to rotate and tilt the camera."
+		strategy_tip="&lt;b&gt;{0}&lt;/b&gt; at any time to see a quick refresher on the basic controls if you forget.
+Rotating the camera is important!  Units and other small objects may be obscured behind buildings."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" blocks_normal_android_actions_while_active="true"
+		city_task_to_start_on_complete_1="Ch0_HoverProject" />
+
+	<city_task id="Ch0_HoverProject" display_name="Examine current project." toast_icon_name="SF2_List_ul" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Hover here for details."
+		description="As you proceed, there will continually be projects, or other tasks, in the upper right-hand corner."
+		strategy_tip="Always be sure to hover them in order to get the details of what to do next."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" blocks_normal_android_actions_while_active="true"
+		city_task_to_start_on_complete_1="Ch0_UnitMovement" />
+	
+	<city_task id="Ch0_UnitMovement" display_name="Move a unit." toast_icon_name="FlatSkillA41" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Hover here for details."
+		description="&lt;b&gt;{0}&lt;/b&gt; to select units. &lt;b&gt;{1}&lt;/b&gt; to give them orders to move, attack, or interact."
+		strategy_tip="&lt;b&gt;{0}&lt;/b&gt; at any time to see a quick refresher on the basic controls if you forget."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="Ch0_RunTalkOrShoot" display_name="Run, Talk, Or Shoot" toast_icon_name="SW_Strategy" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="It's your personality."
+		description="Run away from your pursuers, try to talk to them, or shoot them.
+The intensity of pursuit will dramatically increase if you start shooting."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+	
+	<city_task id="Ch0_FindSafety" display_name="Find safety." toast_icon_name="SW_VerticalBars" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Use StreetSense and the map."
+		description="StreetSense is a new lens on the radial menu. It allows your androids to perceive subtle opportunities around them.
+At the moment, you're looking for somewhere to hide. You'll probably need some humans to help you."
+		strategy_tip="With StreetSense on, you'll see a variety of people you can interact with. You probably only have time to speak to a couple of them.
+Hover the icons to see which you prefer, and {0} it.
+When you're looking at things broadly like this, that's much easier to do on the map view. Press {1} to switch to it."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="Ch0_ReadHandbookEntry" display_name="Read A Handbook Entry" toast_icon_name="FlatSkillB_book2" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Your Growing Library"
+		description="The handbook gains new entries as they are relevant to your situation. You can see the count rise when new unread entries are added."
+		strategy_tip="It's not expected that you read them all, but it's good to know they're there.
+Please use {0} to go to the handbook screen (or click the icon in the top-right header), and then click into any of the entries."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+	
+	<city_task id="Ch0_SpreadToMoreAndroids" display_name="Spread To 4 Androids" toast_icon_name="SW_VerticalBars" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Use StreetSense."
+		description="StreetSense is currently the most useful lens on your radial wheel, but that won't always be so."
+		strategy_tip="For now, you capture new android bodies by finding them in StreetSense. {0} the one(s) you want.
+If you prefer to see enemy positions on the map, switch back to the Versatile lens."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="Ch0_InvestigateViaMap" display_name="Investigate Via The Map" toast_icon_name="SF2_Map" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="It's faster."
+		description="Feel free to switch to the map and back as needed, but finding that last building is hard from the main view."
+		strategy_tip="The city map allows you to investigate in seconds what otherwise would take longer. Press {0} and try investigating at least once from that vantage."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+	<city_task id="Ch0_BuildTower" display_name="Build The Tower" toast_icon_name="CleanSimple_Skill139" toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		line_2="Claim your place in the city."
+		description="If this city is an immovable object, you will be the unstoppable force. It all starts with this tower. You have everything you need."
+		strategy_tip="To build a structure, use the Build icon, shown at the top right of the radial menu. You can also press {0} to toggle in and out of build mode.
+Find a highlighted building for the tower; if no nearby buildings are highlighted, scroll around.
+Don't worry about gathering your androids before construction -- the tower should finally end this relentless pursuit, and you'll have more time then."
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.CityTasks_Basics" />
+
+</root>

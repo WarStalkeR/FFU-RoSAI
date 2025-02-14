@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="territory_control_type">
+
+	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
+	
+	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information, and this one is optional because so much other information is provided already in these tips."/>
+	
+	<attribute key="resource" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+		tooltip="What resource type is this related to?" />
+	<attribute key="dormant_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for flag backgrounds when not active?"/>
+	<attribute key="active_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for flag backgrounds when active?"/>
+	<attribute key="resource_color_hex" type="string" minlength="6" maxlength="6" content_width_px="200" is_required="true"
+		tooltip="What color is used for the resource icon on flags?"/>
+	<attribute key="resource_color_hdr_intensity" type="float-textbox" min="0" max="10" default="0" content_width_px="50"
+		is_required="false" tooltip="HDR intensity to make the color glow, for the glowing version."/>
+
+	<attribute key="required_deterrence" type="int-textbox" min="0" max="100000" content_width_px="40" is_required="true"
+		tooltip="How much deterrence is required in order to keep enemies from attacking this location?"/>
+
+	<attribute key="passive_resource_can_provide_per_turn" type="int-textbox" min="0" max="100000" content_width_px="40" is_required="false"
+		tooltip="Optional. If any harvesters of the player are in range, then how much of this resource will be extracted per turn?"/>
+
+	<attribute key="manager_trigger_1" type="node-dropdown" node_source="TerritoryControlTrigger" content_width_px="200" is_required="true"
+		tooltip="This is the shared trigger that causes managers to act against this territory control point if it's active and meets whatever their other criteria is." />
+	<attribute key="manager_trigger_2" type="node-dropdown" node_source="TerritoryControlTrigger" content_width_px="200" is_required="false"
+		tooltip="Same as the first one, but an optional additional one." />
+	<attribute key="manager_trigger_3" type="node-dropdown" node_source="TerritoryControlTrigger" content_width_px="200" is_required="false"
+		tooltip="Same as the first one, but an optional additional one." />
+	
+	<attribute key="unlock_to_ready_on_start_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this readies an unlock on start, what does it ready?" />
+	<attribute key="unlock_to_ready_on_start_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this readies an unlock on start, what does it ready?" />
+	<attribute key="unlock_to_ready_on_start_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this readies an unlock on start, what does it ready?" />
+	<attribute key="unlock_to_immediately_grant_on_start_1" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this immediately invents an unlock on start, what does it invent?" />
+	<attribute key="unlock_to_immediately_grant_on_start_2" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this immediately invents an unlock on start, what does it invent?" />
+	<attribute key="unlock_to_immediately_grant_on_start_3" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
+		tooltip="If this immediately invents an unlock on start, what does it invent?" />
+	<attribute key="unlock_on_start_inspiration_type" type="node-dropdown" node_source="UnlockInspirationType" content_width_px="200" is_required="false"
+		tooltip="If this readies or invents an unlock on start, then this inspiration type is required. Otherwise not." />
+
+	<attribute key="handbook_entry_on_start_1" type="node-dropdown" node_source="MachineHandbookEntry" content_width_px="200" is_required="false"
+		tooltip="If this provides a handbook entry on start (if that's not already dropped), then which one does it show?" />
+	<attribute key="handbook_entry_on_start_2" type="node-dropdown" node_source="MachineHandbookEntry" content_width_px="200" is_required="false"
+		tooltip="If this provides a handbook entry on start (if that's not already dropped), then which one does it show?" />
+	<attribute key="handbook_entry_on_start_3" type="node-dropdown" node_source="MachineHandbookEntry" content_width_px="200" is_required="false"
+		tooltip="If this provides a handbook entry on start (if that's not already dropped), then which one does it show?" />
+
+</root>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="name_part_type">
+	
+	<attribute key="display_name" type="existing-override" is_localized="false" />
+	<attribute key="description" type="existing-override" is_localized="false" />
+
+	<attribute key="skip_duplicate_name_part_checks" type="bool" default="false" is_required="true"
+		tooltip="Usually it is best if this is false, certainly for common words that people would recognize if they are repeatedly used (multiple factions with the word 'green' in it, or something).
+		
+However, in various cases, things like addendums to the end of a name will be repeated a lot, and those we don't want to check for duplicates." />
+	
+</root>

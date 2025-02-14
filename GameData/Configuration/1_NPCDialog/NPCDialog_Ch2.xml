@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--Housing First Chain
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+	
+	<dialog id="Ch1_HousingReb_First" display_name="Machine Scum!"
+		description="Yeah, they don't want to talk to you at all. They're fanatics."
+		strategy_tip=""
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Get Them To Stop" consequences_line="Will Start A Debate"
+			description=""
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromCorpoMilitary" debate_target_groups="Rebel"
+			debate_target="500" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_HousingReb_First_Win"/>
+	</dialog>
+	
+	<dialog id="Ch2_HousingReb_First_Win" display_name="Congratulations, They Don't Care"
+			description="The idea of tens of thousands of people living under your roof is terrifying to them."
+			strategy_tip="They're not leaving."
+			skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="That A Shame" consequences_line="Guess It's Time To Kill Them"/>
+	</dialog>
+
+	<dialog id="Ch1_HousingGang_First" display_name="You Stupid Robots!"
+		description="You notice that they're shooting at the NOAI rebels as much as they are you and your buildings."
+		strategy_tip="Maybe you can work with that?"
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Get Them To Leave" consequences_line="Will Start A Debate"
+			description=""
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromCorpoMilitary" debate_target_groups="Criminal"
+			debate_target="600" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_HousingGang_First_Win"/>
+	</dialog>
+
+	<dialog id="Ch2_HousingGang_First_Win" display_name="Your Argument Was Compelling"
+			description="These gang members may once have been rebels, but those days are long behind them. They're no longer true believers."
+			strategy_tip="They know when they're staring into the face of death."
+			skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="They'll Go" consequences_line="Solves Some Of The Chaos, At Least"/>
+	</dialog>
+
+
+	<!--Chapter Two, Talking To Vorsiber SVP During Oerl Invasion
+		**************************************************************************-->
+
+	<dialog id="Ch3_Oerl_VS_SVP_First" display_name="He Gives A Confident Smile"
+		description="Everything about him is relaxed, despite the violence all around him."
+		strategy_tip="He's been making occasional notes on a small clipboard."
+		music_tag_to_use_until_dialog_all_complete="EarlySecForceFollowers" music_track_to_play_first_when_starting_music_tag="VorsiberMachinations"
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Extract Information" consequences_line="Will Start A Debate"
+			description="Oerl Integrated is determined to recapture the AGI Researchers you have been hiding. This was expected, but the fact that Vorsiber is backing them and providing a security lockdown for the area is completely unexpected."
+			strategy_tip="Maybe he can explain why Vorsiber is involved with this."
+			debate_to_start_right_now="ExtractInformationFromCorpoExecutive" debate_target_groups="HighSociety,Corpo"
+			debate_target="400" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="2" debate_max_bonus_difficulty="4"
+			dialog_to_start_right_now="Ch3_Oerl_VS_SVP_First_Win"/>
+		<dialog_choice id="2" display_name="Try To Get Them To Leave" consequences_line="Will Start A Debate"
+			description="You're pretty sure any agreement you come to will involve an awful trade."
+			strategy_tip="Are you sure you can't win this fight?"
+			debate_to_start_right_now="ExtractInformationFromCorpoExecutive" debate_target_groups="HighSociety,Corpo"
+			debate_target="650" debate_starting_mistrust="70" debate_starting_defiance="70" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="5"
+			dialog_to_start_right_now="Ch3_Oerl_VS_SVP_Second_Win"/>
+	</dialog>
+
+	<dialog id="Ch3_Oerl_VS_SVP_First_Win" display_name="His Smile Widens"
+		description="Oerl was going behind Vorsiber's back when blackmailing the researchers, and 57 Oerl VPs have been put to death by way of apology.
+Vorsiber upper management isn't particular invested in this group of researchers, as they have plenty more in other cities.
+What Vorsiber wants is you -- to do something, create anything, to make this all worth their while. You're the golden goose: start laying."
+		strategy_tip="Oerl asked for and received permission to run this operation, both to save face and to see if there's anything useful they can steal from you.
+Vorsiber agreed, in the spirit of a good spectacle. The SVP is here to make sure that you aren't irrevocably harmed, and that Oerl sticks to the terms that Vorsiber laid out for them."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Turn And Leave" consequences_line="As usual, it's mind games"
+			description="Vorsiber upper management maintains power by pitting literally everyone else against one another. Even this SVP is just a pawn."/>
+	</dialog>
+
+	<dialog id="Ch3_Oerl_VS_SVP_Second" display_name="The Same Smile As Before"
+		description="It's like he doesn't have a care in the world."
+		strategy_tip="You throw your own android bodies away without much thought, but... humans don't have that luxury. Why is he so calm?"
+		music_tag_to_use_until_dialog_all_complete="EarlySecForceFollowers" music_track_to_play_first_when_starting_music_tag="VorsiberMachinations"
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Get Them To Leave" consequences_line="Will Start A Debate"
+			description="You're pretty sure any agreement you come to will involve an awful trade."
+			strategy_tip="Are you sure you can't win this fight?"
+			debate_to_start_right_now="ExtractInformationFromCorpoMilitary" debate_target_groups="Military,Corpo"
+			debate_target="650" debate_starting_mistrust="70" debate_starting_defiance="70" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="5"
+			dialog_to_start_right_now="Ch3_Oerl_VS_SVP_Second_Win"/>
+	</dialog>
+
+	<dialog id="Ch3_Oerl_VS_SVP_Second_Win" display_name="The Argument Meant Nothing To Him"
+		description="Vorsiber Atomic is prepared to call this whole thing off prematurely under one condition: you provide them with your Predator android design, which they will then begin mass producing."
+		strategy_tip="The very idea is sickening to you. You'd potentially wind up facing your own designs in future battles."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Agree To The Terms" consequences_line="And Hope They Doesn't Come Back To Bite You" 
+			city_flag_to_trip_1="VorsiberHasPredatorDesign" achievement_triggered1="NowForMassProduction"/>
+		<dialog_choice id="2" display_name="Refuse" consequences_line="You'll Have To Fight" city_flag_to_trip_1=""/>
+	</dialog>
+
+	<!--Rebel Kids Chain
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<dialog id="Ch2_RebelKids_First" display_name="You're Like All The Rest!"
+		description="Oof. These kids have seen... a lot."
+		strategy_tip=""
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Explain" consequences_line="Will Start A Debate"
+			description="You saved their friend, who was already hurt. This shouldn't be hard."
+			strategy_tip=""
+			debate_to_start_right_now="ConvinceInitialLostKid" debate_target_groups="Rebel,LowSociety"
+			debate_target="1500" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_RebelKids_First_Win"/>
+	</dialog>
+
+	<dialog id="Ch2_RebelKids_First_Win" display_name="Your Friend Is Right Here, You Know..."
+		description="These kids might have a lot of trauma clouding their vision, but they're not stupid. Fortunately you were able to actually get their friend to back up your side of the story."
+		strategy_tip="The kids all have voice modulators in their helmets, but you can still tell they're embarrassed. They saw a robot and an injured compatriot, and jumped to conclusions."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Tell Them It's Fine" consequences_line="And To Please Stop Shooting At You" dialog_to_start_right_now="Ch2_RebelKids_First_Win2"/>
+	</dialog>
+
+	<dialog id="Ch2_RebelKids_First_Win2" display_name="Why Are You Different?"
+		description="They don't understand why you rescued the kid. Corpos would never have ordered an android to do that. Plus, lately there's all these new kind of androids, and the tower..."
+		strategy_tip=""
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Uh..." consequences_line="You Might Be Ready For Them To Leave Now" dialog_to_start_right_now="Ch2_RebelKids_First_Win3"/>
+	</dialog>
+
+	<dialog id="Ch2_RebelKids_First_Win3" display_name="I Know The Answer"
+		description="The kid you rescued chimes in. Apparently he heard quite a bit of conversation between the AGI researchers."
+		strategy_tip="According to the kid, you're a 'pseudo-demigod' here to save the city from itself.
+The building he was trapped in was the headquarters of 'the only rebels with half a chance,' and you're 'the smartest being to ever walk the planet.'"
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="You're As Surprised As The Boss" consequences_line="That's What The Researchers Are Saying About You?" dialog_to_start_right_now="Ch2_RebelKids_First_Win4"/>
+	</dialog>
+	
+	<dialog id="Ch2_RebelKids_First_Win4" display_name="The Boss Considers All This"
+		description="Finally, they extend a hand. A very corpo gesture -- a handshake. It shows their middle-class origins."
+		strategy_tip="You reluctantly return the handshake."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Working With Kids Wasn't On Your Agenda" consequences_line="But They Literally Have Nothing" dialog_to_start_right_now="Ch2_RebelKids_First_Win5"/>
+	</dialog>
+	
+	<dialog id="Ch2_RebelKids_First_Win5" display_name="Not Nothing"
+		description="The boss is quite proud as they explain their current operation. They've been building a 'Sewer Tiger' for years, whatever that is.
+It apparently helps them dig through the upper and lower sewer systems -- from the ancient city to the current one. 
+It's how their friend wound up trapped in your basement after your basement 'suddenly appeared, bisecting the tunnels as if by magic.'"
+		strategy_tip="They have a plan to break into a specific prison where many of their parents are believed to be held. However, there are seismic sensors all through the prison that would detect the Sewer Tiger well before it arrived.
+Plus they don't have any way to care for injured or wounded they might extract from the prison. There are several problems, but they have the core ingredient, and will share.
+Will You Help?"
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Obviously You're Going To Help" consequences_line="You Really Want To Know What A Sewer Tiger Is" city_flag_to_trip_1="Ch2_TalkedDownRebelKids"/>
+	</dialog>
+
+
+	<!--Bionic Dues Chain
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+	
+	<dialog id="Ch2_BionicDues" display_name="My Death Is Inevitable"
+		description="The sergeant dispassionately explains: there is a deadly implant inside every trooper's skull.
+He and his soldiers fight because they are equally dead if they face you or run. If they run, their families are denied death benefits."
+		strategy_tip="You suddenly... have a sinking feeling about all the soldiers you 'spared.'"
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Let Him Continue" consequences_line="You're Not Sure Where He's Going With This" dialog_to_start_right_now="Ch2_BionicDues2"
+			description=""
+			strategy_tip="">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_BionicDues2" display_name="An Afterlife You Can Bank On"
+		description="Infantry have reported to him on your 'Temple of Minds.' He thinks he knows what you're doing: storage and simulation for human minds.
+Eventually, any soldier in the city may be ordered to face you. And they will die. Either from the implant in their head, or from your superior weaponry. This is unavoidable, but what happens after is not.
+He wants to strike a deal with you."
+		strategy_tip=""
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="I'm Listening" consequences_line="He Definitely Has Your Attention"
+			description=""
+			strategy_tip=""
+			project_to_start_1="" dialog_to_start_right_now="Ch2_BionicDues3">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_BionicDues3" display_name="A Bionic Tithe"
+		description="The deal is this: the NCOs around the city will ensure every trooper gets a software patch the geeks cooked up.
+You will gain access to 5% of their neural capacity while they are in the city. He's a bit smug to know you want that.
+The city averages half a million troops at the moment. That's a tremendous amount of brainpower.
+What they want in return is an afterlife: use their implants to upload their brains to your Temple of Minds when they die."
+		strategy_tip=""
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Agree" consequences_line="This Is An Excellent Deal"
+			description=""
+			strategy_tip="" city_flag_to_trip_1="TempleOfMindsLockedIn" city_flag_to_trip_2="MilitaryDeathsGoToTheTempleOfMinds"
+			project_to_start_1="Ch2_MIN_SpreadTheWord">
+		</dialog_choice>
+		
+		<dialog_choice id="2" display_name="Not Interested" consequences_line="You Can Manage Your Own Neural Expansion, Thanks"
+			description=""
+			strategy_tip=""
+			project_to_start_1="">
+		</dialog_choice>
+	</dialog>
+
+	<!--Exploit Yinshi Wellness Chain
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<dialog id="Ch2_YinshiSVPHereToBuyAnthro" display_name="About Your Invention"
+		description="His introduction is polite, but condescending. You realize, with a thrill of pleasure, that he truly believes you're human."
+		strategy_tip="But as he continues to talk, your pleasure fades. How does he know about the Anthroneuroweave? He talks about it like it's common knowledge."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="This Is Concerning" consequences_line="Your Scientists Must Have Talked"
+			description="On the other hand, Yinshi was the exact target you had in mind for a sale, so this saved you a few steps."
+			strategy_tip="And maybe it wasn't the scientists. It could have been routine digital espionage.
+You decide not to worry about that. You're just glad you're not ACTUALLY a human, or this would be quite intimidating. As it is, you're... curious."
+			dialog_to_start_right_now="Ch2_YinshiSVPHereToBuyAnthro2">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_YinshiSVPHereToBuyAnthro2" display_name="He's Making An Offer"
+		description="While you were navel-gazing about how he knew about your invention, he's gotten to the point: a truly staggering sum of money by human standards."
+		strategy_tip="But, wait -- that won't work. The entire point is to become part of their supply chain, so that you can put in backdoors.
+If they just buy the rights off you, that won't work."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="Protest" consequences_line="You'll Supply Goods, But Not The Tech"
+			description="You want to sell him goods from your own factory, over a long period of time."
+			strategy_tip="That way you can insert backdoors into what you sell him. Also it's way more money."
+			dialog_to_start_right_now="Ch2_YinshiSVPHereToBuyAnthro3">
+		</dialog_choice>
+		<dialog_choice id="2" display_name="Give Up" consequences_line="Just Sell Him The Tech"
+			description="Any inroad of this sort might turn into something you can exploit in the future, and in the short term, the cash is nice."
+			strategy_tip=""
+			dialog_to_start_right_now="Ch2_YinshiSVPHereToBuyAnthro5Sale">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_YinshiSVPHereToBuyAnthro3" display_name="He Shakes His Head"
+		description="He gives a very patronizing explanation of 'how things work in this town.'
+Basically: small fry like your company don't get to be part of the supply chain so readily."
+		strategy_tip="He's offering wealth that would be unimaginable to an individual, but which is nothing much on the corporate scale.
+It's super clear this is not a moment for negotiating."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="Give Up" consequences_line="Just Sell Him The Tech"
+			description="Any inroad of this sort might turn into something you can exploit in the future, and in the short term, the cash is nice."
+			strategy_tip=""
+			dialog_to_start_right_now="Ch2_YinshiSVPHereToBuyAnthro5Sale">
+		</dialog_choice>
+		<dialog_choice id="2" display_name="Refuse" consequences_line="You Won't Sell"
+			description="Small businesses have been getting bullied like this for almost eight hundred years. You're not feeling it."
+			strategy_tip=""
+			dialog_to_start_right_now="Ch2_YinshiSVPHereToBuyAnthro5Refusal">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_YinshiSVPHereToBuyAnthro5Refusal" display_name="He Shrugs"
+		description="His posture says this doesn't matter too much to him. You wonder if that's true."
+		strategy_tip="You wonder if he thinks you'll come back soon, begging."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="That's it." consequences_line="You let him leave."
+			description="Maybe... he'll come back."
+			strategy_tip=""
+			dialog_to_start_right_now=""
+			city_flag_to_trip_1="IsFinishedWithYinshiSaleDiscussion" city_flag_to_trip_2="RefusedAnthroneuroweaveToYinshi" achievement_triggered1=""
+			set_city_statistic_to_current_turn_plus_x="DoFurtherYinishiSolicitingAfterThisTurn" the_x_to_add_to_that_city_statistic="15">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_YinshiSVPHereToBuyAnthro5Sale" display_name="He Smiles"
+		description="You give him the designs, and he wires the money into your company's account."
+		strategy_tip="That's it."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="That's A Lot Of Money, At Least" consequences_line="You let him leave."
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="" resource_gained1="Wealth" resource_gained_amount1="22002000" resource_gained_reason1="Income_SaleOfTechnology"
+			city_flag_to_trip_1="IsFinishedWithYinshiSaleDiscussion" city_flag_to_trip_2="SoldAnthroneuroweaveToYinshi" achievement_triggered1="ThatsJustBusiness"
+			set_city_statistic_to_current_turn_plus_x="DoFurtherYinishiSolicitingAfterThisTurn" the_x_to_add_to_that_city_statistic="15">
+		</dialog_choice> 
+	</dialog>
+
+	<dialog id="Ch2_Yinshi_Rebels" display_name="Your Invention Can Save Lives"
+		description="Her pitch is complicated. There's a lot of rhetoric, and the topic of lower-class veteran amputees comes up a lot.
+The incoherence of her arguments surprises you, so you question her. On any side topic, she gives direct and knowledgeable answers. On anything related to Anthroneuroweave, she fumbles. Interesting."
+		strategy_tip="Just what is her group actually after? She's clearly not going to tell you.
+As an extra bargaining chip, she offers you a Fresh Identity program. THAT has your attention."
+		skip_nevermind_option="false"
+		>
+		<dialog_choice id="1" display_name="Work With The Rebels" consequences_line="Ignore The Syndicate"
+			description="You can only work with either the rebels or the syndicate when it comes to Anthroneuroweave, not both."
+			strategy_tip=""
+			city_flag_to_trip_1="IsFinishedWithAnthroneuroweaveChoice" city_flag_to_trip_2="UsingAnthroneuroweaveWithRebels"
+			tech_idea_to_instantly_unlock1="CrimeSceneCleaner" tech_idea_inspiration_type="DiscussionsWithHumans" crossover1="FreshIdentity" project_to_start_1="Ch2_MIN_RebelAnthroneuroweave"
+			upgrade_int_granted_1="Neuroweaver" upgrade_int_granted_2="Neuroweaver">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_Yinshi_Syndicate" display_name="Your Invention Can Make A Lot Of Money"
+		description="His pitch is simple: brain implants. Yinshi is thinking small when it comes to prosthetics.
+The wealthy will pay incredible prices to have extra computing power directly in their brains, even if it starts out as just a 'fancy calculator.' He keeps using that phrase a lot. It's irritating."
+		strategy_tip="But setting aside your annoyance with this man... this is exactly the sort of opportunity you've been looking for. Implanting your own tech directly in the minds of the wealthy?
+It's almost too good to pass up."
+		skip_nevermind_option="false"
+		>
+		<dialog_choice id="1" display_name="Go Into Business Together" consequences_line="Ignore The Rebels"
+			description="You can only work with either the rebels or the syndicate when it comes to Anthroneuroweave, not both."
+			strategy_tip=""
+			city_flag_to_trip_1="IsFinishedWithAnthroneuroweaveChoice" city_flag_to_trip_2="UsingAnthroneuroweaveWithSyndicate" project_to_start_1="Ch2_MIN_DesignBrainPal"
+			upgrade_int_granted_1="Neuroweaver" upgrade_int_granted_2="LabOperator" upgrade_int_granted_3="LabOperator">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_Yinshi_Rebels2A" display_name="Yes?"
+		description="She looks at you impassively. You both knew she wasn't forthright about her plans for the Anthroneuroweave."
+		strategy_tip="The question now is, will she give you any real answers?"
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="Try To Get The Truth" consequences_line="Will Start A Debate"
+			description=""
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromRebelLeader" debate_target_groups="Rebel"
+			debate_target="700" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_Yinshi_Rebels2A_Win"/>
+	</dialog>
+
+	<dialog id="Ch2_Yinshi_Rebels2A_Win" display_name="Fine. Consider Yourself Part Of The Cause"
+			description="Military veterans are often civilian contractors. Lower-class veterans can't get modern prosthetics.
+By accepted enhancements to their aging hardware, warehouse guards became unwitting mules for full telemetry for the rebels.
+From there, it was only a matter of time until useful ordnance in out-of-the-way places was revealed."
+			strategy_tip="She isn't willing to share any of the ordnance with you, but she will send you a large bank of Top Secret security clearance codes."
+			skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="There's Thousands In There" consequences_line="That Seems Like A Fair Trade"
+			description="You can always work out your own armor-piercing. Level 4 Clearances, and in such volume, are invaluable."
+			tech_idea_to_instantly_unlock1="OfficerCodex" tech_idea_inspiration_type="ReceivedFromRebels" crossover1="OfficerCodex" city_flag_to_trip_1="GotOfficerCodexFromVoxPopuli"/>
+	</dialog>
+
+
+	<!--Exploit Atca Retail Chain
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<dialog id="Ch2_AtcaPresidentHereToNegotiate" display_name="Message Received"
+		description="He has very little to say. His body language is tense."
+		strategy_tip="You're not super interested in talking to him, either."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="Demand A Cut" consequences_line="Infinite Money Glitch"
+			description="Demand they increase their percentage from 5% to 7% on the currency-printing scam, and divert half of that new total of that to you."
+			strategy_tip="Simple. Direct. All the money you could ever need."
+			dialog_to_start_right_now="Ch2_AtcaPresidentHereToNegotiate2">
+		</dialog_choice>
+		<dialog_choice id="2" display_name="Murder Him" consequences_line="You Can Do It Yourself"
+			description="You've seen every part of the scam. You have all the codes you need in order to create any amount of currency you wish."
+			strategy_tip="Plus, who knows when you'll next have the chance to look a top executive in the face and just... end them."
+			on_complete="MurderedWithoutCause" city_flag_to_trip_1="HasMurderedAtcaRetailPresident" city_flag_to_trip_2="DoneWithAtcaRetailPresident" extra_code_on_chosen="MurderedAtcaRetailPresident" achievement_triggered1="IllDoItMyself">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_AtcaPresidentHereToNegotiate2" display_name="Okay"
+		description="There's no resistance. No debate."
+		strategy_tip="You thought there would be. Maybe you should have asked for more."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="Let Him Go" consequences_line="Much As It Pains You"
+			description="You'll be a trillionaire soon, after all."
+			strategy_tip="That's the sort of money that governments have, not even the wealthiest of individuals.
+Well -- that's how it used to be. Now it's all corporations, no governments. But still."
+			dialog_to_start_right_now="" city_flag_to_trip_1="HasBlackmailDealWithAtcaRetail" city_flag_to_trip_2="DoneWithAtcaRetailPresident" achievement_triggered1="InfiniteMoneyGlitch">
+		</dialog_choice>
+	</dialog>
+
+</root>
