@@ -125,7 +125,17 @@ namespace Arcen.HotM.FFU.RoSAI {
                         bool buildingIsInvalid = buildingUnderCursor == null || buildingUnderCursor.MachineStructureInBuilding != null ||
                             (buildingUnderCursor?.GetMapItem()?.ParentTile?.TileNetworkLevel?.Display ?? TileNetLevel.None) < TileNetLevel.Full ||
                             !(buildingUnderCursor?.GetVariant()?.Tags?.ContainsKey(DataRefs.EvictionTag.ID) ?? false);
+                        /*
+                        ResourceType usedResType = 
+                            FlagRefs.IsPostFinalDoom.DuringGameplay_IsTripped ? 
+                            ResourceRefs.Wealth : ResourceRefs.DailyNecessities;
+                        string usedResLang = 
+                            FlagRefs.IsPostFinalDoom.DuringGameplay_IsTripped ? 
+                            "MissingGoods" : "MissingFunds";
+                        */
                         BuildingTypeVariant variant = buildingUnderCursor?.GetVariant();
+                        int baseCost = 1000;
+                        float costMult = 1f;
                         int peopleTotal = 0;
                         int peopleResidents = 0;
                         int peopleWorkers = 0;
@@ -158,11 +168,10 @@ namespace Arcen.HotM.FFU.RoSAI {
                             buildingVolume = buildingPrefab.NormalTotalBuildingVolumeFullDimensions;
                             buildingStorage = buildingPrefab.NormalTotalStorageVolumeFullDimensions;
                             buildingFloorArea = buildingPrefab.NormalTotalBuildingFloorAreaFullDimensions;
-                            totalEvictionCost = (int)(1000 +
-                            peopleTotal + legalOverhead +
-                            buildingVolume * DataRefs.EVICT_VOLUME_FUNDS_MULT +
-                            buildingStorage * DataRefs.EVICT_STORAGE_FUNDS_MULT +
-                            buildingFloorArea * DataRefs.EVICT_AREA_FUNDS_MULT);
+                            totalEvictionCost = (int)(costMult * (baseCost + peopleTotal + legalOverhead +
+                            buildingVolume * DataRefs.EVICT_VOLUME_MULT +
+                            buildingStorage * DataRefs.EVICT_STORAGE_MULT +
+                            buildingFloorArea * DataRefs.EVICT_AREA_MULT));
                         }
 
                         debugStage = 6200;
@@ -186,7 +195,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 if (peopleResidents > 0 || peopleWorkers > 0 || legalIssues > 0 || buildingVolume > 0 || buildingStorage > 0 || buildingFloorArea > 0) costInfo.Line();
                                 if (peopleTotal > 0) costInfo.Line().AddFormat1("ResultPeople", peopleTotal.ToStringThousandsWhole());
                                 if (totalEvictionCost > 0) costInfo.Line().AddFormat1("ResultFunds", totalEvictionCost.ToStringThousandsWhole());
-                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.Line().AddLang("EvictionFundsMissing");
+                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.Line().AddLang("MissingFunds");
                                 novel.Main.EndLineHeight();
                             }
                             return;
@@ -213,7 +222,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 if (peopleResidents > 0 || peopleWorkers > 0 || legalIssues > 0 || buildingVolume > 0 || buildingStorage > 0 || buildingFloorArea > 0) costInfo.Line();
                                 if (peopleTotal > 0) costInfo.Line().AddFormat1("ResultPeople", peopleTotal.ToStringThousandsWhole());
                                 if (totalEvictionCost > 0) costInfo.Line().AddFormat1("ResultFunds", totalEvictionCost.ToStringThousandsWhole());
-                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.Line().AddLang("EvictionFundsMissing");
+                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.Line().AddLang("MissingFunds");
                                 novel.Main.EndLineHeight();
                             }
 

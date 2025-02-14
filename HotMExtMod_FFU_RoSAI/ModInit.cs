@@ -34,12 +34,9 @@ namespace Arcen.HotM.FFU.RoSAI {
         public const float LEGAL_BACTERIA = 0.25f;
         public const float LEGAL_DEFAULT = 1f;
 
-        public const float EVICT_VOLUME_FUNDS_MULT = 0.05f;
-        public const float EVICT_VOLUME_SILICA_MULT = 0.005f;
-        public const float EVICT_STORAGE_FUNDS_MULT = 0.1f;
-        public const float EVICT_STORAGE_SILICA_MULT = 0.01f;
-        public const float EVICT_AREA_FUNDS_MULT = 0.25f;
-        public const float EVICT_AREA_SILICA_MULT = 0.025f;
+        public const float EVICT_VOLUME_MULT = 0.05f;
+        public const float EVICT_STORAGE_MULT = 0.1f;
+        public const float EVICT_AREA_MULT = 0.25f;
 
         public static AbilityType Eviction = null;
         public static BuildingTag EvictionTag = null;

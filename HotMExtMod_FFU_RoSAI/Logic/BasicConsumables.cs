@@ -162,7 +162,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                                             bool hasNext = mFloatEnum.MoveNext();
                                             try {
                                                 string opType = GetMathTypeText(mFloatCurrent.Value.MathType);
-                                                string opValue = mFloatCurrent.Value.GetMin(buildingStructure).ToStringThousandsWhole();
+                                                string opValue = mFloatCurrent.Value.GetMin(buildingStructure).ToStringThousandsDecimal();
                                                 if (mFloatCurrent.Value.IncomeOrExpenseResource != null) {
                                                     var refResource = mFloatCurrent.Value.IncomeOrExpenseResource;
                                                     if (!string.IsNullOrEmpty(refResource.GetDisplayName()))
@@ -234,6 +234,8 @@ namespace Arcen.HotM.FFU.RoSAI {
                         bool buildingIsInvalid = buildingUnderCursor == null || buildingUnderCursor.MachineStructureInBuilding != null ||
                             (buildingUnderCursor?.GetMapItem()?.ParentTile?.TileNetworkLevel?.Display ?? TileNetLevel.None) < TileNetLevel.Full;
                         BuildingTypeVariant variant = buildingUnderCursor?.GetVariant();
+                        int baseCost = 25;
+                        float costMult = 0.1f;
                         int peopleTotal = 0;
                         int peopleResidents = 0;
                         int peopleWorkers = 0;
@@ -249,10 +251,10 @@ namespace Arcen.HotM.FFU.RoSAI {
                             buildingVolume = buildingPrefab.NormalTotalBuildingVolumeFullDimensions;
                             buildingStorage = buildingPrefab.NormalTotalStorageVolumeFullDimensions;
                             buildingFloorArea = buildingPrefab.NormalTotalBuildingFloorAreaFullDimensions;
-                            totalEvictionCost = (int)(25 +
-                            buildingVolume * DataRefs.EVICT_VOLUME_SILICA_MULT +
-                            buildingStorage * DataRefs.EVICT_STORAGE_SILICA_MULT +
-                            buildingFloorArea * DataRefs.EVICT_AREA_SILICA_MULT);
+                            totalEvictionCost = (int)(costMult * (baseCost +
+                            buildingVolume * DataRefs.EVICT_VOLUME_MULT +
+                            buildingStorage * DataRefs.EVICT_STORAGE_MULT +
+                            buildingFloorArea * DataRefs.EVICT_AREA_MULT));
                         }
 
                         debugStage = 6200;
@@ -275,7 +277,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 if (peopleResidents > 0 || peopleWorkers > 0 || buildingVolume > 0 || buildingStorage > 0 || buildingFloorArea > 0) costInfo.Line();
                                 if (peopleTotal > 0) costInfo.Line().AddFormat1("ResultPeople", peopleTotal.ToStringThousandsWhole());
                                 if (totalEvictionCost > 0) costInfo.Line().AddFormat1("ResultSilica", totalEvictionCost.ToStringThousandsWhole());
-                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.Line().AddLang("EvictionSilicaMissing");
+                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.Line().AddLang("MissingSilica");
                                 novel.Main.EndLineHeight();
                             }
                             return false;
@@ -301,7 +303,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 if (peopleResidents > 0 || peopleWorkers > 0 || buildingVolume > 0 || buildingStorage > 0 || buildingFloorArea > 0) costInfo.Line();
                                 if (peopleTotal > 0) costInfo.Line().AddFormat1("ResultPeople", peopleTotal.ToStringThousandsWhole());
                                 if (totalEvictionCost > 0) costInfo.Line().AddFormat1("ResultSilica", totalEvictionCost.ToStringThousandsWhole());
-                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.Line().AddLang("EvictionSilicaMissing");
+                                if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.Line().AddLang("MissingSilica");
                                 novel.Main.EndLineHeight();
                             }
 
