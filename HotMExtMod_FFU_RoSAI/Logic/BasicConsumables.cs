@@ -54,6 +54,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                             if (novel.TryStartSmallerTooltip(TooltipID.Create(Consumable), null, SideClamp.Any, TooltipNovelWidth.Smaller)) {
                                 novel.Icon = Consumable.Icon;
                                 novel.TitleUpperLeft.AddLang("DebugTooltipInfo");
+                                novel.Main_ExtraSizePerLine = 0f;
 
                                 debugStage = 4400;
                                 var costInfo = novel.Main.StartLineHeight10().AddRaw(variant.GetDisplayName()).Line();
@@ -179,6 +180,7 @@ namespace Arcen.HotM.FFU.RoSAI {
 
                                 debugStage = 4900;
                                 costInfo.Line2x().AddRaw("Unique ID: " + buildingUnderCursor.GetBuildingID(), "FFFFFF");
+                                novel.Main.EndLineHeight();
                             }
 
                             ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), DataRefs.InfoVis.ColorHDR,
