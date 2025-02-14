@@ -5,7 +5,7 @@
 		 description="Shows precise information about parameters of the building."
 		 strategy_tip="Doesn't consume anything and only exists to help mod developers to get precise information about buildings."
 		 icon_name="CleanSimple_Common044" icon_color="#ffffff" sort_order="52000"
-		 dll_name="HotMExtMod_FFU_RoSAI" type_name="Arcen.HotM.FFU.RoSAI.BasicConsumables"
+		 dll_name="HotM_External_FFU_RoSAI" type_name="Arcen.HotM.FFU.RoSAI.BasicConsumables"
 		 consumable_intentionally_has_no_unlock="true">
 		<consumable_cost resource_type="MentalEnergy" required="1" />
 		<direct_use_consumable_data targets_building_tag="Any" can_only_be_used_by_actors="AllForces" on_direct_use="ConsumableWarPowerup" is_considered_an_attack_if_thrown="false" />
@@ -15,7 +15,7 @@
 		 description="Through the smart application of liquid metal, forcefully relocate the inhabitants to your housing and deconstruct the building itself to free up the land plot. Liquid metal will be assimilated into the building and make it look as if building fell apart from structural decay. Liquid metal usage depends on size, volume, complexity and other physical properties of the building itself."
 		 strategy_tip="Doesn't work, if there is no network coverage or, if network traffic is restricted (high-security zones, military bases, etc). This endeavor can be quite expensive, if you need to remove lots of buildings. So pay attention to assets you use for this operation."
 		 icon_name="HO_House5" icon_color="#ffffff" sort_order="21000"
-		 dll_name="HotMExtMod_FFU_RoSAI" type_name="Arcen.HotM.FFU.RoSAI.BasicConsumables">
+		 dll_name="HotM_External_FFU_RoSAI" type_name="Arcen.HotM.FFU.RoSAI.BasicConsumables">
 		<consumable_cost resource_type="MentalEnergy" required="1" />
 		<consumable_cost resource_type="DroneFrame" required="1" />
 		<direct_use_consumable_data targets_building_tag="EvictionTarget" can_only_be_used_by_actors="AllAndroids" on_direct_use="EngineDrillLaunched" is_considered_an_attack_if_thrown="false" />
