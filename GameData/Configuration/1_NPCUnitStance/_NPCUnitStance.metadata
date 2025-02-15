@@ -75,12 +75,19 @@ This is basically for large-scale war situations, where all the background units
 		tooltip="If true, units in this stance will be considered a complete noncombatant." />
 	<attribute key="is_considered_passive_guard" type="bool" default="false"
 		tooltip="If true, units in this stance will be considered a passive guard if you're not in the place they are guarding." />
+	<attribute key="is_still_considered_passive_guard_to_player_forces" type="bool" default="false"
+		tooltip="If true, then player-controlled units will treat this like a passive guard, even though other NPCs do not." />
 	<attribute key="is_part_of_city_economy" type="bool" default="false"
 		tooltip="If true, units in this stance are doing work for the city economy." />
 	<attribute key="is_part_of_regional_economy" type="bool" default="false"
 		tooltip="If true, units in this stance are doing work for the regional economy." />
 	<attribute key="is_part_of_international_economy" type="bool" default="false"
 		tooltip="If true, units in this stance are doing work for the international economy." />
+
+	<attribute key="is_considered_rebel_friendly_machine" type="bool" default="false"
+		tooltip="If true, this is considered a machine forces unit friendly-ish to rebels." />
+	<attribute key="will_hold_fire_against_rebel_friendly_machine" type="bool" default="false"
+		tooltip="If true, units in this stance won't fire at rebel-friendly machines." />
 	
 	<attribute key="will_hold_fire_against_non_disruptive" type="bool" default="false"
 		tooltip="If true, units in this stance will avoid shooting other units that are not presently considered disruptive." />
@@ -114,10 +121,14 @@ This is basically for large-scale war situations, where all the background units
 		tooltip="If true, units in this stance will attack anyone and everyone that is not from their own cohort, regardless of anything except 'hold fire if at full health'." />
 	<attribute key="will_ignore_damage_to_machine_structures_in_damage_calculations" type="bool" default="false"
 		tooltip="If true, units in this stance will not include machine structures in their damage calculations, area-of-effect or otherwise." />
+	<attribute key="is_blocked_from_stepping_in_poi_with_higher_security_clearance_than_has" type="bool" default="false"
+		tooltip="If true, this unit will not wander into pois with a higher security clearance than it has, if it is tile-wide and not alarmed." />
 	<attribute key="will_hold_fire_against_lowermiddle_civilians" type="bool" default="false"
 		tooltip="If true, units in this stance will avoid shooting standard lower or middle class civilians." />
 	<attribute key="will_attack_all_active_cohort_guards" type="bool" default="false"
 		tooltip="If true, units in this stance will attack any cohort guards that are also active. This overrides their normal hold-fire against cohort guards, if that's also on." />
+	<attribute key="is_considered_machine_in_terms_of_which_active_guards_to_attack" type="bool" default="false"
+		tooltip="If true, units in this stance will only attack basically like a bulk unit would." />
 	<attribute key="is_allowed_to_aggro_poi_guards" type="bool" default="false"
 		tooltip="If true, units in this stance are allowed too attack poi guards that are not yet aggroed, thus making the poi go on alert. When this is false, they cannot." />
 	<attribute key="is_on_orders_from_the_local_megacorp" type="bool" default="false"

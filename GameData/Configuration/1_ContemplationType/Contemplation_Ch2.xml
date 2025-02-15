@@ -458,4 +458,87 @@ You got the idea from overhearing a conversation between some of your Veterinari
 		icon_name="CS_ChessWarrior" icon_scale="0.5" color_hex="#DE2207" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
 		collections="All,GrandMysteries" />
 
+	<contemplation id="ExploitingAFederatedCorporation" display_name="Exploiting A Federated Corporation" debug_log_contemplation_details="false"
+		description="Vorsiber Atomic has subdivided itself into 18 smaller corporations, and it has delegated a lot of its authority to each of them in various ways.
+Vorsiber maintains control partly by pitting these 'federated corporations' against one another, having them compete in a veneer of capitalism."
+		strategy_tip="There may be an opportunity here because of this intense competition, which often involves physical violence between federated corporations.
+To see if that's true, you'll need to steal and analyze quite a bit of data in order to see if there are any targets for you to exploit."
+		event_to_trigger_at_location="Cont_ExploitingAFederatedCorporation"
+		spawns_at_building_tag="ExecutiveSkyscraper"
+		icon_name="WEmblem185" icon_scale="0.5" color_hex="#1D6D88" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,TimelineGoalCriticalPath" primary_path_for_goals="BionicSecret" one_path_to_goals="CollapseACriminalSyndicate,CollapseAFederatedCorporation,CauseACivilWar" />
+
+	<contemplation id="ExploitingYinshiWellness" display_name="Exploiting Yinshi Wellness" debug_log_contemplation_details="false"
+		description="Yinshi's clientele includes a lot of amputees who are military veterans. If you can become part of their supply chain in some way... there's quite a bit you could do."
+		strategy_tip="The corporations who directly serve the military are locked up tight, so there's no way for you to gain access. But veterans are still useful, as many of them work as civilian contractors..."
+		event_to_trigger_at_location="Cont_ExploitingYinshiWellness"
+		spawns_at_building_tag="ExecutiveSkyscraper"
+		icon_name="FlatSkillC90" icon_scale="0.5" color_hex="#1D8822" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,TimelineGoalCriticalPath" primary_path_for_goals="BionicSecret,CollapseACriminalSyndicate" />
+
+	<contemplation id="ExploitingAtcaRetail" display_name="Exploiting Atca Retail" debug_log_contemplation_details="false"
+		description="Atca is among the worst-performing corporations, but over the last few years they have seen sustained growth at a suspiciously consistent rate.
+Their growth rate is a meager 5%, so it's likely that nobody cares enough to look into this."
+		strategy_tip="Depending on what you find, this might be a means to blackmail, or something even more exciting."
+		event_to_trigger_at_location="Cont_ExploitingAtcaRetail"
+		spawns_at_building_tag="Bank"
+		icon_name="SI_Atm_Machine" icon_scale="0.5" color_hex="#881D83" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,TimelineGoalCriticalPath" primary_path_for_goals="CollapseAFederatedCorporation,CauseACivilWar" />
+
+	<contemplation id="ThreatenToExposeAtcaRetail" display_name="Threaten To Expose Atca Retail" debug_log_contemplation_details="false"
+		description="These idiots are literally printing currency in order to hit their growth targets. This is the sort of thing that Vorsiber absolutely cannot countenance without losing its grip on the region, so consequences would be swift and severe.
+The executives in charge of this are smart enough to keep their operation small-time, so they probably understand the scope of risk they have undertaken."
+		strategy_tip="So... now that you know their scheme... what do you want to do to them?
+You have a tremendous amount of leverage."
+		event_to_trigger_at_location="Cont_ThreatenToExposeAtcaRetail"
+		spawns_at_building_tag="Bank"
+		icon_name="SI_Atm_Machine" icon_scale="0.5" color_hex="#881D1D" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,TimelineGoalCriticalPath" primary_path_for_goals="CollapseAFederatedCorporation,CauseACivilWar" />
+
+	<contemplation id="CollapseTheEconomy" display_name="Collapse The Economy" debug_log_contemplation_details="false"
+		description="Not to be done lightly. Without an economic structure in place, there is likely to be widespread war and suffering."
+		strategy_tip="You learned all you needed to from Atca Retail. The hard part won't be collapsing Vorsiber's currency -- the hard part will be surviving what comes after."
+		event_to_trigger_at_location="Cont_CollapseTheEconomy"
+		spawns_at_building_tag="Courthouse"
+		icon_name="SK_War" icon_scale="0.5" color_hex="#881D1D" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,TimelineGoalCriticalPath" primary_path_for_goals="CollapseAFederatedCorporation,CauseACivilWar" />
+
+	<contemplation id="ExploitingPeakHomes" display_name="Exploiting Peak Homes" debug_log_contemplation_details="false"
+		description="Peak is the largest landlord in town. It's never been entirely clear why redevelopment stalled on the decrepit parts of town, almost a century ago."
+		strategy_tip="On top of that, there are reports of odd sightings of racing animals of some sort, and illegal animal training facilities in those areas of town.
+Employees of Peak have been observed going to and from these locations, but very little else is known."
+		event_to_trigger_at_location="Cont_ExploitingPeakHomes"
+		spawns_at_building_tag="AbandonedOffice"
+		icon_name="Pw_House9" icon_scale="0.5" color_hex="#861D88" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,SideExploration" />
+
+	<contemplation id="UrsineInfiltration" display_name="Ursine Infiltration" debug_log_contemplation_details="false"
+		description="Raven's report on the Underground Ursine Street Racing was... vivid. You think you might want some of those animals for yourself.
+Since CombatUnits are used as handlers in between races, it shouldn't be a big deal for one of your own CombatUnits to get in and set them loose."
+		strategy_tip="These are deadly animals, however. To capture them, you will need Animal Capture Drones, which can be launched from your Mindports (in the Vehicle tab of command mode).
+Make sure you build enough drone frames in advance, and then be ready to capture the animals while both you and they are under heavy fire.
+However many you manage to capture are the number you have; these have so many bionic augmentations that it's not going to be a simple matter to genetically replicate them."
+		event_to_trigger_at_location="Cont_UrsineInfiltration"
+		spawns_at_building_tag="AbandonedOffice"
+		icon_name="FlatSkillB_bear" icon_scale="0.5" color_hex="#5D1D88" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,SideExploration" />
+
+	<contemplation id="BearTraining" display_name="Bear Training" debug_log_contemplation_details="false"
+		description="The claws of these bears are incredibly effective at taking down vehicles and mechs. However, keeping the bears from attacking your own units, and keeping them vaguely on task (also not attacking civilians or hiding in buildings) is tricky.
+The good news is that they already have extensive training with CombatUnits, as well as various established means of conditioning."
+		strategy_tip="If you prefer to just let them live the good life, you certainly can. At the best of times, trying to get bears to do exactly what you want is going to be... fraught.
+And you can't make more bears if these ones die. Eh. Just because you train them, doesn't mean you have to deploy them. It can't hurt to have them trained, right?"
+		event_to_trigger_at_location="Cont_BearTraining"
+		spawns_at_machine_job_tag="ParkourBearFacility"
+		icon_name="FlatSkillB_bear" icon_scale="0.5" color_hex="#1D7488" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_chapter_number="2"
+		collections="All,SideExploration" />
+
 </root>

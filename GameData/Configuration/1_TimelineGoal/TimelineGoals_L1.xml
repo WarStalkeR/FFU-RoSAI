@@ -236,4 +236,43 @@ Once started, the war never ends in this timeline. It also crosses over into oth
 		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="ExpertProtection"/>
 	</timeline_goal>
 
+	<timeline_goal id="BionicSecret" display_name="Bionic Secret"
+		description="Use your shell company and bionics expertise to install a backdoor in many citizens."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="WEmblem067" sort_order="1000" collections="All,Tier1Goal,ShellCompany,ActivistAllies,CriminalSyndicates,FederatedCorporations">
+		<goal_path id="RebelAlliance" display_name="Rebel Alliance" description="Gain Security Clearance 4"
+			meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="RebelAlliance"/>
+		<goal_path id="ToysForTheElite" display_name="Toys For The Elite" description="2+ million Neural Expansion"
+			meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="DangerousToys"/>
+
+		<goal_path id="NoMurders" display_name="No Murders" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="CompassionateBionics"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3" achievement_triggered1="BionicDifficulties"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="ExtremeBionics"/>
+	</timeline_goal>
+
+	<timeline_goal id="CollapseACriminalSyndicate" display_name="Collapse A Criminal Syndicate"
+		description="There was a syndicate here. It's gone now."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="FlatSkillA02" sort_order="1000" collections="All,SideGoal,CriminalSyndicates">
+		<goal_path id="ExoticImporters" display_name="Betray Exotic Importers" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="GoodbyeMrExotic" achievement_triggered2="TheJudge"/>
+	</timeline_goal>
+
+	<timeline_goal id="CollapseAFederatedCorporation" display_name="Collapse A Federated Corporation"
+		description="Before you showed up, this hadn't happened in over a century."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="WEmblem185" sort_order="1000" collections="All,SideGoal,FederatedCorporations">
+		<goal_path id="AtcaRetail" display_name="Frame Atca Retail" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="JustKeepFlogging" achievement_triggered2="FromTheBottomUp"/>
+	</timeline_goal>
+
+	<timeline_goal id="CauseACivilWar" display_name="Cause A Civil War"
+		description="Cause the federated corporations, which are all subsidiaries of Vorsiber Atomic, to go to war with one another via any means."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="SK_War" sort_order="1000" collections="All,SideGoal,FederatedCorporations">
+		<goal_path id="Billionaire" display_name="Everyone's A Billionaire" description="Collapse the economy through hyper-inflation." meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="IfEveryonesABillionaireNobodyIs" achievement_triggered2="EverythingIsAwful"/>
+	</timeline_goal>
+
 </root>

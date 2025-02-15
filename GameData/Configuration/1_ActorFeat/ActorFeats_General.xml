@@ -14,7 +14,7 @@
 		*********************************************************************************-->
 
 	<actor_feat id="Ambush" display_name="Ambush"
-		description="Damage multiplier against targets when this unit is in shadow or blending in."
+		description="Damage multiplier against targets when this unit is in shadow or blending in. Max one ambush per turn."
 		icon_name="FlatSkill_55" icon_color="#D65E34" tooltip_color="ActorStatus_Bad"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActorFeats_General"
 		sort_order="100" is_high_importance="true"
@@ -55,7 +55,7 @@ If not, then the human will be shocked and their attacks will be weaker over the
 	</actor_feat>
 
 	<actor_feat id="SuppressingFire" display_name="Suppressing Fire"
-		description="Enemy units within the attack range of this unit have their attack and movement ranges reduced. This effect does not stack."
+		description="Every time this unit fires its weapon, enemy units within the attack range of this unit have their attack and movement ranges reduced. This effect does not stack."
 		icon_name="CleanSimple_Misc66" icon_color="#D66834" tooltip_color="ActorStatus_Gold"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActorFeats_General"
 		sort_order="200" is_high_importance="true"
