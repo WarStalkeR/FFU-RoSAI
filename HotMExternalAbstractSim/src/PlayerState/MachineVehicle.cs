@@ -2115,9 +2115,12 @@ namespace Arcen.HotM.External
                     return false;
                 if ( npcUnit.GetWillFireOnMachineUnitsBaseline() )
                 {
-                    //we are not part of a shell company, so cannot intervene without giving ourselves away
-                    if ( npcUnit.Stance?.WillAttackShellCompanyMachinesEvenIfNotAggroed??false )
-                        return false;
+                    if ( !(npcUnit.Stance?.IsHyperAggressiveAgainstAllButItsOwnCohort ?? false) )
+                    {
+                        //we are not part of a shell company, so cannot intervene without giving ourselves away
+                        if ( npcUnit.Stance?.WillAttackShellCompanyMachinesEvenIfNotAggroed ?? false )
+                            return false;
+                    }
 
                     return true;
                 }

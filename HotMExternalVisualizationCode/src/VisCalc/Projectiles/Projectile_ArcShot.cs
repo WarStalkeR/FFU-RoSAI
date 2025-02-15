@@ -177,9 +177,10 @@ namespace Arcen.HotM.ExternalVis
             {
                 if ( ArcenTime.UnpausedTimeSinceStartF >= this.ExpiresAtTime )
                 {
-                    if ( !this.HasReachedFinalDestination && this.OnComplete != null )
+                    if ( !this.HasReachedFinalDestination )
                     {
-                        this.OnComplete();
+                        if ( this.OnComplete != null )
+                            this.OnComplete();
                         if ( this.FullParticleDefinition?.OnHit != null )
                             this.FullParticleDefinition.OnHit.DuringGame_PlayAtLocationWithAreaMultiplier( this.CurrentPoint,
                                 new Vector3( 0, Engine_Universal.PermanentQualityRandom.NextFloat( 0, 360f ), 0 ), this.Packet.AreaRange, false );

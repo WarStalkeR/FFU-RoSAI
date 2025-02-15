@@ -197,6 +197,7 @@ namespace Arcen.HotM.ExternalVis
 
         private static List<NPCToSort> sortedNPCs = List<NPCToSort>.Create_WillNeverBeGCed( 4000, "NPCTargetingCalculator-sortedNPCs" );
         private static Dictionary<ISimMapActor,bool> playerDamagedActors = Dictionary<ISimMapActor, bool>.Create_WillNeverBeGCed( 4000, "NPCTargetingCalculator-playerDamagedActors" );
+        private static Dictionary<ISimNPCUnit, bool> npcsDamagingPlayerUnits = Dictionary<ISimNPCUnit, bool>.Create_WillNeverBeGCed( 4000, "NPCTargetingCalculator-npcsDamagingPlayerUnits" );
         private static List<ISimMapActor> currentPossibleMapActors = List<ISimMapActor>.Create_WillNeverBeGCed( 4000, "NPCTargetingCalculator-currentPossibleMapActors" );
         private static List<ISimMapActor> fullListMapActors = List<ISimMapActor>.Create_WillNeverBeGCed( 4000, "NPCTargetingCalculator-fullListMapActors" );
 
@@ -211,6 +212,7 @@ namespace Arcen.HotM.ExternalVis
             SimCommon.NPCsWithAttackPlansThatHitPlayer.ClearConstructionListForStartingConstruction();
 
             playerDamagedActors.Clear();
+            npcsDamagingPlayerUnits.Clear();
 
             foreach ( NPCToSort npcUnitSorted in sortedNPCs )
             {
@@ -319,7 +321,8 @@ namespace Arcen.HotM.ExternalVis
             //now see if there is an area of attack also happening
             float attackAreaSquared = npcUnit.GetAreaOfAttackSquared();
             attackPlan.AreaAttackRangeSquared = attackAreaSquared;
-            bool wouldAreaOrPrimaryAttackAMachineActor = target.GetIsPartOfPlayerForcesInAnyWay();
+            bool wouldAreaOrPrimaryAttackAMachineActorRoot = target.GetIsPartOfPlayerForcesInAnyWay();
+            bool wouldAreaOrPrimaryAttackAMachineActor = wouldAreaOrPrimaryAttackAMachineActorRoot;
             bool wouldAreaAttackSecondaryStrikeAMachineActor = target.GetIsPartOfPlayerForcesInAnyWay();
             if ( attackAreaSquared > 0 )
             {
@@ -347,6 +350,7 @@ namespace Arcen.HotM.ExternalVis
                         if ( prospect.GetIsPartOfPlayerForcesInAnyWay() )
                         {
                             playerDamagedActors[prospect] = true;
+                            npcsDamagingPlayerUnits[npcUnit] = true;
                             wouldAreaOrPrimaryAttackAMachineActor = true;
                             wouldAreaAttackSecondaryStrikeAMachineActor = true;
                         }
@@ -357,8 +361,11 @@ namespace Arcen.HotM.ExternalVis
                 }
             }
 
-            if ( wouldAreaOrPrimaryAttackAMachineActor )
+            if ( wouldAreaOrPrimaryAttackAMachineActorRoot )
+            {
                 playerDamagedActors[target] = true;
+                npcsDamagingPlayerUnits[npcUnit] = true;
+            }
 
             attackPlan.WouldAreaOrPrimaryAttackAMachineActor = wouldAreaOrPrimaryAttackAMachineActor;
             attackPlan.WouldAreaAttackSecondaryStrikeAMachineActor = wouldAreaAttackSecondaryStrikeAMachineActor;
@@ -437,7 +444,8 @@ namespace Arcen.HotM.ExternalVis
         #region CalculateAttackPlanIncoming
         private static void CalculateAttackPlanIncoming()
         {
-            SimCommon.AttackPlanIncomingDamageToPlayerUnits.ClearConstructionListForStartingConstruction();
+            SimCommon.AttackPlan_IncomingDamageToPlayerUnits.ClearConstructionListForStartingConstruction();
+            SimCommon.AttackPlan_AttackersAfterPlayerUnits.ClearConstructionListForStartingConstruction();
 
             if ( playerDamagedActors.Count > 0 )
             {
@@ -469,13 +477,25 @@ namespace Arcen.HotM.ExternalVis
                     incoming.WouldBeFatal = wouldDie;
                     incoming.TypeSortCode = typeSortCode;
 
-                    SimCommon.AttackPlanIncomingDamageToPlayerUnits.AddToConstructionList( incoming );
+                    SimCommon.AttackPlan_IncomingDamageToPlayerUnits.AddToConstructionList( incoming );
                 }
             }
 
-            if ( SimCommon.AttackPlanIncomingDamageToPlayerUnits.GetConstructionList().Count > 1 )
+            if ( npcsDamagingPlayerUnits.Count > 0 )
             {
-                SimCommon.AttackPlanIncomingDamageToPlayerUnits.SortConstructionList( delegate ( AttackPlanIncoming Left, AttackPlanIncoming Right )
+                foreach ( KeyValuePair<ISimNPCUnit, bool> kv in npcsDamagingPlayerUnits )
+                {
+                    ISimNPCUnit npc = kv.Key;
+                    if ( npc.IsFullDead || npc.IsInvalid )
+                        continue;
+
+                    SimCommon.AttackPlan_AttackersAfterPlayerUnits.AddToConstructionList( npc );
+                }
+            }
+
+            if ( SimCommon.AttackPlan_IncomingDamageToPlayerUnits.GetConstructionList().Count > 1 )
+            {
+                SimCommon.AttackPlan_IncomingDamageToPlayerUnits.SortConstructionList( delegate ( AttackPlanIncoming Left, AttackPlanIncoming Right )
                 {
                     int val = Left.TypeSortCode.CompareTo( Right.TypeSortCode ); //asc
                     if ( val != 0)
@@ -491,7 +511,20 @@ namespace Arcen.HotM.ExternalVis
                 } );
             }
 
-            SimCommon.AttackPlanIncomingDamageToPlayerUnits.SwitchConstructionToDisplay();
+            if ( SimCommon.AttackPlan_AttackersAfterPlayerUnits.GetConstructionList().Count > 1 )
+            {
+                SimCommon.AttackPlan_AttackersAfterPlayerUnits.SortConstructionList( delegate ( ISimNPCUnit Left, ISimNPCUnit Right )
+                {
+                    int val = Left.GetDisplayName().CompareTo( Right.GetDisplayName() ); //asc
+                    if ( val != 0 )
+                        return val;
+
+                    return Left.ActorID.CompareTo( Right.ActorID ); //asc
+                } );
+            }
+
+            SimCommon.AttackPlan_IncomingDamageToPlayerUnits.SwitchConstructionToDisplay();
+            SimCommon.AttackPlan_AttackersAfterPlayerUnits.SwitchConstructionToDisplay();
         }
         #endregion
 

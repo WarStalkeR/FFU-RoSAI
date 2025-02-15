@@ -32,6 +32,8 @@ namespace Arcen.HotM.External
 
         public int MaxActionPoints => throw new NotImplementedException();
 
+        public int LastTurnDidAmbush { get => 0; set { } }
+
         public StandbyType CurrentStandby { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public ActionOverTime CurrentActionOverTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public ActionOverTime AlmostCompleteActionOverTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

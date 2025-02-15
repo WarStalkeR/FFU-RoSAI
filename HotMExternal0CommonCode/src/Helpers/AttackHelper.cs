@@ -295,7 +295,9 @@ namespace Arcen.HotM.External
             //this outer method exists just to be in the stack trace
             return HandleGeneralAttackLogic_Inner( Attacker, Target, CalculationType.ForExecution, 
                 RandIfNotPrediction, IsAndroidLeapingFromBeyondAttackRange, 0f, true, true, false, false, Vector3.zero, //this is for the actual melee logic, so the unit has already moved all it is going to
-                0, false, AttackAmounts.Zero(), false, null, null );
+                0, false, AttackAmounts.Zero(),
+                true, //skip range checks, as this had bad edge cases
+                null, null );
         }
 
         #region HandlePlayerRangedAttackLogic
@@ -307,7 +309,9 @@ namespace Arcen.HotM.External
 
             AttackAmounts totalDamageDealt = HandleGeneralAttackLogic_Inner( Attacker, Target, CalculationType.ForExecution, 
                 RandIfNotPrediction, IsAndroidLeapingFromBeyondAttackRange, 0f, true, true, false, false, Vector3.zero,
-                0, false, AttackAmounts.Zero(), false, null, null );
+                0, false, AttackAmounts.Zero(), 
+                true, //skip range checks, as this had bad edge cases
+                null, null );
 
             AttackAmounts originalDamage = totalDamageDealt;
 

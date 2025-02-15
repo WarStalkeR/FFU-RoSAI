@@ -904,8 +904,17 @@ namespace Arcen.HotM.External
                 }
             }
 
-            if ( this.IsFullDead && !wasAlreadyDead && DamageSource != null && DamageSource.GetIsPartOfPlayerForcesInAnyWay() )
-                unitType?.OnUnitKilledByPlayerControlledUnit( DamageSource, Rand );
+            if ( this.IsFullDead && !wasAlreadyDead && DamageSource != null )
+            {
+                if ( DamageSource.GetIsPartOfPlayerForcesInAnyWay() )
+                    unitType?.OnUnitKilledByPlayerControlledUnit( DamageSource, Rand );
+
+                if ( unitType != null && ( unitType.IsMechStyleMovement || unitType.IsVehicle ) )
+                {
+                    if ( DamageSource is ISimNPCUnit npcUnit && ( npcUnit?.UnitType?.ID??string.Empty) == "PlayerParkourBear" )
+                        AchievementRefs.BearAttack.TripIfNeeded();
+                }
+            }
 
             this.IsManagedUnit?.OnManagedUnitDamaged( this, DamageSource, Rand, PhysicalDamageAmount );
             this.IsCityConflictUnit?.OnUnitDamaged( this, DamageSource, Rand, PhysicalDamageAmount );
@@ -978,6 +987,18 @@ namespace Arcen.HotM.External
 
             SimCommon.NeedsVisibilityGranterRecalculation = true;
             SimCommon.NeedsToAttemptAnotherNPCTargetingPass = true;
+        }
+
+        public void DoAlternativeToDeathPositiveItems( ISimMapActor DamageSource, MersenneTwister Rand, bool ShouldDoDamageTextPopupsAndLogging )
+        {
+            if ( DamageSource != null && DamageSource.GetIsPartOfPlayerForcesInAnyWay() )
+                this.UnitType?.OnUnitKilledByPlayerControlledUnit( DamageSource, Rand );
+
+            this.IsManagedUnit?.OnManagedUnitDamaged( this, DamageSource, Rand, 1 );
+            this.IsCityConflictUnit?.OnUnitDamaged( this, DamageSource, Rand, 1 );
+
+            this.IsManagedUnit?.OnManagedUnitDeath( this, Rand );
+            this.IsCityConflictUnit?.OnUnitDeath( this, Rand, false );
         }
 
         public void DisbandNPCUnit( NPCDisbandReason Reason )
@@ -4289,7 +4310,7 @@ namespace Arcen.HotM.External
             if ( this.FromCohort?.GetWillFireOnMachineUnits() ?? false )
             {
                 NPCUnitStance stance = this.Stance;
-                if ( stance == null || stance.IsConsideredPassiveGuard )
+                if ( stance == null || stance.IsConsideredPassiveGuard || stance.IsStillConsideredPassiveGuardToPlayerForces )
                     return false; //passive guards don't show up this way
 
                 if ( stance.WillHoldFireIfAtFullHealth && this.GetActorDataLostFromMax( ActorRefs.ActorHP, true ) <= 0 )
@@ -4407,27 +4428,35 @@ namespace Arcen.HotM.External
             if ( myStance.IsNeverTargetedByNPCs || otherStance.IsNeverTargetedByNPCs )
                 return false; //no firing either way!
 
-            if ( myStance.IsAfterShellCompany )
+            if ( !myStance.IsHyperAggressiveAgainstAllButItsOwnCohort && !otherStance.IsHyperAggressiveAgainstAllButItsOwnCohort )
             {
-                if ( !OtherUnit.GetIsRelatedToPlayerShellCompanyOrCompletelyUnrelatedToPlayer() )
-                    return false;
-            }
-            else
-            {
-                if ( OtherUnit.GetIsRelatedToPlayerShellCompany() )
-                    return false;
+                if ( myStance.IsAfterShellCompany )
+                {
+                    if ( !OtherUnit.GetIsRelatedToPlayerShellCompanyOrCompletelyUnrelatedToPlayer() )
+                        return false;
+                }
+                else
+                {
+                    if ( OtherUnit.GetIsRelatedToPlayerShellCompany() )
+                        return false;
+                }
+
+                if ( otherStance.IsAfterShellCompany )
+                {
+                    if ( !this.GetIsRelatedToPlayerShellCompanyOrCompletelyUnrelatedToPlayer() )
+                        return false;
+                }
+                else
+                {
+                    if ( this.GetIsRelatedToPlayerShellCompany() )
+                        return false;
+                }
             }
 
-            if ( otherStance.IsAfterShellCompany )
-            {
-                if ( !this.GetIsRelatedToPlayerShellCompanyOrCompletelyUnrelatedToPlayer() )
-                    return false;
-            }
-            else
-            {
-                if ( this.GetIsRelatedToPlayerShellCompany() )
-                    return false;
-            }
+            if ( myStance.WillHoldFireAgainstRebelFriendlyMachine && otherStance.IsConsideredRebelFriendlyMachine )
+                return false;
+            if ( otherStance.WillHoldFireAgainstRebelFriendlyMachine && myStance.IsConsideredRebelFriendlyMachine )
+                return false;
 
             NPCUnitType otherUnitType = OtherUnit.UnitType;
             if ( otherUnitType != null )
@@ -4543,6 +4572,11 @@ namespace Arcen.HotM.External
 
             if ( weArePlayer )
             {
+                if ( myStance.WillHoldFireAgainstPassiveGuards && otherStance.IsStillConsideredPassiveGuardToPlayerForces  )
+                {
+                    return false; //these guys are not after us, so don't shoot them, ya idiot
+                }
+
                 if ( otherStance.IsConsideredActiveCohortGuard )
                 {
                     if ( OtherUnit.HomePOI != null )
@@ -4587,11 +4621,16 @@ namespace Arcen.HotM.External
                 }
             }
 
-            if ( myStance.WillHoldFireAgainstPassiveGuards && otherStance.IsConsideredPassiveGuard )
+            if ( myStance.WillHoldFireAgainstPassiveGuards && otherStance.WillHoldFireIfAtFullHealth && OtherUnit.GetActorDataLostFromMax( ActorRefs.ActorHP, true ) <= 0 )
+            {
+                return false; //cannot shoot it in an automated way if it's at full health and would ignore us
+            }
+
+            if ( myStance.WillHoldFireAgainstPassiveGuards && otherStance.IsConsideredPassiveGuard  )
             {
                 if ( OtherUnit.HomePOI != null )
                 {
-                    if ( this.GetIsPartOfPlayerForcesInAnyWay() )
+                    if ( this.GetIsPartOfPlayerForcesInAnyWay() || myStance.IsConsideredMachineInTermsOfWhichActiveGuardsToAttack )
                     {
                         if ( !OtherUnit.HomePOI.IsPOIAlarmed_AgainstPlayer )
                             return false; //I cannot shoot them because they are guarding a poi, but they will also not shoot me
@@ -4639,7 +4678,7 @@ namespace Arcen.HotM.External
 
             if ( !myStance.IsAllowedToAggroPOIGuards )
             {
-                if ( this.GetIsPartOfPlayerForcesInAnyWay() )
+                if ( this.GetIsPartOfPlayerForcesInAnyWay() || myStance.IsConsideredMachineInTermsOfWhichActiveGuardsToAttack )
                 {
                     if ( OtherUnit.HomePOI != null && !OtherUnit.HomePOI.IsPOIAlarmed_AgainstPlayer )
                         return false; //I cannot shoot them because they are guarding a poi, but they will also not shoot me
@@ -4706,11 +4745,14 @@ namespace Arcen.HotM.External
                     return false;
             }
 
-            bool isAfterShellCompany = this.Stance?.IsAfterShellCompany??false;
-            if ( isAfterShellCompany )
+            if ( !(this.Stance?.IsHyperAggressiveAgainstAllButItsOwnCohort ?? false) )
             {
-                if ( !Target.GetIsRelatedToPlayerShellCompanyOrCompletelyUnrelatedToPlayer() )
-                    return false;
+                bool isAfterShellCompany = this.Stance?.IsAfterShellCompany ?? false;
+                if ( isAfterShellCompany )
+                {
+                    if ( !Target.GetIsRelatedToPlayerShellCompanyOrCompletelyUnrelatedToPlayer() )
+                        return false;
+                }
             }
 
             if ( this.HomePOI != null && !this.HomePOI.IsPOIAlarmed_AgainstPlayer && TheoreticalAggroedPOI != this.HomePOI )
@@ -4752,7 +4794,6 @@ namespace Arcen.HotM.External
                         bool isAggroed = machineActor.GetAmountHasAggroedNPCCohort( this.FromCohort ) > 0 || (TheoreticalAggroedCohort != null && TheoreticalAggroedCohort == this.FromCohort);
                         if ( !isAggroed )
                         {
-
                             MobileActorTypeDuringGameData dgd = machineActor.GetTypeDuringGameData();
                             if ( dgd?.IsTiedToShellCompany ?? false )
                             {
@@ -5010,11 +5051,14 @@ namespace Arcen.HotM.External
                 return true;
             }
 
-            bool isAfterShellCompany = this.Stance?.IsAfterShellCompany ?? false;
-            if ( isAfterShellCompany )
+            if ( !(this.Stance?.IsHyperAggressiveAgainstAllButItsOwnCohort ?? false) )
             {
-                if ( !Target.GetIsRelatedToPlayerShellCompanyOrCompletelyUnrelatedToPlayer() )
-                    return false;
+                bool isAfterShellCompany = this.Stance?.IsAfterShellCompany ?? false;
+                if ( isAfterShellCompany )
+                {
+                    if ( !Target.GetIsRelatedToPlayerShellCompanyOrCompletelyUnrelatedToPlayer() )
+                        return false;
+                }
             }
 
             bool isNonAlarmedPOI = false;

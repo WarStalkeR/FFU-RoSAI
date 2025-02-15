@@ -38,6 +38,8 @@ namespace Arcen.HotM.External
         public NPCManagedUnit IsManagedUnit => null;
         public CityConflictUnit IsCityConflictUnit => null;
 
+        public void DoAlternativeToDeathPositiveItems( ISimMapActor DamageSource, MersenneTwister Rand, bool ShouldDoDamageTextPopupsAndLogging ) { }
+
         public int TurnsSinceMoved => 0;
 
         public int ObjectiveProgressPoints { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -146,6 +148,8 @@ namespace Arcen.HotM.External
         public int StatusEffectCount => 0;
 
         public int StatusEffectCountToShowByHealthBar => 0;
+
+        public int LastTurnDidAmbush { get => 0; set { } }
 
         public void AddOrRemoveBadge( ActorBadge Badge, bool Add )
         {

@@ -91,6 +91,8 @@ namespace Arcen.HotM.ExternalVis
 
                 foreach ( ResourceType resource in ResourceTypeTable.SortedRegularResources )
                 {
+                    if ( resource.IsHidden ) 
+                        continue;
                     if ( resource.SortedProducers.Count > 0 || resource.SortedConsumers.Count > 0 )
                         SimCommon.ProducerConsumerTargets.AddToConstructionList( resource );
                 }

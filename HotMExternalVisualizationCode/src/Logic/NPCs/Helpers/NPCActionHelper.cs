@@ -205,6 +205,9 @@ namespace Arcen.HotM.ExternalVis
             else
                 nearestAggroedUnit = TargetingHelper.FindNearestAggroedUnit( Unit, false, false, false, MustBeAbleToShootThem, Logic );
 
+            if ( InputCaching.Debug_LogNPCUnitLogicToTooltip )
+                Unit.DebugText += "TryRunAfterAggroedUnits: " + (nearestAggroedUnit == null ? "null" : nearestAggroedUnit.GetDisplayName()) +" \n";
+
             if ( nearestAggroedUnit == null )
                 return false;
 

@@ -841,7 +841,7 @@ namespace Arcen.HotM.ExternalVis
                                                 continue; //only show the ones considered hostile
                                         }
                                     }
-                                    if ( skipPassiveGuards && stance.IsConsideredPassiveGuard )
+                                    if ( skipPassiveGuards && stance.IsConsideredPassiveGuard )//( stance.IsConsideredPassiveGuard || stance.IsStillConsideredPassiveGuardToPlayerForces ) )
                                         continue;
                                     if ( skipEconomicUnits && (stance.IsPartOfCityEconomy || stance.IsPartOfRegionalEconomy || stance.IsPartOfInternationalEconomy) )
                                         continue;

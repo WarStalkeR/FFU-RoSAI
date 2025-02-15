@@ -1503,17 +1503,18 @@ namespace Arcen.HotM.ExternalVis
                 }
                 else
                 {
-                    if ( SimCommon.Turn <= 1 )
-                    {
-                        ParticleSoundRefs.ErrorSound.DuringGame_PlaySoundOnlyAtCamera();
-                        return;
-                    }
                     if ( (Engine_HotM.SelectedActor is MachineStructure structure) )
                     {
                         BuildModeHandler.TryScrapSelectedStructure( structure );
                     }
                     else if ( Engine_HotM.SelectedActor is ISimMachineActor actor )
                     {
+                        if ( SimCommon.Turn <= 1 && SimMetagame.CurrentChapterNumber <= 2 )
+                        {
+                            ParticleSoundRefs.ErrorSound.DuringGame_PlaySoundOnlyAtCamera();
+                            return;
+                        }
+
                         if ( !actor.PopupReasonCannotScrapIfCannot( ScrapReason.ArbitraryPlayer ) )
                         {
                             ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();

@@ -2526,17 +2526,20 @@ namespace Arcen.HotM.External
                 //for now this is enough
                 if ( npcUnit.GetWillFireOnMachineUnitsBaseline() )
                 {
-                    if ( this.UnitType?.IsTiedToShellCompany??false )
+                    if ( !(npcUnit.Stance?.IsHyperAggressiveAgainstAllButItsOwnCohort ?? false) )
                     {
-                        //we are part of a shell company, and they are not after us, so we can't fire without giving ourselves away
-                        if ( !(npcUnit.Stance?.WillAttackShellCompanyMachinesEvenIfNotAggroed ?? false) )
-                            return false;
-                    }
-                    else
-                    {
-                        //we are not part of a shell company, so cannot intervene without giving ourselves away
-                        if ( npcUnit.Stance?.WillAttackShellCompanyMachinesEvenIfNotAggroed ?? false )
-                            return false;
+                        if ( this.UnitType?.IsTiedToShellCompany ?? false )
+                        {
+                            //we are part of a shell company, and they are not after us, so we can't fire without giving ourselves away
+                            if ( !(npcUnit.Stance?.WillAttackShellCompanyMachinesEvenIfNotAggroed ?? false) )
+                                return false;
+                        }
+                        else
+                        {
+                            //we are not part of a shell company, so cannot intervene without giving ourselves away
+                            if ( npcUnit.Stance?.WillAttackShellCompanyMachinesEvenIfNotAggroed ?? false )
+                                return false;
+                        }
                     }
 
                     return true;

@@ -674,7 +674,7 @@ namespace Arcen.HotM.ExternalVis
                     case "AttacksPlannedAgainstYou":
                         #region AttacksPlannedAgainstYou
                         {
-                            int attackCount = SimCommon.AttackPlanIncomingDamageToPlayerUnits.Count;
+                            int attackCount = SimCommon.AttackPlan_AttackersAfterPlayerUnits.Count;
                             switch ( Logic )
                             {
                                 case OtherChecklistAlertLogic.DoPerQuarterSecond:
@@ -688,12 +688,12 @@ namespace Arcen.HotM.ExternalVis
                                         //if ( Window_NoteLog.Instance.IsOpen )
                                         //    Window_NoteLog.Instance.Close( WindowCloseReason.UserDirectRequest );
                                         //Window_Handbook.Instance.Open();
-                                        SimCommon.CycleThroughAttackPlanIncomingDamageToPlayerUnits();
+                                        SimCommon.CycleThroughAttackPlan_AttackersAfterPlayerUnits();
                                     }
                                     break;
                                 case OtherChecklistAlertLogic.OnClicked_Right:
                                     {
-                                        SimCommon.CycleThroughAttackPlanIncomingDamageToPlayerUnits();
+                                        SimCommon.CycleThroughAttackPlan_IncomingDamageToPlayerUnits();
                                     }
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
@@ -707,7 +707,7 @@ namespace Arcen.HotM.ExternalVis
                                             Alert.HandleTooltip_Format2( novel, attackCount, attackCount );
 
                                             novel.Main.StartStyleLineHeightA();
-                                            List<AttackPlanIncoming> displayList = SimCommon.AttackPlanIncomingDamageToPlayerUnits.GetDisplayList();
+                                            List<AttackPlanIncoming> displayList = SimCommon.AttackPlan_IncomingDamageToPlayerUnits.GetDisplayList();
                                             for ( int i = 0; i < 30 && i < displayList.Count; i++ )
                                             {
                                                 AttackPlanIncoming incoming = displayList[i];

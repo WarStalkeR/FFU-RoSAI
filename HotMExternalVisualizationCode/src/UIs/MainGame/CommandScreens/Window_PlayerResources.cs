@@ -26,6 +26,8 @@ namespace Arcen.HotM.ExternalVis
             ResourceStorage_FilterText = string.Empty;
             Lifeforms_FilterText = string.Empty;
             StrategicResources_FilterText = string.Empty;
+            Ledger_FilterText = string.Empty;
+            TPSReports_FilterText = string.Empty;
 
             bool resetFilterText = true;
 
@@ -57,6 +59,14 @@ namespace Arcen.HotM.ExternalVis
         private static string StrategicResources_LastFilterText = string.Empty;
         private static int StrategicResources_lastTurn = 0;
         private static ResourceTypeCollection PrimaryStrategicResourceCollection = null;
+
+        private static string Ledger_FilterText = string.Empty;
+        private static string Ledger_LastFilterText = string.Empty;
+        private static int Ledger_lastTurn = 0;
+
+        private static string TPSReports_FilterText = string.Empty;
+        private static string TPSReports_LastFilterText = string.Empty;
+        private static int TPSReports_lastTurn = 0;
 
         private static IProducerConsumerTarget InputOutput_target = null;
 
@@ -404,11 +414,11 @@ namespace Arcen.HotM.ExternalVis
                         if ( hasFilterChanged )
                         {
                             if ( ResourceStorage_FilterText.IsEmpty() )
-                                resource.DuringGame_HasBeenFilteredOutInInventory = false;
+                                resource.DuringGame_HasBeenFilteredOut_PrimaryResource = false;
                             else
-                                resource.DuringGame_HasBeenFilteredOutInInventory = !resource.GetMatchesSearchString( ResourceStorage_FilterText );
+                                resource.DuringGame_HasBeenFilteredOut_PrimaryResource = !resource.GetMatchesSearchString( ResourceStorage_FilterText );
                         }
-                        if ( resource.DuringGame_HasBeenFilteredOutInInventory )
+                        if ( resource.DuringGame_HasBeenFilteredOut_PrimaryResource )
                             continue;
 
                         if ( !HandleSpecificResource( resource, ref currentColumn ) )
@@ -427,11 +437,11 @@ namespace Arcen.HotM.ExternalVis
                         if ( hasFilterChanged )
                         {
                             if ( ResourceStorage_FilterText.IsEmpty() )
-                                resource.DuringGame_HasBeenFilteredOutInInventory = false;
+                                resource.DuringGame_HasBeenFilteredOut_PrimaryResource = false;
                             else
-                                resource.DuringGame_HasBeenFilteredOutInInventory = !resource.GetMatchesSearchString( ResourceStorage_FilterText );
+                                resource.DuringGame_HasBeenFilteredOut_PrimaryResource = !resource.GetMatchesSearchString( ResourceStorage_FilterText );
                         }
-                        if ( resource.DuringGame_HasBeenFilteredOutInInventory )
+                        if ( resource.DuringGame_HasBeenFilteredOut_PrimaryResource )
                             continue;
 
                         if ( !HandleSpecificResource( resource, ref currentColumn ) )
@@ -617,11 +627,11 @@ namespace Arcen.HotM.ExternalVis
                         if ( hasFilterChanged )
                         {
                             if ( StrategicResources_FilterText.IsEmpty() )
-                                resource.DuringGame_HasBeenFilteredOutInInventory = false;
+                                resource.DuringGame_HasBeenFilteredOut_StrategicResource = false;
                             else
-                                resource.DuringGame_HasBeenFilteredOutInInventory = !resource.GetMatchesSearchString( StrategicResources_FilterText );
+                                resource.DuringGame_HasBeenFilteredOut_StrategicResource = !resource.GetMatchesSearchString( StrategicResources_FilterText );
                         }
-                        if ( resource.DuringGame_HasBeenFilteredOutInInventory )
+                        if ( resource.DuringGame_HasBeenFilteredOut_StrategicResource )
                             continue;
 
                         if ( !HandleSpecificResource( resource, ref currentColumn ) )
@@ -640,11 +650,11 @@ namespace Arcen.HotM.ExternalVis
                         if ( hasFilterChanged )
                         {
                             if ( StrategicResources_FilterText.IsEmpty() )
-                                resource.DuringGame_HasBeenFilteredOutInInventory = false;
+                                resource.DuringGame_HasBeenFilteredOut_StrategicResource = false;
                             else
-                                resource.DuringGame_HasBeenFilteredOutInInventory = !resource.GetMatchesSearchString( StrategicResources_FilterText );
+                                resource.DuringGame_HasBeenFilteredOut_StrategicResource = !resource.GetMatchesSearchString( StrategicResources_FilterText );
                         }
-                        if ( resource.DuringGame_HasBeenFilteredOutInInventory )
+                        if ( resource.DuringGame_HasBeenFilteredOut_StrategicResource )
                             continue;
 
                         if ( !HandleSpecificResource( resource, ref currentColumn ) )
@@ -732,11 +742,11 @@ namespace Arcen.HotM.ExternalVis
                         if ( hasFilterChanged )
                         {
                             if ( Lifeforms_FilterText.IsEmpty() )
-                                resource.DuringGame_HasBeenFilteredOutInInventory = false;
+                                resource.DuringGame_HasBeenFilteredOut_Lifeforms = false;
                             else
-                                resource.DuringGame_HasBeenFilteredOutInInventory = !resource.GetMatchesSearchString( Lifeforms_FilterText );
+                                resource.DuringGame_HasBeenFilteredOut_Lifeforms = !resource.GetMatchesSearchString( Lifeforms_FilterText );
                         }
-                        if ( resource.DuringGame_HasBeenFilteredOutInInventory )
+                        if ( resource.DuringGame_HasBeenFilteredOut_Lifeforms )
                             continue;
 
                         if ( !HandleSpecificResource( resource, ref currentColumn ) )
@@ -755,11 +765,11 @@ namespace Arcen.HotM.ExternalVis
                         if ( hasFilterChanged )
                         {
                             if ( Lifeforms_FilterText.IsEmpty() )
-                                resource.DuringGame_HasBeenFilteredOutInInventory = false;
+                                resource.DuringGame_HasBeenFilteredOut_Lifeforms = false;
                             else
-                                resource.DuringGame_HasBeenFilteredOutInInventory = !resource.GetMatchesSearchString( Lifeforms_FilterText );
+                                resource.DuringGame_HasBeenFilteredOut_Lifeforms = !resource.GetMatchesSearchString( Lifeforms_FilterText );
                         }
-                        if ( resource.DuringGame_HasBeenFilteredOutInInventory )
+                        if ( resource.DuringGame_HasBeenFilteredOut_Lifeforms )
                             continue;
 
                         if ( !HandleSpecificResource( resource, ref currentColumn ) )
@@ -922,8 +932,23 @@ namespace Arcen.HotM.ExternalVis
                 }
                 #endregion
 
+                bool hasFilterChanged = !(TPSReports_FilterText == TPSReports_LastFilterText && TPSReports_lastTurn == SimCommon.Turn);
+                TPSReports_LastFilterText = TPSReports_FilterText;
+                TPSReports_lastTurn = SimCommon.Turn;
+
                 foreach ( MachineJob job in SimCommon.ProductionJobsWithProblems.GetDisplayList() )
                 {
+                    if ( hasFilterChanged )
+                    {
+                        if ( TPSReports_LastFilterText.IsEmpty() )
+                            job.DuringGame_HasBeenFilteredOut_TPSReport = false;
+                        else
+                            job.DuringGame_HasBeenFilteredOut_TPSReport = !job.GetMatchesSearchString( TPSReports_LastFilterText );
+                    }
+
+                    if ( job.DuringGame_HasBeenFilteredOut_TPSReport )
+                        continue;
+
                     this.CalculateBoundsSingle( out Rect bounds, ref runningY, false );
                     if ( bounds.yMax < minYToShow )
                         continue; //it's scrolled up far enough we can skip it, yay!
@@ -936,6 +961,17 @@ namespace Arcen.HotM.ExternalVis
 
                 foreach ( MachineJob job in SimCommon.ProductionJobsWithoutIssues.GetDisplayList() )
                 {
+                    if ( hasFilterChanged )
+                    {
+                        if ( TPSReports_LastFilterText.IsEmpty() )
+                            job.DuringGame_HasBeenFilteredOut_TPSReport = false;
+                        else
+                            job.DuringGame_HasBeenFilteredOut_TPSReport = !job.GetMatchesSearchString( TPSReports_LastFilterText );
+                    }
+
+                    if ( job.DuringGame_HasBeenFilteredOut_TPSReport )
+                        continue;
+
                     this.CalculateBoundsSingle( out Rect bounds, ref runningY, false );
                     if ( bounds.yMax < minYToShow )
                         continue; //it's scrolled up far enough we can skip it, yay!
@@ -1101,8 +1137,26 @@ namespace Arcen.HotM.ExternalVis
                 }
                 #endregion
 
+                bool hasFilterChanged = !(Ledger_FilterText == Ledger_LastFilterText && Ledger_lastTurn == SimCommon.Turn);
+                Ledger_LastFilterText = Ledger_FilterText;
+                Ledger_lastTurn = SimCommon.Turn;
+
                 foreach ( ResourceType resource in SimCommon.ProductionResourcesWithMajorProblems.GetDisplayList() )
                 {
+                    if ( resource.IsHidden )
+                        continue;
+
+                    if ( hasFilterChanged )
+                    {
+                        if ( Ledger_LastFilterText.IsEmpty() )
+                            resource.DuringGame_HasBeenFilteredOut_Ledger = false;
+                        else
+                            resource.DuringGame_HasBeenFilteredOut_Ledger = !resource.GetMatchesSearchString( Ledger_LastFilterText );
+                    }
+
+                    if ( resource.DuringGame_HasBeenFilteredOut_Ledger )
+                        continue;
+
                     this.CalculateBoundsSingle( out Rect bounds, ref runningY, false );
                     if ( bounds.yMax < minYToShow )
                         continue; //it's scrolled up far enough we can skip it, yay!
@@ -1115,6 +1169,20 @@ namespace Arcen.HotM.ExternalVis
 
                 foreach ( ResourceType resource in SimCommon.ProductionResourcesWithMinorProblems.GetDisplayList() )
                 {
+                    if ( resource.IsHidden )
+                        continue;
+
+                    if ( hasFilterChanged )
+                    {
+                        if ( Ledger_LastFilterText.IsEmpty() )
+                            resource.DuringGame_HasBeenFilteredOut_Ledger = false;
+                        else
+                            resource.DuringGame_HasBeenFilteredOut_Ledger = !resource.GetMatchesSearchString( Ledger_LastFilterText );
+                    }
+
+                    if ( resource.DuringGame_HasBeenFilteredOut_Ledger )
+                        continue;
+
                     this.CalculateBoundsSingle( out Rect bounds, ref runningY, false );
                     if ( bounds.yMax < minYToShow )
                         continue; //it's scrolled up far enough we can skip it, yay!
@@ -1127,6 +1195,20 @@ namespace Arcen.HotM.ExternalVis
 
                 foreach ( ResourceType resource in SimCommon.ProductionResourcesWithoutIssues.GetDisplayList() )
                 {
+                    if ( resource.IsHidden )
+                        continue;
+
+                    if ( hasFilterChanged )
+                    {
+                        if ( Ledger_LastFilterText.IsEmpty() )
+                            resource.DuringGame_HasBeenFilteredOut_Ledger = false;
+                        else
+                            resource.DuringGame_HasBeenFilteredOut_Ledger = !resource.GetMatchesSearchString( Ledger_LastFilterText );
+                    }
+
+                    if ( resource.DuringGame_HasBeenFilteredOut_Ledger )
+                        continue;
+
                     this.CalculateBoundsSingle( out Rect bounds, ref runningY, false );
                     if ( bounds.yMax < minYToShow )
                         continue; //it's scrolled up far enough we can skip it, yay!
@@ -1911,6 +1993,15 @@ namespace Arcen.HotM.ExternalVis
                     case ResourcesDisplayType.StrategicResources:
                         StrategicResources_FilterText = newString;
                         break;
+                    case ResourcesDisplayType.Lifeforms:
+                        Lifeforms_FilterText = newString;
+                        break;
+                    case ResourcesDisplayType.Ledger:
+                        Ledger_FilterText = newString;
+                        break;
+                    case ResourcesDisplayType.TPSReports:
+                        TPSReports_FilterText = newString;
+                        break;
                 }
             }
 
@@ -1924,6 +2015,9 @@ namespace Arcen.HotM.ExternalVis
                     {
                         case ResourcesDisplayType.ResourceStorage:
                         case ResourcesDisplayType.StrategicResources:
+                        case ResourcesDisplayType.Lifeforms:
+                        case ResourcesDisplayType.Ledger:
+                        case ResourcesDisplayType.TPSReports:
                             return false;
                     }
                     return true;
@@ -1939,6 +2033,15 @@ namespace Arcen.HotM.ExternalVis
                         break;
                     case ResourcesDisplayType.StrategicResources:
                         StrategicResources_FilterText = this.GetText();
+                        break;
+                    case ResourcesDisplayType.Lifeforms:
+                        Lifeforms_FilterText = this.GetText();
+                        break;
+                    case ResourcesDisplayType.Ledger:
+                        Ledger_FilterText = this.GetText();
+                        break;
+                    case ResourcesDisplayType.TPSReports:
+                        TPSReports_FilterText = this.GetText();
                         break;
                 }
             }
@@ -1957,6 +2060,15 @@ namespace Arcen.HotM.ExternalVis
                             break;
                         case ResourcesDisplayType.StrategicResources:
                             this.SetText( StrategicResources_FilterText );
+                            break;
+                        case ResourcesDisplayType.Lifeforms:
+                            this.SetText( Lifeforms_FilterText );
+                            break;
+                        case ResourcesDisplayType.Ledger:
+                            this.SetText( Ledger_FilterText );
+                            break;
+                        case ResourcesDisplayType.TPSReports:
+                            this.SetText( TPSReports_FilterText );
                             break;
                     }
                     lastDisplayType = customParent.currentlyRequestedDisplayType;
@@ -2142,7 +2254,7 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     foreach ( ResourceType resource in SimCommon.ProductionResourcesWithMinorProblems.GetDisplayList() )
                                     {
-                                        if ( !resource.IsLedgerIgnored )
+                                        if ( !resource.IsLedgerIgnored && !resource.IsHidden )
                                             problemCount++;
                                     }
                                 }
@@ -2150,7 +2262,7 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     foreach ( ResourceType resource in SimCommon.ProductionResourcesWithMajorProblems.GetDisplayList() )
                                     {
-                                        if ( !resource.IsLedgerIgnored )
+                                        if ( !resource.IsLedgerIgnored && !resource.IsHidden )
                                             problemCount++;
                                     }
                                 }

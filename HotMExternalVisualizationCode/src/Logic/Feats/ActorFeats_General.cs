@@ -92,6 +92,7 @@ namespace Arcen.HotM.ExternalVis
                                     npc.DoOnPostHitWithHostileAction( Attacker, Attacker.GetActorDataCurrent( ActorRefs.ActorEngineeringSkill, true ),
                                         Rand, false );
 
+                                    npc.DoAlternativeToDeathPositiveItems( Attacker, Rand, false );
                                     npc.DisbandNPCUnit( NPCDisbandReason.WantedToLeave );
                                 }
 
@@ -224,7 +225,7 @@ namespace Arcen.HotM.ExternalVis
                     {
                         //works when using non-physical attacks just as well!
 
-                        if ( Attacker.OutcastLevel <= 0 )
+                        if ( Attacker.OutcastLevel <= 0 && Attacker.LastTurnDidAmbush < SimCommon.Turn )
                         {
                             if ( SecondaryBufferOrNull != null )
                                 SecondaryBufferOrNull.StartSize80().AddFormat1( "AmbushBonus",
@@ -261,7 +262,8 @@ namespace Arcen.HotM.ExternalVis
                                         .AddNumberPlusOrMinus( change > 0, change.ToStringThousandsWhole(), ColorTheme.DataBlue ).EndSize().Line();
                             }
 
-
+                            if ( !isAnyKindOfPrediction )
+                                Attacker.LastTurnDidAmbush = SimCommon.Turn;
                         }
                     }
                     break;

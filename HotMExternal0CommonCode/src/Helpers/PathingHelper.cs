@@ -21,6 +21,9 @@ namespace Arcen.HotM.External
             if ( Stance == null )
                 return null;
 
+            bool blockedTilePOI = Stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+            int clearanceForTilePOI = blockedTilePOI ? Unit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
             Vector3 startingLoc = Unit.GetDrawLocation();
             float moveRange = Unit.GetMovementRange();
             float moveRangeSquared = moveRange * moveRange;
@@ -42,6 +45,16 @@ namespace Arcen.HotM.External
                     if ( rect.XMax <= minX || rect.XMin >= maxX ||
                         rect.YMax <= minZ || rect.YMin >= maxZ )
                         continue; //this whole cell is out of range, so ignore it!
+
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = neighbor?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level??0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
+                    }
 
                     //check buildings
                     foreach ( MapItem building in neighbor.BuildingList.GetDisplayList() )
@@ -115,6 +128,9 @@ namespace Arcen.HotM.External
             if ( Stance == null )
                 return null;
 
+            bool blockedTilePOI = Stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+            int clearanceForTilePOI = blockedTilePOI ? Unit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
             Vector3 startingLoc = FromSearchSpot;
             float moveRange = Unit.GetMovementRange();
             float moveRangeSquared = moveRange * moveRange;
@@ -151,6 +167,16 @@ namespace Arcen.HotM.External
                     if ( rect.XMax <= minX || rect.XMin >= maxX ||
                         rect.YMax <= minZ || rect.YMin >= maxZ )
                         continue; //this whole cell is out of range, so ignore it!
+
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = neighbor?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
+                    }
 
                     if ( !mustStayOnGround )
                     {
@@ -467,6 +493,9 @@ namespace Arcen.HotM.External
             if ( Stance == null )
                 return null;
 
+            bool blockedTilePOI = Stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+            int clearanceForTilePOI = blockedTilePOI ? ChaserUnit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
             Vector3 startingLoc = ChaserUnit.GetDrawLocation();
             float moveRange = ChaserUnit.GetMovementRange();
             float moveRangeSquared = moveRange * moveRange;
@@ -512,6 +541,16 @@ namespace Arcen.HotM.External
                     if ( rect.XMax <= minX || rect.XMin >= maxX ||
                         rect.YMax <= minZ || rect.YMin >= maxZ )
                         continue; //this whole cell is out of range, so ignore it!
+
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = neighbor?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
+                    }
 
                     if ( !mustStayOnGround )
                     {
@@ -648,6 +687,9 @@ namespace Arcen.HotM.External
             if ( Stance == null )
                 return null;
 
+            bool blockedTilePOI = Stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+            int clearanceForTilePOI = blockedTilePOI ? ChaserUnit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
             Vector3 startingLoc = ChaserUnit.GetDrawLocation();
             float moveRange = ChaserUnit.GetMovementRange();
             float moveRangeSquared = moveRange * moveRange;
@@ -671,6 +713,16 @@ namespace Arcen.HotM.External
                     if ( rect.XMax <= minX || rect.XMin >= maxX ||
                         rect.YMax <= minZ || rect.YMin >= maxZ )
                         continue; //this whole cell is out of range, so ignore it!
+
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = neighbor?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
+                    }
 
                     if ( !mustStayOnGround )
                     {
@@ -768,6 +820,9 @@ namespace Arcen.HotM.External
             if ( Stance == null )
                 return null;
 
+            bool blockedTilePOI = Stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+            int clearanceForTilePOI = blockedTilePOI ? WanderUnit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
             Vector3 startingLoc = WanderUnit.GetDrawLocation();
             float moveRange = WanderUnit.GetMovementRange();
             float moveRangeSquared = moveRange * moveRange;
@@ -803,6 +858,16 @@ namespace Arcen.HotM.External
                     {
                         if ( !neighbor.ParentTile.AllPOIs.Contains( poi ) )
                             continue;
+                    }
+
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = neighbor?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
                     }
 
                     if ( !mustStayOnGround )
@@ -916,6 +981,9 @@ namespace Arcen.HotM.External
             if ( Stance == null )
                 return null;
 
+            bool blockedTilePOI = Stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+            int clearanceForTilePOI = blockedTilePOI ? NPCUnit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
             Vector3 startingLoc = NPCUnit.GetDrawLocation();
 
             MapCell curCell = CityMap.TryGetWorldCellAtCoordinates( startingLoc );
@@ -925,6 +993,16 @@ namespace Arcen.HotM.External
 
                 foreach ( MapCell neighbor in curCell.AdjacentCellsAndSelfIncludingDiagonal2x )
                 {
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = neighbor?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
+                    }
+
                     foreach ( MapItem building in neighbor.BuildingList.GetDisplayList() )
                     {
                         ISimBuilding simBuild = building?.SimBuilding;
@@ -973,10 +1051,23 @@ namespace Arcen.HotM.External
                 if ( Stance == null )
                     return null;
 
+                bool blockedTilePOI = Stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+                int clearanceForTilePOI = blockedTilePOI ? NPCUnit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
                 NPCUnit.CalculateEffectiveClearances( curCell, out int maxPOIClearance, out _ );
 
                 foreach ( MapCell neighbor in curCell.AdjacentCellsAndSelfIncludingDiagonal2x.GetRandomStartEnumerable( Rand ) )
                 {
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = neighbor?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
+                    }
+
                     foreach ( MapItem building in neighbor.BuildingList.GetDisplayList().GetRandomStartEnumerable( Rand ) )
                     {
                         ISimBuilding simBuild = building?.SimBuilding;
@@ -1028,9 +1119,8 @@ namespace Arcen.HotM.External
 
                 List<ISimBuilding> buildingsWithTag = Tag.DuringGame_Buildings.GetDisplayList();
 
-                NPCUnitStance stance = NPCUnit.Stance;
-                bool stayInDistrict = UseAnyHomeDistrictAndPOIRestrictions && (stance?.IsContainedToDistrict ?? false);
-                bool stayInPOI = UseAnyHomeDistrictAndPOIRestrictions && (stance?.IsContainedToPOI ?? false);
+                bool stayInDistrict = UseAnyHomeDistrictAndPOIRestrictions && (Stance?.IsContainedToDistrict ?? false);
+                bool stayInPOI = UseAnyHomeDistrictAndPOIRestrictions && (Stance?.IsContainedToPOI ?? false);
                 MapDistrict districtToStayIn = stayInDistrict ? NPCUnit.HomeDistrict : null;
                 MapPOI poiToStayIn = stayInPOI ? NPCUnit.HomePOI : null;
 
@@ -1135,6 +1225,9 @@ namespace Arcen.HotM.External
                 if ( stance == null )
                     return null;
 
+                bool blockedTilePOI = stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+                int clearanceForTilePOI = blockedTilePOI ? NPCUnit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
                 bool stayInDistrict = UseAnyHomeDistrictAndPOIRestrictions && (stance?.IsContainedToDistrict ?? false);
                 bool stayInPOI = UseAnyHomeDistrictAndPOIRestrictions && (stance?.IsContainedToPOI ?? false);
                 MapDistrict districtToStayIn = stayInDistrict ? NPCUnit.HomeDistrict : null;
@@ -1176,6 +1269,16 @@ namespace Arcen.HotM.External
                     {
                         if ( simBuild.UpperClassCitizenGrabCount < TargetBuildingMustHaveUpperClassCitizenCountOfAtLeast )
                             continue;
+                    }
+
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = simBuild?.GetParentCell()?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
                     }
 
                     Vector3 loc = simBuild.GetEffectiveWorldLocationForContainedUnit();
@@ -1323,6 +1426,9 @@ namespace Arcen.HotM.External
                 if ( stance == null )
                     return null;
 
+                bool blockedTilePOI = stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+                int clearanceForTilePOI = blockedTilePOI ? NPCUnit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
                 bool stayInDistrict = UseAnyHomeDistrictAndPOIRestrictions && (stance?.IsContainedToDistrict ?? false);
                 bool stayInPOI = UseAnyHomeDistrictAndPOIRestrictions && (stance?.IsContainedToPOI ?? false);
                 MapDistrict districtToStayIn = stayInDistrict ? NPCUnit.HomeDistrict : null;
@@ -1364,6 +1470,16 @@ namespace Arcen.HotM.External
                     {
                         if ( simBuild.UpperClassCitizenGrabCount < TargetBuildingMustHaveUpperClassCitizenCountOfAtLeast )
                             continue;
+                    }
+
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = simBuild?.GetParentCell()?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
                     }
 
                     Vector3 loc = simBuild.GetEffectiveWorldLocationForContainedUnit();
@@ -1534,6 +1650,9 @@ namespace Arcen.HotM.External
                 if ( stance == null )
                     return null;
 
+                bool blockedTilePOI = stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+                int clearanceForTilePOI = blockedTilePOI ? NPCUnit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
                 bool stayInDistrict = UseAnyHomeDistrictAndPOIRestrictions && (stance?.IsContainedToDistrict ?? false);
                 bool stayInPOI = UseAnyHomeDistrictAndPOIRestrictions && (stance?.IsContainedToPOI ?? false);
                 MapDistrict districtToStayIn = stayInDistrict ? NPCUnit.HomeDistrict : null;
@@ -1575,6 +1694,16 @@ namespace Arcen.HotM.External
                     {
                         if ( simBuild.UpperClassCitizenGrabCount < TargetBuildingMustHaveUpperClassCitizenCountOfAtLeast )
                             continue;
+                    }
+
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = simBuild?.GetParentCell()?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
                     }
 
                     Vector3 loc = simBuild.GetEffectiveWorldLocationForContainedUnit();
@@ -1686,6 +1815,9 @@ namespace Arcen.HotM.External
                 if ( Stance == null )
                     return null;
 
+                bool blockedTilePOI = Stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+                int clearanceForTilePOI = blockedTilePOI ? NPCUnit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
                 NPCUnit.CalculateEffectiveClearances( curCell, out int maxPOIClearance, out _ );
 
                 List<ISimBuilding> buildingsWithTag = Tag.DuringGame_Buildings.GetDisplayList();
@@ -1694,6 +1826,16 @@ namespace Arcen.HotM.External
                     ISimBuilding simBuild = building?.SimBuilding;
                     if ( simBuild == null || simBuild.GetIsNPCBlockedFromComingHere( Stance ) )
                         continue; //if not a valid spot, or blocked by another unit
+
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = simBuild?.GetParentCell()?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
+                    }
 
                     if ( maxPOIClearance < 5 )
                     {
@@ -1741,6 +1883,9 @@ namespace Arcen.HotM.External
                 if ( Stance == null )
                     return null;
 
+                bool blockedTilePOI = Stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+                int clearanceForTilePOI = blockedTilePOI ? Unit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
                 Unit.CalculateEffectiveClearances( origCell, out int maxGroundClearance, out int maxBuildingClearance );
 
                 foreach ( MapCell neighbor in origCell.AdjacentCellsAndSelfIncludingDiagonal2x.GetRandomStartEnumerable( Rand ) )
@@ -1749,6 +1894,16 @@ namespace Arcen.HotM.External
                     if ( rect.XMax <= minX || rect.XMin >= maxX ||
                         rect.YMax <= minZ || rect.YMin >= maxZ )
                         continue; //this whole cell is out of range, so ignore it!
+
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = neighbor?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
+                    }
 
                     if ( !mustStayOnGround )
                     {
@@ -1828,7 +1983,6 @@ namespace Arcen.HotM.External
             if ( Unit == null || District == null || District.Cells.Count == 0 )
                 return null;
 
-
             ISimUnitLocation best = null;
             float bestRange = 100000000;
 
@@ -1870,6 +2024,9 @@ namespace Arcen.HotM.External
                 if ( Stance == null )
                     return null;
 
+                bool blockedTilePOI = Stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+                int clearanceForTilePOI = blockedTilePOI ? Unit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
                 Unit.CalculateEffectiveClearances( origCell, out int maxGroundClearance, out int maxBuildingClearance );
 
                 foreach ( MapCell neighbor in origCell.AdjacentCellsAndSelfIncludingDiagonal2x.GetRandomStartEnumerable( Rand ) )
@@ -1878,6 +2035,16 @@ namespace Arcen.HotM.External
                     if ( rect.XMax <= minX || rect.XMin >= maxX ||
                         rect.YMax <= minZ || rect.YMin >= maxZ )
                         continue; //this whole cell is out of range, so ignore it!
+
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = neighbor?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
+                    }
 
                     if ( !mustStayOnGround )
                     {
@@ -1979,6 +2146,9 @@ namespace Arcen.HotM.External
                 if ( Stance == null )
                     return null;
 
+                bool blockedTilePOI = Stance.IsBlockedFromSteppingInPOIWithHigherSecurityClearanceThanHas;
+                int clearanceForTilePOI = blockedTilePOI ? Unit.GetEffectiveClearance( ClearanceCheckType.MovingToNonBuilding ) : 0;
+
                 Unit.CalculateEffectiveClearances( origCell, out int maxGroundClearance, out int maxBuildingClearance );
 
                 foreach ( MapCell neighbor in origCell.AdjacentCellsAndSelfIncludingDiagonal2x.GetRandomStartEnumerable( Rand ) )
@@ -1987,6 +2157,16 @@ namespace Arcen.HotM.External
                     if ( rect.XMax <= minX || rect.XMin >= maxX ||
                         rect.YMax <= minZ || rect.YMin >= maxZ )
                         continue; //this whole cell is out of range, so ignore it!
+
+                    if ( blockedTilePOI )
+                    {
+                        MapPOI tilePOI = neighbor?.ParentTile?.POIOrNull;
+                        if ( tilePOI != null && !tilePOI.IsPOIAlarmed_AgainstPlayer )
+                        {
+                            if ( (tilePOI.Type?.RequiredClearance?.Level ?? 0) > clearanceForTilePOI )
+                                continue; //a tile poi exists, and is too high of a clearance, and is not alarmed against the player, so ignore this whole cell!
+                        }
+                    }
 
                     if ( !mustStayOnGround )
                     {
