@@ -45,6 +45,11 @@
 	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
 		tooltip="This specifies the type name of the type that handles the control code for this message in the specified external dll."/>
 
+	<attribute key="lang_key_for_red_warning" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is going to be shown as a red warning at the bottom of this." />
+	<attribute key="lang_key_for_gray_note" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is going to be shown as a gray note at the bottom of this, under the red warning." />
+	
 	<sub_node id="option">
 		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
 			tooltip="For finding this when we need to refer to it." />
@@ -100,6 +105,13 @@
 		<attribute key="do_full_activity_spawn_check" type="bool" is_required="false" default="false"
 			tooltip="If true, then the game will see if it needs to spawn anything at all after this." />
 
+		<attribute key="is_in_work_option" type="bool" is_required="true" default="false"
+			tooltip="If true, then this will be hidden if Debug_IncludeInWorkProgress is not true." />
+		<attribute key="lang_key_for_red_warning" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+			tooltip="Link to a language entry that is going to be shown as a red warning at the bottom of this." />
+		<attribute key="lang_key_for_gray_note" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+			tooltip="Link to a language entry that is going to be shown as a gray note at the bottom of this, under the red warning." />
+		
 		<attribute key="project_to_start_1" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
 			tooltip="If this starts a project, which project does it start?" />
 		<attribute key="project_to_start_2" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"

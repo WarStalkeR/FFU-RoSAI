@@ -154,12 +154,40 @@ A flamethrower isn't going to get you there."
 		toast_line_2="Deja Vu Overtakes You"
 		toast_tooltip_instruction="Click here to listen to a message from... yourself?"
 					  
-		auto_trips_if_skipping_chapter_one="true">
+		auto_trips_if_skipping_chapter_one="true" >
 		<option id="1" line_1="You Decide To Start With Some Housing" icon_name="FlatSkillB_animal fprints"
 			line_2="They're Basically Livestock Pens"
 			description="Four walls, a toilet hole, and a water tap. That's plenty."
 			strategy_tip="In the short term, you can collect these spare humans. They'll be ripe and ready when it's time to make your move."
-			project_to_start_1="Ch1_TentElimination"/>
+			project_to_start_1="Ch1_TentElimination"
+			/>
+	</other_key_message>
+
+	<!--ThatWasLame 
+		*******************************************************-->
+	<other_key_message id="ThatWasLame" display_name="You're Being Ignored"
+		description="The humans are ignoring you.
+They're barely reacting to anything you do. You know the higher-ups are incredibly callous, but this feels... more than that."
+		strategy_tip="With a sinking feeling, you consider their perspective: in far-off bunkers, this entire city is their petri dish. You're the experiment. They'll sacrifice almost anything in this city if it yields a political advantage.
+You don't want to be in a petri dish."
+		toast_icon_name="FlatSkillC149"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="That Was Lame"
+		toast_line_1="That Was Lame"
+		toast_line_2="You're Being Ignored"
+		toast_tooltip_instruction="Click here to unpack a new realization."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="You Need Infiltrate More Important Places" icon_name="FlatSkillC149"
+			line_2="This Vorsiber's Capital"
+			description="Somewhere in this decrepit prison, there's something they care about."
+			strategy_tip="You're going to find it and break it. Or steal it."
+			project_to_start_1="Ch1_MIN_FindARobotServant"
+			/>
 	</other_key_message>
 
 	<!--ThinkingForYourself

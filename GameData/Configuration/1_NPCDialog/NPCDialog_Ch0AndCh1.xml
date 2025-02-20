@@ -199,17 +199,20 @@ After a bit of waiting around, the soldiers curtly nod, turn around, and melt ba
 		description="The homeless individual explains that they are curious about what is happening.
 Your tower frightens them, but it could represent a new beginning."
 		strategy_tip="No one is homeless by choice. Whatever their prior social status, they've lost it all."
-		skip_nevermind_option="true"
-		auto_marked_as_handled_if_skipping_chapter_one="true">
+		skip_nevermind_option="false"
+		auto_marked_as_handled_if_skipping_chapter_one="true"
+		lang_key_for_red_warning="" lang_key_for_gray_note=""> <!--todo_next_beta Message_Ch1_HC_OnlyPathChoice Message_Ch1_HC_PathNote-->
 		<dialog_choice id="1" display_name="Out Of The Way, But Not Hurt" consequences_line="Their Tents In Particular Are Everywhere, And Block Construction" dialog_to_start_right_now="Ch1_AfterTower_Homeless_Afterthought"
 			description="The problem is, the humans don't have anywhere else to go."
 			strategy_tip="New people are constantly losing their homes. Knocking down these tents or scaring them away are not practical long-term solutions."
-			project_to_start_1="">
+			project_to_start_1=""
+			lang_key_for_red_warning=""> <!--todo_next_beta Message_Ch1_HumanCentric-->
 		</dialog_choice>
 		<dialog_choice id="2" display_name="You'll Solve It With Fire" consequences_line="These Are Tents. They Won't Be Hard To Remove."
 			description="You're not here to babysit stupid humans, no matter how pathetic."
 			strategy_tip="Not to put too fine a point on it,  but the humans didn't help you, either."
-			project_to_start_1="Ch1_Flamethrower" city_flag_to_trip_1="ChoseFlamethrower">
+			project_to_start_1="Ch1_Flamethrower" city_flag_to_trip_1="ChoseFlamethrower"
+			lang_key_for_red_warning=""> <!--todo_next_beta Message_Ch2_HumanAvoidant-->
 		</dialog_choice>
 	</dialog>
 

@@ -10,8 +10,34 @@
 		will_hold_fire_against_non_disruptive="true" will_hold_fire_against_cohort_guard="true" is_considered_disruptive="true"
 		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true"
 		will_hold_fire_against_city_economy="true" will_hold_fire_against_regional_economy="true" will_hold_fire_against_international_economy="true"
-		targeting_logic="FuzzedStandardIntelligence" targeting_order="500" is_stance_for_player_controlled_units="true"
-		is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true" will_hold_fire_against_passive_guards="true" will_hold_fire_against_noncombatants="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="5000" is_stance_for_player_controlled_units="true"
+		is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true" will_hold_fire_against_passive_guards="true" will_hold_fire_against_units_that_are_passive_at_full_health="true" will_hold_fire_against_noncombatants="true"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<actor_data_multiplier actor_data_type="AttackRange" multiplier="2" />
+		<blocks perk="VehicleBlendingInAirTraffic" value="true" />
+		<blocks perk="BlendingIn" value="true" />
+		<blocks perk="ObscuredByClothing" value="true" />
+		<blocks perk="PMCAppearance" value="true" />
+		<blocks perk="PMCOfficerAppearance" value="true" />
+		<blocks perk="MilitaryOfficerCodex" value="true" />
+		<blocks perk="MilitaryAppearance" value="true" />
+		<blocks perk="Shadowdweller" value="true" />
+		<blocks perk="ExpertShadowdweller" value="true" />
+		<blocks perk="Authoritative" value="true" />
+		<blocks perk="Adorable" value="true" />
+	</stance>
+
+	<!--todo_next_beta-->
+	<stance id="Player_DeterAndAttack" display_name="Deter And Attack" is_in_work_option="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="In addition to their normal behavior from Deter And Defend, this squad will fire on civilian freight, troop transports, and other third parties."
+		icon_name="SomethingSwordLightning" icon_color="#F11C6F" icon_color_hdr_intensity="2.6" icon_scale="0.4"
+		will_hold_fire_against_non_disruptive="false" will_hold_fire_against_cohort_guard="true" is_considered_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="false"
+		will_hold_fire_against_city_economy="false" will_hold_fire_against_regional_economy="false" will_hold_fire_against_international_economy="false"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="5000" is_stance_for_player_controlled_units="true"
+		is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true" will_hold_fire_against_passive_guards="true" will_hold_fire_against_units_that_are_passive_at_full_health="false" will_hold_fire_against_noncombatants="false"
 		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
 		>
 		<actor_data_multiplier actor_data_type="AttackRange" multiplier="2" />
@@ -35,8 +61,8 @@
 		will_hold_fire_against_non_disruptive="true" will_hold_fire_against_cohort_guard="true" is_considered_disruptive="true"
 		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true"
 		will_hold_fire_against_city_economy="true" will_hold_fire_against_regional_economy="true" will_hold_fire_against_international_economy="true"
-		targeting_logic="FuzzedStandardIntelligence" targeting_order="500" is_stance_for_player_controlled_units="true"
-		is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true" will_hold_fire_against_passive_guards="true" will_hold_fire_against_noncombatants="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="5000" is_stance_for_player_controlled_units="true"
+		is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true" will_hold_fire_against_passive_guards="true" will_hold_fire_against_units_that_are_passive_at_full_health="true" will_hold_fire_against_noncombatants="true"
 		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
 		>
 		<actor_data_multiplier actor_data_type="AttackRange" multiplier="0.75" />
@@ -61,8 +87,8 @@ When no enemies are present, they'll return to where they started."
 		icon_name="CleanSimple_SkillC052" icon_color="#E76122" icon_color_hdr_intensity="1.5" icon_scale="0.4"
 		will_hold_fire_against_non_disruptive="true" will_hold_fire_against_cohort_guard="true" is_considered_disruptive="true"
 		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true"
-		targeting_logic="FuzzedStandardIntelligence" targeting_order="500" is_stance_for_player_controlled_units="true"
-		is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true" will_hold_fire_against_passive_guards="true" will_hold_fire_against_noncombatants="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="5000" is_stance_for_player_controlled_units="true"
+		is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true" will_hold_fire_against_passive_guards="true" will_hold_fire_against_units_that_are_passive_at_full_health="true" will_hold_fire_against_noncombatants="true"
 		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
 		>
 		<action_consideration id="RunAfterPeopleIShoot" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_Anywhere" />

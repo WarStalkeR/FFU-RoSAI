@@ -41,7 +41,7 @@
 	<stance id="SyndicateExtort" display_name="Extorting Locals"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
 		description="The daily crime grind."
-		icon_name="FlatSkillC85" icon_color="#E46350" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		icon_name="FlatSkillC85" icon_color="#E46350" icon_color_hdr_intensity="1.5" icon_scale="0.4" extra_aggro_against_non_machine_forces="2000"
 		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
 		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true"
 		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"

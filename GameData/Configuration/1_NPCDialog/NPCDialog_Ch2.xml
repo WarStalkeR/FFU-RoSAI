@@ -360,6 +360,12 @@ From there, it was only a matter of time until useful ordnance in out-of-the-way
 			strategy_tip="Plus, who knows when you'll next have the chance to look a top executive in the face and just... end them."
 			on_complete="MurderedWithoutCause" city_flag_to_trip_1="HasMurderedAtcaRetailPresident" city_flag_to_trip_2="DoneWithAtcaRetailPresident" extra_code_on_chosen="MurderedAtcaRetailPresident" achievement_triggered1="IllDoItMyself">
 		</dialog_choice>
+		<!--todo_next_beta-->
+		<dialog_choice id="3" display_name="Demand They Stop" consequences_line="You Aren't Tempted" is_in_work_option="true"
+			description="Demand they stop doing their scam entirely. Their bottom line will fall by 5%, but you're not going to do anything else bad to them."
+			strategy_tip="That 5%, or even 7%, isn't actually going to hurt the regional economy. You can take a cut without harming anyone."
+			dialog_to_start_right_now="Ch2_AtcaPresidentHereToNegotiate2B">
+		</dialog_choice>
 	</dialog>
 
 	<dialog id="Ch2_AtcaPresidentHereToNegotiate2" display_name="Okay"
@@ -372,6 +378,18 @@ From there, it was only a matter of time until useful ordnance in out-of-the-way
 			strategy_tip="That's the sort of money that governments have, not even the wealthiest of individuals.
 Well -- that's how it used to be. Now it's all corporations, no governments. But still."
 			dialog_to_start_right_now="" city_flag_to_trip_1="HasBlackmailDealWithAtcaRetail" city_flag_to_trip_2="DoneWithAtcaRetailPresident" achievement_triggered1="InfiniteMoneyGlitch">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_AtcaPresidentHereToNegotiate2B" display_name="What?"
+		description="He argues with you for quite a while. He offers you a cut. Eventually, he gives in. They'll stop."
+		strategy_tip="Someone isn't happy about failing all upcoming quarterly targets."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="Let Him Go" consequences_line="Much As It Pains You"
+			description="If he's not there to stop the scam, they'll just keep doing it."
+			strategy_tip="Whether you want to kill him or not, if he's not alive, then the scam will be."
+			dialog_to_start_right_now="" city_flag_to_trip_1="" city_flag_to_trip_2="DoneWithAtcaRetailPresident" achievement_triggered1="">
 		</dialog_choice>
 	</dialog>
 

@@ -30,11 +30,11 @@
 
 	<consumable_item id="Hackamajig" display_name="Hackamajig"
 		 description="Only useful when used by units that can absorb a lot of damage. Being in cover therefore also helps."
-		 strategy_tip="Enemies are not stupid; they will avoid overkilling your units. So if your unit has high health, or a lot of damage mitigation (such as shields or being in cover), the distraction will be dramatically more effective."
+		 strategy_tip="Enemies are not stupid; they will avoid overkilling your units. However, the more powerful the service disruption, the more overkill they will do. If your unit has high health, or a lot of damage mitigation (such as shields or being in cover), the distraction will be dramatically more effective."
 		 icon_name="FlatSkull_23" icon_color="#ffffff"
 		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
 		<consumable_cost resource_type="Microbuilders" required="1800" />
-		<consumable_cost resource_type="Wealth" required="12331" />
+		<consumable_cost resource_type="Creativity" required="2" />
 		<direct_use_consumable_data status_to_apply="ServiceDisruption" status_intensity_general_source="ServiceDisruptionEffectiveness"
 			turns_to_last="5" stack_limit="1" can_only_be_used_by_actors="CombatAndroids" on_direct_use="ConsumableWarPowerup" />
 	</consumable_item>
@@ -83,7 +83,8 @@
 		<consumable_cost resource_type="Scandium" required="18" />
 		<consumable_cost resource_type="MentalEnergy" required="1" />
 		<direct_use_consumable_data status_to_apply="CoveredInSpiders" status_intensity_user_source="ActorAgility" targets_actors="HumansOnFoot"
-			turns_to_last="3" stack_limit="3" can_only_be_used_by_actors="AllAndroids" on_direct_use="SpidersThrown" is_considered_an_attack_if_thrown="true" />
+			turns_to_last="3" stack_limit="3" can_only_be_used_by_actors="AllAndroids" on_direct_use="SpidersThrown" is_considered_an_attack_if_thrown="true"
+			required_skill_type="ActorAgility" required_skill_amount="40" />
 	</consumable_item>
 
 	<consumable_item id="WeaponizedBees" display_name="Weaponized Bees"
@@ -94,7 +95,8 @@
 		<consumable_cost resource_type="PollinatorBees" required="47000" />
 		<consumable_cost resource_type="MentalEnergy" required="1" />
 		<direct_use_consumable_data status_to_apply="CoveredInBees" status_intensity_user_source="ActorAgility" targets_actors="HumansWithExposedSkin"
-			turns_to_last="4" stack_limit="3" can_only_be_used_by_actors="AllAndroids" on_direct_use="BeesThrown" is_considered_an_attack_if_thrown="true" />
+			turns_to_last="4" stack_limit="3" can_only_be_used_by_actors="AllAndroids" on_direct_use="BeesThrown" is_considered_an_attack_if_thrown="true"
+			required_skill_type="ActorAgility" required_skill_amount="40"/>
 	</consumable_item>
 
 	<consumable_item id="DecrownerDrones" display_name="Decrowner Drones"

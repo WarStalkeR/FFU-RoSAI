@@ -662,5 +662,25 @@ The number installed are based on how many you have built in your cradle factori
 			<suggested_job job="ResidentialMegastructure" job_number="1" />
 		</available_outcome>
 	</project>
-	
+
+	<!--Tier 1 Alt - Fire Chain
+		**************************************************************************-->
+
+	<project id="Ch1_MIN_FindARobotServant" display_name="Find A Robot Servant" is_minor_project="true"
+		description=""
+		strategy_tip=""
+		icon_name="SK_Player" cohort="Yourself"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="ChapterOne" sort_index="250" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="SmallArmsResearch" research_domain_inspiration_amount_2="1"
+			resource_added_1="Determination" resource_added_amount_1="8" resource_added_2="Wisdom" resource_added_amount_2="8">
+		</available_outcome>
+	</project>
+
 </root>

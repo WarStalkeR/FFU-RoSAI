@@ -86,12 +86,20 @@ You can have more of these, and they don't cost any mental energy to run. They m
 		auto_unlocks_and_marked_read_if_skipping_chapter_one="true"
 		collections="All,Strategy"/>
 
+	<!--WorkerAndroids-->
+	<handbook_entry id="WorkerAndroids" display_name="Worker Androids" section="Strategy"
+		description="Worker androids are very distant from your consciousness. These are tied to specific buildings that spawn them, and what the workers do is based on the structure that spawns them.
+Workers do not have any sort of generalized cap, do not cost mental energy to deploy, cannot use equipment, and only come in three flavors: Predator, Sledge, and PMC Impostor."
+		strategy_tip="When you have a structure that uses Worker Androids, you will first need to build Android Frames of the appropriate types. Using the Workers tab in Command Mode, you can also disable specific kinds of workers from spawning, if you wish.
+What each worker type does depends on the building that spawns them. Each building uses them very differently, but explains how they are used."
+		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
+		collections="All,Strategy"/><!--todo_next_beta-->
+
 	<!--DealsAreSoftPower-->
 	<handbook_entry id="DealsAreSoftPower" display_name="Deals Are Soft Power" section="Strategy" is_mid_visibility_entry="true"
 		description="All that manufacturing power at your fingertips, and nobody to benefit. Well, humans are really into a lot of the stuff you make.
 Deals are a way of using your manufacturing capabilities to influence the world around you -- or get something you can't get any other way."
-		strategy_tip="Some deals give you benefits, and others do not. Some just get the humans off your back.
-If you fail to meet the terms of your bargain (past the limits of the patience of the other party) your deal will end."
+		strategy_tip="All deals give you some sort of passive benefit. If you go into the Resources window, and then go to the Deals tab, you can often increase the intensity of the deal to get a stronger benefit, if you have extra of the resource in question."
 		auto_unlocks_and_marked_read_if_skipping_chapter_one="true"
 		collections="All,Strategy"/>
 
@@ -150,6 +158,16 @@ There may not be a huge number of opportunities just yet, but you can generate s
 Outside of those scenarios they are still highly useful, largely as a means to buy and sell resources in a way you otherwise could not."
 		collections="All,Strategy,ShellCompanies"/>
 
+	<!--UnitCaps-->
+	<handbook_entry id="UnitCaps" display_name="How Do Unit Caps Work?" section="Strategy"
+		description="Each android takes up a certain amount of capacity, which determines how many you can have at once.
+Basic units like Technicians use 4 capacity, while more advanced androids may require 16 or more."
+		strategy_tip="If you exceed the limit, you won’t be able to deploy or create new androids until you scrap existing ones to free up space.
+You can check your current android count and limit at the top of the FORCES panel (e.g., 'Androids 46/48'). The cap can be increased through upgrades and other mechanics.
+Vehicles and Mechs work essentially the same way, but have their own independent caps."
+		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
+		collections="All,Strategy"/><!--todo_next_beta-->
+
 	<!--Combat
 	************************************************************************************************************************************************************************
 	************************************************************************************************************************************************************************-->
@@ -193,6 +211,24 @@ On the other hand, it does mean that unit's ability to blend in is gone, which c
 		auto_unlocks_and_marked_read_if_skipping_chapter_one="true"
 		collections="All,Strategy,Combat"/>
 
+	<!--WhatCountsAsMurder-->
+	<handbook_entry id="WhatCountsAsMurder" display_name="What Counts As Murder? (For Goal Purposes)" section="Combat"
+		description="Murder includes: killing non-combatants, destroying civilian-occupied buildings (even by accident), attempting to kill underage combatants, and (almost) any action or event that specifically uses the word 'Murder' instead of 'Kill.'
+Not murder: killing armed enemies in battle, deaths of displaced humans from exposure, deaths caused by third parties."
+		strategy_tip="You can see your list of murders, if there are any, in the Action Statistics tab of the History window.
+There is one (intentionally) misleading category, called 'Androids Murdered For Registration.' This uses the word murder, but it does not count against you for goal purposes. May be some deeper story significance there...
+Mulching humans into 'canned protein' is also something you would think is murder, but it turns out that it doesn't count if you do it in a businesslike manner. Who knew."
+		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
+		collections="All,Strategy,Combat"/><!--todo_next_beta-->
+
+	<!--KillingHackers-->
+	<handbook_entry id="KillingHackers" display_name="Why Can I Only Kill Hackers Sometimes?" section="Combat"
+		description="It depends on what the hacker is doing at the time.
+If the hacker is only suspicious of your presence but hasn’t fully detected your unit, attacking them sets off an alarm. This triggers security measures, causing your infiltrator to take damage from the alerted forces inside the building. These are always secretive Infiltration missions -- if someone realizes an intruder is inside, everything escalates."
+		strategy_tip="In cases where you can freely kill hackers, they’re not actively tracking an infiltrator inside a high-security area. Instead, they’re attacking through network-based warfare, which means alarms aren’t a factor. You're in some degree of open warfare with them, so the rules are different."
+		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
+		collections="All,Strategy,Combat"/><!--todo_next_beta-->
+
 	<!--NPCUnitMechanics
 	************************************************************************************************************************************************************************
 	************************************************************************************************************************************************************************-->
@@ -207,6 +243,14 @@ Checking NPC tooltips is a very important habit to form!
 If no enemies are directly around, try looking for them on the map view."
 		auto_unlocks_and_marked_read_if_skipping_chapter_zero="true"
 		collections="All,Combat,NPCUnitMechanics"/>
+
+	<!--TalkToEnemies-->
+	<handbook_entry id="TalkToEnemies" display_name="How Do I Talk To Enemies Instead Of Shooting Them?" section="NPCUnitMechanics"
+		description="Some androids have the Force Conversation ability, allowing them to initiate discussion with enemies -- but only if the enemy is willing to talk. Hovering over an enemy will show how many conversations you can force with them, if any.
+Most enemies cannot be engaged in conversation, while some can be approached multiple times."
+		strategy_tip="If your android lacks this ability by default, you can add it in the Loadout window, where you set equipment and abilities for your unit types."
+		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
+		collections="All,Combat,NPCUnitMechanics"/><!--todo_next_beta-->
 	
 	<!--AttacksOfOpportunity-->
 	<handbook_entry id="AttacksOfOpportunity" display_name="Attacks Of Opportunity" section="NPCUnitMechanics"
@@ -439,6 +483,17 @@ If you have enough deterrence in the local area, they won't come back."
 		auto_unlocks_and_marked_read_if_skipping_chapter_one="true"
 		collections="All,Strategy,Controls"/>
 
+	<!--BuildingCaps-->
+	<handbook_entry id="BuildingCaps" display_name="Building Caps" section="Construction"
+		description="There are no explicit building caps -- instead, there is a mechanic called Internal Robotics.
+This means that various different buildings are in tension with each other, sharing a thematic 'cap' due to using the same kind of internal robotics. At the bottom of the Build Menu, you can filter by Internal Robotics to see all buildings that use a given type."
+		strategy_tip="When looking at the Internal Robotics line on a structure's tooltip, you'll see a line that says something like 'Internal Robotics: 4 (16/48).'
+The first number (4) is how many internal robotics it would take to build this structure.
+The second number (16) is how many you have available at this time based on your prior construction. 
+The third number (48) is your total cap at this time for that kind of internal robotics, including the portions you've already allocated."
+		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
+		collections="All,Construction,InternalRobotics"/><!--todo_next_beta-->
+	
 	<!--WhatAreInternalRobotics-->
 	<handbook_entry id="WhatAreInternalRobotics" display_name="What Are Internal Robotics?" section="Construction" is_mid_visibility_entry="false"
 		description="All structures you build are robotic, requiring minor automatons inside themselves to do their work.
@@ -535,7 +590,7 @@ Or, in other cases, just endlessly show up until you kill them all."
 	<!--StudyPotentialEnemies-->
 	<handbook_entry id="StudyPotentialEnemies" display_name="Study Potential Enemies" section="Tactics" is_mid_visibility_entry="true"
 		description="Units with different icons over their heads are doing different things."
-		strategy_tip="In any fight, how units will behave is evident from their tooltips.
+		strategy_tip="In any fight, how units will behave is evident from their tooltips. You can also see if you can Force Conversation with the from here.
 Humans who have an objective that will further the progress of their mission should be priority targets."
 		auto_unlocks_and_marked_read_if_skipping_chapter_zero="true"
 		collections="All,Tactics"/>

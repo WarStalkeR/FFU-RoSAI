@@ -275,10 +275,10 @@
 			</possible_result>
 			<possible_result id="2" unskilled_weight="25" vfx_and_sound="BasicAttemptPartialSuccess" result_message="Fiddlesticks. They saw you." block_thefts_at_the_poi_for_this_many_turns="4">
 				<resource_change_range resource_type="BovineTissue" min="600" max="900" />
-				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea_AngryAtPlayer" radius_in_which_to_seed="-1"
 					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
 					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
-				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea_AngryAtPlayer" radius_in_which_to_seed="-1"
 					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
 					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
 			</possible_result>
@@ -309,16 +309,16 @@
 			</possible_result>
 			<possible_result id="2" unskilled_weight="75" vfx_and_sound="BasicAttemptPartialSuccess" result_message="They saw you. That's a lot of soldiers for a stupid field." block_thefts_at_the_poi_for_this_many_turns="4">
 				<resource_change_range resource_type="VegetableSeeds" min="1200" max="2100" />
-				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea_AngryAtPlayer" radius_in_which_to_seed="-1"
 					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
 					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
-				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea_AngryAtPlayer" radius_in_which_to_seed="-1"
 					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
 					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
-				<npc_unit_to_spawn id="MS3" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+				<npc_unit_to_spawn id="MS3" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea_AngryAtPlayer" radius_in_which_to_seed="-1"
 					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
 					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
-				<npc_unit_to_spawn id="MS4" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+				<npc_unit_to_spawn id="MS4" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea_AngryAtPlayer" radius_in_which_to_seed="-1"
 					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
 					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
 			</possible_result>
@@ -354,10 +354,10 @@
 			<possible_result id="3" unskilled_weight="25" vfx_and_sound="BasicAttemptPartialSuccess" result_message="They saw you. And you harmed the local area."
 				poi_badge_applied="PollinatorShortage" block_thefts_at_the_poi_for_this_many_turns="4">
 				<resource_change_range resource_type="PollinatorBeeQueen" min="1" max="1" />
-				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+				<npc_unit_to_spawn id="MS1" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea_AngryAtPlayer" radius_in_which_to_seed="-1"
 					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
 					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
-				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea" radius_in_which_to_seed="-1"
+				<npc_unit_to_spawn id="MS2" to_spawn="FractiveSniper" stance_to_start_in="DefendingArea_AngryAtPlayer" radius_in_which_to_seed="-1"
 					spawn_facing_player_unit="true" spawn_for_focus_cohort="true"
 					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
 			</possible_result>

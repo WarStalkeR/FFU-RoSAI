@@ -10,6 +10,10 @@
 		  type="BoolToggle" default_bool="false" scope="MainGameOnly" skip_all_localization_on_node="true" should_only_show_in_english_version="true"
 		  description="Useful when making xml changes that can be tested without restarting the program. Turning this on causes an automatic reload of that xml any time the program is focused." />
 
+	<setting id="Debug_IncludeInWorkProgress" category="Debug" display_name="Include In-Work Progress"
+		  type="BoolToggle" default_bool="false" scope="MainGameOnly" skip_all_localization_on_node="true" should_only_show_in_english_version="true"
+		  description="If true, and you are on a beta branch, then you may see some options that are still in-work and not yet ready for general use. Only for the devs and certain playtesters." />
+	
 	<!--Debug: DebugVisualization-->
 	
 	<setting id="Debug_PauseVehicles" category="Debug" subcategory="DebugVisualization" display_name="Pause Ground Vehicles"

@@ -11,7 +11,8 @@
 		 sort_order="51000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
 		<consumable_cost resource_type="DroneFrame" required="6" />
 		<consumable_cost resource_type="Apathy" required="2" />
-		<direct_use_consumable_data targets_building_tag="HasOfficePrinters" can_only_be_used_by_actors="SouldroidsAndTechnicians" on_direct_use="EngineDrillLaunched" is_considered_an_attack_if_thrown="true" />
+		<direct_use_consumable_data targets_building_tag="HasOfficePrinters" can_only_be_used_by_actors="SouldroidsAndTechnicians" on_direct_use="EngineDrillLaunched" is_considered_an_attack_if_thrown="true"
+			required_skill_type="UnitHackingSkill" required_skill_amount="150" />
 	</consumable_item>
 
 	<consumable_item id="FreshIdentity" display_name="Fresh Identity"
@@ -89,7 +90,8 @@
 		<consumable_cost resource_type="Neodymium" required="60" />
 		<consumable_cost resource_type="MentalEnergy" required="1" />
 		<direct_use_consumable_data status_to_apply="CoveredInSaberBees" status_intensity_user_source="ActorAgility" targets_actors="HumansOnFoot"
-			turns_to_last="4" stack_limit="3" can_only_be_used_by_actors="AllAndroids" on_direct_use="BeesThrown" is_considered_an_attack_if_thrown="true" />
+			turns_to_last="4" stack_limit="3" can_only_be_used_by_actors="AllAndroids" on_direct_use="BeesThrown" is_considered_an_attack_if_thrown="true"
+			required_skill_type="ActorAgility" required_skill_amount="40" />
 	</consumable_item>
 
 	<consumable_item id="TormentCaptureDrone" display_name="Torment Capture Drone"
@@ -103,6 +105,18 @@
 		<direct_use_consumable_data status_to_apply="HeadedForTormentVessel" status_intensity_user_source="UnitStrength" targets_actors="HumansThatCanBeSentToTormentVessel"
 			turns_to_last="1" stack_limit="1" can_only_be_used_by_actors="Mindport" on_direct_use="BeesThrown" is_considered_an_attack_if_thrown="true" />
 	</consumable_item>
+
+	<!--
+	<consumable_item id="FreshIdentity" display_name="Fresh Identity"
+		 description="Generate a new ID so that enemies will not recognize this unit is the one they are angry with."
+		 strategy_tip="If this unit has been marked defective or has angered cohorts, all of that will be wiped away."
+		 icon_name="SomethingSprout" icon_color="#ffffff" always_show_strategic_tip="true"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="Microbuilders" required="3000" />
+		<consumable_cost resource_type="LiquidGallium" required="100" />
+		<direct_use_consumable_data clears_all_aggro="true" can_only_be_used_by_actors="StandardUnits" on_direct_use="ConsumableWarPowerup" />
+	</consumable_item>-->
 	
 	<!--Esoteric Consumables
 		*********************************************************-->

@@ -253,6 +253,20 @@ One or more units running interference like this helps keep other units alive."
 		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.1">
 	</actor_status>
 
+	<actor_status id="Horrified" display_name="Horrified"
+		description="This unit has been hit by a Horrify attack, leaving it twice as vulnerable to Argument attacks of any sort (Demoralize or otherwise)."
+		strategy_tip_optional=""
+		icon_name="FlatSkill_42" icon_color="#A241E4" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+	</actor_status>
+
+	<actor_status id="Demoralized" display_name="Demoralized"
+		description="This unit has been hit by a Demoralize attack, leaving it twice as vulnerable to Fear attacks of any sort (Horrify or otherwise)."
+		strategy_tip_optional=""
+		icon_name="WEmblem308" icon_color="#4689E4" tooltip_color="ActorStatus_Bad"
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+	</actor_status>
+
 	<!--Very High Importance (sort order 100+)
 		*********************************************************************************-->
 	

@@ -97,7 +97,8 @@
 	</ability_type>
 
 	<ability_type id="AndroidHorrifyMode" display_name="Horrify"
-		description="If a target is susceptible to fear-based attacks, attacking them in this mode will do morale damage without physical harm."
+		description="If a target is susceptible to fear-based attacks, attacking them in this mode will do morale damage without physical harm.
+It will also leave the target in a Horrified status for one turn, making them more susceptible to argument-based attacks."
 		strategy_tip_optional="A portion of this unit's physical attack power will be converted into fear attack power. The higher this unit's Intimidation, the better the conversion.
 The converted attack power will never be less than 10% and never more than 100%. It will reach 100% conversion at 200 Intimidation. So 60 physical attack power and 100 Intimidation would convert to 30 fear attack."
 		icon_name="FlatSkill_42" parent_group="Android" on_use="ModeClick" must_be_targeted="true" is_soft_targeting_mode="true"
@@ -108,7 +109,8 @@ The converted attack power will never be less than 10% and never more than 100%.
 	</ability_type>
 
 	<ability_type id="AndroidDemoralizeMode" display_name="Demoralize"
-		description="If a target is susceptible to argument-based attacks, attacking them in this mode will do morale damage without physical harm."
+		description="If a target is susceptible to argument-based attacks, attacking them in this mode will do morale damage without physical harm.
+It will also leave the target in a Demoralized status for one turn, making them more susceptible to fear-based attacks."
 		strategy_tip_optional="This unit's full Cognition, and half of its Strength, will be converted into argument attack power.
 Some units are using wits to convince targets to depart the battlefield, while others are demonstrating their physical prowess in a way that deflates morale."
 		icon_name="WEmblem308" parent_group="Android" on_use="ModeClick" must_be_targeted="true" is_soft_targeting_mode="true"

@@ -60,6 +60,11 @@
 		<attribute key="can_only_be_used_by_actors" type="node-dropdown" node_source="ActorCollection" content_width_px="200" is_required="true"
 			tooltip="Whatever this does, we need to know which kind of units can actually use it. What is the collection they have to be in?" />
 
+		<attribute key="required_skill_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"
+			tooltip="Optional limiter for actors." />
+		<attribute key="required_skill_amount" type="int-textbox" min="0" max="10000" default="0" content_width_px="40" is_required="false"
+			tooltip="If this is above a certain amount, then units without this cannot use this type of item."/>
+		
 		<attribute key="targets_actors" type="node-dropdown" node_source="ActorCollection" content_width_px="200" is_required="false"
 			tooltip="Only specified if this targets actors of a different sort. If it does, then this could be enemies or allies or whatever." />
 		<attribute key="target_gate_data_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="false"

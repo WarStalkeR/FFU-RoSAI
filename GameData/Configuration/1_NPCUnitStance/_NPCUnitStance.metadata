@@ -58,6 +58,9 @@ This is basically for large-scale war situations, where all the background units
 
 	<attribute key="is_considered_basic_guard" type="bool" default="false"
 		tooltip="If true, then units looking for enemies won't naturally include this unit." />
+
+	<attribute key="is_in_work_option" type="bool" is_required="true" default="false"
+		tooltip="If true, then this will be hidden if Debug_IncludeInWorkProgress is not true." />
 	
 	<attribute key="is_considered_cohort_guard" type="bool" default="false"
 		tooltip="If true, units in this stance will be considered part of the general cohort guarding the city." />
@@ -88,6 +91,11 @@ This is basically for large-scale war situations, where all the background units
 		tooltip="If true, this is considered a machine forces unit friendly-ish to rebels." />
 	<attribute key="will_hold_fire_against_rebel_friendly_machine" type="bool" default="false"
 		tooltip="If true, units in this stance won't fire at rebel-friendly machines." />
+
+	<attribute key="should_be_targeted_by_all_player_forces_that_are_not_shell_company" type="bool" default="false"
+		tooltip="If true, all player forces should attack this unless they are from the shell company. This is mainly an override to handle things like the alerted POI guards." />
+	<attribute key="should_never_be_targeted_by_player_forces" type="bool" default="false"
+		tooltip="If true, all player bulk units are blocked from shooting at this, even if it shoots back at them. Important for a certain kind of enemy hacker that hurts you more when it's shot." />
 	
 	<attribute key="will_hold_fire_against_non_disruptive" type="bool" default="false"
 		tooltip="If true, units in this stance will avoid shooting other units that are not presently considered disruptive." />
@@ -104,7 +112,9 @@ This is basically for large-scale war situations, where all the background units
 	<attribute key="will_hold_fire_against_noncombatants" type="bool" default="true"
 		tooltip="If true, the default, units in this stance will hold fire against noncombatants." />
 	<attribute key="will_hold_fire_against_passive_guards" type="bool" default="true"
-		tooltip="If true, the default, units in this stance will hold fire against passive guards unless you're in the spot they are guarding." />
+		tooltip="If true, units in this stance will hold fire against passive guards unless you're in the spot they are guarding." />
+	<attribute key="will_hold_fire_against_units_that_are_passive_at_full_health" type="bool" default="true"
+		tooltip="If true, units in this stance will hold fire against units that are passive when not at full health." />
 
 	<attribute key="is_stance_for_player_controlled_units" type="bool" default="false"
 		tooltip="If true, then this is something that player-controlled units can be assigned at will." />
@@ -154,6 +164,9 @@ This is mostly relevant for AOE, or other factors where earlier decisions block 
 Any unit with an AOE attack will multiply the specified targeting order by 10x automatically, so that's important to know when planning these." />
 	<attribute key="targeting_logic" type="node-dropdown" is_required="true" node_source="NPCUnitTargetingLogic" default="" content_width_px="300" linebreak_after="PreferNot"
 		tooltip="Required for all NPCs. What targeting logic should they use when selecting a target to shoot out of the targets within their range?" />
+
+	<attribute key="extra_aggro_against_non_machine_forces" type="int-textbox" is_required="false" min="0" max="100000" default="0" content_width_px="80"
+		tooltip="If set above 0, then units in this stance are far less likely to attack machine forces if other enemies are available." />
 	
 	<attribute key="switch_to_stance_when_damaged" type="node-dropdown" is_required="false" node_source="NPCUnitStance" default="" content_width_px="300" linebreak_after="PreferNot"
 		tooltip="When an npc unit is using this stance, and they take damage, then do they switch to a different stance?" />

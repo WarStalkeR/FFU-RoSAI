@@ -84,7 +84,8 @@
 
 	<job id="CatHouse" display_name="Cat House" marker_color="DeepCyan" ui_color="#fefefe"
 		is_locked_before_unlock="AdoptedACat"
-		description="Any pet cats you have will wander freely in the area of this home. Consider placing them far from danger."
+		description="Your first pet cat will wander... anywhere in the city. It's a cat. Where you put the house barely matters.
+If you want a safer alternative, you'll need to come up with another idea -- and once you have that, you may want to remove the cat house."
 		strategy_tip_optional=""
 		icon_name="BT_Cat" turns_to_install="0" required_structure_type="MachineCabinet" job_work_order_priority="99"
 		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"

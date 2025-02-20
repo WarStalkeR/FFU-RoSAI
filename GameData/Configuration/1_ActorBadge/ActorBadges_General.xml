@@ -149,6 +149,33 @@
 	</actor_badge>
 
 	<!--
+	<actor_badge id="HackersToolkit" display_name="Hacker's Toolkit"
+		description="This unit is loaded up with extra software tools that enhance their hacking skill by 50%."
+		strategy_tip_optional="Be careful! This badge applies only to this unit, so you will have to reapply the badge if this unit dies or is scrapped."
+		icon_name="SI_Hacker5" icon_color="#6F20E4" is_lost_on_death="true" is_lost_on_move="false" tooltip_color="ActorStatus_MinorGood"
+		sort_order="150">
+		<actor_data_multiplier data_type="UnitHackingSkill" multiplier="1.5" />
+	</actor_badge>
+
+	<actor_badge id="PlatedAndroid" display_name="Plated Android"
+		description="This unit has custom armor plating, which gives it an additional 30 armor."
+		strategy_tip_optional="Be careful! This badge applies only to this unit, so you will have to reapply the badge if this unit dies or is scrapped."
+		icon_name="AN_EmergencySign" icon_color="#E42D20" is_lost_on_death="true" is_lost_on_move="false" tooltip_color="ActorStatus_MinorGood"
+		sort_order="150">
+		<actor_data_added actor_data_type="ActorArmorPlating" flat_added="30" />
+	</actor_badge>
+
+	<actor_badge id="InfrasoundEmitter" display_name="Infrasound Emitter"
+		description="This unit emits a deep and unsettling sound which doubles their fear attack power, but also makes them Innately Alarming in a way that draws a lot of extra enemy attention."
+		strategy_tip_optional="Be careful! This badge applies only to this unit, so you will have to reapply the badge if this unit dies or is scrapped."
+		icon_name="NU_SoundWave" icon_color="#E42D20" is_lost_on_death="true" is_lost_on_move="false" tooltip_color="ActorStatus_MinorGood"
+		sort_order="150">
+		<grants perk="InnatelyAlarming" value="true" />
+		<actor_data_multiplier data_type="ActorFearAttackPower" multiplier="2" />
+	</actor_badge>
+	-->
+	
+	<!--
 	<actor_badge id="ShortResourcesForAttack" display_name="Short Resources"
 		description="Cannot attack due to shortage of resources."
 		strategy_tip_optional="Consider changing the equipment of this unit type, or else get more of the type of resource it requires."

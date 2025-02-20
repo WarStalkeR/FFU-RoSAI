@@ -24,7 +24,12 @@
 		tooltip="The music tag to start using until this set of dialog is done." />
 	<attribute key="music_track_to_play_first_when_starting_music_tag" type="node-dropdown" node_source="MusicTrack" content_width_px="200" is_required="false"
 		tooltip="Only applies if setting a music tag, but if one is set, then this is the first track that will be set from it." />
-	
+
+	<attribute key="lang_key_for_red_warning" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is going to be shown as a red warning at the bottom of this." />
+	<attribute key="lang_key_for_gray_note" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+		tooltip="Link to a language entry that is going to be shown as a gray note at the bottom of this, under the red warning." />
+
 	<!--dialog_choice
 	*******************************************************************************************************-->
 	<sub_node id="dialog_choice">
@@ -170,6 +175,13 @@
 		<attribute key="extra_code_on_chosen" type="node-dropdown" node_source="ExtraCodeHandler" content_width_px="200" is_required="false"
 			tooltip="If this needs to run some extra code, custom, at the end of making this choice, then the handler for that can be linked here.
 This has no effect on the ability to make the choice, or other aspects of the choice having been made.  It's purely for adding extra logic to a choice that is definitely happening." />
+
+		<attribute key="is_in_work_option" type="bool" is_required="true" default="false"
+			tooltip="If true, then this will be hidden if Debug_IncludeInWorkProgress is not true." />
+		<attribute key="lang_key_for_red_warning" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+			tooltip="Link to a language entry that is going to be shown as a red warning at the bottom of this." />
+		<attribute key="lang_key_for_gray_note" type="string" maxlength="200" content_width_px="130" is_required="false" is_localized="false"
+			tooltip="Link to a language entry that is going to be shown as a gray note at the bottom of this, under the red warning." />
 		
 		<!--project_flag_change on dialog_choice ...................... -->
 		<sub_node id="project_flag_change">

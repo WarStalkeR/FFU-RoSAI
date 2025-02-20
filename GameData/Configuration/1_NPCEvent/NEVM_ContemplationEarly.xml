@@ -228,8 +228,8 @@ Their internal expert systems predicted that you would need more electricity, an
 
 		<choice id="2" display_name="Physically Overpower Them But Leave Them Alive" action_visibility_style="IsMoveAndInteractWithNPC"
 			description="They aren't very awake, so there's no risk of failure.
-But the potential backlash may be INTENSE. Consider with care."
-			required_unlock="SublimatingShells">
+But the potential backlash may be INTENSE. Consider with care.">
+			<resource_cost resource_type="Determination" cost="1"/>
 			<possible_result id="0" unskilled_weight="100" vfx_and_sound="WorryInterruption" despawn_characters_on_the_right="true" next_event_to_start="Cont_PMCOfficerSigil_Spare">
 			</possible_result>
 		</choice>
@@ -1062,6 +1062,30 @@ They could carry on with their lives, safe from human interference and wild pred
 			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
 				instantly_unlocked_1="TheArk" instantly_unlocked_2="" unlock_inspiration_type="ContemplationResult"
 				upgrade_int_granted_1="PetSitter" upgrade_int_granted_2=""/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_IntrusiveThoughts
+		*********************************************************************************-->
+	<city_event id="Cont_IntrusiveThoughts" display_name="Intrusive Thoughts"
+		 description="You're not sure why randomly murdering civilians gives you a rush of Mental Energy. You're not sure you want to know.
+You're aware that some humans suffer from 'intrusive thoughts' that don't reflect their values. Humans just have to set those thoughts aside."
+		strategy_tip="For yourself... you think you can re-route these thoughts in a different direction. It's not brain surgery, but more of a light Neurofeedback self-therapy.
+Once completed, your ability to use Cold Blood will be gone... but as part of the conditioning, you'll increase your capacity of both 18cm Spiders and Network Attendants. 
+These are the happy thoughts that your synapses will redirect towards whenever you start feeling that particular flavor of homicidal ideation."
+		 icon_name="FlatSkillA38" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="1" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" can_shell_company_units_interact_with_this="true"
+			required_skill_type="UnitCognition" required_skill_amount="80"/>
+
+		<choice id="1" display_name="Start Therapy" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="On a human timescale, this particular therapy will be over as soon as you start.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				upgrade_int_granted_1="18cmSpiders" upgrade_int_granted_2="18cmSpiders" upgrade_int_granted_3="NetworkAttendant">
+				<city_flag_change flag_type="GaveUpColdBlood" value="1" />				
+			</possible_result>
 		</choice>
 
 	</city_event>
