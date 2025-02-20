@@ -83,7 +83,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                         DrawHelper.RenderRangeCircle(groundCenter, attackRange, ColorRefs.MachineUnitAttackLine.ColorHDR);
 
                         debugStage = 2200;
-                        TargetingHelper.DoForAllBuildingsWithinRangeTight(unit, attackRange, DataRefs.EvictionTag, delegate (ISimBuilding Building) {
+                        TargetingHelper.DoForAllBuildingsWithinRangeTight(unit, attackRange, ModRefs.EvictionTag, delegate (ISimBuilding Building) {
                             MapItem item = Building.GetMapItem();
                             if (item == null) return false;
 
@@ -96,7 +96,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                             if (Building.MachineStructureInBuilding != null) return false;
                             if (tile.TileNetworkLevel.Display < TileNetLevel.Full) return false;
 
-                            ModHelpers.DrawMapItemHighlightedBorder(item, DataRefs.EvictionVis.ColorHDR,
+                            ModHelpers.DrawMapItemHighlightedBorder(item, ModRefs.EvictionVis.ColorHDR,
                                 new Vector3(1.05f, 1.05f, 1.05f), HighlightPass.First, Engine_HotM.GameMode == MainGameMode.CityMap, framesPrepped);
                             return false;
                         });
@@ -124,7 +124,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                         bool isInRange = (destinationPoint - center).GetSquareGroundMagnitude() <= attackRange * attackRange;
                         bool buildingIsInvalid = buildingUnderCursor == null || buildingUnderCursor.MachineStructureInBuilding != null ||
                             (buildingUnderCursor?.GetMapItem()?.ParentTile?.TileNetworkLevel?.Display ?? TileNetLevel.None) < TileNetLevel.Full ||
-                            !(buildingUnderCursor?.GetVariant()?.Tags?.ContainsKey(DataRefs.EvictionTag.ID) ?? false);
+                            !(buildingUnderCursor?.GetVariant()?.Tags?.ContainsKey(ModRefs.EvictionTag.ID) ?? false);
                         /*
                         ResourceType usedResType = 
                             FlagRefs.IsPostFinalDoom.DuringGameplay_IsTripped ? 
@@ -152,15 +152,15 @@ namespace Arcen.HotM.FFU.RoSAI {
                             foreach (var legalEntity in buildingUnderCursor.GetBuildingData()) {
                                 legalIssues += legalEntity.Value;
                                 switch (legalEntity.Key.ID) {
-                                    case "MilitaryPresence": legalOverhead += legalEntity.Value * DataRefs.LEGAL_MILITARY; break;
-                                    case "SecForcesPresence": legalOverhead += legalEntity.Value * DataRefs.LEGAL_SECURITY; break;
-                                    case "CrimeSyndicatePresence": legalOverhead += legalEntity.Value * DataRefs.LEGAL_SYNDICATE; break;
-                                    case "HackerPresence": legalOverhead += legalEntity.Value * DataRefs.LEGAL_HACKERS; break;
-                                    case "HostileCultPresence": legalOverhead += legalEntity.Value * DataRefs.LEGAL_CULT; break;
-                                    case "GangCrime": legalOverhead += legalEntity.Value * DataRefs.LEGAL_GANGS; break;
-                                    case "BlackMarket": legalOverhead += legalEntity.Value * DataRefs.LEGAL_MARKET; break;
-                                    case "Vermin": legalOverhead += legalEntity.Value * DataRefs.LEGAL_VERMIN; break;
-                                    case "BacterialLoad": legalOverhead += legalEntity.Value * DataRefs.LEGAL_BACTERIA; break;
+                                    case "MilitaryPresence": legalOverhead += legalEntity.Value * ModRefs.LEGAL_MILITARY; break;
+                                    case "SecForcesPresence": legalOverhead += legalEntity.Value * ModRefs.LEGAL_SECURITY; break;
+                                    case "CrimeSyndicatePresence": legalOverhead += legalEntity.Value * ModRefs.LEGAL_SYNDICATE; break;
+                                    case "HackerPresence": legalOverhead += legalEntity.Value * ModRefs.LEGAL_HACKERS; break;
+                                    case "HostileCultPresence": legalOverhead += legalEntity.Value * ModRefs.LEGAL_CULT; break;
+                                    case "GangCrime": legalOverhead += legalEntity.Value * ModRefs.LEGAL_GANGS; break;
+                                    case "BlackMarket": legalOverhead += legalEntity.Value * ModRefs.LEGAL_MARKET; break;
+                                    case "Vermin": legalOverhead += legalEntity.Value * ModRefs.LEGAL_VERMIN; break;
+                                    case "BacterialLoad": legalOverhead += legalEntity.Value * ModRefs.LEGAL_BACTERIA; break;
                                     default: legalOverhead += legalEntity.Value * 1f; break;
                                 }
                             }
@@ -169,9 +169,9 @@ namespace Arcen.HotM.FFU.RoSAI {
                             buildingStorage = buildingPrefab.NormalTotalStorageVolumeFullDimensions;
                             buildingFloorArea = buildingPrefab.NormalTotalBuildingFloorAreaFullDimensions;
                             totalEvictionCost = (int)(costMult * (baseCost + peopleTotal + legalOverhead +
-                            buildingVolume * DataRefs.EVICT_VOLUME_MULT +
-                            buildingStorage * DataRefs.EVICT_STORAGE_MULT +
-                            buildingFloorArea * DataRefs.EVICT_AREA_MULT));
+                            buildingVolume * ModRefs.EVICT_VOLUME_MULT +
+                            buildingStorage * ModRefs.EVICT_STORAGE_MULT +
+                            buildingFloorArea * ModRefs.EVICT_AREA_MULT));
                         }
 
                         debugStage = 6200;
@@ -226,7 +226,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 novel.Main.EndLineHeight();
                             }
 
-                            ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), DataRefs.EvictionVis.ColorHDR,
+                            ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), ModRefs.EvictionVis.ColorHDR,
                                 new Vector3(1.08f, 1.08f, 1.08f), HighlightPass.AlwaysHappen, Engine_HotM.GameMode == MainGameMode.CityMap, framesPrepped);
                             if (ArcenInput.RightMouseNonUI.GetIsBrieflyClicked_AndConsume()) {
                                 unit.AlterCurrentActionPoints(-Ability.ActionPointCost);
@@ -270,9 +270,9 @@ namespace Arcen.HotM.FFU.RoSAI {
         }
 
         public void HandleDataRefsPreload() {
-            if (DataRefs.Eviction == null) DataRefs.Eviction = AbilityTypeTable.Instance.GetRowByID("Eviction");
-            if (DataRefs.EvictionTag == null) DataRefs.EvictionTag = BuildingTagTable.Instance.GetRowByID("EvictionTarget");
-            if (DataRefs.EvictionVis == null) DataRefs.EvictionVis = VisColorUsageTable.Instance.GetRowByID("BuildingValidEvictionTarget");
+            if (ModRefs.Eviction == null) ModRefs.Eviction = AbilityTypeTable.Instance.GetRowByID("Eviction");
+            if (ModRefs.EvictionTag == null) ModRefs.EvictionTag = BuildingTagTable.Instance.GetRowByID("EvictionTarget");
+            if (ModRefs.EvictionVis == null) ModRefs.EvictionVis = VisColorUsageTable.Instance.GetRowByID("BuildingValidEvictionTarget");
         }
     }
 }

@@ -183,7 +183,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 novel.Main.EndLineHeight();
                             }
 
-                            ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), DataRefs.InfoVis.ColorHDR,
+                            ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), ModRefs.InfoVis.ColorHDR,
                                 new Vector3(1.05f, 1.05f, 1.05f), HighlightPass.First, Engine_HotM.GameMode == MainGameMode.CityMap, framesPrepped);
                             return false;
                         }
@@ -209,7 +209,7 @@ namespace Arcen.HotM.FFU.RoSAI {
                             if (Building.MachineStructureInBuilding != null) return false;
                             if (tile.TileNetworkLevel.Display < TileNetLevel.Full) return false;
 
-                            ModHelpers.DrawMapItemHighlightedBorder(item, DataRefs.EvictionVis.ColorHDR,
+                            ModHelpers.DrawMapItemHighlightedBorder(item, ModRefs.EvictionVis.ColorHDR,
                                 new Vector3(1.05f, 1.05f, 1.05f), HighlightPass.First, Engine_HotM.GameMode == MainGameMode.CityMap, framesPrepped);
                             return false;
                         });
@@ -252,9 +252,9 @@ namespace Arcen.HotM.FFU.RoSAI {
                             buildingStorage = buildingPrefab.NormalTotalStorageVolumeFullDimensions;
                             buildingFloorArea = buildingPrefab.NormalTotalBuildingFloorAreaFullDimensions;
                             totalEvictionCost = (int)(costMult * (baseCost +
-                            buildingVolume * DataRefs.EVICT_VOLUME_MULT +
-                            buildingStorage * DataRefs.EVICT_STORAGE_MULT +
-                            buildingFloorArea * DataRefs.EVICT_AREA_MULT));
+                            buildingVolume * ModRefs.EVICT_VOLUME_MULT +
+                            buildingStorage * ModRefs.EVICT_STORAGE_MULT +
+                            buildingFloorArea * ModRefs.EVICT_AREA_MULT));
                         }
 
                         debugStage = 6200;
@@ -307,10 +307,10 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 novel.Main.EndLineHeight();
                             }
 
-                            ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), DataRefs.EvictionVis.ColorHDR,
+                            ModHelpers.DrawMapItemHighlightedBorder(buildingUnderCursor.GetMapItem(), ModRefs.EvictionVis.ColorHDR,
                                 new Vector3(1.08f, 1.08f, 1.08f), HighlightPass.First, Engine_HotM.GameMode == MainGameMode.CityMap, framesPrepped);
                             if (ArcenInput.RightMouseNonUI.GetIsBrieflyClicked_AndConsume()) {
-                                DataRefs.LiquidMetal.AlterCurrent_Named(-totalEvictionCost, "Expense_UnitActions", ResourceAddRule.IgnoreUntilTurnChange);
+                                ModRefs.LiquidMetal.AlterCurrent_Named(-totalEvictionCost, "Expense_UnitActions", ResourceAddRule.IgnoreUntilTurnChange);
 
                                 Vector3 epicenter = buildingUnderCursor.GetMapItem().OBBCache.BottomCenter;
                                 Consumable.TryToDirectlyUseByActorAgainstTargetBuilding(Actor, buildingUnderCursor, delegate {
@@ -370,9 +370,9 @@ namespace Arcen.HotM.FFU.RoSAI {
         }
 
         public void HandleDataRefsPreload() {
-            if (DataRefs.EvictionVis == null) DataRefs.EvictionVis = VisColorUsageTable.Instance.GetRowByID("BuildingValidEvictionTarget");
-            if (DataRefs.LiquidMetal == null) DataRefs.LiquidMetal = ResourceTypeTable.Instance.GetRowByID("GadoliniumMesosilicate");
-            if (DataRefs.InfoVis == null) DataRefs.InfoVis = VisColorUsageTable.Instance.GetRowByID("BuildingValidInfoTarget");
+            if (ModRefs.EvictionVis == null) ModRefs.EvictionVis = VisColorUsageTable.Instance.GetRowByID("BuildingValidEvictionTarget");
+            if (ModRefs.LiquidMetal == null) ModRefs.LiquidMetal = ResourceTypeTable.Instance.GetRowByID("GadoliniumMesosilicate");
+            if (ModRefs.InfoVis == null) ModRefs.InfoVis = VisColorUsageTable.Instance.GetRowByID("BuildingValidInfoTarget");
         }
     }
 }
