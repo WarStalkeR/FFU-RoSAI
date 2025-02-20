@@ -4465,6 +4465,15 @@ namespace Arcen.HotM.External
                     return false; //we don't auto-murder
             }
 
+            if ( weArePlayer && otherStance.ShouldNeverBeTargetedByPlayerForces )
+                return false; //even if they would shoot at us, ignore it
+
+            if ( weArePlayer && otherStance.ShouldBeTargetedByAllPlayerForcesThatAreNotShellCompany )
+            {
+                if ( !this.GetIsRelatedToPlayerShellCompany() )
+                    return true;
+            }
+
             NPCManagedUnit myManaged = this.IsManagedUnit;
             NPCManagedUnit otherManaged = OtherUnit.IsManagedUnit;
 
@@ -4621,7 +4630,7 @@ namespace Arcen.HotM.External
                 }
             }
 
-            if ( myStance.WillHoldFireAgainstPassiveGuards && otherStance.WillHoldFireIfAtFullHealth && OtherUnit.GetActorDataLostFromMax( ActorRefs.ActorHP, true ) <= 0 )
+            if ( myStance.WillHoldFireAgainstUnitsThatArePassiveAtFullHealth && otherStance.WillHoldFireIfAtFullHealth && OtherUnit.GetActorDataLostFromMax( ActorRefs.ActorHP, true ) <= 0 )
             {
                 return false; //cannot shoot it in an automated way if it's at full health and would ignore us
             }

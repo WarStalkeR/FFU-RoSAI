@@ -23,7 +23,18 @@ namespace Arcen.HotM.ExternalVis
             public bool IsDoingActionOvertime;
         }
 
+        public struct OverrideTargetingData
+        {
+            public ISimMapActor Target;
+            public float DistanceSquared;
+            public int RawRealDamageDone;
+            public int ServiceDisruptionAmount;
+            public int IncomingPhysicalDamageTargeting;
+            public int TargetPhysicalOverage;
+        }
+
         private readonly List<NPCTargetingData> targetingList = List<NPCTargetingData>.Create_WillNeverBeGCed( 40, "NPCTargeting_ActionOverTimeHunter-targetingData" );
+        private readonly List<OverrideTargetingData> overrideList = List<OverrideTargetingData>.Create_WillNeverBeGCed( 40, "NPCTargeting_FuzzedStandardIntelligence-targetingData" );
 
         public ISimMapActor ChooseATargetInRangeThatCanBeShotRightNow( NPCUnitTargetingLogic Logic, ISimNPCUnit NPCUnit, List<ISimMapActor> CurrentActorSet, MersenneTwister Rand, bool ShouldDoTargetingDump )
         {
@@ -39,6 +50,7 @@ namespace Arcen.HotM.ExternalVis
             NPCCohort attackerGroup = NPCUnit.FromCohort;
             float attackerRangeSquared = NPCUnit.GetAttackRangeSquared();
             targetingList.Clear();
+            overrideList.Clear();
 
             float minDistance = 100000;
             float maxDistance = 0;
@@ -111,19 +123,18 @@ namespace Arcen.HotM.ExternalVis
                 bool isDoingActionOverTime = false;
 
                 int amountAggroed = actor.GetAmountHasAggroedNPCCohort( attackerGroup );
-                if ( actor is ISimMachineActor machineActor)
+                int serviceDisruptionAmount = 0;
+                if ( actor is ISimMachineActor machineActor )
                 {
                     if ( machineActor.CurrentActionOverTime != null )
                     {
                         amountAggroed += machineActor.CurrentActionOverTime.Type.AggroAmountForActionOverTimeHunters;
-                        isDoingActionOverTime = true;
                     }
 
-                    int serviceDisruptionAmount = machineActor.GetStatusIntensity( CommonRefs.ServiceDisruption );
+                    serviceDisruptionAmount = machineActor.GetStatusIntensity( CommonRefs.ServiceDisruption );
                     if ( serviceDisruptionAmount > 0 )
                     {
                         amountAggroed += serviceDisruptionAmount;
-                        isDoingActionOverTime = true;
                     }
                 }
 
@@ -158,6 +169,48 @@ namespace Arcen.HotM.ExternalVis
                 targetData.IsDoingActionOvertime = isDoingActionOverTime;
 
                 targetingList.Add( targetData );
+
+                if ( serviceDisruptionAmount > 0 )
+                {
+                    int health = actor.GetActorDataCurrent( ActorRefs.ActorHP, false );
+
+                    OverrideTargetingData overrideData;
+                    overrideData.Target = actor;
+                    overrideData.DistanceSquared = distanceSquared;
+                    overrideData.RawRealDamageDone = HighestRawNumberDone;
+                    overrideData.ServiceDisruptionAmount = serviceDisruptionAmount;
+                    overrideData.IncomingPhysicalDamageTargeting = actor.IncomingDamage.Construction.IncomingPhysicalDamageTargeting;
+                    overrideData.TargetPhysicalOverage = overrideData.RawRealDamageDone + overrideData.IncomingPhysicalDamageTargeting - health;
+
+                    if ( overrideData.TargetPhysicalOverage > 0 && health > 0 )
+                    {
+                        int overageNumber = Mathf.RoundToInt( ((float)overrideData.TargetPhysicalOverage / (float)health) * 1500 );
+                        if ( overageNumber <= serviceDisruptionAmount )
+                            overrideList.Add( overrideData );
+                    }
+                    else
+                        overrideList.Add( overrideData );
+                }
+            }
+
+            if ( overrideList.Count > 0 )
+            {
+                ISimMapActor closestOverride = null;
+                float closetOverrideDistance = 0;
+
+                foreach ( OverrideTargetingData target in overrideList )
+                {
+                    if ( closestOverride == null || closetOverrideDistance < target.DistanceSquared )
+                    {
+                        closestOverride = target.Target;
+                        closetOverrideDistance = target.DistanceSquared;
+                    }
+                }
+
+                if ( closestOverride != null )
+                {
+                    return closestOverride;
+                }
             }
 
             if ( ShouldDoTargetingDump )

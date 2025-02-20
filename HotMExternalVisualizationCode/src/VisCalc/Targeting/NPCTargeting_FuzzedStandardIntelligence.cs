@@ -13,7 +13,8 @@ namespace Arcen.HotM.ExternalVis
         {
             public ISimMapActor Target;
             public float DistanceSquared;
-            public int RawDamageDone;
+            public int EffectiveDamageDone;
+            public int RawRealDamageDone;
             public int DamagePercentage;
             public int TargetPercentageRemain;
             public int AmountTheyHaveAggroedMe;
@@ -22,7 +23,18 @@ namespace Arcen.HotM.ExternalVis
             public bool IsAStructure;
         }
 
+        public struct OverrideTargetingData
+        {
+            public ISimMapActor Target;
+            public float DistanceSquared;
+            public int RawRealDamageDone;
+            public int ServiceDisruptionAmount;
+            public int IncomingPhysicalDamageTargeting;
+            public int TargetPhysicalOverage;
+        }
+
         private readonly List<NPCTargetingData> targetingList = List<NPCTargetingData>.Create_WillNeverBeGCed( 40, "NPCTargeting_FuzzedStandardIntelligence-targetingData" );
+        private readonly List<OverrideTargetingData> overrideList = List<OverrideTargetingData>.Create_WillNeverBeGCed( 40, "NPCTargeting_FuzzedStandardIntelligence-targetingData" );
 
         public ISimMapActor ChooseATargetInRangeThatCanBeShotRightNow( NPCUnitTargetingLogic Logic, ISimNPCUnit NPCUnit, List<ISimMapActor> CurrentActorSet, MersenneTwister Rand, bool ShouldDoTargetingDump )
         {
@@ -46,6 +58,7 @@ namespace Arcen.HotM.ExternalVis
             NPCCohort attackerGroup = NPCUnit.FromCohort;
             float attackerRangeSquared = NPCUnit.GetAttackRangeSquared();
             targetingList.Clear();
+            overrideList.Clear();
 
             float minDistance = 100000;
             float maxDistance = 0;
@@ -75,7 +88,6 @@ namespace Arcen.HotM.ExternalVis
                 //    continue; //if not in range, don't think about anything more -- basically, that's off limits
 
                 numberChecked++;
-
 
                 if ( stance?.WillIgnoreDamageToMachineStructuresInDamageCalculations ?? false )
                 {
@@ -137,6 +149,48 @@ namespace Arcen.HotM.ExternalVis
                     }
                 }
 
+                damageDone.GetTargetingData( actor, out int HighestDamagePercentage, out int LowestTargetPercentageRemain, out int HighestRawNumberDone );
+
+                int effectiveDamageDone = HighestRawNumberDone;
+                if ( effectiveDamageDone > 0 ) //boost against armored targets if we can damage them
+                {
+                    int targetArmor = actor.GetActorDataCurrent( ActorRefs.ActorArmorPlating, true );
+                    if ( targetArmor > 0 )
+                    {
+                        int armorBoost = targetArmor / 2;
+                        armorBoost *= armorBoost;
+
+                        effectiveDamageDone += armorBoost;
+                    }
+                }
+
+                int serviceDisruptionAmount = 0;
+                if ( actor is ISimMachineActor machineActor )
+                {
+                    if ( machineActor.CurrentActionOverTime != null )
+                    {
+                        amountAggroed += machineActor.CurrentActionOverTime.Type.AggroAmountForActionOverTimeHunters;
+                    }
+
+                    serviceDisruptionAmount = machineActor.GetStatusIntensity( CommonRefs.ServiceDisruption );
+                    if ( serviceDisruptionAmount > 0 )
+                    {
+                        amountAggroed += serviceDisruptionAmount;
+                    }
+                }
+
+                if ( stance.ExtraAggroAgainstNonMachineForces > 0 && !actor.GetIsPartOfPlayerForcesInAnyWay() )
+                {
+                    amountAggroed += stance.ExtraAggroAgainstNonMachineForces;
+                    if ( effectiveDamageDone > 0 )
+                    {
+                        int fakeDamageBoost = stance.ExtraAggroAgainstNonMachineForces / 20;
+                        fakeDamageBoost *= fakeDamageBoost;
+
+                        effectiveDamageDone += fakeDamageBoost;
+                    }
+                }
+
                 if ( amountAggroed > largestAggro && !wouldBeDead ) //don't include stuff that would be dead in this part of the aggro math
                     largestAggro = amountAggroed;
 
@@ -145,18 +199,17 @@ namespace Arcen.HotM.ExternalVis
                 if ( maxDistance < distanceSquared )
                     maxDistance = distanceSquared;
 
-                damageDone.GetTargetingData( actor, out int HighestDamagePercentage, out int LowestTargetPercentageRemain, out int HighestRawNumberDone );
-
-                if ( minDamageDone < 0 || HighestRawNumberDone < minDamageDone )
-                    minDamageDone = HighestRawNumberDone;
-                if ( HighestRawNumberDone > maxDamageDone )
-                    maxDamageDone = HighestRawNumberDone;
+                if ( minDamageDone < 0 || effectiveDamageDone < minDamageDone )
+                    minDamageDone = effectiveDamageDone;
+                if ( effectiveDamageDone > maxDamageDone )
+                    maxDamageDone = effectiveDamageDone;
 
                 //we can shoot this target, so learn more about it
                 NPCTargetingData targetData;
                 targetData.Target = actor;
                 targetData.DistanceSquared = distanceSquared;
-                targetData.RawDamageDone = HighestRawNumberDone;
+                targetData.EffectiveDamageDone = effectiveDamageDone;
+                targetData.RawRealDamageDone = HighestRawNumberDone;
                 targetData.DamagePercentage = HighestDamagePercentage;
                 targetData.TargetPercentageRemain = LowestTargetPercentageRemain;
                 targetData.AmountTheyHaveAggroedMe = amountAggroed;
@@ -165,6 +218,48 @@ namespace Arcen.HotM.ExternalVis
                 targetData.IsAStructure = actor is MachineStructure;
 
                 targetingList.Add( targetData );
+
+                if ( serviceDisruptionAmount > 0 )
+                {
+                    int health = actor.GetActorDataCurrent( ActorRefs.ActorHP, false );
+
+                    OverrideTargetingData overrideData;
+                    overrideData.Target = actor;
+                    overrideData.DistanceSquared = distanceSquared;
+                    overrideData.RawRealDamageDone = HighestRawNumberDone;
+                    overrideData.ServiceDisruptionAmount = serviceDisruptionAmount;
+                    overrideData.IncomingPhysicalDamageTargeting = actor.IncomingDamage.Construction.IncomingPhysicalDamageTargeting;
+                    overrideData.TargetPhysicalOverage = overrideData.RawRealDamageDone + overrideData.IncomingPhysicalDamageTargeting - health;
+
+                    if ( overrideData.TargetPhysicalOverage > 0 && health > 0 )
+                    {
+                        int overageNumber = Mathf.RoundToInt( ( (float)overrideData.TargetPhysicalOverage / (float)health ) * 1500 );
+                        if ( overageNumber <= serviceDisruptionAmount )
+                            overrideList.Add( overrideData );
+                    }
+                    else
+                        overrideList.Add( overrideData );
+                }
+            }
+
+            if ( overrideList.Count > 0 )
+            {
+                ISimMapActor closestOverride = null;
+                float closetOverrideDistance = 0;
+
+                foreach ( OverrideTargetingData target in overrideList )
+                {
+                    if ( closestOverride == null || closetOverrideDistance < target.DistanceSquared )
+                    {
+                        closestOverride = target.Target;
+                        closetOverrideDistance = target.DistanceSquared;
+                    }
+                }
+
+                if ( closestOverride != null )
+                {
+                    return closestOverride;
+                }
             }
 
             if ( ShouldDoTargetingDump )
@@ -182,6 +277,8 @@ namespace Arcen.HotM.ExternalVis
             {
                 ISimMapActor toReturn = targetingList[0].Target;
                 targetingList.Clear();
+                if ( ShouldDoTargetingDump )
+                    NPCUnit.TargetingDumpLines.Add( "only possible target was selected" );
                 //ArcenDebugging.LogSingleLine( "Only target: " + NPCUnit.GetDisplayName() + " shoots " + toReturn.GetDisplayName(), Verbosity.DoNotShow );
                 return toReturn;
             }
@@ -199,14 +296,14 @@ namespace Arcen.HotM.ExternalVis
             {
                 if ( targetingData.WouldAlreadyBeDeadFromIncoming )
                     continue; //ignore stuff that would be overkill
-                if ( targetingData.RawDamageDone < minDamageDone + minDamageDone )
+                if ( targetingData.EffectiveDamageDone < minDamageDone + minDamageDone )
                     continue; //look for things where we do a really out-sized amount of damage
                 if ( targetingData.AmountTheyHaveAggroedMe < minAggroForBestDamage && !targetingData.IsAStructure )
                     continue; //ignore anything that is not the fuzzed most-aggroed, unless it's a structure
                 if ( targetingData.IsAVeryLowQualityTarget )
                     continue; //ignore stuff that is a very low quality target for now
 
-                if ( bestInGroup.Target == null || targetingData.RawDamageDone > bestInGroup.RawDamageDone ||
+                if ( bestInGroup.Target == null || targetingData.EffectiveDamageDone > bestInGroup.EffectiveDamageDone ||
                     Rand.Next( 0, 100 ) < 25 ) //the fuzz factor
                     bestInGroup = targetingData;
             }

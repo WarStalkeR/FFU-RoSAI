@@ -944,6 +944,31 @@ namespace Arcen.HotM.ExternalVis
                         }
                         break;
                     #endregion
+                    #region Ch1_MIN_FindARobotServant
+                    case "Ch1_MIN_FindARobotServant":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            CanBeCompletedNow = false;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, 0, 100, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddLang( "Unknown" ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext: //nothing on this one
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    //nope, nothing to do custom
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
                     default:
                         if ( !Project.HasShownHandlerMissingError )
                         {

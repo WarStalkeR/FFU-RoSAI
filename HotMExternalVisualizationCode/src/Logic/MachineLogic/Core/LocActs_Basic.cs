@@ -431,6 +431,8 @@ namespace Arcen.HotM.ExternalVis
                             ActorBadge wouldBecomeOutcast = BasicActionsHelper.CalcEffectiveActorWouldBecomeOutcast( ActorOrNull, BuildingOrNull );
                             int murderMin = 1;
                             int murderMax = 5;
+                            if ( FlagRefs.GaveUpColdBlood.DuringGameplay_IsTripped )
+                                return ActionResult.Blocked;
 
                             switch ( Logic )
                             {

@@ -177,8 +177,31 @@ namespace Arcen.HotM.ExternalVis
                         DoomEvent lastDoomEvent = null;
                         foreach ( DoomEvent doomEvent in doomType.DoomMainEvents )
                         {
-                            if ( doomEvent.DuringGameplay_HasHappened || doomEvent.DoomNumber > 9 )
+                            if ( doomEvent.DuringGameplay_HasHappened )
                                 continue;
+
+                            if ( doomEvent.DoomNumber > 9 )
+                            {
+                                int desiredTurnsFromNow = doomEvent.DuringGameplay_WillHappenOnTurn - currentTurn;
+                                if ( FlagRefs.HasStartedToAccelerateDooms_Extreme.DuringGameplay_IsTripped )
+                                {
+                                    if ( desiredTurnsFromNow > 30 )
+                                        desiredTurnsFromNow = 30;
+                                }
+                                else if ( FlagRefs.HasStartedToAccelerateDooms_Hard.DuringGameplay_IsTripped )
+                                {
+                                    if ( desiredTurnsFromNow > 50 )
+                                        desiredTurnsFromNow = 50;
+                                }
+                                else
+                                {
+                                    if ( desiredTurnsFromNow > 100 )
+                                        desiredTurnsFromNow = 100;
+                                }
+
+                                doomEvent.DuringGameplay_WillHappenOnTurn = desiredTurnsFromNow;
+                                continue;
+                            }
 
                             int turnsFromNow = doomEvent.DuringGameplay_WillHappenOnTurn - currentTurn;
                             if ( turnsFromNow <= 0 )

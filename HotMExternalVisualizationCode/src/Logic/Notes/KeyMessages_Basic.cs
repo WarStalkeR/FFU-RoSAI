@@ -119,7 +119,15 @@ namespace Arcen.HotM.ExternalVis
                             else
                             {
                                 if ( FlagRefs.Ch1_Flamethrower.DuringGame_ActualOutcome != null )
-                                    Message.SetIsReadyToBeViewed();
+                                {
+                                    if ( InputCaching.Debug_IncludeInWorkProgress )
+                                    {
+                                        Message.SetAsDoesNotNeedToBeViewed();
+                                        OtherKeyMessageTable.Instance.GetRowByID( "ThatWasLame" )?.SetIsReadyToBeViewed(); //todo_next_beta
+                                    }
+                                    else
+                                        Message.SetIsReadyToBeViewed();
+                                }
                             }
                         }
                         break;

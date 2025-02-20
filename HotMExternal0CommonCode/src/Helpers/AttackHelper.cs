@@ -723,6 +723,32 @@ namespace Arcen.HotM.External
                 }
                 #endregion
 
+                if ( fearDamage > 0 )
+                {
+                    int demoralized = Target.GetStatusIntensity( StatusRefs.Demoralized );
+                    if ( demoralized > 0 )
+                    {
+                        int prior = fearDamage;
+                        fearDamage += fearDamage;
+                        int change = fearDamage - prior;
+                        if ( BufferOrNull != null && change != 0 )
+                            fearBuffer.AddLangAndAfterLineItemHeader( "TargetIsDemoralized", ColorTheme.DataBlue ).AddNumberPlusOrMinus( change > 0, change.ToStringThousandsWhole() ).Line();
+                    }
+                }
+
+                if ( argumentDamage > 0 )
+                {
+                    int horrified = Target.GetStatusIntensity( StatusRefs.Horrified );
+                    if ( horrified > 0 )
+                    {
+                        int prior = argumentDamage;
+                        argumentDamage += argumentDamage;
+                        int change = argumentDamage - prior;
+                        if ( BufferOrNull != null && change != 0 )
+                            argumentBuffer.AddLangAndAfterLineItemHeader( "TargetIsHorrified", ColorTheme.DataBlue ).AddNumberPlusOrMinus( change > 0, change.ToStringThousandsWhole() ).Line();
+                    }
+                }
+
                 totalMoraleDamage = fearDamage + argumentDamage;
 
                 int minPhysicalDamage = MathA.Max( attackerIsPlayer && attackerPhysicalPower == 0 ? 0 : 1, Mathf.CeilToInt( (float)attackerPhysicalPower / 30f ) );
@@ -1012,6 +1038,19 @@ namespace Arcen.HotM.External
                 {
                     ApplyFinalMoraleDamageAndStatsAndPopup( Attacker, Target, shouldDoDamageTextPopupsAndLogging && !didPopup, shouldDoDamageTextPopupsAndLogging, 
                         totalMoraleDamage, moraleOrNull, popupBuffer );
+
+                    if ( attackerIsPlayer && Attacker is ISimMachineActor machineActor )
+                    {
+                        AbilityType abilityMode = machineActor?.IsInAbilityTypeTargetingMode;
+                        if ( abilityMode?.AttacksAreFearBased ?? false )
+                        {
+                            Target.AddStatus( StatusRefs.Horrified, 100, 1 );
+                        }
+                        else if ( abilityMode?.AttacksAreArgumentBased ?? false )
+                        {
+                            Target.AddStatus( StatusRefs.Demoralized, 100, 1 );
+                        }
+                    }
                 }
 
                 if ( physicalDamage > 0 || totalMoraleDamage > 0 )

@@ -17,6 +17,7 @@ namespace Arcen.HotM.ExternalVis
             switch ( Action.ID )
             {
                 case "DeterAndDefend":
+                case "DeterAndAttack":
                 case "LocalIntimidation":
                 case "SeekAndDestroy":
                     #region DeterAndDefend and SeekAndDestroy
@@ -38,6 +39,9 @@ namespace Arcen.HotM.ExternalVis
                                     {
                                         case "DeterAndDefend":
                                             stance = CommonRefs.Player_DeterAndDefend;
+                                            break;
+                                        case "DeterAndAttack":
+                                            stance = CommonRefs.Player_DeterAndAttack;
                                             break;
                                         case "LocalIntimidation":
                                             stance = CommonRefs.Player_LocalIntimidation;

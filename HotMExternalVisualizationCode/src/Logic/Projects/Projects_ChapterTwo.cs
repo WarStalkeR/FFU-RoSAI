@@ -1286,6 +1286,20 @@ namespace Arcen.HotM.ExternalVis
                                     {
                                     }
                                     break;
+                                case ProjectLogic.DoAnyPerTurnLateLogicWhileProjectActive:
+                                    {
+                                        {
+                                            MachineProject otherProject = MachineProjectTable.Instance.GetRowByID( "Ch2_MIN_LostKids_StopThePoisoning" );
+                                            if ( otherProject.DuringGame_ActualOutcome != null )
+                                                otherProject.DoOnProjectWin( otherProject.DuringGame_IntendedOutcome, Engine_Universal.PermanentQualityRandom, false, true );
+                                        }
+                                        {
+                                            MachineProject otherProject = MachineProjectTable.Instance.GetRowByID( "Ch2_LostKids_DownWithSecForce" );
+                                            if ( otherProject.DuringGame_ActualOutcome != null )
+                                                otherProject.DoOnProjectWin( otherProject.DuringGame_IntendedOutcome, Engine_Universal.PermanentQualityRandom, false, true );
+                                        }
+                                    }
+                                    break;
                             }
                         }
                         break;

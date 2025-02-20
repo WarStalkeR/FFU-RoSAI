@@ -249,6 +249,8 @@ namespace Arcen.HotM.ExternalVis
                 {
                     if ( stance.IsHidden )
                         continue;
+                    if ( stance.IsInWorkOption && !InputCaching.Debug_IncludeInWorkProgress )
+                        continue;
                     //if ( !stance.DuringGame_IsUnlocked() )
                     //    continue; //locked stances are considered hidden
 

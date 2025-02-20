@@ -302,7 +302,11 @@ namespace Arcen.HotM.ExternalVis
             }
 
             if ( isDoingDump )
+            {
                 npcUnit.TargetingDumpLines.Add( "New target: " + target.GetDisplayName() + "  Damage: " + damageToDo );
+                if ( target.IncomingDamage.Construction.GetWouldBeDeadFromIncomingDamageTargeting() )
+                    npcUnit.TargetingDumpLines.Add( "WouldBeDeadFromIncomingDamageTargeting already true one target!!" );
+            }
 
             //log the damage
             attackPlan.TargetForStartOfNextTurn = target;
@@ -317,6 +321,12 @@ namespace Arcen.HotM.ExternalVis
 
             //this keeps various units from overkilling the target
             target.IncomingDamage.Construction.AlterIncomingDamageTargeting( damageToDo.Physical, 1, individualsInThisNPC, damageToDo.Morale );
+
+            if ( isDoingDump )
+            {
+                npcUnit.TargetingDumpLines.Add( "target incoming logged: physical: " + target.IncomingDamage.Construction.IncomingPhysicalDamageTargeting +
+                    " morale: " + target.IncomingDamage.Construction.IncomingMoraleDamageTargeting + " WouldBeDeadFromIncomingDamageTargeting: " + target.IncomingDamage.Construction.GetWouldBeDeadFromIncomingDamageTargeting() );
+            }
 
             //now see if there is an area of attack also happening
             float attackAreaSquared = npcUnit.GetAreaOfAttackSquared();

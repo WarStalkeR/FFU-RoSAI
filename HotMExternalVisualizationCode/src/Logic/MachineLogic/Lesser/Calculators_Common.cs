@@ -780,6 +780,12 @@ namespace Arcen.HotM.ExternalVis
                         else
                             FlagRefs.ExperimentalMonstersAreLoose.Meta_RemoveCrossoverIfNeeded();
 
+                        {
+                            TimelineGoal warGoal = TimelineGoalTable.Instance.GetRowByID( "EndlessWarRaptors" );
+                            if ( warGoal != null && (warGoal.PathDict["Over4000"]?.DuringGameplay_HasAchievedInThisTimeline??false) )
+                                FlagRefs.WarRaptorsAreLoose.Meta_AddCrossoverIfNeeded();
+                        }
+
                         HandleCrossovers_PerTurnPortion();
                     }
                     #endregion

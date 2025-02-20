@@ -876,6 +876,8 @@ namespace Arcen.HotM.ExternalVis
                     invalidToasts.Clear();
                     foreach ( IMinorCompletedToastItem minorToast in UnlockCoordinator.MinorCompletedToasts_MainThread )
                     {
+                        if ( minorToast == null )
+                            continue;
                         debugStage = 4200;
                         if ( !minorToast.GetIsValid() )
                             invalidToasts.Add( minorToast );
