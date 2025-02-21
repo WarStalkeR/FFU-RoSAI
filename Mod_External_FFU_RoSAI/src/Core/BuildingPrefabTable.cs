@@ -40,26 +40,6 @@ namespace Arcen.HotM.Core {
                         ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Override: BuildingPrefab -> {refBuildingPrefab.ID}", Verbosity.DoNotShow);
 
                         debugStage = 1000;
-                        var refTypeWrappered = AccessTools.FieldRefAccess<BuildingPrefab, LazyLoadRowRef<BuildingType>>("TypeWrappered");
-                        if (!refTypeWrappered(modBuildingPrefab).IsNull()) modBuildingPrefab.Type = 
-                                refTypeWrappered(modBuildingPrefab).GetActualRow("BuildingPrefab", modBuildingPrefab.ID);
-
-                        debugStage = 3000;
-                        if (!IsFromSelectReload && !modBuildingPrefab.PathToPlaceable.IsEmpty()) {
-                            if (A5ObjectAggregation.ObjectRootsByPath.TryGetValue(modBuildingPrefab.PathToPlaceable, out modBuildingPrefab.PlaceableRoot)) {
-                                if (modBuildingPrefab.PlaceableRoot.Building.IsNull()) {
-                                    if (A5ObjectAggregation.ObjectRootsByPath.TryGetValue(refBuildingPrefab.PathToPlaceable, out refBuildingPrefab.PlaceableRoot)) {
-                                        if (!refBuildingPrefab.PlaceableRoot.Building.IsNull()) {
-                                            refBuildingPrefab.PathToPlaceable = modBuildingPrefab.PathToPlaceable;
-                                            modBuildingPrefab.PlaceableRoot.Building = refBuildingPrefab;
-                                            refBuildingPrefab.PlaceableRoot.Building = null;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        debugStage = 6000;
                         var refEconomicClassWrappered = AccessTools.FieldRefAccess<BuildingPrefab,
                             Dictionary<LazyLoadRowRef<EconomicClassType>, int>>("NormalMaxResidentsByEconomicClassWrappered");
                         if (!refEconomicClassWrappered(modBuildingPrefab).IsNull()) {
@@ -74,7 +54,7 @@ namespace Arcen.HotM.Core {
                             }
                         }
 
-                        debugStage = 10000;
+                        debugStage = 3000;
                         var refProfessionWrappered = AccessTools.FieldRefAccess<BuildingPrefab,
                             Dictionary<LazyLoadRowRef<ProfessionType>, int>>("NormalMaxJobsByProfessionWrappered");
                         if (!refProfessionWrappered(modBuildingPrefab).IsNull()) {
@@ -89,7 +69,7 @@ namespace Arcen.HotM.Core {
                             }
                         }
 
-                        debugStage = 15000;
+                        debugStage = 6000;
                         if (!modBuildingPrefab.BuildingFloorDefinitions.IsNull() && modBuildingPrefab.BuildingFloorDefinitions.Count > 0) {
                             AccessTools.FieldRefAccess<BuildingPrefab, List<BuildingFloor>>("BuildingFloorDefinitions")(refBuildingPrefab) = 
                                 AccessTools.FieldRefAccess<BuildingPrefab, List<BuildingFloor>>("BuildingFloorDefinitions")(modBuildingPrefab);
@@ -167,7 +147,7 @@ namespace Arcen.HotM.Core {
                             }
                         }
 
-                        debugStage = 21000;
+                        debugStage = 10000;
                         var refMarkerWrappered = AccessTools.FieldRefAccess<BuildingPrefab, LazyLoadRowRef<BuildingMarkerPrefab>>("MarkerPrefabWrappered");
                         if (!refMarkerWrappered(modBuildingPrefab).IsNull()) {
                             AccessTools.FieldRefAccess<BuildingPrefab, LazyLoadRowRef<BuildingMarkerPrefab>>("MarkerPrefabWrappered")(refBuildingPrefab) =
@@ -176,13 +156,6 @@ namespace Arcen.HotM.Core {
                                 refBuildingPrefab.MarkerPrefab = refMarkerWrappered(refBuildingPrefab)?.GetActualRow("BuildingPrefab", refBuildingPrefab.ID);
                             }
                         }
-
-                        debugStage = 28000;
-                        if (refBuildingPrefab.Type.IsConsideredNotToHavePeopleInsideEvenWhenHasWorkers)
-                            refBuildingPrefab.IsConsideredBuildingWithPeople = false;
-                        else if (refBuildingPrefab.NormalMaxJobs > 0 || refBuildingPrefab.NormalMaxResidents > 0)
-                            refBuildingPrefab.IsConsideredBuildingWithPeople = true;
-                        else refBuildingPrefab.IsConsideredBuildingWithPeople = false;
                     } else {
                         ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Type 'BuildingPrefab' with ID '{modBuildingPrefab.ID}' doesn't exist! Ignoring override attempt.", Verbosity.DoNotShow);
                         continue;
