@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HotMExternal_FFU_RoSAI</RootNamespace>
     <AssemblyName>HotMExternal_FFU_RoSAI</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -45,52 +45,36 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" PrivateAssets="All" Version="1.0.0-preview.2" />
-  </ItemGroup>
-  <Choose>
-    <When Condition=" '$(Configuration)' == 'VisualStudio' Or '$(ArcenUseProjectReferences)' == 'true' ">
-      <ItemGroup>
-        <ProjectReference Include="..\..\..\..\CodeCrossProject\ArcenUniversal\ArcenUniversal.csproj" />
-        <ProjectReference Include="..\..\..\CodeMain\HotMCore\HotMCore.csproj" />
-        <ProjectReference Include="..\..\..\CodeMain\HotMVisualization\HotMVisualization.csproj" />
-        <ProjectReference Include="..\..\..\CodeExternal\HotMExternal0CommonCode\HotMExternal0CommonCode.csproj" />
-      </ItemGroup>
-    </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="ArcenUniversal">
-          <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\ArcenUniversal.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="HotMCore">
-          <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\HotMCore.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="HotMVisualization">
-          <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\HotMVisualization.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="HotMExternal0CommonCode, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-          <SpecificVersion>False</SpecificVersion>
-          <HintPath>..\..\..\GameData\ModdableLogicDLLs\HotMExternal0CommonCode.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="HotMExternalAbstractSim, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-          <SpecificVersion>False</SpecificVersion>
-          <HintPath>..\..\..\GameData\ModdableLogicDLLs\HotMExternalAbstractSim.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="HotMExternalVisualizationCode, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-          <SpecificVersion>False</SpecificVersion>
-          <HintPath>..\..\..\GameData\ModdableLogicDLLs\HotMExternalVisualizationCode.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-      </ItemGroup>
-    </Otherwise>
-  </Choose>
-  <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\Libraries\0Harmony.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ArcenUniversal">
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\ArcenUniversal.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HotMCore">
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\HotMCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HotMVisualization">
+      <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\HotMVisualization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HotMExternal0CommonCode, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\GameData\ModdableLogicDLLs\HotMExternal0CommonCode.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HotMExternalAbstractSim, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\GameData\ModdableLogicDLLs\HotMExternalAbstractSim.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HotMExternalVisualizationCode, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\GameData\ModdableLogicDLLs\HotMExternalVisualizationCode.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>..\..\..\HeartOfTheMachine_Data\Managed\Unity.Mathematics.dll</HintPath>
