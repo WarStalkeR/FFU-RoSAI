@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-
-	<building_prefab id="MachineTowerB" type="MachineTower" display_name="Machine Tower B" should_be_shown_in_map_mode="true"
-		path_to_placeable="Assets/__Library/MachineStructure/General/MachineTowerB.prefab">
-		<floors_group min="-16" max="-1" floor_size="1.0,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
-		<floors_group min="0" max="17" floor_size="0.9,0.4,0.9" percentage_work_space="80" percentage_storage_space="20"/>
-		<floors_group min="18" max="25" floor_size="0.7,0.4,0.7" percentage_work_space="80" percentage_storage_space="20"/>
-		<floors_group min="26" max="35" floor_size="0.3,0.3,0.3" percentage_work_space="80" percentage_storage_space="20"/>
-		<building_marker prefab="Skylight" offset="0.0,0.0,0.0" scale_multiplier="0.8"/>
-	</building_prefab>
-
 <!--
-	<building_prefab id="MachineTowerB" display_name="Machine Tower B" is_partial_record="true" custom_reset_floors="true">
-		<floors_group min="-16" max="-1" floor_size="1.0,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
-		<floors_group min="0" max="17" floor_size="0.9,0.4,0.9" percentage_work_space="80" percentage_storage_space="20"/>
-		<floors_group min="18" max="25" floor_size="0.7,0.4,0.7" percentage_work_space="80" percentage_storage_space="20"/>
-		<floors_group min="26" max="35" floor_size="0.3,0.3,0.3" percentage_work_space="80" percentage_storage_space="20"/>
+	<building_prefab id="MachineLargePlotA" type="" path_to_placeable="">
+		<floors_group min="-20" max="-20" floor_size="2.2,1.9,2.6" percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="-19" max="-1" floor_size="2.2,0.53,2.6" percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="8" floor_size="2.2,0.53,2.6" percentage_work_space="80" percentage_storage_space="20"/>
+		<building_marker prefab="Skylight" offset="0.70,-0.25,-0.32" scale_multiplier="0.8"/>
 	</building_prefab>
--->
-<!--
+--><!--
 	<building_prefab id="MachineTowerB" type="MachineTower" display_name="Machine Tower B" should_be_shown_in_map_mode="true"
 		path_to_placeable="Assets/__Library/MachineStructure/General/MachineTowerB.prefab">
 		<floors_group min="-16" max="-1" floor_size="1.0,0.4,0.9" percentage_storage_space="100" is_underground="true"/>
