@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
 
+    <external_call id="FFU_RoSAI_Lib_Init"
+        display_name="FFU: RoSAI Libray Initlialization" description="Will initialize libraries required by Fight For Universe: Rise of Super AI mod."
+        dll_name="Base_External_FFU_RoSAI" type_name="Arcen.HotM.FFU.RoSAI.LibInit">
+    </external_call>
+
     <external_call id="FFU_RoSAI_Mod_Init"
         display_name="FFU: RoSAI Mod Initlialization" description="Will initialize core features of Fight For Universe: Rise of Super AI mod."
         dll_name="HotM_External_FFU_RoSAI" type_name="Arcen.HotM.FFU.RoSAI.ModInit">
