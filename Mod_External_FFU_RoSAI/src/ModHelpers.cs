@@ -62,6 +62,14 @@ namespace Arcen.HotM.FFU.RoSAI {
             }
         }
 
+        internal static bool IsNull(this object refObject) {
+            return refObject == null;
+        }
+
+        internal static bool IsLoaded(this ArcenTableInitializationStage initStage) {
+            return initStage == ArcenTableInitializationStage.XmlLoadingDone;
+        }
+
         internal static bool IsComplete(this ArcenTableInitializationStage initStage) {
             return initStage == ArcenTableInitializationStage.FullyComplete;
         }

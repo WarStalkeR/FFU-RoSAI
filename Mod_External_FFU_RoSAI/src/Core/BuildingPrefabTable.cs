@@ -1,10 +1,8 @@
-﻿using Arcen.Universal;
+﻿using Arcen.HotM.FFU.RoSAI;
+using Arcen.Universal;
 using HarmonyLib;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Arcen.HotM.Core {
     public class BuildingPrefabTableOverride : ArcenDynamicTable<BuildingPrefab> {
@@ -13,7 +11,9 @@ namespace Arcen.HotM.Core {
         public const double DIMENSION_SQUARED = 324.0;
         public const double DIMENSION_CUBED = 5832.0;
 
-        private BuildingPrefabTableOverride() : base("Override_BuildingPrefab", ArcenDynamicTableType.XMLDirectory, ReloadDuringRuntime.Allow, TableLocalization.Skip) {
+        private BuildingPrefabTableOverride() : base("Override_BuildingPrefab", 
+            ArcenDynamicTableType.XMLDirectory, ReloadDuringRuntime.Allow, 
+            TableLocalization.Skip) {
         }
 
         public override BuildingPrefab GetNewRowFromPool() {
@@ -24,159 +24,172 @@ namespace Arcen.HotM.Core {
         }
 
         public override void DoPreInitializationLogic() {
-            for (int i = 0; i < A5ObjectRootTable.Instance.Rows.Length; i++) {
-                A5ObjectRootTable.Instance.Rows[i].Building = null;
-            }
         }
+
         public override void DoPostFinalLoadCrossTableWork_OnLoadingThread() {
             DoPostFinalLoadCrossTableWork_OnLoadingThread(false);
         }
 
         public void DoPostFinalLoadCrossTableWork_OnLoadingThread(bool IsFromSelectReload) {
-            bool isLevelEditor = Engine_Universal.GameLoop.IsLevelEditor;
-            BuildingPrefab[] array = Rows;
-            foreach (BuildingPrefab buildingPrefab in array) {
-                ArcenDebugging.LogSingleLine($"[FFU: RoSAI] BuildingPrefabTableOverride: {buildingPrefab.ID}", Verbosity.DoNotShow);
-                /*
+            foreach (BuildingPrefab modBuildingPrefab in Rows) {
                 int debugStage = 0;
                 try {
-                    debugStage = 1000;
-                    if (!isLevelEditor) {
-                        buildingPrefab.SetOriginalDisplayName("WRONG USAGE: USE BUILDING TYPE NAME");
-                    }
-                    var refTypeWrappered = AccessTools.FieldRefAccess<BuildingPrefab, LazyLoadRowRef<BuildingType>>("TypeWrappered")(buildingPrefab);
-                    buildingPrefab.Type = refTypeWrappered.GetActualRow("BuildingPrefab", buildingPrefab.ID);
-                    debugStage = 3000;
-                    if (!IsFromSelectReload) {
-                        if (A5ObjectAggregation.ObjectRootsByPath.TryGetValue(buildingPrefab.PathToPlaceable, out buildingPrefab.PlaceableRoot)) {
-                            if (buildingPrefab.PlaceableRoot.Building != null) {
-                                ArcenDebugging.LogSingleLine("A5ObjectRoot with path '" + buildingPrefab.PathToPlaceable + "' already had a BuildingPrefab on it, so could not add a second one from BuildingPrefab '" + buildingPrefab.ID + "'", Verbosity.ShowAsError);
-                            } else {
-                                buildingPrefab.PlaceableRoot.Building = buildingPrefab;
+                    debugStage = 100;
+                    BuildingPrefab refBuildingPrefab = BuildingPrefabTable.Instance.Rows.FirstOrDefault(x => x.ID == modBuildingPrefab.ID);
+                    if (refBuildingPrefab != null) {
+                        ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Override: BuildingPrefab -> {refBuildingPrefab.ID}", Verbosity.DoNotShow);
+
+                        debugStage = 1000;
+                        var refTypeWrappered = AccessTools.FieldRefAccess<BuildingPrefab, LazyLoadRowRef<BuildingType>>("TypeWrappered");
+                        if (!refTypeWrappered(modBuildingPrefab).IsNull()) modBuildingPrefab.Type = 
+                                refTypeWrappered(modBuildingPrefab).GetActualRow("BuildingPrefab", modBuildingPrefab.ID);
+
+                        debugStage = 3000;
+                        if (!IsFromSelectReload && !modBuildingPrefab.PathToPlaceable.IsEmpty()) {
+                            if (A5ObjectAggregation.ObjectRootsByPath.TryGetValue(modBuildingPrefab.PathToPlaceable, out modBuildingPrefab.PlaceableRoot)) {
+                                if (modBuildingPrefab.PlaceableRoot.Building.IsNull()) {
+                                    if (A5ObjectAggregation.ObjectRootsByPath.TryGetValue(refBuildingPrefab.PathToPlaceable, out refBuildingPrefab.PlaceableRoot)) {
+                                        if (!refBuildingPrefab.PlaceableRoot.Building.IsNull()) {
+                                            refBuildingPrefab.PathToPlaceable = modBuildingPrefab.PathToPlaceable;
+                                            modBuildingPrefab.PlaceableRoot.Building = refBuildingPrefab;
+                                            refBuildingPrefab.PlaceableRoot.Building = null;
+                                        }
+                                    }
+                                }
                             }
-                        } else {
-                            ArcenDebugging.LogSingleLine("Could not find A5ObjectRoot with path '" + buildingPrefab.PathToPlaceable + "' from BuildingPrefab '" + buildingPrefab.ID + "'", Verbosity.ShowAsError);
                         }
-                    }
-                    debugStage = 9000;
-                    buildingPrefab.NormalMaxResidents = 0;
-                    var refEconomicClassWrappered = AccessTools.FieldRefAccess<BuildingPrefab, 
-                        Universal.Dictionary<LazyLoadRowRef<EconomicClassType>, int>>("NormalMaxResidentsByEconomicClassWrappered")(buildingPrefab);
-                    foreach (Universal.KeyValuePair<LazyLoadRowRef<EconomicClassType>, int> item in refEconomicClassWrappered) {
-                        buildingPrefab.NormalMaxResidents += item.Value;
-                        buildingPrefab.NormalMaxResidentsByEconomicClass[item.Key.GetActualRow("BuildingPrefab", buildingPrefab.ID)] = item.Value;
-                    }
-                    debugStage = 13000;
-                    buildingPrefab.NormalMaxJobs = 0;
-                    var refProfessionWrappered = AccessTools.FieldRefAccess<BuildingPrefab,
-                        Universal.Dictionary<LazyLoadRowRef<ProfessionType>, int>>("NormalMaxJobsByProfessionWrappered")(buildingPrefab);
-                    foreach (Universal.KeyValuePair<LazyLoadRowRef<ProfessionType>, int> item2 in refProfessionWrappered) {
-                        buildingPrefab.NormalMaxJobs += item2.Value;
-                        buildingPrefab.NormalMaxJobsByProfession[item2.Key.GetActualRow("BuildingPrefab", buildingPrefab.ID)] = item2.Value;
-                    }
-                    debugStage = 17000;
-                    buildingPrefab.BuildingFloors.Clear();
-                    double num = 0.0;
-                    double num2 = 0.0;
-                    double num3 = 0.0;
-                    double num4 = 0.0;
-                    double num5 = 0.0;
-                    double num6 = 0.0;
-                    double num7 = 0.0;
-                    double num8 = 0.0;
-                    double num9 = 0.0;
-                    if (buildingPrefab.BuildingFloorDefinitions.Count <= 0) {
-                        buildingPrefab.MinFloor = 0;
-                        buildingPrefab.MaxFloor = 0;
-                    } else {
-                        int num10 = 999;
-                        int num11 = -999;
-                        foreach (BuildingFloor buildingFloorDefinition in buildingPrefab.BuildingFloorDefinitions) {
-                            int num12 = 0;
-                            for (int j = buildingFloorDefinition.MinFloor; j <= buildingFloorDefinition.MaxFloor; j++) {
-                                if (buildingPrefab.BuildingFloors.ContainsKey(j)) {
-                                    ArcenDebugging.LogSingleLine("Tried to add floor " + j + " more than once in building prefab '" + buildingPrefab.ID + "'!", Verbosity.ShowAsError);
+
+                        debugStage = 6000;
+                        var refEconomicClassWrappered = AccessTools.FieldRefAccess<BuildingPrefab,
+                            Dictionary<LazyLoadRowRef<EconomicClassType>, int>>("NormalMaxResidentsByEconomicClassWrappered");
+                        if (!refEconomicClassWrappered(modBuildingPrefab).IsNull()) {
+                            refBuildingPrefab.NormalMaxResidents = 0;
+                            AccessTools.FieldRefAccess<BuildingPrefab, Dictionary<LazyLoadRowRef<EconomicClassType>, int>>("NormalMaxResidentsByEconomicClassWrappered")(refBuildingPrefab) = 
+                                AccessTools.FieldRefAccess<BuildingPrefab, Dictionary<LazyLoadRowRef<EconomicClassType>, int>>("NormalMaxResidentsByEconomicClassWrappered")(modBuildingPrefab);
+                            if (!refEconomicClassWrappered(refBuildingPrefab).IsNull()) {
+                                foreach (var refEconomicClass in refEconomicClassWrappered(refBuildingPrefab)) {
+                                    refBuildingPrefab.NormalMaxResidents += refEconomicClass.Value;
+                                    refBuildingPrefab.NormalMaxResidentsByEconomicClass[refEconomicClass.Key.GetActualRow("BuildingPrefab", refBuildingPrefab.ID)] = refEconomicClass.Value;
+                                }
+                            }
+                        }
+
+                        debugStage = 10000;
+                        var refProfessionWrappered = AccessTools.FieldRefAccess<BuildingPrefab,
+                            Dictionary<LazyLoadRowRef<ProfessionType>, int>>("NormalMaxJobsByProfessionWrappered");
+                        if (!refProfessionWrappered(modBuildingPrefab).IsNull()) {
+                            refBuildingPrefab.NormalMaxJobs = 0;
+                            AccessTools.FieldRefAccess<BuildingPrefab, Dictionary<LazyLoadRowRef<ProfessionType>, int>>("NormalMaxJobsByProfessionWrappered")(refBuildingPrefab) =
+                                AccessTools.FieldRefAccess<BuildingPrefab, Dictionary<LazyLoadRowRef<ProfessionType>, int>>("NormalMaxJobsByProfessionWrappered")(modBuildingPrefab);
+                            if (!refProfessionWrappered(refBuildingPrefab).IsNull()) {
+                                foreach (var refProfession in refProfessionWrappered(refBuildingPrefab)) {
+                                    refBuildingPrefab.NormalMaxJobs += refProfession.Value;
+                                    refBuildingPrefab.NormalMaxJobsByProfession[refProfession.Key.GetActualRow("BuildingPrefab", refBuildingPrefab.ID)] = refProfession.Value;
+                                }
+                            }
+                        }
+
+                        debugStage = 15000;
+                        if (!modBuildingPrefab.BuildingFloorDefinitions.IsNull() && modBuildingPrefab.BuildingFloorDefinitions.Count > 0) {
+                            AccessTools.FieldRefAccess<BuildingPrefab, List<BuildingFloor>>("BuildingFloorDefinitions")(refBuildingPrefab) = 
+                                AccessTools.FieldRefAccess<BuildingPrefab, List<BuildingFloor>>("BuildingFloorDefinitions")(modBuildingPrefab);
+                            if (refBuildingPrefab.BuildingFloorDefinitions.Count > 0) {
+                                double refVolTotal = 0.0;
+                                double refAreaTotal = 0.0;
+                                double refVolSurface = 0.0;
+                                double refAreaSurface = 0.0;
+                                double refVolStorage = 0.0;
+                                double refVolResidence = 0.0;
+                                double refVolProduction = 0.0;
+                                double refAreaStorage = 0.0;
+                                double refAreaProduction = 0.0;
+                                refBuildingPrefab.BuildingFloors.Clear();
+                                if (refBuildingPrefab.BuildingFloorDefinitions.Count == 1 && 
+                                    refBuildingPrefab.BuildingFloorDefinitions.First().MinFloor == -9000) {
+                                    refBuildingPrefab.MinFloor = 0;
+                                    refBuildingPrefab.MaxFloor = 0;
                                 } else {
-                                    buildingPrefab.BuildingFloors[j] = buildingFloorDefinition;
+                                    int refFloorLimitUpper = 999;
+                                    int refFloorLimitLower = -999;
+                                    foreach (BuildingFloor refFloorDef in refBuildingPrefab.BuildingFloorDefinitions) {
+                                        int refTotalFloors = 0;
+                                        for (int currFloor = refFloorDef.MinFloor; currFloor <= refFloorDef.MaxFloor; currFloor++) {
+                                            if (!refBuildingPrefab.BuildingFloors.ContainsKey(currFloor)) refBuildingPrefab.BuildingFloors[currFloor] = refFloorDef;
+                                            if (currFloor < refFloorLimitUpper) refFloorLimitUpper = currFloor;
+                                            if (currFloor > refFloorLimitLower) refFloorLimitLower = currFloor;
+                                            if (currFloor == 0) refBuildingPrefab.GroundFloorDimensions = refFloorDef.FloorSize.x * refFloorDef.FloorSize.z;
+                                            refTotalFloors++;
+                                        }
+                                        refFloorDef.PercentageStorageSpaceMultiplier = refFloorDef.PercentageStorageSpace / 100f;
+                                        refFloorDef.PercentageLivingSpaceMultiplier = refFloorDef.PercentageLivingSpace / 100f;
+                                        refFloorDef.PercentageWorkSpaceMultiplier = refFloorDef.PercentageWorkSpace / 100f;
+                                        refFloorDef.TotalVolumeNonDimensioned_SingleFloor = refFloorDef.FloorSize.x * refFloorDef.FloorSize.y * refFloorDef.FloorSize.z;
+                                        refFloorDef.TotalAreaNonDimensioned_SingleFloor = refFloorDef.FloorSize.x * refFloorDef.FloorSize.z;
+                                        refFloorDef.TotalVolumeNonDimensioned_EntireFloorRange = refFloorDef.TotalVolumeNonDimensioned_SingleFloor * refTotalFloors;
+                                        refFloorDef.TotalAreaNonDimensioned_EntireFloorRange = refFloorDef.TotalAreaNonDimensioned_SingleFloor * refTotalFloors;
+                                        int refTotalSpacePercent = refFloorDef.PercentageLivingSpace + refFloorDef.PercentageStorageSpace + refFloorDef.PercentageWorkSpace;
+                                        if (refTotalSpacePercent <= 100) {
+                                            if (refFloorDef.PercentageStorageSpaceMultiplier > 0.0) {
+                                                refVolStorage += refFloorDef.TotalVolumeNonDimensioned_EntireFloorRange * refFloorDef.PercentageStorageSpaceMultiplier;
+                                                refAreaStorage += refFloorDef.TotalAreaNonDimensioned_EntireFloorRange * refFloorDef.PercentageStorageSpaceMultiplier;
+                                            }
+                                            if (refFloorDef.PercentageLivingSpaceMultiplier > 0.0) {
+                                                refVolResidence += refFloorDef.TotalVolumeNonDimensioned_EntireFloorRange * refFloorDef.PercentageLivingSpaceMultiplier;
+                                            }
+                                            if (refFloorDef.PercentageWorkSpaceMultiplier > 0.0) {
+                                                refVolProduction += refFloorDef.TotalVolumeNonDimensioned_EntireFloorRange * refFloorDef.PercentageWorkSpaceMultiplier;
+                                                refAreaProduction += refFloorDef.TotalAreaNonDimensioned_EntireFloorRange * refFloorDef.PercentageWorkSpaceMultiplier;
+                                            }
+                                        }
+                                        refVolTotal += refFloorDef.TotalVolumeNonDimensioned_EntireFloorRange;
+                                        refAreaTotal += refFloorDef.TotalAreaNonDimensioned_EntireFloorRange;
+                                        if (refFloorDef.MinFloor >= 0) {
+                                            refVolSurface += refFloorDef.TotalVolumeNonDimensioned_EntireFloorRange;
+                                            refAreaSurface += refFloorDef.TotalAreaNonDimensioned_EntireFloorRange;
+                                        }
+                                    }
+                                    refBuildingPrefab.MinFloor = refFloorLimitUpper;
+                                    refBuildingPrefab.MaxFloor = refFloorLimitLower;
+                                    for (int k = refBuildingPrefab.MinFloor; k <= refBuildingPrefab.MaxFloor; k++) {
+                                        if (!refBuildingPrefab.BuildingFloors.ContainsKey(k)) {
+                                            ArcenDebugging.LogSingleLine("Missing floor " + k + " from building prefab '" + refBuildingPrefab.ID + "'!  Floor numbers cannot be skipped.", Verbosity.ShowAsError);
+                                        }
+                                    }
                                 }
-                                if (j < num10) {
-                                    num10 = j;
-                                }
-                                if (j > num11) {
-                                    num11 = j;
-                                }
-                                if (j == 0) {
-                                    buildingPrefab.GroundFloorDimensions = buildingFloorDefinition.FloorSize.x * buildingFloorDefinition.FloorSize.z;
-                                }
-                                num12++;
-                            }
-                            buildingFloorDefinition.PercentageStorageSpaceMultiplier = (float)buildingFloorDefinition.PercentageStorageSpace / 100f;
-                            buildingFloorDefinition.PercentageLivingSpaceMultiplier = (float)buildingFloorDefinition.PercentageLivingSpace / 100f;
-                            buildingFloorDefinition.PercentageWorkSpaceMultiplier = (float)buildingFloorDefinition.PercentageWorkSpace / 100f;
-                            if (buildingFloorDefinition.PercentageStorageSpace + buildingFloorDefinition.PercentageLivingSpace + buildingFloorDefinition.PercentageWorkSpace > 100) {
-                                ArcenDebugging.LogSingleLine("Defined higher than 1x multiplier used space on floor def (floors " + buildingFloorDefinition.MinFloor + "-" + buildingFloorDefinition.MaxFloor + ") for building prefab '" + buildingPrefab.ID + "'!  That should be 100% or less.\n PercentageStorageSpaceMultiplier: " + buildingFloorDefinition.PercentageStorageSpaceMultiplier + "\n PercentageLivingSpaceMultiplier: " + buildingFloorDefinition.PercentageLivingSpaceMultiplier + "\n PercentageWorkSpaceMultiplier: " + buildingFloorDefinition.PercentageWorkSpaceMultiplier, Verbosity.ShowAsError);
-                            }
-                            buildingFloorDefinition.TotalVolumeNonDimensioned_SingleFloor = buildingFloorDefinition.FloorSize.x * buildingFloorDefinition.FloorSize.y * buildingFloorDefinition.FloorSize.z;
-                            buildingFloorDefinition.TotalAreaNonDimensioned_SingleFloor = buildingFloorDefinition.FloorSize.x * buildingFloorDefinition.FloorSize.z;
-                            buildingFloorDefinition.TotalVolumeNonDimensioned_EntireFloorRange = buildingFloorDefinition.TotalVolumeNonDimensioned_SingleFloor * (double)num12;
-                            buildingFloorDefinition.TotalAreaNonDimensioned_EntireFloorRange = buildingFloorDefinition.TotalAreaNonDimensioned_SingleFloor * (double)num12;
-                            int num13 = buildingFloorDefinition.PercentageLivingSpace + buildingFloorDefinition.PercentageStorageSpace + buildingFloorDefinition.PercentageWorkSpace;
-                            if (num13 > 100) {
-                                ArcenDebugging.LogSingleLine("Defined " + num13 + "% used space on floor def (floors " + buildingFloorDefinition.MinFloor + "-" + buildingFloorDefinition.MaxFloor + ") for building prefab '" + buildingPrefab.ID + "'!  That should be 100% or less.  (Less would mean there is some 'other' space, which is fine.)", Verbosity.ShowAsError);
-                            } else {
-                                if (buildingFloorDefinition.PercentageStorageSpaceMultiplier > 0.0) {
-                                    num5 += buildingFloorDefinition.TotalVolumeNonDimensioned_EntireFloorRange * buildingFloorDefinition.PercentageStorageSpaceMultiplier;
-                                    num8 += buildingFloorDefinition.TotalAreaNonDimensioned_EntireFloorRange * buildingFloorDefinition.PercentageStorageSpaceMultiplier;
-                                }
-                                if (buildingFloorDefinition.PercentageLivingSpaceMultiplier > 0.0) {
-                                    num6 += buildingFloorDefinition.TotalVolumeNonDimensioned_EntireFloorRange * buildingFloorDefinition.PercentageLivingSpaceMultiplier;
-                                }
-                                if (buildingFloorDefinition.PercentageWorkSpaceMultiplier > 0.0) {
-                                    num7 += buildingFloorDefinition.TotalVolumeNonDimensioned_EntireFloorRange * buildingFloorDefinition.PercentageWorkSpaceMultiplier;
-                                    num9 += buildingFloorDefinition.TotalAreaNonDimensioned_EntireFloorRange * buildingFloorDefinition.PercentageWorkSpaceMultiplier;
-                                }
-                            }
-                            num += buildingFloorDefinition.TotalVolumeNonDimensioned_EntireFloorRange;
-                            num2 += buildingFloorDefinition.TotalAreaNonDimensioned_EntireFloorRange;
-                            if (buildingFloorDefinition.MinFloor >= 0) {
-                                num3 += buildingFloorDefinition.TotalVolumeNonDimensioned_EntireFloorRange;
-                                num4 += buildingFloorDefinition.TotalAreaNonDimensioned_EntireFloorRange;
+                                refBuildingPrefab.NormalTotalBuildingVolumeFullDimensions = (int)Math.Round(refVolTotal * DIMENSION_CUBED);
+                                refBuildingPrefab.NormalTotalBuildingFloorAreaFullDimensions = (int)Math.Round(refAreaTotal * DIMENSION_SQUARED);
+                                refBuildingPrefab.NormalTotalStorageVolumeFullDimensions = (int)Math.Round(refVolStorage * DIMENSION_CUBED);
+                                refBuildingPrefab.NormalTotalNonStorageVolumeFullDimensions = refBuildingPrefab.NormalTotalBuildingVolumeFullDimensions - refBuildingPrefab.NormalTotalStorageVolumeFullDimensions;
+                                refBuildingPrefab.NormalTotalResidentialVolumeFullDimensions = (int)Math.Round(refVolResidence * DIMENSION_CUBED);
+                                refBuildingPrefab.NormalTotalWorkVolumeFullDimensions = (int)Math.Round(refVolProduction * DIMENSION_CUBED);
+                                refBuildingPrefab.NormalTotalStorageFloorAreaFullDimensions = (int)Math.Round(refAreaStorage * DIMENSION_SQUARED);
+                                refBuildingPrefab.NormalTotalWorkFloorAreaFullDimensions = (int)Math.Round(refAreaProduction * DIMENSION_SQUARED);
                             }
                         }
-                        buildingPrefab.MinFloor = num10;
-                        buildingPrefab.MaxFloor = num11;
-                        for (int k = buildingPrefab.MinFloor; k <= buildingPrefab.MaxFloor; k++) {
-                            if (!buildingPrefab.BuildingFloors.ContainsKey(k)) {
-                                ArcenDebugging.LogSingleLine("Missing floor " + k + " from building prefab '" + buildingPrefab.ID + "'!  Floor numbers cannot be skipped.", Verbosity.ShowAsError);
+
+                        debugStage = 21000;
+                        var refMarkerWrappered = AccessTools.FieldRefAccess<BuildingPrefab, LazyLoadRowRef<BuildingMarkerPrefab>>("MarkerPrefabWrappered");
+                        if (!refMarkerWrappered(modBuildingPrefab).IsNull()) {
+                            AccessTools.FieldRefAccess<BuildingPrefab, LazyLoadRowRef<BuildingMarkerPrefab>>("MarkerPrefabWrappered")(refBuildingPrefab) =
+                                AccessTools.FieldRefAccess<BuildingPrefab, LazyLoadRowRef<BuildingMarkerPrefab>>("MarkerPrefabWrappered")(modBuildingPrefab);
+                            if (!refMarkerWrappered(refBuildingPrefab).IsNull()) {
+                                refBuildingPrefab.MarkerPrefab = refMarkerWrappered(refBuildingPrefab)?.GetActualRow("BuildingPrefab", refBuildingPrefab.ID);
                             }
                         }
-                    }
-                    buildingPrefab.NormalTotalBuildingVolumeFullDimensions = (int)Math.Round(num * 5832.0);
-                    buildingPrefab.NormalTotalBuildingFloorAreaFullDimensions = (int)Math.Round(num2 * 324.0);
-                    debugStage = 22000;
-                    buildingPrefab.NormalTotalStorageVolumeFullDimensions = (int)Math.Round(num5 * 5832.0);
-                    buildingPrefab.NormalTotalNonStorageVolumeFullDimensions = buildingPrefab.NormalTotalBuildingVolumeFullDimensions - buildingPrefab.NormalTotalStorageVolumeFullDimensions;
-                    buildingPrefab.NormalTotalResidentialVolumeFullDimensions = (int)Math.Round(num6 * 5832.0);
-                    buildingPrefab.NormalTotalWorkVolumeFullDimensions = (int)Math.Round(num7 * 5832.0);
-                    buildingPrefab.NormalTotalStorageFloorAreaFullDimensions = (int)Math.Round(num8 * 324.0);
-                    buildingPrefab.NormalTotalWorkFloorAreaFullDimensions = (int)Math.Round(num9 * 324.0);
-                    debugStage = 27000;
-                    var refPrefabWrappered = AccessTools.FieldRefAccess<BuildingPrefab,
-                       LazyLoadRowRef<BuildingMarkerPrefab>>("MarkerPrefabWrappered")(buildingPrefab);
-                    buildingPrefab.MarkerPrefab = refPrefabWrappered?.GetActualRow("BuildingPrefab", buildingPrefab.ID);
-                    debugStage = 36000;
-                    if (buildingPrefab.Type.IsConsideredNotToHavePeopleInsideEvenWhenHasWorkers) {
-                        buildingPrefab.IsConsideredBuildingWithPeople = false;
-                    } else if (buildingPrefab.NormalMaxJobs > 0 || buildingPrefab.NormalMaxResidents > 0) {
-                        buildingPrefab.IsConsideredBuildingWithPeople = true;
+
+                        debugStage = 28000;
+                        if (refBuildingPrefab.Type.IsConsideredNotToHavePeopleInsideEvenWhenHasWorkers)
+                            refBuildingPrefab.IsConsideredBuildingWithPeople = false;
+                        else if (refBuildingPrefab.NormalMaxJobs > 0 || refBuildingPrefab.NormalMaxResidents > 0)
+                            refBuildingPrefab.IsConsideredBuildingWithPeople = true;
+                        else refBuildingPrefab.IsConsideredBuildingWithPeople = false;
                     } else {
-                        buildingPrefab.IsConsideredBuildingWithPeople = false;
+                        ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Type 'BuildingPrefab' with ID '{modBuildingPrefab.ID}' doesn't exist! Ignoring override attempt.", Verbosity.DoNotShow);
+                        continue;
                     }
-                    debugStage = 37000;
                 } catch (Exception e) {
                     ArcenDebugging.LogDebugStageWithStack("BuildingPrefab.DoPostFinalLoadCrossTableWork_OnLoadingThread", debugStage, e, Verbosity.ShowAsError);
                 }
-                */
             }
         }
     }
