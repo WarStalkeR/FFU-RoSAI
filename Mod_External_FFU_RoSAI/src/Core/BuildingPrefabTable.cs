@@ -37,8 +37,6 @@ namespace Arcen.HotM.Core {
                     debugStage = 100;
                     BuildingPrefab refBuildingPrefab = BuildingPrefabTable.Instance.Rows.FirstOrDefault(x => x.ID == modBuildingPrefab.ID);
                     if (refBuildingPrefab != null) {
-                        ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Override: BuildingPrefab -> {refBuildingPrefab.ID}", Verbosity.DoNotShow);
-
                         debugStage = 1000;
                         var refEconomicClassWrappered = AccessTools.FieldRefAccess<BuildingPrefab,
                             Dictionary<LazyLoadRowRef<EconomicClassType>, int>>("NormalMaxResidentsByEconomicClassWrappered");
