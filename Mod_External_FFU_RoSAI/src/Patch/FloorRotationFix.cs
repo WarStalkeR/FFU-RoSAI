@@ -7,10 +7,23 @@ using UnityEngine;
 
 namespace Arcen.HotM.FFU.RoSAI {
     public static partial class ModPatch {
-        public static VisSimpleDrawingObject FloorCubePurple = AccessTools.StaticFieldRefAccess<VisSimpleDrawingObject>(typeof(ExternalVis.RenderHelper_Objects),"FloorCubePurple");
-        public static VisSimpleDrawingObject FloorCubeRed = AccessTools.StaticFieldRefAccess<VisSimpleDrawingObject>(typeof(ExternalVis.RenderHelper_Objects), "FloorCubeRed");
-        public static VisSimpleDrawingObject FloorCubeGreen = AccessTools.StaticFieldRefAccess<VisSimpleDrawingObject>(typeof(ExternalVis.RenderHelper_Objects), "FloorCubeGreen");
-        public static VisSimpleDrawingObject FloorCubeOrange = AccessTools.StaticFieldRefAccess<VisSimpleDrawingObject>(typeof(ExternalVis.RenderHelper_Objects), "FloorCubeOrange");
+        public static VisSimpleDrawingObject FloorCubePurple;
+        public static VisSimpleDrawingObject FloorCubeRed;
+        public static VisSimpleDrawingObject FloorCubeGreen;
+        public static VisSimpleDrawingObject FloorCubeOrange;
+        public static VisSimpleDrawingObject GetFloorCubePurple => AccessTools.StaticFieldRefAccess<VisSimpleDrawingObject>(typeof(ExternalVis.RenderHelper_Objects), "FloorCubePurple");
+        public static VisSimpleDrawingObject GetFloorCubeRed => AccessTools.StaticFieldRefAccess<VisSimpleDrawingObject>(typeof(ExternalVis.RenderHelper_Objects), "FloorCubeRed");
+        public static VisSimpleDrawingObject GetFloorCubeGreen => AccessTools.StaticFieldRefAccess<VisSimpleDrawingObject>(typeof(ExternalVis.RenderHelper_Objects), "FloorCubeGreen");
+        public static VisSimpleDrawingObject GetFloorCubeOrange => AccessTools.StaticFieldRefAccess<VisSimpleDrawingObject>(typeof(ExternalVis.RenderHelper_Objects), "FloorCubeOrange");
+        public static bool DrawFloorsInner_IsLoaded() {
+            return !GetFloorCubeOrange.IsNull();
+        }
+        public static void DrawFloorsInner_LoadRefs() {
+            FloorCubePurple = GetFloorCubePurple;
+            FloorCubeRed = GetFloorCubeRed;
+            FloorCubeGreen = GetFloorCubeGreen;
+            FloorCubeOrange = GetFloorCubeOrange;
+        }
         public static void CallDrawFloorCube(VisSimpleDrawingObject floorCubePurple, 
             BuildingFloor floor, Vector3 pos, Quaternion rotation) {
             MethodInfo drawFloorCubeMethod = AccessTools.Method(

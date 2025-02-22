@@ -46,13 +46,8 @@ namespace Arcen.HotM.FFU.RoSAI {
             yield break;
         }
         public IEnumerator ModLoadOverrides() {
-            yield return new WaitUntil(() => BuildingPrefabTable.Instance.InitializationStage.IsComplete());
-            //BuildingPrefabTableOverride.Instance.ReloadSelectData();
-            //BuildingPrefabTableOverride.Instance.DoPostFinalLoadCrossTableWork_OnLoadingThread(true);
-            //ModPatch.BuildingPrefabOverride();
-            //BuildingPrefabTable.Instance.Initialize(false);
-            //BuildingPrefabTable.Instance.ReloadSelectData();
-            //BuildingPrefabTable.Instance.DoPostFinalLoadCrossTableWork_OnLoadingThread(true);
+            yield return new WaitUntil(() => ModPatch.DrawFloorsInner_IsLoaded());
+            ModPatch.DrawFloorsInner_LoadRefs();
             yield break;
         }
         public void ModLoadRefData() {
