@@ -156,12 +156,19 @@ namespace Arcen.HotM.Core {
                                 refBuildingPrefab.MarkerPrefab = refMarkerWrappered(refBuildingPrefab)?.GetActualRow("BuildingPrefab", refBuildingPrefab.ID);
                             }
                         }
+
+                        debugStage = 15000;
+                        if (refBuildingPrefab.Type.IsConsideredNotToHavePeopleInsideEvenWhenHasWorkers)
+                            refBuildingPrefab.IsConsideredBuildingWithPeople = false;
+                        else if (refBuildingPrefab.NormalMaxJobs > 0 || refBuildingPrefab.NormalMaxResidents > 0)
+                            refBuildingPrefab.IsConsideredBuildingWithPeople = true;
+                        else refBuildingPrefab.IsConsideredBuildingWithPeople = false;
                     } else {
                         ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Type 'BuildingPrefab' with ID '{modBuildingPrefab.ID}' doesn't exist! Ignoring override attempt.", Verbosity.DoNotShow);
                         continue;
                     }
                 } catch (Exception e) {
-                    ArcenDebugging.LogDebugStageWithStack("BuildingPrefab.DoPostFinalLoadCrossTableWork_OnLoadingThread", debugStage, e, Verbosity.ShowAsError);
+                    ArcenDebugging.LogDebugStageWithStack("Override_BuildingPrefab.DoPostFinalLoadCrossTableWork_OnLoadingThread", debugStage, e, Verbosity.ShowAsError);
                 }
             }
         }
