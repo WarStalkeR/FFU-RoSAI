@@ -23,13 +23,6 @@ namespace Arcen.HotM.FFU.RoSAI {
             ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Applying patches via Harmony:", Verbosity.DoNotShow);
             Harmony Mod = new Harmony("arcen.hotm.ffu.rosai");
 
-            try { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Patch: Arcen.HotM.ExternalVis.RenderHelper_Objects -> DrawFloorsInner_OldStyle", Verbosity.DoNotShow);
-                var refMethod = AccessTools.Method(typeof(ExternalVis.RenderHelper_Objects), "DrawFloorsInner_OldStyle");
-                var prefixPatch = SymbolExtensions.GetMethodInfo(() =>
-                    ModPatch.DrawFloorsInner_FixPre(default, default));
-                Mod.Patch(refMethod, prefix: new HarmonyMethod(prefixPatch));
-            } catch (Exception ex) { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Failed: {ex}", Verbosity.DoNotShow); }
-
             try { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Patch: Arcen.HotM.Core.Engine_HotM -> ReloadSelectDataFromXml", Verbosity.DoNotShow);
                 var refMethod = AccessTools.Method(typeof(Engine_HotM), "ReloadSelectDataFromXml");
                 var postfixPatch = SymbolExtensions.GetMethodInfo(() =>
@@ -46,8 +39,6 @@ namespace Arcen.HotM.FFU.RoSAI {
             yield break;
         }
         public IEnumerator ModLoadOverrides() {
-            yield return new WaitUntil(() => ModPatch.DrawFloorsInner_IsLoaded());
-            ModPatch.DrawFloorsInner_LoadRefs();
             yield break;
         }
         public void ModLoadRefData() {
