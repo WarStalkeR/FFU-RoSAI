@@ -982,6 +982,12 @@ namespace Arcen.HotM.ExternalVis
                             switch ( Logic )
                             {
                                 case ProjectLogic.DoAnyPerQuarterSecondLogicWhileProjectActive:
+                                    if ( ResourceRefs.FugitiveAGIResearchers.CurrentPlusExcess <= 0 )
+                                    {
+                                        Project.DoOnProjectFail( string.Empty, RandOrNull, false, false );
+                                        break;
+                                    }
+
                                     if ( !Project.DuringGame_HasDoneAnyNeededInitialization )
                                     {
                                         Project.DuringGame_HasDoneAnyNeededInitialization = true;
@@ -1291,12 +1297,12 @@ namespace Arcen.HotM.ExternalVis
                                         {
                                             MachineProject otherProject = MachineProjectTable.Instance.GetRowByID( "Ch2_MIN_LostKids_StopThePoisoning" );
                                             if ( otherProject.DuringGame_ActualOutcome != null )
-                                                otherProject.DoOnProjectWin( otherProject.DuringGame_IntendedOutcome, Engine_Universal.PermanentQualityRandom, false, true );
+                                                Project.DoOnProjectWin( OutcomeOrNoneYet, Engine_Universal.PermanentQualityRandom, false, true );
                                         }
                                         {
                                             MachineProject otherProject = MachineProjectTable.Instance.GetRowByID( "Ch2_LostKids_DownWithSecForce" );
-                                            if ( otherProject.DuringGame_ActualOutcome != null )
-                                                otherProject.DoOnProjectWin( otherProject.DuringGame_IntendedOutcome, Engine_Universal.PermanentQualityRandom, false, true );
+                                            if ( otherProject.DuringGame_ActualOutcome?.ShortID == "BombThem" )
+                                                Project.DoOnProjectWin( OutcomeOrNoneYet, Engine_Universal.PermanentQualityRandom, false, true );
                                         }
                                     }
                                     break;
@@ -3229,6 +3235,17 @@ namespace Arcen.HotM.ExternalVis
                                 case ProjectLogic.WriteAddedContext:
                                     break;
                                 case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    break;
+                                case ProjectLogic.DoAnyPerQuarterSecondLogicWhileProjectActive:
+                                    {
+                                        ResourceType encryptedData = ResourceTypeTable.Instance.GetRowByID( "EncryptedFederatedCorporationRecords" );
+                                        if ( encryptedData.Current < 400000 )
+                                        {
+                                            InvestigationType investigationType = InvestigationTypeTable.Instance.GetRowByID( "Ch2StealCorporateRecords" );
+                                            if ( investigationType.DuringGame_HasWonInvestigation && !investigationType.DuringGame_IsActiveNow() )
+                                                investigationType.DuringGame_HasWonInvestigation = false;
+                                        }
+                                    }
                                     break;
                             }
                         }

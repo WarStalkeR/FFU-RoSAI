@@ -34,6 +34,14 @@ namespace Arcen.HotM.ExternalVis
             TargetingStructure = null;
             TargetingJob = null;
             TargetingTerritoryControlInvestigation = null;
+
+            ClearLastValidSpot();
+        }
+
+        private static void ClearLastValidSpot()
+        {
+            lastValidSpot_HadOne = false;
+            lastValidSpot_StructureType = null;
         }
 
         #region HandleCancelButton
@@ -150,7 +158,10 @@ namespace Arcen.HotM.ExternalVis
             #endregion
 
             if ( Engine_Universal.IsMouseOverGUI || Engine_HotM.IsGameWorldMouseInteractionBlockedByWindow_General || Engine_Universal.IsMouseOutsideGameWindow )
+            {
+                ClearLastValidSpot();
                 return false;
+            }
 
             if ( MouseHelper.ActorUnderCursor is ISimMachineActor machineActor )
             {
@@ -189,11 +200,20 @@ namespace Arcen.HotM.ExternalVis
                 if ( structureType != null && structureType.DuringGame_IsUnlocked() )
                 {
                     if ( structureType.IsTheDeleteFunction )
+                    {
                         result = this.HandleDeleteStructureMode( false );
+                        ClearLastValidSpot();
+                    }
                     else if ( structureType.IsThePauseFunction )
+                    {
                         result = this.HandlePauseStructureMode( false );
+                        ClearLastValidSpot();
+                    }
                     else if ( structureType.IsBuiltOnSiteOfExistingBuilding )
+                    {
                         result = this.HandleEmbeddedStructureType( structureType, null, false );
+                        ClearLastValidSpot();
+                    }
                     else
                         result = this.HandleFreestandingStructureType( structureType, null );
                     if ( result )
@@ -230,6 +250,7 @@ namespace Arcen.HotM.ExternalVis
             }
             else
             {
+                ClearLastValidSpot();
                 Engine_HotM.CurrentEmbeddedStructureTypeToFocus = null;
                 Engine_HotM.CurrentEmbeddedStructureTypeJobToGoWith = null;
                 if ( useLeftBuildStyle && ArcenInput.RightMouseNonUI.GetIsBrieflyClicked_AndConsume() ) //go back
@@ -808,6 +829,24 @@ namespace Arcen.HotM.ExternalVis
                     .Line();
             }
 
+            int requiredProtection = job.DuringGameActorData[ActorRefs.JobRequiredProtection];
+            int providedProtection = 0;
+            if ( requiredProtection > 0 && !isCompletelyOutOfBounds )
+            {
+                MapTile tile = CityMap.TryGetWorldCellAtCoordinates( loc )?.ParentTile;
+                providedProtection = tile?.CalculateProvidedProtectionAtLocation( loc ) ?? 0;
+            }
+
+            if ( requiredProtection > 0 )
+            {
+                string protectionHex = requiredProtection <= providedProtection ? ColorTheme.GrayLess : ColorTheme.RedOrange2;
+                bufferBase.FrameBody.AddSpriteStyled_NoIndent( ActorRefs.JobRequiredProtection.Icon, AdjustedSpriteStyle.InlineLarger1_2, protectionHex )
+                    .AddRawAndAfterLineItemHeader( ActorRefs.JobRequiredProtection.GetDisplayName(), protectionHex )
+                    .AddRaw( requiredProtection.ToStringThousandsWhole(), protectionHex )
+                    .Space1x().AddFormat1( "ParentheticalProvidedByNearbyUnits", providedProtection.ToStringThousandsWhole(), ColorTheme.Gray )
+                    .Line();
+            }
+
             bool isCyberocracyHub = false;
 
             if ( (job?.RequiredStructureType?.IsCyberocracyHub ?? false) && !isCompletelyOutOfBounds )
@@ -829,7 +868,7 @@ namespace Arcen.HotM.ExternalVis
 
             bufferBase.FrameBody.EndLineHeight();
 
-            if ( requiredElectricity > 0 || requiredDeterrence > 0 || isCyberocracyHub )
+            if ( requiredElectricity > 0 || requiredDeterrence > 0 || requiredProtection > 0 || isCyberocracyHub )
                 bufferBase.FrameTitle.AddLang( "RequiredInfrastructure" );
             else if ( generatedElectricity > 0 )
                 bufferBase.FrameTitle.AddLang( "RequiredInfrastructure" );
@@ -1013,6 +1052,8 @@ namespace Arcen.HotM.ExternalVis
                 MapTile tile = CityMap.TryGetWorldCellAtCoordinates( destinationPoint )?.ParentTile;
                 if ( tile != null && tile.TileNetworkLevel.Display == TileNetLevel.Full )
                     bestProvider = tile.TileNetworkUplink.Display;
+                else if ( tile != null && tile.HasFullNetworkOrIsAdjacentToTileThatDoes.Display && structureType.CanBeBuiltAdjacentToNetwork )
+                    bestProvider = tile.TileNetworkUplink.Display;
 
                 MachineStructure bestSubnetConnection = null;
                 if ( bestProvider != null ) //only do this if it's on a tile we can connect to
@@ -1104,6 +1145,11 @@ namespace Arcen.HotM.ExternalVis
         }
         #endregion
 
+        private static MachineStructureType lastValidSpot_StructureType = null;
+        private static Vector3 lastValidSpot_Position = Vector3.zero;
+        private static bool lastValidSpot_HadOne = false;
+        private static int lastValidSpot_TheoreticalRotation = 0;
+
         #region HandleFreestandingStructureType
         private bool HandleFreestandingStructureType( MachineStructureType structureType, MachineJob startingJob )
         {
@@ -1155,14 +1201,40 @@ namespace Arcen.HotM.ExternalVis
                     //    destinationPoint, Quaternion.Euler( 0, theoreticalRotation, 0 ), Vector3.one, Color.blue,
                     //    Mathf.Clamp01( Mathf.Sin( ArcenTime.AnyTimeSinceStartF ) ) );
 
+                    bool isUsingOldDest = false;
+                    Vector3 newerDest = destinationPoint;
+
                     bool isBlocked = false;
                     string blockingString = string.Empty;
                     if ( hasValidDestinationPoint )
                     {
                         debugStage = 12300;
+                        bool hadValidSpotInner = true;
                         if ( !CityMap.CalculateIsValidLocationForBuilding( prefab, destinationPoint, theoreticalRotation, 
                             structureType.MaxSecurityClearanceOfPOIForPlacement, structureType.RequiredPOITagForPlacement, out IMapBlockingItem BlockingItem, out bool WasInCorrectPOIType,
                             true, out bool IsBlockedByOutOfBounds ) ) //yes, allow overbuild
+                        {
+                            hadValidSpotInner = false;
+
+                            if ( lastValidSpot_HadOne && lastValidSpot_StructureType == structureType && lastValidSpot_TheoreticalRotation == theoreticalRotation )
+                            {
+                                if ( CityMap.CalculateIsValidLocationForBuilding( prefab, lastValidSpot_Position, theoreticalRotation,
+                                    structureType.MaxSecurityClearanceOfPOIForPlacement, structureType.RequiredPOITagForPlacement, out IMapBlockingItem BlockingItem2, out bool WasInCorrectPOIType2,
+                                    true, out bool IsBlockedByOutOfBounds2 ) )
+                                {
+                                    hadValidSpotInner = true;
+                                    destinationPoint = lastValidSpot_Position;
+                                    isUsingOldDest = true;
+
+                                    BlockingItem = BlockingItem2;
+                                    WasInCorrectPOIType = WasInCorrectPOIType2;
+                                    IsBlockedByOutOfBounds = IsBlockedByOutOfBounds2;
+                                }
+                            }
+
+                        }
+
+                        if ( !hadValidSpotInner )
                         {
                             isBlocked = true;
                             hasValidDestinationPoint = false;
@@ -1219,6 +1291,18 @@ namespace Arcen.HotM.ExternalVis
                                 }
                             }
                         }
+                        else
+                        {
+                            lastValidSpot_HadOne = true;
+                            lastValidSpot_StructureType = structureType;
+                            lastValidSpot_Position = destinationPoint;
+                            lastValidSpot_TheoreticalRotation = theoreticalRotation;
+                        }
+                    }
+                    else
+                    {
+                        lastValidSpot_HadOne = false;
+                        lastValidSpot_StructureType = null;
                     }
 
                     debugStage = 13100;
@@ -1242,7 +1326,14 @@ namespace Arcen.HotM.ExternalVis
                     if ( isCompletelyOutOfBounds )
                     { }
                     else if ( hasValidDestinationPoint && !isOutOfRangeOfAnyNetwork && !isBlockedByDistanceRestrictions )
+                    {
                         MoveHelper.RenderBuildingColoredForBuildTarget( prefab, destinationPoint, theoreticalRotation, ColorRefs.VehicleMoveGhostValid );
+
+                        if ( isUsingOldDest )
+                        {
+                            DrawHelper.RenderPolylineFromSourceToTargetPoint_CaliperStyle_Direct( newerDest, destinationPoint, newerDest.y + 0.1f, ColorRefs.VehicleMoveGhostValid.ColorHDR, 1f );
+                        }
+                    }
                     else
                     {
                         if ( isBlocked || isOutOfRangeOfAnyNetwork || isBlockedByDistanceRestrictions )
@@ -1833,7 +1924,10 @@ namespace Arcen.HotM.ExternalVis
                     if ( preferredStructureType != null )
                     {
                         if ( preferredStructureType.IsEmbeddedInHumanBuildingOfTag != null )
+                        {
+                            ClearLastValidSpot();
                             return this.HandleEmbeddedStructureType( preferredStructureType, job, OnlyDoUIHover );
+                        }
                         else
                         {
                             Engine_HotM.CurrentEmbeddedStructureTypeToFocus = null;

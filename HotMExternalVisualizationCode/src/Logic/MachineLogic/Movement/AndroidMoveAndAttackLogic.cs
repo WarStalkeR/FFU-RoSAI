@@ -1198,10 +1198,17 @@ namespace Arcen.HotM.ExternalVis
                 if ( sqrDistToTargetUnit > attackRange * attackRange )
                     isTargetUnitOutOfAttackRange = true;
 
-                MoveHelper.CalculateSprint( sqrDistToTargetUnit, moveRange, out bool isBeyondEvenSprinting, out bool canAffordExtraEnergy, out int extraEnergyCostFromMovingFar );
+                bool isBeyondEvenSprinting = false; 
+                bool canAffordExtraEnergy = true; 
+                int extraEnergyCostFromMovingFar = 0;
 
-                if ( isBeyondEvenSprinting || !canAffordExtraEnergy ) //definitely disallowed
-                    hasValidDestinationPoint = false;
+                if ( isTargetUnitOutOfAttackRange )
+                {
+                    MoveHelper.CalculateSprint( sqrDistToTargetUnit, moveRange, out isBeyondEvenSprinting, out canAffordExtraEnergy, out extraEnergyCostFromMovingFar );
+
+                    if ( isBeyondEvenSprinting || !canAffordExtraEnergy ) //definitely disallowed
+                        hasValidDestinationPoint = false;
+                }
 
                 ISimNPCUnit npcUnit = actorUnderCursor as ISimNPCUnit;
 

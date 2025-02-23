@@ -595,6 +595,11 @@ namespace Arcen.HotM.ExternalVis
                                 unit.SetTargetingMode( null, null );
                                 return;
                             }
+                            if ( (Actor.GetTypeAsRow()?.ID??string.Empty) != "CombatUnitRed" )
+                            {
+                                unit.SetTargetingMode( null, null );
+                                return;
+                            }    
 
                             Vector3 destinationPoint = Engine_HotM.GameMode == MainGameMode.CityMap ? Engine_HotM.MouseWorldLocation : Engine_HotM.MouseWorldHitLocation;
                             ISimBuilding buildingUnderCursor = MouseHelper.BuildingNoFilterUnderCursor;
@@ -610,9 +615,9 @@ namespace Arcen.HotM.ExternalVis
                             bool isInRange = (destinationPoint - center).GetSquareGroundMagnitude() <= moveRange * moveRange;
 
                             ISimNPCUnit hoveredNPC = MouseHelper.ActorUnderCursor as ISimNPCUnit;
-                            bool isValidNPC = hoveredNPC != null && 
-                                !hoveredNPC.GetIsAnAllyFromThePlayerPerspective() && hoveredNPC.UnitType.ProbeCommsScenario != null;
-                            bool isHostileNPC = hoveredNPC != null && !hoveredNPC.GetIsAnAllyFromThePlayerPerspective();
+                            bool isValidNPC = hoveredNPC != null && /*
+                                !hoveredNPC.GetIsAnAllyFromThePlayerPerspective() && */hoveredNPC.UnitType.ProbeCommsScenario != null;
+                            //bool isHostileNPC = hoveredNPC != null && !hoveredNPC.GetIsAnAllyFromThePlayerPerspective();
 
                             if ( !isInRange )
                             {
@@ -635,7 +640,7 @@ namespace Arcen.HotM.ExternalVis
                                 return;
                             }
 
-                            if ( hoveredNPC != null && !isValidNPC && isHostileNPC )
+                            if ( hoveredNPC != null && !isValidNPC )//&& isHostileNPC )
                             {
                                 DrawHelper.RenderCatmullLine( unit.GetCollisionCenter(), destinationPoint,
                                     Color.red, 1f, CatmullSlotType.Move, CatmullSlope.AndroidTargeting );

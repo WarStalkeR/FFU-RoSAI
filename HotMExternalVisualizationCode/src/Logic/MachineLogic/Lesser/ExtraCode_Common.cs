@@ -199,7 +199,7 @@ namespace Arcen.HotM.ExternalVis
                                         desiredTurnsFromNow = 100;
                                 }
 
-                                doomEvent.DuringGameplay_WillHappenOnTurn = desiredTurnsFromNow;
+                                doomEvent.DuringGameplay_WillHappenOnTurn = currentTurn + desiredTurnsFromNow;
                                 continue;
                             }
 

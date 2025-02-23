@@ -524,14 +524,15 @@ namespace Arcen.HotM.ExternalVis
                                         {
                                             doNotComplainAboutStorageRatios = true;
                                         }
-                                        else if ( FlagRefs.IsPostFinalDoom.DuringGameplay_IsTripped )
+                                        else if ( FlagRefs.IsPostFinalDoom.DuringGameplay_IsTripped && !math.IncomeOrExpenseResource.ComplainAboutStorageEvenInPostFinalDoom )
                                             doNotComplainAboutStorageRatios = true;
 
                                         if ( storageAvailable == 0 )
                                         {
                                             bestIncomeStorageRatio = 0;
 
-                                            if ( math.IncomeOrExpenseResource.MidSoftCap == 0 ) //only complain if no storage at ALL
+                                            if ( math.IncomeOrExpenseResource.MidSoftCap == 0 || //only complain if no storage at ALL
+                                                math.IncomeOrExpenseResource.ComplainAboutStorageEvenInPostFinalDoom ) //...or if it's that important
                                                 Structure.Complaints.SetToConstructionDict( MachineJobComplaintTable.Instance.GetRowByID( "NoStorageForOutput" ), 0 );
                                         }
                                     }
@@ -633,6 +634,110 @@ namespace Arcen.HotM.ExternalVis
                                                 #endregion
                                             }
                                         }
+                                    }
+                                }
+                            }
+                            else //no storage??
+                            {
+                                float finalProductionRatio = 0f;
+                                foreach ( JobMathInt math in Job.SortedMathInts )
+                                {
+                                    if ( math.IncomeOrExpenseResource != null )
+                                    {
+                                        ResourceType res = math.IncomeOrExpenseResource;
+                                        int originalDesired = math.GetMin( Structure );
+                                        int finalDesired = originalDesired;
+                                        if ( doNotComplainAboutStorageRatios && hadAnyIncomeStorageLowerThanPerfect )
+                                            originalDesired = Mathf.CeilToInt( originalDesired * bestIncomeStorageRatio );
+
+                                        finalDesired = Mathf.CeilToInt( finalDesired * finalProductionRatio );
+
+                                        if ( math.IsExpense )
+                                        {
+                                            #region Expense
+                                            if ( Job.DuringGame_InputsHighestAvailable.GetConstructionDict().TryGetValue( res, out int highestSoFar ) )
+                                            {
+                                                if ( highestSoFar < res.Current )
+                                                    Job.DuringGame_InputsHighestAvailable.GetConstructionDict()[res] = (int)res.Current;
+                                            }
+                                            else
+                                                Job.DuringGame_InputsHighestAvailable.GetConstructionDict()[res] = (int)res.Current;
+
+                                            if ( originalDesired > 0 )
+                                            {
+                                                Job.DuringGame_InputsDesired.Construction[res] += originalDesired;
+                                                res.SortedConsumers.AddToConstructionList( new KeyValuePair<MachineStructure, int>( Structure, originalDesired ) );
+                                            }
+                                            #endregion
+                                        }
+                                        else
+                                        {
+                                            #region Income
+                                            //if ( finalDesired < originalDesired )
+                                            //{
+                                            //    if ( electricityMultiplier < 1f )
+                                            //    {
+                                            //        int finalFromElecOnly = Mathf.CeilToInt( originalDesired * electricityMultiplier );
+                                            //        Job.DuringGame_OutputsLostToElectricity.Construction[res] += (originalDesired - finalFromElecOnly);
+                                            //    }
+                                            //}
+
+                                            if ( originalDesired > 0 )
+                                                Job.DuringGame_OutputsDesired.Construction[res] += originalDesired;
+                                            #endregion
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else //no inputs
+                        {
+                            float finalProductionRatio = 0f;
+                            foreach ( JobMathInt math in Job.SortedMathInts )
+                            {
+                                if ( math.IncomeOrExpenseResource != null )
+                                {
+                                    ResourceType res = math.IncomeOrExpenseResource;
+                                    int originalDesired = math.GetMin( Structure );
+                                    int finalDesired = originalDesired;
+                                    //if ( doNotComplainAboutStorageRatios && hadAnyIncomeStorageLowerThanPerfect )
+                                    //    originalDesired = Mathf.CeilToInt( originalDesired * bestIncomeStorageRatio );
+
+                                    finalDesired = Mathf.CeilToInt( finalDesired * finalProductionRatio );
+
+                                    if ( math.IsExpense )
+                                    {
+                                        #region Expense
+                                        if ( Job.DuringGame_InputsHighestAvailable.GetConstructionDict().TryGetValue( res, out int highestSoFar ) )
+                                        {
+                                            if ( highestSoFar < res.Current )
+                                                Job.DuringGame_InputsHighestAvailable.GetConstructionDict()[res] = (int)res.Current;
+                                        }
+                                        else
+                                            Job.DuringGame_InputsHighestAvailable.GetConstructionDict()[res] = (int)res.Current;
+
+                                        if ( originalDesired > 0 )
+                                        {
+                                            Job.DuringGame_InputsDesired.Construction[res] += originalDesired;
+                                            res.SortedConsumers.AddToConstructionList( new KeyValuePair<MachineStructure, int>( Structure, originalDesired ) );
+                                        }
+                                        #endregion
+                                    }
+                                    else
+                                    {
+                                        #region Income
+                                        //if ( finalDesired < originalDesired )
+                                        //{
+                                        //    if ( electricityMultiplier < 1f )
+                                        //    {
+                                        //        int finalFromElecOnly = Mathf.CeilToInt( originalDesired * electricityMultiplier );
+                                        //        Job.DuringGame_OutputsLostToElectricity.Construction[res] += (originalDesired - finalFromElecOnly);
+                                        //    }
+                                        //}
+
+                                        if ( originalDesired > 0 )
+                                            Job.DuringGame_OutputsDesired.Construction[res] += originalDesired;
+                                        #endregion
                                     }
                                 }
                             }

@@ -1684,7 +1684,7 @@ namespace Arcen.HotM.ExternalVis
         private static void DrawFloorsInner_OldStyle( MapItem mapItem, BuildingPrefab buildingPref )
         {
             Vector3 center = mapItem.OBBCache.Center;
-            center += buildingPref.FloorsOffset;
+            center += mapItem.OBBCache.GetOBB_ExpensiveToUse().Rotation * buildingPref.FloorsOffset;
             float yBot = mapItem.Type.AlwaysDropTo >= -900 ? 0 : mapItem.OBBCache.BottomCenter.y;
             Quaternion rotation = mapItem.OBBCache.GetOBB_ExpensiveToUse().Rotation;
 

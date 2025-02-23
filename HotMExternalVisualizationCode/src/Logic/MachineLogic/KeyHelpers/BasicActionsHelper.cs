@@ -651,7 +651,7 @@ namespace Arcen.HotM.ExternalVis
                                     {
                                         if ( ridingUnit != null && !ridingUnit.IsFullDead )
                                         {
-                                            otherActor.AddStatus( StatusRefs.NetworkShield, damageNegated, 1 );
+                                            ridingUnit.AddStatus( StatusRefs.NetworkShield, damageNegated, 1 );
                                             didAnyShields = true;
                                         }
                                     }
@@ -844,7 +844,7 @@ namespace Arcen.HotM.ExternalVis
                                     {
                                         if ( ridingUnit != null && !ridingUnit.IsFullDead )
                                         {
-                                            otherActor.AddStatus( StatusRefs.NetworkAssistedTargeting, attackPowerAdded, 1 );
+                                            ridingUnit.AddStatus( StatusRefs.NetworkAssistedTargeting, attackPowerAdded, 1 );
                                             didAnyBuffs = true;
                                         }
                                     }

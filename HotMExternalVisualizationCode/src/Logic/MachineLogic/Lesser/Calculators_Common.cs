@@ -1067,7 +1067,7 @@ namespace Arcen.HotM.ExternalVis
                     NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Peak" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
                 }
 
-                for ( int i = 0; i < 7; i++ )
+                if ( RandForThisTurn.Next( 0, 100 ) < 20 )
                 {
                     Vector3 pulseSpot = CalculateRandomPulseSpot( RandForThisTurn );
                     NPCManagerTable.Instance.GetRowByID( "Man_CivilWar_Vorsiber" )?.HandleManualInvocationAtPoint( pulseSpot, RandForThisTurn, false );
@@ -2160,6 +2160,33 @@ namespace Arcen.HotM.ExternalVis
                                     FlagRefs.Ch1_MIN_GrandTheftAero.DuringGame_ActualOutcome != null )
                                     FlagRefs.IndicateCommandModeButton.UnTripIfNeeded();
                             }
+
+                            if ( !HandbookRefs.WorkerAndroids.Meta_HasBeenUnlocked &&
+                                (FlagRefs.WarImpostor.DuringGameplay_IsInvented ||
+                                FlagRefs.WarMuscle.DuringGameplay_IsInvented ||
+                                FlagRefs.WarRanger.DuringGameplay_IsInvented) )
+                                HandbookRefs.WorkerAndroids.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
+
+                            if ( !HandbookRefs.UnitCaps.Meta_HasBeenUnlocked &&
+                                ( SimMetagame.CurrentChapterNumber > 0 ||
+                                FlagRefs.Ch0_SpreadToMoreAndroids.DuringGameplay_State != CityTaskState.NeverStarted) )
+                                HandbookRefs.UnitCaps.DuringGame_UnlockIfNeeded( false );
+
+                            if ( !HandbookRefs.WhatCountsAsMurder.Meta_HasBeenUnlocked &&
+                                (SimMetagame.CurrentChapterNumber > 1 ||
+                                FlagRefs.Ch1_TentElimination.DuringGame_IntendedOutcome != null ) )
+                                HandbookRefs.WhatCountsAsMurder.DuringGame_UnlockIfNeeded( false );
+
+                            if ( !HandbookRefs.BuildingCaps.Meta_HasBeenUnlocked &&
+                                (SimMetagame.CurrentChapterNumber > 1 ||
+                                FlagRefs.Ch1_MIN_FasterMicrobuilders.DuringGame_ActualOutcome != null) )
+                                HandbookRefs.BuildingCaps.DuringGame_UnlockIfNeeded( false );
+
+                            if ( !HandbookRefs.KillingHackers.Meta_HasBeenUnlocked && SimCommon.NPCHackersThreateningPlayerInfiltrators.Count > 0 )
+                                HandbookRefs.KillingHackers.DuringGame_UnlockIfNeeded( true );
+
+                            if ( !HandbookRefs.TalkToEnemies.Meta_HasBeenUnlocked )
+                                HandbookRefs.TalkToEnemies.DuringGame_UnlockIfNeeded( false );
 
                             if ( !HandbookRefs.ContemplationsSometimesComeFromScientists.Meta_HasBeenUnlocked )
                             {

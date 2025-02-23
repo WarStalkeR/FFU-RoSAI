@@ -948,6 +948,9 @@ namespace Arcen.HotM.ExternalVis
                     case "Ch1_MIN_FindARobotServant":
                         if ( OutcomeOrNoneYet != null )
                         {
+                            int nickelbotCount = 0;
+                            int combatUnitCount = 0;
+
                             CanBeCompletedNow = false;
 
                             switch ( Logic )
@@ -957,10 +960,82 @@ namespace Arcen.HotM.ExternalVis
                                     ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, 0, 100, BufferOrNull );
                                     break;
                                 case ProjectLogic.WriteRequirements_OneLine:
+                                    BufferOrNull.AddFormat3( "RequiredDestroyTargets", nickelbotCount.ToStringThousandsWhole(), "1", CommonRefs.NickelbotUnitType.GetDisplayName() ).Space3x();
+                                    BufferOrNull.AddFormat3( "RequiredDestroyTargets", combatUnitCount.ToStringThousandsWhole(), "1", CommonRefs.CombatUnitUnitType.GetDisplayName() ).Line();
+                                    break;
                                 case ProjectLogic.WriteRequirements_ManyLines:
-                                    BufferOrNull.AddLang( "Unknown" ).Line();
+                                    BufferOrNull.AddFormat3( "RequiredDestroyTargets", nickelbotCount.ToStringThousandsWhole(), "1", CommonRefs.NickelbotUnitType.GetDisplayName() ).Space3x();
+                                    BufferOrNull.AddFormat3( "RequiredDestroyTargets", combatUnitCount.ToStringThousandsWhole(), "1", CommonRefs.CombatUnitUnitType.GetDisplayName() ).Line(); 
                                     break;
                                 case ProjectLogic.WriteAddedContext: //nothing on this one
+                                    //MachineProjectTable.Instance.GetRowByID( "Ch1_MIN_InvestigatingThePrivateResidences" ).TryStartProject( false, false );
+                                    //MachineProjectTable.Instance.GetRowByID( "Ch1_MIN_ClearanceRevoked" ).TryStartProject( false, false );
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    //nope, nothing to do custom
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
+                    #region Ch1_MIN_InvestigatingThePrivateResidences
+                    case "Ch1_MIN_InvestigatingThePrivateResidences":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            int nickelbotCount = 0;
+                            int combatUnitCount = 0;
+
+                            CanBeCompletedNow = false;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, 0, 100, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                    BufferOrNull.AddFormat3( "RequiredDestroyTargets", nickelbotCount.ToStringThousandsWhole(), "1", CommonRefs.NickelbotUnitType.GetDisplayName() ).Space3x();
+                                    BufferOrNull.AddFormat3( "RequiredDestroyTargets", combatUnitCount.ToStringThousandsWhole(), "1", CommonRefs.CombatUnitUnitType.GetDisplayName() ).Line();
+                                    break;
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat3( "RequiredDestroyTargets", nickelbotCount.ToStringThousandsWhole(), "1", CommonRefs.NickelbotUnitType.GetDisplayName() ).Space3x();
+                                    BufferOrNull.AddFormat3( "RequiredDestroyTargets", combatUnitCount.ToStringThousandsWhole(), "1", CommonRefs.CombatUnitUnitType.GetDisplayName() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext: //nothing on this one
+                                    OtherKeyMessageTable.Instance.GetRowByID( "InvPrivResidence_Ch1_4" ).DuringGameplay_IsReadyToBeViewed = true;
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    //nope, nothing to do custom
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
+                    #region Ch1_MIN_ClearanceRevoked
+                    case "Ch1_MIN_ClearanceRevoked":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            int nickelbotCount = 0;
+                            int combatUnitCount = 0;
+
+                            CanBeCompletedNow = false;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, 0, 100, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                    BufferOrNull.AddFormat3( "RequiredDestroyTargets", nickelbotCount.ToStringThousandsWhole(), "1", CommonRefs.NickelbotUnitType.GetDisplayName() ).Space3x();
+                                    BufferOrNull.AddFormat3( "RequiredDestroyTargets", combatUnitCount.ToStringThousandsWhole(), "1", CommonRefs.CombatUnitUnitType.GetDisplayName() ).Line();
+                                    break;
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat3( "RequiredDestroyTargets", nickelbotCount.ToStringThousandsWhole(), "1", CommonRefs.NickelbotUnitType.GetDisplayName() ).Space3x();
+                                    BufferOrNull.AddFormat3( "RequiredDestroyTargets", combatUnitCount.ToStringThousandsWhole(), "1", CommonRefs.CombatUnitUnitType.GetDisplayName() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext: //nothing on this one
+                                    OtherKeyMessageTable.Instance.GetRowByID( "InvPrivResidence_Ch1_4" ).DuringGameplay_IsReadyToBeViewed = true;
                                     break;
                                 case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
                                     //nope, nothing to do custom
