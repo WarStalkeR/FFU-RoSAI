@@ -56,6 +56,9 @@
 	<attribute key="any_unused_expires_at_turn_start" type="bool" default="false"
 		tooltip="If this is true, then any stored amount expires right at the start of the turn changeover.  Mainly for things like computing cycles." />
 
+	<attribute key="complain_about_storage_even_in_post_final_doom" type="bool" default="false"
+		tooltip="If this is true, keep complaining about lack of storage even in after the final doom. Heavy metals!!" />
+
 	<attribute key="skips_click_to_open_header_text" type="bool" default="false"
 		tooltip="If this is true, then the extra info about the click to open inventory will not be shown, to keep the tooltip less cluttered." />
 	<attribute key="is_always_skipped_on_resource_screen" type="bool" default="false"

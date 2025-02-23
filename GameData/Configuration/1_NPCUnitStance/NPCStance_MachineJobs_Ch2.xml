@@ -26,8 +26,22 @@
 		<action_consideration id="WanderFallback" sort_order="400" chance_of_attempting="100" action_to_attempt="Wander"/>
 	</stance>
 
-	<stance id="WarRaptorRoamConfused" copy_from="WarRaptorRoam"
-		description="Phased across timelines, not that they've particularly noticed. They're on the hunt."/>
+	<!--**************************************************************WarRaptorRoamConfused**************************************************************-->
+	<stance id="WarRaptorRoamConfused" display_name="Roaming"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Phased across timelines, not that they've particularly noticed. They're on the hunt."
+		icon_name="FlatSkillC14" icon_color="#2435C6" icon_color_hdr_intensity="2.2" icon_scale="0.5"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="true" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="false" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="false"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" should_use_blue_outline="true"
+		this_unit_acts_before_player_looks_at_them="true"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="1" max_allowed_non_focal_building_clearance="1"
+		>
+		<action_consideration id="RunAfterNearestWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterNearestActorThatICanAutoShoot_Anywhere" />
+		<action_consideration id="WanderFallback" sort_order="400" chance_of_attempting="100" action_to_attempt="Wander"/>
+	</stance>
 
 	<!--**************************************************************ParkourBearDeploymentStation**************************************************************-->
 	<stance id="ParkourBearAttack" display_name="Bear Attack"

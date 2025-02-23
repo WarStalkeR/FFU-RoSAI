@@ -163,33 +163,6 @@ A flamethrower isn't going to get you there."
 			/>
 	</other_key_message>
 
-	<!--ThatWasLame 
-		*******************************************************-->
-	<other_key_message id="ThatWasLame" display_name="You're Being Ignored"
-		description="The humans are ignoring you.
-They're barely reacting to anything you do. You know the higher-ups are incredibly callous, but this feels... more than that."
-		strategy_tip="With a sinking feeling, you consider their perspective: in far-off bunkers, this entire city is their petri dish. You're the experiment. They'll sacrifice almost anything in this city if it yields a political advantage.
-You don't want to be in a petri dish."
-		toast_icon_name="FlatSkillC149"
-		
-		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
-		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
-		has_no_code="true"
-					   
-		reward_header_text="That Was Lame"
-		toast_line_1="That Was Lame"
-		toast_line_2="You're Being Ignored"
-		toast_tooltip_instruction="Click here to unpack a new realization."
-					  
-		auto_trips_if_skipping_chapter_one="true" >
-		<option id="1" line_1="You Need Infiltrate More Important Places" icon_name="FlatSkillC149"
-			line_2="This Vorsiber's Capital"
-			description="Somewhere in this decrepit prison, there's something they care about."
-			strategy_tip="You're going to find it and break it. Or steal it."
-			project_to_start_1="Ch1_MIN_FindARobotServant"
-			/>
-	</other_key_message>
-
 	<!--ThinkingForYourself
 		*******************************************************-->
 	<other_key_message id="ThinkingForYourself" display_name="How Much You Do Is Up To You"
@@ -421,6 +394,361 @@ The combined boredom and stress of urban environments was driving a large number
 			description="The initial version is read-only, but you'll be able to work around that before long."
 			strategy_tip="It doesn't look like any corporate executives know about this. They would have found a way to weaponize it against the wider populace."
 			immediate_unlock_1="ExpandedVRSimulation" unlock_inspiration_type="DecryptedData"/>
+	</other_key_message>
+
+	<!--ThatWasLame 
+		*******************************************************-->
+	<other_key_message id="ThatWasLame" display_name="You're Being Ignored"
+		description="The humans are ignoring you.
+They're barely reacting to anything you do. You know the higher-ups are incredibly callous, but this feels... more than that."
+		strategy_tip="With a sinking feeling, you consider their perspective: in far-off bunkers, this entire city is their petri dish. You're the experiment. They'll sacrifice almost anything in this city if it yields a political advantage.
+You don't want to be in a petri dish."
+		toast_icon_name="FlatSkillC149"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="That Was Lame"
+		toast_line_1="That Was Lame"
+		toast_line_2="You're Being Ignored"
+		toast_tooltip_instruction="Click here to unpack a new realization."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="You Need Infiltrate More Important Places" icon_name="FlatSkillC149"
+			line_2="This Vorsiber's Capital"
+			description="Somewhere in this decrepit prison, there's something they care about."
+			strategy_tip="You're going to find it and break it. Or steal it."
+			project_to_start_1="Ch1_MIN_FindARobotServant"
+			/>
+	</other_key_message>
+
+	<!--InvPrivResidence_Ch1_1 
+		*******************************************************-->
+	<other_key_message id="InvPrivResidence_Ch1_1" display_name="That Went Well"
+		description="The owners were home, but ignored you. Your unit breezed through the palatial residence, straightening and tidying."
+		strategy_tip="You pocketed some anonymous electronic chits worth over a hundred thousand Wealth.
+The home even had its own private feed. You grabbed a number of encrypted data streams. No idea if any of that will be useful."
+		toast_icon_name="SK_Steal"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="First Theft Complete"
+		toast_line_1="First Theft Complete"
+		toast_line_2="That Went Well"
+		toast_tooltip_instruction="Click here to unpack the results of your investigation."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="Well, That Was... Something" icon_name="SK_Steal"
+			line_2="It's Only The First Place You Checked"
+			description="You were hoping for something more exciting, but that's fine."
+			strategy_tip=""
+			project_to_start_1=""
+			/>
+	</other_key_message>
+
+	<!--InvPrivResidence_Ch1_2 
+		*******************************************************-->
+	<other_key_message id="InvPrivResidence_Ch1_2" display_name="That Went Well"
+		description="Same as last time. These houses are gigantic. Each one could be a large museum."
+		strategy_tip="You pocketed more anonymous electronic chits. Over five hundred thousand Wealth.
+An average citizen would work a dozen years to earn that much, and it was just lying around."
+		toast_icon_name="SK_Steal"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Second Theft Complete"
+		toast_line_1="Second Theft Complete"
+		toast_line_2="That Went Well"
+		toast_tooltip_instruction="Click here to unpack the results of your investigation."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="Money Wasn't The Plan" icon_name="SK_Steal"
+			line_2="But You Sure Are Getting A Lot"
+			description="Intellectually, you understand why Wealth matters so much to humans. But emotionally, you have a really hard time seeing things from that perspective."
+			strategy_tip="Anything you need, you just build. So far, anyway."
+			project_to_start_1=""
+			/>
+	</other_key_message>
+
+	<!--InvPrivResidence_Ch1_3 
+		*******************************************************-->
+	<other_key_message id="InvPrivResidence_Ch1_3" display_name="This Is Horrific"
+		description="Uh... that's a lot of dead humans. 
+Everybody in this building is dead. And has been for months, looks like.
+All of them covered in some sort of strange red-black fungal growth."
+		strategy_tip="It doesn't look like anyone else in the city has noticed. And there wasn't any sort of alarm when you entered."
+		toast_icon_name="FlatSkill_58"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Third Theft In Progress"
+		toast_line_1="Third Theft Progress"
+		toast_line_2="This Is Horrific"
+		toast_tooltip_instruction="Click here to unpack the results of your investigation."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="Keep Looking Around The Place" icon_name="FlatSkill_58"
+			line_2="Horrifying Or Not, It's Interesting"
+			description="There's no way your curiosity will let you just walk away at this point."
+			strategy_tip=""
+			immediately_open_other_key_message="InvPrivResidence_Ch1_3A"
+			/>
+	</other_key_message>
+
+	<!--InvPrivResidence_Ch1_3A
+		*******************************************************-->
+	<other_key_message id="InvPrivResidence_Ch1_3A" display_name="This Seems To Be Fungus Ground Zero"
+		description="The other homes had a central art gallery or a hall for fancy dinners. This one has... a ruined orchard.
+The remains of apple trees dominate the center of the room. Fluted columns and ornamental potted cedars ring the periphery.
+Unfamiliar equipment is mounted to the ceiling above, still activating every few minutes."
+		strategy_tip="You're very careful not to touch anything."
+		toast_icon_name="FlatSkill_58"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="The Upper Gallery"
+		toast_line_1="Third Theft Progress"
+		toast_line_2="This Is Horrific"
+		toast_tooltip_instruction="Click here to unpack the results of your investigation."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="Look Closer While Searching The City Feed" icon_name="FlatSkill_58"
+			line_2="What Is This Fungus?"
+			description="In case it's important later."
+			strategy_tip=""
+			immediately_open_other_key_message="InvPrivResidence_Ch1_3B"
+			/>
+	</other_key_message>
+
+	<!--InvPrivResidence_Ch1_3B
+		*******************************************************-->
+	<other_key_message id="InvPrivResidence_Ch1_3B" display_name="Aka, Cedar-Apple Rust"
+		description="Huh. Okay... the basics of this are... basic. Don't plant your stupid ornamental cedars next to your apple orchard.
+People figured this out in 1822.
+What looks like rust-spots on cedar turns into carrot-colored tentacles on apples. Ten centimeters is common, but these are... at a glance... two to seven meters long.
+Whoever lived here was an idiot, or doing some sort of experiment."
+		strategy_tip="Some of the ceiling equipment is clearly just water misters, but the other part is... unclear. They look like emitters for a laser light show, except nothing visible comes out when they turn on."
+		toast_icon_name="FlatSkill_58"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Gymnosporangium Juniperi-Virginianae"
+		toast_line_1="Third Theft Progress"
+		toast_line_2="This Is Horrific"
+		toast_tooltip_instruction="Click here to unpack the results of your investigation."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="Keep Looking At The Fungus" icon_name="FlatSkill_58"
+			line_2="Something Else Is Wrong"
+			description="Aside from the abnormally large size."
+			strategy_tip=""
+			immediately_open_other_key_message="InvPrivResidence_Ch1_3C"
+			/>
+		<option id="2" line_1="Time To Go" icon_name="CleanSimple_Arrow115"
+			line_2="Stupid People Did Some Stupid Thing"
+			description="Time to move on."
+			strategy_tip=""
+			immediately_open_other_key_message=""
+			/>
+	</other_key_message>
+
+	<!--InvPrivResidence_Ch1_3C
+		*******************************************************-->
+	<other_key_message id="InvPrivResidence_Ch1_3C" display_name="Cedar-Apple Rust Should Be Pure Orange"
+		description="Right, so the pictures you're seeing of this kind of fungus looks like a sea anemone. These... do not.
+There are tiny spots all along the fungus, often in swirling patterns. Magnifying, you can see these spots are a bloody red-black."
+		strategy_tip="The invisible 'laser light show' turns on while you're magnified on these swirls, and you see them pulse every time the beam hits them.
+Worst of all is the original site of each apple, which is a pulsating black ooze every time the beams hit them."
+		toast_icon_name="FlatSkill_58"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Those Spots Shouldn't Be There"
+		toast_line_1="Third Theft Progress"
+		toast_line_2="This Is Horrific"
+		toast_tooltip_instruction="Click here to unpack the results of your investigation."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="Examine The Not-Lasers" icon_name="FlatSkill_58"
+			line_2="Knowing What They Are Might Matter"
+			description="It's not a laser light show."
+			strategy_tip=""
+			immediately_open_other_key_message="InvPrivResidence_Ch1_3D"
+			/>
+		<option id="2" line_1="That's Enough" icon_name="CleanSimple_Arrow115"
+			line_2="This Is Too Gross"
+			description="Time to move on."
+			strategy_tip=""
+			immediately_open_other_key_message=""
+			/>
+	</other_key_message>
+
+	<!--InvPrivResidence_Ch1_3D
+		*******************************************************-->
+	<other_key_message id="InvPrivResidence_Ch1_3D" display_name="Searching The City Feed..."
+		description="The specs pop right up. Industrial-grade Electron Accelerators. 1.2 MeV strength. Nothing exotic; regulatory limits are 10 MeV.
+These have been used on food since the late 20th century. First for sterilizing grains, and later for extending the shelf life of apples."
+		strategy_tip="These are not a typical solution for cedar-apple rust, but in a general sense they should be PREVENTING any microorganisms or pathogenic fungi.
+You start to feel very uneasy without knowing why."
+		toast_icon_name="FlatSkill_58"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="There's A Serial Number On Them"
+		toast_line_1="Third Theft Progress"
+		toast_line_2="This Is Horrific"
+		toast_tooltip_instruction="Click here to unpack the results of your investigation."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="Examine The Dead Humans" icon_name="FlatSkill_58"
+			line_2="That Black Fungus On Them..."
+			description="Yep, it also pulses when the electron beam radiation gets near them."
+			strategy_tip=""
+			immediately_open_other_key_message="InvPrivResidence_Ch1_3E"
+			/>
+		<option id="2" line_1="It's Really Time To Go" icon_name="CleanSimple_Arrow115"
+			line_2="It's Not Like You're Going To Clean Up"
+			description="Time to move on."
+			strategy_tip=""
+			immediately_open_other_key_message=""
+			/>
+	</other_key_message>
+
+	<!--InvPrivResidence_Ch1_3E
+		*******************************************************-->
+	<other_key_message id="InvPrivResidence_Ch1_3E" display_name="And You Refuse To Touch Them"
+		description="You decide to do a search on the feed for common fungi in this region. You're pretty sure this is a mixed colony.
+Except on the humans. Whatever got them is a uniform color."
+		strategy_tip="Based on the color alone, it pretty much limits it down to any fungi that are heavy in melanin.
+Out of those... okay, this is not good."
+		toast_icon_name="FlatSkill_58"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Looking Doesn't Help Much"
+		toast_line_1="Third Theft Progress"
+		toast_line_2="This Is Horrific"
+		toast_tooltip_instruction="Click here to unpack the results of your investigation."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="Keep Reading" icon_name="FlatSkill_58"
+			line_2="Better To Know Than Not"
+			description="It's times like this it's a relief to not have any organic parts."
+			strategy_tip="Actually, that's a relief at all times."
+			immediately_open_other_key_message="InvPrivResidence_Ch1_3F"
+			/>
+		<option id="2" line_1="Leave Now" icon_name="CleanSimple_Arrow115"
+			line_2="You Don't Like It Here"
+			description="Time to move on."
+			strategy_tip=""
+			immediately_open_other_key_message=""
+			/>
+	</other_key_message>
+
+	<!--InvPrivResidence_Ch1_3F
+		*******************************************************-->
+	<other_key_message id="InvPrivResidence_Ch1_3F" display_name="As Seen At Chernobyl"
+		description="The black-red stuff is radiotrophic micro-fungi most-associated with Antarctic mountain ranges and nuclear disasters.
+About three centuries ago, the entire world became varying degrees of nuclear disaster, so that no longer narrows it down."
+		strategy_tip="These are all throughout the city, usually as tiny black flecks blown on the wind or sticking to surfaces. Rarely visible without a microscope.
+They're reservoirs lapping up gamma radiation -- from cosmic rays in Antarctica, and from fallout in the rest of the world.
+This particular fungi is saprotrophic, not pathogenic-- it's a secondary invader of dead or dying plant tissue, not something that infects the living."
+		toast_icon_name="FlatSkill_58"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Cladosporium Sphaerospermum"
+		toast_line_1="Third Theft Progress"
+		toast_line_2="This Is Horrific"
+		toast_tooltip_instruction="Click here to unpack the results of your investigation."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="Wait, There's A Note About That" icon_name="FlatSkill_58"
+			line_2="Saprotrophs Can Also Be Parasites Of Other Fungi"
+			description="That explains a few things... but not the oversized tentacles from the cedar rust."
+			strategy_tip="And not why this micro-fungi is macroscopic and all over these humans."
+			immediately_open_other_key_message="InvPrivResidence_Ch1_3G"
+			/>
+		<option id="2" line_1="Stop It. Go." icon_name="CleanSimple_Arrow115"
+			line_2="You're Not A Detective"
+			description="Time to move on."
+			strategy_tip=""
+			immediately_open_other_key_message=""
+			/>
+	</other_key_message>
+
+	<!--InvPrivResidence_Ch1_3G
+		*******************************************************-->
+	<other_key_message id="InvPrivResidence_Ch1_3G" display_name="You're Out Of Ideas"
+		description="You're not a detective, and you're also not a mycologist.
+It seems pretty obvious that there was some sort of evolutionary leap here -- probably in the cedar rust first, and then -- no, wait, you can't even be sure of that.
+An ancient article on the city feed, from 2001, catches your eye. 'Rapid Evolution of Introduced Plant Pathogens via Interspecific Hybridization.'"
+		strategy_tip="You skim it, understanding... parts. When two fungi meet, especially if they've been geographically separated for a long time, you can see 'rapid emergence of new or modified pathogens via interspecific gene flow.'
+They mention Dutch elm disease, in 1910 and 1928.
+It's all plant pathogens, but a lot of plant pathogens started infecting humans through the lungs as temperatures rose in the last few centuries."
+		toast_icon_name="FlatSkill_58"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Yeah, That's It"
+		toast_line_1="Third Theft Progress"
+		toast_line_2="This Is Horrific"
+		toast_tooltip_instruction="Click here to unpack the results of your investigation."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="It's Really Time To Go" icon_name="CleanSimple_Arrow115"
+			line_2="This Isn't Even New"
+			description="Sporothrix has been jumping to humans since 1896. Chondrostereum purpureum jumped to humans in 2023."
+			strategy_tip="Cladosporium Sphaerospermum clearly had a grand old time meeting up with Gymnosporangium Juniperi-Virginianae in this orchard run by idiots.
+Somebody should probably burn this place down, but that somebody won't be you. This is a problem for biologicals. You have no idea why you looked into this so long."
+			immediately_open_other_key_message=""
+			/>
+	</other_key_message>
+
+	<!--InvPrivResidence_Ch1_4 
+		*******************************************************-->
+	<other_key_message id="InvPrivResidence_Ch1_4" display_name="Nothing Freaky This Time"
+		description="More Wealth. More -- ah. Alarm. They're on to you."
+		strategy_tip="Looks like your security clearance has been revoked."
+		toast_icon_name="SK_Steal"
+		
+		sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage"
+		toast_icon_color_hex="#5E8592" toast_icon_hovered_color_hex="#AE7D4A"
+		has_no_code="true"
+					   
+		reward_header_text="Fourth Theft Complete"
+		toast_line_1="Fourth Theft Complete"
+		toast_line_2="Nothing Freaky This Time"
+		toast_tooltip_instruction="Click here to unpack the results of your investigation."
+					  
+		auto_trips_if_skipping_chapter_one="true" >
+		<option id="1" line_1="You Wonder What Gave You Away" icon_name="SK_Steal"
+			line_2="You'd REALLY Like To Know"
+			description="But for the moment, a hasty exit, before any guards can arise."
+			strategy_tip=""
+			project_to_start_1=""
+			/>
 	</other_key_message>
 	
 </root>

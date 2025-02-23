@@ -294,7 +294,7 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		 how_to_acquire="Collected by Well And Cistern structures, from the build menu."
 		 icon_name="FlatInnocent_2" icon_color="#82F0FF" is_locked_before_dialog="Ch1_ShelteredHunger2"
 		 base_storage_capacity="0" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="7000000"
-		 lang_key_for_excess="ExcessResourceBasicNote"
+		 lang_key_for_excess="ExcessResourceBasicNote" complaint_if_job_has_none_as_expense="MissingGroundwater"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Water" sort_index="100" />
@@ -319,7 +319,7 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		 technical_notes="The primary 14 are cobalt, chromium, copper, tellurium, thallium, uranium, arsenic, bismuth, gallium, cadmium, lead, gold, nickel, and platinum."
 		 how_to_acquire="A byproduct of water filtration."
 		 icon_name="WEmblem297" icon_color="#D17171" is_locked_before_unlock="AcousticNanotubeFiltration"
-		 base_storage_capacity="80000" added_storage_capacity_per_storage_bunker="160000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="16000000"
+		 base_storage_capacity="80000" added_storage_capacity_per_storage_bunker="160000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="16000000" complain_about_storage_even_in_post_final_doom="true"
 		 lang_key_for_excess="ExcessResourceBasicNote"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />

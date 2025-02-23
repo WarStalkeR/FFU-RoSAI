@@ -67,6 +67,8 @@
 		tooltip="If true, then this can be built anywhere. Actually a bit of a misnomer, as it can be built inside network range also."/>
 	<attribute key="always_provides_networking_to_its_cell_if_central_tower_exists" type="bool" default="false"
 		tooltip="If true, this will provide networking to the cells it is around, as long as there is a network tower somewhere. They don't have to be connected."/>
+	<attribute key="can_be_built_adjacent_to_network" type="bool" default="false"
+		tooltip="Primarily for penetration into enemy POIs that don't directly take the network, like mining sites, etc."/>
 	
 	<attribute key="is_embedded_in_human_building_of_tag" type="node-dropdown" is_required="false" node_source="BuildingTag" default="" content_width_px="300" linebreak_after="PreferNot"
 		tooltip="If specified, then after this is constructed, it is still inside a human building. Things that convert a human building into one of ours do not use this. This also limits things to only buildings of the matching tag being allowed." />

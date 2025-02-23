@@ -99,5 +99,25 @@
 			spawn_radius_max="7" spawn_radius_relaxed_max="14"
 			should_hard_despawn_on_manager_blocked="true"/>
 	</npc_manager>
+
+	<!--Raptors_WanderingIn
+		*******************************************************************************************************************************-->
+
+	<npc_manager id="Raptors_WanderingIn" debug_log_manager_details="false">
+		<periodic_data
+			cannot_start_until_turn="25" cannot_start_until_doom_number="2"
+			min_turns_between_activity="3" max_turns_between_activity="6"
+			max_security_clearance_of_seed_spot="5" target_building_tag="Any"
+			threat_radius="100" home_radius="15">
+			<seed_in_poi poi_tag="FarmHarvestPickupSite" min_distance_from_machine_areas="15"/>
+			<gate_by_city minimum_chapter="2" required_city_flag="WarRaptorsAreLooseFromOtherTimeline" />
+		</periodic_data>
+		<unit id="E" to_spawn="LostWarRaptor" stance_to_start_in="WarRaptorRoamConfused"
+			should_be_specific_cohort="WildAnimals" max_security_clearance_of_seed_spot="5"
+			min_to_spawn="0" max_to_spawn="2" max_to_have_extant_across_spawns="6" max_to_ever_spawn_in_total="9999999" lang_key_for_extra_info=""
+			min_squad_size_multiplier="0.9" max_squad_size_multiplier="1"
+			spawn_radius_max="7" spawn_radius_relaxed_max="14"
+			should_hard_despawn_on_manager_blocked="true"/>
+	</npc_manager>
 	
 </root>

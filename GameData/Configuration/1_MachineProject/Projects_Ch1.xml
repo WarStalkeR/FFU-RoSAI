@@ -373,7 +373,7 @@ Once you have researched the Cutter, enter Command Mode and deploy one from the 
 		<part_of collection="ChapterOne" sort_index="140" />
 		
 		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" related_resource_1="Scandium" related_resource_2="DroneFrame"
-			description=""
+			description="If you lose your aircraft and need a replacement, you'll need to build an Aerospace Hangar and possibly shoot down some more troop transports to make up for any shortage of scandium."
 			strategy_tip=""
 			if_intended_outcome_unlock_instant_1="EnemyExcavation" if_intended_outcome_unlock_instant_2="SublimatingBoreholes" if_intended_outcome_unlock_inspiration="WorldExperience"
 			research_domain_inspiration_type_1="VehicularDevelopment" research_domain_inspiration_amount_1="1"
@@ -495,7 +495,7 @@ Head to Command Mode to build a new troop deployment vehicle."
 
 	<project id="Ch1_MIN_FlexibleAirspace" display_name="Flexible Airspace" is_minor_project="true"
 		description="The Cutter is an interesting design. That it can't carry any androids is a definite limitation. You'd like something larger and dual-role."
-		strategy_tip="Your mind is a blank. You should have one of your androids use the Contemplate ability and see what that yields."
+		strategy_tip="Your mind is a blank. You should use the Contemplate lens on the radial menu and see what that yields."
 		icon_name="WEmblem154" cohort="Yourself"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
 		<part_of collection="All" sort_index="100" />
@@ -660,26 +660,6 @@ The number installed are based on how many you have built in your cradle factori
 			<suggested_job job="VRCradleFactory" job_number="3" />
 			<suggested_job job="HumanApartments" job_number="4" />
 			<suggested_job job="ResidentialMegastructure" job_number="1" />
-		</available_outcome>
-	</project>
-
-	<!--Tier 1 Alt - Fire Chain
-		**************************************************************************-->
-
-	<project id="Ch1_MIN_FindARobotServant" display_name="Find A Robot Servant" is_minor_project="true"
-		description=""
-		strategy_tip=""
-		icon_name="SK_Player" cohort="Yourself"
-		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterOne">
-		<part_of collection="All" sort_index="100" />
-		<part_of collection="ChapterOne" sort_index="250" />
-
-		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
-			description=""
-			strategy_tip=""
-			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1"
-			research_domain_inspiration_type_2="SmallArmsResearch" research_domain_inspiration_amount_2="1"
-			resource_added_1="Determination" resource_added_amount_1="8" resource_added_2="Wisdom" resource_added_amount_2="8">
 		</available_outcome>
 	</project>
 

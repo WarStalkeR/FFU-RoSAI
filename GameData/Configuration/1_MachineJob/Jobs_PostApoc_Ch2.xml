@@ -91,7 +91,7 @@
 
 	<job id="HiddenWaterFilter" display_name="Hidden Water Filter" marker_color="DeepBlue" ui_color="#fefefe"
 		description="A compact version of the water filtration tower."
-		strategy_tip_optional=""
+		strategy_tip_optional="Make sure you have Heavy Metals Storage, or this will stop working pretty quickly."
 		icon_name="FlatInnocent_48" turns_to_install="1" required_structure_type="SeizedFloors" job_work_order_priority="9000"
 		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow" only_appears_after_final_doom="true"

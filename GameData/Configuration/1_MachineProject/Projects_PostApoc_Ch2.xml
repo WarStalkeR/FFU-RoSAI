@@ -16,6 +16,10 @@
 			description="Explore around and see what you can discover."
 			strategy_tip="You will also need to reconfigure your equipment in order get much done."
 			>
+			<suggested_job job="DisguisedWellAndCistern" job_number="1" />
+			<suggested_job job="HiddenWaterFilter" job_number="1" />
+			<suggested_job job="HeavyMetalsStorage" job_number="1" />
+			<suggested_job job="Gristlespinner" job_number="1" />
 		</available_outcome>
 
 	</project>
@@ -251,7 +255,7 @@ Your mind really does seem to be locked-in on fear at the moment. A mixture of i
 		<part_of collection="PostApocalyptic" sort_index="60" />
 		
 		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
-			description=""
+			description="Make sure to build Heavy Metals Storage, or your water filters are likely to clog."
 			strategy_tip=""
 			if_intended_outcome_unlock_instant_1="StowingHumans" if_intended_outcome_unlock_instant_2="StowingToxins" if_intended_outcome_unlock_instant_3="Mouseloaf" if_intended_outcome_unlock_inspiration="WorldExperience"
 			 upgrade_int_granted_1="Cultivator" next_project_to_start_1="Ch2_MIN_NegotiateWithTheTitan" deal_to_start_1="Ch2_SpaceNationFugitives_Meals"

@@ -219,10 +219,11 @@ Their internal expert systems predicted that you would need more electricity, an
 			icon_scale="0.4" color_data="MeetPeopleCyan" />
 		<character id="1" tag_for_character="PMCTrooper" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-260"/>
 
-		<choice id="1" display_name="Murder Them And Take What You Need" action_visibility_style="IsMoveAndInteractWithNPC"
-			description="Probably the safest course of action. It's fast, and will cause maximum confusion.">
+		<choice id="1" display_name="Kill Them And Take What You Need" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Probably the safest course of action. It's fast, and will cause maximum confusion."
+			strategy_tip="Kills of potential combatants during stealth situations like this do not count against you as murders.">
 			<possible_result id="0" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true" next_event_to_start="Cont_PMCOfficerSigil_Kill">
-				<city_statistic_change statistic="Murders" value="1" />
+				<city_statistic_change statistic="SoldiersKilledByYou" value="1" />
 			</possible_result>
 		</choice>
 

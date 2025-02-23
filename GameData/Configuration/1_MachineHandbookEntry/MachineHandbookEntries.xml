@@ -92,8 +92,7 @@ You can have more of these, and they don't cost any mental energy to run. They m
 Workers do not have any sort of generalized cap, do not cost mental energy to deploy, cannot use equipment, and only come in three flavors: Predator, Sledge, and PMC Impostor."
 		strategy_tip="When you have a structure that uses Worker Androids, you will first need to build Android Frames of the appropriate types. Using the Workers tab in Command Mode, you can also disable specific kinds of workers from spawning, if you wish.
 What each worker type does depends on the building that spawns them. Each building uses them very differently, but explains how they are used."
-		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
-		collections="All,Strategy"/><!--todo_next_beta-->
+		collections="All,Strategy"/>
 
 	<!--DealsAreSoftPower-->
 	<handbook_entry id="DealsAreSoftPower" display_name="Deals Are Soft Power" section="Strategy" is_mid_visibility_entry="true"
@@ -165,8 +164,8 @@ Basic units like Technicians use 4 capacity, while more advanced androids may re
 		strategy_tip="If you exceed the limit, you won’t be able to deploy or create new androids until you scrap existing ones to free up space.
 You can check your current android count and limit at the top of the FORCES panel (e.g., 'Androids 46/48'). The cap can be increased through upgrades and other mechanics.
 Vehicles and Mechs work essentially the same way, but have their own independent caps."
-		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
-		collections="All,Strategy"/><!--todo_next_beta-->
+		auto_unlocks_and_marked_read_if_skipping_chapter_zero="true" is_mid_visibility_entry="true"
+		collections="All,Strategy"/>
 
 	<!--Combat
 	************************************************************************************************************************************************************************
@@ -218,16 +217,15 @@ Not murder: killing armed enemies in battle, deaths of displaced humans from exp
 		strategy_tip="You can see your list of murders, if there are any, in the Action Statistics tab of the History window.
 There is one (intentionally) misleading category, called 'Androids Murdered For Registration.' This uses the word murder, but it does not count against you for goal purposes. May be some deeper story significance there...
 Mulching humans into 'canned protein' is also something you would think is murder, but it turns out that it doesn't count if you do it in a businesslike manner. Who knew."
-		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
-		collections="All,Strategy,Combat"/><!--todo_next_beta-->
+		auto_unlocks_and_marked_read_if_skipping_chapter_one="true" is_mid_visibility_entry="true"
+		collections="All,Strategy,Combat"/>
 
 	<!--KillingHackers-->
 	<handbook_entry id="KillingHackers" display_name="Why Can I Only Kill Hackers Sometimes?" section="Combat"
 		description="It depends on what the hacker is doing at the time.
 If the hacker is only suspicious of your presence but hasn’t fully detected your unit, attacking them sets off an alarm. This triggers security measures, causing your infiltrator to take damage from the alerted forces inside the building. These are always secretive Infiltration missions -- if someone realizes an intruder is inside, everything escalates."
 		strategy_tip="In cases where you can freely kill hackers, they’re not actively tracking an infiltrator inside a high-security area. Instead, they’re attacking through network-based warfare, which means alarms aren’t a factor. You're in some degree of open warfare with them, so the rules are different."
-		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
-		collections="All,Strategy,Combat"/><!--todo_next_beta-->
+		collections="All,Strategy,Combat"/>
 
 	<!--NPCUnitMechanics
 	************************************************************************************************************************************************************************
@@ -249,8 +247,8 @@ If no enemies are directly around, try looking for them on the map view."
 		description="Some androids have the Force Conversation ability, allowing them to initiate discussion with enemies -- but only if the enemy is willing to talk. Hovering over an enemy will show how many conversations you can force with them, if any.
 Most enemies cannot be engaged in conversation, while some can be approached multiple times."
 		strategy_tip="If your android lacks this ability by default, you can add it in the Loadout window, where you set equipment and abilities for your unit types."
-		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
-		collections="All,Combat,NPCUnitMechanics"/><!--todo_next_beta-->
+		auto_unlocks_and_marked_read_if_skipping_chapter_zero="true" is_mid_visibility_entry="true"
+		collections="All,Combat,NPCUnitMechanics"/>
 	
 	<!--AttacksOfOpportunity-->
 	<handbook_entry id="AttacksOfOpportunity" display_name="Attacks Of Opportunity" section="NPCUnitMechanics"
@@ -491,8 +489,8 @@ This means that various different buildings are in tension with each other, shar
 The first number (4) is how many internal robotics it would take to build this structure.
 The second number (16) is how many you have available at this time based on your prior construction. 
 The third number (48) is your total cap at this time for that kind of internal robotics, including the portions you've already allocated."
-		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
-		collections="All,Construction,InternalRobotics"/><!--todo_next_beta-->
+		auto_unlocks_and_marked_read_if_skipping_chapter_one="true" is_mid_visibility_entry="true"
+		collections="All,Construction,InternalRobotics"/>
 	
 	<!--WhatAreInternalRobotics-->
 	<handbook_entry id="WhatAreInternalRobotics" display_name="What Are Internal Robotics?" section="Construction" is_mid_visibility_entry="false"
@@ -590,7 +588,7 @@ Or, in other cases, just endlessly show up until you kill them all."
 	<!--StudyPotentialEnemies-->
 	<handbook_entry id="StudyPotentialEnemies" display_name="Study Potential Enemies" section="Tactics" is_mid_visibility_entry="true"
 		description="Units with different icons over their heads are doing different things."
-		strategy_tip="In any fight, how units will behave is evident from their tooltips. You can also see if you can Force Conversation with the from here.
+		strategy_tip="In any fight, how units will behave is evident from their tooltips. You can also see if you can Force Conversation with them from here.
 Humans who have an objective that will further the progress of their mission should be priority targets."
 		auto_unlocks_and_marked_read_if_skipping_chapter_zero="true"
 		collections="All,Tactics"/>
@@ -846,8 +844,8 @@ You can use the post-apocalypse of one timeline to aid the earliest moments of o
 
 	<!--TimeAndGoalStates-->
 	<handbook_entry id="TimeAndGoalStates" display_name="Time And Goal States" section="Timelines" is_mid_visibility_entry="true"
-		description="There is a lot you can accomplish in a timeline, but you can't do everything at once. You should have time to do two major goals and leave before the Final Doom if desired.
-If you're trying for more complex versions of goals, harder goals, or more than two goals in one timeline, then it will be tighter. Don't put that kind of pressure on yourself until you want to."
+		description="There is a lot you can accomplish in a timeline, but you can't do everything at once. You should have time to do several major goals and leave before the Final Doom if desired.
+If you're trying for more complex versions of goals, higher-tier goals, or are playing on Hard or Extreme mode, then it will be tighter. Don't put that kind of pressure on yourself until you want to."
 		strategy_tip="There is no Game Over screen. That would be boring. You may experience some version of the apocalypse and have to scrounge to escape the timeline during a post-apocalyptic setting, but you won't be prevented from proceeding.
 That said, time does matter -- if you skip through turns you'll accomplish less in this timeline. Strike whatever balance appeals to you."
 		collections="All,Dooms,Timelines"/>
