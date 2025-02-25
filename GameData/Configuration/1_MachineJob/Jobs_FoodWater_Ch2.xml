@@ -31,7 +31,7 @@
 		resource_cap_to_increase_1="VitaminWater" resource_cap_increased_per_unit_of_volume1="45.7"
 		related_resource_1="FilteredWater" related_resource_2="PurpleMurnong" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingWater">
 		<initial_actor_rating data_type="RequiredElectricity" value="2473" />
-		<math_int id="PurpleMurnong" int_min="800" income_or_expense_resource="PurpleMurnong" math_type="InputCost" />
+		<math_int id="PurpleMurnong" int_min="800" income_or_expense_resource="PurpleMurnong" math_type="InputCost" expense_resource_cannot_reduce_below="2000" />
 		<math_int id="FilteredWater" int_min="5200" income_or_expense_resource="FilteredWater" math_type="InputCost" />
 		<math_int id="VitaminWater" int_min="5200" income_or_expense_resource="VitaminWater" math_type="OutputResult" />
 		<resource_cost resource_type="Microbuilders" cost="1400" />
@@ -50,7 +50,7 @@
 		resource_cap_to_increase_1="TPN" resource_cap_increased_per_unit_of_volume1="45.7"
 		related_resource_1="FilteredWater" related_resource_2="BovineTissue" related_resource_3="HydroponicGreens" related_resource_4="TPN" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingWater">
 		<initial_actor_rating data_type="RequiredElectricity" value="2473" />
-		<math_int id="BovineTissue" int_min="1400" income_or_expense_resource="BovineTissue" math_type="InputCost" />
+		<math_int id="BovineTissue" int_min="1400" income_or_expense_resource="BovineTissue" math_type="InputCost" expense_resource_cannot_reduce_below="5000" />
 		<math_int id="HydroponicGreens" int_min="1400" income_or_expense_resource="HydroponicGreens" math_type="InputCost" />
 		<math_int id="Groundwater" int_min="16000" income_or_expense_resource="Groundwater" math_type="InputCost" />
 		<math_int id="FilteredWater" int_min="6000" income_or_expense_resource="FilteredWater" math_type="InputCost" />
@@ -94,9 +94,9 @@ Full nutrition passes through digestive tract as normal, keeping the gut biome h
 		related_resource_1="" related_resource_2="" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingFactoryB">
 		<initial_actor_rating data_type="RequiredElectricity" value="204" />
 		<math_int id="HeavyMetals" int_min="5" income_or_expense_resource="HeavyMetals" math_type="InputCost" />
-		<math_int id="BovineTissue" int_min="240" income_or_expense_resource="BovineTissue" math_type="InputCost" />
+		<math_int id="BovineTissue" int_min="240" income_or_expense_resource="BovineTissue" math_type="InputCost" expense_resource_cannot_reduce_below="5000" />
 		<math_int id="HydroponicGreens" int_min="360" income_or_expense_resource="HydroponicGreens" math_type="InputCost" />
-		<math_int id="PurpleMurnong" int_min="2000" income_or_expense_resource="PurpleMurnong" math_type="InputCost" />
+		<math_int id="PurpleMurnong" int_min="2000" income_or_expense_resource="PurpleMurnong" math_type="InputCost" expense_resource_cannot_reduce_below="2000" />
 		<math_int id="VitalizedYams" int_min="2000" income_or_expense_resource="VitalizedYams" math_type="OutputResult" />
 		<resource_cost resource_type="Microbuilders" cost="300" />
 		<part_of collection="All" sort_index="100" />
@@ -149,9 +149,8 @@ Full nutrition passes through digestive tract as normal, keeping the gut biome h
 		job_classes="Nutrition,Refinery" internal_robotics_type_needed="Assembler" internal_robots_count_needed="2" tags="Refinery" turns_stunned_when_subnet_attacked="0"
 		related_resource_1="" related_resource_2="" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingFactoryB">
 		<initial_actor_rating data_type="RequiredElectricity" value="204" />
-		<math_int id="WildZinnia" int_min="7400" income_or_expense_resource="WildZinnia" math_type="InputCost" />
+		<math_int id="WildZinnia" int_min="7400" income_or_expense_resource="WildZinnia" math_type="InputCost" expense_resource_cannot_reduce_below="2000" />
 		<math_int id="CulturedZinniaGel" int_min="6000" income_or_expense_resource="CulturedZinniaGel" math_type="OutputResult" />
-		<math_int id="WildZinniaOut" int_min="400" income_or_expense_resource="WildZinnia" math_type="OutputResult" />
 		<resource_cost resource_type="Microbuilders" cost="300" />
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Chain" sort_index="100" />
@@ -259,7 +258,7 @@ Full nutrition passes through digestive tract as normal, keeping the gut biome h
 		related_resource_1="" related_resource_2="" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingFactoryB">
 		<initial_actor_rating data_type="RequiredElectricity" value="204" />
 		<math_int id="HeavyMetals" int_min="22" income_or_expense_resource="HeavyMetals" math_type="InputCost" />
-		<math_int id="CulturedZinniaGel" int_min="588" income_or_expense_resource="PurpleMurnong" math_type="InputCost" />
+		<math_int id="CulturedZinniaGel" int_min="588" income_or_expense_resource="PurpleMurnong" math_type="InputCost" expense_resource_cannot_reduce_below="2000" />
 		<math_int id="SyntheticHormones" int_min="882" income_or_expense_resource="SyntheticHormones" math_type="InputCost" />
 		<math_int id="Glue" int_min="1321" income_or_expense_resource="Glue" math_type="OutputResult" />
 		<resource_cost resource_type="Microbuilders" cost="300" />
@@ -277,7 +276,7 @@ Full nutrition passes through digestive tract as normal, keeping the gut biome h
 		job_classes="Nutrition,Refinery" internal_robotics_type_needed="Assembler" internal_robots_count_needed="1" tags="Refinery" turns_stunned_when_subnet_attacked="0"
 		related_resource_1="" related_resource_2="" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingFactoryB">
 		<initial_actor_rating data_type="RequiredElectricity" value="204" />
-		<math_int id="CulturedZinniaGel" int_min="2777" income_or_expense_resource="PurpleMurnong" math_type="InputCost" />
+		<math_int id="CulturedZinniaGel" int_min="2777" income_or_expense_resource="PurpleMurnong" math_type="InputCost" expense_resource_cannot_reduce_below="2000" />
 		<math_int id="SyntheticHormones" int_min="3100" income_or_expense_resource="SyntheticHormones" math_type="InputCost" />
 		<math_int id="WoodLaminar" int_min="38400" income_or_expense_resource="WoodLaminar" math_type="OutputResult" />
 		<resource_cost resource_type="Microbuilders" cost="300" />

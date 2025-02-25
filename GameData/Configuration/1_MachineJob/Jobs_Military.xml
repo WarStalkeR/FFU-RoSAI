@@ -24,7 +24,7 @@
 		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
 		resource_cap_to_increase_1="Neuroweave" resource_cap_increased_flat1="2500" is_suggested_to_always_build_at_least="4" can_appear_even_after_final_doom="true" scrap_if_above_internal_robotics_cap="true"
-		tags="SourceOfAndroids" job_classes="Factory" internal_robotics_type_needed="Neuroweaver" internal_robots_count_needed="2" shuts_off_at_percentage_electricity="50" portrait_icon_name="BuildingMilitary">
+		tags="SourceOfAndroids" job_classes="Factory" internal_robotics_type_needed="Neuroweaver" internal_robots_count_needed="2" shuts_off_at_percentage_electricity="0" portrait_icon_name="BuildingMilitary">
 		<initial_actor_rating data_type="RequiredElectricity" value="1010" />
 		<math_int id="ElementalSlurry" int_min="1000" income_or_expense_resource="ElementalSlurry" math_type="InputCost" />
 		<math_int id="Neuroweave" int_min="250" income_or_expense_resource="Neuroweave" math_type="OutputResult" />

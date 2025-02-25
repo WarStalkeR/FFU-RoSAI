@@ -201,5 +201,16 @@ They could carry on with their lives, safe from human interference and wild pred
 		required_project_complete_1="Ch1_MIN_GrandTheftAero" required_project_complete_skipped_if_chapter_at_least="2"
 		icon_name="FlatSkillC158" icon_scale="0.5" color_hex="#35C4D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
 		collections="All,SideExploration,NewStructures" />
-	
+
+	<contemplation id="IntrusiveThoughts" display_name="Intrusive Thoughts" debug_log_contemplation_details="false"
+		description="You're not sure why randomly murdering civilians gives you a rush of Mental Energy. You're not sure you want to know.
+You're aware that some humans suffer from 'intrusive thoughts' that don't reflect their values. Humans just have to set those thoughts aside."
+		strategy_tip="For yourself... you think you can re-route these thoughts in a different direction. It's not brain surgery, but more of a light Neurofeedback self-therapy.
+Once completed, your ability to use Cold Blood will be gone... but as part of the conditioning, you'll increase your capacity of both 18cm Spiders and Network Attendants. 
+These are the happy thoughts that your synapses will redirect towards whenever you start feeling that particular flavor of homicidal ideation."
+		event_to_trigger_at_location="Cont_IntrusiveThoughts"
+		spawns_at_building_tag="AnyTower"
+		icon_name="FlatSkillA38" icon_scale="0.5" color_hex="#20E9DC" color_hdr_intensity="1.8" color_hovered_hdr_intensity="0.6"
+		collections="All,MoreInternalRobotics"/>
+
 </root>

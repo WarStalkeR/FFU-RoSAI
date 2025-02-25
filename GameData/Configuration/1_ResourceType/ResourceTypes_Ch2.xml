@@ -201,7 +201,7 @@ Physically almost double the size of classical humans, and with a brain volume n
 		 technical_notes=""
 		 how_to_acquire="Built by the Worker Sledge Factory structure, in the Military tab of the build menu."
 		 icon_name="AN_AndroidSledge" icon_color="#F139D2" base_storage_capacity="0" added_most_soft_cap="0" is_locked_before_unlock="WarMuscle"
-		 lang_key_for_excess="ExcessResourceBasicNote"
+		 lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="5"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Military" sort_index="200" />
@@ -213,7 +213,7 @@ Physically almost double the size of classical humans, and with a brain volume n
 		 technical_notes=""
 		 how_to_acquire="Built by the Worker PMC Impostor Factory structure, in the Military tab of the build menu."
 		 icon_name="AN_AndroidPMCImposter" icon_color="#F139D2" base_storage_capacity="0" added_most_soft_cap="0" is_locked_before_unlock="WarImpostor"
-		 lang_key_for_excess="ExcessResourceBasicNote"
+		 lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="5"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Military" sort_index="200" />
@@ -225,7 +225,7 @@ Physically almost double the size of classical humans, and with a brain volume n
 		 technical_notes=""
 		 how_to_acquire="Built by the Worker Predator Factory structure, in the Military tab of the build menu."
 		 icon_name="AN_AndroidPredator" icon_color="#F139D2" base_storage_capacity="0" added_most_soft_cap="0" is_locked_before_unlock="WarRanger"
-		 lang_key_for_excess="ExcessResourceBasicNote"
+		 lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="5"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Military" sort_index="200" />
@@ -238,7 +238,7 @@ Physically almost double the size of classical humans, and with a brain volume n
 		 how_to_acquire="Created by the TPN Refinery structure, in the build menu."
 		 icon_name="CleanSimple_SciFiEmblem18" icon_color="#D96868" is_locked_before_unlock="FoodThroughAMedicalPort"
 		 base_storage_capacity="0" added_storage_capacity_per_storage_bunker="0" added_most_soft_cap="0"
-		 lang_key_for_excess="ExcessResourceBasicNote"
+		 lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="5"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Food" sort_index="100" />
@@ -263,7 +263,7 @@ Full nutrition passes through digestive tract as normal, keeping the gut biome h
 		 how_to_acquire="Created by the Nutrition Blend Refinery structure, in the build menu."
 		 icon_name="SomethingTubes" icon_color="#5EF2FC" is_locked_before_unlock="NGTubeFood"
 		 base_storage_capacity="0" added_storage_capacity_per_storage_bunker="0" added_most_soft_cap="0"
-		 lang_key_for_excess="ExcessResourceBasicNote"
+		 lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="5"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Food" sort_index="100" />
@@ -370,7 +370,7 @@ Full nutrition passes through digestive tract as normal, keeping the gut biome h
 		technical_notes="Oxygen gas which has been supercooled by fractional distillation."
 		icon_name="WEmblem011" icon_color="#F17B52" is_locked_before_unlock="ThisIsABomb"
 		base_storage_capacity="0" added_most_soft_cap="0"
-		lang_key_for_excess="ExcessResourceBasicNote"
+		lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="5"
 		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Gases" sort_index="100" />
@@ -405,7 +405,7 @@ Full nutrition passes through digestive tract as normal, keeping the gut biome h
 The genetics are not accurate to any historical theropod, but the animal is roughly the size of a Utahraptor."
 		 strategy_tip=""
 		 icon_name="FlatSkillC14" icon_color="#E96868"  is_locked_before_unlock="DeepPit"
-		 base_storage_capacity="0" added_most_soft_cap="800"
+		 base_storage_capacity="0" added_most_soft_cap="800" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="5"
 		 lang_key_for_excess="ExcessResourceBasicNote"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
@@ -417,7 +417,7 @@ The genetics are not accurate to any historical theropod, but the animal is roug
 Will take years to mature, under natural circumstances."
 		 strategy_tip=""
 		 icon_name="FlatSkillC185" icon_color="#E96868"  is_locked_before_unlock="DeepPit"
-		 base_storage_capacity="0" added_most_soft_cap="800"
+		 base_storage_capacity="0" added_most_soft_cap="800" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="5"
 		 lang_key_for_excess="ExcessResourceBasicNote"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
@@ -556,7 +556,7 @@ Will take years to mature, under natural circumstances."
 		strategy_tip="A backdoor allows you to gain 25 Neural Expansion and 0.3 Compute Cycles per BrainPal sold."
 		technical_notes="Designed by you and your scientists, and illegally sold by criminal syndicates."
 		icon_name="SI_Brain1" icon_color="#70DFEF" base_storage_capacity="0" added_most_soft_cap="18000" is_locked_before_unlock="HumanBrainAugmentation"
-		lang_key_for_excess="ExcessResourceBasicNote"
+		lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="5"
 		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Military" sort_index="100" />
@@ -566,7 +566,7 @@ Will take years to mature, under natural circumstances."
 		 description="Genetically modified and fitted with bionic implants to create the ultimate urban racing animal."
 		 strategy_tip="Humans are venal and insane."
 		 icon_name="FlatSkillB_bear" icon_color="#E96868"  is_locked_before_unlock="UrsinePlayground"
-		 base_storage_capacity="0" added_most_soft_cap="800"
+		 base_storage_capacity="0" added_most_soft_cap="800" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="5"
 		 lang_key_for_excess="ExcessResourceBasicNote"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />

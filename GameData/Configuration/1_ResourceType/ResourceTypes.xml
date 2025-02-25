@@ -472,7 +472,7 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		strategy_tip="Required for all units you construct."
 		technical_notes=""
 		how_to_acquire="Created by and stored in Neuroweave Factory structures, in the build menu."
-		icon_name="SI_Chip2" icon_color="#34FF97" base_storage_capacity="0" added_most_soft_cap="2500" is_locked_before_unlock="SingularProduction"
+		icon_name="SI_Chip2" icon_color="#34FF97" base_storage_capacity="0" added_most_soft_cap="2500" is_locked_before_unlock="SingularProduction" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="9000"
 		lang_key_for_excess="ExcessResourceBasicNote"
 		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />

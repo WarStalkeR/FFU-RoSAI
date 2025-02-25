@@ -320,9 +320,13 @@
 		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
 		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
 		>
+		<action_consideration id="RunAfterEnemiesWeCanShootDoingActionOverTime" sort_order="100" chance_of_attempting="30" action_to_attempt="RunAfterEnemiesWeCanShootDoingActionOverTime" />
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="80" action_to_attempt="Wander"/>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="300" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<!--
 		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
 		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
-		<action_consideration id="RunAfterMachineStructuresFallback" sort_order="500" chance_of_attempting="100" action_to_attempt="RunAfterMachineStructures" />
+		<action_consideration id="RunAfterMachineStructuresFallback" sort_order="500" chance_of_attempting="100" action_to_attempt="RunAfterMachineStructures" />-->
 	</stance>
 
 	<stance id="SecForceCruiserHuntingAnimals" display_name="Hunting Animals"

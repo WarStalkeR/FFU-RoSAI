@@ -32,6 +32,10 @@
 		scope="MainGameOnly"
 		description="How long should recent resource changes hover near their icons?  You can click to dismiss those notices early, or set this to zero to not have them appear at all." />
 
+	<setting id="MaxBuildingSnapDistance" category="Game" subcategory="UIElements" display_name="Max Building Snap Distance" type="FloatSlider" default_float="1.2" min_float="0" max_float="3" rounding_type="Twentieths"
+		scope="MainGameOnly"
+		description="How far to retain the last-known-good position of a building ghost when you move the ghost into an invalid position during build mode." />
+	
 	<setting id="MaxDistanceToShowMinorIcons" category="Game" subcategory="UIElements" display_name="Max Distance To Show Minor Icons" type="IntSlider" default_int="60" min_int="20" max_int="120"
 		scope="MainGameOnly"
 		description="" />
