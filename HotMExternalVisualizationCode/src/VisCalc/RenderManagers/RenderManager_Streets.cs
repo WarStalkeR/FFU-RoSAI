@@ -543,6 +543,8 @@ namespace Arcen.HotM.ExternalVis
                         Vector3 cameraLoc = CameraCurrent.CameraBodyPosition;
                         #region Investigation Highlight Drawing For All Cells
 
+                        SharedRenderManagerData.ClearInvalidInvestigationBuildings( currentInvestigation );
+
                         bool allCellRings = currentInvestigation.Type.Style.ShowRingsAroundEveryCell;
                         bool isOnFinalBuildingsOfInvestigation = currentInvestigation.Type.Style.ShowAllResultsAsBeaconStyle || currentInvestigation.PossibleBuildings.Count < 4;
                         PulsingBeaconModelData beaconData = isOnFinalBuildingsOfInvestigation ?

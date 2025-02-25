@@ -61,6 +61,33 @@ namespace Arcen.HotM.ExternalVis
         internal static VisSimpleDrawingObject districtHoloWallNormal = null;
         internal static VisSimpleDrawingObject districtHoloWallMap = null;
 
+        private static List<ISimBuilding> investigationBuildingsToRemove = List<ISimBuilding>.Create_WillNeverBeGCed( 400, "SharedRenderManagerData-investigationBuildingsToRemove" );
+
+        #region ClearInvalidInvestigationBuildings
+        public static void ClearInvalidInvestigationBuildings( Investigation investigation )
+        {
+            if ( investigation == null || !(investigation.Type?.Style?.IsTerritoryControlStyle??false) )
+                return;
+
+            investigationBuildingsToRemove.Clear();
+
+            foreach ( KeyValuePair<ISimBuilding, bool> kv in investigation.PossibleBuildings )
+            {
+                ISimBuilding building = kv.Key;
+                if ( building == null )
+                    continue;
+                if ( !investigation.GetIsValidBuilding( building ) )
+                    investigationBuildingsToRemove.Add( building );
+            }
+
+            if ( investigationBuildingsToRemove.Count > 0 )
+            {
+                foreach ( ISimBuilding building in investigationBuildingsToRemove )
+                    investigation.PossibleBuildings.Remove( building );
+            }
+        }
+        #endregion
+
         #region DrawBeaconRingIfFirstInCell
         private static Dictionary<MapCell, bool> mapCellCenterBeacons = Dictionary<MapCell, bool>.Create_WillNeverBeGCed( 400, "SharedRenderManagerData-mapCellCenterBeacons" );
 

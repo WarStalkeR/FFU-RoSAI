@@ -975,7 +975,10 @@ namespace Arcen.HotM.ExternalVis
                         if ( !kv.Value )
                             continue;
                         ISimBuilding building = kv.Key;
-                        float range = building.GetMapItem().GetBasicDistanceToPointXZ( destinationPoint, 0f );
+                        if ( building == null )
+                            continue;
+
+                        float range = building.GetMapItem()?.GetBasicDistanceToPointXZ( destinationPoint, 0f )??10000;
                         if ( range < territoryControlRange )
                         {
                             if ( bestBuilding == null || bestBuildingRange > range )
