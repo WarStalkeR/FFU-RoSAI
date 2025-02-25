@@ -10,12 +10,12 @@
 	MachineCabinet			S-class machine facility for various production lines. Used as mini-fab.
 	MachineLab				XS-class machine facility. Small cube. Maybe advanced small factories suitable?
 	MachineMediumPlotA		XXS-class machine facility. Small resedential
-	MachineBunkerVented		B-class machine facility. Used as geothermal power plant and water extractor.
-	MachineBunkerA			XB-class machine facility. Storage bunker
-	MachineBunkerB			XXB-class machine facility. Neural bridge. Perfect for deep mines
+	MachineBunkerVented		XXXS-class machine facility. Used as geothermal power plant and water extractor.
 	MachineMediumPlotB		M-class machine facility. Brain mainframe
-	MachineLargePlotA		XM-class machine facility. Refugee tower
-	MachineLargePlotB		XXM-class machine facility. Wind generator
+	MachineBunkerA			XM-class machine facility. Storage bunker
+	MachineLargePlotA		XXM-class machine facility. Refugee tower
+	MachineLargePlotB		XXXM-class machine facility. Wind generator
+	MachineBunkerB			XXXXM-class machine facility. Neural bridge. Perfect for deep mines
 	MachineMassivePlotB		L-class machine facility. Big resedential
 	MachineChurch			XL-class machine facility. Temple of minds so far.
 	MachineMassivePlotA		XXL-class machine facility. Air hangar
@@ -82,6 +82,12 @@
 		<building_marker prefab="Skylight" offset="-0.004,-0.17,0.003" scale_multiplier="0.6"/>
 	</building_prefab>
 
+	<building_prefab id="MachineMediumPlotB" type="" path_to_placeable="">
+		<floors_group min="-15" max="-1" floor_size="1.65,0.466667,2.4" percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="4" floor_size="1.65,0.332,2.4" percentage_work_space="80" percentage_storage_space="20"/>
+		<building_marker prefab="Skylight" offset="0.0,-0.03,0.0" scale_multiplier="0.8"/>
+	</building_prefab>
+
 	<building_prefab id="MachineBunkerA" type="" path_to_placeable="">
 		<floors_group min="-28" max="-1" floor_size="3.1,0.33616,1.6" percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
 		<floors_group min="0" max="0" floor_size="3.4,0.625,1.7" percentage_work_space="80" percentage_storage_space="20"/>
@@ -89,29 +95,15 @@
 		<building_marker prefab="Skylight" offset="-0.01,-0.25,-0.01" scale_multiplier="0.8"/>
 	</building_prefab>
 
-	<building_prefab id="MachineBunkerB" type="" path_to_placeable="">
-		<floors_group min="-53" max="-1" floor_size="1.35,0.397421,3.1" percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
-		<floors_group min="0" max="0" floor_size="1.35,0.8,3.1" percentage_work_space="80" percentage_storage_space="20"/>
-		<floors_group min="1" max="1" floor_size="1.2,1.45,2.6" percentage_work_space="80" percentage_storage_space="20"/>
-		<building_marker prefab="Skylight" offset="0.02,-1.425,1.28" scale_multiplier="0.8" rotation_y="90"/>
-	</building_prefab>
-
-	<building_prefab id="MachineMediumPlotB" type="" path_to_placeable="">
-		<floors_group min="-20" max="-1" floor_size="1.65,0.45825,2.4" percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
-		<floors_group min="0" max="4" floor_size="1.65,0.332,2.4" percentage_work_space="80" percentage_storage_space="20"/>
-		<building_marker prefab="Skylight" offset="0.0,-0.03,0.0" scale_multiplier="0.8"/>
-	</building_prefab>
-
 	<building_prefab id="MachineLargePlotA" type="" path_to_placeable="">
-		<floors_group min="-19" max="-19" floor_size="2.32,2.0,2.32" percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
-		<floors_group min="-18" max="-1" floor_size="2.32,0.439824,2.32" percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="-24" max="-1" floor_size="2.32,0.413201,2.32" percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
 		<floors_group min="0" max="4" floor_size="2.32,0.4625,2.32" percentage_work_space="80" percentage_storage_space="20"/>
 		<floors_group min="5" max="10" floor_size="2.16,0.405,2.16" percentage_work_space="80" percentage_storage_space="20"/>
 		<building_marker prefab="Skylight" offset="0.70,-0.25,-0.32" scale_multiplier="0.8"/>
 	</building_prefab>
 
 	<building_prefab id="MachineLargePlotB" type="" path_to_placeable="">
-		<floors_group min="-36" max="-1" floor_size="2.55,0.444812,2.55" percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="-26" max="-1" floor_size="2.55,0.463762,2.55" percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
 		<floors_group min="0" max="0" floor_size="2.55,0.5,2.55" percentage_work_space="80" percentage_storage_space="20"/>
 		<floors_group min="1" max="1" floor_size="2.45,0.5,2.45" percentage_work_space="80" percentage_storage_space="20"/>
 		<floors_group min="2" max="2" floor_size="2.35,0.5,2.35" percentage_work_space="80" percentage_storage_space="20"/>
@@ -127,6 +119,13 @@
 		<floors_group min="12" max="12" floor_size="0.75,0.475,0.75" percentage_work_space="80" percentage_storage_space="20"/>
 		<floors_group min="13" max="13" floor_size="0.65,0.475,0.65" percentage_work_space="80" percentage_storage_space="20"/>
 		<building_marker prefab="Skylight" offset="0.0,-0.011,0.0" scale_multiplier="0.8"/>
+	</building_prefab>
+
+	<building_prefab id="MachineBunkerB" type="" path_to_placeable="">
+		<floors_group min="-78" max="-1" floor_size="1.35,0.39611,3.1" percentage_work_space="80" percentage_storage_space="20" is_underground="true"/>
+		<floors_group min="0" max="0" floor_size="1.35,0.8,3.1" percentage_work_space="80" percentage_storage_space="20"/>
+		<floors_group min="1" max="1" floor_size="1.2,1.45,2.6" percentage_work_space="80" percentage_storage_space="20"/>
+		<building_marker prefab="Skylight" offset="0.02,-1.425,1.28" scale_multiplier="0.8" rotation_y="90"/>
 	</building_prefab>
 
 	<building_prefab id="MachineMassivePlotB" type="" path_to_placeable="">
