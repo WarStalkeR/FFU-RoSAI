@@ -195,6 +195,8 @@ namespace Arcen.HotM.ExternalVis
                             for ( int sci = 0; sci < subCellCount; sci++ )
                             {
                                 MapSubCell subCell = subCells[sci];
+                                if ( subCell == null )
+                                    continue;
                                 if ( !subCell.ShouldBeRenderedIfParentCellIsRendered )
                                     continue;
                                 //note, this may include items from other cells that overlap this subcell, so it's more accurate than drawing the cell
@@ -223,6 +225,8 @@ namespace Arcen.HotM.ExternalVis
                             for ( int sci = 0; sci < subCellCount; sci++ )
                             {
                                 MapSubCell subCell = subCells[sci];
+                                if ( subCell == null )
+                                    continue;
                                 if ( !subCell.ShouldBeRenderedIfParentCellIsRendered )
                                     continue;
                                 //note, this may include items from other cells that overlap this subcell, so it's more accurate than drawing the cell
@@ -255,6 +259,8 @@ namespace Arcen.HotM.ExternalVis
                                 for ( int sci = 0; sci < subCellCount; sci++ )
                                 {
                                     MapSubCell subCell = subCells[sci];
+                                    if ( subCell == null )
+                                        continue;
                                     if ( !subCell.ShouldBeRenderedIfParentCellIsRendered )
                                         continue;
                                     //note, this may include items from other cells that overlap this subcell, so it's more accurate than drawing the cell
@@ -275,6 +281,8 @@ namespace Arcen.HotM.ExternalVis
                                 for ( int sci = 0; sci < subCellCount; sci++ )
                                 {
                                     MapSubCell subCell = subCells[sci];
+                                    if ( subCell == null )
+                                        continue;
                                     if ( !subCell.ShouldBeRenderedIfParentCellIsRendered )
                                         continue;
                                     //note, this may include items from other cells that overlap this subcell, so it's more accurate than drawing the cell
@@ -333,6 +341,8 @@ namespace Arcen.HotM.ExternalVis
                         //    for ( int sci = 0; sci < subCellCount; sci++ )
                         //    {
                         //        MapSubCell subCell = subCells[sci];
+                                    //if ( subCell == null )
+                                    //    continue;
                         //        if ( !subCell.ShouldBeRenderedIfParentCellIsRendered )
                         //            continue;
                         //        //note, this may include items from other cells that overlap this subcell, so it's more accurate than drawing the cell
@@ -361,6 +371,8 @@ namespace Arcen.HotM.ExternalVis
                         //    for ( int sci = 0; sci < subCellCount; sci++ )
                         //    {
                         //        MapSubCell subCell = subCells[sci];
+                        //if ( subCell == null )
+                        //    continue;
                         //        if ( !subCell.ShouldBeRenderedIfParentCellIsRendered )
                         //            continue;
                         //        //note, this may include items from other cells that overlap this subcell, so it's more accurate than drawing the cell

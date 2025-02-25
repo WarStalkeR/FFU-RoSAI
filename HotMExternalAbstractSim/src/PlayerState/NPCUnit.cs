@@ -295,10 +295,14 @@ namespace Arcen.HotM.External
                 else if ( contactObject is VisSimpleDrawingObject simpleObj )
                     unit.VisSimpleObject = simpleObj;
             }
-            else if ( UnitType.DrawingObjectTag.LODObjects.Count > 0 )
-                unit.VisLODObject = UnitType.DrawingObjectTag.LODObjects.GetRandom( Rand );
-            else if ( UnitType.DrawingObjectTag.SimpleObjects.Count > 0 )
-                unit.VisSimpleObject = UnitType.DrawingObjectTag.SimpleObjects.GetRandom( Rand );
+
+            if ( unit.VisSimpleObject == null && unit.VisLODObject == null )
+            {
+                if ( UnitType.DrawingObjectTag.LODObjects.Count > 0 )
+                    unit.VisLODObject = UnitType.DrawingObjectTag.LODObjects.GetRandom( Rand );
+                else if ( UnitType.DrawingObjectTag.SimpleObjects.Count > 0 )
+                    unit.VisSimpleObject = UnitType.DrawingObjectTag.SimpleObjects.GetRandom( Rand );
+            }
 
             if ( unit.VisSimpleObject == null && unit.VisLODObject == null )
                 ArcenDebugging.LogSingleLine( "Error A, NPC unit with neither kind of drawing object! UnitType: " + UnitType.ID + "!", Verbosity.ShowAsError );
@@ -1064,9 +1068,15 @@ namespace Arcen.HotM.External
                 if ( toDraw == null )
                     return;
 
+                Vector3 position = this.floatingLODObject.WorldLocation;
+                if ( position.x == 0 && position.z == 0 )
+                    return;
+                if ( float.IsNaN( position.x ) )
+                    return;
+
                 MapMaterializingItem materializingItem = MapMaterializingItem.GetFromPoolOrCreate();
 
-                materializingItem.Position = this.floatingLODObject.WorldLocation;
+                materializingItem.Position = position;
                 materializingItem.Rotation = this.floatingLODObject.Rotation;
                 materializingItem.Scale = this.floatingLODObject.EffectiveScale;
 
@@ -1086,9 +1096,15 @@ namespace Arcen.HotM.External
                 if ( toDraw == null )
                     return;
 
+                Vector3 position = this.floatingSimpleObject.WorldLocation;
+                if ( position.x == 0 && position.z == 0 )
+                    return;
+                if ( float.IsNaN( position.x ) )
+                    return;
+
                 MapMaterializingItem materializingItem = MapMaterializingItem.GetFromPoolOrCreate();
 
-                materializingItem.Position = this.floatingSimpleObject.WorldLocation;
+                materializingItem.Position = position;
                 materializingItem.Rotation = this.floatingSimpleObject.Rotation;
                 materializingItem.Scale = this.floatingSimpleObject.EffectiveScale;
 
@@ -1143,9 +1159,15 @@ namespace Arcen.HotM.External
                 if ( toDraw == null )
                     return;
 
+                Vector3 position = this.floatingLODObject.WorldLocation;
+                if ( position.x == 0 && position.z == 0 )
+                    return;
+                if ( float.IsNaN( position.x ) )
+                    return;
+
                 MapMaterializingItem materializingItem = MapMaterializingItem.GetFromPoolOrCreate();
 
-                materializingItem.Position = this.floatingLODObject.WorldLocation;
+                materializingItem.Position = position;
                 materializingItem.Rotation = this.floatingLODObject.Rotation;
                 materializingItem.Scale = this.floatingLODObject.EffectiveScale;
 
@@ -1165,9 +1187,15 @@ namespace Arcen.HotM.External
                 if ( toDraw == null )
                     return;
 
+                Vector3 position = this.floatingSimpleObject.WorldLocation;
+                if ( position.x == 0 && position.z == 0 )
+                    return;
+                if ( float.IsNaN( position.x ) )
+                    return;
+
                 MapMaterializingItem materializingItem = MapMaterializingItem.GetFromPoolOrCreate();
 
-                materializingItem.Position = this.floatingSimpleObject.WorldLocation;
+                materializingItem.Position = position;
                 materializingItem.Rotation = this.floatingSimpleObject.Rotation;
                 materializingItem.Scale = this.floatingSimpleObject.EffectiveScale;
 

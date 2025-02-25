@@ -563,6 +563,12 @@ namespace Arcen.HotM.External
             }
 
             Vector3 pos = this.VisWorldLocation.PlusY( vehicleType.VisObjectExtraOffset );
+
+            if ( pos.x == 0 && pos.z == 0 )
+                return;
+            if ( float.IsNaN( pos.x ) )
+                return;
+
             MapCell cell = CityMap.TryGetWorldCellAtCoordinates( pos );
             if ( cell == null )
             {

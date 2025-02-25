@@ -2349,7 +2349,7 @@ namespace Arcen.HotM.External
                     wasAutomated = true;
                 }
 
-                if ( !wasAutomated &&!unit.GetIsDeployed() )
+                if ( !wasAutomated && !unit.GetIsDeployed() )
                 {
                     UnitsRiding.AddToConstructionList( unit );
                     continue;

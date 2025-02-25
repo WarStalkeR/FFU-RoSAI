@@ -138,6 +138,8 @@ namespace Arcen.HotM.External
                         for ( int j = 0; j < otherCell.SubCells.Count; j++ )
                         {
                             MapSubCell subCell = otherCell.SubCells[j];
+                            if ( subCell == null )
+                                continue;
                             if ( subCell.SubCellRect.BasicIntersectionTest( rect ))
                             {
                                 hasHadAnyAdds = true;
@@ -151,6 +153,8 @@ namespace Arcen.HotM.External
                 for ( int j = 0; j < cell.SubCells.Count; j++ )
                 {
                     MapSubCell subCell = cell.SubCells[j];
+                    if ( subCell == null )
+                        continue;
                     if ( subCell.SubCellRect.BasicIntersectionTest( rect ) )
                     {
                         hasHadAnyAdds = true;

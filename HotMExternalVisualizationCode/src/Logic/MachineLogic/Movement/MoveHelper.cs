@@ -455,13 +455,19 @@ namespace Arcen.HotM.ExternalVis
                             if ( investigation != null )
                             {
                                 debugStage = 6100;
+                                IReadOnlyList<MapCell> adjacentCells = cell.AdjacentCells;
                                 float closestDistance = 99999;
                                 foreach ( KeyValuePair<ISimBuilding, bool> kv in investigation.PossibleBuildings )
                                 {
                                     debugStage = 6200;
                                     MapItem item = kv.Key.GetMapItem();
-                                    if ( item.ParentCell != cell )
-                                        continue; //if not this cell
+                                    if ( item == null )
+                                        continue;
+                                    MapCell itemCell = item.ParentCell;
+                                    if ( itemCell == null )
+                                        continue;
+                                    if ( itemCell != cell && !adjacentCells.Contains( itemCell ) )
+                                        continue; //if not this cell or an adjacent one
 
                                     InGameOBBCache cache = item.OBBCache;
                                     ArcenFloatRectangle rect = cache.GetOuterRect();
@@ -484,13 +490,19 @@ namespace Arcen.HotM.ExternalVis
                             else if ( contemplateActive )
                             {
                                 debugStage = 9100;
+                                IReadOnlyList<MapCell> adjacentCells = cell.AdjacentCells;
                                 float closestDistance = 99999;
                                 foreach ( ISimBuilding building in SimCommon.ContemplationsBuildings.GetDisplayList() )
                                 {
                                     debugStage = 9200;
                                     MapItem item = building.GetMapItem();
-                                    if ( item == null || item.ParentCell != cell )
-                                        continue; //if not this cell
+                                    if ( item == null )
+                                        continue;
+                                    MapCell itemCell = item.ParentCell;
+                                    if ( itemCell == null )
+                                        continue;
+                                    if ( itemCell != cell && !adjacentCells.Contains( itemCell ) )
+                                        continue; //if not this cell or an adjacent one
 
                                     InGameOBBCache cache = item.OBBCache;
                                     ArcenFloatRectangle rect = cache.GetOuterRect();
@@ -513,13 +525,19 @@ namespace Arcen.HotM.ExternalVis
                             else if ( explorationSiteActive )
                             {
                                 debugStage = 9100;
+                                IReadOnlyList<MapCell> adjacentCells = cell.AdjacentCells;
                                 float closestDistance = 99999;
                                 foreach ( ISimBuilding building in SimCommon.ExplorationSiteBuildings.GetDisplayList() )
                                 {
                                     debugStage = 9200;
                                     MapItem item = building.GetMapItem();
-                                    if ( item == null || item.ParentCell != cell )
-                                        continue; //if not this cell
+                                    if ( item == null )
+                                        continue;
+                                    MapCell itemCell = item.ParentCell;
+                                    if ( itemCell == null )
+                                        continue;
+                                    if ( itemCell != cell && !adjacentCells.Contains( itemCell ) )
+                                        continue; //if not this cell or an adjacent one
 
                                     InGameOBBCache cache = item.OBBCache;
                                     ArcenFloatRectangle rect = cache.GetOuterRect();
@@ -644,9 +662,15 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     debugStage = 27300;
                                     MapItem item = kv.Key.GetMapItem();
-                                    if ( item.ParentCell != cell && !adjacentCells.Contains( item.ParentCell ) )
+                                    if ( item == null )
+                                        continue;
+                                    MapCell itemCell = item.ParentCell;
+                                    if ( itemCell == null )
+                                        continue;
+                                    if ( itemCell != cell && !adjacentCells.Contains( itemCell ) )
                                         continue; //if not this cell or an adjacent one
 
+                                    debugStage = 27400;
                                     float distance = (DestinationPoint - item.OBBCache.Center).GetSquareGroundMagnitude();
                                     if ( distance > mustBeWithin )
                                         continue; //if not very close by, then skip
@@ -680,7 +704,12 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     debugStage = 29300;
                                     MapItem item = building.GetMapItem();
-                                    if ( item == null || (item.ParentCell != cell && !adjacentCells.Contains( item.ParentCell )) )
+                                    if ( item == null )
+                                        continue;
+                                    MapCell itemCell = item.ParentCell;
+                                    if ( itemCell == null )
+                                        continue;
+                                    if ( itemCell != cell && !adjacentCells.Contains( itemCell ) )
                                         continue; //if not this cell or an adjacent one
 
                                     float distance = (DestinationPoint - item.OBBCache.Center).GetSquareGroundMagnitude();
@@ -716,7 +745,12 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     debugStage = 29300;
                                     MapItem item = building.GetMapItem();
-                                    if ( item == null || (item.ParentCell != cell && !adjacentCells.Contains( item.ParentCell )) )
+                                    if ( item == null )
+                                        continue;
+                                    MapCell itemCell = item.ParentCell;
+                                    if ( itemCell == null )
+                                        continue;
+                                    if ( itemCell != cell && !adjacentCells.Contains( itemCell ) )
                                         continue; //if not this cell or an adjacent one
 
                                     float distance = (DestinationPoint - item.OBBCache.Center).GetSquareGroundMagnitude();

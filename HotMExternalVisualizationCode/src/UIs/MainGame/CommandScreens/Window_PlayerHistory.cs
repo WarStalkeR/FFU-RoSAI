@@ -1282,7 +1282,15 @@ namespace Arcen.HotM.ExternalVis
                                     row.SetRelatedImage0EnabledIfNeeded( isHovered );
                                     ExtraData.Buffer.StartSize80().StartColor( ColorTheme.GetBasicLightTextBlue( isHovered ) );
 
-                                    keyContact.AppendDisplayNameWithPrefixAndColors( ExtraData.Buffer, ColorTheme.HeaderGoldOrangeDark, string.Empty );
+                                    keyContact.AppendDisplayNameWithPrefixAndColors( ExtraData.Buffer, ColorTheme.GetInvertibleListTextBlue_Normal( row.Element.LastHadMouseWithin ), string.Empty );
+
+                                    if ( keyContact.DuringGame_IsDead )
+                                    {
+                                        ExtraData.Buffer.StartSize60();
+                                        ExtraData.Buffer.Space3x();
+                                        ExtraData.Buffer.AddFormat1( "DiedOnTurn_Brief", keyContact.DuringGame_KilledOnTurn, ColorTheme.RedOrange2 );
+                                        ExtraData.Buffer.StartSize70();
+                                    }
                                 }
                                 break;
                             case UIAction.HandleMouseover:

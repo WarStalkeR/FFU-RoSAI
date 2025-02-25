@@ -94,6 +94,12 @@ namespace Arcen.HotM.External
                     }
                 }
 
+                SimCommon.AllSortedPlayerVehicles.ClearConstructionListForStartingConstruction();
+                SimCommon.AllSortedDeployedPlayerAndroids.ClearConstructionListForStartingConstruction();
+                SimCommon.AllSortedDeployedPlayerMechs.ClearConstructionListForStartingConstruction();
+                SimCommon.AllSortedPlayerBulkNPCUnits.ClearConstructionListForStartingConstruction();
+                SimCommon.AllSortedPlayerConvertedNPCUnits.ClearConstructionListForStartingConstruction();
+
                 //first machine vehicles
                 foreach ( KeyValuePair<int, MachineVehicle> kv in World_Forces.MachineVehiclesByID )
                 {
@@ -105,6 +111,8 @@ namespace Arcen.HotM.External
                             SimCommon.MachineActorsDeployedAndActingAsAndroidLauncher.AddToConstructionList( kv.Value );
                         if ( kv.Value.VehicleType.CountsAsAMechLauncher )
                             SimCommon.MachineActorsDeployedAndActingAsMechLauncher.AddToConstructionList( kv.Value );
+
+                        SimCommon.AllSortedPlayerVehicles.AddToConstructionList( kv.Value );
                     }
                 }
 
@@ -130,6 +138,14 @@ namespace Arcen.HotM.External
                                         SimCommon.MachineActorsInvestigatingOrInfiltrating.AddToConstructionList( new KeyValuePair<ISimMachineActor, int>( kv.Value, turnsLeft ) );
                                 }
                                 break;
+                        }
+
+                        if ( kv.Value.GetIsDeployed() )
+                        {
+                            if ( kv.Value.UnitType.IsConsideredAndroid )
+                                SimCommon.AllSortedDeployedPlayerAndroids.AddToConstructionList( kv.Value );
+                            else if ( kv.Value.UnitType.IsConsideredMech )
+                                SimCommon.AllSortedDeployedPlayerMechs.AddToConstructionList( kv.Value );
                         }
                     }
                 }
@@ -163,7 +179,17 @@ namespace Arcen.HotM.External
                     if ( npc != null && !npc.IsFullDead && !npc.IsDowned && npcType != null )
                     {
                         if ( npc.GetIsPartOfPlayerForcesInAnyWay() )
+                        {
                             SimCommon.AllPlayerRelatedNPCUnits.AddToConstructionList( npc );
+
+                            if ( npc.GetIsPlayerControlled() )
+                            {
+                                if ( npc.UnitType.CostsToCreateIfBulkAndroid.Count == 0 )
+                                    SimCommon.AllSortedPlayerConvertedNPCUnits.AddToConstructionList( npc );
+                                else
+                                    SimCommon.AllSortedPlayerBulkNPCUnits.AddToConstructionList( npc );
+                            }
+                        }
                         else
                         {
                             NPCUnitStance stance = npc.Stance;
@@ -207,6 +233,14 @@ namespace Arcen.HotM.External
                 SimCommon.AllPlayerRelatedNPCUnits.SwitchConstructionToDisplay();
                 SimCommon.NPCHackersThreateningPlayerInfiltrators.SwitchConstructionToDisplay();
                 SimCommon.NPCHackersThreateningPlayerSecrets.SwitchConstructionToDisplay();
+
+                SortPlayerItems();
+
+                SimCommon.AllSortedPlayerVehicles.SwitchConstructionToDisplay();
+                SimCommon.AllSortedDeployedPlayerAndroids.SwitchConstructionToDisplay();
+                SimCommon.AllSortedDeployedPlayerMechs.SwitchConstructionToDisplay();
+                SimCommon.AllSortedPlayerBulkNPCUnits.SwitchConstructionToDisplay();
+                SimCommon.AllSortedPlayerConvertedNPCUnits.SwitchConstructionToDisplay();
 
                 foreach ( KeyValuePair<short, MapPOI> kv in CityMap.POIsByID )
                 {
@@ -389,6 +423,86 @@ namespace Arcen.HotM.External
             finally
             {
                 Interlocked.Exchange( ref ActorRecalculationIsHappeningNow, 0 );
+            }
+        }
+        #endregion
+
+        #region SortPlayerItems
+        private static void SortPlayerItems()
+        {
+            if ( SimCommon.AllSortedPlayerVehicles.GetConstructionList().Count > 0 )
+            {
+                try
+                {
+                    SimCommon.AllSortedPlayerVehicles.SortConstructionList( delegate ( ISimMachineVehicle Left, ISimMachineVehicle Right )
+                    {
+                        int val = Left.VehicleType.RowIndexNonSim.CompareTo( Right.VehicleType.RowIndexNonSim );
+                        if ( val != 0 )
+                            return val;
+                        return Left.GetDisplayName().CompareTo( Right.GetDisplayName() );
+                    } );
+                }
+                catch { } //in case something changes briefly
+            }
+
+            if ( SimCommon.AllSortedDeployedPlayerAndroids.GetConstructionList().Count > 0 )
+            {
+                try
+                {
+                    SimCommon.AllSortedDeployedPlayerAndroids.SortConstructionList( delegate ( ISimMachineUnit Left, ISimMachineUnit Right )
+                    {
+                        int val = Left.UnitType.RowIndexNonSim.CompareTo( Right.UnitType.RowIndexNonSim );
+                        if ( val != 0 )
+                            return val;
+                        return Left.GetDisplayName().CompareTo( Right.GetDisplayName() );
+                    } );
+                }
+                catch { } //in case something changes briefly
+            }
+
+            if ( SimCommon.AllSortedDeployedPlayerMechs.GetConstructionList().Count > 0 )
+            {
+                try
+                {
+                    SimCommon.AllSortedDeployedPlayerMechs.SortConstructionList( delegate ( ISimMachineUnit Left, ISimMachineUnit Right )
+                    {
+                        int val = Left.UnitType.RowIndexNonSim.CompareTo( Right.UnitType.RowIndexNonSim );
+                        if ( val != 0 )
+                            return val;
+                        return Left.GetDisplayName().CompareTo( Right.GetDisplayName() );
+                    } );
+                }
+                catch { } //in case something changes briefly
+            }
+
+            if ( SimCommon.AllSortedPlayerBulkNPCUnits.GetConstructionList().Count > 0 )
+            {
+                try
+                {
+                    SimCommon.AllSortedPlayerBulkNPCUnits.SortConstructionList( delegate ( ISimNPCUnit Left, ISimNPCUnit Right )
+                    {
+                        int val = Left.UnitType.RowIndexNonSim.CompareTo( Right.UnitType.RowIndexNonSim );
+                        if ( val != 0 )
+                            return val;
+                        return Left.ActorID.CompareTo( Right.ActorID );
+                    } );
+                }
+                catch { } //in case something changes briefly
+            }
+
+            if ( SimCommon.AllSortedPlayerConvertedNPCUnits.GetConstructionList().Count > 0 )
+            {
+                try
+                {
+                    SimCommon.AllSortedPlayerConvertedNPCUnits.SortConstructionList( delegate ( ISimNPCUnit Left, ISimNPCUnit Right )
+                    {
+                        int val = Left.UnitType.RowIndexNonSim.CompareTo( Right.UnitType.RowIndexNonSim );
+                        if ( val != 0 )
+                            return val;
+                        return Left.ActorID.CompareTo( Right.ActorID );
+                    } );
+                }
+                catch { } //in case something changes briefly
             }
         }
         #endregion

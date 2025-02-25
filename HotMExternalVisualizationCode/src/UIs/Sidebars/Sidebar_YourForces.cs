@@ -28,8 +28,6 @@ namespace Arcen.HotM.ExternalVis
         #endregion
 
         private readonly List<ISimMachineVehicle> vehiclesWithRiders = List<ISimMachineVehicle>.Create_WillNeverBeGCed( 10, "Sidebar_YourForces-vehiclesWithRiders" );
-        private readonly List<ISimNPCUnit> bulkUnits = List<ISimNPCUnit>.Create_WillNeverBeGCed( 10, "Sidebar_YourForces-bulkUnits" );
-        private readonly List<ISimNPCUnit> convertedUnits = List<ISimNPCUnit>.Create_WillNeverBeGCed( 10, "Sidebar_YourForces-convertedUnits" );
 
         public void WriteAnySidebarItems( ref float currentY )
         {
@@ -43,13 +41,12 @@ namespace Arcen.HotM.ExternalVis
 
             vehiclesWithRiders.Clear();
 
-            if ( World.Forces.GetMachineVehiclesByID().Count > 0 )
+            if ( SimCommon.AllSortedPlayerVehicles.Count > 0 )
             {
                 AddItem( item_VehiclesHeader, ref currentY );
 
-                foreach ( KeyValuePair<int, ISimMachineVehicle> kv in World.Forces.GetMachineVehiclesByID() )
+                foreach ( ISimMachineVehicle vehicle in SimCommon.AllSortedPlayerVehicles.GetDisplayList() )
                 {
-                    ISimMachineVehicle vehicle = kv.Value;
                     if ( vehicle.SidebarItem_MainMapActor == null )
                         vehicle.SidebarItem_MainMapActor = new SidebarItemFromOther<ISimMapActor>( vehicle, Sidebar_MainMapActor.Instance );
                     AddItem( vehicle.SidebarItem_MainMapActor, ref currentY );
@@ -59,28 +56,24 @@ namespace Arcen.HotM.ExternalVis
                 }
             }
 
-            if ( SimCommon.TotalOnline_Androids > 0 )
+            if ( SimCommon.AllSortedDeployedPlayerAndroids.Count > 0 )
             {
                 AddItem( item_DeployedAndroidsHeader, ref currentY );
 
-                foreach ( ISimMachineUnit unit in World.Forces.GetMachineUnitsDeployed() )
+                foreach ( ISimMachineUnit unit in SimCommon.AllSortedDeployedPlayerAndroids.GetDisplayList() )
                 {
-                    if ( unit.UnitType.IsConsideredMech )
-                        continue;
                     if ( unit.SidebarItem_MainMapActor == null )
                         unit.SidebarItem_MainMapActor = new SidebarItemFromOther<ISimMapActor>( unit, Sidebar_MainMapActor.Instance );
                     AddItem( unit.SidebarItem_MainMapActor, ref currentY );
                 }
             }
 
-            if ( SimCommon.TotalOnline_Mechs > 0 )
+            if ( SimCommon.AllSortedDeployedPlayerMechs.Count > 0 )
             {
                 AddItem( item_DeployedMechsHeader, ref currentY );
 
-                foreach ( ISimMachineUnit unit in World.Forces.GetMachineUnitsDeployed() )
+                foreach ( ISimMachineUnit unit in SimCommon.AllSortedDeployedPlayerMechs.GetDisplayList() )
                 {
-                    if ( !unit.UnitType.IsConsideredMech )
-                        continue;
                     if ( unit.SidebarItem_MainMapActor == null )
                         unit.SidebarItem_MainMapActor = new SidebarItemFromOther<ISimMapActor>( unit, Sidebar_MainMapActor.Instance );
                     AddItem( unit.SidebarItem_MainMapActor, ref currentY );
@@ -105,23 +98,11 @@ namespace Arcen.HotM.ExternalVis
                 }
             }
 
-            bulkUnits.Clear();
-            convertedUnits.Clear();
-            foreach ( ISimNPCUnit unit in SimCommon.AllPlayerRelatedNPCUnits.GetDisplayList() )
-            {
-                if ( !unit.GetIsPlayerControlled() )
-                    continue;
-                if ( unit.UnitType.CostsToCreateIfBulkAndroid.Count == 0 )
-                    convertedUnits.Add( unit );
-                else
-                    bulkUnits.Add( unit );
-            }
-
-            if ( bulkUnits.Count > 0 )
+            if ( SimCommon.AllSortedPlayerBulkNPCUnits.Count > 0 )
             {
                 AddItem( item_BulkUnitsHeader, ref currentY );
 
-                foreach ( ISimNPCUnit unit in bulkUnits )
+                foreach ( ISimNPCUnit unit in SimCommon.AllSortedPlayerBulkNPCUnits.GetDisplayList() )
                 {
                     if ( unit.SidebarItem_MainMapActor == null )
                         unit.SidebarItem_MainMapActor = new SidebarItemFromOther<ISimMapActor>( unit, Sidebar_MainMapActor.Instance );
@@ -129,11 +110,11 @@ namespace Arcen.HotM.ExternalVis
                 }
             }
 
-            if ( convertedUnits.Count > 0 )
+            if ( SimCommon.AllSortedPlayerConvertedNPCUnits.Count > 0 )
             {
                 AddItem( item_ConvertedUnitsHeader, ref currentY );
 
-                foreach ( ISimNPCUnit unit in convertedUnits )
+                foreach ( ISimNPCUnit unit in SimCommon.AllSortedPlayerConvertedNPCUnits.GetDisplayList() )
                 {
                     if ( unit.SidebarItem_MainMapActor == null )
                         unit.SidebarItem_MainMapActor = new SidebarItemFromOther<ISimMapActor>( unit, Sidebar_MainMapActor.Instance );

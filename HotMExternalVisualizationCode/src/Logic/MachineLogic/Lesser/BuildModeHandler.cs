@@ -1149,6 +1149,7 @@ namespace Arcen.HotM.ExternalVis
         private static Vector3 lastValidSpot_Position = Vector3.zero;
         private static bool lastValidSpot_HadOne = false;
         private static int lastValidSpot_TheoreticalRotation = 0;
+        private static bool isXSlideCheck = false;
 
         #region HandleFreestandingStructureType
         private bool HandleFreestandingStructureType( MachineStructureType structureType, MachineJob startingJob )
@@ -1216,19 +1217,103 @@ namespace Arcen.HotM.ExternalVis
                         {
                             hadValidSpotInner = false;
 
-                            if ( lastValidSpot_HadOne && lastValidSpot_StructureType == structureType && lastValidSpot_TheoreticalRotation == theoreticalRotation )
+                            if ( lastValidSpot_HadOne )
                             {
-                                if ( CityMap.CalculateIsValidLocationForBuilding( prefab, lastValidSpot_Position, theoreticalRotation,
-                                    structureType.MaxSecurityClearanceOfPOIForPlacement, structureType.RequiredPOITagForPlacement, out IMapBlockingItem BlockingItem2, out bool WasInCorrectPOIType2,
-                                    true, out bool IsBlockedByOutOfBounds2 ) )
+                                if ( lastValidSpot_StructureType != structureType || lastValidSpot_TheoreticalRotation != theoreticalRotation )
+                                    lastValidSpot_HadOne = false;
+                                else
                                 {
-                                    hadValidSpotInner = true;
-                                    destinationPoint = lastValidSpot_Position;
-                                    isUsingOldDest = true;
+                                    float dist = GameSettings.Current.GetFloat( "MaxBuildingSnapDistance" );
+                                    if ( dist <= 0 )
+                                        lastValidSpot_HadOne = false;
+                                    else if ( (lastValidSpot_Position - destinationPoint ).GetSquareGroundMagnitude() > dist * dist )
+                                        lastValidSpot_HadOne = false;
+                                }
+                            }
 
-                                    BlockingItem = BlockingItem2;
-                                    WasInCorrectPOIType = WasInCorrectPOIType2;
-                                    IsBlockedByOutOfBounds = IsBlockedByOutOfBounds2;
+                            if ( lastValidSpot_HadOne )
+                            {
+                                Vector3 newPos = lastValidSpot_Position;
+                                bool checkNewPos = false;
+
+                                float slideAmount = 0.2f;
+                                if ( checkNewPos && structureType.SnappingScale > 1f )
+                                {
+                                    slideAmount = 1f / structureType.SnappingScale;
+                                }
+
+                                if ( isXSlideCheck )
+                                {
+                                    if ( newPos.x < destinationPoint.x )
+                                    {
+                                        checkNewPos = true;
+                                        newPos.x += slideAmount;
+                                        if ( newPos.x > destinationPoint.x )
+                                            newPos.x = destinationPoint.x;
+                                    }
+                                    else if ( newPos.x > destinationPoint.x )
+                                    {
+                                        checkNewPos = true;
+                                        newPos.x -= slideAmount;
+                                        if ( newPos.x < destinationPoint.x )
+                                            newPos.x = destinationPoint.x;
+                                    }
+                                }
+                                else
+                                {
+                                    if ( newPos.z < destinationPoint.z )
+                                    {
+                                        checkNewPos = true;
+                                        newPos.z += slideAmount;
+                                        if ( newPos.z > destinationPoint.z )
+                                            newPos.z = destinationPoint.z;
+                                    }
+                                    else if ( newPos.z > destinationPoint.z )
+                                    {
+                                        checkNewPos = true;
+                                        newPos.z -= slideAmount;
+                                        if ( newPos.z < destinationPoint.z )
+                                            newPos.z = destinationPoint.z;
+                                    }
+                                }
+                                isXSlideCheck = !isXSlideCheck;
+
+                                if ( checkNewPos && structureType.SnappingScale > 1f )
+                                {
+                                    newPos.x = Mathf.Ceil( newPos.x * structureType.SnappingScale ) / structureType.SnappingScale;
+                                    newPos.z = Mathf.Ceil( newPos.z * structureType.SnappingScale ) / structureType.SnappingScale;
+                                }
+
+                                if ( checkNewPos )
+                                {
+                                    if ( CityMap.CalculateIsValidLocationForBuilding( prefab, newPos, theoreticalRotation,
+                                        structureType.MaxSecurityClearanceOfPOIForPlacement, structureType.RequiredPOITagForPlacement, out IMapBlockingItem BlockingItem2, out bool WasInCorrectPOIType2,
+                                        true, out bool IsBlockedByOutOfBounds2 ) )
+                                    {
+                                        hadValidSpotInner = true;
+                                        destinationPoint = newPos;
+                                        isUsingOldDest = true;
+
+                                        BlockingItem = BlockingItem2;
+                                        WasInCorrectPOIType = WasInCorrectPOIType2;
+                                        IsBlockedByOutOfBounds = IsBlockedByOutOfBounds2;
+                                    }
+                                }
+
+                                if ( !hadValidSpotInner )
+                                {
+                                    if ( CityMap.CalculateIsValidLocationForBuilding( prefab, lastValidSpot_Position, theoreticalRotation,
+                                        structureType.MaxSecurityClearanceOfPOIForPlacement, structureType.RequiredPOITagForPlacement, out IMapBlockingItem BlockingItem2, out bool WasInCorrectPOIType2,
+                                        true, out bool IsBlockedByOutOfBounds2 ) )
+                                    {
+                                        hadValidSpotInner = true;
+                                        destinationPoint = lastValidSpot_Position;
+                                        isUsingOldDest = true;
+
+                                        BlockingItem = BlockingItem2;
+                                        WasInCorrectPOIType = WasInCorrectPOIType2;
+                                        IsBlockedByOutOfBounds = IsBlockedByOutOfBounds2;
+                                    }
                                 }
                             }
 

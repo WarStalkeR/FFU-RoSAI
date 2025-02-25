@@ -218,8 +218,10 @@ namespace Arcen.HotM.ExternalVis
                     case "Ch2_MIN_ProbeTheTitan":
                         if ( OutcomeOrNoneYet != null )
                         {
-                            int current = (int)ResourceTypeTable.Instance.GetRowByID( "EncryptedTitanSystemsData" ).Current + 
-                                (int)ResourceTypeTable.Instance.GetRowByID( "EncryptedTitanCommsLog" ).Current;
+                            int current = (int)ResourceTypeTable.Instance.GetRowByID( "EncryptedTitanSystemsData" ).Current +
+                                (int)ResourceTypeTable.Instance.GetRowByID( "DecryptedTitanSystemsData" ).Current +
+                                (int)ResourceTypeTable.Instance.GetRowByID( "EncryptedTitanCommsLog" ).Current +
+                                (int)ResourceTypeTable.Instance.GetRowByID( "DecryptedTitanCommsLog" ).Current;
                             int target = 100100;
 
                             CanBeCompletedNow = current >= target;
@@ -3299,7 +3301,7 @@ namespace Arcen.HotM.ExternalVis
                         {
                             int target = OutcomeOrNoneYet.GetSingleIntByID( "Goal", 509 );
                             ResourceType finalResource = ResourceRefs.Anthroneuroweave;
-                            int current = (int)finalResource.GetActualTrendWithLieIfStorageAtLeast( target, 2000000 );
+                            int current = (int)finalResource.GetActualTrendWithLieIfStorageAtLeast( target, 30000 );
                             CanBeCompletedNow = current >= target;
 
                             switch ( Logic )

@@ -275,9 +275,15 @@ namespace Arcen.HotM.External
                 if ( toDraw == null )
                     return;
 
+                Vector3 position = fObject.WorldLocation;
+                if ( position.x == 0 && position.z == 0 )
+                    return;
+                if ( float.IsNaN( position.x ) )
+                    return;
+
                 MapMaterializingItem materializingItem = MapMaterializingItem.GetFromPoolOrCreate();
 
-                materializingItem.Position = fObject.WorldLocation;
+                materializingItem.Position = position;
                 materializingItem.Rotation = fObject.Rotation;
                 materializingItem.Scale = fObject.EffectiveScale;
 

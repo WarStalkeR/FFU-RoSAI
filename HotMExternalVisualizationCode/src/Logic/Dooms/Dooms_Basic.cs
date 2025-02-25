@@ -62,18 +62,30 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     if ( altEvent == null )
                                     {
-                                        KeyContactRefs.BlackMarketTradesman.DuringGame_IsDead = true;
-                                        KeyContactRefs.BlackMarketTradesman.DuringGame_KilledOnTurn = SimCommon.Turn;
-                                        KeyContactRefs.BlackMarketAssistant.DuringGame_IsDead = true;
-                                        KeyContactRefs.BlackMarketAssistant.DuringGame_KilledOnTurn = SimCommon.Turn;
+                                        if ( !KeyContactRefs.BlackMarketTradesman.DuringGame_IsDead )
+                                        {
+                                            KeyContactRefs.BlackMarketTradesman.DuringGame_IsDead = true;
+                                            KeyContactRefs.BlackMarketTradesman.DuringGame_KilledOnTurn = SimCommon.Turn;
+                                        }
+                                        if ( !KeyContactRefs.BlackMarketAssistant.DuringGame_IsDead )
+                                        {
+                                            KeyContactRefs.BlackMarketAssistant.DuringGame_IsDead = true;
+                                            KeyContactRefs.BlackMarketAssistant.DuringGame_KilledOnTurn = SimCommon.Turn;
+                                        }
                                     }
                                 }
                                 else if ( doomEvent.DuringGameplay_HasHappened && doomEvent.DuringGameplay_AlternativeHappened == null )
                                 {
-                                    KeyContactRefs.BlackMarketTradesman.DuringGame_IsDead = true;
-                                    KeyContactRefs.BlackMarketTradesman.DuringGame_KilledOnTurn = SimCommon.Turn;
-                                    KeyContactRefs.BlackMarketAssistant.DuringGame_IsDead = true;
-                                    KeyContactRefs.BlackMarketAssistant.DuringGame_KilledOnTurn = SimCommon.Turn;
+                                    if ( !KeyContactRefs.BlackMarketTradesman.DuringGame_IsDead )
+                                    {
+                                        KeyContactRefs.BlackMarketTradesman.DuringGame_IsDead = true;
+                                        KeyContactRefs.BlackMarketTradesman.DuringGame_KilledOnTurn = SimCommon.Turn;
+                                    }
+                                    if ( !KeyContactRefs.BlackMarketAssistant.DuringGame_IsDead )
+                                    {
+                                        KeyContactRefs.BlackMarketAssistant.DuringGame_IsDead = true;
+                                        KeyContactRefs.BlackMarketAssistant.DuringGame_KilledOnTurn = SimCommon.Turn;
+                                    }
                                 }
                             }
                             #endregion
@@ -125,12 +137,23 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     if ( altEvent == null )
                                     {
-                                        KeyContactRefs.ExalterGeneticist.DuringGame_IsDead = true;
-                                        KeyContactRefs.ExalterGeneticist.DuringGame_KilledOnTurn = SimCommon.Turn;
+                                        if ( !KeyContactRefs.ExalterGeneticist.DuringGame_IsDead )
+                                        {
+                                            KeyContactRefs.ExalterGeneticist.DuringGame_IsDead = true;
+                                            KeyContactRefs.ExalterGeneticist.DuringGame_KilledOnTurn = SimCommon.Turn;
+                                        }
                                         CohortRefs.NurturismExalters.DuringGame_HasBeenDisbanded = true;
                                     }
 
                                     FlagRefs.HasActivePrisonerDrive.UnTripIfNeeded();
+                                }
+                                else if ( doomEvent.DuringGameplay_HasHappened && doomEvent.DuringGameplay_AlternativeHappened == null )
+                                {
+                                    if ( !KeyContactRefs.ExalterGeneticist.DuringGame_IsDead )
+                                    {
+                                        KeyContactRefs.ExalterGeneticist.DuringGame_IsDead = true;
+                                        KeyContactRefs.ExalterGeneticist.DuringGame_KilledOnTurn = SimCommon.Turn;
+                                    }
                                 }
                             }
                             #endregion

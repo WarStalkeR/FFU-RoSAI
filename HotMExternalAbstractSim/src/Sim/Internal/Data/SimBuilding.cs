@@ -576,12 +576,25 @@ namespace Arcen.HotM.External
         #region CalculateIsValidTargetForMachineStructureRightNow
         public bool CalculateIsValidTargetForMachineStructureRightNow( MachineStructureType StructureType, MachineJob StartingJobOrNull )
         {
+            if ( StructureType == null )
+                return false;
             if ( this.MachineStructureInBuilding != null )
                 return false;
-            if ( this.Prefab.MarkerPrefab == null )
+            if ( this.Prefab?.MarkerPrefab == null )
                 return false;
             MapItem item = this.GetMapItem();
             if ( item == null )
+                return false;
+
+            BuildingStatus status = this.Status;
+            if ( status == null )
+                return false;
+
+            if ( status.ShouldBuildingBeInvisible || status.ShouldBuildingBeBurnedVisually || status.IsBuildingConsideredToBeUnderConstruction )
+                return false;
+
+            BuildingTypeVariant variant = this.Variant;
+            if ( variant == null )
                 return false;
 
             MapPOI poi = item.GetParentPOIOrNull();
@@ -593,16 +606,13 @@ namespace Arcen.HotM.External
                     return false;
             }
 
-            if ( this.Status.ShouldBuildingBeInvisible || this.Status.ShouldBuildingBeBurnedVisually || this.Status.IsBuildingConsideredToBeUnderConstruction )
-                return false;
-
 
             if ( poi != null && poi.BuildingOrNull == item )
                 return false; //no building in structures that are a poi all on their own
 
             if ( StructureType == null || StructureType.IsEmbeddedInHumanBuildingOfTag == null )
                 return false;
-            if ( !this.Variant.Tags.ContainsKey( StructureType.IsEmbeddedInHumanBuildingOfTag.ID ) )
+            if ( !variant.Tags.ContainsKey( StructureType.IsEmbeddedInHumanBuildingOfTag.ID ) )
             {
                 return false;
             }
@@ -616,7 +626,7 @@ namespace Arcen.HotM.External
                 if ( network != null && network.Tower != null )
                     return false; //can only have one network!
 
-                BeaconType beacon = this.Variant?.BeaconToShow;
+                BeaconType beacon = variant.BeaconToShow;
                 if ( beacon != null )
                     return false; //no building on beacon sites if a network
 
@@ -639,6 +649,9 @@ namespace Arcen.HotM.External
 
                     foreach ( MachineStructure structure in StartingJobOrNull.DistanceRestriction.DuringGame_FullList.GetDisplayList() )
                     {
+                        if ( structure == null ) 
+                            continue;
+
                         Vector3 pos = structure.GetGroundCenterLocation();
                         float dist = (pos - myPos).GetSquareGroundMagnitude();
                         if ( dist > StartingJobOrNull.DistanceRestriction.DistanceTheseMustBeFromOneAnotherSquared )

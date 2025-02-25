@@ -487,7 +487,7 @@ namespace Arcen.HotM.ExternalVis
 
                             ResourceType dailyResource = ResourceTypeTable.Instance.GetRowByID( "DailyNecessities" );
                             ResourceType furnitureResource = ResourceTypeTable.Instance.GetRowByID( "Furniture" );
-                            int currentDaily = (int)dailyResource.GetActualIncome(); //not the trend, because it already subtracts from this
+                            int currentDaily = (int)dailyResource.GetActualTrendWithLieIfStorageAtLeast( dailyGoal, 20000000 ); //not the trend, because it already subtracts from this
                             CanBeCompletedNow = furnitureProvided >= furnitureGoal && currentDaily >= dailyGoal;
 
                             switch ( Logic )
