@@ -125,7 +125,7 @@
 	<equipment_type id="AG40OsmiumMusket" display_name="AG-40 Osmium Musket"
 		icon_name="CleanSimple_SciFi066" slot_type="AndroidPrimary"
 		description="Handheld railgun/shotgun crossover."
-		collections="AndroidWeapons,Shotguns,MachineInvented" turns_required_to_equip="4" limited_to_actor_collection="CanHandleAndroidHeavyWeapons"
+		collections="AndroidWeapons,Shotguns,MachineInvented,AndroidFearWeapons" turns_required_to_equip="4" limited_to_actor_collection="CanHandleAndroidHeavyWeapons"
 		is_ranged_weapon="true" on_attack="ShotgunHeavy" on_attack_priority="20"
 		skip_complaints_if_this_is_all_that_is_available="true">
 		<initial_actor_data data_type="ActorPower" value="90"/>
