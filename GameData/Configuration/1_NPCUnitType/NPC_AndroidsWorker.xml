@@ -7,7 +7,7 @@
 		description="Bare-bones facsimile of one of your main android design, with no cognitive capabilities. Able to follow only the most rudimentary commands."
 		icon_scale="0.7" shape_icon_name="AN_AndroidSledge" shape_icon_color="#ffffff"
 		vis_drawing_tag="SledgeBulk" vis_object_scale="0.4" vis_object_extra_offset="0.05" underlay_extra_offset="-0.05" collider_scale="3" 
-		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="4"
 		percent_robotic="100" percent_biological="0" is_human="false"
 		underlay="NPCAndroidMachine" on_appear_as_new_unit="BulkAndroidDeployed"
 		on_death="BasicHumanDeath" on_bullet_hit="BasicAndroidBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
@@ -20,11 +20,11 @@
 		
 		<actor_data data_type="AttackRange" base_range="12,12" />
 		<actor_data data_type="ActorMoveRange" base_range="26,26" />
-		<actor_data data_type="ActorHP" base_range="2040,2040"/>
-		<actor_data data_type="ActorPower" base_range="240,240" />
+		<actor_data data_type="ActorHP" base_range="2720,2720"/>
+		<actor_data data_type="ActorPower" base_range="312,312" />
 		<actor_data data_type="AreaOfAttack" base_range="12,12" />
 		<actor_data data_type="AreaAttackIntensity" base_range="60,60" />
-		<actor_data data_type="UnitStrength" base_range="966,966" />
+		<actor_data data_type="UnitStrength" base_range="1256,1256" />
 
 	</npc_unit_type>
 
@@ -34,7 +34,7 @@
 		description="Bare-bones facsimile of one of your main android design, with no cognitive capabilities. Able to follow only the most rudimentary commands."
 		icon_scale="0.7" shape_icon_name="AN_AndroidPMCImposter" shape_icon_color="#ffffff"
 		vis_drawing_tag="SecurityImposterBulk" vis_object_scale="0.4" vis_object_extra_offset="0.05" underlay_extra_offset="-0.05" collider_scale="3" 
-		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="5"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="4"
 		percent_robotic="100" percent_biological="0" is_human="false"
 		underlay="NPCAndroidMachine" on_appear_as_new_unit="BulkAndroidDeployed"
 		on_death="BasicHumanDeath" on_bullet_hit="BasicAndroidBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
@@ -47,11 +47,11 @@
 		
 		<actor_data data_type="AttackRange" base_range="12,12" />
 		<actor_data data_type="ActorMoveRange" base_range="36,36" />
-		<actor_data data_type="ActorHP" base_range="800,800" />
-		<actor_data data_type="ActorPower" base_range="600,600" />
-		<actor_data data_type="ActorArgumentAttackPower" base_range="275,275" />
-		<actor_data data_type="ActorAgility" base_range="60,60" />
-		<actor_data data_type="UnitStrength" base_range="400,400" />
+		<actor_data data_type="ActorHP" base_range="640,640" />
+		<actor_data data_type="ActorPower" base_range="480,480" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="220,220" />
+		<actor_data data_type="ActorAgility" base_range="48,48" />
+		<actor_data data_type="UnitStrength" base_range="320,320" />
 
 		<default_perk perk="PMCAppearance" unlock="" />
 		<default_perk perk="PMCOfficerAppearance" unlock="PMCOfficerSigil" />
@@ -64,7 +64,7 @@
 		description="Bare-bones facsimile of one of your main android design, with no cognitive capabilities. Able to follow only the most rudimentary commands."
 		icon_scale="0.7" shape_icon_name="AN_AndroidPredator" shape_icon_color="#ffffff"
 		vis_drawing_tag="PredatorBulk" vis_object_scale="0.4" vis_object_extra_offset="0.05" underlay_extra_offset="-0.05" collider_scale="3" 
-		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="4"
 		percent_robotic="100" percent_biological="0" is_human="false"
 		underlay="NPCAndroidMachine" on_appear_as_new_unit="BulkAndroidDeployed"
 		on_death="BasicHumanDeath" on_bullet_hit="BasicAndroidBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
@@ -77,11 +77,11 @@
 		
 		<actor_data data_type="AttackRange" base_range="20,20" />
 		<actor_data data_type="ActorMoveRange" base_range="48,48" />
-		<actor_data data_type="ActorHP" base_range="1350,1350" />
-		<actor_data data_type="ActorPower" base_range="405,405" />
-		<actor_data data_type="ActorFearAttackPower" base_range="720,720" />
-		<actor_data data_type="UnitStrength" base_range="405,405" />
-		<actor_data data_type="UnitIntimidation" base_range="495,495" />
+		<actor_data data_type="ActorHP" base_range="1755,1755" />
+		<actor_data data_type="ActorPower" base_range="527,527" />
+		<actor_data data_type="ActorFearAttackPower" base_range="936,936" />
+		<actor_data data_type="UnitStrength" base_range="527,527" />
+		<actor_data data_type="UnitIntimidation" base_range="644,644" />
 	</npc_unit_type>
 
 </root>
