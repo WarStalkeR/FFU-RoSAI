@@ -219,25 +219,25 @@
 
 	<building_type id="DowntownApartments" is_partial_record="true">
 		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Apartments,ApartmentsLowMidClass,HasManyPeople,LowerClassDroneTarget,BasicCommon,MiddleClassCommon,MiddleClassApartments,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Apartments,ApartmentsLowMidClass,HasManyPeople,LowerClassDroneTarget,BasicCommon,WorkingClassCommon,WorkingClassApartments,WorkingClassHome,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,EvictionTarget">
 		</variant>
 	</building_type>
 
 	<building_type id="DowntownBrownstone" is_partial_record="true">
 		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Brownstone,BasicCommon,HasManyPeople,LowerClassDroneTarget,MiddleClassCommon,MiddleClassBrownstone,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Brownstone,BasicCommon,HasManyPeople,LowerClassDroneTarget,WorkingClassCommon,WorkingClassBrownstone,WorkingClassHome,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
 		</variant>
 	</building_type>
 
 	<building_type id="DowntownOffice" is_partial_record="true">
 		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,MiddleClassCommon,MiddleClassOffice,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,WorkingClassCommon,WorkingClassOffice,WorkingClassWorkplace,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
 		</variant>
 		<variant id="Mid" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,MiddleClassCommon,MiddleClassOffice,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,WorkingClassCommon,WorkingClassOffice,WorkingClassWorkplace,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
 		</variant>
 		<variant id="Co" is_partial_record="true" weight="50"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,MiddleClassCommon,MiddleClassOffice,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,WorkingClassCommon,WorkingClassOffice,WorkingClassWorkplace,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
 		</variant>
 		<variant id="A" is_partial_record="true" weight="25"
 			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,WealthyDroneTarget,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveSeizedAndSealedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,CanHaveHealthcareStorefront,AnimalHidingValid,EvictionTarget">
@@ -372,25 +372,25 @@
 
 	<building_type id="ScienceLab" is_partial_record="true">
 		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
 		</variant>
 		<variant id="Genetics" is_partial_record="true" weight="50"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,GeneticsLab,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,GeneticsLab,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
 		</variant>
 		<variant id="AI" is_partial_record="true" weight="5"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,AIResearchLab,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,AIResearchLab,EvictionTarget">
 		</variant>
 	</building_type>
 
 	<building_type id="UndergroundScienceLab" is_partial_record="true">
 		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
 		</variant>
 		<variant id="Genetics" is_partial_record="true" weight="50"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,GeneticsLab,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,GeneticsLab,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
 		</variant>
 		<variant id="AI" is_partial_record="true" weight="5"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,AIResearchLab,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,AIResearchLab,EvictionTarget">
 		</variant>
 	</building_type>
 
@@ -402,16 +402,16 @@
 
 	<building_type id="LowTechFactory" is_partial_record="true">
 		<variant id="MachinePartsFactory" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
 		</variant>
 		<variant id="Garment" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,CottonSource,DailyNecessitiesFactory,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,CottonSource,DailyNecessitiesFactory,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
 		</variant>
 		<variant id="SmallGoods" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,DailyNecessitiesFactory,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,DailyNecessitiesFactory,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
 		</variant>
 		<variant id="CheapElectronics" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
 		</variant>
 		<variant id="Ammo" is_partial_record="true" weight="100"
 			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,WeaponsFactory,BasicCommon,HasManyPeople,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
@@ -420,10 +420,10 @@
 
 	<building_type id="HighTechFactory" is_partial_record="true">
 		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,HighTechFactory,HighTechFactoryGeneral,ScienceIndustrial,BasicCommon,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,HighTechFactory,HighTechFactoryGeneral,WorkingClassWorkplace,ScienceIndustrial,BasicCommon,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
 		</variant>
 		<variant id="AdvWeaponsFactory" is_partial_record="true" weight="5"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,HighTechFactory,ScienceIndustrial,WeaponsFactory,BasicCommon,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,HighTechFactory,ScienceIndustrial,WeaponsFactory,WorkingClassWorkplace,BasicCommon,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
 		</variant>
 	</building_type>
 
@@ -447,7 +447,7 @@
 
 	<building_type id="CropResearchFacility" is_partial_record="true">
 		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,Scientific,Food,ScientificResearch,ScienceIndustrial,CanHaveSecretCompartment,HasManyPeople,CanHaveHiddenRoom,EvictionTarget">
+			tags="Any,AlmostAny,Scientific,Food,WealthyWorkplace,ScientificResearch,ScienceIndustrial,CanHaveSecretCompartment,HasManyPeople,CanHaveHiddenRoom,EvictionTarget">
 		</variant>
 	</building_type>
 
@@ -531,7 +531,7 @@
 
 	<building_type id="SuburbanHomeLevel4" is_partial_record="true">
 		<variant id="1" is_partial_record="true" weight="100"	
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Suburban,Housing,HousingNotSmall,BasicCommon,MiddleClassCommon,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid,EvictionTarget">
+			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Suburban,Housing,HousingNotSmall,BasicCommon,WorkingClassCommon,WorkingClassHome,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid,EvictionTarget">
 		</variant>
 	</building_type>
 

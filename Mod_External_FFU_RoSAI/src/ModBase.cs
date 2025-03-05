@@ -9,8 +9,12 @@ using System.IO;
 namespace Arcen.HotM.FFU.RoSAI {
     public partial class ModInit : IArcenExternalDllInitialLoadCall {
         public void RunOnFirstTimeExternalAssemblyLoaded() {
+        }
+        public void RunImmediatelyOnHandlerProcessed(ArcenExternalDllInitialLoadCall Loader) {
             ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Initializing...", Verbosity.DoNotShow);
             Engine_Universal.SafelyWrappedStartCoroutine(ExecuteLoadFlow());
+        }
+        public void RunAfterAllTableImportsComplete(ArcenExternalDllInitialLoadCall Loader) {
         }
         private IEnumerator ExecuteLoadFlow() {
             yield return Engine_Universal.SafelyWrappedStartCoroutine(ModPatchClasses());
