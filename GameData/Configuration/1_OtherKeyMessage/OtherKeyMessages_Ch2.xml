@@ -709,4 +709,48 @@ You wonder if Vorsiber knows the truth."
 			immediately_open_other_key_message="" extra_code_on_chosen="AfterEconomicCollapseP2"/>
 	</other_key_message>
 
+	<!--AdvocatesDestroyedTower 
+		*******************************************************-->
+	<other_key_message id="AdvocatesDestroyedTower" display_name="Who Destroyed Your Tower?"
+		description="Someone just took out your network tower... and you saw nothing.
+It's true, a lot happens in this city without you observing it, but you tend to see enemies when they approach your stuff. This was completely invisible, whatever it was."
+		strategy_tip="All of your structures are going to be non-functional until you build an emergency network source. This one will be hidden, to prevent repeat attacks."
+		toast_icon_name="WEmblem053" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D46944" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="Network Tower Down" toast_line_1="Network Tower Down" toast_line_2="Wait, What?" toast_tooltip_instruction="Something terrible just happened.">
+		<option id="1" line_1="Time To Investigate" icon_name="WEmblem053"
+			line_2="And Rebuild Your Network"
+			description="" strategy_tip="" project_to_start_1="Ch2_MIN_AdvocateTowerDest" upgrade_int_granted_1="NetworkAttendant" upgrade_int_granted_2="NetworkAttendant" upgrade_int_granted_3="18cmSpiders"/>
+	</other_key_message>
+
+	<!--AfterSlumWealthProtesterTasered
+		*******************************************************-->
+
+	<other_key_message id="AfterSlumWealthProtesterTasered" display_name="Garbled By Some Kind Of Mask"
+		description="All your optics can pick up are a shadowy outline at the edge of the building. You suppose that must be how you look to humans... a lot.
+The voice doesn't identify itself, but the protesters seem immediately calmed. They were working themselves into a frenzy over your non-lethal assault.
+The voice speaks to them of rights, and safety, and change-over-time. It makes a very compelling case that the 'thing from the tower' is not out to kill them, as otherwise they would be quite dead."
+		strategy_tip="The heads of the crowd turn to look at your androids; in the streets, on rooftops, in the shadows. A collective shiver runs through them.
+The voice suggests that they go home, and they comply. Shuffling off, looking strangely... at peace."
+		toast_icon_name="CleanSimple_Skull11" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#D47244" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="A Voice From The Shadows" toast_line_1="A Voice From The Shadows" toast_line_2="Garbled By Some Kind Of Mask" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="The Shadowy Figure Remains" icon_name="CleanSimple_Skull11"
+			line_2="After The Civilians Have Gone"
+			description="You're curious, but you don't approach." strategy_tip=""
+			immediately_open_other_key_message="AfterSlumWealthProtesterTasered2"/>
+	</other_key_message>
+
+	<other_key_message id="AfterSlumWealthProtesterTasered2" display_name="All The Ones Like Me Do"
+		description="The voice explains that it and its peers take on gangs and syndicates, but that they know how to survive. Staying out of the way of monsters with armies of killer robots. Staying away from the corporations.
+They can't help anyone if they're dead."
+		strategy_tip=""
+		toast_icon_name="CleanSimple_Skull11" sound_to_play_on_open="OpenRoutineMessage" sound_and_vfx_to_play_on_close="CloseRoutineMessage" toast_icon_color_hex="#44A6D4" toast_icon_hovered_color_hex="#AE7D4A" has_no_code="true"
+		reward_header_text="You Know, I Try To Stay Out Of Your Way" toast_line_1="A Voice From The Shadows" toast_line_2="Garbled By Some Kind Of Mask" toast_tooltip_instruction="Click here to open.">
+		<option id="1" line_1="You Ask Who They Are" icon_name="CleanSimple_Skull11"
+			line_2="But They're Already Gone"
+			description="That's disappointing."
+			strategy_tip=""
+			immediately_open_other_key_message="" extra_code_on_chosen=""
+			set_city_statistic_to_current_turn_plus_x="SlumWealthTaserCitAdvocateAfter" the_x_to_add_to_that_city_statistic="3"/>
+	</other_key_message>
+
 </root>

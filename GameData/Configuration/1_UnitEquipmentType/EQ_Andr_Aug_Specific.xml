@@ -8,6 +8,21 @@
 	<!--PMC Impostors
 	**********************************************************************************************************************************************-->
 
+	<!--Nickelbot
+	**********************************************************************************************************************************************-->
+
+	<!-- Designed by RocketAssistedPuffin-->
+	<equipment_type id="HighDensityRounds" display_name="High-Density Rounds"
+		icon_name="CleanSimple_SkillB059" slot_type="AndroidAugment"
+		description="Lightweight weaponry can be enhanced with rounds made of particularly dense Heavy Metals. The recoil requires the locking arms of Nickelbots to handle."
+		strategy_tip_optional="These have fantastic stopping power, but severely reduce range."
+		collections="AndroidAugments" turns_required_to_equip="2" limited_to_actor_collection="Nickelbots" is_invalid_and_invisible_for_npc_units="true">
+		<cost_per_attack resource="HeavyMetals" amount="1500" />
+		<initial_actor_data data_type="ActorPower" value="160"/>
+		<initial_actor_data data_type="AttackRange" value="-12"/>
+
+	</equipment_type>
+	
 	<!--Nickelbot And Technician
 	**********************************************************************************************************************************************-->
 
@@ -38,5 +53,17 @@
 	<!--Other
 	**********************************************************************************************************************************************-->
 
+	<!-- Designed by RocketAssistedPuffin-->
+	<equipment_type id="ETSTasp" display_name="ETS Tasp"
+		icon_name="FlatSkillC79" slot_type="AndroidAugment"
+		description="Infiltration-focused less-than-lethal energy weapon; primarily affects human minds, putting them into a state of overwhelming bliss and easy to control."
+		strategy_tip_optional="Greatly increases Argument Attack Power, but the induced mental state reduces dealt damage and Fear Attack Power."
+		collections="AndroidAugments" turns_required_to_equip="2" limited_to_actor_collection="Infildroids" is_invalid_and_invisible_for_npc_units="false">
+		<initial_actor_data data_type="ActorArgumentAttackPower" value="200"/>
+		<initial_actor_data data_type="UnitCognition" value="60"/>
+		<initial_actor_data data_type="ActorPower" value="-50"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="-60"/>
+		<grants_feat feat="Taser" value="35"/>
+	</equipment_type>
 	
 </root>

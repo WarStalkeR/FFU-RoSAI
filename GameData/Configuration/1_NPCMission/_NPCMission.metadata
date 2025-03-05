@@ -191,6 +191,8 @@ Otherwise, there is no cap and the metric just counts up."/>
 		<attribute key="required_unlock" type="node-dropdown" node_source="Unlock" default="" content_width_px="130" is_required="false"
 			tooltip="This will be blocked if the specified unlock has not yet been fully researched." />
 
+		<attribute key="required_before_turn" type="node-dropdown" node_source="CityStatistic" default="" content_width_px="130" is_required="false"
+			tooltip="If this is set, then the value must be above 0 for it to count, and the current turn must be less than or equal to whatever this number is." />
 		<attribute key="required_beyond_turn" type="node-dropdown" node_source="CityStatistic" default="" content_width_px="130" is_required="false"
 			tooltip="If this is set, then the value must be above 0 for it to count, and the current turn must be beyond whatever this number is." />
 

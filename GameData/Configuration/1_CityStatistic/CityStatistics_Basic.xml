@@ -151,9 +151,12 @@
 	<city_statistic id="DeathsByBuildingCollapseByThirdParties" lang_key_for_name="Stat_Name_DeathsByBuildingCollapseByThirdParties" is_group_d_interesting_if_above_zero="true" />
 	<city_statistic id="MonsterPeltsSoldToTheUltraWealthy" lang_key_for_name="Stat_Name_MonsterPeltsSoldToTheUltraWealthy" is_group_c_interesting_if_above_zero="true" />
 	<city_statistic id="CombatantsSentToTormentVessels" lang_key_for_name="Stat_Name_CombatantsSentToTormentVessels" is_group_c_interesting_if_above_zero="true" />
+	<city_statistic id="DeathsFromCorporateRevengeOnSlums" lang_key_for_name="Stat_Name_DeathsFromCorporateRevengeOnSlums" is_group_b_interesting_if_above_zero="true" />
 	
 	<city_statistic id="EarningsFromTheUltraWealthy" lang_key_for_name="Stat_Name_EarningsFromTheUltraWealthy" is_group_c_interesting_if_above_zero="true" />
 	<city_statistic id="EarningsFromReligiousCoOps" lang_key_for_name="Stat_Name_EarningsFromReligiousCoOps" is_group_b_interesting_if_above_zero="true" />
+
+	<city_statistic id="WealthHandedOutToSlumDwellers" lang_key_for_name="Stat_Name_WealthHandedOutToSlumDwellers" is_group_b_interesting_if_above_zero="true" />
 
 	<city_statistic id="UnitsSoldToTheUltraWealthy" lang_key_for_name="Stat_Name_UnitsSoldToTheUltraWealthy" />
 	<city_statistic id="UnitsSoldToReligiousCoOps" lang_key_for_name="Stat_Name_UnitsSoldToReligiousCoOps" />
@@ -297,7 +300,15 @@
 	<city_statistic id="FailedToFindSomeplaceSafe" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 	<city_statistic id="SearchFriendsInventions" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 
+	<city_statistic id="PeopleWatchingDebatesWon" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
+	<city_statistic id="PeopleWatchingMurderousKills" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
+	<city_statistic id="PeopleWatchingWealthyKills" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
+
 	<city_statistic id="DoFurtherYinishiSolicitingAfterThisTurn" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
+
+	<city_statistic id="SlumWealthTaserCitAdvocateAfter" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
+
+	<city_statistic id="AntiWealthReprisalsAgainstSlumsUntilTurn" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 
 	<city_statistic id="LiquidMetalFurtherPrisonBreaks" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 
@@ -311,12 +322,16 @@
 	<city_statistic id="ShellProtection_DesignPoints" lang_key_for_name="DesignPoints" should_be_skipped_on_lists="true" has_no_meta_counterpart="true" />
 	<city_statistic id="ZodiacInfluencersPitched" lang_key_for_name="InfluencersPitched" should_be_skipped_on_lists="true" has_no_meta_counterpart="true" />
 	<city_statistic id="ExiplexLasers_DesignPoints" lang_key_for_name="DesignPoints" should_be_skipped_on_lists="true" has_no_meta_counterpart="true" />
-
+	<city_statistic id="FlushOutBombers_ConflictPoints" lang_key_for_name="ConflictPoints" should_be_skipped_on_lists="true" has_no_meta_counterpart="true" />
+	
 	<city_statistic id="DagekonInvadesUntilTurn" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 	<city_statistic id="TheUIHInvadesUntilTurn" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 	<city_statistic id="MimicEscapeVorsiberSweepsUntilTurn" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 	<city_statistic id="SoldiersWhoDiedAndHaveNotYetBeenUploaded" should_be_invisible_to_players="true" has_no_meta_counterpart="true"/>
 
 	<city_statistic id="DecodedUpliftedRaccoonSpeechData" should_be_invisible_to_players="true" has_no_meta_counterpart="true"/>
-	
+
+	<city_statistic id="FlushOutBombers_Murders" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
+	<city_statistic id="AdvocateBombersKilled" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
+
 </root>

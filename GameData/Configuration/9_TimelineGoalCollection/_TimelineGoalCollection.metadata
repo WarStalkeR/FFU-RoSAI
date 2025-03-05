@@ -2,5 +2,8 @@
 <root node_name="timeline_goal_collection">
 
 	<attribute key="display_name" type="existing-override" can_localization_merge="true" />
-	
+
+	<attribute key="is_primary_goal_type" type="bool" default="false" is_required="false"
+		tooltip="If true, this will show as the goal type." />
+
 </root>

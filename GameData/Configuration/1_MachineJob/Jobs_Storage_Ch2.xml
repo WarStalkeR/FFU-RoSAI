@@ -9,6 +9,8 @@
 		on_installation_start="InstallationStart_MediumStructure" on_installation_complete="InstallationComplete_MediumStructure" actor_data_set="SimpleJobs"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsStorage" extra_code_on_area_explosion="LOXBunkerExplosion"
 		job_classes="VolatileStorage" internal_robotics_type_needed="Archivist" internal_robots_count_needed="10" tags="Procurement"
+		min_explosion_range_on_death="2.4" max_explosion_range_on_death="4" chance_of_exploding_when_damaged="80" on_explosion="MachineBunkerExplosion"
+		explosion_does_not_harm_above_armor_level_min="200" explosion_does_not_harm_above_armor_level_max="800" explosion_does_not_harm_above_height="8"
 		resource_cap_to_increase_1="LiquidOxygen" resource_cap_increased_flat1="646066000000" shuts_off_at_percentage_electricity="10" portrait_icon_name="BuildingHexDark">
 		<initial_actor_rating data_type="RequiredElectricity" value="27" />
 		<resource_cost resource_type="Microbuilders" cost="120" />

@@ -125,7 +125,9 @@
 Every time the turn changes, or any of your units move or act, your combined sensors will pick up different things in slightly different spots.
 New items to sense open over time, but you get told when it's important."
 		 icon_name="SW_VerticalBars" hides_key_npc_units_during_inspect_focus="true"
-		 show_all_street_sense="true" hidden_before_unlock="Observer">
+		 show_all_street_sense="true" hidden_before_unlock="Observer"
+		 right_click_text="{0} to view all StreetSense options in a list."
+		 extra_code_on_right_click="BasicCityLens">
 		
 		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
 		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
@@ -161,7 +163,9 @@ New items to sense open over time, but you get told when it's important."
 		 description="Reveals contemplation spots throughout the city. Having a qualified android interact with one of them will start a chain of events."
 		 strategy_tip="These include side explorations, new steps on the critical path to specific endings, and ways to alter the nature of certain endings."
 		 icon_name="Pw_InsightIdeaLightbulb" hides_key_npc_units_during_inspect_focus="true"
-		 show_contemplations="true" is_only_available_if_has_contemplations="true" hidden_before_unlock="TheThinker">
+		 show_contemplations="true" is_only_available_if_has_contemplations="true" hidden_before_unlock="TheThinker"
+		 right_click_text="{0} to view all Contemplations in a list. You can also toggle ignored contemplations."
+		 extra_code_on_right_click="BasicCityLens">
 		
 		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
 		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
@@ -180,7 +184,9 @@ New items to sense open over time, but you get told when it's important."
 		 description="Others within the city are often in conflict with one another. You don't have to get involved."
 		 strategy_tip="None of these will directly progress your main projects, but you may be able to use them in an indirect fashion."
 		 icon_name="WEmblem177" hides_key_npc_units_during_inspect_focus="true"
-		 show_city_conflicts_large="true" is_only_available_if_has_city_conflicts="true" hidden_before_unlock="TheStrategist" is_hidden_during_obsessions="true">
+		 show_city_conflicts_large="true" is_only_available_if_has_city_conflicts="true" hidden_before_unlock="TheStrategist" is_hidden_during_obsessions="true"
+		 right_click_text="{0} to view all Background Conflicts in a list."
+		 extra_code_on_right_click="BasicCityLens">
 		
 		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
 		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>
@@ -217,7 +223,9 @@ New items to sense open over time, but you get told when it's important."
 		 description="Focuses on locations where your units could explore and create new ideas for new equipment, abilities, or similar."
 		 strategy_tip="If you are struggling with the main paths, this is the primary way to make yourself more powerful."
 		 icon_name="CleanSimple_Arrow020" hides_key_npc_units_during_inspect_focus="true"
-		 hidden_before_unlock="UrbanExplorer" show_exploration_sites="true" is_only_available_if_has_exploration_sites="true">
+		 hidden_before_unlock="UrbanExplorer" show_exploration_sites="true" is_only_available_if_has_exploration_sites="true"
+		 right_click_text="{0} to view all Exploration Sites in a list."
+		 extra_code_on_right_click="BasicCityLens">
 
 		<lens_filter id="InspectFocus" display_name="Inspect Mode Focuses" inspect_mode_focuses_more_on_this="true" is_enabled_by_default="true" description="Normally, holding the button for inspect mode shows a lot of extra icons. With this option enabled, instead that mode focuses to just the icons from this lens."/>
 		<lens_filter id="POIShapes" display_name="Show POI Regions On Map" show_poi_shapes="true" is_enabled_by_default="true" description="Will only show icons on mouseover or Inspect mode or detailed tooltips."/>

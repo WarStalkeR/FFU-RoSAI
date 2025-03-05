@@ -243,5 +243,50 @@
 		>
 		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
 	</stance>
+
+	<stance id="CitizenAdvocate_WantsToTalkToYou" display_name="Wants To Talk To You"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="This vigilante finds 'the thing from the tower' of interest, and wishes to talk."
+		icon_name="CleanSimple_Skull11" icon_color="#29F1D7" icon_color_hdr_intensity="2.2" icon_scale="0.6"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="1" should_use_blue_outline="true" will_hold_fire_against_rebel_friendly_machine="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+	</stance>
+
+	<stance id="CitizenAdvocate_Kill" display_name="Vigilante Justice"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="You crossed a line, and they're out to destroy you."
+		icon_name="WEmblem262" icon_color="#F74E35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+	</stance>
+
+	<stance id="LeadCitizenAdvocate_Kill" display_name="Vigilante Justice"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="You crossed a line, and they're out to destroy you."
+		icon_name="WEmblem295" icon_color="#F74E35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="false" is_considered_active_cohort_guard="false" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+	</stance>
 	
 </root>

@@ -33,7 +33,45 @@
 		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
 		>
 		<action_consideration id="CommuteToWork" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="GoInside"
-			target_building_tag="WealthyHome" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			target_building_tag="WealthyWorkplace" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="40" absolute_max_distance_objective_must_be_from_current_location="440"
+			preferred_min_distance_of_objective_from_current_location="90" preferred_max_distance_of_objective_from_current_location="340"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="false"/>
+	</stance>
+
+	<!--Working-Class Behaviors
+		***********************************************************-->
+	<stance id="WorkingClassCommuteHome" display_name="Commute Home"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Heading home after a work shift."
+		icon_name="CleanSimple_Arrow092" icon_color="#50C8E4" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true" is_considered_lowermiddle_civilian="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="CommuteHome" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="GoInside"
+			target_building_tag="WorkingClassHome" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="40" absolute_max_distance_objective_must_be_from_current_location="440"
+			preferred_min_distance_of_objective_from_current_location="90" preferred_max_distance_of_objective_from_current_location="340"
+			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="false"/>
+	</stance>
+
+	<stance id="WorkingClassCommuteToWork" display_name="Commute To Work"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Heading to the office, cubicle, factory, or similar."
+		icon_name="CleanSimple_Arrow093" icon_color="#50C8E4" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_hold_fire_against_non_disruptive="true" is_considered_lowermiddle_civilian="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="false" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="CommuteToWork" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="GoInside"
+			target_building_tag="WorkingClassWorkplace" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
 			absolute_min_distance_objective_must_be_from_current_location="40" absolute_max_distance_objective_must_be_from_current_location="440"
 			preferred_min_distance_of_objective_from_current_location="90" preferred_max_distance_of_objective_from_current_location="340"
 			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="false"/>
@@ -106,6 +144,25 @@
 		<action_consideration id="Wander" sort_order="200" chance_of_attempting="20" action_to_attempt="Wander"/>
 	</stance>
 
+	<!--Protester Behaviors
+		***********************************************************-->
+	
+	<stance id="SlumWealthProtester" display_name="Protester"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Your actions clearly show favoritism to the people from the slums! How about a helping hand for the rest of us?"
+		icon_name="HM_Protest2" icon_color="#BE5F3F" icon_color_hdr_intensity="2.1" icon_scale="0.7"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="true" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="0.01" should_use_blue_outline="true"
+		targeting_logic="Nonviolent" targeting_order="1000" is_considered_noncombatant="true"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="BackToMission" sort_order="100" chance_of_attempting="80" action_to_attempt="ReturnToMissionAreaIfAwayFromIt"/>
+		<action_consideration id="Wander" sort_order="200" chance_of_attempting="20" action_to_attempt="Wander"/>
+	</stance>
+	
 	<!--Scientist Behaviors
 		***********************************************************-->
 

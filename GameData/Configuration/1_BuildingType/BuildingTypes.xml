@@ -506,7 +506,7 @@
 	<building_type id="DowntownApartments" display_name="Apartments">
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Apartments,ApartmentsLowMidClass,HasManyPeople,LowerClassDroneTarget,BasicCommon,MiddleClassCommon,MiddleClassApartments,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Apartments,ApartmentsLowMidClass,HasManyPeople,LowerClassDroneTarget,BasicCommon,WorkingClassCommon,WorkingClassApartments,WorkingClassHome,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid">
 			<initial_building_rating data_type="GangCrime" value="5"/>
 			<initial_building_rating data_type="Vermin" value="5"/>
 			<initial_building_rating data_type="BacterialLoad" value="3"/>
@@ -516,7 +516,7 @@
 	<building_type id="DowntownBrownstone" display_name="Brownstone">
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Brownstone,BasicCommon,HasManyPeople,LowerClassDroneTarget,MiddleClassCommon,MiddleClassBrownstone,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Brownstone,BasicCommon,HasManyPeople,LowerClassDroneTarget,WorkingClassCommon,WorkingClassBrownstone,WorkingClassHome,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid">
 			<initial_building_rating data_type="GangCrime" value="2"/>
 			<initial_building_rating data_type="Vermin" value="7"/>
 			<initial_building_rating data_type="BacterialLoad" value="2"/>
@@ -526,7 +526,7 @@
 	<building_type id="DowntownOffice" display_name="Office">
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,MiddleClassCommon,MiddleClassOffice,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,WorkingClassCommon,WorkingClassOffice,WorkingClassWorkplace,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid">
 			<initial_building_rating data_type="SecForcesPresence" value="20"/>
 			<initial_building_rating data_type="HackerPresence" value="18"/>
 			<initial_building_rating data_type="GangCrime" value="4"/>
@@ -535,7 +535,7 @@
 		</variant>
 		<variant id="Mid" display_name="Midrise Office" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,MiddleClassCommon,MiddleClassOffice,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,WorkingClassCommon,WorkingClassOffice,WorkingClassWorkplace,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid">
 			<initial_building_rating data_type="SecForcesPresence" value="20"/>
 			<initial_building_rating data_type="HackerPresence" value="18"/>
 			<initial_building_rating data_type="GangCrime" value="2"/>
@@ -544,7 +544,7 @@
 		</variant>
 		<variant id="Co" display_name="Coworking Office Space" weight="50"
 		is_drone_delivery_target="true" is_shootout_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,MiddleClassCommon,MiddleClassOffice,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,WorkingClassCommon,WorkingClassOffice,WorkingClassWorkplace,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid">
 			<initial_building_rating data_type="SecForcesPresence" value="120"/>
 			<initial_building_rating data_type="HackerPresence" value="18"/>
 			<initial_building_rating data_type="GangCrime" value="12"/>
@@ -1145,7 +1145,7 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,Housing,BasicCommon,MiddleClassCommon,FarmPrimaryBuilding,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,Housing,BasicCommon,WorkingClassCommon,WorkingClassWorkplace,FarmPrimaryBuilding,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid">
 			<initial_building_rating data_type="Vermin" value="2"/>
 		</variant>
 	</building_type>
@@ -1422,19 +1422,19 @@
 	<building_type id="ScienceLab" display_name="Science Lab"
 		blocks_events_unless_they_target_this_building_tag="true" hard_max_to_seed_per_tile="2">
 		<variant id="1" display_name="" weight="100" required_clearance="Secret"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
 			<initial_building_rating data_type="SecForcesPresence" value="300"/>
 			<initial_building_rating data_type="MilitaryPresence" value="100"/>
 			<initial_building_rating data_type="HackerPresence" value="300"/>
 		</variant>
 		<variant id="Genetics" display_name="Genetics Lab" weight="50" required_clearance="TopSecret" beacon_to_show="GeneticsResearch"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,GeneticsLab,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,GeneticsLab,CanHaveSecretCompartment,CanHaveHiddenRoom">
 			<initial_building_rating data_type="SecForcesPresence" value="500"/>
 			<initial_building_rating data_type="MilitaryPresence" value="200"/>
 			<initial_building_rating data_type="HackerPresence" value="500"/>
 		</variant>
 		<variant id="AI" display_name="AI Research Lab" weight="5" required_clearance="TopSecret" beacon_to_show="AIResearch"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,AIResearchLab">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,AIResearchLab">
 			<initial_building_rating data_type="SecForcesPresence" value="900"/>
 			<initial_building_rating data_type="MilitaryPresence" value="2000"/>
 			<initial_building_rating data_type="HackerPresence" value="2500"/>
@@ -1444,19 +1444,19 @@
 	<building_type id="UndergroundScienceLab" display_name="Underground Science Lab"
 		blocks_events_unless_they_target_this_building_tag="true" hard_max_to_seed_per_tile="2">
 		<variant id="1" display_name="" weight="100" required_clearance="Secret"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
 			<initial_building_rating data_type="SecForcesPresence" value="900"/>
 			<initial_building_rating data_type="MilitaryPresence" value="100"/>
 			<initial_building_rating data_type="HackerPresence" value="500"/>
 		</variant>
 		<variant id="Genetics" display_name="Underground Genetics Lab" weight="50" required_clearance="TopSecret" beacon_to_show="GeneticsResearch"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,GeneticsLab,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,GeneticsLab,CanHaveSecretCompartment,CanHaveHiddenRoom">
 			<initial_building_rating data_type="SecForcesPresence" value="1300"/>
 			<initial_building_rating data_type="MilitaryPresence" value="300"/>
 			<initial_building_rating data_type="HackerPresence" value="700"/>
 		</variant>
 		<variant id="AI" display_name="Underground AI Research Lab" weight="5" required_clearance="TopSecret" beacon_to_show="AIResearch"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,AIResearchLab">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,AIResearchLab">
 			<initial_building_rating data_type="SecForcesPresence" value="2300"/>
 			<initial_building_rating data_type="MilitaryPresence" value="3000"/>
 			<initial_building_rating data_type="HackerPresence" value="700"/>
@@ -1595,22 +1595,22 @@
 	<building_type id="LowTechFactory" display_name="Low-Tech Factory">
 		<variant id="MachinePartsFactory" display_name="Machine Parts Factory" weight="100" required_clearance="Sight"
 		is_drone_delivery_target="true" special_scavenge_resource="Neodymium" special_scavenge_resource_amount_range="9200,13700" special_scavenge_danger_type="HeavySecForce"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
 			<initial_building_rating data_type="SecForcesPresence" value="80"/>
 		</variant>
 		<variant id="Garment" display_name="Garment Factory" weight="100"
 		is_drone_delivery_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,CottonSource,DailyNecessitiesFactory,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,CottonSource,DailyNecessitiesFactory,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
 			<initial_building_rating data_type="SecForcesPresence" value="30"/>
 		</variant>
 		<variant id="SmallGoods" display_name="Small Goods Factory" weight="100"
 		is_drone_delivery_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,DailyNecessitiesFactory,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,DailyNecessitiesFactory,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
 			<initial_building_rating data_type="SecForcesPresence" value="50"/>
 		</variant>
 		<variant id="CheapElectronics" display_name="Cheap Electronics Factory" weight="100"
 		is_drone_delivery_target="true" special_scavenge_resource="Neodymium" special_scavenge_resource_amount_range="4100,5150" special_scavenge_danger_type="MildSecForce"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
 			<initial_building_rating data_type="SecForcesPresence" value="90"/>
 		</variant>
 		<variant id="Ammo" display_name="Ammunition Factory" weight="100" required_clearance="Sight"
@@ -1625,12 +1625,12 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Oversight"
 		is_drone_delivery_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,HighTechFactory,HighTechFactoryGeneral,ScienceIndustrial,BasicCommon,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,HighTechFactory,HighTechFactoryGeneral,WorkingClassWorkplace,ScienceIndustrial,BasicCommon,CanHaveSecretCompartment,CanHaveHiddenRoom">
 			<initial_building_rating data_type="SecForcesPresence" value="500"/>
 		</variant>
 		<variant id="AdvWeaponsFactory" display_name="Advanced Weapons Factory" weight="5" required_clearance="Secret"
 		is_drone_delivery_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,HighTechFactory,ScienceIndustrial,WeaponsFactory,BasicCommon,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,HighTechFactory,ScienceIndustrial,WeaponsFactory,WorkingClassWorkplace,BasicCommon,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom">
 			<initial_building_rating data_type="MilitaryPresence" value="500"/>
 			<initial_building_rating data_type="SecForcesPresence" value="200"/>
 		</variant>
@@ -1667,7 +1667,7 @@
 		soft_max_to_seed_per_city="16" hard_max_to_seed_per_tile="1" blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret" beacon_to_show="CropResearchFacility"
 		is_drone_delivery_target="true"
-		tags="Any,AlmostAny,Scientific,Food,ScientificResearch,ScienceIndustrial,CanHaveSecretCompartment,HasManyPeople,CanHaveHiddenRoom">
+		tags="Any,AlmostAny,Scientific,Food,WealthyWorkplace,ScientificResearch,ScienceIndustrial,CanHaveSecretCompartment,HasManyPeople,CanHaveHiddenRoom">
 			<initial_building_rating data_type="MilitaryPresence" value="1000"/>
 		</variant>
 	</building_type>
@@ -2111,9 +2111,9 @@
 		</variant>
 	</building_type>
 
-	<building_type id="SuburbanHomeLevel4" display_name="Middle Class Suburban Home">
+	<building_type id="SuburbanHomeLevel4" display_name="Working-Class Suburban Home">
 		<variant id="1" display_name="" weight="100"	
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Suburban,Housing,HousingNotSmall,BasicCommon,MiddleClassCommon,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Suburban,Housing,HousingNotSmall,BasicCommon,WorkingClassCommon,WorkingClassHome,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
 		</variant>
 	</building_type>
 

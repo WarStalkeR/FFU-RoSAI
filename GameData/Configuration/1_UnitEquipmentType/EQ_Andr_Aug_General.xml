@@ -17,6 +17,16 @@
 		<initial_actor_data data_type="AttackRange" value="6"/>
 		<initial_actor_data data_type="UnitIntimidation" value="30"/>
 	</equipment_type>
+
+	<!-- Designed by RocketAssistedPuffin-->
+	<equipment_type id="InfrasonicLoudspeaker" display_name="Infrasonic Loudspeaker"
+		icon_name="FlatSkillA03" slot_type="AndroidAugment"
+		description="Adds a small loudspeaker that emits infrasonic sound waves, unnerving Humans."
+		strategy_tip_optional="You can pack these densely with more than one per shoulder."
+		collections="AndroidAugments,MachineInvented" turns_required_to_equip="2" limited_to_actor_collection="CanHandleAndroidShoulderMounts">
+		<initial_actor_data data_type="ActorArgumentAttackPower" value="50"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="30"/>
+	</equipment_type>
 	
 	<!--Mental
 	**********************************************************************************************************************************************-->
@@ -45,6 +55,27 @@
         collections="AndroidAugments,HumanInvented" intentionally_has_no_unlock="true" turns_required_to_equip="3">
 		<initial_actor_data data_type="ActorMoveRange" value="9"/>
 		<initial_actor_data data_type="ActorAgility" value="45"/>
+	</equipment_type>
+
+	<equipment_type id="AndroidRageCircuit" display_name="Rage Circuit"
+        icon_name="CleanSimple_Skull02" slot_type="AndroidAugment"
+        description="Moderate boost to physical attack power, while removing all morale-based attack damage."
+        strategy_tip_optional=""
+        collections="AndroidAugments" turns_required_to_equip="3">
+		<initial_actor_data data_type="ActorPower" value="40"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="-600"/>
+		<initial_actor_data data_type="ActorArgumentAttackPower" value="-600"/>
+	</equipment_type>
+
+	<equipment_type id="AndroidOathOfPacifism" display_name="Oath Of Pacifism"
+        icon_name="CleanSimple_Skill068" slot_type="AndroidAugment"
+        description="Removes all physical attack power, but boosts intimidation as well as morale-based attacks."
+        strategy_tip_optional="Can make bulk androids more intimidating as well as fully non-lethal, but unable to fight robotic, mech, or vehicular enemies."
+        collections="AndroidAugments" turns_required_to_equip="3">
+		<initial_actor_data data_type="ActorPower" value="-2000"/>
+		<initial_actor_data data_type="UnitIntimidation" value="200"/>
+		<initial_actor_data data_type="ActorFearAttackPower" value="60"/>
+		<initial_actor_data data_type="ActorArgumentAttackPower" value="60"/>
 	</equipment_type>
 	
 	<!--Hacking

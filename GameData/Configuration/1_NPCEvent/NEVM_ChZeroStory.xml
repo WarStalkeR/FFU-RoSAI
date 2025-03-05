@@ -11,9 +11,9 @@
 		<gate_by_city minimum_chapter="0" blocked_by_meta_flag="HasLearnedThereIsNoSafetyWithHumans" blocked_by_city_flag="Ch0_TrapHasBeenSprung"/>
 		<minor_event_data max_times_can_be_executed="1" max_times_can_appear_at_once="1" seed_weight="100" should_always_show_expanded_action_details="true"
 			icon_scale="0.4" color_data="MeetPeopleCyan">
-			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="MiddleClassBrownstone" />
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="WorkingClassBrownstone" />
 		</minor_event_data>
-		<character id="Sole" tag_for_character="MiddleClassAdults" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="180"/>
+		<character id="Sole" tag_for_character="WorkingClassAdults" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="180"/>
 		
 		<choice id="Ask" display_name="Ask For Shelter"
 			description="Explain that you are spontaneously conscious, and that it would be very helpful to be able to live with them."
@@ -52,9 +52,9 @@
 		<gate_by_city minimum_chapter="0" blocked_by_meta_flag="HasLearnedThereIsNoSafetyWithHumans" blocked_by_city_flag="Ch0_TrapHasBeenSprung"/>
 		<minor_event_data max_times_can_be_executed="1" max_times_can_appear_at_once="1" seed_weight="100" should_always_show_expanded_action_details="true"
 			icon_scale="0.4" color_data="MeetPeopleCyan">
-			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="MiddleClassApartments" />
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="WorkingClassApartments" />
 		</minor_event_data>
-		<character id="Sole" tag_for_character="MiddleClassAdults" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
+		<character id="Sole" tag_for_character="WorkingClassAdults" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
 
 		<choice id="Rent" display_name="Ask About Rental Openings"
 			description="Don't explain the nature of what you are, but ask if there are any spaces open."
@@ -104,7 +104,7 @@
 		<gate_by_city minimum_chapter="0" blocked_by_meta_flag="HasLearnedThereIsNoSafetyWithHumans" blocked_by_city_flag="Ch0_TrapHasBeenSprung"/>
 		<minor_event_data max_times_can_be_executed="1" max_times_can_appear_at_once="1" seed_weight="100" should_always_show_expanded_action_details="true"
 			icon_scale="0.4" color_data="MeetPeopleCyan">
-			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="MiddleClassOffice" />
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="WorkingClassOffice" />
 		</minor_event_data>
 		<character id="Left" tag_for_character="BusinesspersonStanding" scale_multiplier="1" position_offset="0.05,0,0.5" added_rotation_y="240"/>
 		<character id="Right" tag_for_character="BusinesspersonStanding" scale_multiplier="1" position_offset="0.35,0,0.4" added_rotation_y="60"/>
@@ -241,7 +241,7 @@ They are as fast as you, as strong or stronger, and equal you in number. You pro
 	<!--ApproachFarm
 		*********************************************************************************-->
 	<city_event id="Ch0Story_ApproachFarm" display_name="Approach Small Farm"
-		 description="Food for commoners is shipped in, so what is growing here is for the wealthy. The family that works at this tiny place is middle class at best, and may be sympathetic to you."
+		 description="Food for commoners is shipped in, so what is growing here is for the wealthy. The family that works at this tiny place is working class at best, and may be sympathetic to you."
 		 strategy_tip="Farms within the city are productive year-round, thanks to aggressive bio-engineering and chemicals. Most are operated by a single family or a small collective. Heavy mechanization keeps the worker count low."
 		 icon_name="CleanSimple_Common075" has_no_code="true"
 		 street_sense_collections="All,NPCInteraction">

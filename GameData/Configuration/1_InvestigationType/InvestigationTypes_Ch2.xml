@@ -118,4 +118,9 @@
 		<resource_change_range resource_type="EncryptedAtcaBankRecords" min="800000" max="800000" />
 	</investigation_type>
 
+	<investigation_type id="Ch2SearchForTowerBombers" style="SearchForTowerBombers"
+		cull_initial_building_set_to_district_count_between_min="24" cull_initial_building_set_to_district_count_between_max="28">
+		<seed_at max_security_clearance_of_seed_spot="1" building_seed_tag="AlmostAnyButNotSuperRestricted" />
+	</investigation_type>
+	
 </root>

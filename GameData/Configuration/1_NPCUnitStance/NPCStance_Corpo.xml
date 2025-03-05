@@ -31,6 +31,31 @@
 		<action_consideration id="GetCloser" sort_order="100" chance_of_attempting="80" action_to_attempt="GetCloserToFocusIfPossible"/>
 	</stance>
 
+	<stance id="Corpo_SlaughteringSlumCitizens" display_name="Slaughtering Slum Citizens"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="Killing people from the slums, as a warning to anyone who even thinks of mass violence against the wealthier classes."
+		icon_name="WEmblem187" icon_color="#D42020" icon_color_hdr_intensity="1.6" icon_scale="0.8"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_disruptive="false" will_hold_fire_against_cohort_guard="true" will_attack_all_active_cohort_guards="false" will_hold_fire_against_non_disruptive="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_hold_fire_against_regular_machines_except_those_aggroed="true" will_hold_fire_against_regular_machine_structures="true"
+		this_unit_acts_before_player_looks_at_them="true" max_height_allowed="1" should_use_blue_outline="false"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000" is_considered_noncombatant="false"
+		max_allowed_poi_clearance="0" max_allowed_non_focal_building_clearance="0"
+		>
+		<action_consideration id="Destroy1" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="DestroySlumBuilding"
+			target_building_tag="SlumTower" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="120"
+			preferred_min_distance_of_objective_from_current_location="4" preferred_max_distance_of_objective_from_current_location="30"
+			max_failure_wait_turns_for_blocked_objective="5"/>
+		<action_consideration id="Destroy2" sort_order="100" chance_of_attempting="100" objective_to_attempt_to_start="DestroySlumBuilding"
+			target_building_tag="Slums" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="120"
+			preferred_min_distance_of_objective_from_current_location="4" preferred_max_distance_of_objective_from_current_location="30"
+			max_failure_wait_turns_for_blocked_objective="5"/>
+		<action_consideration id="Wander" sort_order="400" chance_of_attempting="60" action_to_attempt="Wander"/>
+	</stance>
+
 	<stance id="LawyerPlaintiffA" display_name="Plaintiff"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
 		description="One of the legal aggressors in a background conflict."

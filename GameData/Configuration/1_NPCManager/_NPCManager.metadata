@@ -180,6 +180,8 @@
 			<attribute key="required_unlock" type="node-dropdown" node_source="Unlock" default="" content_width_px="130" is_required="false"
 				tooltip="This will be blocked if the specified unlock has not yet been fully researched." />
 
+			<attribute key="required_before_turn" type="node-dropdown" node_source="CityStatistic" default="" content_width_px="130" is_required="false"
+				tooltip="If this is set, then the value must be above 0 for it to count, and the current turn must be less than or equal to whatever this number is." />
 			<attribute key="required_beyond_turn" type="node-dropdown" node_source="CityStatistic" default="" content_width_px="130" is_required="false"
 				tooltip="If this is set, then the value must be above 0 for it to count, and the current turn must be beyond whatever this number is." />
 
@@ -434,6 +436,22 @@ For things with actions over time, if the AOT succeeds, this unit will remain an
 			tooltip="This city flag will be tripped if this unit is damaged in combat." />
 		<attribute key="city_flag_on_damaged_by_player" type="node-dropdown" node_source="CityFlag" content_width_px="200" is_required="true"
 			tooltip="This city flag will be tripped if this unit is damaged by a machine unit or vehicle in combat." />
+
+		<attribute key="city_statistic_on_killed_by_player1" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="true"
+			tooltip="This city statistic will be increased by the largest-remembered size of the squad size if the squad dies by physical damage after having ever been physically damaged by a player." />
+		<attribute key="city_statistic_on_killed_or_morale_hit_by_player1" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="true"
+			tooltip="This city statistic will be increased by the largest-remembered size of the squad size if the squad dies after having been physically or morale damaged by a player." />
+		<attribute key="trigger_npc_manager_on_killed_by_player1" type="node-dropdown" node_source="NPCManager" default="" content_width_px="130" is_required="false"
+			tooltip="This other manager will be manually triggered at the location of death whenever the squad dies after having been physically damaged by a player." />
+		<attribute key="trigger_npc_manager_on_killed_or_morale_hit_by_player1" type="node-dropdown" node_source="NPCManager" default="" content_width_px="130" is_required="false"
+			tooltip="This other manager will be manually triggered at the location of death whenever the squad dies after having been physically or morale damaged by a player." />
+
+		<attribute key="trigger_extra_code_on_killed_by_player1" type="node-dropdown" node_source="ExtraCodeHandler" default="" content_width_px="130" is_required="false"
+			tooltip="This extra code will be run whenever the squad dies after having been physically damaged by a player." />
+		<attribute key="trigger_extra_code_on_killed_or_morale_hit_by_player1" type="node-dropdown" node_source="ExtraCodeHandler" default="" content_width_px="130" is_required="false"
+			tooltip="This extra code will be run whenever the squad dies after having been physically or morale damaged by a player." />
+		<attribute key="trigger_extra_code_on_nonlethal_takedown_by_player1" type="node-dropdown" node_source="ExtraCodeHandler" default="" content_width_px="130" is_required="false"
+			tooltip="This extra code will be run whenever the squad is non-lethally taken down by a player. A player shooting them physically some first does not count." />
 
 		<attribute key="project_flag_on_death" type="string" maxlength="200" content_width_px="130" is_required="false"
 			tooltip="ID of a flag in the parent project (will error if no parent project and this is used), which will be flipped to true if any unit from this activity group is killed." />

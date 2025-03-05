@@ -11,7 +11,7 @@
 		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
 		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
 		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
-		on_normal_attack="UnarmedHumanNormalAttack"
+		on_normal_attack="UnarmedHumanNormalAttack" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
 		radius_for_collisions="0.5" height_for_collisions="0.75"
 		extra_radius_buffer_when_testing_for_new="1"
 		tags="WealthyCitizenBasic,WealthyCitizenMan" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
@@ -33,10 +33,54 @@
 		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
 		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
 		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
-		on_normal_attack="UnarmedHumanNormalAttack"
+		on_normal_attack="UnarmedHumanNormalAttack" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
 		radius_for_collisions="0.5" height_for_collisions="0.75"
 		extra_radius_buffer_when_testing_for_new="1"
 		tags="WealthyCitizenBasic,WealthyCitizenWoman" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="40,60" />
+		<actor_data data_type="UnitMorale" base_range="120,128" />
+	</npc_unit_type>
+
+	<!--WorkingClassMan
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="WorkingClassMan" display_name="Working-Class Citizen"
+		description="Citizen who is an office worker, assistant, creative, merchandiser, or similar."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Tool36" shape_icon_color="#ffffff"
+		vis_drawing_tag="WorkingClassMan" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="2,3" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="0,0" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="40,60" />
+		<actor_data data_type="UnitMorale" base_range="120,128" />
+	</npc_unit_type>
+
+	<!--WorkingClassWoman
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="WorkingClassWoman" display_name="Working-Class Citizen"
+		description="Citizen who is an office worker, assistant, creative, merchandiser, or similar."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Tool36" shape_icon_color="#ffffff"
+		vis_drawing_tag="WorkingClassWoman" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="0.75"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
 		<actor_data data_type="AttackRange" base_range="2,3" />
 		<actor_data data_type="ActorMoveRange" base_range="18,24" />
 		<actor_data data_type="ActorHP" base_range="40,40" />
@@ -245,6 +289,54 @@ The thrusters on the back are for propulsion only, not altitude maintenance."
 			<shot_emission_point index_in_group="0" offset="2.1,0.25,0.5" />
 			<shot_emission_point index_in_group="1" offset="-2.1,0.25,0.5" />
 		</shot_emission_group>
+	</npc_unit_type>
+
+	<!--SuburbanProtesterMan
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SuburbanProtesterMan" display_name="Suburban Protester"
+		description="They may get special treatment from Vorsiber, but their position is always tenuous."
+		icon_scale="0.7" shape_icon_name="HO_HouseSkyscraper22" shape_icon_color="#ffffff"
+		vis_drawing_tag="ProtesterMan" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="1.15"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="7,10" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="6,6" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="340,360" />
+		<actor_data data_type="UnitMorale" base_range="360,388" />
+		<default_perk perk="Stubborn" unlock="" />
+		<default_perk perk="Fearless" unlock="" />
+	</npc_unit_type>
+
+	<!--SuburbanProtesterWoman
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SuburbanProtesterWoman" display_name="Suburban Protester"
+		description="They may get special treatment from Vorsiber, but their position is always tenuous."
+		icon_scale="0.7" shape_icon_name="HO_HouseSkyscraper22" shape_icon_color="#ffffff"
+		vis_drawing_tag="ProtesterWoman" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true" deaths_count_as_murders="true"
+		underlay="Noncombatant" on_appear_as_new_unit="NPCAppear_NewUnit_NonCombatant"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="UnarmedHumanNormalAttack"
+		radius_for_collisions="0.5" height_for_collisions="1.15"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		<actor_data data_type="AttackRange" base_range="7,10" />
+		<actor_data data_type="ActorMoveRange" base_range="18,24" />
+		<actor_data data_type="ActorHP" base_range="40,40" />
+		<actor_data data_type="ActorPower" base_range="6,6" />
+		<actor_data data_type="ActorArgumentAttackPower" base_range="340,360" />
+		<actor_data data_type="UnitMorale" base_range="360,388" />
+		<default_perk perk="Stubborn" unlock="" />
+		<default_perk perk="Fearless" unlock="" />
 	</npc_unit_type>
 
 	<!--CorpoVPMan

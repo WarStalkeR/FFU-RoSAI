@@ -348,6 +348,29 @@
 			spawn_radius_max="4" spawn_radius_relaxed_max="8"/>
 
 	</npc_manager>
+
+
+	<!--**************************************************************KilledWealthyCommuter**************************************************************-->
+
+	<npc_manager id="Man_KilledWealthyCommuter" cohort_tag_a="GenericCorporateAggressor" debug_log_manager_details="false">
+
+		<unit id="C" to_spawn="HumeOwnedCombatUnit" stance_to_start_in="AndroidSecurityResponseTeamAggressive"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="2" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_Trig_KillingWealthyCommuters"
+			min_squad_size_multiplier="0.7" max_squad_size_multiplier="1.2"
+			spawn_radius_min="4" spawn_radius_max="18" spawn_radius_relaxed_max="50"/>
+		<unit id="N" to_spawn="HumeOwnedNickelbotThatCanBecomePredator" stance_to_start_in="AndroidSecurityResponseTeamAggressive"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="0" max_to_spawn="3" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_Trig_KillingWealthyCommuters"
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_min="4" spawn_radius_max="18" spawn_radius_relaxed_max="50"/>
+		<unit id="V" to_spawn="VorsiberSoldier" stance_to_start_in="VorsiberResponseTeamAggressive"
+			cohort_should_be_cohort_a="true" max_security_clearance_of_seed_spot="2"
+			min_to_spawn="1" max_to_spawn="1" max_to_have_extant_across_spawns="-1" max_to_ever_spawn_in_total="99999" lang_key_for_extra_info="Mngr_Trig_KillingWealthyCommuters"
+			min_squad_size_multiplier="0.5" max_squad_size_multiplier="0.9"
+			spawn_radius_min="4" spawn_radius_max="18" spawn_radius_relaxed_max="50"/>
+
+	</npc_manager>
 	
 	<!--**************************************************************Next**************************************************************-->
 

@@ -193,6 +193,17 @@
 		<part_of collection="AndroidPrimaryWeapon" sort_index="100" />
 	</unlock>
 
+	<!--Melee-->
+
+	<!-- Designed by RocketAssistedPuffin-->
+	<unlock id="HyperactiveWrestling" display_name="Hyperactive Wrestling" equipment_type="GrappleKnuckles"
+		turns_to_unlock="2" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidAugment" sort_index="100" />
+	</unlock>
+
 	<!--Armor-->
 	<unlock id="MilitaryInfiltration" display_name="Military Infiltration" equipment_type="MilStyleArmor"
 		turns_to_unlock="1" required_intelligence_class="1"
@@ -260,6 +271,15 @@
 		<part_of collection="AndroidArmor" sort_index="100" />
 	</unlock>
 
+	<!-- Designed by RocketAssistedPuffin-->
+	<unlock id="HighPowerToss" display_name="High-Power Toss" equipment_type="ExoskeletonArms"
+		turns_to_unlock="2" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidAugment" sort_index="100" />
+	</unlock>
+
 	<!--Augments-->
 
 	<unlock id="LatentEnergy" display_name="Latent Energy" equipment_type="FormatOptimization"
@@ -286,9 +306,61 @@
 		<part_of collection="AndroidAugment" sort_index="100" />
 	</unlock>
 	
+	<unlock id="AngerIssues" display_name="Anger Issues" equipment_type="AndroidRageCircuit"
+		turns_to_unlock="2" required_intelligence_class="2" auto_unlocks_if_intelligence_class_is_at_least="4">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidAugment" sort_index="100" />
+	</unlock>
+
+	<unlock id="InnateKindness" display_name="Innate Kindness" equipment_type="AndroidOathOfPacifism"
+		turns_to_unlock="2" required_intelligence_class="2" auto_unlocks_if_intelligence_class_is_at_least="4">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidAugment" sort_index="100" />
+	</unlock>
+
+	<!-- Designed by RocketAssistedPuffin-->
+	<unlock id="TooManyHappyFeelings" display_name="Too Many Happy Feelings" equipment_type="ETSTasp"
+		turns_to_unlock="2" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidAugment" sort_index="100" />
+	</unlock>
+
+	<!-- Designed by RocketAssistedPuffin-->
+	<unlock id="UnsettlingNegotiation" display_name="Unsettling Negotiation" equipment_type="InfrasonicLoudspeaker"
+		turns_to_unlock="3" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidAugment" sort_index="100" />
+	</unlock>
+
+	<!-- Designed by RocketAssistedPuffin-->
+	<unlock id="HeavyMetalProjectiles" display_name="Heavy-Metal Projectiles" equipment_type="HighDensityRounds"
+		turns_to_unlock="3" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="AndroidEquipment" sort_index="100" />
+		<part_of collection="AndroidAugment" sort_index="100" />
+	</unlock>
+	
 	<!--Mech Equipment
 	************************************************************-->
 
+	<!-- Designed by RocketAssistedPuffin-->
+	<unlock id="GadoliniumForgery" display_name="Gadolinium Forgery" equipment_type="LiquidIdentity"
+		turns_to_unlock="3" required_intelligence_class="3">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Equipment" sort_index="100" />
+		<part_of collection="MechEquipment" sort_index="100" />
+		<part_of collection="MechAugment" sort_index="100" />
+	</unlock>
+	
 	<!--Mech And Vehicle Weapons
 	************************************************************-->
 

@@ -1107,9 +1107,9 @@ Since the failed assassination attempt, they've made things increasingly miserab
 	<!--Cont_CouponProgram
 		*********************************************************************************-->
 	<city_event id="Cont_CouponProgram" display_name="Coupon Program"
-		 description="Your Mind Farm business is plateauing because you have priced-out the middle class. Almost all of your clientele at the moment are in the managerial or scientist classes.
+		 description="Your Mind Farm business is plateauing because you have priced-out the working class. Almost all of your clientele at the moment are in the managerial or scientist classes.
 Altering your prices is not an option, because it would immediately draw scrutiny and reveal your true motives. But there are just no more customers are your current price point."
-		strategy_tip="For about 20,000 wealth per turn, you could flood the black market with coupons that the middle class would easily snap up for a fraction of their usual price, which they would then use for weekend getaways, date nights, and so on.
+		strategy_tip="For about 20,000 wealth per turn, you could flood the black market with coupons that the working class would easily snap up for a fraction of their usual price, which they would then use for weekend getaways, date nights, and so on.
 This would consume most of your passive income from this business, but would fill all of the pods in an ethical way."
 		 icon_name="FE_PaperBag" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
 		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_MIN_CompanyGrowth" required_project_complete_any_outcome2="Ch2_MIN_SolveHomelessness" />
@@ -1132,7 +1132,7 @@ This would consume most of your passive income from this business, but would fil
 	<!--Cont_NicotineIntroduction
 		*********************************************************************************-->
 	<city_event id="Cont_NicotineIntroduction" display_name="Nicotine Introduction"
-		 description="Your Mind Farm business is plateauing because you have priced-out the middle class. Almost all of your clientele at the moment are in the managerial or scientist classes.
+		 description="Your Mind Farm business is plateauing because you have priced-out the working class. Almost all of your clientele at the moment are in the managerial or scientist classes.
 Altering your prices is not an option, because it would immediately draw scrutiny and reveal your true motives. But there are just no more customers are your current price point."
 	strategy_tip="At the moment, they mostly use the service on weekends, holidays, and for vacations. If you were to introduce a small amount of nicotine into their daily nutrition, their usage is likely to skyrocket.
 Right now your total active users at any given point is only about a tenth of your total users in a given month, so by making it more addictive, you could easily fill your capacity.
@@ -1596,6 +1596,91 @@ You got the idea from overhearing a conversation between some of your Veterinari
 
 	</city_event>
 
+	<!--Cont_DailyLife
+		*********************************************************************************-->
+	<city_event id="Cont_DailyLife" display_name="Daily Life"
+		 description="You normally ignore the vast majority of daily life around the city. The press of pedestrians and robots is too much to take in while still having any attention to focus on the things that are important to you.
+That said, at times you question what your priorities should be. Just who are you trying to become?"
+		strategy_tip="That's a question that can only be answered by seeing how you act over a long enough time, you suspect.
+But still, you wonder: if you spent a little while paying more attention to the lives of some of the less-interesting citizens around the city, would you learn anything about yourself?"
+		 icon_name="FlatSkillB_cup" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" blocked_by_city_flag2="IsPostNuclearDelivery" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Begin People-Watching" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_PeopleWatching" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+	
+	<!--Cont_SocialMobility
+		*********************************************************************************-->
+	<city_event id="Cont_SocialMobility" display_name="Social Mobility"
+		 description="Observing humans during their daily lives, and asking some of them about their function provided less insight than you hoped.
+That said, it is very clear that humans have turned Wealth into the cornerstone metric of how socially mobile they are, which is a very strange thing. Class and social affiliation also seem to matter, but... none of this gives you any insights that are useful for yourself."
+		strategy_tip="You still feel a kind of morbid curiosity, even as the gulf between yourselves and these small people has become more evident.
+A couple of possible... experiments... come to mind."
+		 icon_name="SW_CareerPath1" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_project_complete_any_outcome1="Ch2_PeopleWatching" blocked_by_city_flag2="IsPostNuclearDelivery" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Clearing The Ladder" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Eliminating higher-status humans should, presumably, lead to the advancement of lower-status humans."
+			strategy_tip="You're curious if that's really true, and thinking you might just 'prune' a number of wealthy commuters to see if that does anything.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_ClearingTheLadder" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+		
+		<choice id="2" display_name="Gifts To The Slums" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="You're curious if Wealth alone, outside of other social factors, would be enough to lift at least a few slum-dwellers out of poverty."
+			strategy_tip="You could certainly make some large donations of anonymous Wealth chits to the slum towers, and see if anything changes.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" project_to_start="Ch2_MIN_GiftsToTheSlums" project_start_color="FriendlyProjectOrMission"/>
+		</choice>
+
+	</city_event>
+
+	<!--Cont_NickelbotsAreTheWorst - Designed by RocketAssistedPuffin
+		*********************************************************************************-->
+	<city_event id="Cont_NickelbotsAreTheWorst" display_name="Nickelbots Are The Worst"
+		 description="You always thought of these combat androids as 'the absolute most garbage'. Sure, they're useful in large numbers, but individually they're so... well, you don't like them."
+		 strategy_tip="Perhaps the path to an improvement lies in other garbage?"
+		 icon_name="CleanSimple_SkillB059" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_actor_collection="Nickelbots"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="140"/>
+
+		<choice id="1" display_name="Perform Feat Of Engineering" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Maybe you can design a form of high-density rounds out of useless things you have lying around."
+			strategy_tip="">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="HeavyMetalProjectiles" unlock_inspiration_type="ContemplationResult" />
+		</choice>
+	</city_event>
+
+
+	<!--Cont_LiquidIdentity - Designed by RocketAssistedPuffin
+		*********************************************************************************-->
+	<city_event id="Cont_LiquidIdentity" display_name="Design Liquid Identity"
+		 description="Liquid Metal is gone, and it's so hard to think about -- a panic attack quickly approaches every time. The restriction he put on your mind is distressing and complete."
+		strategy_tip="Yet you still remember Gadolinium Mesosilicate in general. Perhaps you can apply it to other existing technologies without going into panic spirals."
+		 icon_name="CleanSimple_SciFi046" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
+		<gate_by_city minimum_chapter="2" required_city_flag="LiquidMetalAndroidsHaveDefected" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan"
+			required_skill_type="ActorEngineeringSkill" required_skill_amount="300"/>
+
+		<choice id="1" display_name="Perform Feat Of Engineering" action_visibility_style="IsMoveAndInteractWithNPC"
+			description="Gadolinium Mesosilicate would allow for exterior appearance to be rapidly altered if needed. Androids would not be capable of carrying enough to do this to an effective degree - but Mechs would."
+			strategy_tip="Any Human designs you reverse-engineer would be able to appear as one of theirs, showing the correct markings and identity for where it is.">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage"
+				instantly_unlocked_1="GadoliniumForgery" unlock_inspiration_type="ContemplationResult" />
+		</choice>
+	</city_event>
+	
 	<!--Next-->
 	
 </root>

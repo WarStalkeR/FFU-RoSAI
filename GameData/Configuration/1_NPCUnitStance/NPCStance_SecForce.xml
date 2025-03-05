@@ -203,6 +203,21 @@
 		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
 	</stance>
 
+	<stance id="AndroidSecurityResponseTeamAggressive" display_name="Security Response Team"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="These androids know what you did, and that it was you. They're going to move against you."
+		icon_name="SomethingWingblade" icon_color="#F75A35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+	</stance>
+
 	<stance id="SecurityResponseTeam" display_name="Security Response Team"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
 		description="SecForce is here to contain a security incident and avenge lost property."

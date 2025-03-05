@@ -275,4 +275,15 @@ Once started, the war never ends in this timeline. It also crosses over into oth
 		<goal_path id="Billionaire" display_name="Everyone's A Billionaire" description="Collapse the economy through hyper-inflation." meta_resource_added_1="Aetagest" meta_resource_added_amount_1="50" achievement_triggered1="IfEveryonesABillionaireNobodyIs" achievement_triggered2="EverythingIsAwful"/>
 	</timeline_goal>
 
+	<timeline_goal id="AdvocateEncounter" display_name="Advocate Encounter"
+		description="Draw the attention of a certain group of vigilantes who normally avoid you."
+		strategy_tip=""
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.TimelineGoals_Main" blocked_after_final_doom="true" on_complete="TimelineGoalComplete"
+		icon_name="CleanSimple_Skull11" sort_order="1000" collections="All,Tier1Goal,ActivistAllies">
+		<goal_path id="EarnedSomeRespect" display_name="Earned Some Respect" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="KnowingSmile"/>
+		<goal_path id="EarnedNewMortalEnemies" display_name="Earned New Mortal Enemies" description="" meta_resource_added_1="Aetagest" meta_resource_added_amount_1="25" achievement_triggered1="TheGearWasWorthIt"/>
+		<goal_path id="HardMode" display_name="Hard Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="3" achievement_triggered1="HardToTrack"/>
+		<goal_path id="ExtremeMode" display_name="Extreme Mode" description="" meta_resource_added_1="Daring" meta_resource_added_amount_1="9" achievement_triggered1="ExtremeExtremism"/>
+	</timeline_goal>
+
 </root>

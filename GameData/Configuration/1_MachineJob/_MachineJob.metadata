@@ -38,6 +38,12 @@ If this provides resource storage, then the explosion range will be shrunk based
 		tooltip="If the max range is specified, then the min range also needs to be specified, and at least 1. This is the smallest the explosion can be if the structure has fewer goods in it that are explosive."/>
 	<attribute key="chance_of_exploding_when_damaged" type="int-textbox" min="0" max="100" default="0" content_width_px="300" is_required="false"
 		tooltip="If above zero, and max_explosion_range_on_death is above zero, then this building has a chance of exploding (and being destroyed) by even small bits of damage to itself."/>
+	<attribute key="explosion_does_not_harm_above_height" type="int-textbox" min="0" max="100" default="0" content_width_px="300" is_required="false"
+		tooltip="If above zero, then the explosions on death will not hit any units that are above a certain altitude."/>
+	<attribute key="explosion_does_not_harm_above_armor_level_min" type="int-textbox" min="0" max="100" default="0" content_width_px="300" is_required="false"
+		tooltip="If above zero, then the explosions on death will not hit any units that are above a certain armor plating level. This scales up to the max same as the explosion range does."/>
+	<attribute key="explosion_does_not_harm_above_armor_level_max" type="int-textbox" min="0" max="100" default="0" content_width_px="300" is_required="false"
+		tooltip="If above zero, then the explosions on death will not hit any units that are above a certain armor plating level. This scales up to the max same as the explosion range does."/>
 	<attribute key="shuts_off_at_percentage_electricity" type="int-textbox" min="-1" max="100" default="0" content_width_px="300" is_required="true"
 		tooltip="If above zero, then it will shut off at a certain percentage. If zero, it will use backup generator power. If -1, it's not shown at all and so probably is a power generator."/>
 	

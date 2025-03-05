@@ -34,22 +34,28 @@
 	<cohort id="Engineers" display_name="Engineers" part_of_group="ScientistClass"
 		  />
 
-	<!--MiddleClass
+	<cohort id="UpperSuburbanite" display_name="Upper Suburbanite" part_of_group="ScientistClass"
+		  description="Their lives in the low-density housing indicates some special favor from Vorsiber, or in some cases inherited favoritism."/>
+	
+	<!--WorkingClass
 	******************************************************************-->
 
-	<cohort id="OfficeWorkers" display_name="Office Workers" part_of_group="MiddleClass"
+	<cohort id="OfficeWorkers" display_name="Office Workers" part_of_group="WorkingClass"
 		  />
 
-	<cohort id="Creatives" display_name="Creatives" part_of_group="MiddleClass"
+	<cohort id="Creatives" display_name="Creatives" part_of_group="WorkingClass"
 		  />
 
-	<cohort id="Merchandisers" display_name="Merchandisers" part_of_group="MiddleClass"
-		  description="Retail workers, wholesalers, and back-end sales roles. They are the most consistently jaded and frustrated middle class cohort, and with good reason."/>
+	<cohort id="Merchandisers" display_name="Merchandisers" part_of_group="WorkingClass"
+		  description="Retail workers, wholesalers, and back-end sales roles. They are the most consistently jaded and frustrated working class cohort, and with good reason."/>
 
-	<cohort id="Assistants" display_name="Assistants" part_of_group="MiddleClass"
+	<cohort id="Assistants" display_name="Assistants" part_of_group="WorkingClass"
 		description="Gophers for the managerial class. They have access to a surprising amount of sensitive information.
 Some are loyal to the hand that feeds them. Others use their position to help their middle and lower class peers."
 		  />
+	
+	<cohort id="LowerSuburbanite" display_name="Lower Suburbanite" part_of_group="WorkingClass"
+		  description="Their lives in the low-density housing indicates some special favor from Vorsiber, or in some cases inherited favoritism."/>
 
 	<!--UneducatedClass
 	******************************************************************-->

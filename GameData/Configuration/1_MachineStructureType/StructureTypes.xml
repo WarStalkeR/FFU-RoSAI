@@ -470,7 +470,7 @@ The humans would use Microbuilders, but you don't have the capacity to program t
 		icon_name="CleanSimple_Skill139" building_prefab="MachineTowerB" establish_network_on_build="true" is_built_on_site_of_existing_building="true"
 		is_locked_before_unlock="AHomeOfYourOwn" is_locked_after_city_flag="HasPlacedNetworkTower" is_locked_after_meta_flag="HasBuiltImposingTowerBefore" is_embedded_in_human_building_of_tag="Any"
 		on_construction_start="BuildStart_SmallStructure" on_construction_complete="BuildComplete_SmallStructure" on_destruction="MachineNetworkTowerExplosion" actor_data_set="SimpleJobs"
-		ui_color="#fefefe" portrait_icon_name="BuildingNetworkTower" force_always_use_this_portrait="true"
+		ui_color="#fefefe" portrait_icon_name="BuildingNetworkTower" is_nanotech_network_tower="true" force_always_use_this_portrait="true"
 		collections="" turns_to_build="1" has_no_job="true">
 		<initial_actor_rating data_type="ActorHP" value="2200" />
 		<initial_actor_rating data_type="NetworkRange" value="40" />

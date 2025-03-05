@@ -18,5 +18,13 @@
 
 	<!--Skills
 	**********************************************************************************************************************************************-->
+	
+	<equipment_type id="LiquidIdentity" display_name="Liquid Identity"
+		icon_name="CleanSimple_SciFi046" slot_type="MechAugment"
+		description="A supply of Gadolinium Mesosilicate would allow this Mech to morph the correct markings and identity for where it currently is, blending in and preventing it from being attacked on sight."
+		strategy_tip_optional="This does not prevent it from being marked defective, however."
+		collections="MechAugments,MachineInvented" limited_to_actor_collection="MechsInventedByHumans" turns_required_to_equip="1">
+		<grants_perk perk="PMCAppearance" value="true" />
+	</equipment_type>
 
 </root>

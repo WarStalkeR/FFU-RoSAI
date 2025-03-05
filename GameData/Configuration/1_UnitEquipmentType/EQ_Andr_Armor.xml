@@ -19,7 +19,7 @@
 		icon_name="ME_CheapSecurityDisguise2" slot_type="AndroidArmor" limited_to_actor_collection="CanFitThinHumanClothes"
 		description="It's just cloth and leather, but it obscures the body and the face. Allows new android forms to blend into crowds.
 Even if it is disguised, enemy scans will detect an android that is marked defective."
-		strategy_tip_optional="Variations of this getup are worn by freelance detectives and bodyguards. Cheap enough for the lower and middle classes to afford them."
+		strategy_tip_optional="Variations of this getup are worn by freelance detectives and bodyguards. Cheap enough for the lower and working classes to afford them."
 		collections="SecurityJacket" turns_required_to_equip="1">
 		<grants_perk perk="ObscuredByClothing" value="true" />
 	</equipment_type>
@@ -87,4 +87,17 @@ Even if it is disguised, enemy scans will detect an android that is marked defec
 		<grants_perk perk="DarkenedAppearance" value="true" />
 	</equipment_type>
 
+	<!-- Designed by RocketAssistedPuffin-->
+	<equipment_type id="ExoskeletonArms" display_name="Exoskeleton Arms"
+		icon_name="CleanSimple_Gesture03" slot_type="AndroidArmor" limited_to_actor_collection="Sledges"
+		description="Large exoskeleton arms that attach alongside those of the Android."
+		strategy_tip_optional="Greatly increases strength and range, but slows the Android and provides no protection."
+		collections="AdvancedMaterialsAndroidArmor" turns_required_to_equip="3"
+		skip_complaints_if_this_is_all_that_is_available="true">
+		<initial_actor_data data_type="ActorMoveRange" value="-6"/>
+		<initial_actor_data data_type="AttackRange" value="6"/>
+		<initial_actor_data data_type="ActorAgility" value="-60"/>
+		<initial_actor_data data_type="UnitStrength" value="120"/>
+	</equipment_type>
+	
 </root>

@@ -143,11 +143,25 @@
 		<attribute key="include_tech_readied_toast" type="bool" is_required="false" default="true"
 			tooltip="If set to true, then the new idea will be called out as a toast notification. By default it is true." />
 
+		<attribute key="upgrade_int_granted_1" type="node-dropdown" node_source="UpgradeInt" content_width_px="200" is_required="false"
+				tooltip="If this will immediately grant an upgraded int field, what is it?" />
+		<attribute key="upgrade_int_granted_2" type="node-dropdown" node_source="UpgradeInt" content_width_px="200" is_required="false"
+			tooltip="If this will immediately grant an upgraded int field, what is it?" />
+		<attribute key="upgrade_int_granted_3" type="node-dropdown" node_source="UpgradeInt" content_width_px="200" is_required="false"
+			tooltip="If this will immediately grant an upgraded int field, what is it?" />
+		<attribute key="upgrade_float_granted_1" type="node-dropdown" node_source="UpgradeFloat" content_width_px="200" is_required="false"
+			tooltip="If this will immediately grant an upgraded float field, what is it?" />
+		
 		<attribute key="required_resource_must_have" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
 			tooltip="If specified, then if the player does not have this amount of a resource, they cannot choose this option." />
 		<attribute key="required_resource_must_have_amount" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
 			tooltip="If required_resource_must_have is specified, and this is above 0, then that's how much the player must have of a resource to choose this option."/>
 
+		<attribute key="set_city_statistic_to_current_turn_plus_x" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="false"
+			tooltip="If you want to have some sort of callback after a certain number of turns, use this." />
+		<attribute key="the_x_to_add_to_that_city_statistic" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="false"
+			tooltip="How many turns to wait for."/>
+		
 		<attribute key="extra_code_on_chosen" type="node-dropdown" node_source="ExtraCodeHandler" content_width_px="200" is_required="false"
 			tooltip="If this needs to run some extra code, custom, at the end of making this choice, then the handler for that can be linked here.
 This has no effect on the ability to make the choice, or other aspects of the choice having been made.  It's purely for adding extra logic to a choice that is definitely happening." />

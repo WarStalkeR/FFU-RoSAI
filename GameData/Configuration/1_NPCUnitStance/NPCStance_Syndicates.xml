@@ -55,8 +55,8 @@
 			preferred_min_distance_of_objective_from_current_location="2" preferred_max_distance_of_objective_from_current_location="40"
 			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"
 			only_start_if_accumulator_less_than="NDAC1" accumulator_comparison_number="100"/>
-		<action_consideration id="Extort2" sort_order="130" chance_of_attempting="70" objective_to_attempt_to_start="ExtortMiddleClassCitizens"
-			target_building_tag="MiddleClassCommon" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
+		<action_consideration id="Extort2" sort_order="130" chance_of_attempting="70" objective_to_attempt_to_start="ExtortWorkingClassCitizens"
+			target_building_tag="WorkingClassCommon" can_target_building_have_machine_structure="true" skip_any_home_district_or_poi_restrictions="true"
 			absolute_min_distance_objective_must_be_from_current_location="1" absolute_max_distance_objective_must_be_from_current_location="50"
 			preferred_min_distance_of_objective_from_current_location="2" preferred_max_distance_of_objective_from_current_location="40"
 			max_failure_wait_turns_for_blocked_objective="5" use_project_center_for_preferred_distances_if_relevant="true"

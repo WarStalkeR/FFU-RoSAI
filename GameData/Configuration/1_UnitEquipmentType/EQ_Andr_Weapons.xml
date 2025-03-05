@@ -279,6 +279,17 @@
 		<initial_actor_data data_type="AreaOfAttack" value="12"/>
 	</equipment_type>
 
+	<equipment_type id="FR70HallucinogenGrenade" display_name="FR-70 Hallucinogen Grenade"
+		icon_name="FlatSkillC124" slot_type="AndroidPrimary"
+		description="Causes a high amount of Morale damage in a small area."
+		intentionally_has_no_unlock="true" is_locked_before_unlock="TerrorTactics"
+		collections="AndroidWeapons,Grenades,MachineInvented,AndroidFearWeapons" turns_required_to_equip="3" limited_to_actor_collection="Harbingers"
+		is_ranged_weapon="true" on_attack="AblatorShot" on_attack_priority="20">
+		<initial_actor_data data_type="ActorFearAttackPower" value="200"/>
+		<initial_actor_data data_type="AreaOfAttack" value="6"/>
+		<grants_feat feat="WeakenEnemyHacker" value="15"/>
+	</equipment_type>
+	
 	<!--Staves
 	**********************************************************************************************************************************************-->
 	
@@ -354,7 +365,17 @@
 		<initial_actor_data data_type="ActorMoveRange" value="6"/>
 		<grants_feat feat="WeakenEnemyHacker" value="20"/>
 	</equipment_type>
-	
+
+	<equipment_type id="GrappleKnuckles" display_name="Grapple Knuckles"
+		icon_name="FlatSkill_52" slot_type="AndroidPrimary"
+		description=""
+		collections="AndroidWeapons,Knuckles,MachineInvented,MeleeWeapons" turns_required_to_equip="1" limited_to_actor_collection="Keanus"
+		is_ranged_weapon="false" on_attack="BasicAndroidMeleeAttack" on_attack_priority="5">
+		<initial_actor_data data_type="ActorHP" value="50"/>
+		<initial_actor_data data_type="ActorArmorPlating" value="20"/>
+		<grants_feat feat="SuppressingFire" value="70"/>
+	</equipment_type>
+
 	<!--Swords
 	**********************************************************************************************************************************************-->
 

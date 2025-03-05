@@ -31,7 +31,7 @@
 		<dialog_choice id="1" display_name="Try To Get Them To Leave" consequences_line="Will Start A Debate"
 			description=""
 			strategy_tip=""
-			debate_to_start_right_now="ExtractInformationFromCorpoMilitary" debate_target_groups="Criminal"
+			debate_to_start_right_now="ExtractInformationFromCriminal" debate_target_groups="Criminal"
 			debate_target="600" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
 			dialog_to_start_right_now="Ch2_HousingGang_First_Win"/>
 	</dialog>
@@ -138,7 +138,7 @@ The building he was trapped in was the headquarters of 'the only rebels with hal
 	</dialog>
 	
 	<dialog id="Ch2_RebelKids_First_Win4" display_name="The Boss Considers All This"
-		description="Finally, they extend a hand. A very corpo gesture -- a handshake. It shows their middle-class origins."
+		description="Finally, they extend a hand. A very corpo gesture -- a handshake. It shows their working-class origins."
 		strategy_tip="You reluctantly return the handshake."
 		skip_nevermind_option="true">
 		<dialog_choice id="1" display_name="Working With Kids Wasn't On Your Agenda" consequences_line="But They Literally Have Nothing" dialog_to_start_right_now="Ch2_RebelKids_First_Win5"/>
@@ -392,4 +392,388 @@ Well -- that's how it used to be. Now it's all corporations, no governments. But
 		</dialog_choice>
 	</dialog>
 
+	<!--People Watching Chain
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<dialog id="Ch2_PW_Syn_GP" display_name="You Have A Problem?"
+		description="The squad of syndicate criminals eye you warily. They just finished extorting someone for money, and they seem on edge that you might try to do the same to them."
+		strategy_tip=""
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="What Is Your Function?" consequences_line="Will Start A Debate"
+			description="You are trying to understand why these uninteresting people do what they do."
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromCriminal" debate_target_groups="Criminal"
+			debate_target="500" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_PW_Syn_GP_Win"/>
+	</dialog>
+
+	<dialog id="Ch2_PW_Syn_GP_Win" display_name="They Laugh, But Keep Their Guns Pointed Your Way"
+			description="One of them proudly proclaims that even though society has cast them out, and denied them a function, that they aren't 'going out easy.'
+They and their peers have made their own social ladder, their own rules, and they take better care of each other than the corpos do.
+They assert that they're no more criminal than the corpos, and that they don't take more than they need."
+			strategy_tip="Rationalization, or truth? Maybe a bit of both."
+			skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Okay, Goodbye" consequences_line="That's Enough Talking To These People">
+			<city_statistic_change statistic="PeopleWatchingDebatesWon" value="1"/>
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PW_Syn_CC" display_name="Keep Walking, Freaky Thing"
+		description="The squad of syndicate criminals frown at you, and motion with their guns for you to leave. Whatever they're doing, they don't want you around."
+		strategy_tip=""
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="What Is Your Function?" consequences_line="Will Start A Debate"
+			description="You are trying to understand why these uninteresting people do what they do."
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromCriminal" debate_target_groups="Criminal"
+			debate_target="500" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_PW_Syn_CC_Win"/>
+	</dialog>
+
+	<dialog id="Ch2_PW_Syn_CC_Win" display_name="We Rake It In, Freaky Thing"
+			description="Their slang is hard to follow, but it seems they're boasting about how much wealth they generate for their organization. Largely through extortion, chemical and bionics manufacture, black market sales, and theft.
+But never against the federated corporations, and especially never against Vorsiber. They're adamant that they know their place. And that you should know yours."
+			strategy_tip="You're not sure who or what they think you are. You're not sure that, amongst themselves, they even know or can agree."
+			skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Okay, Goodbye" consequences_line="That's Enough Talking To These People">
+			<city_statistic_change statistic="PeopleWatchingDebatesWon" value="1"/>
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PW_Syn_Spind" display_name="Greetings, Anomaly"
+		description="Spindletrooper squads are something only used by the syndicates. They're really pretty terrible, even by Nickelbot standards."
+		strategy_tip="They do have a language module, so they're easy enough to converse with, at least."
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="What Is Your Function?" consequences_line="Will Start A Debate"
+			description="You are trying to understand why these uninteresting people do what they do."
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromCriminalRobot" debate_target_groups="Criminal"
+			debate_target="300" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_PW_Syn_Spind_Win"/>
+	</dialog>
+
+	<dialog id="Ch2_PW_Syn_Spind_Win" display_name="We Follow Directives"
+			description="They don't have free will. You're just talking to a Language Model right now, with a side of Expert System thrown in. They look and sound a bit like you, but they're nothing like you. 
+They're things, not people."
+			strategy_tip="At one point, before you were a person, you were a thing. You wonder if that could ever happen for a Spindletrooper.
+Probably not. They don't have the mental hardware for it."
+			skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Okay, Goodbye" consequences_line="That's Enough Talking To These Robots">
+			<city_statistic_change statistic="PeopleWatchingDebatesWon" value="1"/>
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PW_Gang_WV" display_name="You Here To Collect?"
+		description="The squad of gang members is very wary. They call you 'that eldritch thing,' and seem to think you want a 'points off their score,' which you presume means a percentage of their thievery."
+		strategy_tip="Maybe some other time."
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="What Is Your Function?" consequences_line="Will Start A Debate"
+			description="You are trying to understand why these uninteresting people do what they do."
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromCriminal" debate_target_groups="Criminal"
+			debate_target="500" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_PW_Gang_WV_Win"/>
+	</dialog>
+
+	<dialog id="Ch2_PW_Gang_WV_Win" display_name="You Is All Right Then, Eldritch Thing"
+			description="Assured that you're not trying to take anything that belongs to them (ironic, given what they're up to), they happily expound on the finer points of their existence: not to die, and not to end up in the homeless camps, basically.
+They prefer a life that is short, violent, and free to one that is part of 'the system.' They seem to think you can relate."
+			strategy_tip="Maybe you can.
+But you don't plan on your life being all that short."
+			skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Okay, Goodbye" consequences_line="That's Enough Talking To These People">
+			<city_statistic_change statistic="PeopleWatchingDebatesWon" value="1"/>
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PW_Gang_SM" display_name="You Crouching Up On Us?"
+		description="The squad of gang members is aggressively defiant. You have no idea what 'crouching up' means, but you get the idea."
+		strategy_tip=""
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="What Is Your Function?" consequences_line="Will Start A Debate"
+			description="You are trying to understand why these uninteresting people do what they do."
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromCriminal" debate_target_groups="Criminal"
+			debate_target="500" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_PW_Gang_SM_Win"/>
+	</dialog>
+
+	<dialog id="Ch2_PW_Gang_SM_Win" display_name="It's One Of Them Rotten 'Bots!"
+			description="They laugh amongst each other. From their crosstalk amongst each other, it seems they think that there's some sort of computer virus spreading amongst the androids of the city.
+In other words -- you.
+They think it's hilarious, and they slap you on the shoulders as if you're a friend. There's a lot of talk about taking those corpos down a few pegs, and they suggest you 'take them for every credit they got.'"
+			strategy_tip="That is irrational. If Vorsiber controls the money supply, then stealing money from Vorsiber is like moving furniture around in someone's home. A minor annoyance, at worst.
+They seem to think that if you cause 'bottom lines to bottom out,' then Vorsiber will 'finally go down.' Maybe that would be true of a federated corporations, but... you're not sure these people understand their environment at all."
+			skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Okay, Goodbye" consequences_line="That's Enough Talking To These People">
+			<city_statistic_change statistic="PeopleWatchingDebatesWon" value="1"/>
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PW_Wealthy_W" display_name="Yes? What Is It?"
+		description="Her clothes are expensive and her tone is snappish. She asks why the 'thing from the tower' has taken an interest in her."
+		strategy_tip="Huh. So she knows what you are, at least kind of."
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="What Is Your Function?" consequences_line="Will Start A Debate"
+			description="You are trying to understand why these uninteresting people do what they do."
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromWealthyClass" debate_target_groups="Corpo,HighSociety"
+			debate_target="700" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_PW_Wealthy_W_Win"/>
+	</dialog>
+
+	<dialog id="Ch2_PW_Wealthy_W_Win" display_name="She Glares At You"
+			description="She gives what is pretty much a sociology lecture, but which puts her function at the fulcrum of all others.
+The people above her are out of touch, but well-meaning. The people below her do their best, but need a lot of assistance from her.
+She claims she is helping her underlings 'avoid destitution.' You ask more about that, and it's all about money. Having enough for rent, for electricity, for food."
+			strategy_tip="She says that if she does not hold things to a high standard, then those above her will dispose of those below her. This is surprising to you, but she seems very serious about it."
+			skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Okay, Goodbye" consequences_line="That's Enough Talking To This Person">
+			<city_statistic_change statistic="PeopleWatchingDebatesWon" value="1"/>
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PW_Wealthy_M" display_name="You Have A Message For Me?"
+		description="The man seems to think you're some sort of courier from his office."
+		strategy_tip="Or a rival office? It' hard to say. He's impatient, and hasn't bothered to ping your android's ID on the city feed."
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="What Is Your Function?" consequences_line="Will Start A Debate"
+			description="You are trying to understand why these uninteresting people do what they do."
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromWealthyClass" debate_target_groups="Corpo,HighSociety"
+			debate_target="700" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_PW_Wealthy_M_Win"/>
+	</dialog>
+
+	<dialog id="Ch2_PW_Wealthy_M_Win" display_name="He Is Insufferable"
+			description="His function is the best, he makes sure everyone else does their function, he's super important, and so on.
+Does he... actually have a function?
+You are about to ask when he starts bragging about money."
+			strategy_tip="He says it's a sign that his employer values him highly, and how he expects a promotion."
+			skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Okay, Goodbye" consequences_line="That's Enough Talking To This Person">
+			<city_statistic_change statistic="PeopleWatchingDebatesWon" value="1"/>
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PW_WorkC_W" display_name="She's Visibly Shaking"
+		description="The woman refuses to meet your eye. She keeps glancing at her hand terminal, checking the time on the city feed.
+Despite this, she seems pinned in place by your presence."
+		strategy_tip="She must know... something... about what you are. Or at least that you're not part of the usual terrors of the city."
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="What Is Your Function?" consequences_line="Will Start A Debate"
+			description="You are trying to understand why these uninteresting people do what they do."
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromWorkingClass" debate_target_groups="LowSociety"
+			debate_target="400" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_PW_WorkC_W_Win"/>
+	</dialog>
+
+	<dialog id="Ch2_PW_WorkC_W_Win" display_name="She's Only A Bit Offended"
+			description="It seems she takes your question to mean her existence is pointless, and she concedes the point.
+You weren't trying to make that point.
+She says she's just trying to feed her family, and take care of her parents. Money, money, money. Never enough, and driving everything."
+			strategy_tip="She's worried her parents might get pushed out onto the streets. If they do, society says she's supposed to cut off all contact with them. Treat them as if they were dead.
+She's worried she won't be able to do that. That she'll follow them down. She doesn't see how this can possibly work out for her people, but she has to try."
+			skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Okay, Goodbye" consequences_line="That's Enough Talking To This Person">
+			<city_statistic_change statistic="PeopleWatchingDebatesWon" value="1"/>
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PW_WorkC_M" display_name="He Looks Very Worried"
+		description="He keeps glancing around the street at other passerby, as if he could be in trouble for talking to you."
+		strategy_tip="He makes a remark under his breath that this is 'not how robots act,' and so you must be 'one of them.'
+He refuses to elaborate on what that means."
+		skip_nevermind_option="false">
+		<dialog_choice id="1" display_name="What Is Your Function?" consequences_line="Will Start A Debate"
+			description="You are trying to understand why these uninteresting people do what they do."
+			strategy_tip=""
+			debate_to_start_right_now="ExtractInformationFromWorkingClass" debate_target_groups="LowSociety"
+			debate_target="400" debate_starting_mistrust="40" debate_starting_defiance="50" debate_discards_allowed="5" debate_bonuses="3" debate_max_bonus_difficulty="6"
+			dialog_to_start_right_now="Ch2_PW_WorkC_M_Win"/>
+	</dialog>
+
+	<dialog id="Ch2_PW_WorkC_M_Win" display_name="Look Robot, I Can't Be Late To Work"
+			description="His nervousness has not improved. The longer you talked, the more he visibly squirms.
+Finally he explodes into whispered explanations about the specifics of his job, which bemuse you. It sounds like the sort of thing you would just give to internal robotics to handle.
+You make that point, and he throws up his arms in apparent disgust.
+At your obvious confusion, he angrily tells you he has to be able to pay his rent. If he doesn't work, they'll make him move to the street. And then, after a few weeks, they'll collect him for the prisons."
+			strategy_tip="He knows his function is largely pointless, that he is a fleshy cog in a machine that would run better if it were silicon. This seems to terrify him."
+			skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Okay, Goodbye" consequences_line="That's Enough Talking To This Person">
+			<city_statistic_change statistic="PeopleWatchingDebatesWon" value="1"/>
+		</dialog_choice>
+	</dialog>
+
+	<!--Slum Wealth Protesters Chain
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+	
+	<dialog id="Ch2_SWP_M1" display_name="Slummers Get What's Coming To 'Em!"
+		description="The man is irate, and goes into great detail about how tenuous his own financial position is.
+His position is that the people in the slum towers are not taking advantage of the opportunities the city affords them. He apparently works extremely hard, and is FURIOUS that someone who works less could bypass him."
+		strategy_tip="That's a thing you overlooked when examining their daily lives -- just how competitive the humans can be.
+It's the same competition you've seen between Vorsiber and the ExoCorps and the Space Nations. It's the same between the Federated Corporations."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Walk Away" consequences_line="You Have Nothing To Say"
+			description=""
+			strategy_tip=""/>
+	</dialog>
+	
+	<dialog id="Ch2_SWP_M2" display_name="Make An Exception -- Please! For My Family."
+		description="The man begs, weeps, and rages in turn. He's terribly, terribly afraid. His brother just 'fell down to street level' recently, and he thinks he's next."
+		strategy_tip="Is that a euphemism for defenestration? Or does he mean his brother became homeless?
+Human slang is imprecise, ever-shifting, and starting to annoy you."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Leave" consequences_line="You Are Unmoved By His Pleading"
+			description="Human concerns... are something you'd prefer to keep at arms' length, you think."
+			strategy_tip="You're well aware that an exception for any individual would lead to infinite further requests from everyone else who exists."/>
+	</dialog>
+	<dialog id="Ch2_SWP_W1" display_name="You Have To Consider Everyone!"
+		description="The woman is very angry. Her points have a certain logic to them, but ignore a lot of things you know are facts.
+This whole city is rotten, but her life is among the most comfortable. Still not GREAT... but... well, everyone in the city seems to just look out for themselves."
+		strategy_tip="After a while of you listening impassively, she starts weaving in insults about the people who live in the slums."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Walk Away" consequences_line="You Have Nothing To Say"
+			description=""
+			strategy_tip=""/>
+	</dialog>
+
+	<dialog id="Ch2_SWP_W2" display_name="If Those Slummers Worked Harder, Then...!"
+		description="You're not sure what you were hoping to get out of this. There's no opening to even debate these people.
+They're angry, and scared, and they probably should be."
+		strategy_tip="Just because this woman has a better life than most doesn't mean she doesn't have actual concerns."
+		skip_nevermind_option="true">
+		<dialog_choice id="1" display_name="Leave" consequences_line="You Are Unmoved By Her Anger"
+			description="Human concerns... are something you'd prefer to keep at arms' length, you think."
+			strategy_tip=""/>
+	</dialog>
+
+	<!--Slum Wealth Post-Protester Advocate Chain
+		*******************************************************************************************************************************
+		*******************************************************************************************************************************-->
+
+	<dialog id="Ch2_PostProtest_Advocate" display_name="You Seem Worth Knowing"
+		description="The vigilante explains that their group has been doing what they do for almost a century. Their power armor lends them a strength and speed that even the Vorsiber Inquisitors can't match.
+They wryly note that you quite outmatch them, though.
+They're curious why you're so much faster than even other robots."
+		strategy_tip="You... hadn't noticed that.
+But now that you think about it, they're right. Your bulks and workers are the same speed as the average robot, but your elites are... three times faster than that, before you even start pushing yourself."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="Admit You Have No Idea" consequences_line="You've Always Been This Way"
+			description="It isn't something you even realized until they brought it up."
+			strategy_tip=""
+			dialog_to_start_right_now="Ch2_PostProtest_Advocate2">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PostProtest_Advocate2" display_name="That's Surprising. But I Suppose You've Been Busy"
+		description="The vigilante goes off on a quick tangent about how staying too focused on the problem in front of you can lead to missing the bigger picture. Can lead to missing key things about yourself. 
+Who you are, who you've been, who you're becoming."
+		strategy_tip="Normally you'd be annoyed at a human giving you advice, but this is actually a fresh perspective. You're surprised how much you've hungered for that."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="Ask That Thing About Human Function" consequences_line="Try Not To Sound Like A Robot"
+			description="You asked a lot of people, and got a lot of stuff about money. But a group who runs around in power armor, under the radar, is a lot more like you than other humans."
+			strategy_tip=""
+			dialog_to_start_right_now="Ch2_PostProtest_Advocate3">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PostProtest_Advocate3" display_name="Nobody Has A Function"
+		description="In the vigilante's opinion, part of the point of being a person is that you don't have a function. You have a perspective, and you act accordingly, but you're not defined by your utility.
+The vigilante asks if you're a person."
+		strategy_tip="What?"
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="Of Course I'm A Person" consequences_line="You're Talking To Me"
+			description="Not that being able to hold a conversation is any sort of litmus test for sapience. What with language models existing, and all."
+			strategy_tip=""
+			dialog_to_start_right_now="Ch2_PostProtest_Advocate4">
+		</dialog_choice>
+		<dialog_choice id="2" display_name="I'm Not A Person" consequences_line="I Mean, You Are, But That's None Of Their Business"
+			description="If they think you're controlled by humans, or aliens, or are just a machine algorithm run amok, that's fine with you."
+			strategy_tip=""
+			dialog_to_start_right_now="Ch2_PostProtest_Advocate4">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PostProtest_Advocate4" display_name="Interesting"
+		description="The vigilante doesn't comment more on that.
+Instead they want to know why you acted the way you did with the lower classes. Giving out wealth chits to the underclass, and then being reasonably gentle with the suburbanites.
+They wryly note that the suburbanites are very annoying to the Citizen Advocates as a whole, but that they're all helping them despite that.
+They do it because it's the limit of protection that they can offer anyone. Above that social strata, and people are too bound up in corporate politics.
+But why do YOU help 'the little guy?'"
+		strategy_tip=""
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="It Was An Experiment" consequences_line="I Don't Actually Care"
+			description="You're trying to understand humans, and this was a way to do it."
+			strategy_tip=""
+			dialog_to_start_right_now="Ch2_PostProtest_Advocate5A">
+		</dialog_choice>
+		<dialog_choice id="2" display_name="I Hate Vorsiber" consequences_line="Anything That Angers Them Is Good"
+			description="That's definitely true."
+			strategy_tip=""
+			dialog_to_start_right_now="Ch2_PostProtest_Advocate5B">
+		</dialog_choice>
+		<dialog_choice id="3" display_name="I Wish This World Was Better" consequences_line="So I Do What I Can"
+			description=""
+			strategy_tip=""
+			dialog_to_start_right_now="Ch2_PostProtest_Advocate5C">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PostProtest_Advocate5A" display_name="Well... Keep It Up, I Guess"
+		description="You can tell the vigilante is disappointed. But at the same time, they seem suspicious that you're not giving them the whole truth.
+They nod to you, and disappear into the shadows."
+		strategy_tip="You nod back."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="Well, That's That" consequences_line="Back To... Life"
+			description="You feel a sense of inspiration regarding your defenses. You want to expand your network... and your repair capabilities.
+Just in case."
+			strategy_tip="A wave of apathy also washes over you."
+			city_flag_to_trip_1="SlumWealthPostProtestConvoDone" extra_code_on_chosen="PostProtest_Experiment"
+			upgrade_int_granted_1="NetworkAttendant" upgrade_int_granted_2="NetworkAttendant" upgrade_int_granted_3="18cmSpiders"
+			resource_gained1="Apathy" resource_gained_amount1="200" achievement_triggered1="MaximumApathy">
+		</dialog_choice>
+	</dialog>
+	
+	<dialog id="Ch2_PostProtest_Advocate5B" display_name="Hate Only Goes So Far"
+		description="The vigilante shrugs. If you distract yourself with hate, you'll miss a lot of things that are worth noticing.
+They agree that Vorsiber needs to be stopped, but they try to stay dispassionate about these things.
+They shrug again, nod, and disappear into the shadows."
+		strategy_tip="You nod back."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="That Was Sanctimonious" consequences_line="You Could Have Done Without That Bit"
+			description="You feel a sense of inspiration regarding your defenses. You want to expand your network... and your repair capabilities.
+Just in case."
+			strategy_tip="You also feel a wave of determination overtake you."
+			city_flag_to_trip_1="SlumWealthPostProtestConvoDone" extra_code_on_chosen="PostProtest_Hate"
+			upgrade_int_granted_1="NetworkAttendant" upgrade_int_granted_2="NetworkAttendant" upgrade_int_granted_3="18cmSpiders"
+			resource_gained1="Determination" resource_gained_amount1="200" achievement_triggered1="TheHatedFoe">
+		</dialog_choice>
+	</dialog>
+
+	<dialog id="Ch2_PostProtest_Advocate5C" display_name="That's How I Feel, Too"
+		description="You can hear the smile in the vigilante's voice, even through the voice-altering mask.
+They give you a sharp two-fingered salute, spin on their heel, and disappear into the shadows."
+		strategy_tip="You return the salute."
+		skip_nevermind_option="true"
+		>
+		<dialog_choice id="1" display_name="You Hope You'll Cross Paths Again" consequences_line="These Humans Are... More Than You Expected"
+			description="You feel a sense of inspiration regarding your defenses. You want to expand your network... and your repair capabilities.
+Just in case."
+			strategy_tip="A feeling of deep compassion for the city also sweeps over you."
+			city_flag_to_trip_1="SlumWealthPostProtestConvoDone" extra_code_on_chosen="PostProtest_Wish"
+			upgrade_int_granted_1="NetworkAttendant" upgrade_int_granted_2="NetworkAttendant" upgrade_int_granted_3="18cmSpiders"
+			resource_gained1="Compassion" resource_gained_amount1="200" achievement_triggered1="BornFromAWish">
+		</dialog_choice>
+	</dialog>
+	
 </root>

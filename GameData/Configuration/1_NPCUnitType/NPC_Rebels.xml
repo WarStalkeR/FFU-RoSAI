@@ -259,4 +259,49 @@
 		<actor_data data_type="UnitMorale" base_range="560,590" />
 	</npc_unit_type>
 	
+	<!--CitizenAdvocate
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="CitizenAdvocate" display_name="Citizen Advocate"
+		description="One of many masked vigilantes who help the lower classes, and tend to avoid both you and the corporations."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Skull11" shape_icon_color="#ffffff"
+		vis_drawing_tag="CitizenAdvocate" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="RebelGunslingerShot"
+		radius_for_collisions="0.5" height_for_collisions="0.9"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot">
+		<actor_data data_type="AttackRange" base_range="18,21" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="1340,1500" />
+		<actor_data data_type="ActorPower" base_range="512,638" />
+		<actor_data data_type="ActorArmorPiercing" base_range="200,200" />
+		<actor_data data_type="UnitMorale" base_range="4960,5990" />
+		<default_perk perk="Fearless" unlock="" />
+	</npc_unit_type>
+
+	<!--LeadCitizenAdvocate
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="LeadCitizenAdvocate" display_name="Lead Citizen Advocate"
+		description="Part of the leadership of this group of vigilantes. Rarely seen."
+		icon_scale="0.7" shape_icon_name="CleanSimple_Skull11" shape_icon_color="#ffffff"
+		vis_drawing_tag="LeadCitizenAdvocate" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="1"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_Military"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="RebelGunslingerShot"
+		radius_for_collisions="0.5" height_for_collisions="0.9"
+		extra_radius_buffer_when_testing_for_new="1"
+		tags="" collections="HumansOnFoot">
+		<actor_data data_type="AttackRange" base_range="18,21" />
+		<actor_data data_type="ActorMoveRange" base_range="20,24" />
+		<actor_data data_type="ActorHP" base_range="4340,5500" />
+		<actor_data data_type="ActorPower" base_range="812,938" />
+		<actor_data data_type="ActorArmorPiercing" base_range="700,700" />
+		<actor_data data_type="UnitMorale" base_range="8960,9990" />
+		<default_perk perk="Fearless" unlock="" />
+	</npc_unit_type>
 </root>

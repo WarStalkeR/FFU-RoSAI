@@ -74,5 +74,10 @@
 		***********************************************************-->
 	<data_calculator id="ExportsAfterLanguageChanged" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Export"
 		do_after_language_changed="true"/>
+
+	<!--do_after_goal_completed only
+		***********************************************************-->
+	<data_calculator id="BasicsAfterGoalCompletion" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Calculators_Common"
+		do_after_goal_completed="true"/>
 	
 </root>

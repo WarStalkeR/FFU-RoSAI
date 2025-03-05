@@ -392,6 +392,16 @@
 			</possible_result>
 		</choice>
 
+		<choice id="Purchase5000Furniture" display_name="Purchase 5000 Furniture"
+			description="That's an obsessive amount of furniture. Seems like the sellers don't mind."
+			strategy_tip="Hopefully it's the right kind..."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wealth" cost="35000"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true">
+				<resource_change_range resource_type="Furniture" min="5000" max="5000" />
+			</possible_result>
+		</choice>
+		
 		<choice id="Purchase2000Alumina" display_name="Purchase 2000 Alumina"
 			description="This is enough to wire up a 5-story office building."
 			strategy_tip="It's not a suspicious volume for a small company to purchase."
@@ -428,7 +438,7 @@
 		*********************************************************************************-->
 	<city_event id="Repeat_SellingToTheCasino" display_name="Selling To The Casino"
 		 description="If you're in need of wealth, you can sell some of your products in bulk."
-		 strategy_tip="The casino brokers certain high-end backdoor deals to serve the ultra-wealthy. This does nothing to help the lower and middle classes, but it will earn you quite a lot."
+		 strategy_tip="The casino brokers certain high-end backdoor deals to serve the ultra-wealthy. This does nothing to help the lower and working classes, but it will earn you quite a lot."
 		 icon_name="CleanSimple_SkillC069" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.EventsBasic" event_is_blocked_for_actors_without_clearance="false"
 		 street_sense_collections="All,Shops,WealthGeneration">
 		<gate_by_city minimum_chapter="0" required_city_flag="HasEstablishedShellCompany" />
@@ -557,7 +567,7 @@ Selling your excess to them is much better for the citizens of the city, and it 
 		*********************************************************************************-->
 	<city_event id="Repeat_StealFromSyndicate" display_name="Steal From Syndicate Storage"
 		 description="Criminal syndicates stash both anonymous wealth chits and stolen goods in their hidden warehouses. Grabbing wealth chits should be straightforward."
-		 strategy_tip="This is much more ethical than wiretapping the middle class."
+		 strategy_tip="This is much more ethical than wiretapping the working class."
 		 icon_name="BT_Gems2" has_no_code="true" event_is_blocked_for_actors_without_clearance="true"
 		 street_sense_collections="All,ResourceAcquisition,HostileAction,WealthGeneration">
 		<gate_by_city minimum_chapter="1"  />

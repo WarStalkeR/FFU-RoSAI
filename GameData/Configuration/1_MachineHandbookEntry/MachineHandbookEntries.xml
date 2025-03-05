@@ -167,6 +167,16 @@ Vehicles and Mechs work essentially the same way, but have their own independent
 		auto_unlocks_and_marked_read_if_skipping_chapter_zero="true" is_mid_visibility_entry="true"
 		collections="All,Strategy"/>
 
+	<!--ProjectsWithStreetSenseItems-->
+	<handbook_entry id="ProjectsWithStreetSenseItems" display_name="Projects With StreetSense Items" section="Strategy"
+		description="There are a variety of projects that involve you taking a series of actions in StreetSense. Doing work, helping people, hurting people, examining locations, and so on.
+Except in a few cases, the actual result is the same regardless of which actions you take. In other words, any combination of actions you take will complete the project, most of the time."
+		strategy_tip="This might sound strange, but you can probably relate this to some experiences in your own life. Sometimes the result is inevitable.
+In those cases, what changes is YOU. Doing things one way or another leads to changes in yourself -- or in this case, in your units, equipment, or structures.
+So while the primary result may be a given, the secondary benefits vary massively. Smart choices that fit your strategy can have a big impact on your long-term plans."
+		auto_unlocks_and_marked_read_if_skipping_chapter_zero="false"
+		collections="All,Strategy"/>
+
 	<!--Combat
 	************************************************************************************************************************************************************************
 	************************************************************************************************************************************************************************-->
@@ -683,6 +693,29 @@ This is the city's inherent fog of war."
 		auto_unlocks_and_marked_read_if_skipping_chapter_one="true"
 		collections="All,Navigation"/>
 
+	<!--Lifeforms
+	************************************************************************************************************************************************************************
+	************************************************************************************************************************************************************************-->
+
+	<!--FilthAndFurniture-->
+	<handbook_entry id="FilthAndFurniture" display_name="Filth And Furniture" section="Lifeforms" is_mid_visibility_entry="true"
+		description="Humans are gross. Even with a toilet and sink in the apartments you provide, the apartments will fill with Filth if you do not provide residents with Daily Necessities.
+As Filth accumulates, the amount of livable space in a building decreases -- humans can't live in an apartment if it's filled with trash and muck.
+Daily Necessities are consumed per-turn, and prevent any new filth from accumulating. When your residents have enough Daily Necessities, they will clean... but VERY slowly. They only clean half as fast as they would have generated Filth."
+		strategy_tip="This is where furniture comes in. It turns out, humans like having more than just bare metal walls. For each furnished apartment, there's a 12x multiplier to how fast humans clean.
+Furniture is not related to the prevention of Filth, but it strongly motivates humans clean faster when existing Filth is present."
+		auto_unlocks_and_marked_read_if_skipping_chapter_one="false"
+		collections="All,Lifeforms"/>
+
+	<!--FoodAndWaterForHumans-->
+	<handbook_entry id="FoodAndWaterForHumans" display_name="Food And Water For Humans" section="Lifeforms" is_mid_visibility_entry="true"
+		description="If you've ever made a deal to provide food and/or water for homeless humans, that's very admirable, but that's something that is a deal with a social class -- not your specific residents.
+Just because you provide shelter for some humans, that doesn't make you their mayor or responsible for feeding them.
+There can be both moral and practical benefits for providing for the underclasses of the city, and that often overlaps with your residents. But it's not a requirement to keep them alive."
+		strategy_tip="Tip: if you'd like even more of those practical benefits from deals you make (with anyone), be sure to visit the Deals tab of the Resources window. You can see what your benefits are, as well as increase the deal to get even more of them."
+		auto_unlocks_and_marked_read_if_skipping_chapter_one="false"
+		collections="All,Lifeforms"/>
+	
 	<!--TheWorld
 	************************************************************************************************************************************************************************
 	************************************************************************************************************************************************************************-->
@@ -795,6 +828,15 @@ If you wish to have a more tense and challenging experience, you should Vandaliz
 		description="If you want to power yourself up or increase your strategic flexibility, the most direct way to do this is by using Exploration Sites, through the related lens.
 Until you've done them once in a profile, the details are hidden. But they provide notable new equipment and abilities, and can even allow you to redefine the roles of some of your units."
 		strategy_tip="On hard and extreme modes, you will need to make smart use of specific sites in order to carry out your strategies."
+		collections="All,Difficulty,PreparingForCombat,Equipment"/>
+
+	<!--ExplorationSiteProgressIsRetained-->
+	<handbook_entry id="ExplorationSiteProgressIsRetained" display_name="Exploration Site Progress Is Retained" section="Difficulty"
+		description="Worried that your explorer unit does not have the needed clearance and will get blown to bits? Don't be.
+You can send in units without them having the clearance -- they will simply get shot at. You can throw microbuilder clouds on them, or do other things to draw the aggro away."
+		strategy_tip="The work of explorers is cumulative. So if it will take 10 turns, and a Technician does 3 turns of work, future Technicians only have 7 turns of work remaining.
+Even if the exploration site shifts to a new location, that work is retained in the current timeline.
+Note that progress will not be made on a turn where the explorer dies. Any violence happens before work is done, so if the explorer dies on a turn, it won't be there to do the work."
 		collections="All,Difficulty,PreparingForCombat,Equipment"/>
 	
 	<!--HardAndExtremeMode-->

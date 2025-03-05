@@ -62,7 +62,7 @@
 		<acting_actor_accumulator_change accumulator_type="NDAC1" min="40" max="60" />
 	</npc_objective>
 	
-	<npc_objective id="ExtortMiddleClassCitizens" display_name="Extort Middle-Class Citizens" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
+	<npc_objective id="ExtortWorkingClassCitizens" display_name="Extort Working-Class Citizens" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
 		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="true" points_required_to_complete_objective="800" min_points_per_turn_from_actors="30"
 		required_distance_xz_from_building_objective="2"
 		objective_style="PointsCollectionAgainstBuilding" popup_text_on_complete="Extortion Complete" on_complete="ExtortionComplete"
@@ -215,6 +215,19 @@
 		<acting_actor_accumulator_change accumulator_type="NDAC1" min="10" max="10" />
 	</npc_objective>
 	
+
+	<npc_objective id="DestroySlumBuilding" display_name="Demolish Slum Building" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
+		causes_unit_to_always_be_visible_as_if_out_of_fog_of_war="false" points_required_to_complete_objective="100" min_points_per_turn_from_actors="150"
+		required_distance_xz_from_building_objective="5"
+		objective_style="PointsCollectionAgainstBuilding" popup_text_on_complete="" on_complete="Silent"
+		popup_text_scale="0.6" popup_color="#D12121" popup_color_hdr_intensity="1.2"
+		icon_name="WEmblem187" icon_color="#D12121" icon_color_hdr_intensity="1.2" icon_scale="0.6"
+		extra_code_to_run_on_objective_complete="DestroySlumBuilding">
+		<acting_actor_accumulator_change accumulator_type="NDAC1" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC2" min="-10000" max="0" />
+		<acting_actor_accumulator_change accumulator_type="NDAC3" min="-10000" max="0" />
+	</npc_objective>
+
 	<!--Next
 		***********************************************************-->
 	

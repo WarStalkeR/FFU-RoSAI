@@ -267,6 +267,16 @@ One or more units running interference like this helps keep other units alive."
 		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
 	</actor_status>
 
+	<!-- Designed by RocketAssistedPuffin-->
+	<actor_status id="InjectedWithHeavyMetals" display_name="Injected With Heavy Metals"
+		description="Lowers health."
+		strategy_tip_optional=""
+		icon_name="FlatSkillC157" icon_color="#FF553C" tooltip_color="ActorStatus_Bad"
+		badge_1_to_grant_when_fully_expires=""
+		should_show_icon_next_to_health_bar="true" icon_hdr_intensity="0.5">
+		<change_per_turn_by_intensity actor_data_type="ActorHP" multiplied_with_intensity="-0.6" />
+	</actor_status>
+
 	<!--Very High Importance (sort order 100+)
 		*********************************************************************************-->
 	

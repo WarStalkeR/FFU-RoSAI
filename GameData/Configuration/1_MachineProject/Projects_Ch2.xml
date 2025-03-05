@@ -2249,7 +2249,7 @@ Their growth rate is a meager 5%, so it's likely that nobody cares enough to loo
 		</available_outcome>
 	</project>
 
-	<project id="Ch2_MIN_DestroyTheBanks" display_name="Destroy The Banks" is_minor_project="true" can_happen_even_during_obsession="true"
+	<project id="Ch2_MIN_DestroyTheBanks" display_name="Destroy The Banks" is_minor_project="true"
 		description="With each bank you destroy, you gain more ability to corrupt the economic record."
 		strategy_tip="It's a good idea to gird yourself for what comes after."
 		icon_name="SK_War" cohort="Yourself" is_silently_triggered_by_event="true"
@@ -2272,5 +2272,177 @@ Their growth rate is a meager 5%, so it's likely that nobody cares enough to loo
 		</available_outcome>
 
 	</project>
+
+	<!--Advocate Encounter Chain
+		**************************************************************************-->
+
+	<project id="Ch2_PeopleWatching" display_name="People Watching"
+		description="You're much more aware of humans moving about the city than usual."
+		strategy_tip="You should use an android with the Force Conversation ability and try to question some of them."
+		icon_name="FlatSkillB_cup" cohort="Yourself" is_silently_triggered_by_event="true"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="220" />
+
+		<available_outcome id="Some" display_name="Win 3 Debates" on_complete="ProjectComplete"
+			description="Win three of the available debates."
+			strategy_tip="This is an excellent time to use the Forces lens."
+			if_intended_outcome_investigation_to_start_1="Ch2StealCorporateRecords"
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="2"
+			related_resource_1="" related_resource_2=""  countdown_on_complete=""
+			resource_added_1="Determination" resource_added_amount_1="30" resource_added_2="Wisdom" resource_added_amount_2="30" next_project_to_start_1="">
+			<math_int id="Goal" int_min="3" />
+		</available_outcome>
+
+		<available_outcome id="More" display_name="Win 5 Debates" on_complete="ProjectComplete"
+			description="Win five of the available debates."
+			strategy_tip="This is an excellent time to use the Forces lens."
+			if_intended_outcome_investigation_to_start_1="Ch2StealCorporateRecords"
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="4"
+			related_resource_1="" related_resource_2=""  countdown_on_complete=""
+			resource_added_1="Determination" resource_added_amount_1="50" resource_added_2="Wisdom" resource_added_amount_2="50" next_project_to_start_1="">
+			<math_int id="Goal" int_min="5" />
+		</available_outcome>
+
+		<available_outcome id="All" display_name="Win 9 Debates" on_complete="ProjectComplete"
+			description="Win all nine of the available debates."
+			strategy_tip="This is an excellent time to use the Forces lens."
+			if_intended_outcome_investigation_to_start_1="Ch2StealCorporateRecords"
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="6"
+			related_resource_1="" related_resource_2=""  countdown_on_complete=""
+			resource_added_1="Determination" resource_added_amount_1="90" resource_added_2="Wisdom" resource_added_amount_2="90" next_project_to_start_1="">
+			<math_int id="Goal" int_min="9" />
+		</available_outcome>
+	</project>
 	
+	<project id="Ch2_MIN_AdvocateTowerDest" display_name="Investigate Tower Destruction" is_minor_project="true"
+			description="Your network tower just... exploded. For no visible reason that you can see."
+			strategy_tip="You can build an emergency network source that is hidden in order to get yourself back online, but the next step is to investigate this."
+			icon_name="WEmblem053" cohort="Yourself" is_silently_triggered_by_event="true"
+			dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="Whoever did this is going to pay."
+			strategy_tip=""
+			
+			if_intended_outcome_investigation_to_start_1="Ch2SearchForTowerBombers" next_project_to_start_1="Ch2_MIN_FlushOutTheBombers"
+			related_resource_1="" related_resource_2="" related_resource_3="" related_resource_4="" related_resource_5=""
+			resource_added_1="Determination" resource_added_amount_1="50" resource_added_2="Wisdom" resource_added_amount_2="50"
+			research_domain_inspiration_type_1="MartialExpansion" research_domain_inspiration_amount_1="2">
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_FlushOutTheBombers" display_name="Flush Out The Bombers" is_minor_project="true"
+			description="You found very little evidence for the bombers, but you did catch video footage of shadowy figures moving about in a way you never noticed before.
+Reviewing older footage, you still can't find out where they're based. But you can tell that they frequently visit the slum towers, and seem to prey on petty criminals. Vigilantes, perhaps."
+			strategy_tip="If you create enough of a fuss in the slums, you have a feeling they'll reveal themselves."
+			icon_name="CleanSimple_Skull11" cohort="Yourself" is_silently_triggered_by_event="true"
+			dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="You can do this without harming anyone, or you can use lethal force to make a stronger point."
+			strategy_tip="Lethal force will probably draw a stronger response, for good or ill."
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"			
+			next_project_to_start_1="Ch2_MIN_DefeatTheBombers"
+			related_resource_1="" related_resource_2="" related_resource_3="" related_resource_4="" related_resource_5=""
+			resource_added_1="Creativity" resource_added_amount_1="10" resource_added_2="Wisdom" resource_added_amount_2="10">
+			<!--ThreatenInhabitants-->
+			<street_sense_item id="ThreatenInhabitants" display_name="Threaten Inhabitants"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="-1" icon_name="FlatSkill_13" color_data="CasinoShop" icon_scale="0.4"
+				must_be_at_building_tag="SlumTower" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_skill_type="UnitIntimidation" required_skill_amount="200"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="500"
+				upgrade_float_1="BetterRepairSpiders"
+				resource_change_1="Apathy" resource_change_1_amount="10" 
+				alter_city_statistic_1="FlushOutBombers_ConflictPoints" alter_city_statistic_1_amount="4" city_statistic_1_blocks_if_above="20"/>
+			<!--MurderInhabitants-->
+			<street_sense_item id="MurderInhabitants" display_name="Murder Inhabitants"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="-1" icon_name="AN_Knife1" color_data="RecruitMedicalScientists" icon_scale="0.4"
+				must_be_at_building_tag="SlumTower" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_skill_type="UnitStrength" required_skill_amount="90"
+				alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="500"
+				upgrade_float_1="BetterMainframes"
+				resource_change_1="Cruelty" resource_change_1_amount="20" 
+				alter_city_statistic_1="FlushOutBombers_ConflictPoints" alter_city_statistic_1_amount="4" city_statistic_1_blocks_if_above="20"
+				alter_city_statistic_2="FlushOutBombers_Murders" alter_city_statistic_2_amount="1"/>
+		
+		</available_outcome>
+
+	</project>
+		
+	<project id="Ch2_MIN_DefeatTheBombers" display_name="Defeat The Bombers" is_minor_project="true"
+			description="You've gotten their attention. You have no idea who these people are, but they have incredible power armor that makes them almost as fast as you.
+You've never faced any humans like this before."
+			strategy_tip="You're curious to know who they are, but they have no interest in conversation.
+Something gives you the sense that you might be the villain in this situation. Oh well."
+			icon_name="CleanSimple_Skull11" cohort="Yourself" is_silently_triggered_by_event="true"
+			dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="There are more of them than you expected."
+			strategy_tip=""	
+			next_project_to_start_1=""
+			related_resource_1="" related_resource_2="" related_resource_3="" related_resource_4="" related_resource_5=""
+			resource_added_1="Cruelty" resource_added_amount_1="60" resource_added_2="Apathy" resource_added_amount_2="30"
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="4">
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_ClearingTheLadder" display_name="Clearing The Ladder" is_minor_project="true"
+			description="Eliminating higher-status humans should, presumably, lead to the advancement of lower-status humans."
+			strategy_tip="You're curious if that's really true, and thinking you might just 'prune' a number of wealthy commuters to see if that does anything."
+			icon_name="HL_Ladder" cohort="Yourself" is_silently_triggered_by_event="true"
+			dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description=""
+			strategy_tip=""
+			
+			related_resource_1="" related_resource_2="" related_resource_3="" related_resource_4="" related_resource_5=""
+			resource_added_1="Cruelty" resource_added_amount_1="100" resource_added_2="Apathy" resource_added_amount_2="100"
+			research_domain_inspiration_type_1="SmallArmsResearch" research_domain_inspiration_amount_1="2"
+			research_domain_inspiration_type_2="" research_domain_inspiration_amount_2="">
+		</available_outcome>
+
+	</project>
+
+	<project id="Ch2_MIN_GiftsToTheSlums" display_name="Gifts To The Slums" is_minor_project="true"
+			description="You're curious if Wealth alone, outside of other social factors, would be enough to lift at least a few slum-dwellers out of poverty."
+			strategy_tip="You could certainly make some large donations of anonymous Wealth chits to the slum towers, and see if anything changes."
+			icon_name="CleanSimple_SkillC004" cohort="Yourself" is_silently_triggered_by_event="true"
+			dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Projects_ChapterTwo">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AllLaterChapters" sort_index="60" />
+
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+			description="If you don't presently have 2 million Wealth to spare, consider selling filtered water, stealing from criminal syndicates via StreetSense, or investigating shady corporations via a Contemplation."
+			strategy_tip=""
+			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
+			related_resource_1="Wealth" related_resource_2="" related_resource_3="" related_resource_4="" related_resource_5=""
+			resource_added_1="Compassion" resource_added_amount_1="200" resource_added_2="Determination" resource_added_amount_2="100"
+			research_domain_inspiration_type_1="AndroidOptimization" research_domain_inspiration_amount_1="1"
+			research_domain_inspiration_type_2="StructuralImprovement" research_domain_inspiration_amount_2="1">
+			<!--SlumTower-->
+			<street_sense_item id="SlumTower" display_name="Slum Tower"
+				description="Hand out anonymous Wealth chits to the people here."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="-1" icon_name="CleanSimple_SkillC004" color_data="PrismaticTungsten" icon_scale="0.4"
+				must_be_at_building_tag="SlumTower" seed_x_at_once_in_general="8" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				resource_change_1="Wealth" resource_change_1_amount="-200000"
+				alter_city_statistic_1="WealthHandedOutToSlumDwellers" alter_city_statistic_1_amount="200000"/>
+		</available_outcome>
+
+	</project>
+
 </root>

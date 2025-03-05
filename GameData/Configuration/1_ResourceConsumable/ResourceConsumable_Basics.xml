@@ -118,6 +118,17 @@
 		<consumable_cost resource_type="HeavyMetals" required="3000" />
 		<direct_use_consumable_data clears_all_aggro="true" can_only_be_used_by_actors="ShadowUnits" on_direct_use="ConsumableWarPowerup" />
 	</consumable_item>
+
+	<consumable_item id="HeavyMetalInjection" display_name="Heavy Metal Injection"
+		description="Inject the target with various toxic heavy metals, causing severe damage over time."
+		strategy_tip="This is a stealthy action, and so does not alert the target."
+		icon_name="FlatSkillC157" icon_color="#ffffff" always_show_strategic_tip="true"
+		sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="HeavyMetals" required="5000" />
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<direct_use_consumable_data status_to_apply="InjectedWithHeavyMetals" status_intensity_user_source="ActorFearAttackPower" targets_actors="HumansOnFoot"
+			turns_to_last="3" stack_limit="1" can_only_be_used_by_actors="Harbingers" on_direct_use="BeesThrown" is_considered_an_attack_if_thrown="false" />
+	</consumable_item>
 	
 	<!--Esoteric Consumables
 		*********************************************************-->

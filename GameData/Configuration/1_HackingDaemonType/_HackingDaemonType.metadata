@@ -44,6 +44,8 @@
 		tooltip="This is used to let us know when friendly daemons can hunt this kind of daemon." />
 	<attribute key="hunts_hostile_daemons" type="bool" default="false"
 		tooltip="If true, then this can destroy hostile daemons." />
+	<attribute key="will_end_hacking_session_if_corrupted" type="bool" default="false"
+		tooltip="Does not actually end things! All this does is allow players to corrupt their last shard if it would hit this daemon." />
 	<attribute key="always_show_strategy_tip" type="bool" default="false"
 		tooltip="If true, then always show the strategy tip without any need to expand the tooltip." />
 
