@@ -9,6 +9,10 @@ namespace Arcen.HotM.FFU.RoSAI {
         public void RunOnFirstTimeExternalAssemblyLoaded() {
             LoadDependency("FFU_RoSAI", "0Harmony");
         }
+        public void RunImmediatelyOnHandlerProcessed(ArcenExternalDllInitialLoadCall Loader) {
+        }
+        public void RunAfterAllTableImportsComplete(ArcenExternalDllInitialLoadCall Loader) {
+        }
         public static void LoadDependency(string refModName, string refDllName) {
             Assembly[] refAssemblies = AppDomain.CurrentDomain.GetAssemblies();
             bool isAlreadyLoaded = refAssemblies.Any(a => string.Equals(a.GetName().Name, refDllName, StringComparison.OrdinalIgnoreCase));
