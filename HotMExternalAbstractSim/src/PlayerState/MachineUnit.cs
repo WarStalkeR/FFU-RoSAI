@@ -931,6 +931,13 @@ namespace Arcen.HotM.External
         {
             this.HandlePerTurnMachineActorLogic();
             this.PerTurnHandleBaseFairlyEarlyActorLogic( RandForThisTurn );
+
+            if ( this.GetActorDataCurrent( ActorRefs.ActorHP, true ) <= 0 )
+            {
+                this.DoDeathCheck( RandForThisTurn, false );
+                return;
+            }
+
             bool doActionOverTime = this.CurrentActionPoints > 0;
             int apRemainingAfterLastTurn = this.CurrentActionPoints;
 
@@ -949,7 +956,10 @@ namespace Arcen.HotM.External
             {
                 apRemainingAfterLastTurn = 0;
                 if ( this.GetActorDataCurrent( ActorRefs.ActorHP, true ) > 0 )
-                    this.CurrentActionOverTime.DoActionPerTurnLogic( RandForThisTurn ); //unit is still alive, so do the thing
+                {
+                    this.IsScheduledToDoActionOverTime = true;
+                    //this.CurrentActionOverTime.DoActionPerTurnLogic( RandForThisTurn ); //unit is still alive, so do the thing
+                }
                 else
                     this.CurrentActionOverTime.DestroyAndCancelDueToFailureOfSomeKind(); //the failure is that the unit is dead
             }            
@@ -1042,6 +1052,22 @@ namespace Arcen.HotM.External
             {
                 if ( !this.GetIsDeployed() ) //if a unit is not moving and is not deployed, then make sure its location is the current location of the vehicle it is in
                     this.drawLocation = this.ContainerLocation.Get().GetEffectiveWorldLocationForContainedUnit();
+            }
+
+            if ( this.IsScheduledToDoActionOverTime )
+            {
+                if ( SimCommon.NPCsWaitingToActOnTheirOwn.Count == 0 && SimCommon.NPCsWaitingToActAfterPlayerLooksAtThem.Count == 0 && 
+                    !this.GetWouldBeDeadFromIncomingPhysicalDamageActual() && !SimCommon.IsCurrentlyRunningSimTurn )
+                {
+                    if ( this.GetActorDataCurrent( ActorRefs.ActorHP, true ) <= 0 )
+                    {
+                        this.DoDeathCheck( Engine_Universal.PermanentQualityRandom, false );
+                        return;
+                    }
+
+                    this.CurrentActionOverTime.DoActionPerTurnLogic( Engine_Universal.PermanentQualityRandom );
+                    this.IsScheduledToDoActionOverTime = false;
+                }
             }
 
             if ( this.CurrentActionOverTime != null )
@@ -1892,7 +1918,7 @@ namespace Arcen.HotM.External
 
         public Vector3 GetCollisionCenter()
         {
-            return this.drawLocation.PlusY( this.UnitType?.HalfHeightForCollisions??0 );
+            return this.GetPositionForCollisions();
         }
 
         public Vector3 GetPositionForCollisionsFromTheoretic( Vector3 TheoreticalPoint )

@@ -1381,18 +1381,29 @@ namespace Arcen.HotM.ExternalVis
 
                                     ExtraData.Buffer.AddSpriteStyled_NoIndent( contemplation.Icon, AdjustedSpriteStyle.InlineLarger1_2, contemplation.ColorHex ).Space1x();
                                     ExtraData.Buffer.AddRaw( contemplation.GetDisplayName() );
+
+                                    if ( kv.Value.DuringGame_HasBeenIgnored )
+                                    {
+                                        ExtraData.Buffer.Space3x();
+                                        ExtraData.Buffer.StartSize60().AddLang( "Report_Ignored", ColorTheme.HeaderGoldMoreRich ).EndSize();
+                                    }
                                 }
                                 break;
                             case UIAction.HandleMouseover:
                                 {
-                                    contemplation.RenderContemplationTooltip( element, SideClamp.AboveOrBelow, TooltipShadowStyle.Standard, false );
+                                    contemplation.RenderContemplationTooltip( element, SideClamp.AboveOrBelow, TooltipShadowStyle.Standard, false, true );
                                 }
                                 break;
                             case UIAction.OnClick:
-                                //take the mouse cursor to this contemplation in the map
-                                VisManagerVeryBase.Instance.MainCamera_JumpCameraToPosition( building.GetMapItem().CenterPoint, false );
-                                Instance.Close( WindowCloseReason.UserDirectRequest );
-                                SimCommon.SetCurrentCityLensIfAvailable( CommonRefs.ContemplationsLens );
+                                if ( ExtraData.MouseInput.LeftButtonClicked )
+                                {
+                                    //take the mouse cursor to this contemplation in the map
+                                    VisManagerVeryBase.Instance.MainCamera_JumpCameraToPosition( building.GetMapItem().CenterPoint, false );
+                                    Instance.Close( WindowCloseReason.UserDirectRequest );
+                                    SimCommon.SetCurrentCityLensIfAvailable( CommonRefs.ContemplationsLens );
+                                }
+                                else if ( ExtraData.MouseInput.RightButtonClicked )
+                                    kv.Value.DuringGame_HasBeenIgnored = !kv.Value.DuringGame_HasBeenIgnored;
                                 break;
                         }
                     } );

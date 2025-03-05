@@ -188,38 +188,21 @@ namespace Arcen.HotM.ExternalVis.Hacking
         #endregion
 
         #region GetBestShard_JumpRules
-        public static PlayerShard GetBestShard_JumpRules( out h.hCell blockedBy, out bool HadAnyValidNeighbor )
+        public static PlayerShard GetBestShard_JumpRules( out h.hCell blockedBy )
         {
             blockedBy = null;
             if ( scene.AnimatingItems.Count > 0 )
             {
                 //debugText = "animating";
-                HadAnyValidNeighbor = true;
                 return null; //no targeting while animating
             }
             h.hCell target = scene.HoveredCell;
             if ( target == null || target.CurrentEntity is PlayerShard || target.CurrentNumber <= 1 )
             {
                 //debugText = "target null or blocked or something";
-                HadAnyValidNeighbor = true;
                 return null;
             }
-            bool hadAnyValidNeighbor = false;
-            foreach ( h.hCell neighbor in target.AdjacentCells )
-            {
-                if ( neighbor.CurrentNumber == 0 || neighbor.CurrentNumber > target.CurrentNumber )
-                    continue; //if higher or blank
-                if ( neighbor.IsBlocked || neighbor.CurrentEntity != null )
-                    continue; //if blocked or occupied
-                hadAnyValidNeighbor = true;
-                break;
-            }
-            if ( !hadAnyValidNeighbor )
-            {
-                HadAnyValidNeighbor = false;
-                return null;
-            }
-
+            
             h.hCell bestBlocked = null;
             int bestBlockedDistance = 99;
 
@@ -241,7 +224,6 @@ namespace Arcen.HotM.ExternalVis.Hacking
             if ( bestShard == null )
                 blockedBy = bestBlocked;
 
-            HadAnyValidNeighbor = true;
             return bestShard;
         }
         #endregion
@@ -469,7 +451,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
         {
             NovelTooltipBuffer novel = NovelTooltipBuffer.Instance;
 
-            if ( scene.PlayerShards.Count > 1 )
+            if ( scene.PlayerShards.Count > 1 || GetWouldCorruptionEndSession( shard ) )
             {
                 if ( novel.TryStartSmallerTooltip( TooltipID.Create( "HackingItem", "AlwaysAlright" ), null, SideClamp.Any, TooltipNovelWidth.SizeToText ) )
                 {
@@ -491,6 +473,47 @@ namespace Arcen.HotM.ExternalVis.Hacking
                 scene.LastColorSetForHoveredCell = scene.HoveredCell;
                 scene.SpecialColorForHoveredCell = ColorTheme.Hack_YourShard_Hovered;
             }
+        }
+        #endregion
+
+        #region GetWouldCorruptionEndSession
+        public static bool GetWouldCorruptionEndSession( PlayerShard shard )
+        {
+            if ( shard == null )
+                return false;
+
+            h.hCell cell = shard.CurrentCell;
+            if ( cell  == null ) 
+                return false;
+            {
+                if ( cell.North != null && cell.North.CurrentEntity is Daemon dNorth )
+                {
+                    if ( dNorth.DaemonType.WillEndHackingSessionIfCorrupted )
+                        return true;
+                }
+            }
+            {
+                if ( cell.South != null && cell.South.CurrentEntity is Daemon dSouth )
+                {
+                    if ( dSouth.DaemonType.WillEndHackingSessionIfCorrupted )
+                        return true;
+                }
+            }
+            {
+                if ( cell.East != null && cell.East.CurrentEntity is Daemon dEast )
+                {
+                    if ( dEast.DaemonType.WillEndHackingSessionIfCorrupted )
+                        return true;
+                }
+            }
+            {
+                if ( cell.West != null && cell.West.CurrentEntity is Daemon dWest )
+                {
+                    if ( dWest.DaemonType.WillEndHackingSessionIfCorrupted )
+                        return true;
+                }
+            }
+            return false;
         }
         #endregion
 
@@ -568,10 +591,21 @@ namespace Arcen.HotM.ExternalVis.Hacking
             if ( FlagRefs.HackTut_OverallGoal.DuringGameplay_CompleteIfActive() )
                 FlagRefs.HackTut_LeafNode.DuringGameplay_StartIfNeeded();
 
-            if ( scene.PlayerShards.Count <= 1 )
+            if ( DoFireLines )
             {
-                ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
-                return;
+                if ( scene.PlayerShards.Count <= 1 )
+                {
+                    ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
+                    return;
+                }
+            }
+            else
+            {
+                if ( scene.PlayerShards.Count <= 1 && !GetWouldCorruptionEndSession( shard ) )
+                {
+                    ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
+                    return;
+                }
             }
 
             if ( DoFireLines )
@@ -598,8 +632,19 @@ namespace Arcen.HotM.ExternalVis.Hacking
 
                 if ( !hadAnyShardThatWillLive )
                 {
-                    ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
-                    return;
+                    if ( DoFireLines )
+                    {
+                        ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
+                        return;
+                    }
+                    else
+                    {
+                        if ( !GetWouldCorruptionEndSession( shard ) )
+                        {
+                            ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
+                            return;
+                        }
+                    }
                 }
 
                 int daemonsKilled = 0;
@@ -672,11 +717,12 @@ namespace Arcen.HotM.ExternalVis.Hacking
                     if ( DoFireLines )
                     {
                         CityStatisticTable.AlterScore( "HackingFirewalls", 1 );
+                        ResourceRefs.MentalEnergy.AlterCurrent_Named( -1, string.Empty, ResourceAddRule.IgnoreUntilTurnChange );
                     }
                     scene.IsDaemonTurnToMove = true;
                 }
 
-                if ( daemonsKilled > 1 )
+                if ( daemonsKilled > 1 && !DoFireLines )
                 {
                     if ( !AchievementRefs.KillStreak.OneTimeline_HasBeenTripped )
                         AchievementRefs.KillStreak.TripIfNeeded();

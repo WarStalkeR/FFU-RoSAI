@@ -43,9 +43,7 @@ namespace Arcen.HotM.ExternalVis
                                         greensChoice.TrySetResourceCostToNewValue( ResourceRefs.HydroponicGreens, toSell );
                                         greensResult.TrySetResourceResultToNewValue( ResourceRefs.Wealth, totalEarnings, totalEarnings );
                                         greensResult.TrySetCityStatisticToNewValue( earningsString, totalEarnings );
-                                        greensResult.TrySetMetaStatisticToNewValue( earningsString, totalEarnings );
                                         greensResult.TrySetCityStatisticToNewValue( unitsString, toSell );
-                                        greensResult.TrySetMetaStatisticToNewValue( unitsString, toSell );
                                     }
                                 }
 
@@ -67,9 +65,7 @@ namespace Arcen.HotM.ExternalVis
                                         waterChoice.TrySetResourceCostToNewValue( ResourceRefs.FilteredWater, toSell );
                                         waterResult.TrySetResourceResultToNewValue( ResourceRefs.Wealth, totalEarnings, totalEarnings );
                                         waterResult.TrySetCityStatisticToNewValue( earningsString, totalEarnings );
-                                        waterResult.TrySetMetaStatisticToNewValue( earningsString, totalEarnings );
                                         waterResult.TrySetCityStatisticToNewValue( unitsString, toSell );
-                                        waterResult.TrySetMetaStatisticToNewValue( unitsString, toSell );
                                     }
                                 }
 
@@ -92,15 +88,12 @@ namespace Arcen.HotM.ExternalVis
                                         peltsChoice.TrySetResourceCostToNewValue( ResourceRefs.MonsterPelts, toSell );
                                         peltResult.TrySetResourceResultToNewValue( ResourceRefs.Wealth, totalEarnings, totalEarnings );
                                         peltResult.TrySetCityStatisticToNewValue( earningsString, totalEarnings );
-                                        peltResult.TrySetMetaStatisticToNewValue( earningsString, totalEarnings );
 
                                         peltResult.TrySetCityStatisticToNewValue( unitsString, toSell );
-                                        peltResult.TrySetMetaStatisticToNewValue( unitsString, toSell );
 
                                         string unitsString2 = "MonsterPeltsSoldToTheUltraWealthy";
 
                                         peltResult.TrySetCityStatisticToNewValue( unitsString2, toSell );
-                                        peltResult.TrySetMetaStatisticToNewValue( unitsString2, toSell );
                                     }
                                 }
                             }
@@ -135,9 +128,7 @@ namespace Arcen.HotM.ExternalVis
                                         greensChoice.TrySetResourceCostToNewValue( ResourceRefs.HydroponicGreens, toSell );
                                         greensResult.TrySetResourceResultToNewValue( ResourceRefs.Wealth, totalEarnings, totalEarnings );
                                         greensResult.TrySetCityStatisticToNewValue( earningsString, totalEarnings );
-                                        greensResult.TrySetMetaStatisticToNewValue( earningsString, totalEarnings );
                                         greensResult.TrySetCityStatisticToNewValue( unitsString, toSell );
-                                        greensResult.TrySetMetaStatisticToNewValue( unitsString, toSell );
                                     }
                                 }
 
@@ -159,9 +150,7 @@ namespace Arcen.HotM.ExternalVis
                                         waterChoice.TrySetResourceCostToNewValue( ResourceRefs.FilteredWater, toSell );
                                         waterResult.TrySetResourceResultToNewValue( ResourceRefs.Wealth, totalEarnings, totalEarnings );
                                         waterResult.TrySetCityStatisticToNewValue( earningsString, totalEarnings );
-                                        waterResult.TrySetMetaStatisticToNewValue( earningsString, totalEarnings );
                                         waterResult.TrySetCityStatisticToNewValue( unitsString, toSell );
-                                        waterResult.TrySetMetaStatisticToNewValue( unitsString, toSell );
                                     }
                                 }
                             }

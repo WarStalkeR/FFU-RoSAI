@@ -671,7 +671,7 @@ namespace Arcen.HotM.External
                 if ( cell.PrisonersInCell.Display > 0 )
                     return false; //cannot build over prisons
 
-                if ( cell.LowerAndMiddleClassResidentsAndWorkersInCell.Display < MathRefs.CyberocracyHubMinLowerClassesPresent.IntMin )
+                if ( cell.LowerAndWorkingClassResidentsAndWorkersInCell.Display < MathRefs.CyberocracyHubMinLowerClassesPresent.IntMin )
                     return false; //if too few lower and middle class residents
                 if ( cell.UpperClassResidentsAndWorkersInCell.Display > MathRefs.CyberocracyHubMaxUpperClassesPresent.IntMin )
                     return false; //if too many upper class workers and residents

@@ -1733,7 +1733,7 @@ namespace Arcen.HotM.ExternalVis
             if ( cache.ColliderIcon.IsMouseover )
             {
                 cache.ColliderIcon.Color = contemplation.ColorHoveredHDR;
-                contemplation.RenderContemplationTooltip( null, SideClamp.Any, TooltipShadowStyle.None, false );
+                contemplation.RenderContemplationTooltip( null, SideClamp.Any, TooltipShadowStyle.None, false, false );
             }
             else
             {

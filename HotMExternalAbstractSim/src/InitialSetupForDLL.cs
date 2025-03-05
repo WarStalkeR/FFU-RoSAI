@@ -8,6 +8,14 @@ namespace Arcen.HotM.External
 {
     public class InitialSetupForDLL : IArcenExternalDllInitialLoadCall
     {
+        public void RunAfterAllTableImportsComplete( ArcenExternalDllInitialLoadCall Loader )
+        {
+        }
+
+        public void RunImmediatelyOnHandlerProcessed( ArcenExternalDllInitialLoadCall Loader )
+        {
+        }
+
         public void RunOnFirstTimeExternalAssemblyLoaded()
         {
         }

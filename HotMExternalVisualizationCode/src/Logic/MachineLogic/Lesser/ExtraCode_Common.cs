@@ -37,7 +37,9 @@ namespace Arcen.HotM.ExternalVis
                                 destructionData.StatusToApply = CommonRefs.BurnedAndIrradiatedBuildingStatus;
                                 destructionData.AlsoDestroyOtherItems = true;
                                 destructionData.AlsoDestroyUnits = true;
-                                destructionData.SkipUnitsWithArmorPlating = false;
+                                destructionData.DestroyAllPlayerUnits = true;
+                                destructionData.SkipUnitsWithArmorPlatingAbove = 0;
+                                destructionData.SkipUnitsAboveHeight = 0;
                                 destructionData.IrradiateCells = true;
                                 destructionData.UnitsToSpawnAfter = null;
                                 destructionData.StatisticForDeaths = CityStatisticRefs.MurdersByNuke;
@@ -70,7 +72,9 @@ namespace Arcen.HotM.ExternalVis
                                     destructionData.StatusToApply = CommonRefs.BurnedAndIrradiatedBuildingStatus;
                                     destructionData.AlsoDestroyOtherItems = true;
                                     destructionData.AlsoDestroyUnits = true;
-                                    destructionData.SkipUnitsWithArmorPlating = false;
+                                    destructionData.DestroyAllPlayerUnits = true;
+                                    destructionData.SkipUnitsWithArmorPlatingAbove = 0;
+                                    destructionData.SkipUnitsAboveHeight = 0;
                                     destructionData.IrradiateCells = true;
                                     destructionData.UnitsToSpawnAfter = null;
                                     destructionData.StatisticForDeaths = CityStatisticRefs.MurdersByNuke;
@@ -489,9 +493,9 @@ namespace Arcen.HotM.ExternalVis
                             CityStatisticTable.AlterScore( "MurdersByWorkerAndroids", murders );
 
                         int lowerClass = 0;
-                        foreach ( EconomicClassType econClass in CommonRefs.LowerAndMiddleClassResidents )
+                        foreach ( EconomicClassType econClass in CommonRefs.LowerAndWorkingClassResidents )
                             lowerClass += objectiveBuilding.GetResidentAmount( econClass );
-                        foreach ( ProfessionType profession in CommonRefs.LowerAndMiddleClassProfessions )
+                        foreach ( ProfessionType profession in CommonRefs.LowerAndWorkingClassProfessions )
                             lowerClass += objectiveBuilding.GetWorkerAmount( profession );
 
                         objectiveBuilding.KillEveryoneHere(); //not really killing in many cases, but certainly removing from the normal citizen roster
@@ -531,9 +535,9 @@ namespace Arcen.HotM.ExternalVis
                             CityStatisticTable.AlterScore( "CybercraticDissidentsRemoved", removed );
 
                         int lowerClass = 0;
-                        foreach ( EconomicClassType econClass in CommonRefs.LowerAndMiddleClassResidents )
+                        foreach ( EconomicClassType econClass in CommonRefs.LowerAndWorkingClassResidents )
                             lowerClass += objectiveBuilding.GetResidentAmount( econClass );
-                        foreach ( ProfessionType profession in CommonRefs.LowerAndMiddleClassProfessions )
+                        foreach ( ProfessionType profession in CommonRefs.LowerAndWorkingClassProfessions )
                             lowerClass += objectiveBuilding.GetWorkerAmount( profession );
 
                         objectiveBuilding.KillEveryoneHere(); //not really killing in many cases, but certainly removing from the normal citizen roster
@@ -560,7 +564,7 @@ namespace Arcen.HotM.ExternalVis
                         if ( isLowerClass )
                         {
                             int total = 0;
-                            foreach ( EconomicClassType econClass in CommonRefs.LowerAndMiddleClassResidents )
+                            foreach ( EconomicClassType econClass in CommonRefs.LowerAndWorkingClassResidents )
                             {
                                 int toAdd = objectiveBuilding.GetResidentAmount( econClass );
                                 if ( toAdd > 0 )
@@ -569,7 +573,7 @@ namespace Arcen.HotM.ExternalVis
                                     objectiveBuilding.KillSomeResidentsHere( econClass, ref toAdd, Engine_Universal.PermanentQualityRandom );
                                 }
                             }
-                            foreach ( ProfessionType profession in CommonRefs.LowerAndMiddleClassProfessions )
+                            foreach ( ProfessionType profession in CommonRefs.LowerAndWorkingClassProfessions )
                             {
                                 int toAdd = objectiveBuilding.GetWorkerAmount( profession );
                                 if ( toAdd > 0 )
@@ -672,6 +676,27 @@ namespace Arcen.HotM.ExternalVis
                     }
                     #endregion
                     break;
+                case "DestroySlumBuilding":
+                    #region DestroySlumBuilding
+                    if ( objectiveBuilding != null && !objectiveBuilding.GetIsDestroyed() && objectiveBuilding.GetMapItem() != null &&
+                        !objectiveBuilding.GetMapItem().IsInPoolAtAll )
+                    {
+                        //objectiveBuilding.IsBlockedFromGettingMoreCitizens = true;
+
+                        Vector3 epicenter = objectiveBuilding.GetMapItem().OBBCache.BottomCenter;
+                        int peopleInBuilding = objectiveBuilding.GetTotalResidentCount() + objectiveBuilding.GetTotalWorkerCount();
+
+                        objectiveBuilding.KillEveryoneHere();
+
+                        ParticleSoundRefs.BasicBuildingExplode.DuringGame_PlayAtLocation( epicenter,
+                            new Vector3( 0, Engine_Universal.PermanentQualityRandom.Next( 0, 360 ), 0 ) );
+                        objectiveBuilding.GetMapItem().DropBurningEffect_Slow();
+                        objectiveBuilding.FullyDeleteBuilding();
+
+                        CityStatisticTable.AlterScore( "DeathsFromCorporateRevengeOnSlums", peopleInBuilding );
+                    }
+                    #endregion
+                    break;
                 default:
                     ArcenDebugging.LogSingleLine( "HandleExtraNPCCompletedObjectiveConsequences: ExtraCode_Common was asked to handle '" + Handler.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
                     break;
@@ -690,6 +715,30 @@ namespace Arcen.HotM.ExternalVis
                     #region HasBlackmailDealWithAtcaRetail
                     {
                         CityStatisticRefs.Murders.AlterScore_CityAndMeta( 1 );
+                    }
+                    #endregion
+                    break;
+                case "PostProtest_Experiment":
+                    #region PostProtest_Experiment
+                    {
+                        TimelineGoal goal = TimelineGoalTable.Instance.GetRowByID( "AdvocateEncounter" );
+                        TimelineGoalHelper.HandleGoalPathCompletion( goal, "EarnedSomeRespect" );
+                    }
+                    #endregion
+                    break;
+                case "PostProtest_Hate":
+                    #region PostProtest_Hate
+                    {
+                        TimelineGoal goal = TimelineGoalTable.Instance.GetRowByID( "AdvocateEncounter" );
+                        TimelineGoalHelper.HandleGoalPathCompletion( goal, "EarnedSomeRespect" );
+                    }
+                    #endregion
+                    break;
+                case "PostProtest_Wish":
+                    #region PostProtest_Wish
+                    {
+                        TimelineGoal goal = TimelineGoalTable.Instance.GetRowByID( "AdvocateEncounter" );
+                        TimelineGoalHelper.HandleGoalPathCompletion( goal, "EarnedSomeRespect" );
                     }
                     #endregion
                     break;
@@ -795,6 +844,72 @@ namespace Arcen.HotM.ExternalVis
                     break; //nothing to do
                 default:
                     ArcenDebugging.LogSingleLine( "HandleExplosionImminentActor: ExtraCode_Common was asked to handle '" + Handler.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
+                    break;
+            }
+        }
+
+        public void HandleCityLensRightClick( ExtraCodeHandler Handler, CityLensType Lens )
+        {
+            if ( Handler == null || Lens == null )
+                return;
+
+            switch ( Handler.ID )
+            {
+                case "BasicCityLens":
+                    switch (Lens.ID)
+                    {
+                        case "StreetSense":
+                            VisCommands.ToggleHistory_TargetTab( Window_PlayerHistory.HistoryType.StreetSense );
+                            break;
+                        case "Contemplations":
+                            VisCommands.ToggleHistory_TargetTab( Window_PlayerHistory.HistoryType.Contemplations );
+                            break;
+                        case "CityConflicts":
+                            VisCommands.ToggleHistory_TargetTab( Window_PlayerHistory.HistoryType.CityConflicts );
+                            break;
+                        case "ExplorationSites":
+                            VisCommands.ToggleHistory_TargetTab( Window_PlayerHistory.HistoryType.ExplorationSites );
+                            break;
+                    }
+                    break;
+                default:
+                    ArcenDebugging.LogSingleLine( "HandleCityLensRightClick: ExtraCode_Common was asked to handle '" + Handler.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
+                    break;
+            }
+        }
+
+        public void HandleExtraNPCKilledByPlayerConsequences( ExtraCodeHandler Handler, ISimNPCUnit UnitDoingTheDying, Vector3 loc, MersenneTwister workingRand, bool HasBeenPhysicallyDamagedByPlayer )
+        {
+            if ( Handler == null || UnitDoingTheDying == null )
+                return;
+
+            switch ( Handler.ID )
+            {
+                case "SlumWealthProtesterKilled":
+                    {
+                        CityFlagTable.Instance.GetRowByID( "SlumWealthProtestersDispersed" )?.TripIfNeeded();
+
+                        //if ( UnitDoingTheDying.HasBeenPhysicallyDamagedByPlayer )
+                        //{
+                            SimCommon.TheNetwork?.Tower?.ScrapStructureNow( ScrapReason.CaughtInExplosion, workingRand );
+                            OtherKeyMessageTable.Instance.GetRowByID( "AdvocatesDestroyedTower" ).DuringGameplay_IsReadyToBeViewed = true;
+                            AchievementTable.Instance.GetRowByID( "ReallyNotTheWay" )?.TripIfNeeded();
+                        //}
+                        //else
+                        //{
+                        //    OtherKeyMessageTable.Instance.GetRowByID( "AfterSlumWealthProtesterTasered" ).DuringGameplay_IsReadyToBeViewed = true;
+                        //}
+                    }
+                    break;
+                case "SlumWealthProtesterTasered":
+                    {
+                        CityFlagTable.Instance.GetRowByID( "SlumWealthProtestersDispersed" )?.TripIfNeeded();
+
+                        OtherKeyMessageTable.Instance.GetRowByID( "AfterSlumWealthProtesterTasered" ).DuringGameplay_IsReadyToBeViewed = true;
+                    }
+                    break;
+                default:
+                    ArcenDebugging.LogSingleLine( "HandleExtraNPCKilledByPlayerConsequences: ExtraCode_Common was asked to handle '" + Handler.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
                     break;
             }
         }

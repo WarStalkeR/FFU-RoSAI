@@ -205,7 +205,7 @@ namespace Arcen.HotM.ExternalVis
                         {
                             case HackingActionLogic.ExtraDrawPerFrameWhileActive:
                                 {
-                                    PlayerShard bestShard = HackingHelper.GetBestShard_JumpRules( out h.hCell blockedBy, out bool HadAnyValidNeighbor );
+                                    PlayerShard bestShard = HackingHelper.GetBestShard_JumpRules( out h.hCell blockedBy );
                                     if ( scene.HoveredCell == null || bestShard == null )
                                     {
                                         scene.MainTargetingIndicator.ClearExistingData();
@@ -237,14 +237,7 @@ namespace Arcen.HotM.ExternalVis
                                         }
                                         else if ( bestShard == null )
                                         { 
-                                            if ( !HadAnyValidNeighbor )
-                                            {
-                                                if ( novel.TryStartSmallerTooltip( TooltipID.Create( "HackingItem", "AlwaysAlright" ), null, SideClamp.Any, TooltipNovelWidth.SizeToText ) )
-                                                {
-                                                    novel.ShouldTooltipBeRed = true;
-                                                    novel.TitleUpperLeft.AddLang( "Hacking_InvalidJump", ColorTheme.RedOrange2 );
-                                                }
-                                            }
+                                            
                                         }
                                         else
                                         {
@@ -279,7 +272,7 @@ namespace Arcen.HotM.ExternalVis
                             case HackingActionLogic.LeftClick:
                             case HackingActionLogic.RightClick:
                                 {
-                                    PlayerShard bestShard = HackingHelper.GetBestShard_JumpRules( out _, out _ );
+                                    PlayerShard bestShard = HackingHelper.GetBestShard_JumpRules( out _ );
                                     if ( scene.HoveredCell != null && bestShard != null )
                                     {
                                         //int targetValue = bestShard.CurrentCell.CurrentNumber;

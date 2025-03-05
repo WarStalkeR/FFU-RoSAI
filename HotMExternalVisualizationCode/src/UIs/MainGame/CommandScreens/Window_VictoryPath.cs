@@ -443,7 +443,8 @@ namespace Arcen.HotM.ExternalVis
 
                                             bool isHovered = element.LastHadMouseWithin;
                                             row.SetRelatedImage0EnabledIfNeeded( isHovered );
-                                            string mainColor = isFailed ? ColorTheme.GetRedOrange2( isHovered ) : ColorTheme.GetBasicLightTextBlue( isHovered );
+                                            string mainColor = isFailed ? ColorTheme.GetRedOrange2( isHovered ) :
+                                                (goal.PrimaryCollection.ID == "SideGoal" ? ColorTheme.GetBasicLightTextGray( isHovered ) : ColorTheme.GetBasicLightTextBlue( isHovered ));
                                             ExtraData.Buffer.StartColor( mainColor );
 
                                             ExtraData.Buffer.AddSpriteStyled_NoIndent( goal.Icon, AdjustedSpriteStyle.InlineLarger1_2, mainColor ).Space1x();
@@ -792,7 +793,8 @@ namespace Arcen.HotM.ExternalVis
 
                                     bool isHovered = element.LastHadMouseWithin;
                                     row.SetRelatedImage0EnabledIfNeeded( isHovered );
-                                    string mainColor = isFailed ? ColorTheme.GetRedOrange2( isHovered ) : ColorTheme.GetBasicLightTextBlue( isHovered );
+                                    string mainColor = isFailed ? ColorTheme.GetRedOrange2( isHovered ) : 
+                                    (goal.PrimaryCollection.ID == "SideGoal" ? ColorTheme.GetBasicLightTextGray( isHovered ) : ColorTheme.GetBasicLightTextBlue( isHovered ) );
                                     ExtraData.Buffer.StartSize80().StartColor( mainColor );
 
                                     ExtraData.Buffer.AddSpriteStyled_NoIndent( goal.Icon, AdjustedSpriteStyle.InlineLarger1_2, mainColor ).Space1x();

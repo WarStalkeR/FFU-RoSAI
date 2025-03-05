@@ -166,7 +166,9 @@ namespace Arcen.HotM.ExternalVis
                                                 destructionData.StatusToApply = CommonRefs.BurnedAndIrradiatedBuildingStatus;
                                                 destructionData.AlsoDestroyOtherItems = true;
                                                 destructionData.AlsoDestroyUnits = true;
-                                                destructionData.SkipUnitsWithArmorPlating = false;
+                                                destructionData.DestroyAllPlayerUnits = true;
+                                                destructionData.SkipUnitsWithArmorPlatingAbove = 0;
+                                                destructionData.SkipUnitsAboveHeight = 14;
                                                 destructionData.IrradiateCells = true;
                                                 destructionData.UnitsToSpawnAfter = ManagerRefs.Man_MicroNukeVorsiberReaction;
                                                 destructionData.StatisticForDeaths = CityStatisticRefs.MurdersByNuke;
@@ -518,7 +520,7 @@ namespace Arcen.HotM.ExternalVis
                                                 }
                                                 else
                                                 {
-                                                    foreach ( EconomicClassType econClass in CommonRefs.LowerAndMiddleClassResidents )
+                                                    foreach ( EconomicClassType econClass in CommonRefs.LowerAndWorkingClassResidents )
                                                     {
                                                         int toAdd = buildingUnderCursor.GetResidentAmount( econClass );
                                                         if ( toAdd > 0 )
@@ -527,7 +529,7 @@ namespace Arcen.HotM.ExternalVis
                                                             buildingUnderCursor.KillSomeResidentsHere( econClass, ref toAdd, Engine_Universal.PermanentQualityRandom );
                                                         }
                                                     }
-                                                    foreach ( ProfessionType profession in CommonRefs.LowerAndMiddleClassProfessions )
+                                                    foreach ( ProfessionType profession in CommonRefs.LowerAndWorkingClassProfessions )
                                                     {
                                                         int toAdd = buildingUnderCursor.GetWorkerAmount( profession );
                                                         if ( toAdd > 0 )

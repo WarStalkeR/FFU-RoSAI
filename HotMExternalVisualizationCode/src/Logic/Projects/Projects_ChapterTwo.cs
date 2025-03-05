@@ -4,6 +4,7 @@ using UnityEngine;
 using Arcen.HotM.Core;
 using Arcen.HotM.External;
 using Arcen.HotM.Visualization;
+using DiffLib;
 
 namespace Arcen.HotM.ExternalVis
 {
@@ -999,14 +1000,20 @@ namespace Arcen.HotM.ExternalVis
                                 case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
                                     {
                                         JobHelper.ChangeAllOfOneJobToAnother( "AGIResearcherSafehouse", "AbandonedAGIResearcherSafehouse" );
-                                        if ( !JobHelper.StartNPCMissionAtFirstJobType( "AbandonedAGIResearcherSafehouse", "Ch2_OerlAfterAGIResearchers" ) )
+                                        if ( !JobHelper.GetHasAlreadyStartedNPCMission( "Ch2_OerlAfterAGIResearchers" ) )
                                         {
-                                            if ( !JobHelper.StartNPCMissionAtFirstJobType( "AGIResearcherSafehouse", "Ch2_OerlAfterAGIResearchers" ) )
+                                            if ( !JobHelper.StartNPCMissionAtFirstJobType( "AbandonedAGIResearcherSafehouse", "Ch2_OerlAfterAGIResearchers" ) )
                                             {
-                                                if ( !JobHelper.StartNPCMissionAtAnyJob( "Ch2_OerlAfterAGIResearchers" ) )
-                                                    ArcenDebugging.LogSingleLine( "Failed to start Ch2_OerlAfterAGIResearchers due to missing AGI Researcher Safehouse (abandoned or otherwise), AND could not start it at any random job, either!", Verbosity.ShowAsError );
-                                                else
-                                                    ArcenDebugging.LogSingleLine( "Failed to start Ch2_OerlAfterAGIResearchers due to missing AGI Researcher Safehouse (abandoned or otherwise), but was able to start it at a random fallback.", Verbosity.DoNotShow );
+                                                if ( !JobHelper.StartNPCMissionAtFirstJobType( "AGIResearcherSafehouse", "Ch2_OerlAfterAGIResearchers" ) )
+                                                {
+                                                    if ( !JobHelper.StartNPCMissionAtAnyJob( "Ch2_OerlAfterAGIResearchers" ) )
+                                                    {
+                                                        if ( !JobHelper.GetHasAlreadyStartedNPCMission( "Ch2_OerlAfterAGIResearchers" ) )
+                                                            ArcenDebugging.LogSingleLine( "Failed to start Ch2_OerlAfterAGIResearchers due to missing AGI Researcher Safehouse (abandoned or otherwise), AND could not start it at any random job, either!", Verbosity.ShowAsError );
+                                                    }
+                                                    else
+                                                        ArcenDebugging.LogSingleLine( "Failed to start Ch2_OerlAfterAGIResearchers due to missing AGI Researcher Safehouse (abandoned or otherwise), but was able to start it at a random fallback.", Verbosity.DoNotShow );
+                                                }
                                             }
                                         }
                                     }
@@ -1060,16 +1067,19 @@ namespace Arcen.HotM.ExternalVis
                             int turnsRemaining = mission.DuringGame_CalculateTurnsRemaining();
                             int turnsElapsed = totalTurns - turnsRemaining;
 
-                            if ( !mission.DuringGame_IsActive && mission.DuringGameplay_TimesStarted <= 0 )
+                            if ( SimCommon.SecondsSinceLoaded > 3 )
                             {
-                                if ( !JobHelper.StartNPCMissionAtFirstJobType( "AbandonedAGIResearcherSafehouse", "Ch2_OerlAfterAGIResearchers" ) )
+                                if ( !mission.DuringGame_IsActive && mission.DuringGameplay_TimesStarted <= 0 )
                                 {
-                                    if ( !JobHelper.StartNPCMissionAtFirstJobType( "AGIResearcherSafehouse", "Ch2_OerlAfterAGIResearchers" ) )
+                                    if ( !JobHelper.StartNPCMissionAtFirstJobType( "AbandonedAGIResearcherSafehouse", "Ch2_OerlAfterAGIResearchers" ) )
                                     {
-                                        if ( !JobHelper.StartNPCMissionAtAnyJob( "Ch2_OerlAfterAGIResearchers" ) )
-                                            ArcenDebugging.LogSingleLine( "Failed to start Ch2_OerlAfterAGIResearchers due to missing AGI Researcher Safehouse (abandoned or otherwise), AND could not start it at any random job, either!", Verbosity.ShowAsError );
-                                        else
-                                            ArcenDebugging.LogSingleLine( "Failed to start Ch2_OerlAfterAGIResearchers due to missing AGI Researcher Safehouse (abandoned or otherwise), but was able to start it at a random fallback.", Verbosity.DoNotShow );
+                                        if ( !JobHelper.StartNPCMissionAtFirstJobType( "AGIResearcherSafehouse", "Ch2_OerlAfterAGIResearchers" ) )
+                                        {
+                                            if ( !JobHelper.StartNPCMissionAtAnyJob( "Ch2_OerlAfterAGIResearchers" ) )
+                                                ArcenDebugging.LogSingleLine( "Failed to start Ch2_OerlAfterAGIResearchers due to missing AGI Researcher Safehouse (abandoned or otherwise), AND could not start it at any random job, either!", Verbosity.ShowAsError );
+                                            else
+                                                ArcenDebugging.LogSingleLine( "Failed to start Ch2_OerlAfterAGIResearchers due to missing AGI Researcher Safehouse (abandoned or otherwise), but was able to start it at a random fallback.", Verbosity.DoNotShow );
+                                        }
                                     }
                                 }
                             }
@@ -1851,6 +1861,8 @@ namespace Arcen.HotM.ExternalVis
 
                                 if ( target < 1 )
                                     target = 1;
+                                if ( target > 20 )
+                                    target = 20;
 
                                 CanBeCompletedNow = current >= target;
                             }
@@ -3498,6 +3510,214 @@ namespace Arcen.HotM.ExternalVis
                         }
                         break;
                     #endregion
+                    #region Ch2_PeopleWatching
+                    case "Ch2_PeopleWatching":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            int target = OutcomeOrNoneYet.GetSingleIntByID( "Goal", 5039 );
+                            int current = (int)(CityStatisticTable.Instance.GetRowByID( "PeopleWatchingDebatesWon" )?.GetScore()??0);
+                            CanBeCompletedNow = current >= target;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, current, target, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat2( "RequiredDebatesWon", current.ToStringThousandsWhole(), target.ToStringThousandsWhole() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext:
+                                    break;
+                                case ProjectLogic.DoAnyPerQuarterSecondLogicWhileProjectActive:
+                                    {
+                                        int murderousKills = (int)(CityStatisticTable.Instance.GetRowByID( "PeopleWatchingMurderousKills" )?.GetScore() ?? 0);
+                                        if ( murderousKills >= 3 )
+                                        {
+                                            Project.DoOnProjectFailIfActive( string.Empty, RandOrNull, false, false );
+                                            SimCommon.TheNetwork?.Tower?.ScrapStructureNow( ScrapReason.CaughtInExplosion, RandOrNull );
+                                            OtherKeyMessageTable.Instance.GetRowByID( "AdvocatesDestroyedTower" ).DuringGameplay_IsReadyToBeViewed = true;
+                                            AchievementTable.Instance.GetRowByID( "UnseenProtector" )?.TripIfNeeded();
+                                            break;
+                                        }
+
+                                        {
+                                            int wealthyKills = (int)(CityStatisticTable.Instance.GetRowByID( "PeopleWatchingWealthyKills" )?.GetScore() ?? 0);
+                                            if ( wealthyKills >= 5 )
+                                            {
+                                                Project.DoOnProjectFailIfActive( string.Empty, RandOrNull, false, false );
+                                                SimCommon.TheNetwork?.Tower?.ScrapStructureNow( ScrapReason.CaughtInExplosion, RandOrNull );
+                                                OtherKeyMessageTable.Instance.GetRowByID( "AdvocatesDestroyedTower" ).DuringGameplay_IsReadyToBeViewed = true;
+                                                AchievementTable.Instance.GetRowByID( "ShelterInPlace" )?.TripIfNeeded();
+
+                                                //this part is different
+                                                CityStatisticTable.SetScore_UserBeware( "AntiWealthReprisalsAgainstSlumsUntilTurn", SimCommon.Turn + 15 );
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
+                    #region Ch2_MIN_AdvocateTowerDest
+                    case "Ch2_MIN_AdvocateTowerDest":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            InvestigationType investType = InvestigationTypeTable.Instance.GetRowByID( "Ch2SearchForTowerBombers" );
+                            CanBeCompletedNow = investType.DuringGame_HasWonInvestigation;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, 0, 100, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat1( "CompleteInvestigation", investType.GetDisplayName() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext:
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
+                    #region Ch2_MIN_FlushOutTheBombers
+                    case "Ch2_MIN_FlushOutTheBombers":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            int conflictPoints = 20;
+                            CityStatistic statistic = CityStatisticTable.Instance.GetRowByID( "FlushOutBombers_ConflictPoints" );
+
+                            int current = (int)statistic.GetScore();
+                            int target = conflictPoints;
+
+                            CanBeCompletedNow = current >= target;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, current, target, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat3( "RequiredResourceAmount", current.ToStringThousandsWhole(), target.ToStringThousandsWhole(), statistic.GetDisplayName() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext: //nothing on this one
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    //nope, nothing to do custom
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
+                    #region Ch2_MIN_DefeatTheBombers
+                    case "Ch2_MIN_DefeatTheBombers":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            int target = 8;
+                            if ( FlagRefs.HasStartedToAccelerateDooms_Extreme.DuringGameplay_IsTripped )
+                                target = 16;
+                            else if ( FlagRefs.HasStartedToAccelerateDooms_Hard.DuringGameplay_IsTripped )
+                                target = 12;
+
+                            CityStatistic statistic = CityStatisticTable.Instance.GetRowByID( "AdvocateBombersKilled" );
+
+                            int current = (int)statistic.GetScore();
+
+                            CanBeCompletedNow = current >= target;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, current, target, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat2( "RequiredEliminateCitizenAdvocates", current.ToStringThousandsWhole(), target.ToStringThousandsWhole() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext: //nothing on this one
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    {
+                                        TimelineGoal goal = TimelineGoalTable.Instance.GetRowByID( "AdvocateEncounter" );
+                                        TimelineGoalHelper.HandleGoalPathCompletion( goal, "EarnedNewMortalEnemies" );
+                                    }
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
+                    #region Ch2_MIN_ClearingTheLadder
+                    case "Ch2_MIN_ClearingTheLadder":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            int wealthyKills = (int)(CityStatisticTable.Instance.GetRowByID( "PeopleWatchingWealthyKills" )?.GetScore() ?? 0);
+                            int target = 10;
+                            CanBeCompletedNow = wealthyKills >= target;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, wealthyKills, target, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat2( "RequiredEliminateWealthyCommuters", wealthyKills.ToStringThousandsWhole(), target.ToStringThousandsWhole() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext:
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    {
+                                        SimCommon.TheNetwork?.Tower?.ScrapStructureNow( ScrapReason.CaughtInExplosion, RandOrNull );
+                                        OtherKeyMessageTable.Instance.GetRowByID( "AdvocatesDestroyedTower" ).DuringGameplay_IsReadyToBeViewed = true;
+                                        AchievementTable.Instance.GetRowByID( "ShelterInPlace" )?.TripIfNeeded();
+
+                                        //this part is different
+                                        CityStatisticTable.SetScore_UserBeware( "AntiWealthReprisalsAgainstSlumsUntilTurn", SimCommon.Turn + 30 );
+                                    }
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
+                    #region Ch2_MIN_GiftsToTheSlums
+                    case "Ch2_MIN_GiftsToTheSlums":
+                        if ( OutcomeOrNoneYet != null )
+                        {
+                            CityStatistic wealthHandedOut = CityStatisticTable.Instance.GetRowByID( "WealthHandedOutToSlumDwellers" );
+                            int target = 2000000;
+                            CanBeCompletedNow = wealthHandedOut.GetScore() >= target;
+
+                            switch ( Logic )
+                            {
+                                case ProjectLogic.WriteProgressIconText:
+                                case ProjectLogic.WriteProgressTextBrief:
+                                    ProjectHelper.WritePercentageFromTwoNumbers( Logic, OutcomeOrNoneYet, wealthHandedOut.GetScore(), target, BufferOrNull );
+                                    break;
+                                case ProjectLogic.WriteRequirements_OneLine:
+                                case ProjectLogic.WriteRequirements_ManyLines:
+                                    BufferOrNull.AddFormat3( "RequiredResourceAmount", wealthHandedOut.GetScore().ToStringThousandsWhole(), target.ToStringThousandsWhole(), wealthHandedOut.GetDisplayName() ).Line();
+                                    break;
+                                case ProjectLogic.WriteAddedContext:
+                                    break;
+                                case ProjectLogic.DoAnyCustomLogicOnCompletionAttempt:
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
                     default:
                         if ( !Project.HasShownHandlerMissingError )
                         {
@@ -3686,7 +3906,9 @@ namespace Arcen.HotM.ExternalVis
                         destructionData.StatusToApply = CommonRefs.BurnedAndIrradiatedBuildingStatus;
                         destructionData.AlsoDestroyOtherItems = true;
                         destructionData.AlsoDestroyUnits = true;
-                        destructionData.SkipUnitsWithArmorPlating = false;
+                        destructionData.DestroyAllPlayerUnits = true;
+                        destructionData.SkipUnitsWithArmorPlatingAbove = 0;
+                        destructionData.SkipUnitsAboveHeight = 0;
                         destructionData.IrradiateCells = true;
                         destructionData.UnitsToSpawnAfter = null;
                         destructionData.StatisticForDeaths = CityStatisticRefs.DeathsDuringVorsiberWrath;
@@ -3740,6 +3962,22 @@ namespace Arcen.HotM.ExternalVis
                                     Building?.GetMapItem()?.DropBurningEffect_Slow();
 
                                     Actor?.AddOrRemoveBadge( CommonRefs.MarkedDefective, true );
+                                    break;
+                            }
+                        }
+                        break;
+                    #endregion
+                    #region Ch2_MIN_FlushOutTheBombers
+                    case "Ch2_MIN_FlushOutTheBombers-Sole":
+                        {
+                            switch ( StreetItem.ID )
+                            {
+                                case "MurderInhabitants":
+                                    int kills = Building?.KillEveryoneHere()??0;
+                                    Building?.GetMapItem()?.DropBurningEffect_Slow();
+
+                                    if ( kills > 0 )
+                                        CityStatisticRefs.Murders.AlterScore_CityOnly( kills );
                                     break;
                             }
                         }

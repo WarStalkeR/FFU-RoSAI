@@ -90,7 +90,7 @@ namespace Arcen.HotM.External
         public WrapperedSimUnitLocation ContainerLocation { get; private set; }
         private Vector3 drawLocation = Vector3.zero;
         public int CurrentSquadSize { get; set; }
-        public int LargestSquadSize = 0;
+        public int LargestSquadSize { get; set; } = 0;
         public int HealthPerUnit = 0;
         public bool IsNPCInFogOfWar { get; set; } = true;
         public NPCActionDesire WantsToPerformAction { get; set; } = NPCActionDesire.None;
@@ -103,6 +103,8 @@ namespace Arcen.HotM.External
         public bool DisbandWhenObjectiveComplete { get; set; }
         public bool HasAttackedYetThisTurn { get; set; } = false;
         public bool IsDowned { get; private set; }
+        public bool HasBeenPhysicallyDamagedByPlayer { get; set; }
+        public bool HasBeenPhysicallyOrMoraleDamagedByPlayer { get; set; }
         public MapPOI HomePOI { get; set; } = null;
         public MapDistrict HomeDistrict { get; set; } = null;
         public ISimMapActor TargetActor { get; set; }
@@ -199,6 +201,8 @@ namespace Arcen.HotM.External
             this.DisbandWhenObjectiveComplete = false;
             this.HasAttackedYetThisTurn = false;
             this.IsDowned = false;
+            this.HasBeenPhysicallyDamagedByPlayer = false;
+            this.HasBeenPhysicallyOrMoraleDamagedByPlayer = false;
             this.HomePOI = null;
             this.HomeDistrict = null;
             this.TargetActor = null;
@@ -377,7 +381,9 @@ namespace Arcen.HotM.External
             Serializer.AddBoolIfTrue( "DisbandWhenObjectiveComplete", this.DisbandWhenObjectiveComplete );
             Serializer.AddBoolIfTrue( "HasAttackedYetThisTurn", this.HasAttackedYetThisTurn );
             Serializer.AddBoolIfTrue( "IsDowned", this.IsDowned );
-            
+            Serializer.AddBoolIfTrue( "HasBeenPhysicallyDamagedByPlayer", this.HasBeenPhysicallyDamagedByPlayer );
+            Serializer.AddBoolIfTrue( "HasBeenPhysicallyOrMoraleDamagedByPlayer", this.HasBeenPhysicallyOrMoraleDamagedByPlayer );
+
             if ( this.CustomVisSimpleObject != null )
                 Serializer.AddRepeatedlyUsedString_Condensed( "CustomVisSimpleObject", this.CustomVisSimpleObject.ID );
             else if ( this.CustomVisLODObject != null )
@@ -533,7 +539,9 @@ namespace Arcen.HotM.External
             unit.DisbandWhenObjectiveComplete = Data.GetBool( "DisbandWhenObjectiveComplete", false );
             unit.HasAttackedYetThisTurn = Data.GetBool( "HasAttackedYetThisTurn", false );
             unit.IsDowned = Data.GetBool( "IsDowned", false );
-            
+            unit.HasBeenPhysicallyDamagedByPlayer = Data.GetBool( "HasBeenPhysicallyDamagedByPlayer", false );
+            unit.HasBeenPhysicallyOrMoraleDamagedByPlayer = Data.GetBool( "HasBeenPhysicallyOrMoraleDamagedByPlayer", false );
+
             if ( Data.TryGetUnityVector3( "TargetLocation", out Vector3 targetLocation ) )
                 unit.TargetLocation = targetLocation;
             else
@@ -800,7 +808,7 @@ namespace Arcen.HotM.External
             //skip more death stuff
 
             this.IsManagedUnit?.OnManagedUnitDamaged( this, HostileActionSource, Rand, 0 );
-            this.IsCityConflictUnit?.OnUnitDamaged( this, HostileActionSource, Rand, 0 );
+            this.IsCityConflictUnit?.OnUnitDamaged( this, HostileActionSource, Rand, 0, true );
 
             //do this immediately, so that damage output is lowered if it needs to be
             this.RecalculateActorStats( false );
@@ -883,7 +891,8 @@ namespace Arcen.HotM.External
                 }
             }
 
-            this.DoDeathCheck( Rand, ShouldDoDamageTextPopupsAndLogging );
+            this.IsManagedUnit?.OnManagedUnitDamaged( this, DamageSource, Rand, PhysicalDamageAmount );
+            this.IsCityConflictUnit?.OnUnitDamaged( this, DamageSource, Rand, PhysicalDamageAmount, true );
 
             if ( this.FromCohort != null )
             {
@@ -907,6 +916,7 @@ namespace Arcen.HotM.External
                         containerVehicle.AlterAggroOfNPCCohort( this.FromCohort, MathA.Max( 1, Mathf.RoundToInt( (PhysicalDamageAmount + MoraleDamageAmount) * aggroMultiplier ) ) );
                 }
             }
+            this.DoDeathCheck( Rand, ShouldDoDamageTextPopupsAndLogging );
 
             if ( this.IsFullDead && !wasAlreadyDead && DamageSource != null )
             {
@@ -919,9 +929,6 @@ namespace Arcen.HotM.External
                         AchievementRefs.BearAttack.TripIfNeeded();
                 }
             }
-
-            this.IsManagedUnit?.OnManagedUnitDamaged( this, DamageSource, Rand, PhysicalDamageAmount );
-            this.IsCityConflictUnit?.OnUnitDamaged( this, DamageSource, Rand, PhysicalDamageAmount );
 
             //do this immediately, so that damage output is lowered if it needs to be
             this.RecalculateActorStats( false );
@@ -998,8 +1005,8 @@ namespace Arcen.HotM.External
             if ( DamageSource != null && DamageSource.GetIsPartOfPlayerForcesInAnyWay() )
                 this.UnitType?.OnUnitKilledByPlayerControlledUnit( DamageSource, Rand );
 
-            this.IsManagedUnit?.OnManagedUnitDamaged( this, DamageSource, Rand, 1 );
-            this.IsCityConflictUnit?.OnUnitDamaged( this, DamageSource, Rand, 1 );
+            this.IsManagedUnit?.OnManagedUnitDamaged( this, DamageSource, Rand, 0 );
+            this.IsCityConflictUnit?.OnUnitDamaged( this, DamageSource, Rand, 0, true );
 
             this.IsManagedUnit?.OnManagedUnitDeath( this, Rand );
             this.IsCityConflictUnit?.OnUnitDeath( this, Rand, false );
@@ -1429,6 +1436,12 @@ namespace Arcen.HotM.External
             }
 
             this.PerTurnHandleBaseFairlyEarlyActorLogic( RandForThisTurn );
+
+            if ( this.GetActorDataCurrent( ActorRefs.ActorHP, true ) <= 0 )
+            {
+                this.DoDeathCheck( RandForThisTurn, false );
+                return;
+            }
 
             this.PriorLocation = Vector3.negativeInfinity;
             this.WantsToPerformAction = NPCActionDesire.None; //we need to start out false, and if the stance says to do something (belatedly, rather than instant), then that's up to them

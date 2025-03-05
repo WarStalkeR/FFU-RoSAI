@@ -250,7 +250,9 @@ namespace Arcen.HotM.ExternalVis
                                         destructionData.StatusToApply = CommonRefs.BurnedAndIrradiatedBuildingStatus;
                                         destructionData.AlsoDestroyOtherItems = true;
                                         destructionData.AlsoDestroyUnits = true;
-                                        destructionData.SkipUnitsWithArmorPlating = false;
+                                        destructionData.DestroyAllPlayerUnits = true;
+                                        destructionData.SkipUnitsWithArmorPlatingAbove = 800;
+                                        destructionData.SkipUnitsAboveHeight = 10;
                                         destructionData.IrradiateCells = true;
                                         destructionData.UnitsToSpawnAfter = null;
                                         destructionData.StatisticForDeaths = CityStatisticRefs.DeathsDuringVehicularCyberAttack;
@@ -308,7 +310,9 @@ namespace Arcen.HotM.ExternalVis
                                             destructionData.StatusToApply = CommonRefs.DemolishedBuildingStatus;
                                             destructionData.AlsoDestroyOtherItems = false;
                                             destructionData.AlsoDestroyUnits = true;
-                                            destructionData.SkipUnitsWithArmorPlating = true;
+                                            destructionData.DestroyAllPlayerUnits = true;
+                                            destructionData.SkipUnitsWithArmorPlatingAbove = 800;
+                                            destructionData.SkipUnitsAboveHeight = 7;
                                             destructionData.IrradiateCells = false;
                                             destructionData.UnitsToSpawnAfter = null;
                                             destructionData.StatisticForDeaths = CityStatisticRefs.DeathsDuringReligiousSiteElimination;

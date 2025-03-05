@@ -351,6 +351,7 @@ namespace Arcen.HotM.ExternalVis
         #region CheckAchievementsForGoalCompletionsBroadly
         private void CheckAchievementsForGoalCompletionsBroadly()
         {
+            //ArcenDebugging.LogSingleLine( "CheckAchievementsForGoalCompletionsBroadly", Verbosity.DoNotShow );
             if ( !FlagRefs.IsPostFinalDoom.DuringGameplay_IsTripped )
             {
                 int tier1Completed = 0;
@@ -360,10 +361,21 @@ namespace Arcen.HotM.ExternalVis
                         tier1Completed++;
                 }
 
+                //ArcenDebugging.LogSingleLine( "tier1Completed: " + tier1Completed, Verbosity.DoNotShow );
+
                 if ( tier1Completed >= 2 )
                 {
                     if ( FlagRefs.HasStartedToAccelerateDooms_Any.DuringGameplay_IsTripped )
                         AchievementRefs.RideTheLightning.TripIfNeeded();
+                }
+
+                if ( tier1Completed >= 1 )
+                {
+                    //ArcenDebugging.LogSingleLine( "HasStartedToAccelerateDooms_Any: " + FlagRefs.HasStartedToAccelerateDooms_Any.DuringGameplay_IsTripped, Verbosity.DoNotShow );
+
+                    //ArcenDebugging.LogSingleLine( "HasStartedToAccelerateDooms_Extreme: " + FlagRefs.HasStartedToAccelerateDooms_Extreme.DuringGameplay_IsTripped, Verbosity.DoNotShow );
+
+                    //ArcenDebugging.LogSingleLine( "TwoInOneTimeline: " + (TimelineGoalTable.Instance.GetRowByID( "SliceOfInferno" )?.PathDict["TwoInOneTimeline"]?.DuringGameplay_HasAchievedInThisTimeline ?? false), Verbosity.DoNotShow );
 
                     if ( TimelineGoalTable.Instance.GetRowByID( "SliceOfInferno" )?.PathDict["TwoInOneTimeline"]?.DuringGameplay_HasAchievedInThisTimeline ?? false )
                     {
@@ -372,6 +384,17 @@ namespace Arcen.HotM.ExternalVis
                         if ( FlagRefs.HasStartedToAccelerateDooms_Extreme.DuringGameplay_IsTripped )
                             AchievementRefs.Hellraiser.TripIfNeeded();
                     }
+                }
+            }
+
+            if ( !AchievementRefs.GrandAndGhostly.OneTimeline_HasBeenTripped )
+            {
+                TimelineGoal goal = TimelineGoalTable.Instance.GetRowByID( "AlteredGrowth" );
+                if ( goal != null &&
+                    (goal.PathDict["HomoGrandien"]?.DuringGameplay_HasAchievedInThisTimeline ?? false) &&
+                    (goal.PathDict["HomoObscurus"]?.DuringGameplay_HasAchievedInThisTimeline ?? false) )
+                {
+                    AchievementRefs.GrandAndGhostly.TripIfNeeded();
                 }
             }
         }
@@ -518,19 +541,16 @@ namespace Arcen.HotM.ExternalVis
                 if ( !AchievementRefs.Broombreaker.OneTimeline_HasBeenTripped && FlagRefs.MimicEscapeVorsiberSweepsUntilTurn.GetScore() > 1 &&
                     FlagRefs.MimicEscapeVorsiberSweepsUntilTurn.GetScore() <= SimCommon.Turn )
                 {
-                    if ( FlagRefs.MimicEscapeVorsiberSweepsUntilTurn.GetScore() > SimCommon.Turn )
+                    bool hadAtLeastOneInStance = false;
+                    foreach ( KeyValuePair<int, ISimNPCUnit> kv in World.Forces.GetAllNPCUnitsByID() )
                     {
-                        bool hadAtLeastOneInStance = false;
-                        foreach ( KeyValuePair<int, ISimNPCUnit> kv in World.Forces.GetAllNPCUnitsByID() )
-                        {
-                            if ( kv.Value.IsFullDead || kv.Value.FromCohort == null || kv.Value.Stance != CommonRefs.Stance_MilitarySweep )
-                                continue;
-                            hadAtLeastOneInStance = true;
-                            break;
-                        }
-                        if ( !hadAtLeastOneInStance )
-                            AchievementRefs.Broombreaker.TripIfNeeded();
+                        if ( kv.Value.IsFullDead || kv.Value.FromCohort == null || kv.Value.Stance != CommonRefs.Stance_MilitarySweep )
+                            continue;
+                        hadAtLeastOneInStance = true;
+                        break;
                     }
+                    if ( !hadAtLeastOneInStance )
+                        AchievementRefs.Broombreaker.TripIfNeeded();
                 }
 
                 {
@@ -1959,8 +1979,8 @@ namespace Arcen.HotM.ExternalVis
                                     if ( cell == null )
                                         continue;
 
-                                    int possible = cell.LowerAndMiddleClassResidentsAndWorkersInCell.Display;
-                                    int dissidents = cell.UpperClassResidentsAndWorkersInCell.Display;
+                                    int possible = 0;
+                                    int dissidents = 0;
                                     int current = 0;
                                     foreach ( MapItem item in cell.BuildingList.GetDisplayList() )
                                     {
@@ -1990,9 +2010,9 @@ namespace Arcen.HotM.ExternalVis
                                                 CityStatisticTable.AlterScore( "CybercraticDissidentsRemoved", removed );
 
                                             int lowerClass = 0;
-                                            foreach ( EconomicClassType econClass in CommonRefs.LowerAndMiddleClassResidents )
+                                            foreach ( EconomicClassType econClass in CommonRefs.LowerAndWorkingClassResidents )
                                                 lowerClass += building.GetResidentAmount( econClass );
-                                            foreach ( ProfessionType profession in CommonRefs.LowerAndMiddleClassProfessions )
+                                            foreach ( ProfessionType profession in CommonRefs.LowerAndWorkingClassProfessions )
                                                 lowerClass += building.GetWorkerAmount( profession );
 
                                             building.KillEveryoneHere(); //not really killing in many cases, but certainly removing from the normal citizen roster
@@ -2007,7 +2027,22 @@ namespace Arcen.HotM.ExternalVis
                                         }
 
                                         if ( building.SwarmSpread != citizenSwarm )
+                                        {
+                                            foreach ( EconomicClassType econClass in CommonRefs.UpperClassResidents )
+                                            {
+                                                int hereNow = building.GetResidentAmount( econClass );
+                                                if ( hereNow > 0 )
+                                                    dissidents += hereNow;
+                                            }
+                                            foreach ( ProfessionType profession in CommonRefs.UpperClassProfession )
+                                            {
+                                                int hereNow = building.GetWorkerAmount( profession );
+                                                if ( hereNow > 0 )
+                                                    possible += hereNow;
+                                            }
+
                                             continue;
+                                        }
                                         current += building.SwarmSpreadCount;
 
                                         if ( building.GetTotalResidentCount() > 0 || building.GetTotalWorkerCount() > 0 )
@@ -2161,12 +2196,6 @@ namespace Arcen.HotM.ExternalVis
                                     FlagRefs.IndicateCommandModeButton.UnTripIfNeeded();
                             }
 
-                            if ( !HandbookRefs.WorkerAndroids.Meta_HasBeenUnlocked &&
-                                (FlagRefs.WarImpostor.DuringGameplay_IsInvented ||
-                                FlagRefs.WarMuscle.DuringGameplay_IsInvented ||
-                                FlagRefs.WarRanger.DuringGameplay_IsInvented) )
-                                HandbookRefs.WorkerAndroids.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
-
                             if ( !HandbookRefs.UnitCaps.Meta_HasBeenUnlocked &&
                                 ( SimMetagame.CurrentChapterNumber > 0 ||
                                 FlagRefs.Ch0_SpreadToMoreAndroids.DuringGameplay_State != CityTaskState.NeverStarted) )
@@ -2192,6 +2221,17 @@ namespace Arcen.HotM.ExternalVis
                             {
                                 if ( SimMetagame.CurrentChapterNumber >= 2 && FlagRefs.HasEstablishedShellCompany.DuringGameplay_IsTripped && SimCommon.Turn >= 20 )
                                     HandbookRefs.ContemplationsSometimesComeFromScientists.DuringGame_UnlockIfNeeded( true );
+                            }
+                            if ( !HandbookRefs.FilthAndFurniture.Meta_HasBeenUnlocked )
+                            {
+                                if ( SimMetagame.CurrentChapterNumber >= 2 || 
+                                    (OtherKeyMessageTable.Instance.GetRowByIDOrNullIfNotFound( "TooMuchFilth" )?.DuringGameplay_IsViewingComplete??false) )
+                                    HandbookRefs.FilthAndFurniture.DuringGame_UnlockIfNeeded( false );
+                            }
+                            if ( !HandbookRefs.FoodAndWaterForHumans.Meta_HasBeenUnlocked )
+                            {
+                                if ( SimMetagame.CurrentChapterNumber >= 2 )
+                                    HandbookRefs.FoodAndWaterForHumans.DuringGame_UnlockIfNeeded( false );
                             }
 
                             if ( !HandbookRefs.DealsAreSoftPower.Meta_HasBeenUnlocked )
@@ -2424,6 +2464,17 @@ namespace Arcen.HotM.ExternalVis
                                 if ( CommonRefs.ExplorationSitesLens.GetIsLensAvailable( true ) )
                                     HandbookRefs.NewFeaturesFromExplorationSites.DuringGame_UnlockIfNeeded( true );
                             }
+                            if ( !HandbookRefs.ExplorationSiteProgressIsRetained.Meta_HasBeenUnlocked && SimCommon.Turn > 30 && SimMetagame.CurrentChapterNumber > 2 )
+                            {
+                                if ( CommonRefs.ExplorationSitesLens.GetIsLensAvailable( true ) )
+                                    HandbookRefs.ExplorationSiteProgressIsRetained.DuringGame_UnlockIfNeeded( true );
+                            }
+
+                            if ( !HandbookRefs.ProjectsWithStreetSenseItems.Meta_HasBeenUnlocked )
+                            {
+                                if ( CommonRefs.ProjectRelatedStreetSense.NonSim_EntriesVisible > 0 )
+                                    HandbookRefs.ProjectsWithStreetSenseItems.DuringGame_UnlockIfNeeded( true );
+                            }                            
 
                             if ( !HandbookRefs.MemoriesAcrossTime.Meta_HasBeenUnlocked )
                             {
@@ -2435,6 +2486,16 @@ namespace Arcen.HotM.ExternalVis
                             {
                                 if ( FlagRefs.HasEstablishedShellCompany.DuringGameplay_IsTripped )
                                     HandbookRefs.YourFirstShellCompany.DuringGame_UnlockIfNeeded( true );
+                            }
+
+                            //things for the full game only
+                            if ( !Engine_HotM.IsDemoVersion )
+                            {
+                                if ( !HandbookRefs.WorkerAndroids.Meta_HasBeenUnlocked &&
+                                    (FlagRefs.WarImpostor.DuringGameplay_IsInvented ||
+                                    FlagRefs.WarMuscle.DuringGameplay_IsInvented ||
+                                    FlagRefs.WarRanger.DuringGameplay_IsInvented) )
+                                    HandbookRefs.WorkerAndroids.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                         }
                         #endregion Handbook Drops
@@ -2879,6 +2940,19 @@ namespace Arcen.HotM.ExternalVis
 
         public void DoAfterLanguageChanged( DataCalculator Calculator )
         {
+        }
+
+        public void DoAfterGoalCompleted( DataCalculator Calculator, TimelineGoalPath Path )
+        {
+            switch ( Calculator.ID )
+            {
+                case "BasicsAfterGoalCompletion":
+                    CheckAchievementsForGoalCompletionsBroadly();
+                    break;
+                default:
+                    ArcenDebugging.LogSingleLine( "DoAfterGoalCompleted: Calculators_Common was asked to handle '" + Calculator.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
+                    break;
+            }
         }
     }
 }

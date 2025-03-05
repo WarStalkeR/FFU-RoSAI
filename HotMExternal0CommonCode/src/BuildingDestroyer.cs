@@ -26,7 +26,8 @@ namespace Arcen.HotM.External
             if ( SimCommon.QueuedBuildingDestruction.TryDequeue( out QueuedBuildingDestructionData destruction ) )
             {
                 if ( !DestroyBuildingsInRadius( destruction.Epicenter, destruction.Range, destruction.StatusToApply, destruction.AlsoDestroyOtherItems, 
-                    destruction.AlsoDestroyUnits, destruction.SkipUnitsWithArmorPlating, destruction.IrradiateCells, destruction.UnitsToSpawnAfter,
+                    destruction.AlsoDestroyUnits, destruction.DestroyAllPlayerUnits, destruction.SkipUnitsWithArmorPlatingAbove, destruction.SkipUnitsAboveHeight, 
+                    destruction.IrradiateCells, destruction.UnitsToSpawnAfter,
                     destruction.StatisticForDeaths, destruction.IsCausedByPlayer, destruction.IsFromJob, destruction.ExtraCode ) )
                 {
                     //if it failed to start, then put this back in
@@ -38,7 +39,8 @@ namespace Arcen.HotM.External
 
         #region DestroyBuildingsInRadius
         private static bool DestroyBuildingsInRadius( Vector3 Epicenter, float Range, BuildingStatus StatusToApply, bool AlsoDestroyOtherItems, 
-            bool AlsoDestroyUnits, bool SkipUnitsWithArmorPlating, bool IrradiateCells, NPCManager SpawnAfter, CityStatistic StatisticForDeaths, bool IsCausedByPlayer,
+            bool AlsoDestroyUnits, bool DestroyAllPlayerUnits, int SkipUnitsWithArmorPlatingAbove, int SkipUnitsAboveHeight, 
+            bool IrradiateCells, NPCManager SpawnAfter, CityStatistic StatisticForDeaths, bool IsCausedByPlayer,
             MachineJob IsFromJob, ExtraCodeHandler ExtraCode )
         {
             if ( Interlocked.Exchange( ref IsCalculatingNow, 1 ) != 0 )
@@ -123,10 +125,21 @@ namespace Arcen.HotM.External
                                 if ( dist > rangeSquared )
                                     continue; //out of the blast range, skip!
 
-                                if ( SkipUnitsWithArmorPlating )
+                                if ( DestroyAllPlayerUnits && kv.Value.GetIsPartOfPlayerForcesInAnyWay() )
+                                { } //do not let armor save them
+                                else
                                 {
-                                    if ( unit.GetActorDataCurrent( ActorRefs.ActorArmorPlating, true ) > 0 )
-                                        continue; //if any powered armor, and skipping units with powered armor, skip this unit!
+                                    if ( SkipUnitsWithArmorPlatingAbove > 0 )
+                                    {
+                                        if ( unit.GetActorDataCurrent( ActorRefs.ActorArmorPlating, true ) > SkipUnitsWithArmorPlatingAbove )
+                                            continue; //if any powered armor, and skipping units with powered armor, skip this unit!
+                                    }
+                                    
+                                    if ( SkipUnitsAboveHeight > 0 )
+                                    {
+                                        if ( unit.GetPositionForCollisions().y > SkipUnitsAboveHeight )
+                                            continue; //if too high, then don't hit it
+                                    }
                                 }
 
                                 if ( ExtraCode != null )
@@ -142,10 +155,21 @@ namespace Arcen.HotM.External
                                 if ( dist > rangeSquared )
                                     continue; //out of the blast range, skip!
 
-                                if ( SkipUnitsWithArmorPlating )
+                                if ( DestroyAllPlayerUnits )
+                                { } //do not let armor save them
+                                else
                                 {
-                                    if ( unit.GetActorDataCurrent( ActorRefs.ActorArmorPlating, true ) > 0 )
-                                        continue; //if any powered armor, and skipping units with powered armor, skip this unit!
+                                    if ( SkipUnitsWithArmorPlatingAbove > 0 )
+                                    {
+                                        if ( unit.GetActorDataCurrent( ActorRefs.ActorArmorPlating, true ) > SkipUnitsWithArmorPlatingAbove )
+                                            continue; //if any powered armor, and skipping units with powered armor, skip this unit!
+                                    }
+
+                                    if ( SkipUnitsAboveHeight > 0 )
+                                    {
+                                        if ( unit.GetPositionForCollisions().y > SkipUnitsAboveHeight )
+                                            continue; //if too high, then don't hit it
+                                    }
                                 }
 
                                 if ( ExtraCode != null )
@@ -161,10 +185,21 @@ namespace Arcen.HotM.External
                                 if ( dist > rangeSquared )
                                     continue; //out of the blast range, skip!
 
-                                if ( SkipUnitsWithArmorPlating )
+                                if ( DestroyAllPlayerUnits )
+                                { } //do not let armor save them
+                                else
                                 {
-                                    if ( vehicle.GetActorDataCurrent( ActorRefs.ActorArmorPlating, true ) > 0 )
-                                        continue; //if any powered armor, and skipping units with powered armor, skip this unit!
+                                    if ( SkipUnitsWithArmorPlatingAbove > 0 )
+                                    {
+                                        if ( vehicle.GetActorDataCurrent( ActorRefs.ActorArmorPlating, true ) > SkipUnitsWithArmorPlatingAbove )
+                                            continue; //if any powered armor, and skipping units with powered armor, skip this unit!
+                                    }
+
+                                    if ( SkipUnitsAboveHeight > 0 )
+                                    {
+                                        if ( vehicle.GetPositionForCollisions().y > SkipUnitsAboveHeight )
+                                            continue; //if too high, then don't hit it
+                                    }
                                 }
 
                                 if ( ExtraCode != null )

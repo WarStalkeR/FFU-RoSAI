@@ -432,8 +432,19 @@ namespace Arcen.HotM.ExternalVis
                         {
                             case UIAction.GetTextToShowFromVolatile:
                                 icon.SetRelatedImage0EnabledIfNeeded( resource.IsPinnedToTopBar );
-                                Int64 materialAmount = resource.Current;
-                                ExtraData.Buffer.AddRaw( materialAmount.ToStringLargeNumberAbbreviated(), materialAmount <= 0 ? ColorTheme.RedOrange2 : string.Empty );
+                                if ( InputCaching.ShouldShowDetailedTooltips || InputCaching.ShouldShowHyperDetailedTooltips )
+                                {
+                                    Int64 netValue = resource.GetActualNet();
+                                    if ( netValue >= 0 )
+                                        ExtraData.Buffer.AddFormat1( "PositiveChange", netValue.ToStringLargeNumberAbbreviated(), netValue > 0 ? string.Empty : ColorTheme.RedOrange2 );
+                                    else
+                                        ExtraData.Buffer.AddRaw( netValue.ToStringLargeNumberAbbreviated(), ColorTheme.RedOrange2 );
+                                }
+                                else
+                                {
+                                    Int64 materialAmount = resource.Current;
+                                    ExtraData.Buffer.AddRaw( materialAmount.ToStringLargeNumberAbbreviated(), materialAmount <= 0 ? ColorTheme.RedOrange2 : string.Empty );
+                                }
                                 break;
                             case UIAction.HandleMouseover:
                                 resource.WriteResourceTooltip( element, SideClamp.AboveOrBelow, TooltipShadowStyle.None, TooltipInstruction.ForConstruction, TooltipExtraText.None );

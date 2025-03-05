@@ -1569,16 +1569,23 @@ namespace Arcen.HotM.ExternalVis
                                 break;
                             case UIAction.OnClick:
                                 {
-                                    SimCommon.SetCurrentCityLensIfAvailable( lensType );
-
-                                    switch ( SharedRenderManagerData.CurrentIndicator )
+                                    if ( ExtraData.MouseInput.LeftButtonClicked )
                                     {
-                                        case Indicator.RadialStreetSense:
-                                            break;
-                                        case Indicator.MapRadialContemplation:
-                                            if ( lensType != null && lensType.ShowContemplations.Display )
-                                                FlagRefs.HasAlreadyIndicatedMapRadialContemplation.TripIfNeeded();
-                                            break;
+                                        SimCommon.SetCurrentCityLensIfAvailable( lensType );
+
+                                        switch ( SharedRenderManagerData.CurrentIndicator )
+                                        {
+                                            case Indicator.RadialStreetSense:
+                                                break;
+                                            case Indicator.MapRadialContemplation:
+                                                if ( lensType != null && lensType.ShowContemplations.Display )
+                                                    FlagRefs.HasAlreadyIndicatedMapRadialContemplation.TripIfNeeded();
+                                                break;
+                                        }
+                                    }
+                                    else if ( ExtraData.MouseInput.RightButtonClicked )
+                                    {
+                                        lensType.ExtraCodeOnRightClick?.Implementation.HandleCityLensRightClick( lensType.ExtraCodeOnRightClick, lensType );
                                     }
                                 }
                                 break;

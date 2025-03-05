@@ -108,10 +108,10 @@ namespace Arcen.HotM.ExternalVis
                             CityStatisticTable.SetScore_UserBeware( "WealthyConsumers", Mathf.CeilToInt( World.People.GetCurrentResidents()[managerialClass] * 0.92f ) +
                                 Mathf.CeilToInt( World.People.GetCurrentResidents()[scientistsClass] * 0.76f ) );
 
-                            EconomicClassType middleClass = EconomicClassTypeTable.Instance.GetRowByID( "MiddleClass" );
+                            EconomicClassType workingClass = EconomicClassTypeTable.Instance.GetRowByID( "WorkingClass" );
                             EconomicClassType uneducatedClass = EconomicClassTypeTable.Instance.GetRowByID( "Uneducated" );
 
-                            CityStatisticTable.SetScore_UserBeware( "WorkingClassConsumers", Mathf.CeilToInt( World.People.GetCurrentResidents()[middleClass] * 0.98f ) +
+                            CityStatisticTable.SetScore_UserBeware( "WorkingClassConsumers", Mathf.CeilToInt( World.People.GetCurrentResidents()[workingClass] * 0.98f ) +
                                 Mathf.CeilToInt( World.People.GetCurrentResidents()[uneducatedClass] * 0.41f ) );
                         }
 

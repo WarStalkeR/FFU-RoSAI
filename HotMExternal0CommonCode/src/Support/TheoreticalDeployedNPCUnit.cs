@@ -151,6 +151,11 @@ namespace Arcen.HotM.External
 
         public int LastTurnDidAmbush { get => 0; set { } }
 
+        public int LargestSquadSize => 0;
+
+        public bool HasBeenPhysicallyDamagedByPlayer { get => false; set {  } }
+        public bool HasBeenPhysicallyOrMoraleDamagedByPlayer { get => false; set { } }
+
         public void AddOrRemoveBadge( ActorBadge Badge, bool Add )
         {
             throw new NotImplementedException();

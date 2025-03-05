@@ -188,7 +188,7 @@ namespace Arcen.HotM.External
                         else
                             wasMissingSomeOutdoorSpotsInBounds = true;
                     }
-                    cell.LowerAndMiddleClassResidentsAndWorkersInCell.ClearConstructionValueForStartingConstruction();
+                    cell.LowerAndWorkingClassResidentsAndWorkersInCell.ClearConstructionValueForStartingConstruction();
                     cell.UpperClassResidentsAndWorkersInCell.ClearConstructionValueForStartingConstruction();
                     cell.PrisonersInCell.ClearConstructionValueForStartingConstruction();
                     cell.HomelessInCell.ClearConstructionValueForStartingConstruction();
@@ -635,13 +635,13 @@ namespace Arcen.HotM.External
                         {
                             {
                                 int lowerClass = 0;
-                                foreach ( EconomicClassType econClass in CommonRefs.LowerAndMiddleClassResidents )
+                                foreach ( EconomicClassType econClass in CommonRefs.LowerAndWorkingClassResidents )
                                     lowerClass += building.GetResidentAmount( econClass );
-                                foreach ( ProfessionType profession in CommonRefs.LowerAndMiddleClassProfessions )
+                                foreach ( ProfessionType profession in CommonRefs.LowerAndWorkingClassProfessions )
                                     lowerClass += building.GetWorkerAmount( profession );
 
                                 if ( lowerClass > 0 )
-                                    cell.LowerAndMiddleClassResidentsAndWorkersInCell.Construction += lowerClass;
+                                    cell.LowerAndWorkingClassResidentsAndWorkersInCell.Construction += lowerClass;
 
                                 building.IsPeacefulCyberocracyTarget = lowerClass > 0;
                                 building.LowerClassCitizenGrabCount = lowerClass;
@@ -783,7 +783,7 @@ namespace Arcen.HotM.External
                 {
                     debugStage = 426000;
 
-                    cell.LowerAndMiddleClassResidentsAndWorkersInCell.SwitchConstructionToDisplay();
+                    cell.LowerAndWorkingClassResidentsAndWorkersInCell.SwitchConstructionToDisplay();
                     cell.UpperClassResidentsAndWorkersInCell.SwitchConstructionToDisplay();
                     cell.PrisonersInCell.SwitchConstructionToDisplay();
                     cell.HomelessInCell.SwitchConstructionToDisplay();

@@ -97,8 +97,8 @@ namespace Arcen.HotM.ExternalVis
                         #region ColdBlood
                         {
                             debugStage = 1200;
-                            if ( CityStatisticTable.GetScore( "Murders" ) <= 0 || FlagRefs.GaveUpColdBlood.DuringGameplay_IsTripped )
-                                return; //no cold blood option if you have not already murdered someone in this specific city
+                            if ( FlagRefs.GaveUpColdBlood.DuringGameplay_IsTripped )
+                                return;
                             if ( SimMetagame.CurrentChapterNumber == 0 )
                                 break;
 

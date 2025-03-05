@@ -699,6 +699,13 @@ namespace Arcen.HotM.External
         {
             this.HandlePerTurnMachineActorLogic();
             this.PerTurnHandleBaseFairlyEarlyActorLogic( RandForThisTurn );
+
+            if ( this.GetActorDataCurrent( ActorRefs.ActorHP, true ) <= 0 )
+            {
+                this.DoDeathCheck( RandForThisTurn, false );
+                return;
+            }
+
             bool doActionOverTime = this.CurrentActionPoints > 0;
             int apRemainingAfterLastTurn = this.CurrentActionPoints;
 
@@ -709,8 +716,14 @@ namespace Arcen.HotM.External
 
             if ( this.CurrentActionOverTime != null && doActionOverTime )
             {
-                this.CurrentActionOverTime.DoActionPerTurnLogic( RandForThisTurn );
                 apRemainingAfterLastTurn = 0;
+                if ( this.GetActorDataCurrent( ActorRefs.ActorHP, true ) > 0 )
+                {
+                    this.IsScheduledToDoActionOverTime = true;
+                    //this.CurrentActionOverTime.DoActionPerTurnLogic( RandForThisTurn ); //unit is still alive, so do the thing
+                }
+                else
+                    this.CurrentActionOverTime.DestroyAndCancelDueToFailureOfSomeKind(); //the failure is that the unit is dead
             }
 
             this.Stance?.Implementation.HandleLogicForVehicleInStance( this, this.Stance, RandForThisTurn, apRemainingAfterLastTurn, null, VehicleStanceLogic.PerTurnLogic );
@@ -789,6 +802,22 @@ namespace Arcen.HotM.External
             if ( registration != null )
                 registration.DuringGame_DiscoverIfNeed();
             #endregion
+
+            if ( this.IsScheduledToDoActionOverTime )
+            {
+                if ( SimCommon.NPCsWaitingToActOnTheirOwn.Count == 0 && SimCommon.NPCsWaitingToActAfterPlayerLooksAtThem.Count == 0 && 
+                    !this.GetWouldBeDeadFromIncomingPhysicalDamageActual() && !SimCommon.IsCurrentlyRunningSimTurn )
+                {
+                    if ( this.GetActorDataCurrent( ActorRefs.ActorHP, true ) <= 0 )
+                    {
+                        this.DoDeathCheck( Engine_Universal.PermanentQualityRandom, false );
+                        return;
+                    }
+
+                    this.CurrentActionOverTime.DoActionPerTurnLogic( Engine_Universal.PermanentQualityRandom );
+                    this.IsScheduledToDoActionOverTime = false;
+                }
+            }
 
             if ( !SimCommon.IsCurrentlyRunningSimTurn )
             {
@@ -1446,7 +1475,7 @@ namespace Arcen.HotM.External
 
         public Vector3 GetCollisionCenter()
         {
-            return this.worldLocation.PlusY( this.VehicleType?.YOffsetForCollisionBase??0 );
+            return this.GetPositionForCollisions();
         }
 
         public Vector3 GetPositionForCollisionsFromTheoretic( Vector3 TheoreticalPoint )

@@ -307,6 +307,18 @@ namespace Arcen.HotM.ExternalVis
         }
         #endregion
 
+        #region GetHasAlreadyStartedNPCMission
+        public static bool GetHasAlreadyStartedNPCMission( string NPCMissionID )
+        {
+            NPCMission mission = NPCMissionTable.Instance.GetRowByID( NPCMissionID );
+
+            if ( mission == null )
+                return false;
+
+            return !mission.CalculateMeetsPrerequisites( false );
+        }
+        #endregion
+
         #region StartNPCMissionAtAnyJob
         public static bool StartNPCMissionAtAnyJob( string NPCMissionID )
         {

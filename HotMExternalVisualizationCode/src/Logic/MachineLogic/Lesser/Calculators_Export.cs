@@ -41,6 +41,10 @@ namespace Arcen.HotM.ExternalVis
         public void DoDuringAttackPowerCalculation( DataCalculator Calculator, ISimMapActor Attacker, ISimMapActor Target, CalculationType CalcType, MersenneTwister RandIfNotPrediction, bool IsAndroidLeapingFromBeyondAttackRange, float IntensityFromAOE, bool CheckCloakedStatus, bool CheckTakeCoverStatus, bool ImagineWillBeInCover, bool ImagineAttackerWillHaveMoved, Vector3 NewAttackerLocation, int ImagineThisAmountOfAttackerHealthWasLost, bool DoFullPrecalculation, bool SkipCaringAboutRange, ArcenCharacterBufferBase BufferOrNull, ArcenCharacterBufferBase SecondaryBufferOrNull, ref int attackerPhysicalPower, ref int attackerFearAttackPower, ref int attackerArgumentAttackPower )
         {
         }
+
+        public void DoAfterGoalCompleted( DataCalculator Calculator, TimelineGoalPath Path )
+        {
+        }
         #endregion
 
         public void DoAfterLanguageChanged( DataCalculator Calculator )

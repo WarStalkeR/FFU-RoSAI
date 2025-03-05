@@ -786,7 +786,9 @@ namespace Arcen.HotM.External
                         destructionData.StatusToApply = CommonRefs.BurnedAndIrradiatedBuildingStatus;
                         destructionData.AlsoDestroyOtherItems = true;
                         destructionData.AlsoDestroyUnits = true;
-                        destructionData.SkipUnitsWithArmorPlating = false;
+                        destructionData.DestroyAllPlayerUnits = true;
+                        destructionData.SkipUnitsWithArmorPlatingAbove = 200;
+                        destructionData.SkipUnitsAboveHeight = 0;
                         destructionData.IrradiateCells = true;
                         destructionData.UnitsToSpawnAfter = null;
                         destructionData.StatisticForDeaths = CityStatisticRefs.MurdersByNuke;
@@ -822,7 +824,9 @@ namespace Arcen.HotM.External
                         destructionData.StatusToApply = CommonRefs.BurnedAndIrradiatedBuildingStatus;
                         destructionData.AlsoDestroyOtherItems = true;
                         destructionData.AlsoDestroyUnits = true;
-                        destructionData.SkipUnitsWithArmorPlating = false;
+                        destructionData.DestroyAllPlayerUnits = true;
+                        destructionData.SkipUnitsWithArmorPlatingAbove = 200;
+                        destructionData.SkipUnitsAboveHeight = 0;
                         destructionData.IrradiateCells = true;
                         destructionData.UnitsToSpawnAfter = null;
                         destructionData.StatisticForDeaths = CityStatisticRefs.MurdersByNuke;

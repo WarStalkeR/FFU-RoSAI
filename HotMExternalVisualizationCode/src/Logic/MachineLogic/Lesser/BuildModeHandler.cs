@@ -856,8 +856,8 @@ namespace Arcen.HotM.ExternalVis
                 {
                     isCyberocracyHub = true;
 
-                    bufferBase.FrameBody.AddBoldLangAndAfterLineItemHeader( "LowerAndMiddleClass", ColorTheme.DataLabelWhite )
-                        .AddRaw( cell.LowerAndMiddleClassResidentsAndWorkersInCell.Display.ToStringThousandsWhole(), ColorTheme.DataGood )
+                    bufferBase.FrameBody.AddBoldLangAndAfterLineItemHeader( "LowerAndWorkingClass", ColorTheme.DataLabelWhite )
+                        .AddRaw( cell.LowerAndWorkingClassResidentsAndWorkersInCell.Display.ToStringThousandsWhole(), ColorTheme.DataGood )
                         .Line();
 
                     bufferBase.FrameBody.AddBoldLangAndAfterLineItemHeader( "UpperClass", ColorTheme.DataLabelWhite )

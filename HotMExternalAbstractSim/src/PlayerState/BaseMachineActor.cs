@@ -14,6 +14,7 @@ namespace Arcen.HotM.External
         //-----------------------------------------------------
         private int currentActionPoints = 0;
         public int StartingHealthAtTheEndOfTheTurn { get; protected set; } = 0;
+        public bool IsScheduledToDoActionOverTime = false;
         public SecurityClearance CurrentBaseClearance { get; set; } = null;
         public NPCCohort CurrentRegistration { get; set; } = null;
         public AbilityType IsInAbilityTypeTargetingMode { get; private set; }
@@ -41,6 +42,7 @@ namespace Arcen.HotM.External
             //---------------
             this.currentActionPoints = 0;
             this.StartingHealthAtTheEndOfTheTurn = 0;
+            this.IsScheduledToDoActionOverTime = false;
             this.CurrentBaseClearance = null;
             this.CurrentRegistration = null;
             this.IsInAbilityTypeTargetingMode = null;
@@ -86,6 +88,7 @@ namespace Arcen.HotM.External
         {
             Serializer.AddInt32IfGreaterThanZero( "CurrentActionPoints", this.currentActionPoints );
             Serializer.AddInt32IfGreaterThanZero( "StartingHealthAtTheEndOfTheTurn", StartingHealthAtTheEndOfTheTurn );
+            Serializer.AddBoolIfTrue( "IsScheduledToDoActionOverTime", IsScheduledToDoActionOverTime );
             Serializer.AddRepeatedlyUsedString_CondensedIfNotBlank( "CurrentBaseClearance", this.CurrentBaseClearance?.ID );
             Serializer.AddRepeatedlyUsedString_CondensedIfNotBlank( "CurrentRegistration", this.CurrentRegistration?.ID );
             Serializer.AddRepeatedlyUsedString_CondensedIfNotBlank( "IsInAbilityTypeTargetingMode", this.IsInAbilityTypeTargetingMode?.ID );
@@ -124,6 +127,7 @@ namespace Arcen.HotM.External
         {
             this.currentActionPoints = Data.GetInt32( "CurrentActionPoints", false );
             this.StartingHealthAtTheEndOfTheTurn = Data.GetInt32( "StartingHealthAtTheEndOfTheTurn", false );
+            this.IsScheduledToDoActionOverTime = Data.GetBool( "IsScheduledToDoActionOverTime", false );
 
             if ( Data.TryGetTableRow( "CurrentBaseClearance", SecurityClearanceTable.Instance, out SecurityClearance clearance ) )
                 this.CurrentBaseClearance = clearance;
