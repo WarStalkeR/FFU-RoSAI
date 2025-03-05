@@ -4,15 +4,14 @@ using System.Collections;
 using System;
 using HarmonyLib;
 using UnityEngine;
-using System.IO;
 
 namespace Arcen.HotM.FFU.RoSAI {
     public partial class ModInit : IArcenExternalDllInitialLoadCall {
         public void RunOnFirstTimeExternalAssemblyLoaded() {
-        }
-        public void RunImmediatelyOnHandlerProcessed(ArcenExternalDllInitialLoadCall Loader) {
             ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Initializing...", Verbosity.DoNotShow);
             Engine_Universal.SafelyWrappedStartCoroutine(ExecuteLoadFlow());
+        }
+        public void RunImmediatelyOnHandlerProcessed(ArcenExternalDllInitialLoadCall Loader) {
         }
         public void RunAfterAllTableImportsComplete(ArcenExternalDllInitialLoadCall Loader) {
         }
@@ -27,19 +26,22 @@ namespace Arcen.HotM.FFU.RoSAI {
             ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Applying patches via Harmony:", Verbosity.DoNotShow);
             Harmony Mod = new Harmony("arcen.hotm.ffu.rosai");
 
-            try { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Patch: Arcen.HotM.Core.Engine_HotM -> ReloadSelectDataFromXml", Verbosity.DoNotShow);
+            try { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Arcen.HotM.Core.BuildingPrefab -> ProcessNodeLoadOrReload", Verbosity.DoNotShow);
+                var refMethod = AccessTools.Method(typeof(BuildingPrefab), "ProcessNodeLoadOrReload");
+                var prefixPatch = SymbolExtensions.GetMethodInfo(() =>
+                    ModPatch.ProcessNodeLoadOrReload_Custom(default, default, default));
+                Mod.Patch(refMethod, prefix: new HarmonyMethod(prefixPatch));
+            } catch (Exception ex) { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Failed: {ex}", Verbosity.DoNotShow); }
+
+            try { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Arcen.HotM.Core.Engine_HotM -> ReloadSelectDataFromXml", Verbosity.DoNotShow);
                 var refMethod = AccessTools.Method(typeof(Engine_HotM), "ReloadSelectDataFromXml");
                 var postfixPatch = SymbolExtensions.GetMethodInfo(() =>
                     ModPatch.ReloadSelectDataFromXml_Extended(default));
                 Mod.Patch(refMethod, postfix: new HarmonyMethod(postfixPatch));
             } catch (Exception ex) { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Failed: {ex}", Verbosity.DoNotShow); }
-
-            ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Patching routine complete!", Verbosity.DoNotShow);
             yield break;
         }
         public IEnumerator ModLoadInitializers() {
-            yield return new WaitUntil(() => BuildingPrefabTable.Instance.InitializationStage.IsLoaded());
-            BuildingPrefabTableOverride.Instance.Initialize(false);
             yield break;
         }
         public IEnumerator ModLoadOverrides() {
