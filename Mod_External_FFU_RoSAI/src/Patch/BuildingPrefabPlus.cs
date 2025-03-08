@@ -4,7 +4,7 @@ using HarmonyLib;
 
 namespace Arcen.HotM.FFU.RoSAI {
     public static partial class ModPatch {
-        public static bool ProcessNodeLoadOrReload_Custom(BuildingPrefab __instance, ArcenXMLElement Data, bool IsForReload) {
+        public static bool ProcessNodeLoadOrReload_Plus(BuildingPrefab __instance, ArcenXMLElement Data, bool IsForReload) {
             bool bReplaceFloors = false;
             bool bReplaceMarker = false;
             Data.Fill("custom_replace_floors", ref bReplaceFloors, false);

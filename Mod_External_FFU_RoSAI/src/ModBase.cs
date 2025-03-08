@@ -29,7 +29,7 @@ namespace Arcen.HotM.FFU.RoSAI {
             try { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Arcen.HotM.Core.BuildingPrefab -> ProcessNodeLoadOrReload", Verbosity.DoNotShow);
                 var refMethod = AccessTools.Method(typeof(BuildingPrefab), "ProcessNodeLoadOrReload");
                 var prefixPatch = SymbolExtensions.GetMethodInfo(() =>
-                    ModPatch.ProcessNodeLoadOrReload_Custom(default, default, default));
+                    ModPatch.ProcessNodeLoadOrReload_Plus(default, default, default));
                 Mod.Patch(refMethod, prefix: new HarmonyMethod(prefixPatch));
             } catch (Exception ex) { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Failed: {ex}", Verbosity.DoNotShow); }
 
