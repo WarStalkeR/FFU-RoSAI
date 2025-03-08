@@ -4,24 +4,24 @@
 	<job id="HumanApartments"
 		resource_cap_increased_per_unit_of_area1="0.28017"
 		is_partial_record="true">
-		<math_int id="VRSeatsMax" int_min="1500" math_type="SomethingElse" is_partial_record="true" />
-		<math_float id="FilthCapPerResident" float_min="35" math_type="SomethingElse" is_partial_record="true" />
-		<initial_actor_rating data_type="RequiredElectricity" value="1000" is_partial_record="true" />
+		<math_int id="VRSeatsMax" int_min="1500" math_type="SomethingElse" is_partial_record="true"/>
+		<math_float id="FilthCapPerResident" float_min="35" math_type="SomethingElse" is_partial_record="true"/>
+		<initial_actor_rating data_type="RequiredElectricity" value="1000" is_partial_record="true"/>
 	</job>
 
 	<job id="ResidentialMegastructure"
 		resource_cap_increased_per_unit_of_area1="0.698185"
 		is_partial_record="true">
-		<math_int id="VRSeatsMax" int_min="30000" math_type="SomethingElse" is_partial_record="true" />
-		<math_float id="FilthCapPerResident" float_min="50" math_type="SomethingElse" is_partial_record="true" />
-		<initial_actor_rating data_type="RequiredElectricity" value="5000" />
+		<math_int id="VRSeatsMax" int_min="30000" math_type="SomethingElse" is_partial_record="true"/>
+		<math_float id="FilthCapPerResident" float_min="50" math_type="SomethingElse" is_partial_record="true"/>
+		<initial_actor_rating data_type="RequiredElectricity" value="5000"/>
 	</job>
 
 	<job id="RefugeeTower"
 		resource_cap_increased_per_unit_of_area1="0.42599"
 		is_partial_record="true">
-		<math_float id="FilthCapPerResident" float_min="20" math_type="SomethingElse" is_partial_record="true" />
-		<initial_actor_rating data_type="RequiredElectricity" value="2500" is_partial_record="true" />
+		<math_float id="FilthCapPerResident" float_min="20" math_type="SomethingElse" is_partial_record="true"/>
+		<initial_actor_rating data_type="RequiredElectricity" value="2500" is_partial_record="true"/>
 	</job>
 
 	<job id="WorkerPredatorFactory"
@@ -31,16 +31,16 @@
 
 	<job id="TowerMainframe"
 		is_partial_record="true">
-		<!--<initial_actor_rating data_type="NeuralExpansion" value="505" is_partial_record="true" />-->
-		<resource_cost resource_type="ComputroniumCubes" cost="400000" is_partial_record="true" />
-		<!--<math_int id="ComputeTime" int_min="5660" income_or_expense_resource="ComputeTime" math_type="OutputResult" is_partial_record="true" />-->
+		<!--<initial_actor_rating data_type="NeuralExpansion" value="505" is_partial_record="true"/>-->
+		<resource_cost resource_type="ComputroniumCubes" cost="400000" is_partial_record="true"/>
+		<!--<math_int id="ComputeTime" int_min="5660" income_or_expense_resource="ComputeTime" math_type="OutputResult" is_partial_record="true"/>-->
 	</job>
 
 	<job id="BiologicalMainframe"
 		is_partial_record="true">
-		<!--<initial_actor_rating data_type="NeuralExpansion" value="4808" is_partial_record="true" />-->
-		<resource_cost resource_type="PreservedBrain" cost="2000" is_partial_record="true" />
-		<!--<math_int id="ComputeTime" int_min="10480" income_or_expense_resource="ComputeTime" math_type="OutputResult" is_partial_record="true" />-->
+		<!--<initial_actor_rating data_type="NeuralExpansion" value="4808" is_partial_record="true"/>-->
+		<resource_cost resource_type="PreservedBrain" cost="2000" is_partial_record="true"/>
+		<!--<math_int id="ComputeTime" int_min="10480" income_or_expense_resource="ComputeTime" math_type="OutputResult" is_partial_record="true"/>-->
 	</job>
 
 	<job id="SolGelHydrolysisReactor"

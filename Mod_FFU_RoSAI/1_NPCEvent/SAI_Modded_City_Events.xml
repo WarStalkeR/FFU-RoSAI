@@ -4,13 +4,13 @@
 	<city_event id="Cont_Design_DroneForEviction" display_name="Design Eviction Drones"
 		description="Now that you’ve acquired the technological capability to produce liquid metal, you might as well explore where else it can be applied." strategy_tip=""
 		icon_name="HO_House5" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414">
-		<gate_by_city minimum_chapter="2" />
+		<gate_by_city minimum_chapter="2"/>
 		<minor_event_data icon_scale="0.4" color_data="DisableAlarms"
 			max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
 			required_skill_type="ActorEngineeringSkill" required_skill_amount="300" >
 		</minor_event_data>
 		<choice id="1" display_name="Perform Feat Of Engineering" action_visibility_style="IsMoveAndInteractWithNPC" description="" strategy_tip="">
-			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" instantly_unlocked_1="DroneForEviction" unlock_inspiration_type="ContemplationResult" />
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" instantly_unlocked_1="DroneForEviction" unlock_inspiration_type="ContemplationResult"/>
 		</choice>
 	</city_event>
 
