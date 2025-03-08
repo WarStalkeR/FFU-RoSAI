@@ -1,404 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
 
-	<building_type id="AirportControlTower" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="AirportHangar" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-		<variant id="Criminal" is_partial_record="true" weight="50"/>
-		<variant id="Infested" is_partial_record="true" weight="10"/>
-	</building_type>
-
-	<building_type id="AirportTerminal" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="AirportJetway" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-		<variant id="Infested" is_partial_record="true" weight="5"/>
-	</building_type>
-
-	<building_type id="AirportHeliport" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="AirportBuilding" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="DataCenter" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-		<variant id="2" is_partial_record="true" weight="10"/>
-	</building_type>
-	
-	<building_type id="RadioTower" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="SatelliteCommunications" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="ScientificRadioTelescope" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="DeepSpaceCommunications" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="Radome" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmBarn" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="Farmhouse" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmGranary" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmGreenhouse" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmLeanTo" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmSilo" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmWarehouse" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmWaterTower" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmWindmill" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmTomatoes" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmBeans" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmCabbage" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmCorn" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmCotton" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmGrapes" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmSprouts" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmLettuce" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmPeppers" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmPumpkins" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmSquash" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmSunflowers" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmWheat" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmWell" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FarmChickenCoop" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="CryoPrepCenter" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="SpaceportControlTower" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="SpaceportHangar" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="SpaceportTerminal" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="SpaceportLightDutyLaunch" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="SpaceportCrane" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="SpaceportEngineTrolley" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="SpaceportLaunchArm" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="SpaceportLaunchPad" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="SpaceportRocketHangar" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="LightRocket" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MediumRocket" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="HeavyRocket" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="RocketFuelRefinery" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="RocketFuelStorage" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryBunker" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryGuardPost" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryBarracks" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryPoliticalOps" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryHospital" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryMedicalTent" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryChemicalWeaponsStorge" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryGroundOps" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryPsyOps" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryIntelligence" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryWarehouse" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryMunitionsDepot" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryHoverVehicleBunker" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FaradayCageConferenceRooms" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryMainframe" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryFlightTower" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryAirHangar" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MilitaryAirBuilding" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="NuclearLaunchSilo" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="NuclearLaunchControlRoom" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="NuclearSiloGenerator" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="NuclearLaunchSafety" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="NuclearSiloSupport" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="NuclearPowerPlant" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FusionPowerPlant" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="GeothermalPowerPlant" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="HeliumStorage" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="NaturalGasStorage" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="NaturalGasAccumulator" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="NaturalGasExtractor" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="OilStorage" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="RadiumStorage" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="DangerousWasteStorage" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="FilterTank" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="AdvancedWasteProcessingPlant" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="WaterPurificationPlant" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="PureWaterStorage" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="OilMiningAccumulator" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="OilMiningConverter" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="OilMiningCooler" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="OilMiningDegasser" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="OilMiningDrillingRig" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="OilMiningFilters" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="OilMiningSeparator" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="OilMiningTank" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="HeliumFiltrationPlant" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MineralAndMolecularSeparationFacility" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
-
-	<building_type id="MultipurposeMineshaft" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"/>
-	</building_type>
+	<building_type id="AirportControlTower" is_partial_record="true"/>
+	<building_type id="AirportHangar" is_partial_record="true"/>
+	<building_type id="AirportTerminal" is_partial_record="true"/>
+	<building_type id="AirportJetway" is_partial_record="true"/>
+	<building_type id="AirportHeliport" is_partial_record="true"/>
+	<building_type id="AirportBuilding" is_partial_record="true"/>
+	<building_type id="DataCenter" is_partial_record="true"/>
+	<building_type id="RadioTower" is_partial_record="true"/>
+	<building_type id="SatelliteCommunications" is_partial_record="true"/>
+	<building_type id="ScientificRadioTelescope" is_partial_record="true"/>
+	<building_type id="DeepSpaceCommunications" is_partial_record="true"/>
+	<building_type id="Radome" is_partial_record="true"/>
+	<building_type id="FarmBarn" is_partial_record="true"/>
+	<building_type id="Farmhouse" is_partial_record="true"/>
+	<building_type id="FarmGranary" is_partial_record="true"/>
+	<building_type id="FarmGreenhouse" is_partial_record="true"/>
+	<building_type id="FarmLeanTo" is_partial_record="true"/>
+	<building_type id="FarmSilo" is_partial_record="true"/>
+	<building_type id="FarmWarehouse" is_partial_record="true"/>
+	<building_type id="FarmWaterTower" is_partial_record="true"/>
+	<building_type id="FarmWindmill" is_partial_record="true"/>
+	<building_type id="FarmTomatoes" is_partial_record="true"/>
+	<building_type id="FarmBeans" is_partial_record="true"/>
+	<building_type id="FarmCabbage" is_partial_record="true"/>
+	<building_type id="FarmCorn" is_partial_record="true"/>
+	<building_type id="FarmCotton" is_partial_record="true"/>
+	<building_type id="FarmGrapes" is_partial_record="true"/>
+	<building_type id="FarmSprouts" is_partial_record="true"/>
+	<building_type id="FarmLettuce" is_partial_record="true"/>
+	<building_type id="FarmPeppers" is_partial_record="true"/>
+	<building_type id="FarmPumpkins" is_partial_record="true"/>
+	<building_type id="FarmSquash" is_partial_record="true"/>
+	<building_type id="FarmSunflowers" is_partial_record="true"/>
+	<building_type id="FarmWheat" is_partial_record="true"/>
+	<building_type id="FarmWell" is_partial_record="true"/>
+	<building_type id="FarmChickenCoop" is_partial_record="true"/>
+	<building_type id="CryoPrepCenter" is_partial_record="true"/>
+	<building_type id="SpaceportControlTower" is_partial_record="true"/>
+	<building_type id="SpaceportHangar" is_partial_record="true"/>
+	<building_type id="SpaceportTerminal" is_partial_record="true"/>
+	<building_type id="SpaceportLightDutyLaunch" is_partial_record="true"/>
+	<building_type id="SpaceportCrane" is_partial_record="true"/>
+	<building_type id="SpaceportEngineTrolley" is_partial_record="true"/>
+	<building_type id="SpaceportLaunchArm" is_partial_record="true"/>
+	<building_type id="SpaceportLaunchPad" is_partial_record="true"/>
+	<building_type id="SpaceportRocketHangar" is_partial_record="true"/>
+	<building_type id="LightRocket" is_partial_record="true"/>
+	<building_type id="MediumRocket" is_partial_record="true"/>
+	<building_type id="HeavyRocket" is_partial_record="true"/>
+	<building_type id="RocketFuelRefinery" is_partial_record="true"/>
+	<building_type id="RocketFuelStorage" is_partial_record="true"/>
+	<building_type id="MilitaryBunker" is_partial_record="true"/>
+	<building_type id="MilitaryGuardPost" is_partial_record="true"/>
+	<building_type id="MilitaryBarracks" is_partial_record="true"/>
+	<building_type id="MilitaryPoliticalOps" is_partial_record="true"/>
+	<building_type id="MilitaryHospital" is_partial_record="true"/>
+	<building_type id="MilitaryMedicalTent" is_partial_record="true"/>
+	<building_type id="MilitaryChemicalWeaponsStorge" is_partial_record="true"/>
+	<building_type id="MilitaryGroundOps" is_partial_record="true"/>
+	<building_type id="MilitaryPsyOps" is_partial_record="true"/>
+	<building_type id="MilitaryIntelligence" is_partial_record="true"/>
+	<building_type id="MilitaryWarehouse" is_partial_record="true"/>
+	<building_type id="MilitaryMunitionsDepot" is_partial_record="true"/>
+	<building_type id="MilitaryHoverVehicleBunker" is_partial_record="true"/>
+	<building_type id="FaradayCageConferenceRooms" is_partial_record="true"/>
+	<building_type id="MilitaryMainframe" is_partial_record="true"/>
+	<building_type id="MilitaryFlightTower" is_partial_record="true"/>
+	<building_type id="MilitaryAirHangar" is_partial_record="true"/>
+	<building_type id="MilitaryAirBuilding" is_partial_record="true"/>
+	<building_type id="NuclearLaunchSilo" is_partial_record="true"/>
+	<building_type id="NuclearLaunchControlRoom" is_partial_record="true"/>
+	<building_type id="NuclearSiloGenerator" is_partial_record="true"/>
+	<building_type id="NuclearLaunchSafety" is_partial_record="true"/>
+	<building_type id="NuclearSiloSupport" is_partial_record="true"/>
+	<building_type id="NuclearPowerPlant" is_partial_record="true"/>
+	<building_type id="FusionPowerPlant" is_partial_record="true"/>
+	<building_type id="GeothermalPowerPlant" is_partial_record="true"/>
+	<building_type id="HeliumStorage" is_partial_record="true"/>
+	<building_type id="NaturalGasStorage" is_partial_record="true"/>
+	<building_type id="NaturalGasAccumulator" is_partial_record="true"/>
+	<building_type id="NaturalGasExtractor" is_partial_record="true"/>
+	<building_type id="OilStorage" is_partial_record="true"/>
+	<building_type id="RadiumStorage" is_partial_record="true"/>
+	<building_type id="DangerousWasteStorage" is_partial_record="true"/>
+	<building_type id="FilterTank" is_partial_record="true"/>
+	<building_type id="AdvancedWasteProcessingPlant" is_partial_record="true"/>
+	<building_type id="WaterPurificationPlant" is_partial_record="true"/>
+	<building_type id="PureWaterStorage" is_partial_record="true"/>
+	<building_type id="OilMiningAccumulator" is_partial_record="true"/>
+	<building_type id="OilMiningConverter" is_partial_record="true"/>
+	<building_type id="OilMiningCooler" is_partial_record="true"/>
+	<building_type id="OilMiningDegasser" is_partial_record="true"/>
+	<building_type id="OilMiningDrillingRig" is_partial_record="true"/>
+	<building_type id="OilMiningFilters" is_partial_record="true"/>
+	<building_type id="OilMiningSeparator" is_partial_record="true"/>
+	<building_type id="OilMiningTank" is_partial_record="true"/>
+	<building_type id="HeliumFiltrationPlant" is_partial_record="true"/>
+	<building_type id="MineralAndMolecularSeparationFacility" is_partial_record="true"/>
+	<building_type id="MultipurposeMineshaft" is_partial_record="true"/>
 
 </root>

@@ -1,344 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
 
-	<building_type id="ArtMuseum" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Criminal" is_partial_record="true" weight="25" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="SmallMuseum" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Bank" is_partial_record="true">
-		<variant id="Corporate" is_partial_record="true" weight="500" custom_tags_add="EvictionTarget"/>
-		<variant id="MegaCorp" is_partial_record="true" weight="10" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Bar" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Criminal" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Dive" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
-		<variant id="Military" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="BurgerJoint" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Cafe" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Upperclass" is_partial_record="true" weight="5" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="ConvenienceStore" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Carwash" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Criminal" is_partial_record="true" weight="10" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Casino" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="30" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Cinema" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Questionable" is_partial_record="true" weight="4" custom_tags_add="EvictionTarget"/>
-		<variant id="Religious" is_partial_record="true" weight="12" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Theater" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="SmallGoods" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Beauty" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="SmallMarket" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="DepartmentStore" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Upperclass" is_partial_record="true" weight="5" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="DanverDonuts" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="HudsonDonuts" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="SmallShop" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Bookstore" is_partial_record="true" weight="20" custom_tags_add="EvictionTarget"/>
-		<variant id="TrendyBoutique" is_partial_record="true" weight="10" custom_tags_add="EvictionTarget"/>
-		<variant id="Junkshop" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
-		<variant id="Junkshop2" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="IceCreamShop" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Library" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Mall" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="2" is_partial_record="true" weight="25" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="StadiumTennis" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="SoccerPitch" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="2" is_partial_record="true" weight="40" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="BasketballCourt" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="StoreAndApartments" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Supermarket" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="ToolStore" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="DowntownParking" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="2" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="DowntownApartments" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="DowntownBrownstone" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="DowntownOffice" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Mid" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Co" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
-		<variant id="A" is_partial_record="true" weight="25" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Motel" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Hotel" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="LuxuryApartments" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="DowntownPrivateResidence" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="HidVeh" is_partial_record="true" weight="3" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="ResidentialTower" is_partial_record="true">
-		<variant id="2" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="3" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="4" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="5" is_partial_record="true" weight="25" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="CommercialTower" is_partial_record="true">
-		<variant id="2" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="3" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="4" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="MixedUseTower" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="ResidentialSkyscraper" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="MixedUseSkyscraper" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="SkyscraperEstate" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="ExecutiveSkyscraper" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="CultistTemple" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="HistoricTemple" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="ConstructionCrane" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="ConstructionPortableOffice" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="ConstructionSepticTank" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="NanoResearchCenter" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="TestCenter" is_partial_record="true" weight="70" custom_tags_add="EvictionTarget"/>
-		<variant id="ContainmentStudy" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="ScienceLab" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Genetics" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
-		<variant id="AI" is_partial_record="true" weight="5" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="UndergroundScienceLab" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Genetics" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
-		<variant id="AI" is_partial_record="true" weight="5" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="IndustrialChimney" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="LowTechFactory" is_partial_record="true">
-		<variant id="MachinePartsFactory" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Garment" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="SmallGoods" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="CheapElectronics" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Ammo" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="HighTechFactory" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="AdvWeaponsFactory" is_partial_record="true" weight="5" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="ChemicalPlant" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="MechPartsFactory" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="SpaceFoodRationsFactory" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="CropResearchFacility" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="WindPowerTurbine" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="SolarPanels" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="BatteryBackup" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Courthouse" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="SecForceStation" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="UndergroundDetainmentCenter" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="FireStation" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="Hospital" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="MedicalClinic" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="LicensingAgency" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="School" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="SuburbanHomeLevel1" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="SuburbanHomeLevel2" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="SuburbanHomeLevel4" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="GarageVehicleRepair" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="WarehouseStorage" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-		<variant id="Criminal" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
-		<variant id="Infested" is_partial_record="true" weight="10" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="WarehouseConnector" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="PotableWaterStorage" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
-
-	<building_type id="WildernessCabin" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
-	</building_type>
+	<building_type id="ArtMuseum" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="SmallMuseum" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Bank" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Bar" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="BurgerJoint" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Cafe" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="ConvenienceStore" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Carwash" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Casino" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Cinema" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Theater" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="SmallGoods" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="SmallMarket" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="DepartmentStore" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="DanverDonuts" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="HudsonDonuts" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="SmallShop" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="IceCreamShop" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Library" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Mall" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="StadiumTennis" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="SoccerPitch" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="BasketballCourt" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="StoreAndApartments" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Supermarket" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="ToolStore" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="DowntownParking" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="DowntownApartments" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="DowntownBrownstone" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="DowntownOffice" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Motel" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Hotel" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="LuxuryApartments" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="DowntownPrivateResidence" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="ResidentialTower" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="CommercialTower" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="MixedUseTower" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="ResidentialSkyscraper" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="MixedUseSkyscraper" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="SkyscraperEstate" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="ExecutiveSkyscraper" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="CultistTemple" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="HistoricTemple" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="ConstructionCrane" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="ConstructionPortableOffice" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="ConstructionSepticTank" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="NanoResearchCenter" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="ScienceLab" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="UndergroundScienceLab" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="IndustrialChimney" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="LowTechFactory" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="HighTechFactory" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="ChemicalPlant" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="MechPartsFactory" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="SpaceFoodRationsFactory" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="CropResearchFacility" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="WindPowerTurbine" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="SolarPanels" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="BatteryBackup" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Courthouse" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="SecForceStation" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="UndergroundDetainmentCenter" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="FireStation" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="Hospital" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="MedicalClinic" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="LicensingAgency" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="School" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="SuburbanHomeLevel1" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="SuburbanHomeLevel2" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="SuburbanHomeLevel4" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="GarageVehicleRepair" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="WarehouseStorage" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="WarehouseConnector" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="PotableWaterStorage" is_partial_record="true" custom_tags_add="EvictionTarget"/>
+	<building_type id="WildernessCabin" is_partial_record="true" custom_tags_add="EvictionTarget"/>
 
 </root>

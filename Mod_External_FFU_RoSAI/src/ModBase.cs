@@ -33,10 +33,10 @@ namespace Arcen.HotM.FFU.RoSAI {
                 Mod.Patch(refMethod, prefix: new HarmonyMethod(prefixPatch));
             } catch (Exception ex) { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Failed: {ex}", Verbosity.DoNotShow); }
 
-            try { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Arcen.HotM.Core.BuildingTypeVariant -> BuildingVariantNodeProcessor", Verbosity.DoNotShow);
-                var refMethod = AccessTools.Method(typeof(BuildingTypeVariant), "BuildingVariantNodeProcessor");
+            try { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Arcen.HotM.Core.BuildingType -> ProcessNodeLoadOrReload", Verbosity.DoNotShow);
+                var refMethod = AccessTools.Method(typeof(BuildingType), "ProcessNodeLoadOrReload");
                 var postfixPatch = SymbolExtensions.GetMethodInfo(() =>
-                    ModPatch.BuildingVariantNodeProcessor_TagOps(default, default, default, default));
+                    ModPatch.ProcessNodeLoadOrReload_TagOps(default, default, default));
                 Mod.Patch(refMethod, postfix: new HarmonyMethod(postfixPatch));
             } catch (Exception ex) { ArcenDebugging.LogSingleLine($"{ModRefs.MOD_LOG} Failed: {ex}", Verbosity.DoNotShow); }
 
