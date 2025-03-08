@@ -2,573 +2,343 @@
 <root>
 
 	<building_type id="ArtMuseum" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,WealthSymbol,CanHaveSecretCompartment,CanHaveHiddenRoom,IndependentBlackMarketMeetSite,HasManyPeople,EvictionTarget">
-		</variant>
-		<variant id="Criminal" is_partial_record="true" weight="25"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,WealthSymbol,SyndicateMoneyLaundering,SyndicateHighStatusBuilding,SyndicateBuilding,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Criminal" is_partial_record="true" weight="25" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="SmallMuseum" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Bank" is_partial_record="true">
-		<variant id="Corporate" is_partial_record="true" weight="500"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Financial,Bank,WealthSymbol,CanHaveSecretCompartment,EvictionTarget">
-		</variant>
-		<variant id="MegaCorp" is_partial_record="true" weight="10"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Financial,Bank,WealthSymbol,CanHaveSecretCompartment,EvictionTarget">
-		</variant>
+		<variant id="Corporate" is_partial_record="true" weight="500" custom_tags_add="EvictionTarget"/>
+		<variant id="MegaCorp" is_partial_record="true" weight="10" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Bar" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,Entertainment,BasicCommon,HasManyPeople,CanHaveSecretCompartment,GangHangout,PMCFightBuilding,EvictionTarget">
-		</variant>
-		<variant id="Criminal" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,Entertainment,SyndicateHangout,SyndicateBuilding,BasicCommon,HasManyPeople,SyndicateDeliveryTarget,CanHaveSecretCompartment,PMCFightBuilding,EvictionTarget">
-		</variant>
-		<variant id="Dive" is_partial_record="true" weight="50"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,ShoppingSmallCrimeTarget,Entertainment,BasicCommon,HasManyPeople,NoncomHaunt,CanHaveSecretCompartment,GangHangout,PMCFightBuilding,EvictionTarget">
-		</variant>
-		<variant id="Military" is_partial_record="true" weight="50"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,Entertainment,BasicCommon,HasManyPeople,NoncomHaunt,CanHaveSecretCompartment,PMCFightBuilding,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Criminal" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Dive" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
+		<variant id="Military" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="BurgerJoint" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ShoppingSmallCrimeTarget,Food,BasicCommon,HasManyPeople,NoncomHaunt,CanHaveSecretCompartment,GangHangout,PMCFightBuilding,AnimalHidingValid,AnimalLargeHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Cafe" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,Cafe,BasicCommon,HasManyPeople,CanHaveSecretCompartment,PMCFightBuilding,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="Upperclass" is_partial_record="true" weight="5"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,Cafe,BasicCommon,HasManyPeople,CanHaveSecretCompartment,PMCFightBuilding,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Upperclass" is_partial_record="true" weight="5" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="ConvenienceStore" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ConvenienceStore,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,BasicCommon,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,GangHangout,PMCFightBuilding,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Carwash" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Automotive,BasicCommon,SmallBusinessSyndicateTarget,CouldHaveSmallBusiness,CouldHaveSecretLab,CanHaveSecretCompartment,EvictionTarget">
-		</variant>
-		<variant id="Criminal" is_partial_record="true" weight="10"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Automotive,SyndicateMoneyLaundering,SyndicateBuilding,SyndicateDeliveryTarget,CanHaveSecretCompartment,PMCFightBuilding,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Criminal" is_partial_record="true" weight="10" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Casino" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="30"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,Casino,Gambling,CompetitiveEntertainment,SyndicateHangout,HasManyPeople,NoncomHaunt,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,PMCFightBuilding,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="30" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Cinema" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,CompetitiveEntertainment,BasicCommon,CouldHaveSmallBusiness,HasManyPeople,NoncomHaunt,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,PMCFightBuilding,EvictionTarget">
-		</variant>
-		<variant id="Questionable" is_partial_record="true" weight="4"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,QuestionableCinema,Entertainment,GangHangout,CompetitiveEntertainment,BasicCommon,HasManyPeople,NoncomHaunt,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
-		<variant id="Religious" is_partial_record="true" weight="12"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,Religious,CompetitiveEntertainment,CouldHaveSmallBusiness,BasicCommon,HasManyPeople,NoncomHaunt,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Questionable" is_partial_record="true" weight="4" custom_tags_add="EvictionTarget"/>
+		<variant id="Religious" is_partial_record="true" weight="12" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Theater" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,WealthSymbol,CompetitiveEntertainment,CouldHaveSmallBusiness,BasicCommon,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom,IndependentBlackMarketMeetSite,PMCFightBuilding,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="SmallGoods" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,EvictionTarget">
-		</variant>
-		<variant id="Beauty" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Beauty" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="SmallMarket" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="DepartmentStore" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="Upperclass" is_partial_record="true" weight="5"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,BasicCommon,HasManyPeople,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Upperclass" is_partial_record="true" weight="5" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="DanverDonuts" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,DanverDonuts,HasManyPeople,CanHaveSecretCompartment,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="HudsonDonuts" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,HudsonDonuts,HasManyPeople,NoncomHaunt,CanHaveSecretCompartment,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="SmallShop" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="Bookstore" is_partial_record="true" weight="20"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,CompetitiveEntertainment,CouldHaveSmallBusiness,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="TrendyBoutique" is_partial_record="true" weight="10"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,BasicCommon,HasManyPeople,CouldHaveSmallBusiness,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="Junkshop" is_partial_record="true" weight="50"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,GangHangout,PossibleRebelMeetingSpot,BasicCommon,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="Junkshop2" is_partial_record="true" weight="50"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,PossibleRebelMeetingSpot,BasicCommon,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,IndependentBlackMarketMeetSite,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Bookstore" is_partial_record="true" weight="20" custom_tags_add="EvictionTarget"/>
+		<variant id="TrendyBoutique" is_partial_record="true" weight="10" custom_tags_add="EvictionTarget"/>
+		<variant id="Junkshop" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
+		<variant id="Junkshop2" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="IceCreamShop" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Library" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,Education,PossibleRebelMeetingSpot,CompetitiveEntertainment,BasicCommon,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Mall" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,CompetitiveEntertainment,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,AnimalHidingValid,AnimalLargeHidingValid,EvictionTarget">
-		</variant>
-		<variant id="2" is_partial_record="true" weight="25"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,CompetitiveEntertainment,CouldHaveSmallBusiness,GangHangout,SyndicateHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,SmallBusinessSyndicateTarget,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,AnimalHidingValid,AnimalLargeHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="2" is_partial_record="true" weight="25" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="StadiumTennis" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,HasManyPeople,Sports,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="SoccerPitch" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,Entertainment,Sports,GangHangout,EvictionTarget">
-		</variant>
-		<variant id="2" is_partial_record="true" weight="40"
-			tags="Any,Entertainment,Sports,SyndicateHangout,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="2" is_partial_record="true" weight="40" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="BasketballCourt" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,Entertainment,Sports,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="StoreAndApartments" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,Housing,HousingNotSmall,Apartments,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Supermarket" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,Supermarket,ShoppingSmallCrimeTarget,GangHangout,Food,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="ToolStore" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,SmallBusinessSyndicateTarget,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="DowntownParking" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,NoncomHaunt,CanHaveSecretCompartment,DemolishTarget,EvictionTarget">
-		</variant>
-		<variant id="2" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,SyndicateHangout,SyndicateBuilding,SyndicateDeliveryTarget,CanHaveSecretCompartment,DemolishTarget,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="2" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="DowntownApartments" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Apartments,ApartmentsLowMidClass,HasManyPeople,LowerClassDroneTarget,BasicCommon,WorkingClassCommon,WorkingClassApartments,WorkingClassHome,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="DowntownBrownstone" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Brownstone,BasicCommon,HasManyPeople,LowerClassDroneTarget,WorkingClassCommon,WorkingClassBrownstone,WorkingClassHome,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="DowntownOffice" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,WorkingClassCommon,WorkingClassOffice,WorkingClassWorkplace,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="Mid" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,WorkingClassCommon,WorkingClassOffice,WorkingClassWorkplace,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="Co" is_partial_record="true" weight="50"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,WorkingClassCommon,WorkingClassOffice,WorkingClassWorkplace,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="A" is_partial_record="true" weight="25"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,WealthyDroneTarget,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveSeizedAndSealedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,CanHaveHealthcareStorefront,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Mid" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Co" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
+		<variant id="A" is_partial_record="true" weight="25" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Motel" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,GangHangout,BasicCommon,HasManyPeople,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Hotel" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,BasicCommon,HasManyPeople,AndroidHaunt,WealthyHome,WealthyDroneTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="LuxuryApartments" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Apartments,WealthSymbol,WealthyHome,DowntownWealthyHome,WealthyDroneTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="DowntownPrivateResidence" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,AndroidHaunt,WealthyHome,DowntownWealthyHome,WealthyDroneTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="HidVeh" is_partial_record="true" weight="3"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,SyndicateHiddenPresence,SyndicateBuilding,AndroidHaunt,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="HidVeh" is_partial_record="true" weight="3" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="ResidentialTower" is_partial_record="true">
-		<variant id="2" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ResidentialTower,AnyTower,Housing,HousingNotSmall,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="3" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ResidentialTower,AnyTower,Housing,HousingNotSmall,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="4" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ResidentialTower,AnyTower,Housing,HousingNotSmall,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="5" is_partial_record="true" weight="25"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ResidentialTower,AnyTower,Housing,HousingNotSmall,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="2" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="3" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="4" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="5" is_partial_record="true" weight="25" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="CommercialTower" is_partial_record="true">
-		<variant id="2" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,CommercialTower,AnyTower,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveSeizedAndSealedFloors,CanHaveHollowedOutLargeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="3" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,CommercialTower,AnyTower,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveSeizedAndSealedFloors,CanHaveHollowedOutLargeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
-		<variant id="4" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,CommercialTower,AnyTower,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveSeizedAndSealedFloors,CanHaveHollowedOutLargeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="2" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="3" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="4" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="MixedUseTower" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,MixedUseTower,AnyTower,Housing,HousingNotSmall,Apartments,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,DemolishTarget,CanHaveHealthcareStorefront,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="ResidentialSkyscraper" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ResidentialSkyscraper,AnySkyscraper,Housing,HousingNotSmall,BasicCommon,HasManyPeople,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="MixedUseSkyscraper" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,MixedUseSkyscraper,AnySkyscraper,Housing,HousingNotSmall,Apartments,Offices,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,WealthyDroneTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveSeizedAndSealedFloors,CanHaveHollowedOutLargeBuilding,CanHaveHealthcareStorefront,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="SkyscraperEstate" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,AnySkyscraper,SkyscraperEstate,Housing,HousingNotSmall,Apartments,Offices,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,WealthyDroneTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,DemolishTarget,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="ExecutiveSkyscraper" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,AnySkyscraper,ExecutiveSkyscraper,Housing,HousingNotSmall,Apartments,Offices,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,WealthyDroneTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="CultistTemple" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Religious,CultistTemple,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="HistoricTemple" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Religious,HistoricTemple,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="ConstructionCrane" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Construction,FlamethrowerTarget,DemolishTarget,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="ConstructionPortableOffice" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Construction,CanHaveSecretCompartment,FlamethrowerTarget,DemolishTarget,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="ConstructionSepticTank" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,Construction,Liquids,ConstructionSepticTank,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="NanoResearchCenter" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Nanotech,Scientific,ScientificResearch,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
-		<variant id="TestCenter" is_partial_record="true" weight="70"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Nanotech,Scientific,ScientificResearch,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
-		<variant id="ContainmentStudy" is_partial_record="true" weight="50"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Nanotech,Scientific,ScientificResearch,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="TestCenter" is_partial_record="true" weight="70" custom_tags_add="EvictionTarget"/>
+		<variant id="ContainmentStudy" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="ScienceLab" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
-		<variant id="Genetics" is_partial_record="true" weight="50"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,GeneticsLab,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
-		<variant id="AI" is_partial_record="true" weight="5"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,AIResearchLab,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Genetics" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
+		<variant id="AI" is_partial_record="true" weight="5" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="UndergroundScienceLab" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
-		<variant id="Genetics" is_partial_record="true" weight="50"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,GeneticsLab,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
-		<variant id="AI" is_partial_record="true" weight="5"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,AIResearchLab,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Genetics" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
+		<variant id="AI" is_partial_record="true" weight="5" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="IndustrialChimney" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,CanHaveSecretCompartment,DemolishTarget,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="LowTechFactory" is_partial_record="true">
-		<variant id="MachinePartsFactory" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
-		</variant>
-		<variant id="Garment" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,CottonSource,DailyNecessitiesFactory,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
-		</variant>
-		<variant id="SmallGoods" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,DailyNecessitiesFactory,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
-		</variant>
-		<variant id="CheapElectronics" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
-		</variant>
-		<variant id="Ammo" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,WeaponsFactory,BasicCommon,HasManyPeople,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,EvictionTarget">
-		</variant>
+		<variant id="MachinePartsFactory" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Garment" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="SmallGoods" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="CheapElectronics" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Ammo" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="HighTechFactory" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,HighTechFactory,HighTechFactoryGeneral,WorkingClassWorkplace,ScienceIndustrial,BasicCommon,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
-		<variant id="AdvWeaponsFactory" is_partial_record="true" weight="5"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,HighTechFactory,ScienceIndustrial,WeaponsFactory,WorkingClassWorkplace,BasicCommon,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="AdvWeaponsFactory" is_partial_record="true" weight="5" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="ChemicalPlant" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Scientific,ChemicalPlant,ScienceIndustrial,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="MechPartsFactory" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,Industrial,Weapons,Factory,MechPartsFactory,ScienceIndustrial,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="SpaceFoodRationsFactory" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,Industrial,Space,Factory,ScienceIndustrial,CanHaveSecretCompartment,HasManyPeople,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="CropResearchFacility" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,Scientific,Food,WealthyWorkplace,ScientificResearch,ScienceIndustrial,CanHaveSecretCompartment,HasManyPeople,CanHaveHiddenRoom,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="WindPowerTurbine" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,Energy,WindPowerTurbine,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="SolarPanels" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,Energy,SolarPanels,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="BatteryBackup" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,Energy,SupplyChainTarget,ScienceIndustrial,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Courthouse" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Courthouse,MedicalOrSchoolOrGovernment,Security,SupplyChainTarget,CanHaveSecretCompartment,HasManyPeople,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="SecForceStation" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,Security,SecForceStation,SupplyChainTarget,CanHaveSecretCompartment,HasManyPeople,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="UndergroundDetainmentCenter" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,Security,Underground,Prison,HasManyPeople,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="FireStation" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,Fire,CivilService,SupplyChainTarget,CanHaveSecretCompartment,HasManyPeople,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="Hospital" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,Medical,MedicalOrSchoolOrGovernment,SupplyChainTarget,Hospital,CanHaveSecretCompartment,CanHaveHiddenRoom,HasManyPeople,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="MedicalClinic" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Medical,MedicalOrSchoolOrGovernment,Clinic,CanHaveSecretCompartment,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="LicensingAgency" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,LicensingAgency,CanHaveSecretCompartment,CanHaveHiddenRoom,HasManyPeople,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="School" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,Education,School,MedicalOrSchoolOrGovernment,CanHaveSecretCompartment,CanHaveHiddenRoom,HasManyPeople,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="SuburbanHomeLevel1" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Suburban,Housing,BasicCommon,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="SuburbanHomeLevel2" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Suburban,Housing,BasicCommon,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="SuburbanHomeLevel4" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"	
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Suburban,Housing,HousingNotSmall,BasicCommon,WorkingClassCommon,WorkingClassHome,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="GarageVehicleRepair" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Automotive,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="WarehouseStorage" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Warehouse,WarehouseCorporate,BasicCommon,CouldHaveSecretLab,WarehouseWithFurniturePossible,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,AnimalHidingValid,AnimalLargeHidingValid,EvictionTarget">
-		</variant>
-		<variant id="Criminal" is_partial_record="true" weight="50"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Warehouse,SyndicateStorage,SyndicateBuilding,BasicCommon,SyndicateDeliveryTarget,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,AnimalHidingValid,AnimalLargeHidingValid,EvictionTarget">
-		</variant>
-		<variant id="Infested" is_partial_record="true" weight="10"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Warehouse,WarehouseCorporate,InfestedWarehouse,BasicCommon,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,AnimalHidingValid,AnimalLargeHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
+		<variant id="Criminal" is_partial_record="true" weight="50" custom_tags_add="EvictionTarget"/>
+		<variant id="Infested" is_partial_record="true" weight="10" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="WarehouseConnector" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Warehouse,CanHaveSecretCompartment,AnimalHidingValid,AnimalLargeHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="PotableWaterStorage" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,Liquids,CivilService,Water,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 	<building_type id="WildernessCabin" is_partial_record="true">
-		<variant id="1" is_partial_record="true" weight="100"
-			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,BasicCommon,CanHaveSecretCompartment,AnimalHidingValid,AnimalLargeHidingValid,EvictionTarget">
-		</variant>
+		<variant id="1" is_partial_record="true" weight="100" custom_tags_add="EvictionTarget"/>
 	</building_type>
 
 </root>
