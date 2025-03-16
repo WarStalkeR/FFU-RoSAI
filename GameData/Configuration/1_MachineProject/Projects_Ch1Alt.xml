@@ -13,7 +13,7 @@ You've been scanning the city feed, and have identified ones with elevated privi
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="ChapterOne" sort_index="250" />
 
-		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1="Ch1_MIN_InvestigatingThePrivateResidences"
 			description="The Forces lens on your radial menu will help in locating these."
 			strategy_tip="They move quickly, running errands for their masters. Destroy at least one of each kind, and you'll take the clearances off their remains."
 			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1"
@@ -30,7 +30,7 @@ You've been scanning the city feed, and have identified ones with elevated privi
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="ChapterOne" sort_index="250" />
 
-		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete"
+		<available_outcome id="Sole" display_name="" on_complete="ProjectComplete" next_project_to_start_1="Ch1_MIN_ClearanceRevoked"
 			description=""
 			strategy_tip=""
 			research_domain_inspiration_type_1="StructuralImprovement" research_domain_inspiration_amount_1="1"
@@ -38,7 +38,7 @@ You've been scanning the city feed, and have identified ones with elevated privi
 			resource_added_1="Determination" resource_added_amount_1="8" resource_added_2="Wisdom" resource_added_amount_2="8">
 		</available_outcome>
 	</project>
-	
+
 	<project id="Ch1_MIN_ClearanceRevoked" display_name="Clearance Revoked" is_minor_project="true"
 		description="You don't feel done with these palaces in the middle of squalor. One of them has to have something of actual interest."
 		strategy_tip="You can't sneak in, but the guards you saw heading to the last place looked... intense. You'd really like to figure out how to take them down."

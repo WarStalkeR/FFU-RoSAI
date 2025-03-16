@@ -75,6 +75,9 @@
 		<attribute key="targets_building_tag" type="node-dropdown" node_source="BuildingTag" content_width_px="200" is_required="false"
 			tooltip="Only specified if this targets buildings. If it does, then these are the valid building targets." />
 
+		<attribute key="badge_to_apply" type="node-dropdown" node_source="ActorBadge" content_width_px="200" is_required="false"
+			tooltip="If this applies a badge to the unit using it, or a target, then no status is used at all." />
+		
 		<attribute key="clears_all_aggro" type="bool" default="false"
 			tooltip="If this is true, then it does not apply any status at all, but instead clears all aggro on this unit." />
 		

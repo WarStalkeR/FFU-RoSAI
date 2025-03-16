@@ -26,7 +26,7 @@ It seems that their troops get less scrutiny than official corporate troops."
 		strategy_tip="In general the PMCs have lower firepower and lower numbers, so Vorsiber isn't concerned about an uprising from them."
 		event_to_trigger_at_location="Cont_PMCAppearance"
 		spawns_at_building_tag="AlmostAny" spawn_poi_tag_target_limiter="MilitaryBaseMini"
-		icon_name="AN_AndroidPMCImposter" icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
+		required_project_complete_1="Ch1_MIN_CommandMode" icon_name="AN_AndroidPMCImposter" icon_scale="0.7" color_hex="#8235D9" color_hdr_intensity="2.8" color_hovered_hdr_intensity="0.6"
 		blocked_by_unlock_1="NondescriptArmor"
 		is_related_to_chapter_one_main_path="true" collections="All,ChapterOneCriticalPath,StealthCapabilities" />
 
@@ -187,9 +187,9 @@ But you've noticed some of their snipers moving around the decrepit parts of the
 		strategy_tip="You could also get involved, but it does seem like the nomad families have it under control."
 		event_to_trigger_at_location="Cont_DogfightingRescue"
 		spawns_at_building_tag="AbandonedConstruction"
-		required_project_complete_1="Ch1_MIN_PrismTung" required_project_complete_skipped_if_chapter_at_least="2"
+		required_project_complete_1="" required_project_complete_skipped_if_chapter_at_least="2"
 		icon_name="CleanSimple_Animal001" icon_scale="0.5" color_hex="#B0421C" color_hdr_intensity="2.2" color_hovered_hdr_intensity="0.6"
-		collections="All,SideExploration" />
+		collections="All,SideExploration" /><!--required_project_complete_1="Ch1_MIN_PrismTung"-->
 
 	<contemplation id="AnimalsAreNotSafe" display_name="Animals Are Not Safe"
 		description="Feral domesticated animals have always been present in the city, but you never really noticed them until you had some initial interactions with them.

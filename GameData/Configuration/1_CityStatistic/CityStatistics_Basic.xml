@@ -31,6 +31,9 @@
 
 	<city_statistic id="ExperimentalMonstersKilledByPlayer" lang_key_for_name="Stat_Name_ExperimentalMonstersKilledByPlayer" lang_key_for_description="" is_group_c_interesting_if_above_zero="true"/>
 
+	<city_statistic id="FirefightersMurderedByYou" lang_key_for_name="Stat_Name_FirefightersMurderedByYou" lang_key_for_description="" is_group_d_interesting_if_above_zero="true"/>
+	<city_statistic id="SmallFiresYouHelpedPutOut" lang_key_for_name="Stat_Name_SmallFiresYouHelpedPutOut" lang_key_for_description="" is_group_d_interesting_if_above_zero="true"/>
+	
 	<city_statistic id="AGIReserchersMurdered" lang_key_for_name="Stat_Name_AGIResearchersMurdered" is_group_a_interesting_if_above_zero="true"/>
 
 	<city_statistic id="HumansMulched" lang_key_for_name="Stat_Name_HumansMulched" lang_key_for_description="Stat_Desc_HumansMulched" is_group_a_interesting_if_above_zero="true"/>
@@ -297,6 +300,7 @@
 	<!--Invisible Items (for game flow not player info)
 		******************************************************************************-->
 
+	
 	<city_statistic id="FailedToFindSomeplaceSafe" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 	<city_statistic id="SearchFriendsInventions" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 
@@ -305,6 +309,7 @@
 	<city_statistic id="PeopleWatchingWealthyKills" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 
 	<city_statistic id="DoFurtherYinishiSolicitingAfterThisTurn" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
+	<city_statistic id="NoSmallFiresUntilThisTurn" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 
 	<city_statistic id="SlumWealthTaserCitAdvocateAfter" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 
@@ -323,7 +328,7 @@
 	<city_statistic id="ZodiacInfluencersPitched" lang_key_for_name="InfluencersPitched" should_be_skipped_on_lists="true" has_no_meta_counterpart="true" />
 	<city_statistic id="ExiplexLasers_DesignPoints" lang_key_for_name="DesignPoints" should_be_skipped_on_lists="true" has_no_meta_counterpart="true" />
 	<city_statistic id="FlushOutBombers_ConflictPoints" lang_key_for_name="ConflictPoints" should_be_skipped_on_lists="true" has_no_meta_counterpart="true" />
-	
+
 	<city_statistic id="DagekonInvadesUntilTurn" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 	<city_statistic id="TheUIHInvadesUntilTurn" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />
 	<city_statistic id="MimicEscapeVorsiberSweepsUntilTurn" should_be_invisible_to_players="true" has_no_meta_counterpart="true" />

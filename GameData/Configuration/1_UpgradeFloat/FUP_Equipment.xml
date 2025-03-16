@@ -38,7 +38,17 @@
 		<part_of collection="EquipmentImprovement" sort_index="100" />
 		<equiment_actor_data_multiplicative_upgrade id="1" data_to_upgrade="ActorPower" required_collection="Shotguns" />
 	</upgrade_float>
-	
+
+	<upgrade_float id="DualPistolsWeaponCount" display_name="Dual Pistols"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="FlatSkillA02"
+		float_original="2" float_increment="1" float_cap="2" show_data_as_percentage="false"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="3000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="EquipmentImprovement" sort_index="100" />
+		<equiment_actor_data_multiplicative_upgrade id="1" data_to_upgrade="ActorPower" required_collection="DualHandguns" />
+	</upgrade_float>
+
 	<!--******************************************Other Projectiles******************************************-->
 
 	<!--******************************************Melee******************************************-->

@@ -1412,7 +1412,7 @@ Thousands of people will become ill, and many hundreds will die, if you don't st
 			lang_key_for_extra_instructions="StreetSenseProjectFilterInstructions"
 			resource_added_1="" resource_added_amount_1="" resource_added_2="" resource_added_amount_2=""
 			research_domain_inspiration_type_1="ComputingOptimization" research_domain_inspiration_amount_1="1">
-			<!--SetCharges-->
+			<!--Arson-->
 			<street_sense_item id="Arson" display_name="Arson"
 				description=""
 				should_always_show_expanded_action_details="true" on_arrive="Arson"
@@ -2367,6 +2367,26 @@ Reviewing older footage, you still can't find out where they're based. But you c
 				resource_change_1="Cruelty" resource_change_1_amount="20" 
 				alter_city_statistic_1="FlushOutBombers_ConflictPoints" alter_city_statistic_1_amount="4" city_statistic_1_blocks_if_above="20"
 				alter_city_statistic_2="FlushOutBombers_Murders" alter_city_statistic_2_amount="1"/>
+
+			<!--ThreatenInhabitantsB-->
+			<street_sense_item id="ThreatenInhabitantsB" display_name="Threaten Inhabitants"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="-1" icon_name="FlatSkill_13" color_data="CasinoShop" icon_scale="0.4"
+				must_be_at_building_tag="ApartmentsLowMidClass" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_skill_type="UnitIntimidation" required_skill_amount="200"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="500"
+				upgrade_float_1="BetterRepairSpiders"
+				resource_change_1="Apathy" resource_change_1_amount="10"
+				alter_city_statistic_1="FlushOutBombers_ConflictPoints" alter_city_statistic_1_amount="4" city_statistic_1_blocks_if_above="20"/>
+			<!--MurderInhabitantsB-->
+			<street_sense_item id="MurderInhabitantsB" display_name="Murder Inhabitants"
+				should_always_show_expanded_action_details="true" on_arrive="RecruitAndroid"
+				max_times_can_do="-1" icon_name="AN_Knife1" color_data="RecruitMedicalScientists" icon_scale="0.4"
+				must_be_at_building_tag="ApartmentsLowMidClass" seed_x_at_once_in_general="3" blocked_for_actors_without_clearance="0" required_skill_type="UnitStrength" required_skill_amount="90"
+				alter_city_statistic_1_is_shown_as_cost="true" max_rough_distance_from_machines="500"
+				upgrade_float_1="BetterMainframes"
+				resource_change_1="Cruelty" resource_change_1_amount="20"
+				alter_city_statistic_1="FlushOutBombers_ConflictPoints" alter_city_statistic_1_amount="4" city_statistic_1_blocks_if_above="20"
+				alter_city_statistic_2="FlushOutBombers_Murders" alter_city_statistic_2_amount="1"/>
 		
 		</available_outcome>
 
@@ -2435,6 +2455,15 @@ Something gives you the sense that you might be the villain in this situation. O
 				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
 				max_times_can_do="-1" icon_name="CleanSimple_SkillC004" color_data="PrismaticTungsten" icon_scale="0.4"
 				must_be_at_building_tag="SlumTower" seed_x_at_once_in_general="8" blocked_for_actors_without_clearance="0"
+				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
+				resource_change_1="Wealth" resource_change_1_amount="-200000"
+				alter_city_statistic_1="WealthHandedOutToSlumDwellers" alter_city_statistic_1_amount="200000"/>
+			<!--AbandonedHousing-->
+			<street_sense_item id="AbandonedHousing" display_name="Slums"
+				description="Hand out anonymous Wealth chits to the people here."
+				should_always_show_expanded_action_details="true" on_arrive="ColdBlood"
+				max_times_can_do="-1" icon_name="CleanSimple_SkillC004" color_data="PrismaticTungsten" icon_scale="0.4"
+				must_be_at_building_tag="AbandonedHousing" seed_x_at_once_in_general="8" blocked_for_actors_without_clearance="0"
 				has_no_custom_code="true" alter_city_statistic_1_is_shown_as_cost="true"
 				resource_change_1="Wealth" resource_change_1_amount="-200000"
 				alter_city_statistic_1="WealthHandedOutToSlumDwellers" alter_city_statistic_1_amount="200000"/>

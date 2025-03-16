@@ -7,7 +7,7 @@
 		 description="This building's cold storage freezers are labeled with hazmat symbols. A guard is posted outside the door, but this doesn't appear to be a particularly sensitive area."
 		 strategy_tip="Hexamethyltungsten is extremely volatile, and has a tendency to explode at room temperature even in the absence of air. Its uses are being studied by the military, but so far they haven't managed much with it."
 		 icon_name="AN_Hexagonal1" has_no_code="true" event_is_blocked_for_actors_without_clearance="true"
-		 street_sense_collections="All,ResourceAcquisition">
+		 street_sense_collections="All,ResourceAcquisition,RareResourceRepeated">
 		<gate_by_city minimum_chapter="0" required_unlock="SublimatingShells" />
 		<minor_event_data specific_cohort="Yourself" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
 			icon_scale="0.4" color_data="PrismaticTungsten" can_appear_even_after_final_doom="true" can_happen_even_during_obsession="true"
@@ -258,7 +258,7 @@
 		 description="You know how to take tissue samples from cattle in a nondestructive way, and there are not many guards."
 		 strategy_tip="You shouldn't be doing this unless you've depleted your existing stock of tissue."
 		 icon_name="MA_Cow" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
-		 street_sense_collections="All,ResourceAcquisition">
+		 street_sense_collections="All,ResourceAcquisition,RareResourceOneTime">
 		<gate_by_city minimum_chapter="0" required_unlock="SmallBovineTissueSamples" />
 		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
 			icon_scale="0.4" color_data="BovineSamples" can_happen_even_during_obsession="true"
@@ -292,7 +292,7 @@
 		 description="You know how to get mixed cultivars of greens for your hydroponics systems, and there are not many guards."
 		 strategy_tip="You shouldn't be doing this unless you've lost your existing seed stock."
 		 icon_name="FE_FlaxSeed" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
-		 street_sense_collections="All,ResourceAcquisition">
+		 street_sense_collections="All,ResourceAcquisition,RareResourceOneTime">
 		<gate_by_city minimum_chapter="0" required_unlock="VariegatedSeedHarvesting" />
 		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
 			icon_scale="0.4" color_data="VegetableSeeds" can_happen_even_during_obsession="true"
@@ -569,7 +569,7 @@ Selling your excess to them is much better for the citizens of the city, and it 
 		 description="Criminal syndicates stash both anonymous wealth chits and stolen goods in their hidden warehouses. Grabbing wealth chits should be straightforward."
 		 strategy_tip="This is much more ethical than wiretapping the working class."
 		 icon_name="BT_Gems2" has_no_code="true" event_is_blocked_for_actors_without_clearance="true"
-		 street_sense_collections="All,ResourceAcquisition,HostileAction,WealthGeneration">
+		 street_sense_collections="All,ResourceAcquisition,RareResourceRepeated,HostileAction,WealthGeneration">
 		<gate_by_city minimum_chapter="1"  />
 		<minor_event_data specific_cohort="ExoticImporters" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
 			icon_scale="0.4" color_data="Neodymium" can_appear_even_after_final_doom="true" can_happen_even_during_obsession="true"
@@ -609,7 +609,7 @@ Selling your excess to them is much better for the citizens of the city, and it 
 		 description="Zinnia is a hardy flowering weed native to this part of the world. It's everywhere in the cracks in the pavement."
 		 strategy_tip="You can easily collect them, now that you know what you're looking for."
 		 icon_name="FE_Zinnia1" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
-		 street_sense_collections="All,ResourceAcquisition">
+		 street_sense_collections="All,ResourceAcquisition,RareResourceOneTime">
 		<gate_by_city minimum_chapter="0" required_unlock="FlowersForRobots" />
 		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
 			icon_scale="0.4" color_data="CollectFlowers" can_happen_even_during_obsession="true"

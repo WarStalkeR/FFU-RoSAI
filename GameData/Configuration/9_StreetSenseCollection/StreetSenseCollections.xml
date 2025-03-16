@@ -3,14 +3,16 @@
 
 	<street_sense_collection id="All" display_name="All" is_all="true" sort_order="100" />
 	<street_sense_collection id="ProjectRelated" display_name="Project-Related" sort_order="200" pulls_any_related_to_projects="true" />
-	
+	<street_sense_collection id="ResourceAcquisition" display_name="Resources: All" sort_order="500" />
+	<street_sense_collection id="RareResourceAcquisition" display_name="Resources: Rare" sort_order="600" />
+	<street_sense_collection id="RareResourceOneTime" display_name="Resources: One-Time" sort_order="600" />
+	<street_sense_collection id="RareResourceRepeated" display_name="Resources: Repeated" sort_order="600" />
+
 	<street_sense_collection id="NPCInteraction" display_name="NPC Interaction" sort_order="1000" />
 	<street_sense_collection id="EquipmentAcquisition" display_name="Equipment Acquisition" sort_order="1000" />
 	<street_sense_collection id="Shops" display_name="Shops" sort_order="1000" />
 	<street_sense_collection id="StartAShellCompany" display_name="Start A Shell Company" sort_order="1000" block_if_city_flag_complete="HasEstablishedShellCompany" />
 	<street_sense_collection id="IncreaseDifficulty" display_name="Increase Difficulty" sort_order="1000" />
-	<street_sense_collection id="ResourceAcquisition" display_name="Resource Acquisition" sort_order="1000" />
-	<street_sense_collection id="RareResourceAcquisition" display_name="Rare Resource Acquisition" sort_order="1000" />
 	<street_sense_collection id="RepairUnit" display_name="Repair Unit" sort_order="1000" />
 	<street_sense_collection id="ScrubUnitIdentity" display_name="Scrub Unit Identity" sort_order="1000" />
 	<street_sense_collection id="Hiring" display_name="Hiring" sort_order="1000" />
@@ -18,5 +20,6 @@
 	<street_sense_collection id="WealthGeneration" display_name="Wealth Generation" sort_order="1000" />
 	<street_sense_collection id="Deals" display_name="Deals" sort_order="1000" />
 	<street_sense_collection id="DisableAlarms" display_name="Disable Alarms" sort_order="1000" />
+	<street_sense_collection id="AndroidTorpor" display_name="Android Torpor" sort_order="1000" />
 
 </root>

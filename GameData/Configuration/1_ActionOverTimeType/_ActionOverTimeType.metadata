@@ -19,6 +19,8 @@
 		tooltip="A good idea to set this to true, unless the unit needs to be locked into this action for some reason." />
 	<attribute key="blocks_being_scrapped" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
 		tooltip="If this is true, then the unit cannot be scrapped while it's doing this action." />
+	<attribute key="blocks_unit_counting_toward_cap" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
+		tooltip="If this is true, then the unit does not count against the cap while doing this. This should almost never be true." />	
 
 	<attribute key="is_unit_invisible_and_absent_seeming_while_acting" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
 		tooltip="Should be true if this is a covert dispatch where the actor is ostensibly off invisibly doing things. Otherwise should be false." />
@@ -45,9 +47,21 @@
 	<attribute key="event_on_complete" type="node-dropdown" is_required="false" node_source="NPCEvent" content_width_px="300" linebreak_after="PreferNot"
 		tooltip="If this should start an event after it is completed, this is the event." />
 
+	<attribute key="set_city_statistic_to_current_turn_plus_x" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="false"
+		tooltip="If you want to have some sort of callback after a certain number of turns, use this." />
+	<attribute key="the_x_to_add_to_that_city_statistic" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="false"
+		tooltip="How many turns to wait for."/>
+	
 	<attribute key="tags" type="node-list" node_source="ActionOverTimeTag" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
 		tooltip="What tags apply to this type, if any?  Normally this is not needed, but some abilities might pull all of the actions-over-time that are of a certain tag." />
 
+	<sub_node id="city_statistic_change">
+		<attribute key="statistic" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="true"
+			tooltip="This increases some city statistic. Which one?" />
+		<attribute key="value" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
+			tooltip="What is amount the data will be changed by?"/>
+	</sub_node>
+	
 	<sub_node id="math_int">
 		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
 			tooltip="For finding this when we need to refer to it." />

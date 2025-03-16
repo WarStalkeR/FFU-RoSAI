@@ -110,6 +110,8 @@ Please note that it will ignore all gate_by_city stuff." />
 			tooltip="If this is set, then the value must be above 0 for it to count, and the current turn must be less than or equal to whatever this number is." />
 		<attribute key="required_beyond_turn" type="node-dropdown" node_source="CityStatistic" default="" content_width_px="130" is_required="false"
 			tooltip="If this is set, then the value must be above 0 for it to count, and the current turn must be beyond whatever this number is." />
+		<attribute key="required_beyond_turn_if_set" type="node-dropdown" node_source="CityStatistic" default="" content_width_px="130" is_required="false"
+			tooltip="If this is set, then the current turn must be beyond whatever this number is. This defaults to 0, so if it has not been set yet, then it will pass automatically." />
 		
 		<attribute key="blocked_by_countdown_complete" type="node-dropdown" node_source="OtherCountdownType" default="" content_width_px="130" is_required="false"
 			tooltip="If this countdown has already happened, this will be blocked." />

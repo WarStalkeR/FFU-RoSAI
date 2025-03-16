@@ -100,5 +100,12 @@
 		<attribute key="sort_index" type="int-textbox" is_required="true" min="0" max="1000000" default="0" content_width_px="150" linebreak_after="PreferNot"
 			tooltip="How is this sorted within that collection?  If set to zero, it is modded out of that collection." />
 	</sub_node>
+
+	<sub_node id="scavenging">
+		<attribute key="collection" type="node-dropdown" is_required="true" node_source="ResourceScavengingCollection" default="" content_width_px="300" linebreak_after="PreferNot"
+			tooltip="What scavenging collection is this in?" />
+		<attribute key="sort_index" type="int-textbox" is_required="true" min="0" max="1000000" default="0" content_width_px="150" linebreak_after="PreferNot"
+			tooltip="How is this sorted within that collection?  If set to zero, it is modded out of that collection." />
+	</sub_node>
 	
 </root>

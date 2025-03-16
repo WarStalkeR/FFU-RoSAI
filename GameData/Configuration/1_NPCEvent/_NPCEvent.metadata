@@ -112,6 +112,8 @@ If you want the characters to change each time, either set different numbers, or
 			tooltip="If this is set, then the value must be above 0 for it to count, and the current turn must be less than or equal to whatever this number is." />
 		<attribute key="required_beyond_turn" type="node-dropdown" node_source="CityStatistic" default="" content_width_px="130" is_required="false"
 			tooltip="If this is set, then the value must be above 0 for it to count, and the current turn must be beyond whatever this number is." />
+		<attribute key="required_beyond_turn_if_set" type="node-dropdown" node_source="CityStatistic" default="" content_width_px="130" is_required="false"
+			tooltip="If this is set, then the current turn must be beyond whatever this number is. This defaults to 0, so if it has not been set yet, then it will pass automatically." />
 
 		<attribute key="blocked_by_countdown_complete" type="node-dropdown" node_source="OtherCountdownType" default="" content_width_px="130" is_required="false"
 			tooltip="If this countdown has already happened, this will be blocked." />
@@ -329,7 +331,8 @@ That usually should be a random same-role character rather than the key contact.
 		<attribute key="required_skill_amount" type="int-textbox" min="0" max="5000" content_width_px="150" is_required="true"
 			tooltip="This is the direct literal amount of this skill that they must have."/>
 		<attribute key="is_blocked_if_intelligence_class_less_than" type="int-textbox" min="0" max="99" default="0" content_width_px="150" is_required="true"
-			tooltip="If above one, then this requires a specific intelligence class for the player to be able to choose this option."/>
+			tooltip="If above one, then this requires a specific intelligence class.
+For contemplations, the contemplation will be visible but not allowed with an explanation showing why. For minor events in StreetSense, it will be hidden entirely."/>
 
 		<attribute key="required_perk_1" type="node-dropdown" node_source="ActorPerk" content_width_px="200" is_required="false"
 			tooltip="The unit choosing this interaction option must have this perk." />
@@ -496,6 +499,8 @@ Also! While this is defined on the choice itself, the specific outcome that happ
 
 			<attribute key="keep_open_and_pop_up_result_message" type="bool" is_required="true" default="false"
 				tooltip="If true, then this stays open and lets the player do things repeatedly." />
+			<attribute key="skip_having_result_message" type="bool" is_required="true" default="false"
+				tooltip="If true, then this closes immediately without any sort of message, even if you spent some resources or whatever." />
 			
 			<attribute key="unskilled_weight" type="int-textbox" min="0" max="9000" default="100" content_width_px="150"
 				tooltip="When the possible unskilled results of this choice are calculated, how much weight should we put for it compared to the average of 100?  Ignored if there is a kill check here."/>
@@ -661,6 +666,11 @@ Anything less than 50% will yell at you, these should not be used that low!"/>
 			<attribute key="ensure_actor_has_at_least_this_many_action_points" type="int-textbox" min="0" max="3" default="0" content_width_px="150" is_required="false"
 				tooltip="If set above zero, then you can ensure that the actor involved in the event has at least however many action points you say."/>
 
+			<attribute key="set_city_statistic_to_current_turn_plus_x" type="node-dropdown" node_source="CityStatistic" content_width_px="200" is_required="false"
+				tooltip="If you want to have some sort of callback after a certain number of turns, use this." />
+			<attribute key="the_x_to_add_to_that_city_statistic" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="false"
+				tooltip="How many turns to wait for."/>
+			
 			<!--skill_check on possible_result of choice...................... -->
 			<sub_node id="skill_check">
 				<attribute key="skill_type" type="node-dropdown" node_source="ActorDataType" content_width_px="200" is_required="true"

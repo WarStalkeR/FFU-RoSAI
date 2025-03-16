@@ -167,18 +167,18 @@
 	<debate_scenario id="ExtractInformationFromWealthyClass"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DebateScenariosBasic"
 		on_win="WinDebate" on_lose="LoseDebate">
-		<intensity_for action="VerbalSlap" target_multiplier="0.5" target_flat_change="0" mistrust_change="0" defiance_change="0" />
-		<intensity_for action="SneeringInsult" target_multiplier="0.25" target_flat_change="0" mistrust_change="0" defiance_change="0" />
+		<intensity_for action="VerbalSlap" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="0" />
+		<intensity_for action="SneeringInsult" target_multiplier="1.25" target_flat_change="0" mistrust_change="0" defiance_change="0" />
 		<intensity_for action="FieryRhetoric" target_multiplier="-1" target_flat_change="0" mistrust_change="15" defiance_change="0" />
-		<intensity_for action="PhysicallyThreaten" target_multiplier="-1" target_flat_change="0" mistrust_change="15" defiance_change="0" />
+		<intensity_for action="PhysicallyThreaten" target_multiplier="2" target_flat_change="0" mistrust_change="15" defiance_change="0" />
 		<!--<intensity_for action="ThreatenCohort" target_multiplier="-1" target_flat_change="0" mistrust_change="15" defiance_change="-10" />-->
 		<!--ThreatenFamily-->
 		<!--<intensity_for action="EncourageDisobedience" target_multiplier="-1" target_flat_change="0" mistrust_change="5" defiance_change="0" internal_notes="" />-->
-		<intensity_for action="AppealToMorality" target_multiplier="-1" target_flat_change="0" mistrust_change="-5" defiance_change="0" />
-		<intensity_for action="AppealToHonor" target_multiplier="-1" target_flat_change="0" mistrust_change="-10" defiance_change="0" />
+		<intensity_for action="AppealToMorality" target_multiplier="0.2" target_flat_change="0" mistrust_change="-5" defiance_change="0" />
+		<!--AppealToHonor-->
 		<!--SorrowfulAnecdote-->
 		<!--OfferHope-->
-		<intensity_for action="ToutPower" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="10" />
+		<intensity_for action="ToutPower" target_multiplier="2" target_flat_change="0" mistrust_change="0" defiance_change="10" />
 		<!--<intensity_for action="AssertAuthority" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="30" />-->
 		<intensity_for action="AssertDominance" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="-10" />
 		<intensity_for action="MisleadingAnecdote" target_multiplier="-1" target_flat_change="0" mistrust_change="10" defiance_change="0" />
@@ -195,8 +195,8 @@
 		on_win="WinDebate" on_lose="LoseDebate">
 		<intensity_for action="VerbalSlap" target_multiplier="0.5" target_flat_change="0" mistrust_change="0" defiance_change="20" />
 		<!--SneeringInsult-->
-		<intensity_for action="FieryRhetoric" target_multiplier="0.9" target_flat_change="0" mistrust_change="15" defiance_change="0" />
-		<intensity_for action="PhysicallyThreaten" target_multiplier="0.7" target_flat_change="0" mistrust_change="15" defiance_change="0" />
+		<intensity_for action="FieryRhetoric" target_multiplier="1.2" target_flat_change="0" mistrust_change="15" defiance_change="0" />
+		<intensity_for action="PhysicallyThreaten" target_multiplier="1.2" target_flat_change="0" mistrust_change="15" defiance_change="0" />
 		<!--ThreatenCohort-->
 		<!--ThreatenFamily-->
 		<intensity_for action="EncourageDisobedience" target_multiplier="-1" target_flat_change="0" mistrust_change="0" defiance_change="5" internal_notes="Threatening SecForce already handles this." />

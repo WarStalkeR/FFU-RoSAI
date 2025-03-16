@@ -94,4 +94,23 @@ For some reason you find this... enticing."
 		can_be_canceled="true" is_unit_invisible_and_absent_seeming_while_acting="false"
 		aggro_amount_for_action_over_time_hunters="20"/>
 
+	<action_over_time_type id="AndroidInTorpor" display_name="Android In Torpor" icon_color="AOT_QuietNice"
+		description="This android is disconnected from your consciousness and hidden from enemies.
+It does not take up any of your android capacity while in this state. Cancel this action to bring the android back online."
+		icon_name="Pw_CrimeBalaclava" on_start="Silent" on_complete="Silent"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Generic"
+		can_be_canceled="true" blocks_being_scrapped="false" is_unit_invisible_and_absent_seeming_while_acting="true"
+		aggro_amount_for_action_over_time_hunters="5" blocks_unit_counting_toward_cap="true"/>
+
+	<action_over_time_type id="HelpingFirefighters" display_name="Helping Firefighters" icon_color="AOT_QuietNice"
+		description="Your unit is helping out some local firefighters."
+		icon_name="FlatSkillB_extinguisher" on_start="Silent" on_complete="Silent"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Generic"
+		can_be_canceled="true" blocks_being_scrapped="false" is_unit_invisible_and_absent_seeming_while_acting="true"
+		set_city_statistic_to_current_turn_plus_x="NoSmallFiresUntilThisTurn" the_x_to_add_to_that_city_statistic="2"
+		aggro_amount_for_action_over_time_hunters="100">
+		<city_statistic_change statistic="SmallFiresYouHelpedPutOut" value="1" />
+		<resource_change_range resource_type="Compassion" min="5" max="10" />
+	</action_over_time_type>
+
 </root>

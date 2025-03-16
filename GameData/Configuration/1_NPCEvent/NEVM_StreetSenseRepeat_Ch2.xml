@@ -230,7 +230,7 @@ Still, they're curious about the 'thing from the tower.'"
 		 description="You don't need very much. Nobody will care about you taking this tiny amount."
 		 strategy_tip=""
 		 icon_name="FE_Cotton1" has_no_code="true" event_is_blocked_for_actors_without_clearance="false"
-		 street_sense_collections="All,ResourceAcquisition">
+		 street_sense_collections="All,ResourceAcquisition,RareResourceOneTime">
 		<gate_by_city minimum_chapter="0" required_unlock="UndergroundThreads" />
 		<minor_event_data cohort_should_be_starting_building_owner="true" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100"
 			icon_scale="0.4" color_data="PickCotton" can_happen_even_during_obsession="true"
@@ -268,6 +268,54 @@ But these people... they have influence. They have Soft Power. What would happen
 
 		<choice id="SendTheSignal" display_name="Send The Signal" action_visibility_style="IsMoveAndInteractWithNPC" extra_code_on_chosen="BrainPalAneurysms">
 			<possible_result id="1" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" achievement_triggered="PullTheLever"/>
+		</choice>
+
+	</city_event>
+
+	<!-- Repeat_AndroidTorpor
+		*********************************************************************************-->
+	<city_event id="Repeat_AndroidTorpor" display_name="Android Torpor"
+		 description="You can put this android into a deep sleep, where it is hidden from enemies and no longer counts against your android capacity."
+		 strategy_tip="If you've upgraded an android with badges, but don't need it right this moment, this is a way to set it aside.
+This can also be used as a way to have more forces on-hand to deal with a large battle, since androids can be woken from torpor for free."
+		 icon_name="CleanSimple_SkillB071" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.EventsBasic" event_is_blocked_for_actors_without_clearance="false"
+		 street_sense_collections="All,AndroidTorpor">
+		<gate_by_city minimum_chapter="2" />
+		<minor_event_data specific_cohort="Yourself" max_times_can_be_executed="999" max_times_can_appear_at_once="1" seed_weight="100" is_blocked_if_intelligence_class_less_than="5"
+			icon_scale="0.4" color_data="AndroidTorpor" can_appear_even_after_final_doom="true" can_happen_even_during_obsession="true"
+			seeds_one_per_district="true" chance_of_seeding_per_district="3">
+			<seed_at building_seed_tag="AlmostAny" min_security_clearance_of_seed_spot="0" max_security_clearance_of_seed_spot="0">
+			</seed_at>
+		</minor_event_data>
+
+		<choice id="Compassion" display_name="Compassion" description="Spend some of this resource to send your android into a deep sleep." strategy_tip="" action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Compassion" cost="2"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" action_over_time_to_start="AndroidInTorpor" turns_for_action_over_time_to_last="999" skip_having_result_message="true" />
+		</choice>
+
+		<choice id="Apathy" display_name="Apathy" description="Spend some of this resource to send your android into a deep sleep." strategy_tip="" action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Apathy" cost="2"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" action_over_time_to_start="AndroidInTorpor" turns_for_action_over_time_to_last="999" skip_having_result_message="true" />
+		</choice>
+
+		<choice id="Cruelty" display_name="Cruelty" description="Spend some of this resource to send your android into a deep sleep." strategy_tip="" action_visibility_style="IsMoveAndInteractWithNPC" >
+			<resource_cost resource_type="Cruelty" cost="2"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" action_over_time_to_start="AndroidInTorpor" turns_for_action_over_time_to_last="999" skip_having_result_message="true" />
+		</choice>
+
+		<choice id="Determination" display_name="Determination" description="Spend some of this resource to send your android into a deep sleep." strategy_tip="" action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Determination" cost="2"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" action_over_time_to_start="AndroidInTorpor" turns_for_action_over_time_to_last="999" skip_having_result_message="true" />
+		</choice>
+
+		<choice id="Wisdom" display_name="Wisdom" description="Spend some of this resource to send your android into a deep sleep." strategy_tip="" action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Wisdom" cost="2"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" action_over_time_to_start="AndroidInTorpor" turns_for_action_over_time_to_last="999" skip_having_result_message="true" />
+		</choice>
+
+		<choice id="Creativity" display_name="Creativity" description="Spend some of this resource to send your android into a deep sleep." strategy_tip="" action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Creativity" cost="2"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="CloseRoutineMessage" action_over_time_to_start="AndroidInTorpor" turns_for_action_over_time_to_last="999" skip_having_result_message="true" />
 		</choice>
 
 	</city_event>

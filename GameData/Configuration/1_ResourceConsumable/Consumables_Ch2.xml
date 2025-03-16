@@ -106,6 +106,46 @@
 			turns_to_last="1" stack_limit="1" can_only_be_used_by_actors="Mindport" on_direct_use="BeesThrown" is_considered_an_attack_if_thrown="true" />
 	</consumable_item>
 
+	<consumable_item id="Sprinter" display_name="Sprinter"
+		 description="Permanently doubles the move speed of a single specific android."
+		 strategy_tip=""
+		 icon_name="CleanSimple_SkillB035" icon_color="#ffffff"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="Determination" required="20" />
+		<direct_use_consumable_data badge_to_apply="Sprinter" can_only_be_used_by_actors="Dynadroids" on_direct_use="ConsumableWarPowerup" />
+	</consumable_item>
+
+	<consumable_item id="Wizard" display_name="Wizard"
+		 description="Permanently adds 100 hacking skill to a single specific android."
+		 strategy_tip=""
+		 icon_name="CleanSimple_SkillB056" icon_color="#ffffff"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="Wisdom" required="40" />
+		<direct_use_consumable_data badge_to_apply="Wizard" can_only_be_used_by_actors="Souldroids" on_direct_use="ConsumableWarPowerup" />
+	</consumable_item>
+
+	<consumable_item id="Wall" display_name="Wall"
+		 description="Permanently adds 400 health to a single specific android."
+		 strategy_tip=""
+		 icon_name="FlatSkillB_wooden_wall" icon_color="#ffffff"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="Wisdom" required="20" />
+		<direct_use_consumable_data badge_to_apply="Wall" can_only_be_used_by_actors="Oxdroids" on_direct_use="ConsumableWarPowerup" />
+	</consumable_item>
+
+	<consumable_item id="IntimidatingShadow" display_name="Intimidating Shadow"
+		 description="Permanently adds 900 intimidation to a single specific android."
+		 strategy_tip=""
+		 icon_name="FlatSkill_13" icon_color="#ffffff"
+		 sort_order="21000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.BasicConsumables">
+		<consumable_cost resource_type="MentalEnergy" required="1" />
+		<consumable_cost resource_type="Wisdom" required="30" />
+		<direct_use_consumable_data badge_to_apply="IntimidatingShadow" can_only_be_used_by_actors="Infildroids" on_direct_use="ConsumableWarPowerup" />
+	</consumable_item>
+
 	<!--
 	<consumable_item id="FreshIdentity" display_name="Fresh Identity"
 		 description="Generate a new ID so that enemies will not recognize this unit is the one they are angry with."

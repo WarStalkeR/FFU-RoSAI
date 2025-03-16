@@ -123,6 +123,8 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Goods" sort_index="100" />
 		<part_of collection="Housing" sort_index="500" />
+		<scavenging collection="All" sort_index="100" />
+		<scavenging collection="Furniture" sort_index="100" />
 	</resource>
 
 	<resource id="ComputroniumCubes" display_name="Computronium Cubes"
@@ -143,7 +145,7 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		 technical_notes=""
 		 how_to_acquire="Built by a Helix Forge structure, from the build menu."
 		 icon_name="HM_ShapeHelix" icon_color="#67ECFF" base_storage_capacity="0" added_most_soft_cap="10000" is_locked_before_unlock="NeuralSecurity"
-		 lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="500000"
+		 lang_key_for_excess="ExcessResourceBasicNote" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="300000"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Computing" sort_index="100" />
@@ -261,6 +263,8 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Economic" sort_index="100" />
 		<part_of collection="Goods" sort_index="100" />
+		<scavenging collection="All" sort_index="100" />
+		<scavenging collection="MonsterPelts" sort_index="100" />
 	</resource>
 
 	<resource id="DailyNecessities" display_name="Daily Necessities"
@@ -370,6 +374,8 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		extra_starting_amount_in_rank2_plus_city="18000">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Metals" sort_index="100" />
+		<scavenging collection="All" sort_index="100" />
+		<scavenging collection="Alumina" sort_index="100" />
 	</resource>
 
 	<resource id="PrismaticTungsten" display_name="Prismatic Tungsten"
@@ -378,6 +384,20 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		how_to_acquire="Must be stolen from human military bases."
 		technical_notes="Hexamethyltungsten is air-sensitive and highly volatile. It has to be very carefully maintained prior to use."
 		icon_name="AN_Hexagonal1" icon_color="#43D0F1" is_locked_before_unlock="SublimatingShells"
+		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="600000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="600000"
+		lang_key_for_excess="ExcessResourceBasicNote"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Metals" sort_index="100" />
+		<part_of collection="Military" sort_index="100" />
+	</resource>
+
+	<resource id="TungstenScraps" display_name="Tungsten Scraps"
+		description="Brittle metal scraps that are not good for much directly."
+		strategy_tip=""
+		how_to_acquire="Dropped by enemy mechs when you manually hack their armor plating service panels, hydraulic actuators, or weapon systems."
+		technical_notes="Also known as Wolfram. Atomic number 74 on the periodic table."
+		icon_name="SomethingBroken" icon_color="#43D0F1" is_locked_before_unlock="MechByproducts"
 		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="600000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="600000"
 		lang_key_for_excess="ExcessResourceBasicNote"
 		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
@@ -426,6 +446,8 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		extra_starting_amount_in_rank2_plus_city="15000" >
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Metals" sort_index="100" />
+		<scavenging collection="All" sort_index="100" />
+		<scavenging collection="Neodymium" sort_index="100" />
 	</resource>
 
 	<resource id="Scandium" display_name="Scandium"
@@ -441,6 +463,8 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		extra_starting_amount_in_rank2_plus_city="12000">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Metals" sort_index="100" />
+		<scavenging collection="All" sort_index="100" />
+		<scavenging collection="Scandium" sort_index="100" />
 	</resource>
 
 	<resource id="PollinatorBees" display_name="Pollinator Bees" is_lifeform="true"

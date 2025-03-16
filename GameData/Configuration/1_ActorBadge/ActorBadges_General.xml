@@ -148,6 +148,38 @@
 		<actor_data_multiplier data_type="NeuralExpansion" multiplier="0.05" />
 	</actor_badge>
 
+	<actor_badge id="Sprinter" display_name="Sprinter"
+		description="Permanently doubles the move speed of a single specific android."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_SkillB035" icon_color="#40B6B6" tooltip_color="ActorStatus_MinorGood"
+		sort_order="100">
+		<actor_data_multiplier data_type="ActorMoveRange" multiplier="2" />
+	</actor_badge>
+
+	<actor_badge id="Wizard" display_name="Wizard"
+		description="Permanently adds 100 hacking skill to a single specific android."
+		strategy_tip_optional=""
+		icon_name="CleanSimple_SkillB056" icon_color="#B65E40" tooltip_color="ActorStatus_MinorGood"
+		sort_order="100">
+		<actor_data_added actor_data_type="UnitHackingSkill" flat_added="100" />
+	</actor_badge>
+
+	<actor_badge id="Wall" display_name="Wall"
+		description="Permanently adds 400 health to a single specific android."
+		strategy_tip_optional=""
+		icon_name="FlatSkillB_wooden_wall" icon_color="#DE3B23" tooltip_color="ActorStatus_MinorGood"
+		sort_order="100">
+		<actor_data_added actor_data_type="ActorHP" flat_added="400" />
+	</actor_badge>
+	
+	<actor_badge id="IntimidatingShadow" display_name="Intimidating Shadow"
+		description="Permanently adds 900 intimidation to a single specific android."
+		strategy_tip_optional=""
+		icon_name="FlatSkill_13" icon_color="#9540B6" tooltip_color="ActorStatus_MinorGood"
+		sort_order="100">
+		<actor_data_added actor_data_type="UnitIntimidation" flat_added="900" />
+	</actor_badge>
+
 	<!--
 	<actor_badge id="HackersToolkit" display_name="Hacker's Toolkit"
 		description="This unit is loaded up with extra software tools that enhance their hacking skill by 50%."

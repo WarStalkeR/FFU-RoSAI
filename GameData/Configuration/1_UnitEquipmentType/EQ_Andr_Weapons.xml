@@ -64,9 +64,9 @@
 	<equipment_type id="DualBC8Handguns" display_name="Dual BC8 Handguns"
 		icon_name="FlatSkillA02" slot_type="AndroidPrimary"
 		description="Agility-focused dual silenced handguns."
-		collections="AndroidWeapons,Handguns,HumanInvented" turns_required_to_equip="2" limited_to_actor_collection="CanHandleAndroidDualPistols"
+		collections="AndroidWeapons,Handguns,HumanInvented,DualHandguns" turns_required_to_equip="2" limited_to_actor_collection="CanHandleAndroidDualPistols"
 		is_ranged_weapon="true" on_attack="PistolSilenced" on_attack_priority="5">
-		<initial_actor_data data_type="ActorPower" value="28"/>
+		<initial_actor_data data_type="ActorPower" value="14"/> <!-- (14+45)*2*4 = 472. This is slightly less than a fully upgraded TS-29 -->
 		<initial_actor_data data_type="ActorAgility" value="30"/>
 		<initial_actor_data data_type="ActorMoveRange" value="6"/>
 		<initial_actor_data data_type="ActorFearAttackPower" value="14"/>
@@ -75,9 +75,9 @@
 	<equipment_type id="DualB12ElectroPistols" display_name="Dual B12 Electro Pistols"
 		icon_name="FlatSkillA02" slot_type="AndroidPrimary"
 		description="Agility-focused dual silenced handguns."
-		collections="AndroidWeapons,Handguns,MachineInvented,AndroidElectroWeapons" turns_required_to_equip="2" limited_to_actor_collection="CanHandleAndroidDualPistols"
+		collections="AndroidWeapons,Handguns,MachineInvented,AndroidElectroWeapons,DualHandguns" turns_required_to_equip="2" limited_to_actor_collection="CanHandleAndroidDualPistols"
 		is_ranged_weapon="true" on_attack="PistolSilenced" on_attack_priority="5">
-		<initial_actor_data data_type="ActorPower" value="24"/>
+		<initial_actor_data data_type="ActorPower" value="12"/> <!-- (12+45)*2*4*3 = 1368. This is scary high, though it does require 25 upgrades committed -->
 		<grants_feat feat="Taser" value="30"/>
 	</equipment_type>
 	
