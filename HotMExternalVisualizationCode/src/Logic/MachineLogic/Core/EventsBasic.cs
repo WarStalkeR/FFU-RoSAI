@@ -199,6 +199,17 @@ namespace Arcen.HotM.ExternalVis
                     }
                     #endregion
                     break;
+                case "Repeat_AndroidTorpor":
+                    #region Repeat_AndroidTorpor
+                    switch ( Logic )
+                    {
+                        case NPCEventLogic.OnStart:
+                            {
+                            }
+                            break;
+                    }
+                    #endregion
+                    break;
                 default:
                     ArcenDebugging.LogSingleLine( "EventsBasic: Called HandleEventLogic for '" + Event.ID + "', which does not support it!", Verbosity.ShowAsError );
                     break;

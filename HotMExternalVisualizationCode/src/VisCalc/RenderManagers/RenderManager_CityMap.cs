@@ -819,10 +819,7 @@ namespace Arcen.HotM.ExternalVis
                             else if ( canRender )
                             {
                                 //hijack the normal rendering
-                                if ( drawSpecialtyResources && unitType != null &&
-                                    (unitType.Resource1RecoveredOnDeath != null || unitType.Resource1RecoveredOnExtract != null ||
-                                    unitType.Resource2RecoveredOnDeath != null || unitType.Resource2RecoveredOnExtract != null ||
-                                    unitType.Resource3RecoveredOnDeath != null || unitType.Resource3RecoveredOnExtract != null) )
+                                if ( drawSpecialtyResources && unitType != null && unitType.GetShouldDrawInScavengingView() )
                                 {
                                     //we're showing specialty resources, and this includes some
                                     logic = IconLogic.ResourceScavenging;
@@ -852,10 +849,7 @@ namespace Arcen.HotM.ExternalVis
                             }
                             else //we supposedly can't render.  But are we drawing specialty resources?
                             {
-                                if ( drawSpecialtyResources && unitType != null &&
-                                    (unitType.Resource1RecoveredOnDeath != null || unitType.Resource1RecoveredOnExtract != null ||
-                                    unitType.Resource2RecoveredOnDeath != null || unitType.Resource2RecoveredOnExtract != null ||
-                                    unitType.Resource3RecoveredOnDeath != null || unitType.Resource3RecoveredOnExtract != null) )
+                                if ( drawSpecialtyResources && unitType != null && unitType.GetShouldDrawInScavengingView() )
                                 {
                                     //we're showing specialty resources, and this includes some
                                     logic = IconLogic.ResourceScavenging;

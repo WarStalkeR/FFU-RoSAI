@@ -373,7 +373,8 @@ namespace Arcen.HotM.ExternalVis
 
             if ( wouldAreaOrPrimaryAttackAMachineActorRoot )
             {
-                playerDamagedActors[target] = true;
+                if ( target.GetIsPartOfPlayerForcesInAnyWay() )
+                    playerDamagedActors[target] = true;
                 npcsDamagingPlayerUnits[npcUnit] = true;
             }
 

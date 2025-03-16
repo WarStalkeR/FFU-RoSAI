@@ -38,6 +38,32 @@ namespace Arcen.HotM.ExternalVis
                 if ( stance == null )
                     return;
 
+                {
+                    ISimMachineVehicle vehicleUnderCursor = CursorHelper.FindMachineVehicleUnderCursorIfNotDowned();
+
+                    if ( vehicleUnderCursor != null )
+                    {
+                        if ( novel.TryStartSmallerTooltip( TooltipID.Create( Unit ), null, SideClamp.Any,
+                            InputCaching.ShouldShowDetailedTooltips ? TooltipNovelWidth.Simple : TooltipNovelWidth.SizeToText ) )
+                        {
+                            novel.ShouldTooltipBeRed = true;
+                            novel.CanExpand = CanExpandType.Brief;
+                            novel.Icon = IconRefs.MouseMoveMode_BoardVehicle.Icon;
+                            novel.TitleUpperLeft.AddLangAndAfterLineItemHeader( "Move_BoardVehicle" ).AddRaw( vehicleUnderCursor.GetDisplayName() );
+
+                            novel.Main.AddLang( "Move_BoardVehicle_Captured", ColorTheme.NarrativeColor ).Line();
+                            if ( InputCaching.ShouldShowDetailedTooltips )
+                                novel.Main.AddLang( "Move_BoardVehicle_Captured_StrategyTip", ColorTheme.PurpleDim ).Line();
+
+                            CombatTextHelper.AppendLastPredictedDamageBrief( Unit, novel.Main, TTTextBefore.SpacingAlways, TTTextAfter.None );
+                        }
+
+                        //draw the sole version
+                        DrawHelper.RenderCatmullLine( center, vehicleUnderCursor.GetDrawLocation(), Color.red, 2f, CatmullSlotType.Move, CatmullSlope.Movement );
+                        return;
+                    }
+                }
+
                 debugStage = 2200;
 
                 debugStage = 3200;
@@ -541,6 +567,32 @@ namespace Arcen.HotM.ExternalVis
                 NPCUnitStance stance = Unit.Stance;
                 if ( stance == null )
                     return;
+
+                {
+                    ISimMachineVehicle vehicleUnderCursor = CursorHelper.FindMachineVehicleUnderCursorIfNotDowned();
+
+                    if ( vehicleUnderCursor != null )
+                    {
+                        if ( novel.TryStartSmallerTooltip( TooltipID.Create( Unit ), null, SideClamp.Any,
+                            InputCaching.ShouldShowDetailedTooltips ? TooltipNovelWidth.Simple : TooltipNovelWidth.SizeToText ) )
+                        {
+                            novel.ShouldTooltipBeRed = true;
+                            novel.CanExpand = CanExpandType.Brief;
+                            novel.Icon = IconRefs.MouseMoveMode_BoardVehicle.Icon;
+                            novel.TitleUpperLeft.AddLangAndAfterLineItemHeader( "Move_BoardVehicle" ).AddRaw( vehicleUnderCursor.GetDisplayName() );
+
+                            novel.Main.AddLang( "Move_BoardVehicle_Captured", ColorTheme.NarrativeColor ).Line();
+                            if ( InputCaching.ShouldShowDetailedTooltips )
+                                novel.Main.AddLang( "Move_BoardVehicle_Captured_StrategyTip", ColorTheme.PurpleDim ).Line();
+
+                            CombatTextHelper.AppendLastPredictedDamageBrief( Unit, novel.Main, TTTextBefore.SpacingAlways, TTTextAfter.None );
+                        }
+
+                        //draw the sole version
+                        DrawHelper.RenderCatmullLine( center, vehicleUnderCursor.GetDrawLocation(), Color.red, 2f, CatmullSlotType.Move, CatmullSlope.Movement );
+                        return;
+                    }
+                }
 
                 debugStage = 2200;
 

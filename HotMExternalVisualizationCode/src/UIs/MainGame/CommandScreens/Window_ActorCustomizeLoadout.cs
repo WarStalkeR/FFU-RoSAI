@@ -56,7 +56,7 @@ namespace Arcen.HotM.ExternalVis
             }
             else if ( DuringGameDataBeingExamined != null )
             {
-                if ( !Window_PlayerHardware.Instance.GetShouldDrawThisFrame() )
+                if ( !Window_PlayerHardware.Instance.GetShouldDrawThisFrame() && Engine_HotM.SelectedMachineActionMode?.ID != "CommandMode" )
                     return false;
             }
 

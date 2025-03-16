@@ -951,7 +951,7 @@ namespace Arcen.HotM.ExternalVis
                             int nickelbotCount = 0;
                             int combatUnitCount = 0;
 
-                            CanBeCompletedNow = false;
+                            CanBeCompletedNow = false; //todo!
 
                             switch ( Logic )
                             {
@@ -985,7 +985,7 @@ namespace Arcen.HotM.ExternalVis
                             int nickelbotCount = 0;
                             int combatUnitCount = 0;
 
-                            CanBeCompletedNow = false;
+                            CanBeCompletedNow = false; //todo!
 
                             switch ( Logic )
                             {

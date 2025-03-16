@@ -471,28 +471,33 @@ namespace Arcen.HotM.ExternalVis
                                         {
                                             if ( structureType != null )
                                             {
-                                                if ( ExtraData.MouseInput.LeftButtonClicked )
+                                                if ( InputCaching.IsInInspectMode_Any )
                                                 {
-                                                    if ( !structureType.GetCanAfford( null ) )
+                                                }
+                                                else
+                                                {
+                                                    if ( ExtraData.MouseInput.LeftButtonClicked )
                                                     {
-                                                        ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
-                                                        break;
-                                                    }
+                                                        if ( !structureType.GetCanAfford( null ) )
+                                                        {
+                                                            ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
+                                                            break;
+                                                        }
 
-                                                    if ( BuildModeHandler.TargetingStructure == structureType )
-                                                        BuildModeHandler.ClearAllTargeting();
-                                                    else
+                                                        if ( BuildModeHandler.TargetingStructure == structureType )
+                                                            BuildModeHandler.ClearAllTargeting();
+                                                        else
+                                                        {
+                                                            BuildModeHandler.ClearAllTargeting();
+                                                            BuildModeHandler.TargetingStructure = structureType;
+                                                        }
+                                                    }
+                                                    else if ( ExtraData.MouseInput.RightButtonClicked )
                                                     {
-                                                        BuildModeHandler.ClearAllTargeting();
-                                                        BuildModeHandler.TargetingStructure = structureType;
+                                                        if ( structureType.DuringGame_NumberFunctional.Display > 0 || structureType.DuringGame_NumberUnderConstruction.Display > 0 )
+                                                            SimCommon.CycleThroughMachineStructures( true, ( MachineStructure s ) => s.Type == structureType );
                                                     }
                                                 }
-                                                else if ( ExtraData.MouseInput.RightButtonClicked )
-                                                {
-                                                    if ( structureType.DuringGame_NumberFunctional.Display > 0 || structureType.DuringGame_NumberUnderConstruction.Display > 0 )
-                                                        SimCommon.CycleThroughMachineStructures( true, ( MachineStructure s ) => s.Type == structureType );
-                                                }
-
                                             }
                                         }
                                         break;
@@ -1022,7 +1027,9 @@ namespace Arcen.HotM.ExternalVis
                             {
                                 if ( job != null )
                                 {
-                                    job.RenderJobTooltip( element, SideClamp.LeftOrRight, TooltipShadowStyle.TightDark, TooltipInstruction.ForConstruction, null, TooltipExtraText.None, TooltipExtraRules.MustBeToRightOfBuildMenu );
+                                    job.RenderJobTooltip( element, SideClamp.LeftOrRight, TooltipShadowStyle.TightDark, TooltipInstruction.ForConstruction, null,
+                                        FilteredToInternalRobotics == null ? TooltipExtraText.ControlClickToFilterToInternalRobotics : TooltipExtraText.None, 
+                                        TooltipExtraRules.MustBeToRightOfBuildMenu );
 
                                     BuildModeHandler.LastHoveredJob = job;
                                     Engine_HotM.HoveredJob = job;
@@ -1035,26 +1042,33 @@ namespace Arcen.HotM.ExternalVis
                             {
                                 if ( job != null )
                                 {
-                                    if ( ExtraData.MouseInput.LeftButtonClicked )
+                                    if ( InputCaching.IsInInspectMode_Any )
                                     {
-                                        if ( !job.GetCanAffordAnother( true, null ) )
-                                        {
-                                            ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
-                                            break;
-                                        }
-
-                                        if ( BuildModeHandler.TargetingJob == job )
-                                            BuildModeHandler.ClearAllTargeting();
-                                        else
-                                        {
-                                            BuildModeHandler.ClearAllTargeting();
-                                            BuildModeHandler.TargetingJob = job;
-                                        }
+                                        FilteredToInternalRobotics = job.InternalRoboticsTypeNeeded;
                                     }
-                                    else if ( ExtraData.MouseInput.RightButtonClicked )
+                                    else
                                     {
-                                        if ( job.DuringGame_FullList.Count > 0 )
-                                            SimCommon.CycleThroughMachineStructures( true, ( MachineStructure s ) => s.CurrentJob == job );
+                                        if ( ExtraData.MouseInput.LeftButtonClicked )
+                                        {
+                                            if ( !job.GetCanAffordAnother( true, null ) )
+                                            {
+                                                ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
+                                                break;
+                                            }
+
+                                            if ( BuildModeHandler.TargetingJob == job )
+                                                BuildModeHandler.ClearAllTargeting();
+                                            else
+                                            {
+                                                BuildModeHandler.ClearAllTargeting();
+                                                BuildModeHandler.TargetingJob = job;
+                                            }
+                                        }
+                                        else if ( ExtraData.MouseInput.RightButtonClicked )
+                                        {
+                                            if ( job.DuringGame_FullList.Count > 0 )
+                                                SimCommon.CycleThroughMachineStructures( true, ( MachineStructure s ) => s.CurrentJob == job );
+                                        }
                                     }
                                 }
                             }

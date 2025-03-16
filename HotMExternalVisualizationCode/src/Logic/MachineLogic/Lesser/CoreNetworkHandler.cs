@@ -34,8 +34,8 @@ namespace Arcen.HotM.ExternalVis
 
                 NetworkActorData electricityData = network.GetNetworkDataDataAndInitializeIfNeedBe( ActorRefs.GeneratedElectricity );
 
-                electricityData.SortedProducers.ClearConstructionListForStartingConstruction();
-                electricityData.SortedConsumers.ClearConstructionListForStartingConstruction();
+                electricityData.SortedJobProducers.ClearConstructionListForStartingConstruction();
+                electricityData.SortedJobConsumers.ClearConstructionListForStartingConstruction();
 
                 //ArcenDebugging.LogSingleLine( "GenCheck", Verbosity.DoNotShow );
 
@@ -59,9 +59,9 @@ namespace Arcen.HotM.ExternalVis
                         requiredElectricity += requiredAmount;
 
                         if ( generatedAmount > 0 )
-                            electricityData.SortedProducers.AddToConstructionList( new KeyValuePair<MachineStructure, int>( structure, generatedAmount ) );
+                            electricityData.SortedJobProducers.AddToConstructionList( new KeyValuePair<MachineStructure, Int64>( structure, generatedAmount ) );
                         if ( requiredAmount > 0 )
-                            electricityData.SortedConsumers.AddToConstructionList( new KeyValuePair<MachineStructure, int>( structure, requiredAmount ) );
+                            electricityData.SortedJobConsumers.AddToConstructionList( new KeyValuePair<MachineStructure, Int64>( structure, requiredAmount ) );
                     }
                     #endregion
 
@@ -77,23 +77,25 @@ namespace Arcen.HotM.ExternalVis
 
                 electricityData.SortProducerAndConsumerLists();
 
-                electricityData.SortedProducers.SwitchConstructionToDisplay();
-                electricityData.SortedConsumers.SwitchConstructionToDisplay();
+                electricityData.SortedJobProducers.SwitchConstructionToDisplay();
+                electricityData.SortedJobConsumers.SwitchConstructionToDisplay();
 
                 #region ProducerConsumerTargets
                 SimCommon.ProducerConsumerTargets.ClearConstructionListForStartingConstruction();
 
                 if ( ActorRefs.GeneratedElectricity.DuringGameplay_GetShouldBeVisible() )
                 {
-                    if ( electricityData.SortedProducers.Count > 0 || electricityData.SortedConsumers.Count > 0 )
+                    if ( electricityData.SortedJobProducers.Count > 0 || electricityData.SortedJobConsumers.Count > 0 )
                         SimCommon.ProducerConsumerTargets.AddToConstructionList( electricityData );
                 }
 
                 foreach ( ResourceType resource in ResourceTypeTable.SortedRegularResources )
                 {
-                    if ( resource.IsHidden ) 
+                    if ( resource.IsHidden || resource.IsStrategicResource ) 
                         continue;
-                    if ( resource.SortedProducers.Count > 0 || resource.SortedConsumers.Count > 0 )
+
+                    if ( resource.SortedJobProducers.Count > 0 || resource.SortedJobConsumers.Count > 0 ||
+                        resource.SortedNamedProducers.Count > 0 || resource.SortedNamedConsumers.Count > 0 )
                         SimCommon.ProducerConsumerTargets.AddToConstructionList( resource );
                 }
 

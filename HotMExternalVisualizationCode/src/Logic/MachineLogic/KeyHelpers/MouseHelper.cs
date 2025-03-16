@@ -143,7 +143,7 @@ namespace Arcen.HotM.ExternalVis
                 //Engine_HotM.HoveredJob = null;//this causes it to not work
             }
             else if ( selectedMachineActor != null && (selectedMachineActor.GetIsBlockedFromActingInGeneral() ||
-                selectedMachineActor is ISimMachineVehicle) && !InputCaching.IsInInspectMode_ShowMoreStuff )
+                selectedMachineActor is ISimMachineVehicle) && !InputCaching.IsInInspectMode_Any )
             {
                 BuildingUnderCursor = null;
 
@@ -153,7 +153,7 @@ namespace Arcen.HotM.ExternalVis
                 else
                     StructureUnderCursor = null;
 
-                if ( StructureUnderCursor != null && InputCaching.IsInInspectMode_ShowMoreStuff )
+                if ( StructureUnderCursor != null && InputCaching.IsInInspectMode_Any )
                     Engine_HotM.HoveredJob = StructureUnderCursor.CurrentJob;
             }
             else
@@ -221,7 +221,7 @@ namespace Arcen.HotM.ExternalVis
                             }
                         }
                     }
-                    if ( InputCaching.IsInInspectMode_ShowMoreStuff )
+                    if ( InputCaching.IsInInspectMode_Any )
                     {
                         if ( BuildingUnderCursor != null )
                         {
@@ -414,7 +414,7 @@ namespace Arcen.HotM.ExternalVis
                             }
                             if ( BuildingUnderCursor != null )
                             {
-                                if ( InputCaching.IsInInspectMode_ShowMoreStuff )
+                                if ( InputCaching.IsInInspectMode_Any )
                                 {
                                     Inspect( BuildingUnderCursor );
                                     return;
@@ -848,7 +848,7 @@ namespace Arcen.HotM.ExternalVis
             {
                 case MainGameMode.Streets:
                 case MainGameMode.CityMap:
-                    if ( InputCaching.IsInInspectMode_ShowMoreStuff )
+                    if ( InputCaching.IsInInspectMode_Any )
                         return true;
                     if ( Engine_HotM.SelectedActor is ISimMachineActor Machine )
                     {
@@ -916,7 +916,7 @@ namespace Arcen.HotM.ExternalVis
 
             bool buildModeActiveAndTargeting = BuildModeHandler.IsActiveAndTargeting;
 
-            if ( !InputCaching.IsInInspectMode_ShowMoreStuff && buildModeActiveAndTargeting )
+            if ( !InputCaching.IsInInspectMode_Any && buildModeActiveAndTargeting )
             {
                 if ( actor is MachineStructure structure )
                 {

@@ -610,26 +610,33 @@ namespace Arcen.HotM.ExternalVis
                             case UIAction.OnClick:
                                 if ( npc != null )
                                 {
-                                    if ( ExtraData.MouseInput.LeftButtonClicked )
+                                    if ( InputCaching.IsInInspectMode_Any )
                                     {
-                                        if ( npc.CalculateMaxCouldCreateAsBulkAndroid() <= 0 )
-                                        {
-                                            ParticleSoundRefs.ErrorSound.DuringGame_PlaySoundOnlyAtCamera();
-                                            break;
-                                        }
-
-                                        npc.CommandModeCategoryOptional.NonSim_TargetingDeployableMachineUnitType = null;
-                                        npc.CommandModeCategoryOptional.NonSim_TargetingDeployableMachineVehicleType = null;
-
-                                        Engine_HotM.CurrentCommandModeActionTargeting = null;
-                                        if ( npc.CommandModeCategoryOptional.NonSim_TargetingDeployableNPCType == npc )
-                                            npc.CommandModeCategoryOptional.NonSim_TargetingDeployableNPCType = null;
-                                        else
-                                            npc.CommandModeCategoryOptional.NonSim_TargetingDeployableNPCType = npc;
+                                        Window_ActorCustomizeLoadout.Instance.OpenFromDuringGameData( npc.DuringGameData );
                                     }
-                                    else if ( ExtraData.MouseInput.RightButtonClicked )
+                                    else
                                     {
-                                        SimCommon.CycleThroughNPCUnits( true, ( ISimNPCUnit u ) => u.UnitType == npc );
+                                        if ( ExtraData.MouseInput.LeftButtonClicked )
+                                        {
+                                            if ( npc.CalculateMaxCouldCreateAsBulkAndroid() <= 0 )
+                                            {
+                                                ParticleSoundRefs.ErrorSound.DuringGame_PlaySoundOnlyAtCamera();
+                                                break;
+                                            }
+
+                                            npc.CommandModeCategoryOptional.NonSim_TargetingDeployableMachineUnitType = null;
+                                            npc.CommandModeCategoryOptional.NonSim_TargetingDeployableMachineVehicleType = null;
+
+                                            Engine_HotM.CurrentCommandModeActionTargeting = null;
+                                            if ( npc.CommandModeCategoryOptional.NonSim_TargetingDeployableNPCType == npc )
+                                                npc.CommandModeCategoryOptional.NonSim_TargetingDeployableNPCType = null;
+                                            else
+                                                npc.CommandModeCategoryOptional.NonSim_TargetingDeployableNPCType = npc;
+                                        }
+                                        else if ( ExtraData.MouseInput.RightButtonClicked )
+                                        {
+                                            SimCommon.CycleThroughNPCUnits( true, ( ISimNPCUnit u ) => u.UnitType == npc );
+                                        }
                                     }
                                 }
                                 break;
@@ -692,26 +699,33 @@ namespace Arcen.HotM.ExternalVis
                             case UIAction.OnClick:
                                 if ( unit != null )
                                 {
-                                    if ( ExtraData.MouseInput.LeftButtonClicked )
+                                    if ( InputCaching.IsInInspectMode_Any )
                                     {
-                                        if ( !unit.CalculateCanAfford() )
-                                        {
-                                            ParticleSoundRefs.ErrorSound.DuringGame_PlaySoundOnlyAtCamera();
-                                            break;
-                                        }
-
-                                        unit.CommandModeCategory.NonSim_TargetingDeployableNPCType = null;
-                                        unit.CommandModeCategory.NonSim_TargetingDeployableMachineVehicleType = null;
-
-                                        Engine_HotM.CurrentCommandModeActionTargeting = null;
-                                        if ( unit.CommandModeCategory.NonSim_TargetingDeployableMachineUnitType == unit )
-                                            unit.CommandModeCategory.NonSim_TargetingDeployableMachineUnitType = null;
-                                        else
-                                            unit.CommandModeCategory.NonSim_TargetingDeployableMachineUnitType = unit;
+                                        Window_ActorCustomizeLoadout.Instance.OpenFromDuringGameData( unit.DuringGameData );
                                     }
-                                    else if ( ExtraData.MouseInput.RightButtonClicked )
+                                    else
                                     {
-                                        SimCommon.CycleThroughMachineActors( true, ( ISimMachineActor a ) => a is ISimMachineUnit u && u.UnitType == unit );
+                                        if ( ExtraData.MouseInput.LeftButtonClicked )
+                                        {
+                                            if ( !unit.CalculateCanAfford() )
+                                            {
+                                                ParticleSoundRefs.ErrorSound.DuringGame_PlaySoundOnlyAtCamera();
+                                                break;
+                                            }
+
+                                            unit.CommandModeCategory.NonSim_TargetingDeployableNPCType = null;
+                                            unit.CommandModeCategory.NonSim_TargetingDeployableMachineVehicleType = null;
+
+                                            Engine_HotM.CurrentCommandModeActionTargeting = null;
+                                            if ( unit.CommandModeCategory.NonSim_TargetingDeployableMachineUnitType == unit )
+                                                unit.CommandModeCategory.NonSim_TargetingDeployableMachineUnitType = null;
+                                            else
+                                                unit.CommandModeCategory.NonSim_TargetingDeployableMachineUnitType = unit;
+                                        }
+                                        else if ( ExtraData.MouseInput.RightButtonClicked )
+                                        {
+                                            SimCommon.CycleThroughMachineActors( true, ( ISimMachineActor a ) => a is ISimMachineUnit u && u.UnitType == unit );
+                                        }
                                     }
                                 }
                                 break;
@@ -774,26 +788,33 @@ namespace Arcen.HotM.ExternalVis
                             case UIAction.OnClick:
                                 if ( vehicle != null )
                                 {
-                                    if ( ExtraData.MouseInput.LeftButtonClicked )
+                                    if ( InputCaching.IsInInspectMode_Any )
                                     {
-                                        if ( !vehicle.CalculateCanAfford() )
-                                        {
-                                            ParticleSoundRefs.ErrorSound.DuringGame_PlaySoundOnlyAtCamera();
-                                            break;
-                                        }
-
-                                        vehicle.CommandModeCategory.NonSim_TargetingDeployableNPCType = null;
-                                        vehicle.CommandModeCategory.NonSim_TargetingDeployableMachineUnitType = null;
-
-                                        Engine_HotM.CurrentCommandModeActionTargeting = null;
-                                        if ( vehicle.CommandModeCategory.NonSim_TargetingDeployableMachineVehicleType == vehicle )
-                                            vehicle.CommandModeCategory.NonSim_TargetingDeployableMachineVehicleType = null;
-                                        else
-                                            vehicle.CommandModeCategory.NonSim_TargetingDeployableMachineVehicleType = vehicle;
+                                        Window_ActorCustomizeLoadout.Instance.OpenFromDuringGameData( vehicle.DuringGameData );
                                     }
-                                    else if ( ExtraData.MouseInput.RightButtonClicked )
+                                    else
                                     {
-                                        SimCommon.CycleThroughMachineActors( true, ( ISimMachineActor a ) => a is ISimMachineVehicle v && v.VehicleType == vehicle );
+                                        if ( ExtraData.MouseInput.LeftButtonClicked )
+                                        {
+                                            if ( !vehicle.CalculateCanAfford() )
+                                            {
+                                                ParticleSoundRefs.ErrorSound.DuringGame_PlaySoundOnlyAtCamera();
+                                                break;
+                                            }
+
+                                            vehicle.CommandModeCategory.NonSim_TargetingDeployableNPCType = null;
+                                            vehicle.CommandModeCategory.NonSim_TargetingDeployableMachineUnitType = null;
+
+                                            Engine_HotM.CurrentCommandModeActionTargeting = null;
+                                            if ( vehicle.CommandModeCategory.NonSim_TargetingDeployableMachineVehicleType == vehicle )
+                                                vehicle.CommandModeCategory.NonSim_TargetingDeployableMachineVehicleType = null;
+                                            else
+                                                vehicle.CommandModeCategory.NonSim_TargetingDeployableMachineVehicleType = vehicle;
+                                        }
+                                        else if ( ExtraData.MouseInput.RightButtonClicked )
+                                        {
+                                            SimCommon.CycleThroughMachineActors( true, ( ISimMachineActor a ) => a is ISimMachineVehicle v && v.VehicleType == vehicle );
+                                        }
                                     }
                                 }
                                 break;

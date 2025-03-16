@@ -97,6 +97,8 @@ namespace Arcen.HotM.External
                 SimCommon.AllSortedPlayerVehicles.ClearConstructionListForStartingConstruction();
                 SimCommon.AllSortedDeployedPlayerAndroids.ClearConstructionListForStartingConstruction();
                 SimCommon.AllSortedDeployedPlayerMechs.ClearConstructionListForStartingConstruction();
+                SimCommon.AllSortedAnyPlayerAndroids.ClearConstructionListForStartingConstruction();
+                SimCommon.AllSortedAnyPlayerMechs.ClearConstructionListForStartingConstruction();
                 SimCommon.AllSortedPlayerBulkNPCUnits.ClearConstructionListForStartingConstruction();
                 SimCommon.AllSortedPlayerConvertedNPCUnits.ClearConstructionListForStartingConstruction();
 
@@ -139,6 +141,11 @@ namespace Arcen.HotM.External
                                 }
                                 break;
                         }
+
+                        if ( kv.Value.UnitType.IsConsideredAndroid )
+                            SimCommon.AllSortedAnyPlayerAndroids.AddToConstructionList( kv.Value );
+                        else if ( kv.Value.UnitType.IsConsideredMech )
+                            SimCommon.AllSortedAnyPlayerMechs.AddToConstructionList( kv.Value );
 
                         if ( kv.Value.GetIsDeployed() )
                         {
@@ -239,6 +246,8 @@ namespace Arcen.HotM.External
                 SimCommon.AllSortedPlayerVehicles.SwitchConstructionToDisplay();
                 SimCommon.AllSortedDeployedPlayerAndroids.SwitchConstructionToDisplay();
                 SimCommon.AllSortedDeployedPlayerMechs.SwitchConstructionToDisplay();
+                SimCommon.AllSortedAnyPlayerAndroids.SwitchConstructionToDisplay();
+                SimCommon.AllSortedAnyPlayerMechs.SwitchConstructionToDisplay();
                 SimCommon.AllSortedPlayerBulkNPCUnits.SwitchConstructionToDisplay();
                 SimCommon.AllSortedPlayerConvertedNPCUnits.SwitchConstructionToDisplay();
 
@@ -465,6 +474,36 @@ namespace Arcen.HotM.External
                 try
                 {
                     SimCommon.AllSortedDeployedPlayerMechs.SortConstructionList( delegate ( ISimMachineUnit Left, ISimMachineUnit Right )
+                    {
+                        int val = Left.UnitType.RowIndexNonSim.CompareTo( Right.UnitType.RowIndexNonSim );
+                        if ( val != 0 )
+                            return val;
+                        return Left.GetDisplayName().CompareTo( Right.GetDisplayName() );
+                    } );
+                }
+                catch { } //in case something changes briefly
+            }
+
+            if ( SimCommon.AllSortedAnyPlayerAndroids.GetConstructionList().Count > 0 )
+            {
+                try
+                {
+                    SimCommon.AllSortedAnyPlayerAndroids.SortConstructionList( delegate ( ISimMachineUnit Left, ISimMachineUnit Right )
+                    {
+                        int val = Left.UnitType.RowIndexNonSim.CompareTo( Right.UnitType.RowIndexNonSim );
+                        if ( val != 0 )
+                            return val;
+                        return Left.GetDisplayName().CompareTo( Right.GetDisplayName() );
+                    } );
+                }
+                catch { } //in case something changes briefly
+            }
+
+            if ( SimCommon.AllSortedAnyPlayerMechs.GetConstructionList().Count > 0 )
+            {
+                try
+                {
+                    SimCommon.AllSortedAnyPlayerMechs.SortConstructionList( delegate ( ISimMachineUnit Left, ISimMachineUnit Right )
                     {
                         int val = Left.UnitType.RowIndexNonSim.CompareTo( Right.UnitType.RowIndexNonSim );
                         if ( val != 0 )

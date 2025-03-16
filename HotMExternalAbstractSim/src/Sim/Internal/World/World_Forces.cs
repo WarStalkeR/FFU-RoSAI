@@ -191,19 +191,28 @@ namespace Arcen.HotM.External
             foreach ( KeyValuePair<int, MachineVehicle> kv in MachineVehiclesByID )
             {
                 totalVehicleCount++;
-                totalVehicleCapacity += kv.Value?.VehicleType?.VehicleCapacityCost??0;
+                if ( kv.Value?.CurrentActionOverTime?.Type?.BlocksUnitCountingTowardCap ?? false )
+                { } //ooh, no cost!
+                else
+                    totalVehicleCapacity += kv.Value?.VehicleType?.VehicleCapacityCost??0;
             }
             foreach ( KeyValuePair<int, MachineUnit> kv in MachineUnitsByID )
             {
                 if ( kv.Value.UnitType.IsConsideredAndroid )
                 {
                     totalAndroidCount++;
-                    totalAndroidCapacity += kv.Value?.UnitType?.UnitCapacityCost ?? 0;
+                    if ( kv.Value?.CurrentActionOverTime?.Type?.BlocksUnitCountingTowardCap??false )
+                    { } //ooh, no cost!
+                    else
+                        totalAndroidCapacity += kv.Value?.UnitType?.UnitCapacityCost ?? 0;
                 }
                 if ( kv.Value.UnitType.IsConsideredMech )
                 {
                     totalMechCount++;
-                    totalMechCapacity += kv.Value?.UnitType?.UnitCapacityCost ?? 0;
+                    if ( kv.Value?.CurrentActionOverTime?.Type?.BlocksUnitCountingTowardCap ?? false )
+                    { } //ooh, no cost!
+                    else
+                        totalMechCapacity += kv.Value?.UnitType?.UnitCapacityCost ?? 0;
                 }
             }
 

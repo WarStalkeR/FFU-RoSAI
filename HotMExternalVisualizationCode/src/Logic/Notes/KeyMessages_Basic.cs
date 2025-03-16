@@ -109,6 +109,15 @@ namespace Arcen.HotM.ExternalVis
                                 if ( SimMetagame.CurrentChapterNumber == 1 && FlagRefs.AndroidSecurityPatch.DuringGameplay_HasEverCompleted &&
                                     FlagRefs.Ch1_MIN_CommandMode.DuringGame_ActualOutcome != null )
                                     Message.SetIsReadyToBeViewed();
+                                else
+                                {
+                                    if ( SimMetagame.CurrentChapterNumber == 1 )
+                                    {
+                                        int slurrySpidersNeeded = GMathIntTable.GetSingleValueByID( "Chapter1_SlurrySpidersPlayerMustHave", 2 );
+                                        if ( JobRefs.SlurrySpiders.DuringGame_NumberFunctional.Display >= slurrySpidersNeeded )
+                                            Message.SetIsReadyToBeViewed();
+                                    }
+                                }
                             }
                         }
                         break;
@@ -170,8 +179,11 @@ namespace Arcen.HotM.ExternalVis
                                 Message.SetAsDoesNotNeedToBeViewed();
                             else
                             {
-                                if ( SimMetagame.CurrentChapterNumber == 1 && 
-                                    ( FlagRefs.Ch1_TentElimination.DuringGameplay_TurnStarted > 0 || FlagRefs.Ch1_Flamethrower.DuringGameplay_TurnStarted > 0) )
+                                if ( SimMetagame.CurrentChapterNumber == 1 &&
+                                    (FlagRefs.Ch1_TentElimination.DuringGameplay_TurnStarted > 0 || FlagRefs.Ch1_Flamethrower.DuringGameplay_TurnStarted > 0) )
+                                    Message.SetIsReadyToBeViewed();
+                                else if ( ResourceRefs.Apathy.Current > 0 || ResourceRefs.Compassion.Current > 0 || ResourceRefs.Cruelty.Current > 0 ||
+                                    ResourceRefs.Creativity.Current > 0 || ResourceRefs.Determination.Current > 0 || ResourceRefs.Wisdom.Current > 0 )
                                     Message.SetIsReadyToBeViewed();
                             }
                         }

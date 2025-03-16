@@ -340,7 +340,7 @@ namespace Arcen.HotM.ExternalVis
                 {
                     //when selecting an npc, if you mouse over something else
                     ISimMapActor actorMousingOver = CursorHelper.FindMapActorUnderCursor();
-                    if ( actorMousingOver != null && actorMousingOver != npcUnit )
+                    if ( actorMousingOver != null && actorMousingOver != npcUnit && !(actorMousingOver is ISimMachineVehicle ) )
                     {
                         //select it if it's one of our main ones
                         if ( actorMousingOver is ISimMachineActor || actorMousingOver is MachineStructure )

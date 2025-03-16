@@ -2051,6 +2051,11 @@ namespace Arcen.HotM.ExternalVis
                     if ( explorationSiteCollection != null )
                         SimCommon.CurrentExplorationSiteCollection = explorationSiteCollection;
                 }
+                else if ( Item.GetItem() is ResourceScavengingCollection scavengeColl )
+                {
+                    if ( scavengeColl != null )
+                        SimCommon.CurrentScavengingCollection = scavengeColl;
+                }
             }
 
             public override bool GetShouldBeHidden()
@@ -2063,6 +2068,8 @@ namespace Arcen.HotM.ExternalVis
                 else if ( (SimCommon.CurrentCityLens?.ShowContemplations?.Display ?? false) )
                     return false;
                 else if ( (SimCommon.CurrentCityLens?.ShowExplorationSites?.Display ?? false) )
+                    return false;
+                else if ( (SimCommon.CurrentCityLens?.ShowSpecialResources?.Display ?? false) )
                     return false;
 
                 return true;
@@ -2349,6 +2356,75 @@ namespace Arcen.HotM.ExternalVis
                             }
                         }
                         #endregion ExplorationSiteCollections
+                    }
+                    else if ( (SimCommon.CurrentCityLens?.ShowSpecialResources?.Display ?? false) )
+                    {
+                        #region ResourceScavengingCollections
+                        List<ResourceScavengingCollection> validCollections = ResourceScavengingCollection.AvailableCollections.GetDisplayList();
+
+                        if ( SimCommon.CurrentScavengingCollection == null )
+                            SimCommon.CurrentScavengingCollection = validCollections.FirstOrDefault;
+
+                        ResourceScavengingCollection typeDataToSelect = SimCommon.CurrentScavengingCollection;
+
+                        #region If The Selected Type Is Not Valid Right Now, Then Skip It
+                        if ( typeDataToSelect != null )
+                        {
+                            if ( !validCollections.Contains( typeDataToSelect ) )
+                            {
+                                typeDataToSelect = null;
+                                SimCommon.CurrentScavengingCollection = null;
+                            }
+                        }
+                        #endregion
+
+                        #region Select Default If Blank
+                        if ( typeDataToSelect == null && validCollections.Count > 0 )
+                            typeDataToSelect = validCollections.FirstOrDefault;
+                        #endregion
+
+                        if ( SimCommon.CurrentScavengingCollection == null && typeDataToSelect != null )
+                            SimCommon.CurrentScavengingCollection = typeDataToSelect;
+
+                        bool foundMismatch = false;
+                        if ( typeDataToSelect != null && (elementAsType.CurrentlySelectedOption == null || (elementAsType.CurrentlySelectedOption.GetItem() as ResourceScavengingCollection) != typeDataToSelect) )
+                        {
+                            foundMismatch = true;
+                            //ArcenDebugging.ArcenDebugLogSingleLine( "Fixing selected item in names to be " + typeDataToSelect.ID, Verbosity.DoNotShow );
+                        }
+                        else if ( validCollections.Count != elementAsType.GetItems_DoNotAlterDirectly().Count )
+                            foundMismatch = true;
+                        else
+                        {
+                            for ( int i = 0; i < validCollections.Count; i++ )
+                            {
+                                ResourceScavengingCollection row = validCollections[i];
+
+                                IArcenDropdownOption option = elementAsType.GetItems_DoNotAlterDirectly()[i];
+                                if ( option == null )
+                                {
+                                    foundMismatch = true;
+                                    break;
+                                }
+                                ResourceScavengingCollection optionItemAsType = option.GetItem() as ResourceScavengingCollection;
+                                if ( row == optionItemAsType )
+                                    continue;
+                                foundMismatch = true;
+                                break;
+                            }
+                        }
+
+                        if ( foundMismatch )
+                        {
+                            elementAsType.ClearItems();
+
+                            for ( int i = 0; i < validCollections.Count; i++ )
+                            {
+                                ResourceScavengingCollection row = validCollections[i];
+                                elementAsType.AddItem( row, row == typeDataToSelect );
+                            }
+                        }
+                        #endregion ResourceScavengingCollections
                     }
                 }
             }

@@ -447,7 +447,7 @@ namespace Arcen.HotM.ExternalVis
                                 }
                                 break;
                             case UIAction.HandleMouseover:
-                                resource.WriteResourceTooltip( element, SideClamp.AboveOrBelow, TooltipShadowStyle.None, TooltipInstruction.ForConstruction, TooltipExtraText.None );
+                                resource.WriteResourceTooltip( element, SideClamp.AboveOrBelow, TooltipShadowStyle.None, TooltipInstruction.ForConstruction, TooltipExtraText.ControlClickToGoToInputOutputScreen );
                                 break;
                             case UIAction.OnClick:
                                 if ( GetIsOpeningSubMenuBlocked( false ) )
@@ -456,7 +456,18 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 }
 
-                                VisCommands.ToggleResourceWindow_TargetTab( Window_PlayerResources.ResourcesDisplayType.ResourceStorage );
+                                if ( InputCaching.IsInInspectMode_Any && !resource.IsStrategicResource )
+                                {
+                                    if ( resource.GetHasAnyDataForInputOutputView() )
+                                    {
+                                        VisCommands.ToggleResourceWindow_TargetTab( Window_PlayerResources.ResourcesDisplayType.InputOutput );
+                                        Window_PlayerResources.InputOutput_target = resource;
+                                    }
+                                    else
+                                        ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
+                                }
+                                else
+                                    VisCommands.ToggleResourceWindow_TargetTab( Window_PlayerResources.ResourcesDisplayType.ResourceStorage );
                                 break;
                         }
                     } );

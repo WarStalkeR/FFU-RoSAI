@@ -2225,8 +2225,7 @@ namespace Arcen.HotM.ExternalVis
         }
         #endregion
 
-        #region RenderSpecialResourceAtBuilding
-        
+        #region RenderSpecialResourceAtBuilding        
         public static void RenderSpecialResourceAtBuilding( MapItem item, Action OnHoverOrNull, Int64 framesPrepped )
         {
             ISimBuilding building = item.SimBuilding;
@@ -2246,6 +2245,10 @@ namespace Arcen.HotM.ExternalVis
 
             if ( !variant.SpecialScavengeResource.DuringGame_IsUnlocked() )
                 return;
+
+            if ( SimCommon.CurrentScavengingCollection != null && !variant.SpecialScavengeResource.ScavengingCollections.ContainsKey( SimCommon.CurrentScavengingCollection ) )
+                return;
+
             if ( VisCurrent.GetShouldBeBlurred() )
                 return; //hide when in a blurred scene
             if ( !FlagRefs.PropertyDamage.DuringGameplay_IsInvented )

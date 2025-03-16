@@ -145,7 +145,7 @@ namespace Arcen.HotM.ExternalVis
             {
                 int consumeThis = Mathf.RoundToInt( CostPerProduced * MaxToProduce );
                 job.DuringGame_InputsDesired.Construction[ConsumedResourceType] += consumeThis;
-                ConsumedResourceType.SortedConsumers.AddToConstructionList( new KeyValuePair<MachineStructure, int>( structure, consumeThis ) );
+                ConsumedResourceType.SortedJobConsumers.AddToConstructionList( new KeyValuePair<MachineStructure, Int64>( structure, consumeThis ) );
             }
         }
         #endregion
@@ -156,7 +156,7 @@ namespace Arcen.HotM.ExternalVis
             if ( AmountToProduce > 0 )
             {
                 job.DuringGame_OutputsActual.Construction[OutputResourceType] += AmountToProduce;
-                OutputResourceType.SortedProducers.AddToConstructionList( new KeyValuePair<MachineStructure, int>( structure, AmountToProduce ) );
+                OutputResourceType.SortedJobProducers.AddToConstructionList( new KeyValuePair<MachineStructure, Int64>( structure, AmountToProduce ) );
                 OutputResourceType.AlterCurrent_Job( AmountToProduce, job, Rule );
             }
 
@@ -255,7 +255,7 @@ namespace Arcen.HotM.ExternalVis
                 if ( toProduce > 0 )
                 {
                     job.DuringGame_OutputsActual.Construction[OutputResourceType] += toProduce;
-                    OutputResourceType.SortedProducers.AddToConstructionList( new KeyValuePair<MachineStructure, int>( structure, toProduce ) );
+                    OutputResourceType.SortedJobProducers.AddToConstructionList( new KeyValuePair<MachineStructure, Int64>( structure, toProduce ) );
 
                     OutputResourceType.AlterCurrent_Job( toProduce, job, ResourceAddRule.IgnoreUntilTurnChange );
                 }
@@ -617,7 +617,7 @@ namespace Arcen.HotM.ExternalVis
                                                 if ( originalDesired > 0 )
                                                 {
                                                     Job.DuringGame_InputsDesired.Construction[res] += originalDesired;
-                                                    res.SortedConsumers.AddToConstructionList( new KeyValuePair<MachineStructure, int>( Structure, originalDesired ) );
+                                                    res.SortedJobConsumers.AddToConstructionList( new KeyValuePair<MachineStructure, Int64>( Structure, originalDesired ) );
                                                 }
                                                 #endregion
                                             }
@@ -627,7 +627,7 @@ namespace Arcen.HotM.ExternalVis
                                                 if ( finalDesired > 0 )
                                                 {
                                                     Job.DuringGame_OutputsActual.Construction[res] += finalDesired;
-                                                    res.SortedProducers.AddToConstructionList( new KeyValuePair<MachineStructure, int>( Structure, finalDesired ) );
+                                                    res.SortedJobProducers.AddToConstructionList( new KeyValuePair<MachineStructure, Int64>( Structure, finalDesired ) );
                                                     res.AlterCurrent_Job( finalDesired, Job, ResourceAddRule.IgnoreUntilTurnChange );
                                                     createdAnything = true;
                                                 }
@@ -678,7 +678,7 @@ namespace Arcen.HotM.ExternalVis
                                             if ( originalDesired > 0 )
                                             {
                                                 Job.DuringGame_InputsDesired.Construction[res] += originalDesired;
-                                                res.SortedConsumers.AddToConstructionList( new KeyValuePair<MachineStructure, int>( Structure, originalDesired ) );
+                                                res.SortedJobConsumers.AddToConstructionList( new KeyValuePair<MachineStructure, Int64>( Structure, originalDesired ) );
                                             }
                                             #endregion
                                         }
@@ -731,7 +731,7 @@ namespace Arcen.HotM.ExternalVis
                                         if ( originalDesired > 0 )
                                         {
                                             Job.DuringGame_InputsDesired.Construction[res] += originalDesired;
-                                            res.SortedConsumers.AddToConstructionList( new KeyValuePair<MachineStructure, int>( Structure, originalDesired ) );
+                                            res.SortedJobConsumers.AddToConstructionList( new KeyValuePair<MachineStructure, Int64>( Structure, originalDesired ) );
                                         }
                                         #endregion
                                     }

@@ -158,13 +158,9 @@ namespace Arcen.HotM.ExternalVis
                     case ScrapUnitMode.Androids:
                         #region Androids
                         {
-                            foreach ( ISimMachineActor actor in SimCommon.AllMachineActors.GetDisplayList() )
+                            foreach ( ISimMachineUnit unit in SimCommon.AllSortedAnyPlayerAndroids.GetDisplayList() )
                             {
-                                if ( !(actor is ISimMachineUnit unit) )
-                                    continue; //skip non-units
-                                if ( !(unit.UnitType?.IsConsideredAndroid??false) )
-                                    continue; //skip anything that's not an android
-                                if ( actor.CurrentActionOverTime != null )
+                                if ( unit.CurrentActionOverTime != null && (unit.CurrentActionOverTime?.Type?.BlocksBeingScrapped ?? false) )
                                     continue;
 
                                 RenderChoice( unit.GetShapeIcon(), delegate ( ArcenUI_Element element, UIAction Action, ref UIActionData ExtraData )
@@ -188,8 +184,11 @@ namespace Arcen.HotM.ExternalVis
                                                     ExtraData.Buffer.StartSize80().AddRaw( healthPercentage.ToStringIntPercent(), ColorTheme.SmallPopupTextSelected ).EndSize();
 
                                                     string colorHex = UIHelper.SetSmallOptionBGAndGetColor( element.Controller as ButtonAbstractBaseWithImage, false, false );
-                                                    ExtraData.Buffer.Position40().AddRaw( unit.GetDisplayName(), colorHex );
-                                                    ExtraData.Buffer.AddFormat1( "Parenthetical", unitType.UnitCapacityCost.ToString(), ColorTheme.RedOrange2 );
+                                                    ExtraData.Buffer.Position40().AddRaw( unit.GetDisplayName(), colorHex ).Space2x();
+                                                    if ( unit?.CurrentActionOverTime?.Type?.BlocksUnitCountingTowardCap ?? false )
+                                                        ExtraData.Buffer.AddFormat2( "ParentheticalOutOF", "0", unitType.UnitCapacityCost.ToString(), ColorTheme.DataBlue );
+                                                    else
+                                                        ExtraData.Buffer.AddFormat1( "Parenthetical", unitType.UnitCapacityCost.ToString(), ColorTheme.RedOrange2 );
                                                 }
                                                 break;
                                             case UIAction.HandleMouseover:
@@ -203,12 +202,12 @@ namespace Arcen.HotM.ExternalVis
                                                         VisManagerVeryBase.Instance.MainCamera_JumpCameraToPosition( unit.GetDrawLocation(), false );
                                                     else
                                                     {
-                                                        if ( !actor.PopupReasonCannotScrapIfCannot( ScrapReason.ReplacementByPlayer ) )
+                                                        if ( !unit.PopupReasonCannotScrapIfCannot( ScrapReason.ReplacementByPlayer ) )
                                                         {
                                                             ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
                                                             break;
                                                         }
-                                                        if ( actor.GetIsBlockedFromBeingScrappedRightNow() )
+                                                        if ( unit.GetIsBlockedFromBeingScrappedRightNow() )
                                                         {
                                                             ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
                                                             break;
@@ -242,13 +241,11 @@ namespace Arcen.HotM.ExternalVis
                     case ScrapUnitMode.Mechs:
                         #region Mechs
                         {
-                            foreach ( ISimMachineActor actor in SimCommon.AllMachineActors.GetDisplayList() )
+                            foreach ( ISimMachineUnit unit in SimCommon.AllSortedAnyPlayerMechs.GetDisplayList() )
                             {
-                                if ( !(actor is ISimMachineUnit unit) )
-                                    continue; //skip non-units
                                 if ( !(unit.UnitType?.IsConsideredMech??false) )
                                     continue; //skip anything that's not a mech
-                                if ( actor.CurrentActionOverTime != null )
+                                if ( unit.CurrentActionOverTime != null && (unit.CurrentActionOverTime?.Type?.BlocksBeingScrapped ?? false) )
                                     continue;
 
                                 RenderChoice( unit.GetShapeIcon(), delegate ( ArcenUI_Element element, UIAction Action, ref UIActionData ExtraData )
@@ -272,8 +269,11 @@ namespace Arcen.HotM.ExternalVis
                                                     ExtraData.Buffer.StartSize80().AddRaw( healthPercentage.ToStringIntPercent(), ColorTheme.SmallPopupTextSelected ).EndSize();
 
                                                     string colorHex = UIHelper.SetSmallOptionBGAndGetColor( element.Controller as ButtonAbstractBaseWithImage, false, false );
-                                                    ExtraData.Buffer.Position40().AddRaw( unit.GetDisplayName(), colorHex );
-                                                    ExtraData.Buffer.AddFormat1( "Parenthetical", unitType.UnitCapacityCost.ToString(), ColorTheme.RedOrange2 );
+                                                    ExtraData.Buffer.Position40().AddRaw( unit.GetDisplayName(), colorHex ).Space2x();
+                                                    if ( unit?.CurrentActionOverTime?.Type?.BlocksUnitCountingTowardCap ?? false )
+                                                        ExtraData.Buffer.AddFormat2( "ParentheticalOutOF", "0", unitType.UnitCapacityCost.ToString(), ColorTheme.DataBlue );
+                                                    else
+                                                        ExtraData.Buffer.AddFormat1( "Parenthetical", unitType.UnitCapacityCost.ToString(), ColorTheme.RedOrange2 );
                                                 }
                                                 break;
                                             case UIAction.HandleMouseover:
@@ -287,12 +287,12 @@ namespace Arcen.HotM.ExternalVis
                                                         VisManagerVeryBase.Instance.MainCamera_JumpCameraToPosition( unit.GetDrawLocation(), false );
                                                     else
                                                     {
-                                                        if ( !actor.PopupReasonCannotScrapIfCannot( ScrapReason.ReplacementByPlayer ) )
+                                                        if ( !unit.PopupReasonCannotScrapIfCannot( ScrapReason.ReplacementByPlayer ) )
                                                         {
                                                             ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
                                                             break;
                                                         }
-                                                        if ( actor.GetIsBlockedFromBeingScrappedRightNow() )
+                                                        if ( unit.GetIsBlockedFromBeingScrappedRightNow() )
                                                         {
                                                             ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
                                                             break;
@@ -326,11 +326,9 @@ namespace Arcen.HotM.ExternalVis
                     case ScrapUnitMode.Vehicles:
                         #region Vehicles
                         {
-                            foreach ( ISimMachineActor actor in SimCommon.AllMachineActors.GetDisplayList() )
+                            foreach ( ISimMachineVehicle vehicle in SimCommon.AllSortedPlayerVehicles.GetDisplayList() )
                             {
-                                if ( !(actor is ISimMachineVehicle vehicle) )
-                                    continue; //skip non-units
-                                if ( actor.CurrentActionOverTime != null )
+                                if ( vehicle.CurrentActionOverTime != null && (vehicle.CurrentActionOverTime?.Type?.BlocksBeingScrapped??false) )
                                     continue;
 
                                 RenderChoice( vehicle.GetShapeIcon(), delegate ( ArcenUI_Element element, UIAction Action, ref UIActionData ExtraData )
@@ -353,8 +351,11 @@ namespace Arcen.HotM.ExternalVis
                                                     ExtraData.Buffer.StartSize80().AddRaw( healthPercentage.ToStringIntPercent(), ColorTheme.SmallPopupTextSelected ).EndSize();
 
                                                     string colorHex = UIHelper.SetSmallOptionBGAndGetColor( element.Controller as ButtonAbstractBaseWithImage, false, false );
-                                                    ExtraData.Buffer.Position40().AddRaw( vehicle.GetDisplayName(), colorHex );
-                                                    ExtraData.Buffer.AddFormat1( "Parenthetical", vehicleType.VehicleCapacityCost.ToString(), ColorTheme.RedOrange2 );
+                                                    ExtraData.Buffer.Position40().AddRaw( vehicle.GetDisplayName(), colorHex ).Space2x();
+                                                    if ( vehicle?.CurrentActionOverTime?.Type?.BlocksUnitCountingTowardCap ?? false )
+                                                        ExtraData.Buffer.AddFormat2( "ParentheticalOutOF", "0", vehicleType.VehicleCapacityCost.ToString(), ColorTheme.DataBlue );
+                                                    else
+                                                        ExtraData.Buffer.AddFormat1( "Parenthetical", vehicleType.VehicleCapacityCost.ToString(), ColorTheme.RedOrange2 );
                                                 }
                                                 break;
                                             case UIAction.HandleMouseover:
@@ -407,7 +408,7 @@ namespace Arcen.HotM.ExternalVis
                     case ScrapUnitMode.BulkAndroids:
                         #region BulkAndroids
                         {
-                            foreach ( ISimNPCUnit npc in SimCommon.AllPlayerRelatedNPCUnits.GetDisplayList() )
+                            foreach ( ISimNPCUnit npc in SimCommon.AllSortedPlayerBulkNPCUnits.GetDisplayList() )
                             {
                                 if ( npc.IsFullDead || npc == null )
                                     continue;
@@ -479,7 +480,7 @@ namespace Arcen.HotM.ExternalVis
                     case ScrapUnitMode.CapturedUnits:
                         #region CapturedUnits
                         {
-                            foreach ( ISimNPCUnit npc in SimCommon.AllPlayerRelatedNPCUnits.GetDisplayList() )
+                            foreach ( ISimNPCUnit npc in SimCommon.AllSortedPlayerConvertedNPCUnits.GetDisplayList() )
                             {
                                 if ( npc.IsFullDead || npc == null )
                                     continue;

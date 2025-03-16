@@ -68,22 +68,25 @@ namespace Arcen.HotM.External
                 flag.ImplementationOrNull?.DoPerSecondEvenIfAlreadyTripped( flag, RandForThisSecond );
 
             foreach ( MetaFlag flag in MetaFlagTable.FlagsWithCode )
-                flag.ImplementationOrNull?.DoPerSecondEvenIfAlreadyTripped( flag, RandForThisSecond );    
+                flag.ImplementationOrNull?.DoPerSecondEvenIfAlreadyTripped( flag, RandForThisSecond );
+
+            foreach ( ResourceType resource in ResourceTypeTable.Instance.Rows )
+                resource.RecalculateNamedProducerAndConsumerLists();
 
             //if ( !SimCommon.IsCurrentlyRunningSimTurn )
             //{
             //    long msAtStart = SimFramingStopwatch.ElapsedMilliseconds;
 
-            //    foreach ( KeyValuePair<int, NPCUnit> kv in World_Forces.AllNPCUnitsByID )
-            //    {
-            //        NPCUnit unit = kv.Value;
-            //        if ( unit == null || unit.IsFullDead && unit.IsInvalid )
-            //            continue;
-            //        //todo actual aggro revisions as-needed
-            //    }
+                //    foreach ( KeyValuePair<int, NPCUnit> kv in World_Forces.AllNPCUnitsByID )
+                //    {
+                //        NPCUnit unit = kv.Value;
+                //        if ( unit == null || unit.IsFullDead && unit.IsInvalid )
+                //            continue;
+                //        //todo actual aggro revisions as-needed
+                //    }
 
-            //    SimTimingInfo.PerSecondTargeting.LogCurrentMilliseconds( (int)(SimFramingStopwatch.ElapsedMilliseconds - msAtStart) );
-            //}
+                //    SimTimingInfo.PerSecondTargeting.LogCurrentMilliseconds( (int)(SimFramingStopwatch.ElapsedMilliseconds - msAtStart) );
+                //}
             SimCommon.HasRunAtLeastOneRealSecond = true;
         }
 

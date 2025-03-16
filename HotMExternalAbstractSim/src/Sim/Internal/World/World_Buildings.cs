@@ -249,6 +249,12 @@ namespace Arcen.HotM.External
                     swarm.DuringGame_TotalSwarmCount.ClearConstructionValueForStartingConstruction();
                 }
 
+                foreach ( BuildingType type in BuildingTypeTable.Instance.Rows )
+                {
+                    foreach ( KeyValuePair<string, BuildingTypeVariant> v_kv in type.Variants )
+                        v_kv.Value.DuringGame_NumberExtant.ClearConstructionValueForStartingConstruction();
+                }
+
                 debugStage = 25000;
 
                 World_People.AllJobs.ClearConstructionDictForStartingConstruction();
@@ -459,7 +465,7 @@ namespace Arcen.HotM.External
                                 BuildingsWithBrokenMachineStructures.AddToConstructionList( building );
                                 BuildingsWithDamagedMachineStructures.AddToConstructionList( building );
                             }
-                            else if ( !machineStructure.IsUnderConstruction && machineStructure.GetActorDataLostFromMax( ActorRefs.ActorHP, true ) > 0 )
+                            else if ( !machineStructure.IsUnderConstruction && !!machineStructure.IsJobStillInstalling && machineStructure.GetActorDataLostFromMax( ActorRefs.ActorHP, true ) > 0 )
                                 BuildingsWithDamagedMachineStructures.AddToConstructionList( building );
 
                             float jobEffectRange = 0;
@@ -678,6 +684,9 @@ namespace Arcen.HotM.External
                     debugStage = 196000;
 
                     debugStage = 198000;
+
+                    if ( isFunctionalBuilding && variant != null )
+                        variant.DuringGame_NumberExtant.Construction++;
 
                     if ( isFunctionalBuilding && //don't include non-functional buildings in this
                         cell != null && cell.ShouldHaveCityLifeRightNow ) //means it is nearby
@@ -915,6 +924,12 @@ namespace Arcen.HotM.External
                     }
                 }
                 SwarmTable.Instance.ActiveSwarms.SwitchConstructionToDisplay();
+
+                foreach ( BuildingType type in BuildingTypeTable.Instance.Rows )
+                {
+                    foreach ( KeyValuePair<string, BuildingTypeVariant> v_kv in type.Variants )
+                        v_kv.Value.DuringGame_NumberExtant.SwitchConstructionToDisplay();
+                }
 
                 debugStage = 447000;
 

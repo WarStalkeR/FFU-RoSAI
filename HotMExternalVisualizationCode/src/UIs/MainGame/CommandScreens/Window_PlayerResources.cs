@@ -68,7 +68,7 @@ namespace Arcen.HotM.ExternalVis
         private static string TPSReports_LastFilterText = string.Empty;
         private static int TPSReports_lastTurn = 0;
 
-        private static IProducerConsumerTarget InputOutput_target = null;
+        public static IProducerConsumerTarget InputOutput_target = null;
 
         public static CustomUIAbstractBase CustomParentInstance;
         public class customParent : CustomUIAbstractBase
@@ -537,7 +537,20 @@ namespace Arcen.HotM.ExternalVis
                             }
                             break;
                         case UIAction.OnClick:
-                            resource.IsPinnedToTopBar = !resource.IsPinnedToTopBar;
+                            if ( InputCaching.IsInInspectMode_Any && !resource.IsStrategicResource )
+                            {
+                                if ( resource.GetHasAnyDataForInputOutputView() )
+                                {
+                                    customParent.currentlyRequestedDisplayType = ResourcesDisplayType.InputOutput;
+                                    InputOutput_target = resource;
+                                }
+                                else
+                                    ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
+                            }
+                            else
+                            {
+                                resource.IsPinnedToTopBar = !resource.IsPinnedToTopBar;
+                            }
                             break;
                     }
                 } );
@@ -1244,7 +1257,20 @@ namespace Arcen.HotM.ExternalVis
                             resource.RenderLedgerReportTooltip( element, SideClamp.AboveOrBelow, TooltipShadowStyle.Standard );
                             break;
                         case UIAction.OnClick:
-                            resource.IsLedgerIgnored = !resource.IsLedgerIgnored;
+                            if ( InputCaching.IsInInspectMode_Any )
+                            {
+                                if ( resource.GetHasAnyDataForInputOutputView() )
+                                {
+                                    customParent.currentlyRequestedDisplayType = ResourcesDisplayType.InputOutput;
+                                    InputOutput_target = resource;
+                                }
+                                else
+                                    ParticleSoundRefs.BlockedSound.DuringGame_PlaySoundOnlyAtCamera();
+                            }
+                            else
+                            {
+                                resource.IsLedgerIgnored = !resource.IsLedgerIgnored;
+                            }
                             break;
                     }
                 } );
@@ -1344,9 +1370,11 @@ namespace Arcen.HotM.ExternalVis
                     }
                     #endregion
 
-                    ListView<KeyValuePair<MachineStructure, int>> inputs = InputOutput_target.GetProducerListView();
-                    ListView<KeyValuePair<MachineStructure, int>> outputs = InputOutput_target.GetConsumerListView();
-                    int maxIndex = MathA.Max( inputs.Count, outputs.Count );
+                    ListView<KeyValuePair<MachineStructure, Int64>> inputsJob = InputOutput_target.GetJobProducerListView();
+                    ListView<KeyValuePair<MachineStructure, Int64>> outputsJob = InputOutput_target.GetJobConsumerListView();
+                    ListView<KeyValuePair<TrendChangeReason, Int64>> inputsNamed = InputOutput_target.GetNamedProducerListView();
+                    ListView<KeyValuePair<TrendChangeReason, Int64>> outputsNamed = InputOutput_target.GetNamedConsumerListView();
+                    int maxIndex = MathA.Max( inputsJob.Count + inputsNamed.Count, outputsJob.Count + outputsNamed.Count );
 
                     for ( int i = 0; i < maxIndex; i++ )
                     {
@@ -1356,18 +1384,38 @@ namespace Arcen.HotM.ExternalVis
                         if ( leftBounds.yMax > maxYToShow )
                             continue; //this is below where we are scrolled, so let's skip this, too!  We won't break out, because we need runningY to be fully calculated
 
-                        if ( i < inputs.Count )
+                        if ( i < inputsJob.Count )
                         {
-                            KeyValuePair<MachineStructure, int> kv = inputs[i];
+                            KeyValuePair<MachineStructure, Int64> kv = inputsJob[i];
                             kv.Key.NonSim_WorkingProducerAmount = kv.Value;
                             HandleInputOutputStructure( kv.Key, true, leftBounds );
                         }
-
-                        if ( i < outputs.Count )
+                        else 
                         {
-                            KeyValuePair<MachineStructure, int> kv = outputs[i];
+                            int subI = i - inputsJob.Count;
+                            if ( subI < inputsNamed.Count )
+                            {
+                                KeyValuePair<TrendChangeReason, Int64> kv = inputsNamed[subI];
+                                kv.Key.NonSim_WorkingProducerAmount = kv.Value;
+                                HandleInputOutputNamed( kv.Key, true, leftBounds );
+                            }
+                        }
+
+                        if ( i < outputsJob.Count )
+                        {
+                            KeyValuePair<MachineStructure, Int64> kv = outputsJob[i];
                             kv.Key.NonSim_WorkingConsumerAmount = kv.Value;
                             HandleInputOutputStructure( kv.Key, false, rightBounds );
+                        }
+                        else
+                        {
+                            int subI = i - outputsJob.Count;
+                            if ( subI < outputsNamed.Count )
+                            {
+                                KeyValuePair<TrendChangeReason, Int64> kv = outputsNamed[subI];
+                                kv.Key.NonSim_WorkingConsumerAmount = kv.Value;
+                                HandleInputOutputNamed( kv.Key, false, rightBounds );
+                            }
                         }
                     }
                 }
@@ -1377,6 +1425,9 @@ namespace Arcen.HotM.ExternalVis
 
             private bool HandleInputOutputStructure( MachineStructure structure, bool IsProducer, Rect bounds )
             {
+                if ( structure == null )
+                    return false;
+
                 bDataAdjustedItem row = bDataAdjustedItemPool.GetOrAddEntry_OrNullIfTimeSlicingTooManyAdds();
                 if ( row == null )
                     return false;
@@ -1411,6 +1462,51 @@ namespace Arcen.HotM.ExternalVis
                         case UIAction.OnClick:
                             Instance.Close( WindowCloseReason.UserDirectRequest );
                             Engine_HotM.SetSelectedActor( structure, true, false, false );
+                            break;
+                    }
+                } );
+                return true;
+            }
+
+            private bool HandleInputOutputNamed( TrendChangeReason reason, bool IsProducer, Rect bounds )
+            {
+                if ( reason == null )
+                    return false;
+
+                bDataAdjustedItem row = bDataAdjustedItemPool.GetOrAddEntry_OrNullIfTimeSlicingTooManyAdds();
+                if ( row == null )
+                    return false;
+                bDataAdjustedItemPool.ApplySingleItemInRow( row, bounds, true );
+
+                row.Assign( IsProducer ? "NamedProducer" : "NamedConsumer", reason.ID, delegate ( ArcenUI_Element element, UIAction Action, ref UIActionData ExtraData )
+                {
+                    switch ( Action )
+                    {
+                        case UIAction.GetTextToShowFromVolatile:
+                            {
+                                bool isHovered = element.LastHadMouseWithin;
+                                row.SetRelatedImage0EnabledIfNeeded( isHovered );
+                                ExtraData.Buffer.StartColor( ColorTheme.GetBasicLightTextBlue( isHovered ) );
+
+                                ExtraData.Buffer.StartSize80();
+                                if ( IsProducer )
+                                    ExtraData.Buffer.AddRaw( reason.NonSim_WorkingProducerAmount.ToStringThousandsWhole(), ColorTheme.CategorySelectedBlue );
+                                else
+                                    ExtraData.Buffer.AddRaw( reason.NonSim_WorkingConsumerAmount.ToStringThousandsWhole(), ColorTheme.RedOrange2 );
+
+                                ExtraData.Buffer.Position70();
+                                //ExtraData.Buffer.AddSpriteStyled_NoIndent( structure.GetShapeIcon(), AdjustedSpriteStyle.InlineLarger1_8 ).Space1x();
+                                ExtraData.Buffer.AddRaw( reason.GetDisplayName() );
+                            }
+                            break;
+                        case UIAction.HandleMouseover:
+                            {
+                                //structure.RenderTooltip( element, SideClamp.LeftOrRight, TooltipShadowStyle.Standard, false, ActorTooltipExtraData.None, TooltipExtraRules.None );
+                            }
+                            break;
+                        case UIAction.OnClick:
+                            //Instance.Close( WindowCloseReason.UserDirectRequest );
+                            //Engine_HotM.SetSelectedActor( structure, true, false, false );
                             break;
                     }
                 } );
