@@ -32,16 +32,16 @@ namespace Arcen.HotM.FFU.RoSAI {
             IA5RendererGroup rendGroup = primaryRend.Group;
             if (rendGroup == null) return;
 
-            Matrix4x4 parentMatrix; 
+            Matrix4x4 parentMatrix;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if (primaryRend.Rotates) rot *= primaryRend.RotationForInGameGlobal;
-                Vector3 pos = item.Position;
+                Vector3 pos = item.rawReadPos;
                 if (IsMapMode) pos.y += EXTRA_Y_IN_MAP_MODE;
 
-                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_BasicColor(pos, rot, 
-                item.Scale.ComponentWiseMult(ScaleMult), RenderColorStyle.HighlightColor, 
-                ColorForHighlight, RenderOpacity.Normal, false);
+                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_BasicColor(pos, rot,
+                    item.Scale.ComponentWiseMult(ScaleMult), RenderColorStyle.HighlightColor,
+                    ColorForHighlight, RenderOpacity.Normal, false);
             }
 
             if (item.Type.SecondarysRenderersOfThisRoot.Count > 0) {
@@ -56,8 +56,8 @@ namespace Arcen.HotM.FFU.RoSAI {
                     if (secondaryRend.Rotates) rot *= secondaryRend.RotationForInGameGlobal;
 
                     rendGroup.WriteToDrawBufferForOneFrame_BasicColor(secondaryRend.LocalPos, rot, 
-                    secondaryRend.LocalScale, parentMatrix, RenderColorStyle.HighlightColor, 
-                    ColorForHighlight, RenderOpacity.Normal, false);
+                        secondaryRend.LocalScale, parentMatrix, RenderColorStyle.HighlightColor, 
+                        ColorForHighlight, RenderOpacity.Normal, false);
                 }
             }
         }

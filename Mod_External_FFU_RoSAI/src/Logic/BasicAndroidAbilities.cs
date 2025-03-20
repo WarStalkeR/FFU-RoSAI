@@ -139,7 +139,6 @@ namespace Arcen.HotM.FFU.RoSAI {
                         int peopleTotal = 0;
                         int peopleResidents = 0;
                         int peopleWorkers = 0;
-                        int legalIssues = 0;
                         int buildingVolume = 0;
                         int buildingStorage = 0;
                         int buildingFloorArea = 0;
@@ -148,27 +147,11 @@ namespace Arcen.HotM.FFU.RoSAI {
                             peopleResidents = buildingUnderCursor.GetTotalResidentCount();
                             peopleWorkers = buildingUnderCursor.GetTotalWorkerCount();
                             peopleTotal = peopleResidents + peopleWorkers;
-                            float legalOverhead = 0;
-                            foreach (var legalEntity in buildingUnderCursor.GetBuildingData()) {
-                                legalIssues += legalEntity.Value;
-                                switch (legalEntity.Key.ID) {
-                                    case "MilitaryPresence": legalOverhead += legalEntity.Value * ModRefs.LEGAL_MILITARY; break;
-                                    case "SecForcesPresence": legalOverhead += legalEntity.Value * ModRefs.LEGAL_SECURITY; break;
-                                    case "CrimeSyndicatePresence": legalOverhead += legalEntity.Value * ModRefs.LEGAL_SYNDICATE; break;
-                                    case "HackerPresence": legalOverhead += legalEntity.Value * ModRefs.LEGAL_HACKERS; break;
-                                    case "HostileCultPresence": legalOverhead += legalEntity.Value * ModRefs.LEGAL_CULT; break;
-                                    case "GangCrime": legalOverhead += legalEntity.Value * ModRefs.LEGAL_GANGS; break;
-                                    case "BlackMarket": legalOverhead += legalEntity.Value * ModRefs.LEGAL_MARKET; break;
-                                    case "Vermin": legalOverhead += legalEntity.Value * ModRefs.LEGAL_VERMIN; break;
-                                    case "BacterialLoad": legalOverhead += legalEntity.Value * ModRefs.LEGAL_BACTERIA; break;
-                                    default: legalOverhead += legalEntity.Value * 1f; break;
-                                }
-                            }
                             BuildingPrefab buildingPrefab = buildingUnderCursor.GetPrefab();
                             buildingVolume = buildingPrefab.NormalTotalBuildingVolumeFullDimensions;
                             buildingStorage = buildingPrefab.NormalTotalStorageVolumeFullDimensions;
                             buildingFloorArea = buildingPrefab.NormalTotalBuildingFloorAreaFullDimensions;
-                            totalEvictionCost = (int)(costMult * (baseCost + peopleTotal + legalOverhead +
+                            totalEvictionCost = (int)(costMult * (baseCost + peopleTotal +
                             buildingVolume * ModRefs.EVICT_VOLUME_MULT +
                             buildingStorage * ModRefs.EVICT_STORAGE_MULT +
                             buildingFloorArea * ModRefs.EVICT_AREA_MULT));
@@ -188,11 +171,10 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 var costInfo = novel.Main.StartLineHeight10().AddRaw(variant.GetDisplayName()).Line();
                                 if (peopleResidents > 0) costInfo.Line().AddFormat1("InfoResidents", peopleResidents.ToStringThousandsWhole());
                                 if (peopleWorkers > 0) costInfo.Line().AddFormat1("InfoWorkers", peopleWorkers.ToStringThousandsWhole());
-                                if (legalIssues > 0) costInfo.Line().AddFormat1("InfoLegalIssues", legalIssues.ToStringThousandsWhole());
                                 if (buildingVolume > 0) costInfo.Line().AddFormat1("InfoVolume", buildingVolume.ToStringThousandsWhole());
                                 if (buildingStorage > 0) costInfo.Line().AddFormat1("InfoStorage", buildingStorage.ToStringThousandsWhole());
                                 if (buildingFloorArea > 0) costInfo.Line().AddFormat1("InfoArea", buildingFloorArea.ToStringThousandsWhole());
-                                if (peopleResidents > 0 || peopleWorkers > 0 || legalIssues > 0 || buildingVolume > 0 || buildingStorage > 0 || buildingFloorArea > 0) costInfo.Line();
+                                if (peopleResidents > 0 || peopleWorkers > 0 || buildingVolume > 0 || buildingStorage > 0 || buildingFloorArea > 0) costInfo.Line();
                                 if (peopleTotal > 0) costInfo.Line().AddFormat1("ResultPeople", peopleTotal.ToStringThousandsWhole());
                                 if (totalEvictionCost > 0) costInfo.Line().AddFormat1("ResultFunds", totalEvictionCost.ToStringThousandsWhole());
                                 if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.Line().AddLang("MissingFunds");
@@ -215,11 +197,10 @@ namespace Arcen.HotM.FFU.RoSAI {
                                 var costInfo = novel.Main.StartLineHeight10().AddRaw(variant.GetDisplayName()).Line();
                                 if (peopleResidents > 0) costInfo.Line().AddFormat1("InfoResidents", peopleResidents.ToStringThousandsWhole());
                                 if (peopleWorkers > 0) costInfo.Line().AddFormat1("InfoWorkers", peopleWorkers.ToStringThousandsWhole());
-                                if (legalIssues > 0) costInfo.Line().AddFormat1("InfoLegalIssues", legalIssues.ToStringThousandsWhole());
                                 if (buildingVolume > 0) costInfo.Line().AddFormat1("InfoVolume", buildingVolume.ToStringThousandsWhole());
                                 if (buildingStorage > 0) costInfo.Line().AddFormat1("InfoStorage", buildingStorage.ToStringThousandsWhole());
                                 if (buildingFloorArea > 0) costInfo.Line().AddFormat1("InfoArea", buildingFloorArea.ToStringThousandsWhole());
-                                if (peopleResidents > 0 || peopleWorkers > 0 || legalIssues > 0 || buildingVolume > 0 || buildingStorage > 0 || buildingFloorArea > 0) costInfo.Line();
+                                if (peopleResidents > 0 || peopleWorkers > 0 || buildingVolume > 0 || buildingStorage > 0 || buildingFloorArea > 0) costInfo.Line();
                                 if (peopleTotal > 0) costInfo.Line().AddFormat1("ResultPeople", peopleTotal.ToStringThousandsWhole());
                                 if (totalEvictionCost > 0) costInfo.Line().AddFormat1("ResultFunds", totalEvictionCost.ToStringThousandsWhole());
                                 if (ResourceRefs.Wealth.Current < totalEvictionCost) costInfo.Line().AddLang("MissingFunds");
