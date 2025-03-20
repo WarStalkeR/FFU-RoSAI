@@ -477,9 +477,12 @@ namespace Arcen.HotM.External
                 {
                     unit.SetActualGroundLocation( unit.drawLocation ); //must be done BEFORE TurnsSinceMoved and HasMovedThisTurn
 
-                    if (SimCommon.Turn > 1 )
-                        ArcenDebugging.LogSingleLine( "NPCUnit: Asked for MapOutdoorSpot with ID " + ContainerOutdoorSpotID + ", but not found (" +
-                            World_OutdoorSpots.OutdoorSpotsByID.Count + " spots).", Verbosity.ShowAsError );
+                    //if ( SimCommon.Turn > 1 )
+                    //{
+                    //    if ( !(unit.CalculateMapCell()?.ParentTile?.IsOutOfBoundsTile??false) )
+                    //        ArcenDebugging.LogSingleLine( "NPCUnit: Asked for MapOutdoorSpot with ID " + ContainerOutdoorSpotID + ", but not found (" +
+                    //            World_OutdoorSpots.OutdoorSpotsByID.Count + " spots). And was not an out of bounds tile.", Verbosity.ShowAsError );
+                    //}
                 }
             }
 
@@ -4060,7 +4063,7 @@ namespace Arcen.HotM.External
                             bool isFirst = true;
                             foreach ( NPCCohort cohort in NPCCohortTable.Instance.Rows )
                             {
-                                int aggroAmount = this.GetAmountHasAggroedNPCCohort( cohort );
+                                int aggroAmount = this.GetAmountHasAggroedNPCCohort( cohort , null, null );
                                 if ( aggroAmount > 0 )
                                 {
                                     if ( isFirst )
@@ -4593,25 +4596,37 @@ namespace Arcen.HotM.External
                 }
             }
 
+            if ( myStance.IsInvadingCity && otherStance.IsInvadingCity )
+                isLikelyFriend = true;
+
             if ( isLikelyFriend )
                 return false; //they are friend here, with no overriding enemy status from second conflict. No fight.
 
             if ( theyArePlayer && this.GetWillFireOnMachineUnitsBaseline() )
             {
+                if ( myStance.WillHoldFireAgainstPlayerNoncombatants && otherStance.IsConsideredNoncombatant )
+                    return false; //I don't shoot noncombatants, whatever they are up to
+
                 if ( !myStance.WillAttackShellCompanyMachinesEvenIfNotAggroed && (OtherUnit.UnitType?.IsTiedToShellCompany??false) )
                 {
-                    if ( this.GetAmountHasAggroedNPCCohort( otherCohort ) > 0 || OtherUnit.GetAmountHasAggroedNPCCohort( myCohort ) > 0 )
+                    if ( this.GetAmountHasAggroedNPCCohort( otherCohort, myStance, otherStance ) > 0 || OtherUnit.GetAmountHasAggroedNPCCohort( myCohort, myStance, otherStance ) > 0 )
                         return true; //if one of us aggroed the other, then we are going to fight regardless of other things, EXCEPT what the megacorp told us to do
                     return false; //they're the wrong kind, ignore them
                 }
                 else if ( myStance.WillAttackShellCompanyMachinesEvenIfNotAggroed && !(OtherUnit.UnitType?.IsTiedToShellCompany ?? false) )
                 {
-                    if ( this.GetAmountHasAggroedNPCCohort( otherCohort ) > 0 || OtherUnit.GetAmountHasAggroedNPCCohort( myCohort ) > 0 )
+                    if ( this.GetAmountHasAggroedNPCCohort( otherCohort, myStance, otherStance ) > 0 || OtherUnit.GetAmountHasAggroedNPCCohort( myCohort, myStance, otherStance ) > 0 )
                         return true; //if one of us aggroed the other, then we are going to fight regardless of other things, EXCEPT what the megacorp told us to do
                     return false; //they're the wrong kind, ignore them
                 }
 
                 return true; //that's a player unit, so get them
+            }
+
+            if ( myStance.BackgroundWarType > 0 && otherStance.BackgroundWarType == myStance.BackgroundWarType )
+            {
+                if ( this.FromCohort != OtherUnit.FromCohort )
+                    return true; //we are in a war and not friends. Shoot each other!
             }
 
             if ( myStance.WillHoldFireAgainstNoncombatants && otherStance.IsConsideredNoncombatant )
@@ -4656,13 +4671,13 @@ namespace Arcen.HotM.External
                 {
                     if ( !otherStance.WillAttackShellCompanyMachinesEvenIfNotAggroed && (this.UnitType?.IsTiedToShellCompany ?? false) )
                     {
-                        if ( this.GetAmountHasAggroedNPCCohort( otherCohort ) > 0 || OtherUnit.GetAmountHasAggroedNPCCohort( myCohort ) > 0 )
+                        if ( this.GetAmountHasAggroedNPCCohort( otherCohort, myStance, otherStance ) > 0 || OtherUnit.GetAmountHasAggroedNPCCohort( myCohort, myStance, otherStance ) > 0 )
                             return true; //if one of us aggroed the other, then we are going to fight regardless of other things, EXCEPT what the megacorp told us to do
                         return false; //they're the wrong kind, ignore them
                     }
                     else if ( otherStance.WillAttackShellCompanyMachinesEvenIfNotAggroed && !(this.UnitType?.IsTiedToShellCompany ?? false) )
                     {
-                        if ( this.GetAmountHasAggroedNPCCohort( otherCohort ) > 0 || OtherUnit.GetAmountHasAggroedNPCCohort( myCohort ) > 0 )
+                        if ( this.GetAmountHasAggroedNPCCohort( otherCohort, myStance, otherStance ) > 0 || OtherUnit.GetAmountHasAggroedNPCCohort( myCohort, myStance, otherStance ) > 0 )
                             return true; //if one of us aggroed the other, then we are going to fight regardless of other things, EXCEPT what the megacorp told us to do
                         return false; //they're the wrong kind, ignore them
                     }
@@ -4718,7 +4733,7 @@ namespace Arcen.HotM.External
             if ( myCohort.RowIndexNonSim == otherCohort.RowIndexNonSim )
                 return false; //we never shoot at units from the exact same group
 
-            if ( this.GetAmountHasAggroedNPCCohort( otherCohort ) > 0 || OtherUnit.GetAmountHasAggroedNPCCohort( myCohort ) > 0 )
+            if ( this.GetAmountHasAggroedNPCCohort( otherCohort, myStance, otherStance ) > 0 || OtherUnit.GetAmountHasAggroedNPCCohort( myCohort, myStance, otherStance ) > 0 )
                 return true; //if one of us aggroed the other, then we are going to fight regardless of other things, EXCEPT what the megacorp told us to do
 
             if ( myStance.IsConsideredActiveCohortGuard && otherStance.WillAttackAllActiveCohortGuards )
@@ -4841,7 +4856,8 @@ namespace Arcen.HotM.External
                         if ( this.GetIsAnAllyFromThePlayerPerspective() )
                             return false;
 
-                        bool isAggroed = machineActor.GetAmountHasAggroedNPCCohort( this.FromCohort ) > 0 || (TheoreticalAggroedCohort != null && TheoreticalAggroedCohort == this.FromCohort);
+                        bool isAggroed = machineActor.GetAmountHasAggroedNPCCohort( this.FromCohort, this.Stance, (Target as ISimNPCUnit)?.Stance ) > 0 || 
+                            (TheoreticalAggroedCohort != null && TheoreticalAggroedCohort == this.FromCohort);
                         if ( !isAggroed )
                         {
                             MobileActorTypeDuringGameData dgd = machineActor.GetTypeDuringGameData();
@@ -4915,7 +4931,8 @@ namespace Arcen.HotM.External
                         if ( this.Stance.WillAttackOutcastMachinesAtOrAboveLevel >= machineActor.OutcastLevel )
                             return true;
                     }
-                    bool isAggroed = machineActor.GetAmountHasAggroedNPCCohort( this.FromCohort ) > 0 || (TheoreticalAggroedCohort != null && TheoreticalAggroedCohort == this.FromCohort);
+                    bool isAggroed = machineActor.GetAmountHasAggroedNPCCohort( this.FromCohort, this.Stance, (Target as ISimNPCUnit)?.Stance ) > 0 || 
+                        (TheoreticalAggroedCohort != null && TheoreticalAggroedCohort == this.FromCohort);
                     if ( !isAggroed )
                     {
                         MobileActorTypeDuringGameData dgd = machineActor.GetTypeDuringGameData();
@@ -5005,7 +5022,7 @@ namespace Arcen.HotM.External
                 if ( this.GetIsAnAllyFromThePlayerPerspective() )
                     return false;
 
-                bool isAggroed = machineActor.GetAmountHasAggroedNPCCohort( this.FromCohort ) > 0;
+                bool isAggroed = machineActor.GetAmountHasAggroedNPCCohort( this.FromCohort, this.Stance, (Target as ISimNPCUnit)?.Stance ) > 0;
                 if ( !isAggroed )
                 {
                     MobileActorTypeDuringGameData dgd = machineActor.GetTypeDuringGameData();
@@ -5204,7 +5221,7 @@ namespace Arcen.HotM.External
                         if ( this.Stance.WillAttackOutcastMachinesAtOrAboveLevel >= machineActor.OutcastLevel )
                             return true;
                     }
-                    bool isAggroed = machineActor.GetAmountHasAggroedNPCCohort( this.FromCohort ) > 0;
+                    bool isAggroed = machineActor.GetAmountHasAggroedNPCCohort( this.FromCohort, this.Stance, (Target as ISimNPCUnit)?.Stance ) > 0;
                     if ( !isAggroed )
                     {
                         if ( !this.GetWillFireOnMachineUnitsBaseline() ) //we only care about this if we are not specifically aggroed at the target

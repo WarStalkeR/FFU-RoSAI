@@ -1705,7 +1705,7 @@ namespace Arcen.HotM.External
                                 ) )
                                 continue; //if we would intersect some existing collidable
 
-                            float squareDistance = (building.Position.ReplaceY( 0 ) - unitSpot).GetSquareGroundMagnitude();
+                            float squareDistance = (building.rawReadPos.ReplaceY( 0 ) - unitSpot).GetSquareGroundMagnitude();
                             if ( closestBuilding == null || squareDistance < closestSquareDistance )
                             {
                                 closestBuilding = building;
@@ -1826,7 +1826,7 @@ namespace Arcen.HotM.External
                                     ) )
                                     continue; //if we would intersect some existing collidable
 
-                                float squareDistance = (building.Position.ReplaceY( 0 ) - unitSpot).GetSquareGroundMagnitude();
+                                float squareDistance = (building.rawReadPos.ReplaceY( 0 ) - unitSpot).GetSquareGroundMagnitude();
                                 if ( closestBuilding == null || squareDistance < closestSquareDistance )
                                 {
                                     closestBuilding = building;

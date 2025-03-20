@@ -77,7 +77,7 @@ namespace Arcen.HotM.ExternalVis
                     if ( cell.ParentTile.IsOutOfBoundsTile )
                         continue;
 
-                    ArcenGroundPoint loc = cell.CellLocation;
+                    ArcenGroundPoint loc = cell.rawCellLocation;
                     if ( loc.X < minX )
                         minX = loc.X;
                     if ( loc.X > maxX ) 
@@ -177,7 +177,7 @@ namespace Arcen.HotM.ExternalVis
                 workingCellsSource = workingCellsSource.Count > 0 ? workingCellsSource : workingCells4;
                 for ( int i = workingCellsSource.Count - 1; i >= 0; i-- )
                 {
-                    ArcenGroundPoint loc = workingCellsSource[i].CellLocation;
+                    ArcenGroundPoint loc = workingCellsSource[i].rawCellLocation;
                     if ( loc.X <= minX || loc.X >= maxX ||
                         loc.Z <= minZ || loc.Z >= maxZ )
                     { }

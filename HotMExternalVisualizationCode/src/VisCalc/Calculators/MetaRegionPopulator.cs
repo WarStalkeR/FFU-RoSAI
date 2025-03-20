@@ -64,8 +64,8 @@ namespace Arcen.HotM.ExternalVis
 
                     MapItem item = MapItem.GetFromPoolOrCreate_NotFromSavegame( null ); //test purpose only in the level editor, so don't care
                     item.Type = place.ObjRoot;
-                    item.Position = place.TRSCache.LocalPos;
-                    item.Rotation = place.TRSCache.Rotation;
+                    item.SetPosition( place.TRSCache.LocalPos );
+                    item.SetRotation( place.TRSCache.Rotation );
                     item.Scale = place.TRSCache.LocalScale;
                     item.OBBCache.SetToOBB( place.OBBAndBoundsCache.OBB );
                     allPossibleObjectCollisions.Enqueue( item );
@@ -419,8 +419,8 @@ namespace Arcen.HotM.ExternalVis
 
                     MapItem item = MapItem.GetFromPoolOrCreate_NotFromSavegame( null ); //test purpose only in the level editor, so don't care
                     item.Type = inst.Type;
-                    item.Position = inst.Position;
-                    item.Rotation = inst.Rotation;
+                    item.SetPosition( inst.Position );
+                    item.SetRotation( inst.Rotation );
                     item.Scale = inst.Scale;
                     item.OBBCache.SetToOBB( newOBB );
                     addedBuildings.Add( item );
@@ -561,7 +561,7 @@ namespace Arcen.HotM.ExternalVis
                                     }
 
                                     if ( BoxMath.BoxIntersectsBox( newOBB.Center, newOBB.Size, newOBB.Rotation,
-                                        worldCenter, worldSize, existingItem.Rotation ) )
+                                        worldCenter, worldSize, existingItem.rawReadRot ) )
                                     {
                                         hadActualInnerCollision = true;
                                         break;

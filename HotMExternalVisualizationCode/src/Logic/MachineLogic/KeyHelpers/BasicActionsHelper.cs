@@ -1060,6 +1060,8 @@ namespace Arcen.HotM.ExternalVis
                                     {
                                         residentsUnhomed += residentCount;
                                         CityStatisticTable.AlterScore( "CitizensDisplacedWithFire", residentCount );
+
+                                        ResourceRefs.AbandonedHumans.AlterCurrent_Named( residentCount, "Increase_Flamethrower", ResourceAddRule.IgnoreUntilTurnChange );
                                     }
                                     CityStatisticTable.AlterScore( "SmallStructuresBurnedWithFlamethrower", 1 );
 

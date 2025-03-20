@@ -59,11 +59,11 @@ namespace Arcen.HotM.ExternalVis
             }
             else
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
 
-                Vector3 pos = item.Position;
+                Vector3 pos = item.rawReadPos;
                 pos.y += extraY;
 
                 if ( isOpaque )
@@ -82,28 +82,28 @@ namespace Arcen.HotM.ExternalVis
                 }
             }
 
-            //List<SecondaryRenderer> secondaries = item.Type.SecondarysRenderersOfThisRoot;
-            //if ( secondaries.Count > 0 )
-            //{
-            //    Quaternion rot;
-            //    for ( int i = 0; i < secondaries.Count; i++ )
-            //    {
-            //        SecondaryRenderer secondaryRend = secondaries[i];
-            //        rendGroup = secondaryRend.Group;
-            //        if ( rendGroup == null )
-            //            continue;
+            List<SecondaryRenderer> secondaries = item.Type.SecondarysRenderersOfThisRoot;
+            if ( secondaries.Count > 0 )
+            {
+                Quaternion rot;
+                for ( int i = 0; i < secondaries.Count; i++ )
+                {
+                    SecondaryRenderer secondaryRend = secondaries[i];
+                    rendGroup = secondaryRend.Group;
+                    if ( rendGroup == null )
+                        continue;
 
-            //        rot = secondaryRend.LocalRot;
-            //        if ( secondaryRend.Rotates )
-            //            rot *= secondaryRend.RotationForInGameGlobal;
+                    rot = secondaryRend.LocalRot;
+                    if ( secondaryRend.Rotates )
+                        rot *= secondaryRend.RotationForInGameGlobal;
 
-            //        Matrix4x4 secondaryMatrix = parentMatrix * Matrix4x4.TRS( secondaryRend.LocalPos, rot, secondaryRend.LocalScale );
-            //        if ( isOpaque )
-            //            rendGroup.WriteToDrawBufferForOneFrame_FogOfWarOpaque( secondaryMatrix );
-            //        else
-            //            rendGroup.WriteToDrawBufferForOneFrame_FogOfWarFading( secondaryMatrix, effectiveColor );
-            //    }
-            //}
+                    Matrix4x4 secondaryMatrix = parentMatrix * Matrix4x4.TRS( secondaryRend.LocalPos, rot, secondaryRend.LocalScale );
+                    if ( isOpaque )
+                        rendGroup.WriteToDrawBufferForOneFrame_FogOfWarOpaque( secondaryMatrix );
+                    else
+                        rendGroup.WriteToDrawBufferForOneFrame_FogOfWarFading( secondaryMatrix, effectiveColor );
+                }
+            }
             return true;
         }
         #endregion
@@ -136,11 +136,11 @@ namespace Arcen.HotM.ExternalVis
 
             Matrix4x4 parentMatrix;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 //if ( primaryRend.Rotates ) no rotation of burned things!
                 //    rot *= primaryRend.RotationForInGameGlobal;
 
-                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_MaskOffset( item.Position, rot,
+                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_MaskOffset( item.rawReadPos, rot,
                     item.Scale.ComponentWiseMult( SharedRenderManagerData.highlight_ScaleMult ), //we only do this here, not on the children, because their scale will be relative to this
                     colorStyle, item.NonSimBurnMaskOffset );
             }
@@ -223,11 +223,11 @@ namespace Arcen.HotM.ExternalVis
             }
             else
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
 
-                Vector3 pos = item.Position;
+                Vector3 pos = item.rawReadPos;
                 if ( IsMapMode )
                     pos.y += RenderManager_Streets.EXTRA_Y_IN_MAP_MODE;
                 pos.y += extraY;
@@ -243,30 +243,30 @@ namespace Arcen.HotM.ExternalVis
                 }
             }
 
-            //List<SecondaryRenderer> secondaries = item.Type.SecondarysRenderersOfThisRoot;
-            //if ( secondaries.Count > 0 )
-            //{
-            //    Quaternion rot;
-            //    for ( int i = 0; i < secondaries.Count; i++ )
-            //    {
-            //        SecondaryRenderer secondaryRend = secondaries[i];
-            //        if ( secondaryRend == null )
-            //            continue;
-            //        rendGroup = secondaryRend.Group;
-            //        if ( rendGroup == null )
-            //            continue;
+            List<SecondaryRenderer> secondaries = item.Type.SecondarysRenderersOfThisRoot;
+            if ( secondaries.Count > 0 )
+            {
+                Quaternion rot;
+                for ( int i = 0; i < secondaries.Count; i++ )
+                {
+                    SecondaryRenderer secondaryRend = secondaries[i];
+                    if ( secondaryRend == null )
+                        continue;
+                    rendGroup = secondaryRend.Group;
+                    if ( rendGroup == null )
+                        continue;
 
-            //        rot = secondaryRend.LocalRot;
-            //        if ( secondaryRend.Rotates )
-            //            rot *= secondaryRend.RotationForInGameGlobal;
+                    rot = secondaryRend.LocalRot;
+                    if ( secondaryRend.Rotates )
+                        rot *= secondaryRend.RotationForInGameGlobal;
 
-            //        Matrix4x4 secondaryMatrix = parentMatrix * Matrix4x4.TRS( secondaryRend.LocalPos, rot, secondaryRend.LocalScale );
-            //        if ( isOpaque )
-            //            rendGroup.WriteToDrawBufferForOneFrame_SimpleNoColorOpaque( secondaryMatrix );
-            //        else
-            //            rendGroup.WriteToDrawBufferForOneFrame_SimpleNoColorFading( secondaryMatrix, effectiveColorIfTransparent, IsSortedIfTransparent );
-            //    }
-            //}
+                    Matrix4x4 secondaryMatrix = parentMatrix * Matrix4x4.TRS( secondaryRend.LocalPos, rot, secondaryRend.LocalScale );
+                    if ( isOpaque )
+                        rendGroup.WriteToDrawBufferForOneFrame_SimpleNoColorOpaque( secondaryMatrix );
+                    else
+                        rendGroup.WriteToDrawBufferForOneFrame_SimpleNoColorFading( secondaryMatrix, effectiveColorIfTransparent, IsSortedIfTransparent );
+                }
+            }
             return true;
         }
         #endregion
@@ -319,11 +319,11 @@ namespace Arcen.HotM.ExternalVis
             }
             else
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
 
-                Vector3 pos = item.Position;
+                Vector3 pos = item.rawReadPos;
                 if ( IsMapMode )
                     pos.y += RenderManager_Streets.EXTRA_Y_IN_MAP_MODE;
                 pos.y += extraY;

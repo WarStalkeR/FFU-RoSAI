@@ -255,8 +255,8 @@ namespace Arcen.HotM.External
 
                 MapItem item = MapItem.GetFromPoolOrCreate_NotFromSavegame( cell );
                 item.Type = objRoot;
-                item.Position = objPos;
-                item.Rotation = rot;
+                item.SetPosition( objPos );
+                item.SetRotation( rot );
                 item.Scale = obj.scale;
                 //note, not setting the ParentPOIOrNull, as these are all non-buildings
                 item.OBBCache.SetToOBB( newOBB );
@@ -359,8 +359,8 @@ namespace Arcen.HotM.External
         {
             //ArcenDebugging.LogSingleLine( "Populate hole data from type " + HoleLevelType.ID, Verbosity.DoNotShow );
 
-            float tileSizeX = CityMap.CELL_FULL_SIZE * tile.Calculate_WidthInCells();
-            float tileSizeZ = CityMap.CELL_FULL_SIZE * tile.Calculate_HeightInCells();
+            float tileSizeX = CityMap.CELL_FULL_SIZE * tile.WidthInCells;
+            float tileSizeZ = CityMap.CELL_FULL_SIZE * tile.HeightInCells;
 
             float levelSizeX = HoleLevelType.SizeX + HoleLevelType.SizeX;
             float levelSizeZ = HoleLevelType.SizeZ + HoleLevelType.SizeZ;
@@ -544,8 +544,8 @@ namespace Arcen.HotM.External
 
                 MapItem item = MapItem.GetFromPoolOrCreate_NotFromSavegame( cell );
                 item.Type = obj.ObjRoot;
-                item.Position = objPos;
-                item.Rotation = rot;
+                item.SetPosition( objPos );
+                item.SetRotation( rot );
                 item.Scale = obj.scale;
                 item.OBBCache.SetToOBB( newOBB );
 
@@ -1076,8 +1076,8 @@ namespace Arcen.HotM.External
 
                 MapItem item = MapItem.GetFromPoolOrCreate_NotFromSavegame( cell );
                 item.Type = inst.Type;
-                item.Position = inst.Position;
-                item.Rotation = inst.Rotation;
+                item.SetPosition( inst.Position );
+                item.SetRotation( inst.Rotation );
                 item.Scale = inst.Scale;
                 item.OBBCache.SetToOBB( newOBB );
                 item.SetParentPOI( ParentPOIOrNull );
@@ -1217,8 +1217,8 @@ namespace Arcen.HotM.External
 
                 MapItem item = MapItem.GetFromPoolOrCreate_NotFromSavegame( cell );
                 item.Type = obj.ObjRoot;
-                item.Position = destPoint;
-                item.Rotation = rot;
+                item.SetPosition( destPoint );
+                item.SetRotation( rot );
                 item.Scale = obj.scale;
                 item.OBBCache.SetToOBB( newOBB );
                 tile.workingPossibleObjectCollisions_All.Add( item );
@@ -1387,8 +1387,8 @@ namespace Arcen.HotM.External
 
                 MapItem item = MapItem.GetFromPoolOrCreate_NotFromSavegame( cell );
                 item.Type = inst.Type;
-                item.Position = inst.Position;
-                item.Rotation = inst.Rotation;
+                item.SetPosition( inst.Position );
+                item.SetRotation( inst.Rotation );
                 item.Scale = inst.Scale;
                 item.OBBCache.SetToOBB( newOBB );
                 item.SetParentPOI( ParentPOIOrNull );

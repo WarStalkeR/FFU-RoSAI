@@ -3916,7 +3916,7 @@ namespace Arcen.HotM.ExternalVis
                         destructionData.IsFromJob = null;
                         destructionData.ExtraCode = null;
 
-                        SimCommon.QueuedBuildingDestruction.Enqueue( destructionData );
+                        MapEffectCoordinator.AddQueuedBuildingDestruction( destructionData );
                     }
                 }
 

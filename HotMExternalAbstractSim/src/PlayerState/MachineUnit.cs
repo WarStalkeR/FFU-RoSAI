@@ -220,9 +220,9 @@ namespace Arcen.HotM.External
                 {
                     unit.SetActualGroundLocation( unit.drawLocation ); //must be done BEFORE TurnsSinceMoved and HasMovedThisTurn
 
-                    if ( SimCommon.Turn > 1 )
-                        ArcenDebugging.LogSingleLine( "MachineUnit: Asked for MapOutdoorSpot with ID " + ContainerOutdoorSpotID + ", but not found (" +
-                            World_OutdoorSpots.OutdoorSpotsByID.Count + " spots).", Verbosity.ShowAsError );
+                    //if ( SimCommon.Turn > 1 )
+                    //    ArcenDebugging.LogSingleLine( "MachineUnit: Asked for MapOutdoorSpot with ID " + ContainerOutdoorSpotID + ", but not found (" +
+                    //        World_OutdoorSpots.OutdoorSpotsByID.Count + " spots).", Verbosity.ShowAsError );
                 }
             }
 
@@ -2145,7 +2145,7 @@ namespace Arcen.HotM.External
                     int extraCount = 0;
                     foreach ( NPCCohort cohort in NPCCohortTable.Instance.Rows )
                     {
-                        int aggroAmount = this.GetAmountHasAggroedNPCCohort( cohort );
+                        int aggroAmount = this.GetAmountHasAggroedNPCCohort( cohort, null, null );
                         if ( aggroAmount > 0 )
                         {
                             if ( countSoFar > 9 && !showHyperDetailed )
@@ -2484,7 +2484,7 @@ namespace Arcen.HotM.External
 
             if ( SkipInconspicuousCheck )
                 return false;
-            if ( this.GetAmountHasAggroedNPCCohort( FromCohort ) > 0 )
+            if ( this.GetAmountHasAggroedNPCCohort( FromCohort, null, null ) > 0 )
                 return false; //if we have aggroed that group, then no hiding from them
 
             if ( this.GetIsUnremarkableRightNow_NotCountingActualClearanceChecks( ClearanceCheckType.StayingThere ) )
@@ -2531,7 +2531,7 @@ namespace Arcen.HotM.External
             ClearanceCheckType clearanceCheck = BuildingOrNull != null ? ClearanceCheckType.MovingToBuilding : ClearanceCheckType.MovingToNonBuilding;
 
             return MachineActorHelper.GetIsAbleToAvoidAutoTargetingShotAtAtProposedLocation_Unit( FromCohort, BuildingOrNull, Location, WillHaveDoneAttack, SkipInconspicuousCheck,
-                this.IsCloaked, this.GetAmountHasAggroedNPCCohort( FromCohort ),
+                this.IsCloaked, this.GetAmountHasAggroedNPCCohort( FromCohort, null, null ),
                 this.GetIsUnremarkableRightNow_NotCountingActualClearanceChecks( clearanceCheck ),
                 this.GetEffectiveClearance( clearanceCheck ) );
         }

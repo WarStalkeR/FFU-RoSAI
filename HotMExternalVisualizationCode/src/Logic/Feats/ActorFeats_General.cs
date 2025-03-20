@@ -177,8 +177,8 @@ namespace Arcen.HotM.ExternalVis
                                     if ( actor == Target || actor == Attacker || actor is MachineStructure )
                                         continue;
 
-                                    if ( Attacker.GetIsValidToAutomaticallyShootAt_Current( Target ) )
-                                        Target.AddStatus( StatusRefs.PinnedDownBySuppressingFire, suppressionAmount, 1 );
+                                    if ( Attacker.GetIsValidToAutomaticallyShootAt_Current( actor ) )
+                                        actor.AddStatus( StatusRefs.PinnedDownBySuppressingFire, suppressionAmount, 1 );
                                 }
                             }
 

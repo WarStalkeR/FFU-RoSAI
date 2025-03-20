@@ -2924,11 +2924,11 @@ namespace Arcen.HotM.ExternalVis
             }
             else
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
 
-                Vector3 pos = item.Position;
+                Vector3 pos = item.rawReadPos;
                 if ( IsMapMode )
                     pos.y += EXTRA_Y_IN_MAP_MODE;
                 pos.y += extraY;
@@ -3029,9 +3029,9 @@ namespace Arcen.HotM.ExternalVis
             }
 
 
-            Vector3 pos = item.Position;
+            Vector3 pos = item.rawReadPos;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
 
@@ -3048,7 +3048,7 @@ namespace Arcen.HotM.ExternalVis
                 {
                     //draw a line from the building to the flag
                     DrawHelper.RenderLine( territoryControlLink.GetMapItem().OBBCache.Center.ReplaceY( IsMapMode ? RenderManager_Streets.EXTRA_Y_IN_MAP_MODE : 0.1f ),
-                        item.Position.ReplaceY( IsMapMode ? RenderManager_Streets.EXTRA_Y_IN_MAP_MODE : 0.1f ),
+                        item.rawReadPos.ReplaceY( IsMapMode ? RenderManager_Streets.EXTRA_Y_IN_MAP_MODE : 0.1f ),
                         ColorRefs.BuildingPartOfTerritoryControl.ColorHDR );
                 }
             }
@@ -3057,7 +3057,7 @@ namespace Arcen.HotM.ExternalVis
             {
                 IA5Sprite resourceIcon = territoryControlType.Resource.Icon;
 
-                float yRot = item.Rotation.eulerAngles.y;
+                float yRot = item.yRot;
 
                 Quaternion iconRotation = Quaternion.Euler( 0, yRot + 90, 0 );
 
@@ -3111,11 +3111,11 @@ namespace Arcen.HotM.ExternalVis
 
             Matrix4x4 parentMatrix;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
 
-                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_BasicColor( item.Position, rot, 
+                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_BasicColor( item.rawReadPos, rot, 
                     item.Scale.ComponentWiseMult( SharedRenderManagerData.highlight_ScaleMult ), //we only do this here, not on the children, because their scale will be relative to this
                     RenderColorStyle.HighlightColor, ColorForHighlight, 
                     RenderOpacity.Normal, false ); //already transparent if it will be, don't need to mess with it
@@ -3184,10 +3184,10 @@ namespace Arcen.HotM.ExternalVis
 
             Matrix4x4 parentMatrix;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
-                Vector3 pos = item.Position;
+                Vector3 pos = item.rawReadPos;
                 if ( IsMapMode )
                     pos.y += EXTRA_Y_IN_MAP_MODE;
 
@@ -3264,10 +3264,10 @@ namespace Arcen.HotM.ExternalVis
 
             Matrix4x4 parentMatrix;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
-                Vector3 pos = item.Position;
+                Vector3 pos = item.rawReadPos;
                 if ( IsMapMode )
                     pos.y += EXTRA_Y_IN_MAP_MODE;
 
@@ -3340,10 +3340,10 @@ namespace Arcen.HotM.ExternalVis
 
             Matrix4x4 parentMatrix;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
-                Vector3 pos = item.Position;
+                Vector3 pos = item.rawReadPos;
                 if ( IsMapMode )
                     pos.y += EXTRA_Y_IN_MAP_MODE;
                 pos.y += BeaconData.ExtraY;
@@ -3497,10 +3497,10 @@ namespace Arcen.HotM.ExternalVis
 
             Matrix4x4 parentMatrix;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
-                Vector3 pos = item.Position;
+                Vector3 pos = item.rawReadPos;
                 if ( IsMapMode )
                     pos.y += EXTRA_Y_IN_MAP_MODE;
 
@@ -3573,11 +3573,11 @@ namespace Arcen.HotM.ExternalVis
 
             Matrix4x4 parentMatrix;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
 
-                Vector3 pos = item.Position;
+                Vector3 pos = item.rawReadPos;
                 if ( IsMapMode )
                     pos.y += EXTRA_Y_IN_MAP_MODE;
 
@@ -3632,7 +3632,7 @@ namespace Arcen.HotM.ExternalVis
 
             Matrix4x4 parentMatrix;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
 
@@ -3642,7 +3642,7 @@ namespace Arcen.HotM.ExternalVis
                 if ( scaleMultiplierY > 1f )
                     scale.y *= scaleMultiplierY;
 
-                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_BasicColor( item.Position, rot,  scale, 
+                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_BasicColor( item.rawReadPos, rot,  scale, 
                     RenderColorStyle.FallingCubes, ColorForHighlight,
                     RenderOpacity.Normal, false ); //already transparent if it will be, don't need to mess with it
             }
@@ -3694,7 +3694,7 @@ namespace Arcen.HotM.ExternalVis
 
             Matrix4x4 parentMatrix;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
 
@@ -3704,7 +3704,7 @@ namespace Arcen.HotM.ExternalVis
                 if ( scaleMultiplierY > 1f )
                     scale.y *= scaleMultiplierY;
 
-                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_BasicColor( item.Position, rot, scale,
+                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_BasicColor( item.rawReadPos, rot, scale,
                     RenderColorStyle.FallingRain, ColorForHighlight,
                     RenderOpacity.Normal, false ); //already transparent if it will be, don't need to mess with it
             }
@@ -3756,11 +3756,11 @@ namespace Arcen.HotM.ExternalVis
 
             Matrix4x4 parentMatrix;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
 
-                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_BasicColor( item.Position, rot,
+                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_BasicColor( item.rawReadPos, rot,
                     item.Scale.ComponentWiseMult( SharedRenderManagerData.highlight_ScaleMult ), //we only do this here, not on the children, because their scale will be relative to this
                     (IncludeDepth ? RenderColorStyle.HighlightGhostDepth : RenderColorStyle.HighlightGhost ), ColorForHighlight,
                     RenderOpacity.Normal, false ); //already transparent if it will be, don't need to mess with it
@@ -3813,7 +3813,7 @@ namespace Arcen.HotM.ExternalVis
 
             Matrix4x4 parentMatrix;
             {
-                Quaternion rot = item.Rotation;
+                Quaternion rot = item.rawReadRot;
                 if ( primaryRend.Rotates )
                     rot *= primaryRend.RotationForInGameGlobal;
 
@@ -3823,7 +3823,7 @@ namespace Arcen.HotM.ExternalVis
                 if ( scaleMultiplierY > 1f )
                     scale.y *= scaleMultiplierY;
 
-                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_BasicNoColor( item.Position, rot, scale,
+                parentMatrix = rendGroup.WriteToDrawBufferForOneFrame_BasicNoColor( item.rawReadPos, rot, scale,
                     RenderColorStyle.GlassyUncolored );
             }
 

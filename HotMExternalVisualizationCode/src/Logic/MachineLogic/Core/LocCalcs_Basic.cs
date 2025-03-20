@@ -295,10 +295,9 @@ namespace Arcen.HotM.ExternalVis
                                             POIType poiTypeOrNull = building.CalculateLocationPOI()?.Type;
                                             int requiredClearance = building.CalculateLocationSecurityClearanceInt();
 
-                                            DictionaryView<LocationDataType, int> buildingData = building.GetBuildingData();
                                             float roughDist = building.RoughDistanceFromMachines;
 
-                                            if ( !minorEvent.MinorData.SeedAt.SeedAtLogic_CalculateDoesBuildingPassLogic( SeedAtCheckPass.First, variant, poiTypeOrNull, requiredClearance, buildingData, roughDist, false ) )
+                                            if ( !minorEvent.MinorData.SeedAt.SeedAtLogic_CalculateDoesBuildingPassLogic( SeedAtCheckPass.First, variant, poiTypeOrNull, requiredClearance, roughDist, false ) )
                                             {
                                                 //if ( doReportLineItem ) debugBuffer.AddNeverTranslated( minorEvent.ID + " failed " + variant.GetDisplayName(), ColorTheme.RedOrange3 ).Line();
                                                 continue; //this one is blocked!
@@ -403,10 +402,9 @@ namespace Arcen.HotM.ExternalVis
                                             POIType poiTypeOrNull = building.CalculateLocationPOI()?.Type;
                                             int requiredClearance = building.CalculateLocationSecurityClearanceInt();
 
-                                            DictionaryView<LocationDataType, int> buildingData = building.GetBuildingData();
                                             float roughDist = building.RoughDistanceFromMachines;
 
-                                            if ( !minorEvent.MinorData.SeedAt.SeedAtLogic_CalculateDoesBuildingPassLogic( SeedAtCheckPass.First, variant, poiTypeOrNull, requiredClearance, buildingData, roughDist, false ) )
+                                            if ( !minorEvent.MinorData.SeedAt.SeedAtLogic_CalculateDoesBuildingPassLogic( SeedAtCheckPass.First, variant, poiTypeOrNull, requiredClearance, roughDist, false ) )
                                             {
                                                 //if ( doReportLineItem ) debugBuffer.AddNeverTranslated( minorEvent.ID + " failed " + variant.GetDisplayName(), ColorTheme.RedOrange3 ).Line();
                                                 continue; //this one is blocked!
@@ -456,10 +454,9 @@ namespace Arcen.HotM.ExternalVis
 
                                             POIType poiTypeOrNull = building.CalculateLocationPOI()?.Type;
                                             int requiredClearance = building.CalculateLocationSecurityClearanceInt();
-                                            DictionaryView<LocationDataType, int> buildingData = building.GetBuildingData();
                                             float roughDist = building.RoughDistanceFromMachines;
 
-                                            if ( !minorEvent.MinorData.SeedAt.SeedAtLogic_CalculateDoesBuildingPassLogic( SeedAtCheckPass.First, variant, poiTypeOrNull, requiredClearance, buildingData, roughDist, false ) )
+                                            if ( !minorEvent.MinorData.SeedAt.SeedAtLogic_CalculateDoesBuildingPassLogic( SeedAtCheckPass.First, variant, poiTypeOrNull, requiredClearance, roughDist, false ) )
                                             {
                                                 //if ( doReportLineItem ) debugBuffer.AddNeverTranslated( minorEvent.ID + " failed " + variant.GetDisplayName(), ColorTheme.RedOrange3 ).Line();
                                                 continue; //this one is blocked!
@@ -556,10 +553,9 @@ namespace Arcen.HotM.ExternalVis
 
                                         POIType poiTypeOrNull = building.CalculateLocationPOI()?.Type;
                                         int requiredClearance = building.CalculateLocationSecurityClearanceInt();
-                                        DictionaryView<LocationDataType, int> buildingData = building.GetBuildingData();
                                         float roughDist = building.RoughDistanceFromMachines;
 
-                                        if ( !minorEvent.MinorData.SeedAt.SeedAtLogic_CalculateDoesBuildingPassLogic( SeedAtCheckPass.First, variant, poiTypeOrNull, requiredClearance, buildingData, roughDist, false ) )
+                                        if ( !minorEvent.MinorData.SeedAt.SeedAtLogic_CalculateDoesBuildingPassLogic( SeedAtCheckPass.First, variant, poiTypeOrNull, requiredClearance, roughDist, false ) )
                                         {
                                             //if ( doReportLineItem ) debugBuffer.AddNeverTranslated( minorEvent.ID + " failed " + variant.GetDisplayName(), ColorTheme.RedOrange3 ).Line();
                                             continue; //this one is blocked!

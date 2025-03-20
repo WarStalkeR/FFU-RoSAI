@@ -177,7 +177,7 @@ namespace Arcen.HotM.ExternalVis
                                                 destructionData.ExtraCode = CommonRefs.PlayerNukeExplosionExtraCode;
 
                                                 debugStageInner = 400;
-                                                SimCommon.QueuedBuildingDestruction.Enqueue( destructionData );
+                                                MapEffectCoordinator.AddQueuedBuildingDestruction( destructionData );
 
                                                 KeyContactRefs.BaurcorpMiddleManager.FlagsDict["DetonatedNuke"].Trip();
                                                 KeyContactRefs.BaurcorpMiddleManager.FlagsDict["StoleNuke"].UnTrip();

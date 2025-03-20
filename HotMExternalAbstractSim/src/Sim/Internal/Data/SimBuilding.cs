@@ -56,7 +56,6 @@ namespace Arcen.HotM.External
         internal float roughDistanceFromMachines = 999999;
         public float RoughDistanceFromMachines { get { return roughDistanceFromMachines; } }
         public string DebugText = string.Empty;
-        private static Dictionary<LocationDataType, int> serializationBuildingData = Dictionary<LocationDataType, int>.Create_WillNeverBeGCed( 90, "SimBuilding-serializationBuildingData" );
         private readonly LocationCalculationCache locationCalculationCache; //initialized in constructor
         
         #region Cleanup
@@ -205,7 +204,7 @@ namespace Arcen.HotM.External
             //serializing a map item reference requires these two pieces of data
             Serializer.AddInt32( "ItemID", this.Item.MapItemID );
             Serializer.AddRepeatedlyUsedString_Condensed( "Variant", this.Variant.ShortID );
-            Serializer.AddArcenGroundPoint( "ItemCellLoc", this.Item.ParentCell.CellLocation );
+            Serializer.AddArcenGroundPoint( "ItemCellLoc", this.Item.ParentCell.rawCellLocation );
 
             if ( !this.Item.ParentCell.BuildingDict.ContainsKey( this.Item.MapItemGlobalIndex ) )
             {
@@ -476,8 +475,8 @@ namespace Arcen.HotM.External
             this.Prefab = NewPrefab;
             this.Item.Type = NewPrefab.PlaceableRoot;
             this.Item.Scale = NewPrefab.PlaceableRoot.OriginalScale;
-            this.Item.Position = this.Item.OBBCache.Center.ReplaceY( NewPrefab.PlaceableRoot.AlwaysDropTo )
-                .PlusX( NewPrefab.PlaceableRoot.OriginalPivot.x ).PlusZ( NewPrefab.PlaceableRoot.OriginalPivot.z );
+            this.Item.SetPosition( this.Item.OBBCache.Center.ReplaceY( NewPrefab.PlaceableRoot.AlwaysDropTo )
+                .PlusX( NewPrefab.PlaceableRoot.OriginalPivot.x ).PlusZ( NewPrefab.PlaceableRoot.OriginalPivot.z ) );
             this.Item.FillOBBCache();
 
             this.Variant = NewPrefab.Type.VariantDrawBag.PickRandom( Engine_Universal.PermanentQualityRandom );
@@ -920,24 +919,6 @@ namespace Arcen.HotM.External
         public MapDistrict GetLocationDistrict()
         {
             return this.Item?.ParentTile?.District;
-        }
-
-        public DictionaryView<LocationDataType,int> GetBuildingData()
-        {
-            return DictionaryView<LocationDataType, int>.Create( this.Variant?.InitialBuildingRatings );
-        }
-
-        public int GetBuildingDataValue( LocationDataType Type )
-        {
-            return this.Variant?.InitialBuildingRatings[Type]??0;
-        }
-
-        public int GetBuildingDataValue( string TypeName )
-        {
-            LocationDataType type = LocationDataTypeTable.Instance.GetRowByID( TypeName );
-            if ( type == null )
-                return 0;
-            return this.Variant?.InitialBuildingRatings[type]??0;
         }
         
         public LocationCalculationCache GetLocationCalculationCache()
@@ -1481,31 +1462,6 @@ namespace Arcen.HotM.External
             }
             #endregion
 
-            #region Building Data
-            {
-                //extra spacing
-                Buffer.Line().AddLangAndAfterLineItemHeader( "Building_Info", ColorTheme.HeaderGold );
-
-                foreach ( LocationDataType dataType in LocationDataTypeTable.Instance.Rows )
-                {
-                    if ( this.Variant.InitialBuildingRatings.TryGetValue( dataType, out int val ) )
-                    {
-                        if ( val <= 0 )
-                            continue;
-                        Buffer.Line();
-
-                        Buffer.AddRaw( val.ToStringLargeNumberAbbreviated() );
-                        Buffer.Position40();
-
-                        Buffer.StartLink( false, ColorTheme.LinkColor_FadedBlue, "BuildingData", dataType.ID );
-                        Buffer.AddSpriteStyled_NoIndent( dataType.Icon, AdjustedSpriteStyle.InlineLarger1_2, dataType.IconColorHex ).Space1x();
-                        Buffer.AddRaw( dataType.GetDisplayName() );
-                        Buffer.EndLink( false, true );
-                    }
-                }
-            }
-            #endregion
-
             #region Residents
             if ( this.Prefab.NormalMaxResidents > 0 && !this.Status.ShouldBuildingBeNonfunctional )
             {
@@ -1626,13 +1582,7 @@ namespace Arcen.HotM.External
         {
             string linkID = TooltipLinkData[0];
             switch ( linkID )
-            {                
-                case "BuildingData":
-                    {
-                        LocationDataType dataType = LocationDataTypeTable.Instance.GetRowByID( TooltipLinkData[1] );
-                        dataType?.RenderBriefLocationDataTypeTooltip( null, SideClamp.Any, TooltipShadowStyle.Standard );
-                    }
-                    break;
+            {
                 case "MachineStructure":
                     {
                         MachineStructure machineStructure = this.MachineStructureInBuilding;

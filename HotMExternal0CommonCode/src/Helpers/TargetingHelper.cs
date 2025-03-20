@@ -186,6 +186,10 @@ namespace Arcen.HotM.External
             if ( InputCaching.Debug_DoDumpEveryTurn && Logic == NPCUnitActionLogic.PlanningPerTurn )
                 SearcherNPCUnit.TurnDumpLines.Add( "AllLivingMapActors: " + actors.Count );
 
+            NPCUnitStance searcherStance = SearcherNPCUnit.Stance;
+            if ( searcherStance == null )
+                return null;
+
             NPCCohort mustHaveAggroed = SearcherNPCUnit.FromCohort;
             int numberChecked = 0;
 
@@ -196,7 +200,7 @@ namespace Arcen.HotM.External
                 if ( actor.GetEquals( SearcherNPCUnit ) )
                     continue; //don't look at self
 
-                int amountAggroed = actor.GetAmountHasAggroedNPCCohort( mustHaveAggroed );
+                int amountAggroed = actor.GetAmountHasAggroedNPCCohort( mustHaveAggroed, searcherStance, (actor as ISimNPCUnit)?.Stance );
                 if ( actor.GetIsTrackedByCohort( mustHaveAggroed ))
                     amountAggroed += 100;
 
@@ -538,6 +542,10 @@ namespace Arcen.HotM.External
             if ( actors == null || actors.Count == 0 )
                 return;
 
+            NPCUnitStance searcherStance = SearcherActor.Stance;
+            if ( searcherStance == null )
+                return;
+
             if ( InputCaching.Debug_DoDumpEveryTurn && Logic == NPCUnitActionLogic.PlanningPerTurn )
                 SearcherActor.TurnDumpLines.Add( "ActorsWithinMaxNPCAttackRange: " + actors.Count + " cell: " + curCell.CellID );
 
@@ -588,7 +596,7 @@ namespace Arcen.HotM.External
                         meetsRestrictions = false;
                 }
 
-                int amountAggroed = actor.GetAmountHasAggroedNPCCohort( attackerGroup );
+                int amountAggroed = actor.GetAmountHasAggroedNPCCohort( attackerGroup, searcherStance, (actor as ISimNPCUnit)?.Stance );
                 if ( actor.GetIsTrackedByCohort( attackerGroup ) )
                     amountAggroed += 100;
 

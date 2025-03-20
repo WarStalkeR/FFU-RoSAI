@@ -47,7 +47,7 @@ namespace Arcen.HotM.ExternalVis
                                 destructionData.IsFromJob = null;
                                 destructionData.ExtraCode = CommonRefs.PlayerNukeExplosionExtraCode;
 
-                                SimCommon.QueuedBuildingDestruction.Enqueue( destructionData );
+                                MapEffectCoordinator.AddQueuedBuildingDestruction( destructionData );
                             }
 
                             MapTile tile = ForBuilding.GetLocationMapTile();
@@ -82,7 +82,7 @@ namespace Arcen.HotM.ExternalVis
                                     destructionData.IsFromJob = null;
                                     destructionData.ExtraCode = CommonRefs.PlayerNukeExplosionExtraCode;
 
-                                    SimCommon.QueuedBuildingDestruction.Enqueue( destructionData );
+                                    MapEffectCoordinator.AddQueuedBuildingDestruction( destructionData );
                                 }
                             }
                         }

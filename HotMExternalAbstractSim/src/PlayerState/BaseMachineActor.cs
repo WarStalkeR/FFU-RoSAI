@@ -199,7 +199,7 @@ namespace Arcen.HotM.External
             ActionOverTime almostComplete = this.AlmostCompleteActionOverTime;
             if ( almostComplete != null )
             {
-                almostComplete.DoActionFinalSuccessLogic( true, Engine_Universal.PermanentQualityRandom );
+                almostComplete?.DoActionFinalSuccessLogic( true, Engine_Universal.PermanentQualityRandom );
                 this.AlmostCompleteActionOverTime = null;
             }
 
@@ -208,11 +208,11 @@ namespace Arcen.HotM.External
             if ( currentAction != null )
             {
                 if ( currentAction.RelatedInvestigationTypeOrNull != null )
-                    currentAction.RelatedInvestigationTypeOrNull.DuringGame_DoAnythingNeededFromFailure( false );
+                    currentAction.RelatedInvestigationTypeOrNull?.DuringGame_DoAnythingNeededFromFailure( false );
 
                 ActivityScheduler.DoThreatNeutralizedCheckRelatedToUnitWithActionOvertimeDeath( this as ISimMachineActor, currentAction );
 
-                this.CurrentActionOverTime.ReturnToPool();
+                this.CurrentActionOverTime?.ReturnToPool();
                 this.CurrentActionOverTime = null;
             }
         }

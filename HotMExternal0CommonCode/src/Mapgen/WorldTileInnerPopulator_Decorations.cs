@@ -142,7 +142,7 @@ namespace Arcen.HotM.External
 
                         debugStage = 2500;
                         PopulateFullMapCell_Decoration( startData, cell.NonSerialized_HoleTileDecorationRandomSeed, tile, cell, levelData.ParentLevelType, levelData,
-                            rectToDisallow, usesDisallowedRect );
+                            rectToDisallow, usesDisallowedRect, ref debugStage );
                     }
                 }
             }
@@ -314,6 +314,25 @@ namespace Arcen.HotM.External
             }
             #endregion
 
+            bool isDeserializing = tile.IsDeserializedFromSave;
+            if ( isDeserializing )
+            {
+                if ( tile.IsLegacyRadiationBlockingDecorations )
+                    return;
+
+                if ( SimCommon.LoadedFromGameVersion.GetLessThan( 0, 652, 7 ) )
+                {
+                    foreach ( MapCell cell in tile.CellsList )
+                    {
+                        if ( cell?.IsCellConsideredIrradiated ?? false )
+                        {
+                            tile.IsLegacyRadiationBlockingDecorations = true;
+                            return; //do no seeding for this!
+                        }
+                    }
+                }
+            }
+
             foreach ( ReferenceObject obj in DecorationSource.AllObjects )
             {
                 if ( obj.ObjRoot == null ) 
@@ -322,6 +341,9 @@ namespace Arcen.HotM.External
                     continue; //we don't actually seed the meta regions from decoration zones
                 else if ( obj.ObjRoot.IsPathingPoint || obj.ObjRoot.IsPathingRegion )
                     continue; //we skip these, also
+
+                if ( isDeserializing && obj.ObjRoot.Building != null )
+                    continue; //we skip anything that is a building on non-deserialization saves
 
                 Vector3 objPos = obj.pos;
                 Quaternion rot = Quaternion.Euler( obj.rot.x, obj.rot.y, obj.rot.z );
@@ -348,6 +370,21 @@ namespace Arcen.HotM.External
 
                 if ( !levelRect.ContainsRectangle( boundsRect ) ) //if one rectangle does not contain the other, then out of bounds
                     continue;
+
+                if ( isDeserializing )
+                {
+                    bool wasBlocked = false;
+                    foreach ( FormerExplosionSite expo in SimCommon.FormerExplosionSites_MainThreadOnly )
+                    {
+                        if ( boundsRect.IntersectsWithCircleXZSquared( expo.Center, expo.RadiusSquared ) )
+                        {
+                            wasBlocked = true;
+                            break;
+                        }
+                    }
+                    if ( wasBlocked )
+                        continue;
+                }
 
                 #region test against anything and everything to make sure there are no hits!
                 if ( tile.workingPossibleObjectCollisions_Current.Count > 0 )
@@ -384,7 +421,7 @@ namespace Arcen.HotM.External
                                     }
 
                                     if ( BoxMath.BoxIntersectsBox( newOBB.Center, newOBB.Size, newOBB.Rotation,
-                                        worldCenter, worldSize, existingItem.Rotation ) )
+                                        worldCenter, worldSize, existingItem.rawReadRot ) )
                                     {
                                         hadActualInnerCollision = true;
                                         break;
@@ -414,11 +451,16 @@ namespace Arcen.HotM.External
                 #endregion
 
                 MapCell cell = tile.FindCellForMapItem( destPoint );
+                if ( cell == null )
+                {
+                    ArcenDebugging.LogSingleLine( "Null cell found at position!", Verbosity.DoNotShow );
+                    continue;
+                }
 
                 MapItem item = MapItem.GetFromPoolOrCreate_NotFromSavegame( cell );
                 item.Type = obj.ObjRoot;
-                item.Position = destPoint;
-                item.Rotation = rot;
+                item.SetPosition( destPoint );
+                item.SetRotation( rot );
                 item.Scale = obj.scale;
                 item.OBBCache.SetToOBB( newOBB );
                 tile.workingPossibleObjectCollisions_All.Add( item );
@@ -435,14 +477,16 @@ namespace Arcen.HotM.External
 
         #region PopulateFullMapCell_Decoration
         private static void PopulateFullMapCell_Decoration( TaskStartData startData, int randSeed, MapTile tile, MapCell outerCell, LevelType ChosenType,
-            ReferenceLevelData DecorationSource, ArcenFloatRectangle rectToDisallow, bool usesDisallowedRect )
+            ReferenceLevelData DecorationSource, ArcenFloatRectangle rectToDisallow, bool usesDisallowedRect, ref int DebugStage )
         {
+            DebugStage = 101400;
+
             MersenneTwister rand = new MersenneTwister( randSeed );
 
             //decide which side we are starting from, which is arbitrary.  This leads to rotation in one of the cardinal directions
             FourDirection dir = (FourDirection)rand.Next( (int)FourDirection.North, (int)FourDirection.Length );
             float cellSizeXZ = CityMap.CELL_FULL_SIZE;
-            Vector3 cellCenter = outerCell.Calculate_Center();
+            Vector3 cellCenter = outerCell.Center;
 
             float levelSizeX = ChosenType.SizeX + ChosenType.SizeX;
             float levelSizeZ = ChosenType.SizeZ + ChosenType.SizeZ;
@@ -459,6 +503,8 @@ namespace Arcen.HotM.External
                     " when looking at a meta region zone here, and the level type " + ChosenType.ID, Verbosity.ShowAsError );
                 return;
             }
+
+            DebugStage = 103400;
 
             float regionRotation = 0;
             switch ( dir )
@@ -477,12 +523,16 @@ namespace Arcen.HotM.External
             if ( regionRotation > 360 )
                 regionRotation -= 360;
 
+            DebugStage = 108400;
+
             Vector3 tileCenter = tile.Center;
             ArcenFloatRectangle levelRect = ArcenFloatRectangle.CreateFromCenterAndHalfSize( tileCenter.x, tileCenter.z, tile.HalfSizeX,
                  tile.HalfSizeZ );
 
             float xSourceOffset = rand.NextFloat( 0, levelSizeX - cellSizeXZ ) / 2;
             float zSourceOffset = rand.NextFloat( 0, levelSizeZ - cellSizeXZ ) / 2;
+
+            DebugStage = 121400;
 
             #region Fill workingPossibleObjectCollisions_Current As A Subset
             tile.workingPossibleObjectCollisions_Current.Clear();
@@ -511,12 +561,42 @@ namespace Arcen.HotM.External
             }
             #endregion
 
+            DebugStage = 161400;
+
+            bool isDeserializing = tile.IsDeserializedFromSave;
+            if ( isDeserializing )
+            {
+                if ( tile.IsLegacyRadiationBlockingDecorations )
+                    return;
+
+                if ( SimCommon.LoadedFromGameVersion.GetLessThan( 0, 652, 7 ) )
+                {
+                    foreach ( MapCell cell in tile.CellsList )
+                    {
+                        if ( cell?.IsCellConsideredIrradiated ?? false )
+                        {
+                            tile.IsLegacyRadiationBlockingDecorations = true;
+                            return; //do no seeding for this!
+                        }
+                    }
+                }
+            }
+
+            DebugStage = 181400;
+
             foreach ( ReferenceObject obj in DecorationSource.AllObjects )
             {
+                DebugStage = 201400;
+
                 if ( obj.ObjRoot.IsMetaRegion )
                     continue; //we don't actually seed the meta regions from decoration zones
                 else if ( obj.ObjRoot.IsPathingPoint || obj.ObjRoot.IsPathingRegion )
                     continue; //we skip these, also
+
+                if ( isDeserializing && obj.ObjRoot.Building != null )
+                    continue; //we skip anything that is a building on non-deserialization saves
+
+                DebugStage = 202400;
 
                 Vector3 objPos = obj.pos;
                 Quaternion rot = Quaternion.Euler( obj.rot.x, obj.rot.y, obj.rot.z );
@@ -527,6 +607,8 @@ namespace Arcen.HotM.External
 
                 Vector3 destPoint = objPos;
 
+                DebugStage = 207400;
+
                 OBBUnity newOBB = obj.ObjRoot.CalculateOBBForItem( objPos, rot, obj.scale );
 
                 float newOBBMaxSize = newOBB.Size.LargestComponent();
@@ -535,6 +617,8 @@ namespace Arcen.HotM.External
                 //looking for a cheap early exclusion
                 if ( (cellCenter - newOBB.Center).sqrMagnitude > (newOBBMaxSize + cellSizeXZ) * (newOBBMaxSize + cellSizeXZ) )
                     continue;
+
+                DebugStage = 209400;
 
                 ArcenFloatRectangle boundsRect = ArcenFloatRectangle.CreateFromBoundsXZ( new Bounds( newOBB.Center, newOBB.Size ) );
 
@@ -546,6 +630,23 @@ namespace Arcen.HotM.External
 
                 if ( !levelRect.ContainsRectangle( boundsRect ) ) //if one rectangle does not contain the other, then out of bounds
                     continue;
+
+                if ( isDeserializing )
+                {
+                    bool wasBlocked = false;
+                    foreach ( FormerExplosionSite expo in SimCommon.FormerExplosionSites_MainThreadOnly )
+                    {
+                        if ( boundsRect.IntersectsWithCircleXZSquared( expo.Center, expo.RadiusSquared ) )
+                        {
+                            wasBlocked = true;
+                            break;
+                        }
+                    }
+                    if ( wasBlocked )
+                        continue;
+                }
+
+                DebugStage = 301400;
 
                 #region test against anything and everything to make sure there are no hits!
                 if ( tile.workingPossibleObjectCollisions_Current.Count > 0 )
@@ -582,7 +683,7 @@ namespace Arcen.HotM.External
                                     }
 
                                     if ( BoxMath.BoxIntersectsBox( newOBB.Center, newOBB.Size, newOBB.Rotation,
-                                        worldCenter, worldSize, existingItem.Rotation ) )
+                                        worldCenter, worldSize, existingItem.rawReadRot ) )
                                     {
                                         hadActualInnerCollision = true;
                                         break;
@@ -611,12 +712,14 @@ namespace Arcen.HotM.External
                 }
                 #endregion
 
+                DebugStage = 401400;
+
                 MapCell cell = tile.FindCellForMapItem( destPoint );
 
                 MapItem item = MapItem.GetFromPoolOrCreate_NotFromSavegame( cell );
                 item.Type = obj.ObjRoot;
-                item.Position = destPoint;
-                item.Rotation = rot;
+                item.SetPosition( destPoint );
+                item.SetRotation( rot );
                 item.Scale = obj.scale;
                 item.OBBCache.SetToOBB( newOBB );
                 tile.workingPossibleObjectCollisions_All.Add( item );

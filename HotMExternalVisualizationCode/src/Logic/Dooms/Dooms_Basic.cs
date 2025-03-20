@@ -260,7 +260,7 @@ namespace Arcen.HotM.ExternalVis
                                         destructionData.IsFromJob = null;
                                         destructionData.ExtraCode = null;
 
-                                        SimCommon.QueuedBuildingDestruction.Enqueue( destructionData );
+                                        MapEffectCoordinator.AddQueuedBuildingDestruction( destructionData );
 
                                         npcUnit.DisbandNPCUnit( NPCDisbandReason.CaughtInExplosion );
                                     }
@@ -320,7 +320,7 @@ namespace Arcen.HotM.ExternalVis
                                             destructionData.IsFromJob = null;
                                             destructionData.ExtraCode = null;
 
-                                            SimCommon.QueuedBuildingDestruction.Enqueue( destructionData );
+                                            MapEffectCoordinator.AddQueuedBuildingDestruction( destructionData );
                                         }
                                     }
                                 }

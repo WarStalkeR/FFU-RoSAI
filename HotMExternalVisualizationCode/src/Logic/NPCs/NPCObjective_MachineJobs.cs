@@ -128,7 +128,7 @@ namespace Arcen.HotM.ExternalVis
                                         humansToMoveIn += residentCount;
                                         building.KillEveryoneHere(); //from the normal perspective we are killing, but really they are moving out of the human society
                                         Vector3 position = buildingItem.GroundCenterPoint;
-                                        Quaternion rotation = buildingItem.Rotation;
+                                        Quaternion rotation = buildingItem.rawReadRot;
 
                                         BiomeType biome = buildingItem.ParentTile?.District?.Biome;
                                         buildingItem.DropBurningEffect();
@@ -137,8 +137,8 @@ namespace Arcen.HotM.ExternalVis
 
                                         {
                                             MapGlowingIndicator indicator = new MapGlowingIndicator();
-                                            indicator.Position = buildingItem.Position;
-                                            indicator.Rotation = buildingItem.Rotation;
+                                            indicator.Position = buildingItem.rawReadPos;
+                                            indicator.Rotation = rotation;
                                             indicator.Scale = buildingItem.Scale;
                                             indicator.ColorForHighlight = ColorRefs.BuildingRemovedAura.ColorHDR;
                                             indicator.ItemRoot = buildingItem.Type;
@@ -164,8 +164,8 @@ namespace Arcen.HotM.ExternalVis
                                             {
                                                 MapItem item = MapItem.GetFromPoolOrCreate_NotFromSavegame( cell );
                                                 item.Type = treeToPlant;
-                                                item.Position = position;
-                                                item.Rotation = rotation;
+                                                item.SetPosition( position );
+                                                item.SetRotation( rotation );
                                                 item.Scale = treeToPlant.OriginalScale;
                                                 item.FillOBBCache();
                                                 cell.PlaceMapItemIntoCell( treeToPlant.ExtraPlaceableData.IsMinorDecoration ? TileDest.DecorationMinor : TileDest.DecorationMajor, item, false );

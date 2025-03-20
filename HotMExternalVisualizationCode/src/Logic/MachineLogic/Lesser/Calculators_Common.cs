@@ -620,7 +620,7 @@ namespace Arcen.HotM.ExternalVis
         #endregion
 
         #region OtherLatePerTurn
-        private static void OtherLatePerTurn() //PerTurnLate
+        private static void OtherLatePerTurn( MersenneTwister Rand ) //PerTurnLate
         {
             if ( !Engine_HotM.IsDemoVersion ) //only in the non-demo version
             {
@@ -660,6 +660,20 @@ namespace Arcen.HotM.ExternalVis
                 if ( FlagRefs.HasBlackmailDealWithAtcaRetail.DuringGameplay_IsTripped )
                 {
                     ResourceRefs.Wealth.AlterCurrent_Named( 930000000, "Income_FromBlackmailingAtcaRetail", ResourceAddRule.IgnoreUntilTurnChange );
+                }
+            }
+
+            //this part can happen in the demo!
+            {
+                if ( !CountdownRefs.HomeSecurityUpgrade.GetHasEverStarted() )
+                {
+                    int homesBrokenInto = (int)CityStatisticRefs.HomesBrokenInto.GetScore();
+                    if ( homesBrokenInto > 3 )
+                    {
+                        int percentChance = homesBrokenInto * 3;
+                        if ( Rand.Next( 0, 100 ) < percentChance )
+                            CountdownRefs.HomeSecurityUpgrade.DuringGameplay_StartNowIfNeeded();
+                    }
                 }
             }
         }
@@ -817,7 +831,7 @@ namespace Arcen.HotM.ExternalVis
                     HandleAchievementsPerTurn();
                     break;
                 case "OtherLatePerTurn":
-                    OtherLatePerTurn();
+                    OtherLatePerTurn( RandForThisTurn );
                     break;
                 default:
                     ArcenDebugging.LogSingleLine( "DoPerTurn_Late: Calculators_Common was asked to handle '" + Calculator.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );

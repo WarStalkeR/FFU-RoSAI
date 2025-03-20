@@ -40,8 +40,7 @@ namespace Arcen.HotM.External
             {
                 {
                     MapTile mapTile = MapTile.GetFromPoolOrCreate();
-                    mapTile.SetTileTypes( null, randomTile.MapGenFullTileType );
-                    mapTile.SetTileTopLeftCellCoordinate( new ArcenGroundPoint( x, z ) );
+                    mapTile.SetTilePositionAndData( new ArcenGroundPoint( x, z ), null, randomTile.MapGenFullTileType );
                     if ( mapTile.TileType.CanRotate() )
                     {
                         int randRot = Engine_Universal.PermanentQualityRandom.Next( 0, 4 );
@@ -97,18 +96,16 @@ namespace Arcen.HotM.External
                         {
                             //this was instrumental in figuring out some of the problems with mirroring/rotation by giving a reference to look at 
                             mapTile = MapTile.GetFromPoolOrCreate();
-                            mapTile.SetTileTypes( null, randomTile.MapGenFullTileType );
+                            mapTile.SetTilePositionAndData( new ArcenGroundPoint( 2, 2 ), null, randomTile.MapGenFullTileType );
                             mapTile.Mirroring = TileMirrorFlags.None;
                             mapTile.Rotation = TileRotation.Zero;
-                            mapTile.SetTileTopLeftCellCoordinate( new ArcenGroundPoint( 2, 2 ) );
                             if ( !CityMap.TryAddNewPopulatedTile( mapTile ) )
                                 ArcenDebugging.LogWithStack( "Failed to add a populated tile (Spot B) right on the start?", Verbosity.ShowAsError );
 
                             mapTile = MapTile.GetFromPoolOrCreate();
-                            mapTile.SetTileTypes( null, randomTile.MapGenFullTileType );
+                            mapTile.SetTilePositionAndData( new ArcenGroundPoint( 2, 3 ), null, randomTile.MapGenFullTileType );
                             mapTile.Mirroring = TileMirrorFlags.None;
                             mapTile.Rotation = TileRotation.TwoSeventy;
-                            mapTile.SetTileTopLeftCellCoordinate( new ArcenGroundPoint( 2, 3 ) );
                             if ( !CityMap.TryAddNewPopulatedTile( mapTile ) )
                                 ArcenDebugging.LogWithStack( "Failed to add a populated tile (Spot C) right on the start?", Verbosity.ShowAsError );
                         }
@@ -358,7 +355,7 @@ namespace Arcen.HotM.External
                     tile.IsHoleTile = true;
                     tile.DuringSeeding_DistrictType = null;
                     holeTilesConverted++;
-                    tile.SetTileTypes( null, null );
+                    tile.SetTilePositionAndData( tile.TileTopLeftCellCoordinate, null, null );
                 }
 
                 //ArcenDebugging.LogSingleLine( "Converted " + holeTilesConverted + " regular tiles into hole tiles to make sure we have the " +
@@ -531,9 +528,8 @@ namespace Arcen.HotM.External
             //hole tile:
             potentialMapTile.IsHoleTile = true;
             potentialMapTile.HoleLevelData = data;
-            potentialMapTile.SetTileTypes( HoleType, null );
+            potentialMapTile.SetTilePositionAndData( new ArcenGroundPoint( X, Z ), HoleType, null );
             potentialMapTile.DuringSeeding_DistrictType = DistrictType;
-            potentialMapTile.SetTileTopLeftCellCoordinate( new ArcenGroundPoint( X, Z ) ); //must happen after the above stuff is set
 
             if ( !CityMap.TryAddNewPopulatedTile( potentialMapTile ) )
             {
@@ -571,7 +567,7 @@ namespace Arcen.HotM.External
 
             tile.HoleLevelData = data;
             tile.DuringSeeding_DistrictType = DistrictType;
-            tile.SetTileTypes( HoleType, null );
+            tile.SetTilePositionAndData( tile.TileTopLeftCellCoordinate, HoleType, null );
             return true;
         }
         #endregion
@@ -598,7 +594,6 @@ namespace Arcen.HotM.External
                 {
                     if ( CityMap.TryAddNewPopulatedTile( potentialMapTile ) )
                     {
-                        potentialMapTile.SetTileTopLeftCellCoordinate( potentialMapTile.TileTopLeftCellCoordinate ); //this prevents all sorts of things from being wrong
                         return true; //found one that worked.  Yes!
                     }
                 }
@@ -612,8 +607,7 @@ namespace Arcen.HotM.External
                         potentialMapTile.IsHoleTile = true;
                         potentialMapTile.DuringSeeding_DistrictType = null;
                         TraditionalHoleTilesRemainingRequired--;
-                        potentialMapTile.SetTileTypes( null, null );
-                        potentialMapTile.SetTileTopLeftCellCoordinate( potentialMapTile.TileTopLeftCellCoordinate ); //this prevents all sorts of things from being wrong
+                        potentialMapTile.SetTilePositionAndData( potentialMapTile.TileTopLeftCellCoordinate, null, null );
                         return true; //just made it a hole tile early
                     }
                 }
@@ -633,8 +627,7 @@ namespace Arcen.HotM.External
                     potentialMapTile.IsHoleTile = true;
                     potentialMapTile.DuringSeeding_DistrictType = null;
                     TraditionalHoleTilesRemainingRequired--;
-                    potentialMapTile.SetTileTypes( null, null );
-                    potentialMapTile.SetTileTopLeftCellCoordinate( lastDitchPoint );
+                    potentialMapTile.SetTilePositionAndData( lastDitchPoint, null, null );
                 }
 
                 if ( !CityMap.TryAddNewPopulatedTile( potentialMapTile ) )
@@ -642,7 +635,6 @@ namespace Arcen.HotM.External
                     potentialMapTile.ReturnToPool();
                     return false;
                 }
-                potentialMapTile.SetTileTopLeftCellCoordinate( potentialMapTile.TileTopLeftCellCoordinate ); //this prevents all sorts of things from being wrong
                 return true;
             }
         }
@@ -661,8 +653,7 @@ namespace Arcen.HotM.External
                 potentialMapTile.IsHoleTile = true;
                 potentialMapTile.DuringSeeding_DistrictType = null;
                 TraditionalHoleTilesRemainingRequired--;
-                potentialMapTile.SetTileTypes( null, null );
-                potentialMapTile.SetTileTopLeftCellCoordinate( potentialMapTile.TileTopLeftCellCoordinate ); //this prevents all sorts of things from being wrong
+                potentialMapTile.SetTilePositionAndData( potentialMapTile.TileTopLeftCellCoordinate, null, null );
             }
 
             if ( !CityMap.TryAddNewPopulatedTile( potentialMapTile ) )
@@ -670,7 +661,6 @@ namespace Arcen.HotM.External
                 potentialMapTile.ReturnToPool();
                 return false;
             }
-            potentialMapTile.SetTileTopLeftCellCoordinate( potentialMapTile.TileTopLeftCellCoordinate ); //this prevents all sorts of things from being wrong
             return true;
         }
         #endregion
@@ -729,10 +719,8 @@ namespace Arcen.HotM.External
                 ReferenceLevelData data = HoleType.AvailableContent[contentIndex];
 
                 tile.HoleLevelData = data;
-                tile.SetTileTypes( HoleType, null );
+                tile.SetTilePositionAndData( tile.TileTopLeftCellCoordinate , HoleType, null );
             }
-
-            tile.SetTileTopLeftCellCoordinate( tile.TileTopLeftCellCoordinate ); //this prevents all sorts of things from being wrong
             return true;
         }
         #endregion
@@ -767,9 +755,9 @@ namespace Arcen.HotM.External
             {
                 bool innerDebug = GameSettings.Current.GetBool( "Debug_MainGameMapgenLogging" );
                 if ( tryAllTiles )
-                    potentialMapTile.SetTileTypes( null, GetTileByIndex( i ) );
+                    potentialMapTile.SetTilePositionAndData( potentialMapTile.TileTopLeftCellCoordinate, null, GetTileByIndex( i ) );
                 else
-                    potentialMapTile.SetTileTypes( null, GetRandomTileType( rand ) );
+                    potentialMapTile.SetTilePositionAndData( potentialMapTile.TileTopLeftCellCoordinate, null, GetRandomTileType( rand ) );
                 if ( debug )
                 {
                     ArcenDebugging.LogSingleLine("Checking if we could place " + potentialMapTile.TileType.ToDebugString() + ". We will make " + TilesAdjacentToPoint.Count + " adjacent tile checks. Attempt " + i + " to find a tile.", Verbosity.DoNotShow );
@@ -1022,8 +1010,7 @@ namespace Arcen.HotM.External
 
             MapGenFullTile tile = GetTileByName("SkeletonExtDowntownGridA");
             MapTile mapTile2 = MapTile.GetFromPoolOrCreate();
-            mapTile2.SetTileTypes( null, tile );
-            mapTile2.SetTileTopLeftCellCoordinate( new ArcenGroundPoint(0, 0) );
+            mapTile2.SetTilePositionAndData( new ArcenGroundPoint( 0, 0 ), null, tile );
             mapTile2.Mirroring = TileMirrorFlags.None;
             mapTile2.Rotation = TileRotation.Zero;
             ArcenDebugging.LogSingleLine("Seeding " + mapTile2.ToDebugStringWithConnectors(), Verbosity.DoNotShow );
@@ -1031,8 +1018,7 @@ namespace Arcen.HotM.External
                 ArcenDebugging.LogWithStack( "Failed to add mapTile", Verbosity.ShowAsError );
             
             mapTile2 = MapTile.GetFromPoolOrCreate();
-            mapTile2.SetTileTypes( null, tile );
-            mapTile2.SetTileTopLeftCellCoordinate( new ArcenGroundPoint(0, 1) );
+            mapTile2.SetTilePositionAndData( new ArcenGroundPoint( 0, 1 ), null, tile );
             mapTile2.Mirroring = TileMirrorFlags.X;
             mapTile2.Rotation = TileRotation.Ninety;
             ArcenDebugging.LogSingleLine("Seeding " + mapTile2.ToDebugStringWithConnectors(), Verbosity.DoNotShow );
@@ -1040,8 +1026,7 @@ namespace Arcen.HotM.External
                 ArcenDebugging.LogWithStack( "Failed to add mapTile", Verbosity.ShowAsError );
 
             mapTile2 = MapTile.GetFromPoolOrCreate();
-            mapTile2.SetTileTypes( null, tile );
-            mapTile2.SetTileTopLeftCellCoordinate( new ArcenGroundPoint(0, 2) );
+            mapTile2.SetTilePositionAndData( new ArcenGroundPoint( 0, 2 ), null, tile );
             mapTile2.Mirroring = TileMirrorFlags.X;
             mapTile2.Rotation = TileRotation.Zero;
             ArcenDebugging.LogSingleLine("Seeding " + mapTile2.ToDebugStringWithConnectors(), Verbosity.DoNotShow );
@@ -1106,7 +1091,7 @@ namespace Arcen.HotM.External
 
                     int maxCount = rand.Next( 5, 11 );
 
-                    CityMap.FloodFillCellsFromPoint( cellsForDistrict, cell.CellLocation, workingPoints,
+                    CityMap.FloodFillCellsFromPoint( cellsForDistrict, cell.rawCellLocation, workingPoints,
                         delegate ( MapCell other )
                         {
                             return other.ParentTile.DuringSeeding_DistrictType == districtType &&
@@ -1466,7 +1451,7 @@ namespace Arcen.HotM.External
                             continue;
                         }
 
-                        CityMap.FloodFillCellsFromPoint( cellsWeCanBlob, startingCell.CellLocation, workingPoints,
+                        CityMap.FloodFillCellsFromPoint( cellsWeCanBlob, startingCell.rawCellLocation, workingPoints,
                             delegate ( MapCell other ) {
                                 return other.IsStillNeedingSeedingLogic;
                             }, Blob.DesiredSizeInCells + 1 );
@@ -1502,19 +1487,19 @@ namespace Arcen.HotM.External
                         switch ( digDirection )
                         {
                             case FourDirection.East:
-                                if ( diggerCell.CellLocation.X >= CityBounds.XMax - 10 )
+                                if ( diggerCell.rawCellLocation.X >= CityBounds.XMax - 10 )
                                     digDirection = FourDirection.West;
                                 break;
                             case FourDirection.West:
-                                if ( diggerCell.CellLocation.X <= CityBounds.XMin + 10 )
+                                if ( diggerCell.rawCellLocation.X <= CityBounds.XMin + 10 )
                                     digDirection = FourDirection.East;
                                 break;
                             case FourDirection.South:
-                                if ( diggerCell.CellLocation.Z >= CityBounds.YMax - 10 )
+                                if ( diggerCell.rawCellLocation.Z >= CityBounds.YMax - 10 )
                                     digDirection = FourDirection.North;
                                 break;
                             case FourDirection.North:
-                                if ( diggerCell.CellLocation.Z <= CityBounds.YMin + 10 )
+                                if ( diggerCell.rawCellLocation.Z <= CityBounds.YMin + 10 )
                                     digDirection = FourDirection.South;
                                 break;
                         }
@@ -1558,19 +1543,19 @@ namespace Arcen.HotM.External
                                     switch ( digDirection )
                                     {
                                         case FourDirection.North:
-                                            if ( diggerCell.CellLocation.Z > CityBounds.YMin + 10 ) //this is actually in the south
+                                            if ( diggerCell.rawCellLocation.Z > CityBounds.YMin + 10 ) //this is actually in the south
                                                 tile = diggerCell.CellNorth;
                                             break;
                                         case FourDirection.South:
-                                            if ( diggerCell.CellLocation.Z < CityBounds.YMax - 10 ) //this is actually in the north
+                                            if ( diggerCell.rawCellLocation.Z < CityBounds.YMax - 10 ) //this is actually in the north
                                                 tile = diggerCell.CellSouth;
                                             break;
                                         case FourDirection.East:
-                                            if ( diggerCell.CellLocation.X < CityBounds.XMax - 10 )
+                                            if ( diggerCell.rawCellLocation.X < CityBounds.XMax - 10 )
                                                 tile = diggerCell.CellEast;
                                             break;
                                         case FourDirection.West:
-                                            if ( diggerCell.CellLocation.X > CityBounds.XMin + 10 )
+                                            if ( diggerCell.rawCellLocation.X > CityBounds.XMin + 10 )
                                                 tile = diggerCell.CellWest;
                                             break;
                                     }

@@ -1752,7 +1752,7 @@ namespace Arcen.HotM.External
                         int extraCount = 0;
                         foreach ( NPCCohort cohort in NPCCohortTable.Instance.Rows )
                         {
-                            int aggroAmount = this.GetAmountHasAggroedNPCCohort( cohort );
+                            int aggroAmount = this.GetAmountHasAggroedNPCCohort( cohort, null, null );
                             if ( aggroAmount > 0 )
                             {
                                 if ( countSoFar > 9 && !showHyperDetailed )
@@ -2089,7 +2089,7 @@ namespace Arcen.HotM.External
             if ( SkipInconspicuousCheck )
                 return false;
 
-            if ( this.GetAmountHasAggroedNPCCohort( FromCohort ) > 0 )
+            if ( this.GetAmountHasAggroedNPCCohort( FromCohort, null, null ) > 0 )
                 return false; //if we have aggroed that group, then no hiding from them
 
             int unremarkableUpTo = this.IsUnremarkableAnywhereUpToClearanceInt; //we will ignore the building variant for vehicles, since they cannot be at buildings
@@ -2126,7 +2126,7 @@ namespace Arcen.HotM.External
         public bool GetIsAbleToAvoidAutoTargetingShotAtAtProposedLocation( NPCCohort FromCohort, ISimBuilding BuildingOrNull, Vector3 Location, bool WillHaveDoneAttack, bool SkipInconspicuousCheck )
         {
             return MachineActorHelper.GetIsAbleToAvoidAutoTargetingShotAtAtProposedLocation_Vehicle( FromCohort, BuildingOrNull, Location, WillHaveDoneAttack, SkipInconspicuousCheck,
-                this.IsCloaked, this.GetAmountHasAggroedNPCCohort( FromCohort ), this.IsUnremarkableAnywhereUpToClearanceInt );
+                this.IsCloaked, this.GetAmountHasAggroedNPCCohort( FromCohort, null, null ), this.IsUnremarkableAnywhereUpToClearanceInt );
         }
         #endregion
 

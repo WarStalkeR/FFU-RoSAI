@@ -109,7 +109,7 @@ namespace Arcen.HotM.ExternalVis.CityLifeEffects
 				MapCell currentCell = origin.ParentCell;
 				PathHelperFuncs.GetLine(origin.CenterPoint, destination.CenterPoint, cellList);
 				MapCell c = PathHelperFuncs.GetCellFor(origin.CenterPoint);
-				cellList.Sort((a,b) => Vector2.Distance(a.CellLocation.ToVector2(), c.CellLocation.ToVector2()).CompareTo(Vector2.Distance(b.CellLocation.ToVector2(), c.CellLocation.ToVector2())) );
+				cellList.Sort((a,b) => Vector2.Distance(a.rawCellLocation.ToVector2(), c.rawCellLocation.ToVector2()).CompareTo(Vector2.Distance(b.rawCellLocation.ToVector2(), c.rawCellLocation.ToVector2())) );
 				MapItem currentStartItem = origin;
 				foreach (MapCell mapCell in cellList)
 				{

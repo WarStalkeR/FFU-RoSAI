@@ -796,7 +796,7 @@ namespace Arcen.HotM.External
                         destructionData.IsFromJob = null;
                         destructionData.ExtraCode = CommonRefs.PlayerNukeExplosionExtraCode;
 
-                        SimCommon.QueuedBuildingDestruction.Enqueue( destructionData );
+                        MapEffectCoordinator.AddQueuedBuildingDestruction( destructionData );
                     }
                     break;
                 case "ClickToMicroNuke":
@@ -834,7 +834,7 @@ namespace Arcen.HotM.External
                         destructionData.IsFromJob = null;
                         destructionData.ExtraCode = CommonRefs.PlayerNukeExplosionExtraCode;
 
-                        SimCommon.QueuedBuildingDestruction.Enqueue( destructionData );
+                        MapEffectCoordinator.AddQueuedBuildingDestruction( destructionData );
                     }
                     break;
                 case "ClickToFillMissionProgress":

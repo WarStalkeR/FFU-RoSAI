@@ -47,6 +47,8 @@ namespace Arcen.HotM.ExternalVis
                 return null;
 
             NPCUnitStance stance = NPCUnit.Stance;
+            if ( stance == null )
+                return null;
 
             MachineJobTag extraAggroMachineJob = NPCUnit?.IsManagedUnit?.ExtraAggroAgainstMachineStructures;
             int extraAggroMachineJobAmount = NPCUnit?.IsManagedUnit?.ExtraAggroAgainstMachineStructuresAmount??0;
@@ -77,12 +79,47 @@ namespace Arcen.HotM.ExternalVis
                 Vector3 targetLocation = actor.GetDrawLocation();
                 float distanceSquared = (attackerLocation - targetLocation).GetSquareGroundMagnitude();
                 if ( distanceSquared > attackerRangeSquared )
+                {
+                    //if ( stance.BackgroundWarType > 0 && ShouldDoTargetingDump )
+                    //{
+                    //    NPCUnit.TargetingDumpLines.Add( "skip-distance war" + stance.BackgroundWarType + " amountAggroed: " +
+                    //        actor.GetAmountHasAggroedNPCCohort( attackerGroup, stance, (actor as ISimNPCUnit)?.Stance ) + " otherStance: " + ((actor as ISimNPCUnit)?.Stance?.GetDisplayName() ?? "null") + " war-" +
+                    //        ((actor as ISimNPCUnit)?.Stance?.BackgroundWarType ?? -1) );
+                    //}
+                    //else if ( ShouldDoTargetingDump )
+                    //    NPCUnit.TargetingDumpLines.Add( "skip-distance war" + stance.BackgroundWarType );
                     continue; //this potential target is out of our range, so ignore it
+                }
+
+                //if ( actor is ISimNPCUnit )
+                //{
+                //    if ( stance.BackgroundWarType > 0 && ShouldDoTargetingDump )
+                //    {
+                //        NPCUnit.TargetingDumpLines.Add( "in-range war" + stance.BackgroundWarType + " amountAggroed: " +
+                //            actor.GetAmountHasAggroedNPCCohort( attackerGroup, stance, (actor as ISimNPCUnit)?.Stance ) + " otherStance: " + ((actor as ISimNPCUnit)?.Stance?.GetDisplayName() ?? "null") + " war-" +
+                //            ((actor as ISimNPCUnit)?.Stance?.BackgroundWarType ?? -1) );
+                //    }
+                //    else if ( ShouldDoTargetingDump )
+                //        NPCUnit.TargetingDumpLines.Add( "in-range war" + stance.BackgroundWarType );
+                //}
 
                 if ( actor.GetIsCurrentlyInvisible( InvisibilityPurpose.ForNPCTargeting ) )
                     continue;
                 if ( !NPCUnit.GetIsValidToAutomaticallyShootAt_Current( actor ) )
+                {
+                    //if ( actor is ISimNPCUnit u2 && !u2.Stance.IsConsideredCohortGuard )
+                    //{
+                    //    if ( stance.BackgroundWarType > 0 && ShouldDoTargetingDump )
+                    //    {
+                    //        NPCUnit.TargetingDumpLines.Add( "skip-shot war" + stance.BackgroundWarType + " amountAggroed: " +
+                    //            actor.GetAmountHasAggroedNPCCohort( attackerGroup, stance, (actor as ISimNPCUnit)?.Stance ) + " otherStance: " + ((actor as ISimNPCUnit)?.Stance?.GetDisplayName() ?? "null") + " war-" +
+                    //            ((actor as ISimNPCUnit)?.Stance?.BackgroundWarType ?? -1) );
+                    //    }
+                    //    else if ( ShouldDoTargetingDump )
+                    //        NPCUnit.TargetingDumpLines.Add( "skip-shot war" + stance.BackgroundWarType );
+                    //}
                     continue;
+                }
                 //note: this was redundant
                 //if ( !AttackHelper.GetTargetIsInRange( NPCUnit, actor ) )
                 //    continue; //if not in range, don't think about anything more -- basically, that's off limits
@@ -139,7 +176,7 @@ namespace Arcen.HotM.ExternalVis
 
                 bool wouldBeDead = actor.IncomingDamage.Construction.GetWouldBeDeadFromIncomingDamageTargeting();
 
-                int amountAggroed = actor.GetAmountHasAggroedNPCCohort( attackerGroup );
+                int amountAggroed = actor.GetAmountHasAggroedNPCCohort( attackerGroup, stance, (actor as ISimNPCUnit)?.Stance );
                 if ( extraAggroMachineJobAmount > 0 && extraAggroMachineJob != null )
                 {
                     if ( actor is MachineStructure structure )
@@ -148,6 +185,14 @@ namespace Arcen.HotM.ExternalVis
                             amountAggroed += extraAggroMachineJobAmount;
                     }
                 }
+
+                //if ( stance.BackgroundWarType > 0 && ShouldDoTargetingDump )
+                //{
+                //    NPCUnit.TargetingDumpLines.Add( "war" + stance.BackgroundWarType + " amountAggroed: " + amountAggroed + " otherStance: " + ((actor as ISimNPCUnit)?.Stance?.GetDisplayName() ?? "null") + " war-" +
+                //        ((actor as ISimNPCUnit)?.Stance?.BackgroundWarType ?? -1) );
+                //}
+                //else if (ShouldDoTargetingDump )
+                //    NPCUnit.TargetingDumpLines.Add( "war" + stance.BackgroundWarType + " amountAggroed: " + amountAggroed );
 
                 damageDone.GetTargetingData( actor, out int HighestDamagePercentage, out int LowestTargetPercentageRemain, out int HighestRawNumberDone );
 

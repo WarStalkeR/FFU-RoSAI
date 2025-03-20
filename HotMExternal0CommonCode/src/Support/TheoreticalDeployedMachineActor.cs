@@ -327,7 +327,7 @@ namespace Arcen.HotM.External
             throw new NotImplementedException();
         }
 
-        public int GetAmountHasAggroedNPCCohort( NPCCohort Group )
+        public int GetAmountHasAggroedNPCCohort( NPCCohort Group, NPCUnitStance Stance1OrNull, NPCUnitStance Stance2OrNull )
         {
             return 0;
         }
@@ -508,7 +508,7 @@ namespace Arcen.HotM.External
                 ClearanceCheckType clearanceCheck = BuildingOrNull != null ? ClearanceCheckType.MovingToBuilding : ClearanceCheckType.MovingToNonBuilding;
 
                 return MachineActorHelper.GetIsAbleToAvoidAutoTargetingShotAtAtProposedLocation_Unit( FromCohort, BuildingOrNull, Location, WillHaveDoneAttack, SkipInconspicuousCheck,
-                    this.IsCloaked, this.GetAmountHasAggroedNPCCohort( FromCohort ),
+                    this.IsCloaked, this.GetAmountHasAggroedNPCCohort( FromCohort, null, null ),
                     this.GetIsUnremarkableRightNow_NotCountingActualClearanceChecks( clearanceCheck ),
                     this.GetEffectiveClearance( clearanceCheck ) );
             }

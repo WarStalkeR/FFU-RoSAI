@@ -249,11 +249,17 @@ namespace Arcen.HotM.External
             if ( Unit == null )
                 return null;
 
-            ISimUnitLocation bestReal = null;
-            float bestRealRange = 100000000;
+            ISimUnitLocation bestEitherReal = null;
+            float bestEitherRealRange = 100000000;
 
-            ISimUnitLocation bestAnyClearance = null;
-            float bestAnyClearanceRange = 100000000;
+            ISimUnitLocation bestEitherAnyClearance = null;
+            float bestEitherAnyClearanceRange = 100000000;
+
+            ISimBuilding bestBuildingReal = null;
+            float bestBuildingRealRange = 100000000;
+
+            ISimBuilding bestBuildingAnyClearance = null;
+            float bestBuildingAnyClearanceRange = 100000000;
 
             Vector3 unitStartingSpot = Unit.GetActualPositionForMovementOrPlacement();
 
@@ -347,28 +353,40 @@ namespace Arcen.HotM.External
                             float range = (loc - TargetLocation).GetSquareGroundMagnitude();
                             if ( isBadClearance )
                             {
-                                if ( bestAnyClearance == null || range < bestAnyClearanceRange )
+                                if ( bestBuildingAnyClearance == null || range < bestBuildingAnyClearanceRange )
                                 {
                                     if ( neighbor.CalculateIfCollidableWouldIntersectAnotherCollidableHere( Unit, loc,
                                             0, CollisionRule.Strict, false //we will ignore rotation, as this only applies to sub-collidables
                                             ) )
                                         continue; //if we would intersect some existing collidable
 
-                                    bestAnyClearance = simBuild;
-                                    bestAnyClearanceRange = range;
+                                    bestBuildingAnyClearance = simBuild;
+                                    bestBuildingAnyClearanceRange = range;
+
+                                    if ( bestEitherAnyClearance == null || range < bestEitherAnyClearanceRange )
+                                    {
+                                        bestEitherAnyClearance = simBuild;
+                                        bestEitherAnyClearanceRange = range;
+                                    }
                                 }
                             }
                             else
                             {
-                                if ( bestReal == null || range < bestRealRange )
+                                if ( bestBuildingReal == null || range < bestBuildingRealRange )
                                 {
                                     if ( neighbor.CalculateIfCollidableWouldIntersectAnotherCollidableHere( Unit, loc,
                                             0, CollisionRule.Strict, false //we will ignore rotation, as this only applies to sub-collidables
                                             ) )
                                         continue; //if we would intersect some existing collidable
 
-                                    bestReal = simBuild;
-                                    bestRealRange = range;
+                                    bestBuildingReal = simBuild;
+                                    bestBuildingRealRange = range;
+
+                                    if ( bestEitherReal == null || range < bestEitherRealRange )
+                                    {
+                                        bestEitherReal = simBuild;
+                                        bestEitherRealRange = range;
+                                    }
                                 }
                             }
                         }
@@ -433,39 +451,47 @@ namespace Arcen.HotM.External
                         float range = (loc - TargetLocation).GetSquareGroundMagnitude();
                         if ( isBadClearance )
                         {
-                            if ( bestAnyClearance == null || range < bestAnyClearanceRange )
+                            if ( bestEitherAnyClearance == null || range < bestEitherAnyClearanceRange )
                             {
                                 if ( neighbor.CalculateIfCollidableWouldIntersectAnotherCollidableHere( Unit, outdoorSpot.GetEffectiveWorldLocationForContainedUnit(),
                                         0, CollisionRule.Strict, false //we will ignore rotation, as this only applies to sub-collidables
                                         ) )
                                     continue; //if we would intersect some existing collidable
 
-                                bestAnyClearance = outdoorSpot;
-                                bestAnyClearanceRange = range;
+                                bestEitherAnyClearance = outdoorSpot;
+                                bestEitherAnyClearanceRange = range;
                             }
                         }
                         else
                         {
-                            if ( bestReal == null || range < bestRealRange )
+                            if ( bestEitherReal == null || range < bestEitherRealRange )
                             {
                                 if ( neighbor.CalculateIfCollidableWouldIntersectAnotherCollidableHere( Unit, outdoorSpot.GetEffectiveWorldLocationForContainedUnit(),
                                         0, CollisionRule.Strict, false //we will ignore rotation, as this only applies to sub-collidables
                                         ) )
                                     continue; //if we would intersect some existing collidable
 
-                                bestReal = outdoorSpot;
-                                bestRealRange = range;
+                                bestEitherReal = outdoorSpot;
+                                bestEitherRealRange = range;
                             }
                         }
                     }
                 }
             }
 
-            if ( bestReal != null && bestRealRange <= MaxDistanceAllowedFromSpot * MaxDistanceAllowedFromSpot )
-                return bestReal;
+            float distanceAllowedSquared = MaxDistanceAllowedFromSpot * MaxDistanceAllowedFromSpot;
 
-            if ( bestAnyClearance != null && bestAnyClearanceRange <= MaxDistanceAllowedFromSpot * MaxDistanceAllowedFromSpot )
-                return bestAnyClearance;
+            if ( bestBuildingReal != null && bestBuildingRealRange <= distanceAllowedSquared )
+                return bestBuildingReal;
+
+            //if ( bestBuildingAnyClearance != null && bestBuildingAnyClearanceRange <= distanceAllowedSquared )
+            //    return bestBuildingAnyClearance;
+
+            if ( bestEitherReal != null && bestEitherRealRange <= distanceAllowedSquared )
+                return bestEitherReal;
+
+            if ( bestEitherAnyClearance != null && bestEitherAnyClearanceRange <= distanceAllowedSquared )
+                return bestEitherAnyClearance;
             return null;
         }
         #endregion

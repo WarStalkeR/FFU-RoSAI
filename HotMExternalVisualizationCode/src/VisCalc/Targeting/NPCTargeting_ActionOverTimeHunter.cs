@@ -46,6 +46,8 @@ namespace Arcen.HotM.ExternalVis
                 return null;
 
             NPCUnitStance stance = NPCUnit.Stance;
+            if ( stance == null )
+                return null;
 
             NPCCohort attackerGroup = NPCUnit.FromCohort;
             float attackerRangeSquared = NPCUnit.GetAttackRangeSquared();
@@ -122,7 +124,8 @@ namespace Arcen.HotM.ExternalVis
                 bool wouldBeDead = actor.IncomingDamage.Construction.GetWouldBeDeadFromIncomingDamageTargeting();
                 bool isDoingActionOverTime = false;
 
-                int amountAggroed = actor.GetAmountHasAggroedNPCCohort( attackerGroup );
+                int amountAggroed = actor.GetAmountHasAggroedNPCCohort( attackerGroup, stance, (actor as ISimNPCUnit)?.Stance );
+
                 int serviceDisruptionAmount = 0;
                 if ( actor is ISimMachineActor machineActor )
                 {

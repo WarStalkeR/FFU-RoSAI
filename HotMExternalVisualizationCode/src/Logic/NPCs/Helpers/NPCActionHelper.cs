@@ -1205,20 +1205,6 @@ namespace Arcen.HotM.ExternalVis
                 ongoingAmount += (Unit.GetActorDataCurrent( kv.Key, true ) * kv.Value);
             }
 
-            ISimBuilding building = Unit.ObjectiveBuilding.Get();
-            if ( building == null ) //use the location if the objective is not a building
-                building = Unit.ContainerLocation.Get() as ISimBuilding;
-
-            if ( building != null )
-            {
-                foreach ( KeyValuePair<LocationDataType, float> kv in Objective.PointChangePerTurnPerLocationData )
-                {
-                    if ( kv.Value == 0 )
-                        continue;
-                    ongoingAmount += (building.GetBuildingDataValue( kv.Key ) * kv.Value);
-                }
-            }
-
             if ( ongoingAmount < Objective.MinPointsPerTurnFromActors )
                 return MathA.Max( 1, Objective.MinPointsPerTurnFromActors );
 

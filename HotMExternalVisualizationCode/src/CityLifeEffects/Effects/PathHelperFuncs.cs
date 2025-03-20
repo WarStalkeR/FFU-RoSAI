@@ -137,7 +137,7 @@ namespace Arcen.HotM.ExternalVis.CityLifeEffects
 		{
 			if (cell == null) return ArcenGroundPoint.ZeroZeroPoint;
 			cellList.AddIfNotAlreadyIn(cell);
-			return cell.CellLocation;
+			return cell.rawCellLocation;
 		}
 
 		public static MapCell GetCellFor(Waypoint wp)

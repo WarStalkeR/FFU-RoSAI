@@ -386,7 +386,7 @@ namespace Arcen.HotM.External
             throw new NotImplementedException();
         }
 
-        public int GetAmountHasAggroedNPCCohort( NPCCohort Group )
+        public int GetAmountHasAggroedNPCCohort( NPCCohort Group, NPCUnitStance Stance1OrNull, NPCUnitStance Stance2OrNull )
         {
             return 0;
         }
