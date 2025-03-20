@@ -19,7 +19,7 @@
 		name_when_first_unit="Tech 4000" name_prefix="Tech" name_style="UnitBarcode"
 		sort_order="1100" command_mode_category="AndroidDeployment"
 		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true" is_never_gray_on_upgrade_lists="true"
-		collections="AllForces,AllAndroids,AndroidsInventedByHumans,StandardUnits,SupportUnits,Portdroids,Technicians,TechniciansAndNickelbots,SouldroidsAndTechnicians,CanFitThinHumanClothes,CanFitHumanClothes,CanHandleAndroidShoulderMounts,CanHandleAndroidTechPistols" is_considered_android="true">
+		collections="AllForces,AllAndroids,AndroidsInventedByHumans,StandardUnits,SupportUnits,Portdroids,Technicians,TechniciansAndNickelbots,TechniciansAndNickelbotsNotBulk,SouldroidsAndTechnicians,CanFitThinHumanClothes,CanFitHumanClothes,CanHandleAndroidShoulderMounts,CanHandleAndroidTechPistols" is_considered_android="true">
 		<equipment_slot_count type="AndroidArmor" amount="1" />
 		<equipment_slot_count type="AndroidSecondary" amount="1" name_when_blank="Basic Pistol" />
 		<equipment_slot_count type="AndroidAugment" amount="2" />
@@ -74,7 +74,7 @@
 		name_prefix="Senior Tech" name_style="UnitBarcode"
 		sort_order="1150" command_mode_category="ShellCompanyDeployment"
 		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true" is_tied_to_shell_company="true"
-		collections="AllForces,AllAndroids,AndroidsInventedByHumans,StandardUnits,ShellCompanyOperatives,SupportUnits,Portdroids,Technicians,TechniciansAndNickelbots,SouldroidsAndTechnicians,CanFitThinHumanClothes,CanFitHumanClothes,CanHandleAndroidTechPistols" is_considered_android="true">
+		collections="AllForces,AllAndroids,AndroidsInventedByHumans,StandardUnits,ShellCompanyOperatives,SupportUnits,Portdroids,Technicians,TechniciansAndNickelbots,TechniciansAndNickelbotsNotBulk,SouldroidsAndTechnicians,CanFitThinHumanClothes,CanFitHumanClothes,CanHandleAndroidTechPistols" is_considered_android="true">
 		<equipment_slot_count type="AndroidArmor" amount="1" />
 		<equipment_slot_count type="AndroidSecondary" amount="1" name_when_blank="Basic Pistol" />
 		<equipment_slot_count type="AndroidAugment" amount="2" />
@@ -249,7 +249,7 @@
 		name_prefix="NIKL" name_style="UnitBarcode"
 		sort_order="1400" command_mode_category="AndroidDeployment" can_appear_even_after_final_doom="true"
 		can_make_ranged_attacks_by_default="true" can_ever_make_melee_attacks="true" can_ever_make_ranged_attacks="true" is_never_gray_on_upgrade_lists="true"
-		collections="AllForces,AllAndroids,AndroidsInventedByHumans,StandardUnits,Combatants,CombatAndroids,CanFitThinHumanClothes,Nickelbots,TechniciansAndNickelbots,Dynadroids,CanHandleAndroidRifles,CanHandleAndroidLightFirearms,CanHandleAndroidThrowables,CanHandleAndroidShoulderMounts" is_considered_android="true">
+		collections="AllForces,AllAndroids,AndroidsInventedByHumans,StandardUnits,Combatants,CombatAndroids,CanFitThinHumanClothes,Nickelbots,NickelbotsNotBulk,TechniciansAndNickelbots,TechniciansAndNickelbotsNotBulk,Dynadroids,CanHandleAndroidRifles,CanHandleAndroidLightFirearms,CanHandleAndroidThrowables,CanHandleAndroidShoulderMounts" is_considered_android="true">
 		<equipment_slot_count type="AndroidPrimary" amount="1" name_when_blank="Basic Rifle" />
 		<equipment_slot_count type="AndroidArmor" amount="1" />
 		<equipment_slot_count type="AndroidAugment" amount="1" />

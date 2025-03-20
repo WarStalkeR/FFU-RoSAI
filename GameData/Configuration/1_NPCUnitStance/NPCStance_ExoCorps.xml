@@ -11,6 +11,7 @@
 		will_attack_outcast_machines_at_or_above_level="1" is_hyper_aggressive_against_all_but_its_own_cohort="true"
 		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
 		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		is_invading_city="true" extra_aggro_against_me_if_i_invade_and_other_does_not="500000"
 		>
 		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
 		<action_consideration id="RunAfterMachineStructures" sort_order="180" chance_of_attempting="60" action_to_attempt="RunAfterMachineStructures" />
@@ -19,7 +20,8 @@
 	</stance>
 
 	<stance id="ExoCorpMilUnitInvasionConfused" copy_from="ExoCorpMilUnitInvasion"
-		description="Phased across timelines, to their great surprise. They don't recognize this city, or know how they got here. Where are their comrades?"/>
+		description="Phased across timelines, to their great surprise. They don't recognize this city, or know how they got here. Where are their comrades?"
+		is_invading_city="true" extra_aggro_against_me_if_i_invade_and_other_does_not="10000"/>
 
 	<stance id="ExoCorpSoldierInvasion" display_name="Invasion"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
@@ -31,6 +33,7 @@
 		will_attack_outcast_machines_at_or_above_level="1" is_hyper_aggressive_against_all_but_its_own_cohort="true"
 		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
 		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		is_invading_city="true" extra_aggro_against_me_if_i_invade_and_other_does_not="500000"
 		>
 		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="1.1" />
 		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
@@ -40,7 +43,8 @@
 	</stance>
 
 	<stance id="ExoCorpSoldierInvasionConfused" copy_from="ExoCorpSoldierInvasion"
-		description="Phased across timelines, to their great surprise. They don't recognize this city, or know how they got here. Where are their comrades?"/>
+		description="Phased across timelines, to their great surprise. They don't recognize this city, or know how they got here. Where are their comrades?"
+		is_invading_city="true" extra_aggro_against_me_if_i_invade_and_other_does_not="10000"/>
 
 	<stance id="ExoCorpMechInvasion" display_name="Invasion"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
@@ -52,12 +56,14 @@
 		will_attack_outcast_machines_at_or_above_level="1" is_hyper_aggressive_against_all_but_its_own_cohort="true"
 		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
 		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		is_invading_city="true" extra_aggro_against_me_if_i_invade_and_other_does_not="500000"
 		>
 		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
 	</stance>
 
 	<stance id="ExoCorpMechInvasionConfused" copy_from="ExoCorpMechInvasion"
-		description="Phased across timelines, to their great surprise. They don't recognize this city, or know how they got here. Where are their comrades?"/>
+		description="Phased across timelines, to their great surprise. They don't recognize this city, or know how they got here. Where are their comrades?"
+		is_invading_city="true" extra_aggro_against_me_if_i_invade_and_other_does_not="10000"/>
 
 	<stance id="ExoCorpRaptorHunting" display_name="Hunting"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
@@ -69,6 +75,7 @@
 		will_attack_outcast_machines_at_or_above_level="1" is_hyper_aggressive_against_all_but_its_own_cohort="true"
 		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
 		max_allowed_poi_clearance="5" max_allowed_non_focal_building_clearance="5"
+		is_invading_city="true" extra_aggro_against_me_if_i_invade_and_other_does_not="500000"
 		>
 		<actor_data_multiplier actor_data_type="ContrabandScanner" multiplier="1.1" />
 		<action_consideration id="RunAfterAggroedWeShoot" sort_order="150" chance_of_attempting="70" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
@@ -78,6 +85,7 @@
 	</stance>
 
 	<stance id="ExoCorpRaptorHuntingConfused" copy_from="ExoCorpRaptorHunting"
-		description="Phased across timelines, not that they've particularly noticed. They're on the hunt."/>
+		description="Phased across timelines, not that they've particularly noticed. They're on the hunt."
+		is_invading_city="true" extra_aggro_against_me_if_i_invade_and_other_does_not="10000"/>
 
 </root>

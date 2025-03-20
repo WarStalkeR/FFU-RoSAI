@@ -16,7 +16,7 @@
 		icon_name="CleanSimple_SkillB059" slot_type="AndroidAugment"
 		description="Lightweight weaponry can be enhanced with rounds made of particularly dense Heavy Metals. The recoil requires the locking arms of Nickelbots to handle."
 		strategy_tip_optional="These have fantastic stopping power, but severely reduce range."
-		collections="AndroidAugments" turns_required_to_equip="2" limited_to_actor_collection="Nickelbots" is_invalid_and_invisible_for_npc_units="true">
+		collections="AndroidAugments" turns_required_to_equip="2" limited_to_actor_collection="NickelbotsNotBulk" is_invalid_and_invisible_for_npc_units="true">
 		<cost_per_attack resource="HeavyMetals" amount="1500" />
 		<initial_actor_data data_type="ActorPower" value="160"/>
 		<initial_actor_data data_type="AttackRange" value="-12"/>
@@ -30,7 +30,7 @@
 		icon_name="SK_Optimization" slot_type="AndroidAugment"
 		description="These lightweight human-designed models can be optimized."
 		strategy_tip_optional="With adequate mental energy, allows android to take more actions per turn."
-		collections="AndroidAugments" turns_required_to_equip="2" limited_to_actor_collection="TechniciansAndNickelbots" is_invalid_and_invisible_for_npc_units="true">
+		collections="AndroidAugments" turns_required_to_equip="2" limited_to_actor_collection="TechniciansAndNickelbotsNotBulk" is_invalid_and_invisible_for_npc_units="true">
 		<initial_actor_data data_type="ActorMaxActionPoints" value="2"/>
 	</equipment_type>
 

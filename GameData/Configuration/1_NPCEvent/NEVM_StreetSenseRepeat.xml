@@ -625,6 +625,557 @@ Selling your excess to them is much better for the citizens of the city, and it 
 		</choice>
 
 	</city_event>
+
+
+	<!--*********************************************************************************
+		NEVM_MinorOpportunities_Ch0
+		*********************************************************************************
+	-->
+
+	<!--Ch0_Fire
+		*********************************************************************************-->
+	<city_event id="Ch0_Fire" display_name="Apartment Fire"
+		 description="Firefighters are putting out a minor apartment blaze."
+		 strategy_tip="The thick concrete-and-alumina walls make the risk of it spreading to neighboring tenements rather low."
+		 icon_name="FlatSkillB_extinguisher" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction">
+		<gate_by_city minimum_chapter="0" required_meta_flag="HasLearnedThereIsNoSafetyWithHumans" required_beyond_turn_if_set="NoSmallFiresUntilThisTurn">
+			<required_city_statistic statistic_type="FirefightersMurderedByYou" value="17" at_least="false" />
+			<!--means it can be done 3 times, in effect-->
+			<required_city_statistic statistic_type="SmallFiresYouHelpedPutOut" value="2" at_least="false" />
+			<!--means it can be done 3 times-->
+		</gate_by_city>
+		<minor_event_data max_times_can_be_executed="5" max_times_can_appear_at_once="2" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="RecruitMedicalScientists">
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="WorkingClassApartments" />
+		</minor_event_data>
+		<character id="Sole" tag_for_character="FireRescueAxe" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-20"/>
+
+		<choice id="Help" display_name="Help Put Out The Fire"
+			description="Seems unlikely to benefit you, but what the heck. You're here."
+			strategy_tip="This unit will remain busy at this site for several turns."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="UnexpectedBonusUnlock" despawn_characters_on_the_right="false"
+				action_over_time_to_start="HelpingFirefighters" turns_for_action_over_time_to_last="5"
+				set_city_statistic_to_current_turn_plus_x="NoSmallFiresUntilThisTurn" the_x_to_add_to_that_city_statistic="5">
+			</possible_result>
+		</choice>
+
+		<choice id="Murder" display_name="Murder Them"
+			description="Maybe the fire will spread if there's nobody around to stop it."
+			strategy_tip=""
+			action_visibility_style="IsAttack">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true"
+				result_message="Six firefighters are dead. The police are on their way."
+				set_city_statistic_to_current_turn_plus_x="NoSmallFiresUntilThisTurn" the_x_to_add_to_that_city_statistic="5">
+				<city_statistic_change statistic="FirefightersMurderedByYou" value="6" />
+				<city_statistic_change statistic="Murders" value="6" />
+				<resource_change_range resource_type="Cruelty" min="4" max="7" />
+				<npc_unit_to_spawn id="SF1" to_spawn="SecForcePatrol" stance_to_start_in="SecForceRespondingToCall" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="SF2" to_spawn="SecForcePatrol" stance_to_start_in="SecForceRespondingToCall" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="SF3" to_spawn="SecForcePatrol" stance_to_start_in="SecForceRespondingToCall" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="SF4" to_spawn="SecForcePatrol" stance_to_start_in="SecForceRespondingToCall" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Ch0_FireTrap
+		*********************************************************************************-->
+	<city_event id="Ch0_FireTrap" display_name="Apartment Fire"
+		 description="Firefighters are putting out a minor apartment blaze."
+		 strategy_tip="Security is visibly present. Looks like people noticed you murdering all those firefighters."
+		 icon_name="SomethingFireblow" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction" skip_nevermind_option="true">
+		<gate_by_city minimum_chapter="0" required_meta_flag="HasLearnedThereIsNoSafetyWithHumans" required_beyond_turn_if_set="NoSmallFiresUntilThisTurn">
+			<required_city_statistic statistic_type="FirefightersMurderedByYou" value="18" at_least="true" />
+		</gate_by_city>
+		<minor_event_data max_times_can_be_executed="5" max_times_can_appear_at_once="2" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="RecruitMedicalScientists">
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="WorkingClassApartments" />
+		</minor_event_data>
+		<character id="Sole" tag_for_character="FireRescueCarryChild" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-20"/>
+
+		<choice id="Trap" display_name="It's A Trap"
+			description="Substantially more security was waiting for you than was expected."
+			strategy_tip="Let's not do this again. You're not going to get anything out of it..."
+			action_visibility_style="IsAttack">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="WorryInterruption"
+				result_message=""
+				set_city_statistic_to_current_turn_plus_x="NoSmallFiresUntilThisTurn" the_x_to_add_to_that_city_statistic="15">
+				<npc_unit_to_spawn id="SF1" to_spawn="SecForcePatrol" stance_to_start_in="SecForceAmbush" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="SF2" to_spawn="SecForcePatrol" stance_to_start_in="SecForceAmbush" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="SF3" to_spawn="SecForcePatrol" stance_to_start_in="SecForceAmbush" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="SF4" to_spawn="SecForcePatrol" stance_to_start_in="SecForceAmbush" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="B1" to_spawn="SecForceBackup" stance_to_start_in="SecForceSecuringArea" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="B2" to_spawn="SecForceBackup" stance_to_start_in="SecForceSecuringArea" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="B3" to_spawn="SecForceBackup" stance_to_start_in="SecForceSecuringArea" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="N1" to_spawn="SecForceNegotiator" stance_to_start_in="SecForceNegotiatorAmbush" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+				<npc_unit_to_spawn id="N2" to_spawn="SecForceNegotiator" stance_to_start_in="SecForceNegotiatorAmbush" radius_in_which_to_seed="8"
+					spawn_facing_player_unit="true"
+					spawn_for_local_authority_if_matches_this_tag_else_use_other_tag="CorporateAggressorOfAnySort" spawn_for_this_tag_if_local_authority_invalid="CorporationMilitaryPropertyOwner"
+					aggro_the_cohort_of_this_unit_against_the_spawning_actor_by="1000" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Ch0_LostGenWaterTheft
+		*********************************************************************************-->
+	<city_event id="Ch0_LostGenWaterTheft" display_name="LostGen Water Theft"
+		 description="These orphans are simply trying to get potable water for their group."
+		 strategy_tip=""
+		 icon_name="FlatSkillB_flask" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction">
+		<gate_by_city minimum_chapter="0" required_meta_flag="HasLearnedThereIsNoSafetyWithHumans" required_beyond_turn_if_set="NoLostGenWaterUntilThisTurn">
+			<required_city_statistic statistic_type="AttemptedMurders" value="0" at_least="false" />
+			<!--means it can be done 1 time-->
+			<required_city_statistic statistic_type="HelpedLostGenStealWater" value="2" at_least="false" />
+			<!--means it can be done 3 times-->
+			<required_city_statistic statistic_type="WatchedLostGenFailToStealWater" value="2" at_least="false" />
+			<!--means it can be done 3 times-->
+		</gate_by_city>
+		<minor_event_data max_times_can_be_executed="7" max_times_can_appear_at_once="1" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="CryogenicsWork">
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="ConvenienceStore" />
+		</minor_event_data>
+		<character id="Sole" tag_for_character="LostKidGrunt" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="0"/>
+
+		<choice id="Help" display_name="Help Gather And Carry Water"
+			description="You can carry a vast amount more than these kids. Patching into pipes at the outside of the convenience store is not that hard, but carrying it away at speed is quite difficult."
+			strategy_tip="This unit will remain busy, while moving around stealthily, for several turns."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="UnexpectedBonusUnlock" despawn_characters_on_the_right="false"
+				action_over_time_to_start="HelpingLostGenKidsStealWater" turns_for_action_over_time_to_last="4"
+				set_city_statistic_to_current_turn_plus_x="NoLostGenWaterUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+			</possible_result>
+		</choice>
+
+		<choice id="Watch" display_name="Watch Impassively"
+			description="Water is one of the largest needs humans have, and it's pretty heavy."
+			strategy_tip="You're curious if these kids can manage to not only get the water, but also get away."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="DeviousChoice" despawn_characters_on_the_right="true"
+				result_message="Huh. Nope. SecForce picked up the kids. Straight to jail with them, you presume. And no water for the others."
+				set_city_statistic_to_current_turn_plus_x="NoLostGenWaterUntilThisTurn" the_x_to_add_to_that_city_statistic="4">
+				<city_statistic_change statistic="WatchedLostGenFailToStealWater" value="1" />
+				<resource_change_range resource_type="Apathy" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+		<choice id="Murder" display_name="Murder Them"
+			description="They're kids just trying to survive, but hey."
+			strategy_tip=""
+			action_visibility_style="IsAttack">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" despawn_characters_on_the_right="true"
+				result_message="The kids got away. Oh well.">
+				<city_statistic_change statistic="AttemptedMurders" value="3" />
+				<resource_change_range resource_type="Cruelty" min="20" max="30" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Ch0_CitizenParkingAtMotel
+		*********************************************************************************-->
+	<city_event id="Ch0_CitizenParkingAtMotel" display_name="Citizen Parking At Motel"
+		 description="You're not sure what this person is up to. Are they committing a crime, doing something immoral, or just poor?"
+		 strategy_tip=""
+		 icon_name="HL_HouseGarage" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction">
+		<gate_by_city minimum_chapter="0" required_meta_flag="HasLearnedThereIsNoSafetyWithHumans" required_beyond_turn_if_set="NoCitizensParkingUntilThisTurn">
+			<required_city_statistic statistic_type="GaveGoodsToMotelVisitor" value="5" at_least="false" />
+			<!--means it can be done 3 times-->
+			<required_city_statistic statistic_type="MotelVisitorsObserved" value="0" at_least="false" />
+			<!--means it can be done 1 time-->
+			<required_city_statistic statistic_type="MotelVisitorsMurderedByYou" value="2" at_least="false" />
+			<!--means it can be done 3 times-->
+		</gate_by_city>
+		<minor_event_data max_times_can_be_executed="5" max_times_can_appear_at_once="3" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="OfficeWork">
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="Motel" />
+		</minor_event_data>
+		<character id="Sole" tag_for_character="GenericElder" scale_multiplier="1" position_offset="0,0,0" added_rotation_y="-20"/>
+
+		<choice id="Help" display_name="Help Them"
+			description="In the event they're poor, rather than a criminal or simply immoral, maybe they need something?"
+			strategy_tip="You're not sure what exactly they might need, so a basic amalgamation of consumer products seems right."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="ConsumerGoods" cost="2"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="You're not sure if he likes the stuff or not, and the man seems baffled to be given anything by a random robot."
+				result_message_secondary_note="As you jog away slightly quicker than you strictly need to, you feel grateful that only humans get embarrassed, and you do not."
+				set_city_statistic_to_current_turn_plus_x="NoCitizensParkingUntilThisTurn" the_x_to_add_to_that_city_statistic="8">
+				<city_statistic_change statistic="GaveGoodsToMotelVisitor" value="2" />
+				<resource_change_range resource_type="Compassion" min="30" max="40" />
+			</possible_result>
+		</choice>
+
+		<choice id="Watch" display_name="Watch Them"
+			description="You can't see through walls, but your hearing is excellent, and all of the motel rooms are poorly made. You could try and see what they're doing."
+			strategy_tip="This unit will remain busy at this site for several turns."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="UnexpectedBonusUnlock" despawn_characters_on_the_right="false"
+				action_over_time_to_start="ObservingMotelVisitor" turns_for_action_over_time_to_last="7"
+				set_city_statistic_to_current_turn_plus_x="NoCitizensParkingUntilThisTurn" the_x_to_add_to_that_city_statistic="5">
+			</possible_result>
+		</choice>
+
+		<choice id="Murder" display_name="Murder Them"
+			description="Why not."
+			strategy_tip=""
+			action_visibility_style="IsAttack">
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="MurderedWithoutCause" kill_characters_on_the_right="true"
+				result_message="Yep, that man is... dead. People have pretended not to notice."
+				set_city_statistic_to_current_turn_plus_x="NoCitizensParkingUntilThisTurn" the_x_to_add_to_that_city_statistic="8">
+				<city_statistic_change statistic="MotelVisitorsMurderedByYou" value="1" />
+				<city_statistic_change statistic="Murders" value="1" />
+				<resource_change_range resource_type="Cruelty" min="3" max="5" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Ch0_UnlockedBrownstone
+		*********************************************************************************-->
+	<city_event id="Ch0_UnlockedBrownstone" display_name="Unlocked Brownstone"
+		 description="The home isn't strictly open, but the security on the door is low enough that it might as well be. No-one is home, and you can walk right on in if you want."
+		 strategy_tip=""
+		 icon_name="HL_HouseStairway" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction,WealthGeneration">
+		<gate_by_city minimum_chapter="1" required_meta_flag="HasFiguredOutPowerGeneration" required_beyond_turn_if_set="NoUnlockedBrownstoneUntilThisTurn"
+			blocked_by_countdown_complete="HomeSecurityUpgrade"/>
+		<minor_event_data max_times_can_be_executed="6" max_times_can_appear_at_once="3" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="AndroidTorpor">
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="Brownstone" />
+		</minor_event_data>
+
+		<choice id="Loot" display_name="Loot What You Can Find"
+			description="Nobody is here to stop you."
+			strategy_tip="You're not sure you need any of this junk, but whatever."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="UnexpectedBonusUnlock"
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedBrownstoneUntilThisTurn" the_x_to_add_to_that_city_statistic="6"
+				instantly_unlocked_1="Consumerism" instantly_unlocked_2="Woodworking" unlock_inspiration_type="StreeSenseEvent">
+				<city_statistic_change statistic="BrownstonesLooted" value="1" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="ConsumerGoods" min="1" max="6" />
+				<resource_change_range resource_type="Wealth" min="1" max="6" />
+				<resource_change_range resource_type="Furniture" min="2" max="4" />
+			</possible_result>
+		</choice>
+
+		<choice id="PlaceCG" display_name="Place Items Here"
+			description="Maybe they'll appreciate it? Maybe they'll be really confused."
+			strategy_tip="You're not sure what exactly makes you think this would be useful."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="ConsumerGoods" cost="4"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="Yeah, whoever lives here is going to be very confused when they get home."
+				result_message_secondary_note="You hope they like the stuff."
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedBrownstoneUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+				<city_statistic_change statistic="ConsumerGoodsPlacedInRandomHomes" value="4" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="Creativity" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+		<choice id="PlaceGG" display_name="Place Items Here"
+			description="Maybe they'll appreciate it? Maybe they'll be really confused."
+			strategy_tip="You're not sure what exactly makes you think this would be useful."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="FineGoods" cost="7"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="Yeah, whoever lives here is going to be very confused when they get home."
+				result_message_secondary_note="You hope they like the stuff."
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedBrownstoneUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+				<city_statistic_change statistic="FineGoodsPlacedInRandomHomes" value="7" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="Creativity" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+		<choice id="PlaceF" display_name="Place Items Here"
+			description="Maybe they'll appreciate it? Maybe they'll be really confused."
+			strategy_tip="You're not sure what exactly makes you think this would be useful."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Furniture" cost="3"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="Yeah, whoever lives here is going to be very confused when they get home."
+				result_message_secondary_note="The only thing you left behind is tables...?"
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedBrownstoneUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+				<city_statistic_change statistic="FurniturePlacedInRandomHomes" value="3" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="Creativity" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Ch0_UnlockedStarterHome
+		*********************************************************************************-->
+	<city_event id="Ch0_UnlockedStarterHome" display_name="Unlocked Starter Home"
+		 description="The home isn't strictly open, but the security on the door is low enough that it might as well be. No-one is home, and you can walk right on in if you want."
+		 strategy_tip=""
+		 icon_name="HL_HouseStairway" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction,WealthGeneration">
+		<gate_by_city minimum_chapter="1" required_meta_flag="HasFiguredOutPowerGeneration" required_beyond_turn_if_set="NoUnlockedSuburbanStarterHomeUntilThisTurn"
+			blocked_by_countdown_complete="HomeSecurityUpgrade"/>
+		<minor_event_data max_times_can_be_executed="6" max_times_can_appear_at_once="3" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="VegetableSeeds">
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="SuburbanStarterHome" />
+		</minor_event_data>
+
+		<choice id="Loot" display_name="Loot What You Can Find"
+			description="Nobody is here to stop you."
+			strategy_tip="You're not sure you need any of this junk, but whatever."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="UnexpectedBonusUnlock"
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedSuburbanStarterHomeUntilThisTurn" the_x_to_add_to_that_city_statistic="6"
+				instantly_unlocked_1="Consumerism" instantly_unlocked_2="Woodworking" unlock_inspiration_type="StreeSenseEvent">
+				<city_statistic_change statistic="SuburbanStarterHomesLooted" value="1" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="ConsumerGoods" min="4" max="12" />
+				<resource_change_range resource_type="Wealth" min="2" max="8" />
+				<resource_change_range resource_type="Furniture" min="3" max="7" />
+			</possible_result>
+		</choice>
+
+		<choice id="PlaceCG" display_name="Place Items Here"
+			description="Maybe they'll appreciate it? Maybe they'll be really confused."
+			strategy_tip="You're not sure what exactly makes you think this would be useful."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="ConsumerGoods" cost="4"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="Yeah, whoever lives here is going to be very confused when they get home."
+				result_message_secondary_note="You hope they like the stuff."
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedSuburbanStarterHomeUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+				<city_statistic_change statistic="ConsumerGoodsPlacedInRandomHomes" value="4" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="Creativity" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+		<choice id="PlaceGG" display_name="Place Items Here"
+			description="Maybe they'll appreciate it? Maybe they'll be really confused."
+			strategy_tip="You're not sure what exactly makes you think this would be useful."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="FineGoods" cost="7"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="Yeah, whoever lives here is going to be very confused when they get home."
+				result_message_secondary_note="You hope they like the stuff."
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedSuburbanStarterHomeUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+				<city_statistic_change statistic="FineGoodsPlacedInRandomHomes" value="7" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="Creativity" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+		<choice id="PlaceF" display_name="Place Items Here"
+			description="Maybe they'll appreciate it? Maybe they'll be really confused."
+			strategy_tip="You're not sure what exactly makes you think this would be useful."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Furniture" cost="3"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="Yeah, whoever lives here is going to be very confused when they get home."
+				result_message_secondary_note="The only thing you left behind is tables...?"
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedSuburbanStarterHomeUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+				<city_statistic_change statistic="FurniturePlacedInRandomHomes" value="3" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="Creativity" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Ch0_UnlockedUpgradedHome
+		*********************************************************************************-->
+	<city_event id="Ch0_UnlockedUpgradedHome" display_name="Unlocked Upgraded Home"
+		 description="The home isn't strictly open, but the security on the door is low enough that it might as well be. No-one is home, and you can walk right on in if you want."
+		 strategy_tip=""
+		 icon_name="HL_HouseStairway" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction,WealthGeneration">
+		<gate_by_city minimum_chapter="1" required_meta_flag="HasFiguredOutPowerGeneration" required_beyond_turn_if_set="NoUnlockedSuburbanUpgradedHomeUntilThisTurn"
+			blocked_by_countdown_complete="HomeSecurityUpgrade"/>
+		<minor_event_data max_times_can_be_executed="6" max_times_can_appear_at_once="3" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="VegetableSeeds">
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="SuburbanUpgradedHome" />
+		</minor_event_data>
+
+		<choice id="Loot" display_name="Loot What You Can Find"
+			description="Nobody is here to stop you."
+			strategy_tip="You're not sure you need any of this junk, but whatever."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="UnexpectedBonusUnlock"
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedSuburbanUpgradedHomeUntilThisTurn" the_x_to_add_to_that_city_statistic="6"
+				instantly_unlocked_1="Consumerism" instantly_unlocked_2="Woodworking" instantly_unlocked_3="Decadence" unlock_inspiration_type="StreeSenseEvent">
+				<city_statistic_change statistic="SuburbanUpgradedHomesLooted" value="1" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="ConsumerGoods" min="16" max="24" />
+				<resource_change_range resource_type="FineGoods" min="0" max="8" />
+				<resource_change_range resource_type="Wealth" min="9" max="22" />
+			</possible_result>
+		</choice>
+
+		<choice id="PlaceCG" display_name="Place Items Here"
+			description="Maybe they'll appreciate it? Maybe they'll be really confused."
+			strategy_tip="You're not sure what exactly makes you think this would be useful."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="ConsumerGoods" cost="4"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="Yeah, whoever lives here is going to be very confused when they get home."
+				result_message_secondary_note="You hope they like the stuff."
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedSuburbanUpgradedHomeUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+				<city_statistic_change statistic="ConsumerGoodsPlacedInRandomHomes" value="4" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="Creativity" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+		<choice id="PlaceGG" display_name="Place Items Here"
+			description="Maybe they'll appreciate it? Maybe they'll be really confused."
+			strategy_tip="You're not sure what exactly makes you think this would be useful."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="FineGoods" cost="7"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="Yeah, whoever lives here is going to be very confused when they get home."
+				result_message_secondary_note="You hope they like the stuff."
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedSuburbanUpgradedHomeUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+				<city_statistic_change statistic="FineGoodsPlacedInRandomHomes" value="7" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="Creativity" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+		<choice id="PlaceF" display_name="Place Items Here"
+			description="Maybe they'll appreciate it? Maybe they'll be really confused."
+			strategy_tip="You're not sure what exactly makes you think this would be useful."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Furniture" cost="3"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="Yeah, whoever lives here is going to be very confused when they get home."
+				result_message_secondary_note="The only thing you left behind is tables...?"
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedSuburbanUpgradedHomeUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+				<city_statistic_change statistic="FurniturePlacedInRandomHomes" value="3" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="Creativity" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+	</city_event>
+
+	<!--Ch0_UnlockedUpperClassHome
+		*********************************************************************************-->
+	<city_event id="Ch0_UnlockedUpperClassHome" display_name="Unlocked Upper-Class Home"
+		 description="The home isn't strictly open, but the security on the door is low enough that it might as well be. No-one is home, and you can walk right on in if you want."
+		 strategy_tip=""
+		 icon_name="HL_HouseStairway" has_no_code="true"
+		 street_sense_collections="All,NPCInteraction,WealthGeneration">
+		<gate_by_city minimum_chapter="1" required_meta_flag="HasFiguredOutPowerGeneration" required_beyond_turn_if_set="NoUnlockedSuburbanUpperClassHomeUntilThisTurn"
+			blocked_by_countdown_complete="HomeSecurityUpgrade"/>
+		<minor_event_data max_times_can_be_executed="6" max_times_can_appear_at_once="3" seed_weight="100" should_always_show_expanded_action_details="true"
+			icon_scale="0.4" color_data="PollinatorBeeQueen">
+			<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="SuburbanUpperClassHome" />
+		</minor_event_data>
+
+		<choice id="Loot" display_name="Loot What You Can Find"
+			description="Nobody is here to stop you."
+			strategy_tip="You're not sure you need any of this junk, but whatever."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="UnexpectedBonusUnlock"
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedSuburbanUpperClassHomeUntilThisTurn" the_x_to_add_to_that_city_statistic="6"
+				instantly_unlocked_1="Consumerism" instantly_unlocked_2="Woodworking" instantly_unlocked_3="Decadence" unlock_inspiration_type="StreeSenseEvent">
+				<city_statistic_change statistic="SuburbanUpperClassHomesLooted" value="1" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="ConsumerGoods" min="48" max="70" />
+				<resource_change_range resource_type="FineGoods" min="16" max="18" />
+				<resource_change_range resource_type="Wealth" min="50" max="130" />
+				<resource_change_range resource_type="Furniture" min="12" max="16" />
+			</possible_result>
+		</choice>
+
+		<choice id="PlaceCG" display_name="Place Items Here"
+			description="Maybe they'll appreciate it? Maybe they'll be really confused."
+			strategy_tip="You're not sure what exactly makes you think this would be useful."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="ConsumerGoods" cost="4"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="Yeah, whoever lives here is going to be very confused when they get home."
+				result_message_secondary_note="You hope they like the stuff."
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedSuburbanUpperClassHomeUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+				<city_statistic_change statistic="ConsumerGoodsPlacedInRandomHomes" value="4" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="Creativity" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+		<choice id="PlaceGG" display_name="Place Items Here"
+			description="Maybe they'll appreciate it? Maybe they'll be really confused."
+			strategy_tip="You're not sure what exactly makes you think this would be useful."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="FineGoods" cost="7"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="Yeah, whoever lives here is going to be very confused when they get home."
+				result_message_secondary_note="You hope they like the stuff."
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedSuburbanUpperClassHomeUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+				<city_statistic_change statistic="FineGoodsPlacedInRandomHomes" value="7" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="Creativity" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+		<choice id="PlaceF" display_name="Place Items Here"
+			description="Maybe they'll appreciate it? Maybe they'll be really confused."
+			strategy_tip="You're not sure what exactly makes you think this would be useful."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="Furniture" cost="3"/>
+			<possible_result id="0" unskilled_weight="100" vfx_and_sound="SimpleGoodFortune" despawn_characters_on_the_right="false"
+				result_message="Yeah, whoever lives here is going to be very confused when they get home."
+				result_message_secondary_note="The only thing you left behind is tables...?"
+				set_city_statistic_to_current_turn_plus_x="NoUnlockedSuburbanUpperClassHomeUntilThisTurn" the_x_to_add_to_that_city_statistic="6">
+				<city_statistic_change statistic="FurniturePlacedInRandomHomes" value="3" />
+				<city_statistic_change statistic="HomesBrokenInto" value="1" />
+				<resource_change_range resource_type="Creativity" min="10" max="20" />
+			</possible_result>
+		</choice>
+
+	</city_event>
 	
 	<!--Next-->
 	

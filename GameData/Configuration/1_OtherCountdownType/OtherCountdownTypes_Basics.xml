@@ -33,7 +33,13 @@ If you don't honor the agreement, you may have a problem with Baurcorp's middle 
 		description="The lawyers have held off Falsom Detention's mech for now, but it will be back."
 		strategy_tip="You need to be ready when it returns. Piercing the armor is highly unlikely in the time available, so you'd better think of something else."
 		alert_color_style="Low"
-		per_turn_sound_optional="MinorScaryCountdownPerTurn" countdown_complete_sound_optional="MinorScaryCountdownComplete"
-		auto_marked_as_complete_if_skipping_chapter_one="false"/>
+		per_turn_sound_optional="MinorScaryCountdownPerTurn" countdown_complete_sound_optional="MinorScaryCountdownComplete"/>
 
+	<!--HomeSecurityUpgrade-->
+	<countdown_type id="HomeSecurityUpgrade" display_name="Home Security Upgrade" turns_to_last="8"
+		description="The humans have noticed that you are coming and going from their homes, and are rolling out software countermeasures."
+		strategy_tip="If you really want to keep breaking in, you'll soon have to do it by physical means. But really... are the things you're finding worth the trouble?"
+		alert_color_style="MidWarning"
+		per_turn_sound_optional="GeneralScaryCountdownPerTurn" countdown_complete_sound_optional="GeneralScaryCountdownComplete"/>
+	
 </root>

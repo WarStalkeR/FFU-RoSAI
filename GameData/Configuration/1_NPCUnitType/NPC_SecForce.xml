@@ -117,7 +117,7 @@
 		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
 		extra_radius_buffer_when_testing_for_new="1"
 		extra_max_allowed_poi_clearance="3" extra_max_allowed_non_focal_building_clearance="5"
-		tags="" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
+		tags="SecForceHacker" collections="HumansOnFoot,HumansWithExposedSkin,Flammable,HumansThatCanBeSentToTormentVessel">
 		<actor_data data_type="AttackRange" base_range="12,14" />
 		<actor_data data_type="ActorMoveRange" base_range="20,24" />
 		<actor_data data_type="ActorHP" base_range="235,245" />
@@ -130,6 +130,31 @@
 		<default_perk perk="Stubborn" unlock="" />
 	</npc_unit_type>
 
+	<!--SecForceNegotiator
+	**********************************************************************************************************************************************-->
+	<npc_unit_type id="SecForceNegotiator" display_name="SecForce Negotiator"
+		description="You're pretty sure that 'Negotiator' is some kind of euphemism. That's some extremely powerful armor."
+		icon_scale="0.7" shape_icon_name="SomethingMask" shape_icon_color="#ffffff"
+		vis_drawing_tag="SecForceNegotiator" vis_object_scale="0.4" vis_object_extra_offset="0" collider_scale="3"
+		extra_offset_for_camera_focus_when_selected="0.4" basic_squad_size="3"
+		percent_robotic="0" percent_biological="100" is_human="true"
+		underlay="NPCCombatant" on_appear_as_new_unit="NPCAppear_NewUnit_MilitaryMid"
+		on_death="BasicHumanDeath" on_bullet_hit="BasicHumanBulletHit" on_move_start="BasicHumanMoveStart" on_movement_finished_with_no_action="BasicHumanMoveEnd"
+		on_normal_attack="SecForceIPSecurityShot" kills_by_player_increase_statistic1="SecForceKilledByYou"
+		radius_for_collisions="0.5" height_for_collisions="0.75" applied_outcast_badge_if_attacked_by_machine="MarkedDefective"
+		extra_radius_buffer_when_testing_for_new="1"
+		extra_max_allowed_poi_clearance="5" extra_max_allowed_non_focal_building_clearance="5"
+		tags="SecForceNegotiator" collections="HumansOnFoot">
+		<actor_data data_type="AttackRange" base_range="28,32" />
+		<actor_data data_type="ActorMoveRange" base_range="16,18" />
+		<actor_data data_type="ActorHP" base_range="880,1000" />
+		<actor_data data_type="ActorPower" base_range="572,708" />
+		<actor_data data_type="UnitMorale" base_range="2960,3290" />
+		<actor_data data_type="ActorExtraVulnerabilityFromRear" base_range="180,225" />
+		<actor_data data_type="ContrabandScanner" base_range="5000,5100" />
+		<default_perk perk="Stubborn" unlock="" />
+	</npc_unit_type>
+	
 	<!--SecForceCruiser
 	**********************************************************************************************************************************************-->
 	<npc_unit_type id="SecForceCruiser" display_name="SecForce Cruiser"

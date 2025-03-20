@@ -61,6 +61,15 @@
 		<attribute key="value" type="int-textbox" min="0" max="1000" content_width_px="40" is_required="true"
 			tooltip="What is amount the data will be changed by?"/>
 	</sub_node>
+
+	<sub_node id="resource_change_range">
+		<attribute key="resource_type" type="node-dropdown" node_source="ResourceType" content_width_px="200" is_required="true"
+			tooltip="This changes some resource for the player. What data will it change?" />
+		<attribute key="min" type="int-textbox" min="-10000000" max="10000000" content_width_px="40" is_required="true"
+			tooltip="What is the lowest amount of the random range the data will be changed by?"/>
+		<attribute key="max" type="int-textbox" min="-10000000" max="10000000" content_width_px="40" is_required="true"
+			tooltip="What is the highest amount of the random range the data will be changed by?"/>
+	</sub_node>
 	
 	<sub_node id="math_int">
 		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"

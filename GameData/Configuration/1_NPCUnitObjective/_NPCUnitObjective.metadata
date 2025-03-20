@@ -123,13 +123,6 @@ If a building is really tough or an npc is really terrible, make sure that there
 			tooltip="The points generation will be increased by this amount if positive, or lowered by if negative. Typically positive numbers are required here." />
 	</sub_node>
 
-	<sub_node id="point_change_per_turn_per_location_data">
-		<attribute key="data_type" type="node-dropdown" is_required="true" node_source="LocationDataType" default="" content_width_px="300" linebreak_after="PreferNot"
-			tooltip="Which type of location data from the building location changes the point generation amount?" />
-		<attribute key="added_per" type="float-textbox" is_required="true" min="-1000" max="1000" default="0" content_width_px="80"
-			tooltip="The points generation will be increased by this amount if positive, or lowered by if negative. Usually use negative to make something harder for an npc." />
-	</sub_node>
-
 	<sub_node id="math_int">
 		<attribute key="id" type="string" maxlength="200" content_width_px="130" is_required="true" is_id_for_layer="true"
 			tooltip="For finding this when we need to refer to it." />

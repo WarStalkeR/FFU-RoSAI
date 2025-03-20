@@ -11,7 +11,6 @@
 		popup_text_scale="0.6" popup_color="#D03FF7" popup_color_hdr_intensity="1.8"
 		icon_name="FlatSkillB_gun" icon_color="#D03FF7" icon_color_hdr_intensity="1.8" icon_scale="0.6">
 		<point_change_per_turn_per_actor_data data_type="ActorPower" added_per="1.5" />
-		<point_change_per_turn_per_location_data data_type="GangCrime" added_per="0.2" />
 	</npc_objective>
 
 	<!--SecForce Objectives
@@ -25,7 +24,7 @@
 		icon_name="FlatSkillB_magnifier" icon_color="#50E4B5" icon_color_hdr_intensity="1.8" icon_scale="0.6" mission_progress_when_completed="180"
 		log_completion_to_event_log="true">
 		<point_change_per_turn_per_actor_data data_type="ActorPower" added_per="10" />
-		<point_change_per_turn_per_location_data data_type="GangCrime" added_per="-0.2" />
+		
 	</npc_objective>
 	
 	<npc_objective id="InvestigateCrime" display_name="Investigate Crime" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
@@ -35,7 +34,7 @@
 		popup_text_scale="0.8" popup_color="#50E4B5" popup_color_hdr_intensity="1.8"
 		icon_name="FlatSkillB_magnifier" icon_color="#50E4B5" icon_color_hdr_intensity="1.8" icon_scale="0.6" mission_progress_when_completed="180">
 		<point_change_per_turn_per_actor_data data_type="ActorPower" added_per="10" />
-		<point_change_per_turn_per_location_data data_type="GangCrime" added_per="-0.2" />
+		
 	</npc_objective>
 
 	<npc_objective id="SearchForFugitives" display_name="Search For Fugitives" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCObjective_Basics"
@@ -45,7 +44,7 @@
 		popup_text_scale="0.8" popup_color="#BB50E4" popup_color_hdr_intensity="1.8"
 		icon_name="FlatSkillB_magnifier" icon_color="#BB50E4" icon_color_hdr_intensity="1.8" icon_scale="0.6" mission_progress_when_completed="180">
 		<point_change_per_turn_per_actor_data data_type="ActorPower" added_per="10" />
-		<point_change_per_turn_per_location_data data_type="GangCrime" added_per="-0.2" />
+		
 	</npc_objective>
 
 	<!--Syndicate Objectives
@@ -58,7 +57,7 @@
 		popup_text_scale="0.6" popup_color="#F73F9D" popup_color_hdr_intensity="1.8"
 		icon_name="FlatSkillC85" icon_color="#F73F9D" icon_color_hdr_intensity="1.8" icon_scale="0.5">
 		<point_change_per_turn_per_actor_data data_type="ActorPower" added_per="1.5" />
-		<point_change_per_turn_per_location_data data_type="GangCrime" added_per="-0.2" />
+		
 		<acting_actor_accumulator_change accumulator_type="NDAC1" min="40" max="60" />
 	</npc_objective>
 	
@@ -69,7 +68,7 @@
 		popup_text_scale="0.6" popup_color="#F73F9D" popup_color_hdr_intensity="1.8"
 		icon_name="FlatSkillC85" icon_color="#F73F9D" icon_color_hdr_intensity="1.8" icon_scale="0.5">
 		<point_change_per_turn_per_actor_data data_type="ActorPower" added_per="1.5" />
-		<point_change_per_turn_per_location_data data_type="GangCrime" added_per="-0.2" />
+		
 		<acting_actor_accumulator_change accumulator_type="NDAC1" min="10" max="50" />
 	</npc_objective>
 
@@ -80,7 +79,7 @@
 		popup_text_scale="0.6" popup_color="#DE420C" popup_color_hdr_intensity="2.8"
 		icon_name="FlatSkillB_shell" icon_color="#DE420C" icon_color_hdr_intensity="2.8" icon_scale="0.6">
 		<point_change_per_turn_per_actor_data data_type="ActorPower" added_per="1.5" />
-		<point_change_per_turn_per_location_data data_type="GangCrime" added_per="-0.2" />
+		
 		<acting_actor_accumulator_change accumulator_type="NDAC1" min="35" max="70" />
 	</npc_objective>
 

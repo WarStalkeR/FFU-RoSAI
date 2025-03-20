@@ -90,14 +90,6 @@ Does not apply to pre-placed buildings from mini/micro tiles."/>
 		<attribute key="tags" type="node-list" node_source="BuildingTag" content_width_px="300" is_required="false" linebreak_before="Always" linebreak_after="Always"
 			tooltip="What building tags apply to this variant?" />
 		
-		<sub_node id="initial_building_rating">
-			<attribute key="data_type" type="node-dropdown" node_source="LocationDataType" content_width_px="200" is_required="true"
-				tooltip="This LocationDataType will be set to an initial value for any buildings of this type that use this variant.
-				
-It's expected that these are the rating-type LDTs, but it can be whatever you want, really." />
-			<attribute key="value" type="int-textbox" min="-10000000" max="10000000" content_width_px="150" is_required="true"
-				tooltip="The range you can set on this is wide. If set to 0 (by mod or otherwise), then it will skip being applied to new buildings of this variant."/>
-		</sub_node>
 	</sub_node>
 	
 </root>

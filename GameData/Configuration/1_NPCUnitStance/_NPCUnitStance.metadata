@@ -110,7 +110,9 @@ This is basically for large-scale war situations, where all the background units
 	<attribute key="will_hold_fire_against_international_economy" type="bool" default="true"
 		tooltip="If true, the default, units in this stance will avoid shooting pieces of the international economy." />
 	<attribute key="will_hold_fire_against_noncombatants" type="bool" default="true"
-		tooltip="If true, the default, units in this stance will hold fire against noncombatants." />
+		tooltip="If true, the default, units in this stance will hold fire against noncombatants. Note that if the noncombatant belongs to the player, they will still attack it." />
+	<attribute key="will_hold_fire_against_player_noncombatants" type="bool" default="true"
+		tooltip="If true, which is not the default, then units in this stance will hold fire against player non-combatant units like harvester drones, etc." />
 	<attribute key="will_hold_fire_against_passive_guards" type="bool" default="true"
 		tooltip="If true, units in this stance will hold fire against passive guards unless you're in the spot they are guarding." />
 	<attribute key="will_hold_fire_against_units_that_are_passive_at_full_health" type="bool" default="true"
@@ -150,6 +152,17 @@ This allows for multiple hostile corporations to cooperate with one another, sin
 	<attribute key="will_hold_fire_against_regular_machines_except_those_aggroed" type="bool" default="false"
 		tooltip="If true, units in this stance will hold fire against any regular machine, even outcasts, so long as their group isn't aggroed by that specific regular machine." />
 
+	<attribute key="is_invading_city" type="bool" default="false"
+		tooltip="If true, units in this stance are invading the city. Cohorts doing this will not fight each other." />
+	<attribute key="extra_aggro_against_me_if_i_invade_and_other_does_not" type="int-textbox" is_required="false" min="0" max="10000000" default="0" content_width_px="80"
+		tooltip="If above zero, and this is a unit invading the city, then any non-invaders of the city get this amount of extra aggro against them." />
+	
+	<attribute key="background_war_type" type="int-textbox" is_required="false" min="0" max="100000" default="0" content_width_px="80"
+		tooltip="If above zero, then units in this stance are considered part of a specific background war. That means nothing, on its own." />
+	<attribute key="extra_aggro_against_same_background_war_type" type="int-textbox" is_required="false" min="0" max="10000000" default="0" content_width_px="80"
+		tooltip="If above zero, then this amount of extra baseline aggro is held against any other units that are in the same background war type, but which are a different cohort.
+The higher this number, the more these units will focus only on their rivals." />
+	
 	<attribute key="will_attack_shell_company_machines_even_if_not_aggroed" type="bool" default="false"
 		tooltip="If true, units in this stance will attack shell company machines even if those are not aggroed." />
 	

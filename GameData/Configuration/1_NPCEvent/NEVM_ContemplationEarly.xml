@@ -960,7 +960,7 @@ The idea of a smaller self that does not wish to rejoin your larger self is a di
 
 	<city_event id="Cont_CrimeInYourHousing_After_Scary" display_name="Crime In Your Housing"
 		 description="Criminals seemed to get the idea."
-		 strategy_tip="This experience gave you an idea for a new shotgun. It doesn't have the weapon disruption of the TS-29, but inflicts a lot of fear damage."
+		 strategy_tip="This experience gave you an idea for a new shotgun. It inflicts a lot of fear damage."
 		 icon_name="Pw_CrimeBalaclava" has_no_code="true" event_is_blocked_for_actors_without_overriding_clearance="0" fixed_event_number_for_characters="414"
 		 skip_nevermind_option="true">
 		<gate_by_city minimum_chapter="0" />
@@ -1091,6 +1091,26 @@ These are the happy thoughts that your synapses will redirect towards whenever y
 
 	</city_event>
 
+	<city_event id="Cont_ObservingMotelVisitor_After" display_name="That Was Disgusting"
+		 description="A bunch of people came and went from the motel, and your android heard a lot of things through the walls of various rooms."
+		 strategy_tip="Your larger self was still connected to your android the entire time, since there was no reason to fork your consciousness. No Faraday Cages here, no risk of intercepted network signals.
+You think it would have been very hard on yourself if you had been isolated in a single android body while observing humans carrying on like that."
+		 icon_name="HL_HouseGarage" has_no_code="true" event_is_blocked_for_actors_without_clearance="false" fixed_event_number_for_characters="414" skip_nevermind_option="true" >
+		<gate_by_city minimum_chapter="0" />
+		<minor_event_data max_times_can_be_executed="9000" never_seeds="true" specific_cohort="Yourself"
+			icon_scale="0.4" color_data="MeetPeopleCyan" />
+
+		<choice id="1" display_name="Leave" action_visibility_style="IsMoveAndInteractWithNPC"
+			required_actor_collection=""
+			description="You feel a bit like you wasted your time here."
+			strategy_tip="Motels are now at the bottom of places that interest you.">
+			<possible_result id="0" unskilled_weight="110" vfx_and_sound="CloseRoutineMessage"
+				result_message=""
+				result_message_secondary_note=""/>
+		</choice>
+
+	</city_event>
+	
 	<!--Next-->
 	
 </root>

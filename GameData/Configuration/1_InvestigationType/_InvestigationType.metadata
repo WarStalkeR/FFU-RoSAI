@@ -166,14 +166,6 @@
 			tooltip="How far, roughly, should this be from machine subnets and towers?  Will fail if not yet any of those. Set to -1 to ignore."/>
 		<attribute key="max_rough_distance_from_machines" type="float-textbox" min="-1" max="900" default="-1" content_width_px="50" is_required="false"
 			tooltip="How far, roughly, should this be from machine subnets and towers?  Will fail if not yet any of those. Set to -1 to ignore."/>
-		<sub_node id="required_building_data">
-			<attribute key="data_type" type="node-dropdown" node_source="LocationDataType" content_width_px="200" is_required="true"
-				tooltip="To match, a building must have certain qualities relating to this data type." />
-			<attribute key="value" type="int-textbox" min="-1" max="1000000" content_width_px="150" is_required="true"
-				tooltip="The value that will be compared against. Set to -1 to mod this out."/>
-			<attribute key="at_least" type="bool" default="false" is_required="true"
-				tooltip="If true, the building data must be at least this high to pass. If false, it must be at most this high." />
-		</sub_node>
 	</sub_node>
 
 </root>

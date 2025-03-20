@@ -112,5 +112,27 @@ It does not take up any of your android capacity while in this state. Cancel thi
 		<city_statistic_change statistic="SmallFiresYouHelpedPutOut" value="1" />
 		<resource_change_range resource_type="Compassion" min="5" max="10" />
 	</action_over_time_type>
+	
+	<action_over_time_type id="HelpingLostGenKidsStealWater" display_name="Helping LostGen Kids Steal Water" icon_color="AOT_QuietNice"
+		description="Your unit is helping out some orphans who need potable water to avoid death."
+		icon_name="FlatSkillB_flask" on_start="Silent" on_complete="Silent"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Generic"
+		can_be_canceled="true" blocks_being_scrapped="false" is_unit_invisible_and_absent_seeming_while_acting="true" unit_moves_at_random_while_invisibly_acting="true"
+		set_city_statistic_to_current_turn_plus_x="NoLostGenWaterUntilThisTurn" the_x_to_add_to_that_city_statistic="2"
+		aggro_amount_for_action_over_time_hunters="100">
+		<city_statistic_change statistic="HelpedLostGenStealWater" value="1" />
+		<resource_change_range resource_type="Compassion" min="10" max="20" />
+	</action_over_time_type>
+
+	<action_over_time_type id="ObservingMotelVisitor" display_name="Observing Motel Visitor" icon_color="AOT_QuietNice"
+		description="Your unit is observing a motel visitor to see what they're up to."
+		icon_name="HL_HouseGarage" on_start="Silent" on_complete="Silent"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActionsOverTime_Generic"
+		can_be_canceled="true" blocks_being_scrapped="false" is_unit_invisible_and_absent_seeming_while_acting="true"
+		set_city_statistic_to_current_turn_plus_x="NoCitizensParkingUntilThisTurn" the_x_to_add_to_that_city_statistic="2"
+		aggro_amount_for_action_over_time_hunters="100" event_on_complete="Cont_ObservingMotelVisitor_After">
+		<city_statistic_change statistic="MotelVisitorsObserved" value="1" />
+		<resource_change_range resource_type="Apathy" min="15" max="25" />
+	</action_over_time_type>
 
 </root>

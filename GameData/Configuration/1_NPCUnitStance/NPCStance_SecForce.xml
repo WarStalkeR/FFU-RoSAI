@@ -161,6 +161,36 @@
 		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
 	</stance>
 
+	<stance id="SecForceAmbush" display_name="Ambush"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="They were lying in wait for you."
+		icon_name="CleanSimple_Accuracy20" icon_color="#F7CA35" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+	</stance>
+
+	<stance id="SecForceNegotiatorAmbush" display_name="Ambush"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
+		description="They were lying in wait for you."
+		icon_name="SomethingMask" icon_color="#DA35F7" icon_color_hdr_intensity="1.5" icon_scale="0.4"
+		causes_unit_to_show_as_silhouette_when_in_fog_of_war_if_notable_enough="true" is_contained_to_district="false"  is_stance_always_drawn_in_streets="true" is_stance_always_drawn_in_city_map="true"
+		is_considered_cohort_guard="true" is_considered_active_cohort_guard="true" will_hold_fire_against_cohort_guard="true"
+		will_hold_fire_against_wealthy_civilians="true" will_hold_fire_against_lowermiddle_civilians="false" always_show_health_bar="true"
+		will_attack_outcast_machines_at_or_above_level="1"
+		targeting_logic="FuzzedStandardIntelligence" targeting_order="1000"
+		max_allowed_poi_clearance="2" max_allowed_non_focal_building_clearance="2"
+		>
+		<action_consideration id="RunAfterAggroedWeShoot" sort_order="190" chance_of_attempting="100" action_to_attempt="RunAfterAggroedUnitsWeCanShoot" />
+		<action_consideration id="RunAfterOutcasts" sort_order="200" chance_of_attempting="100" action_to_attempt="RunAfterOutcastThenConspicuousUnits" />
+	</stance>
+
 	<stance id="SecForceRespondingToRebelAmbush" display_name="Responding To Ambush"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.NPCStance_Basics"
 		description="Rebels routinely ambush SecForce, usually to little effect. SecForce always has response teams ready to quickly respond to disturbances of this sort."

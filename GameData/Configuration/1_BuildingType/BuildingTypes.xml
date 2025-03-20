@@ -11,8 +11,6 @@
 		<variant id="1" display_name="" weight="100" required_clearance="Secret"
 			is_drone_delivery_target="true"
 			tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport,SupplyChainTarget">
-			<initial_building_rating data_type="SecForcesPresence" value="100"/>
-			<initial_building_rating data_type="HackerPresence" value="100"/>
 		</variant>
 	</building_type>
 
@@ -22,22 +20,14 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport,AirportHangar,AirportHangarNonSyndicate,IndependentBlackMarketMeetSite,PMCFightBuilding,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="20"/>
-			<initial_building_rating data_type="BlackMarket" value="8"/>
 		</variant>
 		<variant id="Criminal" display_name="Syndicate Hangar" weight="50" overriding_authority_cohort_tag="CriminalSyndicateTraditional"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport,SyndicateStorage,SyndicateBuilding,AirportHangar,SyndicateDeliveryTarget,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="380"/>
-			<initial_building_rating data_type="BlackMarket" value="50"/>
 		</variant>
 		<variant id="Infested" display_name="Infested Hangar" weight="10"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,InfestedHangar,Airport,AirportHangar,AirportHangarNonSyndicate,IndependentBlackMarketMeetSite,PMCFightBuilding,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="5"/>			
-			<initial_building_rating data_type="BlackMarket" value="25"/>
-			<initial_building_rating data_type="Vermin" value="90"/>
-			<initial_building_rating data_type="BacterialLoad" value="45"/>
 		</variant>
 	</building_type>
 
@@ -46,11 +36,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport,SupplyChainTarget,AirportPrime,IndependentBlackMarketMeetSite">
-			<initial_building_rating data_type="SecForcesPresence" value="150"/>
-			<initial_building_rating data_type="MilitaryPresence" value="50"/>
-			<initial_building_rating data_type="HackerPresence" value="80"/>
-			<initial_building_rating data_type="BlackMarket" value="30"/>
-			<initial_building_rating data_type="BacterialLoad" value="60"/>
 		</variant>
 	</building_type>
 
@@ -59,14 +44,9 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport">
-			<initial_building_rating data_type="SecForcesPresence" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="60"/>
 		</variant>
 		<variant id="Infested" display_name="Infested Jetway" weight="5"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport,InfestedJetway">
-			<initial_building_rating data_type="SecForcesPresence" value="2"/>
-			<initial_building_rating data_type="Vermin" value="90"/>
-			<initial_building_rating data_type="BacterialLoad" value="45"/>
 		</variant>
 	</building_type>
 
@@ -76,11 +56,6 @@
 		<variant id="1" display_name="" weight="100" required_clearance="Oversight" beacon_to_show="Heliport"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport,SupplyChainTarget">
-			<initial_building_rating data_type="SecForcesPresence" value="50"/>
-			<initial_building_rating data_type="MilitaryPresence" value="25"/>
-			<initial_building_rating data_type="HackerPresence" value="10"/>
-			<initial_building_rating data_type="BlackMarket" value="60"/>
-			<initial_building_rating data_type="BacterialLoad" value="20"/>
 		</variant>
 	</building_type>
 
@@ -89,11 +64,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Airport">
-			<initial_building_rating data_type="SecForcesPresence" value="100"/>
-			<initial_building_rating data_type="MilitaryPresence" value="25"/>
-			<initial_building_rating data_type="HackerPresence" value="40"/>
-			<initial_building_rating data_type="BlackMarket" value="35"/>
-			<initial_building_rating data_type="BacterialLoad" value="40"/>
 		</variant>
 	</building_type>
 
@@ -102,14 +72,10 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,WealthSymbol,CanHaveSecretCompartment,CanHaveHiddenRoom,IndependentBlackMarketMeetSite,HasManyPeople">
-			<initial_building_rating data_type="SecForcesPresence" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="15"/>
 		</variant>
 		<variant id="Criminal" display_name="Syndicate Art Museum" weight="25" overriding_authority_cohort_tag="CriminalSyndicateTraditional"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,WealthSymbol,SyndicateMoneyLaundering,SyndicateHighStatusBuilding,SyndicateBuilding,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="480"/>
-			<initial_building_rating data_type="BlackMarket" value="50"/>
 		</variant>
 	</building_type>
 
@@ -118,8 +84,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="10"/>			
-			<initial_building_rating data_type="BacterialLoad" value="5"/>
 		</variant>
 	</building_type>
 
@@ -128,15 +92,10 @@
 		<variant id="Corporate" display_name="Corporate Bank" weight="500" required_clearance="Secret" beacon_to_show="CorporateBank"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Financial,Bank,WealthSymbol,CanHaveSecretCompartment">
-			<initial_building_rating data_type="SecForcesPresence" value="2200"/>
-			<initial_building_rating data_type="HackerPresence" value="1200"/>
 		</variant>
 		<variant id="MegaCorp" display_name="MegaCorp Bank" weight="10" required_clearance="TopSecret" beacon_to_show="MegaCorpBank"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Financial,Bank,WealthSymbol,CanHaveSecretCompartment">
-			<initial_building_rating data_type="MilitaryPresence" value="3300"/>
-			<initial_building_rating data_type="SecForcesPresence" value="2200"/>
-			<initial_building_rating data_type="HackerPresence" value="4000"/>
 		</variant>
 	</building_type>
 
@@ -144,29 +103,16 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,Entertainment,BasicCommon,HasManyPeople,CanHaveSecretCompartment,GangHangout,PMCFightBuilding">
-			<initial_building_rating data_type="SecForcesPresence" value="15"/>
-			<initial_building_rating data_type="GangCrime" value="40"/>
-			<initial_building_rating data_type="Vermin" value="10"/>
-			<initial_building_rating data_type="BacterialLoad" value="15"/>
 		</variant>
 		<variant id="Criminal" display_name="Syndicate Bar" weight="100" overriding_authority_cohort_tag="CriminalSyndicateTraditional" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,Entertainment,SyndicateHangout,SyndicateBuilding,BasicCommon,HasManyPeople,SyndicateDeliveryTarget,CanHaveSecretCompartment,PMCFightBuilding">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="400"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="Dive" display_name="Dive Bar" weight="50" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,ShoppingSmallCrimeTarget,Entertainment,BasicCommon,HasManyPeople,NoncomHaunt,CanHaveSecretCompartment,GangHangout,PMCFightBuilding">
-			<initial_building_rating data_type="GangCrime" value="90"/>
-			<initial_building_rating data_type="Vermin" value="35"/>
-			<initial_building_rating data_type="BacterialLoad" value="50"/>
 		</variant>
 		<variant id="Military" display_name="Military Bar" weight="50"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,Entertainment,BasicCommon,HasManyPeople,NoncomHaunt,CanHaveSecretCompartment,PMCFightBuilding">
-			<initial_building_rating data_type="MilitaryPresence" value="500"/>
-			<initial_building_rating data_type="Vermin" value="8"/>
-			<initial_building_rating data_type="BacterialLoad" value="9"/>
 		</variant>
 	</building_type>
 
@@ -174,9 +120,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ShoppingSmallCrimeTarget,Food,BasicCommon,HasManyPeople,NoncomHaunt,CanHaveSecretCompartment,GangHangout,PMCFightBuilding,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="GangCrime" value="20"/>
-			<initial_building_rating data_type="Vermin" value="10"/>
-			<initial_building_rating data_type="BacterialLoad" value="7"/>
 		</variant>
 	</building_type>
 
@@ -184,15 +127,10 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,Cafe,BasicCommon,HasManyPeople,CanHaveSecretCompartment,PMCFightBuilding,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="1"/>
-			<initial_building_rating data_type="Vermin" value="4"/>
-			<initial_building_rating data_type="BacterialLoad" value="3"/>
 		</variant>
 		<variant id="Upperclass" display_name="Upperclass Cafe" weight="5"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,Cafe,BasicCommon,HasManyPeople,CanHaveSecretCompartment,PMCFightBuilding,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="15"/>
-			<initial_building_rating data_type="SecForcesPresence" value="20"/>
 		</variant>
 	</building_type>
 
@@ -200,10 +138,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ConvenienceStore,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,BasicCommon,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,GangHangout,PMCFightBuilding,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="5"/>
-			<initial_building_rating data_type="GangCrime" value="40"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="30"/>
 		</variant>
 	</building_type>
 
@@ -212,14 +146,10 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Automotive,BasicCommon,SmallBusinessSyndicateTarget,CouldHaveSmallBusiness,CouldHaveSecretLab,CanHaveSecretCompartment">
-			<initial_building_rating data_type="SecForcesPresence" value="5"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
 		</variant>
 		<variant id="Criminal" display_name="Syndicate Carwash" weight="10" overriding_authority_cohort_tag="CriminalSyndicateTraditional"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Automotive,SyndicateMoneyLaundering,SyndicateBuilding,SyndicateDeliveryTarget,CanHaveSecretCompartment,PMCFightBuilding">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="800"/>
-			<initial_building_rating data_type="Vermin" value="12"/>		
 		</variant>
 	</building_type>
 
@@ -228,8 +158,6 @@
 		<variant id="1" display_name="Casino" weight="30" beacon_to_show="Casino"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,Casino,Gambling,CompetitiveEntertainment,SyndicateHangout,HasManyPeople,NoncomHaunt,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,PMCFightBuilding">
-			<initial_building_rating data_type="SecForcesPresence" value="4000"/>
-			<initial_building_rating data_type="HackerPresence" value="4000"/>
 		</variant>
 	</building_type>
 
@@ -237,32 +165,18 @@
 		soft_max_to_seed_per_city="16" hard_max_to_seed_per_tile="1">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,CompetitiveEntertainment,BasicCommon,CouldHaveSmallBusiness,HasManyPeople,NoncomHaunt,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,PMCFightBuilding">
-			<initial_building_rating data_type="SecForcesPresence" value="5"/>
-			<initial_building_rating data_type="GangCrime" value="5"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="35"/>
 		</variant>
 		<variant id="Questionable" display_name="Questionable Cinema" weight="4" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,QuestionableCinema,Entertainment,GangHangout,CompetitiveEntertainment,BasicCommon,HasManyPeople,NoncomHaunt,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="5"/>
-			<initial_building_rating data_type="GangCrime" value="60"/>
-			<initial_building_rating data_type="Vermin" value="55"/>
-			<initial_building_rating data_type="BacterialLoad" value="60"/>
 		</variant>
 		<variant id="Religious" display_name="Religious Cinema" weight="12" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,Religious,CompetitiveEntertainment,CouldHaveSmallBusiness,BasicCommon,HasManyPeople,NoncomHaunt,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="10"/>
-			<initial_building_rating data_type="Vermin" value="15"/>
 		</variant>
 	</building_type>
 
 	<building_type id="Theater" display_name="Theater" hard_max_to_seed_per_tile="1">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,WealthSymbol,CompetitiveEntertainment,CouldHaveSmallBusiness,BasicCommon,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom,IndependentBlackMarketMeetSite,PMCFightBuilding">
-			<initial_building_rating data_type="SecForcesPresence" value="5"/>
-			<initial_building_rating data_type="BlackMarket" value="2"/>
-			<initial_building_rating data_type="Vermin" value="10"/>
-			<initial_building_rating data_type="BacterialLoad" value="15"/>
 		</variant>
 	</building_type>
 
@@ -270,18 +184,10 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget">
-			<initial_building_rating data_type="SecForcesPresence" value="2"/>
-			<initial_building_rating data_type="GangCrime" value="10"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 		<variant id="Beauty" display_name="Beauty Store" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget">
-			<initial_building_rating data_type="SecForcesPresence" value="2"/>
-			<initial_building_rating data_type="GangCrime" value="10"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 	</building_type>
 
@@ -289,10 +195,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="2"/>
-			<initial_building_rating data_type="GangCrime" value="5"/>
-			<initial_building_rating data_type="Vermin" value="8"/>
-			<initial_building_rating data_type="BacterialLoad" value="12"/>
 		</variant>
 	</building_type>
 
@@ -300,16 +202,10 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="40"/>
-			<initial_building_rating data_type="GangCrime" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="20"/>
 		</variant>
 		<variant id="Upperclass" display_name="Upperclass Fashions" weight="5"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,BasicCommon,HasManyPeople,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="70"/>
-			<initial_building_rating data_type="GangCrime" value="1"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -317,9 +213,6 @@
 		soft_max_to_seed_per_city="20" hard_max_to_seed_per_tile="1" blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" beacon_to_show="DanverDonuts" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,DanverDonuts,HasManyPeople,CanHaveSecretCompartment" overriding_authority_cohort_tag="DanverDonuts">
-			<initial_building_rating data_type="SecForcesPresence" value="315"/>
-			<initial_building_rating data_type="Vermin" value="1"/>
-			<initial_building_rating data_type="BacterialLoad" value="1"/>
 		</variant>
 	</building_type>
 
@@ -327,9 +220,6 @@
 		soft_max_to_seed_per_city="20" hard_max_to_seed_per_tile="1" blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" beacon_to_show="HudsonDonuts" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,HudsonDonuts,HasManyPeople,NoncomHaunt,CanHaveSecretCompartment" overriding_authority_cohort_tag="HudsonDonuts">
-			<initial_building_rating data_type="MilitaryPresence" value="310"/>
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -337,38 +227,22 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="5"/>
-			<initial_building_rating data_type="GangCrime" value="10"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 		<variant id="Bookstore" display_name="Bookstore" weight="20"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,CompetitiveEntertainment,CouldHaveSmallBusiness,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="1"/>
-			<initial_building_rating data_type="Vermin" value="1"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 		<variant id="TrendyBoutique" display_name="Trendy Boutique" weight="10"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,BasicCommon,HasManyPeople,CouldHaveSmallBusiness,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="50"/>
-			<initial_building_rating data_type="Vermin" value="3"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 		<variant id="Junkshop" display_name="Junkshop" weight="50"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,GangHangout,PossibleRebelMeetingSpot,BasicCommon,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,AnimalHidingValid">
-			<initial_building_rating data_type="GangCrime" value="15"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="4"/>
 		</variant>
 		<variant id="Junkshop2" display_name="Junkshop" weight="50"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,PossibleRebelMeetingSpot,BasicCommon,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,IndependentBlackMarketMeetSite,AnimalHidingValid">
-			<initial_building_rating data_type="BlackMarket" value="15"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="4"/>
 		</variant>
 	</building_type>
 
@@ -377,10 +251,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Food,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="HackerPresence" value="80"/>
-			<initial_building_rating data_type="GangCrime" value="14"/>
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="1"/>
 		</variant>
 	</building_type>
 
@@ -389,9 +259,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,Education,PossibleRebelMeetingSpot,CompetitiveEntertainment,BasicCommon,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="1"/>
-			<initial_building_rating data_type="HackerPresence" value="40"/>
-			<initial_building_rating data_type="BacterialLoad" value="1"/>
 		</variant>
 	</building_type>
 
@@ -400,21 +267,10 @@
 		<variant id="1" display_name="" weight="100" beacon_to_show="Mall"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,CompetitiveEntertainment,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="60"/>
-			<initial_building_rating data_type="MilitaryPresence" value="20"/>
-			<initial_building_rating data_type="HackerPresence" value="40"/>
-			<initial_building_rating data_type="GangCrime" value="20"/>
-			<initial_building_rating data_type="Vermin" value="14"/>
-			<initial_building_rating data_type="BacterialLoad" value="20"/>
 		</variant>
 		<variant id="2" display_name="" weight="25" beacon_to_show="Mall"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,CompetitiveEntertainment,CouldHaveSmallBusiness,GangHangout,SyndicateHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,SmallBusinessSyndicateTarget,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="260"/>
-			<initial_building_rating data_type="HackerPresence" value="90"/>
-			<initial_building_rating data_type="GangCrime" value="10"/>
-			<initial_building_rating data_type="Vermin" value="14"/>
-			<initial_building_rating data_type="BacterialLoad" value="20"/>
 		</variant>
 	</building_type>
 
@@ -422,9 +278,6 @@
 		soft_max_to_seed_per_city="3" hard_max_to_seed_per_tile="1" blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Entertainment,HasManyPeople,Sports,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront">
-			<initial_building_rating data_type="SecForcesPresence" value="70"/>
-			<initial_building_rating data_type="Vermin" value="25"/>
-			<initial_building_rating data_type="BacterialLoad" value="18"/>
 		</variant>
 	</building_type>
 
@@ -432,15 +285,9 @@
 		is_excluded_from_city_network="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Entertainment,Sports,GangHangout">
-			<initial_building_rating data_type="GangCrime" value="15"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="5"/>
 		</variant>
 		<variant id="2" display_name="" weight="40"
 		tags="Any,Entertainment,Sports,SyndicateHangout">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="15"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="5"/>
 		</variant>
 	</building_type>
 
@@ -448,9 +295,6 @@
 		is_excluded_from_city_network="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Entertainment,Sports">
-			<initial_building_rating data_type="GangCrime" value="15"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="5"/>
 		</variant>
 	</building_type>
 
@@ -458,10 +302,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,Housing,HousingNotSmall,Apartments,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="5"/>
-			<initial_building_rating data_type="GangCrime" value="10"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 	</building_type>
 
@@ -469,10 +309,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,Supermarket,ShoppingSmallCrimeTarget,GangHangout,Food,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="8"/>
-			<initial_building_rating data_type="GangCrime" value="25"/>
-			<initial_building_rating data_type="Vermin" value="3"/>
-			<initial_building_rating data_type="BacterialLoad" value="40"/>
 		</variant>
 	</building_type>
 
@@ -480,26 +316,16 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Shopping,ShoppingSmallCrimeTarget,CouldHaveSmallBusiness,GangHangout,BasicCommon,HasManyPeople,NoncomHaunt,AndroidHaunt,SmallBusinessSyndicateTarget,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="2"/>
-			<initial_building_rating data_type="GangCrime" value="10"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 	</building_type>
 
+	<!--Note, these are often not seeding right now!-->
 	<building_type id="DowntownParking" display_name="Parking Garage">		
 		<variant id="1" display_name="" weight="100" is_shootout_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,NoncomHaunt,CanHaveSecretCompartment,DemolishTarget">
-			<initial_building_rating data_type="SecForcesPresence" value="5"/>
-			<initial_building_rating data_type="GangCrime" value="60"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ParkingGarage,GangParkingGarage,GangHangout,NoncomHaunt,CanHaveSecretCompartment,DemolishTarget">
 		</variant>
 		<variant id="2" display_name="" weight="100" is_shootout_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,SyndicateHangout,SyndicateBuilding,SyndicateDeliveryTarget,CanHaveSecretCompartment,DemolishTarget">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="40"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ParkingGarage,SyndicateParkingGarage,SyndicateHangout,SyndicateBuilding,SyndicateDeliveryTarget,CanHaveSecretCompartment,DemolishTarget">
 		</variant>
 	</building_type>
 
@@ -507,9 +333,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Apartments,ApartmentsLowMidClass,HasManyPeople,LowerClassDroneTarget,BasicCommon,WorkingClassCommon,WorkingClassApartments,WorkingClassHome,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="GangCrime" value="5"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="3"/>
 		</variant>
 	</building_type>
 
@@ -517,9 +340,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Brownstone,BasicCommon,HasManyPeople,LowerClassDroneTarget,WorkingClassCommon,WorkingClassBrownstone,WorkingClassHome,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="GangCrime" value="2"/>
-			<initial_building_rating data_type="Vermin" value="7"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -527,46 +347,24 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,WorkingClassCommon,WorkingClassOffice,WorkingClassWorkplace,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="20"/>
-			<initial_building_rating data_type="HackerPresence" value="18"/>
-			<initial_building_rating data_type="GangCrime" value="4"/>
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 		<variant id="Mid" display_name="Midrise Office" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,WorkingClassCommon,WorkingClassOffice,WorkingClassWorkplace,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="20"/>
-			<initial_building_rating data_type="HackerPresence" value="18"/>
-			<initial_building_rating data_type="GangCrime" value="2"/>
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 		<variant id="Co" display_name="Coworking Office Space" weight="50"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,WorkingClassCommon,WorkingClassOffice,WorkingClassWorkplace,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="120"/>
-			<initial_building_rating data_type="HackerPresence" value="18"/>
-			<initial_building_rating data_type="GangCrime" value="12"/>
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 		<variant id="A" display_name="Class A Office" weight="25"
 		is_drone_delivery_target="true" is_shootout_target="true" special_scavenge_resource="Alumina" special_scavenge_resource_amount_range="1500,1900" special_scavenge_danger_type="ModerateSecForce"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,WealthyDroneTarget,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveSeizedAndSealedFloors,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,CanHaveHealthcareStorefront,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="450"/>
-			<initial_building_rating data_type="HackerPresence" value="200"/>
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 	</building_type>
 
 	<building_type id="Motel" display_name="Motel" hard_max_to_seed_per_tile="4">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,GangHangout,BasicCommon,HasManyPeople,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="GangCrime" value="60"/>
-			<initial_building_rating data_type="Vermin" value="60"/>
-			<initial_building_rating data_type="BacterialLoad" value="80"/>
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Motel,Housing,HousingNotSmall,GangHangout,BasicCommon,HasManyPeople,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid">
 		</variant>
 	</building_type>
 
@@ -574,11 +372,6 @@
 		<variant id="1" display_name="" weight="100" required_clearance="Sight"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,BasicCommon,HasManyPeople,AndroidHaunt,WealthyHome,WealthyDroneTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="40"/>
-			<initial_building_rating data_type="HackerPresence" value="9"/>
-			<initial_building_rating data_type="BlackMarket" value="2"/>
-			<initial_building_rating data_type="Vermin" value="1"/>
-			<initial_building_rating data_type="BacterialLoad" value="16"/>
 		</variant>
 	</building_type>
 
@@ -587,11 +380,6 @@
 		<variant id="1" display_name="" weight="100" required_clearance="Oversight"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Apartments,WealthSymbol,WealthyHome,DowntownWealthyHome,WealthyDroneTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="1100"/>
-			<initial_building_rating data_type="HackerPresence" value="600"/>
-			<initial_building_rating data_type="BlackMarket" value="1"/>
-			<initial_building_rating data_type="Vermin" value="1"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -600,14 +388,10 @@
 		<variant id="1" display_name="" weight="100" required_clearance="Secret"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,AndroidHaunt,WealthyHome,DowntownWealthyHome,WealthyDroneTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="1300"/>
-			<initial_building_rating data_type="HackerPresence" value="800"/>
 		</variant>
 		<variant id="HidVeh" display_name="Hidden Vehicle Factory" weight="3" overriding_authority_cohort_tag="CriminalSyndicateTraditional"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,SyndicateHiddenPresence,SyndicateBuilding,AndroidHaunt,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="3800"/>
-			<initial_building_rating data_type="HackerPresence" value="1800"/>
 		</variant>
 	</building_type>
 
@@ -615,42 +399,18 @@
 		<variant id="2" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ResidentialTower,AnyTower,Housing,HousingNotSmall,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="100"/>
-			<initial_building_rating data_type="MilitaryPresence" value="50"/>
-			<initial_building_rating data_type="HackerPresence" value="100"/>
-			<initial_building_rating data_type="GangCrime" value="10"/>
-			<initial_building_rating data_type="Vermin" value="10"/>
-			<initial_building_rating data_type="BacterialLoad" value="30"/>
 		</variant>
 		<variant id="3" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ResidentialTower,AnyTower,Housing,HousingNotSmall,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="100"/>
-			<initial_building_rating data_type="MilitaryPresence" value="50"/>
-			<initial_building_rating data_type="HackerPresence" value="100"/>
-			<initial_building_rating data_type="GangCrime" value="10"/>
-			<initial_building_rating data_type="Vermin" value="10"/>
-			<initial_building_rating data_type="BacterialLoad" value="30"/>
 		</variant>
 		<variant id="4" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ResidentialTower,AnyTower,Housing,HousingNotSmall,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="100"/>
-			<initial_building_rating data_type="MilitaryPresence" value="50"/>
-			<initial_building_rating data_type="HackerPresence" value="100"/>
-			<initial_building_rating data_type="GangCrime" value="10"/>
-			<initial_building_rating data_type="Vermin" value="10"/>
-			<initial_building_rating data_type="BacterialLoad" value="30"/>
 		</variant>
 		<variant id="5" display_name="" weight="25" special_scavenge_resource="Furniture" special_scavenge_resource_amount_range="500,900" special_scavenge_danger_type="MildSecForce"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ResidentialTower,AnyTower,Housing,HousingNotSmall,BasicCommon,HasManyPeople,LowerClassDroneTarget,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="100"/>
-			<initial_building_rating data_type="MilitaryPresence" value="50"/>
-			<initial_building_rating data_type="HackerPresence" value="100"/>
-			<initial_building_rating data_type="GangCrime" value="10"/>
-			<initial_building_rating data_type="Vermin" value="10"/>
-			<initial_building_rating data_type="BacterialLoad" value="30"/>
 		</variant>
 	</building_type>
 
@@ -658,32 +418,14 @@
 		<variant id="2" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,CommercialTower,AnyTower,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveSeizedAndSealedFloors,CanHaveHollowedOutLargeBuilding,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="125"/>
-			<initial_building_rating data_type="MilitaryPresence" value="75"/>
-			<initial_building_rating data_type="HackerPresence" value="150"/>
-			<initial_building_rating data_type="GangCrime" value="5"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="38"/>
 		</variant>
 		<variant id="3" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,CommercialTower,AnyTower,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveSeizedAndSealedFloors,CanHaveHollowedOutLargeBuilding,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="125"/>
-			<initial_building_rating data_type="MilitaryPresence" value="75"/>
-			<initial_building_rating data_type="HackerPresence" value="150"/>
-			<initial_building_rating data_type="GangCrime" value="5"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="38"/>
 		</variant>
 		<variant id="4" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true" special_scavenge_resource="Alumina" special_scavenge_resource_amount_range="3200,4800" special_scavenge_danger_type="HeavySecForce"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,CommercialTower,AnyTower,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveSeizedAndSealedFloors,CanHaveHollowedOutLargeBuilding,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="125"/>
-			<initial_building_rating data_type="MilitaryPresence" value="75"/>
-			<initial_building_rating data_type="HackerPresence" value="150"/>
-			<initial_building_rating data_type="GangCrime" value="5"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="38"/>
 		</variant>
 	</building_type>
 
@@ -691,12 +433,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,MixedUseTower,AnyTower,Housing,HousingNotSmall,Apartments,Offices,HasOfficePrinters,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,DemolishTarget,CanHaveHealthcareStorefront,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="125"/>
-			<initial_building_rating data_type="MilitaryPresence" value="75"/>
-			<initial_building_rating data_type="HackerPresence" value="150"/>
-			<initial_building_rating data_type="GangCrime" value="5"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="38"/>
 		</variant>
 	</building_type>
 
@@ -704,12 +440,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,ResidentialSkyscraper,AnySkyscraper,Housing,HousingNotSmall,BasicCommon,HasManyPeople,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="100"/>
-			<initial_building_rating data_type="MilitaryPresence" value="50"/>
-			<initial_building_rating data_type="HackerPresence" value="100"/>
-			<initial_building_rating data_type="GangCrime" value="10"/>
-			<initial_building_rating data_type="Vermin" value="10"/>
-			<initial_building_rating data_type="BacterialLoad" value="30"/>
 		</variant>
 	</building_type>
 
@@ -717,12 +447,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,MixedUseSkyscraper,AnySkyscraper,Housing,HousingNotSmall,Apartments,Offices,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,WealthyDroneTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveSeizedAndSealedFloors,CanHaveHollowedOutLargeBuilding,CanHaveHealthcareStorefront">
-			<initial_building_rating data_type="SecForcesPresence" value="125"/>
-			<initial_building_rating data_type="MilitaryPresence" value="75"/>
-			<initial_building_rating data_type="HackerPresence" value="150"/>
-			<initial_building_rating data_type="GangCrime" value="5"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="38"/>
 		</variant>
 	</building_type>
 
@@ -732,12 +456,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" demolish_special_manager="Man_DemolishBuildingInsane"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,AnySkyscraper,SkyscraperEstate,Housing,HousingNotSmall,Apartments,Offices,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,WealthyDroneTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding,DemolishTarget">
-			<initial_building_rating data_type="SecForcesPresence" value="125"/>
-			<initial_building_rating data_type="MilitaryPresence" value="75"/>
-			<initial_building_rating data_type="HackerPresence" value="150"/>
-			<initial_building_rating data_type="GangCrime" value="5"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="38"/>
 		</variant>
 	</building_type>
 
@@ -747,12 +465,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" special_scavenge_resource="Alumina" special_scavenge_resource_amount_range="15000,27000" special_scavenge_danger_type="VorsiberSpecialForces"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,AnySkyscraper,ExecutiveSkyscraper,Housing,HousingNotSmall,Apartments,Offices,BasicCommon,HasManyPeople,AndroidHaunt,WealthyWorkplace,WealthyDroneTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutLargeBuilding">
-			<initial_building_rating data_type="SecForcesPresence" value="125"/>
-			<initial_building_rating data_type="MilitaryPresence" value="75"/>
-			<initial_building_rating data_type="HackerPresence" value="150"/>
-			<initial_building_rating data_type="GangCrime" value="5"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="38"/>
 		</variant>
 	</building_type>
 
@@ -761,16 +473,10 @@
 		<variant id="1" display_name="" weight="100" required_clearance="Secret" beacon_to_show="DataCenter"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Communications,CityFeedAccess,DataCenter,ScienceIndustrial,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="500"/>
-			<initial_building_rating data_type="MilitaryPresence" value="200"/>
-			<initial_building_rating data_type="HackerPresence" value="500"/>
 		</variant>
 		<variant id="2" display_name="Backbone Nexus Data Center" weight="10" required_clearance="TopSecret" beacon_to_show="BackboneNexusDataCenter"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Communications,CityFeedAccess,DataCenter,ScienceIndustrial,AndroidHaunt,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="1500"/>
-			<initial_building_rating data_type="MilitaryPresence" value="400"/>
-			<initial_building_rating data_type="HackerPresence" value="700"/>
 		</variant>
 	</building_type>
 	
@@ -778,8 +484,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Secret"
 		tags="Any,Communications,CityFeedAccess,CanHaveSecretCompartment">
-			<initial_building_rating data_type="SecForcesPresence" value="5"/>
-			<initial_building_rating data_type="HackerPresence" value="100"/>
 		</variant>
 	</building_type>
 
@@ -899,8 +603,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Secret"
 		tags="Any,Scientific,Communications,Space,CityFeedAccess,CanHaveSecretCompartment">
-			<initial_building_rating data_type="SecForcesPresence" value="5"/>
-			<initial_building_rating data_type="HackerPresence" value="100"/>			
 		</variant>
 	</building_type>
 
@@ -908,9 +610,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret"
 		tags="Any,Scientific,ScientificResearch">
-			<initial_building_rating data_type="SecForcesPresence" value="800"/>
-			<initial_building_rating data_type="MilitaryPresence" value="300"/>
-			<initial_building_rating data_type="HackerPresence" value="600"/>
 		</variant>
 	</building_type>
 
@@ -918,8 +617,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,Scientific,Communications,Space,Military">
-			<initial_building_rating data_type="MilitaryPresence" value="900"/>
-			<initial_building_rating data_type="HackerPresence" value="900"/>			
 		</variant>
 	</building_type>
 
@@ -927,8 +624,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Secret"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Communications,Military">
-			<initial_building_rating data_type="MilitaryPresence" value="400"/>
-			<initial_building_rating data_type="HackerPresence" value="400"/>			
 		</variant>
 	</building_type>
 
@@ -937,9 +632,6 @@
 		soft_max_to_seed_per_city="45" hard_max_to_seed_per_tile="2" blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Religious,CultistTemple,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid">
-			<initial_building_rating data_type="HostileCultPresence" value="900"/>			
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 	</building_type>
 
@@ -948,155 +640,90 @@
 		soft_max_to_seed_per_city="35" hard_max_to_seed_per_tile="2">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Religious,HistoricTemple,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="100"/>
-			<initial_building_rating data_type="BacterialLoad" value="5"/>
 		</variant>
 	</building_type>
 
 	<building_type id="AbandonedConstructionSite" display_name="Abandoned Construction Site">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Abandoned,Construction,AbandonedConstruction,Abandoned_NomadUse,PossibleRebelMeetingSpot,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="GangCrime" value="60"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="2" display_name="Hidden Syndicate Storage" weight="100" overriding_authority_cohort_tag="CriminalSyndicateTraditional" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,Construction,Abandoned_SyndicateUse,SyndicateHangout,SyndicateStorage,SyndicateHiddenPresence,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="180"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="3" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
-		tags="Any,Abandoned,Construction,Abandoned_CultUse,AbandonedConstruction,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid,AnimalLargeHidingValid,DemolishTarget">
-			<initial_building_rating data_type="HostileCultPresence" value="220"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
+		tags="Any,Abandoned,Construction,Abandoned_CultUse,AbandonedConstruction,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid,AnimalLargeHidingValid,DemolishTarget">	
 		</variant>
 	</building_type>
 
 	<building_type id="AbandonedBuildingRuin" display_name="Abandoned Building Ruin">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Abandoned,Abandoned_NomadUse,Abandoned_HiddenCommercePossible,PossibleRebelMeetingSpot,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="GangCrime" value="60"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="2" display_name="Hidden Syndicate Outpost" weight="100" overriding_authority_cohort_tag="CriminalSyndicateTraditional" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,Abandoned_SyndicateUse,Abandoned_HiddenCommercePossible,SyndicateOutpost,SyndicateHiddenPresence,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHollowedOutMidsizeBuilding,DemolishTarget,CanHaveHiddenRoom,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="450"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="3" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,Abandoned_CultUse,Abandoned_HiddenCommercePossible,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveHollowedOutMidsizeBuilding,AnimalHidingValid,AnimalLargeHidingValid,DemolishTarget">
-			<initial_building_rating data_type="HostileCultPresence" value="200"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 	</building_type>
 
 	<building_type id="AbandonedShop" display_name="Abandoned Shop">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Abandoned,Abandoned_NomadUse,Abandoned_HiddenCommercePossible,PossibleRebelMeetingSpot,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="GangCrime" value="60"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="2" display_name="Hidden Syndicate Outpost" weight="100" overriding_authority_cohort_tag="CriminalSyndicateTraditional" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,Abandoned_SyndicateUse,Abandoned_HiddenCommercePossible,SyndicateOutpost,SyndicateHiddenPresence,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,CanHaveStorefront,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="200"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="3" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,Abandoned_CultUse,Abandoned_HiddenCommercePossible,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,AnimalHidingValid,AnimalLargeHidingValid,DemolishTarget">
-			<initial_building_rating data_type="HostileCultPresence" value="150"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 	</building_type>
 
 	<building_type id="AbandonedHouse" display_name="Abandoned House">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Abandoned,Housing,AbandonedHousing,Abandoned_NomadUse,PossibleRebelMeetingSpot,CanHaveSecretCompartment,CanHaveHiddenRoom,FlamethrowerTarget,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="GangCrime" value="60"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="2" display_name="Hidden Syndicate Housing" weight="100" overriding_authority_cohort_tag="CriminalSyndicateTraditional" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,Housing,Abandoned_SyndicateUse,SyndicateHousing,SyndicateHiddenPresence,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,AnimalHidingValid,AnimalLargeHidingValid,FlamethrowerTarget,DemolishTarget">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="320"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="3" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,Housing,Abandoned_CultUse,AbandonedHousing,CanHaveSecretCompartment,CanHaveHiddenRoom,FlamethrowerTarget,AnimalHidingValid,AnimalLargeHidingValid,DemolishTarget">
-			<initial_building_rating data_type="HostileCultPresence" value="350"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 	</building_type>
 
 	<building_type id="AbandonedDiner" display_name="Abandoned Diner" hard_max_to_seed_per_tile="2">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Abandoned,AbandonedDiner,Food,Abandoned_NomadUse,PossibleRebelMeetingSpot,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid,FlamethrowerTarget">
-			<initial_building_rating data_type="GangCrime" value="60"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="2" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,Food,Abandoned_SyndicateUse,SyndicateHangout,SyndicateDeliveryTarget,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,AnimalHidingValid,AnimalLargeHidingValid,DemolishTarget,FlamethrowerTarget">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="220"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="3" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,AbandonedDiner,Food,Abandoned_CultUse,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveStorefront,AnimalHidingValid,AnimalLargeHidingValid,DemolishTarget,FlamethrowerTarget">
-			<initial_building_rating data_type="HostileCultPresence" value="125"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 	</building_type>
 
 	<building_type id="AbandonedApartments" display_name="Abandoned Apartments">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Abandoned,Housing,AbandonedHousing,HousingNotSmall,Apartments,Abandoned_NomadUse,Abandoned_HiddenCommercePossible,PossibleRebelMeetingSpot,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,FlamethrowerTarget,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="GangCrime" value="60"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="2" display_name="Hidden Syndicate Housing" weight="100" overriding_authority_cohort_tag="CriminalSyndicateTraditional" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,Housing,HousingNotSmall,Apartments,Abandoned_SyndicateUse,Abandoned_HiddenCommercePossible,SyndicateHousing,SyndicateHiddenPresence,SyndicateDeliveryTarget,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,AnimalHidingValid,AnimalLargeHidingValid,DemolishTarget,FlamethrowerTarget">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="410"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="3" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,Housing,HousingNotSmall,Apartments,AbandonedHousing,Abandoned_CultUse,Abandoned_HiddenCommercePossible,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,FlamethrowerTarget,AnimalHidingValid,AnimalLargeHidingValid,DemolishTarget">
-			<initial_building_rating data_type="HostileCultPresence" value="450"/>
-			<initial_building_rating data_type="Vermin" value="20"/>			
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 	</building_type>
 
 	<building_type id="AbandonedOffice" display_name="Abandoned Office">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Abandoned,Offices,AbandonedOffice,Abandoned_NomadUse,Abandoned_HiddenCommercePossible,PossibleRebelMeetingSpot,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,FlamethrowerTarget,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="GangCrime" value="60"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="2" display_name="Hidden Syndicate Outpost" weight="100" overriding_authority_cohort_tag="CriminalSyndicateTraditional" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,Offices,Abandoned_SyndicateUse,Abandoned_HiddenCommercePossible,SyndicateOutpost,SyndicateHiddenPresence,SyndicateDeliveryTarget,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,AnimalHidingValid,AnimalLargeHidingValid,DemolishTarget,FlamethrowerTarget">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="520"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 		<variant id="3" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Abandoned,Offices,AbandonedOffice,Abandoned_CultUse,Abandoned_HiddenCommercePossible,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,CanHaveHollowedOutMidsizeBuilding,FlamethrowerTarget,AnimalHidingValid,AnimalLargeHidingValid,DemolishTarget">
-			<initial_building_rating data_type="HostileCultPresence" value="510"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 	</building_type>
 
@@ -1105,7 +732,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Construction,FlamethrowerTarget,DemolishTarget">
-			<initial_building_rating data_type="SecForcesPresence" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1114,8 +740,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Construction,CanHaveSecretCompartment,FlamethrowerTarget,DemolishTarget">
-			<initial_building_rating data_type="SecForcesPresence" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 	</building_type>
 
@@ -1124,8 +748,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Construction,Liquids,ConstructionSepticTank">
-			<initial_building_rating data_type="SecForcesPresence" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="600"/>
 		</variant>
 	</building_type>
 
@@ -1135,8 +757,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,FarmMainBuildings,FarmAnimals,Food,FarmPrimaryBuilding,FarmBarn,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="20"/>
 		</variant>
 	</building_type>
 
@@ -1146,7 +766,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,Housing,BasicCommon,WorkingClassCommon,WorkingClassWorkplace,FarmPrimaryBuilding,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="Vermin" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1156,8 +775,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,FarmMainBuildings,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">			
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="5"/>
 		</variant>
 	</building_type>
 
@@ -1166,8 +783,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,DemolishTarget">
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1177,8 +792,6 @@
 		is_excluded_from_city_network="true">
 		<variant id="1" display_name="" weight="100" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,DemolishTarget">
-			<initial_building_rating data_type="Vermin" value="30"/>
-			<initial_building_rating data_type="BacterialLoad" value="1"/>
 		</variant>	
 	</building_type>
 
@@ -1188,8 +801,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,FarmMainBuildings,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">			
-			<initial_building_rating data_type="Vermin" value="10"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1198,8 +809,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Farm,FarmMainBuildings,Warehouse,PossibleRebelMeetingSpot,FarmPrimaryBuilding,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid">			
-			<initial_building_rating data_type="Vermin" value="30"/>
-			<initial_building_rating data_type="BacterialLoad" value="10"/>
 		</variant>
 	</building_type>
 
@@ -1208,8 +817,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Liquids,Water,DemolishTarget">
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="5"/>
 		</variant>
 	</building_type>
 
@@ -1218,8 +825,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,DemolishTarget">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="1"/>
 		</variant>
 	</building_type>
 
@@ -1229,8 +834,6 @@
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Fields,Food,FarmFieldGreens">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1239,9 +842,7 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_skipped_during_relaxed_collisions="true"
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
-		tags="Any,Farm,Fields,Food,FarmFieldGreens">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
+		tags="Any,Farm,Fields,Food,FarmFieldGreens">	
 		</variant>
 	</building_type>
 
@@ -1251,8 +852,6 @@
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Fields,Food,FarmFieldGreens">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1262,8 +861,6 @@
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Fields,Food,FarmFieldGreens">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1273,8 +870,6 @@
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Fields,CottonSource">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1284,8 +879,6 @@
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Fields,Food">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1295,8 +888,6 @@
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Fields,Food,FarmFieldGreens">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1306,8 +897,6 @@
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Fields,Food,FarmFieldGreens">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1317,8 +906,6 @@
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Fields,Food">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1328,8 +915,6 @@
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Fields,Food">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1339,8 +924,6 @@
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Fields,Food">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1350,8 +933,6 @@
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Fields,Food">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1361,8 +942,6 @@
 		is_excluded_from_city_network="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Fields,Food,FarmFieldGreens">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1371,8 +950,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,Liquids,Water">
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1381,8 +958,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Farm,FarmAnimals,Food">
-			<initial_building_rating data_type="Vermin" value="1"/>
-			<initial_building_rating data_type="BacterialLoad" value="5"/>
 		</variant>
 	</building_type>
 
@@ -1391,9 +966,6 @@
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Cryonics,Scientific,Space,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="400"/>
-			<initial_building_rating data_type="MilitaryPresence" value="400"/>
-			<initial_building_rating data_type="HackerPresence" value="200"/>
 		</variant>
 	</building_type>
 
@@ -1401,21 +973,12 @@
 		blocks_events_unless_they_target_this_building_tag="true" hard_max_to_seed_per_tile="2">
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret" beacon_to_show="Nanotech"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Nanotech,Scientific,ScientificResearch,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="1200"/>
-			<initial_building_rating data_type="MilitaryPresence" value="1200"/>
-			<initial_building_rating data_type="HackerPresence" value="800"/>
 		</variant>
 		<variant id="TestCenter" display_name="Nano Testing Center" weight="70" required_clearance="TopSecret" beacon_to_show="Nanotech"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Nanotech,Scientific,ScientificResearch,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="800"/>
-			<initial_building_rating data_type="MilitaryPresence" value="2200"/>
-			<initial_building_rating data_type="HackerPresence" value="1400"/>
 		</variant>
 		<variant id="ContainmentStudy" display_name="Nano Containment Study Lab" weight="50" required_clearance="TopSecret" beacon_to_show="Nanotech"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Nanotech,Scientific,ScientificResearch,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="300"/>
-			<initial_building_rating data_type="MilitaryPresence" value="3200"/>
-			<initial_building_rating data_type="HackerPresence" value="1400"/>
 		</variant>
 	</building_type>
 
@@ -1423,21 +986,12 @@
 		blocks_events_unless_they_target_this_building_tag="true" hard_max_to_seed_per_tile="2">
 		<variant id="1" display_name="" weight="100" required_clearance="Secret"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="300"/>
-			<initial_building_rating data_type="MilitaryPresence" value="100"/>
-			<initial_building_rating data_type="HackerPresence" value="300"/>
 		</variant>
 		<variant id="Genetics" display_name="Genetics Lab" weight="50" required_clearance="TopSecret" beacon_to_show="GeneticsResearch"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,GeneticsLab,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="500"/>
-			<initial_building_rating data_type="MilitaryPresence" value="200"/>
-			<initial_building_rating data_type="HackerPresence" value="500"/>
 		</variant>
 		<variant id="AI" display_name="AI Research Lab" weight="5" required_clearance="TopSecret" beacon_to_show="AIResearch"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,AIResearchLab">
-			<initial_building_rating data_type="SecForcesPresence" value="900"/>
-			<initial_building_rating data_type="MilitaryPresence" value="2000"/>
-			<initial_building_rating data_type="HackerPresence" value="2500"/>
 		</variant>
 	</building_type>
 
@@ -1445,21 +999,12 @@
 		blocks_events_unless_they_target_this_building_tag="true" hard_max_to_seed_per_tile="2">
 		<variant id="1" display_name="" weight="100" required_clearance="Secret"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="900"/>
-			<initial_building_rating data_type="MilitaryPresence" value="100"/>
-			<initial_building_rating data_type="HackerPresence" value="500"/>
 		</variant>
 		<variant id="Genetics" display_name="Underground Genetics Lab" weight="50" required_clearance="TopSecret" beacon_to_show="GeneticsResearch"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,GeneticsLab,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="1300"/>
-			<initial_building_rating data_type="MilitaryPresence" value="300"/>
-			<initial_building_rating data_type="HackerPresence" value="700"/>
 		</variant>
 		<variant id="AI" display_name="Underground AI Research Lab" weight="5" required_clearance="TopSecret" beacon_to_show="AIResearch"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,WealthyWorkplace,Scientific,Underground,ScientificResearch,ScienceLab,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom,AIResearchLab">
-			<initial_building_rating data_type="SecForcesPresence" value="2300"/>
-			<initial_building_rating data_type="MilitaryPresence" value="3000"/>
-			<initial_building_rating data_type="HackerPresence" value="700"/>
 		</variant>
 	</building_type>
 
@@ -1468,8 +1013,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,AlmostAny,Space,Spaceport,SupplyChainTarget,SpaceportControlTower">
-			<initial_building_rating data_type="MilitaryPresence" value="600"/>
-			<initial_building_rating data_type="HackerPresence" value="600"/>
 		</variant>
 	</building_type>
 
@@ -1478,7 +1021,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior" beacon_to_show="SpaceportHangar"
 		tags="Any,AlmostAny,Space,Spaceport">
-			<initial_building_rating data_type="MilitaryPresence" value="1200"/>
 		</variant>
 	</building_type>
 
@@ -1487,8 +1029,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior" beacon_to_show="SpaceportTerminal"
 		tags="Any,AlmostAny,Space,Spaceport,SpaceportTerminal">
-			<initial_building_rating data_type="MilitaryPresence" value="1500"/>
-			<initial_building_rating data_type="HackerPresence" value="800"/>
 		</variant>
 	</building_type>
 
@@ -1496,9 +1036,7 @@
 		building_group_sale_restriction_type="Spaceport"		
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
-		tags="Any,Space,Spaceport">
-			<initial_building_rating data_type="MilitaryPresence" value="200"/>
-			<initial_building_rating data_type="HackerPresence" value="200"/>
+		tags="Any,Space,Spaceport">	
 		</variant>
 	</building_type>
 
@@ -1506,9 +1044,7 @@
 		building_group_sale_restriction_type="Spaceport"		
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
-		tags="Any,Space,Spaceport">
-			<initial_building_rating data_type="MilitaryPresence" value="200"/>
-			<initial_building_rating data_type="HackerPresence" value="200"/>
+		tags="Any,Space,Spaceport">	
 		</variant>
 	</building_type>
 
@@ -1517,8 +1053,6 @@
 		is_excluded_from_city_network="true" is_considered_not_to_have_people_inside_even_when_has_workers="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,Space,Spaceport">
-			<initial_building_rating data_type="MilitaryPresence" value="200"/>
-			<initial_building_rating data_type="HackerPresence" value="200"/>
 		</variant>
 	</building_type>
 
@@ -1527,8 +1061,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,Space,Spaceport,SpaceportLaunchArm">
-			<initial_building_rating data_type="MilitaryPresence" value="200"/>
-			<initial_building_rating data_type="HackerPresence" value="200"/>
 		</variant>
 	</building_type>
 
@@ -1537,8 +1069,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,Space,Spaceport,SpaceportLaunchPad">
-			<initial_building_rating data_type="MilitaryPresence" value="600"/>
-			<initial_building_rating data_type="HackerPresence" value="600"/>
 		</variant>
 	</building_type>
 
@@ -1547,7 +1077,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,Space,Spaceport,SpaceportRocketHangar">
-			<initial_building_rating data_type="MilitaryPresence" value="1200"/>
 		</variant>
 	</building_type>
 
@@ -1557,8 +1086,6 @@
 		is_excluded_from_city_network="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,Space,Spaceport,Rocket">
-			<initial_building_rating data_type="MilitaryPresence" value="2400"/>
-			<initial_building_rating data_type="HackerPresence" value="2400"/>
 		</variant>
 	</building_type>
 
@@ -1568,8 +1095,6 @@
 		is_excluded_from_city_network="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,Space,Spaceport,Rocket">
-			<initial_building_rating data_type="MilitaryPresence" value="4000"/>
-			<initial_building_rating data_type="HackerPresence" value="4000"/>
 		</variant>
 	</building_type>
 
@@ -1579,8 +1104,6 @@
 		is_excluded_from_city_network="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,Space,Spaceport,Rocket">
-			<initial_building_rating data_type="MilitaryPresence" value="6000"/>
-			<initial_building_rating data_type="HackerPresence" value="6000"/>
 		</variant>	
 	</building_type>
 
@@ -1588,7 +1111,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,CanHaveSecretCompartment,DemolishTarget">
-			<initial_building_rating data_type="SecForcesPresence" value="2"/>
 		</variant>
 	</building_type>
 
@@ -1596,28 +1118,22 @@
 		<variant id="MachinePartsFactory" display_name="Machine Parts Factory" weight="100" required_clearance="Sight"
 		is_drone_delivery_target="true" special_scavenge_resource="Neodymium" special_scavenge_resource_amount_range="9200,13700" special_scavenge_danger_type="HeavySecForce"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
-			<initial_building_rating data_type="SecForcesPresence" value="80"/>
 		</variant>
 		<variant id="Garment" display_name="Garment Factory" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,CottonSource,DailyNecessitiesFactory,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
-			<initial_building_rating data_type="SecForcesPresence" value="30"/>
 		</variant>
 		<variant id="SmallGoods" display_name="Small Goods Factory" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,DailyNecessitiesFactory,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
-			<initial_building_rating data_type="SecForcesPresence" value="50"/>
 		</variant>
 		<variant id="CheapElectronics" display_name="Cheap Electronics Factory" weight="100"
 		is_drone_delivery_target="true" special_scavenge_resource="Neodymium" special_scavenge_resource_amount_range="4100,5150" special_scavenge_danger_type="MildSecForce"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,BasicCommon,HasManyPeople,WorkingClassWorkplace,SmallBusinessSyndicateTarget,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
-			<initial_building_rating data_type="SecForcesPresence" value="90"/>
 		</variant>
 		<variant id="Ammo" display_name="Ammunition Factory" weight="100" required_clearance="Sight"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,LowTechFactory,ScienceIndustrial,WeaponsFactory,BasicCommon,HasManyPeople,DailyNecessitiesFactoryFallback,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors">
-			<initial_building_rating data_type="SecForcesPresence" value="20"/>
-			<initial_building_rating data_type="MilitaryPresence" value="40"/>
 		</variant>
 	</building_type>
 
@@ -1626,13 +1142,10 @@
 		<variant id="1" display_name="" weight="100" required_clearance="Oversight"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,HighTechFactory,HighTechFactoryGeneral,WorkingClassWorkplace,ScienceIndustrial,BasicCommon,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="500"/>
 		</variant>
 		<variant id="AdvWeaponsFactory" display_name="Advanced Weapons Factory" weight="5" required_clearance="Secret"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Factory,HighTechFactory,ScienceIndustrial,WeaponsFactory,WorkingClassWorkplace,BasicCommon,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="MilitaryPresence" value="500"/>
-			<initial_building_rating data_type="SecForcesPresence" value="200"/>
 		</variant>
 	</building_type>
 
@@ -1641,8 +1154,6 @@
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Industrial,Scientific,ChemicalPlant,ScienceIndustrial,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="MilitaryPresence" value="500"/>
-			<initial_building_rating data_type="SecForcesPresence" value="200"/>
 		</variant>
 	</building_type>
 
@@ -1650,7 +1161,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" hard_max_to_seed_per_tile="1">
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret" beacon_to_show="MechPartsFactory"
 		tags="Any,AlmostAny,Industrial,Weapons,Factory,MechPartsFactory,ScienceIndustrial,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="MilitaryPresence" value="2000"/>
 		</variant>
 	</building_type>
 
@@ -1659,7 +1169,6 @@
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,Industrial,Space,Factory,ScienceIndustrial,CanHaveSecretCompartment,HasManyPeople,CanHaveHiddenRoom">
-			<initial_building_rating data_type="MilitaryPresence" value="1000"/>
 		</variant>
 	</building_type>
 
@@ -1668,7 +1177,6 @@
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret" beacon_to_show="CropResearchFacility"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,Scientific,Food,WealthyWorkplace,ScientificResearch,ScienceIndustrial,CanHaveSecretCompartment,HasManyPeople,CanHaveHiddenRoom">
-			<initial_building_rating data_type="MilitaryPresence" value="1000"/>
 		</variant>
 	</building_type>
 
@@ -1676,7 +1184,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">		
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret"
 		tags="Any,AlmostAny,Industrial,Space,ScienceIndustrial">
-			<initial_building_rating data_type="MilitaryPresence" value="1000"/>
 		</variant>
 	</building_type>
 
@@ -1684,7 +1191,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true">		
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret"
 		tags="Any,Industrial,Space,ScienceIndustrial">
-			<initial_building_rating data_type="MilitaryPresence" value="500"/>
 		</variant>
 	</building_type>
 
@@ -1693,7 +1199,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Sight"
 		tags="Any,AlmostAny,Military,MilitaryStorage,HasManyPeople,Underground,CouldHaveMechPilotSoftware">
-			<initial_building_rating data_type="MilitaryPresence" value="4000"/>
 		</variant>
 	</building_type>
 
@@ -1702,7 +1207,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Sight"
 		tags="Any,AlmostAny,Military">
-			<initial_building_rating data_type="MilitaryPresence" value="500"/>
 		</variant>
 	</building_type>
 
@@ -1711,7 +1215,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Sight"
 		tags="Any,AlmostAny,Military,HasManyPeople,MilitaryBarracks">
-			<initial_building_rating data_type="MilitaryPresence" value="3000"/>
 		</variant>
 	</building_type>
 
@@ -1720,7 +1223,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Oversight"
 		tags="Any,AlmostAny,Military,HasManyPeople">
-			<initial_building_rating data_type="MilitaryPresence" value="6000"/>
 		</variant>
 	</building_type>
 
@@ -1729,7 +1231,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Sight"
 		tags="Any,AlmostAny,Military,Medical,MedicalOrSchoolOrGovernment,Hospital,HasManyPeople">
-			<initial_building_rating data_type="MilitaryPresence" value="1000"/>
 		</variant>
 	</building_type>
 
@@ -1738,7 +1239,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Sight"
 		tags="Any,AlmostAny,Military,MedicalOrSchoolOrGovernment,Medical,Clinic">
-			<initial_building_rating data_type="MilitaryPresence" value="400"/>
 		</variant>
 	</building_type>
 
@@ -1747,7 +1247,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret"
 		tags="Any,AlmostAny,Military,Weapons,MilitaryStorage,Warehouse,ChemicalWeapons">
-			<initial_building_rating data_type="MilitaryPresence" value="8000"/>
 		</variant>
 	</building_type>
 
@@ -1756,7 +1255,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Oversight"
 		tags="Any,AlmostAny,Military,HasManyPeople,CouldHaveMechPilotSoftware">
-			<initial_building_rating data_type="MilitaryPresence" value="6000"/>
 		</variant>
 	</building_type>
 
@@ -1765,7 +1263,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Oversight"
 		tags="Any,AlmostAny,Military,HasManyPeople">
-			<initial_building_rating data_type="MilitaryPresence" value="6000"/>
 		</variant>
 	</building_type>
 
@@ -1774,7 +1271,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret"
 		tags="Any,AlmostAny,Military,HasManyPeople">
-			<initial_building_rating data_type="MilitaryPresence" value="6000"/>
 		</variant>
 	</building_type>
 
@@ -1782,7 +1278,6 @@
 		building_group_sale_restriction_type="Military">
 		<variant id="1" display_name="" weight="100" required_clearance="Sight"
 		tags="Any,AlmostAny,Military,MilitaryStorage,Warehouse">
-			<initial_building_rating data_type="MilitaryPresence" value="2000"/>
 		</variant>
 	</building_type>
 
@@ -1791,7 +1286,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Oversight"
 		tags="Any,AlmostAny,Military,MilitaryStorage,Warehouse,Weapons">
-			<initial_building_rating data_type="MilitaryPresence" value="3000"/>			
 		</variant>
 	</building_type>
 
@@ -1800,7 +1294,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Oversight"
 		tags="Any,AlmostAny,Military,Warehouse,Weapons,Automotive,Underground">
-			<initial_building_rating data_type="MilitaryPresence" value="5000"/>
 		</variant>
 	</building_type>
 
@@ -1809,8 +1302,6 @@
 		is_excluded_from_city_network="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Secret"
 		tags="Any,AlmostAny,Military">
-			<initial_building_rating data_type="MilitaryPresence" value="9000"/>
-			<initial_building_rating data_type="HackerPresence" value="8000"/>
 		</variant>
 	</building_type>
 
@@ -1819,8 +1310,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret"
 		tags="Any,AlmostAny,Military,Communications">
-			<initial_building_rating data_type="MilitaryPresence" value="5000"/>
-			<initial_building_rating data_type="HackerPresence" value="3000"/>
 		</variant>
 	</building_type>
 
@@ -1829,8 +1318,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret"
 		tags="Any,AlmostAny,Military">
-			<initial_building_rating data_type="MilitaryPresence" value="600"/>
-			<initial_building_rating data_type="HackerPresence" value="600"/>
 		</variant>
 	</building_type>
 
@@ -1839,7 +1326,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Secret"
 		tags="Any,AlmostAny,Military">
-			<initial_building_rating data_type="MilitaryPresence" value="1200"/>
 		</variant>
 	</building_type>
 
@@ -1848,7 +1334,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Secret"
 		tags="Any,AlmostAny,Military">
-			<initial_building_rating data_type="MilitaryPresence" value="3000"/>
 		</variant>
 	</building_type>
 
@@ -1857,7 +1342,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior" beacon_to_show="NuclearLaunchSilo"
 		tags="Any,NuclearSilo">
-			<initial_building_rating data_type="MilitaryPresence" value="16000"/>
 		</variant>
 	</building_type>
 
@@ -1866,7 +1350,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,NuclearSilo">
-			<initial_building_rating data_type="MilitaryPresence" value="22000"/>
 		</variant>
 	</building_type>
 
@@ -1875,7 +1358,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,NuclearSilo">
-			<initial_building_rating data_type="MilitaryPresence" value="9000"/>
 		</variant>
 	</building_type>
 
@@ -1884,7 +1366,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,AlmostAny,NuclearSilo">
-			<initial_building_rating data_type="MilitaryPresence" value="6000"/>
 		</variant>
 	</building_type>
 
@@ -1893,7 +1374,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="Interior"
 		tags="Any,AlmostAny,NuclearSilo">
-			<initial_building_rating data_type="MilitaryPresence" value="6000"/>
 		</variant>
 	</building_type>
 
@@ -1901,57 +1381,36 @@
 		is_excluded_from_city_network="true" is_skipped_during_relaxed_collisions="true">
 		<variant id="1" display_name="" weight="100" can_be_overbuilt_by_freestanding_construction="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,HomelessTent,FlamethrowerTarget,DemolishTarget">
-			<initial_building_rating data_type="GangCrime" value="1"/>
-			<initial_building_rating data_type="Vermin" value="100"/>
-			<initial_building_rating data_type="BacterialLoad" value="5"/>
 		</variant>
 	</building_type>
 
 	<building_type id="SlumSmallHome" display_name="Slum Small Home">
 		<variant id="1" display_name="" weight="100" can_be_overbuilt_by_freestanding_construction="true" can_be_overbuilt_as_slum_building="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,Slums,BasicCommon,CanHaveSecretCompartment,FlamethrowerTarget,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="GangCrime" value="5"/>
-			<initial_building_rating data_type="Vermin" value="40"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 	</building_type>
 
 	<building_type id="SlumTower" display_name="Slum Tower">
 		<variant id="1" display_name="" weight="100" is_shootout_target="true" can_be_overbuilt_as_slum_building="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Housing,HousingNotSmall,Slums,SlumTower,SlumDroneTarget,BasicCommon,HasManyPeople,LowerClassDroneTarget,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="GangCrime" value="40"/>
-			<initial_building_rating data_type="Vermin" value="60"/>
-			<initial_building_rating data_type="BacterialLoad" value="70"/>
 		</variant>
 		<variant id="2" display_name="" weight="25" is_shootout_target="true" can_be_overbuilt_as_slum_building="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Housing,HousingNotSmall,Slums,SlumTower,SlumDroneTarget,BasicCommon,HasManyPeople,LowerClassDroneTarget,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="GangCrime" value="30"/>
-			<initial_building_rating data_type="Vermin" value="50"/>
-			<initial_building_rating data_type="BacterialLoad" value="60"/>
 		</variant>
 		<variant id="3" display_name="" weight="10" is_shootout_target="true" can_be_overbuilt_as_slum_building="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,HousingNotSmall,Slums,SlumTower,SlumDroneTarget,SyndicateHangout,BasicCommon,HasManyPeople,LowerClassDroneTarget,SyndicateDeliveryTarget,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="180"/>
-			<initial_building_rating data_type="Vermin" value="20"/>
-			<initial_building_rating data_type="BacterialLoad" value="20"/>
 		</variant>
 	</building_type>
 
 	<building_type id="SlumShack" display_name="Shack" is_skipped_during_relaxed_collisions="true">
 		<variant id="1" display_name="" weight="100" can_be_overbuilt_by_freestanding_construction="true" can_be_overbuilt_as_slum_building="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,Slums,BasicCommon,FlamethrowerTarget,DemolishTarget">
-			<initial_building_rating data_type="GangCrime" value="4"/>
-			<initial_building_rating data_type="Vermin" value="50"/>
-			<initial_building_rating data_type="BacterialLoad" value="12"/>
 		</variant>
 	</building_type>
 
 	<building_type id="SlumTrailer" display_name="Trailer">
 		<variant id="1" display_name="" weight="100" can_be_overbuilt_by_freestanding_construction="true" can_be_overbuilt_as_slum_building="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,Slums,BasicCommon,CanHaveSecretCompartment,FlamethrowerTarget,DemolishTarget">
-			<initial_building_rating data_type="GangCrime" value="4"/>
-			<initial_building_rating data_type="Vermin" value="50"/>
-			<initial_building_rating data_type="BacterialLoad" value="12"/>
 		</variant>
 	</building_type>
 
@@ -1960,9 +1419,6 @@
 		is_excluded_from_city_network="true">
 		<variant id="1" display_name="" weight="100" can_be_overbuilt_by_freestanding_construction="true" can_be_overbuilt_as_slum_building="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Slums,FlamethrowerTarget,DemolishTarget">
-			<initial_building_rating data_type="GangCrime" value="4"/>
-			<initial_building_rating data_type="Vermin" value="50"/>
-			<initial_building_rating data_type="BacterialLoad" value="12"/>
 		</variant>
 	</building_type>
 
@@ -1971,7 +1427,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret" beacon_to_show="NuclearPowerPlant"
 		tags="Any,AlmostAny,Energy,PowerPlant,ScienceIndustrial,NuclearPowerPlant,CanHaveSecretCompartment,CanHaveHiddenRoom,HasManyPeople">
-			<initial_building_rating data_type="MilitaryPresence" value="400"/>
 		</variant>
 	</building_type>
 
@@ -1980,7 +1435,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100" required_clearance="TopSecret" beacon_to_show="FusionPowerPlant"
 		tags="Any,AlmostAny,Energy,PowerPlant,ScienceIndustrial,FusionPowerPlant,CanHaveSecretCompartment,CanHaveHiddenRoom,HasManyPeople">
-			<initial_building_rating data_type="MilitaryPresence" value="1700"/>
 		</variant>
 	</building_type>
 
@@ -1989,7 +1443,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,AlmostAny,Energy,PowerPlant,ScienceIndustrial,SupplyChainTarget,GeothermalPower,CanHaveSecretCompartment,HasManyPeople">
-			<initial_building_rating data_type="MilitaryPresence" value="100"/>
 		</variant>
 	</building_type>
 
@@ -1998,7 +1451,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Energy,WindPowerTurbine">
-			<initial_building_rating data_type="SecForcesPresence" value="10"/>
 		</variant>
 	</building_type>
 
@@ -2007,7 +1459,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Energy,SolarPanels">
-			<initial_building_rating data_type="SecForcesPresence" value="10"/>
 		</variant>
 	</building_type>
 
@@ -2015,7 +1466,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Energy,SupplyChainTarget,ScienceIndustrial">
-			<initial_building_rating data_type="SecForcesPresence" value="3"/>
 		</variant>
 	</building_type>
 
@@ -2024,9 +1474,6 @@
 		<variant id="1" display_name="" weight="100" required_clearance="Sight" beacon_to_show="Courthouse"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Courthouse,MedicalOrSchoolOrGovernment,Security,SupplyChainTarget,CanHaveSecretCompartment,HasManyPeople">
-			<initial_building_rating data_type="SecForcesPresence" value="900"/>
-			<initial_building_rating data_type="HackerPresence" value="700"/>
-			<initial_building_rating data_type="BacterialLoad" value="20"/>
 		</variant>
 	</building_type>
 
@@ -2035,9 +1482,6 @@
 		<variant id="1" display_name="" weight="100" required_clearance="Oversight"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,Security,SecForceStation,SupplyChainTarget,CanHaveSecretCompartment,HasManyPeople">
-			<initial_building_rating data_type="SecForcesPresence" value="5000"/>
-			<initial_building_rating data_type="HackerPresence" value="3000"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 	</building_type>
 
@@ -2046,10 +1490,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" hard_max_to_seed_per_tile="2">
 		<variant id="1" display_name="" weight="100" required_clearance="Secret" is_shootout_target="true"
 		tags="Any,Security,Underground,Prison,HasManyPeople">
-			<initial_building_rating data_type="SecForcesPresence" value="11000"/>
-			<initial_building_rating data_type="HackerPresence" value="300"/>
-			<initial_building_rating data_type="GangCrime" value="65"/>
-			<initial_building_rating data_type="BacterialLoad" value="95"/>
 		</variant>
 	</building_type>
 
@@ -2058,8 +1498,6 @@
 		<variant id="1" display_name="" weight="100" required_clearance="Sight" beacon_to_show="FireStation"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,Fire,CivilService,SupplyChainTarget,CanHaveSecretCompartment,HasManyPeople">
-			<initial_building_rating data_type="SecForcesPresence" value="2000"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 	</building_type>
 
@@ -2068,7 +1506,6 @@
 		<variant id="1" display_name="" weight="100" required_clearance="Sight" beacon_to_show="Hospital"
 		is_drone_delivery_target="true"
 		tags="Any,Medical,MedicalOrSchoolOrGovernment,SupplyChainTarget,Hospital,CanHaveSecretCompartment,CanHaveHiddenRoom,HasManyPeople">
-			<initial_building_rating data_type="SecForcesPresence" value="800"/>
 		</variant>
 	</building_type>
 
@@ -2077,7 +1514,6 @@
 		<variant id="1" display_name="" weight="100" beacon_to_show="MedicalClinic"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Medical,MedicalOrSchoolOrGovernment,Clinic,CanHaveSecretCompartment">
-			<initial_building_rating data_type="SecForcesPresence" value="70"/>
 		</variant>
 	</building_type>
 
@@ -2086,7 +1522,6 @@
 		<variant id="1" display_name="" weight="100" beacon_to_show="LicensingAgency"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,LicensingAgency,CanHaveSecretCompartment,CanHaveHiddenRoom,HasManyPeople">
-			<initial_building_rating data_type="MilitaryPresence" value="70"/>
 		</variant>
 	</building_type>
 
@@ -2095,25 +1530,24 @@
 		<variant id="1" display_name="" weight="100" beacon_to_show="School"
 		is_drone_delivery_target="true"
 		tags="Any,Education,School,MedicalOrSchoolOrGovernment,CanHaveSecretCompartment,CanHaveHiddenRoom,HasManyPeople">
-			<initial_building_rating data_type="SecForcesPresence" value="20"/>
 		</variant>
 	</building_type>
 
 	<building_type id="SuburbanHomeLevel1" display_name="Suburban Starter Home"	>
 		<variant id="1" display_name="" weight="100"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Suburban,Housing,BasicCommon,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,SuburbanStarterHome,Suburban,Housing,BasicCommon,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid">
 		</variant>
 	</building_type>
 
 	<building_type id="SuburbanHomeLevel2" display_name="Suburban Upgraded Home">
 		<variant id="1" display_name="" weight="100"
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Suburban,Housing,BasicCommon,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Suburban,SuburbanUpgradedHome,Housing,BasicCommon,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid">
 		</variant>
 	</building_type>
 
-	<building_type id="SuburbanHomeLevel4" display_name="Working-Class Suburban Home">
+	<building_type id="SuburbanHomeLevel4" display_name="Upper-Class Suburban Home">
 		<variant id="1" display_name="" weight="100"	
-		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Suburban,Housing,HousingNotSmall,BasicCommon,WorkingClassCommon,WorkingClassHome,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
+		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Suburban,SuburbanUpperClassHome,Housing,HousingNotSmall,BasicCommon,WorkingClassCommon,WorkingClassHome,CanHaveSecretCompartment,CanHaveHiddenRoom,DemolishTarget,AnimalHidingValid,AnimalLargeHidingValid">
 		</variant>
 	</building_type>
 
@@ -2121,10 +1555,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Automotive,BasicCommon,HasManyPeople,SmallBusinessSyndicateTarget,CanHaveSecretCompartment,DemolishTarget,AnimalHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="2"/>
-			<initial_building_rating data_type="GangCrime" value="10"/>
-			<initial_building_rating data_type="Vermin" value="5"/>
-			<initial_building_rating data_type="BacterialLoad" value="8"/>
 		</variant>
 	</building_type>
 
@@ -2132,20 +1562,13 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Warehouse,WarehouseCorporate,BasicCommon,CouldHaveSecretLab,WarehouseWithFurniturePossible,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="80"/>
-			<initial_building_rating data_type="GangCrime" value="8"/>
 		</variant>
 		<variant id="Criminal" display_name="Syndicate Warehouse" weight="50" overriding_authority_cohort_tag="CriminalSyndicateTraditional"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Warehouse,SyndicateStorage,SyndicateBuilding,BasicCommon,SyndicateDeliveryTarget,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="CrimeSyndicatePresence" value="480"/>
 		</variant>
 		<variant id="Infested" display_name="Infested Warehouse" weight="10" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Warehouse,WarehouseCorporate,InfestedWarehouse,BasicCommon,CouldHaveSecretLab,CanHaveSecretCompartment,CanHaveHiddenRoom,CanHaveSeizedFloors,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="50"/>
-			<initial_building_rating data_type="GangCrime" value="25"/>
-			<initial_building_rating data_type="Vermin" value="90"/>
-			<initial_building_rating data_type="BacterialLoad" value="45"/>
 		</variant>
 	</building_type>
 
@@ -2153,8 +1576,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,GangHangout,Warehouse,CanHaveSecretCompartment,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="GangCrime" value="30"/>
-			<initial_building_rating data_type="Vermin" value="15"/>
 		</variant>
 	</building_type>
 
@@ -2163,7 +1584,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Liquids,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="200"/>
 		</variant>
 	</building_type>
 
@@ -2172,7 +1592,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Liquids,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="300"/>
 		</variant>
 	</building_type>
 
@@ -2181,7 +1600,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="300"/>
 		</variant>
 	</building_type>
 
@@ -2191,7 +1609,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="300"/>
 		</variant>
 	</building_type>
 
@@ -2200,7 +1617,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Liquids,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="350"/>
 		</variant>
 	</building_type>
 
@@ -2209,7 +1625,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Liquids,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="400"/>
 		</variant>
 	</building_type>
 
@@ -2218,7 +1633,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Liquids,CivilService">
-			<initial_building_rating data_type="SecForcesPresence" value="200"/>
 		</variant>
 	</building_type>
 
@@ -2226,7 +1640,6 @@
 		building_group_sale_restriction_type="Mining" is_considered_not_to_have_people_inside_even_when_has_workers="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Liquids,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="100"/>
 		</variant>
 	</building_type>
 
@@ -2234,7 +1647,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" hard_max_to_seed_per_tile="3">
 		<variant id="1" display_name="" weight="100" beacon_to_show="AdvancedWasteProcessingPlant"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Liquids,SupplyChainTarget,CivilService,SewageTreatment,ScienceIndustrial,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="2000"/>
 		</variant>
 	</building_type>
 
@@ -2242,7 +1654,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" hard_max_to_seed_per_tile="3">
 		<variant id="1" display_name="" weight="100" beacon_to_show="WaterPurificationPlant" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Liquids,SupplyChainTarget,CivilService,Water,ScienceIndustrial,WaterPurification,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="2200"/>
 		</variant>
 	</building_type>
 
@@ -2250,7 +1661,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true" hard_max_to_seed_per_tile="3">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Liquids,CivilService,Water">
-			<initial_building_rating data_type="SecForcesPresence" value="1000"/>
 		</variant>
 	</building_type>
 
@@ -2258,7 +1668,6 @@
 		blocks_events_unless_they_target_this_building_tag="true" is_considered_not_to_have_people_inside_even_when_has_workers="true" hard_max_to_seed_per_tile="6">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Liquids,CivilService,Water">
-			<initial_building_rating data_type="SecForcesPresence" value="20"/>			
 		</variant>
 	</building_type>
 
@@ -2266,9 +1675,6 @@
 		<variant id="1" display_name="" weight="100"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Housing,BasicCommon,CanHaveSecretCompartment,AnimalHidingValid,AnimalLargeHidingValid">
-			<initial_building_rating data_type="SecForcesPresence" value="60"/>
-			<initial_building_rating data_type="Vermin" value="2"/>
-			<initial_building_rating data_type="BacterialLoad" value="1"/>
 		</variant>
 	</building_type>
 
@@ -2277,7 +1683,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="410"/>
 		</variant>
 	</building_type>
 
@@ -2286,7 +1691,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="220"/>
 		</variant>
 	</building_type>
 
@@ -2295,7 +1699,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="320"/>
 		</variant>
 	</building_type>
 
@@ -2304,7 +1707,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="300"/>
 		</variant>
 	</building_type>
 
@@ -2313,16 +1715,14 @@
 		blocks_events_unless_they_target_this_building_tag="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Mining,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="750"/>
 		</variant>
 	</building_type>
 
 	<building_type id="OilMiningFilters" display_name="Oil Mining Filters"
 		building_group_sale_restriction_type="Mining"		 
-		blocks_events_unless_they_target_this_building_tag="true">		
+		blocks_events_unless_they_target_this_building_tag="true">
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="150"/>
 		</variant>
 	</building_type>
 
@@ -2331,7 +1731,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="200"/>
 		</variant>
 	</building_type>
 
@@ -2340,7 +1739,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,Mining">
-			<initial_building_rating data_type="SecForcesPresence" value="400"/>
 		</variant>
 	</building_type>
 
@@ -2349,7 +1747,6 @@
 		blocks_events_unless_they_target_this_building_tag="true">		
 		<variant id="1" display_name="" weight="100"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Mining,MiningFacility,CanHaveSecretCompartment,CanHaveHiddenRoom">
-			<initial_building_rating data_type="SecForcesPresence" value="200"/>
 		</variant>
 	</building_type>
 
@@ -2359,7 +1756,6 @@
 		<variant id="1" display_name="" weight="100" beacon_to_show="MineralAndMolecularSeparationFacility"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Mining,MiningFacility,HasManyPeople,Scientific,CanHaveSecretCompartment,CanHaveHiddenRoom,MineralAndMolecularSeparationFacility,CanHaveSeizedLevelsOfMine">
-			<initial_building_rating data_type="SecForcesPresence" value="700"/>
 		</variant>
 	</building_type>
 
@@ -2369,7 +1765,6 @@
 		<variant id="1" display_name="" weight="100" beacon_to_show="MultipurposeMineshaft"
 		is_drone_delivery_target="true" is_shootout_target="true"
 		tags="Any,AlmostAny,AlmostAnyButNotSuperRestricted,Mining,MiningFacility,HasManyPeople,CanHaveSecretCompartment,CanHaveHiddenRoom,MultipurposeMineshaft,CanHaveSeizedLevelsOfMine">
-			<initial_building_rating data_type="SecForcesPresence" value="600"/>
 		</variant>
 	</building_type>
 
