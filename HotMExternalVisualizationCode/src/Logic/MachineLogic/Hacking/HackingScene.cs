@@ -39,7 +39,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
         public static readonly List<PlayerShard> PlayerShards = List<PlayerShard>.Create_WillNeverBeGCed( 100, "HackingScene-PlayerShards" );
         public static readonly List<IHEntity> AnimatingItems = List<IHEntity>.Create_WillNeverBeGCed( 100, "HackingScene-AnimatingItems" );
         public static readonly List<Daemon> Daemons = List<Daemon>.Create_WillNeverBeGCed( 100, "HackingScene-Daemons" );
-        private static readonly List<Daemon> workingDaemons = List<Daemon>.Create_WillNeverBeGCed( 100, "HackingScene-workingDaemons" );
+        private static readonly List<Daemon> daemonsPlanningMoves = List<Daemon>.Create_WillNeverBeGCed( 100, "HackingScene-daemonsPlanningMoves" );
 
         public static h.hCell[,] HackingCellArray;
         public static readonly List<h.hCell> AllHackingCells = List<h.hCell>.Create_WillNeverBeGCed( 500, "HackingScene-AllHackingCells" );
@@ -186,6 +186,24 @@ namespace Arcen.HotM.ExternalVis.Hacking
                     {
                         foreach ( Daemon daemon in Daemons )
                             daemon?.DaemonType?.Implementation?.TryHandleDaemonLogic( daemon?.DaemonType, daemon, null, HackingDaemonLogic.OnAllHostileDaemonsGone );
+
+                        foreach ( h.hCell cell in AllHackingCells )
+                        {
+                            if ( cell.CurrentEntity == null )
+                            { }//    cell.SetCurrentNumber( Engine_Universal.PermanentQualityRandom.Next( 11, 19 ) );
+                            else
+                            {
+                                if ( cell.IsBlocked )
+                                    cell.IsBlocked = false;
+                                foreach ( h.hCell adjacent in cell.AdjacentCellsAndDiagonal2X )
+                                {
+                                    if ( adjacent.IsBlocked )
+                                        adjacent.IsBlocked = false;
+                                    if ( adjacent.CurrentNumber == 0 )
+                                        adjacent.SetCurrentNumber( Engine_Universal.PermanentQualityRandom.Next( 11, 19 ) );
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -248,20 +266,39 @@ namespace Arcen.HotM.ExternalVis.Hacking
 
             CityStatisticTable.AlterScore( "HackingTotalMoves", 1 );
 
-            workingDaemons.Clear();
-            workingDaemons.AddRange( Daemons );
+            foreach ( h.hCell cell in AllHackingCells )
+                cell.IsBlockedFromDaemonsMovingHere = false;
 
-            foreach ( Daemon daemon in workingDaemons ) //this keeps newly-added daemons from being able to act instantly
+            daemonsPlanningMoves.Clear();
+
+            foreach ( Daemon daemon in Daemons ) //this keeps newly-added daemons from being able to act instantly
             {
+                daemon.CurrentCell?.SetBlockedFromDaemonsMovingHere( true );
+                if ( daemon.CanStartMovingAt > DaemonMovesSoFar )
+                    continue;
+
                 if ( daemon.AdditionalMovesToSkip > 0 )
                 {
                     daemon.AdditionalMovesToSkip--;
                     daemon.RefreshVisuals();
                 }
                 else
-                    daemon.DaemonType.Implementation.TryHandleDaemonLogic( daemon.DaemonType, daemon, null, HackingDaemonLogic.Move );
+                    daemonsPlanningMoves.Add( daemon );
             }
-            workingDaemons.Clear();
+
+            foreach ( Daemon daemon in daemonsPlanningMoves )
+            {
+                h.hCell startingCell = daemon.CurrentCell;
+                daemon.DaemonType.Implementation.TryHandleDaemonLogic( daemon.DaemonType, daemon, null, HackingDaemonLogic.Move );
+                h.hCell targetCell = daemon.MovingToTargetCell;
+                if ( targetCell != null && targetCell != startingCell )
+                {
+                    targetCell.SetBlockedFromDaemonsMovingHere( true );
+                    startingCell.SetBlockedFromDaemonsMovingHere( false ); //let others move in behind me
+                }
+            }
+
+            daemonsPlanningMoves.Clear();
         }
         #endregion
 

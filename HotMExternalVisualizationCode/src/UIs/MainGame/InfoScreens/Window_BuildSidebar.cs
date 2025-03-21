@@ -3,6 +3,7 @@ using Arcen.HotM.External;
 using Arcen.Universal;
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Arcen.HotM.ExternalVis
@@ -1315,10 +1316,29 @@ namespace Arcen.HotM.ExternalVis
 
             public override void HandleMouseover()
             {
+                if ( FilteredToInternalRobotics != null )
+                {
+                    NovelTooltipBuffer novel = NovelTooltipBuffer.Instance;
+
+                    if ( novel.TryStartSmallerTooltip( TooltipID.Create( "dInternalRobotics", "Main" ), this.Element, SideClamp.LeftOrRight, TooltipNovelWidth.SizeToText ) )
+                    {
+                        novel.TitleUpperLeft.AddLang( "InternalRobotics" );
+                        novel.MainHeader.StartSize90().AddRightClickFormat( "RightClickToClearFilter", ColorTheme.SoftGold ).EndSize();
+                    }
+                }
             }
             public override void HandleItemMouseover( IArcenUIElementForSizing ItemElement, IArcenDropdownOption Item )
             {
                 //MachineHandbookCollection ItemAsType = (MachineHandbookCollection)Item.GetItem();
+            }
+
+            public override bool HandleOverallClick( PointerEventData eventData )
+            {
+                if ( eventData.button == PointerEventData.InputButton.Left )
+                    return false;
+
+                FilteredToInternalRobotics = null;
+                return true;
             }
         }
         #endregion

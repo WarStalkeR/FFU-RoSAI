@@ -75,7 +75,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
                     int loops = 0;
                     while ( test != null && loops++ < 100 )
                     {
-                        if ( test.IsBlocked || test.CurrentEntity != null || test.CurrentNumber > current.CurrentNumber )
+                        if ( test.IsBlocked || test.CurrentEntity != null || ( test == target && test.CurrentNumber > current.CurrentNumber + 20 ) )
                         {
                             if ( distance < bestBlockedDistance )
                             {
@@ -101,7 +101,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
                     int loops = 0;
                     while ( test != null && loops++ < 100 )
                     {
-                        if ( test.IsBlocked || test.CurrentEntity != null || test.CurrentNumber > current.CurrentNumber )
+                        if ( test.IsBlocked || test.CurrentEntity != null || (test == target && test.CurrentNumber > current.CurrentNumber + 20) )
                         {
                             if ( distance < bestBlockedDistance )
                             {
@@ -137,7 +137,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
                     int loops = 0;
                     while ( test != null && loops++ < 100 )
                     {
-                        if ( test.IsBlocked || test.CurrentEntity != null || test.CurrentNumber > current.CurrentNumber )
+                        if ( test.IsBlocked || test.CurrentEntity != null || (test == target && test.CurrentNumber > current.CurrentNumber + 20) )
                         {
                             if ( distance < bestBlockedDistance )
                             {
@@ -163,7 +163,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
                     int loops = 0;
                     while ( test != null && loops++ < 100 )
                     {
-                        if ( test.IsBlocked || test.CurrentEntity != null || test.CurrentNumber > current.CurrentNumber )
+                        if ( test.IsBlocked || test.CurrentEntity != null || (test == target && test.CurrentNumber > current.CurrentNumber + 20) )
                         {
                             if ( distance < bestBlockedDistance )
                             {
@@ -308,7 +308,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
             //if ( target.CurrentNumber == 0 )
             //    return;
 
-            if ( target.IsBlocked || target.CurrentEntity != null || target.CurrentNumber > current.CurrentNumber || target.CurrentNumber <= 1 )
+            if ( target.IsBlocked || target.CurrentEntity != null || target.CurrentNumber > current.CurrentNumber + 20 || target.CurrentNumber <= 1 )
             {
                 int blockedDistance = MathA.Min( MathA.Abs( current.ArrayX - target.ArrayX ), MathA.Abs( current.ArrayY - target.ArrayY ) );
                 if ( bestBlocked == null || blockedDistance < bestBlockedDistance )
@@ -1171,7 +1171,8 @@ namespace Arcen.HotM.ExternalVis.Hacking
         #endregion
 
         #region TryPlaceADaemon
-        public static Daemon TryPlaceADaemon( HackingDaemonType DaemonType, bool IsHidden, int MinDistanceFromShards, int MinDistanceFromOtherDaemons, int MinDistanceFromEdge, MersenneTwister Rand )
+        public static Daemon TryPlaceADaemon( HackingDaemonType DaemonType, bool IsHidden, int MinDistanceFromShards, 
+            int MinDistanceFromOtherDaemons, int MinDistanceFromEdge, MersenneTwister Rand, int WaitTurnsToMove )
         {
             if ( DaemonType == null )
             {
@@ -1219,14 +1220,14 @@ namespace Arcen.HotM.ExternalVis.Hacking
                 if ( foundBlockage )
                     continue;
 
-                return CreateNewDaemonAtCell( cell, DaemonType, IsHidden );
+                return CreateNewDaemonAtCell( cell, DaemonType, IsHidden, WaitTurnsToMove );
             }
             return null;
         }
         #endregion
 
         #region TryPlaceADaemonAdjacent
-        public static Daemon TryPlaceADaemonAdjacent( HackingDaemonType DaemonType, h.hCell Cell, bool StartAsHidden, MersenneTwister Rand )
+        public static Daemon TryPlaceADaemonAdjacent( HackingDaemonType DaemonType, h.hCell Cell, bool StartAsHidden, MersenneTwister Rand, int WaitTurnsToMove )
         {
             if ( DaemonType == null )
             {
@@ -1237,19 +1238,19 @@ namespace Arcen.HotM.ExternalVis.Hacking
             foreach ( h.hCell adjacent in Cell.AdjacentCells.GetRandomStartEnumerable( Rand ) )
             {
                 if ( adjacent.CurrentEntity == null )
-                    return CreateNewDaemonAtCell( adjacent, DaemonType, StartAsHidden );
+                    return CreateNewDaemonAtCell( adjacent, DaemonType, StartAsHidden, WaitTurnsToMove );
             }
 
             foreach ( h.hCell adjacent in Cell.AdjacentCellsAndDiagonal.GetRandomStartEnumerable( Rand ) )
             {
                 if ( adjacent.CurrentEntity == null )
-                    return CreateNewDaemonAtCell( adjacent, DaemonType, StartAsHidden );
+                    return CreateNewDaemonAtCell( adjacent, DaemonType, StartAsHidden, WaitTurnsToMove );
             }
 
             foreach ( h.hCell adjacent in Cell.AdjacentCellsAndDiagonal2X.GetRandomStartEnumerable( Rand ) )
             {
                 if ( adjacent.CurrentEntity == null )
-                    return CreateNewDaemonAtCell( adjacent, DaemonType, StartAsHidden );
+                    return CreateNewDaemonAtCell( adjacent, DaemonType, StartAsHidden, WaitTurnsToMove );
             }
 
             return null;
@@ -1270,14 +1271,14 @@ namespace Arcen.HotM.ExternalVis.Hacking
 
         #region TryPlaceADaemonSoftening
         public static Daemon TryPlaceADaemonSoftening( HackingDaemonType DaemonType, bool IsHidden, int minDistanceFromShards, 
-            int minDistanceFromOtherDaemons, int minDistanceFromEdge, MersenneTwister Rand )
+            int minDistanceFromOtherDaemons, int minDistanceFromEdge, MersenneTwister Rand, int WaitTurnsToMove )
         {
             if ( DaemonType == null )
                 return null;
 
             while ( minDistanceFromShards > 0 || minDistanceFromOtherDaemons > 0 || minDistanceFromEdge > 0 )
             {
-                Daemon result = TryPlaceADaemon( DaemonType, IsHidden, minDistanceFromShards, minDistanceFromOtherDaemons, minDistanceFromEdge, Rand );
+                Daemon result = TryPlaceADaemon( DaemonType, IsHidden, minDistanceFromShards, minDistanceFromOtherDaemons, minDistanceFromEdge, Rand, WaitTurnsToMove );
                 if ( result != null ) 
                     return result;
                 if ( minDistanceFromOtherDaemons > 2 )
@@ -1298,7 +1299,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
         #endregion
 
         #region CreateNewDaemonAtCell
-        public static Daemon CreateNewDaemonAtCell( h.hCell cell, HackingDaemonType DaemonType, bool IsHidden )
+        public static Daemon CreateNewDaemonAtCell( h.hCell cell, HackingDaemonType DaemonType, bool IsHidden, int WaitTurnsToMove )
         {
             if ( cell == null )
             {
@@ -1311,7 +1312,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
                 return null;
             }
             Daemon daemon = new Daemon();
-            daemon.InitializeAtCell( cell, DaemonType, IsHidden );
+            daemon.InitializeAtCell( cell, DaemonType, IsHidden, WaitTurnsToMove );
             scene.Daemons.Add( daemon );
             return daemon;
         }
@@ -1326,7 +1327,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
             if ( shardToChase != null )
             {
                 int moveDist = daemon.DaemonType.GetSingleIntByID( "MoveRange", 2 );
-                h.hCell dest = HackingHelper.FlyingCardinalMoveToward( daemon.CurrentCell, shardToChase.CurrentCell, moveDist );
+                h.hCell dest = HackingHelper.FlyingCardinalMoveToward( daemon.CurrentCell, shardToChase.CurrentCell, moveDist, true );
                 if ( dest != null )
                 {
                     ParticleSoundRefs.Hacking_DaemonMove_Start.DuringGame_PlayAtUILocation( daemon.CurrentCell.CalculateScreenPos() );
@@ -1351,7 +1352,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
             if ( shardToChase != null )
             {
                 int moveDist = daemon.DaemonType.GetSingleIntByID( "MoveRange", 2 );
-                h.hCell dest = HackingHelper.FlyingCardinalMoveToward( daemon.CurrentCell, shardToChase.CurrentCell, moveDist );
+                h.hCell dest = HackingHelper.FlyingCardinalMoveToward( daemon.CurrentCell, shardToChase.CurrentCell, moveDist, true );
                 if ( dest != null && dest == shardToChase.CurrentCell )//only go there if this is actually within range
                 {
                     ParticleSoundRefs.Hacking_DaemonMove_Start.DuringGame_PlayAtUILocation( daemon.CurrentCell.CalculateScreenPos() );
@@ -1365,7 +1366,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
                 }
                 else
                 {
-                    dest = FindRandomAdjacentCellsAndDiagonal2XWithoutEntity( daemon.CurrentCell, Rand );
+                    dest = FindRandomAdjacentCellsAndDiagonal2XWithoutEntityOrBlockage( daemon.CurrentCell, Rand );
                     ParticleSoundRefs.Hacking_DaemonMove_Start.DuringGame_PlayAtUILocation( daemon.CurrentCell.CalculateScreenPos() );
                     daemon.MoveTo( dest );
                     int moveFrequency = daemon.DaemonType.GetSingleIntByID( "MoveFrequency", 1 );
@@ -1391,7 +1392,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
             if ( daemonToChase != null )
             {
                 int moveDist = daemon.DaemonType.GetSingleIntByID( "MoveRange", 2 );
-                h.hCell dest = FlyingCardinalMoveToward( daemon.CurrentCell, daemonToChase.CurrentCell, moveDist );
+                h.hCell dest = FlyingCardinalMoveToward( daemon.CurrentCell, daemonToChase.CurrentCell, moveDist, true );
                 if ( dest != null )
                 {
                     ParticleSoundRefs.Hacking_DaemonMove_Start.DuringGame_PlayAtUILocation( daemon.CurrentCell.CalculateScreenPos() );
@@ -1414,6 +1415,11 @@ namespace Arcen.HotM.ExternalVis.Hacking
                 return;
             if ( daemon.AdditionalMovesToSkip > 0 )
                 return;
+            if ( scene.HoveredCell?.CurrentEntity is Daemon otherDaemon )
+            {
+                if ( otherDaemon != daemon )
+                    return;
+            }
 
             h.hCell source = daemon.CurrentCell;
             if ( source == null )
@@ -1512,7 +1518,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
         /// <summary>
         /// Can pass through blockages (flying), and only moves in cardinal directions
         /// </summary>
-        public static h.hCell FlyingCardinalMoveToward( h.hCell startingPoint, h.hCell targetPoint, int DistToMove )
+        public static h.hCell FlyingCardinalMoveToward( h.hCell startingPoint, h.hCell targetPoint, int DistToMove, bool DisallowBlockages )
         {
             if ( startingPoint == null || targetPoint == null || DistToMove <= 0 )
                 return null;
@@ -1522,6 +1528,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
 
             h.hCell currentCell = startingPoint;
             h.hCell priorCell = startingPoint;
+            h.hCell lastNonBlockedCell = startingPoint;
             for ( int i = 0; i < DistToMove; i++ )
             {
                 int diffX = MathA.Abs( targetPoint.ArrayX - currentCell.ArrayX );
@@ -1530,6 +1537,8 @@ namespace Arcen.HotM.ExternalVis.Hacking
                     return currentCell; //we made it!
 
                 priorCell = currentCell;
+                if ( !priorCell.IsBlockedFromDaemonsMovingHere )
+                    lastNonBlockedCell = priorCell;
 
                 //ArcenDebugging.LogSingleLine( "i: " + i + " " + currentCell.ArrayX + "," + currentCell.ArrayY +
                 //    " diffs: " + diffX + "," + diffY, Verbosity.DoNotShow );
@@ -1564,10 +1573,103 @@ namespace Arcen.HotM.ExternalVis.Hacking
                 }
 
                 if ( currentCell == null )
-                    return priorCell;
+                    return lastNonBlockedCell;
             }
 
-            return currentCell;
+            if ( !currentCell.IsBlockedFromDaemonsMovingHere )
+                lastNonBlockedCell = currentCell;
+
+            if ( lastNonBlockedCell != startingPoint )
+                return lastNonBlockedCell;
+            else
+            {
+                currentCell = startingPoint;
+                priorCell = startingPoint;
+                lastNonBlockedCell = startingPoint;
+                for ( int i = 0; i < DistToMove; i++ )
+                {
+                    int diffX = MathA.Abs( targetPoint.ArrayX - currentCell.ArrayX );
+                    int diffY = MathA.Abs( targetPoint.ArrayY - currentCell.ArrayY );
+                    if ( diffX == 0 && diffY == 0 )
+                        return currentCell; //we made it!
+
+                    priorCell = currentCell;
+                    if ( !priorCell.IsBlockedFromDaemonsMovingHere )
+                        lastNonBlockedCell = priorCell;
+
+                    //ArcenDebugging.LogSingleLine( "i: " + i + " " + currentCell.ArrayX + "," + currentCell.ArrayY +
+                    //    " diffs: " + diffX + "," + diffY, Verbosity.DoNotShow );
+
+                    if ( diffX > diffY )
+                    {
+                        //move in the x axis
+                        if ( targetPoint.ArrayX < currentCell.ArrayX )
+                        {
+                            currentCell = currentCell.West;
+                            //ArcenDebugging.LogSingleLine( "moveWest: " + " " + (currentCell?.ArrayX ?? -3) + "," + (currentCell?.ArrayY ?? -3), Verbosity.DoNotShow );
+                        }
+                        else
+                        {
+                            currentCell = currentCell.East;
+                            //ArcenDebugging.LogSingleLine( "moveEast: " + " " + (currentCell?.ArrayX ?? -3) + "," + (currentCell?.ArrayY ?? -3), Verbosity.DoNotShow );
+                        }
+
+                        if ( currentCell.IsBlockedFromDaemonsMovingHere )
+                        {
+                            currentCell = priorCell;
+                            //move in the y axis
+                            if ( targetPoint.ArrayY < currentCell.ArrayY )
+                            {
+                                currentCell = currentCell.North;
+                                //ArcenDebugging.LogSingleLine( "moveNorth: " + " " + (currentCell?.ArrayX??-3) + "," + (currentCell?.ArrayY ?? -3), Verbosity.DoNotShow );
+                            }
+                            else
+                            {
+                                currentCell = currentCell.South;
+                                //ArcenDebugging.LogSingleLine( "moveSouth: " + " " + (currentCell?.ArrayX ?? -3) + "," + (currentCell?.ArrayY ?? -3), Verbosity.DoNotShow );
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //move in the y axis
+                        if ( targetPoint.ArrayY < currentCell.ArrayY )
+                        {
+                            currentCell = currentCell.North;
+                            //ArcenDebugging.LogSingleLine( "moveNorth: " + " " + (currentCell?.ArrayX??-3) + "," + (currentCell?.ArrayY ?? -3), Verbosity.DoNotShow );
+                        }
+                        else
+                        {
+                            currentCell = currentCell.South;
+                            //ArcenDebugging.LogSingleLine( "moveSouth: " + " " + (currentCell?.ArrayX ?? -3) + "," + (currentCell?.ArrayY ?? -3), Verbosity.DoNotShow );
+                        }
+
+                        if ( currentCell.IsBlockedFromDaemonsMovingHere )
+                        {
+                            currentCell = priorCell;
+                            //move in the x axis
+                            if ( targetPoint.ArrayX < currentCell.ArrayX )
+                            {
+                                currentCell = currentCell.West;
+                                //ArcenDebugging.LogSingleLine( "moveWest: " + " " + (currentCell?.ArrayX ?? -3) + "," + (currentCell?.ArrayY ?? -3), Verbosity.DoNotShow );
+                            }
+                            else
+                            {
+                                currentCell = currentCell.East;
+                                //ArcenDebugging.LogSingleLine( "moveEast: " + " " + (currentCell?.ArrayX ?? -3) + "," + (currentCell?.ArrayY ?? -3), Verbosity.DoNotShow );
+                            }
+                        }
+                    }
+
+                    if ( currentCell == null )
+                        return lastNonBlockedCell;
+                }
+
+                if ( !currentCell.IsBlockedFromDaemonsMovingHere )
+                    lastNonBlockedCell = currentCell;
+
+                return lastNonBlockedCell;
+            }
         }
         #endregion
 
@@ -1667,9 +1769,9 @@ namespace Arcen.HotM.ExternalVis.Hacking
                 return;
 
             h.hCell cell = daemon.CurrentCell;
-            h.hCell result = FindRandomAdjacentCellWithoutEntity( cell, Rand );
+            h.hCell result = FindRandomAdjacentCellWithoutEntityOrBlockage( cell, Rand );
             if ( result == null )
-                result = FindRandomAdjacentCellsAndDiagonalWithoutEntity( cell, Rand );
+                result = FindRandomAdjacentCellsAndDiagonalWithoutEntityOrBlockage( cell, Rand );
 
             if ( result == null )
                 daemon.DestroyEntity();
@@ -1685,13 +1787,13 @@ namespace Arcen.HotM.ExternalVis.Hacking
                 return;
 
             h.hCell cell = daemon.CurrentCell;
-            h.hCell result = FindRandomAdjacentCellWithoutEntity( cell, Rand );
+            h.hCell result = FindRandomAdjacentCellWithoutEntityOrBlockage( cell, Rand );
             if ( result == null )
-                result = FindRandomAdjacentCellsAndDiagonalWithoutEntity( cell, Rand );
+                result = FindRandomAdjacentCellsAndDiagonalWithoutEntityOrBlockage( cell, Rand );
             if ( result == null )
-                result = FindRandomAdjacentCellsAndDiagonal2XWithoutEntity( cell, Rand );
+                result = FindRandomAdjacentCellsAndDiagonal2XWithoutEntityOrBlockage( cell, Rand );
             if ( result == null )
-                result = FindRandomAnyCellWithoutEntity( Rand );
+                result = FindRandomAnyCellWithoutEntityOrBlockage( Rand );
 
             if ( result == null )
                 return;
@@ -1700,53 +1802,53 @@ namespace Arcen.HotM.ExternalVis.Hacking
         #endregion
 
         #region FindRandomAdjacentCellWithoutEntity
-        public static h.hCell FindRandomAdjacentCellWithoutEntity( h.hCell cell, MersenneTwister Rand )
+        public static h.hCell FindRandomAdjacentCellWithoutEntityOrBlockage( h.hCell cell, MersenneTwister Rand )
         {
             if ( cell == null )
                 return null;
             foreach ( h.hCell adjacent in cell.AdjacentCells.GetRandomStartEnumerable( Rand ) )
             {
-                if ( adjacent.CurrentEntity == null )
+                if ( adjacent.CurrentEntity == null && !adjacent.IsBlockedFromDaemonsMovingHere )
                     return adjacent;
             }
             return null;
         }
         #endregion
 
-        #region FindRandomAdjacentCellsAndDiagonalWithoutEntity
-        public static h.hCell FindRandomAdjacentCellsAndDiagonalWithoutEntity( h.hCell cell, MersenneTwister Rand )
+        #region FindRandomAdjacentCellsAndDiagonalWithoutEntityOrBlockage
+        public static h.hCell FindRandomAdjacentCellsAndDiagonalWithoutEntityOrBlockage( h.hCell cell, MersenneTwister Rand )
         {
             if ( cell == null )
                 return null;
             foreach ( h.hCell adjacent in cell.AdjacentCellsAndDiagonal.GetRandomStartEnumerable( Rand ) )
             {
-                if ( adjacent.CurrentEntity == null )
+                if ( adjacent.CurrentEntity == null && !adjacent.IsBlockedFromDaemonsMovingHere )
                     return adjacent;
             }
             return null;
         }
         #endregion
 
-        #region FindRandomAdjacentCellsAndDiagonal2XWithoutEntity
-        public static h.hCell FindRandomAdjacentCellsAndDiagonal2XWithoutEntity( h.hCell cell, MersenneTwister Rand )
+        #region FindRandomAdjacentCellsAndDiagonal2XWithoutEntityOrBlockage
+        public static h.hCell FindRandomAdjacentCellsAndDiagonal2XWithoutEntityOrBlockage( h.hCell cell, MersenneTwister Rand )
         {
             if ( cell == null )
                 return null;
             foreach ( h.hCell adjacent in cell.AdjacentCellsAndDiagonal2X.GetRandomStartEnumerable( Rand ) )
             {
-                if ( adjacent.CurrentEntity == null )
+                if ( adjacent.CurrentEntity == null && !adjacent.IsBlockedFromDaemonsMovingHere )
                     return adjacent;
             }
             return null;
         }
         #endregion
 
-        #region FindRandomAnyCellWithoutEntity
-        public static h.hCell FindRandomAnyCellWithoutEntity( MersenneTwister Rand )
+        #region FindRandomAnyCellWithoutEntityOrBlockage
+        public static h.hCell FindRandomAnyCellWithoutEntityOrBlockage( MersenneTwister Rand )
         {
             foreach ( h.hCell cell in scene.AllHackingCells.GetRandomStartEnumerable( Rand ) )
             {
-                if ( cell.CurrentEntity == null )
+                if ( cell.CurrentEntity == null && !cell.IsBlockedFromDaemonsMovingHere )
                     return cell;
             }
             return null;

@@ -1614,7 +1614,8 @@ namespace Arcen.HotM.ExternalVis
             else if ( canConstruct )
             {
                 InvestigationType territoryControlType = TargetingTerritoryControlInvestigation?.Type;
-                if ( structureType.IsTerritoryControlFlag && (territoryBuildingWouldLinkTo == null || territoryControlType == null || territoryControlType.TerritoryControl == null) )
+                if ( structureType.IsTerritoryControlFlag && (territoryBuildingWouldLinkTo == null || territoryControlType == null || territoryControlType.TerritoryControl == null ||
+                    !territoryControlType.DuringGame_GetIsTerritoryControlInvestigationValidForMoreConstruction() ) )
                 {
                     ParticleSoundRefs.ErrorSound.DuringGame_PlaySoundOnlyAtCamera();
                     if ( InputCaching.UseLeftClickForBuildingConstruction )
@@ -1647,7 +1648,7 @@ namespace Arcen.HotM.ExternalVis
                             structure.TerritoryControlInvestigation = territoryControlType;
                             structure.TerritoryControlType = territoryControlType.TerritoryControl;
                             structure.TerritoryControlType?.DuringGame_DoOnStartUnlocksIfNeeded( false );
-                            TargetingTerritoryControlInvestigation?.ReturnToPool();
+                            //TargetingTerritoryControlInvestigation?.ReturnToPool();
                             TargetingTerritoryControlInvestigation = null;
                         }
                         else

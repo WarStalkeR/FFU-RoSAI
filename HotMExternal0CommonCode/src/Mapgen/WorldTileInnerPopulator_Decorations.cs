@@ -33,10 +33,15 @@ namespace Arcen.HotM.External
 
             while ( CityMap.WorkingTilesToPostProcess_Decoration.Count > 0 )
             {
-                Interlocked.Increment( ref CityMap.TilesBeingPostProcessed_Decorations );
-
                 MapTile tile = CityMap.WorkingTilesToPostProcess_Decoration[0];
                 CityMap.WorkingTilesToPostProcess_Decoration.RemoveAt( 0 );
+                if ( tile.HasPopulatedDecorations > 0 )
+                {
+                    ArcenDebugging.LogSingleLine( "Harmless: Skipped decoration doubling (A)", Verbosity.DoNotShow );
+                    continue;
+                }
+
+                Interlocked.Increment( ref CityMap.TilesBeingPostProcessed_Decorations );
 
                 tile.timeStartedPopulation_Decoration = ArcenTime.AnyTimeSinceStartF;
                 int randSeed = Engine_Universal.PermanentQualityRandom.Next();
@@ -44,9 +49,19 @@ namespace Arcen.HotM.External
                 if ( !ArcenThreading.RunTaskOnBackgroundThreadAndErrorIfCannotStart( "_Data.DoDecorationPopulationOfTile",
                     ( TaskStartData startData ) =>
                     {
-
                         try
                         {
+                            if ( tile.HasPopulatedDecorations > 0 )
+                            {
+                                ArcenDebugging.LogSingleLine( "Harmless: Skipped decoration doubling (B)", Verbosity.DoNotShow );
+                                return;
+                            }
+                            if ( Interlocked.Exchange( ref tile.HasPopulatedDecorations, 1 ) != 0 )
+                            {
+                                ArcenDebugging.LogSingleLine( "Harmless: Skipped decoration doubling (C)", Verbosity.DoNotShow );
+                                return;
+                            }
+
                             DoPopulationOfTile_OnBackgroundThread( startData, randSeed, tile );
                         }
                         catch ( Exception e )
@@ -225,25 +240,42 @@ namespace Arcen.HotM.External
                     continue;
 
                 ReferenceLevelData levelData = LevelTypeTable.Instance.ReferenceLevelLookup[subRegion.DecorationSeedingFile];
-                PopulateRegion_Decoration( startData, true, subRegion.DecorationRandomSeed, tile, subRegion,
-                    extraData.MetaOnly_ShortID, levelData.ParentLevelType, levelData );
+                int debugStage = 0;
+                try
+                {
+                    PopulateRegion_Decoration( startData, true, subRegion.DecorationRandomSeed, tile, subRegion,
+                        extraData.MetaOnly_ShortID, levelData.ParentLevelType, levelData, ref debugStage );
+                }
+                catch ( Exception e )
+                {
+                    ArcenDebugging.LogDebugStageWithStack( "Harmless: PopulateRegion_Decoration", debugStage, e, Verbosity.ShowAsError );
+                }
             }
         }
         #endregion
 
         #region PopulateRegion_Decoration
         private static void PopulateRegion_Decoration( TaskStartData startData, bool isForExistingBuildingZone, int randSeed, MapTile tile, MapSubRegion SubRegion, 
-            string ShortID, LevelType ChosenType, ReferenceLevelData DecorationSource )
+            string ShortID, LevelType ChosenType, ReferenceLevelData DecorationSource, ref int debugStage )
         {
+            if ( ChosenType == null || SubRegion == null || tile == null )
+                return;
+
+            debugStage = 100;
+
             if ( ChosenType.AvailableContent.Count == 0 )
             {
                 ArcenDebugging.LogSingleLine( "No available files in ChosenType '" + ChosenType.ID + "' for tile!", Verbosity.ShowAsError );
                 return;
             }
 
+            debugStage = 200;
+
             OBBUnity regionOBB = SubRegion.OBBCache.GetOBB_ExpensiveToUse();
             float regionLargestSize = regionOBB.Size.LargestComponent();
             MersenneTwister rand = new MersenneTwister( randSeed );
+
+            debugStage = 500;
 
             //decide which side we are starting from, which is arbitrary.  This leads to rotation in one of the cardinal directions
             FourDirection dir = (FourDirection)rand.Next( (int)FourDirection.North, (int)FourDirection.Length );
@@ -266,6 +298,8 @@ namespace Arcen.HotM.External
                 return;
             }
 
+            debugStage = 900;
+
             float regionRotation = SubRegion.Rotation.y;
             switch ( dir )
             {
@@ -283,12 +317,16 @@ namespace Arcen.HotM.External
             if ( regionRotation > 360 )
                 regionRotation -= 360;
 
+            debugStage = 2100;
+
             Vector3 tileCenter = tile.Center;
             ArcenFloatRectangle levelRect = ArcenFloatRectangle.CreateFromCenterAndHalfSize( tileCenter.x, tileCenter.z, tile.HalfSizeX, 
                  tile.HalfSizeZ );
 
             float xSourceOffset = rand.NextFloat( 0, levelSizeX - regionSizeX ) / 2;
             float zSourceOffset = rand.NextFloat( 0, levelSizeZ - regionSizeZ ) / 2;
+
+            debugStage = 3100;
 
             #region Fill workingPossibleObjectCollisions_Current As A Subset
             //we need to use an inflated OBB, because things like roads on the edges will otherwise be missed (of course)
@@ -300,6 +338,11 @@ namespace Arcen.HotM.External
             tile.workingPossibleObjectCollisions_Current.Clear();
             foreach ( MapItem existing in tile.workingPossibleObjectCollisions_All )
             {
+                debugStage = 4100;
+                if ( existing == null )
+                    continue;
+                debugStage = 4200;
+
                 OBBUnity obb = existing.OBBCache.GetOBB_ExpensiveToUse();
                 float newOBBMaxSize = obb.Size.LargestComponent();
                 newOBBMaxSize += newOBBMaxSize; //double it for a fudge factor
@@ -314,12 +357,15 @@ namespace Arcen.HotM.External
             }
             #endregion
 
+            debugStage = 6100;
+
             bool isDeserializing = tile.IsDeserializedFromSave;
             if ( isDeserializing )
             {
                 if ( tile.IsLegacyRadiationBlockingDecorations )
                     return;
 
+                debugStage = 7100;
                 if ( SimCommon.LoadedFromGameVersion.GetLessThan( 0, 652, 7 ) )
                 {
                     foreach ( MapCell cell in tile.CellsList )
@@ -333,8 +379,12 @@ namespace Arcen.HotM.External
                 }
             }
 
+            debugStage = 9100;
+
             foreach ( ReferenceObject obj in DecorationSource.AllObjects )
             {
+                debugStage = 12100;
+
                 if ( obj.ObjRoot == null ) 
                     continue;
                 if ( obj.ObjRoot.IsMetaRegion )
@@ -345,6 +395,8 @@ namespace Arcen.HotM.External
                 if ( isDeserializing && obj.ObjRoot.Building != null )
                     continue; //we skip anything that is a building on non-deserialization saves
 
+                debugStage = 14100;
+
                 Vector3 objPos = obj.pos;
                 Quaternion rot = Quaternion.Euler( obj.rot.x, obj.rot.y, obj.rot.z );
                 MathA.RotateAround( ref objPos, ref rot, Vector3.zero, new Vector3( 0, 1, 0 ), regionRotation );
@@ -353,6 +405,8 @@ namespace Arcen.HotM.External
                 objPos = objPos.PlusZ( regionOBB.Center.z - zSourceOffset );
 
                 Vector3 destPoint = objPos;
+
+                debugStage = 16100;
 
                 OBBUnity newOBB = obj.ObjRoot.CalculateOBBForItem( objPos, rot, obj.scale );
 
@@ -371,8 +425,11 @@ namespace Arcen.HotM.External
                 if ( !levelRect.ContainsRectangle( boundsRect ) ) //if one rectangle does not contain the other, then out of bounds
                     continue;
 
+                debugStage = 18100;
+
                 if ( isDeserializing )
                 {
+                    debugStage = 18200;
                     bool wasBlocked = false;
                     foreach ( FormerExplosionSite expo in SimCommon.FormerExplosionSites_MainThreadOnly )
                     {
@@ -386,6 +443,8 @@ namespace Arcen.HotM.External
                         continue;
                 }
 
+                debugStage = 22100;
+
                 #region test against anything and everything to make sure there are no hits!
                 if ( tile.workingPossibleObjectCollisions_Current.Count > 0 )
                 {
@@ -393,6 +452,8 @@ namespace Arcen.HotM.External
 
                     foreach ( MapItem existingItem in tile.workingPossibleObjectCollisions_Current )
                     {
+                        debugStage = 23100;
+
                         //looking for a cheap early exclusion
                         float existingLargestSize = existingItem.OBBCache.OBBSize.LargestComponent();
                         if ( (existingItem.OBBCache.Center - newOBB.Center).sqrMagnitude > (newOBBMaxSize + existingLargestSize) * (newOBBMaxSize + existingLargestSize) )
@@ -400,10 +461,14 @@ namespace Arcen.HotM.External
 
                         if ( existingItem.OBBCache.GetOBB_ExpensiveToUse().IntersectsOBB( newOBB ) )
                         {
+                            debugStage = 24100;
+
                             //whoops, hit another object we added
                             if ( existingItem.Type.ExtraPlaceableData.RequiresIndividualColliderCheckingDuringBoundingCollisionChecks ||
                                 existingItem.Type.CollisionBoxes.Count > 0 ) //if we have the extra detail, then let's use it, regardless
                             {
+                                debugStage = 25100;
+
                                 int rotY = Mathf.RoundToInt( existingItem.OBBCache.GetOBB_ExpensiveToUse().Rotation.eulerAngles.y );
                                 bool hadActualInnerCollision = false;
                                 //OBB collision is not good enough, but it's a start.  Now that we know our OBBs intersect, we have to ask -- does that also happen with any of our
@@ -450,6 +515,8 @@ namespace Arcen.HotM.External
                 }
                 #endregion
 
+                debugStage = 32100;
+
                 MapCell cell = tile.FindCellForMapItem( destPoint );
                 if ( cell == null )
                 {
@@ -457,12 +524,15 @@ namespace Arcen.HotM.External
                     continue;
                 }
 
+                debugStage = 34100;
+
                 MapItem item = MapItem.GetFromPoolOrCreate_NotFromSavegame( cell );
                 item.Type = obj.ObjRoot;
                 item.SetPosition( destPoint );
                 item.SetRotation( rot );
                 item.Scale = obj.scale;
                 item.OBBCache.SetToOBB( newOBB );
+                debugStage = 35100;
                 tile.workingPossibleObjectCollisions_All.Add( item );
                 if ( obj.ObjRoot.Building != null )
                     cell.PlaceMapItemIntoCell( TileDest.Buildings, item, true );

@@ -72,22 +72,22 @@ namespace Arcen.HotM.ExternalVis
                                         HackingDaemonType daemonType = HackingHelper.GetValidDaemonTypeFromBag( Engine_Universal.PermanentQualityRandom );
                                         if ( daemonType != null )
                                         {
-                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom );
+                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom, 0 );
                                             if ( newDaemon != null )
                                                 remainingDifficulty -= daemonType.ReducesDangerLevelBy;
                                         }
                                     }
 
                                     if ( scene.TargetUnit.GetStackCountOfStatus( StatusRefs.SecurityCamerasOffline ) == 0 )
-                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpSecurityCameras" ), false, 3, 2, 3, Rand );
+                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpSecurityCameras" ), false, 3, 2, 3, Rand, 0 );
                                     if ( scene.TargetUnit.GetStackCountOfStatus( StatusRefs.VentilationFansOffline ) == 0 )
-                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpVentilationFans" ), false, 3, 2, 3, Rand );
+                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpVentilationFans" ), false, 3, 2, 3, Rand, 0 );
                                     if ( scene.TargetUnit.GetStackCountOfStatus( StatusRefs.SecurityDoorsOpen ) == 0 )
-                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpSecurityDoors" ), false, 3, 2, 3, Rand );
+                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpSecurityDoors" ), false, 3, 2, 3, Rand, 0 );
 
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpHalogenFireSuppression" ), false, 3, 2, 3, Rand );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpHalogenFireSuppression" ), false, 3, 2, 3, Rand, 0 );
                                     if ( scene.TargetUnit.GetActorDataLostFromMax( ActorRefs.ActorHP, true ) > 100 )
-                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpFalseAlarm" ), false, 3, 2, 3, Rand );
+                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpFalseAlarm" ), false, 3, 2, 3, Rand, 0 );
                                 }
                                 break;
                             case HackingScenarioLogic.DoPerFrame:
@@ -120,18 +120,18 @@ namespace Arcen.HotM.ExternalVis
                                         HackingDaemonType daemonType = HackingHelper.GetValidDaemonTypeFromBag( Engine_Universal.PermanentQualityRandom );
                                         if ( daemonType != null )
                                         {
-                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom );
+                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom, 0 );
                                             if ( newDaemon != null )
                                                 remainingDifficulty -= daemonType.ReducesDangerLevelBy;
                                         }
                                     }
 
                                     if ( scene.TargetUnit.GetStackCountOfStatus( StatusRefs.SecurityCamerasOffline ) == 0 )
-                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpSecurityCameras" ), false, 3, 2, 3, Rand );
+                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpSecurityCameras" ), false, 3, 2, 3, Rand, 0 );
                                     if ( scene.TargetUnit.GetStackCountOfStatus( StatusRefs.VentilationFansOffline ) == 0 )
-                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpVentilationFans" ), false, 3, 2, 3, Rand );
+                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpVentilationFans" ), false, 3, 2, 3, Rand, 0 );
                                     if ( scene.TargetUnit.GetStackCountOfStatus( StatusRefs.SecurityDoorsOpen ) == 0 )
-                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpSecurityDoors" ), false, 3, 2, 3, Rand );
+                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "InfiltrationSysOpSecurityDoors" ), false, 3, 2, 3, Rand, 0 );
                                 }
                                 break;
                             case HackingScenarioLogic.DoPerFrame:

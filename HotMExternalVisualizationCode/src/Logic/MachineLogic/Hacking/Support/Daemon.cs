@@ -17,12 +17,15 @@ namespace Arcen.HotM.ExternalVis.Hacking
         public h.iParticle Visuals;
         public HackingDaemonType DaemonType;
         public bool IsHidden = false;
+        public int CanStartMovingAt = 0;
+        public int MovesHasMade = 0;
+        public bool HasBeenDestroyed = false;
 
         public int AdditionalMovesToSkip = 0;
 
-        private h.hCell MovingToTargetCell = null;
+        public h.hCell MovingToTargetCell = null;
 
-        public void InitializeAtCell( h.hCell Cell, HackingDaemonType DaemonType, bool IsHidden )
+        public void InitializeAtCell( h.hCell Cell, HackingDaemonType DaemonType, bool IsHidden, int WaitTurnsToMove )
         {
             this.CurrentCell = Cell;
             Cell.CurrentEntity = this;
@@ -35,6 +38,11 @@ namespace Arcen.HotM.ExternalVis.Hacking
 
             this.RefreshVisuals();
             this.Visuals.Trans.localPosition = this.CurrentCell.CenterPos;
+
+            if ( WaitTurnsToMove <= 0 )
+                this.CanStartMovingAt = 0; //right away
+            else
+                this.CanStartMovingAt = scene.DaemonMovesSoFar + WaitTurnsToMove;
         }
 
         public void ClearVisualData()
@@ -50,6 +58,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
         {
             this.MovingToTargetCell = Moving;
             scene.AnimatingItems.Add( this );
+            this.MovesHasMade++;
         }
 
         public void RefreshVisuals()
@@ -71,6 +80,9 @@ namespace Arcen.HotM.ExternalVis.Hacking
         {
             if ( this.CurrentCell == null || this.MovingToTargetCell == null )
                 return true; //must be done
+            HackingDaemonType daemonType = this.DaemonType;
+            if ( daemonType == null ) 
+                return true;
 
             this.RefreshVisuals();
             Visuals.Trans.localPosition = MathA.MoveTowards( Visuals.Trans.localPosition, MovingToTargetCell.CenterPos,
@@ -94,7 +106,7 @@ namespace Arcen.HotM.ExternalVis.Hacking
                     {
                         try
                         {
-                            this.DaemonType.Implementation.TryHandleDaemonLogic( this.DaemonType, this, shard, HackingDaemonLogic.HitPlayerShard );
+                            daemonType.Implementation.TryHandleDaemonLogic( daemonType, this, shard, HackingDaemonLogic.HitPlayerShard );
                         }
                         catch ( Exception e )
                         {
@@ -115,12 +127,14 @@ namespace Arcen.HotM.ExternalVis.Hacking
                 }
                 if ( this.DaemonType != null )
                     this.RefreshVisuals();
+                daemonType.Implementation.TryHandleDaemonLogic( daemonType, this, null, HackingDaemonLogic.ReachedMovementDestination );
             }
             return hasReachedDestination;
         }
 
         public void DestroyEntity()
         {
+            this.HasBeenDestroyed = true;
             this.ClearVisualData();
             if ( this.CurrentCell?.CurrentEntity == this )
                 this.CurrentCell.CurrentEntity = null;

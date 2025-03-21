@@ -2182,6 +2182,16 @@ namespace Arcen.HotM.ExternalVis
                                     FlagRefs.DogRescue.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
                             }
 
+                            CityTimeline timeline = SimCommon.CurrentTimeline;
+                            if ( timeline != null )
+                            {
+                                timeline.HasSavedDifficulty = true;
+                                if ( FlagRefs.HasStartedToAccelerateDooms_Extreme.DuringGameplay_IsTripped )
+                                    timeline.IsExtremeMode = true;
+                                else if ( FlagRefs.HasStartedToAccelerateDooms_Hard.DuringGameplay_IsTripped )
+                                    timeline.IsHardMode = true;
+                            }
+
                             HandleWarMusicChecksPerQuarterSecond();
                             HandleDangerMusicChecksPerQuarterSecond();
                         }

@@ -56,15 +56,15 @@ namespace Arcen.HotM.ExternalVis
 
                                     if ( isJointHacking )
                                     {
-                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "LAKE" ), false, 3, 2, 3, Rand );
-                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "LAKE" ), false, 3, 2, 3, Rand );
-                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "LAKE" ), false, 3, 2, 3, Rand );
+                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "LAKE" ), false, 3, 2, 3, Rand, 0 );
+                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "LAKE" ), false, 3, 2, 3, Rand, 0 );
+                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "LAKE" ), false, 3, 2, 3, Rand, 0 );
 
                                     }
                                     else if ( MachineProjectTable.Instance.GetRowByID( "Ch2_MIN_ProbeTheTitan" ).DuringGame_ActualOutcome == null )
                                     {
-                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "TitanCommsLeak" ), false, 3, 2, 3, Rand );
-                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "TitanCommsGap" ), false, 3, 2, 3, Rand );
+                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "TitanCommsLeak" ), false, 3, 2, 3, Rand, 0 );
+                                        HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "TitanCommsGap" ), false, 3, 2, 3, Rand, 0 );
                                     }
                                     else
                                     {
@@ -72,11 +72,11 @@ namespace Arcen.HotM.ExternalVis
 
                                         if ( (scene.TargetUnit as ISimNPCUnit)?.Stance != deactivatedStance )
                                         {
-                                            HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "TitanHumanContact" ), false, 3, 2, 3, Rand );
-                                            HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "TitanSystemContact" ), false, 3, 2, 3, Rand );
+                                            HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "TitanHumanContact" ), false, 3, 2, 3, Rand, 0 );
+                                            HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "TitanSystemContact" ), false, 3, 2, 3, Rand, 0 );
                                         }
                                         else
-                                            HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "TitanFreedSystemContact" ), false, 3, 2, 3, Rand );
+                                            HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "TitanFreedSystemContact" ), false, 3, 2, 3, Rand, 0 );
                                     }
 
                                     //seed the actual daemon bits
@@ -88,7 +88,7 @@ namespace Arcen.HotM.ExternalVis
                                         HackingDaemonType daemonType = HackingHelper.GetValidDaemonTypeFromBag( Engine_Universal.PermanentQualityRandom );
                                         if ( daemonType != null )
                                         {
-                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom );
+                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom, 0 );
                                             if ( newDaemon != null )
                                                 remainingDifficulty -= daemonType.ReducesDangerLevelBy;
                                         }
@@ -149,6 +149,8 @@ namespace Arcen.HotM.ExternalVis
             scene.HackingBlockagesDifficulty = scene.HackingSeedDifficulty * 10;
             if ( scene.HackingBlockagesDifficulty < 100 )
                 scene.HackingBlockagesDifficulty = 100;
+            if ( scene.HackingBlockagesDifficulty > 3000 )
+                scene.HackingBlockagesDifficulty = 3000;
 
             if ( scene.HackingSeedDifficulty < 100 )
                 scene.HackingSeedDifficulty = 100;            
@@ -172,9 +174,9 @@ namespace Arcen.HotM.ExternalVis
                                     if ( determinationShortage > 0 )
                                         ResourceRefs.Determination.AlterCurrent_Named( determinationShortage, "Income_Other", ResourceAddRule.IgnoreUntilTurnChange );
 
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "LeafNode" ), false, 3, 2, 3, Rand );
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "Gnath" ), false, 5, 2, 1, Rand );
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "CodePriest" ), false, 5, 2, 1, Rand );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "LeafNode" ), false, 3, 2, 3, Rand, 0 );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "Gnath" ), false, 5, 2, 1, Rand, 0 );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "CodePriest" ), false, 5, 2, 1, Rand, 0 );
 
                                     FlagRefs.ResetHackingTutorial();
                                     FlagRefs.HackTut_OverallGoal.DuringGameplay_StartIfNeeded();
@@ -201,7 +203,7 @@ namespace Arcen.HotM.ExternalVis
                                     HackingHelper.PopulateStandardBlockages( Rand );
                                     HackingHelper.PopulateStandardFirstShards( Rand );
 
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "LeafNode" ), false, 3, 2, 3, Rand );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "LeafNode" ), false, 3, 2, 3, Rand, 0 );
 
                                     //seed the actual daemon bits
                                     HackingHelper.FillDaemonTypeBagFromTagUse( "InitialDaemons" );
@@ -212,16 +214,16 @@ namespace Arcen.HotM.ExternalVis
                                         HackingDaemonType daemonType = HackingHelper.GetValidDaemonTypeFromBag( Engine_Universal.PermanentQualityRandom );
                                         if ( daemonType != null )
                                         {
-                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom );
+                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom, 0 );
                                             if ( newDaemon != null )
                                                 remainingDifficulty -= daemonType.ReducesDangerLevelBy;
                                         }
                                     }
 
                                     //seed the mech-specific things that we can hack
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "ArmorPlatingServicePanels" ), false, 3, 2, 3, Rand );
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "WeaponSystems" ), false, 3, 2, 3, Rand );
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "HydraulicActuators" ), false, 3, 2, 3, Rand );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "ArmorPlatingServicePanels" ), false, 3, 2, 3, Rand, 0 );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "WeaponSystems" ), false, 3, 2, 3, Rand, 0 );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "HydraulicActuators" ), false, 3, 2, 3, Rand, 0 );
                                 }
                                 break;
                             case HackingScenarioLogic.DoPerFrame:
@@ -254,17 +256,17 @@ namespace Arcen.HotM.ExternalVis
                                         HackingDaemonType daemonType = HackingHelper.GetValidDaemonTypeFromBag( Engine_Universal.PermanentQualityRandom );
                                         if ( daemonType != null )
                                         {
-                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom );
+                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom, 0 );
                                             if ( newDaemon != null )
                                                 remainingDifficulty -= daemonType.ReducesDangerLevelBy;
                                         }
                                     }
 
                                     //seed the bionic-human-specific things that we can hack
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "AugmentedOrgans" ), false, 3, 2, 3, Rand );
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "AdrenalineRegulator" ), false, 3, 2, 3, Rand );
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "AugmentedVision" ), false, 3, 2, 3, Rand );
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "BionicUplink" ), false, 3, 2, 3, Rand );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "AugmentedOrgans" ), false, 3, 2, 3, Rand, 0 );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "AdrenalineRegulator" ), false, 3, 2, 3, Rand, 0 );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "AugmentedVision" ), false, 3, 2, 3, Rand, 0 );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "BionicUplink" ), false, 3, 2, 3, Rand, 0 );
                                 }
                                 break;
                             case HackingScenarioLogic.DoPerFrame:
@@ -288,7 +290,7 @@ namespace Arcen.HotM.ExternalVis
                                     HackingHelper.PopulateStandardBlockages( Rand );
                                     HackingHelper.PopulateStandardFirstShards( Rand );
 
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "RingNode" ), false, 3, 2, 3, Rand );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "RingNode" ), false, 3, 2, 3, Rand, 0 );
 
                                     //seed the actual daemon bits
                                     HackingHelper.FillDaemonTypeBagFromTagUse( "InitialDaemons" );
@@ -299,16 +301,16 @@ namespace Arcen.HotM.ExternalVis
                                         HackingDaemonType daemonType = HackingHelper.GetValidDaemonTypeFromBag( Engine_Universal.PermanentQualityRandom );
                                         if ( daemonType != null )
                                         {
-                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom );
+                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom, 0 );
                                             if ( newDaemon != null )
                                                 remainingDifficulty -= daemonType.ReducesDangerLevelBy;
                                         }
                                     }
 
                                     //seed the mech-specific things that we can hack
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "ArmorPlatingServicePanels" ), false, 3, 2, 3, Rand );
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "WeaponSystems" ), false, 3, 2, 3, Rand );
-                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "HydraulicActuators" ), false, 3, 2, 3, Rand );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "ArmorPlatingServicePanels" ), false, 3, 2, 3, Rand, 0 );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "WeaponSystems" ), false, 3, 2, 3, Rand, 0 );
+                                    HackingHelper.TryPlaceADaemon( HackingDaemonTypeTable.Instance.GetRowByID( "HydraulicActuators" ), false, 3, 2, 3, Rand, 0 );
                                 }
                                 break;
                             case HackingScenarioLogic.DoPerFrame:

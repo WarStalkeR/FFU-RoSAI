@@ -611,8 +611,10 @@ namespace Arcen.HotM.ExternalVis
 
                     //if ( InputCaching.ShouldShowDetailedTooltips )
                     {
-                        novel.Main.AddRaw( SimMetagame.CurrentChapter.GetDescription() ).Line();
-                        novel.Main.AddRaw( SimMetagame.CurrentChapter.StrategyTip.Text, ColorTheme.PurpleDim ).Line();
+                        if ( !SimMetagame.CurrentChapter.GetDescription().IsEmpty() )
+                            novel.Main.AddRaw( SimMetagame.CurrentChapter.GetDescription() ).Line();
+                        if ( !SimMetagame.CurrentChapter.StrategyTip.Text.IsEmpty() )
+                            novel.Main.AddRaw( SimMetagame.CurrentChapter.StrategyTip.Text, ColorTheme.PurpleDim ).Line();
                     }
                 }
 
@@ -626,6 +628,17 @@ namespace Arcen.HotM.ExternalVis
 
                 if ( !isTheEndOfTime )
                 {
+                    if ( !SimCommon.IsCheatTimeline && SimMetagame.CurrentChapterNumber > 1 )
+                    {
+                        novel.Main.AddBoldLangAndAfterLineItemHeader( "RadialMenu_Difficulty", ColorTheme.DataLabelWhite );
+                        if ( FlagRefs.HasStartedToAccelerateDooms_Extreme.DuringGameplay_IsTripped )
+                            novel.Main.AddLang( "RadialMenu_Difficulty_Extreme", ColorTheme.DataBlue ).Line();
+                        else if ( FlagRefs.HasStartedToAccelerateDooms_Hard.DuringGameplay_IsTripped )
+                            novel.Main.AddLang( "RadialMenu_Difficulty_Hard", ColorTheme.DataBlue ).Line();
+                        else
+                            novel.Main.AddLang( "RadialMenu_Difficulty_Normal", ColorTheme.DataBlue ).Line();
+                    }
+
                     if ( SimCommon.IsFogOfWarDisabled )
                         novel.Main.AddLang( "FogOfWarDisabled", ColorTheme.DataBlue ).Line();
 

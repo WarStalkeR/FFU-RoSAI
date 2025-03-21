@@ -139,11 +139,13 @@ namespace Arcen.HotM.ExternalVis
 
                         if ( Target is ISimNPCUnit npc && (npc.Stance?.IsConsideredEnemyHacker??false) )
                         {
+                            bool stopAttack = false;
                             if ( (npc.Stance?.IsConsideredEnemyHackerThatThreatensInfiltrators ?? false) )
                             {
                                 PhysicalAttackPowerSoFar = 0;
                                 FearAttackPowerSoFar = 0;
                                 ArgumentAttackPowerSoFar = 0;
+                                stopAttack = true;
                             }
 
                             int weakenedAmount = Mathf.RoundToInt( FeatAmount );
@@ -156,7 +158,8 @@ namespace Arcen.HotM.ExternalVis
                             {
                                 Target.AddStatus( StatusRefs.HackerWeakened, weakenedAmount, 1 );
 
-                                StopTheAttack = true;
+                                if ( stopAttack )
+                                    StopTheAttack = true;
                             }
                         }
                     }

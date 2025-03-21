@@ -26,6 +26,9 @@ namespace Arcen.HotM.ExternalVis
             Daemon otherDaemon = OtherObject as Daemon;
             PlayerShard shard = OtherObject as PlayerShard;
 
+            if ( daemon.HasBeenDestroyed && Logic == HackingDaemonLogic.HitByCorruptionFire )
+                return HackingDaemonResult.Indeterminate; //not a daemon, or is a dead one
+
             if ( Logic == HackingDaemonLogic.HitByCorruptionFire && DaemonType.CostTypeToCorrupt != null && DaemonType.CostAmountToCorrupt > 0 )
             {
                 if ( DaemonType.CostTypeToCorrupt.Current < DaemonType.CostAmountToCorrupt )
@@ -120,6 +123,22 @@ namespace Arcen.HotM.ExternalVis
                                     }
                                     break;
                                 }
+                            case HackingDaemonLogic.ReachedMovementDestination:
+                                {
+                                    switch ( DaemonType.ID )
+                                    {
+                                        case "TriswarmFragment":
+                                            if ( daemon.MovesHasMade > 0 )
+                                            {
+                                                ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();
+                                                buffer.AddFormat1( "HackingLog_DaemonDestroyedByExpiration", DaemonType.GetDisplayName() );
+                                                scene.AddToHackingHistory( buffer );
+                                                daemon.DestroyEntity();
+                                            }
+                                            break;
+                                    }
+                                }
+                                break;
                         }
                     }
                     return HackingDaemonResult.Indeterminate;
@@ -153,7 +172,7 @@ namespace Arcen.HotM.ExternalVis
                                         int splitCount = 0;
                                         for ( int i = 0; i < 3; i++ )
                                         {
-                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonAdjacent( daemonType, daemon.CurrentCell, false, Engine_Universal.PermanentQualityRandom );
+                                            Daemon newDaemon = HackingHelper.TryPlaceADaemonAdjacent( daemonType, daemon.CurrentCell, false, Engine_Universal.PermanentQualityRandom, 2 );
                                             if ( newDaemon != null )
                                                 splitCount++;
                                         }
@@ -182,6 +201,106 @@ namespace Arcen.HotM.ExternalVis
                                     }
 
                                     return HackingDaemonResult.KilledTarget;
+                                }
+                        }
+                    }
+                    return HackingDaemonResult.Indeterminate;
+                #endregion
+                case "Bomb":
+                    #region Bomb
+                    {
+                        switch ( Logic )
+                        {
+                            case HackingDaemonLogic.Move:
+                                HackingHelper.DoBasicDaemonChaseLogic( daemon );
+                                break;
+                            case HackingDaemonLogic.ExtraDrawPerFrameWhileDaemonLives:
+                                HackingHelper.DoBasicDaemonThreatenLogic( daemon );
+                                break;
+                            case HackingDaemonLogic.HitPlayerShard:
+                                HackingHelper.DaemonDestroyPlayerShard( shard, daemon );
+                                break;
+                            case HackingDaemonLogic.HitByOtherDaemon:
+                                HackingHelper.JumpDaemonToNearestFreeSpaceOrKillIt( daemon, Engine_Universal.PermanentQualityRandom );
+                                break;
+                            case HackingDaemonLogic.HitByCorruptionFire:
+                                {
+                                    h.hCell cell = daemon.CurrentCell;
+
+                                    DaemonType.TryPayCorruptionCosts();
+                                    daemon.DestroyEntity();
+
+                                    if ( cell != null )
+                                    {
+                                        cell.IsBlocked = false;
+                                        cell.SetCurrentNumber( 0 );
+                                        foreach ( h.hCell cell2 in cell.AdjacentCellsAndDiagonal )
+                                        {
+                                            cell2.IsBlocked = false;
+                                            cell2.SetCurrentNumber( 0 );
+
+                                            if ( cell2.CurrentEntity != null )
+                                            {
+                                                if ( cell2.CurrentEntity is Daemon daemon2 && !daemon.DaemonType.WillEndHackingSessionIfCorrupted )
+                                                {
+                                                    HackingDaemonResult result = daemon2.DaemonType.Implementation.TryHandleDaemonLogic( daemon2.DaemonType, daemon2, null, HackingDaemonLogic.HitByCorruptionFire );
+                                                    if ( result == HackingDaemonResult.KilledTarget )
+                                                    {
+                                                        daemon2.DaemonType.OnDeath.DuringGame_PlayAtUILocation( cell2.CalculateScreenPos(), true );
+                                                        CityStatisticTable.AlterScore( "HackingDaemonsCorrupted", 1 );
+                                                    }
+                                                }
+                                                else if ( cell2.CurrentEntity is PlayerShard shard2 )
+                                                {
+                                                    HackingHelper.DaemonDestroyPlayerShard( shard2, daemon );
+                                                }
+                                                else
+                                                {
+                                                    DaemonType.OnDeath.DuringGame_PlayAtUILocation( cell2.CalculateScreenPos(), true );
+                                                    cell.CurrentEntity.DestroyEntity();
+                                                }
+                                            }
+                                            else
+                                                DaemonType.OnDeath.DuringGame_PlayAtUILocation( cell2.CalculateScreenPos(), true );
+                                        }
+                                    }
+
+                                    return HackingDaemonResult.KilledTarget;
+                                }
+                        }
+                    }
+                    return HackingDaemonResult.Indeterminate;
+                #endregion
+                case "LesserWanderer":
+                case "GreaterWanderer":
+                    #region LesserWanderer / GreaterWanderer
+                    {
+                        switch ( Logic )
+                        {
+                            case HackingDaemonLogic.Move:
+                                HackingHelper.DoDaemonWanderOrLeapLogic( daemon, Engine_Universal.PermanentQualityRandom );
+                                break;
+                            case HackingDaemonLogic.ExtraDrawPerFrameWhileDaemonLives:
+                                HackingHelper.DoBasicDaemonThreatenLogic( daemon );
+                                break;
+                            case HackingDaemonLogic.HitPlayerShard:
+                                HackingHelper.DaemonDestroyPlayerShard( shard, daemon );
+                                break;
+                            case HackingDaemonLogic.HitByOtherDaemon:
+                                HackingHelper.JumpDaemonToNearestFreeSpaceOrKillIt( daemon, Engine_Universal.PermanentQualityRandom );
+                                break;
+                            case HackingDaemonLogic.HitByCorruptionFire:
+                                {
+                                    if ( DaemonType.TryPayCorruptionCosts() )
+                                    {
+                                        ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();
+                                        buffer.AddFormat1( "HackingLog_DaemonDestroyedByCorruption", daemon.DaemonType.GetDisplayName() );
+                                        scene.AddToHackingHistory( buffer );
+                                        daemon.DestroyEntity();
+
+                                        return HackingDaemonResult.KilledTarget;
+                                    }
+                                    break;
                                 }
                         }
                     }
@@ -238,7 +357,7 @@ namespace Arcen.HotM.ExternalVis
                                 HackingDaemonType daemonType = HackingHelper.GetValidDaemonTypeFromBag( Engine_Universal.PermanentQualityRandom );
                                 if ( daemonType != null )
                                 {
-                                    Daemon newDaemon = HackingHelper.TryPlaceADaemonAdjacent( daemonType, daemon.CurrentCell, false, Engine_Universal.PermanentQualityRandom );
+                                    Daemon newDaemon = HackingHelper.TryPlaceADaemonAdjacent( daemonType, daemon.CurrentCell, false, Engine_Universal.PermanentQualityRandom, 1 );
                                     if ( newDaemon == null )
                                     {
                                         ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();
@@ -322,7 +441,7 @@ namespace Arcen.HotM.ExternalVis
                                 HackingDaemonType daemonType = daemon.DaemonType;
                                 if ( daemonType != null )
                                 {
-                                    Daemon newDaemon = HackingHelper.TryPlaceADaemonAdjacent( daemonType, daemon.CurrentCell, false, Engine_Universal.PermanentQualityRandom );
+                                    Daemon newDaemon = HackingHelper.TryPlaceADaemonAdjacent( daemonType, daemon.CurrentCell, false, Engine_Universal.PermanentQualityRandom, 1 );
                                     if ( newDaemon == null )
                                     {
                                         ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();
@@ -368,7 +487,7 @@ namespace Arcen.HotM.ExternalVis
                                 HackingDaemonType daemonType = HackingHelper.GetValidDaemonTypeFromBag( Engine_Universal.PermanentQualityRandom );
                                 if ( daemonType != null )
                                 {
-                                    Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom );
+                                    Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom, 0 );
 
                                     if ( newDaemon == null )
                                     {
@@ -377,6 +496,18 @@ namespace Arcen.HotM.ExternalVis
                                     }
                                     else
                                     {
+                                        h.hCell daemonCell = newDaemon.CurrentCell;
+                                        if ( daemonCell != null )
+                                        {
+                                            foreach ( h.hCell adjacent in daemonCell.AdjacentCellsAndDiagonal2X )
+                                            {
+                                                if ( adjacent.IsBlocked )
+                                                    adjacent.IsBlocked = false;
+                                                if ( adjacent.CurrentNumber == 0 )
+                                                    adjacent.SetCurrentNumber( Engine_Universal.PermanentQualityRandom.Next( 11, 19 ) );
+                                            }
+                                        }
+
                                         buffer.AddFormat2( "HackingLog_DaemonRevealsOtherDaemon", daemon.DaemonType.GetDisplayName(), newDaemon.DaemonType.GetDisplayName() );
                                         scene.AddToHackingHistory( buffer );
 
@@ -409,7 +540,7 @@ namespace Arcen.HotM.ExternalVis
                         {
                             case HackingDaemonLogic.HitByOtherDaemon:
                                 {
-                                    Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( DaemonType.InsteadOfDeathBecomes, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom );
+                                    Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( DaemonType.InsteadOfDeathBecomes, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom, 1 );
                                     if ( newDaemon == null )
                                     {
                                         buffer.AddFormat1( "HackingLog_DaemonGotAway", daemon.DaemonType.GetDisplayName(), ColorTheme.Gray );
@@ -429,7 +560,7 @@ namespace Arcen.HotM.ExternalVis
                                 HackingDaemonType daemonType = HackingHelper.GetValidDaemonTypeFromBag( Engine_Universal.PermanentQualityRandom );
                                 if ( daemonType != null )
                                 {
-                                    Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom );
+                                    Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( daemonType, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom, 1 );
 
                                     if ( newDaemon == null )
                                     {
@@ -475,7 +606,7 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     if ( DaemonType.InsteadOfDeathBecomes != null )
                                     {
-                                        Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( DaemonType.InsteadOfDeathBecomes, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom );
+                                        Daemon newDaemon = HackingHelper.TryPlaceADaemonSoftening( DaemonType.InsteadOfDeathBecomes, false, 6, 4, 2, Engine_Universal.PermanentQualityRandom, 1 );
                                         if ( newDaemon == null )
                                         {
                                             ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();

@@ -613,6 +613,13 @@ namespace Arcen.HotM.ExternalVis
             public bool IsOnFire = false;
             public bool IsBeingThreatened = false;
 
+            public bool IsBlockedFromDaemonsMovingHere = false;
+
+            public void SetBlockedFromDaemonsMovingHere( bool val )
+            {
+                this.IsBlockedFromDaemonsMovingHere = val;
+            }
+
             #region ClearExistingData
             public void ClearExistingData()
             {
