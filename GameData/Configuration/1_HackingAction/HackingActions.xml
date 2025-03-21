@@ -9,7 +9,7 @@
 		on_use="BoardVehicle" >
 		<sub_described_item id="Move" display_name="Move"
 			description="Move horizontally or vertically to a new cell. You will absorb half of the destination cell's value. The other half will be placed in the cell you leave."
-			strategy_tip="You cannot pass blocked cells or cells that are a higher number than you." />
+			strategy_tip="You cannot pass blocked cells or daemons, and you cannot land on cells that are 20+ higher than your number." />
 		<sub_described_item id="Split" display_name="Split"
 			description="If the result of a move would be more than 99, a split will occur instead."
 			strategy_tip="A split makes two consciousness shards from one. This is very important." />

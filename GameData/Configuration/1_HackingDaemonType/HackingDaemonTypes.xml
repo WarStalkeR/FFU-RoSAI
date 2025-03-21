@@ -7,7 +7,7 @@
 		visible_icon_name="SomethingJaws" visible_color="#B05C40" visible_idle_color="#A09191" visible_scale="0.9"
 		hidden_hdr_intensity="1" visible_hdr_intensity="1.5" visible_idle_hdr_intensity="1"
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#DDDDDD" hidden_scale="1" is_hostile_daemon="true"
-		required_danger_level="150" reduces_danger_level_by="70" seed_weight="100" max_to_seed="5"
+		required_danger_level="150" reduces_danger_level_by="70" seed_weight="100" max_to_seed="4"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
 		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
 		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon" 
@@ -26,7 +26,7 @@
 		visible_icon_name="CleanSimple_SkillC034" visible_color="#A75CBB" visible_idle_color="#806090" visible_scale="0.8"
 		hidden_hdr_intensity="1" visible_hdr_intensity="1.6" visible_idle_hdr_intensity="1.4"
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#DDDDDD" hidden_scale="1" is_hostile_daemon="true"
-		required_danger_level="100" reduces_danger_level_by="150" seed_weight="100" max_to_seed="3"
+		required_danger_level="100" reduces_danger_level_by="150" seed_weight="100" max_to_seed="2"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
 		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
 		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon"
@@ -34,7 +34,6 @@
 		>
 		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="3" />
 		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="2" />
-		<included_in tag="CodePriestSpawns_SimpleMech" value="true" />
 		<included_in tag="InitialDaemons_SimpleMech" value="true" />
 	</daemon>
 
@@ -44,7 +43,7 @@
 		visible_icon_name="HM_ShapeAbstract3" visible_color="#68983D" visible_idle_color="#A09191" visible_scale="1"
 		hidden_hdr_intensity="1" visible_hdr_intensity="1.7" visible_idle_hdr_intensity="1"
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1" is_hostile_daemon="true"
-		required_danger_level="100" reduces_danger_level_by="120" seed_weight="100" max_to_seed="5"
+		required_danger_level="100" reduces_danger_level_by="120" seed_weight="100" max_to_seed="4"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
 		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
 		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon" 
@@ -62,7 +61,7 @@
 		visible_icon_name="CleanSimple_Skill069" visible_color="#D1C976" visible_idle_color="#A09191" visible_scale="0.9"
 		hidden_hdr_intensity="1" visible_hdr_intensity="0.8" visible_idle_hdr_intensity="1"
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1" is_hostile_daemon="true"
-		required_danger_level="360" reduces_danger_level_by="150" seed_weight="20" max_to_seed="3"
+		required_danger_level="360" reduces_danger_level_by="150" seed_weight="20" max_to_seed="2"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
 		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
 		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon" 
@@ -71,10 +70,11 @@
 		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="3" />
 		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="1" />
 		<included_in tag="InitialDaemons_SimpleMech" value="true" />
+		<included_in tag="CodePriestSpawns_SimpleMech" value="true" />
 	</daemon>
 
 	<daemon id="TriswarmFragment" display_name="Triswarm Fragment"
-		description="Fast and relentless, but thankfully are gone for good when corrupted."
+		description="Fast and relentless, but thankfully destroys itself after a single movement."
 		strategy_tip=""
 		visible_icon_name="SomethingTriangle" visible_color="#C6B14E" visible_idle_color="#A09191" visible_scale="0.45"
 		hidden_hdr_intensity="1" visible_hdr_intensity="1.7" visible_idle_hdr_intensity="1"
@@ -87,20 +87,6 @@
 		>
 		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="2" />
 		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="1" />
-	</daemon>
-
-	<daemon id="Bomb" display_name="Bomb"
-		description=""
-		strategy_tip=""
-		visible_icon_name="SW_DonutChart6" visible_color="#D46844" visible_idle_color="#A09191" visible_scale="1"
-		hidden_hdr_intensity="1" visible_hdr_intensity="1" visible_idle_hdr_intensity="1"
-		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1" is_hostile_daemon="true"
-		required_danger_level="100" reduces_danger_level_by="20" seed_weight="100" max_to_seed="3"
-		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
-		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
-		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon" 
-		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownDaemon" 
-		>
 	</daemon>
 
 	<daemon id="Mirror" display_name="Mirror"

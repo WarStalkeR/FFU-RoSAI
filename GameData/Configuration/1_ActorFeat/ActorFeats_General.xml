@@ -64,6 +64,7 @@ If not, then the human will be shocked and their attacks will be weaker over the
 	
 	<actor_feat id="HackBreaker" display_name="Hack Breaker"
 		description="Damage multiplier against targets with hacking skill. Targets with less than 150 hacking skill have a far smaller bonus, and targets with progressively more hacking skill get larger bonuses."
+		strategy_tip_optional="This unit is weaponizing the target's own hacking skill against them. So better hackers take more damage from hack-breakers."
 		icon_name="WEmblem254" icon_color="#D65E34" tooltip_color="ActorStatus_Bad"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ActorFeats_General"
 		sort_order="200" is_high_importance="true"

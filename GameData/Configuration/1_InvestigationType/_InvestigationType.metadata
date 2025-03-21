@@ -113,6 +113,10 @@
 
 	<attribute key="automatically_start_if_city_rank_is_at_least" type="int-textbox" min="0" max="10000" content_width_px="40" is_required="false"
 		tooltip="If set higher than 1, then this investigation will automatically start on new cities that are at least that rank. Cities started in chapter 2, or in a new timeline, are rank 2."/>
+	<attribute key="automatically_start_if_chapter_is_at_least" type="int-textbox" min="0" max="10000" content_width_px="40" is_required="false"
+		tooltip="If set higher than 0, then this investigation will automatically start if it has not already done so."/>
+	<attribute key="automatically_start_if_project_has_ever_started" type="node-dropdown" node_source="MachineProject" content_width_px="200" is_required="false"
+		tooltip="If this is specified, then if this project has ever started, this investigation will start if it has not already." />
 
 	<attribute key="message_on_enemies_spawn" type="node-dropdown" node_source="OtherKeyMessage" content_width_px="200" is_required="false"
 		tooltip="When enemies spawn against this investigation type, what message pops up, if any?" />

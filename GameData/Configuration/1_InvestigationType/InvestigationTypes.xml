@@ -57,14 +57,14 @@
 	<investigation_type id="Ch1FindFactoryWithDailyNecessities" style="FactoryProducingDailyNecessities"
 		territory_control_type="Factory_DailyNecessities"
 		cull_initial_building_set_to_between_min="60" cull_initial_building_set_to_between_max="70"
-		automatically_start_if_city_rank_is_at_least="2">
+		automatically_start_if_city_rank_is_at_least="2" automatically_start_if_chapter_is_at_least="2" automatically_start_if_project_has_ever_started="Ch1_ImprovedApartments">
 		<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="DailyNecessitiesFactory" building_seed_fallback_tag="DailyNecessitiesFactoryFallback" />
 	</investigation_type>
 	
 	<investigation_type id="Ch1FindWarehouseWithFurniture" style="WarehouseWithFurniture"
 		territory_control_type="Warehouse_Furniture"
 		cull_initial_building_set_to_between_min="7" cull_initial_building_set_to_between_max="10"
-		automatically_start_if_city_rank_is_at_least="2">
+		automatically_start_if_city_rank_is_at_least="2" automatically_start_if_chapter_is_at_least="2" automatically_start_if_project_has_ever_started="Ch1_ImprovedApartments">
 		<seed_at max_security_clearance_of_seed_spot="0" building_seed_tag="WarehouseWithFurniturePossible" />
 	</investigation_type>
 	
