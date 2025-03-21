@@ -143,6 +143,8 @@ namespace Arcen.HotM.FFU.RoSAI {
                         int buildingStorage = 0;
                         int buildingFloorArea = 0;
                         int totalEvictionCost = 0;
+                        float buildingSizeMult = 0;
+                        float buildingPopMult = 0;
                         if (!buildingIsInvalid) {
                             peopleResidents = buildingUnderCursor.GetTotalResidentCount();
                             peopleWorkers = buildingUnderCursor.GetTotalWorkerCount();
@@ -151,10 +153,14 @@ namespace Arcen.HotM.FFU.RoSAI {
                             buildingVolume = buildingPrefab.NormalTotalBuildingVolumeFullDimensions;
                             buildingStorage = buildingPrefab.NormalTotalStorageVolumeFullDimensions;
                             buildingFloorArea = buildingPrefab.NormalTotalBuildingFloorAreaFullDimensions;
-                            totalEvictionCost = (int)(costMult * (baseCost + peopleTotal +
-                            buildingVolume * ModRefs.EVICT_VOLUME_MULT +
-                            buildingStorage * ModRefs.EVICT_STORAGE_MULT +
-                            buildingFloorArea * ModRefs.EVICT_AREA_MULT));
+                            buildingSizeMult = Mathf.Max(1f, Mathf.Sqrt(buildingVolume / ModRefs.EVICT_SIZE_DIV));
+                            buildingPopMult = Mathf.Max(1f, Mathf.Sqrt(peopleTotal / ModRefs.EVICT_POP_DIV));
+                            totalEvictionCost = (int)(costMult * (baseCost +
+                            peopleResidents * ModRefs.EVICT_TENANT_COST * buildingPopMult +
+                            peopleWorkers * ModRefs.EVICT_WORKER_COST * buildingPopMult +
+                            buildingVolume * ModRefs.EVICT_VOLUME_MULT * buildingSizeMult +
+                            buildingStorage * ModRefs.EVICT_STORAGE_MULT * buildingSizeMult +
+                            buildingFloorArea * ModRefs.EVICT_AREA_MULT * buildingSizeMult));
                         }
 
                         debugStage = 6200;

@@ -68,17 +68,10 @@ namespace Arcen.HotM.FFU.RoSAI {
         public const string MOD_NAME = "Fight For Universe: Rise of Super AI";
         public const string MOD_LOG = "[FFU:RoSAI]";
 
-        public const float LEGAL_MILITARY = 25f;
-        public const float LEGAL_SECURITY = 17.5f;
-        public const float LEGAL_SYNDICATE = 5f;
-        public const float LEGAL_HACKERS = 10f;
-        public const float LEGAL_CULT = 7.5f;
-        public const float LEGAL_GANGS = 2.5f;
-        public const float LEGAL_MARKET = 3.5f;
-        public const float LEGAL_VERMIN = 0.75f;
-        public const float LEGAL_BACTERIA = 0.25f;
-        public const float LEGAL_DEFAULT = 1f;
-
+        public const float EVICT_POP_DIV = 2500f;
+        public const float EVICT_SIZE_DIV = 75000f;
+        public const float EVICT_TENANT_COST = 15f;
+        public const float EVICT_WORKER_COST = 5f;
         public const float EVICT_VOLUME_MULT = 0.05f;
         public const float EVICT_STORAGE_MULT = 0.1f;
         public const float EVICT_AREA_MULT = 0.25f;
