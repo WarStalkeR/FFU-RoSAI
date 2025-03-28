@@ -12,6 +12,9 @@
 		<int_upgrade upgrade="FasterOxdroids" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
 		<int_upgrade upgrade="PortdroidCognition" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
 		<int_upgrade upgrade="CombatAndroidIntimidation" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
+		<int_upgrade upgrade="HardenedInfildroids" min_class="2" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
+		<int_upgrade upgrade="SouldroidHackingSkill" min_class="2" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
+		<int_upgrade upgrade="FasterSouldroids" min_class="2" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
 	</upgrade_reward_group>
 
 	<!--EarlyMissionRewards
@@ -119,10 +122,16 @@
 		**************************************************************-->
 	<upgrade_reward_group id="MartialExpansion">
 		<int_upgrade upgrade="AndroidDropShuttle" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
-		<int_upgrade upgrade="Neuroweaver" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
 		<int_upgrade upgrade="AvionicsCore" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
+		<int_upgrade upgrade="Neuroweaver" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
 		<int_upgrade upgrade="MaxAndroidCapacity" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
+		<int_upgrade upgrade="MaxVehicleCapacity" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
+		<int_upgrade upgrade="MaxMechCapacity" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
 		<float_upgrade upgrade="BetterRepairSpiders" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
+		<int_upgrade upgrade="18cmSpiders" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
+		<int_upgrade upgrade="SmallMechPower" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
+		<int_upgrade upgrade="SmallMechArmorPiercing" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
+		<int_upgrade upgrade="SmallMechArmorPlating" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
 	</upgrade_reward_group>
 	
 	<!--ItemDevelopment
@@ -138,6 +147,7 @@
 		**************************************************************-->
 	<upgrade_reward_group id="VehicularDevelopment">
 		<int_upgrade upgrade="MaxVehicleCapacity" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
+		<int_upgrade upgrade="AvionicsCore" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
 		<int_upgrade upgrade="SupportVehicleDroneQuality" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
 		<int_upgrade upgrade="CombatVehicleDroneQuality" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
 		<int_upgrade upgrade="SupportVehicleHullStrength" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
@@ -146,6 +156,9 @@
 		<int_upgrade upgrade="SupportVehicleArmorPlating" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
 		<int_upgrade upgrade="CombatVehicleArmorPlating" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
 		<int_upgrade upgrade="CarrierArmorPlating" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
+		<int_upgrade upgrade="CombatVehiclePower" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="1" f_skip_2="0" />
+		<int_upgrade upgrade="SupportVehiclePower" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
+		<int_upgrade upgrade="SupportVehicleEngineering" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
 	</upgrade_reward_group>
 	
 	<!--ProcurementEfficacy
@@ -157,8 +170,12 @@
 		<float_upgrade upgrade="BetterBiomulchers" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
 		<float_upgrade upgrade="BetterWindTurbines" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
 		<float_upgrade upgrade="BetterMicrobuilderMiniFabs" min_class="1" max_from_here="99" f_skip_0="0" f_skip_1="2" f_skip_2="0" />
+		<float_upgrade upgrade="BetterMineralScroungers" min_class="2" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
+		<float_upgrade upgrade="BetterMiningSkimmers" min_class="2" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
+		<float_upgrade upgrade="BetterGeothermalWells" min_class="2" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" />
+		<float_upgrade upgrade="BetterMeats" min_class="2" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" internal_notes="Kept back to IC2 to not cloud the early game." />
+		<float_upgrade upgrade="BetterVeggies" min_class="2" max_from_here="99" f_skip_0="0" f_skip_1="0" f_skip_2="0" internal_notes="Kept back to IC2 to not cloud the early game." />
 	</upgrade_reward_group>
-
 
 	<!--ComputingOptimization
 		**************************************************************-->

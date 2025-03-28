@@ -54,8 +54,10 @@
 
 	<attribute key="cost_type_to_corrupt" type="node-dropdown" is_required="false" node_source="ResourceType" content_width_px="300" linebreak_after="PreferNot"
 		tooltip="If this costs some resource to corrupt it, what is that resource?" />
-	<attribute key="cost_amount_to_corrupt" type="int-textbox" is_required="false" min="0" max="99" default="0" content_width_px="80"
-		tooltip="If this costs some resource to corrupt it, how much is required?" />
+	<attribute key="cost_amount_to_corrupt_discounted" type="int-textbox" is_required="false" min="0" max="99" default="0" content_width_px="80"
+		tooltip="If this costs some resource to corrupt it, how much is required? This is for the hacking mini game." />
+	<attribute key="cost_amount_to_corrupt_quick_hack" type="int-textbox" is_required="false" min="0" max="99" default="0" content_width_px="80"
+		tooltip="If this costs some resource to corrupt it, how much is required? This is the base cost for quick-hacking, in a best-case scenario." />
 	
 	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
 		tooltip="This specifies the dll that the daemon logic is in."/>

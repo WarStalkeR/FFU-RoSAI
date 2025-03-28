@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="vr_mode_category">
+
+	<attribute key="short_name" type="string" maxlength="20" content_width_px="200" is_required="true" is_localized="true"
+		tooltip="This is the name that is used on the button, which is very short. An abbreviation is fine, players can hover to see the full thing."/>
+	
+	<attribute key="description" type="existing-override" is_required="true" />
+	<attribute key="strategy_tip" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="true" is_description="true" can_localization_merge="true"
+		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
+		tooltip="This is the player-visible description of how to use this information."/>
+
+	<attribute key="is_disabled_until_unlocked" type="node-dropdown" is_required="false" node_source="Unlock" content_width_px="300" linebreak_after="PreferNot"
+		tooltip="If specified, this category will be visible but disabled until the unlock in question is done." />
+	
+	<attribute key="icon_name" type="string" maxlength="200" content_width_px="200" is_required="true"
+		tooltip="Which icon to use."/>
+
+	<attribute key="is_adventure_for_a_future_build" type="bool" default="false"
+		tooltip="If this is true, then this cannot be done yet."/>
+
+</root>

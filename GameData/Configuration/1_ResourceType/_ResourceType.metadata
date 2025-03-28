@@ -58,6 +58,8 @@
 
 	<attribute key="complain_about_storage_even_in_post_final_doom" type="bool" default="false"
 		tooltip="If this is true, keep complaining about lack of storage even in after the final doom. Heavy metals!!" />
+	<attribute key="do_not_complain_about_ledger_values_being_low" type="bool" default="false"
+		tooltip="If this is true, then don't show a ledger warning when this is going to be exhausted. Whatever this is, it's not meant to be a forever-process." />
 
 	<attribute key="skips_click_to_open_header_text" type="bool" default="false"
 		tooltip="If this is true, then the extra info about the click to open inventory will not be shown, to keep the tooltip less cluttered." />

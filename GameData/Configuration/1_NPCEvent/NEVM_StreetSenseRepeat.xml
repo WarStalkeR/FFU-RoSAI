@@ -488,6 +488,19 @@
 			</possible_result>
 		</choice>
 
+		<choice id="SellAllYourHumanBiodata" display_name="Sell All Your Human Biodata"
+			description="The criminal syndicate is happy to buy stolen citizen data. Who knows what they'll do with it, but probably some kind of fraud."
+			strategy_tip="Eh. It pays well."
+			action_visibility_style="IsMoveAndInteractWithNPC">
+			<resource_cost resource_type="HumanBiodata" cost="1"/>
+			<possible_result id="1" unskilled_weight="100" vfx_and_sound="BribeSuccessful" keep_open_and_pop_up_result_message="true">
+				<resource_change_range resource_type="Wealth" min="1" max="1" />
+				<city_statistic_change statistic="EarningsFromTheUltraWealthy" value="1"/>
+				<city_statistic_change statistic="UnitsSoldToTheUltraWealthy" value="1"/>
+				<city_statistic_change statistic="HumanBiodataSoldToCriminals" value="1"/>
+			</possible_result>
+		</choice>
+
 	</city_event>
 
 	<!--Selling To The Religious Co-Op

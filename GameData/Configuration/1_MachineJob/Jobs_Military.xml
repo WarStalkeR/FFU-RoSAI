@@ -155,5 +155,21 @@
 		<part_of collection="Self" sort_index="100" />
 	</job>
 
-
+	<job id="TungstenMethylator" display_name="Tungsten Methylator" marker_color="DeepBlue" ui_color="#fefefe"
+		description="Creates Prismatic Tungsten if you happen to have any Tungsten Scraps, but won't complain if you're out."
+		strategy_tip_optional="" do_not_complain_about_low_inputs="true" is_suggested_to_always_build_at_least="1"
+		icon_name="AN_Hexagonal1" turns_to_install="3" required_structure_type="MachineCabinet" job_work_order_priority="4000"
+		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsRoutineFlow"
+		job_classes="Factory" internal_robotics_type_needed="Assembler" internal_robots_count_needed="6" turns_stunned_when_subnet_attacked="4"
+		related_resource_1="TungstenScraps" related_resource_2="PrismaticTungsten" related_resource_3="" scrap_if_above_internal_robotics_cap="true"
+		shuts_off_at_percentage_electricity="99" portrait_icon_name="BuildingFood">
+		<initial_actor_rating data_type="RequiredElectricity" value="4616" />
+		<math_int id="TungstenScraps" int_min="60" income_or_expense_resource="TungstenScraps" math_type="InputCost" />
+		<math_int id="PrismaticTungsten" int_min="480" income_or_expense_resource="PrismaticTungsten" math_type="OutputResult" />
+		<resource_cost resource_type="Microbuilders" cost="1200" />
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Chain" sort_index="100" />
+	</job>
+	
 </root>

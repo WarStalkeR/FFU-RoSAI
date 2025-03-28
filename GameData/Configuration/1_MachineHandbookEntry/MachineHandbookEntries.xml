@@ -80,9 +80,10 @@ If you run out of side content, don't forget to go back to the key path. The upp
 	<!--BulkAndroids-->
 	<handbook_entry id="BulkAndroids" display_name="Bulk Androids" section="Strategy"
 		description="You can't be everywhere at once. More importantly, you don't want to be.
-Up until now, your focus has been your elite-operative androids. They are part of your consciousness. Now you have the option to start adding in bulk minions that act on their own."
-		strategy_tip="Not every one of the android classes can be used in a bulk format -- some are just too specialized to be run on autopilot.
-You can have more of these, and they don't cost any mental energy to run. They may lack the abilities and finesse of your elite units, but they make up for it with numbers."
+Up until now, your focus has been your elite-operative androids. They are part of your consciousness. Now you can add in bulk minions that act on their own."
+		strategy_tip="Not all android classes can be used in a bulk format -- some are just too specialized.
+You can have more bulks than elites, and they don't cost any mental energy when they make their attacks per turn. They DO cost mental energy to deploy or reposition, however.
+They may lack the abilities and finesse of your elite units, but they make up for it with numbers. They tend to be best as an occupying force that protects an area."
 		auto_unlocks_and_marked_read_if_skipping_chapter_one="true"
 		collections="All,Strategy"/>
 
@@ -601,6 +602,25 @@ Or, in other cases, just endlessly show up until you kill them all."
 		strategy_tip="In any fight, how units will behave is evident from their tooltips. You can also see if you can Force Conversation with them from here.
 Humans who have an objective that will further the progress of their mission should be priority targets."
 		auto_unlocks_and_marked_read_if_skipping_chapter_zero="true"
+		collections="All,Tactics"/>
+
+	<!--AttackingFromVehicles-->
+	<handbook_entry id="AttackingFromVehicles" display_name="Attacking From Vehicles" section="Tactics" is_mid_visibility_entry="true"
+		description="When your units are riding in a vehicle, they can still attack. This is essentially pulling up an aircraft to a battle, and having androids or mechs fire out of the open doors."
+		strategy_tip="While this tactic is highly mobile and can save you some mental energy on the turn that you launch the attack, it has some downsides. If enemies shoot the vehicle down, all of your forces on board will perish."
+		collections="All,Tactics,Combat"/>
+
+	<!--Counterattacks-->
+	<handbook_entry id="Counterattacks" display_name="Counterattacks Against You" section="Tactics"
+		description="Some buildings that you construct, like the Mining Skimmers in particular, cause a counter-attack when their construction is finished. Even if you have enough deterrence in the area to prevent normal and ongoing harassment, the counterattacks cannot be prevented."
+		strategy_tip="Counterattacks are not localized to your specific offending building, either. Enemies may come at any of your buildings or forces from any direction. It's good to have some snipers as well as some mid-tier high-mobility ready to take care of the aggressors."
+		collections="All,Tactics,Combat"/>
+
+	<!--Infiltrations-->
+	<handbook_entry id="Infiltrations" display_name="Infiltrations" section="Tactics"
+		description="When you do an infiltration into a building, you should send an agile unit. It will sneak through the building, avoiding enemies inside the building.
+Enemy hackers will spawn outside the building, and search for your hacker. They will do damage to your hacker every turn equal to their hacking skill minus the agility of your infiltrator. This represents how close your infiltrator is to being found and killed."
+		strategy_tip="If the enemy hackers are attacked or killed by your units while searching for your infiltrator, they'll deal that damage to your infiltrator each time. If you cut them off from the network by counter-hacking them, or if you use weapons with Silence on them against the hackers, then you can prevent them from harming your infiltrator."
 		collections="All,Tactics"/>
 
 	<!--Research

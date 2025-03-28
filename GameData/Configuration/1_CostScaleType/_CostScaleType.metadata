@@ -9,29 +9,28 @@
 	
 	<attribute key="min_level" type="int-textbox" min="0" max="999999" default="1" content_width_px="150" is_required="false"
 		tooltip="What is the lowest level for unlocking whatever this is?"/>
-
 	<attribute key="max_level" type="int-textbox" min="0" max="999999" default="20" content_width_px="150" is_required="false"
 		tooltip="What is the highest level for unlocking whatever this is?"/>
 
 	<attribute key="multiplier_of_prior_level" type="float-textbox" min="1" max="10" default="1.2" content_width_px="150" is_required="true"
 		tooltip="What base multiplier is applied to whatever the prior cost was, for each level?"/>
+
+	<attribute key="divide_by" type="int-textbox" min="0" max="10000" default="0" content_width_px="200" is_required="false"
+		tooltip="If before any number is locked in, it should be divided by something, what is that something? Must be above 0."/>
+	<attribute key="multiply_by" type="int-textbox" min="0" max="10000" default="0" content_width_px="200" is_required="false"
+		tooltip="If before any number is locked in, it should be multiplied by something, what is that something? Must be above 0."/>
 	
 	<!--Now for the adjusted_per_level_starting_at sub node-->
-
 	<sub_node id="adjusted_per_level_starting_at">
-
 		<attribute key="starting_level" type="int-textbox" min="0" max="1000000" default="100" content_width_px="150" is_required="true"
 			tooltip="At what level does this cost start arriving?"/>
-
-		<attribute key="added_per_level" type="float-textbox" min="-1000000" max="1000000" default="100" content_width_px="150" is_required="true"
+		
+		<attribute key="adjusted_per_level" type="float-textbox" min="-1000000" max="1000000" default="100" content_width_px="150" is_required="true"
 			tooltip="What multiplier is applied to the level and then added or remove to/from the previous cost?"/>
-
 	</sub_node>
 
 	<!--Now for the adjusted_multiplier_to_prior_starting_at sub node-->
-
 	<sub_node id="adjusted_multiplier_to_prior_starting_at">
-
 		<attribute key="starting_level" type="int-textbox" min="0" max="1000000" default="100" content_width_px="150" is_required="true"
 			tooltip="At what level does this addition to the basic multiplier start arriving?"/>
 
@@ -39,7 +38,6 @@
 			tooltip="If the basic multiplier was 1.2, and you add 0.1 here, then the new multiplier above this level is 1.3. If we subtract 0.1, it's now 1.1.
 			
 If you have multiple of these defined at different levels, then you can create soft caps, or curves that start more harshly and then soften out."/>
-
 	</sub_node>
 	
 </root>

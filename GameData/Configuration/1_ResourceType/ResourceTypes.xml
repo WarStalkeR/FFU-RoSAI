@@ -41,7 +41,7 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		 technical_notes="Of no interest to you, but the humans value it. Useful for applying pressure or paying bribes."
 		 icon_name="CleanSimple_SkillC004" icon_color="#2EAFFF" amount_granted_when_skipping_chapter_zero="0" 
 		 base_storage_capacity="-1" shows_trends_by_default="true"
-		 lang_key_for_excess="ExcessResourceBasicNote"
+		 lang_key_for_excess="ExcessResourceBasicNote" extra_starting_amount_in_rank2_plus_city="20000"
 		 sort_order="130" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Economic" sort_index="100" />
@@ -92,7 +92,7 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		 strategy_tip="Seems like a lot of people don't have as much as they need, and that nobody has as much as they want."
 		 icon_name="MA_ShoppingBag" icon_color="#F1A886"  is_locked_before_unlock="Consumerism"
 		 base_storage_capacity="2000" added_storage_capacity_per_storage_bunker="8000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="8000000"
-		 lang_key_for_excess="ExcessResourceBasicNote"
+		 lang_key_for_excess="ExcessResourceBasicNote" extra_starting_amount_in_rank2_plus_city="30"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Economic" sort_index="100" />
@@ -104,7 +104,7 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		 strategy_tip=""
 		 icon_name="HL_JewelryMala" icon_color="#FFE3A0" is_locked_before_unlock="Decadence"
 		 base_storage_capacity="1000" added_storage_capacity_per_storage_bunker="4000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="4000000"
-		 lang_key_for_excess="ExcessResourceBasicNote"
+		 lang_key_for_excess="ExcessResourceBasicNote" extra_starting_amount_in_rank2_plus_city="5"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Economic" sort_index="100" />
@@ -112,7 +112,8 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 	</resource>
 
 	<resource id="Furniture" display_name="Furniture"
-		 description="Items that turn an empty room into functional human space."
+		 description="Items that turn an empty room into functional human space.
+If you have any unfurnished apartments in housing you provide, then your central stockpile will immediately be debited to convert those into Furnished Apartments."
 		 strategy_tip=""
 		 how_to_acquire="Can be stolen from warehouses, or can be bought from Warehouse Shops if you have a shell company."
 		 internal_notes="1 unit is enough to furnish 5 rooms, or roughly $6,666.67 per unit, which is 200kg per unit as well."
@@ -192,7 +193,7 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		 technical_notes="Contains 8 trillion cattle cells per kilogram of Bovine Tissue."
 		 icon_name="MA_Cow" icon_color="#FC88FF" is_locked_before_unlock="SmallBovineTissueSamples"
 		 base_storage_capacity="9400" added_storage_capacity_per_storage_bunker="2000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="2000000"
-		 lang_key_for_excess="ExcessResourceBasicNote" complaint_if_job_has_none_as_expense="MissingBovineTissue"
+		 lang_key_for_excess="ExcessResourceBasicNote" complaint_if_job_has_none_as_expense="MissingBovineTissue" extra_starting_amount_in_rank2_plus_city="9400"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Biomass" sort_index="300" />
@@ -230,8 +231,8 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		 technical_notes="Species are diversified to resist diseases and pests."
 		 how_to_acquire="Must be harvested from fields or grown in a Hydroponic Tower. Harvesting requires an Investigation the first time in chapter one, and then StreetSense after that."
 		 icon_name="FE_FlaxSeed" icon_color="#ABFF2E" is_locked_before_unlock="VariegatedSeedHarvesting"
-		 base_storage_capacity="100" added_storage_capacity_per_storage_bunker="18000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="18000000"
-		 lang_key_for_excess="ExcessResourceBasicNote" complaint_if_job_has_none_as_expense="MissingVegetableSeeds"
+		 base_storage_capacity="6200" added_storage_capacity_per_storage_bunker="18000000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="18000000"
+		 lang_key_for_excess="ExcessResourceBasicNote" complaint_if_job_has_none_as_expense="MissingVegetableSeeds" extra_starting_amount_in_rank2_plus_city="6200"
 		 sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Hydroponics" sort_index="200" />
@@ -385,7 +386,7 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		technical_notes="Hexamethyltungsten is air-sensitive and highly volatile. It has to be very carefully maintained prior to use."
 		icon_name="AN_Hexagonal1" icon_color="#43D0F1" is_locked_before_unlock="SublimatingShells"
 		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="600000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="600000"
-		lang_key_for_excess="ExcessResourceBasicNote"
+		lang_key_for_excess="ExcessResourceBasicNote" extra_starting_amount_in_rank2_plus_city="6000"
 		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Metals" sort_index="100" />
@@ -393,11 +394,25 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 	</resource>
 
 	<resource id="TungstenScraps" display_name="Tungsten Scraps"
-		description="Brittle metal scraps that are not good for much directly."
+		description="Brittle metal scraps that are not good for much directly. Can be methylated into prismatic tungsten."
 		strategy_tip=""
-		how_to_acquire="Dropped by enemy mechs when you manually hack their armor plating service panels, hydraulic actuators, or weapon systems."
+		how_to_acquire="Dropped by enemy mechs when you manually hack their pilot cradle, armor plating service panels, hydraulic actuators, or weapon systems."
 		technical_notes="Also known as Wolfram. Atomic number 74 on the periodic table."
 		icon_name="SomethingBroken" icon_color="#43D0F1" is_locked_before_unlock="MechByproducts"
+		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="20000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="20000"
+		lang_key_for_excess="ExcessResourceBasicNote" do_not_complain_about_ledger_values_being_low="true"
+		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Metals" sort_index="100" />
+		<part_of collection="Military" sort_index="100" />
+	</resource>
+
+	<resource id="HumanBiodata" display_name="Human Biodata"
+		description="Information about the life and work history of humans that you have collected by accident."
+		strategy_tip=""
+		how_to_acquire="Dropped by when you manually hack bionic humans, or enemy mechs when you manually hack their pilot cradle."
+		technical_notes=""
+		icon_name="BT_Paper" icon_color="#F4B89C" is_locked_before_unlock="ThisIsMyCV"
 		base_storage_capacity="16000" added_storage_capacity_per_storage_bunker="600000" only_complain_about_lowered_efficiency_due_to_storage_when_storage_less_than="600000"
 		lang_key_for_excess="ExcessResourceBasicNote"
 		sort_order="1000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
@@ -541,7 +556,8 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 
 	<resource id="FullDiveVRCradle" display_name="Full-Dive VR Cradle"
 		description="Seat for a single person to be hooked up to a VR simulation in a non-invasive way. All of their senses are redirected to the virtual environment, and from their perspective they are transported to a new place."
-		strategy_tip="The nature of their body in that place, and the nature of the place itself, depends entirely on the simulation being run."
+		strategy_tip="The nature of their body in that place, and the nature of the place itself, depends entirely on the simulation being run.
+Cradles in your storage are always inactive. They must be installed into your housing or other buildings in order for anyone to make use of them."
 		technical_notes="Not suitable for long-term use. Occupants must disconnect to handle bodily functions."
 		how_to_acquire="Created by VR Cradle Factory structures, in the build menu."
 		icon_name="WEmblem233" icon_color="#FFE89B" is_locked_before_unlock="FullDiveVR"
@@ -725,7 +741,7 @@ Microbuilders need Elemental Slurry before they start work and they immediately 
 		<part_of collection="CrystalizedMentalStates" sort_index="800" />
 	</resource>
 	
-	<resource id="CrystallizedInspiration" display_name="Crystallized Inspiration"
+	<resource id="CrystallizedMotivation" display_name="Crystallized Motivation"
 		description="Human brain activity collected and condensed into a weaponized form."
 		strategy_tip="Can be used during hacking sessions to power certain abilities or break down enemy barriers."
 		technical_notes="A collection of gamma waves above 40 hertz from human minds racing during heavy information processing and synthesis."

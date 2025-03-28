@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!--GenerateInspiration
+		*************************************************************************************-->
+
+	<vr_mode_action id="SmallArmsResearch" display_name="Small Arms Research"
+		description="Armor and weapons for androids."
+		strategy_tip="This is a very large group of upgrades, so it can be tricky to get exactly what you want."
+		icon_name="WEmblem108" ui_color="#fefefe" vr_mode_category="GenerateInspiration"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VRActionsBasic"
+		on_use="BulkUnitStanceChange" related_cost_scale_1="Sci_SmallArms">
+	</vr_mode_action>
+
+	<vr_mode_action id="MartialExpansion" display_name="Martial Expansion"
+		description="Growth to how many units you can deploy, how well they can be repaired, and general prowess for mechs in particular."
+		strategy_tip=""
+		icon_name="SomethingRank3" ui_color="#fefefe" vr_mode_category="GenerateInspiration"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VRActionsBasic"
+		on_use="BulkUnitStanceChange" related_cost_scale_1="Sci_Martial">
+	</vr_mode_action>
+	
+	<vr_mode_action id="GunResearch" display_name="Gun Research"
+		description="Broad improvements to guns used by androids."
+		strategy_tip=""
+		icon_name="SK_Rifle" ui_color="#fefefe" vr_mode_category="GenerateInspiration"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VRActionsBasic"
+		on_use="BulkUnitStanceChange" related_cost_scale_1="Sci_Gun">
+	</vr_mode_action>
+
+	<vr_mode_action id="MeleeResearch" display_name="Melee Research"
+		description="Broad improvements to melee weapons used by androids."
+		strategy_tip=""
+		icon_name="SI_Sword" ui_color="#fefefe" vr_mode_category="GenerateInspiration"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VRActionsBasic"
+		on_use="BulkUnitStanceChange" related_cost_scale_1="Sci_Melee">
+	</vr_mode_action>
+	
+	<vr_mode_action id="AndroidOptimization" display_name="Android Optimization"
+		description="Direct improvements to entire android classes (Dynadroids, Oxdroids, Portdroids, etc)."
+		strategy_tip=""
+		icon_name="WEmblem163" ui_color="#fefefe" vr_mode_category="GenerateInspiration"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VRActionsBasic"
+		on_use="BulkUnitStanceChange" related_cost_scale_1="Sci_AndroidOpt">
+	</vr_mode_action>
+
+	<vr_mode_action id="VehicularDevelopment" display_name="Vehicular Development"
+		description="Broad improvements to how many vehicles you can field, and to the general quality of broad groups of vehicles, such as Combat or Support vehicles."
+		strategy_tip=""
+		icon_name="SF2_Airplane" ui_color="#fefefe" vr_mode_category="GenerateInspiration"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VRActionsBasic"
+		on_use="BulkUnitStanceChange" related_cost_scale_1="Sci_VehicularDev">
+	</vr_mode_action>
+
+	<vr_mode_action id="ItemDevelopment" display_name="Item Development"
+		description="Improvements to the effectiveness of various consumable items."
+		strategy_tip=""
+		icon_name="HM_LegalFileFolders" ui_color="#fefefe" vr_mode_category="GenerateInspiration"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VRActionsBasic"
+		on_use="BulkUnitStanceChange" related_cost_scale_1="Sci_ItemDev">
+	</vr_mode_action>
+
+	<vr_mode_action id="StructuralImprovement" display_name="Structural Improvement"
+		description="Increased numbers of Internal Robotics for various kinds of buildings."
+		strategy_tip="This is a very large group of upgrades, so it can be tricky to get exactly what you want."
+		icon_name="HO_HouseSkyscraper3" ui_color="#fefefe" vr_mode_category="GenerateInspiration"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VRActionsBasic"
+		on_use="BulkUnitStanceChange" related_cost_scale_1="Sci_StructImp">
+	</vr_mode_action>
+
+	<vr_mode_action id="ProcurementEfficacy" display_name="Procurement Efficacy"
+		description="Improved effectiveness of resource-procurement structures."
+		strategy_tip=""
+		icon_name="Pw_FastPower" ui_color="#fefefe" vr_mode_category="GenerateInspiration"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VRActionsBasic"
+		on_use="BulkUnitStanceChange" related_cost_scale_1="Sci_ProcureEff">
+	</vr_mode_action>
+
+	<vr_mode_action id="ComputingOptimization" display_name="Computing Optimization"
+		description="Added capabilities for both generating Compute Time, and consuming it."
+		strategy_tip=""
+		icon_name="SF2_Integratedcircuit" ui_color="#fefefe" vr_mode_category="GenerateInspiration"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.VRActionsBasic"
+		on_use="BulkUnitStanceChange" related_cost_scale_1="Sci_ComputeOpt">
+	</vr_mode_action>
+
+</root>

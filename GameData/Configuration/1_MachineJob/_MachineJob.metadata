@@ -200,7 +200,9 @@ Resources where caps are increased already do this, so no need to duplicate thos
 		tooltip="If true, then this structure will get an initial wave against it even if there is enough deterrence."/>
 	<attribute key="is_related_to_shell_company" type="bool" default="false"
 		tooltip="If true, then this structure is related to your shell company, not to you."/>
-
+	<attribute key="do_not_complain_about_low_inputs" type="bool" default="false"
+		tooltip="If true, low inputs won't cause this to show on the TPS Report."/>
+	
 	<attribute key="strategy_tip_optional" type="string-multiline" maxlength="500" show_lines="3" is_required="false" is_localized="true" is_description="false" can_localization_merge="true"
 		content_width_px="600" linebreak_before="Always" linebreak_after="Always"
 		tooltip="This is the player-visible description of what is going on with this job."/>

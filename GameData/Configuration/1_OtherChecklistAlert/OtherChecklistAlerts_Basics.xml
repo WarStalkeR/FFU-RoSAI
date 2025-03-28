@@ -42,17 +42,32 @@ These flags also deactivate if too many of your defenders are destroyed."
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
 
 	<!--VulnerableStructures-->
-	<other_alert id="VulnerableStructures" display_name="Vulnerable Structures: {1}" very_short_text="Vulnerable Structures"
+	<other_alert id="VulnerableStructures" display_name="Vulnerable Structures: {0}" very_short_text="Vulnerable Structures"
 		description="Certain structures are vulnerable to enemy attack if they do not have enough Deterrence in place."
 		strategy_tip="For your shell company, Protection is the equivalent of Deterrence."
 		icon_name="WEmblem217" alert_color_style="MidWarning"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
 
+	<!--CounterattacksIncoming-->
+	<other_alert id="CounterattacksIncoming" display_name="Counterattacks Incoming: {0}" very_short_text="Counterattacks Incoming"
+		description="Certain structures cause a counterattack to trigger when you finish building them. No amount of Deterrence or Protection can stop it from happening, but it will only happen as a singular event when the building is constructed."
+		strategy_tip="Counterattacks can hit you anywhere and from any angle, so having snipers ready to go alongside mid-strength high-mobility defenders is a good idea."
+		icon_name="FlatSkull_7" alert_color_style="MidWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+	
 	<!--InvestigationProgress-->
 	<other_alert id="InvestigationProgress" display_name="Investigation Turns Remaining: {1}" very_short_text="Investigation Progress"
-		description="You must keep your investigator or infiltrator alive until this turn counter reaches zero."
+		description="You must keep your investigator alive until this turn counter reaches zero."
 		strategy_tip=""
 		icon_name="FlatSkillB_magnifier" alert_color_style="MidWarning"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
+
+	<!--InfiltrationProgress-->
+	<other_alert id="InfiltrationProgress" display_name="Infiltration Turns Remaining: {1}" very_short_text="Infiltration Progress"
+		description="You must keep your infiltrator from being discovered until this turn counter reaches zero."
+		strategy_tip="The higher the agility of your infiltrator, the more it can avoid enemies. Mindrunners can SysOp for your infiltrators to help with this.
+Beyond that, the threat to your infiltrator is the hackers who are searching from them. If you can Silence them or take them out by hacking the hackers, then your infiltrator will be safe. Emotionally-overloading hackers tends to be a better strategy than killing them outright."
+		icon_name="FlatSkillC140" alert_color_style="MidWarning"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
 	
 	<!--InvestigationAvailable-->
@@ -66,7 +81,7 @@ These flags also deactivate if too many of your defenders are destroyed."
 	<other_alert id="UnitsWithEmptyEquipmentSlots" display_name="Units Classes With Empty Equipment Slots: {0}" very_short_text="Missing Equipment"
 		description="At least one of your unit classes has an empty equipment slot. Total Empty Slots: {1}"
 		strategy_tip="The bulk of a unit's power comes from their equipment."
-		icon_name="CS_Armor10" alert_color_style="Low"
+		icon_name="FlatSkillB_gear" alert_color_style="Low"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.OtherAlerts_Basic" />
 
 	<!--UnitsWithoutResourcesToAttack-->

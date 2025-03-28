@@ -119,4 +119,15 @@ Unless otherwise specified, actions cost exactly 1 AP and 1 Mental Energy."
 		<part_of collection="Personality" sort_index="900" />
 	</resource>
 
+	<resource id="ScientificResearch" display_name="Scientific Research"
+		 description="Can be used to generate inspiration for new upgrades."
+		 strategy_tip="Spent in the virtual reality pod room, under the Inspiration category."
+		 how_to_acquire="Your scientists and engineers all produce a certain amount of research per turn, if they have a proper building in which to work."
+		 icon_name="SF2_Beaker" icon_color="#89DFFC"
+		 base_storage_capacity="-1" is_strategic_resource="true" is_locked_before_unlock="CaveJohnsonsBest"
+		 lang_key_for_excess="ExcessResourceBasicNote" extra_starting_amount_in_rank2_plus_city="0"
+		 sort_order="41000" dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.ResourceTypes_Basic">
+		<part_of collection="All" sort_index="100" />
+	</resource>
+
 </root>

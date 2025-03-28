@@ -103,6 +103,58 @@
 		>
 	</daemon>
 
+	<daemon id="Bomb" display_name="Bomb"
+		description="When you destroy this, it corrupts all other cells in a ring around itself."
+		strategy_tip=""
+		visible_icon_name="SW_DonutChart6" visible_color="#D46844" visible_idle_color="#A09191" visible_scale="1.2"
+		hidden_hdr_intensity="1" visible_hdr_intensity="1" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1" is_hostile_daemon="true"
+		required_danger_level="100" reduces_danger_level_by="20" seed_weight="100" max_to_seed="3"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
+		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownDaemon"
+		>
+		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="1" />
+		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="1" />
+		<included_in tag="CodePriestSpawns_SimpleMech" value="true" />
+		<included_in tag="InitialDaemons_SimpleMech" value="true" />
+	</daemon>
+
+	<daemon id="LesserWanderer" display_name="Lesser Wanderer"
+		description="Unpredictable. Does not chase after your shards, but will pounce on them if in range and active."
+		strategy_tip=""
+		visible_icon_name="SW_AbstractShape1" visible_color="#EFA5CC" visible_idle_color="#B691B3" visible_scale="0.6"
+		hidden_hdr_intensity="1" visible_hdr_intensity="0.8" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1" is_hostile_daemon="true"
+		required_danger_level="100" reduces_danger_level_by="10" seed_weight="100" max_to_seed="3"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
+		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownDaemon"
+		>
+		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="2" />
+		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="3" />
+		<included_in tag="InitialDaemons_SimpleMech" value="true" />
+	</daemon>
+
+	<daemon id="GreaterWanderer" display_name="Greater Wanderer"
+		description="Fast and unpredictable. Does not chase after your shards, but will pounce on them if in range and active."
+		strategy_tip=""
+		visible_icon_name="CleanSimple_SkillB005" visible_color="#EFA5CC" visible_idle_color="#B691B3" visible_scale="0.6"
+		hidden_hdr_intensity="1" visible_hdr_intensity="0.8" visible_idle_hdr_intensity="1"
+		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1" is_hostile_daemon="true"
+		required_danger_level="400" reduces_danger_level_by="20" seed_weight="60" max_to_seed="1"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
+		on_death="Hacking_Corrupt_ShardDeath" can_daemon_be_hunted_by_friendly_daemons="true"
+		lang_key_for_known_entity_type="Hacking_EntityType_SecurityDaemon"
+		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownDaemon"
+		>
+		<math_int id="MoveRange" display_name="Move Range" icon_name="CleanSimple_Skill013" icon_color="#DFC3FF" int_min="5" />
+		<math_int id="MoveFrequency" display_name="Move Frequency" icon_name="CleanSimple_Ranger14" icon_color="#AED5F4" int_min="4" />
+		<included_in tag="InitialDaemons_SimpleMech" value="true" />
+	</daemon>
+	
 	<!-- Positive items -->
 	
 	<daemon id="LeafNode" display_name="Leaf Node"
@@ -146,7 +198,7 @@
 		visible_icon_name="CleanSimple_Controls022" visible_color="#D46844" visible_idle_color="#A09191" visible_scale="1"
 		hidden_hdr_intensity="1" visible_hdr_intensity="1" visible_idle_hdr_intensity="1"
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
-		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="2" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt="1"
+		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="2" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt_discounted="1" cost_amount_to_corrupt_quick_hack="2"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
 		on_death="Hacking_Corrupt_ShardDeath"
 		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface" 
@@ -176,7 +228,7 @@
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
 		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic" will_end_hacking_session_if_corrupted="true"
-		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="ArmorPlatingServicePanelsOpen" cost_type_to_corrupt="Wisdom" cost_amount_to_corrupt="4"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="ArmorPlatingServicePanelsOpen" cost_type_to_corrupt="Wisdom" cost_amount_to_corrupt_discounted="3" cost_amount_to_corrupt_quick_hack="6"
 		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface" 
 		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware" 
 		 >
@@ -205,7 +257,7 @@
 		hidden_hdr_intensity="1" visible_hdr_intensity="2.4" visible_idle_hdr_intensity="1"
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
 		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1"
-		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic" cost_type_to_corrupt="Determination" cost_amount_to_corrupt="20"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic" cost_type_to_corrupt="Determination" cost_amount_to_corrupt_discounted="16" cost_amount_to_corrupt_quick_hack="20"
 		on_death="Hacking_MechConverted" will_end_hacking_session_if_corrupted="true"
 		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
 		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
@@ -222,7 +274,7 @@
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
 		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic" will_end_hacking_session_if_corrupted="true"
-		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="MechHydraulicsDisrupted" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt="2"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="MechHydraulicsDisrupted" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt_discounted="2" cost_amount_to_corrupt_quick_hack="3"
 		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
 		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
 		>
@@ -236,7 +288,7 @@
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
 		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic" will_end_hacking_session_if_corrupted="true"
-		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="WeaponsSystemsDisrupted" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt="6"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="WeaponsSystemsDisrupted" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt_discounted="5" cost_amount_to_corrupt_quick_hack="7"
 		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface" 
 		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware" 
 		>
@@ -250,7 +302,7 @@
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
 		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic"
-		on_death="Hacking_Corrupt_ShardDeath" cost_type_to_corrupt="Determination" cost_amount_to_corrupt="1"
+		on_death="Hacking_Corrupt_ShardDeath" cost_type_to_corrupt="Determination" cost_amount_to_corrupt_discounted="1" cost_amount_to_corrupt_quick_hack="2"
 		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
 		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
 		>
@@ -264,7 +316,7 @@
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
 		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic" will_end_hacking_session_if_corrupted="true"
-		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="EmotionalOverload" cost_type_to_corrupt="Wisdom" cost_amount_to_corrupt="2"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="EmotionalOverload" cost_type_to_corrupt="Wisdom" cost_amount_to_corrupt_discounted="2" cost_amount_to_corrupt_quick_hack="3"
 		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
 		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
 		>
@@ -278,7 +330,7 @@
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
 		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic" will_end_hacking_session_if_corrupted="true"
-		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="Blindness" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt="1"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="Blindness" cost_type_to_corrupt="Creativity" cost_amount_to_corrupt_discounted="1" cost_amount_to_corrupt_quick_hack="2"
 		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
 		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
 		>
@@ -292,7 +344,7 @@
 		hidden_icon_name="SF2_Geometricshape_142" hidden_color="#dddddd" hidden_scale="1"
 		required_danger_level="0" reduces_danger_level_by="0" seed_weight="100" max_to_seed="1" forces_numeric_substrate_to="80"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.DaemonsBasic" will_end_hacking_session_if_corrupted="true"
-		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="DisconnectedFromNetwork" cost_type_to_corrupt="Determination" cost_amount_to_corrupt="2"
+		on_death="Hacking_Corrupt_ShardDeath" status_to_apply_to_target_on_death="DisconnectedFromNetwork" cost_type_to_corrupt="Determination" cost_amount_to_corrupt_discounted="2" cost_amount_to_corrupt_quick_hack="3"
 		lang_key_for_known_entity_type="Hacking_EntityType_HardwareInterface"
 		lang_key_for_hidden_entity_type="Hacking_EntityType_UnknownHardware"
 		>

@@ -116,6 +116,9 @@ This does not help you see the order in which NPCs made decisions, but it lets y
 	<setting id="Debug_DoDumpNPCTargetingAll" category="Debug" subcategory="GameLogging" display_name="Dump NPC Targeting Passes (All)"
 	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Each targeting pass, various information will be logged to the /PlayerData/Dumps/NPCTargeting/ folder, for ever NPC on the entire map." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
 
+	<setting id="Debug_LogCostScaleTypes" category="Debug" subcategory="GameLogging" display_name="Dump Cost Scale Types On Load Or Reload"
+	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="A series of text files will be created in PlayerData/Dumps/CostScaleTypes/ to check your work." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
+
 	<setting id="Debug_LogUpgradeRewardGroupsOnSaveAndLoad" category="Debug" subcategory="GameLogging" display_name="Log Upgrade Reward Groups On Save And Load"
 	   type="BoolToggle" default_bool="false" scope="MainGameOnly" description="Allows for correctness checking. Goes into the main log when turned on." skip_all_localization_on_node="true" should_only_show_in_english_version="true" />
 	

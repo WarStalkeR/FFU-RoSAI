@@ -4,7 +4,7 @@
 	<job id="MineralScrounger" display_name="Mineral Scrounger" marker_color="VolatileRed" ui_color="#fefefe"
 		is_locked_before_unlock="UnpredictableScraps"
 		description="Deploys tiny hovering orbs to collect useful scraps from mining sites. Will randomly collect Alumina, Bastnasite, Scandium, or Neodymium regardless of where it is placed."
-		strategy_tip_optional="If you already have at least 5000 of each, then microbuilders will be constructed instead."
+		strategy_tip_optional="Will not collect more than 5000 of any kind already in storage. If you already have at least 5000 of each, then microbuilders will be constructed instead."
 		icon_name="CleanSimple_Media47" turns_to_install="1" required_structure_type="MachineMiningDigsite" job_work_order_priority="4000"
 		on_installation_start="InstallationStart_SmallStructure" on_installation_complete="InstallationComplete_SmallStructure" actor_data_set="SimpleJobs"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.JobsBasic" is_suggested_to_always_build_maximum_possible="true" portrait_icon_name="BuildingsMining" scrap_if_above_internal_robotics_cap="true"

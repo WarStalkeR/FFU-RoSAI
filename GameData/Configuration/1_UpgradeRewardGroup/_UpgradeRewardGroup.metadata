@@ -20,6 +20,9 @@
 			tooltip="The number of unlocks automatically applied from this if you're skipping chapter one. This is in addition to whatever was gained from the prologue, not in place of it."/>
 		<attribute key="f_skip_2" type="int-textbox" min="0" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
 			tooltip="The number of unlocks automatically applied from this if you're skipping chapter two. This is in addition to whatever was gained from the prologue and chapter one, not in place of it."/>
+
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
 	</sub_node>
 
 	<!--float_upgrade-->
@@ -38,6 +41,9 @@
 			tooltip="The number of unlocks automatically applied from this if you're skipping chapter one. This is in addition to whatever was gained from the prologue, not in place of it."/>
 		<attribute key="f_skip_2" type="int-textbox" min="0" max="99" is_required="true" content_width_px="90" linebreak_before="Always" linebreak_after="PreferNot"
 			tooltip="The number of unlocks automatically applied from this if you're skipping chapter two. This is in addition to whatever was gained from the prologue and chapter one, not in place of it."/>
+
+		<attribute key="internal_notes" type="string-multiline" maxlength="500" show_lines="3" is_required="true" is_localized="false" is_description="true"
+			content_width_px="600" linebreak_before="Always" linebreak_after="Always" tooltip="Optional internal notes if we want to have any. Just for ourselves, not localized."/>
 	</sub_node>
 	
 </root>

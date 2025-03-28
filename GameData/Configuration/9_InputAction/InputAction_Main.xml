@@ -8,7 +8,7 @@
 		category="Common" display_name="Jump To Next Actor Or End Turn"
 		description="If there are any actors on the map that have not acted this turn, jump to the next one. If everyone has acted, then end the turn."
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,MainMenu">
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,MainMenu,ZodiacPods">
 		<keybind id="1" key="Space" />
 		<keybind id="2" key="GamepadButtonSouth" is_steam_deck_default="true" />
 	</input_action>
@@ -17,7 +17,7 @@
 		category="Common" display_name="Go Straight To Next Turn"
 		description="Skip giving any more orders to units and just go straight to the next turn."
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode">
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,ZodiacPods">
 		<keybind id="1" key="Alpha0" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -69,7 +69,7 @@
 		category="Common" display_name="Map Mode"
 		description="Switch between viewing the detailed streets or viewing the map."
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="Tab" />
 		<keybind id="2" key="GamepadSelectButton" is_steam_deck_default="true" />
 	</input_action>
@@ -78,7 +78,7 @@
 		category="Common" display_name="Full-Dive Virtual Reality Mode"
 		description="Switch between viewing your city and the virtual reality environment you are creating."
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="4" key="J" />
 		<keybind id="5" key="" />
 	</input_action>
@@ -87,7 +87,7 @@
 		category="Common" display_name="The End Of Time"
 		description="Switch between your current city and The End Of Time."
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="Comma" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -116,7 +116,7 @@
 	<input_action id="Ability1" scope="MainGameOnly" category="Abilities" display_name="Ability 1"
       description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
 	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="Alpha1" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -124,7 +124,7 @@
 	<input_action id="Ability2" scope="MainGameOnly" category="Abilities" display_name="Ability 2"
       description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
 	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="Alpha2" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -132,7 +132,7 @@
 	<input_action id="Ability3" scope="MainGameOnly" category="Abilities" display_name="Ability 3"
       description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
 	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="Alpha3" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -140,7 +140,7 @@
 	<input_action id="Ability4" scope="MainGameOnly" category="Abilities" display_name="Ability 4" check_type="ButtonPressStarting"
       description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
 	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler"
-      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="Alpha4" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -148,7 +148,7 @@
 	<input_action id="Ability5" scope="MainGameOnly" category="Abilities" display_name="Ability 5"
       description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
 	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="Alpha5" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -156,7 +156,7 @@
 	<input_action id="Ability6" scope="MainGameOnly" category="Abilities" display_name="Ability 6"
       description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
 	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="Alpha6" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -164,7 +164,7 @@
 	<input_action id="Ability7" scope="MainGameOnly" category="Abilities" display_name="Ability 7"
       description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
 	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="Alpha7" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -172,7 +172,7 @@
 	<input_action id="Ability8" scope="MainGameOnly" category="Abilities" display_name="Ability 8"
       description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
 	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="Alpha8" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -180,7 +180,7 @@
 	<input_action id="Ability9" scope="MainGameOnly" category="Abilities" display_name="Ability 9"
       description="Quick-activate the unit ability, command menu category, hacking action, or similar in the current slot."
 	  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking">
+      allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,Hacking,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="Alpha9" />
 		<keybind id="2" key="" />
 	</input_action>

@@ -112,7 +112,7 @@ Normally this is 0, but for something like vision it should be 5, and HP obvious
 		tooltip="If specified, then in the UI the icon color will be calculated from a severity scale, but that scale will have no other effect on anything." />
 
 	<attribute key="severity_scale_for_icon_color_uses_percent_of_max" type="bool" default="false" is_required="false" linebreak_after="PreferNot"
-		tooltip="If using a severity scale to set the color of the icon, then with this true it will be off of a percentage of the maximum value. As false, it's off the raw value." />
+		tooltip="If using a severity scale to set the color of the icon, then with this true it will be on a percentage of the maximum value. As false, it's off the raw value." />
 
 	<attribute key="hidden_before_unlock" type="node-dropdown" node_source="Unlock" content_width_px="200" is_required="false"
 		tooltip="If specified, then the UI will had this stat until this is unlocked." />

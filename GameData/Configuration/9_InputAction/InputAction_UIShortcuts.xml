@@ -23,7 +23,7 @@
 		category="UIShortcuts" display_name="Inventory"
 		description="Inventory for a city or for the end of time."
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EndOfTime,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="I" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -59,7 +59,7 @@
 		category="UIShortcuts" display_name="History"
 		description="All of the retained logs and statistics from your time in this city."
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="2" key="O" />
 		<keybind id="3" key="" />
 	</input_action>
@@ -68,7 +68,7 @@
 		category="UIShortcuts" display_name="Victory Path"
 		description="View your progress toward various victory conditions, in this and other timelines."
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="1" key="Y" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -77,7 +77,7 @@
 		category="UIShortcuts" display_name="Hardware"
 		description="View and analyze all of the unit types, equipment, and consumable items in your possession."
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,ZodiacNeurons,ZodiacHexes">
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="2" key="U" />
 		<keybind id="3" key="" />
 	</input_action>
@@ -95,7 +95,7 @@
 		  category="UIShortcuts" display_name="Handbook"
 		  description="Open the machine handbook."
 		  dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-		  scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes,Hacking">
+		  scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacPods,ZodiacNeurons,ZodiacHexes,Hacking">
 		<keybind id="1" key="H" />
 		<keybind id="2" key="" />
 	</input_action>
@@ -142,7 +142,7 @@ Only works in the End of Time."
 		category="UIShortcuts" display_name="Save Game"
 		description="Open the save game dialog."
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes">
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacPods,ZodiacNeurons,ZodiacHexes">
 		<keybind id="3" key="F5" />
 		<keybind id="4" key="" />
 	</input_action>
@@ -151,7 +151,7 @@ Only works in the End of Time."
 		category="UIShortcuts" display_name="Load Game"
 		description="Open the load game dialog."
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Input_MainUIHandler" check_type="ButtonPressStarting"
-		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacNeurons,ZodiacHexes,MainMenu">
+		scope="MainGameOnly" allowed_in_modes="Normal,MapMode,BuildMode,CommandMode,EventCamera,EndOfTime,ZodiacPods,ZodiacNeurons,ZodiacHexes,MainMenu">
 		<keybind id="3" key="F8" />
 		<keybind id="4" key="" />
 	</input_action>

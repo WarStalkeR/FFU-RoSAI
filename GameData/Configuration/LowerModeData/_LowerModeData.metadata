@@ -38,7 +38,7 @@
 		tooltip="If this part of the ui should be hidden when in this mode."/>
 	<attribute key="hide_right_header_full" type="bool" default="false"
 		tooltip="If this part of the ui should be hidden when in this mode."/>
-	
+
 	<attribute key="closes_like_a_window" type="bool" default="false"
 		tooltip="If this is true, then hitting escape exits this mode rather than opening the system menu, and the other mode-toggle windows won't open this automatically."/>
 	<attribute key="does_not_close_from_hotkeys" type="bool" default="false"
@@ -78,4 +78,9 @@
 	<attribute key="lower_mode_content_filename" type="string" maxlength="600" content_width_px="400" is_required="false"
 		tooltip="This specifies the path of the content prefab for this mode inside the specified asset bundle."/>
 	
+	<attribute key="dll_name" type="string" maxlength="200" content_width_px="300" linebreak_before="Always" is_required="true"
+		tooltip="This specifies the dll that the mode logic is in."/>
+	<attribute key="type_name" type="string" maxlength="600" content_width_px="300" is_required="true"
+		tooltip="This specifies the type name of the type that handles the mode logic in the specified external dll."/>
+
 </root>

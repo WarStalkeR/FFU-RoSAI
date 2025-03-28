@@ -74,6 +74,19 @@
 	</unlock>
 
 	<unlock id="MechByproducts" display_name="Mech Byproducts" resource_type="TungstenScraps"
+		turns_to_unlock="1" required_intelligence_class="1"
+		immediate_other_unlock_1="Methyllithium" other_unlock_inspiration_type="FollowUpIdea">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+
+	<unlock id="ThisIsMyCV" display_name="This Is My CV" resource_type="HumanBiodata"
+		turns_to_unlock="1" required_intelligence_class="1">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="Resource" sort_index="100" />
+	</unlock>
+
+	<unlock id="CaveJohnsonsBest" display_name="Cave Johnson's Best" resource_type="ScientificResearch"
 		turns_to_unlock="1" required_intelligence_class="1">
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="Resource" sort_index="100" />

@@ -38,6 +38,16 @@
 		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorHP" required_collection="Oxdroids" applies_only_if_existing_amount_is_above_zero="false" />
 	</upgrade_int>
 
+	<upgrade_int id="HardenedInfildroids" display_name="Hardened Infildroids"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_Activity051"
+		int_original="0" int_increment="80" int_cap="400" shows_plus_number_upgrade_style="true" is_always_considered_unlocked_from_the_start="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AndroidImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorHP" required_collection="Infildroids" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
 	<upgrade_int id="FasterPortdroids" display_name="Faster Portdroids"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_SkillB035"
 		int_original="0" int_increment="8" int_cap="40" shows_plus_number_upgrade_style="true" is_always_considered_unlocked_from_the_start="true"
@@ -50,7 +60,7 @@
 
 	<upgrade_int id="FasterDynadroids" display_name="Faster Dynadroids"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_SkillB035"
-		int_original="0" int_increment="8" int_cap="40" shows_plus_number_upgrade_style="true" is_always_considered_unlocked_from_the_start="true"
+		int_original="0" int_increment="12" int_cap="60" shows_plus_number_upgrade_style="true" is_always_considered_unlocked_from_the_start="true"
 		description=""
 		show_on_upgrades_screen_as_part_of_priority_group="5000">
 		<part_of collection="All" sort_index="100" />
@@ -76,6 +86,26 @@
 		<part_of collection="All" sort_index="100" />
 		<part_of collection="AndroidImprovement" sort_index="100" />
 		<actor_data_flat_upgrade id="1" data_to_upgrade="UnitCognition" required_collection="Portdroids" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="SouldroidHackingSkill" display_name="Souldroid Hacking Skill"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_SciFi086"
+		int_original="0" int_increment="30" int_cap="150" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AndroidImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="UnitHackingSkill" required_collection="Souldroids" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="FasterSouldroids" display_name="Faster Souldroids"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_SkillB035"
+		int_original="0" int_increment="8" int_cap="40" shows_plus_number_upgrade_style="true" is_always_considered_unlocked_from_the_start="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="AndroidImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorMoveRange" required_collection="Souldroids" applies_only_if_existing_amount_is_above_zero="false" />
 	</upgrade_int>
 
 	<upgrade_int id="CombatAndroidIntimidation" display_name="Combat Android Intimidation"
@@ -134,6 +164,36 @@
 		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorHP" required_collection="SupportVehicles" applies_only_if_existing_amount_is_above_zero="false" />
 	</upgrade_int>
 
+	<upgrade_int id="SupportVehiclePower" display_name="Support Vehicle Power"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem026"
+		int_original="0" int_increment="50" int_cap="250" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="VehicleImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorPower" required_collection="SupportVehicles" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="SupportVehicleEngineering" display_name="Support Vehicle Engineering"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_SciFi043"
+		int_original="0" int_increment="30" int_cap="300" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="VehicleImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorEngineeringSkill" required_collection="SupportVehicles" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="CombatVehiclePower" display_name="Combat Vehicle Power"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem026"
+		int_original="0" int_increment="35" int_cap="350" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="VehicleImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorPower" required_collection="CombatVehicles" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
 	<upgrade_int id="CombatVehicleHullStrength" display_name="Combat Vehicle Hull Strength"
 		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="CleanSimple_Activity051"
 		int_original="0" int_increment="70" int_cap="350" shows_plus_number_upgrade_style="true"
@@ -184,6 +244,35 @@
 
 	<!--Mechs
 	******************************************************************************************-->
-	
+
+	<upgrade_int id="SmallMechPower" display_name="Small Mech Power"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="WEmblem026"
+		int_original="0" int_increment="50" int_cap="500" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="MechImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorPower" required_collection="SmallMechs" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="SmallMechArmorPiercing" display_name="Small Mech Armor Piercing"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="Pw_ArmorPiercingBullet"
+		int_original="0" int_increment="30" int_cap="300" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="MechImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorArmorPiercing" required_collection="SmallMechs" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
+
+	<upgrade_int id="SmallMechArmorPlating" display_name="Small Mech Armor Plating"
+		dll_name="HotMExternalVisualizationCode" type_name="Arcen.HotM.ExternalVis.Upgrade_Basics" icon_name="AN_EmergencySign"
+		int_original="0" int_increment="16" int_cap="70" shows_plus_number_upgrade_style="true"
+		description=""
+		show_on_upgrades_screen_as_part_of_priority_group="5000">
+		<part_of collection="All" sort_index="100" />
+		<part_of collection="MechImprovement" sort_index="100" />
+		<actor_data_flat_upgrade id="1" data_to_upgrade="ActorArmorPlating" required_collection="SmallMechs" applies_only_if_existing_amount_is_above_zero="false" />
+	</upgrade_int>
 	
 </root>
