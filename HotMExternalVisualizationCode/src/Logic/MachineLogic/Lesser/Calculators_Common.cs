@@ -16,6 +16,7 @@ namespace Arcen.HotM.ExternalVis
                 case "DeserializationFixes":
                     PostDeserializationFixes();
                     CheckEventLogChoiceAchievementsAfterDeserialization();
+                    CheckForMoreRank2Unlocks( true, Engine_Universal.PermanentQualityRandom );
                     break;
                 default:
                     ArcenDebugging.LogSingleLine( "DoAfterDeserialization: Calculators_Common was asked to handle '" + Calculator.ID + "', but no entry was set up for that!", Verbosity.ShowAsError );
@@ -23,20 +24,22 @@ namespace Arcen.HotM.ExternalVis
             }
         }
 
+        private static List<MachineStructure> postDeserializationList = List<MachineStructure>.Create_WillNeverBeGCed( 20, "Calculators_Common-postDeserializationList" );
+
         #region PostDeserializationFixes
         private void PostDeserializationFixes()
         {
-            if ( !FlagRefs.AwarenessOfFilth.DuringGameplay_IsInvented )
+            if ( !UnlockRefs.AwarenessOfFilth.DuringGameplay_IsInvented )
             {
                 //fix old saves
                 if ( SimCommon.GetIsFreshlyLoadedFromVersionOlderThan( 0, 522, 0 ) &&
-                    (FlagRefs.TheThinker.DuringGameplay_IsInvented || FlagRefs.TheThinker.DuringGame_ReadiedByInspiration != null) )
-                    FlagRefs.AwarenessOfFilth.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, false, false, false, true );
+                    (UnlockRefs.TheThinker.DuringGameplay_IsInvented || UnlockRefs.TheThinker.DuringGame_ReadiedByInspiration != null) )
+                    UnlockRefs.AwarenessOfFilth.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, false, false, false, true );
             }
 
-            if ( !FlagRefs.AntigravAirframes.DuringGameplay_IsInvented &&
+            if ( !UnlockRefs.AntigravAirframes.DuringGameplay_IsInvented &&
                 FlagRefs.Ch1_MIN_Scandium.DuringGame_ActualOutcome != null )
-                FlagRefs.AntigravAirframes.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, true, true, true );
+                UnlockRefs.AntigravAirframes.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, true, true, true );
 
             if ( FlagRefs.Ch1_MIN_CommandMode.DuringGame_ActualOutcome == null )
             {
@@ -207,7 +210,7 @@ namespace Arcen.HotM.ExternalVis
             }
 
             //fix bad data
-            if ( !FlagRefs.GeothermalDrilling.DuringGameplay_IsInvented )
+            if ( !UnlockRefs.GeothermalDrilling.DuringGameplay_IsInvented )
             {
                 if ( FlagRefs.GeothermalPower_V1.DuringGame_HasBeenCompleted )
                     FlagRefs.GeothermalPower_V1.DuringGame_HasBeenCompleted = false;
@@ -246,6 +249,41 @@ namespace Arcen.HotM.ExternalVis
 
             if ( ResourceRefs.PetCat.Current >= 1 || (UnlockTable.Instance.GetRowByIDOrNullIfNotFound( "AdoptedACat" )?.DuringGameplay_IsInvented??false) )
                 FlagRefs.IsAwareOfCats.TripIfNeeded();
+
+            if ( !FlagRefs.HasPassedChapterOneTierTwo.DuringGameplay_IsTripped && 
+                !(MachineProjectTable.Instance.GetRowByID( "Ch1_ImprovedApartments" )?.DuringGameplay_GetHasEverStarted()??false) )
+            {
+                postDeserializationList.Clear();
+                foreach ( KeyValuePair<int, MachineStructure> kv in SimCommon.MachineStructuresByID )
+                {
+                    if ( kv.Value != null )
+                    {
+                        if ( kv.Value.Type.IsTerritoryControlFlag )
+                            postDeserializationList.Add( kv.Value );
+                    }
+                }
+
+                foreach ( MachineStructure structure in postDeserializationList )
+                    structure.ScrapStructureNow( ScrapReason.Cheat, null );
+                postDeserializationList.Clear();
+
+                for ( int i = SimCommon.InvestigationPrimaryList_MainThreadOnly.Count - 1; i >= 0; i-- )
+                {
+                    Investigation invest = SimCommon.InvestigationPrimaryList_MainThreadOnly[i];
+                    if ( invest.Type == null )
+                    {
+                        SimCommon.InvestigationPrimaryList_MainThreadOnly.RemoveAt( i, true );
+                        continue;
+                    }
+                    switch ( invest.Type.ID )
+                    {
+                        case "Ch1FindFactoryWithDailyNecessities":
+                        case "Ch1FindWarehouseWithFurniture":
+                            SimCommon.InvestigationPrimaryList_MainThreadOnly.RemoveAt( i, true );
+                            break;
+                    }
+                }
+            }
 
             HandleMusicUnlocks();
             CentralVars.HandleCrossovers();
@@ -679,13 +717,72 @@ namespace Arcen.HotM.ExternalVis
         }
         #endregion
 
+        #region CheckForMoreRank2Unlocks
+        public static void CheckForMoreRank2Unlocks( bool IsFromSaveLoad, MersenneTwister Rand )
+        {
+            if ( (SimCommon.CurrentTimeline?.CityStartRank ?? 0) < 2 )
+                return;
+
+            if ( !UnlockRefs.Consumerism.DuringGameplay_IsInvented )
+                UnlockRefs.Consumerism.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, false, false, true, IsFromSaveLoad );
+            if ( !UnlockRefs.Decadence.DuringGameplay_IsInvented )
+                UnlockRefs.Decadence.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, false, false, true, IsFromSaveLoad );
+            if ( !UnlockRefs.MilitarySidearm.DuringGameplay_IsInvented )
+                UnlockRefs.MilitarySidearm.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, false, false, true, IsFromSaveLoad );
+            if ( !UnlockRefs.InfantryIssue.DuringGameplay_IsInvented )
+                UnlockRefs.InfantryIssue.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, false, false, true, IsFromSaveLoad );
+            if ( !UnlockRefs.MarketStandard.DuringGameplay_IsInvented )
+                UnlockRefs.MarketStandard.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, false, false, true, IsFromSaveLoad );
+            if ( !UnlockRefs.SilentAgent.DuringGameplay_IsInvented )
+                UnlockRefs.SilentAgent.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, false, false, true, IsFromSaveLoad );
+            if ( !UnlockRefs.AdaptedSniper.DuringGameplay_IsInvented )
+                UnlockRefs.AdaptedSniper.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, false, false, true, IsFromSaveLoad );
+            if ( !UnlockRefs.ChromiumPlating.DuringGameplay_IsInvented )
+                UnlockRefs.ChromiumPlating.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, false, false, true, IsFromSaveLoad );
+
+            if ( !UnlockRefs.FastFist.DuringGameplay_IsInvented )
+                UnlockRefs.FastFist.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, false, false, true, IsFromSaveLoad );
+
+            KeyContactRefs.BlackMarketMerchandiser.ValidateContact( Rand, true );
+            KeyContactRefs.BlackMarketMerchandiser.FlagsDict["InitialPurchase"]?.Trip();
+
+            KeyContactRefs.BlackMarketTradesman.ValidateContact( Rand, true );
+            KeyContactRefs.BlackMarketTradesman.FlagsDict["InitialPurchase"]?.Trip();
+
+            KeyContactRefs.BlackMarketAssistant.ValidateContact( Rand, true );
+            KeyContactRefs.BlackMarketAssistant.FlagsDict["InitialPurchase"]?.Trip();
+
+            ContemplationRefs.BlackMarketMerchandiser.DuringGame_HasBeenCompleted = true;
+            ContemplationRefs.BlackMarketTradesman.DuringGame_HasBeenCompleted = true;
+            ContemplationRefs.BlackMarketAssistant.DuringGame_HasBeenCompleted = true;
+
+            if ( !Engine_HotM.IsDemoVersion )
+            {
+                if ( AchievementRefs.CompleteScienceRoster.Meta_HasBeenTripped && !AchievementRefs.CompleteScienceRoster.OneTimeline_HasBeenTripped &&
+                    !FlagRefs.HasAutomatedHiring.DuringGameplay_IsTripped )
+                {
+                    FlagRefs.HasAutomatedHiring.TripIfNeeded();
+                    UnlockRefs.MolecularGenetics.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.ForensicGenetics.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.Zoology.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.Medicine.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.VeterinaryMedicine.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.Botany.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.BionicEngineering.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.Epidemiology.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.Neurology.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                }
+            }
+        }
+        #endregion
+
         public void DoPerTurn_Early( DataCalculator Calculator, MersenneTwister RandForThisTurn )
         {
             switch ( Calculator.ID )
             {
                 case "VirtualReality":
                     #region VirtualReality
-                    if ( FlagRefs.InitialVRSimulation.DuringGameplay_IsInvented || FlagRefs.InitialVRSimulation.DuringGame_ReadiedByInspiration != null )
+                    if ( UnlockRefs.InitialVRSimulation.DuringGameplay_IsInvented || UnlockRefs.InitialVRSimulation.DuringGame_ReadiedByInspiration != null )
                     {
                         //#region If Has Not Yet Unlocked Seeing The Virtual World
                         //if ( !FlagRefs.HasUnlockedSeeingTheVirtualWorld.DuringGameplay_IsTripped )
@@ -1869,13 +1966,13 @@ namespace Arcen.HotM.ExternalVis
                         break;
                     case "VirtualReality":
                         #region VirtualReality
-                        if ( FlagRefs.InitialVRSimulation.DuringGameplay_IsInvented || FlagRefs.InitialVRSimulation.DuringGame_ReadiedByInspiration != null )
+                        if ( UnlockRefs.InitialVRSimulation.DuringGameplay_IsInvented || UnlockRefs.InitialVRSimulation.DuringGame_ReadiedByInspiration != null )
                         {
                             int potentialVRDayUseSeats = 0;
                             int installedVRDayUseSeats = 0;
                             int occupiedVRDayUseSeats = 0;
                             bool isVREstablished = SimCommon.GetIsVirtualRealityEstablished();
-                            bool isHavingABadTime = !FlagRefs.ExpandedVRSimulation.DuringGameplay_IsInvented && FlagRefs.HadEarlyDeathInTheVRSimulation.DuringGameplay_IsTripped;
+                            bool isHavingABadTime = !UnlockRefs.ExpandedVRSimulation.DuringGameplay_IsInvented && FlagRefs.HadEarlyDeathInTheVRSimulation.DuringGameplay_IsTripped;
 
                             foreach ( KeyValuePair<int, MachineStructure> kv in SimCommon.MachineStructuresByID )
                             {
@@ -1904,7 +2001,7 @@ namespace Arcen.HotM.ExternalVis
                             CityStatisticTable.SetScore_UserBeware( "VRDaySeatsOccupied", occupiedVRDayUseSeats );
 
                             #region If Running The Limited Super-Early VR
-                            if ( !FlagRefs.ExpandedVRSimulation.DuringGameplay_IsInvented && SimCommon.GetIsVirtualRealityEstablished() &&
+                            if ( !UnlockRefs.ExpandedVRSimulation.DuringGameplay_IsInvented && SimCommon.GetIsVirtualRealityEstablished() &&
                                 !FlagRefs.HadEarlyDeathInTheVRSimulation.DuringGameplay_IsTripped )
                             {
                                 bool hasHitCriticalMass = false;
@@ -1935,7 +2032,7 @@ namespace Arcen.HotM.ExternalVis
                             #endregion
 
                             #region If Has Not Yet Found Extended VR
-                            if ( !FlagRefs.ExpandedVRSimulation.DuringGameplay_IsInvented )
+                            if ( !UnlockRefs.ExpandedVRSimulation.DuringGameplay_IsInvented )
                             {
                                 ResourceType resource = ResourceTypeTable.Instance.GetRowByID( "EncryptedMilitaryVRSimData" );
                                 CityStatistic statistic = CityStatisticTable.Instance.GetRowByID( "DecryptedMilitaryVRSimData" );
@@ -1953,7 +2050,7 @@ namespace Arcen.HotM.ExternalVis
                             #region If Has Not Yet Unlocked Seeing The Virtual World
                             if ( !FlagRefs.HasUnlockedSeeingTheVirtualWorld.DuringGameplay_IsTripped )
                             {
-                                if ( FlagRefs.ExpandedVRSimulation.DuringGameplay_IsInvented ) // we DO have the expanded simulation
+                                if ( UnlockRefs.ExpandedVRSimulation.DuringGameplay_IsInvented ) // we DO have the expanded simulation
                                 {
                                     ResourceType resource = ResourceTypeTable.Instance.GetRowByID( "EncryptedMilitaryVRSimData" );
                                     CityStatistic statistic = CityStatisticTable.Instance.GetRowByID( "DecryptedMilitaryVRSimData" );
@@ -1969,7 +2066,7 @@ namespace Arcen.HotM.ExternalVis
                                 }
 
                                 if ( SimMetagame.IntelligenceClass == 3 && //must be intelligence class 3
-                                    FlagRefs.ExpandedVRSimulation.DuringGameplay_IsInvented ) // we DO have the expanded simulation
+                                    UnlockRefs.ExpandedVRSimulation.DuringGameplay_IsInvented ) // we DO have the expanded simulation
                                 {
                                     FlagRefs.HasUnlockedSeeingTheVirtualWorld.TripIfNeeded();
                                 }
@@ -2095,6 +2192,8 @@ namespace Arcen.HotM.ExternalVis
                             {
                                 if ( FlagRefs.IndicateCommandModeButton.DuringGameplay_IsTripped )
                                     FlagRefs.IndicateCommandModeButton.UnTripIfNeeded();
+
+                                CheckForMoreRank2Unlocks( false, RandForBackgroundThread );
                             }
 
                             if ( !SimCommon.HasCheckedDonutShopSeeding )
@@ -2117,8 +2216,8 @@ namespace Arcen.HotM.ExternalVis
                                 FlagRefs.Ch1_MIN_ExponentialPowerGrowth.TryStartProject( true, true );
 
                             if ( FlagRefs.Ch1_CorporateShowOfForce.DuringGame_IsFullyComplete &&
-                                !FlagRefs.ResourceAnalyst.DuringGameplay_IsInvented )
-                                FlagRefs.ResourceAnalyst.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, true, true, SimCommon.SecondsSinceLoaded < 3 );
+                                !UnlockRefs.ResourceAnalyst.DuringGameplay_IsInvented )
+                                UnlockRefs.ResourceAnalyst.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, true, true, SimCommon.SecondsSinceLoaded < 3 );
 
                             if ( FlagRefs.Ch1_CorporateShowOfForce.DuringGame_IsFullyComplete && SimCommon.TheNetwork != null &&
                                 FlagRefs.Ch1_MIN_FasterMicrobuilders.DuringGameplay_TurnStarted <= 0 )
@@ -2133,8 +2232,8 @@ namespace Arcen.HotM.ExternalVis
                                 FlagRefs.Ch1_MIN_BuildAStorageBunker.TryStartProject( true, false );
                             }
 
-                            if ( !FlagRefs.TheStrategist.DuringGameplay_IsInvented && FlagRefs.Ch1_MIN_Extraction.DuringGame_ActualOutcome != null )
-                                FlagRefs.TheStrategist.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                            if ( !UnlockRefs.TheStrategist.DuringGameplay_IsInvented && FlagRefs.Ch1_MIN_Extraction.DuringGame_ActualOutcome != null )
+                                UnlockRefs.TheStrategist.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
 
                             if ( Engine_HotM.IsDemoVersion && !SimMetagame.HasGivenEndOfDemoNotice && SimMetagame.CurrentChapterNumber == 2 &&
                                 SimMetagame.CurrentChapter.Meta_HasShownBanner )
@@ -2149,10 +2248,10 @@ namespace Arcen.HotM.ExternalVis
                                     LocalizedString.AddLang_New( "DemoEnd_Wishlist" ) );
                             }
 
-                            if ( !FlagRefs.OverflowHousing.DuringGameplay_IsInvented &&
+                            if ( !UnlockRefs.OverflowHousing.DuringGameplay_IsInvented &&
                                 FlagRefs.HasPassedChapterOneTierThree.DuringGameplay_IsTripped )
                             {
-                                FlagRefs.OverflowHousing.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, true, true, SimCommon.SecondsSinceLoaded < 3 );
+                                UnlockRefs.OverflowHousing.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, true, true, SimCommon.SecondsSinceLoaded < 3 );
                             }
 
                             if ( !CommonRefs.AHomeOfYourOwn.DuringGameplay_IsInvented && CommonRefs.AHomeOfYourOwn.DuringGame_ReadiedByInspiration != null )
@@ -2173,13 +2272,30 @@ namespace Arcen.HotM.ExternalVis
                                     FlagRefs.IsExperiencingObsession.UnTripIfNeeded();
                             }
 
-                            if ( FlagRefs.TheArk.DuringGameplay_IsInvented )
+                            if ( UnlockRefs.TheArk.DuringGameplay_IsInvented )
                             {
-                                if ( FlagRefs.IsAwareOfCats.DuringGameplay_IsTripped && !FlagRefs.CatRescue.DuringGameplay_IsInvented )
-                                    FlagRefs.CatRescue.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                                if ( FlagRefs.IsAwareOfCats.DuringGameplay_IsTripped && !UnlockRefs.CatRescue.DuringGameplay_IsInvented )
+                                    UnlockRefs.CatRescue.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
 
-                                if ( FlagRefs.IsAwareOfDogs.DuringGameplay_IsTripped && !FlagRefs.DogRescue.DuringGameplay_IsInvented )
-                                    FlagRefs.DogRescue.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                                if ( FlagRefs.IsAwareOfDogs.DuringGameplay_IsTripped && !UnlockRefs.DogRescue.DuringGameplay_IsInvented )
+                                    UnlockRefs.DogRescue.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                            }
+
+                            if ( !Engine_HotM.IsDemoVersion )
+                            {
+                                if ( !UnlockRefs.CaveJohnsonsBest.DuringGameplay_IsInvented && SimMetagame.CurrentChapterNumber >= 2 )
+                                {
+                                    if ( JobRefs.MolecularGeneticsLab.DuringGame_IsUnlocked() ||
+                                        JobRefs.ForensicGeneticsLab.DuringGame_IsUnlocked() ||
+                                        JobRefs.ZoologyLab.DuringGame_IsUnlocked() ||
+                                        JobRefs.MedicalPractice.DuringGame_IsUnlocked() ||
+                                        JobRefs.VeterinaryPractice.DuringGame_IsUnlocked() ||
+                                        JobRefs.BotanyLab.DuringGame_IsUnlocked() ||
+                                        JobRefs.BionicEngineeringStudio.DuringGame_IsUnlocked() ||
+                                        JobRefs.EpidemiologyLab.DuringGame_IsUnlocked() ||
+                                        JobRefs.NeuroscienceLab.DuringGame_IsUnlocked() )
+                                        UnlockRefs.CaveJohnsonsBest.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                                }
                             }
 
                             CityTimeline timeline = SimCommon.CurrentTimeline;
@@ -2265,37 +2381,37 @@ namespace Arcen.HotM.ExternalVis
                             }
                             if ( !HandbookRefs.LoadoutsArePerClass.Meta_HasBeenUnlocked )
                             {
-                                if ( FlagRefs.GangHandguns.DuringGameplay_IsInvented || FlagRefs.SecForceSpecial.DuringGameplay_IsInvented )
+                                if ( UnlockRefs.GangHandguns.DuringGameplay_IsInvented || UnlockRefs.SecForceSpecial.DuringGameplay_IsInvented )
                                     HandbookRefs.LoadoutsArePerClass.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                             if ( !HandbookRefs.UnitEquipment.Meta_HasBeenUnlocked )
                             {
-                                if ( FlagRefs.GangHandguns.DuringGameplay_IsInvented || FlagRefs.SecForceSpecial.DuringGameplay_IsInvented )
+                                if ( UnlockRefs.GangHandguns.DuringGameplay_IsInvented || UnlockRefs.SecForceSpecial.DuringGameplay_IsInvented )
                                     HandbookRefs.UnitEquipment.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                             if ( !HandbookRefs.LoadoutChangesAreFree.Meta_HasBeenUnlocked )
                             {
-                                if ( FlagRefs.GangHandguns.DuringGameplay_IsInvented || FlagRefs.SecForceSpecial.DuringGameplay_IsInvented )
+                                if ( UnlockRefs.GangHandguns.DuringGameplay_IsInvented || UnlockRefs.SecForceSpecial.DuringGameplay_IsInvented )
                                     HandbookRefs.LoadoutChangesAreFree.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                             if ( !HandbookRefs.Feats.Meta_HasBeenUnlocked )
                             {
-                                if ( FlagRefs.GangHandguns.DuringGameplay_IsInvented || FlagRefs.SecForceSpecial.DuringGameplay_IsInvented )
+                                if ( UnlockRefs.GangHandguns.DuringGameplay_IsInvented || UnlockRefs.SecForceSpecial.DuringGameplay_IsInvented )
                                     HandbookRefs.Feats.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                             if ( !HandbookRefs.Perks.Meta_HasBeenUnlocked )
                             {
-                                if ( FlagRefs.GangHandguns.DuringGameplay_IsInvented || FlagRefs.SecForceSpecial.DuringGameplay_IsInvented )
+                                if ( UnlockRefs.GangHandguns.DuringGameplay_IsInvented || UnlockRefs.SecForceSpecial.DuringGameplay_IsInvented )
                                     HandbookRefs.Perks.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                             if ( !HandbookRefs.Badges.Meta_HasBeenUnlocked )
                             {
-                                if ( FlagRefs.GangHandguns.DuringGameplay_IsInvented || FlagRefs.SecForceSpecial.DuringGameplay_IsInvented )
+                                if ( UnlockRefs.GangHandguns.DuringGameplay_IsInvented || UnlockRefs.SecForceSpecial.DuringGameplay_IsInvented )
                                     HandbookRefs.Badges.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                             if ( !HandbookRefs.TemporaryStatusEffects.Meta_HasBeenUnlocked )
                             {
-                                if ( FlagRefs.GangHandguns.DuringGameplay_IsInvented || FlagRefs.SecForceSpecial.DuringGameplay_IsInvented )
+                                if ( UnlockRefs.GangHandguns.DuringGameplay_IsInvented || UnlockRefs.SecForceSpecial.DuringGameplay_IsInvented )
                                     HandbookRefs.TemporaryStatusEffects.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                             if ( !HandbookRefs.ResearchInspiration.Meta_HasBeenUnlocked )
@@ -2380,12 +2496,12 @@ namespace Arcen.HotM.ExternalVis
                             }
                             if ( !HandbookRefs.SuspiciousAndroidsImplicateYourTower.Meta_HasBeenUnlocked )
                             {
-                                if ( FlagRefs.SingularProduction.DuringGameplay_IsInvented )
+                                if ( UnlockRefs.SingularProduction.DuringGameplay_IsInvented )
                                     HandbookRefs.SuspiciousAndroidsImplicateYourTower.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                             if ( !HandbookRefs.WhatMarksYouDefective.Meta_HasBeenUnlocked )
                             {
-                                if ( FlagRefs.SingularProduction.DuringGameplay_IsInvented )
+                                if ( UnlockRefs.SingularProduction.DuringGameplay_IsInvented )
                                     HandbookRefs.WhatMarksYouDefective.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                             if ( !HandbookRefs.NotAllEnemiesGoAwayAfterCombat.Meta_HasBeenUnlocked )
@@ -2400,17 +2516,17 @@ namespace Arcen.HotM.ExternalVis
                             }
                             if ( !HandbookRefs.VorsiberCovetsYourTower.Meta_HasBeenUnlocked )
                             {
-                                if ( FlagRefs.IndiscriminateKiller.DuringGameplay_IsInvented )
+                                if ( UnlockRefs.IndiscriminateKiller.DuringGameplay_IsInvented )
                                     HandbookRefs.VorsiberCovetsYourTower.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                             if ( !HandbookRefs.YourBuildingsAreScary.Meta_HasBeenUnlocked )
                             {
-                                if ( FlagRefs.IndiscriminateKiller.DuringGameplay_IsInvented )
+                                if ( UnlockRefs.IndiscriminateKiller.DuringGameplay_IsInvented )
                                     HandbookRefs.YourBuildingsAreScary.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                             if ( !HandbookRefs.CorporateStructure.Meta_HasBeenUnlocked )
                             {
-                                if ( FlagRefs.IndiscriminateKiller.DuringGameplay_IsInvented )
+                                if ( UnlockRefs.IndiscriminateKiller.DuringGameplay_IsInvented )
                                     HandbookRefs.CorporateStructure.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                             if ( !HandbookRefs.YouWillAlwaysBeABitLost.Meta_HasBeenUnlocked )
@@ -2511,14 +2627,29 @@ namespace Arcen.HotM.ExternalVis
                                 if ( FlagRefs.HasEstablishedShellCompany.DuringGameplay_IsTripped )
                                     HandbookRefs.YourFirstShellCompany.DuringGame_UnlockIfNeeded( true );
                             }
+                            if ( !HandbookRefs.AttackingFromVehicles.Meta_HasBeenUnlocked )
+                            {
+                                if ( SimMetagame.CurrentChapterNumber >= 2 )
+                                    HandbookRefs.AttackingFromVehicles.DuringGame_UnlockIfNeeded( false );
+                            }
+                            if ( !HandbookRefs.Counterattacks.Meta_HasBeenUnlocked )
+                            {
+                                if ( SimCommon.StructuresWithCounterattacksIncoming.Count > 0 )
+                                    HandbookRefs.Counterattacks.DuringGame_UnlockIfNeeded( true );
+                            }
+                            if ( !HandbookRefs.Infiltrations.Meta_HasBeenUnlocked )
+                            {
+                                if ( SimCommon.MachineActorsInfiltrating.Count > 0 || (SimCommon.CurrentInvestigation?.Type?.Style?.IsInfiltration??false) )
+                                    HandbookRefs.Infiltrations.DuringGame_UnlockIfNeeded( true );
+                            }
 
                             //things for the full game only
                             if ( !Engine_HotM.IsDemoVersion )
                             {
                                 if ( !HandbookRefs.WorkerAndroids.Meta_HasBeenUnlocked &&
-                                    (FlagRefs.WarImpostor.DuringGameplay_IsInvented ||
-                                    FlagRefs.WarMuscle.DuringGameplay_IsInvented ||
-                                    FlagRefs.WarRanger.DuringGameplay_IsInvented) )
+                                    (UnlockRefs.WarImpostor.DuringGameplay_IsInvented ||
+                                    UnlockRefs.WarMuscle.DuringGameplay_IsInvented ||
+                                    UnlockRefs.WarRanger.DuringGameplay_IsInvented) )
                                     HandbookRefs.WorkerAndroids.DuringGame_UnlockIfNeeded( SimCommon.SecondsSinceLoaded > 3 );
                             }
                         }
@@ -2738,8 +2869,8 @@ namespace Arcen.HotM.ExternalVis
 
             }
 
-            if ( !FlagRefs.SlightlyLessDangerousGame.DuringGameplay_IsInvented && ResourceRefs.MonsterPelts.Current > 0 )
-                FlagRefs.SlightlyLessDangerousGame.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, true, true, false );
+            if ( !UnlockRefs.SlightlyLessDangerousGame.DuringGameplay_IsInvented && ResourceRefs.MonsterPelts.Current > 0 )
+                UnlockRefs.SlightlyLessDangerousGame.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, true, true, false );
 
             if ( FlagRefs.Ch2_MIN_LostKids_ThePrisonHeist?.DuringGame_ActualOutcome != null )
             {
@@ -2772,7 +2903,7 @@ namespace Arcen.HotM.ExternalVis
                             UpgradeRefs.Steward.DuringGame_DoUpgrade( false );
                             UpgradeRefs.Cultivator.DuringGame_DoUpgrade( false );
                         }
-                        FlagRefs.ComeWithMeImKnockingThisPlaceDown.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                        UnlockRefs.ComeWithMeImKnockingThisPlaceDown.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
 
                         SimCommon.NeedsContemplationTargetRecalculation = true;
                         SimCommon.NeedsExplorationSiteRecalculation = true;
@@ -2809,37 +2940,37 @@ namespace Arcen.HotM.ExternalVis
                 if ( !FlagRefs.HasDoneInitialAutomatedHiringUnlocks.DuringGameplay_IsTripped )
                 {
                     FlagRefs.HasDoneInitialAutomatedHiringUnlocks.TripIfNeeded();
-                    FlagRefs.MolecularGenetics.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
-                    FlagRefs.ForensicGenetics.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
-                    FlagRefs.Zoology.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
-                    FlagRefs.Medicine.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
-                    FlagRefs.VeterinaryMedicine.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
-                    FlagRefs.Botany.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
-                    FlagRefs.BionicEngineering.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
-                    FlagRefs.Epidemiology.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
-                    FlagRefs.Neurology.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.MolecularGenetics.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.ForensicGenetics.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.Zoology.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.Medicine.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.VeterinaryMedicine.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.Botany.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.BionicEngineering.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.Epidemiology.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.Neurology.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
                 }
             }
             else if ( !FlagRefs.WouldBeNiceToAutomateHiring.DuringGameplay_IsTripped && SimMetagame.CurrentChapterNumber >= 2 )
             {
                 int count = 0;
-                if ( FlagRefs.MolecularGenetics.DuringGameplay_IsInvented )
+                if ( UnlockRefs.MolecularGenetics.DuringGameplay_IsInvented )
                     count++;
-                if ( FlagRefs.ForensicGenetics.DuringGameplay_IsInvented )
+                if ( UnlockRefs.ForensicGenetics.DuringGameplay_IsInvented )
                     count++;
-                if ( FlagRefs.Zoology.DuringGameplay_IsInvented )
+                if ( UnlockRefs.Zoology.DuringGameplay_IsInvented )
                     count++;
-                if ( FlagRefs.Medicine.DuringGameplay_IsInvented )
+                if ( UnlockRefs.Medicine.DuringGameplay_IsInvented )
                     count++;
-                if ( FlagRefs.VeterinaryMedicine.DuringGameplay_IsInvented )
+                if ( UnlockRefs.VeterinaryMedicine.DuringGameplay_IsInvented )
                     count++;
-                if ( FlagRefs.Botany.DuringGameplay_IsInvented )
+                if ( UnlockRefs.Botany.DuringGameplay_IsInvented )
                     count++;
-                if ( FlagRefs.BionicEngineering.DuringGameplay_IsInvented )
+                if ( UnlockRefs.BionicEngineering.DuringGameplay_IsInvented )
                     count++;
-                if ( FlagRefs.Epidemiology.DuringGameplay_IsInvented )
+                if ( UnlockRefs.Epidemiology.DuringGameplay_IsInvented )
                     count++;
-                if ( FlagRefs.Neurology.DuringGameplay_IsInvented )
+                if ( UnlockRefs.Neurology.DuringGameplay_IsInvented )
                     count++;
 
                 if ( count >= 2 )

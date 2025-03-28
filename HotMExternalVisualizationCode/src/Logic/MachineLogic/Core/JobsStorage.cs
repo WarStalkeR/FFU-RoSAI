@@ -26,6 +26,17 @@ namespace Arcen.HotM.ExternalVis
                     case "SmallHumanSafehouse":
                         //no filth or VR, this is not that kind of place.
                         break;
+                    case "MolecularGeneticsLab":
+                    case "ForensicGeneticsLab":
+                    case "ZoologyLab":
+                    case "MedicalPractice":
+                    case "VeterinaryPractice":
+                    case "BotanyLab":
+                    case "BionicEngineeringStudio":
+                    case "EpidemiologyLab":
+                    case "NeuroscienceLab":
+                        JobHelper.HandleScientificResearch( Structure, Job, Logic, RandOrNull );
+                        break;
                 }
 
                 return JobResult.Success; //nothing to do here on most storage jobs

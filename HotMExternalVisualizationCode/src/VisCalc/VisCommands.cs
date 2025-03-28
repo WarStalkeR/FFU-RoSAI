@@ -1703,8 +1703,18 @@ namespace Arcen.HotM.ExternalVis
 
             if ( Engine_HotM.CurrentLowerMode != null )
             {
-                if ( !Engine_HotM.CurrentLowerMode.ClosesLikeAWindow && !Engine_HotM.CurrentLowerMode.DoesNotCloseFromHotkeys )
+                if ( Engine_HotM.CurrentLowerMode.ClosesLikeAWindow && !Engine_HotM.CurrentLowerMode.DoesNotCloseFromHotkeys )
                     Engine_HotM.CurrentLowerMode = null;
+
+                switch ( Engine_HotM.GameMode )
+                {
+                    case MainGameMode.Streets:
+                        break; //nothing else to do
+                    default:
+                        Engine_HotM.SetGameMode( MainGameMode.Streets );
+                        break;
+                }
+
                 return;
             }
 
@@ -1727,8 +1737,18 @@ namespace Arcen.HotM.ExternalVis
 
             if ( Engine_HotM.CurrentLowerMode != null )
             {
-                if ( !Engine_HotM.CurrentLowerMode.ClosesLikeAWindow && !Engine_HotM.CurrentLowerMode.DoesNotCloseFromHotkeys )
+                if ( Engine_HotM.CurrentLowerMode.ClosesLikeAWindow && !Engine_HotM.CurrentLowerMode.DoesNotCloseFromHotkeys )
                     Engine_HotM.CurrentLowerMode = null;
+
+                switch ( Engine_HotM.GameMode )
+                {
+                    case MainGameMode.CityMap:
+                        break; //nothing else to do
+                    default:
+                        Engine_HotM.SetGameMode( MainGameMode.CityMap );
+                        break;
+                }
+
                 return;
             }
 
@@ -1780,8 +1800,18 @@ namespace Arcen.HotM.ExternalVis
 
             if ( Engine_HotM.CurrentLowerMode != null )
             {
-                if ( !Engine_HotM.CurrentLowerMode.ClosesLikeAWindow && !Engine_HotM.CurrentLowerMode.DoesNotCloseFromHotkeys )
+                if ( Engine_HotM.CurrentLowerMode.ClosesLikeAWindow && !Engine_HotM.CurrentLowerMode.DoesNotCloseFromHotkeys )
                     Engine_HotM.CurrentLowerMode = null;
+
+                switch ( Engine_HotM.GameMode )
+                {
+                    case MainGameMode.TheEndOfTime:
+                        break; //nothing else to do
+                    default:
+                        Engine_HotM.SetGameMode( MainGameMode.TheEndOfTime );
+                        break;
+                }
+
                 return;
             }
 
@@ -1805,6 +1835,16 @@ namespace Arcen.HotM.ExternalVis
 
             if ( !SimCommon.IsCheatTimeline && !FlagRefs.HasUnlockedSeeingTheVirtualWorld.DuringGameplay_IsTripped )
                 return;
+
+            switch ( Engine_HotM.GameMode )
+            {
+                case MainGameMode.CityMap:
+                case MainGameMode.Streets:
+                    break; //nothing else to do
+                default:
+                    Engine_HotM.SetGameMode( MainGameMode.Streets );
+                    break;
+            }
 
             if ( Engine_HotM.CurrentLowerMode == CommonRefs.ZodiacPodScene )
                 Engine_HotM.CurrentLowerMode = null;

@@ -215,7 +215,7 @@ namespace Arcen.HotM.ExternalVis
                     }
                     break;
                 case "Ch1_Water_NewStyleOfInvestigation":
-                    if ( CommonRefs.InvestigateLocationActionOverTimeType_Regular.DuringGame_RelatedActors.Count > 0 || FlagRefs.SublimatingShells.DuringGameplay_IsInvented )
+                    if ( CommonRefs.InvestigateLocationActionOverTimeType_Regular.DuringGame_RelatedActors.Count > 0 || UnlockRefs.SublimatingShells.DuringGameplay_IsInvented )
                     {
                         Task.DuringGameplay_CompleteIfActive();
                         FlagRefs.Ch1_Water_DeathAndKnowledge.DuringGameplay_StartIfNeeded();
@@ -237,14 +237,14 @@ namespace Arcen.HotM.ExternalVis
                     }
                     break;
                 case "Ch1_Water_UsingItems":
-                    if ( FlagRefs.AcousticNanotubeFiltration.DuringGame_ReadiedByInspiration != null )
+                    if ( UnlockRefs.AcousticNanotubeFiltration.DuringGame_ReadiedByInspiration != null )
                     {
                         Task.DuringGameplay_CompleteIfActive();
                         FlagRefs.Ch1_Water_BuildAFiltrationTower.DuringGameplay_StartIfNeeded();
                     }
                     break;
                 case "Ch1_Water_DefeatingTheCruiser":
-                    if ( FlagRefs.AcousticNanotubeFiltration.DuringGame_ReadiedByInspiration != null )
+                    if ( UnlockRefs.AcousticNanotubeFiltration.DuringGame_ReadiedByInspiration != null )
                     {
                         Task.DuringGameplay_CompleteIfActive();
                         FlagRefs.Ch1_Water_BuildAFiltrationTower.DuringGameplay_StartIfNeeded();

@@ -29,9 +29,9 @@ namespace Arcen.HotM.ExternalVis
             if ( daemon.HasBeenDestroyed && Logic == HackingDaemonLogic.HitByCorruptionFire )
                 return HackingDaemonResult.Indeterminate; //not a daemon, or is a dead one
 
-            if ( Logic == HackingDaemonLogic.HitByCorruptionFire && DaemonType.CostTypeToCorrupt != null && DaemonType.CostAmountToCorrupt > 0 )
+            if ( Logic == HackingDaemonLogic.HitByCorruptionFire && DaemonType.CostTypeToCorrupt != null && DaemonType.CostAmountToCorruptDiscounted > 0 )
             {
-                if ( DaemonType.CostTypeToCorrupt.Current < DaemonType.CostAmountToCorrupt )
+                if ( DaemonType.CostTypeToCorrupt.Current < DaemonType.CostAmountToCorruptDiscounted )
                 {
                     //cannot afford!
                     ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();
@@ -39,7 +39,7 @@ namespace Arcen.HotM.ExternalVis
                     scene.AddToHackingHistory( buffer );
 
                     buffer.Clear();
-                    buffer.AddFormat2( "HackingLog_DaemonFailedToCorruptP2", DaemonType.CostAmountToCorrupt, DaemonType.CostTypeToCorrupt.GetDisplayName() );
+                    buffer.AddFormat2( "HackingLog_DaemonFailedToCorruptP2", DaemonType.CostAmountToCorruptDiscounted, DaemonType.CostTypeToCorrupt.GetDisplayName() );
                     scene.AddToHackingHistory( buffer );
 
                     daemon.DestroyEntity();
@@ -112,7 +112,7 @@ namespace Arcen.HotM.ExternalVis
                                 break;
                             case HackingDaemonLogic.HitByCorruptionFire:
                                 {
-                                    if ( DaemonType.TryPayCorruptionCosts() )
+                                    if ( DaemonType.TryPayCorruptionCostsDiscounted() )
                                     {
                                         ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();
                                         buffer.AddFormat1( "HackingLog_DaemonDestroyedByCorruption", daemon.DaemonType.GetDisplayName() );
@@ -163,7 +163,7 @@ namespace Arcen.HotM.ExternalVis
                             case HackingDaemonLogic.HitByCorruptionFire:
                                 {
                                     ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();
-                                    DaemonType.TryPayCorruptionCosts();
+                                    DaemonType.TryPayCorruptionCostsDiscounted();
                                     daemon.DestroyEntity();
 
                                     HackingDaemonType daemonType = HackingDaemonTypeTable.Instance.GetRowByID( "TriswarmFragment" );
@@ -227,7 +227,7 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     h.hCell cell = daemon.CurrentCell;
 
-                                    DaemonType.TryPayCorruptionCosts();
+                                    DaemonType.TryPayCorruptionCostsDiscounted();
                                     daemon.DestroyEntity();
 
                                     if ( cell != null )
@@ -291,7 +291,7 @@ namespace Arcen.HotM.ExternalVis
                                 break;
                             case HackingDaemonLogic.HitByCorruptionFire:
                                 {
-                                    if ( DaemonType.TryPayCorruptionCosts() )
+                                    if ( DaemonType.TryPayCorruptionCostsDiscounted() )
                                     {
                                         ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();
                                         buffer.AddFormat1( "HackingLog_DaemonDestroyedByCorruption", daemon.DaemonType.GetDisplayName() );
@@ -325,7 +325,7 @@ namespace Arcen.HotM.ExternalVis
                                 break;
                             case HackingDaemonLogic.HitByCorruptionFire:
                                 {
-                                    if ( DaemonType.TryPayCorruptionCosts() )
+                                    if ( DaemonType.TryPayCorruptionCostsDiscounted() )
                                     {
                                         ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();
                                         buffer.AddFormat1( "HackingLog_DaemonDistracted", daemon.DaemonType.GetDisplayName() );
@@ -383,7 +383,7 @@ namespace Arcen.HotM.ExternalVis
                                 break;
                             case HackingDaemonLogic.HitByCorruptionFire:
                                 {
-                                    DaemonType.TryPayCorruptionCosts();
+                                    DaemonType.TryPayCorruptionCostsDiscounted();
                                     ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();
                                     buffer.AddFormat1( "HackingLog_DaemonDestroyedByCorruption", daemon.DaemonType.GetDisplayName() );
                                     scene.AddToHackingHistory( buffer );
@@ -414,7 +414,7 @@ namespace Arcen.HotM.ExternalVis
                                 break;
                             case HackingDaemonLogic.HitByCorruptionFire:
                                 {
-                                    DaemonType.TryPayCorruptionCosts();
+                                    DaemonType.TryPayCorruptionCostsDiscounted();
                                     ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();
                                     buffer.AddFormat1( "HackingLog_DaemonDestroyedByCorruption", daemon.DaemonType.GetDisplayName() );
                                     scene.AddToHackingHistory( buffer );
@@ -461,7 +461,7 @@ namespace Arcen.HotM.ExternalVis
                                 break;
                             case HackingDaemonLogic.HitByCorruptionFire:
                                 {
-                                    DaemonType.TryPayCorruptionCosts();
+                                    DaemonType.TryPayCorruptionCostsDiscounted();
                                     ArcenDoubleCharacterBuffer buffer = scene.GetHackingHistoryBuffer();
                                     buffer.AddFormat1( "HackingLog_DaemonDestroyedByCorruption", daemon.DaemonType.GetDisplayName() );
                                     scene.AddToHackingHistory( buffer );
@@ -619,7 +619,7 @@ namespace Arcen.HotM.ExternalVis
                                             buffer.AddFormat1( "HackingLog_DaemonHealthLossAndMoved", daemon.DaemonType.GetDisplayName(), ColorTheme.RedOrange2 );
                                             scene.AddToHackingHistory( buffer );
                                         }
-                                        DaemonType.TryPayCorruptionCosts();
+                                        DaemonType.TryPayCorruptionCostsDiscounted();
                                         daemon.DaemonType.OnDeath.DuringGame_PlayAtUILocation( daemon.CurrentCell.CalculateScreenPos() );
                                         daemon.DestroyEntity();
                                         return HackingDaemonResult.Indeterminate;
@@ -628,27 +628,54 @@ namespace Arcen.HotM.ExternalVis
                                     {
                                         if ( scene.TargetUnit != null )
                                         {
-                                            DaemonType.TryPayCorruptionCosts();
+                                            DaemonType.TryPayCorruptionCostsDiscounted();
 
                                             DoFinalDaemonLogicForDeathOrQuickHack( DaemonType, scene.HackerUnit, scene.TargetUnit );
-
-                                            //if ( Engine_Universal.PermanentQualityRandom.Next( 0, 100 ) < 20 )
+                                            
+                                            switch ( DaemonType.ID )
                                             {
-                                                int rand = Engine_Universal.PermanentQualityRandom.Next( 0, 100 );
-                                                if ( rand < 15 )
-                                                    ResearchDomainTable.Instance.GetRowByID( "SmallArmsResearch" )?.AddMoreInspiration( 1 );
-                                                else if ( rand  < 30 )
-                                                    ResearchDomainTable.Instance.GetRowByID( "StructuralImprovement" )?.AddMoreInspiration( 1 );
-                                                else if ( rand < 45 )
-                                                    ResearchDomainTable.Instance.GetRowByID( "ItemDevelopment" )?.AddMoreInspiration( 1 );
-                                                else if ( rand < 60 )
-                                                    ResearchDomainTable.Instance.GetRowByID( "VehicularDevelopment" )?.AddMoreInspiration( 1 );
-                                                else if ( rand < 75 )
-                                                    ResearchDomainTable.Instance.GetRowByID( "MartialExpansion" )?.AddMoreInspiration( 1 );
-                                                else if ( rand < 90 )
-                                                    ResearchDomainTable.Instance.GetRowByID( "ProcurementEfficacy" )?.AddMoreInspiration( 1 );
-                                                else
-                                                    ResearchDomainTable.Instance.GetRowByID( "AndroidOptimization" )?.AddMoreInspiration( 1 );
+                                                case "ArmorPlatingServicePanels":
+                                                case "HydraulicActuators":
+                                                case "WeaponSystems":
+                                                    if ( !ResourceRefs.TungstenScraps.DuringGame_IsUnlocked() )
+                                                        ResourceRefs.TungstenScraps.ResourceMustBeUnlockedBy.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( 
+                                                            CommonRefs.WorldExperienceInspiration, true, true, true, false );
+                                                    switch ( DaemonType.ID )
+                                                    {
+                                                        case "ArmorPlatingServicePanels":
+                                                            ResourceRefs.TungstenScraps.AlterCurrent_Named( Engine_Universal.PermanentQualityRandom.Next( 200, 300 ), "Increase_FullHackOfAnEnemy", ResourceAddRule.IgnoreUntilTurnChange );
+                                                            break;
+                                                        case "HydraulicActuators":
+                                                            ResourceRefs.TungstenScraps.AlterCurrent_Named( Engine_Universal.PermanentQualityRandom.Next( 20, 45 ), "Increase_FullHackOfAnEnemy", ResourceAddRule.IgnoreUntilTurnChange );
+                                                            break;
+                                                        case "WeaponSystems":
+                                                            ResourceRefs.TungstenScraps.AlterCurrent_Named( Engine_Universal.PermanentQualityRandom.Next( 50, 75 ), "Increase_FullHackOfAnEnemy", ResourceAddRule.IgnoreUntilTurnChange );
+                                                            break;
+                                                    }
+                                                    break;
+                                                case "AugmentedOrgans":
+                                                case "AdrenalineRegulator":
+                                                case "AugmentedVision":
+                                                case "BionicUplink":
+                                                    if ( !ResourceRefs.HumanBiodata.DuringGame_IsUnlocked() )
+                                                        ResourceRefs.HumanBiodata.ResourceMustBeUnlockedBy.DuringGameplay_ImmediatelyInventIfNotAlreadyDone(
+                                                            CommonRefs.WorldExperienceInspiration, true, true, true, false );
+                                                    switch ( DaemonType.ID )
+                                                    {
+                                                        case "AugmentedOrgans":
+                                                            ResourceRefs.HumanBiodata.AlterCurrent_Named( Engine_Universal.PermanentQualityRandom.Next( 100, 200 ), "Increase_FullHackOfAnEnemy", ResourceAddRule.IgnoreUntilTurnChange );
+                                                            break;
+                                                        case "AdrenalineRegulator":
+                                                            ResourceRefs.HumanBiodata.AlterCurrent_Named( Engine_Universal.PermanentQualityRandom.Next( 200, 300 ), "Increase_FullHackOfAnEnemy", ResourceAddRule.IgnoreUntilTurnChange );
+                                                            break;
+                                                        case "AugmentedVision":
+                                                            ResourceRefs.HumanBiodata.AlterCurrent_Named( Engine_Universal.PermanentQualityRandom.Next( 400, 500 ), "Increase_FullHackOfAnEnemy", ResourceAddRule.IgnoreUntilTurnChange );
+                                                            break;
+                                                        case "BionicUplink":
+                                                            ResourceRefs.HumanBiodata.AlterCurrent_Named( Engine_Universal.PermanentQualityRandom.Next( 600, 700 ), "Increase_FullHackOfAnEnemy", ResourceAddRule.IgnoreUntilTurnChange );
+                                                            break;
+                                                    }
+                                                    break;
                                             }
 
                                             //these are sneaky
@@ -683,12 +710,19 @@ namespace Arcen.HotM.ExternalVis
 
                                     if ( scene.TargetUnit != null && ((scene.TargetUnit as ISimNPCUnit)?.UnitType.IsMechStyleMovement??false) )
                                     {
-                                        if ( DaemonType.TryPayCorruptionCosts() )
+                                        if ( DaemonType.TryPayCorruptionCostsDiscounted() )
                                         {
                                             DoFinalDaemonLogicForDeathOrQuickHack( DaemonType, scene.HackerUnit, scene.TargetUnit );
 
-                                            ResearchDomainTable.Instance.GetRowByID( "AndroidOptimization" )?.AddMoreInspiration( 1 );
-                                            ResearchDomainTable.Instance.GetRowByID( "ItemDevelopment" )?.AddMoreInspiration( 1 );
+                                            if ( !ResourceRefs.TungstenScraps.DuringGame_IsUnlocked() )
+                                                ResourceRefs.TungstenScraps.ResourceMustBeUnlockedBy.DuringGameplay_ImmediatelyInventIfNotAlreadyDone(
+                                                    CommonRefs.WorldExperienceInspiration, true, true, true, false );
+                                            if ( !ResourceRefs.HumanBiodata.DuringGame_IsUnlocked() )
+                                                ResourceRefs.HumanBiodata.ResourceMustBeUnlockedBy.DuringGameplay_ImmediatelyInventIfNotAlreadyDone(
+                                                    CommonRefs.WorldExperienceInspiration, true, true, true, false );
+
+                                            ResourceRefs.TungstenScraps.AlterCurrent_Named( Engine_Universal.PermanentQualityRandom.Next( 800, 900 ), "Increase_FullHackOfAnEnemy", ResourceAddRule.IgnoreUntilTurnChange );
+                                            ResourceRefs.HumanBiodata.AlterCurrent_Named( Engine_Universal.PermanentQualityRandom.Next( 600, 700 ), "Increase_FullHackOfAnEnemy", ResourceAddRule.IgnoreUntilTurnChange );
 
                                             h.Instance.Close( WindowCloseReason.UserDirectRequest );
 
@@ -718,7 +752,7 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     if ( scene.TargetUnit != null )
                                     {
-                                        if ( DaemonType.TryPayCorruptionCosts() )
+                                        if ( DaemonType.TryPayCorruptionCostsDiscounted() )
                                         {
                                             (scene.TargetUnit as ISimNPCUnit)?.DoOnPostHitWithHostileAction( scene.HackerUnit, 100, Engine_Universal.PermanentQualityRandom, false );
                                             h.Instance.Close( WindowCloseReason.UserDirectRequest );
@@ -748,7 +782,7 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     if ( scene.TargetUnit != null )
                                     {
-                                        if ( DaemonType.TryPayCorruptionCosts() )
+                                        if ( DaemonType.TryPayCorruptionCostsDiscounted() )
                                         {
                                             (scene.TargetUnit as ISimNPCUnit)?.DoOnPostHitWithHostileAction( scene.HackerUnit, 100, Engine_Universal.PermanentQualityRandom, false );
                                             h.Instance.Close( WindowCloseReason.UserDirectRequest );
@@ -778,7 +812,7 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     if ( scene.TargetUnit != null )
                                     {
-                                        if ( DaemonType.TryPayCorruptionCosts() )
+                                        if ( DaemonType.TryPayCorruptionCostsDiscounted() )
                                         {
                                             (scene.TargetUnit as ISimNPCUnit)?.DoOnPostHitWithHostileAction( scene.HackerUnit, 100, Engine_Universal.PermanentQualityRandom, false );
                                             h.Instance.Close( WindowCloseReason.UserDirectRequest );
@@ -812,7 +846,7 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     if ( scene.TargetUnit != null )
                                     {
-                                        if ( DaemonType.TryPayCorruptionCosts() )
+                                        if ( DaemonType.TryPayCorruptionCostsDiscounted() )
                                         {
                                             (scene.TargetUnit as ISimNPCUnit)?.DoOnPostHitWithHostileAction( scene.HackerUnit, 100, Engine_Universal.PermanentQualityRandom, false );
                                             h.Instance.Close( WindowCloseReason.UserDirectRequest );
@@ -845,7 +879,7 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     if ( scene.TargetUnit != null )
                                     {
-                                        if ( DaemonType.TryPayCorruptionCosts() )
+                                        if ( DaemonType.TryPayCorruptionCostsDiscounted() )
                                         {
                                             (scene.TargetUnit as ISimNPCUnit)?.DoOnPostHitWithHostileAction( scene.HackerUnit, 100, Engine_Universal.PermanentQualityRandom, false );
                                             h.Instance.Close( WindowCloseReason.UserDirectRequest );
@@ -909,7 +943,7 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     if ( scene.TargetUnit != null )
                                     {
-                                        DaemonType.TryPayCorruptionCosts();
+                                        DaemonType.TryPayCorruptionCostsDiscounted();
                                         if ( daemon.DaemonType.BadgeToApplyToTargetOnDeath != null )
                                         {
                                             scene.TargetUnit.AddOrRemoveBadge( daemon.DaemonType.BadgeToApplyToTargetOnDeath, true );

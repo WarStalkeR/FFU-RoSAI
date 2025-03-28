@@ -230,8 +230,8 @@ namespace Arcen.HotM.ExternalVis
                 ResearchDomainTable.Instance.GetRowByID( "GenerateIdeasChapterZero" ).AddMoreInspiration( 1 );
 
                 HandbookRefs.ExamineEnemies.DuringGame_UnlockIfNeeded( true );
-                FlagRefs.TacticalCover.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
-                FlagRefs.FieldRepairs.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                UnlockRefs.TacticalCover.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                UnlockRefs.FieldRepairs.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
             }
 
             if ( HandbookRefs.ExamineEnemies.Meta_HasBeenRead && FlagRefs.Ch0_ReadHandbookEntry.DuringGameplay_State == CityTaskState.NeverStarted )

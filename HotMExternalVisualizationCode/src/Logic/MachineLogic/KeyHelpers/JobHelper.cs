@@ -68,7 +68,7 @@ namespace Arcen.HotM.ExternalVis
                 long totalCapAvailable = OutputResourceType.MidSoftCap;
                 if ( totalCapAvailable <= 0 )
                 {
-                    if ( FlagRefs.ResourceAnalyst.DuringGameplay_IsInvented )
+                    if ( UnlockRefs.ResourceAnalyst.DuringGameplay_IsInvented )
                     {
                         //if no storage at all for the thing we're to produce
                         machineStructure.Complaints.SetToConstructionDict( MachineJobComplaintTable.Instance.GetRowByID( "NoStorageForOutput" ), 0 );
@@ -486,6 +486,10 @@ namespace Arcen.HotM.ExternalVis
                             {
                                 Int64 currentAmount = Math.Max( 0, math.IncomeOrExpenseResource.Current - math.ExpenseResourceCannotReduceBelow );
                                 Int64 desiredAmount = math.GetMin( Structure );
+
+                                if ( currentAmount < desiredAmount && Job.DoNotComplainAboutLowInputs )
+                                    desiredAmount = currentAmount;
+
                                 if ( currentAmount < desiredAmount )
                                 {
                                     hadAnyExpensesLowerThanPerfect = true;
@@ -590,6 +594,13 @@ namespace Arcen.HotM.ExternalVis
                                         {
                                             ResourceType res = math.IncomeOrExpenseResource;
                                             int originalDesired = math.GetMin( Structure );
+                                            if ( math.IsExpense )
+                                            {
+                                                Int64 currentAmount = Math.Max( 0, math.IncomeOrExpenseResource.Current - math.ExpenseResourceCannotReduceBelow );
+                                                if ( currentAmount < originalDesired && Job.DoNotComplainAboutLowInputs )
+                                                    originalDesired = (int)currentAmount;
+                                            }
+
                                             int finalDesired = originalDesired;
                                             if ( doNotComplainAboutStorageRatios && hadAnyIncomeStorageLowerThanPerfect )
                                                 originalDesired = Mathf.CeilToInt( originalDesired * bestIncomeStorageRatio );
@@ -1162,7 +1173,7 @@ namespace Arcen.HotM.ExternalVis
         #region HandleFilth
         public static void HandleFilth( MachineStructure Structure, MachineJob Job, JobLogic Logic, MersenneTwister RandOrNull, bool isRefugees )
         {
-            if ( FlagRefs.AwarenessOfFilth.DuringGameplay_IsInvented || FlagRefs.AwarenessOfFilth.DuringGame_ReadiedByInspiration != null )
+            if ( UnlockRefs.AwarenessOfFilth.DuringGameplay_IsInvented || UnlockRefs.AwarenessOfFilth.DuringGame_ReadiedByInspiration != null )
             {
                 int debugStage = 0;
                 try
@@ -1214,7 +1225,7 @@ namespace Arcen.HotM.ExternalVis
                                     filthData.SetOriginalMaximum( maxFilth );
 
                                     debugStage = 12000;
-                                    if ( filthData.Current == 0 && (FlagRefs.AwarenessOfFilth.GetWasInventedWithinTheLastTurn() || SimCommon.GetIsFreshlyLoadedFromVersionOlderThan( 0, 498, 0 )) )
+                                    if ( filthData.Current == 0 && (UnlockRefs.AwarenessOfFilth.GetWasInventedWithinTheLastTurn() || SimCommon.GetIsFreshlyLoadedFromVersionOlderThan( 0, 498, 0 )) )
                                     {
                                         debugStage = 12100;
                                         //don't mess with the current amount of filth UNLESS we just unlocked AwarenessOfFilth
@@ -1237,7 +1248,7 @@ namespace Arcen.HotM.ExternalVis
                                 MapActorData filthData = Structure.GetActorDataData( ActorRefs.Filth, true );
                                 if ( filthData != null )
                                 {
-                                    if ( FlagRefs.RoboticCleaners.DuringGameplay_IsInvented )
+                                    if ( UnlockRefs.RoboticCleaners.DuringGameplay_IsInvented )
                                     {
                                         if ( filthData.Current > 0 )
                                             filthData.SetCurrent( 0 );
@@ -1253,11 +1264,11 @@ namespace Arcen.HotM.ExternalVis
                                             0.5f,
                                             Structure.GetActorDataData( ActorRefs.FurnishedApartments, true ), MathRefs.MaxCleaningMultiplierFromFurnishings.IntMin );
 
-                                        if ( FlagRefs.IsExperiencingObsession.DuringGameplay_IsTripped && !FlagRefs.RoboticCleaners.DuringGameplay_IsInvented )
+                                        if ( FlagRefs.IsExperiencingObsession.DuringGameplay_IsTripped && !UnlockRefs.RoboticCleaners.DuringGameplay_IsInvented )
                                         {
                                             if ( filthData.Current * 2 > filthData.Maximum )
                                             {
-                                                FlagRefs.RoboticCleaners.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, true, true, false );
+                                                UnlockRefs.RoboticCleaners.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, true, true, false );
                                                 OtherKeyMessageTable.Instance.GetRowByID( "TooMuchFilth" ).DuringGameplay_IsReadyToBeViewed = true;
                                             }
                                         }
@@ -1296,6 +1307,85 @@ namespace Arcen.HotM.ExternalVis
         }
         #endregion
 
+        #region HandleScientificResearch
+        public static void HandleScientificResearch( MachineStructure Structure, MachineJob Job, JobLogic Logic, MersenneTwister RandOrNull )
+        {
+            int debugStage = 0;
+            try
+            {
+                //this stuff only happens once the appropriate part of chapter one is reached
+
+                switch ( Logic )
+                {
+                    case JobLogic.ExecuteLogic:
+                        {
+                            if ( !Structure.IsFunctionalJob || Structure.IsJobPaused )
+                                return;
+
+                            ResourceType workers = null;
+                            switch ( Job.ID )
+                            {
+                                case "MolecularGeneticsLab":
+                                    workers = ResourceRefs.MolecularGeneticists;
+                                    break;
+                                case "ForensicGeneticsLab":
+                                    workers = ResourceRefs.ForensicGeneticists;
+                                    break;
+                                case "ZoologyLab":
+                                    workers = ResourceRefs.Zoologists;
+                                    break;
+                                case "MedicalPractice":
+                                    workers = ResourceRefs.Physicians;
+                                    break;
+                                case "VeterinaryPractice":
+                                    workers = ResourceRefs.Veterinarians;
+                                    break;
+                                case "BotanyLab":
+                                    workers = ResourceRefs.Botanists;
+                                    break;
+                                case "BionicEngineeringStudio":
+                                    workers = ResourceRefs.BionicsEngineers;
+                                    break;
+                                case "EpidemiologyLab":
+                                    workers = ResourceRefs.Epidemiologists;
+                                    break;
+                                case "NeuroscienceLab":
+                                    workers = ResourceRefs.Neurologists;
+                                    break;
+                            }
+                            if ( workers == null || workers.Current <= 0 )
+                                return;
+
+                            int scienceAmount = Job.GetSingleIntByID( "ScientificResearch", Structure );
+                            if ( scienceAmount <= 0 ) 
+                                return;
+
+                            if ( workers.Current >= workers.HardCap )
+                            {
+                                ResourceRefs.ScientificResearch.AlterCurrent_Job( scienceAmount, Job, ResourceAddRule.IgnoreUntilTurnChange );
+                            }
+                            else
+                            {
+                                float hardCap = (float)MathA.Max( 1, workers.HardCap );
+                                float percentage = (float)workers.Current / hardCap;
+                                if ( percentage <= 0 )
+                                    return;
+
+                                scienceAmount = Mathf.RoundToInt( percentage * scienceAmount );
+
+                                ResourceRefs.ScientificResearch.AlterCurrent_Job( scienceAmount, Job, ResourceAddRule.IgnoreUntilTurnChange );
+                            }
+                        }
+                        break;
+                }
+            }
+            catch ( Exception e )
+            {
+                ArcenDebugging.LogDebugStageWithStack( "HandleScientificResearch error: " + Logic + " " + (Job?.ID ?? "[null]"), debugStage, e, Verbosity.ShowAsError );
+            }
+        }
+        #endregion
+
         #region GetCurrentResidentsAtStructure
         public static int GetCurrentResidentsAtStructure( MachineStructure Structure )
         {
@@ -1314,7 +1404,7 @@ namespace Arcen.HotM.ExternalVis
         #region HandleVRDayUseSeats
         public static void HandleVRDayUseSeats( MachineStructure Structure, MachineJob Job, JobLogic Logic, MersenneTwister RandOrNull )
         {
-            if ( FlagRefs.InitialVRSimulation.DuringGameplay_IsInvented || FlagRefs.InitialVRSimulation.DuringGame_ReadiedByInspiration != null )
+            if ( UnlockRefs.InitialVRSimulation.DuringGameplay_IsInvented || UnlockRefs.InitialVRSimulation.DuringGame_ReadiedByInspiration != null )
             {
                 int debugStage = 0;
                 try
@@ -1334,7 +1424,7 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     MapActorData seatsData = Structure.GetActorDataDataAndInitializeIfNeedBe( ActorRefs.VRDayUseSeats, 0, 0 );
 
-                                    bool isHavingABadTime = !FlagRefs.ExpandedVRSimulation.DuringGameplay_IsInvented && FlagRefs.HadEarlyDeathInTheVRSimulation.DuringGameplay_IsTripped;
+                                    bool isHavingABadTime = !UnlockRefs.ExpandedVRSimulation.DuringGameplay_IsInvented && FlagRefs.HadEarlyDeathInTheVRSimulation.DuringGameplay_IsTripped;
                                     if ( isHavingABadTime )
                                         currentResidents /= 4;
 
@@ -1359,7 +1449,7 @@ namespace Arcen.HotM.ExternalVis
                                 {
                                     int hoursPerFilledVRSeat = Job.GetSingleIntByID( "HoursPerFilledVRSeat", Structure );
 
-                                    bool isHavingABadTime = !FlagRefs.ExpandedVRSimulation.DuringGameplay_IsInvented && FlagRefs.HadEarlyDeathInTheVRSimulation.DuringGameplay_IsTripped;
+                                    bool isHavingABadTime = !UnlockRefs.ExpandedVRSimulation.DuringGameplay_IsInvented && FlagRefs.HadEarlyDeathInTheVRSimulation.DuringGameplay_IsTripped;
                                     if ( isHavingABadTime )
                                         hoursPerFilledVRSeat /= 4;
 

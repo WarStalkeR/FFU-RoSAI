@@ -96,6 +96,34 @@ namespace Arcen.HotM.ExternalVis
                                         peltResult.TrySetCityStatisticToNewValue( unitsString2, toSell );
                                     }
                                 }
+
+                                if ( ResourceRefs.HumanBiodata != null )
+                                {
+                                    EventChoice biodataChoice = Event.ChoicesLookup["SellAllYourHumanBiodata"];
+                                    EventChoiceResult biodataResult = biodataChoice.AllPossibleResults.FirstOrDefault;
+
+                                    int toSell = (int)ResourceRefs.HumanBiodata?.Current;
+                                    float earningsPer = 328f;
+                                    int totalEarnings = Mathf.CeilToInt( toSell * earningsPer );
+                                    if ( toSell < 1 )
+                                    {
+                                        biodataChoice.DuringGame_CalculatedErrorStringToShow = Lang.Format1( "YouCannotSellFewerThan", 1 );
+                                        biodataChoice.TrySetResourceCostToNewValue( ResourceRefs.HumanBiodata, 1 );
+                                    }
+                                    else
+                                    {
+                                        biodataChoice.DuringGame_CalculatedErrorStringToShow = string.Empty;
+                                        biodataChoice.TrySetResourceCostToNewValue( ResourceRefs.HumanBiodata, toSell );
+                                        biodataResult.TrySetResourceResultToNewValue( ResourceRefs.Wealth, totalEarnings, totalEarnings );
+                                        biodataResult.TrySetCityStatisticToNewValue( earningsString, totalEarnings );
+
+                                        biodataResult.TrySetCityStatisticToNewValue( unitsString, toSell );
+
+                                        string unitsString2 = "HumanBiodataSoldToCriminals";
+
+                                        biodataResult.TrySetCityStatisticToNewValue( unitsString2, toSell );
+                                    }
+                                }
                             }
                             break;
                     }

@@ -277,7 +277,7 @@ namespace Arcen.HotM.ExternalVis
             {
                 RenderHackOption( Daemon.VisibleIcon, delegate ( ArcenUI_Element element, UIAction Action, ref UIActionData ExtraData )
                 {
-                    int finalCost = multiplier <= 1f  ? Daemon.CostAmountToCorrupt : Mathf.CeilToInt( Daemon.CostAmountToCorrupt * ( multiplier * multiplier ));
+                    int finalCost = multiplier <= 1f  ? Daemon.CostAmountToCorruptQuickHack : Mathf.CeilToInt( Daemon.CostAmountToCorruptQuickHack * ( multiplier * multiplier ));
                     bool canUse = Daemon.CostTypeToCorrupt == null || Daemon.CostTypeToCorrupt.Current >= finalCost;
 
                     //if ( canUse )

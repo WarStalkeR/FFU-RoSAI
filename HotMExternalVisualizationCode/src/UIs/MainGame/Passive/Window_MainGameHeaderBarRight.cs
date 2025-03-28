@@ -307,7 +307,7 @@ namespace Arcen.HotM.ExternalVis
                                                 }
                                             }
                                         }
-                                        icon.SetBoxStyle( element.LastHadMouseWithin ? MapIconStyle.SecondaryHighlighted : MapIconStyle.Secondary );
+                                        icon.SetBoxStyle( isSelectedOrHovered ? MapIconStyle.SecondaryHighlighted : MapIconStyle.Secondary );
 
                                         if ( SharedRenderManagerData.CurrentIndicator == Indicator.VirtualWorldButton )
                                         {

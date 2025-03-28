@@ -66,7 +66,7 @@ namespace Arcen.HotM.ExternalVis
                     Buffer.AddLang( "VirtualRealityRenaming_Body" );
                 else
                 {
-                    if ( FlagRefs.ExpandedVRSimulation.DuringGameplay_IsInvented )
+                    if ( UnlockRefs.ExpandedVRSimulation.DuringGameplay_IsInvented )
                         Buffer.AddLang( "VirtualRealityNaming_Expanded_Body" );
                     else
                         Buffer.AddLang( "VirtualRealityNaming_Early_Body" );

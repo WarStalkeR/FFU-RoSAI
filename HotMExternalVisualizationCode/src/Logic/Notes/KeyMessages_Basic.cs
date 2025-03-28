@@ -102,7 +102,7 @@ namespace Arcen.HotM.ExternalVis
                         break;
                     case "OKM-ThinkingForYourself":
                         {
-                            if ( SimMetagame.CurrentChapterNumber > 1 || FlagRefs.TheThinker.DuringGameplay_IsInvented )
+                            if ( SimMetagame.CurrentChapterNumber > 1 || UnlockRefs.TheThinker.DuringGameplay_IsInvented )
                                 Message.SetAsDoesNotNeedToBeViewed();
                             else
                             {

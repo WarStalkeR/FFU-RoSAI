@@ -870,13 +870,19 @@ namespace Arcen.HotM.ExternalVis
         {
             if ( !FlagRefs.HasFinishedUITour.DuringGameplay_IsTripped )
                 return;
+            if ( Engine_HotM.CurrentLowerMode != null )
+            {
+                Engine_HotM.CurrentLowerMode?.Implementation?.TriggerSlotNumber( Index );
+                return;
+            }
+
             switch ( Engine_HotM.GameMode )
             {
                 case MainGameMode.Streets:
                 case MainGameMode.CityMap:
                     if ( Engine_HotM.SelectedMachineActionMode != null )
                     {
-                        Engine_HotM.SelectedMachineActionMode.Implementation.TriggerSlotNumber( Index );
+                        Engine_HotM.SelectedMachineActionMode?.Implementation?.TriggerSlotNumber( Index );
                         break;
                     }
                     if ( Window_VehicleUnitPanel.Instance.IsOpen )

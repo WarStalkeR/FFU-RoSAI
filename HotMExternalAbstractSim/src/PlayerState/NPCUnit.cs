@@ -919,6 +919,14 @@ namespace Arcen.HotM.External
                         containerVehicle.AlterAggroOfNPCCohort( this.FromCohort, MathA.Max( 1, Mathf.RoundToInt( (PhysicalDamageAmount + MoraleDamageAmount) * aggroMultiplier ) ) );
                 }
             }
+
+            if ( PhysicalDamageAmount > 0 )
+            {
+                if ( !FlagRefs.HasThoughtOfRepairSpiders.DuringGameplay_IsTripped && !CommonRefs.RepairSpidersBulk_Message.DuringGameplay_IsViewingComplete &&
+                    (this.UnitType?.CostsToCreateIfBulkAndroid?.Count ?? 0) > 0 )
+                    CommonRefs.RepairSpidersBulk_Message.DuringGameplay_IsReadyToBeViewed = true;
+            }
+
             this.DoDeathCheck( Rand, ShouldDoDamageTextPopupsAndLogging );
 
             if ( this.IsFullDead && !wasAlreadyDead && DamageSource != null )

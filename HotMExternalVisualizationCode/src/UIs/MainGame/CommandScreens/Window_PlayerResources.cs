@@ -801,7 +801,7 @@ namespace Arcen.HotM.ExternalVis
             #region OnUpdate_Content_TPSReports
             private void OnUpdate_Content_TPSReports()
             {
-                if ( !FlagRefs.ResourceAnalyst.DuringGameplay_IsInvented )
+                if ( !UnlockRefs.ResourceAnalyst.DuringGameplay_IsInvented )
                 {
                     #region Not Yet Unlocked
                     bool render = true;
@@ -1033,7 +1033,7 @@ namespace Arcen.HotM.ExternalVis
             #region OnUpdate_Content_Ledger
             private void OnUpdate_Content_Ledger()
             {
-                if ( !FlagRefs.ResourceAnalyst.DuringGameplay_IsInvented )
+                if ( !UnlockRefs.ResourceAnalyst.DuringGameplay_IsInvented )
                 {
                     #region Not Yet Unlocked
                     bool render = true;
@@ -2323,7 +2323,7 @@ namespace Arcen.HotM.ExternalVis
                         break;
                     case ResourcesDisplayType.TPSReports:
                         {
-                            if ( FlagRefs.ResourceAnalyst.DuringGameplay_IsInvented )
+                            if ( UnlockRefs.ResourceAnalyst.DuringGameplay_IsInvented )
                             {
                                 int problemCount = 0;
                                 if ( SimCommon.ProductionJobsWithProblems.Count > 0 )
@@ -2343,7 +2343,7 @@ namespace Arcen.HotM.ExternalVis
                         break;
                     case ResourcesDisplayType.Ledger:
                         {
-                            if ( FlagRefs.ResourceAnalyst.DuringGameplay_IsInvented )
+                            if ( UnlockRefs.ResourceAnalyst.DuringGameplay_IsInvented )
                             {
                                 int problemCount = 0;
                                 if ( SimCommon.ProductionResourcesWithMinorProblems.Count > 0 )

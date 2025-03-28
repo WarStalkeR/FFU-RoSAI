@@ -109,7 +109,7 @@ namespace Arcen.HotM.ExternalVis
                 if ( unit.CurrentActionPoints == 0 )
                 {
                     HandbookRefs.UnitsCanReload.DuringGame_UnlockIfNeeded( true );
-                    FlagRefs.AndroidOverdrive.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                    UnlockRefs.AndroidOverdrive.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
                 }
 
                 if ( unit.IsInConsumableTargetingMode != null )

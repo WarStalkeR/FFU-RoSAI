@@ -2251,7 +2251,7 @@ namespace Arcen.HotM.ExternalVis
 
             if ( VisCurrent.GetShouldBeBlurred() )
                 return; //hide when in a blurred scene
-            if ( !FlagRefs.PropertyDamage.DuringGameplay_IsInvented )
+            if ( !UnlockRefs.PropertyDamage.DuringGameplay_IsInvented )
                 return; //hide if not yet able to extract
 
             Vector3 effectivePoint = item.CenterPoint;

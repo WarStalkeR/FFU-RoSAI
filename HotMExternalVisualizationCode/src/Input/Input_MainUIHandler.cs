@@ -66,11 +66,8 @@ namespace Arcen.HotM.ExternalVis
                         {
                             if ( lowerMode.DoesNotCloseFromHotkeys )
                                 return;
-                            if ( lowerMode.ClosesLikeAWindow )
-                            {
-                                Engine_HotM.CurrentLowerMode = null;
-                                return;
-                            }
+                            lowerMode.Implementation.HandleCancelButton();
+                            return;
                         }
                         else
                         {
@@ -455,7 +452,7 @@ namespace Arcen.HotM.ExternalVis
                     break;
                 case "Lens_CityConflicts":
                     {
-                        if ( !FlagRefs.TheStrategist.DuringGameplay_IsInvented ) //must have unlocked this
+                        if ( !UnlockRefs.TheStrategist.DuringGameplay_IsInvented ) //must have unlocked this
                             return;
                         ArcenInput.BlockUntilNextFrame();
                         SimCommon.SetCurrentCityLensIfAvailable( CommonRefs.CityConflictLens );
@@ -505,8 +502,17 @@ namespace Arcen.HotM.ExternalVis
                 case "RotateStructureRight":
                 case "RotateBulkUnitLeft":
                 case "RotateBulkUnitRight":
-                    if ( Engine_HotM.SelectedMachineActionMode != null )
-                        Engine_HotM.SelectedMachineActionMode.Implementation.HandlePassedInput( Int1, InputActionType );
+                    {
+                        LowerModeData lowerMode = Engine_HotM.CurrentLowerMode;
+                        if ( lowerMode != null )
+                            lowerMode.Implementation.HandlePassedInput( Int1, InputActionType );
+                        else
+                        {
+                            MachineActionMode actionMode = Engine_HotM.SelectedMachineActionMode;
+                            if ( actionMode != null )
+                                actionMode.Implementation.HandlePassedInput( Int1, InputActionType );
+                        }
+                    }
                     break;
                 case "LevelEditor_SwitchPaletteAndSceneObjectList":
                     if ( areAllInputsBlocked )

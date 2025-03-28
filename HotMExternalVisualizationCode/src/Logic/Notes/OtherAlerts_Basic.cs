@@ -34,7 +34,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( SimCommon.CurrentDialogs.Count.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     if ( novel.TryStartSmallerTooltip( TooltipID.Create( Alert ), MustBeAboveOrBelow, Clamp, TooltipNovelWidth.Simple, TooltipExtraText.None, ExtraRules ) )
@@ -75,7 +75,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( inactiveFlags.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     if ( novel.TryStartSmallerTooltip( TooltipID.Create( Alert ), MustBeAboveOrBelow, Clamp, TooltipNovelWidth.Simple, TooltipExtraText.None, ExtraRules ) )
@@ -105,12 +105,42 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( total.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     if ( novel.TryStartSmallerTooltip( TooltipID.Create( Alert ), MustBeAboveOrBelow, Clamp, TooltipNovelWidth.Simple, TooltipExtraText.None, ExtraRules ) )
                                     {
-                                        Alert.HandleTooltip_Basic( novel );
+                                        Alert.HandleTooltip_Format1( novel, total );
+
+                                        novel.Main.AddLeftClickFormat( "LeftClickToCycleThroughStructures_RelatedToNotice", ColorTheme.SoftGold ).Line();
+                                    }
+                                    break;
+                            }
+                        }
+                        #endregion
+                        break;
+                    case "CounterattacksIncoming":
+                        #region CounterattacksIncoming
+                        {
+                            int total = SimCommon.StructuresWithCounterattacksIncoming.Count;
+
+                            switch ( Logic )
+                            {
+                                case OtherChecklistAlertLogic.DoPerQuarterSecond:
+                                    Alert.DuringGameplay_ShouldBeVisibleNow = total > 0;
+                                    break;
+                                case OtherChecklistAlertLogic.OnClicked_Left:
+                                case OtherChecklistAlertLogic.OnClicked_Right:
+                                    SimCommon.CycleThroughMachineStructuresWithCounterattacksIncoming( false, ( MachineStructure s ) => true );
+                                    break;
+                                case OtherChecklistAlertLogic.WriteBriefText:
+                                    BufferOrNull.AddRaw( total.ToString() ).Position20();
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
+                                    break;
+                                case OtherChecklistAlertLogic.WriteTooltip:
+                                    if ( novel.TryStartSmallerTooltip( TooltipID.Create( Alert ), MustBeAboveOrBelow, Clamp, TooltipNovelWidth.Simple, TooltipExtraText.None, ExtraRules ) )
+                                    {
+                                        Alert.HandleTooltip_Format1( novel, total );
 
                                         novel.Main.AddLeftClickFormat( "LeftClickToCycleThroughStructures_RelatedToNotice", ColorTheme.SoftGold ).Line();
                                     }
@@ -125,12 +155,12 @@ namespace Arcen.HotM.ExternalVis
                             switch ( Logic )
                             {
                                 case OtherChecklistAlertLogic.DoPerQuarterSecond:
-                                    Alert.DuringGameplay_ShouldBeVisibleNow = SimCommon.MachineActorsInvestigatingOrInfiltrating.Count > 0;
+                                    Alert.DuringGameplay_ShouldBeVisibleNow = SimCommon.MachineActorsInvestigating.Count > 0;
                                     break;
                                 case OtherChecklistAlertLogic.OnClicked_Left:
                                 case OtherChecklistAlertLogic.OnClicked_Right:
                                     {
-                                        foreach ( KeyValuePair<ISimMachineActor, int> kv in SimCommon.MachineActorsInvestigatingOrInfiltrating.GetDisplayList() )
+                                        foreach ( KeyValuePair<ISimMachineActor, int> kv in SimCommon.MachineActorsInvestigating.GetDisplayList() )
                                         {
                                             Engine_HotM.SetSelectedActor( kv.Key, false, false, false );
                                             break;
@@ -140,20 +170,68 @@ namespace Arcen.HotM.ExternalVis
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     {
                                         int highest = 0;
-                                        foreach ( KeyValuePair<ISimMachineActor, int> kv in SimCommon.MachineActorsInvestigatingOrInfiltrating.GetDisplayList() )
+                                        foreach ( KeyValuePair<ISimMachineActor, int> kv in SimCommon.MachineActorsInvestigating.GetDisplayList() )
                                         {
                                             if ( kv.Value > highest )
                                                 highest= kv.Value;
                                         }
                                         BufferOrNull.AddRaw( highest.ToString() ).Position20();
-                                        Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                        Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     }
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     if ( novel.TryStartSmallerTooltip( TooltipID.Create( Alert ), MustBeAboveOrBelow, Clamp, TooltipNovelWidth.Simple, TooltipExtraText.None, ExtraRules ) )
                                     {
                                         int highest = 0;
-                                        foreach ( KeyValuePair<ISimMachineActor, int> kv in SimCommon.MachineActorsInvestigatingOrInfiltrating.GetDisplayList() )
+                                        foreach ( KeyValuePair<ISimMachineActor, int> kv in SimCommon.MachineActorsInvestigating.GetDisplayList() )
+                                        {
+                                            if ( kv.Value > highest )
+                                                highest = kv.Value;
+                                        }
+                                        Alert.HandleTooltip_Format2( novel, highest, highest );
+
+                                        novel.Main.AddLeftClickFormat( "LeftClickToSelectUnit_RelatedToNotice", ColorTheme.SoftGold ).Line();
+                                    }
+                                    break;
+                            }
+                        }
+                        #endregion
+                        break;
+                    case "InfiltrationProgress":
+                        #region InfiltrationProgress
+                        {
+                            switch ( Logic )
+                            {
+                                case OtherChecklistAlertLogic.DoPerQuarterSecond:
+                                    Alert.DuringGameplay_ShouldBeVisibleNow = SimCommon.MachineActorsInfiltrating.Count > 0;
+                                    break;
+                                case OtherChecklistAlertLogic.OnClicked_Left:
+                                case OtherChecklistAlertLogic.OnClicked_Right:
+                                    {
+                                        foreach ( KeyValuePair<ISimMachineActor, int> kv in SimCommon.MachineActorsInfiltrating.GetDisplayList() )
+                                        {
+                                            Engine_HotM.SetSelectedActor( kv.Key, false, false, false );
+                                            break;
+                                        }
+                                    }
+                                    break;
+                                case OtherChecklistAlertLogic.WriteBriefText:
+                                    {
+                                        int highest = 0;
+                                        foreach ( KeyValuePair<ISimMachineActor, int> kv in SimCommon.MachineActorsInfiltrating.GetDisplayList() )
+                                        {
+                                            if ( kv.Value > highest )
+                                                highest = kv.Value;
+                                        }
+                                        BufferOrNull.AddRaw( highest.ToString() ).Position20();
+                                        Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
+                                    }
+                                    break;
+                                case OtherChecklistAlertLogic.WriteTooltip:
+                                    if ( novel.TryStartSmallerTooltip( TooltipID.Create( Alert ), MustBeAboveOrBelow, Clamp, TooltipNovelWidth.Simple, TooltipExtraText.None, ExtraRules ) )
+                                    {
+                                        int highest = 0;
+                                        foreach ( KeyValuePair<ISimMachineActor, int> kv in SimCommon.MachineActorsInfiltrating.GetDisplayList() )
                                         {
                                             if ( kv.Value > highest )
                                                 highest = kv.Value;
@@ -211,7 +289,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( SimCommon.VisibleAndroidInvestigations.Count.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     if ( novel.TryStartSmallerTooltip( TooltipID.Create( Alert ), MustBeAboveOrBelow, Clamp, TooltipNovelWidth.Simple, TooltipExtraText.None, ExtraRules ) )
@@ -244,7 +322,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( SimCommon.ActorTypesMissingEquipment.Count.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -279,7 +357,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( SimCommon.PlayerUnitsShortResourceCostsToAttacks.Count.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -319,7 +397,7 @@ namespace Arcen.HotM.ExternalVis
                                 case OtherChecklistAlertLogic.OnClicked_Right:
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -352,7 +430,7 @@ namespace Arcen.HotM.ExternalVis
                                 case OtherChecklistAlertLogic.OnClicked_Right:
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -382,7 +460,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( SimCommon.ResourcesWithExcess.Count.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -420,7 +498,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( SimCommon.ActiveProjectsThatCauseAttacks.Count.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -443,7 +521,7 @@ namespace Arcen.HotM.ExternalVis
                         #region TPSReports
                         {
                             int problemCount = 0;
-                            if ( FlagRefs.ResourceAnalyst.DuringGameplay_IsInvented )
+                            if ( UnlockRefs.ResourceAnalyst.DuringGameplay_IsInvented )
                             {
                                 if ( SimCommon.ProductionJobsWithProblems.Count > 0 )
                                 {
@@ -468,7 +546,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( problemCount.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -505,13 +583,13 @@ namespace Arcen.HotM.ExternalVis
                         #region Ledger
                         {
                             int majorProblemCount = 0;
-                            if ( FlagRefs.ResourceAnalyst.DuringGameplay_IsInvented )
+                            if ( UnlockRefs.ResourceAnalyst.DuringGameplay_IsInvented )
                             {
                                 if ( SimCommon.ProductionResourcesWithMajorProblems.Count > 0 )
                                 {
                                     foreach ( ResourceType resource in SimCommon.ProductionResourcesWithMajorProblems.GetDisplayList() )
                                     {
-                                        if ( !resource.IsLedgerIgnored )
+                                        if ( !resource.IsLedgerIgnored && !resource.DoNotComplainAboutLedgerValuesBeingLow )
                                             majorProblemCount++;
                                     }
                                 }
@@ -530,7 +608,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( majorProblemCount.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -580,7 +658,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( turnsRemaining.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -610,7 +688,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( turnsRemaining.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -657,7 +735,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( handbookCount.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -698,7 +776,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( attackCount.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -761,7 +839,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( attackCount.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -802,7 +880,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( attackCount.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     {
@@ -822,7 +900,7 @@ namespace Arcen.HotM.ExternalVis
                             switch ( Logic )
                             {
                                 case OtherChecklistAlertLogic.DoPerQuarterSecond:
-                                    if ( FlagRefs.InitialVRSimulation.DuringGameplay_IsInvented && !SimCommon.GetIsVirtualRealityEstablished() )
+                                    if ( UnlockRefs.InitialVRSimulation.DuringGameplay_IsInvented && !SimCommon.GetIsVirtualRealityEstablished() )
                                         Alert.DuringGameplay_ShouldBeVisibleNow = CityStatisticTable.GetScore( "VRDaySeatsInstalled" ) >= 2000;
                                     else
                                         Alert.DuringGameplay_ShouldBeVisibleNow = false;
@@ -839,7 +917,7 @@ namespace Arcen.HotM.ExternalVis
                                         BufferOrNull.AddSpriteStyled_NoIndent( IconRefs.ChooseProjectTarget.Icon, AdjustedSpriteStyle.InlineLarger1_2, ColorTheme.GetRedOrange2( IsHovered ) );
 
                                     BufferOrNull.Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     if ( novel.TryStartSmallerTooltip( TooltipID.Create( Alert ), MustBeAboveOrBelow, Clamp, TooltipNovelWidth.Simple, TooltipExtraText.None, ExtraRules ) )
@@ -886,7 +964,7 @@ namespace Arcen.HotM.ExternalVis
                                     break;
                                 case OtherChecklistAlertLogic.WriteBriefText:
                                     BufferOrNull.AddRaw( SimCommon.StructuresWithInternalRoboticsShortage.Count.ToString() ).Position20();
-                                    Alert.WriteTextPart( BufferOrNull, IsHovered );
+                                    Alert.WriteTextPartWithIcon( BufferOrNull, IsHovered );
                                     break;
                                 case OtherChecklistAlertLogic.WriteTooltip:
                                     if ( novel.TryStartSmallerTooltip( TooltipID.Create( Alert ), MustBeAboveOrBelow, Clamp, TooltipNovelWidth.Simple, TooltipExtraText.None, ExtraRules ) )

@@ -81,7 +81,8 @@ namespace Arcen.HotM.External
                 SimCommon.MachineActorsDeployedAndActingAsAndroidLauncher.ClearConstructionListForStartingConstruction();
                 SimCommon.MachineActorsDeployedAndActingAsMechLauncher.ClearConstructionListForStartingConstruction();
                 SimCommon.AllMachineActors.ClearConstructionListForStartingConstruction();
-                SimCommon.MachineActorsInvestigatingOrInfiltrating.ClearConstructionListForStartingConstruction();
+                SimCommon.MachineActorsInvestigating.ClearConstructionListForStartingConstruction();
+                SimCommon.MachineActorsInfiltrating.ClearConstructionListForStartingConstruction();
 
                 if ( !ForceRun )
                 {
@@ -132,12 +133,18 @@ namespace Arcen.HotM.External
 
                         switch ( kv.Value.CurrentActionOverTime?.Type?.ID ?? string.Empty )
                         {
-                            case "InvestigateLocation":
                             case "InvestigateLocation_Infiltration":
                                 {
                                     int turnsLeft = kv.Value?.CurrentActionOverTime?.GetIntData( "Target1", false )??0;
                                     if ( turnsLeft > 0 )
-                                        SimCommon.MachineActorsInvestigatingOrInfiltrating.AddToConstructionList( new KeyValuePair<ISimMachineActor, int>( kv.Value, turnsLeft ) );
+                                        SimCommon.MachineActorsInfiltrating.AddToConstructionList( new KeyValuePair<ISimMachineActor, int>( kv.Value, turnsLeft ) );
+                                }
+                                break;
+                            case "InvestigateLocation":
+                                {
+                                    int turnsLeft = kv.Value?.CurrentActionOverTime?.GetIntData( "Target1", false ) ?? 0;
+                                    if ( turnsLeft > 0 )
+                                        SimCommon.MachineActorsInvestigating.AddToConstructionList( new KeyValuePair<ISimMachineActor, int>( kv.Value, turnsLeft ) );
                                 }
                                 break;
                         }
@@ -160,7 +167,8 @@ namespace Arcen.HotM.External
                 SimCommon.MachineActorsDeployedAndActingAsAndroidLauncher.SwitchConstructionToDisplay();
                 SimCommon.MachineActorsDeployedAndActingAsMechLauncher.SwitchConstructionToDisplay();
                 SimCommon.AllMachineActors.SwitchConstructionToDisplay();
-                SimCommon.MachineActorsInvestigatingOrInfiltrating.SwitchConstructionToDisplay();
+                SimCommon.MachineActorsInvestigating.SwitchConstructionToDisplay();
+                SimCommon.MachineActorsInfiltrating.SwitchConstructionToDisplay();
 
                 //now down here calculate the npcs waiting to act
 

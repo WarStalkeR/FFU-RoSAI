@@ -1516,7 +1516,7 @@ namespace Arcen.HotM.ExternalVis
                             int target = 100;
                             CanBeCompletedNow = false;
 
-                            bool hasLiquidMetal = FlagRefs.MercurialForm.DuringGameplay_IsInvented;
+                            bool hasLiquidMetal = UnlockRefs.MercurialForm.DuringGameplay_IsInvented;
                             bool hasAllies = FlagRefs.Ch2_SecuredNomadSupportForPrisonHeist.DuringGameplay_IsTripped;
 
                             if ( hasLiquidMetal )
@@ -1533,7 +1533,7 @@ namespace Arcen.HotM.ExternalVis
                                 case ProjectLogic.WriteRequirements_OneLine:
                                     {
                                         BufferOrNull.AddLangAndAfterLineItemHeader( hasLiquidMetal ? "ChecklistItemComplete" : "ChecklistItemIncomplete",
-                                            hasLiquidMetal ? ColorTheme.DataGood : ColorTheme.DataProblem ).AddRaw( FlagRefs.MercurialForm.UnitType.GetDisplayName() );
+                                            hasLiquidMetal ? ColorTheme.DataGood : ColorTheme.DataProblem ).AddRaw( UnlockRefs.MercurialForm.UnitType.GetDisplayName() );
                                         BufferOrNull.Space5x();
                                         BufferOrNull.AddFormat2( "RecruitedAdditionalAlliesOptional", hasAllies ? 1 : 0, 1 ).Line();
                                         BufferOrNull.Line();
@@ -1542,7 +1542,7 @@ namespace Arcen.HotM.ExternalVis
                                 case ProjectLogic.WriteRequirements_ManyLines:
                                     {
                                         BufferOrNull.AddLangAndAfterLineItemHeader( hasLiquidMetal ? "ChecklistItemComplete" : "ChecklistItemIncomplete",
-                                            hasLiquidMetal ? ColorTheme.DataGood : ColorTheme.DataProblem ).AddRaw( FlagRefs.MercurialForm.UnitType.GetDisplayName() );
+                                            hasLiquidMetal ? ColorTheme.DataGood : ColorTheme.DataProblem ).AddRaw( UnlockRefs.MercurialForm.UnitType.GetDisplayName() );
                                         BufferOrNull.Line();
                                         BufferOrNull.AddFormat2( "RecruitedAdditionalAlliesOptional", hasAllies ? 1: 0, 1 ).Line();
                                         BufferOrNull.Line();
@@ -2972,8 +2972,8 @@ namespace Arcen.HotM.ExternalVis
                                         }
                                         for ( int i = 0; i < 20; i++ )
                                             UpgradeRefs.Steward.DuringGame_DoUpgrade( false );
-                                        FlagRefs.TheSlumRelocationEffort.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
-                                        FlagRefs.PavingOverSlums.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                                        UnlockRefs.TheSlumRelocationEffort.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
+                                        UnlockRefs.PavingOverSlums.DuringGameplay_ImmediatelyInventIfNotAlreadyDone( CommonRefs.WorldExperienceInspiration, true, false, true, false );
                                     }
                                     break;
                             }
@@ -3031,7 +3031,7 @@ namespace Arcen.HotM.ExternalVis
                                             if ( protectorGoal != null )
                                             {
                                                 TimelineGoalHelper.HandleGoalPathCompletion( protectorGoal, "1MillionSavedFromTheSlums" );
-                                                if ( !FlagRefs.RoboticCleaners.DuringGameplay_IsInvented )
+                                                if ( !UnlockRefs.RoboticCleaners.DuringGameplay_IsInvented )
                                                     TimelineGoalHelper.HandleGoalPathCompletion( protectorGoal, "WithoutNervousBreakdown" );
                                                 if ( (CityStatisticTable.Instance.GetRowByID( "AbandonedHumanDeathsFromExposure" )?.GetScore()??0) +
                                                     (CityStatisticTable.Instance.GetRowByID( "DesperateHomelessDeathsFromExposure" )?.GetScore() ?? 0) <= 0 )

@@ -182,10 +182,21 @@ namespace Arcen.HotM.ExternalVis
 
                         foreach ( CityTask task in SimCommon.ActiveCityTasks.GetDisplayList() )
                         {
-                            if ( lowerMode != null || task.ShowsInLowerMode != null )
+                            if ( lowerMode != null && !lowerMode.HideTaskStack )
                             {
-                                if ( task.ShowsInLowerMode != lowerMode )
-                                    continue;
+                                if ( task.ShowsInLowerMode != null )
+                                {
+                                    if ( task.ShowsInLowerMode != lowerMode )
+                                        continue;
+                                }
+                            }
+                            else
+                            {
+                                if ( lowerMode != null || task.ShowsInLowerMode != null )
+                                {
+                                    if ( task.ShowsInLowerMode != lowerMode )
+                                        continue;
+                                }
                             }
                             if ( !task.Implementation.GetShouldBeVisible( task ) )
                                 continue;
@@ -839,8 +850,13 @@ namespace Arcen.HotM.ExternalVis
                 if ( !FlagRefs.UITour4_RadialMenu.DuringGameplay_IsTripped )
                     return; //this is the one directly before it
 
-                if ( !Window_RadialMenu.Instance.GetShouldDrawThisFrame() )
-                    return;
+                if ( lowerMode != null && !lowerMode.HideTaskStack )
+                { }
+                else
+                {
+                    if ( !Window_RadialMenu.Instance.GetShouldDrawThisFrame() )
+                        return;
+                }
 
                 int debugStage = 0;
                 try
@@ -851,10 +867,21 @@ namespace Arcen.HotM.ExternalVis
                     foreach ( CityTask task in SimCommon.ActiveCityTasks.GetDisplayList() )
                     {
                         debugStage = 1100;
-                        if ( lowerMode != null || task.ShowsInLowerMode != null )
+                        if ( lowerMode != null && !lowerMode.HideTaskStack )
                         {
-                            if ( task.ShowsInLowerMode != lowerMode )
-                                continue;
+                            if ( task.ShowsInLowerMode != null )
+                            {
+                                if ( task.ShowsInLowerMode != lowerMode )
+                                    continue;
+                            }
+                        }
+                        else
+                        {
+                            if ( lowerMode != null || task.ShowsInLowerMode != null )
+                            {
+                                if ( task.ShowsInLowerMode != lowerMode )
+                                    continue;
+                            }
                         }
                         debugStage = 1200;
                         if ( !task.Implementation.GetShouldBeVisible( task ) )

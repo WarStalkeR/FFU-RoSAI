@@ -54,7 +54,7 @@ namespace Arcen.HotM.ExternalVis
                         break; //nothing to do if already tripped
 
                     //otherwise trip if both these conditions are true
-                    if ( FlagRefs.UnobservedFlight.DuringGameplay_IsInvented && FlagRefs.BulkProduction.DuringGameplay_IsInvented )
+                    if ( UnlockRefs.UnobservedFlight.DuringGameplay_IsInvented && UnlockRefs.BulkProduction.DuringGameplay_IsInvented )
                     {
                         Flag.TripIfNeeded();
 
@@ -68,7 +68,7 @@ namespace Arcen.HotM.ExternalVis
                         break; //nothing to do if already tripped
 
                     //otherwise trip if this condition is true
-                    if ( FlagRefs.AwarenessOfFilth.DuringGameplay_IsInvented )
+                    if ( UnlockRefs.AwarenessOfFilth.DuringGameplay_IsInvented )
                     {
                         Flag.TripIfNeeded();
 
